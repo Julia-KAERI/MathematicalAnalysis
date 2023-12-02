@@ -1,0 +1,740 @@
+---
+title: "함수의 연속성"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+## 함수의 극한과 연속
+
+### 함수의 극한과 연속
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-limits_and_continuity_of_functions}
+
+#### 함수의 극한과 연속
+
+거리공간 $X,\,Y$ 와 $E\subset X$ 에서 정의된  함수 $f:E \to Y$ 를 생각한다. $x_0\in E$ 가 $E$ 에서의 극한점이며 $y_0\in Y$ 라고 하자. 각각의 $\varepsilon > 0$ 에 대해 
+
+$$
+0<\|x-x_0\|_X < \delta \implies \|f(x)- y_0\|_Y< \varepsilon
+$$
+
+을 만족하는 $\delta>0$ 가 존재하면 함수 $f$ 의 $x_0$ 에서의 극한이 $y_0$ 라고 하며 
+
+$$
+\lim_{x \to x_0} f(x) = y_0
+$$
+
+라고 쓴다. 또한 $\displaystyle \lim_{x \to x_0} f(x) = f(x_0)$ 일 때 $f$ 는 $x_0$ 에서 **연속** 이라고 한다. 함수 $f$ 가 정의구역 $E$ 전체에서 연속일 때 $f$ 를 **연속 함수** 라고 한다.
+
+
+::: 
+:::
+
+</br>
+
+::: {#prp-limit_and_convergent_series}
+
+$X,\, Y,\, E,\, f$ 가 @def-limits_and_continuity_of_functions 와 같다고 하자. 이 때 아래 두 명제는 동치이다. 
+
+&emsp; ($1$) $f$ 는 $x_0$ 에서 극한을 가진다.
+   
+&emsp; ($2$) $X$ 에서 정의된 수열 $\langle x_n \rangle$ 이 $x_0$ 를 포함하지 않으면서 $x_0$ 로 수렴하면 수열 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴한다.
+
+:::
+
+
+::: {.proof}
+
+우선 (1) $\implies$ (2) 를 보이자. $\displaystyle y_0 = \lim_{x \to x_0} f(x)$ 이면 임의의 $\varepsilon>0$ 에 대해 
+
+$$
+0<\|x - x_0\|< \delta \implies \|f(x) - y_0\|< \varepsilon
+$$
+
+을 만족하는 $\delta>0$ 이 존재한다. 수열의 극한의 정의에 의해, 그리고 $x_0 \not\in \langle x_n \rangle$ 조건에 의해 
+
+$$
+n \ge N \implies 0<\|x_n - x_0 \|< \delta
+$$ 
+를 만족하는 $N\in \mathbb{N}$ 이 존재한다. 따라서 $n\ge N$ 이면 $\| f(x_n) - y_0\|< \varepsilon$ 이므로 $\displaystyle \lim_{n \to \infty} f(x_n) = y_0$ 이다.
+
+이제 명제 (1) 이 성립하지 않는다고 가정하자. 즉 임의의 $\delta >0$ 에 대해 어떤 $\varepsilon >0$ 이 존재하여 $0<\| x-x_0 \| <\delta$ 이며 $\|f(x)-y_0\|> \varepsilon$ 이다. 적당한 $\varepsilon_0>0$ 에 대해 $\delta_n = \dfrac{1}{n}$, $(n=1,\,2,\ldots)$ 라 잡고 $0<\|x_n - x_0\|< \delta_n$ 이며 $\|f(x_n)-f(x_0)\|>\varepsilon_0$ 가 되도록 잡을 수있다. 그렇다면 $\langle x_n \rangle \to x_0$ 이지만 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴하지 않는다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-uniqueness_of_limit}
+
+함수 $f$ 가 $x_0$ 에서 극한을 갖는다면, 그 극한은 유일하다. 
+
+:::
+
+
+::: {.proof}
+
+@prp-properties_of_convergence_1 의 2. 에서 보였듯이 수열의 극한은 유일하며 $\langle x_n \rangle \to x_0$ 인 수열을 잡으면 @prp-limit_and_convergent_series 에 의해 그 극한값은 $\displaystyle \lim_{n \to \infty} f(x_n)= x_0$ 이다. $\square$
+
+:::
+
+
+</br>
+
+::: {#prp-basic_properties_of_limit_of_functions}
+거리공간 $X,\, Y$ 에 대해 $E\subset X$ 이며 $f,\,g$ 가 $E \mapsto Y$ 함수이며 $x_0$ 가 $E$ 의 극한점이고 $\displaystyle \lim_{x\to x_0} f(x) = a$, $\displaystyle \lim_{x \to x_0} g(x) = b$ 일 때 다음이 성립한다. 
+
+&emsp; (1) $\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b$, 
+
+&emsp; (2) $\displaystyle \lim_{x \to x_0}(fg)(x) = ab$, 
+
+&emsp; (3) $b\ne 0$ 일 경우 $\displaystyle \lim_{x \to x_0} \dfrac{f}{g}(x) = \dfrac{a}{b}$.
+
+:::
+
+::: {.proof}
+@prp-limit_and_convergent_series 에 의해 $\langle x_n \rangle \to x_0$ 인 수열 $x_n$ 을 생각하자. @prp-properties_of_convergence_2 를 이용하여 증명 할 수 있다. $\square$
+:::
+
+
+</br>
+
+::: {#prp-continuity_of_composited_function}
+
+거리공간 $X,\,Y,\,Z$ 에서 $f:X \to Y,\, g:f(X) \to Z$ 이며 $h = g \circ f$ 라 하자. $f$ 가 $x_0\in X$ 에서 연속이며 $g$ 가 $f(x_0)$ 에서 연속이면 $h$ 도 $x_0$ 에서 연속이다.
+
+:::
+
+::: {.proof}
+
+$g$ 가 $f(x_0)$ 에서 연속이므로 주어진 $\varepsilon>0$ 에 대해 
+
+$$
+0<\|y-f(x_0)\|_Y < \gamma \implies \|g(y) - g(f(x_0))\|_Z < \varepsilon
+$$
+
+을 만족하는 $\gamma>0$ 가 존재한다. 또한 $f$ 가 $x_0$ 에서 연속이므로 이 $\gamma$ 에 대해
+
+$$
+0<\|x-x_0\|_X < \delta \implies \|f(x) - f(x_0)\|_Y<\gamma
+$$
+
+를 만족하는 $\delta>0$ 이 존재한다. 즉 주어진 $\varepsilon >0$ 에 대해
+
+$$
+0< \|x-x_0\|_X <\delta \implies \| g(f(x))-g(f(x_0))\|_Z < \varepsilon
+$$ 
+
+을 만족하는 $\delta>0$ 가 존재하므로 $\displaystyle \lim_{x \to x_0} (g \circ f)(x) = g(f(x_0))$ 이다. $\square$ 
+:::
+
+</br>
+
+
+### 함수의 연속과 역사상
+
+
+함수의 상과 역상의 정의, 그리고 이에 대한 명제들은 진행을 위해 필요하다.
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-inverse_image_of_function}
+
+#### 함수의 상과 역상
+
+함수 $f:X \to Y$ 을 생각하자. $E \subset X$ 에 대해 $\{f(x): x\in E\}$ 를 $f$ 에 대한 $A$ 의 **상(image)** 라고 하고 $f(A)$ 라 쓴다. 또한 $V\subset Y$ 에 대해 $\{x\in X : f(x) \in V\}$ 를 $f$ 에 대한 $V$ 의 **역상 (inverse image)** 이라 하고 $f^{-1}(V)$ 라 쓴다.
+
+:::
+:::
+
+
+
+::: {#prp-properties_of_image_and_inverse_image_of_fucntion}
+
+$f:X \to Y$ 에서 $\{E_i\}$ 가 $X$ 의 부분집합족이고 $\{V_i\}$ 가 $Y$ 의 부분집합족일 때, 다음이 성립한다.
+
+&emsp; (1) $f\left(\bigcup_i E_i\right) = \bigcup_i f(E_i)$, 
+
+&emsp; (2) $f\left(\bigcap_i E_i\right) \subset \bigcap_i f(E_i)$,
+
+&emsp; (3) $f^{-1}\left(\bigcup_i V_i\right) = \bigcup_i f^{-1}(V_i)$,
+   
+&emsp; (4) $f^{-1}\left(\bigcap_i V_i\right) = \bigcap_i f^{-1}(E_i)$
+
+:::
+
+
+::: {.proof}
+($1$) $\Gamma = \{E_i\}$ 라 하자. 
+$$
+\begin{aligned} 
+y\in f\left(\bigcup_i E_i\right) &\iff \exists x\in \bigcup_i E_i,\, f(x) = y \\
+&\iff \exists E_i\in \Gamma, y\in f(E_i)\\
+&\iff y \in \bigcap_i f(E_i).
+\end{aligned}
+$$
+
+
+($2$) $\Gamma = \{E_i\}$ 라 하자. 
+$$
+\begin{aligned}
+y \in f\left(\bigcap_i E_i \right) &\iff \exists x\in \bigcap_i E_i,\, f(x) = y \\
+&\implies \forall E_i \in\Gamma,\, y \in f(E_i) \\
+&\iff y \in \bigcup_i f(E_i)
+\end{aligned}
+$$
+
+두번째 줄에서 $\iff$ 가 아니라 $\implies$ 인 이유는 $x_1\in E_i,\, x_2\in E_j \backslash E_i$ 에 대해 $f(x_1) = f(x_2)$ 인 경우 $\;\Longleftarrow\;$ 가 성립하지 않기 때문이다.
+
+
+($3$) $\displaystyle x \in f^{-1}\left(\bigcup_i V_i \right) \iff f(x)\in \bigcup_i V_i \iff x \in \bigcup_i f^{-1}(V_i)$
+
+($4$) $\displaystyle x \in f^{-1}\left(\bigcap_i V_i \right) \iff f(x)\in \bigcap_i V_i \iff x \in \bigcap_i f^{-1}(V_i).$ $\qquad\square$
+
+:::
+
+</br>
+
+::: {#prp-inclusion_of_function_and_inverse_image}
+
+$f:X \to Y$ 이며 $A\subset X,\, B \subset Y$ 라고 할 때 다음이 성립한다.
+$$
+A \subset f^{-1}(f(A)),\qquad f(f^{-1}(B)) \subset B
+$$
+
+:::
+
+::: {.solution}
+$a\in A$ 일 때 $a\in f^{-1}(f(A))$ 임은 자명하다. $f(a)=b$ 이며 $f^{-1}(\{b\})$ 가 $A$ 에 포함되지 않는 원소 $x$ 를 포함한다면 $f^{-1}(x)\not\in A$ 이므로 등호는 성립하지 않는다.
+
+이제 $f(f^{-1}(B)) \subset B$ 를 보이자. 
+
+$$
+\begin{aligned}
+b\in f(f^{-1 }(B)) &\implies \exists x\in f^{-1}(B) \, \text{s.t } f(x) = b \\
+&\implies \exists b' \in B \text{ s.t. } b'=f(x),\, f(x) = b\\
+&\implies b\in B
+\end{aligned}
+$$ 
+
+이므로 $f(f^{-1}(B)) \subset B$ 이다. 만약 $b\in B\backslash f(X)$ 이면 $b\not\in f(f^{-1}(B))$ 이므로 등호는 성립하지 않는다. $\square$
+:::
+
+</br>
+
+::: {#prp-inverse_image_of_complement}
+
+$f:X \to Y$ 이며 $V\subset Y$ 일 때 $f^{-1}(Y\backslash V) = X \backslash f^{-1}(V)$ 이다.
+
+:::
+
+:::{.solution}
+$x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\in X\backslash f(V)$. $\square$ 
+:::
+
+</br>
+
+
+이제 본격적으로 정의구역과 공변역의 위상학적 성질과 연속함수에 대해 알아보자.
+
+</br>
+
+::: {#prp-equivalent_expression}
+
+거리공간 $X,\,Y$ 에서 정의된 함수 $f: X\to Y$ 에 대해 다음은 동치이다. 
+
+&emsp; ($1$) $f$ 는 $x_0\in X$ 에서 연속이다.
+
+&emsp; ($2$) 임의의 $\varepsilon>0$ 에 대해 어떤 $\delta >0$ 이 존재하여 $f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\, \varepsilon)$ 이다.
+
+:::
+
+
+::: {.proof}
+
+연속의 정의를 생각하면 두 명제가 동치임을 쉽게 보일 수 있다. 
+
+:::
+
+</br>
+
+::: {#thm-continuity_and_inverse_of_map}
+
+거리공간 $X,\,Y$ 에서 정의된 함수 $f:X \to Y$ 에 대해 다음 세 명제는 동치이다.
+
+&emsp; ($1$) $f$ 는 $X$ 에서 연속이다.
+
+&emsp; ($2$) $V\subset Y$ 가 열린집합이면 $f^{-1}(V)$ 도 열린집합이다.
+
+&emsp; ($3$) $V\subset Y$ 가 닫힌집합이면 $f^{-1}(V)$ 도 닫힌집합이다.
+
+:::
+
+::: {.proof}
+
+$(1) \iff (2)$ 와 $(2) \iff (3)$ 을 보인다.
+
+($1 \implies 2$) $x_0 \in X,\, f(x_0)\in V$ 이며 $V$ 가 열린집합이라고 하자. 어떤 $f(x_0)$ 근방은 $V$ 에 포함되므로 $N_Y(f(x_0),\, \varepsilon)\subset V$ 인 $\varepsilon>0$ 이 존재한다. @prp-equivalent_expression 에 의해 임의의 $\varepsilon>0$ 에 대해 $\delta>0$ 이 존재하여 $f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\varepsilon) \subset V$ 이며 
+
+$$
+N_X (x_0,\, \delta) \subset f^{-1}(f(N_X (x_0,\delta))) \subset f^{-1}(N_Y(f(x_0),\varepsilon) )\subset f^{-1}(V)
+$$
+ 이다. $V$ 가 열린 집합 일 때 임의의 $x_0 \in f^{-1}(V)$ 에 대해 성립하므로 $f^{-1}(V)$ 는 열린집합이다.
+
+($2 \implies 1$) 임의의 $Y$ 에서의 열린집합 $V$ 에 대해 $f^{-1}(V)$ 가 열린집합이라 하자. $V$ 가 열린집합이므로 $y\in V$ 에 대해 $N_Y(y,\, \varepsilon)\subset V$ 인 $\varepsilon>0$ 가 존재한다. $y\not\in f(X)$ 이면 생각 할 것이 없으므로 $y\in f(X)$ 인 경우에만 생각하자. $N_Y(y,\varepsilon)$ 역시 $Y$ 에서의 열린집합이므로 $f^{-1}(N_Y(y,\varepsilon))$ 도 열린집합이다. $f(x) = y$ 라 하면 $x\in f^{-1}(N_Y(y,\varepsilon))$ 이며 $f^{-1}(N_Y(y,\varepsilon))$ 가 $X$ 에서의 열린집합이므로 $N_X(x,\delta)\subset f^{-1}(N_Y(y,\varepsilon))$ 인 $\delta>0$ 이 존재한다. @prp-inclusion_of_function_and_inverse_image 에 의해 $f(N_X(x,\delta)) \subset (f\circ f^{-1})(N_Y(y,\varepsilon)) \subset N_Y(y,\varepsilon)$ 이므로 $f$ 는 연속이다. 
+
+
+($2 \implies 3$) $V\subset Y$ 가 닫힌집합이면 $V\backslash Y$ 는 열린집합이므로 $f^{-1}(V\backslash Y)$ 도 열린집합이다. @prp-inverse_image_of_complement 에 의해 $f^{-1}(V)\backslash X$ 가 열린집합이므로 $f^{-1}(Y)$ 는 닫힌집합이다. 
+
+($3 \implies 2$) $V \subset Y$ 가 열린집합이면 같은 과정으로 $f^{-1}(V)$ 가 열린집합이라는 것을 보일 수 있다. $\square$
+:::
+
+</br>
+
+## 연속함수와 옹골집합
+
+### 최대-최소 정리
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-bounded_function}
+
+#### 유계함수
+
+거리공간 $X,\,Y$ 에서 정의된 함수 $f:X\to Y$ 를 생각하자. $\{\|f(x)\|_Y: x\in X\}$ 가 유계일 때 $f$ 를 유계함수 라고 한다.
+
+::: 
+:::
+
+</br>
+
+::: {#thm-continuity_and_compactness}
+
+거리공간 $X,\,Y$ 에서 정의된 함수 $f:X\to Y$ 가 옹골집합 $K \subset X$ 에서 연속일 때 $f(K)$ 는 옹골집합이다.
+
+:::
+
+::: {.proof}
+
+$\{V_{\alpha}\}$ 가 $f(K)$ 의 열린 덮개라고 하자. @thm-continuity_and_inverse_of_map 에 따라 $\{f^{-1}(V_{\alpha})\}$ 도 $K$ 의 열린 덮개이다. 따라서 유한개의 $\{f^{-1}(V_\alpha)\}$ 로 $K$ 를 덮을 수 있으며 이를 $\{f^{-1}(V_1),\ldots,\, f^{-1}(V_n)\}$ 이라 하자 @prp-inclusion_of_function_and_inverse_image 에 의해 
+$$
+f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
+$$ 
+이므로 $f(K)$ 는 옹골집합이다. $\square$
+:::
+
+</br>
+
+::: {#cor-continuity_and_compactness_in_Rk}
+거리공간 $X$ 와 유클리드공간에서 정의된 함수 $f:X \to \mathbb{R}^k$ 가 옹골집합 $K \subset X$ 에서 연속일 때 $f(K)$ 는 유계이며 닫힌 집합이다.
+
+:::
+
+::: {.proof}
+@thm-continuity_and_compactness 와 @thm-heine_borrel 에 의해 증명된다. $\square$
+
+:::
+
+</br>
+
+::: {#thm-extreme_value_theorem}
+
+#### 최대-최소 정리 (Extreme value theorem)
+거리공간 $X$ 위에서 정의된 함수 $f:X \to \mathbb{R}$ 가 옹골집합 $K$ 에서 연속일 때 $f(K)$ 는 최소값과 최대값을 가진다.
+
+:::
+
+::: {.proof}
+@cor-continuity_and_compactness_in_Rk 에 의해 $f$ 는 유계이며 닫힌 집합이다. $\mathbb{R}$ 에서 유계이므로 최소상계와 최대하계를 갖고 닫힌 집합이므로 최소상계와 최대하계가 $f(K)$ 에 포함된다. $\square$ 
+
+:::
+
+</br>
+
+::: {#thm-bijective_continuous_function_on_compact_set}
+
+거리공간 $X,\,Y$ 에서 정의된 함수 $f:X \to Y$ 가 옹골집합 $K \subset X$ 위에서 연속이며 전단사일 때 $K$ 위에서 의 $f$ 의 역함수 $f^{-1}$ 도 연속이다. 
+
+:::
+
+
+::: {.proof}
+$f$ 를 $K$ 위에서만 생각하자. 즉 $f:K \to Y$ 만 생각해도 된다. @thm-continuity_and_inverse_of_map 에 의해 열린집합 $U\subset K$ 에 대해 $f(U)$ 가 열린집합임을 보이면 된다. 
+
+우선 $U\backslash K$ 가 닫힌집합이므로 @prp-closed_subset_of_compact_set_is_compact 에 의해 옹골집합이다. 그리고 @thm-continuity_and_compactness 에 의해 $f(U\backslash K)$ 옹골집합이다. $f$ 가 $K$ 위에서 전단사이므로 $f(U\backslash K) = f(U)\backslash f(K)$ 이다. 따라서 $f(U)\backslash f(K)$ 가 옹골집합이므로 $f(U)$ 는 열린집합이다. $\square$
+
+:::
+
+</br>
+
+
+### 고른 연속 함수
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-uniformly_continuous}
+
+#### 고른 연속 함수
+
+거리공간 $X,\, Y$ 에서 정의된 함수 $f:X \to Y$ 가 각각의 $\varepsilon>0$ 에 대해 $\delta>0$ 이 존재하여
+
+$$
+\|p,\,q\|_X <\delta  \implies \|f(p)-f(q)\|_Y<\varepsilon
+$$
+
+을 만족하면 $f$ 를 $X$ 에서 **고른 연속** 이라고 한다.
+
+::: 
+:::
+
+</br>
+
+다음은 정의에 의해 자명하기 때문에 증명은 생략한다.
+
+::: {#prp-uniform_continuity}
+
+$E\subset X$ 에서 고른 연속인 함수 $f:X \to Y$ 는 $E$ 전체에서 연속이다.
+:::
+
+
+</br>
+
+::: {#exm-not_uniformly_continuous_function_1}
+
+함수 $f:[0,\, +\infty) \to \mathbb{R},\, f(x) = x^2$ 는 고른 연속이 아니다. 그러나 정의역이 유계이면 고른 연속이다.
+
+:::
+
+::: {.solution}
+구간 $I$ 에서 정의된 함수 $f$ 가 고른 연속이 아님을 보이기 위해서는 임의의 $\delta >0$ 에 대해 어떤 $\varepsilon>0$ 이 존재하여, $\exists \, x,\, y\in I,\, |x-y|< \delta,\, |f(x) - f(y)|>\varepsilon$ 임을 보이면 된다. $\varepsilon = 1$ 로 놓고, $x=1/\delta, y = 1/\delta + \delta/2$ 이라 하면
+
+$$
+|f(x)-f(y)| = |1 + \delta^2/4 | > 1
+$$
+
+이므로 $[0,\, +\infty)$ 에서 정의된 함수 $f$ 는 고른 연속이 아니다. 그러나 $[a,\,b]$ 구간으로 정의역을 한정시킨다고 하자. $M = \max\{ |a|,\, |b|\}$ 라고 하면, 
+
+$$
+|f(x)-f(y)|^2 = |x-y||x+y| \le 2M|x-y|
+$$
+
+이므로 임의의 $\varepsilon>0$ 에 대해 $\delta = \dfrac{\varepsilon}{2M}$ 보다 작게 잡으면 고른 연속의 정의를 만족한다는 것을 알 수 있다.
+
+:::
+
+</br>
+
+::: {#exm-not_uniformly_continuous_function_2}
+
+#### 김김계 문제 3.3.1
+
+다음 함수가 고른 연속인지 여부를 알아보자.
+
+1. $f(x)=x^2,\qquad x\in (0,\,5)$
+2. $f(x) = \dfrac{1}{x},\qquad x\in (0,\,1)$
+3. $f(x) = \sin \dfrac{1}{x},\qquad x\in (0,\,1)$, 
+4. $f(x) = x\sin \dfrac{1}{x},\qquad x\in (0,\,1)$, 
+5. $f(x) = \sqrt{x},\qquad x\in (0,\, +\infty)$, 
+6. $f(x) = \dfrac{1}{1+x^2},\qquad x\in (-\infty,\, +\infty)$
+
+:::
+
+::: {.solution}
+
+$1$. $\varepsilon>0$ 을 생각하자. $|x^2-y^2|=|x-y||x+y| < 10|x-y|$ 이므로 $\delta = \dfrac{\varepsilon}{10}$ 라 하면, $|x-y|<\delta$ 일 때 $|x^2-y^2|<10|x-y|<\varepsilon$ 이다.
+
+$2$. $\varepsilon = 1$ 을 생각하자. $x\in (0,\,1)$ 에 대해 $x=\delta,\, y = \dfrac{x}{2}= \dfrac{\delta}{2}$ 로 잡자. 정의역 조건에 의해 $\delta \in (0,\,1)$ 이다. $|x-y|=\dfrac{\delta}{2}<\delta$ 이지만 
+
+$$
+\left|\dfrac{1}{x}-\dfrac{1}{y}\right| =  \dfrac{|x-y|}{|xy|} =  \dfrac{1}{\delta}>1
+$$
+
+이므로 균등연속이 아니다.
+
+$3$. $\varepsilon = 1$ 이라 하자. 임의의 $\delta>0$ 에 대해 충분히 큰 $n$ 을 생각하고 $x = \dfrac{1}{2n\pi + \pi/2}$, $y = \dfrac{1}{2n\pi-\pi/2}$ 라 하면 $|x-y|<\delta$ 로 잡을 수 있다. 우리는 
+
+$$
+\sin \theta - \sin \phi  = 2 \cos \left(\dfrac{\theta + \phi}{2}\right) \sin \left(\dfrac{\theta - \phi}{2}\right)
+$$ 
+
+임을 알고 있으므로, 
+
+$$
+\left| \sin \dfrac{1}{x} - \sin \dfrac{1}{y}\right| = 2 \left| \cos \left( 2n\pi \right) \sin \dfrac{\pi}{2}\right| = 2 > 1
+$$
+
+를 얻었으며, 따라서 $\sin \dfrac{1}{x}$ 는 고른 연속이 아니다.
+
+$4$. 
+
+$$
+\left| \sin \dfrac{1}{x} - \sin \dfrac{1}{y}\right| = 2 \left| \cos \left( 2n\pi \right) \sin \dfrac{\pi}{2}\right|
+$$
+
+
+$5$. $|\sqrt{x}-\sqrt{y}| =\sqrt{|\sqrt{x}-\sqrt{y}|^2} \le \sqrt{|\sqrt{x}-\sqrt{y}||\sqrt{x}+\sqrt{y}|} = \sqrt{|x-y|}$
+
+이다. 따라서 $\delta < \varepsilon^2$ 로 잡으면 $|x-y|<\delta \implies |\sqrt{x}-\sqrt{y}|<\sqrt{\delta}<\varepsilon$ 이다.
+
+$6$. 
+
+:::
+
+
+</br>
+
+::: {#prp-uniform_continuity_and_compact_set}
+
+옹골 거리 집합 $X$ 와 거리집합 $Y$ 에서 정의된 함수 $f:X \to Y$ 가 $X$ 에서 연속이면 $f$ 는 $X$ 에서 고른 연속이다.
+
+:::
+
+::: {.proof}
+
+$\varepsilon>0$ 이 주어졌다고 하자. $f$ 가 연속이기 때문에 각 $p\in X$ 에 대해 
+
+$$
+\|p-q\|_X<\delta(p) \implies \|f(p)-f(q)\|_Y<\dfrac{\varepsilon}{2}
+$$
+
+를 만족하는 $\delta(p)$ 를 잡을 수 있다. 
+
+$$
+\left\{N\left(p,\, \dfrac{\delta(p)}{2}\right) : p\in X\right\}
+$$
+
+는 $X$ 에 대한 열린 덮개이며 $X$ 가 옹골집합이므로 유한개의 근방으로 $X$ 를 덮을 수있다. 유한개의 근방의 중심을 $p_1,\ldots,\, p_n$ 이라 하면 
+$$
+\left\{N\left(p_i,\, \dfrac{\delta(p_i)}{2}\right) : i=1,\ldots,\, n\right\}
+$$
+
+는 $X$ 에 대한 열린 덮개이다. 이제 $\delta = \min \left\{ \dfrac{\delta(p_i)}{2} : i=1,\ldots,\, n \right\}$ 라 하자. 이제,
+
+$$
+\|x-y\|_X < \delta \implies \|f(x)-f(y)\|_Y <\varepsilon
+$$
+
+임을 보이자. $x\in X$ 에 대해 $\|x-p_m\|_X < \dfrac{\delta(p_i)}{2}$ 인 $p_m$ 를 찾을 수 있다. $\|x-y\|_X<\delta$ 라면
+
+$$
+\|y-p_m\|_X \le \|y-x\|_X + \|x-p_m\|_X < \delta + \dfrac{\delta(p_m)}{2} \le \delta(p_m)
+$$
+
+이며 
+
+$$
+\|f(x) - f(y) \|_Y \le \|f(x)-f(p_m)\|_Y + \|f(p_m)-f(y)\|_Y < \dfrac{\varepsilon}{2}+\dfrac{\varepsilon}{2} = \varepsilon
+$$
+
+이다. $\square$ 
+
+:::
+
+</br>
+
+::: {#prp-non_compact_domain_in_R1}
+
+$E\subset \mathbb{R}^1$ 이 옹골집합이 아니라고 하자. 그렇다면, 
+
+1. $E \mapsto \mathbb{R}^1$ 인 유계가 아닌 연속함수 가 존재한다.
+2. $E \mapsto \mathbb{R}^1$ 인 유계이며 연속이지만 최대값을 갖지 않는 함수가 존재한다.
+3. $E$ 가 유계이면 $E \mapsto \mathbb{R}^1$ 인 연속이지만 균등연속은 아닌 함수가 존재한다.
+
+:::
+
+
+::: {.proof}
+
+@thm-heine_borrel 에 따라 $E\subset{R}^1$ 이 옹골집합이 아니라면 유계가 아니거나, 닫힌 집합이 아니다.
+
+$1$. $E$ 가 유계라면 닫힌집합이 아니며, 따라서 $E$ 에 포함되지 않는 $E$ 의 극한점 $x_0$ 가 존재한다. $f(x) = 1/(x-x_0)$ 는 유계가 아닌 연속함수이다. $E$ 가 유계가 아니라면 $g(x)=x$ 는 유계가 아닌 연속함수이다.
+
+$2$. $E$ 가 유계라고 하자. $E$ 에 포함되지 않는 $E$ 의 극한점 $x_0$ 에 대해 
+
+$$
+g(x) = \dfrac{1}{1+(x-x_0)^2}
+$$
+
+은 유계이며 $E$ 에서 연속이지만 최대값을 갖지 않는다. $E$ 가 유계가 아니라면 
+
+$$
+h(x) = \dfrac{x^2}{1+x^2}
+$$
+
+는 $0<h(x)<1$ 이므로 유계이지만 최대값을 갖지 않는다. 
+
+$3$. 유계인 $E$ 에 대해 $E$ 에 포함되지 않는 $E$ 의 극한점 $x_0$ 를 생각하자. 임의의 $\delta>0$ 과 $\varepsilon=1$ 을 생각하자. $x=x_0-\delta/4$, $y=x_0-\delta/2$ 라 하면 $|x-y|=\delta/4$ 이지만 $|f(x)-f(y)| = 2/\delta$ 이므로 충분히 작은 $\delta$ 에 대해 $|f(x)-f(y)|>1$ 이다. 즉 $f(x)$ 는 균등연속이 아니다. $\square$
+
+:::
+
+</br>
+
+
+## 연속과 연결
+
+::: {#prp-continuity_and_connectivity}
+
+거리공간 $X,\,Y$ 에서 정의된 함수 $f:X\to Y$ 를 생각하자. $E\subset X$ 가 연결집합이면 $f(E)$ 도 연결집합이다. 
+
+:::
+
+::: {.proof}
+
+귀류법을 통해 증명한다. $f(E)=A \cup B$ 이며 $A,\,B$ 가 공집합이 아닌 $Y$ 의 부분집합이고 서로 분리되어 있다고 하자. $G=E \cap f^{-1}(A)$, $H = E \cap f^{-1}(B)$ 라고 하자. $G=\varnothing$ 이라면 $f^{-1}(A)=\varnothing$ 이거나 $f^{-1}(A) \subset Y\backslash E$ 인데 가정에 의해 $A\ne \varnothing$ 이며, 따라서 $f^{-1}(A) \cap E \ne \varnothing$ 이므로 $G \ne \varnothing$ 이다. 같은 이유로 $H \ne \varnothing$ 이다. 이로부터 (@prp-properties_of_image_and_inverse_image_of_fucntion 를 참고하라)
+
+$$
+G \cup H = E \cap (f^{-1}(A)\cup f^{-1}(B)) = E \cap f^{-1}(A \cup B) = E
+$$
+
+이다. 즉 $E= G \cup H$ 이며 $G,\, H$ 도 공집합이 아니다.
+
+$A \subset \overline{A}$ 이므로 $G \subset f^{-1}(\overline{A})$ 이다. $f$ 가 연속이며 $\overline{A}$ 는 닫힌집합이므로 @thm-continuity_and_inverse_of_map 에 의해 $f^{-1}(\overline{A})$ 는 닫힌집합이다. 따라서 $\overline{G} \subset f^{-1}(\overline{A})$ 이며, 따라서 $f(\overline{G})\subset \overline{A}$ 이다. 
+
+$f(H) = B$ 이며 $\overline{A}\cap B= \varnothing$ 이다. 
+
+$$
+f(\overline{G}\cap H) \subset f(\overline{G}) \cap f(H) \subset \overline{A} \cap B= \varnothing
+$$
+
+이다. 즉 $\overline{G} \cap H = \varnothing$ 이다. 같은 방식으로 $G \cap \overline{H}=\varnothing$ 임을 보일 수 있으며, $G$ 와 $H$ 는 분리된 집합이다. 그런데 $E=G\cup H$ 이므로 $E$ 는 분리된 집합인데 이는 가정에 위배된다. 따라서 $f(E)$ 는 연결집합이다. $\square$
+:::
+
+</br>
+
+::: {#thm-intermediate_value_theorem}
+
+#### 사잇값 정리
+
+$f : [a,\,b]\subset\mathbb{R}^1 \to \mathbb{R}^1$ 이 연속함수이고 $f(a)<f(b)$ 라고 하자. $f(a)<c<f(b)$ 라면 $f(x)=c$ 를 만족하는 $x$ 가 구간 $(a,\,b)$ 에 존재한다.
+:::
+
+::: {.proof}
+
+$[a,\,b]$ 는 연결집합이며 @prp-continuity_and_connectivity 에 의해 $f([a,\,b])$ 도 연결집합이다. @thm-connected_set_in_R1 에 의해 $c\in f([a,\,b])$ 이다. $\square$ 
+
+:::
+
+
+</br>
+
+## 단조 함수
+
+
+### 좌극한과 우극한 {#sec-left_limit_and_right_limit}
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-1st_2nd_kind_discontinuity}
+
+#### 좌극한과 우극한
+
+$f:X\subset \mathbb{R} \to \mathbb{R}$ 을 생각하자. 임의의 $\varepsilon>0$ 에 대해 어떤 $\delta>0$ 이 존재하여 
+
+$$
+0<x-x_0<\delta \implies |f(x)-r|< \varepsilon
+$$
+
+일 때 함수 $f$ 는 $x_0$ 에서의 **우극한**이 존재한다고 하며 $\displaystyle \lim_{x \to x_0^+} = r$ 혹은 $f(x_0^+)=r$ 이라 쓴다. 또한
+
+$$
+-\delta < x-x_0 < 0 \implies |f(x)-l|<\varepsilon
+$$
+
+일 때 함수 $f$ 는 $x_0$ 에서의 **좌극한**이 존재한다고 하며 $\displaystyle \lim_{x \to x_0^-} = l$ 혹은 $f(x_0^-)=l$ 이라 쓴다.
+
+::: 
+:::
+
+
+</br>
+
+### 단조함수
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-monotonic_function}
+
+#### 단조증가/단조감소
+
+$f:(a,\,b)\to \mathbb{R}$ 함수 일 때 $a<x<y<b$ 에 대해 $f(x)\le f(y)$ 이면 $f$ 가 구간 $(a,\,b)$ 에서 **단조증가** 한다고 하며 $f(x) \ge f(y)$ 이면 $f$ 가 구간 $(a,\,b)$ 에서 **단조감소**한다고 한다. $f$ 가 $(a,\,b)$ 에서 단조증가 하거나 단조감소 하면 $f$ 를 $(a,\,b)$ 에서의 **단조함수** 라고 한다.
+
+::: 
+:::
+
+</br>
+
+::: {#prp-existance_of_left_right_limit_for_monotonic_function}
+
+$f$ 가 $(a,\,b)$ 에서 단조증가 하면 모든 $x\in (a,\,b)$ 에 대해 $f(x^+)$ 와 $f(x^-)$ 가 존재한다. 정확하게는
+
+$$
+\sup_{a<t<x} f(t) = f(x^-) \le f(x) \le f(x^+) = \inf_{x<t<b}f(t)
+$$
+
+이다. 또한 $a<x<y<b$ 일 때
+
+$$
+f(x^+) \le f(y^-)
+$$
+
+이다.
+:::
+
+
+::: {.proof}
+
+$a<t<x$ 에 대해 $f(t)\le f(x)$ 이므로 $m=\sup \{f(t) : a<t<x\} \le f(x)$ 이다. 임의의 $\varepsilon>0$ 에 대해 
+
+$$
+m-\varepsilon < f(x-\delta) \le m
+$$
+
+를 만족하는 $\delta$ 가 존재한다. $f$ 가 $(a,\,b)$ 에서의 단조함수 이므로 $x-\delta < t < x$ 인 $t$ 에 대해
+
+$$
+f(x-\delta) \le f(t) \le m
+$$
+
+이다. 이는 좌극한의 정의에 의해 
+
+$$
+f(x^-)=m=\sup_{a<t<x} f(t) \le f(x)
+$$ 
+이다. 같은 방법으로 $\displaystyle f(x^+) = \inf_{x<t<b} f(t) \ge f(x)$ 임을 보일 수 있다. 따라서 $f(x^-)\le f(x) \le f(x^+)$ 이다.
+
+이제 두번째를 보이기 위해 $a<x<y<b$ 라 하자. 
+
+$$
+\begin{aligned}
+f(x^+) &= \inf_{x<t<b} f(t) = \inf_{x<t<y} f(t) \\
+f(y^-) &= \sup_{a<t<y} f(t) = \sup_{x<t<y} f(t) 
+\end{aligned}
+$$ 
+
+이므로 $f(x^+) \le f(y^-)$ 이다. $\square$
+
+:::
+
+</br>
+
+::: {#prp-monitonic_and_countable_number_of_discontinuity}
+
+$f:(a,\,b)\to \mathbb{R}$ 이 단조함수이면 $f$ 가 불연속인 $(a,\,b)$ 구간의 점은 countable 이다.
+
+:::
+
+
+::: {.proof}
+
+일반성을 잃지 않고 $f$ 를 단조증가라 가정 할 수 있다. $E$ 를 $f$ 가 불연속인 $(a,\,b)$ 구간의 점이라고 하자. $x\in E$ 라면 유리수의 조밀성에 의해
+
+$$
+f(x^-) < r(x) <f(x^+)
+$$
+
+인 어떤 유리수 $r(x)$ 를 정할 수 있다. $x_1<x_2$ 라면 $f(x_1^+) \le f(x_2^-)$ 이므로 $r(x_1)\ne r(x_2)$ 이다. 즉 $E$ 와 $\mathbb{Q}$ 사이에 단사함수가 존재한다. 따라서 $E$ 는 countable 이다. $\square$
+:::
+

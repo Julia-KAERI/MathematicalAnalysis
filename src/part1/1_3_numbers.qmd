@@ -1,0 +1,921 @@
+---
+title: "수"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+
+## 실수 ($\mathbb{R}$)
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-binary_operation}
+
+#### 이항 연산
+
+집합 $A$ 에 대해 $f:A\times A \to A$ 를 $A$ 에 대한 **이항연산(binary operation)** 이라 한다.
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-field}
+
+#### 체(Field)
+
+덧셈과 곱셈 이항연산이 정의된 집합 $\mathbb{F}$ 가 다음을 만족 할 때 $\mathbb{F}$ 를 **체(Field)** 라고 한다.
+
+**덧셈에 대한 공리**
+
+1. [덧셈에 대해 닫혀있음] $a,\,b\in \mathbb{F} \implies a+b\in \mathbb{F}$.
+   
+2. [덧셈에 대한 결합법칙] $a,\,b,\,c\in \mathbb{F} \implies a+(b+c)=(a+b)+c$.
+
+3. [덧셈의 항등원] $\exists 0 \in \mathbb{F} \,\forall a\in \mathbb{F},\, a+0 = 0+a = a$.
+
+4. [덧셈의 역원] $\forall a\in \mathbb{F} \exists x\in \mathbb{F}, \, a+x = x+a = 0$. 이 때 $a+x=0$ 이 되도록 하는 $x$ 를 $a$ 의 덧셈에 대한 역원이라고 하며 $-a$ 라고 쓴다. $a+(-b)$ 를 줄여서 $a-b$ 라고 쓴다.
+
+5. [덧셈에 대한 교환법칙] $a,\,b\in \mathbb{F} \implies a+b=b+a$.
+
+**곱셈에 대한 공리**
+
+6. [곱셈에 대해 닫혀 있음] $a,\,b\in \mathbb{F}\implies ab\in \mathbb{F}$. 
+
+7. [곱셈애 대한 결합법칙] $a,\,b,\,c \in \mathbb{F}\implies (ab)c = a(bc)$.
+
+8. [곱셈의 항등원] $\exists 1 \in \mathbb{F},\, \forall a\in \mathbb{F},\, a\ne 1 \implies a1 = 1a = 1$. 
+
+9.  [곱셈에 대한 역원] $\forall a\in \mathbb{F}\backslash \{0\} \, \exists x\in \mathbb{F},\, ax=xa=1$. 이 때 $x$ 를 $a$ 에 대한 곱셈의 역원이라고 하며 $1/a$ 혹은 $a^{-1}$ 이라고 쓴다. 
+
+10. [곱셍에 대한 결합법칙] $a,\,b\in\mathbb{F}, ab=ba$.
+
+**분배법칙** 
+
+11. [분배법칙] $a,\,b,\,c \in \mathbb{F} \implies a(b+c)= ab + ac$.
+
+:::
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-ordered_field}
+
+#### 음수와 양수, 순서체(Ordered field)
+
+체 $\mathbb{F}$ 가 전순서 집합일 때 $x<0$ 이면 $x$ 를 음수라 한다. $0<y$ 이면 $y$ 를 양수라 한다. $x<y$ 일 때 $y>x$ 라 쓸 수 있다.
+
+
+체 $\mathbb{F}$ 가 전순서 집합이며 다음 성질을 만족하면 $\mathbb{F}$ 를 **순서체 (ordered field)** 라 한다.
+
+12. $x < y\implies x+z < y+z$,
+
+13. $x>y,\, z>0 \implies xz > yz$.
+
+
+:::
+:::
+
+</br>
+
+
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-linear_continuum}
+
+#### Linear continuum
+
+아래의 성질을 가지는 집합을 **linear continuum** 이라 한다.
+
+14. 관계 $<$ 는 최소 상계 성질을 가진다.
+15. $x<y$ 일 때 $x<z<y$ 인 $z$ 가 집합 내에 존재한다.
+
+:::
+:::
+
+
+
+::: {.callout-important appearance="simple" icon="false"}
+
+<b>실수의 집합 $\mathbb{R}$ 의 존재 가정</b>
+
+Linear continuum 이며 순서체인 실수의 집합 $\mathbb{R}$ 이 존재한다.
+
+:::
+
+
+</br>
+
+::: {#prp-linear_continuum_is_dense}
+[뒤에서 나오겠지만 이런 성질을 조밀성 이라 한다.]{.aside}
+$\mathbb{F}$ 가 선형 연속체이고 $x,\, y\in \mathbb{F},\, x<y$ 이면 $x<z,\, z<y$ 를 만족하는 $z\in \mathbb{F}$ 가 존재한다.
+:::
+
+
+
+::: {.proof}
+
+$x+x<x+y<y+y$ 이며 $1/2>0$ 이므로 $x<\dfrac{x+y}{2} <y$ 이다. $\square$
+
+:::
+
+
+실수의 집합 $\mathbb{R}$ 은 선형 연속체이다.
+
+
+</br>
+
+## 정수 ($\mathbb{Z}$) 와 유리수 ($\mathbb{Q}$)
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-positive_integer}
+
+#### 양의 정수
+
+$A\subset \mathbb{R}$ 이 다음 성질을 가지면 **귀납적(inductive)** 하다고 한다. [수학에서의 귀납적(inductive)이라는 말은 논리학에서의 귀납법과는 무관하다.]{.aside}
+
+&emsp; ($1$) $1\in A$, 
+
+&emsp; ($2$) $n\in A \implies n+1 \in A$.
+
+$\mathcal{A}$ 를 inductive 한 집합의 집합족이라 할 때, 다음과 같이 정의된 $\mathbb{Z}_+$ 를 양의 정수라 한다.
+
+$$
+\mathbb{Z}_+ = \bigcap_{A\in \mathcal{A}}A.
+$$
+
+:::
+:::
+
+</br>
+
+::: {#prp-Z_plus_is_inductive}
+
+다음이 성립한다.
+
+&emsp; ($1$) $\mathbb{Z}_+$ 는 귀납적이다.
+
+&emsp; ($2$) $\mathbb{Z}_+$ 의 귀납적인 부분집합은 $\mathbb{Z}_+$ 뿐이다.
+
+:::
+
+::: {.proof}
+
+($1$) 은 쉽게 보일 수 있다.
+
+($2$) $A\subset \mathbb{Z}_+$ 가 귀납적이라면 $Z_+ \subset A$ 이어야 하므로 $Z_+ = A$ 이다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-integer}
+
+#### 정수
+
+정수 $\mathbb{Z}$ 는 다음과 같이 정의된다.
+
+$$
+\mathbb{Z}= \mathbb{Z}_+ \cup \{0\} \cup \{-z: z\in \mathbb{Z}_+\}.
+$$
+:::
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-rational_irrational}
+
+#### 유리수(rational number) 와 무리수(irrational number)
+
+아래와 같이 정의된 $\mathbb{Q}$ 의 원소를 **유리수** 라 한다. 어떤 실수가 유리수가 아니면 **무리수** 라 한다.
+$$
+\mathbb{Q} = \left\{\dfrac{p}{q} : p\in \mathbb{Z},\, q\in \mathbb{Z}\backslash\{0\}\right\}.
+$$
+
+
+:::
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-section}
+
+#### Section
+
+양의 정수 $n$ 에 대해 $1$ 보다 크거나 같고 $n$ 보다 작은 자연수의 집합을 **section** 이라 하며 $S_n$ 으로 쓴다. 
+
+$$
+S_n = \{m\in \mathbb{Z}_+ : 1\le m < n\}
+$$
+:::
+:::
+
+</br>
+
+::: {#thm-well_ordering_property}
+
+#### 양의 정수의 정렬성
+
+모든 공집합이 아닌 $\mathbb{Z}_+$ 의 부분집합은 최소값을 가진다.
+
+::: 
+
+::: {.proof}
+
+우선 다음을 보인다.
+
+> 각각의 $n\in \mathbb{Z}_+$ 에 대해 $\{1,\ldots,\,n\}$ 의 공집합이 아닌 부분집합은 최소값을 가진다.
+
+$A$ 를 위 명제가 성립하는 양의 정수의 집합이라 하자. $1\in A$ 임은 자명하다. 이제 $n\in A \implies n+1\in A$ 임을 보이자. $\{1,\,2,\ldots,n+1\}$ 의 부분집합 $C$ 를 생각하자. $C=\{n+1\}$ 일 경우 최소값은 $n+1$ 이다. $C$ 가 $n+1$ 이외의 원소를 포함한다면 $C \cap \{1,\ldots,\,n\} \ne \varnothing$ 이며 $n\in A$ 이므로 $C\cap \{1,\ldots,n\}$ 에 최소값이 존재하며 그것은 $n+1$ 보다 크므로 $C$ 의 최소값이다. 즉 $A$ 는 inductive 하며 @prp-Z_plus_is_inductive 에 의해 $A=\mathbb{Z}_+$ 이다. 즉 위의 명제가 성립함을 보였다.
+
+이제 모든 공집합이 아닌 $\mathbb{Z}_+$ 의 부분집합은 최소값을 가진다는 것을 보이자. $D$ 가 공집합이 아닌 $\mathbb{Z}_+$ 의 부분집이라 하자. 임의의 $m \in D$ 에 대해 $A=D\cap \{1,\ldots,m\}\ne \varnothing$ 이며 $A$ 는 $\{1,\ldots,m\}$ 의 부분집합이므로 최소값 $k$ 를 가진다. 이 $k$ 가 $D$ 의 최소값임은 자명하다. $\square$
+
+:::
+
+</br>
+
+
+::: {#thm-strong_induction_principle}
+
+#### 강한 귀납법
+
+$A\subset \mathbb{Z}_+$ 이며 각각의 $n\in \mathbb{Z}_+$ 에 대해 
+
+$$
+S_n \subset A \implies n\in A
+$$ 
+
+이 성립하면 $A=\mathbb{Z}_+$ 이다.
+
+:::
+
+::: {.proof}
+
+우선 $\varnothing = S_1 \subset A$ 이므로 $1\in A$ 이다. $A\ne \mathbb{Z}_+$ 이면 $B=\mathbb{Z}_+-A\ \ne \varnothing$ 이며 $B \subset \mathbb{Z}_+$ 이므로 $B$ 의 최소값 $m$ 이 존재한다. $m \not\in A$ 이므로 $m \ne 1$ 이다. 그런데 $S_m\subset A$ 이므로 $m\in A$ 인데 이는 모순된다. 따라서 $A=\mathbb{Z}_+$ 이다. $\square$ 
+
+:::
+
+</br>
+
+::: {#thm-archmedian_ordering_property}
+
+#### 아르키메데스의 성질
+
+$\mathbb{Z}_+$ 는 위로 유계가 아니다.
+
+:::
+
+::: {.proof}
+
+$\mathbb{Z}_+$ 가 위로 유계임을 가정하자. 실수의 최소 상계 성질에 의해 $\mathbb{Z}_+$ 의 상한 $r\in \mathbb{R}$ 이 존재한다. 즉 $n\in \mathbb{Z}_+ \implies n \le r$ 이다. 그렇다면 어떤 $m\in \mathbb{Z}_+$ 에 대해 $m>r-1$ 이다. 그렇지 않다면 $r-1$ 이 $\mathbb{Z}_+$ 의 상계이므로 $r$ 이 최소상계라는 가정에 모순된다.
+
+$m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ 인데 $m+1>r$ 이다. 즉 $\mathbb{Z}_+$ 는 위로 유계가 아니다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-archimedean_ordering_property}
+
+임의의 $a\in \mathbb{R}$ 에 대해 $n>a$ 인 양의 정수 $n$ 이 존재한다. 또한 $a$ 가 양수일 경우 $0<\dfrac{1}{n}<a$ 인 자연수 $n$ 이 존재한다.
+
+:::
+
+</br>
+
+::: {#cor-archimedian_law}
+
+#### 아르키메데스의 법칙
+
+임의의 $a>0,\, b\in \mathbb{R}$ 에 대해 $na>b$ 를 만족하는 $n\in \mathbb{Z}_+$ 이 존재한다.
+:::
+
+</br>
+
+## 연습문제
+
+::: {#exr-munkres_1_4_1}
+
+#### Munkres 1.4.1
+
+아래의 대수적 관계를 @def-field 의 공리를 이용하여 증명하라.
+
+:::
+
+::: {.solution}
+
+($1$) $x+y=x\implies y=0$
+
+$$
+\begin{aligned}
+y&=0+y & \qquad &;공리 \;3\\
+&= (x+(-x))+y & &;공리 \;4\\
+&=(x+y) + (-x) & &;공리 \;2 \\
+&= x+(-x) & &;\text{문제의 조건 }x+y=x\;\\
+&= 0
+\end{aligned}
+$$
+
+($2$) $0 \cdot x = 0$
+
+$$
+\begin{aligned}
+x\cdot x &= (x+0) \cdot x & &; 공리 \;3 \\
+&= x\cdot x + 0 \cdot x & &; 공리 \;11
+\end{aligned}
+$$
+
+이며 ($1$) 에 의해 $0 \cdot x = 0$ 이다.
+
+($3$) $-0 = 0$
+
+공리 $4$ 에 의해 $0 = (0)+ (-0)$ 이며 ($1$) 에 의해 $-0=0$ 이다.
+
+($4$) $-(-x)=x$
+
+$$
+\begin{aligned}
+-(-x) &= 0+(-(-x)) & &;공리 \;3\\
+&= (x+(-x)) + (-(-x)) & &;공리\;4 \\
+&=  x+ (-x+ (-(-x))) = x & &;공리\;4
+\end{aligned}
+$$
+
+($5$) $x(-y)=-(xy) = (-x)y$
+
+$$
+\begin{aligned}
+0&=x(y+(-y)) & & ;공리\;4 와 \;(2)\\ 
+&= xy + x(-y) & &; 공리 \;11
+\end{aligned}
+$$
+
+이므로 $x(-y) = -(xy)$ 이다. 
+
+$$
+\begin{aligned}
+0& = (x+(-x))y & &; 공리 \;4 와\; (2)\\
+&= xy + (-x)y & &; 공리 \; 11
+\end{aligned}
+$$
+이므로 $(-x)y = -(xy)$ 이다.
+
+($6$) $(-1)x=-x$
+
+$$
+\begin{aligned}
+0&=(1-1)x  & &; (2), \; 공리 \; 4 \\
+&= 1\cdot x + (-1)x & &; 공리 \;11 \\
+&= x+(-1)x & &;공리 \;3
+\end{aligned}
+$$ 
+
+이므로 $(-1)x = -x$ 이다. 
+
+($7$) $x(y-z) = xy - xz$
+
+$$
+\begin{aligned}
+x(y-z) &=  x(y+(-z)) \\
+& =  xy + x(-z) & &; 공리 \;11\\
+&= xy -xz & &;(5)
+\end{aligned}
+$$
+
+($8$) $-(x+y) =  -x -y; -(x-y) = -x+y$
+
+$$
+\begin{aligned}
+0&=(x+(-x))+ (y+(-y))  & &;공리 \;4 \\
+&= (x+y) + (-x-y) & &; 공리 \;2,\, 공리\; 5 \\
+\implies & -x-y = -(x+y), \\
+0 &=(x+(-x)) + (y+(-y)) & &;공리 \;4 \\
+&= (x-y)+ (-x+y) & & ; 공리 \;2,\, 공리 \; 5\\
+\implies& -(x-y) = -x+y.
+\end{aligned}
+$$
+
+($9$) $(x\ne 0) \land (x \cdot y =x) \implies y=1$ 
+ 
+$$
+\begin{aligned}
+y &= 1 \cdot y  & &; 공리\;8  \\
+&= (1/x \cdot x) \cdot y  & &; x\ne 0,\; 공리 \;9\\
+&= 1/x  \cdot (xy) & &; 공리 \; 7 \\
+&= 1/x \cdot x= 1 & &; 공리\; 9
+\end{aligned}
+$$
+
+($10$) $x\ne 0 \implies x/x=1$
+
+$1/x$ 의 정의.
+
+($11$) $x/1=x$
+
+$$
+\begin{aligned}
+x/1 &= (x\cdot 1)/1 & &;공리\;8 \\
+&= x (1/ 1) & &; 공리\; 7\\
+&= x\cdot 1 = x & &; 공리 \;8,\, 9
+\end{aligned}
+$$
+
+($12$) $(x \ne 0)\land (y \ne 0) \implies xy \ne 0$
+
+$(xy)\cdot ((1/x) \cdot (1/y)) = x \cdot (1/x) \cdot y \cdot (1/y) =1$ 이다. ($2$) 에 의해 $0 \cdot z = 1$ 인 $z\in \mathbb{R}$ 이 존재하지 않으므로 $xy\ne 0$ 이다.
+
+($13$) $y,\, z\ne 0$ 이면 $(1/y)(1/z) = 1/(yz)$ 이다.
+
+$(yz)(1/y)(1/z)= (y(1/y)) (z(1/z))=1$ 이므로 $(1/y)(1/z)= 1/(yz)$ 이다.
+
+($14$) $y,\, z\ne 0$ 이면 $(x/y)(w/z) = (xw)/(yz)$ 이다.
+
+$$
+(x/y)(w/z) = (x \cdot (1/y))\cdot (w\cdot (1/z)) =  (xw) \cdot ((1/y)(1/z)) = (xw)(1/(yz)) =  (xw)/(yz)
+$$
+:::
+
+
+</br>
+
+::: {#exr-munkres_1_4_2}
+
+#### Munkres 1.4.2
+
+아래의 부등식 규칙을 @def-field 와 @def-ordered_field  의 공리를 이용하여 증명하라.
+
+:::
+
+::: {.solution}
+
+($1$) $x>y$ 이고 $w>z$ 이면 $x+w > y+z$ 이다.
+
+공리 12 에 의해 $x+w > y+w$ 이다. 역시 공리 11 에 의해 $y+w > y+z$ 이다. 전순서 집합이므로 $x+w > y+z$ 이다.
+
+($2$) $x>0,\, y>0$ 이면 $x+y>0$ 이며 $x \cdot y >0$ 이다.
+
+공리 12 에 의해 $x>0 \implies x+y > y$ 이며 $y >0$ 이므로 $x+y>0$ 이다. 공리 13 에 의해 $x>0,\, y>0$ 이므로 $x \cdot y > 0 \cdot y = 0$ 이다.
+
+($3$) $x>0 \implies -x<0$.
+
+$x>0$ 이므로 $x+(-x)> 0+(-x)$ 이며 $0> -x$ 이다.
+
+($4$) $x>y \implies -x<-y$.
+
+$$
+\begin{aligned}
+x>y &\implies x-y > y-y=0 & &; 공리 \; 12\\
+&\implies -(x-y)<0 & &;(3) \\
+&\implies y-x<0 \\
+&\implies (y-x)-y < 0-y & & \; 공리 \;12 \\
+&\implies -x < -y
+\end{aligned}
+$$ 
+
+($5$) $(x>y) \land (z<0) \implies xz<yz$
+
+문제 ($4$) 에 의해 $0>z$ 이므로 $(-z)>-0=0$ 이다. 공리 13 에 의해 $x(-z)> y(-z)$ 이며 $-xz > -yz$ 이다. ($4$) 에 의해 $xz<yz$ 이다.
+
+($6$) $x\ne 0 \implies x^2>0$. 여기서 $x^2 = x \cdot x$ 이다.
+
+$x>0$ 이면 공리 13 에 의해 $x\cdot x > x \cdot 0 =0$ 이다. $x<0$ 이면 ($5$) 에 의해 $x \cdot x >0$ 이다. 
+
+($7$) $-1<0<1$
+
+문제 ($6$) 에 의해 $1 = 1 \cdot 1 >0$ 이며 ($3$) 에 의해 $-1<0$ 이다. 
+
+($8$) $xy>0 \iff x \text{ 와 } y \text{ 는 동시에 양수이거나 동시에 음수이다.}$
+
+$x =0$ 이거나 $y=0$ 이면 $xy=0$ 이므로 $x\ne 0,\, y\ne 0$ 일 때만 생각한다. $x>0,\, y>0$ 이면 공리 13 에 의해 $xy>0$ 이다. $x<0,\, y<0$ 이면 문제 ($5$) 의해 $0=0 \cdot y<x \cdot y$ 이다. $x>0,\, y<0$ 이면 문제 ($5$) 에 의해 $x \cdot y < 0 \cdot y= 0$ 이며 $x<0,\, y>0$ 이면 공리 12 에 의해 $xy< 0 \cdot y = 0$ 이다.
+
+($9$) $x>0 \implies 1/x>0$.
+
+$x \cdot 1/x = 1 >0$ 이므로 문제 ($8$) 에 의해 $1/x>0$ 이다.
+
+($10$) $x>y>0 \implies 1/x<1/y$.
+
+문제 ($9$) 에 의해 $1/x>0,\,1/y>0$ 이다. 공리 13 에 의해 $1= x \cdot 1/x > y \cdot 1/x$ 이며 $1/y = 1 \cdot 1/y > y \cdot 1/x \cdot 1/y = 1/x$ 이다. 
+
+($11$) $x<y \implies x<(x+y)/2 < y$. 
+
+$$
+x<y \implies 2x = x+x < y+x < y+y =2y.
+$$
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_4_4}
+
+#### Munkres 1.4.4
+
+($1$) $n \in \mathbb{Z}_+$ 일 때 $\{1,\ldots,n\}$ 의 공집합이 아닌 부분집합은 최대값을 가짐을 귀납법으로 보이시오.
+
+($2$) 우리는 왜 ($1$) 로부터 $\mathbb{Z}_+$ 의 공집합이 아닌 부분집합이 최대값을 가진다는 결론을 내릴 수 없는가?
+
+:::
+
+::: {.solution}
+
+($1$) $A\subset Z_{+}$ 를 ($1$) 이 참인 $n$ 의 집합이라 하자. $n=1$ 일 경우 $1$ 이 그 집합의 최대값이다. $n\in A$ 라 하자. $B = \{1,\ldots,\, n+1\}$ 에 대해 $C\subset B$ 이고 $n+1\in C$ 라면 $n+1$ 이 최대값이다. $n+1\not\in C$ 이면 $C \subset \{1,\ldots,\,n\}$ 이므로 최대값을 가진다. 즉 $A=\mathbb{Z}_+$ 이다. 
+
+($2$) 이 명제가 의미하는 것은 특정한 $n\in \mathbb{Z}_+$ 에서 $n$ 보다 작은 자연수의 집합은 최대값을 가진다는 것이지 $\mathbb{Z}_+$ 의 부분집합이 최대값을 가진다는 것이 아니다.
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_4_5}
+
+#### Munkres 1.4.5
+
+$\mathbb{Z}$ 와 $\mathbb{Z}_+$ 에 대해 다음을 보이시오.
+
+&emsp; ($1$) $a,\,b\in \mathbb{Z}_+ \implies a+b\in \mathbb{Z}_+$.
+
+&emsp; ($2$) $a,\,b\in \mathbb{Z}_+ \implies a\cdot b\in \mathbb{Z}_+$.
+
+&emsp; ($3$) $a\in \mathbb{Z}_+ \implies a-1 \in \mathbb{Z}_+ \cup \{0\}$.
+
+&emsp; ($4$) $c,\,d\in \mathbb{Z} \implies c+d \in \mathbb{Z},\, c-d\in \mathbb{Z}$.
+
+&emsp; ($5$) $c,\,d\in \mathbb{Z} \implies c\cdot d \in \mathbb{Z}$. 
+
+:::
+
+::: {.solution}
+
+($1$) 임의의 $a\in \mathbb{Z}_+$ 에 대해 $B_a=\{b\in \mathbb{Z}_+ : a+b\in \mathbb{Z}_+\}$ 라 하자. $a+1\in \mathbb{Z}_+$ 이므로 $1 \in B_a$ 이다. $m\in B_a$ 라 하자. $a+m\in \mathbb{Z}_+$ 이면 $a+m+1 = a+ (m+1)\in \mathbb{Z}_+$ 이므로 $m+1\in B_a$ 이다. 즉 $B_a=\mathbb{Z}_+$ 이다. 임의의 $a\in \mathbb{Z}_+$ 에 대해 성립하므로 $a,\,b\in \mathbb{Z}_+ \implies a+b\in \mathbb{Z}_+$ 이다.
+
+($2$) 임의의 $a\in \mathbb{Z}_+$ 에 대해 $B_a = \{b\in \mathbb{Z}_+ : a\cdot b\in \mathbb{Z}_+\}$ 라 하자. $a=a\cdot 1$ 이므로 $1\in B_a$ 이다. $m\in B_a$ 라 하자. $a\cdot (m+1) =  am + a$ 이며 $am\in \mathbb{Z}_+,\, a\in \mathbb{Z}_+$ 이므로 ($1$) 에 의해 $a(m+1)\in \mathbb{Z}_+$ 이다. 즉 $B_a = \mathbb{Z}_+$ 이므로 명제가 성립한다.
+
+($3$) $X=\{x: x\in \mathbb{R},\, x-1\in \mathbb{Z}_+ \cup \{0\}\}$ 라 하자. $1\in X$ 이다. $n\in X$ 임을 가정하면 $n\in \mathbb{R}$ 이며 $n-1\in \mathbb{Z}\cup \{0\}$ 이다. $\mathbb{R}$ 은 덧셈에 대해 닫혀있으며 $1\in \mathbb{R}$ 이므로 $n+1\in \mathbb{R}$ 이다. $n-1\in \mathbb{Z}\cup \{0\}$ 이므로 $n\in \mathbb{Z}_+$ 이다. 즉 $X$ 는 귀납적이다. 따라서 $\mathbb{Z}_+ \subset X$ 이다. 따라서 $m\in \mathbb{Z}_+$ 이면 $n-1 \in \mathbb{Z}_+ \cup \{0\}$ 이다.
+
+</br>
+
+이제 ($4$) 와 ($5$) 에 앞서 우선 다음을 보이자.
+
+> **명제 1**
+>
+> $A_- \subset \mathbb{R}$ 에 대해 $-1\in A_-$ 이고 $n\in A_- \implies n-1\in A_-$ 라면 $\mathbb{Z}_-\subset A_-$ 이다.
+
+(*증명*) $A_+ = \{-a \mid a\in A_-\}$ 라 하자. $1\in A$ 이며 $m=-n \in A_+$ 이면 $n\in A_-$ 이며 $n-1\in A_-$ 이므로 $-(n-1)=-n+1 =m+1\in A_+$ 이므로 $\mathbb{Z}_+ \in A_+$ 이다. 따라서 $\mathbb{Z}_-\subset A_-$ 이다.
+
+
+> **명제 2**
+> 
+> $A\subset \mathbb{Z}$ 에 대해
+>
+> 1. $0 \in A$,
+>
+> 2. $n \in A \implies n-1\in A,\, n+1\in A$
+>
+> 이면 $\mathbb{Z}= A$ 이다.
+
+
+(*증명*) $0\in A$ 이므로 $-1,\, 1 \in A$ 이다. $n\in A\implies n+1 \in \mathbb{A}$ 이므로 $\mathbb{Z}_+ \subset A$ 이다. 명제 1 에 의해 $\mathbb{Z}_- \subset A$ 이다. $0\in A$ 이므로 $\mathbb{Z}\in A$ 이다. 그런데 문제의 조건에 의해 $A \subset \mathbb{Z}$ 이므로 $A=\mathbb{Z}$ 이다.
+
+
+> **명제 3**
+>
+> $a\in \mathbb{Z}_+$ 일 때 $a-1 \in \mathbb{Z}_{+}\cup \{0\}$ 이다. $b\in \mathbb{Z}_-$ 에 대해 $b+1 \in \mathbb{Z}_-\cup \{0\}$ 이다.
+
+(*증명*) $a\in \mathbb{Z}_+$ 일 때 $a-1\in \mathbb{Z}_+ \cup \{0\}$ 은 ($3$) 에서 보였다. $b \in \mathbb{Z}_-$ 일 때 $-b\in \mathbb{Z}_+$ 이므로 $-b-1\in \mathbb{Z}_+ \cup \{0\}$ 이다. 따라서 $b+1 \in \mathbb{Z}_- \cup \{0\}$ 이다. 
+
+</br>
+
+($4$) 고정된 임의의 $c\in \mathbb{Z}$ 에 대해 $X_+ = \{d \in \mathbb{Z} \mid c+d\in \mathbb{Z}\}$ 라 하자. $c+0=c\in \mathbb{Z}$ 이므로 $0\in X_+$ 이다. $d\in \mathbb{X}_+$ 일 때 $c+(d+1)= (c+d)+1$ 이다. $c+d>0$ 일 경우 $(c+d)+1\in \mathbb{Z}_+ \subset \mathbb{Z}$ 이므로 $d+1\in X_+$ 이다. $c+d=0$ 일 경우 $c+d+1=1\in \mathbb{Z}_+\subset \mathbb{Z}$ 이므로 $d+1\in \mathbb{Z}$ 이다. $c+d<0$ 일 경우 $(c+d)+1 \in \mathbb{Z}_+\cup \{0\} \subset \mathbb{Z}$ 이므로 $d+1\in X_+$ 이다. 
+
+이제 $d\in X_+$ 이면 $d-1\in \mathbb{X}_+$ 임을 보이자. $c+d>0$ 이면 문제 ($3$) 에 의해 $c+(d-1)=(c+d)-1\in \mathbb{Z}_+ \cup\{0\}\subset \mathbb{Z}$ 이다. $c+d=0$ 이면 $c+d-1=-1\in \mathbb{Z}$ 이다. $c+d<0$ 이라면 $c+d-1\in \mathbb{Z}_- \subset \mathbb{Z}$ 이다. 즉 $d\in X_+ \implies d-1\in \mathbb{X}_+$ 이다. 따라서 $\mathbb{Z}\subset X_+$ 이며 문제의 조건에 의해 $X_+\subset \mathbb{Z}$ 이므로 $X_+ = \mathbb{Z}$ 이다. 즉 $c,\, d\in \mathbb{Z}\implies c+d\in \mathbb{Z}$ 이다. $d\in \mathbb{Z}$ 이면 $-d\in \mathbb{Z}$ 이므로 $c-d\in \mathbb{Z}$ 이다.
+
+($5$) 고정된 임의의 $c\in \mathbb{Z}$ 에 대해 $X = \{d\in \mathbb{Z} \mid c\cdot d \in \mathbb{Z}\}$ 라 하자. $c \cdot 0 = 0\in \mathbb{Z}$ 이므로 $0 \in X$ 이다. $d\in X$ 임을 가정하자. $c\cdot (d+1) = c\cdot d + c$ 인데 $X$ 의 정의에 의해 $c\cdot d\in \mathbb{Z}$ 이며 $c\in \mathbb{Z}$ 이므로 ($4$) 에 의해 $d+1\in X$ 이다. 마찬가지로 $d\in X \implies d-1\in X$ 임을 보일 수 있다. $\mathbb{Z}\subset X \subset \mathbb{Z}$ 이므로 $X=\mathbb{Z}$ 이다. 즉 모든 정수 $c,\,d$ 에 대해 $c \cdot d$ 는 정수이다. 
+
+:::
+
+</br>
+
+::: {#exr-munkres_1.4.6}
+
+#### Munkres 1.4.6
+
+$a\in \mathbb{R}$ 일 때 $n\in \mathbb{Z}_+$ 에 대해 재귀적으로 
+
+$$
+\begin{aligned}
+a^1 &= a,\\
+a^{n+1} &= a^n \cdot a
+\end{aligned}
+$$
+
+라 정의한다. $m,\,n \in \mathbb{Z}_+$, $a,\, b\in \mathbb{R}$ 에 대해 
+
+$$
+\begin{aligned}
+a^n a^m &= a^{n+m},\\
+(a^n)^m &= a^{nm},\\
+a^m b^m &= (ab)^m
+\end{aligned}
+$$
+
+임을 보이시오. 이것을 지수 법칙이라 한다.
+
+:::
+
+::: {.proof}
+
+고정된 $a\in \mathbb{R}$ 과 $n \in \mathbb{Z}_+$ 에 대해 $X_1 = \{m\in \mathbb{Z}_+ \mid a^n a^m = a^{n+m}\}$ 이라 하자. 귀납적 정의에 의해 $1\in X_1$ 이다. $m\in X_1$ 일 때 $a^n a^{m+1}= a^n a^m a = a^{n +m} a = a^{n + m +1}$ 이므로 $m+1\in X_1$ 이다. 즉 $\mathbb{Z}_+ \subset X \subset X_1$ 이므로 $a^n a^m = a^{n+m}$ 이다.
+
+고정된 $a\in \mathbb{R}$ 과 $n \in \mathbb{Z}_+$ 에 대해 $X_2 = \{m \in \mathbb{Z}_+ \mid (a^n)^m = a^{mn}\}$ 라 하자. $(a^n)^1 = a^n$ 이므로 $1\in X_2$ 이다. $m\in X_2$ 라 하자. $(a^n)^{m+1} =  (a^n)^m (a^n)=a^{nm} a^n = a^{nm+n}= a^{n(m+1)}$ 이므로 $m+1\in X_2$ 이다. 즉 $\mathbb{Z}_+ \subset X_2 \subset \mathbb{Z}_+$ 이므로 $X_2=\mathbb{Z}_+$ 이다.
+
+고정된 $a,\,b\in \mathbb{R}$ 에 대해 $X_3 = \{m\in \mathbb{Z} \mid a^mb^m = (ab)^m\}$ 라 하자. $a^1b^1 = ab=(ab)^1$ 이므로 $1\in X_3$ 이다. $m\in X_3$ 라 하자. 
+$$
+a^{m+1}b^{m+1} = a^m a b^m b = (ab)^m ab = (ab)^{m+1}
+$$
+
+이므로 $m\in X_3 \implies m+1\in X_3$ 이다. 즉 $\mathbb{Z}_+ \subset X_3 \subset \mathbb{Z}_+$ 이므로 $X_3= \mathbb{Z}_+$ 이다. 
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_4_7}
+
+#### Munkres 1.4.7
+
+$a\in \mathbb{R},\, a\ne 0$ 일 때 $a^0=1$ 로 정의한다. 또한 $n\in \mathbb{Z}_+$ 에 대해 $a^{-n}= 1/a^n$ 으로 정의한다. 지수법칙이 $a,\,b\ne 0,\, n,\,m\in \mathbb{Z}$ 에 대해 성립함을 보이시오.
+
+:::
+
+
+::: {.solution}
+
+($1$) 우선 양의 정수 $m$ 에 대해 $a^{m-1} = a^m a^{-1}$ 임을 보이자. $m=1$ 일 경우는 쉽게 보일 수 있다. $m$ 일 때 성립함을 가정한다. $a^{(m+1)-1} =  a^m$ 이며 $a^{m+1} a^{-1} = a^m a a^{-1}= a^m$ 이므로, 양의 정수 $m$ 에 대해 $a^{m-1}= a^m a^{-1}$ 이다.
+
+($2$) $n\in \mathbb{Z}$ 에 대해 $a^{n+1}= a^n a$ 임을 보이자. $X_0 = \{n\in \mathbb{Z} \mid a^{n+1}= a^n a\}$ 이라 하자. 지수 법칙에 의해 $\mathbb{Z}_+ \subset X_0$ 이다. $a^{0+1}= a^0 a = a$ 이므로 $0\in X_0$ 이다. $n=-1$ 일 때 $a^{-1+1} =  a^0=1=a^{-1}a$ 이므로 $-1\in X_0$ 이다. $n<-1$ 일 때 $n+1<0$ 이다. $m=-n >1$ 이며, ($1$) 을 이용하면  $1/a^m \cdot a \cdot a^{m-1} = 1/a^m \cdot a \cdot a^m a^{-1} = 1$ 이다. 즉 $a^{n+1} = a^{-m+1} = 1/a^{m-1} = 1/a^m a = a^{-m} a = a^n a$ 이다. 따라서 $\mathbb{Z} \subset X_0 \subset \mathbb{Z}$ 이므로 $X_0=Z$ 이다.
+
+($3$) $n\in \mathbb{Z}_-$ 일 때 $a^{n-1}= a^n a^{-1}$ 임을 보이자. $m=-n$ 이라 하면 
+
+$$
+a^{n-1} = a^{-m-1}= 1/(a^m a) = a^{-m} a^{-1} = a^{n} a^{-1}
+$$
+
+이다. ($1$) 과 함께라면 모든 정수 $n$ 에 대해 $a^{n-1} = a^n a^{-1}$ 이다. ($n=0$ 일 경우는 정의에 의해 자명하다.)
+
+($4$) $a^n a^m = a^{m+m}$ 임을 보이자. 고정된 $n\in \mathbb{Z}$ 에 대해 $X_1 = \{m\in \mathbb{Z} \mid a^na^m = a^{n+m}\}$ 이라 하고 $X_1 = \mathbb{Z}$ 임을 보이면 된다. $a^na^0 = a^n$ 이므로 $0\in X_1$ 이다. $m\in X_1$ 일 때 $m+1\in X_1$ 임을 보이자. 
+
+$$
+a^n a^{m+1} = a^n a^m a = a^{n+m}a = a^{n+(m+1)} 
+$$
+
+이므로 $m\in X_1 \implies m+1 \in X_1$ 이다. 또한 ($3$) 의 결과를 통해
+
+$$
+a^n a^{m-1} = a^n a^m a^{-1} = a^{n+m}a^{-1} = a^{n+m-1}
+$$
+
+임을 안다. 즉 $\mathbb{Z} \subset X_1 \subset \mathbb{Z}$ 이므로 $X_1 = \mathbb{Z}$ 이다. 
+
+($5$) $(a^n)^m = a^{nm}$ 임을 보이자. 고정된 $n\in \mathbb{Z}$ 에 대해 $X_2 = \{m\in \mathbb{Z} \mid (a^n)^m = a^{nm}\}$ 가 $\mathbb{Z}$ 와 같음을 보이면 된다. $0 \in X_2$ 임은 쉽게 보일 수 있다. $n\in X_2$ 라 하자. 
+
+$$
+(a^n)^{m+1} = (a^n)^m a^n = a^{nm} a^n = a^{nm+n} = a^{n (m+1)}
+$$
+
+이다. 또한
+
+$$
+(a^{n})^{m-1} =  (a^n)^m (a^n)^{-1} =  a^{nm} (1/a^n)= a^{nm} a^{-n} =  a^{nm-n} = a^{n(m-1)}
+$$
+
+이다. 즉 $\mathbb{Z}\subset X_2$ 이며 $X_2$ 의 정의에 의해 $X_2\subset \mathbb{Z}$ 이므로 $X_2=\mathbb{Z}$ 이다.
+
+($6$) $a^m b^m = (ab)^m$ 임을 보이자. $X_3 =\{ m\in \mathbb{Z} \mid a^m b^m = (ab)^m\}$ 라 하고 $X_3=\mathbb{Z}$ 임을 보이면 된다. $a^0b^0=1$ 이며 $(ab)^0=1$ 이므로 $0\in X_3$ 이다. $n\in X_3$ 임을 가정한다.
+
+$$
+\begin{aligned}
+a^{m+1}b^{m+1} &= a^m a b^m b = (ab)^m (ab) = (ab)^{m+1} \\
+a^{m-1} b^{m-1} &=  a^{m}a^{-1}b^{m}b^{-1} = a^{m}b^m 1/a 1/b = (ab)^{m} 1/(ab)= (ab)^m (ab)^{-1} = (ab)^{m-1}
+\end{aligned}
+$$
+
+이므로 $X_3 = \mathbb{Z}$ 이다.
+
+:::
+
+
+::: {#exr-Munkres_1_4_8}
+
+#### Munkres 1.4.8
+
+다음을 보이시오. 
+
+&emsp; ($1$) $\mathbb{R}$ 은 최대 하계 성질을 가진다.
+
+&emsp; ($2$) $\inf \{ 1/n : n \in \mathbb{Z}_+ \} =0$ 이다.
+
+&emsp; ($3$) 주어진 $a$ 가 $0<a<1$ 일 때 $\inf \{a^n : n\in \mathbb{Z}_+\}=0$ 이다.
+
+:::
+
+
+::: {.solution}
+
+($1$) @thm-least_upper_bound_property_greatest_lower_bound_property 에서 최소상계 성질을 갖는 집합은 최대 하계 성질을 가짐을 보였다.
+
+($2$) $A=\{1/n: n\in \mathbb{Z}+\}$ 라 하자. @exr-munkres_1_4_2 의 ($9$) 에 의해 $0$ 은 $A$ 의 하계이다. ($1$) 에 의해 $A$ 는 최대 하계를 가진다. $a=\inf A$ 라 하자. $a>0$ 이라면 @thm-archmedian_ordering_property 에 의해 $m>1/a$ 인 $m\in \mathbb{Z}_+$ 이 존재하며 $1/m<a,\, 1/m \in A$ 이므로 $a$ 가 최대 하계라는 가정에 모순된다. $a<0$ 이라면 모든 $n \in \mathbb{Z}_+$ 에 대해 $1/a<1/(2a)<n$ 이므로 역시 $a$ 가 최대 하계라는 가정에 모순된다. 따라서 $\inf A=0$ 이다.
+
+($3$) 우선 양수 $h$ 와 자연수 $n$ 에 대해 $(1+h)^n \ge 1+nh$ 임을 보이자. 임의의 고정된 $h>0$ 에 대해 $X = \{n\in \mathbb{Z}_+ \mid (1+h)^n \ge 1+nh\}$ 라 하자. 
+
+$n=1$ 일 때 성립함은 자명하다. $n$ 에서 성립한다고 가정하자.
+
+$$
+(1+h)^{n+1} =(1+h)^n (1+h) \ge (1+nh)(1+h) = 1+(n+1)h + nh^2 > 1+(n+1)h
+$$
+
+이므로 $X=\mathbb{Z}_+$ 이다. 이제 $0<a<1$ 일 때 $h=(1-a)/a$ 라고 하면 $h>0$ 이며, $(1+h)^n \ge 1+nh$ 로 부터 다음을 얻는다.
+
+$$
+0<a^n \le \dfrac{1}{1+n(1-a)/a}
+$$
+
+아르키메데스 성질에 의해 $\inf \left\{\dfrac{1}{1+n(1-a)/a} \mid n\in \mathbb{Z}_+\right\}=0$ 이며, 따라서 $\inf \{a^n \mid n\in \mathbb{Z}\}=0$ 이다. 
+
+:::
+
+</br>
+
+::: {#exr-Munkres_1_4_9}
+
+#### Munrkes 1.4.9
+
+다음을 보이시오.
+
+&emsp; ($1$) 공집합이 아니며 위로 유계인 $\mathbb{Z}$ 의 부분집합은 최대값을 가진다.
+
+&emsp; ($2$) $x\notin\mathbb{Z}$ 이면 $n<x<n+1$ 을 만족하는 정수 $n$ 은 하나 뿐이다.
+
+&emsp; ($3$) $x-y>1$ 이라면 $y<n<x$ 를 만족하는 정수는 최소한 하나이다.
+
+&emsp; ($4$) $y<x$ 라면 $y<z<x$ 를 만족하는 유리수 $z$ 가 존재한다.
+
+:::
+
+::: {.solution} 
+
+($1$) $A\subset \mathbb{Z},\, A\ne \varnothing$ 이며 위로 유계라고 하자. $A$ 가 모두 양의 정수의 집합이라면 @exr-munkres_1_4_4 ($1$) 에 의해 최대값을 가진다. $A$ 가 양의 정수를 포함하는 집합이라면 $A \cap \mathbb{Z}_+$ 는 최대값을 가지며 이 값이 $A$ 의 최대값이다. $A$ 가 $0$ 과 음의 정수로 이루어진 집합이라면 $0$ 이 최대값이다. $A$ 가 음의 정수만으로 이루어진 집합이라고 하자. $A'=\{-a\mid a\in A\}$ 는 양의 정수의 집합이며 @thm-well_ordering_property 에 의해 최소값 $m$ 을 가진다. 즉 모든 $n\in A'$ 에 재해 $m\le n$ 이며 $-n \le -m$ 이므로 $-m$ 이 $A$ 의 최대값이다.
+
+($2$) $A_x =\{m\in \mathbb{Z}\mid m<x\}$ 라 하자. 우선 $A_x \ne \varnothing$ 임을 보이자. $x>0$ 이라면 $0\in A_x$ 이므로 $A_x\ne \varnothing$ 이다. $x=0$ 이라면 $-1\in A_x$ 이므로 $A_x \ne \varnothing$ 이다. $x<0$ 이라면 @thm-archmedian_ordering_property 에 의해 $p>-x$ 인 $m\in \mathbb{Z}_+$ 가 존재하며 $-p<x$ 이므로 $-p\in A_x$ 이다. 즉 $A_x \ne \varnothing$ 이다. 
+
+또한 $A_x$ 는 유계이므로 ($1$) 에 의해 최대값이 존재한다. 이를 $n$ 이라 하자. 따라서 $n+1\notin A_x$ 이므로 $n+1\le x$ 이다. $n+1=x$ 이면 $x \in \mathbb{Z}$ 이므로 가정에 위배된다. 따라서 $n<x<n+1$ 을 만족하는 정수 $n$ 이 존재한다. 
+
+만족하는 정수가 두 개 이상일 때 그중 둘을 $n_1,\,n_2$ 라 하자. $n_1<x<n_1+1$, $n_2<x<n_2+1$ 이다. $n_1 > n_2$ 라면 $0<n_1-n_2 < 0 <n_1-n_2$ 이므로 모순. $n_2>n_1$ 이어도 모순. 따라서 $n_1=n_2$ 이다. 즉 $n<x<n+1$ 을 만족하는 $n\in \mathbb{Z}$ 는 하나 뿐이다.
+
+($3$) $x-y>1$ 일 때 $y<n<x$ 를 만족하는 정수가 하나도 없다고 가정하자. $x$ 가 정수라면 $x-1>y$ 도 정수이며 $y<x-1<x$ 이므로 모순된다. 따라서 $x$ 는 정수가 아니다. $x$ 가 정수가 아니라면 ($2$) 에 의해 $n<x<n+1$ 을 만족하는 정수가 $n$ 이 존재하며 $y<x-1<n<x<n+1$ 이므로 만족하는 정수 $n$ 이 존재한다.
+
+($4$) 이것은 중요하므로 아래 @prp-Q_is_dense 로 정리하도록 한다.
+
+:::
+
+</br>
+
+::: {#prp-Q_is_dense}
+
+#### 유리수의 조밀성
+
+두 실수 $y<x$ 에 대해 $y<z<x$ 를 만족하는 유리수 $z$ 가 존재한다.
+
+:::
+
+
+::: {.proof}
+
+$y=0$ 이면 @cor-archimedean_ordering_property 으로 보일 수 있다. $0<y<x$ 인 경우 아르키메데스 법칙(@cor-archimedian_law) 에 의해
+
+$$
+0 < \dfrac{1}{n}<x-y
+$$
+
+를 만족하는 $n\in \mathbb{Z}_+$ 이 존재하며, 역시 아르키메데스 법칙에 의해 
+
+$$
+\left\{k\in \mathbb{Z}_+ : k \cdot \dfrac{1}{n} > y \right\} \ne \varnothing
+$$
+
+
+이다. 위의 집합은 최소값 $m$ 을 가지며 $\dfrac{m-1}{n} \le y < \dfrac{m}{n}$ 이므로
+
+$$
+y<\dfrac{m}{n} = \dfrac{m-1}{n} + \dfrac{1}{n} \le y + \dfrac{1}{n}<x
+$$
+
+이다. 따라서 유리수 $\dfrac{m}{n}$ 이 우리가 찾는 값이다. $y<0$ 인 경우에는 $0<y+r < x+r$ 인 자연수 $r$ 이 존재하며 $y+r < \dfrac{m}{n}<x+r$ 을 만족하는 유리수 $\dfrac{m}{n}$ 을 찾을 수 있다. 이 경우 $\dfrac{m}{n}-r$ 이 우리가 찾는 값이다. $\square$
+
+:::
+
+
+</br>
+
+::: {#exr-munkres_1_4_10}
+
+#### Munkres 1.4.10
+
+모든 양수 $a$ 는 단 하나의 양의 제곱근을 갖는다는 것을 다음 순서로 보이고자 한다.
+
+&emsp; ($1$) $x>0$ 이며 $0\le h <1$ 이면 다음이 성립함을 보여라.
+
+$$
+\begin{aligned}
+(x+h)^2 &\le x^2 + h(2x+1), \\
+(x-h)^2 &\ge x^2 - h(2x).
+\end{aligned}
+$$
+
+&emsp; ($2$) $x>0$ 이라 하자. $x^2<a$ 이면 어떤 $h>0$ 에 대해 $(x+h)^2<a$ 임을 보여라. $x^2>a$ 이면 어떤 $h>0$ 에 대해 $(x-h)^2>a$ 를 만족함을 보여라.
+
+&emsp; ($3$) 주어진 $a>0$ 에 대해 $B=\{x\in \mathbb{R} \mid x^2<a\}$ 라 하자. $B$ 는 위로 유계이며 최소한 하나의 양수를 포함한다는 것을 보여라. $b=\sup B$ 라면 $b^2=a$ 임을 보여라.
+
+&emsp; ($4$) $b>0,\, c>0,\, b^2=c^2$ 이면 $b=c$ 임을 보여라.
+
+:::
+
+
+::: {.proof}
+($1$) $0\le h < 1$ 이므로 $h^2\le h$ 이다. 따라서 다음이 성립한다.
+
+$$
+\begin{aligned}
+(x+h)^2 &= x^2+h(2x) + h^2 \le x^2 + h(2x) + h = x^2+h(2x+1), \\
+(x-h)^2 &= x^2 -h(2x) + h^2 \ge x^2 -h(2x)
+\end{aligned}
+$$
+
+($2$) $h=\dfrac{a-x^2}{2(2x+1)}$ 이라 하자. $h>0$ 이다.
+
+$$
+(x+h)^2 \le x^2+h(2x+1) = x^2 + \dfrac{a-x^2}{2} = \dfrac{a+x^2}{2}<a
+$$
+
+
+이다. 이제 $h=\dfrac{x^2-a}{4x}$ 라 하자. $h>0$ 이다.
+
+$$
+(x-h)^2 \ge x^2-h(2x) = x^2- \dfrac{x^2-a}{2}=\dfrac{x^2+a}{2} > a
+$$
+
+이다.
+
+($3$) $a>1$ 일 경우 $1^2=1<a$ 이다. $0<a<1$ 일 경우 $0<a^2<a$ 이므로 $a\in B$ 이다. $a=1$ 일 경우 $1/2\in B$ 이다. 따라서 $B\ne \varnothing$ 이다. 
+이제 $b=\sup B$ 라고 하자. $b^2<a$ 이면 ($2$) 에서 보았듯이 어떤 $h>0$ 에 대해 $(b+h)^2<a$ 이므로 $b=\sup B$ 라는 가정에 모순된다. $b^2<a$ 이면 역시 ($2$) 에서 보았듯이 어떤 $h<0$ 에 대해 $(b-h)^2<a$ 이므로 $b=\sup B$ 라는 가정에 모순된다. 따라서 $b=a^2$ 이다.
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_4_11}
+
+#### Munkres 1.4.11
+
+주어진 $m\in \mathbb{Z}$ 에 대해 $m/2\in \mathbb{Z}$ 일 때 $m$ 을 짝수라고 하며, 그렇지 않을 경우 홀수라고 한다.
+
+&emsp; ($1$) $m$ 이 홀수라면 어떤 $n\in \mathbb{Z}$ 에 대해 $m=2n+1$ 임을 보여라.
+
+&emsp; ($2$) $p$ 와 $q$ 가 홀수라면 $p\cdot q$ 도 홀수이며, $n\in \mathbb{Z}_+$ 에 대해 $p^n$ 도 홀수임을 보여라.
+
+&emsp; ($3$) 양의 유리수 $a$ 는 둘 다 짝수는 아닌 어떤 정수 $m,\, n$ 에 대해 $a=m/n$ 임을 보여라.
+
+&emsp; ($4$) $\sqrt{2}$ 는 무리수임을 보여라.
+
+:::
+
+::: {.solution}
+
+($1$) @exr-Munkres_1_4_9 ($2$) 에 의해 $m/2\notin \mathbb{Z}$ 이면 $n<m/2<n+1$ 을 만족하는 정수 $n$ 이 유일하게 존재한다. 이 $n$ 에 대해 $2n<m<2n+2$ 이므로 $m=2n+1$ 이다. 
+
+
+($2$) 어떤 정수 $m$ 에 대해 $2m+1$ 은 홀수이다. $p=2m+1,\, q=2n+1$ 이라 하면 
+
+$$
+p \cdot q = 2(2mn + m + n) +1
+$$
+
+이므로 $p \cdot q$ 는 홀수이다. 이제 $p^n$ 이 홀수임을 보이자. $n=1$ 일 때 홀수이며, $n$ 에 대해 $p^n$ 이 홀수라면 $p^{n+1}= p^n \cdot p$ 이므로 홀수이다. 따라서 $n\in \mathbb{Z}_+$ 에 대해 $p^n$ 은 홀수이다.
+
+($3$) @def-rational_irrational 에 의해 $a\in \mathbb{Q}$ 는 어떤 정수 $p,\,q$ 에 대해 $a=p/q$ 이다. 만약 둘 다 짝수이면 $p=2m,\, q=2n$ 이므로 $a=m/n$ 이다. 이 과정을 $m,\,n$ 둘 중 하나가 짝수가 아닐 때까지 반복 할 수 있다.
+
+($4$) $\sqrt{2}\in \mathbb{Q}$ 라고 하자. $\sqrt{2}=p/q$ 이고 둘 중 최소한 $p,\,q$ 중 최소한 하나는 짝수가 아니라고 할 수 있다($3$). $2=p^2/q^2$ 이므로 $p^2 = 2q^2$ 이다. $p^2$ 가 짝수이므로 $p=2m,\, m\in \mathbb{Z}$ 이며, $2m^2 = q^2$ 이므로 $q=2n$ 이다. $p,\,q$ 중 최소한 하나는 짝수라는 가정에 위배된다. 따라서 $\sqrt{2}$ 는 무리수이다. 
+
+
+
+
+
+:::

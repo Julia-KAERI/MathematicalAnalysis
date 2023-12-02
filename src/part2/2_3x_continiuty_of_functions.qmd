@@ -1,0 +1,210 @@
+---
+# title: "수열과 급수"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+## 연습문제 {.unnumbered}
+
+::: {#exr-kkk_3_5_1}
+
+#### 김김계 3.5.1
+
+연속함수 $f:\mathbb{R}\to \mathbb{R}$ 에 대하여 다음 명제가 성립하는지 살펴보아라.
+
+&emsp; ($1$) $V$ 가 $\mathbb{R}$ 의 열린집합이면 $f(V)$ 도 $\mathbb{R}$ 의 열린집합이다.
+
+&emsp; ($2$) $V$ 가 $\mathbb{R}$ 의 열린집합이면 $f(V)$ 도 $f(\mathbb{R})$ 의 열린집합이다.
+
+&emsp; ($3$) $F$ 가 $\mathbb{R}$ 의 닫힌집합이면 $f(F)$ 도 $\mathbb{R}$ 의 닫힌집합이다.
+
+&emsp; ($4$) $F$ 가 $\mathbb{R}$ 의 닫힌집합이면 $f(F)$ 도 $f(\mathbb{R})$ 의 닫힌집합이다.
+
+:::
+
+::: {.solution}
+
+($1$) $f$ 가 상수함수이면 $f(V)$ 는 닫힌집합이다.
+
+($2$) 다음과 같이 정의된 $f$ 는 연속함수이다. 
+
+$$
+f(x) = \left\{\begin{array}{ll} x \qquad &; \text{if } x<0 \\0 & ;\text{if }0 \le x < 1 \\ x-1 &; \text{if } x \ge 1\end{array}\right.
+$$
+
+$f(\mathbb{R})=\mathbb{R}$ 이지만 열린 구간 $V=(0,\,1)$ 에 대해 $f(V)$ 는 상수이므로 $f(\mathbb{R})$ 에 대해 열린집합이 아니다.
+
+($3$) $f(x)= \tanh(x)=\dfrac{e^x-e^{-x}}{e^x+e^{-x}}$ 를 생각하자. $f$ 는 연속함수이고 $\mathbb{R}$ 은 닫힌집합이지만 $f(\mathbb{R})=(-1, 1)$ 이므로 닫힌집합이 아니다. 
+
+($4$) 음과 같이 정의된 $f$ 는 연속함수이다. 
+
+$$
+f(x) = \left\{\begin{array}{ll} -x \qquad &; \text{if } x<0 \\ \tanh (x)  &; \text{if } x \ge 0\end{array}\right.
+$$
+
+$f(\mathbb{R})$ 은 $[0, \infty)$ 이다. $F=[0, \infty)$ 는 $\mathbb{R}$ 에 대해 닫힌집합 이지만 $f(F)= [0, 1)$ 로 $f(\mathbb{R})$ 에 대해 닫힌 집합이 아니다.
+
+
+:::
+
+
+</br>
+
+::: {#exr-kkk_3_5_2}
+
+#### 김김계 3.5.2
+
+연속 함수 $f:\mathbb{R}\to \mathbb{R}$ 가 다음 성질
+
+$$
+f(x+y) =  f(x)+ f(y),\qquad x,\, y\in \mathbb{R}
+$$
+
+을 가지면, 적당한 실수 $a\in \mathbb{R}$ 에 대하여 $f(x) = ax$ 임을 보여라.
+
+:::
+
+
+::: {.solution}
+
+우선 실수열 $\langle r_i \rangle$ 에 대해
+
+$$
+f\left(\sum_{i=1} r_i \right) = f(r_1) + f\left(\sum_{i=2}r_i\right) = f(r_1) + f(r_2) + f\left(\sum_{i=3}r_i\right) =\cdots =\sum_i f(r_i)
+$$
+
+임을 안다. 
+
+$x,\,y=0$ 에 대해 $f(0)=f(0)+f(0)\implies f(0)=0$ 이다. $y=-x$ 에 대해 $f(0)=0=f(x)+f(-x)$ 이므로 $f(-x)=-f(x)$ 이다. 또한 귀납법을 이용하여 자연수 $m$ 에 대해 $f(mx)=mf(x)$ 임을 쉽게 증명 할 수 있다. 따라서 $f(m) = mf(1)$ 이다. $f(-m) = -f(m)$ 이므로 $m\in \mathbb{Z}$ 에 대해 $f(m) = mf(1)$ 이다. $f(1)=a$ 라 하자. 유리수 $\dfrac{p}{q},\, (p,\,q \in \mathbb{Z})$ 에 대해, 
+
+$$
+f(p)=f\left(\underbrace{\dfrac{p}{q}+ \cdots + \dfrac{p}{q}}_{q-\text{times}}\right) = qf\left(\dfrac{p}{q}\right)
+$$
+
+이며 $f(p) = pf(1)=pa$ 이므로, $f\left(\dfrac{p}{q}\right)=\dfrac{p}{q}a$ 이다.
+
+우리는 $\overline{\mathbb{Q}}=\mathbb{R}$ 임을 안다. 즉 임의의 $r\in \mathbb{R}$ 은 유리수열의 합으로 표현 할 수 있다. $r\in \mathbb{R}$ 이 $r=\sum_i q_i,\, q_i \in \mathbb{Q}$ 라면, 
+
+$$
+f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
+$$
+
+이다. 따라서 $f(x) = ax,\, a=f(1)$ 이다. 
+
+:::
+
+</br>
+
+::: {#exr-rudin_4.1}
+
+#### Rudin 4.1
+
+$f$ 가 $\mathbb{R}$ 에서 정의된 실함수 이며 모든 $x\in \mathbb{R}$ 에 대해
+
+$$
+\lim_{h \to 0} \left[ f(x+h) - f(x-h)\right] = 0
+$$
+
+을 만족 한다고 하자. $f$ 는 연속인가?
+
+:::
+
+::: {.solution}
+
+$f(x) = \left\{ \begin{array}{ll} x \qquad &; x\ne 0 \\ 1 &;x=0\end{array} \right.$ 는 위를 만족하지만 연속이 아니다.
+:::
+
+
+</br>
+
+::: {#exr-rudin_4_2}
+
+#### Rudin 4.2
+
+거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 가 연속함수이다. $E \subset X$ 에 대해 $f(\overline{E})\subset \overline{f(E)}$ 임을 보여라. 또한 $f(\overline{E})$ 가 $\overline{f(E)}$ 의 진부분집합인 예를 들어라. 
+
+
+:::
+
+::: {.solution}
+
+ $x\in E$ 이면 $f(x)\in f(E)\subset \overline{f(E)}$ 이다. $x\in E'\backslash E$ 라 하자. $\lim_n x_n = x$ 인 $\langle x_n \rangle \subset E$ 가 존재하며 $f(x_n) \in f(E)$ 이다. $f$ 가 연속이므로 임의의 $\varepsilon>0$ 에 대해 $0<\|x-x_n\|_X<\delta$ 이면 $\|f(x)-f(x_n)\|_Y<\varepsilon$ 인 $\delta>0$ 이 존재하며, 이 $\delta$ 에 대해 $n\ge N \implies \|x-x_n\|_X < \delta$ 인 $n\in \mathbb{N}$ 이 존재한다. 즉 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{N}$ 이 존재하여 $n \ge N$ 이면 $\|f(x)-f(x_n)\|_Y<\varepsilon$ 이다. 따라서 $f(x)\in \overline{f(E)}$ 이다. 따라서 $f(\overline{E})\subset \overline{f(E)}$ 이다. 
+
+ $f(x) = \dfrac{1}{x}$ 라 하자. $E=\overline{E}=[1,\infty)$ 에 대해  $f(\overline{E})=(0, 1]$ 이지만 $\overline{f(E)} = [0,\,1]$ 이다. 
+
+:::
+
+</br>
+
+::: {#exr-rudin_4_3}
+
+#### Rudin 4.3
+
+거리공간 $X$ 에 대해 $f:X \to \mathbb{R}$ 이 연속함수이다. $Z(f) = \{x\in X: f(x) = 0\}$ 일 때 $Z(f)$ 는 닫힌 집합임을 보이시오. 
+
+:::
+
+::: {.solution}
+
+$p \in X\backslash Z(f)$ 라 하자. $f(p)=y>0$ 이면 $f$ 가 연속이므로 $\varepsilon=\dfrac{y}{2}$ 에 대해 어떤 $\delta>0$ 이 존재하여 $\|x-p\|_X<\delta$ 이면 $\|f(x)-f(p)\|<\dfrac{y}{2}$ 이다. 즉 $x\in N_X(p,\, \delta)$ 이면 $f(x)> \dfrac{y}{2}>0$ 이므로 $N_X(p,\, \delta)\subset X\backslash Z(f)$ 이다. $f(p)<0$ 일 때도 같은 방식으로 증명 할 수 있다. 따라서 $X\backslash Z(f)$ 는 열린집합이므로 $Z(f)$ 는 닫힌 집합이다. 
+
+:::
+
+
+</br>
+
+::: {#exr-rudin_4_4}
+
+#### Rudin 4.4
+
+거리공간 $X,\,Y$ 에 대해 $f,\,g$ 는 $X\mapsto Y$ 연속함수이다. $E$ 는 $X$ 에서 조밀한 부분집합이다. $f(E)$ 는 $f(X)$ 에 대해 조밀함을 보여라. 모든 $p\in E$ 에 대해 $g(p)=f(p)$ 이면 $g(x)=f(x),\, \forall x\in X$ 임을 보여라. 
+
+:::
+
+::: {.solution}
+$y=f(x),\, x\in X$ 라 하자. $f$ 가 $X$ 에 대해 연속이므로 임의의 $\varepsilon>0$ 에 대해 $\|x-x'\|_X<\delta \implies \|y-f(x')|_Y<\varepsilon$ 인 $\delta>0$ 가 존재하며, $E$ 가 $X$ 에 대해 조밀하므로 $\|x-x_0\|_X< \delta$ 인 $x_0\in E$ 가 존재하고 따라서 $\|y-f(x_0)\|_Y<\varepsilon$ 이다. 따라서 $f(E)$ 는 $f(X)$ 에 대해 조밀하다. 
+
+$x\in X=\overline{E}$ 라 하자. $x$ 로 수렴하는 $E$ 에서 정의된 수열 $\langle p_i \rangle$ 이 존재하며 $g(p_i)= f(p_i)$ 이다. @prp-limit_and_convergent_series 에 의해 $\lim_i g(p_i) = g(x)=f(x)$ 이다. 
+
+:::
+
+
+</br>
+
+::: {#exr-rudin_4_5}
+
+#### Rudin 4.5
+
+닫힌 집합 $E\subset\mathbb{R}$ 에 대해 $f:E \to \mathbb{R}$ 이 연속 함수라면 모든 $x\in E$ 에 대해 $f(x)=g(x)$ 인 연속 함수 $g: \mathbb{R}\to \mathbb{R}$ 가 존재함을 보여라. (이런 함수 $g$ 를 $E$ 에서 $\mathbb{R}$ 로의 $f$ 의 확장이라고 한다.) 만약 $E$ 가 닫힌 집합이 아니라면 앞의 결과가 성립하지 않을 수 도 있음을 보여라. 
+
+:::
+
+::: {.solution}
+
+
+:::
+
+</br>
+
+::: {#exr-kkk_3_5_4}
+
+#### 김김계 3.5.4
+
+함수 $f:\mathbb{R}\to \mathbb{R}$ 이 유계라 하자. 이 때 함수 $f$ 가 연속일 필요충분조건은 집합
+
+$$
+\{ (x,\,f(x)) \in \mathbb{R}\times \mathbb{R} : x\in \mathbb{R}\}
+$$
+
+이 $\mathbb{R}\times \mathbb{R}$ 의 닫힌집합임을 증명하여라. 함수 $f$ 에 유계란 조건이 없으면 어떻게 되겠는가?
+
+
+
+
+:::
+
+::: {.solution}
+
+:::

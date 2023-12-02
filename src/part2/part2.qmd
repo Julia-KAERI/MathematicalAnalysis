@@ -1,0 +1,7 @@
+---
+title: "일변수 함수의 해석학"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---

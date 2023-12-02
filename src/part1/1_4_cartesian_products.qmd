@@ -1,0 +1,259 @@
+---
+title: "데카르트 곱"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+## 집합족
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-collection_and_indexing}
+
+#### 집합족과 인덱스
+
+공집합이 아닌 집합족 $\mathcal{A}$ 를 생각하자. 어떤 집합 $J$ 에 대해 함수 $f:J \to \mathcal{A}$ 가 전사함수 일 때 $f$ 를 인덱스 함수라하고 $J$ 를 인덱스 집합이라고 한다. 주어진 $\alpha\in J$ 에 대해 $f(\alpha)$ 를 $A_{\alpha}$ 라고 쓴다. 앞으로 집합족을 표기할 때는 인덱스 집합 $J$ 에 대해
+
+$$
+\{A_\alpha\}_{\alpha\in J}
+$$
+
+와 같이 표기하도록 한다. 간략하게 쓸 때는 $\{A_\alpha\}$ 와 같이 쓰기로 한다.
+:::
+
+:::
+
+</br>
+
+인덱스 함수가 단사일 필요가 없으므로 $A_\alpha,\, A_\beta\in \mathcal{A}$ 에 대해 $\alpha \ne \beta$ 더라도 $A_\alpha = A_\beta$ 일 수 있다. 
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-union_and_intersection_for_collection}
+
+#### 집합족에 대한 합집합과 교집합
+
+집합족 $\mathcal{A}=\{A_\alpha\}_{\alpha\in J}$ 에 대해
+
+$$
+\begin{aligned}
+\bigcup_{\alpha\in J} A_\alpha &= \{x \mid \exists \beta\in J,\, x\in A_\beta\}, \\
+\bigcap_{\alpha\in J} A_{\alpha} & = \{x \mid \forall \beta \in J,\,  x\in A_\beta\}
+\end{aligned}
+$$
+
+라고 정의한다.
+
+::: 
+:::
+
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-union_and_intersection_for_collection}
+
+#### $\boldsymbol{m}$-tuple
+
+$m\in \mathbb{Z}_+$ 라 하자. 주어진 집합 $X$ 에 대해 함수 
+
+$$
+\boldsymbol{x} : \{1,\ldots,m\} \to X
+$$
+
+를 $X$ 의 원소에 대한 **$\boldsymbol{m}$-tuple** 이라 한다. $m$-tuple $\boldsymbol{x}$ 에 대해 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓰며 $\boldsymbol{x}$ 의 $i$ 번째 좌표라고 한다. $m$-tuple 자체를
+
+$$
+(x_1,\ldots,x_m)
+$$
+
+과 같이 쓸 수 있다.
+
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-union_and_intersection_for_collection}
+
+#### 데카르트 곱 (Cartesian Product)
+
+집합족 $\{A_1,\ldots,A_m\}$ 과 인덱스 집합 $J_m=\{1,\ldots,\,m\}$ 에 대해 $X=A_1 \cup \cdots \cup A_m$ 이라 하자. $\boldsymbol{x}:J_m \to X$ 이 $\forall i\in J_m,\, x_i \in A_i$ 인 집합을 **데카르트 곱** 이라 하며 다음과 같이 표기한다.
+
+$$
+\prod_{i=1}^m A_i \qquad \text{or} \qquad A_1 \times \cdots \times A_m .
+$$
+
+
+::: 
+:::
+
+</br>
+
+::: {#exm-order_of_m_tuple}
+
+집합 $A,\,B,\,C$ 에 대해 $A \times B \times C$, $A\times (B \times C)$ 와 $(A \times B) \times C$ 사이에 각각 전단사 함수가 존재함을 보일 수 있다. 
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-omega_tuple_and_sequence}
+
+#### $\boldsymbol{\omega}$-tuple 과 수열 (sequence)
+
+집합 $X$ 에 대해 $\mathbb{Z}_+$ 를 정의역으로, $X$ 를 공역으로 정의된 함수 $\boldsymbol{x}:\mathbb{Z}_+ \to X$ 를 $\boldsymbol{\omega}$**-tuple** 혹은 $X$ 에서의 **수열** 이라고 하며 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓴다. $\omega$-tuple 을 $\langle x_i \rangle$ 이라고 흔히 쓴다. $m$-tuple 과 유사하게
+
+$$
+(x_1,\,x_2,\ldots)
+$$
+
+라고 쓸 수 있다. $\omega$-tuple 에서의 데카르트곱은
+
+$$
+\prod_{i\in \mathbb{Z}_+} A_i \qquad \text{or}\qquad A_1 \times A_2 \times \cdots
+$$
+
+와 같이 쓴다.
+
+::: 
+:::
+
+</br>
+
+### 연습문제
+
+::: {#exm-munkres_1_5_1}
+
+#### Munkres 1.5.1
+
+$A\times B$ 에서 $B \times A$ 로의 전단사 함수가 존재함을 보이시오.
+
+:::
+
+::: {.solution}
+
+$\phi :A \times B \to B \times A,\, \phi ((a,\,b)) = (b,\,a)$ 는 전단사 함수임을 쉽게 보일 수 있다.
+:::
+
+</br>
+
+::: {#exr-munkres_1_5_3}
+
+#### Munkres 1.5.3
+
+$A=A_1\times A_2 \times \cdots,\, B=B_1 \times B_2\times \cdots$ 일 때 다음을 보이시오.
+
+&emsp;($1$) 각각의 $i$ 에 대해 $B_i \subset A_i$ 이면 $B \subset A$ 이다.
+
+&emsp;($2$) $B\ne \varnothing$ 이면 ($1$) 의 역이 성립한다.
+
+&emsp;($3$) $A$ 가 공집합이 아니면 각각의 $A_i$ 는 공집합이 아니다.
+
+&emsp;($4$) $A \cup B$ 와 $\prod (A_i \cup B_i)$ 의 관계는 무엇인가. $A \cap B$ 와 $\prod (A_i \cap B_i)$ 의 관계는 무엇인가?
+
+:::
+
+::: {.solution}
+($1$) trivial
+
+($2$) $B\ne \varnothing$ 이면 $b\in B$ 의 $i$ 번째 좌표는 $b_i\in B_i \subset A_i$ 이므로 ($1$) 의 역이 성립한다.
+
+($3$) $A_1 = \varnothing$ 이면 정의에 의해 $A$ 가 공집합이다. 임의의 $A_i$ 가 공집합이면 $A$ 가 공집합이다. 따라서 $A_i$ 가 공집합이 아니면 각각의 $A_i$ 도 공집합이 아니다.
+
+($4$) $x\in A \cap B$ 이면 $x\in A$ 이거나 $x\in B$ 이다. $x\in A$ 라면 $\forall i\in \mathbb{Z}_+,\, x_i \in A_i$ 이므로 $x\in \prod (A_i \cup B_i)$ 이다. $x\in B$ 여도 마찬가지. 따라서 $(A \cup B) \subset \prod (A_i \cup B_i)$ 이다. $x\in \prod (A_i \cup B_i)$ 이면 $\forall i\in \mathbb{Z}_+,\, x_i \in A_i \cup B_i$ 이다. 그런데 예를 들어 $x_1 \in A_1 -B_1$ 이고 $x_2 \in B_2-A_2$ 일 수 있다. 이 경우에는 $x\not \in A \cup B$ 이다. 
+
+$x\in A\cap B$ 이면 $\forall i\in \mathbb{Z}_+,\, x_i A_i \cap B_i$ 이므로 $(A \cap B) \subset \prod (A_i \cap B_i)$ 이다. 그 역도 성립함은 쉽게 보일 수 있다. 따라서 $(A \cap B) = \prod (A_i \cap B_i)$ 이다. 
+
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_5_4}
+
+#### Munkres 1.5.4
+
+$m,\,n\in \mathbb{Z}$ 이고 $X \ne \varnothing$ 일 때 다음을 보여라.
+
+&emsp; ($1$) $m\le n$ 이면 $f:X^m \to X^n$ 인 단사함수 $f$ 가 존재한다.
+
+&emsp; ($2$) $g:X^m \times X^n \to X^{m + n}$ 인 전단사 함수 $g$ 가 존재한다.
+
+&emsp; ($3$) 단사함수 $h:X^n \to X^\omega$ 의 예를 드시오.
+
+&emsp; ($4$) 전단사함수 $k:X^n \times X^\omega \to X^\omega$ 의 예를 드시오.
+
+&emsp; ($5$) 전단사함수 $l:X^\omega \times X^\omega \to X^\omega$ 의 예를 드시오.
+
+&emsp; ($6$) $A \subset B$ 이면 단사함수 $m: \left(A^\omega \right)^n \to B^\omega$ 가 존재함을 보이시오.
+
+:::
+
+::: {.solution}
+
+($1$) $p\in X$ 에 대해 $f(x_1,\ldots,x_m) = (x_1,\ldots,x_m,p,\cdots,p)$ 는 단사함수이다.
+
+($2$) $x\in X^m,\, y\in X^n$ 에 대해 
+
+$$
+g((x_1,\ldots,\,x_m),\, (y_{1},\ldots,y_{n})) = (x_1,\ldots,x_m,y_{1},\ldots,y_{n})
+$$
+
+은 전사함수이다.
+
+($3$) 임의의 $p\in X$ 에 대해 $h(x)_i = \left\{\begin{array}{ll} x_i, \quad &\text{if }i\le n \\ p, &\text{if } i > n \end{array}\right.$ 은 단사함수이다. 
+
+($4$) $x\in X^n,\, y \in X^\omega$ 에 대해 $k(x, y) = \left\{\begin{array}{ll} x_i, \quad&\text{if }i\le n \\ y_{i-n}, &\text{if } i > n  \end{array} \right.$ 은 전단사 함수이다. 
+
+($5$) $\boldsymbol{a}_j\in A^\omega$ $(j=1,\,2,\ldots, n)$ 에 대해 $a_{ij} = (\boldsymbol{a}_j)_i$ $(i=1,\,2,\ldots)$ 라 하자. $k\in \mathbb{Z}_+$ 에 대해 $p,\, q$ 는 각각 $k$ 를 $n$ 으로 나누었을 때의 몫과 나머지라 하자.
+
+$$
+m((\boldsymbol{a}_1,\ldots,\, \boldsymbol{a}_n))_k = (\boldsymbol{a}_{q+1})_{p+1} 
+$$
+
+는 단사함수이다. 
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_5_5}
+
+#### Munkres 1.5.5
+
+아래의 $\mathbb{R}^\omega$ 의 부분집합중에 $\mathbb{R}$ 의 부분집합들의 데카르트 곱으로 표현 될 수 있는것은?
+
+&emsp; ($a$) $\{\boldsymbol{x} \mid x_i \in \mathbb{Z}\}$. 
+
+&emsp; ($b$) $\{\boldsymbol{x} \mid \forall i,\, x_i \ge i\}$.
+
+&emsp; ($c$) $\{\boldsymbol{x} \mid \forall i\ge 100,\, x_i \in \mathbb{Z} \}$.
+
+&emsp; ($d$) $\{\boldsymbol{x} \mid x_2= x_3 \}$.
+
+
+:::
+
+::: {.solution}
+
+($a$) $\mathbb{Z}^\omega \subset \mathbb{R}^\omega$ (see @exr-munkres_1_5_3).
+
+($b$) $B_m =\{x\in \mathbb{R}: x\ge m\} \subset \mathbb{R}$ 이다. $\prod_{m=1} B_m \subset \mathbb{R}^\omega$.
+
+($c$) $C_i = \left\{\begin{array}{ll} \mathbb{R}\quad & \text{if } i< 100 \\ \mathbb{Z}& \text{if } i \ge 100 \end{array}\right.$ 일 때 $C_i \subset \mathbb{R}$ 이며 따라서 $\prod C_i \subset \mathbb{R}^\omega$.
+
+($d$) 는 표현 될 수 없다.
+
+
+
+:::

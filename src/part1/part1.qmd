@@ -1,0 +1,9 @@
+---
+title: "해석학의 기반"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+1부에서는 해석학의 시작이 되는 실수의 성질, 수열과 급수, 그리고 좌표공간의 위상학적 성질에 대해 다루기로 한다.

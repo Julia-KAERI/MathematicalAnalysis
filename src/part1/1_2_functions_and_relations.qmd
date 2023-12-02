@@ -1,0 +1,661 @@
+---
+title: "함수와 관계"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+## 함수
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-rule_of_assignment}
+
+#### 할당 규칙 (rule of assignment)
+
+$R\subset C \times D$ 에 대해 $C$ 의 각각의 원소가 $R$ 의 첫번째 좌표로 최대 한번만 나올 때 $R$ 을 $A \times B$ 의 할당 규칙이라 한다.
+
+이 때 $R$ 의 첫번째 좌표의 집합을 할당 규칙에 대한 **정의역(domain)** 이라고 하며 $R$ 의 두번째 좌표의 집합을 할당 규칙에 대한 **상(image)** 이라고 한다.
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-function}
+
+#### 함수 (function)
+
+할당 규칙 $R$ 에 대해 정의역 $A$ 와 상을 포함하는 집합 $B$ 를 생각하자. 이 때 $B$ 를 공역(codomain) 이라 한다. 이 할당규칙을 $A$ 에서 $B$ 로의 함수라고 하며 할당규칙 $R$ 에 대한 함수를 $f$ 라고 하면 $f:A \to B$ 라 표현한다. $(a,\,b)\in R$ 이면 $f(a) = b$ 라고 쓴다.
+
+::: 
+:::
+
+</br>
+
+함수 $f:A \to B$ 에 대해 함수의 상을 $f(A)$ 라 쓸 수 있다. 즉 
+
+$$
+f(A) = \{f(a) \mid a\in A\}
+$$
+
+이다. 
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-restriction_of_function}
+
+#### 함수의 제한(restriction)
+
+$f:A \to B$ 와 $A_0 \subset A$ 에 대해 정의역을 $A_0$ 로 제한하는 함수를 생각 할 수 있으며 이를 $f\mid_{A_0}$ 라고 쓴다.
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-composite_of_function}
+
+#### 함수의 합성
+
+$f: A \to B$, $g: f(A) \to C$ 에 대해 $g \circ f : A \to C$ 는 $(g \circ f)(a)= g(f(a))$ 로 정의되며 이를 함수 $f$ 와 $g$ 의 **합성(composition)** 이라 한다.
+
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-injection_surjection_bijection}
+
+#### 전사함수, 단사함수, 전단사 함수
+
+$f:A \to B$ 에 대해 $f(A)=B$ 일 때 $f$ 를 **전사함수(surjection)**라 한다. $a_1 \ne a_2 \implies f(a_1)\ne f(a_2)$ 일 때 $f$ 를 **단사함수(injection)** 라 한다. $f$ 가 전사함수이며 단사함수 일 때 $f$ 를 **전단사함수(bijection)** 이라 한다.
+
+
+::: 
+:::
+
+</br>
+
+::: {#prp-inverse_function}
+
+$f:A \to B$ 를 생각하자. 어떤 함수 $g: B \to A,\, h : B \to A$ 가 존재하여 모든 $a\in A$ 에 대해 $g(f(a)) =a$ 이며 모든 $b\in B$ 에 대해 $f(h(b))=b$ 이면 $f$ 는 전단사이며 $g=f$ 이다. 
+
+:::
+
+::: {.proof}
+
+어떤 $a_1\ne a_2$ 에 대해 $f(a_1)= f(a_2)$ 라 하자. 이는 $g(f(a))=a$ 라는 가정에 모순된다. 따라서 $f$ 는 단사이다. 어떤 $b\in B$ 에 대해 $b\not\in f(A)$ 이면 $f(h(b))=b$ 일 수 없다. 따라서 $f$ 는 전사이다.
+
+각각의 $b\in B$ 에 대해 $f(x)=b$ 를 만족하는 $x\in A$ 는 단 하나 뿐이며 이를 $a$ 라 하자. $g(b) = a$ 이며 $f(h(b))=b$ 이므로 $h(b) = a$ 이다. 즉 $g=f$ 이다. $\square$
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-inverse_function}
+
+#### 역함수
+
+$f:A \to B$ 가 전단사 함수 일 때 @prp-inverse_function 에서의 $g=h$ 를 $f$ 에 대한 **역함수(inverse)** 라 하고 $f^{-1}$ 이라 쓴다. 
+
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-inverse_function}
+
+#### 역상
+
+$f:A \to B$ 와 $B_0 \subset B$ 에 대해 
+
+$$
+f^{-1}(B_0) = \{x\in A : f(x)\in B_0\}
+$$
+
+를 $f$ 의 $B_0$ 에 대한 **역상(inverse image)** 혹은 **preimage** 라 한다. 
+
+::: 
+:::
+
+</br>
+
+
+::: {#prp-properties_of_inverse_image}
+$f:A \to B$ 이고 $A_0 \subset A,\,B_0 \subset B$ 일 때 다음이 성립한다.
+
+$$
+A_0 \subset f^{-1}(f(A_0)),\qquad f(f^{-1}(B_0)) \subset B_0
+$$
+
+$f$ 가 단사이면 $A_0 = f^{-1}(f(A_0))$ 이며 $f$ 가 전사이면 $f(f^{-1}(B_0)) = B_0$ 이다.
+
+:::
+
+::: {.proof}
+
+$a\in A_0$ 이면 $a\in f^{-1}(f(A_0))$ 임은 쉽게 알 수 있다. $f$ 가 단사이며 $x\in f^{-1}(f(A_0))$ 라 하자. 어떤 $f(x) \in f(A_0)$ 이며 $f$ 가 단사이므로 $x\in A_0$ 이다. 즉 $f$ 가 단사이면 $A_0 = f^{-1}(f(A_0))$ 이다.
+
+$b\in f(f^{-1}(B_0))$ 라 하자. 어떤 $x\in f^{-1}(B_0)$ 에 대해 $b=f(x)$ 이며 $f(x) \in B_0$ 이므로 $b \in B_0$ 이다. 즉 $f(f^{-1}(B_0)) \subset B_0$ 이다. $f$ 가 전사라고 하자. $b\in B_0$ 이면 어떤 $a\in A$ 에 대해 $f(a)=b$ 이다. $a\in f^{-1}(B_0)$ 이므로 $b\in f(f^{-1}(B_0))$ 이다. 따라서 $f$ 가 전사이면 $f(f^{-1}(B_0)) = B_0$ 이다. $\square$
+
+:::
+
+</br>
+
+### 연습 문제
+
+::: {#exr-munkres_1_2_2}
+
+#### Munkres 1.2.2
+
+$f:A \to B$ 이며 $i=0,\,1$ 에 대해 $A_i\subset A$, $B_i \subset B$ 일 때 다음이 성립함을 보여라.
+
+&emsp; ($1$) $B_0 \subset B_1 \implies f^{-1}(B_0) \subset f^{-1}(B_1)$.
+
+&emsp; ($2$) $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
+
+&emsp; ($3$) $f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$.
+
+&emsp; ($4$) $f^{-1}(B_0 - B_1) = f^{-1}(B_0 - B_1)$.
+
+&emsp; ($5$) $A_0 \subset A_1 \implies f(A_0) \subset f(A_1)$.
+
+&emsp; ($6$) $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+
+&emsp; ($7$) $f(A_0 \cap A_1) \subset f(A_0)\cap f(A_1)$ 이며 $f$ 가 단사일 경우 등호가 성립한다.
+
+&emsp; ($8$) $f(A_0 - A_1) \supset f(A_0)-f(A_1)$ 이며 $f$ 가 단사일 경우 등호가 성립한다.
+
+::: 
+
+::: {.solution}
+
+($1$) $a\in f^{-1}(B_0) \iff f(a) \in B_0 \implies f(a) \in B_1 \iff a\in f^{-1}(B_1)$.
+
+($2$) 
+
+$$
+\begin{aligned}
+a\in f^{-1}(B_0 \cup B_1) &\iff  f(a) \in B_0 \cup B_1 \\
+&\iff f(a) \in B_0 \lor f(a) \in B_1 \\
+&\iff a\in f^{-1}(B_0)\cup f^{-1}(B_1).
+\end{aligned}
+$$
+
+($3$) 
+$$
+\begin{aligned}
+a\in f^{-1}(B_0 \cap B_1) &\iff  f(a) \in B_0 \cap B_1 \\
+&\iff f(a) \in B_0 \land f(a) \in B_1 \\
+&\iff a\in f^{-1}(B_0)\cap f^{-1}(B_1).
+\end{aligned}
+$$
+
+($4$) 
+
+$$
+\begin{aligned}
+a\in f^{-1}(B_0 - B_1) &\iff  f(a) \in B_0 - B_1 \\
+&\iff f(a) \in B_0 \land f(a) \not\in B_1 \\
+&\iff a\in f^{-1}(B_0)- f^{-1}(B_1).
+\end{aligned}
+$$
+
+($5$) $b\in f(A_0) \iff \exists a\in A_0,\, f(a)=b \implies b\in f(A_1)$.
+
+($6$) 
+
+$$
+\begin{aligned}
+b\in f(A_0 \cup A_1) &\iff \exists a\in (A_0 \cup A_1),\, f(a) = b \\
+&\iff (\exists a_0 \in A_0,\, f(a_0) = b) \lor (\exists a_1 \in A_1,\, f(a_1) = b) \\
+&\iff b \in f(A_0) \lor b \in f(A_1) \\
+&\iff b \in  f(A_0)\cup f(A_1).
+\end{aligned}
+$$
+
+
+($7$) 아래의 두번째 줄에서 $\implies$ 는 $f$ 가 단사일 경우 $\iff$ 가 된다.
+$$
+\begin{aligned}
+b\in f(A_0 \cap A_1) &\iff \exists a\in (A_0 \cap A_1),\, f(a) = b \\
+&\implies (\exists a_0 \in A_0,\, f(a_0) = b) \land (\exists a_1 \in A_1,\, f(a_1) = b) \\
+&\iff b\in f(A_0)\cap f(A_1).
+\end{aligned}
+$$
+
+($8$) $f$ 가 단사이면 3번째 줄의 $\implies$ 가 $\iff$ 가 된다. 
+
+$$
+\begin{aligned}
+b\in f(A_0)-f(A_1) &\iff (\exists a_0 \in A,\, f(a_0)=b) \land (\forall a_1\in A_1,\, f(a_1)\ne b) \\
+&\iff (\exists a_0 \in A,\, f(a_0)=b) \land (\exists a_2\in (A_1)^C,\, f(a_2)=b)  \\
+&\implies \exists a\in A_0-A_1,\, f(a)=b \\
+&\iff b\in f(A_0-A_1).
+\end{aligned}
+$$
+:::
+
+
+</br>
+
+::: {#exr-munkres_1_2_4}
+
+#### Munkres 1.2.4
+
+$f:A \to B,\, g:B \to C$ 이다.
+
+&emsp; ($1$) $C_0 \subset C$ 이면 $(g \circ f)^{-1} (C_0) = f^{-1}(g^{-1})(C_0)$ 임을 보여라.
+
+&emsp; ($2$) $f,\, g$ 가 단사이면 $g \circ f$ 도 단사임을 보여라.
+
+&emsp; ($3$) $g \circ f$ 가 단사일 때 $f,\,g$ 의 단사함수 여부에 대해 무엇을 알 수 있는가?
+
+&emsp; ($4$) $f,\,g$ 가 전사이면 $g \circ f$ 가 전사임을 보여라.
+
+&emsp; ($5$) $g \circ f$ 가 전사일 때 $f,\,g$ 의 전사함수 여부에 대해 무엇을 알 수 있는가?
+
+&emsp; ($6$) ($2$) 에서 ($6$) 까지의 결과를 정리 형식으로 요약하라.
+
+:::
+
+
+::: {.solution}
+
+($1$) 
+$$
+\begin{aligned}
+a \in (g \circ f)^{-1}(C_0) &\iff g(f(a)) \in C_0 \\
+&\iff f(a) \in g^{-1}(C_0) \\
+&\iff a\in f^{-1}(g^{-1}(C_0)).
+\end{aligned}
+$$
+
+($2$) $a_1 \ne a_2$ 이면 $f$ 가 단사이므로 $f(a_1) \ne f(a_2)$ 이고 $g$ 가 단사이므로 $g(f(a_1)) \ne g(f(a_2))$ 이다. 따라서 $g \circ f$ 는 단사이다.
+
+($3$) $f$ 가 단사가 아니라면 어떤 $a_1,\, a_2 \in A,\, a_1\ne a_2$ 에 대해 $f(a_1)=f(a_2)$ 이므로 $g(f(a_1))=g(f(a_2))$ 가 된다. 따라서 $g\circ f$ 가 단사이면 $f$ 는 단사이다. 단 $g$ 가 단사가 아니라도 $f(A)\subset B$ 에 대해서만 단사이면 $g \circ f$ 는 단사이다.
+
+($4$) $f(A) = B$, $g(B) = C$ 이므로 $g (f(A))= C$ 이다. 
+
+($5$) $f$ 가 전사가 아니라도 $g(f(A))=C$ 이면 $g \circ f$ 도 전사이다. $g(f(A))$ 가 전사이면 $g$ 는 전사이다.
+
+($6$) $f,\,g$ 가 전단사이면 $g \circ f$ 도 전단사이며 그 역도 성립한다.
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_2_5}
+
+#### Munkres 1.2.5
+
+$i_C : C \to C,\, i_C (x)=x$ 를 $C$ 에서의 **항등 함수(identity function)** 이라 한다. $f:A \to B$ 에 대해 어떤 $g:B \to A$ 가 $g \circ f = i_A$ 일 때 $g$ 를 $f$ 에 대한 좌역함수(left inverse) 라고 하며, 어떤 $h:B \to A$ 가 $f \circ h = i_B$ 일 때 $h$ 를 $f$ 에 대한 우역함수(right inverse) 라고 한다.
+
+&emsp; ($1$) $f$ 에 대한 좌역함수가 존재하면 $f$ 는 단사이며, $f$ 에 대한 우역함수가 존재하면 $f$ 는 전사임을 보여라.
+
+&emsp; ($2$) 좌역함수는 존재하지만 우역함수는 존재하지 않는 함수의 예를 들어라.
+
+&emsp; ($3$) 우역함수는 존재하지만 좌역함수는 존재하지 않는 함수의 예를 들어라.
+
+&emsp; ($4$) 하나 이상의 좌역함수가 존재 할 수 있는가? 하나 이상의 우역함수가 존재할 수 있는가?
+
+&emsp; ($5$) 함수 $f$ 에 대한 좌역함수 $g$ 와 우역함수 $h$ 가 존재한다면 $f$ 는 전단사이며 $g=h=f^{-1}$ 임을 보여라.
+
+:::
+
+::: {.solution}
+
+($1$) $f(a_1)=f(a_2)=b$ 라 하면 $g(b)$ 가 동시에 $a_1,\,a_2$ 일 수 없다. 따라서 좌역함수가 존재한다면 $f$ 는 단사이다. $f$ 가 전사가 아니라면 어떤 $b\in B$ 에 대해 $b\not\in f(A)$ 이며 $h(f(x))=b$ 일 수 없다. 따라서 $f$ 에 대한 우역함수가 존재한다면 $f$ 는 전사이다.
+
+($2$) $A=\mathbb{Z}_+$, $B=\mathbb{Z}_+$ 에 대해 $f(x) = 2x$ 라 하자. $g(x)=\left\{\begin{array}{ll} x/2 &;x=\text{even} \\ 1 & ;x=\text{odd} \end{array}\right.$ 에 대해 $g(f(x))=x$ 이므로 $g$ 는 좌역함수이지만 $f$ 가 전사가 아니므로 우역함수가 존재하지 않는다. 
+
+($3$) $A=\mathbb{Z}_+$, $B=\mathbb{Z}_+$ 에 대해 $f(x)=\left\{\begin{array}{ll} x/2 &;x=\text{even} \\ x & ;x=\text{odd} \end{array}\right.$ 라 하면 $f$ 는 전사이지만 단사가 아니다. 따라서 좌역함수가 존재하지 않는다. $h(x)=\left\{\begin{array}{ll} 2x &;x=\text{even} \\ x & ;x=\text{odd} \end{array}\right.$ 는 $f$ 의 우역함수이다.
+
+($4$) ($2$) 의 $f$ 에 대해 $g_1(x) = \left\{\begin{array}{ll} x/2 &;x=\text{even} \\ 1 &;x=\text{odd}\end{array}\right.$ 와 $g_2(x) = \left\{\begin{array}{ll} x/2 &;x=\text{even} \\ 2 &;x=\text{odd}\end{array}\right.$ 는 모두 $f$ 의 좌역함수 이다. $f:\{1,\,2\} \to \{1\}$, $f(x)=1$ 에 대해 $h_1: \{1\}\to \{1,\,2\}$, $h_1(1) =1$ 과 $h_2 :\{1\}\to \{1,\,2\}$, $h_2(1) =2$ 은 모두 $f$ 의 우역함수이다. 즉 좌역함수와 우역함수의 유일성을 보장 할 수 없다.
+
+($5$) $f$ 가 전단사이면 좌역함수 $g$ 와 우역함수 $h$ 가 존재한다. $(g\circ f)(x) = x$, $(f \circ h)(y)=y$ 이다. $g(y) = (g \circ (f \circ h))(y) = ((g \circ f)\circ h)(y) = h(y)$ 이므로 $g=h$ 이다. 
+
+:::
+
+
+</br>
+
+
+## 관계
+
+### 관계와 동치관계
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-relation}
+
+#### 관계 (relation)
+
+집합 $A$ 에 대해 $A\times A$ 의 부분집합을 $A$ 에 대한 **관계(relatioin)**라고 한다. $R\subset A\times A$ 에 대해 $(x,\,y) \in R$ 이면 $xRy$, $x\sim_{R}y$ 혹은 줄여서 $x\sim y$ 라 쓴다. 
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-equivalence_relation}
+
+#### 동치 관계 (equivalence relation)
+
+$R$ 이 $A$ 에 서의 관계일 때 다음 조건을 모두 만족하면 $R$ 을 **동치 관계** 라고 한다.
+
+&emsp; ($1$) (Reflectivity) $x\in A \implies xRx$, 
+
+&emsp; ($2$) (Symmetry) $xRy \implies yRx$, 
+
+&emsp; ($3$) (Transivity) $xRy,\, yRz \implies xRz$. 
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-equivalence_class}
+
+#### 동치류 (equivalence class)
+
+$A$ 에 대한 관계 $R$ 에 대해 $\{y\in A : x\sim y\}$ 를 $x$ 에 대한 **동치류(equivalence class)** 라고 한다.
+
+::: 
+:::
+
+
+</br>
+
+::: {#prp-properties_of_equivalence_class}
+
+두 동치류는 같거나 서로소이다.
+
+:::
+
+::: {.proof}
+
+집합 $A$ 에 대해 정의된 관계 $R$ 의 두 동치류 $E_1,\,E_2$ 를 생각하자. $x\in E_1 \cap E_2$ 라면 $y\in E_1$ 일 때 $x\sim y$ 이므로 $y\in E_2$ 이고, $y'\in E_2$ 이면 $x\in y'$ 이므로 $y'\in E_1$ 이다. 즉 $E_1=E_2$ 이다. $\square$
+
+:::
+
+</br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-partition}
+
+#### 분할(Partition)
+
+$\Gamma$ 가 $A$ 의 부분집합으로 이루어진 집합족이며 $A_1,\, A_2\in \Gamma$ 에 대해 $A_1 \ne A_2 \implies A_1 \cap A_2 =\varnothing$ 이며 $\bigcup_{A_\alpha \in \Gamma} A_\alpha = A$ 일 때, $\Gamma$ 를 $A$ 의 **분할(partition)** 이라 한다. 집합족 $\Gamma$ 가 $A$ 의 분할이면 $\Gamma$ 가 $A$ 를 분할한다고 한다.
+
+::: 
+:::
+
+</br>
+
+::: {#thm-equivalence_relation_and_partition}
+
+집합 $A$ 에서의 동치관계 $R$ 에 의한 동치류의 집합족은 $A$ 를 분할한다.
+
+:::
+
+::: {.proof}
+
+Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된다. 따라서 동치류의 합집합은 $A$ 이다. @prp-properties_of_equivalence_class 에 의해 두 동치류는 같거나 서로소이므로 동치류의 집합족은 $A$ 를 분할한다. 
+
+:::
+
+</br>
+
+### 순서 관계와 순서집합
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-order_relation}
+
+#### 전순서 관계와 전순서 집합
+
+[수학에서 다루는 순서는 전순서 이외에도 존재하지만 여기서는 일단은 전순서 관계만을 다룬다]{.aside}
+
+집합 $A$ 에서의 관계 $\sim$ 이 다음을 만족할 때 $\sim$ 을 $A$ 에서의 **전순서관계(total order relation)** 라 하며 전순서관계가 존재하는 집합을 **전순서 집합(totally ordered set)** 이라 한다.
+
+&emsp; ($1$) (Comparability) 모든 서로 다른 $x,\,y\in A$ 에 대해 $x \sim y$ 이거나 $y \sim x$ 이다.
+
+&emsp; ($2$) (Nonreflectivity) $\forall x \in A$, $x \not\sim x$ 이다. 
+
+&emsp; ($3$) (Transitivity) $x \sim y$ 이고 $y \sim z$ 이면 $x \sim z$ 이다.
+
+순서관계 $\sim$ 에 대해 $a\sim b$ 일 때 $a<b$ 라고 쓴다. 혹은 정해진 순서관계를 $<$ 이라고 할 수 있다.
+
+
+::: 
+:::
+
+
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-open_interval}
+
+#### 열린 구간 (open interval)
+
+집합 $X$ 에서 정의된 전순서관계 $<$ 에서 $a<b$ 일 때 $a,\,b$ 사이의 열린구간 $(a,\,b)$ 는
+
+$$
+(a,\,b) = \{x \mid a<x<b\}
+$$
+
+로 정의된다. $(a,\,b)=\varnothing$ 일 때 $a$ 를 $b$ 의 **즉각 선행자(immediate predecessor)** 라 하고 $b$ 를 $a$ 의 **즉각 후행자(immediate successor)** 라 한다. 
+
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-order_type}
+
+#### 순서형(Order type)
+
+집합 $A,\,B$ 에 각각 전순서관계 $<_A,\,<_B$ 가 정의되어 있으며, $A$ 와 $B$ 사이에 전단사 함수 $f$ 가 존재하여, 
+
+$$
+a_1 <_A a_2 \implies f(a_1)<_B f(a_2)
+$$
+
+이면 $A$ 와 $B$ 가 같은  **순서형(order type)** 을 가졌다고 한다. 
+
+::: 
+:::
+
+</br> 
+
+::: {#exm-order_type_1}
+
+$f:(-1,\,1) \to \mathbb{R}$, $f(x) = \dfrac{x}{1-x^2}$ 를 생각하면 $(-1,\,1)$ 과 $\mathbb{R}$ 는 같은 순서형을 가진다.
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-dictionary_order}
+
+#### 사전 순서 (dictionary order)
+
+집합 $A,\,B$ 에 각각 전순서관계 $<_A,\,<_B$ 가 정의되어 있을 때 $(a_1,b_1),\, (a_2,\,b_2)\in A\times B$ 의 순서관계를 
+
+&emsp; ($1$) $a_1<_A a_2$ 이거나,
+
+&emsp; ($2$) $a_1=a_2$ 이고 $b_1<_B b_2$ 일 때
+
+$$
+(a_1,\, b_1) < (a_2,\, b_2) 
+$$
+
+라고 정하는 것을 $A\times B$ 에서의 **사전 순서(dictionary order)** 라고 한다.
+
+::: 
+:::
+
+</br>
+
+::: {#prp-dictionary_order_is_order_relation}
+
+@def-dictionary_order 에서의 사전 순서는 $A \times B$ 에서의 전순서 관계 이다.
+
+:::
+
+증명은 trivial 하다.
+
+</br>
+
+
+:::{#exm-order_relation_1}
+
+$[0,\,1)$ 과 $\mathbb{Z}_{+}$ 는 각각 통상적인 전순서관계를 가지고 있다. $\mathbb{Z}_+ \times [0, 1)$ 과 양의 실수의 집합 사이에서 정의된 함수
+
+$$
+f(n, t) = n+t-1
+$$
+
+는 전단사이며 순서를 보존한다. 즉, $\mathbb{Z}_+ \times [0, 1)$ 과 양의 실수는 같은 순서형을 가진다. 반면에 $[0, 1)\times \mathbb{Z}_+$ 의 모든 원소는 즉각 후행자를 갖는다. $(t, n)$ 의 즉각 후행자는 $(t, n+1)$ 이다. 
+
+:::
+
+
+</br>
+
+
+### 최소 상계 성질
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-maximum_minimum}
+
+#### 최대값과 최소값
+
+전순서 집합 $A$ 의 부분집합 $A_0$ 에 어떤 $a\in A_0$ 가 존재하여, $x\in A_0 \implies x\le a$ 이면 $a$ 를 $A_0$ 의 최대값 이라고 하며 $a=\max A_0$ 라 쓴다. 어떤 $a'\in A_0$ 가 존재하여 $x\in A_0 \implies a \le x$ 이면 $a'$ 을 $A_0$ 의 최소값이라 하며 $a' = \min A_0$ 라고 쓴다.
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-bounded}
+
+#### 위로 유계, 아래로 유계, 최소상계(상한), 최대하계(하한))
+
+전순서 집합 $A$ 의 부분집합 $A_0$ 에 대해 어떤 $a\in A$ 가 존재하여 $x\in A_0 \implies x\le a$ 이면 $A0$ 를 **위로 유계(bounded above)** 라 하고 $a$ 를 $A_0$ 의 **상계(upper bound)** 라 한다. 어떤 $a'\in A$ 가 존재하여 $x\in A_0 \implies a' \le x$ 라 하면 $A_0$ 를 **아래로 유계(bounded below)** 라 하고 $a'$ 을 $A_0$ 의 **하계(lower bound)**라 한다.
+
+$A$ 의 부분집합 $A_0$ 가 위로 유계일 때 $A_0$ 의 상계의 집합에 최소값이 존재하면 이 값을 $A_0$ 의 **최소상계(least upper bound)** 혹은 **상한(supremum)** 이라 하고 $\sup A_0$ 라 쓴다. $A_0$ 가 아래로 유계일 때 $A_0$ 의 하계의 집합에 최대값이 존재하면 이 값을 $A_0$ 의 **최대 하계(greatest lower bound)** 혹은 **하한(infimum)** 이라 하고 $\inf A_0$ 라 쓴다.
+
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-least_upper_bound_property}
+
+#### 최소 상계 성질, 최대 하계 성질
+
+전순서 집합 $A$ 의 공집합이 아닌 부분집합 $A_0$ 가 위로 유계이면 항상 상한이 존재 할 때 집합 $A$ 가 **최소 상계 성질** 을 가졌다고 한다. $A_0$ 가 아래로 유계이면 항상 하한이 존재 할 때 집합 $A$ 가 **최대 하계 성질** 을 가졌다고 한다.
+
+
+::: 
+:::
+
+</br>
+
+::: {#thm-least_upper_bound_property_greatest_lower_bound_property}
+다음 두 명제는 동치이다.
+
+&emsp; ($1$) 집합 $A$ 는 최소 상계 성질을 가진다.
+
+&emsp; ($2$) 집합 $A$ 는 최대 하계 성질을 가진다.
+
+
+:::
+
+::: {.proof}
+($1 \implies 2$) $B$ 가 공집합이 아닌 아래로 유계인 $A$ 의 부분집합이라고 하자. $B$ 의 하계들의 집합 $T$ 는 위로 유계이며 ($1$) 에 의해 최소상계를 가진다 이를 $m$ 이라 하자. $m$ 이 $B$ 의 하계임을 보이자. 어떤 $b\in B$ 에 대해 $b<m$ 이라면 $T$ 의 모든 집합은 $b$ 보다 작거나 같아야 하므로 $T$ 의 최소상계는 $b$ 보다 작거나 같아야 한다. 즉 $m$ 이 $T$ 의 최소상계란 가정에 모순이 되므로 모든 $b\in B$ 에 대해 $b\ge m$ 이다. 즉 $m$ 은 $B$ 의 하계이며 $m$ 보다 큰 값은 $B$ 의 하계가 아니므로 $m$ 은 $B$ 의 최대하계이다. 
+
+($2\implies 1$) 은 같은 방식으로 보일 수 있다. $\square$
+:::
+
+</br>
+
+### 연습 문제
+
+::: {#exr-munkres_1_3_3}
+
+#### Munkres 1.3.3
+
+Symmetric 하고 transitive 한 관계 $C$ 는 reflective 하다는 것을 다음과 같이 증명한다고 하자.
+
+> $C$ 가 symmectric 하므로 $aCb \implies bCa$ 이다. $C$ 가 transtive 하므로 $aCb$ 하고 $bCa$ 이면 $aCa$ 이다.
+
+이 논증의 오류를 찾으라.
+
+:::
+
+::: {.solution}
+
+어떤 $a$ 가 다른 모든 $x$ 에 대해 $(a, x)\not\in C$ 라면 $aCa$ 임을 보일 수 없다.
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_3_4}
+
+#### Munkres 1.3.4
+
+$f: A \to B$ 는 전사함수이다. $A$ 에 서의 관계 $\sim$ 을 $f(a_1) = f(a_2)$ 이면 $a_1 \sim a_2$ 라고 정의하자.
+
+&emsp; ($1$) 이 관계가 동치관계 임을 보이시오.
+
+&emsp; ($2$) $A^\ast$ 가 동치류의 집합이라고 하자. $A^\ast$ 와 $B$ 사이에 전단사 함수가 존재함을 보이시오.
+
+:::
+
+::: {.solution}
+($1$) 은 쉽게 보일 수 있다.
+
+($2$) $[a]$ 를 $a\in A$ 에 대한 동치류라 하자. $g:A^\ast \to B$ 를 $g([a])=f(a)$ 로 정의하면 전단사 함수이다. 
+
+:::
+
+</br>

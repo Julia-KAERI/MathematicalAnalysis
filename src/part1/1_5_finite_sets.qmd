@@ -1,0 +1,250 @@
+---
+title: "유한집합"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+---
+
+## 유한집합의 정의
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-finte_set}
+
+#### 유한 집합
+
+집합 $A$ 가 공집합이거나 $A$ 에서 section(@def-section) 로 가는 전단사 함수가 존재할 때 이 $A$ 를 **유한집합**이라 한다. $A$ 가 공집합일 경우 **cardinality 0** 라 하며, $\{1,\ldots,\,n\}$ 과 전단사 관계가 존재할경우 **cardinality n** 이라 한다. 
+
+:::
+
+:::
+
+</br>
+
+::: {#lem-finite_set1}
+
+$n\in \mathbb{Z}_+$ 일 때 집합 $A$ 에 대해 다음은 동치이다.
+
+&emsp; ($1$) $A$ 와 $\{1,\ldots,\,n+1\}$ 사이에 전단사 함수가 존재한다.
+
+&emsp; ($2$) $a\in A$ 일 때 $A\backslash\{a\}$ 와 $\{1,\ldots,\,n\}$ 사이에 전단사 함수가 존재한다.
+
+
+:::
+
+::: {.proof}
+
+($1 \implies 2$) $f:A \to \{1,\ldots,\,n+1\}$ 이 전단사 함수이며 $f(a)=k$ 라 하자. $f(b) = n+1$ 인 $b\in A$ 가 유일하게 존재한다. 이 때 $h:A\backslash\{a\}\to \{1,\ldots,n\}$ 을 다음과 같이 정의하자. 
+
+$$
+h(x) = \left\{\begin{array}{ll}f(x), \quad & \text{if } x\ne b \\ k, &\text{if } x= b\end{array}\right.
+$$
+
+$h(x)$ 가 전단사 함수임은 쉽게 보일 수 있다.
+
+($2 \implies 1$) $g:A\backslash\{a\} \to \{1,\ldots,\,n\}$ 이 전단사 함수라 하자. $k:A \to \{1,\ldots,n+1\}$ 을 다음과 같이 정의하자.
+
+$$
+k(x) = \left\{\begin{array}{ll} g(x),\quad&\text{if }x\ne a\\ n+1, &\text{if }x=a  \end{array} \right.
+$$
+
+$k(x)$ 는 전단사 함수이다.
+:::
+
+
+</br>
+
+## 유한집합의 기본 성질
+
+::: {#thm-finite_set2}
+
+집합 $A$ 와 $n\in \mathbb{Z}_+$ 에 대해 $f:A \to \{1,\ldots,\,n\}$ 인 전단사 함수 $f$ 가 존재한다고 하자. $B$ 가 $A$ 의 진부분 집합이라면 $B \mapsto \{1,\ldots,\,n\}$ 인 전단사 함수는 존재하지 않으며, $B\ne \varnothing$ 일 경우 어떤 $m<n$ 에 대해 $B \mapsto \{1,\ldots,m\}$ 인 전단사 함수가 존재한다.
+
+:::
+
+::: {.proof}
+
+$B=\varnothing$ 일 경우 $B \to \{1,\ldots,n\}$ 인 전단사 함수가 존재하지 않음은 자명하다. 이제 $B\ne \varnothing$ 일 경우 induction 으로 증명한다. 정리가 만족하는 양의 정수의 의 집합을 $C$ 라 하자. $n=1$ 일 경우는 성립한다는 것을 쉽게 알 수 있다. 
+
+$n\in C$ 임을 가정한다. $f:A \to \{1,\ldots,n+1\}$ 이 전단사 함수라고 하자. $A$ 의 진부분집합 $B$ 에 대해 $a_0\in B$ 와 $a_1\in A\backslash B$ 를 선택한다. @lem-finite_set1 에 의해 전단사 함수 $g:A\backslash \{a_0\} \to \{1,\ldots,n\}$ 가 존재한다. 이로부터 가정에 의해 아래의 결론을 내릴 수 있다.
+
+&emsp; ($1$) $B\backslash\{a_0\} \mapsto \{1,\ldots,n\}$ 인 전단사 함수는 존재하지 않으며, 
+
+&emsp; ($2$) 어떤 $m<n$ 에 대해 전단사 함수 $h:B\backslash\{a_0\} \to \{1,\ldots,\,m\}$ 이 존재한다. 
+
+@lem-finite_set1 에 의해 $B \mapsto \{1,\ldots,n+1\}$ 인 전단사 함수는 존재하지 않는다. 또한 $B\backslash \{a_0\} \ne \varnothing$ 일 경우 $B\mapsto \{1,\ldots,\,m+1\}$ 인 전단사 함수가 존재한다. 즉 $C=\mathbb{Z}_+$ 이다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-finite_set2}
+
+$A$ 가 유한집합이고 $B$ 가 $A$ 의 진부분집합이라면 $A \mapsto B$ 인 전단사함수는 존재하지 않는다.
+
+:::
+
+
+::: {.proof}
+
+$f:A \to B$ 가 전단사 함수라 하자. $g:A \to \{1,\ldots,\,n\}$ 이 전단사함수라면 $g\circ f^{-1}$ 는 $B \mapsto \{1,\ldots,n\}$ 전단사 함수인데 이는 @thm-finite_set2 에 위배된다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-Z_plus_is_not_finite}
+
+$\mathbb{Z}_+$ 는 유한집합이 아니다.
+
+:::
+
+::: {.proof}
+
+$f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}$ 을 $f(n) =n+1$ 로 정의하면 전단사 함수이다. 그런데 $\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+$ 이므로 @cor-finite_set2 에 의해 $\mathbb{Z}_+$ 는 유한집합이 아니다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-cardinality_of_finit_set}
+유한집합의 cardinality 는 유일하게 정해진다.
+:::
+
+::: {.proof}
+$A$ 와 $\{1,\ldots,\,n\}$ 사이의 전단사 함수 $f$ 와 $A$ 와 $\{1,\ldots,m\}$ 사이의 전단사 함수 $g$ 가 존재한다고 하자. $g \circ f^{-1}$ 은 $\{1,\ldots, n\}$ 에서 $\{1,\ldots,\,m\}$ 으로의 전단사 함수이어야 하는데, $m\ne n$ 이라면 둘중 하나는 나머지의 진부분집합이므로 @cor-finite_set2 에 의해 전단사 함수가 존재하지 않는다. 즉 $m=n$ 이므로 유한집합의 cardinaility 는 유일하게 정해진다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-cardinality_of_subset}
+
+$A$ 가 유한집합이고 $B \subset A$ 이면 $B$ 는 유한집합이다. $B$ 가 $A$ 의 진부분집합이라면 $B$ 의 cardinality 는 $A$ 보다 적다.
+
+:::
+
+::: {.proof}
+
+$A$ 의 cardinality 가 $n$ 이라면 @thm-finite_set2 에 의해 $B$ 의 cardinality 는 $n$ 보다 작다. $\square$
+
+:::
+
+</br>
+
+::: {#cor-properties_of_finite_set}
+
+$A$ 가 공집합이 아닐 때 아래의 세 명제는 동치이다.
+
+&emsp; ($1$) $A$ 는 유한집합이다.
+
+&emsp; ($2$) 어떤 양의 정수의 section 에서 $A$ 로의 전사함수가 존재한다.
+
+&emsp; ($3$) $A$ 에서 어떤 양의 정수에 대한 section 으로의 단사함수가 존재한다.
+
+:::
+
+::: {.proof}
+
+($1 \implies 2$) $A$ 가 유한집합이므로 정의에 의해 section 으로의 전단사 함수가 존재한다.
+
+($2 \implies 3$) $f:\{1,\ldots,\,n\} \to A$ 가 전사함수라 하자. $g: A \to \{1,\ldots,\,n\}$, $g(a)=\min \{f^{-1}(\{a\})\}$ 는 단사함수이다.
+
+($3 \implies 1$) $h:A \to \{1,\ldots,\,n\}$ 이 단사함수라 하자. 
+
+$$
+B = \{i \in \{1,\ldots,\,n\}: f^{-1}(\{i\})\ne\varnothing\}
+$$
+
+이라 하면 $B \subset A$ 이므로 $B$ 에서 어떤 $m \le n$ 에 대해 $\{1,\ldots,\,m\}$ 로의 전단사 함수 $k$ 가 존재한다. 이 때 $k \circ h$ 는 $A$ 에서 $\{1,\ldots,\,m\}$ 으로의 전단사 함수이므로 $A$ 는 유한집합이다. $\square$
+
+:::
+
+
+</br>
+
+::: {#prp-finite_cartesian_product_of_finite_sets}
+
+유한집합의 유한 합집합은 유한집합이다. 유한집합의 유한 데카르트곱도 유한집합이다.
+
+:::
+
+::: {.proof}
+
+집합 $A,\,B$ 가 공집합일경우 합집합과 데카르트곱은 공집합이므로 유한집합이다. 둘중의 하나만 공집합일 경우는 자명하다. $f:A \to \{1,\ldots,\,m\}$ 과 $g:B \to \{1,\ldots,\,n\}$ 이 전단사 함수 일 때, $h:A \cup B \to \{1,\ldots,m+n\}$ 을 다음과 같이 정의하자.
+
+$$
+h(x) = \left\{\begin{array}{ll} f(x) \quad & ;\text{if }x\in A \\ m+g(x) &;\text{if }x\in B \backslash A \end{array}\right. .
+$$
+
+이 때 $h$ 는 단사함수이므로 $A \cup B$ 는 유한집합이다. Induction 을 이용하면 임의의 유한 합집합에 대해 성립한다는 것을 보일 수 있다.
+
+이제 데카르트 곱에 대해 보이자. $k:A \times B \to \{1,\ldots,m\times n\}$ 을 
+
+$$
+k(a,\,b) = n \times (f(a)-1) + g(b)
+$$
+
+라 하면 $k$ 는 단사함수이므로 $A \times B$ 는 유한집합이다. Induction 을 이용하면 임의의 유한 데카르트 곱에 대해 성립함을 보일 수 있다. $\square$
+
+:::
+
+
+</br>
+
+## 연습문제
+
+::: {#exr-muknres_1_6_2}
+
+#### Munkres 1.6.2
+
+$B$ 가 유한집합이 아니고 $B \subset A$ 이면 $A$ 는 유한집합이 아님을 보여라.
+
+:::
+
+::: {.solution}
+
+$A$ 가 유한집합이라면 어떤 양의 정수 $n$ 에 대해 전단사 함수 $f: A \to \{1,\ldots,\,n\}$ 가 존재한다. $B \subset A$ 이면 @cor-cardinality_of_subset 에 의해 $B$ 는 유한집합이어야 하므로 가정에 위배된다. 
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_6_3}
+
+#### Munkres 1.6.3
+
+$X=\{0,\,1\}$ 일 때 $X^\omega$ 애서 $X^\omega$ 의 진부분집합으로의 전단사 함수가 존재함을 보여라.
+
+:::
+
+::: {.solution}
+
+$x\in X^\omega$ 에 대해 $x_i$ 는 $x$ 의 $i$ 번째 좌표라 하자. 
+
+$$
+P = \{(0,\,a_1,\,a_2,\ldots): a_i \in \{0,\,1\},\, i=1,\,2,\ldots\}
+$$
+
+는 $X^\omega$ 의 진부분 집합이다. $f(x_1,x_2,\ldots) =  (0,x_1,x_2,\ldots)$ 는 $X^\omega \mapsto P$ 로의 전단사 함수이다.
+
+:::
+
+</br>
+
+::: {#exr-munkres_1_6_4}
+#### Munkres 1.6.4
+
+$A$ 는 공집합이 아닌 유한 전순서 집합(@def-order_relation) 이라 하자.
+
+&emsp; ($1$) $A$ 에 최대값이 존재함을 보이시오.
+
+&emsp; ($2$) $A$ 는 어떤 section 과 같은 순서형(@def-ordered_pair) 을 가짐을 보이시오.
+
+:::
+
+::: {.soluion}
+
+
+:::
