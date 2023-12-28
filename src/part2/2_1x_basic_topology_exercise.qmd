@@ -347,7 +347,7 @@ $$
 
 
 ::: {.solution}
-[연결집합의 정의](1_3_basic_topology.qmd#def-connected_set) 를 참고한다.
+[연결집합의 정의](2_1_basic_topology.qmd#def-connected_set) 를 참고한다.
 
 ($1$) $A,\,B$ 가 닫혀있으면 $A=\overline{A},\, B= \overline{B}$ 이다. 연결집합의 정의에 의해 닫혀있다.
 
