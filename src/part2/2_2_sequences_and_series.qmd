@@ -54,7 +54,7 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-convergence_and_space}
 
@@ -62,31 +62,33 @@ $$
 
 :::
 
+</div>
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-properties_of_convergence_1}
 
 거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 에 대해 다음이 성립한다.
 
-1. $\displaystyle \lim_{n \to \infty} a_n = a \iff$ 모든 $a$ 의 근방은 유한개의 $\langle a_n \rangle$ 을 제외한 $\langle a_n\rangle$ 을 포함한다.
+&emsp;($1$) $\displaystyle \lim_{n \to \infty} a_n = a \iff$ 모든 $a$ 의 근방은 유한개의 $\langle a_n \rangle$ 을 제외한 $\langle a_n\rangle$ 을 포함한다.
 
-2. 수열의 극한은 유일하다.
+&emsp;($2$) 수열의 극한은 유일하다.
 
-3. 수렴하는 수열은 유계이다.
+&emsp;($3$) 수렴하는 수열은 유계이다.
 
-4. $E\subset X$ 이고 $p$ 가 $E$ 의 극한점이라면 $p$ 로 수렴하는 $E$ 에서 정의된 수열이 존재한다.
+&emsp;($4$) $E\subset X$ 이고 $p$ 가 $E$ 의 극한점이라면 $p$ 로 수렴하는 $E$ 에서 정의된 수열이 존재한다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
-$1$. $\implies$ 는 정의에 의해 자명하다.
+($1$) $\implies$ 는 정의에 의해 자명하다.
 
-$2$. $\displaystyle \lim_{n \to \infty} a_n = a_1,\, \displaystyle \lim_{n \to \infty} a_n = a_2$ 라 하자. 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies d(a_n,\,a_1)<\varepsilon$ 이며 $n \ge N_2 \implies d(a_n,\, a_2)<\varepsilon$ 이라 하자. $n \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_n,\,a_1)+d(a_n,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
+($2$) $\displaystyle \lim_{n \to \infty} a_n = a_1,\, \displaystyle \lim_{n \to \infty} a_n = a_2$ 라 하자. 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies d(a_n,\,a_1)<\varepsilon$ 이며 $n \ge N_2 \implies d(a_n,\, a_2)<\varepsilon$ 이라 하자. $n \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_n,\,a_1)+d(a_n,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
 
-$3$. 고정된 $\varepsilon >0$ 에 대해 $n\ge N \implies d(a_n,\, a)<\varepsilon$ 이다. $m = \min \{a_1,\ldots,\,a_{N-1}\}$ $M = \max \{a_1,\ldots,\, a_{N-1}\}$ 이라 하면
+($3$) 고정된 $\varepsilon >0$ 에 대해 $n\ge N \implies d(a_n,\, a)<\varepsilon$ 이다. $m = \min \{a_1,\ldots,\,a_{N-1}\}$ $M = \max \{a_1,\ldots,\, a_{N-1}\}$ 이라 하면
 
 $$
 \min (m, a-\varepsilon) \le a_n \le \max (M, a+\varepsilon)
@@ -94,7 +96,7 @@ $$
 
 이므로 $\langle a_n\rangle$ 은 유계이다. 
 
-$4$. 자연수 $n$ 에 대해 $N(p,\, 1/n) \cap E \ne \varnothing$ 이므로 $N(p,\, 1/n) \cap E$ 에서 하나를 잡아 $a_n$ 이라 하자. 그렇다면 $\displaystyle \lim_{n \to \infty} a_n = p$ 이다. $\square$
+($4$) 자연수 $n$ 에 대해 $N(p,\, 1/n) \cap E \ne \varnothing$ 이므로 $N(p,\, 1/n) \cap E$ 에서 하나를 잡아 $a_n$ 이라 하자. 그렇다면 $\displaystyle \lim_{n \to \infty} a_n = p$ 이다. $\square$
 
 :::
 

@@ -42,10 +42,15 @@ $\mathbb{N}$ 를 정의역으로 정의된 함수를 수열(sequence) 라고 하
 
 </br>
 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#prp-countable_subset}
 
 $A \sim \mathbb{N}$ 의 무한 부분집합 $B$ 는 $B \sim \mathbb{N}$ 이다.
+
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -54,10 +59,13 @@ $A\sim J$ 이므로 $x:J \to A$ 인 수열 $\langle x_n \rangle$ 을 생각 할 
 
 </br>
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#thm-countable_union_of_countable_sets}
 
 $\langle E_n\rangle$ 이 가산집합의 수열일 때 $\bigcup_{n=1}^\infty E_n$ 은 가산집합이다.
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -79,16 +87,17 @@ $$
 :::
 
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-countable_cartesian_product}
 
-$A$ 가산집합이며 $B_n=A^n$ 일 때 $B$ 는 가산이다.[집합 $A$ 에 대해 $A^n$ 은 데카르트곱을 의미한다]{.aside}
+$A$ 가 가산집합이면 $A$ 의 유한 데카르트곱은 가산이다.
 
 :::
+</div></br>
 
 ::: {.proof}
-수학적 귀납법을 통해 증명한다. $B_1=A$ 이므로 $B_1$ 은 가산이다. $B_{n-1}$ 을 가산이라고 가정하자. 고정된 $b\in B_{n-1}$ 에 대해 
+수학적 귀납법을 통해 증명한다. $B_n:=\underbrace{A \times \cdots \times A}_{n\text{ times}}$ 라고 하자. $B_1=A$ 이므로 $B_1$ 은 가산이다. $B_{n-1}$ 을 가산이라고 가정하자. 고정된 $b\in B_{n-1}$ 에 대해 
 
 $$
 \{(b,\, a) : a\in A\} 
@@ -103,9 +112,11 @@ $$
 
 우리는 이로부터 다음을 알 수 있다.
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#cor-Q_is_countable}
 유리수의 집합 $\mathbb{Q}$ 는 가산집합이다.
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -118,14 +129,14 @@ $\mathbb{Q} \sim Q$ 이며 $Q\subset \mathbb{Z}^2$ 이고 $Q$ 가 무한집합�
 
 :::
 
-</br>
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#thm-Cantor_diagonal_process}
 
 $0$ 과 $1$ 로만 이루어진 수열의 집합은 불가산 집합이다.
 
 :::
-
+</div></br>
 
 ::: {.proof}
 
@@ -133,13 +144,13 @@ $A$ 를 $0$ 과 $1$ 로만 이루어진 수열의 집합이라고 하고 $E$ 는
 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#cor-real_numbers_are_uncaoutable}
 
 실수의 집합 $\mathbb{R}$ 은 불가산 집합이다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -217,32 +228,33 @@ $$
 ::: 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-norm_of_Euclidean_space}
 
 $\boldsymbol{x},\, \boldsymbol{y},\,\boldsymbol{z}\in \mathbb{R}^k$ 과 $a\in \mathbb{R}$ 에 대해 다음이 성립한다.
 
-1. $\|\boldsymbol{x}\| \ge 0$ 이며 $\|\boldsymbol{x}\|=0 \iff \boldsymbol{x}=\boldsymbol{0}$ 이다.
+&emsp; ($1$) $\|\boldsymbol{x}\| \ge 0$ 이며 $\|\boldsymbol{x}\|=0 \iff \boldsymbol{x}=\boldsymbol{0}$ 이다.
 
-2. $\|a\boldsymbol{x}\| = |a| \|\boldsymbol{x}\|$.
+&emsp; ($2$) $\|a\boldsymbol{x}\| = |a| \|\boldsymbol{x}\|$.
 
-3. $\|\boldsymbol{x}-\boldsymbol{y} \| = \| \boldsymbol{y}-\boldsymbol{x} \|$.
+&emsp; ($3$) $\|\boldsymbol{x}-\boldsymbol{y} \| = \| \boldsymbol{y}-\boldsymbol{x} \|$.
 
-4. $\|\boldsymbol{x \cdot y}\| \le \|\boldsymbol{x}\| \|\boldsymbol{y}\|$.
+&emsp; ($4$) $\|\boldsymbol{x \cdot y}\| \le \|\boldsymbol{x}\| \|\boldsymbol{y}\|$.
 
-5. $\| \boldsymbol{x}+\boldsymbol{y}\| \le \|\boldsymbol{x}\| + \|\boldsymbol{y}\|$.
+&emsp; ($5$) $\| \boldsymbol{x}+\boldsymbol{y}\| \le \|\boldsymbol{x}\| + \|\boldsymbol{y}\|$.
 
-6. $\| \boldsymbol{x}-\boldsymbol{y} \| \le \|\boldsymbol{x}-\boldsymbol{z} \| + \|\boldsymbol{z}-\boldsymbol{y}\|$.
+&emsp; ($6$) $\| \boldsymbol{x}-\boldsymbol{y} \| \le \|\boldsymbol{x}-\boldsymbol{z} \| + \|\boldsymbol{z}-\boldsymbol{y}\|$.
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
-$1$, $2$, $3$ 은 정의로부터 쉽게 보일 수 있으며 $4$. 는 코시-슈바르츠 부등식으로부터 증명할 수 있다.
+($1$), ($2$), ($3$) 은 정의로부터 쉽게 보일 수 있으며 ($4$) 는 코시-슈바르츠 부등식으로부터 증명할 수 있다.
 
-$5$. $4$ 를 이용하면
+($5$) ($4$) 를 이용하면
 
 $$
 \|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 +2 \boldsymbol{x \cdot y} + \|\boldsymbol{y}\|^2 \le (\|\boldsymbol{x}\|+\|\boldsymbol{y})^2
@@ -250,7 +262,7 @@ $$
 
 임을 보일 수 있다. 이로부터 $\| \boldsymbol{x}+\boldsymbol{y}\| \le \|\boldsymbol{x}\| + \|\boldsymbol{y}\|$ 이다.
 
-$6$. $5$ 에서 $\boldsymbol{x}$ 를 $\boldsymbol{x}-\boldsymbol{z}$ 로, $\boldsymbol{y}$ 를 $\boldsymbol{z}-\boldsymbol{y}$ 로 바꾼다. $\square$
+($6$) ($5$) 에서 $\boldsymbol{x}$ 를 $\boldsymbol{x}-\boldsymbol{z}$ 로, $\boldsymbol{y}$ 를 $\boldsymbol{z}-\boldsymbol{y}$ 로 바꾼다. $\square$
 :::
 
 
@@ -269,7 +281,7 @@ $6$. $5$ 에서 $\boldsymbol{x}$ 를 $\boldsymbol{x}-\boldsymbol{z}$ 로, $\bold
 $\mathbb{R}^k$ 에서
 
 $$
-[a_1,\,b_1]\times \cdots \times [a_k,\,b_k] = \{(x_1,\ldots,\,x_k)\in \mathbb{R}^k : a_i \le x_i \le b_i,\, i=1,\ldots,k\}
+[a_1,\,b_1]\times \cdots \times [a_k,\,b_k] := \{(x_1,\ldots,\,x_k)\in \mathbb{R}^k : a_i \le x_i \le b_i,\, i=1,\ldots,k\}
 $$
 
 를 $k$-cell 이라고 한다.
@@ -285,15 +297,15 @@ $$
 
 #### 열린 근방과 닫힌근방
 
-거리공간 $X$ 에서 정의된 다음과 같은 $X$ 의 부분집합을 생각하자.
+$\varepsilon>0$ 에 대해 거리공간 $X$ 에서 정의된 다음과 같은 $X$ 의 부분집합을 정의하자.
 $$
 \begin{aligned}
-N_X(p,\, \varepsilon) &= \{x\in X : d(p,\,x) <\varepsilon\}, \\
-\overline{N}_X(p,\,\varepsilon) & = \{ x \in X : d(p,\,x) \le \varepsilon \}.
+N_X(p,\, \varepsilon) &:= \{x\in X : d(p,\,x) <\varepsilon\}, \\
+\overline{N}_X(p,\,\varepsilon) & := \{ x \in X : d(p,\,x) \le \varepsilon \}.
 \end{aligned}
 $$
 
-이 때 $\varepsilon>0$ 이어야 한다. $N_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 열린 근방이라고 하고, $\overline{N}_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 닫힌 근방이라고 한다. 특별한 언급 없이 근방이라고 할 때는 열린 근방을 의미한다.
+$N_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 열린 근방이라고 하고, $\overline{N}_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 닫힌 근방이라고 한다. 특별한 언급 없이 근방이라고 할 때는 열린 근방을 의미한다.
 
 ::: 
 :::
@@ -313,32 +325,33 @@ $$
 
 1. $p\in X$ 를 **점** 이라고 한다.
 
-2. 모든 $p$ 근방이 $p$ 를 제외한 $E$ 의 원소를 포함하면 $p$ 를 $E$ 의 **극한점** 이라고 한다. $p$ 가 $E$ 에 포함되는지 여부는 상관 없다. $p$ 가 $E$ 의 극한점이 아니라면 $p$ 를 $E$ 의 **고립점** 이라고 한다.
+2. 모든 $p$ 의 근방이 $p$ 를 제외한 $E$ 의 원소를 포함하면 $p$ 를 $E$ 의 **극한점(limit point)** 이라고 한다. $p$ 가 $E$ 에 포함되는지 여부는 상관 없다. $p$ 가 $E$ 의 극한점이 아니라면 $p$ 를 $E$ 의 **고립점(isolated point)** 이라고 한다.
 
-3. 모든 $E$ 의 극한점의 집합을 $E'$ 라고 쓴다. $E' \subset E$ 일 때 $E$ 가 **닫혀있다** 라고 하며 닫혀있는 집합을 **닫힌 집합** 이라고 한다. $\overline{E}=E \cup E'$ 으로 정의하며 $E$ 의 **폐포** 라고 한다.
+3. 모든 $E$ 의 극한점의 집합을 $E'$ 라고 쓴다. $E' \subset E$ 일 때 $E$ 가 **닫혀있다(closed)** 라고 하며 닫혀있는 집합을 **닫힌 집합(closed set)** 이라고 한다. $\overline{E}=E \cup E'$ 으로 정의하며 $E$ 의 **폐포(closure)** 라고 한다.
 
-4. $p$ 의 어떤 근방이 $E$ 에 포함되면 $p$ 를 $E$ 의 **내점**이라고 한다. $E$ 의 내점들의 집합을 $\text{int} (E)$ 라고 쓴다. 
+4. $p$ 의 어떤 근방이 $E$ 에 포함되면 $p$ 를 $E$ 의 **내점(inner point)**이라고 한다. $E$ 의 내점들의 집합을 $\text{int} (E)$ 라고 쓴다. 
 
-5. $E = \text{int} (E)$ 일 때 $E$ 가 **열려 있다** 라고 하며 열려있는 집합을 **열린 집합** 이라고 한다.
+5. $E = \text{int} (E)$ 일 때 $E$ 가 **열려 있다(open)** 라고 하며 열려있는 집합을 **열린 집합(open set)** 이라고 한다.
 
-6. $E$ 가 닫혀 있으며 $E$ 의 모든 점들이 극한점이면 $E$ 를 **완전 집합** 이라고 한다.
+6. $E$ 가 닫혀 있으며 $E$ 의 모든 점들이 극한점이면 $E$ 를 **완전 집합 (perpect set)** 이라고 한다.
 
 7. $\exists M>0,\;\forall p,\,q \in E, \, d(p,\,q)<M$ 일 때 $E$ 를 유계라고 한다.
 
-8. $X= \overline{E}$ 일 때 $E$ 를 **조밀하다** 고 한다.
+8. $X= \overline{E}$ 일 때 $E$ 를 **조밀하다(dense)** 고 한다.
 
 
 ::: 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-neighborhood_is_open}
 
-모든 근방은 열린 집합이다.
+모든 열린 근방은 열린 집합이다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -346,26 +359,29 @@ $E=N(p, \varepsilon)$ 이라 하자. $q\in E$ 이면 $d(p,\,q)<\varepsilon$ 이�
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-limit_points_1}
 
 거리공간 $X$ 의 부분집합 $E$ 의 극한점의 집합 $E'$ 에 대해 다음은 동치이다.
 
-1. $p \in E'$.
-2. $p\in X$ 의 모든 근방이 무한개의 $E$ 의 원소를 포함한다.
+&emsp;($1$) $p \in E'$.
+
+&emsp;($2$) $p\in X$ 의 모든 근방이 무한개의 $E$ 의 원소를 포함한다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
-(1 $\implies$ 2) $p\in E'$ 의 근방이 유한개의 $E$ 의 원소를 포함한다고 가정하자. 포함된 $E$ 의 원소중 $p$ 와의 거리가 최소인 원소를 $q$ 라 하자. $N(p,\, d(p,\,q)/2)\cup E = \varnothing$ 이므로 $p$ 가 극한점이라는 가정에 모순된다. 따라서 무한개의 $E$ 의 원소를 포함한다. 
+($1\implies 2$) $p\in E'$ 의 근방이 유한개의 $E$ 의 원소를 포함한다고 가정하자. 포함된 $E$ 의 원소중 $p$ 와의 거리가 최소인 원소를 $q$ 라 하자. $N(p,\, d(p,\,q)/2)\cup E = \varnothing$ 이므로 $p$ 가 극한점이라는 가정에 모순된다. 따라서 무한개의 $E$ 의 원소를 포함한다. 
 
-(2 $\implies$ 1) 극한점의 정의에 의해 자명하다. $\square$
+($2 \implies 1$) 극한점의 정의에 의해 자명하다. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-limit_points_1}
 
@@ -373,18 +389,20 @@ $E=N(p, \varepsilon)$ 이라 하자. $q\in E$ 이면 $d(p,\,q)<\varepsilon$ 이�
 
 :::
 
+</div></br>
 
-</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-open_set_is_complement_of_closed_set}
 
 거리공간 $X$ 의 부분집합 $E$ 에 대해 다음은 동치이다. 
 
-1. $E$ 는 열린 집합이다.
-2. $E \backslash X$ 는 닫힌 집합이다.
+&emsp;($1$) $E$ 는 열린 집합이다.
+
+&emsp;($2$) $E \backslash X$ 는 닫힌 집합이다.
 
 :::
-
+</div></br>
 
 ::: {.proof}
 
@@ -394,8 +412,7 @@ $E\backslash X$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-closed_set_is_complement_of_open_set}
 거리공간 $X$ 의 부분집합 $E$ 에 대해 다음은 동치이다. 
@@ -404,39 +421,43 @@ $E\backslash X$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 2. $E \backslash X$ 는 열린 집합이다.
 :::
 
-
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-open_and_closed_of_set_operations}
 
 거리공간 $X$ 에 대해 다음이 성립한다. 
 
-1. 공집합과 $X$ 는 열린집합이다.
-2. 공집합과 $X$ 는 닫힌집합이다.
-3. 열린집합들의 합집합은 열린집합이다.
-4. 닫힌집합들의 교집합은 닫힌집합이다.
-5. 유한개의 열린집합들의 교집합은 열린집합이다.
-6. 유한개의 닫힌집합의 합집합은 닫힌 집합이다.
+&emsp;($1$) 공집합과 $X$ 는 열린집합이다.
+
+&emsp;($2$) 공집합과 $X$ 는 닫힌집합이다.
+
+&emsp;($3$) 열린집합들의 합집합은 열린집합이다.
+
+&emsp;($4$) 닫힌집합들의 교집합은 닫힌집합이다.
+
+&emsp;($5$) 유한개의 열린집합들의 교집합은 열린집합이다.
+
+&emsp;($6$) 유한개의 닫힌집합의 합집합은 닫힌 집합이다.
 
 :::
+</div></br>
 
 ::: {.proof}
-$1$. 공집합과 $X$ 가 열린집합이라는 것은 자명하다.
+($1$) 공집합과 $X$ 가 열린집합이라는 것은 자명하다.
 
-$2$. $1$,  @prp-open_set_is_complement_of_closed_set 와 @cor-closed_set_is_complement_of_open_set 에 의해 공집합과 $X$ 는 닫힌집합이다. 
+($2$) ($1$)  @prp-open_set_is_complement_of_closed_set 와 @cor-closed_set_is_complement_of_open_set 에 의해 공집합과 $X$ 는 닫힌집합이다. 
 
-$3$. $\{G_{\alpha}\}$ 를 열린 집합의 집합족이라고 하고 $G=\bigcup_{\alpha}G_{\alpha}$ 라고 하자. $x\in G\implies \exists G_\alpha,\, x\in G_\alpha$ 이며 어떤 $N(x,\, \varepsilon)$ 에 대해 $N(x,\, \varepsilon) \subset G_\alpha \subset G$ 이므로 $G$ 는 열린 집합이다.
+($3$) $\{G_{\alpha}\}$ 를 열린 집합의 집합족이라고 하고 $G=\bigcup_{\alpha}G_{\alpha}$ 라고 하자. $x\in G\implies \exists G_\alpha,\, x\in G_\alpha$ 이며 어떤 $N(x,\, \varepsilon)$ 에 대해 $N(x,\, \varepsilon) \subset G_\alpha \subset G$ 이므로 $G$ 는 열린 집합이다.
 
-$4$. $\{F_\alpha\}$ 를 닫힌 집합의 집합족이라고 하고 $F = \bigcap_{\alpha} F_{\alpha}$ 라고 하자. $\left( \bigcap_\alpha F_{\alpha}\right)^c = \bigcup_{\alpha} (F_\alpha)^c$ 이며 $\bigcup_{\alpha} (F_\alpha)^c$ 가 열린 집합이므로 $\bigcap_\alpha F_{\alpha}$ 는 닫힌집합이다.
+($4$) $\{F_\alpha\}$ 를 닫힌 집합의 집합족이라고 하고 $F = \bigcap_{\alpha} F_{\alpha}$ 라고 하자. $\left( \bigcap_\alpha F_{\alpha}\right)^c = \bigcup_{\alpha} (F_\alpha)^c$ 이며 $\bigcup_{\alpha} (F_\alpha)^c$ 가 열린 집합이므로 $\bigcap_\alpha F_{\alpha}$ 는 닫힌집합이다.
 
-$5$. $G_1,\ldots,\,G_m$ 이 열린집합이라고 하자. $x\in \bigcap_{i=1}^m G_i$ 이면 각각의 $i=1,\ldots,\,m$ 에 대해 $N(x,\,r_i)\subset G_i$ 인 $r_i>0$ 이 존재한다. $r=\min (r_1,\ldots,\,r_m)$ 이라고 하면 $N(x,\,r) \subset \bigcap_{i=1}^m G_i$ 이다. 즉 $\bigcap_{i=1}^m G_i$ 는 열린집합이다.
+($5$) $G_1,\ldots,\,G_m$ 이 열린집합이라고 하자. $x\in \bigcap_{i=1}^m G_i$ 이면 각각의 $i=1,\ldots,\,m$ 에 대해 $N(x,\,r_i)\subset G_i$ 인 $r_i>0$ 이 존재한다. $r=\min (r_1,\ldots,\,r_m)$ 이라고 하면 $N(x,\,r) \subset \bigcap_{i=1}^m G_i$ 이다. 즉 $\bigcap_{i=1}^m G_i$ 는 열린집합이다.
 
-$6$. $F_1,\ldots,\,F_m$ 이 닫힌 집합이라고 하자. $\left( \bigcup_{i=1}^m F_{i}\right)^c = \bigcap_{i=1}^m (F_i)^c$ 이며 (다) 에 의해 우변이 열린집합이므로 $\bigcup_{i=1}^m F_{i}$ 는 닫힌 집합이다. $\square$
+($6$) $F_1,\ldots,\,F_m$ 이 닫힌 집합이라고 하자. $\left( \bigcup_{i=1}^m F_{i}\right)^c = \bigcap_{i=1}^m (F_i)^c$ 이며 (다) 에 의해 우변이 열린집합이므로 $\bigcup_{i=1}^m F_{i}$ 는 닫힌 집합이다. $\square$
 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-open_closed_sets}
 
@@ -444,7 +465,7 @@ $6$. $F_1,\ldots,\,F_m$ 이 닫힌 집합이라고 하자. $\left( \bigcup_{i=1}
 
 :::
 
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-closure}
 
@@ -455,6 +476,7 @@ $6$. $F_1,\ldots,\,F_m$ 이 닫힌 집합이라고 하자. $\left( \bigcup_{i=1}
 3. $\overline{E}$ 는 $E$ 를 포함하는 모든 닫힌 집합의 부분집합이다. 즉 $\overline{E}$ 는 $E$ 를 포함하는 가장 작은 닫힌 집합이다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -479,22 +501,24 @@ $3$ $F$ 가 $E$ 를 포함하는 닫힌집합이라면 $E'\subset F$ 이므로 $
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-open_closed_relative}
 
 거리공간 $X$ 에 대해 $E\subset Y \subset X$ 일 때 다음은 동치이다.
 
-1. $E$ 는 $Y$ 안에서 열려 있다.
+&emsp;($1$) $E$ 는 $Y$ 안에서 열려 있다.
 
-2. 어떤 $X$ 에서의 열린 집합 $G$ 에 대해 $E = Y \cap G$ 이다.
+&emsp;($2$) 어떤 $X$ 에서의 열린 집합 $G$ 에 대해 $E = Y \cap G$ 이다.
 :::
+
+</div></br>
 
 ::: {.proof}
 
-(1 $\implies$ 2) $p\in E$ 에 대해 $N_Y(p,\,\varepsilon)\subset Y$ 인 $\varepsilon_p>0$ 이 존재한다. $G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)$ 라고 하면 $G$ 는 열린 집합이며 $E\subset Y \cap G$ 이다. 또한 각각의 $p\in E$ 에 대해 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이므로 $Y \cap G \subset E$ 이다. 즉 $Y = Y \cap G$ 이다.
+($1 \implies 2$) $p\in E$ 에 대해 $N_Y(p,\,\varepsilon)\subset Y$ 인 $\varepsilon_p>0$ 이 존재한다. $G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)$ 라고 하면 $G$ 는 열린 집합이며 $E\subset Y \cap G$ 이다. 또한 각각의 $p\in E$ 에 대해 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이므로 $Y \cap G \subset E$ 이다. 즉 $Y = Y \cap G$ 이다.
 
-(2 $\implies$ 1) $G$ 가 열린집합이고 $E \subset G$ 이므로 각각의 $p\in E$ 에 대해 $N_X(p,\, \varepsilon_p) \subset G$ 인 $\varepsilon_p >0$ 이 존재하며 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이다. 이 때 $N_X(p,\, \varepsilon_p) \cap Y = N_Y (p,\,\varepsilon_p)$ 이므로 정의에 의해 $E$ 는 $Y$ 안에서 열려 있다. $\square$
+($2 \implies 1$) $G$ 가 열린집합이고 $E \subset G$ 이므로 각각의 $p\in E$ 에 대해 $N_X(p,\, \varepsilon_p) \subset G$ 인 $\varepsilon_p >0$ 이 존재하며 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이다. 이 때 $N_X(p,\, \varepsilon_p) \cap Y = N_Y (p,\,\varepsilon_p)$ 이므로 정의에 의해 $E$ 는 $Y$ 안에서 열려 있다. $\square$
 :::
 
 
@@ -536,36 +560,37 @@ $$
 
 즉 어떤 무한한 열린 덮게 $\{G_\alpha\}$ 를 잡더라도 그 가운데 유한개를 골라 $E$ 를 포함시킬 수 있다면 $E$ 는 옹골 집합이다.
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-compact_relative}
 
 거리공간 $X$ 와 $K\subset Y \subset X$ 에 대해 다음은 동치이다.
 
-1. $K$ 가 $X$ 안에서 옹골집합이다.
+&emsp;($1$) $K$ 가 $X$ 안에서 옹골집합이다.
 
-2. $K$ 가 $Y$ 안에서 옹골집합이다.
+&emsp;($2$) $K$ 가 $Y$ 안에서 옹골집합이다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
-(1 $\implies$ 2) $\{G_\alpha\}$ 를 $X$ 에서의 열린 덮개일 때 $\{V_\alpha = G_\alpha \cap Y\}$ 는 $Y$ 에서의 열린 덮개이며 $K \subset \bigcup_{\alpha}V_\alpha$ 이다. 유한개의 $\{G_\alpha\}$ 로 $K$ 를 덮을 수 있으므로 역시 유한개의 $\{V_\alpha\}$ 로 $K$ 를 덮을 수 있다. 
+($1 \implies 2$) $\{G_\alpha\}$ 를 $X$ 에서의 열린 덮개일 때 $\{V_\alpha = G_\alpha \cap Y\}$ 는 $Y$ 에서의 열린 덮개이며 $K \subset \bigcup_{\alpha}V_\alpha$ 이다. 유한개의 $\{G_\alpha\}$ 로 $K$ 를 덮을 수 있으므로 역시 유한개의 $\{V_\alpha\}$ 로 $K$ 를 덮을 수 있다. 
 
-(2 $\implies$ 1) $\{V_\alpha\}$ 를 $Y$ 에서의 $K$ 에 대한 열린 덮개라고 하자. @prp-open_closed_relative 에 의해 각각의 $V_\alpha$ 에 대해 $G_\alpha = V_{\alpha}\cap Y$ 를 만족하는 $X$ 에서의 열린 집합 $G_\alpha$ 가 존재하며 당연히 $K\subset \bigcup_{\alpha}G_{\alpha}$ 이다. 유한개의 $V_\alpha$ 가 $K$ 를 덮으므로 유한개의 $G_{\alpha}$ 는 $K$ 를 덮는다. $\square$
+($2 \implies 1$) $\{V_\alpha\}$ 를 $Y$ 에서의 $K$ 에 대한 열린 덮개라고 하자. @prp-open_closed_relative 에 의해 각각의 $V_\alpha$ 에 대해 $G_\alpha = V_{\alpha}\cap Y$ 를 만족하는 $X$ 에서의 열린 집합 $G_\alpha$ 가 존재하며 당연히 $K\subset \bigcup_{\alpha}G_{\alpha}$ 이다. 유한개의 $V_\alpha$ 가 $K$ 를 덮으므로 유한개의 $G_{\alpha}$ 는 $K$ 를 덮는다. $\square$
 
 :::
 
-
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-compact_set_is_closed}
 
 거리공간 $X$ 에서의 옹골집합은 닫힌 집합이다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 $K\subset X$ 가 옹골집합이라고 하자. 고정된 $p \in  X\backslash K$ 와 각각의 $q\in K$ 에 대해 반지름 $r$ 이 $\frac{1}{2}d(p,\,q)$ 보다 작은 $p$ 의 근방 $V_q$ 와 $q$ 의 근방 $W_q$ 를 잡을 수 있다. 집합족 $\{W_q\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개의 근방들을 모아 $K$ 를 덮을 수 있다. 이 유한개의 근방을 각각 $W_{q_1},\ldots,\,W_{q_n}$ 이라고 하고 이 $q_1,\,\ldots,\,q_n$ 의 근방을 정할때의 $p$ 의 근방을 각각 $V_{q_1},\ldots,\,V_{q_n}$ 이라고 하자.
@@ -574,7 +599,7 @@ $W=W_{q_1} \cup \cdots \cup W_{q_n}$ 라 하고 $V=V_{q_1}\cap \cdots \cap V_{q_
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-closed_subset_of_compact_set_is_compact}
 
@@ -582,22 +607,22 @@ $W=W_{q_1} \cup \cdots \cup W_{q_n}$ 라 하고 $V=V_{q_1}\cap \cdots \cap V_{q_
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
 거리공간 $X$ 에 대해 $F\subset K \subset X$ 이며 $K$ 는 옹골집합, $F$ 는 닫힌 집합이라고 하자. $\Gamma = \{V_\alpha\}$ 가 $F$ 에 대한 열린 덮개라면 $\Gamma' = \Gamma \cup \{F^c\}$ 는 $K$ 에 대한 열린 덮개이며, $K$ 가 옹골집합이므로 유한개의 $\Gamma'$ 의 원소만으로 $K$ 를 덮을 수 있으며 $\Gamma'\backslash \{F^c\}$ 는 $F$ 를 덮을 수 있다. $\square$
 
 :::
 
-
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-intersection_of_closed_and_compact_set}
 
 닫힌집합과 옹골집합의 교집합은 옹골집합이다.
 :::
 
-
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-finite_intesection_of_compact_sets}
 
@@ -605,6 +630,7 @@ $\Gamma = \{K_\alpha\}$ 가 거리공간 $X$ 에서의 옹골집합의 집합족
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -614,7 +640,7 @@ $X\backslash K_\alpha$ 는 열린집합이므로 $\{X\backslash K_\alpha \}$ 는
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-infinite_subset_in_compact_set_has_limit_point_in_compact_set}
 
@@ -622,13 +648,14 @@ $X\backslash K_\alpha$ 는 열린집합이므로 $\{X\backslash K_\alpha \}$ 는
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
 $K$ 의 모든 점이 $E$ 의 극한점이 아니라고 하자. $p\in K\backslash E$ 라면 $E$ 와 교집합이 없는 근방을 갖고 $p \in E$ 라면 교집합이 자기 자신 하나인 근방을 갖는다. 유한개의 이 근방으로는 $K$ 를 덮을 수 없으므로 $K$ 가 옹골집합이라는 가정에 모순된다. $\square$
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-intersection_of_intervals}
 
@@ -636,6 +663,7 @@ $\{I_n\}$ 이 $\mathbb{R}^1$ 에서의 닫힌 구간의 수열이며 $I_{n+1} \s
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -643,9 +671,7 @@ $I_n = [a_n,\,b_n],\, (a_n<b_n)$ 이라 하자. $a_n$ 은 위로 유계 이므�
 
 :::
 
-
-
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-intersection_of-k-cells}
 
@@ -653,8 +679,7 @@ $\{I_n\}$ 이 $\mathbb{R}^k$ 에서의 $k$-cell 의 수열이며 $I_n \subset I_
 
 :::
 
-
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-k_cell_is_compact}
 
@@ -662,6 +687,7 @@ $\{I_n\}$ 이 $\mathbb{R}^k$ 에서의 $k$-cell 의 수열이며 $I_n \subset I_
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -685,8 +711,7 @@ $$
 
 :::
 
-
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-heine_borrel}
 
@@ -694,27 +719,27 @@ $$
 
 $\mathbb{R}^k$ 의 부분집합 $E$ 에 대해 다음은 동치이다.
 
-1. $E$ 는 유계인 닫힌 집합이다.
+&emsp;($1$) $E$ 는 유계인 닫힌 집합이다.
 
-2. $E$ 는 옹골집합이다.
+&emsp;($2$) $E$ 는 옹골집합이다.
 
-3. $E$ 의 무한 부분집합은 $E$ 에서의 극한점을 가진다.
+&emsp;($3$) $E$ 의 무한 부분집합은 $E$ 에서의 극한점을 가진다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
-(1 $\implies$ 2) $E$ 가 유계이므로 $E$ 를 포함하는 $k$-cell 이 존재하며 @prp-closed_subset_of_compact_set_is_compact 에 의해 $E$ 는 옹골집합이다.
+($1 \implies 2$) $E$ 가 유계이므로 $E$ 를 포함하는 $k$-cell 이 존재하며 @prp-closed_subset_of_compact_set_is_compact 에 의해 $E$ 는 옹골집합이다.
 
-(2 $\implies$ 3) @prp-infinite_subset_in_compact_set_has_limit_point_in_compact_set 에 의해 성립한다.
+($2 \implies 3$) @prp-infinite_subset_in_compact_set_has_limit_point_in_compact_set 에 의해 성립한다.
 
-(3 $\implies$ 1) $E$ 가 유계가 아니라면 $n=1,\ldots$ 에 대해 $|a_n|>n,\, a_n\in E$ 인 집합 $\{a_n\}\subset E$ 를 생각 할 수 있으며 이는 가정에 위배된다. 따라서 $E$ 는 유계이다. $E$ 가 닫힌 집합이 아니라면 $E$ 의 부분집합의 극한점 가운데 $E$ 에 포함되지 않은 것이 존재한다. 이 점을 $x$ 라고 하자. 임의의 자연수 $n$ 에 대해 $d(x,\,x_n)<1/n$ 인 $x_n\in E$ 을 선택하여 $\{x_n\} \subset E$ 을 구성 할 수 있다. 이 $\{x_n\}$ 이 유한집합일 경우는 고려의 대상에서 제외되며, 무한집합 일 경우만 생각한다. 이 때 $x$ 는 $\{x_n\}$ 의 극한점이며 가정에 의해 $E$ 에 포함되어야 한다. 따라서 $E$ 는 닫힌 집합이다. $\square$
+($3 \implies 1$) $E$ 가 유계가 아니라면 $n=1,\ldots$ 에 대해 $|a_n|>n,\, a_n\in E$ 인 집합 $\{a_n\}\subset E$ 를 생각 할 수 있으며 이는 가정에 위배된다. 따라서 $E$ 는 유계이다. $E$ 가 닫힌 집합이 아니라면 $E$ 의 부분집합의 극한점 가운데 $E$ 에 포함되지 않은 것이 존재한다. 이 점을 $x$ 라고 하자. 임의의 자연수 $n$ 에 대해 $d(x,\,x_n)<1/n$ 인 $x_n\in E$ 을 선택하여 $\{x_n\} \subset E$ 을 구성 할 수 있다. 이 $\{x_n\}$ 이 유한집합일 경우는 고려의 대상에서 제외되며, 무한집합 일 경우만 생각한다. 이 때 $x$ 는 $\{x_n\}$ 의 극한점이며 가정에 의해 $E$ 에 포함되어야 한다. 따라서 $E$ 는 닫힌 집합이다. $\square$
 
 :::
 
-
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-bolzano_weierstrass}
 
@@ -723,6 +748,8 @@ $\mathbb{R}^k$ 의 부분집합 $E$ 에 대해 다음은 동치이다.
 $\mathbb{R}^k$ 에서의 유계인 무한집합은 $\mathbb{R}^k$ 에서 극한점을 가진다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -735,7 +762,6 @@ $\mathbb{R}^k$ 에서의 유계인 무한집합은 $\mathbb{R}^k$ 에서 극한�
 
 ## 연결집합
 
-
 ::: {.callout-note appearance="simple" icon="false"}
 
 ::: {#def-connected_set}
@@ -747,23 +773,524 @@ $\mathbb{R}^k$ 에서의 유계인 무한집합은 $\mathbb{R}^k$ 에서 극한�
 ::: 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-connected_set_in_R1}
 $E \subset \mathbb{R}^1$ 에서 다음은 동치이다.
 
-1. $E$ 는 연결집합이다.
+&emsp;($1$) $E$ 는 연결집합이다.
 
-2. $x,\,y\in E$, $x<z<y$ 이면 $z\in E$ 이다.
+&emsp;($2$) $x,\,y\in E$, $x<z<y$ 이면 $z\in E$ 이다.
 :::
+
+</div></br>
 
 ::: {.proof}
 
-(1 $\implies$ 2) $E$ 가 연결집합임을 가정하자. $x,\,y\in E$ 이며 $x<z<y$ 인데 $z\not\in E$ 라 하자. $A_1 = E \cap (-\infty,\, z)$, $B_1 = E \cap (z,\, \infty)$ 라 하면 $A_1\ne \varnothing$, $B_2 \ne \varnothing$ 이며 $A_1 \cup A_2 = E$ 이며 $\overline{A_1} \cap B_2 = \varnothing$, $A_1 \cap \overline{B_1} = \varnothing$ 이므로 $E$ 는 연결집합이 아니다. 따라서 $z\in E$ 이어야 한다.
+($1 \implies 2$) $E$ 가 연결집합임을 가정하자. $x,\,y\in E$ 이며 $x<z<y$ 인데 $z\not\in E$ 라 하자. $A_1 = E \cap (-\infty,\, z)$, $B_1 = E \cap (z,\, \infty)$ 라 하면 $A_1\ne \varnothing$, $B_2 \ne \varnothing$ 이며 $A_1 \cup A_2 = E$ 이며 $\overline{A_1} \cap B_2 = \varnothing$, $A_1 \cap \overline{B_1} = \varnothing$ 이므로 $E$ 는 연결집합이 아니다. 따라서 $z\in E$ 이어야 한다.
 
-(2 $\implies$ 1) $E$ 가 연결집합이 아님을 가졍하자. $E=A \cup B$ 이며 $\overline{A} \cap B= \varnothing$ $A \cap \overline{B}=\varnothing$ 이라 하자. $x\in A,\, y\in B$ 를 선택하자. 일반성을 잃지 않고 $x<y$ 라고 가정 할 수 있다. $z= \sup (A \cap [x,\,y])$ 라고 하자. $z\in \overline{A}$ 이므로 $z\not\in B$ 이다. 따라서 $x\le z<y$ 이다. 
+($2 \implies 1$) $E$ 가 연결집합이 아님을 가졍하자. $E=A \cup B$ 이며 $\overline{A} \cap B= \varnothing$ $A \cap \overline{B}=\varnothing$ 이라 하자. $x\in A,\, y\in B$ 를 선택하자. 일반성을 잃지 않고 $x<y$ 라고 가정 할 수 있다. $z= \sup (A \cap [x,\,y])$ 라고 하자. $z\in \overline{A}$ 이므로 $z\not\in B$ 이다. 따라서 $x\le z<y$ 이다. 
 만약 $z\not\in A$ 이면 $z\ne x\in A$ 이므로 $x<z<y$ 이다. $z\in A$ 이면 $z\not\in \overline{B}$ 이며 따라서 어떤 $\overline{z}$ 에 대해 $z<\overline{z}<y$, $\overline{z}\not\in B$ 이다. 즉 $x<\overline{z}<y$ 이며 $\overline{z}\not\in E$ 이다. $\square$
 
 :::
 
 </br>
 
+
+## 연습문제
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_6}
+
+#### Rudin 2.6
+
+$E'$ 은 $E$ 의 극한점의 집합이다. $E'$ 이 닫힌 집합이며 $E$ 와 $\overline{E}$ 가 같은 극한점을 가짐을 보여라. $E$ 와 $E'$ 은 같은 극한점을 갖는가?
+
+:::
+</div></br>
+
+::: {.solution}
+$x\notin E'$  이면 $N(x,\, \epsilon) \cap E = \varnothing$ 혹은 $\{x\}$ 인 $\epsilon>0$ 이 존재한다. $y\in N(x,\, \epsilon) \cap E'$ 이라면 @prp-limit_points_1 에 의해 $y$ 의 모든 근방에 무수히 많은 $E$ 의 점들이 포함되므로 $y\in N(x,\,\epsilon)$ 일 수 없다. 따라서 $N(x,\, \epsilon) \subset X\backslash E'$ 이므로 $X\backslash E'$ 은 열린 집합이다. 따라서 $E'$ 은 닫힌 집합이다.
+
+$\overline{E} = E \cup E'$ 이므로 $E$ 의 극한점은 $\overline{E}'$ 의 극한점이다. $x\in (\overline{E})'$ 이며 $x\not\in E'$ 라면 어떤 $x$ 의 근방은 $x$ 를 제외하면 $E'$ 의 원소는 포함하지 않고 $\overline{E}$ 의 원소만을 포함해야 한다. $y$ 를 $x$ 근방의 $\overline{E}\backslash E$ 에 속한 원소라면 $y\in E',\, y\not\in E$ 인데 $y$ 의 모든 근방은 무수히 많은 $E$ 의 원소를 포함해야 하므로 모순이다. 즉 $x\in (\overline{E})' \implies x\in E'$ 이므로 $\overline{E}' \subset E'$ 이다. 따라서 $\overline{E}$ 의 극한점과 $E$ 의 극한점은 같다.
+
+$E=\{ 1/n :n\in \mathbb{N}\}$ 일 때 $E'=\{0\}$ 이지만 $(E')'=\varnothing$ 이다. 따라서 $E' \ne (E')'$ 이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_7}
+
+#### Rudin 2.7
+
+$A_1,\,A_2,\,A_3,\ldots$ 가 거리공간의 부분집합일 때 다음을 보이시오.
+
+
+&emsp; ($1$) $B_n=\bigcup_{i=1}^n A_i$ 이면 $\overline{B_n} = \bigcup_{i=1}^n \overline{A}_i$ ($n=1,\,2,\ldots$).
+
+&emsp; ($2$) $B = \bigcup_{i=1}^\infty A_i$ 이면 $\overline{B} \supset \bigcup_{i=1}^\infty \overline{A}_i$.
+
+위의 ($2$) 에서 $\bigcup_{i=1}^\infty \overline{A}_i$ 와 $\overline{B}$ 가 다른 경우의 예를 드시오.
+:::
+
+</div></br>
+
+::: {.solution}
+($1$) $x\in \overline{B_n}$ 이면 $x\in B_n$ 이거나 $x\in {B_n}'$ 이다. $x\in B_n$ 이면 $x\in \bigcup_{i=1}^n \overline{A_i}$ 임은 자명하다. $x\in {B_n}'$ 이면 모든 $x$ 의 근방은 무한개의 $B_n$ 의 원소를 포함한다. <u>$B_n$ 이 유한개의 집합의 합집합이므로 최소한 하나의 $A_i$ 는 무한개의 원소를 포함한다 </u>.  즉 $x$ 는 어떤 $A_i$ 의 극한점이므로 $x\in \bigcup_{i=1}^n \overline{A_i}$ 이다.  즉 $\overline{B_n} \subset \bigcup_{i=1}^n \overline{A_i}$ 이다. $x\in \bigcup_{i=1}^n \overline{A_i}$ 이라면 $x$ 는 어떤 $A_i$ 의 극한점이다. $x\in \overline{A}_j$ 라면 $x$ 의 모든 근방은 무한개의 $A_j$ 의 원소를 포함하므로 $x$ 의 모든 근방은 무한개의 $B_n$ 의 원소를 포함한다. 따라서 $\bigcup_{i=1}^n \overline{A_i} \subset \overline{B_n}$ 이다. 즉  $\overline{B_n} = \bigcup_{i=1}^n \overline{A}_i$ 이다.
+
+($2$) $B = \bigcup_{i=1}^\infty A_i$ 이면 위에서 밑줄친 부분이 성립하지 않고 나머지는 성립하므로 $\bigcup_{i=1}^\infty \overline{A_i} \subset \overline{B}$  이다. 
+
+$A_i=\{1/i\}$ 라고 정의하면 $\overline{A_i}=\varnothing$ 이므로 $\bigcup_{i=1}^\infty \overline{A_i} =\varnothing$ 이지만 $\overline{B}=\{0\}$ 이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-open_set_limit_point}
+$E\subset \mathbb{R}^2$ 가 열린집합이면 $E$ 의 모든 점은 $E$ 의 극한점인가? $E$ 가 닫힌집합인 경우는?
+:::
+
+</div></br>
+
+::: {.solution}
+
+$E$ 가 열린집합이라고 하자. $p\in E$ 이면 어떤 $\varepsilon_p>0$ 에 대해 $N(p,\, \varepsilon_p) \subset E$ 이므로 $p$ 의 임의의 근방은 $p$ 이외의 $E$ 의 점을 포함한다. 따라서 $p$ 는 $E$ 의 극한점이다. 
+
+$E = \{(0,\,0)\} \cup ([1, 2]\times [1, 2]) \subset \mathbb{R}^2$ 는 닫힌집합이며 $(0,\,0) \in E$ 이지만 $(0,\,0)$ 은 극한점이 아니다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_9}
+
+#### Rudin 2.9
+
+$E$ 가 거리공간 $X$ 의 부분집합일 때 $E$ 의 모든 내점의 집합을 $\text{int}(E)$ 라고 한다. 다음을 보여라.
+
+&emsp; ($1$) $\text{int} (E)$ 는 열린집합이다.
+
+&emsp; ($2$) $\text{int}(E)$ 는 $E$ 에 포함되는 열린집합 중 가장 큰 열린집합이다. 
+
+&emsp; ($3$) $X\backslash (\text{int}(E)) = \overline{X\backslash E}$
+
+:::
+</div></br>
+
+::: {.solution}
+($1$) $x\in \text{int}(E)$ 이면 어떤 $\epsilon>0$ 에 대해 $N(x,\, \epsilon)\subset E$ 이다. $y\in N(x,\, \epsilon),\, y\ne x$ 이면 $N\left( y,\, \dfrac{\epsilon - d(x,\,y)}{2} \right) \subset N(x,\, \epsilon) \subset E$  이므로 $y\in \text{int}(E)$ 이다. 즉 $x\in \text{int}(E)$ 이면 $x$ 의 $E$ 에서의 어떤 근방이 $\text{int}(E)$ 에 포함된다. 따라서 $\text{int}(E)$ 는 열린집합이다. 
+
+($2$) $G \subset E$ 가 열린 집합이라고 하자. $x\in G$ 이면 $N(x,\, \epsilon)\subset E$ 인 $\epsilon>0$ 이 존재하며 $x\in \text{int}(E)$ 이다. 다라서 $G\subset E$ 이다. 즉 $\text{int}(E)$ 는 $E$ 에 포함되는 가장 큰 열린 집합이다.
+
+($3$) $X\backslash (\text{int}(E))$ 는 닫힌집합이므로 $X\backslash (\text{Int}(E)) = \overline{X\backslash (\text{Int}(E))}$    이다. $\text{int}{E}\subset E$ 이므로 $X\backslash E \subset X\backslash (\text{int}(E))$ 이다. ($A \subset B \implies \overline{A}\subset \overline{B}$ 는 @exr-intersections_union 에서 알 수 있다) 따라서 $\overline{X \backslash E} \subset \overline{X \backslash (\text{int}(E))} = X \backslash (\text{int}(E))$  이다. 이제 $X \backslash (\text{int}(E)) \subset \overline{X\backslash E}$ 임을 보이자. $x\in X\backslash (\text{int}E)$ 라면 $x\not\in E$ 이거나 $x\in E\backslash (\text{int}(E))$ 이다. $x\not\in E$ 이면 $x\in X\backslash E \subset \overline{X\backslash E}$ 이다. $x\in E\backslash (\text{int}(E))$ 이면 $x$ 의 모든 근방은 $E$ 에 포함 되지 않는다. 즉 $x$ 의 모든 근방은 $X\backslash E$ 의 원소를 포함하며 따라서 $x\in X\backslash E \subset \overline{X\backslash E}$ 이다. 따라서 $X \backslash (\text{int}(E)) \subset \overline{X\backslash E}$ 이다. 
+
+:::
+
+</br>
+
+다음은 문제를 풀기 위해 필요하며 별도로 언급할 가치가 있다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+::: {#prp-closed_set_and_boundary}
+
+거리공간 $X$ 와 그 부분집합 $A$ 를 생각하자. $x\in X$ 일 때 $\overline{A}$ 는 다음과 같다.
+
+$$
+\overline{A} = \{x\in X : \forall \varepsilon>0\; N(x,\, \varepsilon) \cap A \ne \varnothing\}
+$$
+
+:::
+</div></br>
+
+:::{.proof}
+@prp-limit_points_1 를 생각한다. $B=\{x\in X : \forall \varepsilon>0\; N(x,\, \varepsilon) \cap A \ne \varnothing\}$ 라 하고 $\overline{A}=B$ 임을 보이자. $A\subset B$ 임은 자명하다. 
+$x\in B\backslash A$ 이면 $x\in A'$ 이므로 $B\subset \overline{A}$ 이다. $x\in \overline{A}\backslash A$ 이면 $x\in B$ 이므로 $\overline{A} \subset B$ 이다. 즉 $\overline{A}=B$ 이다. $\square$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_2_7_6}
+
+#### 김김계 2.7.6
+
+$A\subset \mathbb{R}^n,\, x\in \mathbb{R}^n$ 일 때 임의의 $\varepsilon>0$ 에 대해 
+
+$$
+N(x,\, \varepsilon) \cap A \ne \varnothing,\qquad N(x,\, \varepsilon) \cap (\mathbb{R}^n \backslash A) \ne \varnothing
+$$
+
+일 때 $x$ 를 $A$ 의 경계점이라고 하며 $A$ 의 경계점의 집합을 $\partial A$ 라고 쓴다. 
+
+($1$) 임의의 $A\subset\mathbb{R}^n$ 에 대해 $\partial A = \overline{A} \cap \overline{\mathbb{R}^n \backslash A}$ 임을 보여라. 또한 $\partial A$ 는 항상 닫힌 집합임을 보여라.
+
+($2$) $A$ 가 열린집합이면 $A \cap \partial A = \varnothing$ 임을 보여라. 그 역이 성립하는지 살펴보아라.
+
+($3$) $A$ 가 닫힌집합이면 $\partial A \subset A$ 임을 보여라. 그 역이 성립하는지 살펴보아라.
+
+($4$) $A$ 가 열린집합이거나 닫힌집합이면 $\text{int}(\partial A) = \varnothing$ 임을 보여라. 그 역이 성립하는지 살펴보아라.
+
+($5$) $\text{int}(\partial A) \ne \varnothing$ 인 집합 $A$ 의 예를 들어라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) @prp-closed_set_and_boundary 에 의해 $\partial A = \overline{A} \cap \overline{\mathbb{R}^n\backslash A}$ 이다. 닫힌 집합의 교집합으로 정의되므로 $\partial A$ 는 닫힌 집합이다.
+
+($2$) $A$ 가 열린집합이고 $x\in A$ 이면 어떤 $A$ 의 근방에 $A$ 에 포함되며 그 근방과 $\mathbb{R}^n\backslash A$ 와의 교집합은 공집합이다. 따라서 $A \cap \partial A = \varnothing$ 이다.
+
+이제 그 역이 성립하는지 확인해보자.
+
+$$
+\begin{aligned}
+\varnothing = A \cap \partial A = A \cap (\overline{A} \cap \overline{\mathbb{R}^n \backslash A}) = (A \cap \overline{A}) \cap \overline{\mathbb{R}^n \backslash A} = A\cap \overline{\mathbb{R}^n \backslash A}
+\end{aligned}
+$$
+
+이므로 $\overline{\mathbb{R}^n \backslash A} \subset \mathbb{R}^n \backslash A$ 이다. 즉 $\overline{\mathbb{R}^n \backslash A} = \mathbb{R}^n \backslash A$ 이므로 $A$ 는 열린집합이다. 
+
+($3$) $A$ 가 닫힌집합이면 $A=\overline{A}$ 이며 $\partial A \subset \overline{A}$ 이므로 $\partial A \subset A$ 이다. 
+
+이제 그 역이 성립하는지 확인해보자 $\partial A \subset A$ 이면 $\partial A \cap \mathbb{R}^n \backslash A = \varnothing$ 이므로 (2) 에 의해 $\mathbb{R}^n \backslash A$ 가 열린집합이다. 따라서 $A$ 는 닫힌집합이다.
+
+($4$) $A$ 가 열린 집합이면 (2) 에 의해 $\text{int}(\partial A) \subset \mathbb{R}^n\backslash A$ 이며 이며 따라서 $x\in \text{int}(\partial A)$ 일 때 어떠 $\varepsilon >0$ 에 대해 $N(x,\, \varepsilon) \subset \text{int}(\partial A) \subset \mathbb{R}^n \backslash A$ 이므로 $N(x,\, \varepsilon)\cap A = \varnothing$ 이 된다. 따라서 $x\not\in\partial A$ 이다. 즉 $A$ 가 열린집합이면 $\text{int}(\partial A)= \varnothing$ 이다. $A$ 가 닫힌집합이면 $\mathbb{R}^n \backslash A$ 가 열린집합이므로 $\text{int}(\partial A) = \varnothing$ 이다. 
+
+이제 그 역이 성립하는지 확인하자. $A$ 를 $A=\{ (1, y) : y\in \mathbb{Q}\}\subset \mathbb{R}^2$ 이라 정의하자. $\text{int}(\partial A) = \varnothing$ 이지만 $A$ 는 열린집합도 닫힌집합도 아니다. 
+
+($5$) $\mathbb{R}^1$ 에서 $\partial \mathbb{Q}=\mathbb{R}$ 이므로 $\text{int} (\partial \mathbb{Q}) = \mathbb{R}$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_2_7_8}
+
+#### 김김계 2.7.8
+
+비어 있지 않은 집합 $A \subset\mathbb{R}^n$ 와 한 점 $x\in \mathbb{R}^n$ 에 대하여,
+
+$$
+\rho(x,A)= \inf \{ \|x-y\| : y \in A\}
+$$
+
+라 정의하자.
+
+($1$) 집합 $N(A,\varepsilon) = \{x\in \mathbb{R}^n : \rho(x, A)<\varepsilon\}$ 이 열린집합임을 보여라.
+
+($2$) $\overline{N(A,\varepsilon)} = \{x\in \mathbb{R}^n : \rho (x,A)\le \varepsilon\}$ 임을 보여라.
+
+($3$) 집합 $A$ 가 닫힌집합일 필요충분조건이 $A= \bigcap_{\varepsilon>0} \overline{N(A,\varepsilon)}$ 임을 보여라.
+
+($4$) 문제 ($3$) 에서 $\overline{N(A,\varepsilon)}$ 을 $N(A,\varepsilon)$ 으로 바꾸면 어떻게 되는가?
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$)  $y\in N(A,\varepsilon)$ 이라 하자. 어떤 $a\in A$ 에 대해 $\|y-a\|=d_y<\varepsilon$ 이다.  $N\left( y,\, \dfrac{\varepsilon-d_y}{2}\right)$ 를 생각하자. $z\in N\left( y,\, \dfrac{\varepsilon-d_y}{2}\right)$ 라면  $\|y-z\|<\dfrac{\varepsilon-d_y}{2}$ 이므로
+$$
+\|z-a\|< \|z-y\| + \|y-a\| < \dfrac{\varepsilon-d_y}{2} + d_y = \dfrac{\varepsilon+d_y}{2}<\varepsilon
+$$
+이다. $N\left( y,\, \dfrac{\varepsilon-d_y}{2}\right) \subset N(A,\varepsilon)$ 이므로 $N(A,\varepsilon)$ 은 연린 집합이다.
+
+($2$) $U\subset \mathbb{R}^n$ 가 열린 집합일 때 $\overline{U} =U \cup \partial U$ 임을 보이자. 앞서 우리는 @exr-boundary 에서 $\partial U = \overline{U} \cap \overline{\mathbb{R}^n \backslash U}$ 임을 보았다. 또한 $U$ 가 열린집합이므로  $U \cap \partial U = \varnothing$ 이다. 즉 $\partial U \subset \overline{U}\backslash U$ 이므로 $\partial U \subset U'\backslash U$ 이다. $x\in U'\backslash U$ 라 하자. $x\not\in U$ 이므로 $x\in \partial U$ 이다. 따라서 $\partial U = A'\backslash U$ 이므로 $\overline{U} = U' \cup U = \partial U \cup U$ 이다. 
+
+$N_A =N(A,\varepsilon)$ 는 열린집합 이므로 @exr-boundary 의 ($2$) 에 의해 $\partial N_A \cap N_A=\varnothing$ 이다. $y\in \mathbb{R}^n$ 에 대해 $\rho(y,A)=d_y>\varepsilon$ 이라 하자. $N\left(y, \dfrac{d_y-\varepsilon}{2}\right) \cap N_A=\varnothing$ 이므로 $y \not\in \partial N_A$ 이다. $\rho(y,A)=\varepsilon$ 이라 하자. 임의의 $0<\delta<\varepsilon$ 에 대해 $N(y,\, \delta)\cap N_A \ne \varnothing$ 이며 $N(y,\, \delta)\cap \mathbb{R}^N\backslash N_A \ne \varnothing$ 임을 보이자. 
+$z_1= a+\dfrac{\varepsilon+\delta/2}{\varepsilon}(y-a)$ 라 하자.
+
+$$
+\|z_1-y\| = \dfrac{\delta}{2\varepsilon}\|y-a\| = \dfrac{\delta}{2}
+$$
+
+이므로 $z_1\in N(y,\, \delta)$ 이며 
+
+$$
+\|z_1-a\| = \varepsilon + \dfrac{\delta}{2}> \varepsilon
+$$
+
+이므로 $z_1\in \mathbb{R}^n\backslash N_A$ 이다. $z_2= a+ \dfrac{\varepsilon - \delta/2}{\varepsilon}(y-a)$ 이라 하면 $\|z_2-y\| = \dfrac{\delta}{2}$ 이므로 $z_2\in N(y,\,\delta)$ 이며, $\|z_2-a\| =\varepsilon - \dfrac{\delta}{2}< \varepsilon$ 이므로 $z_2\in N_A$ 이다. 즉
+
+$$
+\partial N_A = \{x\in \mathbb{R}^n : \rho(x,\, A)=\varepsilon\}
+$$
+
+이다. $\delta'>\varepsilon$ 인 경우 $N(y,\, \delta')$ 는 $0<\delta<\varepsilon$ 인 $N(y,\, \delta)$ 를 포함하므로 역시 성립한다. 따라서, 
+
+$$
+\overline{N_A} = N_A \cup \partial N_A = \{x\in \mathbb{R}^n : \rho(x,\, A) \le \varepsilon\}
+$$
+
+이다. 
+
+($3$) 임의의 $\varepsilon>0$ 에 대해 $A \subset N(A, \varepsilon) \subset \overline{N(A, \varepsilon)}$ 이므로 $A \subset \bigcap_{\varepsilon>0} \overline{N(A,\varepsilon)}$ 이다. 임의의 $\varepsilon>0$ 에 대해 $x\in \overline{N(A,\varepsilon)}$ 이면 어떤 $a\in A$ 에 대해 $\inf_{a\in A} \|x-a\|\le \varepsilon$ 이어야 하는데 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $x\in A$ 이거나 $x\in A'$ 이어야 한다. 즉 $\bigcap_{\varepsilon>0} \overline{N(A,\varepsilon)} \subset \overline{A}$ 이므로
+
+$$
+A \subset \bigcap_{\varepsilon>0} \overline{N(A, \varepsilon)} \subset \overline{A}
+$$
+
+이다. $A=\bigcap_{\varepsilon>0} \overline{N(A,\varepsilon)}$ 이면 $A$ 는 닫힌 집합의 교집합이므로 닫힌 집합이다. $A$ 가 닫힌 집합이면 $A=\overline{A}$ 이므로 $A=\overline{A}= \bigcap_{\varepsilon>0} \overline{N(A, \varepsilon)}$ 이다.
+
+
+($4$) $N(A, \varepsilon) \subset \overline{N(A, \varepsilon)}$ 인데 $\overline{N(A, \varepsilon)} \subset N(A, 2\varepsilon)$ 이므로 $\bigcap_{\varepsilon > 0} N(A, \varepsilon) = \bigcap_{\varepsilon >0} \overline{N(A, \varepsilon)}$ 이다. 따라서 $N(A, \varepsilon)$ 에 대해서도 성립한다.
+ 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_2_7_9}
+
+##### 김김계 2.7.9
+
+
+(<b> Note : 함수의 연속에 대한 지식이 필요함</b>) 집합 $\{\sin n : n = 1,\,2,\ldots\}$ 가 구간 $[-1,\,1]$ 안에서 조밀함을 보여라. 또한, $\theta$ 가 무리수일 때 $\{e^{2\pi i n \theta} : n=1,\,2,\ldots\}$ 이 단위원 $\{e^{2\pi i t} : t\in [0,\,1)\}$ 안에서 조밀함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) 임의의 무리수 $\phi$ 에 대해 $\{n\phi\; (\text{mod}\;1) : n\in \mathbb{Z}\}$ 은 $[0,\,1)$ 에서 조밀함을 보이자.
+
+함수 $[x]$ 는 $x$ 보다 크지 않은 정수중 가장 큰 값을 의미한다. 실수 $x$ 에 대해 $x (\text{mod}\;1) = x-[x]$ 이다. 임의의 양의 정수 $m$ 에 대해 $[0,\,1)$ 구간을 $m$ 개의 $I_{m, k}=\left[ \dfrac{k}{m}, \dfrac{k+1}{m}\right),\, k=0,\ldots,\, m-1$ 로 나눌 수 있다. 이 때 $k\ne k' \implies I_{m,k} \cap I_{m,k'} = \varnothing$ 이며 $\displaystyle \bigcup_{k=0}^{m-1} I_{m,k} = [0,\,1)$ 이다. 어떤 서로 다른 정수 $n_1,\,n_2$ 에 대해서도 $n_1 \phi \;(\text{mod}\; 1) \ne n_2 \phi \;(\text{mod}\; 1)$ 이다. 그렇지 않다면 $(n_1-n_2)\phi \in \mathbb{Z}$ 인데 $\phi$ 가 무리수인 조건에 위배된다. 그렇다면 비둘기 집 원리에 의해 어떤 서로 다른 두 정수 $n_1,\, n_2$ 에 대해 $n_1\phi \;(\text{mod}\;1)$ 과 $n_2\phi \;(\text{mod}\;1)$ 을 동시에 포함하는 $I_{m,k}$ 가 존재한다. 그렇다면
+$$
+|(n_2-n_1)\phi \; (\text{mod}\;1)| =\left| (n_2-n_1) \phi -[(n_2-n_1)\phi] \right|< \dfrac{1}{m}
+$$
+이다. 그런데 $(n_1-n_2)\phi \; (\text{mod}\;1) \in \{n\phi \;(\text{mod}\;1)\}$ 이다. $n\phi \;(\text{mod}\;1) = h<\frac{1}{m}$ 이라면 각각의 $k=0,\,1,\ldots,\, m-1$ 에 대해 적당한 자연수 $p_k$ 를 곱하여  $p_kn\phi \;(\text{mod}\;1) =p_k h\in I_{m, k}$  가 되도록 할 수 있다. 즉 임의의 $r\in [0,\,1)$ 에 대해 $r$ 과의 차이가 $1/m$ 보다 작은 $\{n\phi\; (\text{mod}\;1) : n\in \mathbb{Z}\}$ 의 원소를 찾을 수 있으며 이 이는 임의의 자연수 $m$ 에 대해 성립하므로 $r$ 은 $\{n\phi\; (\text{mod}\;1) : n\in \mathbb{Z}\}$ 의 닫힘에 포함된다. 즉 $\{n\phi\; (\text{mod}\;1) : n\in \mathbb{Z}\}$ 은 $[0,\,1)$ 에서 조밀하다. 
+
+($2$) 임의의 무리수 $\phi$ 에 대해 $\{m+n\phi : m,\, n \in \mathbb{Z}\}$ 는 $\mathbb{R}$ 에서 조밀하다. 
+
+$r\in \mathbb{R}$ 은 어떤 정수 $m$ 에 대해 $m\le r < m+1$ 이므로 성립한다. 
+
+($3$) $\{ \sin n : n\in \mathbb{N}\}$ 는 $[-1,\,1]$ 에서 조밀함을 보이자. 
+
+$\{ \sin n : n\in \mathbb{N}\} =\left\{ \sin 2\pi x : x = \dfrac{n}{2\pi},\, n\in \mathbb{N}\right\}$ 이다.  $\dfrac{1}{2\pi}$ 가 무리수이므로  $X=\left\{\dfrac{n}{2\pi} \;(\text{mod}\;1): n \in \mathbb{N} \right\}$ 은 $[0,\,1)$ 에서 조밀하다. 
+
+$r\in [-1,\,1]$ 이라 하자. $\theta = \dfrac{1}{2\pi}\sin^{-1}(r)$ 이라 할 때 임의의 $\delta>0$ 에 대해  $|\sin (2\pi \theta)- \sin (2\pi x)|<\delta$ 를 만족하는 $x\in X$ 가 존재함을 보이자. 
+$$
+|\sin (2\pi \theta) - \sin (2 \pi x)| = \left|2 \cos \left(\dfrac{2\pi (\theta+x)}{2}\right) \sin \left(\dfrac{2\pi (\theta-x)}{2}\right)\right| \le 2 \left| \sin \left(\dfrac{2\pi (\theta-x)}{2}\right)\right|
+$$
+이다. 그런에 우리는 $|x|\ge |\sin (x)|$ 임을 안다. (가장 간단한 증명은 미분을 이용한 증명이다.  미분을 사용하지 않는 증명도 가능하지만 여기서는 제시하지 않는다.) 따라서, 
+$$
+|\sin (2\pi \theta) - \sin (2 \pi x)|  \le 2\pi |\theta-x|
+$$
+이다. $X$ 가 $[0,\,1)$ 에서 조밀하므로 우리는 $| \theta - x|<\dfrac{\delta}{2\pi}$ 가 되는 $x \in X$ 를 찾을 수 있다. 즉 임의의 $\delta>0$ 에 대해 $| r - \sin n|< \delta$ 가 되는 $n\in \mathbb{N}$ 이 존재하며 이는 $\{\sin n :n \in \mathbb{N}\}$ 이 $[-1,\,1]$ 에서 조밀함을 의미한다. 
+
+($4$) $\theta$ 가 무리수일 때 $\{e^{2\pi i n \theta} : n=1,\,2,\ldots\}$ 이 단위원 $\{e^{2\pi i t} : t\in [0,\,1)\}$ 안에서 조밀함을 보이자.
+
+임의의 $\delta>0$ 에 대해 $|e^{2\pi i t}-e^{2\pi i n \theta}|<\delta$ 를 만족하는 $n\in \mathbb{N}$ 이 존재함을 보이면 된다. 
+
+$$
+\begin{aligned}
+|e^{2\pi i t} - e^{2 \pi i n \theta}| &= | (\cos (2\pi t) - \cos (2 \pi n \theta))+ i(\sin (2\pi t) - \sin (2 \pi n \theta)) | \\
+&\le | \cos (2\pi t) - \cos (2 \pi n \theta)| + |\sin (2\pi t) - \sin (2 \pi n \theta)| \\
+&= 2 \left| \sin (\pi(t+n\theta)) \sin (\pi(t-n\theta))\right| + 2 \left| \cos (\pi(t+n\theta)) \sin (\pi(t-n\theta))\right|  \\
+&\le 4 | \sin (\pi (t- n \theta)) \\
+&\le 4 \pi |( t-n\theta)| \\
+\end{aligned}
+$$
+
+$X=\{n\theta \; (\text{mod}\;1) :  n\in \mathbb{N}\}$ 이 $[0,\,1)$ 에서 조밀하므로 임의의 $t\in [0,\,1)$ 에 대해 $|t-x|< \dfrac{\delta}{4\pi}$ 를 만족하는 $x\in X$ 이 존재한다. 따라서 $\{e^{2\pi i n \theta} : n=1,\,2,\ldots\}$ 는 단위원 $\{e^{2\pi i t} : t\in [0,\,1)\}$ 안에서 조밀하다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_2_7_20}
+
+#### 김김계 2.7.20
+
+만일 $A \subset \mathbb{R}^n$ 과 $B\subset \mathbb{R}^m$ 이 옹골집합이면 그 곱집합 $A\times B \subset \mathbb{R}^{m+n}$ 도 옹골집합임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$X\subset A\times B$ 가 무한집합이라 하자. @thm-heine_borrel 에 의해 $X$ 가 $A\times B$ 에서의 극한점을 가지면 $A\times B$ 는 옹골집합이다. 
+
+$$
+\begin{aligned}
+X_A &= \{(x_1,\ldots,\,x_n) : (x_1,\ldots,\,x_n,\, x_{n+1},\ldots,\,x_{n+m}) \in X\}, \\
+X_B &= \{(x_{n+1},\ldots,\,x_{n+m}) : (x_1,\ldots,\,x_n,\, x_{n+1},\ldots,\,x_{n+m}) \in X\}
+\end{aligned}
+$$ 
+
+라 하면 $X_A \subset A,\, X_B \subset B$ 이다. $X_A,\,X_B$ 가 각각 무한집합이며 $A,\,B$ 가 옹골집합이므로 $A,\,B$ 에서의 극한점을 가지며 $a,\,b$ 가 각각 $X_A,\,X_B$ 의 극한점이라 할 때 $(a,\,b)\in A\times B$ 는 $X$ 의 극한점이다. 따라서 $A\times B$ 는 옹골집합이다.  
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-separated_set}
+
+#### Rudin 2.19
+
+거리공간 $X$ 와 그 부분집합 $A,\,B$ 에 대해 다음을 보여라.
+
+&emsp;  ($1$) $A$ 와 $B$ 가 닫힌집합이며 교집합이 공집합이라면 $A$ 와 $B$ 는 분리되었음을 보이시오.
+
+&emsp; ($2$) ($1$) 이 열린 집합 $A$, $B$ 에 대해서도 분리되었음을 보이시오
+
+&emsp; ($3$) 고정된 $p\in X,\, \delta > 0$ 에 대해 $A=N_X(p,\, \delta)$ 일 때 $B$ 를 $<$ 대신 $>$ 를 이용하여 정의하시오. $A$ 와 $B$ 가 분리되었음을 보이시오.
+
+&emsp; ($4$) 최소한 두개 이상의 점을 갖는 연결된 거리공간은 uncountable 임을 보이시오. (힌트 : $3$ 을 이용할것)
+ 
+:::
+
+</div></br>
+
+::: {.solution}
+[연결집합의 정의](2_1_basic_topology.qmd#def-connected_set) 를 참고한다.
+
+($1$) $A,\,B$ 가 닫혀있으면 $A=\overline{A},\, B= \overline{B}$ 이다. 연결집합의 정의에 의해 닫혀있다.
+
+($2$) $A,\,B$ 가 열린집합이며 $A \cap B = \varnothing$ 이라 하자. $x\in A \cap \overline{B}$ 이면 $x\in A$ 이므로, $N_X(x,\, \varepsilon)\subset A$ 인 $\varepsilon>0$ 이 존재하는데 $N_X \cap B=\varnothing$ 이므로 $x\in \overline{B}$ 일 수 없다. 따라서 $x \not\in A \cap \overline{B}$ 이다. 즉 $A \cap \overline{B} =\varnothing$ 이다. 같은 방식으로 $\overline{A}\cap B=\varnothing$ 임을 보일 수 있다. 즉 열린집합 $A,\,B$ 가 $A \cap B = \varnothing$ 이면 $A$ 와 $B$ 는 분리되어 있다.
+
+($3$) $A=N_X(p,\, \delta),\, B=\{x\in X : d(x,\, p)> \delta\}$ 이며 $B$ 는 열린집합이다. $A \cap B = \varnothing$ 이므로 ($2$) 에 의해 $A$ 와 $B$ 는 분리되었다.
+
+($4$) 우선 $A_1 \subset A$ 일 때 $\overline{A_1}\subset \overline{A}$ 이다. 따라서 $A,\,B$ 가 분리된 $X$ 의 두 부분집합이고 $A_1\subset A,\, B_1 \subset B$ 이면 $A_1$ 과 $B_1$ 은 분리되어 있다.
+
+$p,\,q \in A$, $p \ne q$ 이며 $A$ 가 연결집합이라고 하자. $r<d(p,\, q)$ 일 때 $d(p,\, x)=r$ 인 $x\in A$ 가 존재하지 않는다면 $3$ 에 의해 $p,\,q$ 가 각각 연결되지 않은 두 집합에 속할 수 있으며, 따라서 $p$ 와 $q$ 를 포함하는 집합은 연결집합이 아니다. 즉 모든 $r\in \mathbb{R},\, r<d(p,\,q)$ 에 대해 $r=d(p,\,x)$ 를 만족하는 $x\in A$ 가 존재히야 하므로 $A$ 는 uncountable 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_22}
+
+#### Rudin 2.22
+
+거리공간 $X$ 의 어떤 부분집합 $E$ 에 대해 $E$ 가 가산무한집합이며 $\overline{E}=X$ 일 때 $X$ 를 **separable** 이라 한다. $\mathbb{R}^k$ 가 separable 임을 보이시오.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\mathbb{Q}^k$ 는 $\mathbb{R}^k$ 의 countable dense subset 이다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_23}
+
+#### Rudin 2.23
+
+다음 조건을 만족하는 $X$ 에서의 열린 집합족 $\{V_\alpha\}$ 을 $X$ 에 대한 **기저(base)** 라고 한다. 
+
+>모든 $x\in X$ 와 $x$ 를 포함하는 모든 열린 집합 $G\subset X$ 에 대해 $x\in V_\alpha \subset G$ 를 만족하는 $V_\alpha\in \{V_\alpha\}$ 가 존재한다. 
+
+즉 $X$ 에서의 모든 열린 집합은 $\{V_\alpha\}$ 의 부분 집합족의 합집합으로 표현 할 수 있다. 모든 separable 거리 공간은 가산인 기저를 가짐을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$X$ 가 separable 거리공간 이므로 어떤 집합 $E\subset X$ 가 countable 이고 $\overline{E}=X$ 이다. $y\in E$ 에 대해 $\{N_X(y, q): y\in E, q>0, q\in \mathbb{Q}\}$ 는 가산의 열린 집합족이다. $x\in G$ 이며 $G$ 가 열린 집합이라고 하자. $N_X(x,\, \delta)\subset G$ 인 $\delta>0$ 이 존재하며, $\overline{E}=X$ 이므로 $\|x-y\|_X =d_y< \delta/2$ 인 $y\in E$ 가 존재한다. 또한 $d_y< q < \delta/2$ 인 $q\in \mathbb{Q}$ 가 존재하며, $x\in N_X(y,\, q) \subset N_X(x,\, \delta)$ 이다. 즉 $\{N(y, q): y\in E, q>0, q\in \mathbb{Q}\}$ 는 $X$ 의 기저이다. 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_24}
+
+#### Rudin 2.24
+
+거리공간 $X$ 의 모든 무한 집합은 극한점을 가진다고 하자. 이 때 $X$ 는 separable 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+임의의 정해진 $\delta>0$ 를 생각하자. $x_1\in X$ 를 임의로 고른다. 선택된 $x_1,\ldots,\,x_j$ 에 대해 $\|x_i-x_{i+1}\|_X \ge \delta,\, \forall i=1,\ldots,\, j$ 가 되도록 $x_{j+1}$ 을 선택한다고 하자. 이 과정을 무한번 할 수 있다면, $X$ 의 모든 무한 집합은 극한점을 가진다는 가정에 위배된다. 따라서 유한번의 과정 후에 더 이상 진행 할 수 없어야 한다.
+
+유한개의 $\delta$ 를 반경으로 하는 근방으로 $X$ 를 덮을 수 없다면 위의 과정이 무한번 반복 될 수 있어야 한다. 따라서 유한개의 $\delta$ 를 반경으로 하는 근방으로 $X$ 를 덮을 수 있다. $\delta>0$ 에 대한 이 근방의 중심의 집합을 $S_\delta$ 라고 하자. $E=\bigcup_{n=1}^\infty S_{1/n}$ 는 countable subset of $X$ 이며 $\overline{E}=X$ 이다. 즉 $X$ 는 separable 하다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_25}
+
+#### Rudin 2.25
+
+모든 옹골집합 $K$ 는 가산의 기저를 가짐을 보여라. 또한 $K$ 가 separable 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+임의의 $n\in \mathbb{N}$ 에 대해 $\left\{ N (x,1/n) : x\in K \right\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개만을 선택하여 $K$ 를 덮을 수 있다. 이 유한개의 근방의 중심을 $x^n_1,\ldots,\,x^n_{m_n}$ 이라 하고 $N^n_i = N(x_i,\, 1/n)$ 이라 하자. $\{N^n_i : n=1,\,2,\ldots,\, i=1,\ldots,\, m_n\}$ 는 countable set 이며 $K$ 의 기저이고 $E=\{x^n_i : n=1,\,2,\ldots,\, i=1,\ldots,m_n,\}$ 일 때 $\overline{E}=K$ 이므로 $K$ 는 separable 이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_26}
+
+#### Rudin 2.26
+
+$X$ 가 거리 공간이며 모든 $X$ 의 무한 부분집합은 극한점을 갖는다고 하자. $X$ 가 옹골집합임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+@exr-rudin_2_24 에 의해 $X$ 는 separable 이다. @exr-rudin_2_23 에 의해 $X$ 는 countable base 를 갖는다. 이제 $\{G_\alpha\}$ 를 $X$ 에 대한 열린 덮개라고 하자. $\{G_\alpha\}$ 가 불가산 집합족이면 가산무한개의 $\{G_\alpha\}$ 의 부분집합족으로 $X$ 를 덮을 수 있음을 보이자. $\{\Theta_i\}$ 를 $X$ 의 countable basis 라 하자. 각각의 $G_\alpha$ 는 $\{\Theta_i\}$ 의 부분 합집합으로 표현 할 수 있으며 $\{\Theta_i\}$ 의 부분합집합의 갯수는 가산무한이다(@thm-countable_union_of_countable_sets). 따라서 가산무한개의 $\{G_\alpha\}$ 의 부분집합족으로 $X$ 를 덮을 수 있다. 이것을 $\{G_i:i\in\mathbb{N}\}$ 이라 하자. $\varnothing \not\in \{G_i\}$ 라고 정해도 무방하다. 이제 어떤 유한개의 $\{G_i\}$ 의 부분집합족도 $X$ 를 덮을 수 없음을 가정하자. 
+
+$F_n = X\backslash \left(\bigcup_{i=1}^n G_i \right)$ 은 닫힌 집합이다. $F_{n+1} \subset F_{n}$ 이고 $F_{n+1}\ne F_n$ 이다. 또한 $F_n \ne \varnothing$ 이며 $\bigcap_n F_n = \varnothing$ 이다. $\{y_n \in F_n \backslash F_{n+1}: n\in \mathbb{N}\}$ 일 때 이 집합은 무한집합이므로 극한점을 가져야 한다. 또한 $\{y_n,\,y_{n+1},\cdots\}\subset F_{n}$ 이다. 각각의 $F_n$ 이 닫힌 집합이므로 각각의 $F_n$ 이 이 극한점을 포함해야 한다. 즉 $\bigcap F_n \ne \varnothing$ 이어야 하는데 이는 모순이다. 따라서 유한개의 $\{G_i\}$ 로 $X$ 를 덮을 수 있으며, 따라서 $X$ 는 옹골집합이다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_29}
+
+##### Rudin 2.29
+
+모든 $\mathbb{R}^1$ 의 열린 집합은 서로소인 열린 구간의 가산 집합족의 합집합임을 보이시오.
+
+:::
+</div></br>
+
+::: {.solution}
+
+$V\subset \mathbb{R}$ 이 불가산개의 열린 구간의 합집합이라고 하자. 즉 $V=\bigcup_{\alpha} I_{\alpha}$, $\alpha \ne \beta \implies I_{\alpha} \cap I_{\beta} = \varnothing$ 이다. @exr-rudin_2_22 에서 $\mathbb{R}$ 이 separable 임을 보였다. 또한 @exr-rudin_2_23 으로부터 $\mathbb{R}$ 은 가산무한개의 기저를 가짐을 안다. 따라서 각각의 $I_\alpha$ 는 이 기저의 부분 합집합이다. 그런데 가산무한개의 집합족의 부분합집합의 갯수는 가산무한개이므로 서로 다른 불가산개의 열린 구간이 존재 할 수 없다(@exr-rudin_2_26). 따라서 열린 집합 $V$ 는 가산개의 열린 구간의 합집합이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-kkk_2_7_24}
+
+#### 김김계 2.7.24
+
+실수축 $\mathbb{R}$ 의 부분집합 $A$ 가 열린집합이면서 동시에 닫힌집합이면 $A=\mathbb{R}$ 이거나 $A=\varnothing$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\mathbb{R}$ 과 $\varnothing$ 이 열린집합이며 동시에 닫힌집합임은 쉽게 보일 수 있다. 이제 $A\ne \mathbb{R}$,  $A \ne \varnothing$ 인 경우만 생각한다. $x\not\in A$ 이면 $\mathbb{R}\backslash A$ 가 열린집합이므로 어떤 $\varepsilon>0$ 에 대해 $N(x,\, \varepsilon) \subset \mathbb{R}\backslash A$ 이어야 한다. $x$ 를 포함하는 $\mathbb{R}\backslash A$ 의 부분집합 가운데 가장 큰 열린 구간 $I=(x-a,\, x+b)$ 를 생각하자.
+
+$x-a\in \mathbb{R}\backslash A$ 이면 $\mathbb{R}\backslash A$ 가 열린 집합이므로 $x-a$ 를 포함하는 어떤 구간이 $\mathbb{R}\backslash A$ 에 포함되어야 하므로 $I$ 가 $x$ 를 포함하는 가장 큰 열린 구간이라는 가정에 모순된다. 마찬가지로 $x+b\not\in \mathbb{R}\backslash A$ 이다. 그런데 $\mathbb{R}\backslash A$ 는 닫힌 집합이므로 $x-a\in \mathbb{R}\backslash A$ 이어야 한다. 따라서 $A$ 는 공집합이거나 $\mathbb{R}$ 이어야 한다.
+
+:::

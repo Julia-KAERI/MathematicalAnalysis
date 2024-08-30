@@ -3,3 +3,44 @@
 This is a Quarto book.
 
 To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+
+
+명제는  다음과 같이 표기한다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-example}
+
+자연수는 무한집합이다.
+:::
+
+
+</div>
+
+</br>
+
+예제(example) 은 다음과 같이 표기한다.
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-example}
+
+예제 
+:::
+
+</div>
+
+</br>
+
+연습문제는 다음과 같이 표기한다.
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-example}
+
+연습문제
+
+:::
+
+</div>
