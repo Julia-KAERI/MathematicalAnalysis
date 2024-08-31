@@ -8,9 +8,11 @@ crossref:
 
 ## 집합족
 
+### 집합족 {#sec-part1_collection}
+
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-collection_and_indexing}
+::: {#def-part1_collection_and_indexing}
 
 #### 집합족과 인덱스
 
@@ -33,7 +35,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-union_and_intersection_for_collection}
+::: {#def-part1_union_and_intersection_for_collection}
 
 #### 집합족에 대한 합집합과 교집합
 
@@ -56,20 +58,20 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-union_and_intersection_for_collection}
+::: {#def-part1_union_and_intersection_for_collection}
 
-#### $\boldsymbol{m}$-tuple
+#### $\boldsymbol{n}$-tuple
 
-$m\in \mathbb{Z}_+$ 라 하자. 주어진 집합 $X$ 에 대해 함수 
-
-$$
-\boldsymbol{x} : \{1,\ldots,m\} \to X
-$$
-
-를 $X$ 의 원소에 대한 **$\boldsymbol{m}$-tuple** 이라 한다. $m$-tuple $\boldsymbol{x}$ 에 대해 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓰며 $\boldsymbol{x}$ 의 $i$ 번째 좌표라고 한다. $m$-tuple 자체를
+$n\in \mathbb{Z}_+$ 라 하자. 주어진 집합 $X$ 에 대해 함수 
 
 $$
-(x_1,\ldots,x_m)
+\boldsymbol{x} : \{1,\ldots,n\} \to X
+$$
+
+를 $X$ 의 원소에 대한 **$\boldsymbol{n}$-tuple** 이라 한다. $n$-tuple $\boldsymbol{x}$ 에 대해 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓰며 $\boldsymbol{x}$ 의 $i$ 번째 좌표라고 한다. $n$-tuple 자체를
+
+$$
+(x_1,\ldots,x_n)
 $$
 
 과 같이 쓸 수 있다.
@@ -82,7 +84,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-union_and_intersection_for_collection}
+::: {#def-part1_union_and_intersection_for_collection}
 
 #### 데카르트 곱 (Cartesian Product)
 
@@ -96,7 +98,7 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-order_of_m_tuple}
 
@@ -104,14 +106,14 @@ $$
 
 :::
 
-</br>
+</div></br>
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-omega_tuple_and_sequence}
+::: {#def-part1_omega_tuple_and_sequence}
 
-#### $\boldsymbol{\omega}$-tuple 과 수열 (sequence)
+#### $\boldsymbol{\omega}$-tuple 과 수열
 
-집합 $X$ 에 대해 $\mathbb{Z}_+$ 를 정의역으로, $X$ 를 공역으로 정의된 함수 $\boldsymbol{x}:\mathbb{Z}_+ \to X$ 를 $\boldsymbol{\omega}$**-tuple** 혹은 $X$ 에서의 **수열** 이라고 하며 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓴다. $\omega$-tuple 을 $\langle x_i \rangle$ 이라고 흔히 쓴다. $m$-tuple 과 유사하게
+집합 $X$ 에 대해 $\mathbb{Z}_+$ 를 정의역으로, $X$ 를 공역으로 정의된 함수 $\boldsymbol{x}:\mathbb{Z}_+ \to X$ 를 $\boldsymbol{\omega}$**-tuple** 혹은 $X$ 에서의 **수열(sequence)** 이라고 하며 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓴다. $\omega$-tuple 을 $\langle x_i \rangle$ 이라고 흔히 쓴다. $n$-tuple 과 유사하게
 
 $$
 (x_1,\,x_2,\ldots)
@@ -130,8 +132,8 @@ $$
 
 </br>
 
-### 연습문제
-
+### 연습문제 {.unnumbered}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 ::: {#exm-munkres_1_5_1}
 
 #### Munkres 1.5.1
@@ -139,13 +141,14 @@ $$
 $A\times B$ 에서 $B \times A$ 로의 전단사 함수가 존재함을 보이시오.
 
 :::
+</div></br>
 
 ::: {.solution}
 
 $\phi :A \times B \to B \times A,\, \phi ((a,\,b)) = (b,\,a)$ 는 전단사 함수임을 쉽게 보일 수 있다.
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_5_3}
 
@@ -163,6 +166,8 @@ $A=A_1\times A_2 \times \cdots,\, B=B_1 \times B_2\times \cdots$ 일 때 다음�
 
 :::
 
+</div></br>
+
 ::: {.solution}
 ($1$) trivial
 
@@ -177,7 +182,7 @@ $x\in A\cap B$ 이면 $\forall i\in \mathbb{Z}_+,\, x_i A_i \cap B_i$ 이므로 
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_5_4}
 
@@ -198,6 +203,8 @@ $m,\,n\in \mathbb{Z}$ 이고 $X \ne \varnothing$ 일 때 다음을 보여라.
 &emsp; ($6$) $A \subset B$ 이면 단사함수 $m: \left(A^\omega \right)^n \to B^\omega$ 가 존재함을 보이시오.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -225,7 +232,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_5_5}
 
@@ -233,16 +240,16 @@ $$
 
 아래의 $\mathbb{R}^\omega$ 의 부분집합중에 $\mathbb{R}$ 의 부분집합들의 데카르트 곱으로 표현 될 수 있는것은?
 
-&emsp; ($a$) $\{\boldsymbol{x} \mid x_i \in \mathbb{Z}\}$. 
+&emsp;($a$) $\{\boldsymbol{x} \mid x_i \in \mathbb{Z}\}$. 
 
-&emsp; ($b$) $\{\boldsymbol{x} \mid \forall i,\, x_i \ge i\}$.
+&emsp;($b$) $\{\boldsymbol{x} \mid \forall i,\, x_i \ge i\}$.
 
-&emsp; ($c$) $\{\boldsymbol{x} \mid \forall i\ge 100,\, x_i \in \mathbb{Z} \}$.
+&emsp;($c$) $\{\boldsymbol{x} \mid \forall i\ge 100,\, x_i \in \mathbb{Z} \}$.
 
-&emsp; ($d$) $\{\boldsymbol{x} \mid x_2= x_3 \}$.
-
+&emsp;($d$) $\{\boldsymbol{x} \mid x_2= x_3 \}$.
 
 :::
+</div></br>
 
 ::: {.solution}
 
@@ -253,7 +260,5 @@ $$
 ($c$) $C_i = \left\{\begin{array}{ll} \mathbb{R}\quad & \text{if } i< 100 \\ \mathbb{Z}& \text{if } i \ge 100 \end{array}\right.$ 일 때 $C_i \subset \mathbb{R}$ 이며 따라서 $\prod C_i \subset \mathbb{R}^\omega$.
 
 ($d$) 는 표현 될 수 없다.
-
-
 
 :::

@@ -15,7 +15,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-set_and_element}
+::: {#def-part1_set_and_element}
 
 #### 집합에의 포함관계
 
@@ -29,7 +29,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-subset}
+::: {#def-part1_subset}
 
 #### 부분 집합, 동일한 집합, 진부분 집합
 
@@ -60,7 +60,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-union_and_intersection_of_sets}
+::: {#def-part1_union_and_intersection_of_sets}
 
 #### 합집합과 교집합
 
@@ -83,6 +83,8 @@ $$
 
 아래 두 명제는 정의로부터 자명하다. 
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#prp-associativity_of_union_and_intersection}
 
 집합 $A,\,B$ 에 대해 $A \cup B = B \cup A$ 이고 $A \cap B = B \cap A$ 이다. 
@@ -90,7 +92,9 @@ $$
 :::
 
 
-</br>
+</div>
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-commutativity_of_union_and_intersection}
 
@@ -98,6 +102,7 @@ $$
 
 :::
 
+</div>
 </br>
 
 세 집합의 합집합 혹은 교집합이 순서에 무관하므로 $A\cup B \cup C$ 나 $A \cap B \cap C$ 라 쓸 수 있다.
@@ -109,7 +114,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-empty_set}
+::: {#def-part1_empty_set}
 
 #### 공집합, 서로소
 
@@ -119,7 +124,7 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-union_intersection_with_empty_set}
 
@@ -128,13 +133,17 @@ $$
 :::
 
 
-</br>
+</div></br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-empty_set_is_subset_of_every_set}
 
 공집합은 모든 집합의 부분집합이다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -146,7 +155,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-diffeence_of_two_sets}
+::: {#def-part1_diffeence_of_two_sets}
 
 #### 차집합
 
@@ -161,6 +170,7 @@ $$
 ::: 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-distribution_law_for_sets}
 
@@ -176,6 +186,7 @@ A \cup (B \cap C) &= (A \cup B) \cap (A \cup C).
 $$
 
 :::
+</div></br>
 
 ::: {.proof}
 $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ 는 다음과 같이 증명 할 수 있다.
@@ -196,7 +207,7 @@ $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ 도 같은 방법으로 증명 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-complement_of_set}
+::: {#def-part1_complement_of_set}
 
 #### 여집합
 
@@ -216,7 +227,7 @@ $$
 
 이제부터 별도로 언급하지 않아도 집합을 언급할 때는 어떤 전체집합의 부분집합임을 가정한다.
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-difference_and_intersection}
 
@@ -224,6 +235,7 @@ $X$ 의 부분집합 $A,\,B$ 에 대해 $A-B = A \cap B^C$ 이다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -232,12 +244,14 @@ $x\in (A-B) \iff x\in A \land x\not\in B \iff x\in A \cap B^C$ $\square$
 :::
 
 </br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-complement_of_union_and_intersection}
 
 집합 $A,\,B$ 에 대해 $(A\cup B)^C = A^C \cap B^C$ 이며 $(A \cap B)^C = A^C \cup B^C$ 이다. 
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -251,9 +265,8 @@ $$
 $\square$
 :::
 
-
 </br>
-
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-DeMorgrans_law}
 
@@ -269,6 +282,7 @@ A-(B \cap C) & = (A-B)\cup (A-C).
 $$
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -288,7 +302,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-collection}
+::: {#def-part1_collection}
 
 #### 집합족(collection, family)과 멱집합 (power set)
 
@@ -311,7 +325,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-ordered_pair}
+::: {#def-part1_ordered_pair}
 
 #### 순서쌍(ordered pair) 과 좌표(coordinate)
 
@@ -321,16 +335,18 @@ $$
 ::: 
 :::
 
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
 ::: {#exm-ordered_pair}
 
 $a \ne b$ 이면 $(a,\,b) \ne (b,\,a)$ 이다. 
 :::
 
-</br>
+</div></br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-cartesian_product}
+::: {#def-part1_cartesian_product}
 
 #### 데카르트 곱
 

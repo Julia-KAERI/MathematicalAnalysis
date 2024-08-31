@@ -11,7 +11,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-binary_operation}
+::: {#def-part1_binary_operation}
 
 #### 이항 연산
 
@@ -24,7 +24,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-field}
+::: {#def-part1_field}
 
 #### 체(Field)
 
@@ -65,7 +65,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-ordered_field}
+::: {#def-part1_ordered_field}
 
 #### 음수와 양수, 순서체(Ordered field)
 
@@ -85,9 +85,8 @@ crossref:
 </br>
 
 
-
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-linear_continuum}
+::: {#def-part1_linear_continuum}
 
 #### Linear continuum
 
@@ -110,17 +109,15 @@ Linear continuum 이며 순서체인 실수의 집합 $\mathbb{R}$ 이 존재한
 :::
 
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-linear_continuum_is_dense}
-[뒤에서 나오겠지만 이런 성질을 조밀성 이라 한다.]{.aside}
+
 $\mathbb{F}$ 가 선형 연속체이고 $x,\, y\in \mathbb{F},\, x<y$ 이면 $x<z,\, z<y$ 를 만족하는 $z\in \mathbb{F}$ 가 존재한다.
 :::
-
-
+</div></br>
 
 ::: {.proof}
-
 $x+x<x+y<y+y$ 이며 $1/2>0$ 이므로 $x<\dfrac{x+y}{2} <y$ 이다. $\square$
 
 :::
@@ -134,7 +131,7 @@ $x+x<x+y<y+y$ 이며 $1/2>0$ 이므로 $x<\dfrac{x+y}{2} <y$ 이다. $\square$
 ## 정수 ($\mathbb{Z}$) 와 유리수 ($\mathbb{Q}$)
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-positive_integer}
+::: {#def-part1_positive_integer}
 
 #### 양의 정수
 
@@ -155,15 +152,19 @@ $$
 
 </br>
 
-::: {#prp-Z_plus_is_inductive}
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part1_positive_integers_are_inductive}
 
 다음이 성립한다.
 
-&emsp; ($1$) $\mathbb{Z}_+$ 는 귀납적이다.
+&emsp;($1$) $\mathbb{Z}_+$ 는 귀납적이다.
 
-&emsp; ($2$) $\mathbb{Z}_+$ 의 귀납적인 부분집합은 $\mathbb{Z}_+$ 뿐이다.
+&emsp;($2$) $\mathbb{Z}_+$ 의 귀납적인 부분집합은 $\mathbb{Z}_+$ 뿐이다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -176,7 +177,7 @@ $$
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-integer}
+::: {#def-part1_integer}
 
 #### 정수
 
@@ -191,7 +192,7 @@ $$
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-rational_irrational}
+::: {#def-part1_rational_irrational}
 
 #### 유리수(rational number) 와 무리수(irrational number)
 
@@ -207,11 +208,11 @@ $$
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-section}
+::: {#def-part1_section}
 
 #### Section
 
-양의 정수 $n$ 에 대해 $1$ 보다 크거나 같고 $n$ 보다 작은 자연수의 집합을 **section** 이라 하며 $S_n$ 으로 쓴다. 
+양의 정수 $n$ 에 대해 $1$ 보다 크거나 같고 $n$ 보다 작은 양의 정수의 집합을 **section** 이라 하며 $S_n$ 으로 쓴다. 
 
 $$
 S_n = \{m\in \mathbb{Z}_+ : 1\le m < n\}
@@ -219,7 +220,7 @@ $$
 :::
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-well_ordering_property}
 
@@ -228,6 +229,7 @@ $$
 모든 공집합이 아닌 $\mathbb{Z}_+$ 의 부분집합은 최소값을 가진다.
 
 ::: 
+</div></br>
 
 ::: {.proof}
 
@@ -235,14 +237,13 @@ $$
 
 > 각각의 $n\in \mathbb{Z}_+$ 에 대해 $\{1,\ldots,\,n\}$ 의 공집합이 아닌 부분집합은 최소값을 가진다.
 
-$A$ 를 위 명제가 성립하는 양의 정수의 집합이라 하자. $1\in A$ 임은 자명하다. 이제 $n\in A \implies n+1\in A$ 임을 보이자. $\{1,\,2,\ldots,n+1\}$ 의 부분집합 $C$ 를 생각하자. $C=\{n+1\}$ 일 경우 최소값은 $n+1$ 이다. $C$ 가 $n+1$ 이외의 원소를 포함한다면 $C \cap \{1,\ldots,\,n\} \ne \varnothing$ 이며 $n\in A$ 이므로 $C\cap \{1,\ldots,n\}$ 에 최소값이 존재하며 그것은 $n+1$ 보다 크므로 $C$ 의 최소값이다. 즉 $A$ 는 inductive 하며 @prp-Z_plus_is_inductive 에 의해 $A=\mathbb{Z}_+$ 이다. 즉 위의 명제가 성립함을 보였다.
+$A$ 를 위 명제가 성립하는 양의 정수의 집합이라 하자. $1\in A$ 임은 자명하다. 이제 $n\in A \implies n+1\in A$ 임을 보이자. $\{1,\,2,\ldots,n+1\}$ 의 부분집합 $C$ 를 생각하자. $C=\{n+1\}$ 일 경우 최소값은 $n+1$ 이다. $C$ 가 $n+1$ 이외의 원소를 포함한다면 $C \cap \{1,\ldots,\,n\} \ne \varnothing$ 이며 $n\in A$ 이므로 $C\cap \{1,\ldots,n\}$ 에 최소값이 존재하며 그것은 $n+1$ 보다 크므로 $C$ 의 최소값이다. 즉 $A$ 는 inductive 하며 @prp-part1_positive_integers_are_inductive 에 의해 $A=\mathbb{Z}_+$ 이다. 즉 위의 명제가 성립함을 보였다.
 
 이제 모든 공집합이 아닌 $\mathbb{Z}_+$ 의 부분집합은 최소값을 가진다는 것을 보이자. $D$ 가 공집합이 아닌 $\mathbb{Z}_+$ 의 부분집이라 하자. 임의의 $m \in D$ 에 대해 $A=D\cap \{1,\ldots,m\}\ne \varnothing$ 이며 $A$ 는 $\{1,\ldots,m\}$ 의 부분집합이므로 최소값 $k$ 를 가진다. 이 $k$ 가 $D$ 의 최소값임은 자명하다. $\square$
 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-strong_induction_principle}
 
@@ -258,6 +259,8 @@ $$
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
 우선 $\varnothing = S_1 \subset A$ 이므로 $1\in A$ 이다. $A\ne \mathbb{Z}_+$ 이면 $B=\mathbb{Z}_+-A\ \ne \varnothing$ 이며 $B \subset \mathbb{Z}_+$ 이므로 $B$ 의 최소값 $m$ 이 존재한다. $m \not\in A$ 이므로 $m \ne 1$ 이다. 그런데 $S_m\subset A$ 이므로 $m\in A$ 인데 이는 모순된다. 따라서 $A=\mathbb{Z}_+$ 이다. $\square$ 
@@ -266,13 +269,16 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#thm-archmedian_ordering_property}
 
 #### 아르키메데스의 성질
 
 $\mathbb{Z}_+$ 는 위로 유계가 아니다.
-
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -282,7 +288,7 @@ $m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ �
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-archimedean_ordering_property}
 
@@ -290,7 +296,9 @@ $m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ �
 
 :::
 
-</br>
+</div></br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-archimedian_law}
 
@@ -299,17 +307,21 @@ $m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ �
 임의의 $a>0,\, b\in \mathbb{R}$ 에 대해 $na>b$ 를 만족하는 $n\in \mathbb{Z}_+$ 이 존재한다.
 :::
 
-</br>
+</div></br>
 
-## 연습문제
+## 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_1}
 
 #### Munkres 1.4.1
 
-아래의 대수적 관계를 @def-field 의 공리를 이용하여 증명하라.
+아래의 대수적 관계를 @def-part1_field 의 공리를 이용하여 증명하라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -445,15 +457,17 @@ $$
 :::
 
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_2}
 
 #### Munkres 1.4.2
 
-아래의 부등식 규칙을 @def-field 와 @def-ordered_field  의 공리를 이용하여 증명하라.
+아래의 부등식 규칙을 @def-part1_field 와 @def-part1_ordered_field  의 공리를 이용하여 증명하라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -513,7 +527,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_4}
 
@@ -525,6 +539,8 @@ $$
 
 :::
 
+</div></br>
+
 ::: {.solution}
 
 ($1$) $A\subset Z_{+}$ 를 ($1$) 이 참인 $n$ 의 집합이라 하자. $n=1$ 일 경우 $1$ 이 그 집합의 최대값이다. $n\in A$ 라 하자. $B = \{1,\ldots,\, n+1\}$ 에 대해 $C\subset B$ 이고 $n+1\in C$ 라면 $n+1$ 이 최대값이다. $n+1\not\in C$ 이면 $C \subset \{1,\ldots,\,n\}$ 이므로 최대값을 가진다. 즉 $A=\mathbb{Z}_+$ 이다. 
@@ -533,7 +549,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_5}
 
@@ -552,6 +568,8 @@ $\mathbb{Z}$ 와 $\mathbb{Z}_+$ 에 대해 다음을 보이시오.
 &emsp; ($5$) $c,\,d\in \mathbb{Z} \implies c\cdot d \in \mathbb{Z}$. 
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -602,7 +620,7 @@ $\mathbb{Z}$ 와 $\mathbb{Z}_+$ 에 대해 다음을 보이시오.
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1.4.6}
 
@@ -631,6 +649,8 @@ $$
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
 고정된 $a\in \mathbb{R}$ 과 $n \in \mathbb{Z}_+$ 에 대해 $X_1 = \{m\in \mathbb{Z}_+ \mid a^n a^m = a^{n+m}\}$ 이라 하자. 귀납적 정의에 의해 $1\in X_1$ 이다. $m\in X_1$ 일 때 $a^n a^{m+1}= a^n a^m a = a^{n +m} a = a^{n + m +1}$ 이므로 $m+1\in X_1$ 이다. 즉 $\mathbb{Z}_+ \subset X \subset X_1$ 이므로 $a^n a^m = a^{n+m}$ 이다.
@@ -646,7 +666,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_7}
 
@@ -656,6 +676,7 @@ $a\in \mathbb{R},\, a\ne 0$ 일 때 $a^0=1$ 로 정의한다. 또한 $n\in \math
 
 :::
 
+</div></br>
 
 ::: {.solution}
 
@@ -712,6 +733,7 @@ $$
 
 :::
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-Munkres_1_4_8}
 
@@ -719,14 +741,15 @@ $$
 
 다음을 보이시오. 
 
-&emsp; ($1$) $\mathbb{R}$ 은 최대 하계 성질을 가진다.
+&emsp;($1$) $\mathbb{R}$ 은 최대 하계 성질을 가진다.
 
-&emsp; ($2$) $\inf \{ 1/n : n \in \mathbb{Z}_+ \} =0$ 이다.
+&emsp;($2$) $\inf \{ 1/n : n \in \mathbb{Z}_+ \} =0$ 이다.
 
-&emsp; ($3$) 주어진 $a$ 가 $0<a<1$ 일 때 $\inf \{a^n : n\in \mathbb{Z}_+\}=0$ 이다.
+&emsp;($3$) 주어진 $a$ 가 $0<a<1$ 일 때 $\inf \{a^n : n\in \mathbb{Z}_+\}=0$ 이다.
 
 :::
 
+</div></br>
 
 ::: {.solution}
 
@@ -752,7 +775,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-Munkres_1_4_9}
 
@@ -770,6 +793,8 @@ $$
 
 :::
 
+</div></br>
+
 ::: {.solution} 
 
 ($1$) $A\subset \mathbb{Z},\, A\ne \varnothing$ 이며 위로 유계라고 하자. $A$ 가 모두 양의 정수의 집합이라면 @exr-munkres_1_4_4 ($1$) 에 의해 최대값을 가진다. $A$ 가 양의 정수를 포함하는 집합이라면 $A \cap \mathbb{Z}_+$ 는 최대값을 가지며 이 값이 $A$ 의 최대값이다. $A$ 가 $0$ 과 음의 정수로 이루어진 집합이라면 $0$ 이 최대값이다. $A$ 가 음의 정수만으로 이루어진 집합이라고 하자. $A'=\{-a\mid a\in A\}$ 는 양의 정수의 집합이며 @thm-well_ordering_property 에 의해 최소값 $m$ 을 가진다. 즉 모든 $n\in A'$ 에 재해 $m\le n$ 이며 $-n \le -m$ 이므로 $-m$ 이 $A$ 의 최대값이다.
@@ -786,7 +811,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#prp-Q_is_dense}
 
@@ -796,8 +821,9 @@ $$
 
 :::
 
+</div></br>
 
-::: {.proof}
+::: {.solution}
 
 $y=0$ 이면 @cor-archimedean_ordering_property 으로 보일 수 있다. $0<y<x$ 인 경우 아르키메데스 법칙(@cor-archimedian_law) 에 의해
 
@@ -823,7 +849,7 @@ $$
 :::
 
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_10}
 
@@ -840,16 +866,17 @@ $$
 \end{aligned}
 $$
 
-&emsp; ($2$) $x>0$ 이라 하자. $x^2<a$ 이면 어떤 $h>0$ 에 대해 $(x+h)^2<a$ 임을 보여라. $x^2>a$ 이면 어떤 $h>0$ 에 대해 $(x-h)^2>a$ 를 만족함을 보여라.
+&emsp;($2$) $x>0$ 이라 하자. $x^2<a$ 이면 어떤 $h>0$ 에 대해 $(x+h)^2<a$ 임을 보여라. $x^2>a$ 이면 어떤 $h>0$ 에 대해 $(x-h)^2>a$ 를 만족함을 보여라.
 
-&emsp; ($3$) 주어진 $a>0$ 에 대해 $B=\{x\in \mathbb{R} \mid x^2<a\}$ 라 하자. $B$ 는 위로 유계이며 최소한 하나의 양수를 포함한다는 것을 보여라. $b=\sup B$ 라면 $b^2=a$ 임을 보여라.
+&emsp;($3$) 주어진 $a>0$ 에 대해 $B=\{x\in \mathbb{R} \mid x^2<a\}$ 라 하자. $B$ 는 위로 유계이며 최소한 하나의 양수를 포함한다는 것을 보여라. $b=\sup B$ 라면 $b^2=a$ 임을 보여라.
 
-&emsp; ($4$) $b>0,\, c>0,\, b^2=c^2$ 이면 $b=c$ 임을 보여라.
+&emsp;($4$) $b>0,\, c>0,\, b^2=c^2$ 이면 $b=c$ 임을 보여라.
 
 :::
 
+</div></br>
 
-::: {.proof}
+::: {.solution}
 ($1$) $0\le h < 1$ 이므로 $h^2\le h$ 이다. 따라서 다음이 성립한다.
 
 $$
@@ -879,7 +906,7 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_4_11}
 
@@ -887,15 +914,17 @@ $$
 
 주어진 $m\in \mathbb{Z}$ 에 대해 $m/2\in \mathbb{Z}$ 일 때 $m$ 을 짝수라고 하며, 그렇지 않을 경우 홀수라고 한다.
 
-&emsp; ($1$) $m$ 이 홀수라면 어떤 $n\in \mathbb{Z}$ 에 대해 $m=2n+1$ 임을 보여라.
+&emsp;($1$) $m$ 이 홀수라면 어떤 $n\in \mathbb{Z}$ 에 대해 $m=2n+1$ 임을 보여라.
 
-&emsp; ($2$) $p$ 와 $q$ 가 홀수라면 $p\cdot q$ 도 홀수이며, $n\in \mathbb{Z}_+$ 에 대해 $p^n$ 도 홀수임을 보여라.
+&emsp;($2$) $p$ 와 $q$ 가 홀수라면 $p\cdot q$ 도 홀수이며, $n\in \mathbb{Z}_+$ 에 대해 $p^n$ 도 홀수임을 보여라.
 
-&emsp; ($3$) 양의 유리수 $a$ 는 둘 다 짝수는 아닌 어떤 정수 $m,\, n$ 에 대해 $a=m/n$ 임을 보여라.
+&emsp;($3$) 양의 유리수 $a$ 는 둘 다 짝수는 아닌 어떤 정수 $m,\, n$ 에 대해 $a=m/n$ 임을 보여라.
 
-&emsp; ($4$) $\sqrt{2}$ 는 무리수임을 보여라.
+&emsp;($4$) $\sqrt{2}$ 는 무리수임을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -910,12 +939,8 @@ $$
 
 이므로 $p \cdot q$ 는 홀수이다. 이제 $p^n$ 이 홀수임을 보이자. $n=1$ 일 때 홀수이며, $n$ 에 대해 $p^n$ 이 홀수라면 $p^{n+1}= p^n \cdot p$ 이므로 홀수이다. 따라서 $n\in \mathbb{Z}_+$ 에 대해 $p^n$ 은 홀수이다.
 
-($3$) @def-rational_irrational 에 의해 $a\in \mathbb{Q}$ 는 어떤 정수 $p,\,q$ 에 대해 $a=p/q$ 이다. 만약 둘 다 짝수이면 $p=2m,\, q=2n$ 이므로 $a=m/n$ 이다. 이 과정을 $m,\,n$ 둘 중 하나가 짝수가 아닐 때까지 반복 할 수 있다.
+($3$) @def-part1_rational_irrational 에 의해 $a\in \mathbb{Q}$ 는 어떤 정수 $p,\,q$ 에 대해 $a=p/q$ 이다. 만약 둘 다 짝수이면 $p=2m,\, q=2n$ 이므로 $a=m/n$ 이다. 이 과정을 $m,\,n$ 둘 중 하나가 짝수가 아닐 때까지 반복 할 수 있다.
 
 ($4$) $\sqrt{2}\in \mathbb{Q}$ 라고 하자. $\sqrt{2}=p/q$ 이고 둘 중 최소한 $p,\,q$ 중 최소한 하나는 짝수가 아니라고 할 수 있다($3$). $2=p^2/q^2$ 이므로 $p^2 = 2q^2$ 이다. $p^2$ 가 짝수이므로 $p=2m,\, m\in \mathbb{Z}$ 이며, $2m^2 = q^2$ 이므로 $q=2n$ 이다. $p,\,q$ 중 최소한 하나는 짝수라는 가정에 위배된다. 따라서 $\sqrt{2}$ 는 무리수이다. 
-
-
-
-
 
 :::

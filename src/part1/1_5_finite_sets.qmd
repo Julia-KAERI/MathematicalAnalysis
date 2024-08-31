@@ -10,17 +10,18 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-finte_set}
+::: {#def-part1_finte_set}
 
 #### 유한 집합
 
-집합 $A$ 가 공집합이거나 $A$ 에서 section(@def-section) 로 가는 전단사 함수가 존재할 때 이 $A$ 를 **유한집합**이라 한다. $A$ 가 공집합일 경우 **cardinality 0** 라 하며, $\{1,\ldots,\,n\}$ 과 전단사 관계가 존재할경우 **cardinality n** 이라 한다. 
+집합 $A$ 가 공집합이거나 $A$ 에서 section(@def-part1_section) 로 가는 전단사 함수가 존재할 때 이 $A$ 를 **유한집합**이라 한다. $A$ 가 공집합일 경우 **cardinality 0** 라 하며, $\{1,\ldots,\,n\}$ 과 전단사 관계가 존재할경우 **cardinality n** 이라 한다. 
 
 :::
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 
 ::: {#lem-finite_set1}
 
@@ -32,6 +33,8 @@ $n\in \mathbb{Z}_+$ 일 때 집합 $A$ 에 대해 다음은 동치이다.
 
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -57,11 +60,15 @@ $k(x)$ 는 전단사 함수이다.
 
 ## 유한집합의 기본 성질
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#thm-finite_set2}
 
 집합 $A$ 와 $n\in \mathbb{Z}_+$ 에 대해 $f:A \to \{1,\ldots,\,n\}$ 인 전단사 함수 $f$ 가 존재한다고 하자. $B$ 가 $A$ 의 진부분 집합이라면 $B \mapsto \{1,\ldots,\,n\}$ 인 전단사 함수는 존재하지 않으며, $B\ne \varnothing$ 일 경우 어떤 $m<n$ 에 대해 $B \mapsto \{1,\ldots,m\}$ 인 전단사 함수가 존재한다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -77,7 +84,8 @@ $n\in C$ 임을 가정한다. $f:A \to \{1,\ldots,n+1\}$ 이 전단사 함수라
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 
 ::: {#cor-finite_set2}
 
@@ -85,6 +93,7 @@ $A$ 가 유한집합이고 $B$ 가 $A$ 의 진부분집합이라면 $A \mapsto B
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -92,7 +101,8 @@ $f:A \to B$ 가 전단사 함수라 하자. $g:A \to \{1,\ldots,\,n\}$ 이 전�
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 
 ::: {#cor-Z_plus_is_not_finite}
 
@@ -100,24 +110,27 @@ $\mathbb{Z}_+$ 는 유한집합이 아니다.
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
 $f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}$ 을 $f(n) =n+1$ 로 정의하면 전단사 함수이다. 그런데 $\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+$ 이므로 @cor-finite_set2 에 의해 $\mathbb{Z}_+$ 는 유한집합이 아니다. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-cardinality_of_finit_set}
 유한집합의 cardinality 는 유일하게 정해진다.
 :::
+</div></br>
 
 ::: {.proof}
 $A$ 와 $\{1,\ldots,\,n\}$ 사이의 전단사 함수 $f$ 와 $A$ 와 $\{1,\ldots,m\}$ 사이의 전단사 함수 $g$ 가 존재한다고 하자. $g \circ f^{-1}$ 은 $\{1,\ldots, n\}$ 에서 $\{1,\ldots,\,m\}$ 으로의 전단사 함수이어야 하는데, $m\ne n$ 이라면 둘중 하나는 나머지의 진부분집합이므로 @cor-finite_set2 에 의해 전단사 함수가 존재하지 않는다. 즉 $m=n$ 이므로 유한집합의 cardinaility 는 유일하게 정해진다. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-cardinality_of_subset}
 
@@ -125,13 +138,15 @@ $A$ 가 유한집합이고 $B \subset A$ 이면 $B$ 는 유한집합이다. $B$ 
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
 $A$ 의 cardinality 가 $n$ 이라면 @thm-finite_set2 에 의해 $B$ 의 cardinality 는 $n$ 보다 작다. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-properties_of_finite_set}
 
@@ -144,6 +159,8 @@ $A$ 가 공집합이 아닐 때 아래의 세 명제는 동치이다.
 &emsp; ($3$) $A$ 에서 어떤 양의 정수에 대한 section 으로의 단사함수가 존재한다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -162,13 +179,15 @@ $$
 :::
 
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-finite_cartesian_product_of_finite_sets}
 
 유한집합의 유한 합집합은 유한집합이다. 유한집합의 유한 데카르트곱도 유한집합이다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -193,7 +212,9 @@ $$
 
 </br>
 
-## 연습문제
+## 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-muknres_1_6_2}
 
@@ -203,13 +224,15 @@ $B$ 가 유한집합이 아니고 $B \subset A$ 이면 $A$ 는 유한집합이 �
 
 :::
 
+</div></br>
+
 ::: {.solution}
 
 $A$ 가 유한집합이라면 어떤 양의 정수 $n$ 에 대해 전단사 함수 $f: A \to \{1,\ldots,\,n\}$ 가 존재한다. $B \subset A$ 이면 @cor-cardinality_of_subset 에 의해 $B$ 는 유한집합이어야 하므로 가정에 위배된다. 
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_6_3}
 
@@ -218,6 +241,8 @@ $A$ 가 유한집합이라면 어떤 양의 정수 $n$ 에 대해 전단사 함�
 $X=\{0,\,1\}$ 일 때 $X^\omega$ 애서 $X^\omega$ 의 진부분집합으로의 전단사 함수가 존재함을 보여라.
 
 :::
+
+</div></br>
 
 ::: {.solution}
 
@@ -231,18 +256,20 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-munkres_1_6_4}
 #### Munkres 1.6.4
 
-$A$ 는 공집합이 아닌 유한 전순서 집합(@def-order_relation) 이라 하자.
+$A$ 는 공집합이 아닌 유한 전순서 집합(@def-part1_order_relation) 이라 하자.
 
 &emsp; ($1$) $A$ 에 최대값이 존재함을 보이시오.
 
-&emsp; ($2$) $A$ 는 어떤 section 과 같은 순서형(@def-ordered_pair) 을 가짐을 보이시오.
+&emsp; ($2$) $A$ 는 어떤 section 과 같은 순서형(@def-part1_ordered_pair) 을 가짐을 보이시오.
 
 :::
+
+</div></br>
 
 ::: {.soluion}
 
