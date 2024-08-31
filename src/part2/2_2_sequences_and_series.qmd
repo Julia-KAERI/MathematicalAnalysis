@@ -1,7 +1,7 @@
 ---
 title: "수열과 급수"
 number-sections: true
-number-depth : 2
+number-depth : 3
 crossref:
   chapters: true
 ---
@@ -43,13 +43,7 @@ $$
 \forall \varepsilon>0,\, \exists N\in \mathbb{N}, \text{ s.t. } n \ge N \implies d(a_n,\, a)<\varepsilon
 $$
 
-일 때 수열 $\langle a_n \rangle$ 은 $a$ 로 수렴한다고 하며 
-
-$$
-\lim_{n \to \infty} a_n = a
-$$
-
-라고 쓴다. $\langle a_n \rangle$  이 수렴하지 않으면 발산한다고 한다. 
+일 때 수열 $\langle a_n \rangle$ 은 $a$ 로 수렴한다고 하며 $\displaystyle \lim_{n \to \infty} a_n = a$ 혹은 $\langle a_n\rangle \to a$ 라고 쓴다. $\langle a_n \rangle$  이 수렴하지 않으면 발산한다고 한다. 
 
 ::: 
 :::
@@ -84,9 +78,10 @@ $$
 
 ::: {.proof}
 
-($1$) $\implies$ 는 정의에 의해 자명하다.
+($1$) $\implies$ 는 정의에 의해 자명하다. $a$ 의 임의의 근방 $N_X(a,\,\varepsilon)$ 에 대해 유한개 성분을 제외한 $a_n$ 의 모든 성분이 포함된다고 하자. 유한개의 포함되지 않는 수열 성분 가운데 인덱스가 최대인 것을 $N$ 이라고 하면 $n\ge N \implies a_n \in N_X(a,\,\varepsilon)$ 이므로 $\langle a_n \rangle \to a$ 이다. 
 
-($2$) $\displaystyle \lim_{n \to \infty} a_n = a_1,\, \displaystyle \lim_{n \to \infty} a_n = a_2$ 라 하자. 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies d(a_n,\,a_1)<\varepsilon$ 이며 $n \ge N_2 \implies d(a_n,\, a_2)<\varepsilon$ 이라 하자. $n \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_n,\,a_1)+d(a_n,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
+
+($2$) $a_1,\,a_2$ 로 수렴한다고 하자. 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies d(a_n,\,a_1)<\varepsilon$ 이며 $n \ge N_2 \implies d(a_n,\, a_2)<\varepsilon$ 이라 하자. $n \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_n,\,a_1)+d(a_n,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
 
 ($3$) 고정된 $\varepsilon >0$ 에 대해 $n\ge N \implies d(a_n,\, a)<\varepsilon$ 이다. $m = \min \{a_1,\ldots,\,a_{N-1}\}$ $M = \max \{a_1,\ldots,\, a_{N-1}\}$ 이라 하면
 
@@ -96,27 +91,33 @@ $$
 
 이므로 $\langle a_n\rangle$ 은 유계이다. 
 
-($4$) 자연수 $n$ 에 대해 $N(p,\, 1/n) \cap E \ne \varnothing$ 이므로 $N(p,\, 1/n) \cap E$ 에서 하나를 잡아 $a_n$ 이라 하자. 그렇다면 $\displaystyle \lim_{n \to \infty} a_n = p$ 이다. $\square$
+($4$) 자연수 $n$ 에 대해 $N(p,\, 1/n) \cap E \ne \varnothing$ 이므로 $N(p,\, 1/n) \cap E$ 에서 하나를 잡아 $a_n$ 이라 하자. 그렇다면 $\langle a_n\rangle\to  p$ 이다. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-properties_of_convergence_2}
 
 $\mathbb{R}^k$ 에서 정의된 수열 $\langle a_n\rangle,\, \langle b_n \rangle$ 이 각각 $a,\,b$ 로 수렴할 때 다음이 성립한다.
 
-1. $\displaystyle \lim_{n \to \infty}(a_n+b_n) = a+b$, 
-2. $c\in \mathbb{R}$ 에 대해 $\displaystyle \lim_{n \to \infty} (ca_n)= ca$, 
-3. $\displaystyle \lim_{n \to \infty} a_nb_n = ab$, 
-4. $a\ne 0$ 일 때 $\displaystyle \lim_{n \to \infty} \dfrac{1}{a_n}= \dfrac{1}{a}$.
-5. 어떤 $N \in \mathbb{N}$ 에 대해 $n\ge N \implies a_n \ge 0$ 이면 $a\ge 0$ 이다.
+&emsp;($1$) $\displaystyle \lim_{n \to \infty}(a_n+b_n) = a+b$.
+
+&emsp;($2$) $c\in \mathbb{R}$ 에 대해 $\displaystyle \lim_{n \to \infty} (ca_n)= ca$.
+
+&emsp;($3$) $\displaystyle \lim_{n \to \infty} a_nb_n = ab$.
+
+&emsp;($4$) $a\ne 0$ 일 때 $\displaystyle \lim_{n \to \infty} \dfrac{1}{a_n}= \dfrac{1}{a}$.
+
+&emsp;($5$) 어떤 $N \in \mathbb{N}$ 에 대해 $n\ge N \implies a_n \ge 0$ 이면 $a\ge 0$ 이다.
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
-$1$. 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n - a|<\varepsilon/2$, $n \ge N_2 \implies |b_n- b|<\varepsilon/2$ 인 $N_1,\,N_2$ 가 존재한다. $N = \max (N_1,\, N_2)$ 이라 하면 $n \ge N$ 일 때
+($1$) 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n - a|<\varepsilon/2$, $n \ge N_2 \implies |b_n- b|<\varepsilon/2$ 인 $N_1,\,N_2$ 가 존재한다. $N = \max (N_1,\, N_2)$ 이라 하면 $n \ge N$ 일 때
 
 $$
 |(a_n+b_n)-(a+b)| \le |a_n -a| + |b_n - b| < \varepsilon
@@ -124,9 +125,9 @@ $$
 
 이므로 $\displaystyle \lim_{n \to \infty}(a_n+b_n) = a+b$ 이다.
 
-$2$. 고정된 $\varepsilon>0$ 에 대해 $n\ge N \implies |a_n - a|<\varepsilon/|c|$ 인 $N$ 이 존재한다. 따라서 $n \ge N \implies |ca_n - ca| = |c||a_n -c| < \varepsilon$ 이다.
+($2$) $c=0$ 이면 자명하다. $c\ne 0$ 일 때 고정된 $\varepsilon>0$ 에 대해 $n\ge N \implies |a_n - a|<\varepsilon/|c|$ 인 $N$ 이 존재한다. 따라서 $n \ge N \implies |ca_n - ca| = |c||a_n -c| < \varepsilon$ 이다.
 
-$3$. $a_n b_n - ab = (a_n-a)(b_n-b)- a( b_n-b)-b(a_n-a)$ 이다. 주어진 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n-a|<\sqrt{\varepsilon}$, $n \ge N_2 \implies |b_n -b|<\sqrt{\varepsilon}$ 인 $N_1,\, N_2$ 가 존재하며 $N = \max (N_1,\, N_2)$ 라 하자. 
+($3$) $a_n b_n - ab = (a_n-a)(b_n-b)- a( b_n-b)-b(a_n-a)$ 이다. 주어진 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n-a|<\sqrt{\varepsilon}$, $n \ge N_2 \implies |b_n -b|<\sqrt{\varepsilon}$ 인 $N_1,\, N_2$ 가 존재하며 $N = \max (N_1,\, N_2)$ 라 하자. 
 
 $$
 a_nb_n - ab = (a_n-a)(b_n-b) + a(b_n-b)+ b(a_n-a)
@@ -134,7 +135,7 @@ $$
 
 이며 $n \ge N \implies |(a_n-a)(b_n -b)|<\varepsilon$ 이며 1. 과 2. 에 의해 $a(b_n-b)$ 와 $b(a_n-a)$ 는 $0$ 으로 수렴하므로 $\displaystyle \lim_{n \to \infty} a_nb_n = ab$ 이다.
 
-$4$. $a\ne 0$ 이므로 $n \ge M \implies |a_n - a|< \dfrac{1}{2}|a|$ 인 $M\in \mathbb{N}$ 이 존재한다. $n>M$ 일 때
+($4$) $a\ne 0$ 이므로 $n \ge M \implies |a_n - a|< \dfrac{1}{2}|a|$ 인 $M\in \mathbb{N}$ 이 존재한다. $n>M$ 일 때
 
 $$
 |a|-|a_n| \le |a-a_n| = |a_n-a|<\dfrac{1}{2}|a| \implies |a_n|> \dfrac{1}{2}|a|
@@ -148,7 +149,7 @@ $$
 
 이므로 $\displaystyle \lim_{n \to \infty}\dfrac{1}{a_n} = \dfrac{1}{a}$ 이다. 
 
-$5$. $a<0$ 이라면 $n \ge N' \implies |a_n - a|<\dfrac{1}{2}|a|$ 인 $N'$ 이 존재한다. $M = \max(N,\,N')$ 이라 하면
+($5$) $a<0$ 이라면 $n \ge N' \implies |a_n - a|<\dfrac{1}{2}|a|$ 인 $N'$ 이 존재한다. $M = \max(N,\,N')$ 이라 하면
 
 $$
 n \ge M \implies a_n < \dfrac{1}{2}a < 0
@@ -158,17 +159,11 @@ $$
 
 ::: 
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-convergence_in_Euclidean_space}
 
-$\mathbb{R}^k$ 에서의 수열 $\langle \boldsymbol{x}_n\rangle$ 이
-
-$$
-\boldsymbol{x}_n = ( x_{1, n},\ldots,\, x_{k, n})
-$$
-
-이라 하자. 이 때 $\boldsymbol{x}_n$ 이 $\boldsymbol{x} = (x_1,\ldots,\,x_k)$ 로 수렴할 필요충분조건은
+$\mathbb{R}^k$ 에서의 수열 $\boldsymbol{x}_n = ( x_{1, n},\ldots,\, x_{k, n})$ 에 대해 $\boldsymbol{x}_n$ 이 $\boldsymbol{x} = (x_1,\ldots,\,x_k)$ 로 수렴할 필요충분조건은
 
 $$
 \lim_{n \to \infty} x_{j, n} = x_j \qquad (1 \le j \le k)
@@ -178,6 +173,7 @@ $$
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -208,12 +204,15 @@ $$
 ::: 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#prp-bounded_monotonic_sequence}
 
 유계인 단조수열은 수렴한다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -234,6 +233,7 @@ $\langle a_n\rangle$ 이 단조 감소 수열이며 유계라고 하자. $a_1$ �
 ::: 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-properties_of_subsequence}
 
@@ -241,16 +241,20 @@ $\langle a_n\rangle$ 이 단조 감소 수열이며 유계라고 하자. $a_1$ �
 
 :::
 
+</div></br>
+
 ::: {.proof}
 $\langle a_n \rangle \subset K$ 라고 하자. $\langle a_n \rangle$ 이 유한집합이면 자명하게 수렴하므로 무한집합에서 생각하기로 하자. @prp-infinite_subset_in_compact_set_has_limit_point_in_compact_set 의해 $\langle a_n \rangle$ 은 극한점을 가지며, 따라서 $k\in \mathbb{N}$ 에 대해 $N(a,\, 1/k)\cap \langle a_n \rangle$ 은 무한개의 원소를 갖는다. $p_1=1$ 로 하고  $N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)$  가운데 $a_m$ 을 골라 $p_{k+1}= m$ 이라고 하자. 그렇다면 $\langle a_{p_k}\rangle$ 은 $a$ 로 수렴하는 부분수열이다. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-properties_of_subsequence}
 $\mathbb{R}^k$ 에서 정의된 유계인 수열은 수렴하는 부분수열을 갖는다.
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -258,7 +262,7 @@ $\mathbb{R}^k$ 에서 정의된 유계인 수열은 수렴하는 부분수열을
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-subsequential_limit_forms_closed_subset}
 
@@ -266,6 +270,7 @@ $\mathbb{R}^k$ 에서 정의된 유계인 수열은 수렴하는 부분수열을
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -284,6 +289,8 @@ $$
 
 ### $e$ {#sec-e}
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#prp-convergence_of_geometric_series}
 
 #### 등비급수
@@ -291,6 +298,7 @@ $$
 $0 \le r < 1$ 일 때 $\displaystyle \sum_{k=0}^\infty r^k = \dfrac{1}{1-r}$ 로 수렴하며 $r\ge 1$ 이면 $\displaystyle \sum_{k=0}^\infty r^k$ 는 발산한다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -302,7 +310,11 @@ $$
 :::
 
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-e}
+
+#### $e$
 
 자연로그의 밑 $e$ 는 다음과 같이 정의된다.
 
@@ -351,13 +363,16 @@ $$
 
 이며 이 부등식은 모든 $k$ 에 대해 성립하므로 $\displaystyle \lim_{n \to \infty} a_n = e$ 이다. $\square$
 
+:::
 
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-e_is_irrational}
 
 $e$ 는 무리수이다.
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -381,7 +396,6 @@ $$
 이다. $e=p/q$ 이므로 $q!(e-s_q)$ 는 자연수 이어야 하며 $1/q\le1$ 이므로 모순된다. $\square$
 :::
 
-
 </br>
 
 ## 코시 수열
@@ -403,23 +417,29 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-cauchy_sequence}
 
 #### 코시 수열의 성질 
 
-1. 거리공간에서 정의된 수렴하는 수열은 코시 수열이다.
-2. 코시수열은 유계이다.
-3. 코시수열의 어떤 부분수열이 수렴하면 코시수열은 수렴한다.
-4. $\mathbb{R}^k$ 위에서의 코시수열은 수렴한다.
+코시 수열은 다음의 성질을 가진다.
+
+&emsp;($1$) 거리공간에서 정의된 수렴하는 수열은 코시 수열이다.
+
+&emsp;($2$) 코시수열은 유계이다.
+
+&emsp;($3$) 코시수열의 어떤 부분수열이 수렴하면 코시수열은 수렴한다.
+
+&emsp;($4$) $\mathbb{R}^k$ 위에서의 코시수열은 수렴한다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
-$1$. $\langle a_n \rangle$ 이 거리공간 $X$ 에서 정의된 $a$ 로 수렴하는 수열이라고 하자. 임의의 $\varepsilon >0$ 에 대해 $n \ge N \implies d(a_n,\, a)<\varepsilon/2$ 을 만족하는 $N\in \mathbb{N}$ 이 존재하므로 $m,\, n \ge N$ 일 때
+($1$) $\langle a_n \rangle$ 이 거리공간 $X$ 에서 정의된 $a$ 로 수렴하는 수열이라고 하자. 임의의 $\varepsilon >0$ 에 대해 $n \ge N \implies d(a_n,\, a)<\varepsilon/2$ 을 만족하는 $N\in \mathbb{N}$ 이 존재하므로 $m,\, n \ge N$ 일 때
 
 $$
 d(a_m,\, a_n) \le d(a_m,\, a)+ d(a_n,\, a)< \varepsilon
@@ -427,9 +447,9 @@ $$
 
 이다. 즉 수렴하는 수열은 코시 수열이다.
 
-$2$. $\varepsilon>0$ 에 대해 $m,\, n \ge N \implies d(a_m,\, a_n)< \varepsilon$ 인 $N\in \mathbb{N}$ 이 존재하므로 $\{a_1,\ldots,\, a_{N-1}\}$ 과 $a_N-\varepsilon,\, a_N+\varepsilon$ 에 의해 코시수열 $a_n$ 의 한 상계와 하계가 정해진다. 따라서 코시수열은 유계이다.
+($2$) $\varepsilon>0$ 에 대해 $m,\, n \ge N \implies d(a_m,\, a_n)< \varepsilon$ 인 $N\in \mathbb{N}$ 이 존재하므로 $\{a_1,\ldots,\, a_{N-1}\}$ 과 $a_N-\varepsilon,\, a_N+\varepsilon$ 에 의해 코시수열 $a_n$ 의 한 상계와 하계가 정해진다. 따라서 코시수열은 유계이다.
 
-$3$. 코시수열 $\langle a_n \rangle$ 의 부분수열 $\langle a_{n_k} \rangle$ 이 $a$ 로 수렴한다고 하자. 임의의 $\varepsilon>0$ 에 대헤 $m,\, n \ge N_1 \implies d(a_m,\, a_n)<\varepsilon/2$ 인 $N_1 \in \mathbb{N}$ 이 존재한다. 부분수열이 수렴하므로 $k>K \implies d(a_{n_k},\, a)<\varepsilon/2$ 인 $K\in \mathbb{N}$ 이 존재한다. $K$ 를 충분히 크게 잡아 $n_K \ge N_1$ 이 되게 할 수 있다. 그렇다면 $n \ge n_K$ 일 때
+($3$) 코시수열 $\langle a_n \rangle$ 의 부분수열 $\langle a_{n_k} \rangle$ 이 $a$ 로 수렴한다고 하자. 임의의 $\varepsilon>0$ 에 대헤 $m,\, n \ge N_1 \implies d(a_m,\, a_n)<\varepsilon/2$ 인 $N_1 \in \mathbb{N}$ 이 존재한다. 부분수열이 수렴하므로 $k>K \implies d(a_{n_k},\, a)<\varepsilon/2$ 인 $K\in \mathbb{N}$ 이 존재한다. $K$ 를 충분히 크게 잡아 $n_K \ge N_1$ 이 되게 할 수 있다. 그렇다면 $n \ge n_K$ 일 때
 
 $$
 d(a_n,\, a) \le d(a_n,\, a_{n_K})+ d(a,\, a_{n_K}) < \varepsilon
@@ -437,14 +457,13 @@ $$
 
 이므로 $\langle a_n \rangle$ 은 $a$ 로 수렴한다. 
 
-$4$. $2$ 에 의해 코시수열은 유계이므로 코시수열을 포함하는 $k$-cell 을 잡을 수 있다. $k$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 갖는다. $3$ 에 의해 이 코시수열은 수렴한다. $\square$ 
+($4$) ($2$) 에 의해 코시수열은 유계이므로 코시수열을 포함하는 $k$-cell 을 잡을 수 있다. $k$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 갖는다. $3$ 에 의해 이 코시수열은 수렴한다. $\square$ 
 
 :::
 
 </br>
 
 앞으로 더 자세하게 다루겠지만 일단 다음을 정의하고 넘어가자.
-
 
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -509,19 +528,21 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-properties_of_limsup}
 
 유계인 실수열 $\langle a_n \rangle$ 의 상극한이 $a$ 일 때 다음이 성립한다.
 
-1. 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies a_n < a+\varepsilon$ 을 만족하는 $N\in \mathbb{N}$ 이 존재한다.
-2. 임의의 $\varepsilon>0$ 에 대해 $a-\varepsilon < a_n$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
+&emsp;($1$) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies a_n < a+\varepsilon$ 을 만족하는 $N\in \mathbb{N}$ 이 존재한다.
+
+&emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 $a-\varepsilon < a_n$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
 
 또한 어떤 실수열 $\langle a_n \rangle$ 이 실수 $a$ 에 대해 위의 두 성질을 만족하면 $\displaystyle \limsup_{n \to \infty} a_n = a$ 이다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -535,31 +556,35 @@ $$
 
 </br>
 
-
 같은 방법으로 다음을 보일 수 있다.
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-properties_of_liminf}
 
 유계인 실수열 $\langle b_n \rangle$ 의 하극한이 $b$ 일 때 다음이 성립한다.
 
-1. 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies b_n > a-\varepsilon$ 을 만족하는 $N\in \mathbb{N}$ 이 존재한다.
-2. 임의의 $\varepsilon>0$ 에 대해 $b + \varepsilon < b_n$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
+&emsp;($1$) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies b_n > a-\varepsilon$ 을 만족하는 $N\in \mathbb{N}$ 이 존재한다.
 
-또한 어떤 실수열 $\langle b_n \rangle$ 이 실수 $a$ 에 대해 위의 두 성질을 만족하면 $\displaystyle \liminf_{n \to \infty} b_n = b$ 이다.
+&emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 $b + \varepsilon < b_n$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
+
+&emsp;($3$) 어떤 실수열 $\langle b_n \rangle$ 이 실수 $b$ 에 대해 ($1$), ($2$) 를 만족하면 $\displaystyle \liminf_{n \to \infty} b_n = b$ 이다.
 
 :::
 
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-limsup_liminf_limit}
 
 실수열 $\langle a_n \rangle$ 에 대해 다음은 동치이다.
 
-1. $\displaystyle \lim_{n \to \infty} a_n = a$, 
-2. $\displaystyle \limsup_{n \to \infty} a_n = \liminf_{n \to \infty} a_n = a$.
+&emsp;($1$) $\displaystyle \lim_{n \to \infty} a_n = a$.
+
+&emsp;($2$) $\displaystyle \limsup_{n \to \infty} a_n = \liminf_{n \to \infty} a_n = a$.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 (1 $\implies$ 2) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies |a_n - a|<\varepsilon$ 이므로 @prp-properties_of_limsup 과 @prp-properties_of_liminf 를 만족한다.
@@ -572,21 +597,29 @@ $$
 
 ## 중요한 수열들
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
 ::: {#exm-sequences}
 
-1. $\displaystyle p>0 \implies \lim_{n \to \infty} \dfrac{1}{n^p} = 0$, 
-2. $\displaystyle p > 0 \implies \lim_{n \to \infty} \sqrt[n]{p}=1$, 
-3. $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$, 
-4. $\displaystyle p>0,\, a\in \mathbb{R} \implies \lim_{n \to \infty}\dfrac{n^a}{(1+p)^n} = 0$, 
+#### 중요한 수열들
 
-:::
+아래의 수열은 많이 사용되는 수열이다.
 
-:::{.proof}
-$1$. $N>(1/\varepsilon)^{1/p}$ 이라 하면 $n>N$ 에 대해 $\left| 1/n^p \right| < \varepsilon$ 이다.
+&emsp;($1$) $\displaystyle p>0 \implies \lim_{n \to \infty} \dfrac{1}{n^p} = 0$.
 
-$2$. $p>1$ 일 경우를 먼저 생각한다. $a_n = \sqrt[n]{p}-1$ 이라면 $1+a_n \le (1+a_n)^n = p$ 이며 $0 < a_n \le \dfrac{p-1}{n}$ 이다. 따라서 $\displaystyle \lim_{n \to \infty}a_n = 0$ 이므로 $\displaystyle \lim_{n \to \infty} \sqrt[n]{p}=1$ 이다. $p=1$ 일 경우는 자명하며 $0<p<1$ 일 경우는 $1/p=q$ 에 대해 생각해보면 된다.
+&emsp;($2$) $\displaystyle p > 0 \implies \lim_{n \to \infty} \sqrt[n]{p}=1$.
 
-$3$. $a_n = \sqrt[n]{n}-1$ 이라 하자. $n > 2$ 일 경우만 생각해도 된다. $a_n \ge 0$ 이므로 이항정리에 의해 
+&emsp;($3$) $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$.
+
+&emsp;($4$) $\displaystyle p>0,\, a\in \mathbb{R} \implies \lim_{n \to \infty}\dfrac{n^a}{(1+p)^n} = 0$
+
+이제 위 식을 증명해보자.
+
+($1$) $N>(1/\varepsilon)^{1/p}$ 이라 하면 $n>N$ 에 대해 $\left| 1/n^p \right| < \varepsilon$ 이다.
+
+($2$) $p>1$ 일 경우를 먼저 생각한다. $a_n = \sqrt[n]{p}-1$ 이라면 $1+a_n \le (1+a_n)^n = p$ 이며 $0 < a_n \le \dfrac{p-1}{n}$ 이다. 따라서 $\displaystyle \lim_{n \to \infty}a_n = 0$ 이므로 $\displaystyle \lim_{n \to \infty} \sqrt[n]{p}=1$ 이다. $p=1$ 일 경우는 자명하며 $0<p<1$ 일 경우는 $1/p=q$ 에 대해 생각해보면 된다.
+
+($3$) $a_n = \sqrt[n]{n}-1$ 이라 하자. $n > 2$ 일 경우만 생각해도 된다. $a_n \ge 0$ 이므로 이항정리에 의해 
 
 $$
 n = (1+a_n)^n \ge \dfrac{n(n-1)}{2}{a_n}^2
@@ -600,7 +633,7 @@ $$
 
 이므로 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다. 따라서 $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$ 이다. 
 
-$4$. $k$ 가 $a$ 보다 큰 자연수라 하자. $n>2k$ 일 때
+($4$) $k$ 가 $a$ 보다 큰 자연수라 하자. $n>2k$ 일 때
 
 $$
 \begin{aligned}
@@ -622,12 +655,14 @@ $$
 :::
 
 
-</br>
+</div></br>
 
 
 ## 급수의 수렴과 발산
 
 ### 코시 판정법 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-convergence_of_series_1}
 
@@ -643,19 +678,21 @@ $$
 
 :::
 
+</div></br>
 
 ::: {.proof}
 $s_n = \displaystyle \sum_{k=1}^n a_k$ 라고 하면 위의 조건은 $s_m - s_{n-1}$ 인 코시수열이 된다. @thm-cauchy_sequence 을 보라. $\square$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-convergence_of_series_2}
 
 $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -663,13 +700,15 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: 
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-partial_sum_of_nonnegative_sequence}
 
 음수가 아닌 항으로 이루어진 수열의 급수가 수렴할 필요충분조건은 수열의 부분합이 유계인 수열을 이루는 것이다.
 
 :::
+
+</div></br>
 
 ::: {.proof} 
 
@@ -690,21 +729,23 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-convergence_of_series_3}
 
-1. 수열 $\langle a_n \rangle, \, \langle b_n\rangle$ 에서 어떤 $N \in \mathbb{N}$ 이 존재하여 $n \ge N \implies |a_n |\le b_n$ 이고 $\sum b_n$ 이 수렴하면 $\sum a_n$ 도 수렴한다.
+($1$) 수열 $\langle a_n \rangle, \, \langle b_n\rangle$ 에서 어떤 $N \in \mathbb{N}$ 이 존재하여 $n \ge N \implies |a_n |\le b_n$ 이고 $\sum b_n$ 이 수렴하면 $\sum a_n$ 도 수렴한다.
 
-2. 수열 $\langle a_n \rangle, \, \langle c_n\rangle$ 에서 어떤 $N \in \mathbb{N}$ 이 존재하여 $n \ge N \implies |a_n |\ge b_n \ge$ 이고 $\sum b_n$ 이 발산하면 $\sum a_n$ 도 발산한다.
+($2$) 수열 $\langle a_n \rangle, \, \langle c_n\rangle$ 에서 어떤 $N \in \mathbb{N}$ 이 존재하여 $n \ge N \implies |a_n |\ge b_n \ge$ 이고 $\sum b_n$ 이 발산하면 $\sum a_n$ 도 발산한다.
 
 :::
 
+</div></br>
+
 ::: {.proof}
 
-$1$. 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum_n b_n$ 이 수렴하면 임의의 $\varepsilon>0$ 에 대해 $N \in \mathbb{N}$ 이 존재하여 $m\ge n \ge N$ 이면 $\displaystyle \sum_{k=n}^m b_k < \varepsilon$ 이며, 따라서 $\displaystyle\sum_{k=n}^m a_k <\varepsilon$ 이다.
+($1$) 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum_n b_n$ 이 수렴하면 임의의 $\varepsilon>0$ 에 대해 $N \in \mathbb{N}$ 이 존재하여 $m\ge n \ge N$ 이면 $\displaystyle \sum_{k=n}^m b_k < \varepsilon$ 이며, 따라서 $\displaystyle\sum_{k=n}^m a_k <\varepsilon$ 이다.
 
-$2$. $\sum a_n$ 이 수렴한다면 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum b_n$ 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 $\sum a_n$ 은 발산한다. $\square$
+($2$) $\sum a_n$ 이 수렴한다면 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum b_n$ 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 $\sum a_n$ 은 발산한다. $\square$
 
 :::
 
@@ -712,16 +753,18 @@ $2$. $\sum a_n$ 이 수렴한다면 코시 판정법(@thm-convergence_of_series_
 
 
 ### 음수가 아닌 수로 이루어진 급수
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-series_of_power_of_2}
 수열 $\langle a_k\rangle$ 에 대해 $a_1 \ge a_2 \ge \cdots \ge 0$ 일 때 다음은 동치이다.
 
-1. $\displaystyle \sum_{k=1}^\infty a_k$ 는 수렴한다.
+&emsp;($1$) $\displaystyle \sum_{k=1}^\infty a_k$ 는 수렴한다.
 
-2. $\displaystyle \sum_{k=0}^\infty 2^k a_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \cdots$ 는 수렴한다.
+&emsp;($2$) $\displaystyle \sum_{k=0}^\infty 2^k a_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \cdots$ 는 수렴한다.
 
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -760,13 +803,14 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-convergence_of_1_over_n_p}
 
 $\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}$ 는 $p>1$ 일 때 수렴하며 그 외에는 발산한다.
 :::
 
+</div></br>
 
 ::: {.proof}
 
@@ -780,19 +824,13 @@ $$
 
 :::
 
-</br>
-
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-convergence_of_series_1}
 
-급수 $\displaystyle \sum_{k=2}^\infty \dfrac{1}{k(\log k)^p}$ 는 $p>1$ 에서 수렴하며 나머지 경우에는 발산함을 보여라. [$\log (x)$ 는 밑이 $e$ 인 자연로그함수를 말한다.]{.aside}
+급수 $\displaystyle \sum_{k=2}^\infty \dfrac{1}{k(\log k)^p}$ 는 $p>1$ 에서 수렴하며 나머지 경우에는 발산함을 보일 수 있다.
 
-:::
-
-
-::: {.solution}
-
-우리는 $k>1 \implies \log k > 0$ 이며 $\log (k)$ 이 단조증가함수라는 것을 안다. 따라서 $p>0$ 에 대해  $1/(k (\log (k))^p$ 는 단조감소수열므로 @prp-series_of_power_of_2 를 사용 할 수 있다.
+우리는 $k>1 \implies \log k > 0$ 이며 $\log (k)$ 이 단조증가함수라는 것을 안다. 따라서 $p>0$ 에 대해  $1/(k (\log (k)))^p$ 는 단조감소수열므로 @prp-series_of_power_of_2 를 사용 할 수 있다.
 
 $$
 \sum_{k=1}^\infty 2^k \cdot \dfrac{1}{2^k (\log (2^k))^p} = \sum_{k=1}^\infty \dfrac{1}{(k \log 2)^p} = \dfrac{1}{(\log 2)^p} \sum_{k=1}^\infty \dfrac{1}{k^p}
@@ -802,22 +840,27 @@ $$
 
 $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
-
 :::
 
-</br>
+</div></br>
 
 ### 근 판정법
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-series_root_test}
 
 급수 $\sum a_n$ 에 대해 $\displaystyle \alpha = \limsup_{n \to \infty} \sqrt[n]{|a_n|}$ 이라 할 때, 
 
-1. $\alpha<1$ 이면 $\sum a_n$ 은 수렴하며,
-2. $\alpha > 1$ 이면 $\sum a_n$ 은 발산하고,
-3. $\alpha=1$ 이면 이 조건만으로 수렴 여부를 정할 수 없다.
+&emsp;($1$) $\alpha<1$ 이면 $\sum a_n$ 은 수렴하며,
+
+&emsp;($2$) $\alpha > 1$ 이면 $\sum a_n$ 은 발산하고,
+
+&emsp;($3$) $\alpha=1$ 이면 이 조건만으로 수렴 여부를 정할 수 없다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 $1$. $\alpha<1$ 이라 하자. $\alpha< \beta < 1$ 인 임의의 $\beta$ 를 생각하자. @prp-properties_of_limsup 에 의해 $n\ge N \implies \sqrt[n]{|a_n|}<\beta$ 인 자연수 $N$ 이 존재한다. 즉 $n \ge N \implies |a_n|< \beta^n$ 이므로 $\sum a_n$ 은 절대수렴한다.
@@ -833,37 +876,39 @@ $3$. @exm-sequences 에서 $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$ 임
 
 ### 비율 판정법
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#thm-series_ratio_test}
 
 급수 $\sum a_n$ 에 대해 
 
-1. $\displaystyle \limsup_{n \to \infty} \left|\dfrac{a_{n+1}}{a_n}\right| <1$ 이면 수렴한다.
-2. 어떤 $N\in \mathbb{N}$ 에 대해 $n\ge N \implies \left|\dfrac{a_{n+1}}{a_n}\right| \ge 1$ 이면 발산한다.
+&emsp;($1$) $\displaystyle \limsup_{n \to \infty} \left|\dfrac{a_{n+1}}{a_n}\right| <1$ 이면 수렴한다.
+
+&emsp;($2$) 어떤 $N\in \mathbb{N}$ 에 대해 $n\ge N \implies \left|\dfrac{a_{n+1}}{a_n}\right| \ge 1$ 이면 발산한다.
 
 :::
+
+</div></br>
 
 ::: {.proof}
 
-$1$.$\displaystyle \limsup_{n \to \infty} \left|\dfrac{a_{n+1}}{a_n}\right| =\alpha$ 라고 하자. 임의의 $\alpha <\beta< 1$ 인 $\beta$ 에 대해 $n \ge N_0 \implies \left|\dfrac{a_{n+1}}{a_n}\right|<\beta$ 인 $N_0 \in \mathbb{N}$ 이 존재힌다(@prp-properties_of_limsup). $|a_{N_0 + k}|< \beta^k |a_{N_0}|$ 이므로 $\sum a_n$ 은 수렴한다. 
+($1$) $\displaystyle \limsup_{n \to \infty} \left|\dfrac{a_{n+1}}{a_n}\right| =\alpha$ 라고 하자. 임의의 $\alpha <\beta< 1$ 인 $\beta$ 에 대해 $n \ge N_0 \implies \left|\dfrac{a_{n+1}}{a_n}\right|<\beta$ 인 $N_0 \in \mathbb{N}$ 이 존재힌다(@prp-properties_of_limsup). $|a_{N_0 + k}|< \beta^k |a_{N_0}|$ 이므로 $\sum a_n$ 은 수렴한다. 
 
-$2$. $n \ge N \implies |a_{n+1}|\ge |a_n|$ 이면 $\displaystyle \lim_{n \to \infty}a_n \ne 0$ 이므로 $\sum a_n$ 은 발산한다 (@cor-convergence_of_series_2). $\square$
+($2$) $n \ge N \implies |a_{n+1}|\ge |a_n|$ 이면 $\displaystyle \lim_{n \to \infty}a_n \ne 0$ 이므로 $\sum a_n$ 은 발산한다 (@cor-convergence_of_series_2). $\square$
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-convergence_test_of_series}
 
-다음 급수의 수렴과 발산을 근판정법과 비율판정법으로 확인해보라. (Rudin 3.35 Example)
+다음 급수의 수렴과 발산을 근판정법과 비율판정법으로 확인 할 수 있다.
 
-1. $\displaystyle \dfrac{1}{2}+ \dfrac{1}{3} + \dfrac{1}{2^2}+ \dfrac{1}{3^2} + \dfrac{1}{2^3}+ \dfrac{1}{3^3} + \cdots$
+&emsp;($1$) $\displaystyle \dfrac{1}{2}+ \dfrac{1}{3} + \dfrac{1}{2^2}+ \dfrac{1}{3^2} + \dfrac{1}{2^3}+ \dfrac{1}{3^3} + \cdots$
 
-2. $\displaystyle \dfrac{1}{2} + 1 + \dfrac{1}{8} + \dfrac{1}{4} + \dfrac{1}{32} + \dfrac{1}{16} + \dfrac{1}{128} + \dfrac{1}{64} + \cdots$ 
+&emsp;($2$) $\displaystyle \dfrac{1}{2} + 1 + \dfrac{1}{8} + \dfrac{1}{4} + \dfrac{1}{32} + \dfrac{1}{16} + \dfrac{1}{128} + \dfrac{1}{64} + \cdots$ 
 
-:::
 
-::: {.solution}
 
-$1$. $a_{2n-1} = \dfrac{1}{2^n},\, a_{2n}= \dfrac{1}{3^n}$ 이므로,
+($1$) 의 경우를 보자. $a_{2n-1} = \dfrac{1}{2^n},\, a_{2n}= \dfrac{1}{3^n}$ 이므로,
 
 $$
 \begin{aligned}
@@ -874,7 +919,7 @@ $$
 
 이다. 근 판정법에 따라 $\sum a_n$ 은 수렴하지만. 비율판정법으로는 수렴을 판단할 수 없으며 $n \ge N \implies |a_{n+1}|<|a_n|$ 인 $N\in \mathbb{N}$ 도 존재하지 않기 때문에 발산도 판정할 수 없다.
 
-$2$. $a_{2n-1}= \dfrac{1}{2^{2n-1}}, a_{2n}= \dfrac{1}{2^{2n-2}}$ 이므로
+($2$) 의 경우는 $a_{2n-1}= \dfrac{1}{2^{2n-1}}, a_{2n}= \dfrac{1}{2^{2n-2}}$ 이므로
 
 $$
 \begin{aligned}
@@ -887,7 +932,7 @@ $$
 
 :::
 
-</br>
+</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-root_test_and_ratio_test}
 
@@ -898,6 +943,8 @@ $$
 $$
 
 :::
+
+</div><br>
 
 ::: {.proof}
 
@@ -940,7 +987,7 @@ $\displaystyle \liminf_{n \to \infty} {a_n}^{1/n} \le \limsup_{n \to \infty} {a_
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-radius_of_convergence}
 멱급수 $\sum a_n z^n$ 에 대해 
@@ -951,6 +998,8 @@ $$
 
 이라 하자. $|z|<R$ 일 때 멱급수는 수렴하고 $|z|>R$ 이면 멱급수는 발산한다.
 :::
+
+</div></br>
 
 ::: {.proof}
 
@@ -974,34 +1023,34 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-convergence_of_radius}
 
 다음 멱급수에 대한 수렴반경 $R$ 은 다음과 같다.
 
-1. $\displaystyle \sum n^n z^n \longrightarrow R=0$, 
-2. $\displaystyle \sum \dfrac{z^n}{n!} \longrightarrow R=+\infty$, 
-3. $\displaystyle \sum z^n \longrightarrow R=1$,
-4. $\displaystyle \sum \dfrac{z^n}{n^2} \longrightarrow R=1$.
+&emsp;($1$) $\displaystyle \sum n^n z^n \longrightarrow R=0$, 
+
+&emsp;($2$) $\displaystyle \sum \dfrac{z^n}{n!} \longrightarrow R=+\infty$, 
+
+&emsp;($3$) $\displaystyle \sum z^n \longrightarrow R=1$,
+
+&emsp;($4$) $\displaystyle \sum \dfrac{z^n}{n^2} \longrightarrow R=1$.
+
+
+($1$) $\displaystyle \limsup_{n \to \infty} n = \infty$ 
+
+($2$) 비율판정법을 사용한다. $c_n = \dfrac{z^n}{n!}$ 이라고 하면, $\displaystyle \limsup_{n \to \infty} \dfrac{c_{n+1}}{c_n} = \lim_{n \to \infty} \dfrac{|z|}{n+1} = 0$ 이므로 @prp-root_test_and_ratio_test 에 의해 $R= +\infty$ 이다.
+
+($3$), ($4$) 는 쉽게 보일 수 있기때문에 생략한다. 
 
 :::
 
-::: {.solution}
-
-$1$. $\displaystyle \limsup_{n \to \infty} n = \infty$ 
-
-$2$. 비율판정법을 사용한다. $c_n = \dfrac{z^n}{n!}$ 이라고 하면, $\displaystyle \limsup_{n \to \infty} \dfrac{c_{n+1}}{c_n} = \lim_{n \to \infty} \dfrac{|z|}{n+1} = 0$ 이므로 @prp-root_test_and_ratio_test 에 의해 $R= +\infty$ 이다.
-
-$3$, $4$ 는 쉽게 보일 수 있기때문에 생략한다. $\square$
-
-:::
-
-
-</br>
+</div></br>
 
 ## 부분합과 재배열 급수
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 ::: {#prp-partial_summation_formula}
 
 두 수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 $\displaystyle A_n = \sum_{k=0}^n a_k$ 라 하자. $A_{-1}=0$ 이라 하자. $0 \le p \le q$ 일 때
@@ -1012,7 +1061,7 @@ $$
 
 이다.
 :::
-
+</div></br>
 
 ::: {.proof}
 
@@ -1031,16 +1080,18 @@ $$
 
 [1번 조건에서 $\sum a_n$ 이 수렴한다면 $A_n$ 은 유계이다. 그러나 $A_n$ 이 유계라고 $\sum_n a_n$ 이 수렴하지는 않는다. $a_n = (-1)^n$ 을 생각해보라.]{.aside}
 
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
 ::: {#prp-convergence_of_product_of_sequences}
 
-수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 이 
+수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 이 아래의 두 조건을 만족하면 $\sum_n a_n b_n$ 은 수렴한다.
 
-1. $\displaystyle A_n=\sum_{k=1}^n a_k$ 이 유계인 수열을 이루며,
-2. $\langle b_n \rangle$ $0$ 으로 수렴하는 단조감소 수열이라면,
+&emsp;($1$) $\displaystyle A_n=\sum_{k=1}^n a_k$ 이 유계인 수열을 이루며,
 
-$\sum_n a_n b_n$ 은 수렴한다.
+&emsp;($2$) $\langle b_n \rangle$ 은 $0$ 으로 수렴하는 단조감소 수열이다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -1059,13 +1110,14 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#prp-summation_of_series}
 
 $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한 상수 $c$ 에 대해 $\sum ca_n = cA$ 이다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -1092,14 +1144,15 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#prp-convergence_of_cauchy_product}
 
 급수 $\sum a_n,\, \sum b_n$ 이
 
-1. $\displaystyle \sum_{n=0}^\infty a_n$ 이 절대수렴하며,
-2. $\displaystyle A=\sum_{n=0}^{\infty} a_n,\, B = \sum_{n = 0}^\infty b_n$ 
+&emsp; ($1$) $\displaystyle \sum_{n=0}^\infty a_n$ 이 절대수렴하며,
+
+&emsp; ($2$) $\displaystyle A=\sum_{n=0}^{\infty} a_n,\, B = \sum_{n = 0}^\infty b_n$ 
 
 일 때 코시 곱 $\displaystyle c_n = \sum_{k=0}^n a_k b_{n-k}$ 에 대해 
 
@@ -1110,6 +1163,7 @@ $$
 이다.
 
 :::
+</div></br>
 
 ::: {.proof}
 
@@ -1159,7 +1213,7 @@ $$
 ::: 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#prp-convergence_of_rearanged_series}
 
@@ -1167,6 +1221,7 @@ $$
 
 :::
 
+</div></br>
 
 ::: {.proof}
 $\sum a_n$ 에 대한 재배열 급수 $\sum a_{\sigma (n)}$ 을 생각한다. $\sum a_n = \alpha$ 라고 하자. $M(n) = \max \{\sigma(1), \ldots,\, \sigma(n)\}$ 이라 하면 
@@ -1185,6 +1240,8 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
 ::: {#prp-alternating_series}
 
 #### 교대 급수 판정법
@@ -1193,6 +1250,7 @@ $$
 
 :::
 
+</div></br>
 
 ::: {.proof}
 $b_n = (-1)^n a_n$ 이라 하고 $b_n$ 의 부분합수열 $s_n = \displaystyle \sum_{i=1}^n b_i$ 이 코시 수열임을 보이자. 임의의 $\varepsilon >0$ 에 대해 $n \ge N \implies a_n < \varepsilon$ 인 $N\in \mathbb{N}$ 이 항상 존재한다.$n>m\ge N$ 에 대해
@@ -1207,3 +1265,580 @@ $$
 :::
 
 
+## 연습문제
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_1_6_7}
+
+#### 김김계 1.6.7
+
+임의의 자연수 $n=1,\,2,\ldots$ 에 대하여 $\sqrt{n-1} + \sqrt{n+1}$ 이 무리수임을 증명하여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) 우선 $(m+1)^2-(m)^2 = 2m+1$ 이므로 인접하는 $0$ 보다 큰 두 자연수의 제곱의 차이는 2보다 크다. 따라서 $\sqrt{n-1}$ 과 $\sqrt{n+1}$ 이 동시에 제곱수일 수는 없다. 
+
+($2$) 제곱수가 아닌 자연수 $n$ 에 대해 $\sqrt{n}$ 이 유리수라고 가정하면 서로소인 어떤 자연수 $p,\,q$ 에 대해 $\sqrt{n}=p/q$ 이며 $q^2 n = p^2$ 인데 이로부터 $q\mid p$ 라는 결론이 나오므로 모순이다. 따라서 제곱수가 아닌 자연수의 제곱근은 무리수이며 따라서 $\sqrt{n-1}+ \sqrt{n+1}$ 은 자연수 + 무리수 이거나, 무리수 + 무리수 이다. 자연수 + 무리수 인 경우는 무리수이므로, 무리수 + 무리수 인 경우만 살펴보면 된다.
+
+($3$) 서로소인 자연수 $p,\,q$ 에 대해 $\sqrt{n-1}+ \sqrt{n+1} = \dfrac{p}{q}$ 라 하자. 그렇다면 $\sqrt{n^2-1}=\dfrac{p^2}{2q^2} - \dfrac{2n+1}{2} \in \mathbb{Q}$ 이다. 그런데 ($1$) 에서 보였듯이 $n^2-1$ 은 완전제곱수가 아니며 따라서 $2$ 에 의해 무리수이다. 즉 $\sqrt{n-1}+ \sqrt{n+1}$ 은 무리수이다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_2_6_11_12}
+
+#### 김김계 1.6.11, 1.6.12
+
+각 양수 $a>0$ 과 자연수 $n=1,\,2,\ldots$ 에 대하여 부등식
+
+$$
+(1+a)^n \ge 1+ na
+$$
+
+가 성립함을 보여라 그리고 이를 이용하여 다음을 보여라.
+
+(1) 만일 $|a|<1$ 이면 $\lim_n a^n = 0$ 이고, $|a|>1$ 이면 $\langle a^n\rangle$ 은 발산한다.
+
+(2) 임의의 양수 $a>0$ 에 대하여 $\lim_n a^{1/n}=1$ 이다.
+
+(3) $\lim_n n^{1/n}=1$ 이다.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$(1+a)^n = \displaystyle \sum_{k=0}^n \begin{pmatrix}n \\ k\end{pmatrix}a^k$ 에 의해 $(1+a)^n \ge 1+ na$ 이다.
+
+($1$) $0<a<1$ 이라면 어떤 $b>0$ 에 대해 $a=\dfrac{1}{1+b}$ 이다. $\dfrac{1}{a^n} = (1+b)^n \ge 1+nb$ 이므로, $a^n \le \dfrac{1}{1+nb}$ 이다. 따라서 $\lim_n \dfrac{1}{1+nb}=0$ 이므로 $\lim_n a^n = 0$ 이다. $-1<a<0$ 이라면 $\lim_n (-a)^n = 0$ 이므로 $\lim_n a^n = 0$ 이다. 따라서 $|a|<1 \implies \lim_n a^n=0$ 이다. $|a|>1$ 일 경우 $d=1/a$ 에 대해 $\lim_n |d|^n = 0$ 이므로 $\lim_n |a|^n$ 은 발산한다.
+
+($2$) $a>1$ 일 경우 임의의 자연수 $n$ 에 대해 $a^1/n>1$ 이다. 고정된 $n\in \mathbb{N}$ 에 대해 $\alpha_n = \dfrac{a-1}{n}$ 이라고 하면 $1+n\alpha_n = a$ 이며, $(1+\alpha_n)^n \ge 1+n\alpha =a$ 이다.
+
+$$
+1 < a^{1/n} \le (1+\alpha_n)
+$$
+
+이므로 $n \to \infty$ 극한을 생각하면 $\lim_n a^{1/n}=1$ 이다. $0<a<1$ 일 경우에는 $b=1/a$ 에 대해 $\lim_n b^{1/n} = 1$ 이므로 $\lim_n a^{1/n}=1$ 이다. 
+
+
+($3$) 자연수 $n$ 에 대해 $n^{1/n} \ge 1$ 이다. 주어진 부등식을 생각하자. 임의의 $a>0$ 에 대해
+
+$$
+(1+a)^n \ge 1+na \ge na
+$$
+
+이므로 $n^{1/n} \le \dfrac{1+a}{a^{1/n}}$ 이다. $\lim_n a^{1/n}=1$ 이므로 $\lim_n n^{1/n} \le 1+a$ 이며 임의의 양수 $a$ 에 대해 성립하므로 $\lim_n n^{1/n}=1$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-KKK_2_7_9}
+
+### 김김계 2.7.9
+
+집합 $\{ \sin n : n\in \mathbb{N}\}$ 이 구간 $[-1,\,1]$ 안에서 조밀함을 보여라. 또한 $\theta$ 가 무리수일 때 $\{e^{2\pi i n \theta}: n \in \mathbb{N}\}$ 이 단위원 $\{e^{2\pi i t}:t\in [0,\,1]\}$ 안에서 조밀함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_3}
+
+#### Rudin 3.3
+
+$s_1 = \sqrt{2}$ 이고 $s_{n+1} = \sqrt{2+\sqrt{s_n}}$, $(n=1,\,2,\,3,\ldots)$ 일 때 $\langle s_n \rangle$ 이 수렴하며 $s_n<2,\, n=1,\,2,\,3,\ldots$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+주어진 점화식에 의해 $s_n<2 \implies s_{n+1}<2$ 이다. 따라서 $\{s_n\}$ 은 유계이다. $s_n<2$ 이므로 $\sqrt{s_n}> \dfrac{s_n}{2}$ 이다.
+
+$$
+s_{n+1} = \sqrt{2+\sqrt{s_n}} \ge \sqrt{2+\dfrac{s_n}{2}} \ge \sqrt{s_n + \dfrac{s_n}{2}}=\sqrt{\dfrac{3}{2}} \sqrt{s_n} \ge \dfrac{\sqrt{3}}{2\sqrt{2}}s_n > s_n
+$$
+
+
+이므로 $\{s_n\}$ 은 유계인 단조증가수열이다. 따라서 수렴한다. 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_4}
+
+#### Rudin 3.4
+
+다음과 같이 정의된 수열 $\langle s_n \rangle$ 의 상극한과 하극한을 구하시오.
+
+$$
+s_1=0,\qquad s_{2m} = \dfrac{s_{2m-1}}{2},\qquad s_{2m+1} = \dfrac{1}{2} + s_{2m}.
+$$
+
+:::
+</div></br>
+
+::: {.proof}
+
+주어진 조건으로 부터 다음을 알 수 있다.
+$$
+s_1=0,\qquad s_2 = 0,\qquad s_{2m+2} = \dfrac{1}{4} + \dfrac{1}{2}s_{2m},\qquad s_{2m+1} =  \dfrac{1+s_{2m-1}}{2} 
+$$
+
+따라서,
+
+$$
+\begin{aligned}
+s_{2m} &= \left(-\dfrac{1}{2}\right)\left(\dfrac{1}{2}\right)^{m-1} + \dfrac{1}{2}, \\
+s_{2m+1} &= -\left(\dfrac{1}{2}\right)^{m-1}+1,
+\end{aligned}
+$$
+
+이다. 이 수열의 상극한은 $1$, 하극한은 $1/2$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_5}
+
+#### Rudin 3.5
+
+실수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 동시에 $\displaystyle \limsup_{n \to \infty} a_n = +\infty$, $\displaystyle \limsup_{n \to \infty} b_n = -\infty$ 인 경우가 아닐 때에는 다음이 성립함을 보이시오.
+
+$$
+\limsup_{n \to \infty} (a_n + b_n) \le \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n
+$$
+
+:::
+</div></br>
+
+::: {.solution}
+
+$\displaystyle a=\limsup_{n \to \infty} a_n ,\, b=\limsup_{n \to \infty} b_n$ 라 하자. $a=b=+\infty$ 이거나 $a=b=-\infty$ 인 경우라면 자명하다. 이제 $a,\,b$ 가 실수일 때만 생각한다. 귀류법으로 증명한다. 이제
+
+$$
+c=\limsup_{n \to \infty} (a_n + b_n) > \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n = a+b
+$$
+
+임을 가정하자. $r= \dfrac{c-(a+b)}{2}$ 라 하면 $r>0$ 이다. @prp-properties_of_limsup 에 의해 $\varepsilon < \dfrac{r}{2}$ 에 대해 어떤 $N\in \mathbb{N}$ 이 존재하여,
+
+$$
+n \ge N \implies a_n< a+\varepsilon,\, b_n < b+\varepsilon
+$$
+
+이므로 
+
+$$
+n \ge N \implies a_n + b_n < a+b+2\varepsilon < a+b+r =c-r
+$$
+
+이다. 즉 $a_n + b_n$ 의 상극한은 $c$ 가 아닌데 이는 모순이다. 즉, 
+
+$$
+\limsup_{n \to \infty} (a_n + b_n) \le \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n
+$$
+
+이다. 
+
+등호가 성립하지 않는 예를 블어보자. $a_n = (−1)^n +2$, $b_n = −(−1)^n +2$ 라 하면 $a=3,\, b=3$ 이지만 $a_n +b_n = 4$ 이므로 $a_n + b_n$ 의 상극한은 각각의 상극한보다 작다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_7}
+
+#### Rudin 3.7
+
+양의 실수열 $\langle a_n \rangle$ 에 대해 $\sum a_n$ 이 수렴하면 $\sum \dfrac{\sqrt{a_n}}{n}$ 도 수렴함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+Cauchy-Schwartz 부등식을 사용한다. 즉 수열 $a_n,\,b_n$ 에 대해 
+
+$$
+\sum_n a_n b_n \le \sqrt{\sum_n |a_n|^2}  \sqrt{\sum_n |b_n|^2}  
+$$
+
+이다. 
+
+$$
+\sum_n \dfrac{\sqrt{a_n}}{n} \le \sqrt{\sum_n a_n} \sqrt{\sum_n \dfrac{1}{n^2}}
+$$
+
+이다. $\sqrt{\sum_n a_n}$ 는 문제의 조건에 의해 수렴하며, $\sqrt{\sum_n \dfrac{1}{n^2}}$ 가 수렴함은 @prp-convergence_of_1_over_n_p 로부터 안다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_8}
+
+#### Rudin 3.8
+
+$\sum a_n$ 이 수렴하며 $\langle b_n \rangle$ 이 유계인 단조수열일 때 $\sum a_n b_n$ 이 수렴함을 보이시오.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\langle b_n \rangle$ 이 유계인 단조수열이므로 수렴한다. $b=\lim b_n$ 라 하자. $b_n$ 이 단조증가수열이라면 $c_n=b-b_n$ 은 단조감소수열이며 $\lim c_n = 0$ 이다. 
+
+$$
+\sum_n a_n b_n = \sum_{n} a_n (b-c_n) = b\sum_n a_n - \sum_n a_n c_n 
+$$
+
+이며 @prp-convergence_of_product_of_sequences 에 의해 $\sum_n a_n c_n$ 은 수렴하므로 위 식은 수렴하는 두 수열의 차이므로 수렴한다. $b_n$ 이 단조감소수열이라면 $c_n = b_n -b$ 는 $0$ 으로 수렴하는 단조감소수열이고 
+
+$$
+\sum_n a_n b_n = \sum_{n} a_n (c_n + b) = b\sum_n a_n + \sum_n a_n c_n 
+$$
+
+이므로 좌변은 수렴하는 두 수열의 합이되며, 따라서 수렴한다. $\square$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_11}
+
+#### Rudin 3.11
+
+양의 실수열 $\langle a_n \rangle$ 에 대해 $s_n = \displaystyle \sum_{k=1}^n a_k$ 이며 $\sum a_n$ 은 발산한다고 하자.
+
+($1$) $\sum \dfrac{a_n}{1+a_n}$ 은 발산함을 보여라.
+
+($2$) $\dfrac{a_{n+1}}{s_{N+1}} + \cdots + \dfrac{a_{N+k}}{s_{N+k}} \ge 1- \dfrac{s_N}{s_{N+k}}$ 임을 보이고 $\sum \dfrac{a_n}{s_n}$ 이 발산함을 보여라.
+
+($3$) $\dfrac{a_n}{{s_{n}}^2} \le \dfrac{1}{s_{n-1}} - \dfrac{1}{s_n}$ 임을 보이고 $\sum \dfrac{a_n}{{s_n}^2}$ 가 수렴함을 보여라.
+
+($4$) $\sum \dfrac{a_n}{1+a_n}$ 과 $\sum \dfrac{a_n}{1+n^2a_n}$ 에 대해 더 알 수 있는 것은 무엇인가?
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $\sum \dfrac{a_n}{1+a_n}$ 이 수렴함을 가정하자. 그렇다면 $\displaystyle \lim_{n \to \infty} \dfrac{a_n}{1+a_n}=0$ 이며 따라서 $a_n \to 0$ 이다. 그렇다면 어떤 $N\in \mathbb{N}$ 에 대해 $n\ge N \implies a_n<1$ 이며
+
+$$
+a_n<1 \implies a_n^2 < a_n \implies a_n^2+a_n \le 2a_n \implies \dfrac{a_n}{2} \le \dfrac{a_n}{1+a_n}
+$$
+
+이므로 비교판정법에 의해 $\sum a_n$ 은 수렴해야 하는데 이는 가정에 모순된다. 따라서 $\sum \dfrac{a_n}{1+a_n}$ 은 발산한다.
+
+($2$) 부등식은 다음과 같이 보인다.
+
+$$
+\dfrac{a_{n+1}}{s_{N+1}} + \cdots + \dfrac{a_{N+k}}{s_{N+k}} \ge \dfrac{a_{n+1}}{s_{N+k}} + \cdots + \dfrac{a_{N+k}}{s_{N+k}} = \dfrac{s_{N+k}-s_N}{s_{N+k}} = 1-\dfrac{s_N}{s_{N+k}}
+$$
+
+이제 $\sum \dfrac{a_n}{s_n}$ 이 발산함을 보이자. $s_n$ 이 $+\infty$ 로 발산하므로 충분히 큰 $k$ 에 대해 $s_{N+k}>2s_N$ 이며 따라서 $\dfrac{a_{n+1}}{s_{N+1}} + \cdots + \dfrac{a_{N+k}}{s_{N+k}} \ge \dfrac{1}{2}$ 이다. 즉 코시 판정법의 발산 조건이다. 
+
+($3$) $s_n > s_{n-1}$ 이므로
+
+$$
+\dfrac{1}{s_{n-1}}-\dfrac{1}{s_n} = \dfrac{a_n}{s_n s_{n-1}} \ge \dfrac{a_n}{{s_n}^2}
+$$
+
+이다. 따라서, 
+
+$$
+\begin{aligned}
+\sum_{k=1}^n \dfrac{a_n}{{s_n}^2} &= \dfrac{1}{a_1} + \sum_{k=2}^n \dfrac{a_n}{{s_n}^2} \\
+&\le \dfrac{1}{a_1} + \left(\dfrac{1}{s_1}- \dfrac{1}{s_2}\right) + \cdots \left(\dfrac{1}{s_{n-1}}-\dfrac{1}{s_n}\right) \\
+&= \dfrac{2}{a_1}-\dfrac{1}{s_n}
+\end{aligned}
+$$
+
+이므로 $\sum \dfrac{a_n}{{s_n}^2} \le \dfrac{2}{a_1}$ 이다. 따라서 수렴한다.
+
+($4$) $\langle na_n\rangle$ 이 위로 유계인 경우 즉 $na_n < M$ 인 경우 $\dfrac{a_n}{1+na_n} > \dfrac{a_n}{M+1}$ 이므로 발산한다. $\langle na_n \rangle$ 이 $0$ 이 양의 하한 $b$ 를 가지는 경우, 즉 $na_n > b > 0$ 인 경우
+
+$$
+\dfrac{a_n}{1+na_n} = \dfrac{1}{n} \dfrac{na_n}{1+na_n} > \dfrac{1}{n}\dfrac{b}{1+b}
+$$
+
+이므로 $\sum \dfrac{a_n}{1+na_n}$ 은 발산한다.
+
+수렴하는 경우는 (위스컨신 대학의 solution site 에서 가져왔음) 
+
+$$
+a_n = \left\{ \begin{array}{ll} \dfrac{1}{\sqrt{n}} \qquad & n\text{ 이 자연수의 제곱일 때} \\ \dfrac{1}{n^2} &\text{otherwise}.\end{array} \right.
+$$
+
+이 있다. 이 $a_n$ 은 문제의 조건을 만족하며, 인덱스가 제곱수가 아닌 항의 합은 수렴하고($<\sum 1/n^2$), 제곱수 인 항의 합은 $\sum \dfrac{1}{m^2+m}$ 이 되므로 수렴한다. 따라서 $\dfrac{a_n}{1+na_n}$ 은 수렴한다.
+
+$\dfrac{a_n}{1+n^2a_n}$ 의 경우
+
+$$
+\sum \dfrac{a_n}{1+n^2 a_n} = \sum \dfrac{1}{1/a_n + n^2} < \sum \dfrac{1}{n^2}
+$$
+
+이므로 수렴한다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_12}
+
+#### Rudin 3.12
+
+$a_n>0$ 이며 $\sum a_n$ 이 수렴한다고 하자. $r_n$ 을 다음과 같이 정한다.
+
+
+$$
+r_n = \sum_{k=n}^\infty a_k.
+$$
+
+
+&emsp; ($1$) $m<n$ 일 때 $\dfrac{a_m}{r_m} + \cdots + \dfrac{a_n}{r_n} > 1- \dfrac{r_n}{r_m}$ 임을 보이고, $\sum \dfrac{a_n}{r_n}$ 이 발산함을 보여라.
+
+&emsp; ($2$) $\dfrac{a_n}{\sqrt{r_n}} < 2(\sqrt{r_n}- \sqrt{r_{n+1}})$ 임을 보이고 $\sum \dfrac{a_n}{\sqrt{r_n}}$ 이 수렴함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $m<n$ 일 때 $r_m > r_n$ 이다. 즉 $\langle r_n\rangle$ 은 단순 감소 수열(같은 값을 갖는 항이 없는 감소수열) 이다.
+
+$$
+\dfrac{a_m}{r_m} + \cdots + \dfrac{a_n}{r_n} > \dfrac{a_m + \cdots a_n}{r_m} = \dfrac{r_m-r_{n+1}}{r_m} > \dfrac{r_m - r_n}{r_m} = 1-\dfrac{r_n}{r_m}
+$$
+
+
+$\sum a_n$ 이 수렴하므로 $\langle r_n \rangle \to 0$ 이다. 아무리 큰 $m$ 을 잡더라도 더 큰 어떤 $n$ 에 대해 $r_n < \dfrac{1}{2} r_m$ 이므로
+
+$$
+\sum_{k=n}^m \dfrac{a_n}{r_n} > 1-\dfrac{r_n}{r_m} > \dfrac{1}{2}
+$$
+
+이다. 코시 판정법에 의해 발산한다.
+
+($2$)  $a_n = r_n - r_{n+1} >0$ 을 이용한다.
+
+$$
+\sqrt{r_n}-\sqrt{r_{n+1}} = \dfrac{r_n -r_{n+1}}{\sqrt{r_n}+\sqrt{r_{n+1}}} = \dfrac{a_n}{\sqrt{r_n}+ \sqrt{r_{n+1}}}> \dfrac{a_n}{2 \sqrt{r_{n}}}.
+$$
+
+이로부터, 
+
+$$
+\sum_{k=1}^n \dfrac{a_n}{\sqrt{r_n}} < 2(\sqrt{r_1}- \sqrt{r_{n+1}}) 
+$$
+
+
+이므로 수렴한다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_13}
+
+#### Rudin 3.13
+
+절대수렴하는 두 급수의 코시곱은 절대수렴함을 보이시오.
+
+:::
+
+</div></br>
+
+::: {.solution}
+$\displaystyle A'_n = \sum_{k=0}^n |a_k|,\, B'_n = \sum_{k=0}^n |b_k|$, $A' = \displaystyle \lim_{n \to \infty} A'_n$, $B' = \displaystyle \lim_{n \to \infty} B'_n$, $\beta'_n = B'_n - B'$ 이라 하자.
+
+$$
+\begin{aligned}
+\sum_{k=0}^\infty |c_k| &= |a_0 b_0| + |a_0b_1 + a_1b_0| + \cdots + |a_0b_n + a_1b_{n-1} + \cdots + a_n b_0| \\
+&\le |a_0|\left( |b_0|+|b_1|+ \cdots + |b_n| \right) + |a_1|\left( |b_0|+ \cdots + |b_{n-1}|\right)\\
+&\qquad \qquad + \cdots + |a_n| \left(|b_0|\right) \\
+&= |a_0|B'_n + |a_1| B'_{n-1} + \cdots + |a_n| B'_0\\
+&= |a_0|(\beta'_n+B') + |a_1| (\beta'_{n-1}+B') + \cdots + |a_n| (\beta'_0 + B') \\
+&= A'_n B' + |a_0| \beta'_n + \cdots + |a_n| \beta'_0
+\end{aligned}
+$$
+이다. $\gamma'_n = |a_0|\beta'_n + \cdots + |a_n| \beta'_0$ 라 하고 $\displaystyle \lim_{n \to \infty} \gamma'_n \to 0$ 임을 보이자. 임의의 $\varepsilon >0$ 을 생각한다. $\displaystyle \lim_{n \to \infty}\beta'_n = 0$ 이므로 $n \ge N \implies |\beta'_n|<\varepsilon$ 이 되도록 $N$ 을 선택 할 수 있다. $n \ge N$ 이면, 
+$$
+\begin{aligned}
+|\gamma'_n| &= \left| \beta'_0|a_n| + \cdots + \beta'_N |a_{n-N}| + \beta'_{N+1} |a_{n-N-1}| + \cdots + \beta'_n |a_0| \right|\\
+&\le \left| \beta'_0|a_n| + \cdots + \beta'_N |a_{n-N}|\right| + \left|\beta'_{N+1} |a_{n-N-1}| + \cdots + \beta'_n |a_0| \right|\\
+&\le \left| \beta'_0|a_n| + \cdots + \beta'_N |a_{n-N}|\right| + \varepsilon \left(\sum_{k=0}^{n-N-1} |a_k|\right)
+\end{aligned}
+$$
+이다. 여기에 $N$ 을 고정하고 $n \to \infty$ 극한을 취하면, 
+$$
+0 \le \limsup_{n \to \infty} |\gamma'_n| \le \varepsilon \left( \sum |a_n|\right)
+$$
+이므로 $\displaystyle \lim_{n \to \infty} \gamma'_n = 0$ 임을 알 수 있다. 즉 $\displaystyle \sum_{k=0}^\infty |c_k| = A'B'$ 이다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-kkk_2_7_11}
+
+#### 김김계 2.7.11
+
+유계 실수열 $\langle x_n \rangle$ 이 다음 조건
+
+$$
+2x_n \le x_{n-1}+x_{n+1},\qquad n=1,\,2,\ldots
+$$
+
+를 만족할 때 $\lim_n (x_{n+1}-x_n)=0$ 임을 보여라.
+:::
+
+</div></br>
+
+::: {.solution}
+$y_n := x_{n+1}-x_n$ 이라 하자. $\langle x_n\rangle$ 이 유계이므로 $|x_n|<R$ 인 양의 실수 $R\in \mathbb{R}$ 이 존재하며 $|y_n|<2R$ 이므로 $\langle y_n\rangle$ 도 유계이다. 또한 주어진 조건으로 부터 $x_{n+1}-x_n \le x_n -x_{n-1}$ 이므로 $\langle y_{n} \rangle$ 은 단조감소수열이다. 따라서 $\langle y_n \rangle$ 은 수렴한다. 
+
+$y:=\displaystyle \lim_{n \to \infty} y_n$ 이라 하자. 우리는 $y=0$ 임을 보이고자 한다. 
+
+우선 $y>0$ 임을 가정하자. $y$ 가 감소수열이므로 $y_n\ge y$ 이다. 자연수 $N$ 에 대해 
+$$
+\begin{aligned}
+x_{N+1}-x_1 &= (x_{N+1}-x_{N})+ (x_{N}-x_{N-1}) + (x_{N-1}-x_{N-2}) + \cdots + (x_2-x_1) \\
+&= y_{N} + y_{N-1} + \cdots + y_{1} > Ny
+\end{aligned}
+$$
+
+이므로 $x_{N+1} > x_1 + Ny$ 이다. $N > \dfrac{R-x_1}{y}$ 이면 $x_{N+1}>R$ 이므로 $|x_n|<R$ 이라는 가정에 위배된다. 
+
+$y<0$ 이라면 어떤 $N\in \mathbb{N}$ 이 존재하여 $n\ge N \implies y_n < \dfrac{y}{2}$ 이며,
+
+$$
+\begin{aligned}
+x_{N} - x_{N+M+1} &= x_{N}-x_{N+1}+ x_{N+1}-x_{N+2} + \cdots + x_{N+M}- x_{N+M+1}\\
+&= - y_{N} - y_{N+1} - \cdots - y_{N+M} > -(M+1)\dfrac{y}{2}
+\end{aligned}
+$$
+
+이므로 $x_{N+M+1} < x_N + (M+1)\dfrac{y}{2}$ 이다. $M > -(R+x_N) \dfrac{2}{y}-1$ 이면 $x_{N+M+1}<-R$ 이므로 $|x_n|<R$ 이라는 가정에 위배된다. 따라서 $y=0$ 이다. $\square$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-kkk_2_7_12}
+
+#### 김김계 2.7.12
+
+실수열 $\langle a_n \rangle$ 에 대하여 새로운 수열 $\langle \sigma_n\rangle$ 을 다음
+
+$$
+\sigma_n = \dfrac{1}{n}(a_1+ \cdots + a_n),\qquad n=1,\,2,\ldots,
+$$
+
+과 같이 정의하자. 이 때 $\lim_n a_n = a$ 이면 $\lim_n \sigma_n = a$ 임을 보여라.
+
+::: 
+</div></br>
+
+::: {.solution}
+
+정해진 $\varepsilon>0$ 에 대해 $n \ge N \implies |a_n - a|<\varepsilon$ 을 만족하는 $N$ 이 존재한다. $n > N$ 이라 하자. 
+
+$$
+\begin{aligned}
+|\sigma_n - a| & = \dfrac{1}{n} \left| (a_1-a)  + \cdots + (a_N -a ) + (a_{N+1}-a) + \cdots + (a_n - a) \right| \\
+& \le \dfrac{|a_1-a| + \cdots + |a_N-a|}{n} + \dfrac{|a_{N+1}-a| + \cdots + |a_{n}-a|}{n} \\
+&< \dfrac{|a_1-a| + \cdots + |a_N-a|}{n} + \varepsilon \dfrac{n-N}{n}
+\end{aligned}
+$$
+
+이다. $N$ 을 고정하고 $n \to \infty$ 에서 생각하면, 
+
+$$
+0 \le \limsup_{n \to \infty} |\sigma_n - a| \le \varepsilon
+$$
+
+이다. 따라서 $\displaystyle \lim_{n \to \infty} \sigma_n = a$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_16}
+
+#### Rudin 3.16
+
+양수 $\alpha$ 를 고정시킨다. $x_1 > \sqrt{\alpha}$ 를 선택하고
+$$
+x_{n+1} = \dfrac{1}{2} \left(x_n + \dfrac{\alpha}{x_n}\right)
+$$
+
+이라 하자.
+
+($1$) $\langle x_n \rangle$ 이 단조감소수열이며 $\lim_n x_n = \sqrt{\alpha}$ 임을 보여라
+
+($2$) $\varepsilon_n = x_n -\sqrt{\alpha}$ 일 때 $\varepsilon_{n+1} = \dfrac{\varepsilon_n^2}{2x_n}  < \dfrac{\varepsilon_n^2}{2\sqrt{\alpha}}$ 임을 보여라. 또한 $\beta = 2\sqrt{\alpha}$ 라 하면
+
+$$
+\varepsilon_n < \beta \left(\dfrac{\varepsilon_1}{\beta}\right)^{2^n} \qquad (n=1,\,2,\,3,\ldots)
+$$
+
+임을 보여라
+
+($3$) 이것은 제곱근을 계산하는 좋은 알고리즘이다. 예를 들어 $\alpha=3$ 이고 $x_1=2$ 일 때 $\varepsilon/\beta < \dfrac{1}{10}$ 이며 따라서, 
+
+$$
+\varepsilon_5 < 4 \cdot 10^{-16},\qquad \varepsilon_6 < 4 \cdot 10^{-32}
+$$
+
+이다.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $a+b\ge 2 \sqrt{ab}$ 이므로 
+
+$$
+x_{n+1} = \dfrac{1}{2} \left(x_n + \dfrac{\alpha}{x_n}\right) \ge \sqrt{\alpha}
+$$
+
+이다. $x_n > \sqrt{\alpha}$ 이며 $\alpha/x_n <\sqrt{\alpha}$ 이다.
+
+$$
+x_n-x_{n+1} = \dfrac{1}{2}\left(x_n - \dfrac{\alpha}{x_n}\right) >0
+$$
+
+이므로 $\langle x_n \rangle$ 은 단조감소수열이다. $\langle x_n \rangle$ 이 유계인 단조감소수열이므로 수렴하며 $\lim_n x_n=x$ 라 놓으면 $x=\dfrac{1}{2} \left(x+\dfrac{\alpha}{x}\right)$ 이므로 $x=\sqrt{\alpha}$ 이다.
+
+($2$) $\dfrac{\varepsilon_n^2}{2x_n} = \dfrac{1}{2x_n}\left(x_n^2 - 2\sqrt{\alpha}x_n + \alpha\right) = \dfrac{1}{2}\left(x_n + \dfrac{\alpha}{x_n}\right) - \sqrt{\alpha} = x_{n+1}-\sqrt{\alpha} = \varepsilon_{n+1}$
+
+이며 $x_n> \sqrt{\alpha}$ 이므로 $\dfrac{\varepsilon_n^2}{2x_n}< \dfrac{\varepsilon_n^2}{2\sqrt{\alpha}}$ 이다. $\beta = 2\sqrt{\alpha}$ 라 하면 $\varepsilon_{n+1} < \dfrac{\varepsilon_{n}^2}{\beta}$ 이다.
+
+$$
+\varepsilon_{n+1} < \dfrac{\varepsilon_n^2}{\beta} < \dfrac{1}{\beta}\left(\dfrac{\varepsilon_{n-1}^2}{\beta}\right)^2 = \dfrac{\varepsilon_{n-1}^4}{\beta^3} < \cdots < \beta \left(\dfrac{\varepsilon_1}{\beta}\right)^{2^n}
+$$
+
+
+:::

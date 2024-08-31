@@ -20,7 +20,6 @@ book:
       chapters :
         - src/part2/2_1_basic_topology.qmd
         - src/part2/2_2_sequences_and_series.qmd
-        - src/part2/2_2x_sequences_and_series_exercise.qmd
         - src/part2/2_3_continuity_of_functions.qmd
         - src/part2/2_3x_continiuty_of_functions.qmd
     - references.qmd
