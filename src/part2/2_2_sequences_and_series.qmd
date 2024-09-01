@@ -10,7 +10,7 @@ crossref:
 
 ### 수열의 수렴
 
-수열은 @def-sequence 에서 정의하였다. 급수(series) 는 다음과 같이 정의된다.
+수열은 @def-part2_sequence 에서 정의하였다. 급수(series) 는 다음과 같이 정의된다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
