@@ -276,10 +276,10 @@ $$
 
 위의 정리의 1, 3, 5, 6 으로부터 유클리드 공간은 노름을 거리함수로 갖는 거리공간이라는 것을 알 수 있다.
 
+</br>
 
 ### 열린집합과 닫힌집합 {#sec-open_set_and_closed_set}
 
-</br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -299,6 +299,7 @@ $$
 :::
 
 </br>
+
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -323,6 +324,70 @@ $N_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 
 
 
 </br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_convex}
+
+#### 볼록 집합
+
+$E\subset \mathbb{R}^k$ 가 모든 $x,\,y\in E,\, t\in (0,\,1)$ 에 대해
+
+$$
+(1-t)x+ty\in E
+$$
+
+이면 $E$ 를 **볼록 집합(convex set)** 이라고 한다. 
+
+::: 
+:::
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-convex_set}
+
+#### 근방과 볼록집합
+
+$N(p,\,\varepsilon)$ 은 볼록집합임을 보이자. $x,\,y \in N(p,\,\varepsilon)$ 일 때 
+
+$$
+\begin{aligned}
+|(1-t)x+ty-p| &= |(1-t)(x-p) + t(y-p)| \\
+& \le (1-t)|x-p| + t|y-p| \\
+& < (1-t)r +tr = r
+\end{aligned}
+$$
+
+이므로 $N(p,\,\varepsilon)$ 은 볼록집합이다. $\overline{N}(p,\,\varepsilon)$ 도 볼록집합임을 같은 방법으로 보일 수 있다.
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-convex_set}
+
+#### $n$-cell 과 볼록집합
+
+$\mathbb{R}^n$ 에서 정의된 $n$-cell $A:=[a_1,\,b_1]\times \cdots \times [a_n,\,b_n]$ 을 생각하자. $x=(x_1,\ldots,\,x_n)$, $y=(y_1,\ldots,\,y_n)$ 이 $x,\,y\in A$ 일 때 $t\in (0,\,1)$ 에 대해 $z=(1-t)x+ty$ 라고 하자. 
+
+$$
+\begin{aligned}
+(1-t)x_j +ty_j &\le  (1-t)b_j + tb_j =b_j,\\
+(1-t)x_j + ty_j & \ge (1-t)a_j + ta_j = a_j
+\end{aligned}
+$$
+
+이므로 $z_j \in [a_j,\,b_j],\, j=1,\ldots,\,n$ 이다. 
+
+:::
+
+</div></br>
+
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -1031,9 +1096,14 @@ $$
 
 ($5$) $\text{int}(\partial A) \ne \varnothing$ 인 집합 $A$ 의 예를 들어라.
 
+($6^\ast$) $A$ 가 열린집합이면 $\partial A = A'\backslash A$ 임을 보여라.
+
+($7^\ast$) $\overline{A}=A\cup \partial A$ 임을 보여라.
 :::
 
+
 </div></br>
+[문제에 $^\ast$ 가 붙으면 원래는 없던 문제를 추가한 것이다.]{.aside}
 
 ::: {.solution}
 
@@ -1061,9 +1131,15 @@ $$
 
 ($5$) $\mathbb{R}^1$ 에서 $\partial \mathbb{Q}=\mathbb{R}$ 이므로 $\text{int} (\partial \mathbb{Q}) = \mathbb{R}$ 이다.
 
+($6^\ast$) $\partial A$ 의 정의에 의해 $\partial A \subset \overline{A}$ 인데 $A$ 가 열린집합이므로 $\partial A \cap A=\varnothing$ 이며($2$), 따라서 $\partial A\subset A'$ 이다. $x\in A'\backslash A$ 이면 $x\in A'$ 이므로 임의의 $\varepsilon >0$ 에 대해 $N(x,\,\varepsilon) \cap A \ne \varnothing$ 이며, $x\in \mathbb{R}^n\backslash A$ 이므로 $N(x,\, \varepsilon) \cap \mathbb{R}^n\backslash A\ne \varnothing$ 이다. 즉 $A'\backslash A \subset \partial A$ 이다. $\partial A=A'\backslash A$ 이므로 $\overline{A}=\partial A$ 이다. 
+
+($7^\ast$) $\partial A \cup A = (\overline{A}\cup A) \cap \left(\left(\overline{\mathbb{R}^n\backslash A}\right)\cup A\right)$ 여기서 $\mathbb{R}^n\backslash A \subset \overline{\mathbb{R}^n\backslash A}$ 이므로 $\left(\left(\overline{\mathbb{R}^n\backslash A}\right)\cup A\right) = \mathbb{R}^n$ 이다. $A \subset \overline{A}$ 이므로 $\partial A \cup A = \overline{A}$ 이다. $\square$
+
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-KKK_2_7_8}
 
@@ -1097,34 +1173,10 @@ $$
 $$
 이다. $N\left( y,\, \dfrac{\varepsilon-d_y}{2}\right) \subset N(A,\varepsilon)$ 이므로 $N(A,\varepsilon)$ 은 연린 집합이다.
 
-($2$) $U\subset \mathbb{R}^n$ 가 열린 집합일 때 $\overline{U} =U \cup \partial U$ 임을 보이자. 앞서 우리는 @exr-KKK_2_7_6 에서 $\partial U = \overline{U} \cap \overline{\mathbb{R}^n \backslash U}$ 임을 보았다. 또한 $U$ 가 열린집합이므로  $U \cap \partial U = \varnothing$ 이다. 즉 $\partial U \subset \overline{U}\backslash U$ 이므로 $\partial U \subset U'\backslash U$ 이다. $x\in U'\backslash U$ 라 하자. $x\not\in U$ 이므로 $x\in \partial U$ 이다. 따라서 $\partial U = A'\backslash U$ 이므로 $\overline{U} = U' \cup U = \partial U \cup U$ 이다. 
+($2$) $N_A :=N(A,\varepsilon)$ 는 열린 집합이므로 @exr-KKK_2_7_6 의 ($2$) 에 의해 $\partial N_A \cap N_A=\varnothing$ 이다. $S_A := \{x\in \mathbb{R}^n : \rho(x, A) = \varepsilon\}$ 이면 $S_A\cap N_A=\varnothing$ 이며 $x\in S_A$ 이면 임의의 $\delta>0$ 에 대해 $N(x,\,\delta)\cap N_A\ne \varnothing$ 이고 $x\notin N_A$ 이므로 $N(x,\,\delta)\cap \mathbb{R}^n\backslash N_A\ne \varnothing$ 이다. 따라서 $S_A \subset \partial N_A$ 이다. $x\notin S_A$ 라고 하자. $\rho(x,\,A) =d_x > \varepsilon$ 이면 $N_A \cap N\left(x,\, \dfrac{d_x-\varepsilon}{2}\right) =\varnothing$ 이므로 $x\not\in \partial N_A$ 이다. $\rho(x,\,, A)= d_x <\varepsilon$ 이면 $N\left(x,\, \dfrac{\varepsilon-d_x}{2}\right)\cap (\mathbb{R}^N\backslash N_A) =\varnothing$ 이므로 $x\not\in \partial N_A$ 이다. 
 
-$N_A =N(A,\varepsilon)$ 는 열린집합 이므로 @exr-KKK_2_7_6 의 ($2$) 에 의해 $\partial N_A \cap N_A=\varnothing$ 이다. $y\in \mathbb{R}^n$ 에 대해 $\rho(y,A)=d_y>\varepsilon$ 이라 하자. $N\left(y, \dfrac{d_y-\varepsilon}{2}\right) \cap N_A=\varnothing$ 이므로 $y \not\in \partial N_A$ 이다. $\rho(y,A)=\varepsilon$ 이라 하자. 임의의 $0<\delta<\varepsilon$ 에 대해 $N(y,\, \delta)\cap N_A \ne \varnothing$ 이며 $N(y,\, \delta)\cap \mathbb{R}^N\backslash N_A \ne \varnothing$ 임을 보이자. 
-$z_1= a+\dfrac{\varepsilon+\delta/2}{\varepsilon}(y-a)$ 라 하자.
+즉 $S_A=\partial N_A$ 이며 $\overline{N_A}=N_A \cup \partial N_A = \{x\in \mathbb{R}^n : \rho (x,A)\le \varepsilon\}$ 이다.
 
-$$
-\|z_1-y\| = \dfrac{\delta}{2\varepsilon}\|y-a\| = \dfrac{\delta}{2}
-$$
-
-이므로 $z_1\in N(y,\, \delta)$ 이며 
-
-$$
-\|z_1-a\| = \varepsilon + \dfrac{\delta}{2}> \varepsilon
-$$
-
-이므로 $z_1\in \mathbb{R}^n\backslash N_A$ 이다. $z_2= a+ \dfrac{\varepsilon - \delta/2}{\varepsilon}(y-a)$ 이라 하면 $\|z_2-y\| = \dfrac{\delta}{2}$ 이므로 $z_2\in N(y,\,\delta)$ 이며, $\|z_2-a\| =\varepsilon - \dfrac{\delta}{2}< \varepsilon$ 이므로 $z_2\in N_A$ 이다. 즉
-
-$$
-\partial N_A = \{x\in \mathbb{R}^n : \rho(x,\, A)=\varepsilon\}
-$$
-
-이다. $\delta'>\varepsilon$ 인 경우 $N(y,\, \delta')$ 는 $0<\delta<\varepsilon$ 인 $N(y,\, \delta)$ 를 포함하므로 역시 성립한다. 따라서, 
-
-$$
-\overline{N_A} = N_A \cup \partial N_A = \{x\in \mathbb{R}^n : \rho(x,\, A) \le \varepsilon\}
-$$
-
-이다. 
 
 ($3$) 임의의 $\varepsilon>0$ 에 대해 $A \subset N(A, \varepsilon) \subset \overline{N(A, \varepsilon)}$ 이므로 $A \subset \bigcap_{\varepsilon>0} \overline{N(A,\varepsilon)}$ 이다. 임의의 $\varepsilon>0$ 에 대해 $x\in \overline{N(A,\varepsilon)}$ 이면 어떤 $a\in A$ 에 대해 $\inf_{a\in A} \|x-a\|\le \varepsilon$ 이어야 하는데 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $x\in A$ 이거나 $x\in A'$ 이어야 한다. 즉 $\bigcap_{\varepsilon>0} \overline{N(A,\varepsilon)} \subset \overline{A}$ 이므로
 
@@ -1139,7 +1191,9 @@ $$
  
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-KKK_2_7_9}
 
@@ -1198,7 +1252,9 @@ $X=\{n\theta \; (\text{mod}\;1) :  n\in \mathbb{N}\}$ 이 $[0,\,1)$ 에서 조�
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-KKK_2_7_20}
 
@@ -1225,7 +1281,9 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-separated_set}
 
@@ -1233,13 +1291,13 @@ $$
 
 거리공간 $X$ 와 그 부분집합 $A,\,B$ 에 대해 다음을 보여라.
 
-&emsp;  ($1$) $A$ 와 $B$ 가 닫힌집합이며 교집합이 공집합이라면 $A$ 와 $B$ 는 분리되었음을 보이시오.
+($1$) $A$ 와 $B$ 가 닫힌집합이며 교집합이 공집합이라면 $A$ 와 $B$ 는 분리되었음을 보이시오.
 
-&emsp; ($2$) ($1$) 이 열린 집합 $A$, $B$ 에 대해서도 분리되었음을 보이시오
+($2$) ($1$) 이 열린 집합 $A$, $B$ 에 대해서도 분리되었음을 보이시오
 
-&emsp; ($3$) 고정된 $p\in X,\, \delta > 0$ 에 대해 $A=N_X(p,\, \delta)$ 일 때 $B$ 를 $<$ 대신 $>$ 를 이용하여 정의하시오. $A$ 와 $B$ 가 분리되었음을 보이시오.
+($3$) 고정된 $p\in X,\, \delta > 0$ 에 대해 $A=N_X(p,\, \delta)$ 일 때 $B$ 를 $<$ 대신 $>$ 를 이용하여 정의하시오. $A$ 와 $B$ 가 분리되었음을 보이시오.
 
-&emsp; ($4$) 최소한 두개 이상의 점을 갖는 연결된 거리공간은 uncountable 임을 보이시오. (힌트 : $3$ 을 이용할것)
+($4$) 최소한 두개 이상의 점을 갖는 연결된 거리공간은 uncountable 임을 보이시오. (힌트 : $3$ 을 이용할것)
  
 :::
 
@@ -1260,13 +1318,28 @@ $p,\,q \in A$, $p \ne q$ 이며 $A$ 가 연결집합이라고 하자. $r<d(p,\, 
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
 
-::: {#exr-rudin_2_22}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-#### Rudin 2.22
+::: {#exr-rudin_2_21}
 
-거리공간 $X$ 의 어떤 부분집합 $E$ 에 대해 $E$ 가 가산무한집합이며 $\overline{E}=X$ 일 때 $X$ 를 **separable** 이라 한다. $\mathbb{R}^k$ 가 separable 임을 보이시오.
+#### Rudin 2.21
+
+$A,\,B$ 가 $\mathbb{R}^n$ 의 분리된 부분집합이라고 하자. $a\in A,\, b\in B$ 에 대해 $p:\mathbb{R} \to \mathbb{R}^n$ 이 다음과 같이 정의되었다고 하자.
+
+$$
+p(t):= (1-t)a+tb.
+$$
+
+이 때 $A_0 = p^{-1}(A),\, B_0=p^{-1}(B)$ 라고 하자.
+
+($1$) $A_0,\,B_0$ 가 분리되어 있음을 보여라.
+
+($2$) 어떤 $t_0\in (0,\,1)$ 에 대해 $p(t_0) \notin A \cup B$ 이다.
+
+($3$) 모든 $\mathbb{R}^n$ 의 볼록 부분집합은 연결되어 있음을 보여라.
+
 
 :::
 
@@ -1274,10 +1347,34 @@ $p,\,q \in A$, $p \ne q$ 이며 $A$ 가 연결집합이라고 하자. $r<d(p,\, 
 
 ::: {.solution}
 
-$\mathbb{Q}^k$ 는 $\mathbb{R}^k$ 의 countable dense subset 이다.
+($1$) $A_0,\,B_0$ 가 연결되어 있다고 가정하고 모순을 찾자. 연결되어 있다면 $A_0\cap \overline{B_0}\ne \varnothing$ 이거나 $\overline{A_0}\cap B_0 \ne \varnothing$ 이어야 한다. 우선 $A_0\cap \overline{B_0}\ne \varnothing$ 라고 하고 $t_0\in A_0\cap \overline{B_0}$ 라고 하자. $x_0:=p(t_0)=(1-t_0)a+t_0b\in A$ 이므로 
+$x_0 \not\in B$ 이며 임의의 $\delta>0$ 에 대해 $p(N(t_0,\,\delta))\cap B_0 \ne \varnothing$ 이어야 한다. 
+
+
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_2_22}
+
+#### Rudin 2.22
+
+거리공간 $X$ 의 어떤 부분집합 $E$ 에 대해 $E$ 가 가산무한집합이며 $\overline{E}=X$ 일 때 $X$ 를 **separable** 이라 한다. $\mathbb{R}^n$ 가 separable 임을 보이시오.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\mathbb{Q}^n$ 는 $\mathbb{R}^n$ 의 countable dense subset 이다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_2_23}
 
