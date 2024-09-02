@@ -40,7 +40,7 @@ $$
 거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 과 어떤 $a\in X$ 를 생각하자. 
 
 $$
-\forall \varepsilon>0,\, \exists N\in \mathbb{N}, \text{ s.t. } n \ge N \implies d(a_n,\, a)<\varepsilon
+\forall \varepsilon>0,\, \exists N\in \mathbb{Z}_+, \text{ s.t. } n \ge N \implies d(a_n,\, a)<\varepsilon
 $$
 
 일 때 수열 $\langle a_n \rangle$ 은 $a$ 로 수렴한다고 하며 $\displaystyle \lim_{n \to \infty} a_n = a$ 혹은 $\langle a_n\rangle \to a$ 라고 쓴다. $\langle a_n \rangle$  이 수렴하지 않으면 발산한다고 한다. 
@@ -58,7 +58,9 @@ $$
 
 </div>
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-properties_of_convergence_1}
 
@@ -117,7 +119,7 @@ $\mathbb{R}^k$ 에서 정의된 수열 $\langle a_n\rangle,\, \langle b_n \rangl
 
 ::: {.proof}
 
-($1$) 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n - a|<\varepsilon/2$, $n \ge N_2 \implies |b_n- b|<\varepsilon/2$ 인 $N_1,\,N_2$ 가 존재한다. $N = \max (N_1,\, N_2)$ 이라 하면 $n \ge N$ 일 때
+($1$) 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n - a|<\varepsilon/2$, $n \ge N_2 \implies |b_n- b|<\varepsilon/2$ 인 $N_1,\,N_2$ 가 존재한다. $n \ge \max(N_1,\,N_2)$ 이면
 
 $$
 |(a_n+b_n)-(a+b)| \le |a_n -a| + |b_n - b| < \varepsilon
@@ -127,13 +129,13 @@ $$
 
 ($2$) $c=0$ 이면 자명하다. $c\ne 0$ 일 때 고정된 $\varepsilon>0$ 에 대해 $n\ge N \implies |a_n - a|<\varepsilon/|c|$ 인 $N$ 이 존재한다. 따라서 $n \ge N \implies |ca_n - ca| = |c||a_n -c| < \varepsilon$ 이다.
 
-($3$) $a_n b_n - ab = (a_n-a)(b_n-b)- a( b_n-b)-b(a_n-a)$ 이다. 주어진 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n-a|<\sqrt{\varepsilon}$, $n \ge N_2 \implies |b_n -b|<\sqrt{\varepsilon}$ 인 $N_1,\, N_2$ 가 존재하며 $N = \max (N_1,\, N_2)$ 라 하자. 
+($3$) 주어진 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n-a|<\sqrt{\varepsilon}$, $n \ge N_2 \implies |b_n -b|<\sqrt{\varepsilon}$ 인 $N_1,\, N_2$ 가 존재하며 $N = \max (N_1,\, N_2)$ 라 하자. 
 
 $$
 a_nb_n - ab = (a_n-a)(b_n-b) + a(b_n-b)+ b(a_n-a)
 $$
 
-이며 $n \ge N \implies |(a_n-a)(b_n -b)|<\varepsilon$ 이며 1. 과 2. 에 의해 $a(b_n-b)$ 와 $b(a_n-a)$ 는 $0$ 으로 수렴하므로 $\displaystyle \lim_{n \to \infty} a_nb_n = ab$ 이다.
+인데 $n \ge N \implies |(a_n-a)(b_n -b)|<\varepsilon$ 이며 ($1$) 과 ($2$) 에 의해 $a(b_n-b)$ 와 $b(a_n-a)$ 는 $0$ 으로 수렴하므로 $\displaystyle \lim_{n \to \infty} a_nb_n = ab$ 이다.
 
 ($4$) $a\ne 0$ 이므로 $n \ge M \implies |a_n - a|< \dfrac{1}{2}|a|$ 인 $M\in \mathbb{N}$ 이 존재한다. $n>M$ 일 때
 
@@ -199,7 +201,7 @@ $$
 
 #### 단조 수열
 
-수열 $\langle a_n \rangle$ 이 $k\in \mathbb{N}$ 에 대해 $a_k \le a_{k+1}$ 일 때 **단조 증가 수열** 이라고 하고 $a_{k} \ge a_{k+1}$ 일 때 **단조 감수 수열** 이라고 한다. 단조 증가 수열과 단조 감소 수열을 **단조 수열** 이라고 한다.
+수열 $\langle a_n \rangle$ 이 $k\in \mathbb{Z}_+$ 에 대해 $a_k \le a_{k+1}$ 일 때 **단조 증가 수열** 이라고 하고 $a_{k} \ge a_{k+1}$ 일 때 **단조 감수 수열** 이라고 한다. 단조 증가 수열과 단조 감소 수열을 **단조 수열** 이라고 한다.
 
 ::: 
 :::
@@ -244,21 +246,23 @@ $\langle a_n\rangle$ 이 단조 감소 수열이며 유계라고 하자. $a_1$ �
 </div></br>
 
 ::: {.proof}
-$\langle a_n \rangle \subset K$ 라고 하자. $\langle a_n \rangle$ 이 유한집합이면 자명하게 수렴하므로 무한집합에서 생각하기로 하자. @prp-infinite_subset_in_compact_set_has_limit_point_in_compact_set 의해 $\langle a_n \rangle$ 은 극한점을 가지며, 따라서 $k\in \mathbb{N}$ 에 대해 $N(a,\, 1/k)\cap \langle a_n \rangle$ 은 무한개의 원소를 갖는다. $p_1=1$ 로 하고  $N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)$  가운데 $a_m$ 을 골라 $p_{k+1}= m$ 이라고 하자. 그렇다면 $\langle a_{p_k}\rangle$ 은 $a$ 로 수렴하는 부분수열이다. $\square$
+$\langle a_n \rangle \subset K$ 라고 하자. $\langle a_n \rangle$ 이 유한집합이면 최소한 하나의 $a\in \langle a_n \rangle$ 에 대해 $\{k: a_k = a\}$ 가 무한집합이므로 이 인덱스의 집합으로 부분수열을 만들면 $a$ 로 수렴하는 부분수열이다. 
+
+이제 $\langle a_n \rangle$ 이 무한집합일 경우에 대해 생각하기로 하자. @prp-infinite_subset_in_compact_set_has_limit_point_in_compact_set 의해 $\langle a_n \rangle$ 은 극한점을 가지며, 따라서 $k\in \mathbb{Z}_+$ 에 대해 $N(a,\, 1/k)\cap \langle a_n \rangle$ 은 무한개의 원소를 갖는다. $p_1=1$ 로 하고  $N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)$  가운데 $a_m$ 을 골라 $p_{k+1}= m$ 이라고 하자. 그렇다면 $\langle a_{p_k}\rangle$ 은 $a$ 로 수렴하는 부분수열이다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-properties_of_subsequence}
-$\mathbb{R}^k$ 에서 정의된 유계인 수열은 수렴하는 부분수열을 갖는다.
+$\mathbb{R}^n$ 에서 정의된 유계인 수열은 수렴하는 부분수열을 갖는다.
 :::
 
 </div></br>
 
 ::: {.proof}
 
-유계인 수열을 포함하는 $k$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 가진다. $\square$
+유계인 수열을 포함하는 $n$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 가진다. $\square$
 
 :::
 
@@ -266,7 +270,7 @@ $\mathbb{R}^k$ 에서 정의된 유계인 수열은 수렴하는 부분수열을
 
 ::: {#prp-subsequential_limit_forms_closed_subset}
 
-수열 $\langle a_n \rangle$ 의 부분수열의 극한의 집합은 닫힌 집합이다.
+거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 의 부분수열의 극한의 집합은 닫힌 집합이다.
 
 :::
 
@@ -274,7 +278,7 @@ $\mathbb{R}^k$ 에서 정의된 유계인 수열은 수렴하는 부분수열을
 
 ::: {.proof}
 
-$E^\ast$ 를 $\langle a_n \rangle$ 의 부분수열의 극한의 집합이라고 하고 $q$ 가 $E^\ast$ 의 극한점이라고 하자.우선 $a_{n_1}\ne q$ 인 $a_{n_1}$ 을 선택한다. $a_{n_1} \ne q$ 인 $n_1$ 이 없다면 모든 $a_n=q$ 이므로 $E^\ast = \{q\}$ 는 닫힌 집합이다. 따라서 $a_1 \ne q$ 인 $a_1$ 을 선택할 수 있을 경우만을 고려한다. $\delta = d(a_{n_1},\, q)$ 라 하자. $p$ 는 $E^\ast$ 에서의 극한점이므로 임의의 정수 $i$ 에 대해 $d(p,\,x)< 2^{-i}\delta$ 인 $x\in E^\ast$ 가 존재하며, $x$ 는 $\langle a_n \rangle$ 의 부분수열의 극한이므로 무한개의 $\langle a_n \rangle$ 의 원소를 포함한다. $n_1,\ldots,\, n_{i-1}$ 이 정해졌다고 할 때 $d(x,\, a_{n_i})<2^{-i}\delta$ 인 $a_{n_i}$ 를 정할 수 있다. 따라서 
+$E^\ast$ 를 $\langle a_n \rangle$ 의 부분수열의 극한의 집합이라고 하고 $q$ 가 $E^\ast$ 의 극한점이라고 하자.우선 $a_{n_1}\ne q$ 인 $a_{n_1}$ 을 선택한다. $a_{n_1} \ne q$ 인 $n_1$ 이 없다면 모든 $a_n=q$ 이므로 $E^\ast = \{q\}$ 는 닫힌 집합이다. 따라서 $a_{n_1} \ne q$ 인 $a_{n_1}$ 을 선택할 수 있을 경우만을 고려한다. $\delta = d(a_{n_1},\, q)$ 라 하자. $q$ 는 $E^\ast$ 에서의 극한점이므로 임의의 정수 $i$ 에 대해 $d(p,\,x)< 2^{-i}\delta$ 인 $x\in E^\ast$ 가 존재하며, $x$ 는 $\langle a_n \rangle$ 의 부분수열의 극한이므로 무한개의 $\langle a_n \rangle$ 의 원소를 포함한다. $n_1,\ldots,\, n_{i-1}$ 이 정해졌다고 할 때 $d(x,\, a_{n_i})<2^{-i}\delta$ 인 $a_{n_i}$ 를 정할 수 있다. 따라서 
 
 $$
 d(q,\, a_{n_i}) \le d(q,\, x) + d(x,\, a_{n_i}) < 2^{i-1}\delta
@@ -365,7 +369,9 @@ $$
 
 :::
 
-</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</div></br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-e_is_irrational}
 
@@ -406,7 +412,7 @@ $$
 
 #### 코시 수열
 
-거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 이 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{N}$ 이 존재하여 
+거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 이 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 이 존재하여 
 
 $$
 m,\, n \ge N \implies d(a_m,\, a_n) < \varepsilon
@@ -439,7 +445,7 @@ $$
 
 ::: {.proof}
 
-($1$) $\langle a_n \rangle$ 이 거리공간 $X$ 에서 정의된 $a$ 로 수렴하는 수열이라고 하자. 임의의 $\varepsilon >0$ 에 대해 $n \ge N \implies d(a_n,\, a)<\varepsilon/2$ 을 만족하는 $N\in \mathbb{N}$ 이 존재하므로 $m,\, n \ge N$ 일 때
+($1$) $\langle a_n \rangle$ 이 거리공간 $X$ 에서 정의된 $a$ 로 수렴하는 수열이라고 하자. 임의의 $\varepsilon >0$ 에 대해 $n \ge N \implies d(a_n,\, a)<\varepsilon/2$ 을 만족하는 $N\in \mathbb{Z}_+$ 이 존재하므로 $m,\, n \ge N$ 일 때
 
 $$
 d(a_m,\, a_n) \le d(a_m,\, a)+ d(a_n,\, a)< \varepsilon
@@ -447,9 +453,9 @@ $$
 
 이다. 즉 수렴하는 수열은 코시 수열이다.
 
-($2$) $\varepsilon>0$ 에 대해 $m,\, n \ge N \implies d(a_m,\, a_n)< \varepsilon$ 인 $N\in \mathbb{N}$ 이 존재하므로 $\{a_1,\ldots,\, a_{N-1}\}$ 과 $a_N-\varepsilon,\, a_N+\varepsilon$ 에 의해 코시수열 $a_n$ 의 한 상계와 하계가 정해진다. 따라서 코시수열은 유계이다.
+($2$) $\varepsilon>0$ 에 대해 $m,\, n \ge N \implies d(a_m,\, a_n)< \varepsilon$ 인 $N\in \mathbb{Z}_+$ 이 존재하므로 $\{a_1,\ldots,\, a_{N-1}\}$ 과 $a_N-\varepsilon,\, a_N+\varepsilon$ 에 의해 코시수열 $a_n$ 의 한 상계와 하계가 정해진다. 따라서 코시수열은 유계이다.
 
-($3$) 코시수열 $\langle a_n \rangle$ 의 부분수열 $\langle a_{n_k} \rangle$ 이 $a$ 로 수렴한다고 하자. 임의의 $\varepsilon>0$ 에 대헤 $m,\, n \ge N_1 \implies d(a_m,\, a_n)<\varepsilon/2$ 인 $N_1 \in \mathbb{N}$ 이 존재한다. 부분수열이 수렴하므로 $k>K \implies d(a_{n_k},\, a)<\varepsilon/2$ 인 $K\in \mathbb{N}$ 이 존재한다. $K$ 를 충분히 크게 잡아 $n_K \ge N_1$ 이 되게 할 수 있다. 그렇다면 $n \ge n_K$ 일 때
+($3$) 코시수열 $\langle a_n \rangle$ 의 부분수열 $\langle a_{n_k} \rangle$ 이 $a$ 로 수렴한다고 하자. 임의의 $\varepsilon>0$ 에 대헤 $m,\, n \ge N_1 \implies d(a_m,\, a_n)<\varepsilon/2$ 인 $N_1 \in \mathbb{Z}_+$ 이 존재한다. 부분수열이 수렴하므로 $k>K \implies d(a_{n_k},\, a)<\varepsilon/2$ 인 $K\in \mathbb{Z}_+$ 이 존재한다. $K$ 를 충분히 크게 잡아 $n_K \ge N_1$ 이 되게 할 수 있다. 그렇다면 $n \ge n_K$ 일 때
 
 $$
 d(a_n,\, a) \le d(a_n,\, a_{n_K})+ d(a,\, a_{n_K}) < \varepsilon
@@ -457,7 +463,7 @@ $$
 
 이므로 $\langle a_n \rangle$ 은 $a$ 로 수렴한다. 
 
-($4$) ($2$) 에 의해 코시수열은 유계이므로 코시수열을 포함하는 $k$-cell 을 잡을 수 있다. $k$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 갖는다. $3$ 에 의해 이 코시수열은 수렴한다. $\square$ 
+($4$) ($2$) 에 의해 코시수열은 유계이므로 코시수열을 포함하는 $n$-cell 을 잡을 수 있다. $n$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 갖는다. ($3$) 에 의해 이 코시수열은 수렴한다. $\square$ 
 
 :::
 

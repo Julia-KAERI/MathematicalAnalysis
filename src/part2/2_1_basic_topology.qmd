@@ -1347,9 +1347,13 @@ $$
 
 ::: {.solution}
 
-($1$) $A_0,\,B_0$ 가 연결되어 있다고 가정하고 모순을 찾자. 연결되어 있다면 $A_0\cap \overline{B_0}\ne \varnothing$ 이거나 $\overline{A_0}\cap B_0 \ne \varnothing$ 이어야 한다. 우선 $A_0\cap \overline{B_0}\ne \varnothing$ 라고 하고 $t_0\in A_0\cap \overline{B_0}$ 라고 하자. $x_0:=p(t_0)=(1-t_0)a+t_0b\in A$ 이므로 
-$x_0 \not\in B$ 이며 임의의 $\delta>0$ 에 대해 $p(N(t_0,\,\delta))\cap B_0 \ne \varnothing$ 이어야 한다. 
+($1$) $A_0,\,B_0$ 가 연결되어 있다고 가정하고 모순을 찾자. 연결되어 있다면 $A_0\cap \overline{B_0}\ne \varnothing$ 이거나 $\overline{A_0}\cap B_0 \ne \varnothing$ 이어야 한다. 우선 $A_0\cap \overline{B_0}\ne \varnothing$ 라고 하고 $t_0\in A_0\cap \overline{B_0}$ 라고 하자. 
 
+$t_0\in A$ 이므로 $x_0=p(t_0) \in A$ 이며 $A$ 와 $B$ 가 분리되어 있으므로 $x_0\notin B$ 이며 따라서 $t_0 \not\in B_0$ 이다. 즉 $t_0 \in B'\backslash B$ 이다. 이로부터 임의의 $\delta >0$ 에 대해 $N(t_0,\, \delta)\cap B_0\ne\varnothing$ 이므로 $p(N(t_0,\, \delta))\cap B \ne \varnothing$ 이다. 즉 $p(t_0)\in \overline{B}$ 인데 이는 $A$ 와 $B$ 가 분리되어 있다는 가정에 모순된다. 이로부터 $A_0 \cap \overline{B_0} = \varnothing$ 임을 알 수 있으며, 같은 방법으로 $\overline{A_0}\cap B_0 = \varnothing$ 라는 것을 보일 수 있다. 즉 $A_0$ 와 $B_0$ 는 분리되어 있다.
+
+($2$) $\forall t\in (0,\,1)$ 에 대해 $p(t) \in A\cup B$ 라고 가정하자. $t\in p^{-1}(A \cup B)= p^{-1}(A)\cup p^{-1}(B)= A_0 \cup B_0$ (@exr-munkres_1_2_2) 이다. 즉 $(0,\,1)\subset A_0 \cup B_0$ 이다. $B_0$ 는 유계이므로 하한 $b_1$ 이 존재한다. $b_1=0$ 이라면 $0\in \overline{B_0}$ 이므로 $A_0$ 와 $B_0$ 가 분리집합이 아니게 된다. 따라서 $b_1>0$ 이다. $b_1\in B_0$ 라면 $\left\{b_1 - \dfrac{b_1}{n+1}\mid n\in \mathbb{Z}_+\right\} \subset A_0$ 이므로 $b_1\in \overline{A_0}$ 이며, 따라서 $A_0$ 와 $B_0$ 가 분리집합이 아니게 된다는 결론이 나와 모순이 된다. $b_1\in A_0$ 라면 $b_1\in B_0' \subset\overline{B}_0$ 이므로 역시 분리집합이 아니게 된다. 따라서 $p(t_0)\notin A \cup B$ 인 $t_0 \in (0,\,1)$ 이 존재한다.
+
+($3$) $E \subset \mathbb{R}^n$ 이 볼록집합이라고 하자. $E$ 가 어떤 분리된 두 부분집합의 합집합이라면 ($2$) 를 만족하는 $t_0$ 가 존재해야 하는데 이는 볼록집합의 정의에 위배된다. 따라서 모든 $\mathbb{R}^n$ 의 부분집합은 연결되어 있다.
 
 :::
 
@@ -1395,7 +1399,9 @@ $\mathbb{Q}^n$ 는 $\mathbb{R}^n$ 의 countable dense subset 이다.
 $X$ 가 separable 거리공간 이므로 어떤 집합 $E\subset X$ 가 countable 이고 $\overline{E}=X$ 이다. $y\in E$ 에 대해 $\{N_X(y, q): y\in E, q>0, q\in \mathbb{Q}\}$ 는 가산의 열린 집합족이다. $x\in G$ 이며 $G$ 가 열린 집합이라고 하자. $N_X(x,\, \delta)\subset G$ 인 $\delta>0$ 이 존재하며, $\overline{E}=X$ 이므로 $\|x-y\|_X =d_y< \delta/2$ 인 $y\in E$ 가 존재한다. 또한 $d_y< q < \delta/2$ 인 $q\in \mathbb{Q}$ 가 존재하며, $x\in N_X(y,\, q) \subset N_X(x,\, \delta)$ 이다. 즉 $\{N(y, q): y\in E, q>0, q\in \mathbb{Q}\}$ 는 $X$ 의 기저이다. 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_2_24}
 
@@ -1429,11 +1435,13 @@ $X$ 가 separable 거리공간 이므로 어떤 집합 $E\subset X$ 가 countabl
 
 ::: {.solution}
 
-임의의 $n\in \mathbb{N}$ 에 대해 $\left\{ N (x,1/n) : x\in K \right\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개만을 선택하여 $K$ 를 덮을 수 있다. 이 유한개의 근방의 중심을 $x^n_1,\ldots,\,x^n_{m_n}$ 이라 하고 $N^n_i = N(x_i,\, 1/n)$ 이라 하자. $\{N^n_i : n=1,\,2,\ldots,\, i=1,\ldots,\, m_n\}$ 는 countable set 이며 $K$ 의 기저이고 $E=\{x^n_i : n=1,\,2,\ldots,\, i=1,\ldots,m_n,\}$ 일 때 $\overline{E}=K$ 이므로 $K$ 는 separable 이다. 
+임의의 $n\in \mathbb{Z}_+$ 에 대해 $\left\{ N (x,1/n) : x\in K \right\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개만을 선택하여 $K$ 를 덮을 수 있다. 이 유한개의 근방의 중심을 $x^n_1,\ldots,\,x^n_{m_n}$ 이라 하고 $N^n_i = N(x_i,\, 1/n)$ 이라 하자. $\{N^n_i : n=1,\,2,\ldots,\, i=1,\ldots,\, m_n\}$ 는 countable set 이며 $K$ 의 기저이고 $E=\{x^n_i : n=1,\,2,\ldots,\, i=1,\ldots,m_n,\}$ 일 때 $\overline{E}=K$ 이므로 $K$ 는 separable 이다. 
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_2_26}
 
@@ -1452,7 +1460,9 @@ $X$ 가 거리 공간이며 모든 $X$ 의 무한 부분집합은 극한점을 �
 $F_n = X\backslash \left(\bigcup_{i=1}^n G_i \right)$ 은 닫힌 집합이다. $F_{n+1} \subset F_{n}$ 이고 $F_{n+1}\ne F_n$ 이다. 또한 $F_n \ne \varnothing$ 이며 $\bigcap_n F_n = \varnothing$ 이다. $\{y_n \in F_n \backslash F_{n+1}: n\in \mathbb{N}\}$ 일 때 이 집합은 무한집합이므로 극한점을 가져야 한다. 또한 $\{y_n,\,y_{n+1},\cdots\}\subset F_{n}$ 이다. 각각의 $F_n$ 이 닫힌 집합이므로 각각의 $F_n$ 이 이 극한점을 포함해야 한다. 즉 $\bigcap F_n \ne \varnothing$ 이어야 하는데 이는 모순이다. 따라서 유한개의 $\{G_i\}$ 로 $X$ 를 덮을 수 있으며, 따라서 $X$ 는 옹골집합이다.
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_2_29}
 
@@ -1469,7 +1479,9 @@ $V\subset \mathbb{R}$ 이 불가산개의 열린 구간의 합집합이라고 �
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-kkk_2_7_24}
 
