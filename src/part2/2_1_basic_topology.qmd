@@ -1384,9 +1384,20 @@ $\mathbb{Q}^n$ 는 $\mathbb{R}^n$ 의 countable dense subset 이다.
 
 #### Rudin 2.23
 
-다음 조건을 만족하는 $X$ 에서의 열린 집합족 $\{V_\alpha\}$ 을 $X$ 에 대한 **기저(base)** 라고 한다. 
+위상공간에서의 기저는 다음과 같이 정의된다.
 
->모든 $x\in X$ 와 $x$ 를 포함하는 모든 열린 집합 $G\subset X$ 에 대해 $x\in V_\alpha \subset G$ 를 만족하는 $V_\alpha\in \{V_\alpha\}$ 가 존재한다. 
+
+::: {.callout-note appearance="minimal"}
+
+::: {#def-part2-basse}
+
+#### 위상공간에서의 기저 
+
+거리공간 $X$ 에서의 열린 집합족 $\{V_\alpha\}$ 이 모든 $x\in X$ 와 $x$ 를 포함하는 모든 열린집합 $G\subset X$ 에 대해 $x\in V_x \subset G$ 를 만족하는 $V_x\in \{V_\alpha\}$ 가 존재한다면 $\{V_\alpha\}$ 를 $X$ 에 대한 **기저(base)** 라고 한다. 
+
+:::
+
+:::
 
 즉 $X$ 에서의 모든 열린 집합은 $\{V_\alpha\}$ 의 부분 집합족의 합집합으로 표현 할 수 있다. 모든 separable 거리 공간은 가산인 기저를 가짐을 보여라.
 
@@ -1396,7 +1407,13 @@ $\mathbb{Q}^n$ 는 $\mathbb{R}^n$ 의 countable dense subset 이다.
 
 ::: {.solution}
 
-$X$ 가 separable 거리공간 이므로 어떤 집합 $E\subset X$ 가 countable 이고 $\overline{E}=X$ 이다. $y\in E$ 에 대해 $\{N_X(y, q): y\in E, q>0, q\in \mathbb{Q}\}$ 는 가산의 열린 집합족이다. $x\in G$ 이며 $G$ 가 열린 집합이라고 하자. $N_X(x,\, \delta)\subset G$ 인 $\delta>0$ 이 존재하며, $\overline{E}=X$ 이므로 $\|x-y\|_X =d_y< \delta/2$ 인 $y\in E$ 가 존재한다. 또한 $d_y< q < \delta/2$ 인 $q\in \mathbb{Q}$ 가 존재하며, $x\in N_X(y,\, q) \subset N_X(x,\, \delta)$ 이다. 즉 $\{N(y, q): y\in E, q>0, q\in \mathbb{Q}\}$ 는 $X$ 의 기저이다. 
+$E=\{x_1,\,x_2,\ldots\}$ 가 countable 이며 $\overline{E}=X$ 라고 할 때 아래와 같이 정의된 $\Gamma$ 는 가산집합족이다.
+
+$$
+\Gamma = \{N(x_i,\, q): i\in \mathbb{Z}_+,\, q\in \mathbb{Q} \}.
+$$
+
+$x\in E$ 이며 임의의 $x$ 를 포함하는 열린 집합 $G$ 에 대해 $N(x,\,1/n)\subset G$ 인 $n\in \mathbb{Z}_+$ 가 항상 존재하며 $N(x,\,1/n)\in \Gamma$ 이다. $x\in E'$ 이며 $x$ 를 포함하는 열린집함 $G$ 를 생각하자. $N(x,\, \delta)\subset G$ 인 $\delta>0$ 이 존재하며 $d<\delta/2,\, d\in \mathbb{Q}$ 에 대해 $\|x-y\|_X = d$ 인 $y\in E$ 가 존재한다. $N_X(y,\, d)\subset G$ 이며 $N_X(y,\,d)\in \Gamma$ 이다. 따라서 $\Gamma$ 는 $X$ 의 가산 기저이다.
 :::
 
 </br>
@@ -1415,13 +1432,18 @@ $X$ 가 separable 거리공간 이므로 어떤 집합 $E\subset X$ 가 countabl
 
 ::: {.solution}
 
-임의의 정해진 $\delta>0$ 를 생각하자. $x_1\in X$ 를 임의로 고른다. 선택된 $x_1,\ldots,\,x_j$ 에 대해 $\|x_i-x_{i+1}\|_X \ge \delta,\, \forall i=1,\ldots,\, j$ 가 되도록 $x_{j+1}$ 을 선택한다고 하자. 이 과정을 무한번 할 수 있다면, $X$ 의 모든 무한 집합은 극한점을 가진다는 가정에 위배된다. 따라서 유한번의 과정 후에 더 이상 진행 할 수 없어야 한다.
+임의의 정해진 $\delta>0$ 를 생각하자. $x_1\in X$ 를 임의로 고른다. 선택된 $x_1,\ldots,\,x_j$ 에 대해 $\|x_{j+1}-x_{i}\|_X \ge \delta,\, \forall i=1,\ldots,\, j$ 가 되도록 $x_{j+1}$ 을 선택한다고 하자. 이 과정을 무한번 할 수 있다면, $X$ 의 모든 무한 집합은 극한점을 가진다는 가정에 위배된다. 따라서 유한번의 과정 후에 더 이상 진행 할 수 없어야 한다. 즉 $X$ 는 유계이다.
 
-유한개의 $\delta$ 를 반경으로 하는 근방으로 $X$ 를 덮을 수 없다면 위의 과정이 무한번 반복 될 수 있어야 한다. 따라서 유한개의 $\delta$ 를 반경으로 하는 근방으로 $X$ 를 덮을 수 있다. $\delta>0$ 에 대한 이 근방의 중심의 집합을 $S_\delta$ 라고 하자. $E=\bigcup_{n=1}^\infty S_{1/n}$ 는 countable subset of $X$ 이며 $\overline{E}=X$ 이다. 즉 $X$ 는 separable 하다. 
+유한개의 $\delta$ 를 반경으로 하는 근방으로 $X$ 를 덮을 수 없다면 위의 과정이 무한번 반복 될 수 있어야 한다. 따라서 유한개의 $\delta$ 를 반경으로 하는 근방으로 $X$ 를 덮을 수 있다. $\delta>0$ 에 대한 이 근방의 중심의 집합을 $x_1,\,\ldots,\,x_n$ 이 라고 하자. $X=\bigcup_{i=1}^n N(x_i,\,\delta)$ 이다.
+
+$m\in \mathbb{Z}_+$ 에 대해 각각의 $N(x_i,\,\delta)$ 를 그 폭이 $1/m$ 인 유한개의 열린 구간의 합집합으로 표현 할 수 있다. 이 열린 구간의 중심을 $x_{i,m}^j$ 라고 하면 $i=1,\ldots,\,n,\, m\in \mathbb{Z}_+$ 에 대해 $j$ 는 유한한 양의 정수이다. $E = \{x_{i,m}^j : i=1,\ldots\,n,\, m\in \mathbb{Z}_+,\, j=1,\,2,\ldots\}$ 라고 하면 $E$ 는 가산 무한집합이며 $\overline{E}=X$ 이다.
+
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_2_25}
 
@@ -1435,7 +1457,7 @@ $X$ 가 separable 거리공간 이므로 어떤 집합 $E\subset X$ 가 countabl
 
 ::: {.solution}
 
-임의의 $n\in \mathbb{Z}_+$ 에 대해 $\left\{ N (x,1/n) : x\in K \right\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개만을 선택하여 $K$ 를 덮을 수 있다. 이 유한개의 근방의 중심을 $x^n_1,\ldots,\,x^n_{m_n}$ 이라 하고 $N^n_i = N(x_i,\, 1/n)$ 이라 하자. $\{N^n_i : n=1,\,2,\ldots,\, i=1,\ldots,\, m_n\}$ 는 countable set 이며 $K$ 의 기저이고 $E=\{x^n_i : n=1,\,2,\ldots,\, i=1,\ldots,m_n,\}$ 일 때 $\overline{E}=K$ 이므로 $K$ 는 separable 이다. 
+임의의 $n\in \mathbb{Z}_+$ 에 대해 $\left\{ N (x,1/n) : x\in K \right\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개만을 선택하여 $K$ 를 덮을 수 있다. 이 유한개의 근방의 중심을 $x^n_1,\ldots,\,x^n_{m_n}$ 이라 하고 $N^n_i = N(x_i,\, 1/n)$ 이라 하자. $\{N^n_i : n=1,\,2,\ldots,\, i=1,\ldots,\, m_n\}$ 는 countable set 이며 $K$ 의 기저이고 $E=\{N : n=1,\,2,\ldots,\, i=1,\ldots,m_n,\}$ 일 때 $\overline{E}=K$ 이므로 $K$ 는 separable 이다. 
 
 :::
 

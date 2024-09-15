@@ -408,7 +408,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-series}
+::: {#def-part2_series}
 
 #### 코시 수열
 
@@ -423,7 +423,71 @@ $$
 ::: 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+
+코시 수열 뿐만 아니라 앞으로의 진행에 필요한 집합의 지름이라는 개념과 지름에 관련된 명제를 증명하고 넘어가기로 하자.
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_diameter}
+
+#### 집합의 지름
+
+거리공간 $X$ 의 공집합이 아닌 부분집합 $E$ 에 대해 아래와 같이 정의된 $\text{diam}(E)$ 를 $E$ 의 **지름 (diameter)** 라고 한다.
+
+$$
+\text{diam}(E):= \max \{\|x-y\|_X: x,\,y \in E\}. 
+$$ {#eq-part2_definition_of_diameter}
+
+
+::: 
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_diameter}
+
+ 거리공간 $X$ 를 생각하자. 
+
+($1$) $E\subset X$ 일 때 $\text{diam}(\overline{E}) = \text{diam}(E)$ 이다.
+
+($2$) $K_n$ 이 $X$ 에서 정의된 옹골집합이며 $n=1,\,2,\ldots,\,$ 에서 $K_{n}\supset K_{n+1}$ 이고 $\displaystyle \lim_{n \to \infty} \text{diam}(K_n)=0$ 이면 $\displaystyle \bigcap_{n=1}^\infty K_n$ 은 오직 하나의 원소로만 이루어졌다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) $E \subset \overline{E}$ 이므로 $\text{diam}(E) \le \text{diam}(\overline{E})$ 이다. $p,\,q \in \overline{E}$ 라고 하자. $\overline{E}$ 의 정의에 의해 임의의 $\varepsilon>0$ 에 대해 $\|p-p'\|<\varepsilon,\, \|q-q'\|<\varepsilon$ 을 만족하는 $p'\,q'\in E$ 가 존재한다. 삼각부등식으로부터 
+
+$$
+\|p-q\| \le \|p - p'\| + \| q-q'\| + \|p'-q'\| \le 2\varepsilon + \|p'-q'\|
+$$
+
+이므로 $\text{diam}(\overline{E}) \le 2\varepsilon + \text{diam}(E)$ 이다. 임의의 $\varepsilon >0$ 에 대해
+
+$$
+\text{diam}(E) \le \text{diam}(\overline{E}) \le 2\varepsilon + \text{diam}(E)
+$$
+
+이므로 $\text{diam}(\overline{E}) = \text{diam}(E)$ 이다.
+
+($2$) $K = \bigcap K_n$ 이라고 하자. @prp-finite_intesection_of_compact_sets 에 의해 $K \ne \varnothing$ 이다. $K$ 가 두개 이상의 원소로 이루어졌다면 $\text{diam}(K) >0$ 이며, 따라서 $\displaystyle \lim_{n \to \infty} \text{diam}(K_n) >0$ 이므로 가정에 위배된다. 따라서 $K$ 는 오직 하나의 원소로만 이루어진다. $\square$
+
+:::
+
+
+</br>
+
+수열의 수렴은 그 수열이 수렴하는 값에 대해 성립하지만 코시 수열은 정의상 수렴하는 값이 없어도 코시 수열인지 여부를 알 수 있다. 수열의 수렴과 코시 수열은 밀접한 관련이 있는데 이제 코시 수열에 대해 알아보기로 하자.
+
+</br>
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-cauchy_sequence}
 
@@ -437,7 +501,9 @@ $$
 
 &emsp;($3$) 코시수열의 어떤 부분수열이 수렴하면 코시수열은 수렴한다.
 
-&emsp;($4$) $\mathbb{R}^k$ 위에서의 코시수열은 수렴한다.
+&emsp;($4$) 옹골집합인 거리공간 $X$ 에서 정의된 코시 수열은 $X$ 위의 한 점으로 수렴한다.
+
+
 
 :::
 
@@ -463,9 +529,30 @@ $$
 
 이므로 $\langle a_n \rangle$ 은 $a$ 로 수렴한다. 
 
-($4$) ($2$) 에 의해 코시수열은 유계이므로 코시수열을 포함하는 $n$-cell 을 잡을 수 있다. $n$-cell 은 옹골집합이므로 @prp-properties_of_subsequence 에 의해 수렴하는 부분수열을 갖는다. ($3$) 에 의해 이 코시수열은 수렴한다. $\square$ 
+($4$) @prp-properties_of_subsequence 과 ($3$) 에 의해 성립한다. $\square$ 
 
 :::
+
+</br>
+
+이로부터 자연스럽게 다음의 결론을 얻는다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-cauchy_sequence_in_Rn}
+
+$\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
+:::
+</div> 
+
+</br>
+
+::: {.proof}
+
+코시 수열은 유계이므로 코시 수열 전체를 포함하는 $n$-cell 을 잡을수 있다. $n$-cell 은 옹골집합이므로 수렴한다. $\square$
+
+:::
+
 
 </br>
 
@@ -540,7 +627,7 @@ $$
 
 유계인 실수열 $\langle a_n \rangle$ 의 상극한이 $a$ 일 때 다음이 성립한다.
 
-&emsp;($1$) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies a_n < a+\varepsilon$ 을 만족하는 $N\in \mathbb{N}$ 이 존재한다.
+&emsp;($1$) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies a_n < a+\varepsilon$ 을 만족하는 $N\in \mathbb{Z}_+$ 이 존재한다.
 
 &emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 $a-\varepsilon < a_n$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
 
@@ -552,11 +639,11 @@ $$
 
 ::: {.proof}
 
-우선 $\displaystyle a=\limsup_{n \to \infty} a_n$ 일 때 두 명제를 만족한다는 것을 보이자. $x_n = \sup \{a_n,\, a_{n+1},\ldots\}$ 라고 하자. $\langle x_n\rangle$ 은 단조 감소 수열 이다. $\displaystyle \limsup_{n \to \infty} a_n = \lim_{n \to \infty} x_n = a$ 이므로 $n\ge N \implies |x_n - a|<\varepsilon$ 인 $N \in \mathbb{N}$ 이 존재한다.  $\langle x_n \rangle$ 이 단조감소수열이므로 $n \ge N \implies x_n < a+\varepsilon$ 이다. ($1$ 증명 끝) 
+우선 $\displaystyle a=\limsup_{n \to \infty} a_n$ 일 때 두 명제를 만족한다는 것을 보이자. $x_n = \sup \{a_n,\, a_{n+1},\ldots\}$ 라고 하자. $\langle x_n\rangle$ 은 단조 감소 수열 이다. $\displaystyle \limsup_{n \to \infty} a_n = \lim_{n \to \infty} x_n = a$ 이므로 $n\ge N \implies |x_n - a|<\varepsilon$ 인 $N \in \mathbb{Z}_+$ 이 존재한다.  $\langle x_n \rangle$ 이 단조감소수열이므로 $n \ge N \implies x_n < a+\varepsilon$ 이다. (($1$) 증명 끝) 
 
-만약 유한개의 $n$ 에 대해서만 $a-\varepsilon < a_n$ 라면 어떤 $K\in \mathbb{N}$ 에 대해 $n \ge K \implies a_n < a-\varepsilon$ 이므로 $n \ge K \implies x_n \le a-\varepsilon$ 이 성립한다. 이렇게 되면 $\displaystyle \limsup_{n \to \infty}a_n \le a-\varepsilon$ 이 되어 모순이다. (2 증명 끝)
+만약 유한개의 $n$ 에 대해서만 $a-\varepsilon < a_n$ 라면 어떤 $K\in \mathbb{Z}_+$ 에 대해 $n \ge K \implies a_n < a-\varepsilon$ 이므로 $n \ge K \implies x_n \le a-\varepsilon$ 이 성립한다. 이렇게 되면 $\displaystyle \limsup_{n \to \infty}a_n \le a-\varepsilon$ 이 되어 모순이다. (($2$) 증명 끝)
 
-이제 수열 $\langle a_n \rangle$ 이 두 조건을 만족하면 $\displaystyle \limsup_{n \to \infty} a_n = a$ 임을 보이자. 임의의 $\varepsilon>0$ 에 대해 $1$ 로 부터 $\displaystyle \limsup_{n \to \infty} a_n \le a+\varepsilon$ 임을 알 수 있다. 또한 $2$ 로 부터 $\displaystyle a-\varepsilon \le \limsup_{n \to \infty}a_n$ 임을 알 수 있다. 따라서 $\displaystyle \limsup_{n \to \infty}a_n = a$ 이다. $\square$
+이제 수열 $\langle a_n \rangle$ 이 두 조건을 만족하면 $\displaystyle \limsup_{n \to \infty} a_n = a$ 임을 보이자. 임의의 $\varepsilon>0$ 에 대해 ($1$) 로 부터 $\displaystyle \limsup_{n \to \infty} a_n \le a+\varepsilon$ 임을 알 수 있다. 또한 ($2$) 로 부터 $\displaystyle a-\varepsilon \le \limsup_{n \to \infty}a_n$ 임을 알 수 있다. 따라서 $\displaystyle \limsup_{n \to \infty}a_n = a$ 이다. $\square$
 
 :::
 
@@ -572,7 +659,7 @@ $$
 
 &emsp;($1$) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies b_n > a-\varepsilon$ 을 만족하는 $N\in \mathbb{N}$ 이 존재한다.
 
-&emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 $b + \varepsilon < b_n$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
+&emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 $b_n< b + \varepsilon$ 을 만족하는 $n$ 이 무한히 많이 존재한다.
 
 &emsp;($3$) 어떤 실수열 $\langle b_n \rangle$ 이 실수 $b$ 에 대해 ($1$), ($2$) 를 만족하면 $\displaystyle \liminf_{n \to \infty} b_n = b$ 이다.
 
@@ -623,7 +710,7 @@ $$
 
 ($1$) $N>(1/\varepsilon)^{1/p}$ 이라 하면 $n>N$ 에 대해 $\left| 1/n^p \right| < \varepsilon$ 이다.
 
-($2$) $p>1$ 일 경우를 먼저 생각한다. $a_n = \sqrt[n]{p}-1$ 이라면 $1+a_n \le (1+a_n)^n = p$ 이며 $0 < a_n \le \dfrac{p-1}{n}$ 이다. 따라서 $\displaystyle \lim_{n \to \infty}a_n = 0$ 이므로 $\displaystyle \lim_{n \to \infty} \sqrt[n]{p}=1$ 이다. $p=1$ 일 경우는 자명하며 $0<p<1$ 일 경우는 $1/p=q$ 에 대해 생각해보면 된다.
+($2$) $p>1$ 일 경우를 먼저 생각한다. $a_n = \sqrt[n]{p}-1$ 이라면 $1+n a_n \le (1+a_n)^n = p$ 이며 $0 < a_n \le \dfrac{p-1}{n}$ 이다. 따라서 $\displaystyle \lim_{n \to \infty}a_n = 0$ 이므로 $\displaystyle \lim_{n \to \infty} \sqrt[n]{p}=1$ 이다. $p=1$ 일 경우는 자명하며 $0<p<1$ 일 경우는 $1/p=q$ 에 대해 생각해보면 된다.
 
 ($3$) $a_n = \sqrt[n]{n}-1$ 이라 하자. $n > 2$ 일 경우만 생각해도 된다. $a_n \ge 0$ 이므로 이항정리에 의해 
 
@@ -666,6 +753,8 @@ $$
 
 ## 급수의 수렴과 발산
 
+지금부터 다룰 수열과 급수는 $\mathbb{C}^1$ 에서 정의된 수열과 급수이다. $\mathbb{R}^n$ 에서의 급수에 대해서는 별도로 다루기로 한다.
+
 ### 코시 판정법 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -674,7 +763,7 @@ $$
 
 #### 코시 판정법 {#sec-cauchy_criterion}
 
-급수 $\sum a_n$ 이 수렴할 필요 충분 조건은 임의의 $\varepsilon > 0$ 에 대해 어떤 $N \in \mathbb{N}$ 이 존재하여 
+급수 $\sum a_n$ 이 수렴할 필요 충분 조건은 임의의 $\varepsilon > 0$ 에 대해 어떤 $N \in \mathbb{Z}_+$ 이 존재하여 
 
 $$
 m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
@@ -730,7 +819,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 #### 절대수렴 
 
-수열 $\langle a_n \rangle$ 에 대한 급수 $s_n = \sum_{k=1}^\infty |a_k|$ 가 수렴하면 급수 $\sum_{k=1}^\infty a_k$ 가 절대수렴한다고 한다.
+수열 $\langle a_n \rangle$ 에 대한 급수 $\displaystyle s_n = \sum_{k=1}^\infty |a_k|$ 가 수렴하면 급수 $\displaystyle \sum_{k=1}^\infty a_k$ 가 절대수렴한다고 한다.
 
 ::: 
 :::
@@ -739,9 +828,11 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: {#prp-convergence_of_series_3}
 
-($1$) 수열 $\langle a_n \rangle, \, \langle b_n\rangle$ 에서 어떤 $N \in \mathbb{N}$ 이 존재하여 $n \ge N \implies |a_n |\le b_n$ 이고 $\sum b_n$ 이 수렴하면 $\sum a_n$ 도 수렴한다.
+수열 $\langle a_k\rangle,\, \langle b_k\rangle$ 에 대해
 
-($2$) 수열 $\langle a_n \rangle, \, \langle c_n\rangle$ 에서 어떤 $N \in \mathbb{N}$ 이 존재하여 $n \ge N \implies |a_n |\ge b_n \ge$ 이고 $\sum b_n$ 이 발산하면 $\sum a_n$ 도 발산한다.
+($1$) 어떤 $N \in \mathbb{Z}_+$ 이 존재하여 $k \ge N \implies |a_k |\le b_k$ 이고 $\sum b_k$ 이 수렴하면, $\sum a_k$ 도 수렴한다.
+
+($2$) 어떤 $N \in \mathbb{Z}_+$ 이 존재하여 $k \ge N \implies |a_k |\ge b_k \ge 0$ 이고 $\sum b_k$ 이 발산하면, $\sum a_k$ 도 발산한다.
 
 :::
 
@@ -749,9 +840,9 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: {.proof}
 
-($1$) 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum_n b_n$ 이 수렴하면 임의의 $\varepsilon>0$ 에 대해 $N \in \mathbb{N}$ 이 존재하여 $m\ge n \ge N$ 이면 $\displaystyle \sum_{k=n}^m b_k < \varepsilon$ 이며, 따라서 $\displaystyle\sum_{k=n}^m a_k <\varepsilon$ 이다.
+($1$) 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum_k b_k$ 이 수렴하면 임의의 $\varepsilon>0$ 에 대해 $N \in \mathbb{Z}_+$ 이 존재하여 $m\ge n \ge N$ 이면 $\displaystyle \sum_{k=n}^m b_k < \varepsilon$ 이며, 따라서 $\displaystyle\sum_{k=n}^m a_k <\varepsilon$ 이다.
 
-($2$) $\sum a_n$ 이 수렴한다면 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum b_n$ 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 $\sum a_n$ 은 발산한다. $\square$
+($2$) $\sum_k a_k$ 이 수렴한다면 코시 판정법(@thm-convergence_of_series_1) 에 의해 $\sum_k b_k$ 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 $\sum a_k$ 은 발산한다. $\square$
 
 :::
 
@@ -778,7 +869,7 @@ $s_n,\,t_k$ 를 다음과 같이 정한다.
 
 $$
 \begin{aligned}
-s_k &= a_1 + a_2 + \cdots + a_n,\\
+s_n &= a_1 + a_2 + \cdots + a_n,\\
 t_k & = a_1 + 2a_2 + \cdots + 2^k a_{2^k}.
 \end{aligned}
 $$
@@ -789,11 +880,11 @@ $$
 \begin{aligned}
 s_n & = a_1 + \cdots + a_n \\
 &\le (a_1) + (a_2 + a_3) + \cdots + (a_{2^k}+ a_{2^k+1} + \cdots + a_{2^{k+1}-1}) \\
-& \le a_1 +2a_2 + \cdots + 2^k a_{2^k} = t^k 
+& \le a_1 +2a_2 + \cdots + 2^k a_{2^k} = t_k 
 \end{aligned}
 $$ 
 
-이므로 $s_n \le t^k$ 이다.
+이므로 $s_n \le t_k$ 이다.
 
 $n > 2^k$ 일 때,
 
@@ -856,11 +947,11 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
 ::: {#thm-series_root_test}
 
-급수 $\sum a_n$ 에 대해 $\displaystyle \alpha = \limsup_{n \to \infty} \sqrt[n]{|a_n|}$ 이라 할 때, 
+급수 $\sum a_k$ 에 대해 $\displaystyle \alpha = \limsup_{k \to \infty} \sqrt[k]{|a_k|}$ 이라 할 때, 
 
-&emsp;($1$) $\alpha<1$ 이면 $\sum a_n$ 은 수렴하며,
+&emsp;($1$) $\alpha<1$ 이면 $\sum_k a_k$ 은 수렴하며,
 
-&emsp;($2$) $\alpha > 1$ 이면 $\sum a_n$ 은 발산하고,
+&emsp;($2$) $\alpha > 1$ 이면 $\sum_k a_k$ 은 발산하고,
 
 &emsp;($3$) $\alpha=1$ 이면 이 조건만으로 수렴 여부를 정할 수 없다.
 
@@ -869,11 +960,11 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 </div></br>
 
 ::: {.proof}
-$1$. $\alpha<1$ 이라 하자. $\alpha< \beta < 1$ 인 임의의 $\beta$ 를 생각하자. @prp-properties_of_limsup 에 의해 $n\ge N \implies \sqrt[n]{|a_n|}<\beta$ 인 자연수 $N$ 이 존재한다. 즉 $n \ge N \implies |a_n|< \beta^n$ 이므로 $\sum a_n$ 은 절대수렴한다.
+($1$) $\alpha<1$ 이라 하자. $\alpha< \beta < 1$ 인 임의의 $\beta$ 를 생각하자. @prp-properties_of_limsup 에 의해 $k\ge N \implies \sqrt[k]{|a_k|}<\beta$ 인 자연수 $N$ 이 존재한다. 즉 $k \ge N \implies |a_n|< \beta^n$ 이므로 $\sum_k a_k$ 는 절대수렴한다.
 
-$2$. $\alpha>1$ 이라 하자. @prp-properties_of_limsup 에 의해 $1<\beta<\alpha$ 일 때 무한히 많은 $n$ 에 대해 $|\alpha_n|> \beta^n > 1$ 이다. 따라서 $\sum a_n$ 은 발산한다.
+($2$) $\alpha>1$ 이라 하자. @prp-properties_of_limsup 에 의해 $1<\beta<\alpha$ 일 때 무한히 많은 $k$ 에 대해 $|\alpha_k|> \beta^k > 1$ 이다. 따라서 $\sum_k a_k$ 는 발산한다.
 
-$3$. @exm-sequences 에서 $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$ 임을 보였다. 따라서 $\displaystyle \lim_{n \to \infty} \dfrac{1}{\sqrt[n]{n}} = \lim_{n \to \infty} \dfrac{1}{\sqrt[n]{n^2}}=1$ 이다. 그런데 $\alpha=1$ 인 두 수열 $\sum 1/n,\, \sum 1/n^2$ 은 각각 발산하고 수렴한다. (@prp-convergence_of_1_over_n_p) $\square$
+($3$) @exm-sequences 에서 $\displaystyle \lim_{k \to \infty} \sqrt[k]{k}=1$ 임을 보였다. 따라서 $\displaystyle \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k}} = \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k^2}}=1$ 이다. 그런데 $\alpha=1$ 인 두 수열 $\sum 1/k,\, \sum 1/k^2$ 은 각각 발산하고 수렴한다. (@prp-convergence_of_1_over_n_p) $\square$
 
 :::
 
@@ -885,11 +976,11 @@ $3$. @exm-sequences 에서 $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$ 임
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#thm-series_ratio_test}
 
-급수 $\sum a_n$ 에 대해 
+급수 $\sum_k a_k$ 에 대해 
 
-&emsp;($1$) $\displaystyle \limsup_{n \to \infty} \left|\dfrac{a_{n+1}}{a_n}\right| <1$ 이면 수렴한다.
+&emsp;($1$) $\displaystyle \limsup_{k \to \infty} \left|\dfrac{a_{k+1}}{a_k}\right| <1$ 이면 수렴한다.
 
-&emsp;($2$) 어떤 $N\in \mathbb{N}$ 에 대해 $n\ge N \implies \left|\dfrac{a_{n+1}}{a_n}\right| \ge 1$ 이면 발산한다.
+&emsp;($2$) 어떤 $N\in \mathbb{Z}_+$ 에 대해 $k\ge N \implies \left|\dfrac{a_{k+1}}{a_k}\right| \ge 1$ 이면 발산한다.
 
 :::
 
@@ -897,16 +988,16 @@ $3$. @exm-sequences 에서 $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$ 임
 
 ::: {.proof}
 
-($1$) $\displaystyle \limsup_{n \to \infty} \left|\dfrac{a_{n+1}}{a_n}\right| =\alpha$ 라고 하자. 임의의 $\alpha <\beta< 1$ 인 $\beta$ 에 대해 $n \ge N_0 \implies \left|\dfrac{a_{n+1}}{a_n}\right|<\beta$ 인 $N_0 \in \mathbb{N}$ 이 존재힌다(@prp-properties_of_limsup). $|a_{N_0 + k}|< \beta^k |a_{N_0}|$ 이므로 $\sum a_n$ 은 수렴한다. 
+($1$) $\displaystyle \limsup_{k \to \infty} \left|\dfrac{a_{k+1}}{a_k}\right| =\alpha$ 라고 하자. 임의의 $\alpha <\beta< 1$ 인 $\beta$ 에 대해 $k \ge N_0 \implies \left|\dfrac{a_{k+1}}{a_k}\right|<\beta$ 인 $N_0 \in \mathbb{Z}_+$ 이 존재한다(@prp-properties_of_limsup). 임의의 $m\in \mathbb{Z}_+$ 에 대해 $|a_{N_0 + m}|< \beta^m |a_{N_0}|$ 이므로 $\sum_k a_k$ 는 수렴한다. 
 
-($2$) $n \ge N \implies |a_{n+1}|\ge |a_n|$ 이면 $\displaystyle \lim_{n \to \infty}a_n \ne 0$ 이므로 $\sum a_n$ 은 발산한다 (@cor-convergence_of_series_2). $\square$
+($2$) $k \ge N \implies |a_{k+1}|\ge |a_k|$ 이면 $\displaystyle \lim_{k \to \infty}a_k \ne 0$ 이므로 $\sum_k a_k$ 은 발산한다 (@cor-convergence_of_series_2). $\square$
 :::
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-convergence_test_of_series}
 
-다음 급수의 수렴과 발산을 근판정법과 비율판정법으로 확인 할 수 있다.
+근 판정법으로 판단할수 있지만 비율판정법으로는 판단 할 수 없는 경우를 보자.
 
 &emsp;($1$) $\displaystyle \dfrac{1}{2}+ \dfrac{1}{3} + \dfrac{1}{2^2}+ \dfrac{1}{3^2} + \dfrac{1}{2^3}+ \dfrac{1}{3^3} + \cdots$
 
@@ -914,23 +1005,23 @@ $3$. @exm-sequences 에서 $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1$ 임
 
 
 
-($1$) 의 경우를 보자. $a_{2n-1} = \dfrac{1}{2^n},\, a_{2n}= \dfrac{1}{3^n}$ 이므로,
+($1$) 의 경우를 보자. $a_{2k-1} = \dfrac{1}{2^k},\, a_{2k}= \dfrac{1}{3^k}$ 이므로,
 
 $$
 \begin{aligned}
-\limsup_{n \to \infty}  \sqrt[n]{a_n} &= \lim_{ n\to \infty} \sqrt[2n]{\dfrac{1}{2^n}} = \dfrac{1}{\sqrt{2}} < 1, \\
-\limsup_{n \to \infty} \dfrac{a_{n+1}}{a_n} &=  \lim_{n \to \infty} \dfrac{1}{2}\left(\dfrac{3}{2}\right)^n = +\infty
+\limsup_{k \to \infty}  \sqrt[k]{a_k} &= \lim_{k \to \infty} \sqrt[2k]{\dfrac{1}{2^k}} = \dfrac{1}{\sqrt{2}} < 1, \\
+\limsup_{k \to \infty} \dfrac{a_{k+1}}{a_k} &=  \lim_{k \to \infty} \dfrac{1}{2}\left(\dfrac{3}{2}\right)^k = +\infty
 \end{aligned}
 $$
 
-이다. 근 판정법에 따라 $\sum a_n$ 은 수렴하지만. 비율판정법으로는 수렴을 판단할 수 없으며 $n \ge N \implies |a_{n+1}|<|a_n|$ 인 $N\in \mathbb{N}$ 도 존재하지 않기 때문에 발산도 판정할 수 없다.
+이다. 근 판정법에 따라 $\sum_k a_k$ 은 수렴하지만. 비율판정법으로는 수렴을 판단할 수 없으며 $k \ge N \implies |a_{k+1}|<|a_k|$ 인 $N\in \mathbb{Z}_+$ 도 존재하지 않기 때문에 발산도 판정할 수 없다.
 
-($2$) 의 경우는 $a_{2n-1}= \dfrac{1}{2^{2n-1}}, a_{2n}= \dfrac{1}{2^{2n-2}}$ 이므로
+($2$) 의 경우는 $a_{2k-1}= \dfrac{1}{2^{2k-1}}, a_{2n}= \dfrac{1}{2^{2k-2}}$ 이므로
 
 $$
 \begin{aligned}
-\limsup_{n \to \infty} \sqrt[n]{a_n} &= \dfrac{1}{2},\\
-\limsup_{n \to \infty} \dfrac{a_{n+1}}{a_n} &= 2
+\limsup_{k \to \infty} \sqrt[k]{a_k} &= \dfrac{1}{2},\\
+\limsup_{k \to \infty} \dfrac{a_{k+1}}{a_k} &= 2
 \end{aligned}
 $$
 
@@ -942,10 +1033,10 @@ $$
 
 ::: {#prp-root_test_and_ratio_test}
 
-양수로 이루어진 수열 $\langle a_n \rangle$ 에 대해 다음이 성립한다.
+양수로 이루어진 수열 $\langle a_k \rangle$ 에 대해 다음이 성립한다.
 
 $$
-\liminf_{n \to \infty} \dfrac{a_{n+1}}{a_n} \le \liminf_{n \to \infty} {a_n}^{1/n} \le \limsup_{n \to \infty} {a_n}^{1/n} \le \limsup_{n \to \infty} \dfrac{a_{n+1}}{a_n}
+\liminf_{k \to \infty} \dfrac{a_{k+1}}{a_k} \le \liminf_{k \to \infty} {a_k}^{1/k} \le \limsup_{k \to \infty} {a_k}^{1/k} \le \limsup_{k \to \infty} \dfrac{a_{k+1}}{a_k}
 $$
 
 :::
@@ -954,29 +1045,85 @@ $$
 
 ::: {.proof}
 
-$\displaystyle \alpha = \liminf_{n \to \infty} \dfrac{a_{n+1}}{a_n}$ 라 하자. $\alpha =0$ 이면 trivial 하므로 $\alpha >0$ 인 경우만 생각한다. 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{N}$ 이 존재하여 
+$\displaystyle \liminf_{k \to \infty} a_k^{1/k} \le \limsup_{k \to \infty} a^{1/k}$ 임을 안다. 따라서 아래의 ($1$) 과 ($2$) 를 보이면 된다. 
+
+&emsp;($1$) $\displaystyle \liminf_{k \to \infty} \dfrac{a_{k+1}}{a_k} \le \liminf_{k \to \infty} {a_k}^{1/k}$ 
+
+&emsp;($2$) $\displaystyle \limsup_{k \to \infty} {a_k}^{1/k} \le \limsup_{k \to \infty} \dfrac{a_{k+1}}{a_k}$
+
+우선 ($1$) 을 보이자. $\displaystyle \alpha = \liminf_{k \to \infty} \dfrac{a_{k+1}}{a_k}$ 라 하자. $\alpha =0$ 이면 trivial 하므로 $\alpha >0$ 인 경우만 생각한다. 임의의 $\varepsilon \in (0,\, \alpha)$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 이 존재하여 
 
 $$
-n \ge N \implies \dfrac{a_{n+1}}{a_n} \ge \alpha - \varepsilon
+k \ge N \implies \dfrac{a_{k+1}}{a_k} \ge \alpha - \varepsilon > 0
 $$ 
 
-이므로(@prp-properties_of_limsup), $a_{N+k} \ge a_N(\alpha - \varepsilon)^k$ 이다. 따라서, 
+이므로(@prp-properties_of_limsup), $m\in \mathbb{Z}_+$ 에 대해 $a_{N+m} \ge a_N(\alpha - \varepsilon)^m$ 이며, 
 
 $$
-n \ge N \implies a_n \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\right)^{1/n} ( \alpha - \varepsilon)
+k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\right)^{1/k} ( \alpha - \varepsilon)
 $$
 
 이므로, 
 
 $$
-\liminf_{n \to \infty} {a_n}^{1/n} \ge \alpha - \varepsilon 
+\liminf_{k \to \infty} {a_k}^{1/k} \ge \alpha - \varepsilon 
 $$
 
-이다. 임의의 $\varepsilon>0$ 에 대해 성립하기 때문에 $\displaystyle \liminf_{n \to \infty} {a_n}^{1/n} \ge \alpha = \liminf_{n \to \infty} \dfrac{a_{n+1}}{a_n}$ 이다. 
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하기 때문에 $\displaystyle \liminf_{k \to \infty} {a_k}^{1/k} \ge \alpha = \liminf_{k \to \infty} \dfrac{a_{k+1}}{a_k}$ 이다. 
 
-$\displaystyle \liminf_{n \to \infty} {a_n}^{1/n} \le \limsup_{n \to \infty} {a_n}^{1/n}$ 은 정의에 의해 자명하며, $\displaystyle \limsup_{n \to \infty} {a_n}^{1/n} \le \limsup_{n \to \infty} \dfrac{a_{n+1}}{a_n}$ 은 $\liminf$ 과 같은 방법으로 보일 수 있다. $\square$ 
+($2$) 의 경우는 ($1$) 과 비슷한 방법으로 보일 수 있다. $\square$ 
 
 :::
+
+</br>
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-convergence_of_some_series}
+
+다음 급수의 수렴 여부를 알아보자.
+
+($1$) $\displaystyle \sum_{k=1}^\infty \dfrac{2^k}{k!}$.
+
+이 경우 비율판정법을 통해 $k>1$ 인 경우 $\dfrac{a_{k+1}}{a_k} = \dfrac{2}{k+1}<1$ 이므로 수렴함을 알 수 있다. 
+
+($2$) $\displaystyle \sum_{k=1}^\infty \dfrac{k^{1/k}}{k}$.
+
+우리는 $k^{1/k}>1$ 임을 안다. 또한 $\sum_k 1/k$ 가 발산함을 안다. 따라서 발산한다.
+
+($3$) $\displaystyle \sum_{k=1}^\infty a^k k^a,\, (a>0)$
+
+$a>1$ 일 경우는 $a^kk^a > a^k > 1$ 이므로 발산한다. $a<1$ 일 경우 비율판정법을 사용하면
+
+$$
+\left(a^kk^a\right)^{1/k} = a \left(k^{1/k}\right)^a \to a <1
+$$
+
+이므로 수렴한다.
+
+($4$) $\displaystyle \sum_{k=1}^\infty \left(k^{1/k}-1\right)^k$.
+
+비율판정법으로 $\lim_{k\to \infty} (k^{1/k}-1)=0$ 이므로 수렴한다.
+
+
+($5$) $\displaystyle \sum_{k=2}^\infty \dfrac{1}{k^p-k^q},\qquad (0<q<p)$.
+
+$\dfrac{1}{k^p-k^q} = \dfrac{1}{k^p}\dfrac{1}{1-k^{q-p}}$ 이다. $\displaystyle \lim_{k \to \infty} k^{q-p}\to 0$ 이므로 충분히 큰 $k$ 에 대해 $k^{q-p}< 1/2$ 이며 
+
+$$
+\dfrac{1}{k^p-k^q} < \dfrac{1}{2k^p} < \dfrac{1}{k^p}
+$$
+
+이므로 수렴한다.
+
+($6$) $\displaystyle \sum_{k=1}^\infty \dfrac{1}{1+a^k}, \, (a>-1)$.
+
+$a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴한다. $-1< a \le 1$ 이면 모든 항이 모든 항이 $1/2$ 보다 크거나 같으므로 발산한다. 
+
+
+
+:::
+</div>
 
 </br>
 
@@ -1056,10 +1203,11 @@ $$
 
 ## 부분합과 재배열 급수
 
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 ::: {#prp-partial_summation_formula}
 
-두 수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 $\displaystyle A_n = \sum_{k=0}^n a_k$ 라 하자. $A_{-1}=0$ 이라 하자. $0 \le p \le q$ 일 때
+두 수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 $\displaystyle A_n = \sum_{k=0}^n a_k$ 라 하고 $A_{-1}=0$ 이라 하자. $0 \le p \le q$ 일 때
 
 $$
 \sum_{n=p}^q a_n b_n = \sum_{n=p}^{q-1} A_n(b_n - b_{n-1}) + A_qb_q - A_{p-1} b_p
@@ -1086,7 +1234,7 @@ $$
 
 [1번 조건에서 $\sum a_n$ 이 수렴한다면 $A_n$ 은 유계이다. 그러나 $A_n$ 이 유계라고 $\sum_n a_n$ 이 수렴하지는 않는다. $a_n = (-1)^n$ 을 생각해보라.]{.aside}
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-convergence_of_product_of_sequences}
 
@@ -1116,7 +1264,9 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-summation_of_series}
 
@@ -1136,7 +1286,7 @@ $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한
 
 ::: {#def-Cauchy_product}
 
-#### 코시 곱(Cauchy product)
+#### 코시 곱
 
 급수 $\sum a_n,\, \sum b_n$ 에 대해 
 
@@ -1144,13 +1294,15 @@ $$
 c_n = \sum_{k=0}^n a_k b_{n-k}
 $$
 
-로 정의된 급수 $\sum c_n$ 을 두 급수의 **코시 곱** 이라고 한다.
+로 정의된 급수 $\sum c_n$ 을 두 급수의 **코시 곱(Cauchy product)** 이라고 한다.
 
 
 ::: 
 :::
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-convergence_of_cauchy_product}
 
@@ -1219,7 +1371,7 @@ $$
 ::: 
 :::
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-convergence_of_rearanged_series}
 
@@ -1246,7 +1398,7 @@ $$
 
 </br>
 
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-alternating_series}
 
@@ -1288,11 +1440,11 @@ $$
 
 ::: {.solution}
 
-($1$) 우선 $(m+1)^2-(m)^2 = 2m+1$ 이므로 인접하는 $0$ 보다 큰 두 자연수의 제곱의 차이는 2보다 크다. 따라서 $\sqrt{n-1}$ 과 $\sqrt{n+1}$ 이 동시에 제곱수일 수는 없다. 
+우선 $(m+1)^2-(m)^2 = 2m+1$ 이므로 인접하는 $0$ 보다 큰 두 자연수의 제곱의 차이는 2보다 크다. 따라서 $\sqrt{n-1}$ 과 $\sqrt{n+1}$ 이 동시에 제곱수일 수는 없다. 
 
-($2$) 제곱수가 아닌 자연수 $n$ 에 대해 $\sqrt{n}$ 이 유리수라고 가정하면 서로소인 어떤 자연수 $p,\,q$ 에 대해 $\sqrt{n}=p/q$ 이며 $q^2 n = p^2$ 인데 이로부터 $q\mid p$ 라는 결론이 나오므로 모순이다. 따라서 제곱수가 아닌 자연수의 제곱근은 무리수이며 따라서 $\sqrt{n-1}+ \sqrt{n+1}$ 은 자연수 + 무리수 이거나, 무리수 + 무리수 이다. 자연수 + 무리수 인 경우는 무리수이므로, 무리수 + 무리수 인 경우만 살펴보면 된다.
+제곱수가 아닌 자연수 $n$ 에 대해 $\sqrt{n}$ 이 유리수라고 가정하면 서로소인 어떤 자연수 $p,\,q$ 에 대해 $\sqrt{n}=p/q$ 이며 $q^2 n = p^2$ 인데 이로부터 $q\mid p$ 라는 결론이 나오므로 모순이다. 따라서 제곱수가 아닌 자연수의 제곱근은 무리수이며 따라서 $\sqrt{n-1}+ \sqrt{n+1}$ 은 자연수 + 무리수 이거나, 무리수 + 무리수 이다. 자연수 + 무리수 인 경우는 무리수이므로, 무리수 + 무리수 인 경우만 살펴보면 된다.
 
-($3$) 서로소인 자연수 $p,\,q$ 에 대해 $\sqrt{n-1}+ \sqrt{n+1} = \dfrac{p}{q}$ 라 하자. 그렇다면 $\sqrt{n^2-1}=\dfrac{p^2}{2q^2} - \dfrac{2n+1}{2} \in \mathbb{Q}$ 이다. 그런데 ($1$) 에서 보였듯이 $n^2-1$ 은 완전제곱수가 아니며 따라서 $2$ 에 의해 무리수이다. 즉 $\sqrt{n-1}+ \sqrt{n+1}$ 은 무리수이다.
+서로소인 자연수 $p,\,q$ 에 대해 $\sqrt{n-1}+ \sqrt{n+1} = \dfrac{p}{q}$ 라 하자. 그렇다면 $\sqrt{n^2-1}=\dfrac{p^2}{2q^2} - \dfrac{2n+1}{2} \in \mathbb{Q}$ 이다. 그런데 ($1$) 에서 보였듯이 $n^2-1$ 은 완전제곱수가 아니며 따라서 $2$ 에 의해 무리수이다. 즉 $\sqrt{n-1}+ \sqrt{n+1}$ 은 무리수이다.
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1309,11 +1461,11 @@ $$
 
 가 성립함을 보여라 그리고 이를 이용하여 다음을 보여라.
 
-(1) 만일 $|a|<1$ 이면 $\lim_n a^n = 0$ 이고, $|a|>1$ 이면 $\langle a^n\rangle$ 은 발산한다.
+&emsp;($1$) 만일 $|a|<1$ 이면 $\displaystyle \lim_{n\to \infty} a^n = 0$ 이고, $|a|>1$ 이면 $\langle a^n\rangle$ 은 발산한다.
 
-(2) 임의의 양수 $a>0$ 에 대하여 $\lim_n a^{1/n}=1$ 이다.
+&emsp;($2$) 임의의 양수 $a>0$ 에 대하여 $\displaystyle \lim_{n\to\infty} a^{1/n}=1$ 이다.
 
-(3) $\lim_n n^{1/n}=1$ 이다.
+&emsp;($3$) $\lim_n n^{1/n}=1$ 이다.
 
 :::
 
@@ -1323,15 +1475,15 @@ $$
 
 $(1+a)^n = \displaystyle \sum_{k=0}^n \begin{pmatrix}n \\ k\end{pmatrix}a^k$ 에 의해 $(1+a)^n \ge 1+ na$ 이다.
 
-($1$) $0<a<1$ 이라면 어떤 $b>0$ 에 대해 $a=\dfrac{1}{1+b}$ 이다. $\dfrac{1}{a^n} = (1+b)^n \ge 1+nb$ 이므로, $a^n \le \dfrac{1}{1+nb}$ 이다. 따라서 $\lim_n \dfrac{1}{1+nb}=0$ 이므로 $\lim_n a^n = 0$ 이다. $-1<a<0$ 이라면 $\lim_n (-a)^n = 0$ 이므로 $\lim_n a^n = 0$ 이다. 따라서 $|a|<1 \implies \lim_n a^n=0$ 이다. $|a|>1$ 일 경우 $d=1/a$ 에 대해 $\lim_n |d|^n = 0$ 이므로 $\lim_n |a|^n$ 은 발산한다.
+($1$) $0<a<1$ 이라면 어떤 $b>0$ 에 대해 $a=\dfrac{1}{1+b}$ 이다. $\dfrac{1}{a^n} = (1+b)^n \ge 1+nb$ 이므로, $a^n \le \dfrac{1}{1+nb}$ 이다. 따라서 $\displaystyle \lim_{n\to \infty} \dfrac{1}{1+nb}=0$ 이므로 $\displaystyle \lim_{n\to\infty} a^n = 0$ 이다. $-1<a<0$ 이라면 $\displaystyle \lim_{n\to\infty} (-a)^n = 0$ 이므로 $\displaystyle\lim_{n\to\infty} a^n = 0$ 이다. 따라서 $\displaystyle |a|<1 \implies \lim_{n\to\infty} a^n=0$ 이다. $|a|>1$ 일 경우 $d=1/a$ 에 대해 $\displaystyle \lim_{n\to\infty} |d|^n = 0$ 이므로 $\displaystyle\lim_{n\to \infty} |a|^n$ 은 발산한다.
 
-($2$) $a>1$ 일 경우 임의의 자연수 $n$ 에 대해 $a^1/n>1$ 이다. 고정된 $n\in \mathbb{N}$ 에 대해 $\alpha_n = \dfrac{a-1}{n}$ 이라고 하면 $1+n\alpha_n = a$ 이며, $(1+\alpha_n)^n \ge 1+n\alpha =a$ 이다.
+($2$) $a>1$ 일 경우 임의의 자연수 $n$ 에 대해 $a^{1/n}>1$ 이다. 임의의 $n\in \mathbb{Z}_+$ 에 대해 $\alpha_n = \dfrac{a-1}{n}$ 이라고 하면 $1+n\alpha_n = a$ 이며, $(1+\alpha_n)^n \ge 1+n\alpha =a$ 이다.
 
 $$
 1 < a^{1/n} \le (1+\alpha_n)
 $$
 
-이므로 $n \to \infty$ 극한을 생각하면 $\lim_n a^{1/n}=1$ 이다. $0<a<1$ 일 경우에는 $b=1/a$ 에 대해 $\lim_n b^{1/n} = 1$ 이므로 $\lim_n a^{1/n}=1$ 이다. 
+이므로 $\displaystyle \lim_{n\to\infty} a^{1/n}=1$ 이다. $0<a<1$ 일 경우에는 $b=1/a$ 에 대해 $\displaystyle \lim_{n\to\infty} b^{1/n} = 1$ 이므로 $\displaystyle \lim_{n\to\infty} a^{1/n}=1$ 이다. 
 
 
 ($3$) 자연수 $n$ 에 대해 $n^{1/n} \ge 1$ 이다. 주어진 부등식을 생각하자. 임의의 $a>0$ 에 대해
@@ -1340,7 +1492,7 @@ $$
 (1+a)^n \ge 1+na \ge na
 $$
 
-이므로 $n^{1/n} \le \dfrac{1+a}{a^{1/n}}$ 이다. $\lim_n a^{1/n}=1$ 이므로 $\lim_n n^{1/n} \le 1+a$ 이며 임의의 양수 $a$ 에 대해 성립하므로 $\lim_n n^{1/n}=1$ 이다.
+이므로 $n^{1/n} \le \dfrac{1+a}{a^{1/n}}$ 이다. $\displaystyle \lim_{n\to\infty} a^{1/n}=1$ 이므로 $\displaystyle \lim_{n\to\infty} n^{1/n} \le 1+a$ 이며 임의의 양수 $a$ 에 대해 성립하므로 $\displaystyle \lim_{n \to \infty} n^{1/n}=1$ 이다.
 
 :::
 
@@ -1350,7 +1502,7 @@ $$
 
 ### 김김계 2.7.9
 
-집합 $\{ \sin n : n\in \mathbb{N}\}$ 이 구간 $[-1,\,1]$ 안에서 조밀함을 보여라. 또한 $\theta$ 가 무리수일 때 $\{e^{2\pi i n \theta}: n \in \mathbb{N}\}$ 이 단위원 $\{e^{2\pi i t}:t\in [0,\,1]\}$ 안에서 조밀함을 보여라.
+집합 $\{ \sin n : n\in \mathbb{Z}_+\}$ 이 구간 $[-1,\,1]$ 안에서 조밀함을 보여라. 또한 $\theta$ 가 무리수일 때 $\{e^{2\pi i n \theta}: n \in \mathbb{Z}_+\}$ 이 단위원 $\{e^{2\pi i t}:t\in [0,\,1]\}$ 안에서 조밀함을 보여라.
 
 :::
 
@@ -1425,10 +1577,10 @@ $$
 
 #### Rudin 3.5
 
-실수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 동시에 $\displaystyle \limsup_{n \to \infty} a_n = +\infty$, $\displaystyle \limsup_{n \to \infty} b_n = -\infty$ 인 경우가 아닐 때에는 다음이 성립함을 보이시오.
+실수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 아래 식의 우변이 $\infty - \infty$ 꼴이 아닐 때 성립함을 보여라.
 
 $$
-\limsup_{n \to \infty} (a_n + b_n) \le \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n
+\limsup_{n \to \infty} (a_n + b_n) \le \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n.
 $$
 
 :::
@@ -1442,7 +1594,7 @@ $$
 c=\limsup_{n \to \infty} (a_n + b_n) > \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n = a+b
 $$
 
-임을 가정하자. $r= \dfrac{c-(a+b)}{2}$ 라 하면 $r>0$ 이다. @prp-properties_of_limsup 에 의해 $\varepsilon < \dfrac{r}{2}$ 에 대해 어떤 $N\in \mathbb{N}$ 이 존재하여,
+임을 가정하자. $r= \dfrac{c-(a+b)}{2}$ 라 하면 $r>0$ 이다. @prp-properties_of_limsup 에 의해 $\varepsilon < \dfrac{r}{2}$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 이 존재하여,
 
 $$
 n \ge N \implies a_n< a+\varepsilon,\, b_n < b+\varepsilon
@@ -1495,7 +1647,9 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_3_8}
 
@@ -1525,7 +1679,36 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-rudin_3_9}
+
+#### Rudin 3.9
+
+아래의 멱급수에 대한 수렴반경을 구하라.
+
+($a$) $\displaystyle \sum n^3 z^n\qquad$ ($b$) $\displaystyle \sum\dfrac{2^n}{n!}z^n\qquad$ ($c$) $\displaystyle \sum \dfrac{2^n}{n^2} z^n\qquad$ ($d$) $\displaystyle \sum \dfrac{n^3}{3^n}z^n$.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $\left|\dfrac{a_{n+1}}{a_n}\right| = \left(1+\dfrac{1}{n}\right)^3|z| <1$ 이어야 하므로 수렴반경 $R=1$ 이다.
+
+($b$) $\left|\dfrac{a_{n+1}}{a_n} \right| = \dfrac{2}{n+1}|z| <1$ 이므로 수렴반경 $R=\infty$ 이다.
+
+($c$) $\left|\dfrac{a_{n+1}}{a_n}\right| = \dfrac{2}{(1+1/n)^2}|z| <1$ 이므로 수렴반경 $R=\dfrac{1}{2}$ 이다.
+
+($d$) $\left|\dfrac{a_{n+1}}{a_n}\right| =  \dfrac{1}{3}\left(1+\dfrac{1}{n}\right)^3 |z|<1$ 이므로 수렴반경 $R=3$ 이다. 
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-rudin_3_11}
 
@@ -1547,7 +1730,7 @@ $$
 
 ::: {.solution}
 
-($1$) $\sum \dfrac{a_n}{1+a_n}$ 이 수렴함을 가정하자. 그렇다면 $\displaystyle \lim_{n \to \infty} \dfrac{a_n}{1+a_n}=0$ 이며 따라서 $a_n \to 0$ 이다. 그렇다면 어떤 $N\in \mathbb{N}$ 에 대해 $n\ge N \implies a_n<1$ 이며
+($1$) $\sum \dfrac{a_n}{1+a_n}$ 이 수렴함을 가정하자. 그렇다면 $\displaystyle \lim_{n \to \infty} \dfrac{a_n}{1+a_n}=0$ 이며 따라서 $a_n \to 0$ 이다. 그렇다면 어떤 $N\in \mathbb{Z}_+$ 에 대해 $n\ge N \implies a_n<1$ 이며
 
 $$
 a_n<1 \implies a_n^2 < a_n \implies a_n^2+a_n \le 2a_n \implies \dfrac{a_n}{2} \le \dfrac{a_n}{1+a_n}
