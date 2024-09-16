@@ -85,7 +85,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-associativity_of_union_and_intersection}
+::: {#prp-part1_associativity_of_union_and_intersection}
 
 집합 $A,\,B$ 에 대해 $A \cup B = B \cup A$ 이고 $A \cap B = B \cap A$ 이다. 
 
@@ -96,7 +96,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-commutativity_of_union_and_intersection}
+::: {#prp-part1_commutativity_of_union_and_intersection}
 
 집합 $A,\,B,\, C$ 에 대해 $A \cup (B \cup C) = (A \cup B) \cup C$ 이고 $A \cap (B\cap C) = (A \cap B) \cap C$ 이다. 
 
@@ -126,7 +126,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-union_intersection_with_empty_set}
+::: {#prp-part1_union_intersection_with_empty_set}
 
 집합 $A$ 에 대해 $A \cap \varnothing = \varnothing$ 이며 $A \cup \varnothing = A$ 이다.
 
@@ -137,7 +137,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-empty_set_is_subset_of_every_set}
+::: {#thm-part1_empty_set_is_subset_of_every_set}
 
 공집합은 모든 집합의 부분집합이다.
 
@@ -172,7 +172,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-distribution_law_for_sets}
+::: {#prp-part1_distribution_law_for_sets}
 
 #### 집합에서의 분배법칙
 
@@ -229,7 +229,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-difference_and_intersection}
+::: {#prp-part1_difference_and_intersection}
 
 $X$ 의 부분집합 $A,\,B$ 에 대해 $A-B = A \cap B^C$ 이다.
 
@@ -246,7 +246,7 @@ $x\in (A-B) \iff x\in A \land x\not\in B \iff x\in A \cap B^C$ $\square$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-complement_of_union_and_intersection}
+::: {#prp-part1_complement_of_union_and_intersection}
 
 집합 $A,\,B$ 에 대해 $(A\cup B)^C = A^C \cap B^C$ 이며 $(A \cap B)^C = A^C \cup B^C$ 이다. 
 
@@ -268,7 +268,7 @@ $\square$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-DeMorgrans_law}
+::: {#thm-part1_DeMorgrans_law}
 
 #### 드 모르강의 법칙
 
@@ -337,7 +337,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-ordered_pair}
+::: {#exm-part1_ordered_pair}
 
 $a \ne b$ 이면 $(a,\,b) \ne (b,\,a)$ 이다. 
 :::

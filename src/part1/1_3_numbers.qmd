@@ -111,7 +111,7 @@ Linear continuum 이며 순서체인 실수의 집합 $\mathbb{R}$ 이 존재한
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-linear_continuum_is_dense}
+::: {#prp-part1_linear_continuum_is_dense}
 
 $\mathbb{F}$ 가 선형 연속체이고 $x,\, y\in \mathbb{F},\, x<y$ 이면 $x<z,\, z<y$ 를 만족하는 $z\in \mathbb{F}$ 가 존재한다.
 :::
@@ -222,7 +222,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-well_ordering_property}
+::: {#thm-part1_well_ordering_property}
 
 #### 양의 정수의 정렬성
 
@@ -245,7 +245,7 @@ $A$ 를 위 명제가 성립하는 양의 정수의 집합이라 하자. $1\in A
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-strong_induction_principle}
+::: {#thm-part1_strong_induction_principle}
 
 #### 강한 귀납법
 
@@ -271,7 +271,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-archmedian_ordering_property}
+::: {#thm-part1_archmedian_ordering_property}
 
 #### 아르키메데스의 성질
 
@@ -290,7 +290,7 @@ $m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ �
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-archimedean_ordering_property}
+::: {#cor-part1_archimedean_ordering_property}
 
 임의의 $a\in \mathbb{R}$ 에 대해 $n>a$ 인 양의 정수 $n$ 이 존재한다. 또한 $a$ 가 양수일 경우 $0<\dfrac{1}{n}<a$ 인 자연수 $n$ 이 존재한다.
 
@@ -300,7 +300,7 @@ $m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ �
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-archimedian_law}
+::: {#cor-part1_archimedian_law}
 
 #### 아르키메데스의 법칙
 
@@ -313,7 +313,7 @@ $m\in \mathbb{Z}_+$ 이므로 귀납적 성질에 의해 $m+1\in \mathbb{Z}_+$ �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_1}
+::: {#exr-part1_munkres_1_4_1}
 
 #### Munkres 1.4.1
 
@@ -459,7 +459,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_2}
+::: {#exr-part1_munkres_1_4_2}
 
 #### Munkres 1.4.2
 
@@ -529,7 +529,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_4}
+::: {#exr-part1_munkres_1_4_4}
 
 #### Munkres 1.4.4
 
@@ -551,7 +551,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_5}
+::: {#exr-part1_munkres_1_4_5}
 
 #### Munkres 1.4.5
 
@@ -622,7 +622,7 @@ $\mathbb{Z}$ 와 $\mathbb{Z}_+$ 에 대해 다음을 보이시오.
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1.4.6}
+::: {#exr-part1_munkres_1.4.6}
 
 #### Munkres 1.4.6
 
@@ -668,7 +668,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_7}
+::: {#exr-part1_munkres_1_4_7}
 
 #### Munkres 1.4.7
 
@@ -735,7 +735,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-Munkres_1_4_8}
+::: {#exr-part1_Munkres_1_4_8}
 
 #### Munkres 1.4.8
 
@@ -753,9 +753,9 @@ $$
 
 ::: {.solution}
 
-($1$) @thm-least_upper_bound_property_greatest_lower_bound_property 에서 최소상계 성질을 갖는 집합은 최대 하계 성질을 가짐을 보였다.
+($1$) @thm-part1_least_upper_bound_property_greatest_lower_bound_property 에서 최소상계 성질을 갖는 집합은 최대 하계 성질을 가짐을 보였다.
 
-($2$) $A=\{1/n: n\in \mathbb{Z}+\}$ 라 하자. @exr-munkres_1_4_2 의 ($9$) 에 의해 $0$ 은 $A$ 의 하계이다. ($1$) 에 의해 $A$ 는 최대 하계를 가진다. $a=\inf A$ 라 하자. $a>0$ 이라면 @thm-archmedian_ordering_property 에 의해 $m>1/a$ 인 $m\in \mathbb{Z}_+$ 이 존재하며 $1/m<a,\, 1/m \in A$ 이므로 $a$ 가 최대 하계라는 가정에 모순된다. $a<0$ 이라면 모든 $n \in \mathbb{Z}_+$ 에 대해 $1/a<1/(2a)<n$ 이므로 역시 $a$ 가 최대 하계라는 가정에 모순된다. 따라서 $\inf A=0$ 이다.
+($2$) $A=\{1/n: n\in \mathbb{Z}+\}$ 라 하자. @exr-part1_munkres_1_4_2 의 ($9$) 에 의해 $0$ 은 $A$ 의 하계이다. ($1$) 에 의해 $A$ 는 최대 하계를 가진다. $a=\inf A$ 라 하자. $a>0$ 이라면 @thm-part1_archmedian_ordering_property 에 의해 $m>1/a$ 인 $m\in \mathbb{Z}_+$ 이 존재하며 $1/m<a,\, 1/m \in A$ 이므로 $a$ 가 최대 하계라는 가정에 모순된다. $a<0$ 이라면 모든 $n \in \mathbb{Z}_+$ 에 대해 $1/a<1/(2a)<n$ 이므로 역시 $a$ 가 최대 하계라는 가정에 모순된다. 따라서 $\inf A=0$ 이다.
 
 ($3$) 우선 양수 $h$ 와 자연수 $n$ 에 대해 $(1+h)^n \ge 1+nh$ 임을 보이자. 임의의 고정된 $h>0$ 에 대해 $X = \{n\in \mathbb{Z}_+ \mid (1+h)^n \ge 1+nh\}$ 라 하자. 
 
@@ -777,7 +777,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-Munkres_1_4_9}
+::: {#exr-part1_Munkres_1_4_9}
 
 #### Munrkes 1.4.9
 
@@ -797,9 +797,9 @@ $$
 
 ::: {.solution} 
 
-($1$) $A\subset \mathbb{Z},\, A\ne \varnothing$ 이며 위로 유계라고 하자. $A$ 가 모두 양의 정수의 집합이라면 @exr-munkres_1_4_4 ($1$) 에 의해 최대값을 가진다. $A$ 가 양의 정수를 포함하는 집합이라면 $A \cap \mathbb{Z}_+$ 는 최대값을 가지며 이 값이 $A$ 의 최대값이다. $A$ 가 $0$ 과 음의 정수로 이루어진 집합이라면 $0$ 이 최대값이다. $A$ 가 음의 정수만으로 이루어진 집합이라고 하자. $A'=\{-a\mid a\in A\}$ 는 양의 정수의 집합이며 @thm-well_ordering_property 에 의해 최소값 $m$ 을 가진다. 즉 모든 $n\in A'$ 에 재해 $m\le n$ 이며 $-n \le -m$ 이므로 $-m$ 이 $A$ 의 최대값이다.
+($1$) $A\subset \mathbb{Z},\, A\ne \varnothing$ 이며 위로 유계라고 하자. $A$ 가 모두 양의 정수의 집합이라면 @exr-part1_munkres_1_4_4 ($1$) 에 의해 최대값을 가진다. $A$ 가 양의 정수를 포함하는 집합이라면 $A \cap \mathbb{Z}_+$ 는 최대값을 가지며 이 값이 $A$ 의 최대값이다. $A$ 가 $0$ 과 음의 정수로 이루어진 집합이라면 $0$ 이 최대값이다. $A$ 가 음의 정수만으로 이루어진 집합이라고 하자. $A'=\{-a\mid a\in A\}$ 는 양의 정수의 집합이며 @thm-part1_well_ordering_property 에 의해 최소값 $m$ 을 가진다. 즉 모든 $n\in A'$ 에 재해 $m\le n$ 이며 $-n \le -m$ 이므로 $-m$ 이 $A$ 의 최대값이다.
 
-($2$) $A_x =\{m\in \mathbb{Z}\mid m<x\}$ 라 하자. 우선 $A_x \ne \varnothing$ 임을 보이자. $x>0$ 이라면 $0\in A_x$ 이므로 $A_x\ne \varnothing$ 이다. $x=0$ 이라면 $-1\in A_x$ 이므로 $A_x \ne \varnothing$ 이다. $x<0$ 이라면 @thm-archmedian_ordering_property 에 의해 $p>-x$ 인 $m\in \mathbb{Z}_+$ 가 존재하며 $-p<x$ 이므로 $-p\in A_x$ 이다. 즉 $A_x \ne \varnothing$ 이다. 
+($2$) $A_x =\{m\in \mathbb{Z}\mid m<x\}$ 라 하자. 우선 $A_x \ne \varnothing$ 임을 보이자. $x>0$ 이라면 $0\in A_x$ 이므로 $A_x\ne \varnothing$ 이다. $x=0$ 이라면 $-1\in A_x$ 이므로 $A_x \ne \varnothing$ 이다. $x<0$ 이라면 @thm-part1_archmedian_ordering_property 에 의해 $p>-x$ 인 $m\in \mathbb{Z}_+$ 가 존재하며 $-p<x$ 이므로 $-p\in A_x$ 이다. 즉 $A_x \ne \varnothing$ 이다. 
 
 또한 $A_x$ 는 유계이므로 ($1$) 에 의해 최대값이 존재한다. 이를 $n$ 이라 하자. 따라서 $n+1\notin A_x$ 이므로 $n+1\le x$ 이다. $n+1=x$ 이면 $x \in \mathbb{Z}$ 이므로 가정에 위배된다. 따라서 $n<x<n+1$ 을 만족하는 정수 $n$ 이 존재한다. 
 
@@ -807,13 +807,15 @@ $$
 
 ($3$) $x-y>1$ 일 때 $y<n<x$ 를 만족하는 정수가 하나도 없다고 가정하자. $x$ 가 정수라면 $x-1>y$ 도 정수이며 $y<x-1<x$ 이므로 모순된다. 따라서 $x$ 는 정수가 아니다. $x$ 가 정수가 아니라면 ($2$) 에 의해 $n<x<n+1$ 을 만족하는 정수가 $n$ 이 존재하며 $y<x-1<n<x<n+1$ 이므로 만족하는 정수 $n$ 이 존재한다.
 
-($4$) 이것은 중요하므로 아래 @prp-Q_is_dense 로 정리하도록 한다.
+($4$) 이것은 중요하므로 아래 @prp-part1_Q_is_dense 로 정리하도록 한다.
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
 
-::: {#prp-Q_is_dense}
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part1_Q_is_dense}
 
 #### 유리수의 조밀성
 
@@ -825,7 +827,7 @@ $$
 
 ::: {.solution}
 
-$y=0$ 이면 @cor-archimedean_ordering_property 으로 보일 수 있다. $0<y<x$ 인 경우 아르키메데스 법칙(@cor-archimedian_law) 에 의해
+$y=0$ 이면 @cor-part1_archimedean_ordering_property 으로 보일 수 있다. $0<y<x$ 인 경우 아르키메데스 법칙(@cor-part1_archimedian_law) 에 의해
 
 $$
 0 < \dfrac{1}{n}<x-y
@@ -851,7 +853,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_10}
+::: {#exr-part1_munkres_1_4_10}
 
 #### Munkres 1.4.10
 
@@ -908,7 +910,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_4_11}
+::: {#exr-part1_munkres_1_4_11}
 
 #### Munkres 1.4.11
 
@@ -928,7 +930,7 @@ $$
 
 ::: {.solution}
 
-($1$) @exr-Munkres_1_4_9 ($2$) 에 의해 $m/2\notin \mathbb{Z}$ 이면 $n<m/2<n+1$ 을 만족하는 정수 $n$ 이 유일하게 존재한다. 이 $n$ 에 대해 $2n<m<2n+2$ 이므로 $m=2n+1$ 이다. 
+($1$) @exr-part1_Munkres_1_4_9 ($2$) 에 의해 $m/2\notin \mathbb{Z}$ 이면 $n<m/2<n+1$ 을 만족하는 정수 $n$ 이 유일하게 존재한다. 이 $n$ 에 대해 $2n<m<2n+2$ 이므로 $m=2n+1$ 이다. 
 
 
 ($2$) 어떤 정수 $m$ 에 대해 $2m+1$ 은 홀수이다. $p=2m+1,\, q=2n+1$ 이라 하면 

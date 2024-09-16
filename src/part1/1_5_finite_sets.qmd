@@ -20,10 +20,12 @@ crossref:
 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 
-::: {#lem-finite_set1}
+::: {#lem-part1_finite_set1}
 
 $n\in \mathbb{Z}_+$ 일 때 집합 $A$ 에 대해 다음은 동치이다.
 
@@ -62,7 +64,7 @@ $k(x)$ 는 전단사 함수이다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-finite_set2}
+::: {#thm-part1_finite_set2}
 
 집합 $A$ 와 $n\in \mathbb{Z}_+$ 에 대해 $f:A \to \{1,\ldots,\,n\}$ 인 전단사 함수 $f$ 가 존재한다고 하자. $B$ 가 $A$ 의 진부분 집합이라면 $B \mapsto \{1,\ldots,\,n\}$ 인 전단사 함수는 존재하지 않으며, $B\ne \varnothing$ 일 경우 어떤 $m<n$ 에 대해 $B \mapsto \{1,\ldots,m\}$ 인 전단사 함수가 존재한다.
 
@@ -74,20 +76,20 @@ $k(x)$ 는 전단사 함수이다.
 
 $B=\varnothing$ 일 경우 $B \to \{1,\ldots,n\}$ 인 전단사 함수가 존재하지 않음은 자명하다. 이제 $B\ne \varnothing$ 일 경우 induction 으로 증명한다. 정리가 만족하는 양의 정수의 의 집합을 $C$ 라 하자. $n=1$ 일 경우는 성립한다는 것을 쉽게 알 수 있다. 
 
-$n\in C$ 임을 가정한다. $f:A \to \{1,\ldots,n+1\}$ 이 전단사 함수라고 하자. $A$ 의 진부분집합 $B$ 에 대해 $a_0\in B$ 와 $a_1\in A\backslash B$ 를 선택한다. @lem-finite_set1 에 의해 전단사 함수 $g:A\backslash \{a_0\} \to \{1,\ldots,n\}$ 가 존재한다. 이로부터 가정에 의해 아래의 결론을 내릴 수 있다.
+$n\in C$ 임을 가정한다. $f:A \to \{1,\ldots,n+1\}$ 이 전단사 함수라고 하자. $A$ 의 진부분집합 $B$ 에 대해 $a_0\in B$ 와 $a_1\in A\backslash B$ 를 선택한다. @lem-part1_finite_set1 에 의해 전단사 함수 $g:A\backslash \{a_0\} \to \{1,\ldots,n\}$ 가 존재한다. 이로부터 가정에 의해 아래의 결론을 내릴 수 있다.
 
 &emsp; ($1$) $B\backslash\{a_0\} \mapsto \{1,\ldots,n\}$ 인 전단사 함수는 존재하지 않으며, 
 
 &emsp; ($2$) 어떤 $m<n$ 에 대해 전단사 함수 $h:B\backslash\{a_0\} \to \{1,\ldots,\,m\}$ 이 존재한다. 
 
-@lem-finite_set1 에 의해 $B \mapsto \{1,\ldots,n+1\}$ 인 전단사 함수는 존재하지 않는다. 또한 $B\backslash \{a_0\} \ne \varnothing$ 일 경우 $B\mapsto \{1,\ldots,\,m+1\}$ 인 전단사 함수가 존재한다. 즉 $C=\mathbb{Z}_+$ 이다. $\square$
+@lem-part1_finite_set1 에 의해 $B \mapsto \{1,\ldots,n+1\}$ 인 전단사 함수는 존재하지 않는다. 또한 $B\backslash \{a_0\} \ne \varnothing$ 일 경우 $B\mapsto \{1,\ldots,\,m+1\}$ 인 전단사 함수가 존재한다. 즉 $C=\mathbb{Z}_+$ 이다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 
-::: {#cor-finite_set2}
+::: {#cor-part1_finite_set2}
 
 $A$ 가 유한집합이고 $B$ 가 $A$ 의 진부분집합이라면 $A \mapsto B$ 인 전단사함수는 존재하지 않는다.
 
@@ -97,14 +99,14 @@ $A$ 가 유한집합이고 $B$ 가 $A$ 의 진부분집합이라면 $A \mapsto B
 
 ::: {.proof}
 
-$f:A \to B$ 가 전단사 함수라 하자. $g:A \to \{1,\ldots,\,n\}$ 이 전단사함수라면 $g\circ f^{-1}$ 는 $B \mapsto \{1,\ldots,n\}$ 전단사 함수인데 이는 @thm-finite_set2 에 위배된다. $\square$
+$f:A \to B$ 가 전단사 함수라 하자. $g:A \to \{1,\ldots,\,n\}$ 이 전단사함수라면 $g\circ f^{-1}$ 는 $B \mapsto \{1,\ldots,n\}$ 전단사 함수인데 이는 @thm-part1_finite_set2 에 위배된다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 
-::: {#cor-Z_plus_is_not_finite}
+::: {#cor-part1_Z_plus_is_not_finite}
 
 $\mathbb{Z}_+$ 는 유한집합이 아니다.
 
@@ -114,25 +116,25 @@ $\mathbb{Z}_+$ 는 유한집합이 아니다.
 
 ::: {.proof}
 
-$f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}$ 을 $f(n) =n+1$ 로 정의하면 전단사 함수이다. 그런데 $\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+$ 이므로 @cor-finite_set2 에 의해 $\mathbb{Z}_+$ 는 유한집합이 아니다. $\square$
+$f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}$ 을 $f(n) =n+1$ 로 정의하면 전단사 함수이다. 그런데 $\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+$ 이므로 @cor-part1_finite_set2 에 의해 $\mathbb{Z}_+$ 는 유한집합이 아니다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-cardinality_of_finit_set}
+::: {#cor-part1_cardinality_of_finit_set}
 유한집합의 cardinality 는 유일하게 정해진다.
 :::
 </div></br>
 
 ::: {.proof}
-$A$ 와 $\{1,\ldots,\,n\}$ 사이의 전단사 함수 $f$ 와 $A$ 와 $\{1,\ldots,m\}$ 사이의 전단사 함수 $g$ 가 존재한다고 하자. $g \circ f^{-1}$ 은 $\{1,\ldots, n\}$ 에서 $\{1,\ldots,\,m\}$ 으로의 전단사 함수이어야 하는데, $m\ne n$ 이라면 둘중 하나는 나머지의 진부분집합이므로 @cor-finite_set2 에 의해 전단사 함수가 존재하지 않는다. 즉 $m=n$ 이므로 유한집합의 cardinaility 는 유일하게 정해진다. $\square$
+$A$ 와 $\{1,\ldots,\,n\}$ 사이의 전단사 함수 $f$ 와 $A$ 와 $\{1,\ldots,m\}$ 사이의 전단사 함수 $g$ 가 존재한다고 하자. $g \circ f^{-1}$ 은 $\{1,\ldots, n\}$ 에서 $\{1,\ldots,\,m\}$ 으로의 전단사 함수이어야 하는데, $m\ne n$ 이라면 둘중 하나는 나머지의 진부분집합이므로 @cor-part1_finite_set2 에 의해 전단사 함수가 존재하지 않는다. 즉 $m=n$ 이므로 유한집합의 cardinaility 는 유일하게 정해진다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-cardinality_of_subset}
+::: {#cor-part1_cardinality_of_subset}
 
 $A$ 가 유한집합이고 $B \subset A$ 이면 $B$ 는 유한집합이다. $B$ 가 $A$ 의 진부분집합이라면 $B$ 의 cardinality 는 $A$ 보다 적다.
 
@@ -142,13 +144,13 @@ $A$ 가 유한집합이고 $B \subset A$ 이면 $B$ 는 유한집합이다. $B$ 
 
 ::: {.proof}
 
-$A$ 의 cardinality 가 $n$ 이라면 @thm-finite_set2 에 의해 $B$ 의 cardinality 는 $n$ 보다 작다. $\square$
+$A$ 의 cardinality 가 $n$ 이라면 @thm-part1_finite_set2 에 의해 $B$ 의 cardinality 는 $n$ 보다 작다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-properties_of_finite_set}
+::: {#cor-part1_properties_of_finite_set}
 
 $A$ 가 공집합이 아닐 때 아래의 세 명제는 동치이다.
 
@@ -181,7 +183,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-finite_cartesian_product_of_finite_sets}
+::: {#prp-part1_finite_cartesian_product_of_finite_sets}
 
 유한집합의 유한 합집합은 유한집합이다. 유한집합의 유한 데카르트곱도 유한집합이다.
 
@@ -216,7 +218,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-muknres_1_6_2}
+::: {#exr-part1_muknres_1_6_2}
 
 #### Munkres 1.6.2
 
@@ -228,13 +230,13 @@ $B$ 가 유한집합이 아니고 $B \subset A$ 이면 $A$ 는 유한집합이 �
 
 ::: {.solution}
 
-$A$ 가 유한집합이라면 어떤 양의 정수 $n$ 에 대해 전단사 함수 $f: A \to \{1,\ldots,\,n\}$ 가 존재한다. $B \subset A$ 이면 @cor-cardinality_of_subset 에 의해 $B$ 는 유한집합이어야 하므로 가정에 위배된다. 
+$A$ 가 유한집합이라면 어떤 양의 정수 $n$ 에 대해 전단사 함수 $f: A \to \{1,\ldots,\,n\}$ 가 존재한다. $B \subset A$ 이면 @cor-part1_cardinality_of_subset 에 의해 $B$ 는 유한집합이어야 하므로 가정에 위배된다. 
 
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_6_3}
+::: {#exr-part1_munkres_1_6_3}
 
 #### Munkres 1.6.3
 
@@ -258,7 +260,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_6_4}
+::: {#exr-part1_munkres_1_6_4}
 #### Munkres 1.6.4
 
 $A$ 는 공집합이 아닌 유한 전순서 집합(@def-part1_order_relation) 이라 하자.

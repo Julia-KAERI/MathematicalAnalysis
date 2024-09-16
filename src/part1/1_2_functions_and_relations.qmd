@@ -89,7 +89,7 @@ $f:A \to B$ 에 대해 $f(A)=B$ 일 때 $f$ 를 **전사함수(surjection)**라 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-inverse_function}
+::: {#prp-part1_inverse_function}
 
 $f:A \to B$ 를 생각하자. 어떤 함수 $g: B \to A,\, h : B \to A$ 가 존재하여 모든 $a\in A$ 에 대해 $g(f(a)) =a$ 이며 모든 $b\in B$ 에 대해 $f(h(b))=b$ 이면 $f$ 는 전단사이며 $g=f$ 이다. 
 
@@ -112,7 +112,7 @@ $f:A \to B$ 를 생각하자. 어떤 함수 $g: B \to A,\, h : B \to A$ 가 존�
 
 #### 역함수
 
-$f:A \to B$ 가 전단사 함수 일 때 @prp-inverse_function 에서의 $g=h$ 를 $f$ 에 대한 **역함수(inverse)** 라 하고 $f^{-1}$ 이라 쓴다. 
+$f:A \to B$ 가 전단사 함수 일 때 @prp-part1_inverse_function 에서의 $g=h$ 를 $f$ 에 대한 **역함수(inverse)** 라 하고 $f^{-1}$ 이라 쓴다. 
 
 
 ::: 
@@ -139,7 +139,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-properties_of_inverse_image}
+::: {#prp-part1_properties_of_inverse_image}
 $f:A \to B$ 이고 $A_0 \subset A,\,B_0 \subset B$ 일 때 다음이 성립한다.
 
 $$
@@ -164,7 +164,7 @@ $b\in f(f^{-1}(B_0))$ 라 하자. 어떤 $x\in f^{-1}(B_0)$ 에 대해 $b=f(x)$ 
 ### 연습 문제 {.unnumbered}
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_2_2}
+::: {#exr-part1_munkres_1_2_2}
 
 #### Munkres 1.2.2
 
@@ -260,7 +260,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_2_4}
+::: {#exr-part1_munkres_1_2_4}
 
 #### Munkres 1.2.4
 
@@ -307,7 +307,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_2_5}
+::: {#exr-part1_munkres_1_2_5}
 
 #### Munkres 1.2.5
 
@@ -393,7 +393,7 @@ $A$ 에 대한 관계 $R$ 에 대해 $\{y\in A : x\sim y\}$ 를 $x$ 에 대한 *
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-properties_of_equivalence_class}
+::: {#prp-part1_properties_of_equivalence_class}
 
 두 동치류는 같거나 서로소이다.
 
@@ -422,7 +422,7 @@ $\Gamma$ 가 $A$ 의 부분집합으로 이루어진 집합족이며 $A_1,\, A_2
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-equivalence_relation_and_partition}
+::: {#thm-part1_equivalence_relation_and_partition}
 
 집합 $A$ 에서의 동치관계 $R$ 에 의한 동치류의 집합족은 $A$ 를 분할한다.
 
@@ -432,7 +432,7 @@ $\Gamma$ 가 $A$ 의 부분집합으로 이루어진 집합족이며 $A_1,\, A_2
 
 ::: {.proof}
 
-Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된다. 따라서 동치류의 합집합은 $A$ 이다. @prp-properties_of_equivalence_class 에 의해 두 동치류는 같거나 서로소이므로 동치류의 집합족은 $A$ 를 분할한다. 
+Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된다. 따라서 동치류의 합집합은 $A$ 이다. @prp-part1_properties_of_equivalence_class 에 의해 두 동치류는 같거나 서로소이므로 동치류의 집합족은 $A$ 를 분할한다. 
 
 :::
 
@@ -504,7 +504,7 @@ $$
 
 </br> <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-order_type_1}
+::: {#exm-part1_order_type_1}
 
 $f:(-1,\,1) \to \mathbb{R}$, $f(x) = \dfrac{x}{1-x^2}$ 를 생각하면 $(-1,\,1)$ 과 $\mathbb{R}$ 는 같은 순서형을 가진다.
 
@@ -535,7 +535,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-dictionary_order_is_order_relation}
+::: {#prp-part1_dictionary_order_is_order_relation}
 
 @def-part1_dictionary_order 에서의 사전 순서는 $A \times B$ 에서의 전순서 관계 이다.
 
@@ -547,7 +547,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-:::{#exm-order_relation_1}
+:::{#exm-part1_order_relation_1}
 
 $[0,\,1)$ 과 $\mathbb{Z}_{+}$ 는 각각 통상적인 전순서관계를 가지고 있다. $\mathbb{Z}_+ \times [0, 1)$ 과 양의 실수의 집합 사이에서 정의된 함수
 
@@ -606,7 +606,7 @@ $A$ 의 부분집합 $A_0$ 가 위로 유계일 때 $A_0$ 의 상계의 집합�
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-least_upper_bound_property_greatest_lower_bound_property}
+::: {#thm-part1_least_upper_bound_property_greatest_lower_bound_property}
 다음 두 명제는 동치이다.
 
 &emsp; ($1$) 집합 $A$ 는 최소 상계 성질을 가진다.
@@ -629,7 +629,7 @@ $A$ 의 부분집합 $A_0$ 가 위로 유계일 때 $A_0$ 의 상계의 집합�
 ### 연습 문제 {.unnumbered}
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_3_3}
+::: {#exr-part1_munkres_1_3_3}
 
 #### Munkres 1.3.3
 
@@ -651,7 +651,7 @@ Symmetric 하고 transitive 한 관계 $C$ 는 reflective 하다는 것을 다�
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-munkres_1_3_4}
+::: {#exr-part1_munkres_1_3_4}
 
 #### Munkres 1.3.4
 

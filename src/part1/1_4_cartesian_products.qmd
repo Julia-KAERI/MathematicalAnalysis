@@ -100,7 +100,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-order_of_m_tuple}
+::: {#exm-part1_order_of_m_tuple}
 
 집합 $A,\,B,\,C$ 에 대해 $A \times B \times C$, $A\times (B \times C)$ 와 $(A \times B) \times C$ 사이에 각각 전단사 함수가 존재함을 보일 수 있다. 
 
@@ -134,7 +134,8 @@ $$
 
 ### 연습문제 {.unnumbered}
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-::: {#exm-munkres_1_5_1}
+
+::: {#exm-part1_munkres_1_5_1}
 
 #### Munkres 1.5.1
 
@@ -148,9 +149,11 @@ $A\times B$ 에서 $B \times A$ 로의 전단사 함수가 존재함을 보이�
 $\phi :A \times B \to B \times A,\, \phi ((a,\,b)) = (b,\,a)$ 는 전단사 함수임을 쉽게 보일 수 있다.
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
 
-::: {#exr-munkres_1_5_3}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part1_munkres_1_5_3}
 
 #### Munkres 1.5.3
 
@@ -182,9 +185,11 @@ $x\in A\cap B$ 이면 $\forall i\in \mathbb{Z}_+,\, x_i A_i \cap B_i$ 이므로 
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
 
-::: {#exr-munkres_1_5_4}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part1_munkres_1_5_4}
 
 #### Munkres 1.5.4
 
@@ -232,9 +237,11 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
 
-::: {#exr-munkres_1_5_5}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part1_munkres_1_5_5}
 
 #### Munkres 1.5.5
 

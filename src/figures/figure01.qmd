@@ -1,0 +1,40 @@
+---
+title: "그림 1"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+```{r, engine = 'tikz'}
+#| label: fig-continuity_of_inverse
+#| code-fold: true
+#| echo: fenced
+#| output: asis
+#| fig-width: 6
+#| fig-align: center
+#| fig-cap: "양자 상태"
+
+
+\begin{tikzpicture}[scale=1]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[thick, -{Stealth[length=2mm]}] (-0.5, 0) -- (3, 0) node [right] {$x$} ;
+\draw[thick, -{Stealth[length=2mm]}] (0, -0.5) -- (0, 3) node [above] {$f(x)$};
+
+\filldraw[black] (0, 0) circle (2pt);
+\draw[black, very thick] (1, 0) -- (3, 2);
+\fill[draw=black, fill = white] (1, 0) circle (2pt);
+
+\begin{scope}[shift={(5,0)}]
+\draw[thick, -{Stealth[length=2mm]}] (-0.5, 0) -- (3, 0) node [right] {$x$} ;
+\draw[thick, -{Stealth[length=2mm]}] (0, -0.5) -- (0, 3) node [above] {$f^{-1}(x)$};
+
+\filldraw[black] (0, 0) circle (2pt);
+\draw[black, very thick] (0, 1) -- (2, 3);
+\fill[draw=black, fill = white] (0, 1) circle (2pt);
+
+\end{scope}
+\end{tikzpicture}
+```
