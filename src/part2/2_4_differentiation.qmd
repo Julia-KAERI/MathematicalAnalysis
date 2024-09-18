@@ -1,0 +1,428 @@
+---
+title: "미분"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+## 실함수의 미분
+
+### 미분가능성과 도함수 {#sec-part2_differentiability}
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_differentiable}
+
+#### 미분가능과 도함수
+
+$f:[a,\,b] \subset \R \to \R$ 과 $x\in [a,\,b]$ 에 대해 
+
+$$
+\lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}
+$$ {#eq-part2_differentiability}
+
+가 존재할 때 $f$ 가 $x$ 에서 **미분 가능하다(be differentiable)** 고 하며 @eq-part2_differentiability 의 극한값을 $f'(x)$ 라고 표기한다. $f$ 가 $[a,\,b]$ 의 모든 값에서 미분가능할 할 때 $f'$ 값을 $[a,\,b]$ 에서 정의된 함수로 생각 할 수 있으며 $f'(x)$ 를 $f(x)$ 의 **도함수 (derivative)** 라고 한다.
+
+::: 
+:::
+
+</br>
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_continuity_and_differentiability}
+
+$f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하면 $f$ 는 $x$ 에서 연속이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$\lim_{h \to 0} f(x+h)-f(x) \ne 0$ 이면 $x$ 에서 미분가능하지 않으므로 $x$ 에서 미분가능하면 $\lim_{h \to 0} f(x+h)-f(x) = 0$ 이다. 즉 $f$ 는 $x$ 에서 연속이다. $\square$
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_continuity_and_differentiability}
+
+$[a,\,b]$ 구간에서 정의된 함수 $f,\,g$ 가 $x \in [a,\,b]$ 에서 미분가능하면 $f+g,\, fg,\, f/g$ 가 $x$ 에서 미분가능하며, 
+
+&emsp;($1$) $(f+g)'(x) = f'(x)+g'(x)$, 
+
+&emsp;($2$) $(fg)'(x) = f'(x) g(x) + f(x) g'(x)$, 
+
+&emsp;($3$) $\left(\dfrac{f}{g}\right)'(x) = \dfrac{f'(x)g(x) - f(x) g'(x)}{(g(x))^2}$
+
+이다. 단 ($3$) 의 경우 $g(x)\ne 0$ 일 때 성립한다. 
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) $\displaystyle \lim_{t\to x} (f+g)(t)= \lim_{t\to x} f(t) + \lim_{t \to x} g(t)$ 임을 이용한다.
+
+($2$) 아래 식을 이용한다.
+
+$$
+\begin{aligned}
+&\dfrac{f(x+h)g(x+h)-f(x)g(x)}{h} \qquad \\
+&= \dfrac{f(x+h)g(x+h) - f(x) g(x+h) + f(x)g(x+h) - f(x)g(x)}{h} \\
+&= g(x+h)\dfrac{f(x+h)-f(x)}{h} + f(x) \dfrac{g(x+h)-g(x)}{h}
+\end{aligned}
+$$
+
+($3$) $g(x) \ne 0$ 일 때 
+
+$$
+\begin{aligned}
+\left(\dfrac{1}{g}\right)'(x) &= \lim_{h \to 0}\dfrac{1/g(x+h) - 1/g(x)}{h} \\
+&= -\lim_{h \to 0}\dfrac{1}{g(x+h)g(x)}\dfrac{g(x+h) - g(x)}{h} \\
+&= - \dfrac{g'(x)}{(g(x))^2}
+\end{aligned}
+$$
+
+이므로 ($2$) 와 함께 사용하면 ($3$) 의 결과를 얻는다. $\square$
+
+:::
+
+</br>
+
+미분 가능성에 대한 다른 정의가 가능하며, 이 정의는 앞으로 자주 사용된다. 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_other_form_of_differentiability}
+
+$f:(a,\,b) \to \R$ 과 $x\in (a,\,b)$ 에 대해 다음은 동치이다.
+
+($1$) $f$ 는 미분 가능하다.
+
+($2$) 어떤 상수 $a$ 와 $0$ 으로의 극한이 $0$ 인 어떤 함수 $\eta:N(0,\,\delta)\backslash\{0\} \to \R$ 에 대해
+
+$$
+f(x +h) -f(x) = ah + |h| \eta (h)
+$$ {#eq-part2_other_form_of_differentiability}
+
+이다. 
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1 \implies 2$) $\eta(h)$ 를 다음과 같이 정의한다.
+
+$$
+\eta(h) = \left\{\begin{array}{ll} \dfrac{f(x+h)-f(x)}{h} - f'(x), \qquad &h>0, \\ -\dfrac{f(x+h)-f(x)}{h} + f'(x), \qquad &h<0 \end{array}\right.
+$$
+
+그렇다면 $\displaystyle \lim_{h \to 0}\eta(h) = 0$ 이며 @eq-part2_other_form_of_differentiability 를 만족한다. 그리고 $a=f'(x)$ 이다. 
+
+
+($2\implies 1$) 미분가능의 정의에 의해
+
+$$
+\lim_{h \to 0}\dfrac{f(x+h)-f(x)}{h} = \lim_{h \to 0} \left(a + \dfrac{|h|}{h}\eta (h)\right) = a
+$$
+
+이다. $\square$
+
+:::
+
+</br>
+
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_derivatives_of_simplie_functions}
+
+다음은 쉽게 보일 수 있다. 
+
+($1$) $f(x)$ 가 상수함수일 경우 $f'(x) = 0$ 이다.
+
+($2$) $n\in \mathbb{Z}_+$ 에 대해 $f(x)=x^n$ 일 경우 $f'(x) = nx^{n-1}$ 이다. 
+
+
+:::
+
+</div>
+
+<br>
+
+### 연쇄 규칙 {#sec-part2_chain_rule}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_chain_rule}
+
+#### 연쇄 규칙
+
+
+$f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하며 $f(x)$ 를 포함하는 구간 $I$ 에서 정의된 함수 $g$ 가 $f(x)$ 에서 미분가능하다고 하자. 이 때 $g\circ f$ 는 $x$ 에서 미분 가능하며 그 미분값은 다음과 같다.
+
+$$
+(g\circ f)'(x) = g'(f(x))f'(x).
+$$ {#eq-part2_chain_rule}
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$h=g \circ f,\, y=f(x)$ 라고 하자. @prp-part2_other_form_of_differentiability 에 의해 
+
+$$
+\begin{aligned}
+f(x+h) - f(x) &= hf'(x) + |h|\eta(h), \\
+g(y+s) - g(y) & = sg'(y) + |s|\zeta(s)
+\end{aligned}
+$$
+
+인 $\eta(h),\, \zeta(s)$ 가 존재하며 $0$ 으로의 극한은 $0$ 이다. 
+
+$$
+\begin{aligned}
+h(x+h)-h(x) &= g(f(x+h)) - g(f(x)) \\
+&= g(y + hf'(x) +|h|\eta(h)) - g(y) &;s=hf'(x) +|h|\eta(h)\\
+& = (hf'(x)+|h|\eta (h))g'(y) + |s| \zeta (s) \\
+& = hf'(x) g'(y) + |h| \left[\eta (h) g'(y) + \dfrac{s}{|h|}\zeta (s) \right]
+\end{aligned}
+$$
+
+이며 마지막 줄 두번째 항의 $[\cdots]$ 부분은 $h \to 0$ 극한에서 $s\to 0$ 이므로 $\to 0$ 이다. 따라서,  @eq-part2_chain_rule 가 성립한다. $\square$
+
+:::
+
+</br>
+
+### 도함수의 연속성과 계층 {#sec-continuity_of_derivatives}
+
+우리는 앞서 @prp-part2_continuity_and_differentiability 에서 $f:[a,\,b] \to \R$ 이 $x_0\in [a,\,b]$ 에서 미분가능하면 $x_0$ 에서 연속이라는 것을 보였다. $f$ 의 도함수 $f'(x)$ 의 경우는 연속함수가 아닐 수 있다.
+
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_case_of_derivative_without_continuity}
+
+$f:\R \to \R$ 이 다음과 같이 정의되어 있다고 하자. 
+
+$$
+f(x) = \left\{\begin{array}{ll} 0, & x=0, \\ x^2 \sin \dfrac{1}{x},\,&x\ne 0\end{array}\right.
+$$
+
+$f(x)$ 는 $\R$ 에서 미분가능하며 그 도함수는 
+
+$$
+f'(x) = \left\{\begin{array}{ll} 0, & x=0, \\ 2x \sin \dfrac{1}{x}- \cos \dfrac{1}{x},\,&x\ne 0\end{array}\right.
+$$
+
+이다. 그러나 $f'(x)$ 는 $x=0$ 에서 연속이 아니다. 
+
+:::
+
+</div>
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_differentiable}
+
+#### 도함수의 차수
+
+구간에서 정의된 함수 $f:I \to \mathbb{R}$ 의 도함수 $f'(x)$ 를 생각 할 수 있다. $f'(x)$ 가 $I$ 에서 미분가능하면 $f'(x)$ 의 도함수를 $f''(x)$ 혹은 $f^{(2)}(x)$ 라고 쓰고 이차 도함수라고 한다. 이것을 계속하면 $n$ 차 도함수 $f^{(n)}(x)$ 를 생각 할 수 있다. 
+
+::: 
+:::
+
+</br>
+
+@exm-part2_case_of_derivative_without_continuity 에서 보았듯이 $n$-차 도함수가 연속일 수도 있고 아닐 수도 있다. $n$ 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_class_of_derivatives}
+
+#### 도함수의 계층
+
+구간 $I$ 에서 정의된 함수 $f:I \to \mathbb{R}$ 이 $n$ 번 미분가능하며 $n$ 번째 도함수가 연속일 때 이 함수를 $C^k$-함수라고 한다. 연속인 함수는 $C^0$-함수이며 도함수가 연속이면 $C^1$-함수 라고 한다. 다항함수나 지수함수와 같이 무한번 미분 가능하며 연속인 함수는 $C^\infty$ 라고 표기한다.
+
+::: 
+:::
+
+
+
+## 평균값 정리와 로피탈 정리
+
+### 평균값 정리 {#sec-mean_value_theorem}
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_extreme_value}
+
+#### 극대값과 극소값
+
+거리공간에서 $X$ 에서 정의된 실함수 $f:X\to\R$ 을 생각하자. $x\in X$ 일 때 어떤 $x$ 의 근방 $N=N(x,\,\delta)$ 에서 $p\in N \implies f(p) \le f(x)$ 일 때 $f$ 가 $x$ 에서 **극대값(local maximum)** 을 갖는다고 한다. 반대로 $p\in N \implies f(p) \ge f(x)$ 일 때 $f$ 가 $x$ 에서 **극소값(local minimum)** 을 갖는다고 한다. 극대값과 극소값을 **극값 (local extrema)** 라고 한다.
+::: 
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_derivative_of_extreme_value}
+
+함수 $f:[a,\,b] \to \R$ 이 미분가능하며 $p\in (a,\,b)$ 가 극값일 경우 $f'(p)=0$ 이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$p$ 가 극대값이라고 하자. 어떤 $I_p=(p-\delta,\, p+\delta)$ 에서 $x\in I_p \implies f(x) \le f(p)$ 이다. 이 때 $h>0$ 이면 $\phi_1(h) := \dfrac{f(p+h)-f(p)}{h} <0$ 이며 $h<0$ 이면 $\phi_2(h) := \dfrac{f(p+h)-f(p)}{h} >0$ 이다. $h\to 0$ 극한에서 $\phi_1(h) \le 0$ 이며 $\phi_2(h) \ge 0$ 인데 두 극한이 같아야 하므로 $f'(p) = 0$ 이다. $p$ 가 극소값인 경우도 같은 방법으로 보일 수 있다. $\square$ 
+
+:::
+
+</br>
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-part2_generalized_mean_value_theorem}
+
+$f:[a,\,b]\to \R$ 가 미분가능함수일 때 $f(a)=f(b)$ 이면 어떤 $c\in (a,\,b)$ 에서 $f'(c) = 0$ 이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$f$ 가 상수함수이면 자명하므로 $f$ 가 상수함수가 아니라고 하자. $[a,\,b]$ 는 옹골집합이므로 @thm-part2_extreme_value_theorem 에 의해 최소값과 최대값을 가지며 최소한 둘 중 하나는 $f(a)$ 값과 (그리고 $f(b)$ 값과) 다르다. $c\in (a,\,b)$ 에서 최대값 혹은 최소값을 가진다면 당연히 $c$ 에서 극값을 가지므로 $f'(c) = 0$ 이다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_generalized_mean_value_theorem}
+
+#### 일반화된 평균값 정리
+
+$f,\,g:[a,\,b] \to \R$ 이 $(a,\,b)$ 에서 미분가능하면 다음을 만족하는 $c\in (a,\,b)$ 가 존재한다.
+
+$$
+[f(b)-f(a)] g'(c) = [g(b)-g(a)] f'(c).
+$$
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+함수 $h:[a,\,b] \to \R$ 을 다음과 같이 정의한다.
+
+$$
+h(t) := [f(b) -f(a)] g(t) - [g(b)-g(a)] f(t).
+$$ 
+
+$h(a) = h(b)=f(b)g(a) - f(a)g(b)$ 이다. @lem-part2_generalized_mean_value_theorem 의해 $h'(c)=0$ 인 $c\in (a,\,b)$ 가 존재한다. $\square$ 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_mean_value_theorem}
+
+#### 평균값 정리
+
+$f:[a,\,b] \to \R$ 이 $(a,\,b)$ 에서 미분가능하면 다음을 만족하는 $c\in (a,\,b)$ 가 존재한다.
+
+$$
+f(b)-f(a) = (b-a)f'(c)
+$$ {#eq-part2_mean_value_theorem}
+
+:::
+
+</div></br>
+
+::: {.proof}
+@thm-part2_generalized_mean_value_theorem 에서 $g(x) = x$ 로 놓으면 된다. $\square$ 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part2_mean_value_theorem}
+
+$f:[a,\,b]\to \R$ 이 $I=(a,\,b)$ 에서 미분가능하면 다음이 성립한다.
+
+&emsp;($1$) $x\in I \implies f'(x)\ge 0$ 이면 $f$ 는 단조증가함수이다.
+
+&emsp;($2$) $x\in I \implies f'(x) = 0$ 이면 $f$ 는 상수함수이다.
+
+&emsp;($3$) $x\in I \implies f'(x) \le 0$ 이면 $f$ 는 단조감소함수이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+평균값정리(@thm-part2_mean_value_theorem) 에 따라 임의의 $x_1,\,x\in \in I$ 에 대해 
+
+$$
+f(x_2)-f(x_1)= (x_2-x_1)f'(x)
+$$
+
+를 만족하는 $x\in (x_1,\,x_2)$ 가 존재한다. $x_2>x_1$ 이라면 $f(x_2)-f(x_1)=(x_2-x_1)f'(x) >0$ 이므로 단조증가함수이다. 나머지 경우에 대해서도 쉽게 보일 수 있다. $\square$
+
+:::
+
+</br>
+
+### 로피탈 정리 {#sec-part2_Lhopital_theorem}
+
+
+로피탈 정리는 실제 극한값을 계산할 때 아주 유용한 정리이다. 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_Lhopital_theorem}
+
+#### 로피탈 정리
+
+$x_0$ 를 포함하는 어떤 열린 구간 $I$ 에서 미분가능
+
+
+
+:::
+
+</div></br>
+
+::: {.proof}
+@thm-part2_generalized_mean_value_theorem 에서 $g(x) = x$ 로 놓으면 된다. $\square$ 
+
+:::
+
+</br>

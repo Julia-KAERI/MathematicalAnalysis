@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.1)  16 SEP 2024 11:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.1)  18 SEP 2024 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**tikz1809a579142c8.tex
-(./tikz1809a579142c8.tex
+**tikzab7e500d4672.tex
+(./tikzab7e500d4672.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex
 /standalone/standalone.cls
@@ -425,8 +425,8 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
 \l__pdf_internal_box=\box65
 )
-No file tikz1809a579142c8.aux.
-\openout1 = `tikz1809a579142c8.aux'.
+No file tikzab7e500d4672.aux.
+\openout1 = `tikzab7e500d4672.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -497,21 +497,19 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) [1
-
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-! Undefined control sequence.
-\sa@orig@endtikzpicture ...ist@globally \endscope 
-                                                  \let \pgf@baseline =\pgf@s...
-l.32 \end{tikzpicture}
-                       
+)
+! Dimension too large.
+<recently read> \pgfmath@x 
+                           
+l.19 ...hick] ({5*\t}, {\t* sin(180/3.141592/\t)})
+                                                  ; 
 Here is how much of TeX's memory you used:
- 14350 strings out of 476025
- 298465 string characters out of 5790018
- 1855388 words of memory out of 5000000
- 34561 multiletter control sequences out of 15000+600000
- 512741 words of font info for 34 fonts, out of 8000000 for 9000
+ 14095 strings out of 476025
+ 292974 string characters out of 5790018
+ 1849388 words of memory out of 5000000
+ 34309 multiletter control sequences out of 15000+600000
+ 512287 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,7n,118p,422b,1101s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,2n,118p,421b,1042s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 !  ==> Fatal error occurred, no output PDF file produced!

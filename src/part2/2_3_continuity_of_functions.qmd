@@ -6,6 +6,8 @@ crossref:
   chapters: true
 ---
 
+{{< include ../../latexmacros.qmd >}}
+
 ## 함수의 극한과 연속
 
 ### 함수의 극한과 연속
@@ -108,13 +110,13 @@ $x\in \mathbb{R}\backslash \mathbb{Q}$ 일 때 $x$ 로 수렴하는 유리수열
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-part2_basic_properties_of_limit_of_functions}
-거리공간 $X,\, Y$ 에 대해 $E\subset X$ 이며 $f,\,g$ 가 $E \mapsto Y$ 함수이며 $x_0$ 가 $E$ 의 극한점이고 $\displaystyle \lim_{x\to x_0} f(x) = a$, $\displaystyle \lim_{x \to x_0} g(x) = b$ 일 때 다음이 성립한다. 
+거리공간 $X$ 와 $E\subset X$ 에 대해 $f,\,g$ 가 $E \mapsto \mathbb{C}$ 함수이며 $x_0$ 가 $E$ 의 극한점이고 $\displaystyle \lim_{x\to x_0} f(x) = a$, $\displaystyle \lim_{x \to x_0} g(x) = b$ 일 때 다음이 성립한다. 
 
 &emsp; (1) $\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b$, 
 
 &emsp; (2) $\displaystyle \lim_{x \to x_0}(fg)(x) = ab$, 
 
-&emsp; (3) $b\ne 0$ 일 경우 $\displaystyle \lim_{x \to x_0} \dfrac{f}{g}(x) = \dfrac{a}{b}$.
+&emsp; (3) $b\ne 0$ 일 경우 $\displaystyle \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \dfrac{a}{b}$.
 
 :::
 </div></br>
@@ -323,7 +325,55 @@ $$
 ($3 \implies 2$) $V \subset Y$ 가 열린집합이면 같은 과정으로 $f^{-1}(V)$ 가 열린집합이라는 것을 보일 수 있다. $\square$
 :::
 
+</br>
 
+이제 복소함수와 벡터 함수로 관심을 옮겨보자. 복소함수에 대한 아래의 정리는 쉽게 보일 수 있다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_continuity_of_complex_valued_function}
+
+거리공간 $X$ 에 대해 $f,\,g$ 가 $X\mapsto \mathbb{C}$ 인 연속함수일 때 $f+g,\, fg,\, f/g$ 도 연속함수이다.
+
+:::
+
+</div>
+
+</br> 
+
+거리공간에서 $\mathbb{R}^n$ 으로의 함수의 연속성에 대해 알아보자. 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_continuity_of_vector_valued_function}
+
+거리공간 $X$ 에서 정의된 함수들 $f_1,\ldots,\,f_n :X \to \mathbb{R}$ 을 생각하자. 벡터 함수 $\boldsymbol{f}:X\to \mathbb{R}^n$ 이 $\boldsymbol{f}(x) := (f_1(x),\ldots,\,f_n(x))$ 일 때 $\boldsymbol{f}$ 가 연속인 것의 필요충분조건은 각각의 $f_1,\ldots,\,f_n$ 이 연속인 것이다. 또한 $\boldsymbol{f},\,\boldsymbol{g}:X \to \mathbb{R}^n$ 일 때 $\boldsymbol{f}+\boldsymbol{g}$ 와 $\boldsymbol{f\cdot g}$ 도 연속이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+각각의 $j=1,\ldots,\,n$ 에 대해 다음의 부등식이 성립한다.
+
+$$
+|f_j (x)-f_j (y) | \le \|\boldsymbol{f}(x) - \boldsymbol{f}(y)\| \le \left[\sum_{k=1}^n \left| f_k(x)-f_k(y) \right|^2\right]^{1/2}.
+$$
+
+$f_1,\ldots,\,f_n$ 이 연속이면 정해진 $\varepsilon>0$ 에 대해 $|x-x_0|<\delta_j \implies |f_j(x)-f_j(x_0)|<\varepsilon/n$ 을 만족하는 $\delta_j$ 가 존재하며 $\delta = \min\{\delta_1,\ldots,\,\delta_n\}$ 으로 잡으면
+
+$$
+|x-x_0|<\delta \implies \|\boldsymbol{f}(x)-\boldsymbol{f}(x_0)\| \le \varepsilon
+$$
+
+이므로 $\boldsymbol{f}$ 는 연속이다. $\boldsymbol{f}$ 가 연속이면 각각의 $f_j$ 가 연속임은 쉽게 보일 수 있다. 또한 나머지도 조금만 생각하면 알 수 있다. $\square$
+
+
+
+:::
+
+</br>
 
 
 </br>
@@ -520,7 +570,7 @@ $$
 \left|\dfrac{1}{x}-\dfrac{1}{y}\right| =  \dfrac{|x-y|}{|xy|} =  \dfrac{1}{\delta}>1
 $$
 
-이므로 균등연속이 아니다.
+이므로 고른연속이 아니다.
 
 ($3$) $\varepsilon = 1$ 이라 하자. 임의의 $\delta>0$ 에 대해 충분히 큰 $n$ 을 생각하고 $x = \dfrac{1}{2n\pi + \pi/2}$, $y = \dfrac{1}{2n\pi-\pi/2}$ 라 하면 $|x-y|<\delta$ 로 잡을 수 있다. 우리는 
 
@@ -613,7 +663,7 @@ $E\subset \mathbb{R}^1$ 이 옹골집합이 아니라고 하자. 그렇다면,
 
 &emsp;($2$) $E \mapsto \mathbb{R}^1$ 인 유계이며 연속이지만 최대값을 갖지 않는 함수가 존재한다.
 
-&emsp;($3$) $E$ 가 유계이면 $E \mapsto \mathbb{R}^1$ 인 연속이지만 균등연속은 아닌 함수가 존재한다.
+&emsp;($3$) $E$ 가 유계이면 $E \mapsto \mathbb{R}^1$ 인 연속이지만 고른연속은 아닌 함수가 존재한다.
 
 :::
 
@@ -639,7 +689,7 @@ $$
 
 는 $0<h(x)<1$ 이므로 유계이지만 최대값을 갖지 않는다. 
 
-($3$) 유계인 $E$ 에 대해 $E$ 에 포함되지 않는 $E$ 의 극한점 $x_0$ 를 생각하자. 임의의 $\delta>0$ 과 $\varepsilon=1$ 을 생각하자. $x=x_0-\delta/4$, $y=x_0-\delta/2$ 라 하면 $|x-y|=\delta/4$ 이지만 $|f(x)-f(y)| = 2/\delta$ 이므로 충분히 작은 $\delta$ 에 대해 $|f(x)-f(y)|>1$ 이다. 즉 $f(x)$ 는 균등연속이 아니다. $\square$
+($3$) 유계인 $E$ 에 대해 $E$ 에 포함되지 않는 $E$ 의 극한점 $x_0$ 를 생각하자. 임의의 $\delta>0$ 과 $\varepsilon=1$ 을 생각하자. $x=x_0-\delta/4$, $y=x_0-\delta/2$ 라 하면 $|x-y|=\delta/4$ 이지만 $|f(x)-f(y)| = 2/\delta$ 이므로 충분히 작은 $\delta$ 에 대해 $|f(x)-f(y)|>1$ 이다. 즉 $f(x)$ 는 고른연속이 아니다. $\square$
 
 :::
 
@@ -1119,6 +1169,40 @@ $f:(0,\,\infty) \to \mathbb{R}$ 을 $f(x) = 1/x$ 로 정의하자. $(0,\,\infty)
 
 :::
 
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_6}
+
+#### Rudin 4.6
+
+$f:E\to \mathbb{R}$ 에 대해 $\{(x,\,f(x)):x\in E\}$ 를 $f$ 의 **그래프 (graph)** 라고 한다. $E\subset \mathbb{R}$ 라면 $f$ 의 그래프는 $\mathbb{R}^2$ 의 부분집합이다. $E$ 가 옹골집합일 때 $f$ 가 연속인 것과 $f$ 의 그래프가 옹골집합인것이 동치임을 보여라.
+
+:::
+</div></br>
+
+:::{.solution}
+
+$\bf{g}:E\to \mathbb{R}^2$ 를 $\bf{g}(x) := (x,\,f(x))$ 로 정의하고 $A=\{(x,\,f(x)):x\in E\}$ 라고 하자.
+
+$f$ 가 연속임을 가정한다. 고정된 $\varepsilon>0$ 에 대해 어떤 $\eta>0$ 이 존재하여 $|x-x_0|<\eta \implies |f(x)-f(x_0)|<\varepsilon/2$ 이다. $\delta := \min \{\eta,\,\varepsilon/2\}$ 라고 하면 $|x-x_0| <\delta$ 일 때
+
+$$
+\begin{aligned}
+\|\bf{g}(x)-\bf{g}(x_0)\| &= \sqrt{|x-x_0|^2 + |f(x)-f(x_0)|^2} \\
+&\le |x-x_0| + |f(x)-f(x_0)| \le \delta + \dfrac{\varepsilon}{2} \le \varepsilon
+\end{aligned}
+$$
+
+이다. 즉 $f$ 가 연속이면 $\bf{g}$ 는 연속이다. 따라서 $E$ 가 옹골집합이면 @thm-part2_continuity_and_compactness 에 따라 $\bf{g}(E)=A$ 는 옹골집합이다. 
+
+이제 $A$ 가 옹골집합임을 가정하자. $E$ 에서 정의된 $x$ 로 수렴하는 수열 $\langle x_k\rangle$ 을 생각하자. $A$ 가 옹골집합이므로 $\langle (x_k,\, f(x_k))\rangle$ 은 $A$ 상의 한 점으로 수렴하며 $\langle x_k \rangle \to x$ 이므로 $\langle f(x_k) \rangle \to f(x)$ 이다. 임의의 $x\in E$ 에 대해 성립하므로 $f$ 는 연속이다.
+
+:::
+
+
+
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part2_kkk_3_5_4}
@@ -1138,5 +1222,155 @@ $$
 </div></br>
 
 ::: {.solution}
+
+$\boldsymbol{g}:\mathbb{R}\to \mathbb{R}^2$ 를 $\boldsymbol{g}(x):=(x,\,f(x))$ 로 정의하고 $A: = \{ (x,\,f(x)) \in \mathbb{R}\times \mathbb{R} : x\in \mathbb{R}\}$ 라고 하면 $A=\boldsymbol{g}(\mathbb{R})$ 이다. @thm-part2_continuity_of_vector_valued_function 에 따라 $f$ 가 연속인것과 $\boldsymbol{g}$ 가 연속인 것은 동치이다. 이제 $\boldsymbol{g}$ 가 연속인 것과 $A$ 가 닫힌 집합인 것이 동치임을 보이면 된다.
+
+$\boldsymbol{g}$ 가 연속임을 가정한다. $\boldsymbol{y}_0 \in A'$ 이라고 하자. @prp-part2_properties_of_convergence_2 에 의해 $\boldsymbol{y}_0$ 로 수렴하는 $A\backslash \{\boldsymbol{y}_0\}$ 에서 정의된 수열 $\langle \boldsymbol{y}_k\rangle = \langle (x_k,\,f(x_k))\rangle$ 이 존재하며 $\boldsymbol{g}$ 가 연속이므로(따라서 $f$ 가 연속이므로) @prp-part2_limit_and_convergent_series 에 따라 $\boldsymbol{y} = (x_0,\, f(x_0)) \in A$ 이다. 즉 $A'\subset A$ 이므로 $A$ 는 닫힌 집합이다.
+
+이제 $A$ 가 닫힌집합임을 가정하자. @thm-part2_continuity_and_inverse_of_map 에 따라 임의의 닫힌 집합 $K\subset \mathbb{R}^2$ 에 대해 $\boldsymbol{g}^{-1}(K)$ 가 닫힌 집합이면 $\boldsymbol{g}$ 는 연속이다. 
+
+$K\cap A=\varnothing$ 이면 $\bf{g}^{-1}(K)=\varnothing$ 이므로 닫힌 집합이다. 
+
+.. to be continued ..
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_7}
+
+#### Rudin 4.7
+
+$f:X\to \mathbb{R}$ 라고 하자. $E\subset X$ 일 때 $x\in E$ 에 대해 $g(x) = f(x)$ 인 $g:E\to \mathbb{R}$ 를 $f$ 의 $E$ 로의 **제한(restriction)** 이라고 한다. $X=\mathbb{R}^2$ 이며 
+
+$$
+\begin{aligned}
+f(x,\,y) &= \left\{\begin{array}{ll} 0, &(x,\,y) = (0, 0) \\ \dfrac{xy^2}{x^2+y^4},\qquad &(x,\,y)  \ne (0,\,0)\end{array}\right.\\
+g(x,\,y) &= \left\{\begin{array}{ll} 0, &(x,\,y) = (0, 0) \\ \dfrac{xy^2}{x^2+y^6},\qquad &(x,\,y)  \ne (0,\,0)\end{array}\right.
+\end{aligned}
+$$
+
+라고 하자. $f$ 는 $\mathbb{R}^2$ 에서 유계이며, $g$ 는 $(0,\,0)$ 의 모든 근방에서 유계가 아님을 보여라. 그럼에도 불구하고 $f$ 와 $g$ 의 모든 직선으로의 제한은 연속임을 보여라.
+
+:::
+</div></br>
+
+:::{.solution}
+
+$x^2+y^4\ge 2|x|y^2$ 이므로 $|f(x,\,y)| \le \dfrac{1}{2}$ 이다. 따라서 $f(x,\,y)$ 는 유계이다. $x=y^3$ 을 따라 원점으로 가면 $g(x,\,y) =  \dfrac{1}{2y}$ 이므로 발산한다. 따라서 $g$ 는 $(0,\,0)$ 의 모든 근방에서 유계가 아니다.
+
+정해진 $c\in \mathbb{R}$ 에 대해 $E=\{(t,\, ct) : t\in \mathbb{R}\}  \subset\mathbb{R}^2$ 를 생각하자. 
+
+$$
+\begin{aligned}
+f|_E(t) &= \dfrac{c^2t^3}{t^2+c^4t^4} = \dfrac{c^2t}{1+c^4t^2}, \\
+g|_E(t) &= \dfrac{c^2t^3}{t^2+c^6t^6}= \dfrac{c^2t}{1+c^6t^4}
+\end{aligned}
+$$
+
+이므로 직선으로의 제한은 연속이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_8}
+
+#### Rudin 4.8
+
+$E\subset \mathbb{R}$ 이 유계이며 $f:E\to \mathbb{R}$ 가 $E$ 에서 고른연속이면 $f(E)$ 는 유계임을 보여라. $E$ 가 유계가 아니라면 $f(E)$ 는 유계가 아닐수도 있음을 보여라.
+:::
+</div></br>
+
+:::{.solution}
+
+$a=\inf E,\, b= \sup E$ 라고 하자. 고른 연속의 정의에 의해 $|x-y|<\delta \implies |f(x)-f(y)|<1$ 을 만족하는 $\delta>0$ 가 존재한다. $\Delta = \delta/2$ 에 대해 
+
+$$
+I_k = \left[a + (k-1) \Delta,\, a+k\Delta\right]\cap E,\qquad k=1,\,2,\ldots
+$$
+
+라고 하면 유한개의 $I_k$ 의 합집합이 $E$ 와 같다. $I_N$ 까지가 공집합이 아니라고 하자. $I_1$ 에서 $f(x)$ 는 유계이며 $m_1= \inf f(I_1),\, M_1 = \inf f(I_1)$ 라고 하면  
+
+$$
+m_1 - N < f(E) < M_1 +N
+$$
+
+
+이므로 $f(E)$ 는 유계이다. 
+
+
+$f(x)=x$ 는 균등수렴하지만 $\mathbb{R}$ 에서 유계가 아니다.
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_9}
+
+#### Rudin 4.9
+
+고른 수렴의 정의가 다음과 같이 변형될 수 있음을 보여라. 각각의 $\varepsilon>0$ 에 대해 어떤 $\delta>0$ 이 존재하여 모든 $\text{diam}(E)<\delta$ 인 $E\subset X$ 에 대해 $\text{diam} f(E) < \varepsilon$ 이다.
+
+:::
+</div></br>
+
+:::{.solution}
+
+
+trivial
+
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_10}
+
+#### Rudin 4.10
+
+@thm-part2_uniform_continuity_and_compact_set 를 다르게 증명해보자. 옹골 거리 집합 $X$ 와 거리집합에서 정의된 함수 $f:X \to Y$ 를 생각하자. $f$ 가 고른 연속이 아니면 $f$ 는 $X$ 에서 연속이 아님을 보여라.
+
+:::
+</div></br>
+
+:::{.solution}
+
+$f$ 가 고른 연속이 아니므로 어떤 $\varepsilon>0$ 에 대해 각각 $p,\,q$ 로 수렴하는 어떤 수열 $\langle p_n\rangle,\, \langle q_n\rangle$ 이 존재하여 $\|p_n-q_n\|_X \to 0$ 이지만 $\|f(p_n)-f(q_n)\|_Y > \varepsilon$ 이다. $X$ 가 옹골집합이므로 $p,\,q\in X$ 이며 $f$ 가 연속이라면 $\langle f(p_n) \rangle \to f(p)$, $\langle f(q_n) \rangle \to f(q)$ 이며 따라서 $\|f(p_n)-f(q_n)\|_Y =0$ 이어야 하는데 이는 가정에 모순된다. 따라서 $f$ 가 연속이 아니다.
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_11}
+
+#### Rudin 4.11
+
+거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 는 고른 연속이다. $\langle x_n\rangle$ 이 $X$ 에서의 코시 수열이라면 $\langle f(x_n)\rangle$ 은 $Y$ 에서의 코시 수열임을 보여라.
+
+:::
+</div></br>
+
+:::{.solution}
+
+$f$ 가 균등연속이므로 임의의 $\varepsilon >0$ 에 대해 $|x-y|<\delta \implies |f(x)-f(y)|<\varepsilon$ 인 $\delta$ 가 존재한다. 이 $\delta$ 에 대해 $m,\,n\ge N\implies |x_m-x_n|<\delta$ 인 $N\in \mathbb{Z}_+$ 가 존재한다. 즉 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 가 존재하여
+
+$$
+m,\,n \ge N \implies |f(x_m)-f(x_n)|<\varepsilon
+$$
+
+이다. 따라서 $\langle f(x_n)\rangle$ 은 코시수열이다. 
 
 :::

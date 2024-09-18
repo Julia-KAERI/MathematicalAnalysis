@@ -1,0 +1,31 @@
+---
+format: html
+---
+
+::: {.hidden}
+
+%\newcommand*{\e}{\mathrm{e}}
+%\renewcommand{\P}{\mathrm{P}}
+
+%\newcommand{\bf}[1]{\boldsymbol{#1}}
+
+\newcommand{\R}{\mathbb{R}}
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+$$
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+$$
+
+
+:::

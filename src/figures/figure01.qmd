@@ -38,3 +38,26 @@ crossref:
 \end{scope}
 \end{tikzpicture}
 ```
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_continuity_and_differentiability
+#| code-fold: true
+#| output: asis
+#| fig-width: 8
+#| fig-align: center
+#| fig-cap: "연속과 미분 가능"
+
+
+\begin{tikzpicture}[scale=6.0]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\draw[, -{Stealth[length=2mm]}] (-0.5, 0) -- (1, 0) node[right] {$x$} ;
+\draw[, -{Stealth[length=2mm]}] (0, -0.5) -- (0, 0.5) ;
+
+
+\draw[teal, thick] plot[variable=\t, domain=0.011:0.08, samples=600, thick] ({10*\t}, {60*\t*\t* sin(180/3.141592/\t)});
+\draw[red, thick] plot[variable=\t, domain=0:0.08, samples=600, thick] ({10*\t}, {60*\t*\t});
+\draw[red, thick] plot[variable=\t, domain=0:0.08, samples=600, thick] ({10*\t}, {-60*\t*\t});
+\end{tikzpicture}
+```

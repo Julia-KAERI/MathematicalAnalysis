@@ -18,13 +18,13 @@ crossref:
 
 #### 부분합, 급수, 무한급수
 
-수열 $\langle a_n\rangle$ 에 대해 
+수열 $\langle a_k\rangle$ 에 대해 
 
 $$
 s_n = \sum_{k=1}^n a_k
 $$
 
-일 때 $s_n$ 을 $a_n$ 에 대한 **부분합 (partial sum)** 이라고 하며, 부분합으로 정의된 수열 $\langle s_n \rangle$ 을 **급수(series)** 라고 한다. $n \to \infty$ 에서의 $\langle s_n \rangle$ 을 **무한급수 (infinite sereis)** 라고 한다.
+일 때 $s_n$ 을 $\langle a_k\rangle$ 에 대한 **부분합 (partial sum)** 이라고 하며, 부분합으로 정의된 수열 $\langle s_n \rangle$ 을 **급수(series)** 라고 한다. $n \to \infty$ 에서의 $\langle s_n \rangle$ 을 **무한급수 (infinite sereis)** 라고 한다.
 
 ::: 
 :::
@@ -37,13 +37,13 @@ $$
 
 #### 수열의 수렴과 발산
 
-거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 과 어떤 $a\in X$ 를 생각하자. 
+거리공간 $X$ 에서 정의된 수열 $\langle a_k \rangle$ 과 어떤 $a\in X$ 를 생각하자. 
 
 $$
-\forall \varepsilon>0,\, \exists N\in \mathbb{Z}_+, \text{ s.t. } n \ge N \implies d(a_n,\, a)<\varepsilon
+\forall \varepsilon>0,\, \exists N\in \mathbb{Z}_+, \text{ s.t. } k \ge N \implies d(a_k,\, a)<\varepsilon
 $$
 
-일 때 수열 $\langle a_n \rangle$ 은 $a$ 로 수렴한다고 하며 $\displaystyle \lim_{n \to \infty} a_n = a$ 혹은 $\langle a_n\rangle \to a$ 라고 쓴다. $\langle a_n \rangle$  이 수렴하지 않으면 발산한다고 한다. 
+일 때 수열 $\langle a_k \rangle$ 은 $a$ 로 수렴한다고 하며 $\displaystyle \lim_{k \to \infty} a_k = a$ 혹은 $\langle a_k\rangle \to a$ 라고 쓴다. $\langle a_k \rangle$ 이 수렴하지 않으면 발산한다고 한다. 
 
 ::: 
 :::
@@ -64,9 +64,9 @@ $$
 
 ::: {#prp-part2_properties_of_convergence_1}
 
-거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 에 대해 다음이 성립한다.
+거리공간 $X$ 에서 정의된 수열 $\langle a_k \rangle$ 에 대해 다음이 성립한다.
 
-&emsp;($1$) $\displaystyle \lim_{n \to \infty} a_n = a \iff$ 모든 $a$ 의 근방은 유한개의 $\langle a_n \rangle$ 을 제외한 $\langle a_n\rangle$ 을 포함한다.
+&emsp;($1$) $\displaystyle \lim_{k \to \infty} a_k = a \iff$ 모든 $a$ 의 근방은 유한개의 $\langle a_k \rangle$ 을 제외한 $\langle a_n\rangle$ 을 포함한다.
 
 &emsp;($2$) 수열의 극한은 유일하다.
 
@@ -77,18 +77,18 @@ $$
 
 ::: {.proof}
 
-($1$) $\implies$ 는 정의에 의해 자명하다. $a$ 의 임의의 근방 $N_X(a,\,\varepsilon)$ 에 대해 유한개 성분을 제외한 $a_n$ 의 모든 성분이 포함된다고 하자. 유한개의 포함되지 않는 수열 성분 가운데 인덱스가 최대인 것을 $N$ 이라고 하면 $n\ge N \implies a_n \in N_X(a,\,\varepsilon)$ 이므로 $\langle a_n \rangle \to a$ 이다. 
+($1$) $\implies$ 는 정의에 의해 자명하다. $a$ 의 임의의 근방 $N_X(a,\,\varepsilon)$ 에 대해 유한개 성분을 제외한 $a_k$ 의 모든 성분이 포함된다고 하자. 유한개의 포함되지 않는 수열 성분 가운데 인덱스가 최대인 것을 $N$ 이라고 하면 $k\ge N \implies a_k \in N_X(a,\,\varepsilon)$ 이므로 $\langle a_k \rangle \to a$ 이다. 
 
 
-($2$) $a_1,\,a_2$ 로 수렴한다고 하자. 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies d(a_n,\,a_1)<\varepsilon$ 이며 $n \ge N_2 \implies d(a_n,\, a_2)<\varepsilon$ 이라 하자. $n \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_n,\,a_1)+d(a_n,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
+($2$) $a_1,\,a_2$ 로 수렴한다고 하자. 고정된 $\varepsilon>0$ 에 대해 $k \ge N_1 \implies d(a_k,\,a_1)<\varepsilon$ 이며 $k \ge N_2 \implies d(a_k,\, a_2)<\varepsilon$ 이라 하자. $k \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_k,\,a_1)+d(a_k,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
 
-($3$) 고정된 $\varepsilon >0$ 에 대해 $n\ge N \implies d(a_n,\, a)<\varepsilon$ 이다. $m = \min \{a_1,\ldots,\,a_{N-1}\}$ $M = \max \{a_1,\ldots,\, a_{N-1}\}$ 이라 하면
+($3$) 고정된 $\varepsilon >0$ 에 대해 $k\ge N \implies d(a_k,\, a)<\varepsilon$ 이다. $m = \min \{a_1,\ldots,\,a_{N-1}\}$ $M = \max \{a_1,\ldots,\, a_{N-1}\}$ 이라 하면
 
 $$
-\min (m, a-\varepsilon) \le a_n \le \max (M, a+\varepsilon)
+\min (m, a-\varepsilon) \le a_k \le \max (M, a+\varepsilon)
 $$
 
-이므로 $\langle a_n\rangle$ 은 유계이다. $\square$
+이므로 $\langle a_k\rangle$ 은 유계이다. $\square$
 
 :::
 
@@ -126,17 +126,17 @@ $$
 
 ::: {#prp-part2_properties_of_convergence_3}
 
-$\mathbb{R}^k$ 에서 정의된 수열 $\langle a_n\rangle,\, \langle b_n \rangle$ 이 각각 $a,\,b$ 로 수렴할 때 다음이 성립한다.
+$\mathbb{R}^n$ 에서 정의된 수열 $\langle a_k\rangle,\, \langle b_k \rangle$ 이 각각 $a,\,b$ 로 수렴할 때 다음이 성립한다.
 
-&emsp;($1$) $\displaystyle \lim_{n \to \infty}(a_n+b_n) = a+b$.
+&emsp;($1$) $\displaystyle \lim_{k \to \infty}(a_k+b_k) = a+b$.
 
-&emsp;($2$) $c\in \mathbb{R}$ 에 대해 $\displaystyle \lim_{n \to \infty} (ca_n)= ca$.
+&emsp;($2$) $c\in \mathbb{R}$ 에 대해 $\displaystyle \lim_{k \to \infty} (ca_k)= ca$.
 
-&emsp;($3$) $\displaystyle \lim_{n \to \infty} a_nb_n = ab$.
+&emsp;($3$) $\displaystyle \lim_{k \to \infty} a_k b_k = ab$.
 
-&emsp;($4$) $a\ne 0$ 일 때 $\displaystyle \lim_{n \to \infty} \dfrac{1}{a_n}= \dfrac{1}{a}$.
+&emsp;($4$) $a\ne 0$ 일 때 $\displaystyle \lim_{k \to \infty} \dfrac{1}{a_k}= \dfrac{1}{a}$.
 
-&emsp;($5$) 어떤 $N \in \mathbb{N}$ 에 대해 $n\ge N \implies a_n \ge 0$ 이면 $a\ge 0$ 이다.
+&emsp;($5$) 어떤 $N \in \mathbb{N}$ 에 대해 $k\ge N \implies a_k \ge 0$ 이면 $a\ge 0$ 이다.
 
 :::
 
@@ -144,45 +144,45 @@ $\mathbb{R}^k$ 에서 정의된 수열 $\langle a_n\rangle,\, \langle b_n \rangl
 
 ::: {.proof}
 
-($1$) 고정된 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n - a|<\varepsilon/2$, $n \ge N_2 \implies |b_n- b|<\varepsilon/2$ 인 $N_1,\,N_2$ 가 존재한다. $n \ge \max(N_1,\,N_2)$ 이면
+($1$) 고정된 $\varepsilon>0$ 에 대해 $k\ge N_1 \implies |a_k - a|<\varepsilon/2$, $k \ge N_2 \implies |b_k- b|<\varepsilon/2$ 인 $N_1,\,N_2$ 가 존재한다. $k \ge \max(N_1,\,N_2)$ 이면
 
 $$
-|(a_n+b_n)-(a+b)| \le |a_n -a| + |b_n - b| < \varepsilon
+|(a_k+b_k)-(a+b)| \le |a_k -a| + |b_k - b| < \varepsilon
 $$
 
-이므로 $\displaystyle \lim_{n \to \infty}(a_n+b_n) = a+b$ 이다.
+이므로 $\displaystyle \lim_{k \to \infty}(a_k+b_k) = a+b$ 이다.
 
-($2$) $c=0$ 이면 자명하다. $c\ne 0$ 일 때 고정된 $\varepsilon>0$ 에 대해 $n\ge N \implies |a_n - a|<\varepsilon/|c|$ 인 $N$ 이 존재한다. 따라서 $n \ge N \implies |ca_n - ca| = |c||a_n -c| < \varepsilon$ 이다.
+($2$) $c=0$ 이면 자명하다. $c\ne 0$ 일 때 고정된 $\varepsilon>0$ 에 대해 $k \ge N \implies |a_k - a|<\dfrac{\varepsilon}{|c|}$ 인 $N$ 이 존재한다. 따라서 $k \ge N \implies |ca_k - ca| = |c||a_k -c| < \varepsilon$ 이다.
 
-($3$) 주어진 $\varepsilon>0$ 에 대해 $n\ge N_1 \implies |a_n-a|<\sqrt{\varepsilon}$, $n \ge N_2 \implies |b_n -b|<\sqrt{\varepsilon}$ 인 $N_1,\, N_2$ 가 존재하며 $N = \max (N_1,\, N_2)$ 라 하자. 
-
-$$
-a_nb_n - ab = (a_n-a)(b_n-b) + a(b_n-b)+ b(a_n-a)
-$$
-
-인데 $n \ge N \implies |(a_n-a)(b_n -b)|<\varepsilon$ 이며 ($1$) 과 ($2$) 에 의해 $a(b_n-b)$ 와 $b(a_n-a)$ 는 $0$ 으로 수렴하므로 $\displaystyle \lim_{n \to \infty} a_nb_n = ab$ 이다.
-
-($4$) $a\ne 0$ 이므로 $n \ge M \implies |a_n - a|< \dfrac{1}{2}|a|$ 인 $M\in \mathbb{N}$ 이 존재한다. $n>M$ 일 때
+($3$) 주어진 $\varepsilon>0$ 에 대해 $k \ge N_1 \implies |a_k - a|<\sqrt{\varepsilon}$ 인 $N_1$ 과 $k \ge N_2 \implies |b_k - b|<\sqrt{\varepsilon}$ 인 $N_2$ 가 존재하며 $N = \max (N_1,\, N_2)$ 라 하자. 
 
 $$
-|a|-|a_n| \le |a-a_n| = |a_n-a|<\dfrac{1}{2}|a| \implies |a_n|> \dfrac{1}{2}|a|
+a_k b_k  - ab = (a_k-a)(b_k-b) + a(b_k-b)+ b(a_k-a)
 $$
 
-이다. 또한 주어진 $\varepsilon>0$ 에 대해 $n \ge N_1 \implies |a_n -a| < \dfrac{1}{2}|a|^2 \varepsilon$ 인 $N_1 \in \mathbb{N}$ 이 존재한다. $N = \max (M,\, N_1)$ 이라 하면, 
+인데 $k \ge N \implies |(a_k-a)(b_k -b)|<\varepsilon$ 이며 ($1$) 과 ($2$) 에 의해 $a(b_k-b)$ 와 $b(a_k-a)$ 는 $0$ 으로 수렴하므로 $\displaystyle \lim_{k \to \infty} a_k b_k = ab$ 이다.
+
+($4$) $a\ne 0$ 이므로 $k \ge M \implies |a_k - a|< \dfrac{1}{2}|a|$ 인 $M\in \mathbb{Z}_+$ 이 존재한다. $k > M$ 일 때
 
 $$
-\left| \dfrac{1}{a_n}- \dfrac{1}{a}\right| =\dfrac{|a_n - a|}{|a_n a|} < \dfrac{|a|^2\varepsilon}{2|a_n a|} < \varepsilon
+|a|-|a_k| \le |a-a_k| = |a_k-a|<\dfrac{1}{2}|a| \implies |a_k|> \dfrac{1}{2}|a|
 $$
 
-이므로 $\displaystyle \lim_{n \to \infty}\dfrac{1}{a_n} = \dfrac{1}{a}$ 이다. 
-
-($5$) $a<0$ 이라면 $n \ge N' \implies |a_n - a|<\dfrac{1}{2}|a|$ 인 $N'$ 이 존재한다. $M = \max(N,\,N')$ 이라 하면
+이다. 또한 주어진 $\varepsilon>0$ 에 대해 $k \ge N_1 \implies |a_k -a| < \dfrac{1}{2}|a|^2 \varepsilon$ 인 $N_1 \in \mathbb{Z}_+$ 이 존재한다. $N = \max (M,\, N_1)$ 이라 하면, 
 
 $$
-n \ge M \implies a_n < \dfrac{1}{2}a < 0
+\left| \dfrac{1}{a_k}- \dfrac{1}{a}\right| =\dfrac{|a_k - a|}{|a_k a|} < \dfrac{|a|^2\varepsilon}{2|a_k a|} < \varepsilon
 $$
 
-이므로 $n \ge N \implies a_n \ge 0$ 이라는 가정에 모순된다. 따라서 $a\ge 0$ 이다. $\square$
+이므로 $\displaystyle \lim_{k \to \infty}\dfrac{1}{a_k} = \dfrac{1}{a}$ 이다. 
+
+($5$) $a<0$ 이라면 $k \ge N' \implies |a_k- a|<\dfrac{1}{2}|a|$ 인 $N'$ 이 존재한다. $M = \max(N,\,N')$ 이라 하면
+
+$$
+k \ge M \implies a_k < \dfrac{1}{2}a < 0
+$$
+
+이므로 $k \ge N \implies a_k \ge 0$ 이라는 가정에 모순된다. 따라서 $a\ge 0$ 이다. $\square$
 
 ::: 
 
