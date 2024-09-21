@@ -412,8 +412,25 @@ $$
 
 #### 로피탈 정리
 
-$x_0$ 를 포함하는 어떤 열린 구간 $I$ 에서 미분가능
+$x_0$ 를 포함하는 어떤 열린 구간 $I$ 에서 미분가능한 함수 $f,\,g :I \to \mathbb{R}$ 를 생각하자. $g'(x_0)\ne 0$ 이라고 하자. 이 때  
 
+&emsp; ($1$) $\displaystyle \lim_{x\to x_0} f(x) = \lim_{x\to x_0} g(x) = 0$ 이거나
+
+&emsp; ($2$) $\displaystyle \lim_{x\to x_0} g(x) = \pm \infty$ 
+
+의 두가지 경우 가운데 하나이면서
+
+$$
+\lim_{x\to x_0}\dfrac{f'(x)}{g'(x)} = l
+$$ {#eq-part2_lhopital_1}
+
+라면
+
+$$
+\lim_{x\to x_0}\dfrac{f(x)}{g(x)} = l
+$${#eq-part2_lhopital_2}
+
+이다.
 
 
 :::
@@ -421,8 +438,176 @@ $x_0$ 를 포함하는 어떤 열린 구간 $I$ 에서 미분가능
 </div></br>
 
 ::: {.proof}
-@thm-part2_generalized_mean_value_theorem 에서 $g(x) = x$ 로 놓으면 된다. $\square$ 
+
+임의의 $\varepsilon >0$ 에 대해
+
+$$
+|x-x_0|<\delta \implies \left|\dfrac{f'(x)}{g'(x)}-l\right|<\varepsilon
+$$
+
+인 $\delta > 0$ 이 존재한다. 구간 $N:=\left(x_0-\frac{\delta}{2},\,x_0+\frac{\delta}{2}\right) \cap I$ 라고 정하자. $x,\,t\in N,\, t>x$ 이면 @thm-part2_generalized_mean_value_theorem 에 따라
+
+$$
+\dfrac{f(t)-f(x)}{g(t)-g(x)} = \dfrac{f'(y)}{g'(y)}
+$${#eq-part2_lhopital_3}
+
+인 $y\in (x,\,t) \subset N$ 가 존재하며, 따라서,
+
+$$
+\left|\dfrac{f(t)-f(x)}{g(t)-g(x)} - l\right|<\varepsilon
+$${#eq-part2_lhopital_4}
+
+이다. ($1$) 의 경우 즉, $\displaystyle \lim_{x\to x_0} f(x) = \lim_{x\to x_0} g(x) = 0$ 라면 
+
+$$
+\left| \dfrac{f(t)}{g(t)} - l \right | <\varepsilon
+$${#eq-part2_lhopital_6}
+
+이다. 즉 $\displaystyle \lim_{x\to x_0} \dfrac{f(x)}{g(x)} = l$ 이다.
+
+이제 ($2$) 의 경우를 생각하자. 우선 $\displaystyle \lim_{x \to x_0}g(x) = \infty$ 라고 하자. 
+@eq-part2_lhopital_3 로부터
+
+$$
+l-\varepsilon < \dfrac{f(t)-f(x)}{g(t)-g(x)} < l+\varepsilon
+$${#eq-part2_lhopital_7}
+
+에서 $x \in N,\, x > x_0$ 로 고정하면 $t \in (x_0,\,c) \implies g(t)>g(x)$ 인 $c<x$ 가 존재한다. @eq-part2_lhopital_7 에 $(g(t)-g(x))/g(t)$ 를 곱하면 
+
+$$
+\dfrac{f(x)}{g(t)} + (l-\varepsilon)\dfrac{g(t)-g(x)}{g(t)} < \dfrac{f(t)}{g(t)} <\dfrac{f(x)}{g(t)} + (l+\varepsilon)\dfrac{g(t)-g(x)}{g(t)}
+$$
+
+이며 $t\to x_0$ 극한에서, $f(t)/g(t) \to l$ 임을 알 수 있다. 또한 같은 방법으로 $\displaystyle \lim_{x\to x_0} g(x) = -\infty$ 의 경우에도 성립함을 알 수 있다. 
+
 
 :::
 
 </br>
+
+
+## 테일러 정리
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_tayler_theorem}
+
+#### 테일러 정리
+
+$f:[a,\,b]\to \R$ 이 $C^{n-1}$ 급 함수이며 $(a,\,b)$ 구간에서 $n$ 번 미분 가능할 때 
+$$
+f(x) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(t)}{k!}(x-t)^{k} + \dfrac{f^{(n)}(c)}{n!}(x-t)^n 
+$$ {#eq-part2_tayler_theorem}
+
+을 만족하는 $t,\,c\in (a,\,b)$ 가 항상 존재한다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$n=1$ 일 경우는 평균값 정리이다. 임의의 $t\in [a,\,b]$ 에 대해 
+
+$$
+f(x) = \sum_{k=0}^{n-1} \dfrac{f^{(k)}(t)}{k!}(x-t)^k + M(x-t)^n
+$$ {#eq-part2_tayler_theorem_1}
+
+를 만족하는 $M$ 을 생각하자. $y\in [a,\,b]$ 에 대해
+
+$$
+g(y) := f(y) - \sum_{k=0}^{n-1} \dfrac{f^{(k)}(t)}{k!}(y-t)^k - M(y-t)^n
+$$ {#eq-part2_tayler_theorem_2}
+
+라고 하면
+
+$$
+g^{(n)}(y) = f^{(n)}(y) - n!M
+$$
+
+이다. 이제 $g^{(n)}(y)=0$ 인 $y$ 가 반드시 존재한다는 것을 보이면 된다. @eq-part2_tayler_theorem_2 를 생각하면
+
+$$
+g(t) = g'(t) = \cdots = g^{(n-1)}(t) = 0
+$$
+
+임을 안다. @eq-part2_tayler_theorem_1 로부터 $g(x) = 0$ 이므로 $g'(x_1) = 0$ 인 $x_1$ 이 $t$ 와 $x$ 사이에 존재하며 $g''(x_2)$ 인 $x_2$ 가 $x_1$ 과 $t$ 사이에 존재한다. 이것을 계속하면 $g^{(n-1)}(x_{n-1}) = 0$ 인 $x_{n-1}$ 이 $t$ 와 $x_{n-2}$ 사이에 존재하므로 $g^{(n)}(x_n)=0$ 인 $x_n$ 도 $t$ 와 $x_{n-1}$ 사이에 존재한다. $g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0$ 이므로 $M=f^{(n)}(x_n)/n!$ 이다. $\square$
+
+
+:::
+
+</br>
+
+## 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_1}
+
+#### Rudin 4.1
+
+$f:\R \to \R$ 이 모든 $x,\,y\in \R$ 에 대해 
+
+$$
+|f(x)-f(y)| \le (x-y)^2
+$$
+
+일 때 $f$ 는 상수함수임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$$
+\left|\dfrac{f(x+h)-f(x)}{h}\right| \le |h|
+$$
+
+이므로 $h \to 0$ 극한을 생각하면 모든 $x\in \R$ 에 대해 $f$ 는 미분가능하며 $f'(x) = 0$ 이다. $f$ 가 미분가능하므로 임의의 $x,\,y\in R$ 에 대해
+
+$$
+f(x)-f(y)=(x-y)f'(c) = 0
+$$
+
+이므로 $f(x)$ 는 상수함수이다.
+
+:::
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_2}
+
+#### Rudin 4.2
+
+$(a,\,b)$ 구간에서 $f'(x)>0$ 이다. $f$ 가 $(a,\,b)$ 구간에서 strictily increasing 임을 보여라. $g=f^{-1}$ 에 대해 $g$ 가 미분가능하며, 
+
+$$
+g'(f(x)) = \dfrac{1}{f'(x)},\qquad (a<x<b)
+$$
+
+임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+임의의 $a<x<y<b$ 에 대해 $f(y)-f(x) = (y-x)f'(c)$ 를 만족하는 $c\in(x,\,y)$ 가 존재하는데 $f'(c)>0$ 이므로 $f(y)-f(x) >0$ 이다. 즉 $f$ 는 $(a,\,b)$ 구간에서 strictily increasing 하다. $f$ 가 $(a,\,b)$ 구간에서 strictily increasing 이므로 전단사이며, 따라서 역함수가 존재한다. 즉 $g$ 는 $(f(a),\, f(b))$ 구간에서 strictly increasing 이다. $y,\,s$ 에 대해 $g(y)=x,\, g(s)=t$ 라고 하자. 
+
+$$
+g'(f(t)) = g'(s)=\lim_{y \to s} \dfrac{g(y)- g(s)}{y-s} = \lim_{x \to t} \dfrac{x-t}{f(x)-f(t)} = \dfrac{1}{f'(t)}
+$$
+
+이다.
+
+
+:::
