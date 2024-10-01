@@ -401,6 +401,20 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_mean_value_theorem_is_not_valid_for_complex_function}
+
+#### $\R \mapsto \mathbb{C}$ 함수와 평균값 정리
+
+$f:\R \to \mathbb{C}$ 가 $f(x) = e^{ix}= \cos x + i \sin x$ 라고 하자. $f(2\pi) = f(0) = 0$ 이며 $f'(x) = ie^{ix}$ 이지만 $|f'(x) | = 1$ 이므로 중간값 정리가 성립하지 않는다. 즉 $\R \mapsto \mathbb{C}$ 함수의 경우 중간값 정리가 성립함을 보장 할 수 없다.
+
+:::
+
+</div>
+</br>
+
+
 ### 로피탈 정리 {#sec-part2_Lhopital_theorem}
 
 
@@ -485,6 +499,49 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_Lhopital_theorem_for_complex_function}
+
+#### $\R \mapsto \mathbb{C}$ 함수와 로피탈 정리
+
+$f,\,g:(0,\,1) \to \mathbb{C}$ 가 $f(x) := x$, $g(x) := x+x^2e^{i/x^2}$ 으로 정의되었다고 하자. $x\to 0$ 에 대해 $f(x) \to 0,\, g(x) \to 0$ 이다. 또한
+
+$$
+\lim_{x \to 0}\dfrac{f(x)}{g(x)} = 1
+$$
+
+이다. 여기서 
+
+$$
+g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
+$$
+
+이므로
+
+$$
+|g'(x)| \ge \left| 2x - \dfrac{2i}{x} \right| -1 \ge \dfrac{2}{x}-1
+$$
+
+이다. 이로부터
+
+$$
+\left|\dfrac{f'(x)}{g'(x)}\right| = \dfrac{1}{|g'(x)|} \le \dfrac{x}{2-x}
+$$
+
+이므로
+
+$$
+\lim_{x \to 0} \dfrac{f'(x)}{g'(x)} = 0
+$$
+
+이다. 즉 $\R\mapsto \mathbb{C}$ 함수의 경우 로피탈의 정리가 성립하지 않는다.
+
+:::
+
+</div>
+</br>
+
 
 ## 테일러 정리
 
@@ -495,12 +552,12 @@ $$
 
 #### 테일러 정리
 
-$f:[a,\,b]\to \R$ 이 $C^{n-1}$ 급 함수이며 $(a,\,b)$ 구간에서 $n$ 번 미분 가능할 때 
+$f:[a,\,b]\to \R$ 이 $C^{n-1}$ 급 함수이며 $(a,\,b)$ 구간에서 $n$ 번 미분 가능하다고 하자. $x,\,t\in (a,\,b)$ 에 대해 
 $$
 f(x) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(t)}{k!}(x-t)^{k} + \dfrac{f^{(n)}(c)}{n!}(x-t)^n 
 $$ {#eq-part2_tayler_theorem}
 
-을 만족하는 $t,\,c\in (a,\,b)$ 가 항상 존재한다.
+을 만족하는 $\xi$ 가 $x,\,t$ 사이에 반드시 존재한다. 
 
 :::
 
@@ -508,7 +565,7 @@ $$ {#eq-part2_tayler_theorem}
 
 ::: {.proof}
 
-$n=1$ 일 경우는 평균값 정리이다. 임의의 $t\in [a,\,b]$ 에 대해 
+$n=1$ 일 경우는 평균값 정리이다.
 
 $$
 f(x) = \sum_{k=0}^{n-1} \dfrac{f^{(k)}(t)}{k!}(x-t)^k + M(x-t)^n
@@ -544,9 +601,9 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_1}
+::: {#exr-part2_rudin_5_1}
 
-#### Rudin 4.1
+#### Rudin 5.1
 
 $f:\R \to \R$ 이 모든 $x,\,y\in \R$ 에 대해 
 
@@ -578,12 +635,13 @@ $$
 
 :::
 
+</br>
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_2}
+::: {#exr-part2_rudin_5_2}
 
-#### Rudin 4.2
+#### Rudin 5.2
 
 $(a,\,b)$ 구간에서 $f'(x)>0$ 이다. $f$ 가 $(a,\,b)$ 구간에서 strictily increasing 임을 보여라. $g=f^{-1}$ 에 대해 $g$ 가 미분가능하며, 
 
@@ -608,6 +666,515 @@ g'(f(t)) = g'(s)=\lim_{y \to s} \dfrac{g(y)- g(s)}{y-s} = \lim_{x \to t} \dfrac{
 $$
 
 이다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_3}
+
+#### Rudin 5.3
+
+$g:\R \to \R$ 의 도함수는 유계이다 (즉 $|g'|<M$). 고정된 $\varepsilon>0$ 에 대해 $f(x) = x+\varepsilon g(x)$ 라고 하자. $\varepsilon$ 이 충분히 작다면 $f$ 는 전단사 임을 보여라.
 
 
 :::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f'(x) = 1+\varepsilon g'(x)$ 이므로 $\varepsilon < 1/M$ 이라면 $f'(x)>0$ 이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_4}
+
+#### Rudin 5.4
+
+$C_0,\ldots,\,C_n$ 이 실수 이며
+
+$$
+C_0 + \dfrac{C_1}{2} + \cdots + \dfrac{C_{n-1}}{n} + \dfrac{C_n}{n+1}=0
+$$
+
+이라고 하자. 하자 이 때 방정식
+
+$$
+C_0 + C_1x + \cdots + C_{n-1}x^{n-1} + C_n x^n=0
+$$
+
+은 $0$ 과 $1$ 사이에서 최소한 하나의 근을 가짐을 보여라.
+
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}$ 라고 하자. $g(0) = g(1) = 0$ 이다. 중간값 정리(@thm-part2_mean_value_theorem) 에 따라 $g'(x)=0$ 의 해가 $(0,\,1)$ 사이에 존재한다.  
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_5}
+
+#### Rudin 5.5
+
+$f$ 가 모든 $x>0$ 에서 미분가능하며 $\displaystyle \lim_{x \to \infty} f'(x) = 0$ 이라고 하자. $g(x) := f(x+1)-f(x)$ 에 대해 $\displaystyle \lim_{x \to \infty} g(x) = 0$ 임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$g(x) = f(x+1)-f(x) = f'(c)$ 인 $c\in (x,\, x+1)$ 이 존재한다. 
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_6}
+
+#### Rudin 5.6
+
+$f:[0,\,\infty) \to \R$ 에 대해
+
+($1$) $x\ge 0$ 에 대해 연속이며,
+
+($2$) $x>0$ 에서 미분가능하고,
+
+($3$) $f(0)= 0$ 이며,
+
+($4$) $f'$ 이 단조증가함수이다.
+
+이 때 $g(x):= \dfrac{f(x)}{x}$ 가 $x>0$ 에서 단조증가함수임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$$
+g'(x) = \dfrac{xf'(x) - f(x)}{x^2}
+$$
+
+이며 중간값 정리에 의해 $f(x)-f(0) = xf'(t)$ 인 $t\in (0,\,x)$ 가 존재한다. $f'$ 이 단조증가함수이므로 $f'(x)\ge f'(t)$ 이며 따라서 
+
+$$
+g'(x) = \dfrac{x(f'(x)-f'(t))}{x^2}\ge 0
+$$
+
+이다. 즉 $g$ 도 단조증가함수이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_7}
+
+#### Rudin 5.7
+
+$f,\,g$ 가 $x$ 에서 미분가능하며 $g'(x) \ne 0$ 이고 $f(x) = g(x) = 0$ 이라고 하자. 이 때
+
+$$
+\lim_{t \to x} \dfrac{f(t)}{g(t)} = \dfrac{f'(x)}{g'(x)}
+$$
+
+임을 보여라. 
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$t \ne x$ 에 대해
+$$
+\dfrac{f(t)}{g(t)} = \dfrac{f(t)-f(x)}{g(t)-g(x)} = \dfrac{f'(c)(t-x)}{g'(d)(t-x)}= \dfrac{f'(c)}{g'(d)}
+$$
+
+인 $c,\,d \in (t,\,x)$ 에서 존재한다. $\lim t\to x$ 극한에서 생각하면 성립함을 알 수 있다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_8}
+
+#### Rudin 5.8
+
+$f'(x)$ 가 $[a,\,b]$ 구간에서 연속이며 $\varepsilon>0$ 이다. 이 때 다음이 성립하는 $\delta >0$ 이 존재함을 보여라.
+
+$$
+0<|t-x|<\delta ,\, a\le x,\,t \le b \implies \left|\dfrac{f(t)-f(x)}{t-x} - f'(x)\right|<\varepsilon.
+$$
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$a,\,b\in R$ 에 대해 큰 값과 작은 값 사이의 열린 구간을 $I_{ab}$ 라고 하자. $a<b$ 이면 $I_{a,b}=(a,\,b)$ 이고 $a>b$ 이면 $I_{ab}=(b,\,a)$ 이다. $x \in (a,\,b)$ 를 고정시키자. 중간값 정리에 의해 $f(t)-f(x) = (t-x)f'(y)$ 인 $y\in I_{tx}$  가 존재한다. $f'$ 이 연속이므로 임의의 $\varepsilon>0$ 에 대해
+
+$$
+|y-x|<\delta_x \implies |f'(y)-f'(x)|<\varepsilon
+$$
+
+인 $\delta_x>0$ 이 존재한다. 이 $\{\delta_x | x\in [a,\,b]\}$ 는 $[a,\,b]$ 에 대한 열린 덮개이며 $[a,\,b]$ 가 옹골집합이므로 유한개만으로 $[a,\,b]$ 를 덮을 수 있다. 이 유한개중 가장 작은 값을 $\delta$ 라고 잡자. $0<|t-x|<\delta$ 이면 $f(t)-f(x)=(t-x)f'(y)$ 인 $y\in I_{tx}$ 가 존재하며 $\delta \le \delta_x$ 이므로
+
+$$
+\left|\dfrac{f(t)-f(x)}{t-x} - f'(x)\right|<\varepsilon
+$$
+
+이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_9}
+
+#### Rudin 5.9
+
+$f:\R \to \R$ 이 연속이며, $x\ne 0$ 에 대해 도함수가 존재하고 $\lim_{x \to 0} f'(x) = 3$ 이라고 하자. $f'(0)$ 이 존재하는가?
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+로피탈의 정리에 의해
+
+$$
+f'(0) = \lim_{t \to 0} \dfrac{f(t)-f(0)}{t-0} = \lim_{t \to 0}\dfrac{f'(t)}{1} = 3
+$$
+
+
+이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_10}
+
+#### Rudin 5.10
+
+$f,\,g : (0,\,1) \to \mathbb{C}$ 이며 $x\to 0$ 에 대해 $f(x) \to 0$, $g(x) \to 0$, $f'(x) \to A$, $g'(x) \to B$ 이다. 이 때 $B\ne 0$ 이라고 하자. 다음을 보여라.
+
+$$
+\lim_{x \to 0} \dfrac{f(x)}{g(x)} = \dfrac{A}{B}.
+$$
+
+그리고 @exm-part2_Lhopital_theorem_for_complex_function 과 비교하라.
+
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f(x) = f_r (x) + if_i (x)$, $g(x) = g_r(x) + ig(x)$ 이며 $f_r,\,f_i,\,g_r,\,g_i$ 가 모두 $\R\mapsto \mathbb{C}$ 함수라고 하자. $A=A_r+iA_i,\, B=B_r+iB_i$ 이며 $A_r,\,A_i,\,B_r,\,B_i$ 가 모두 실수라고 하자. 
+
+$$
+\begin{aligned}
+\dfrac{f(x)}{g(x)} &= \left(\dfrac{f(x)}{x}-A\right) \cdot \dfrac{x}{g(x)} + A \cdot \dfrac{x}{g(x)} \\
+&= \left[\left(\dfrac{f_r(x)}{x} - A_r\right) + i \left(\dfrac{f_i(x)}{x} - A_i\right)\right] \left(\dfrac{g_r(x)}{x} + i \dfrac{g_i(x)}{x}\right)^{-1} \\
+&\qquad + A \left(\dfrac{g_r(x)}{x} + i \dfrac{g_i(x)}{x}\right)^{-1}
+\end{aligned}
+$$
+
+이며 $x\to 0$ 극한을 취하자. 
+
+$$
+\begin{aligned}
+\lim_{x \to 0}\dfrac{f_r(x)}{x} &= \lim_{x\to 0}\dfrac{f'_r(x)}{1} = A_r, \\
+\lim_{x \to 0}\dfrac{f_i(x)}{x} &= \lim_{x\to 0}\dfrac{f'_i(x)}{1} = A_i, \\
+\lim_{x \to 0}\dfrac{g_r(x)}{x} &= \lim_{x\to 0}\dfrac{g'_r(x)}{1} = B_r, \\
+\lim_{x \to 0}\dfrac{g_i(x)}{x} &= \lim_{x\to 0}\dfrac{g'_i(x)}{1} = B_i,
+\end{aligned}
+$$
+
+이므로
+
+$$
+\lim_{x\to 0} \dfrac{f(x)}{g(x)} = A(B_r+iB_i)^{-1} = \dfrac{A}{B}
+$$
+
+이다. @exm-part2_Lhopital_theorem_for_complex_function 의 경우 $\lim_{x \to 0} g'(x)$ 가 발산하는 차이가 있다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_11}
+
+#### Rudin 5.11
+
+$f$ 가 $x$ 의 근방에서 정의되어 있고 $f''(x)$ 가 존재한다. 이 때 
+
+$$
+\lim_{h \to 0}\dfrac{f(x+h) + f(x-h) -2f(x)}{h^2} = f''(x)
+$$
+
+임을 보여라. $f''(x)$ 가 존재하지 않더라도 위의 극한이 존재할 수 있음을 예를 들어 보여라.
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$x$ 를 고정하고 $h$ 에 대해 로피탈의 정리를 적용하면
+$$
+\begin{aligned}
+\lim_{h \to 0}\dfrac{f(x+h) + f(x-h) -2f(x)}{h^2} &= \lim_{h \to 0} \dfrac{f'(x+h) - f'(x-h)}{2h} \\
+&= \lim_{h \to 0}\dfrac{f''(x+h) + f''(x-h)}{2} \\
+&= f''(x)
+\end{aligned}
+$$
+
+이다. 
+
+신호처리등에서 많이 사용되는 $\text{sgn}: \R \to \{0,\,1, -1\}$ 은 다음과 같이 정의된다.
+
+$$
+\text{sgn}(x) = \left\{\begin{array}{ll}1, \qquad & x>0,\\ 0, & x=0, \\ -1, & x<0. \end{array}\right.
+$$
+
+$x=0$ 에서 연속이 아니므로 도함수 및 이차도함수는 존재하지 않지만 위의 극한은 $0$ 으로 존재한다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_12}
+
+#### Rudin 5.12
+
+$f(x)=|x|^3$ 일 때 $f'(x),\, f''(x)$ 를 계산하라. $f^{(3)}(0)$ 이 존재하지 않음을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$$
+f'(x) = \left\{\begin{array}{ll} 3x^2, \qquad &x\ge 0\\ -3x^2 & x<0\end{array}\right. \qquad f''(x) = \left\{\begin{array}{ll} 6x, \qquad &x\ge 0\\ -6x & x<0\end{array}\right. 
+$$ 
+
+이지만 $f^{(3)}(0^+) = 6$, $f^{(3)}(0^-)=-6$ 이므로 $f^{(3)}(0)$ 은 존재하지 않는다. 
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_14}
+
+#### Rudin 5.14
+
+$f:(a,\,b)\to \R$ 이 미분가능하다. 이 때 $f$ 가 볼록함수(@exr-part2_rudin_4_23) 일 필요충분조건이 $f'$ 이 단조증가함수인 것임을 보여라. 또한 $f''(x)$ 가 모든 $x\in (a,\,b)$ 에서 존재한다면 $f$ 가 볼록함수일 필요충분조건은 $\forall x\in (a,\,b), f''(x)\ge 0$ 인 것임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f$ 가 볼록함수 임을 가정한다. @exr-part2_rudin_4_23 의 @eq-part2_convex_function_2 을 이용한다. $a<s<t<u<b$ 에 대해
+
+$$
+\dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(t)}{u-t}
+$$
+
+이다. 좌변에 $t \to s$ 극한을 취하면 $f'(s) \le \dfrac{f(u)-f(t)}{u-t}$ 이며 우변에 $t\to u$ 극한을 취하면 $f'(s) \le f(u)$ 이다. 즉 $s<u \implies f'(s) \le f'(u)$ 이므로 $f'$ 은 단조증가함수이다. 
+
+이제 $f'$ 이 단조증가함수임을 가정하자. 여기서 $\lambda \in (0,\,1)$ 에 대해 
+
+$$
+f(\lambda x+ (1-\lambda)y) \le \lambda f(x) + (1-\lambda)f(y)
+$$
+
+임을 보이고자 한다. $z=\lambda x+ (1-\lambda)y$ 이며, $x<y$ 라고 하면 $x<z<y$ 이다. $\lambda = \dfrac{y-z}{y-x}$ 이며
+
+$$
+\begin{aligned}
+f(z)-\lambda f(x) - (1-\lambda)f(y) &= f(z) - \dfrac{y-z}{y-x}f(x) - \dfrac{z-x}{y-x}f(y) \\
+&= \dfrac{y-z}{y-x}(f(z)-f(x)) - \dfrac{z-x}{y-x}(f(y)-f(z))
+\end{aligned}
+$$
+
+이다. 중간값 정리에 의해 $f(z)-f(x) = (z-x)f'(c)$ 인 $c\in (x,\,z)$ 가 존재하며 $f(y)-f(z) = (z-y)f'(d)$ 인 $d\in (z,\,y)$ 가 존재한다. 즉 $c<d$ 이다. 그렇다면
+
+$$
+\begin{aligned}
+f(z)-\lambda f(x) + (1-\lambda)f(y) &= \dfrac{(y-z)(z-x)}{y-x}(f'(c)-f'(d) ) 
+\end{aligned}
+$$
+
+이다. $x<y<z$ 이므로 $\dfrac{(y-z)(z-x)}{y-x}>0$ 이며 $f'$ 이 단조증가이므로 $f'(c)-f'(d)\le 0$ 이다. 즉
+
+$$
+f(\lambda x + (1-\lambda)y) = f(z) \le \lambda f(x) + (1-\lambda) 
+$$
+
+이므로 $f$ 는 볼록함수이다. 
+
+이제 $f''(x)$ 가 모든 $x\in (a,\,b)$ 에서 존재함을 가정하자. $f'$ 이 단조증가인 것과 $f''(x)>0$ 인 것은 동치임을 쉽게 보일 수 있다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_15}
+
+#### Rudin 5.15
+
+$a\in \R$ 이며 $f$ 가 $(a,\,\infty)$ 에서 두번 미분 가능한 함수이고 $M_0,\,M_1,\,M_2$ 는 각각 $|f(x)|,\, |f'(x)|,\, |f''(x)|$ 의 $(a,\,\infty)$ 구간에서의 상한이라고 하자. 다음이 성립함을 보여라.
+
+$$
+{M_1}^2 \le 4M_0 M_2.
+$$
+
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+테일러 전개에 의해 $h>0,\, x>a$ 에 대해
+
+$$
+f'(x) = \dfrac{1}{2h}[f(x+2h)-f(x)] - hf''(\xi)
+$$
+
+인 $\xi \in (x,\, x+2h)$ 가 존재한다. 따라서
+
+$$
+|f'(x)| \le  \dfrac{1}{2h}|f(x+2h)-f(x)| + h|f''(\xi)| \le hM_2 + \dfrac{M_0}{h} \le 2\sqrt{M_0M_2}
+$$
+
+가 성립한다. 즉 ${M_1}^2 \le 4M_0M_2$ 이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_16}
+
+#### Rudin 5.16
+
+$f$ 가 $(0,\,\infty)$ 구간에서 두번 미분 가능하며 $f''$ 은 유계이고 $\displaystyle \lim_{x\to \infty}f(x) = 0$ 이다. $\displaystyle \lim_{x\to \infty} f'(x) = 0$ 임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+@exr-part2_rudin_5_15 를 이용한다. $\displaystyle \lim_{x\to \infty}f(x) = 0$ 이므로 정해진 $\varepsilon >0$ 에 대해 $x>x_0 \implies |f(x)|<\varepsilon$ 인 $x_0$ 가 존재한다. 그렇다면 $x>x_0$ 이면 $(x_0,\, \infty)$ 구간에서 $|f'(x)|< 2 \sqrt{\varepsilon M}$ 이 성립하므로 $\displaystyle \lim_{x\to \infty} f'(x) = 0$ 이다. 
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_18}
+
+#### Rudin 5.18
+
+$f:[a,\,b]\to \R$ 이 $n-1$ 번 미분 가능한 함수이다. $\alpha,\,\beta\in (a,\,b)$ 에 대해 $Q:[a,\,b] \to \R$ 을 $t\ne \beta$ 에 대해
+
+$$
+Q(t) := \dfrac{f(t)-f(\beta)}{t-\beta}
+$$
+
+라고 하자. $f(t) - f(\beta) = (t-\beta) Q(t)$ 를 $t=\alpha$ 에서 $n-1$ 번 미분하여 아래 식을 구하라.
+
+$$
+f(\beta) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(\beta)}{k!} + \dfrac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n.
+$$
+
+
+
+@thm-part2_tayler_theorem 의 
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f(t) - f(\beta) = (t-\beta) Q(t)$ 를 $n-1$ 번 미분하면 
+
+$$
+f^{(n-1)}(t) = (n-1)Q^{(n-2)} + (t-\beta) Q^{(n-1)}(t)
+$$
+
+를 얻는다. 
+
+:::
+

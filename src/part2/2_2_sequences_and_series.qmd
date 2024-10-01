@@ -1959,7 +1959,9 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part2_kkk_2_7_12}
 
@@ -1998,7 +2000,69 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_kkk_2_7_13}
+
+#### 김김계 2.7.13
+
+좌표공간의 수얼 $\langle x_n\rangle$ 이 고정된 실수 $r\in 1$ 에 대해
+
+$$
+\|x_{n+2}-x_{n+1}\| \le r\|x_{n+1}-x_n\|,\qquad n=1,\,2,\ldots
+$$
+
+을 만족하면 $\langle x_n\rangle$ 이 코시수열임을 보여라. 위 조건이 
+
+$$
+\|x_{n+2}-x_{n+1} \| < \|x_{n+1}-x_n\|, \qquad n=1,\,2,\ldots
+$$
+
+으로 바뀌면 어떻게 되는지 살펴보아라.
+
+
+::: 
+</div></br>
+
+::: {.solution}
+
+주어진 조건에 의해 
+
+$$
+\|x_{n+2}-x_{n+1}\| \le r\| x_{n+1}-x_n\| \le \cdots \le r^{n}\|x_2-x_1\|
+$$
+
+이다. 이를 이용하면 
+
+$$
+\begin{aligned}
+\|x_{n+k}-x_n\| &\le \|x_{n+k}-x_{n+k-1}\| + \|x_{n+k-1}-x_n\|  \\
+& \qquad \qquad \vdots \\
+&\le \|x_{n+k}-x_{n+k-1}\| + \|x_{n+k-1}-x_{n+k-2}\| + \cdots + \|x_{n+1}-x_n\| \\
+&\le (r^{n+k-2} + r^{n+k-3} + \cdots + r^{n-1}) \|x_2-x_1\| \\
+&= \dfrac{r^{n-1}(1-r^{k})}{1-r}\|x_2-x_1\| < \dfrac{r^{n}}{1-r}\|x_2-x_1\|
+\end{aligned}
+$$
+
+임을 안다. $c=\dfrac{\|x_2-x_1\|}{1-r}$ 라 하면  $\|x_{n+k}-x_n\| \le cr^{n}$ 이므로 임의의 $\varepsilon>0$ 에 대해 $n>\ln_r(\varepsilon/c)$ 이면 $\|x_{n+k}-x_n\|<\varepsilon$ 이므로 $\langle x_n \rangle$ 은 코시수열이다. 
+
+이제 $\|x_{n+2}-x_{n+1} \| < \|x_{n+1}-x_n\|$ 인 경우를 보자. $x_n := \displaystyle \sum_{k=1}^n \dfrac{1}{n}$ 이라 하면
+
+$$
+\|x_{n+2} - x_{n+1}\| = \dfrac{1}{n+2} < \dfrac{1}{n+1} = \|x_{n+1}-x_{n}\| 
+$$
+
+이지만 $\langle x_n\rangle$ 은 수렴하지 않으므로 코시수열이 아니다. 
+
+:::
+
+</br>
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part2_rudin_3_16}
 

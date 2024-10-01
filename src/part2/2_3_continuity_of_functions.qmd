@@ -42,7 +42,7 @@ $$
 
 $X,\, Y,\, E,\, f$ 가 @def-part2_limits_and_continuity_of_functions 와 같다고 하자. 이 때 아래 두 명제는 동치이다. 
 
-&emsp;($1$) $f$ 는 $x_0$ 에서 극한을 가진다.
+&emsp;($1$) $f$ 는 $x_0$ 에서 연속이다.
    
 &emsp;($2$) $X$ 에서 정의된 수열 $\langle x_n \rangle$ 이 $x_0$ 를 포함하지 않으면서 $x_0$ 로 수렴하면 수열 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴한다.
 
@@ -705,7 +705,7 @@ $$
 
 ::: {#prp-part2_continuity_and_connectivity}
 
-거리공간 $X,\,Y$ 에서 정의된 함수 $f:X\to Y$ 를 생각하자. $E\subset X$ 가 연결집합이면 $f(E)$ 도 연결집합이다. 
+거리공간 $X,\,Y$ 에서 정의된 연속 함수 $f:X\to Y$ 를 생각하자. $E\subset X$ 가 연결집합이면 $f(E)$ 도 연결집합이다. 
 
 :::
 </div></br>
@@ -1358,14 +1358,14 @@ $f$ 가 고른 연속이 아니므로 어떤 $\varepsilon>0$ 에 대해 각각 $
 
 #### Rudin 4.11
 
-거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 는 고른 연속이다. $\langle x_n\rangle$ 이 $X$ 에서의 코시 수열이라면 $\langle f(x_n)\rangle$ 은 $Y$ 에서의 코시 수열임을 보여라.
+거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 는 고른연속이다. $\langle x_n\rangle$ 이 $X$ 에서의 코시 수열이라면 $\langle f(x_n)\rangle$ 은 $Y$ 에서의 코시 수열임을 보여라.
 
 :::
 </div></br>
 
 :::{.solution}
 
-$f$ 가 균등연속이므로 임의의 $\varepsilon >0$ 에 대해 $|x-y|<\delta \implies |f(x)-f(y)|<\varepsilon$ 인 $\delta$ 가 존재한다. 이 $\delta$ 에 대해 $m,\,n\ge N\implies |x_m-x_n|<\delta$ 인 $N\in \mathbb{Z}_+$ 가 존재한다. 즉 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 가 존재하여
+$f$ 가 고른연속이므로 임의의 $\varepsilon >0$ 에 대해 $|x-y|<\delta \implies |f(x)-f(y)|<\varepsilon$ 인 $\delta$ 가 존재한다. 이 $\delta$ 에 대해 $m,\,n\ge N\implies |x_m-x_n|<\delta$ 인 $N\in \mathbb{Z}_+$ 가 존재한다. 즉 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 가 존재하여
 
 $$
 m,\,n \ge N \implies |f(x_m)-f(x_n)|<\varepsilon
@@ -1374,3 +1374,403 @@ $$
 이다. 따라서 $\langle f(x_n)\rangle$ 은 코시수열이다. 
 
 :::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_12}
+
+#### Rudin 4.12
+
+거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 가 고른 연속이고 $g:f(X) \to Z$ 가 고른연속일 때 $g\circ f$ 도 고른 연속임을 보여라. 
+
+:::
+</div></br>
+
+:::{.solution}
+
+$g$ 가 고른연속이므로 임의의 $\varepsilon>0$ 에 대해 $|y_1-y_2|_Y<\eta \implies |g(y_1)-g(y_2)|_Z<\varepsilon$ 인 $\eta>0$ 이 존재한다. $f$ 가 고른연속이므로 $|x_1-x_2|_X<\delta \implies |f(x_1)-f(x_2)|_Y<\eta$ 인 $\delta>0$ 이 존재한다. $y_1=f(x_1),\, y_2=f(x_2)$ 라 하면 임의의 $\varepsilon>0$ 에 대해 $|x_1-x_2|_X<\delta \implies |(g\circ f)(x_1) - (g \circ f)(x_2)|_Z<\varepsilon$ 인 $\delta>0$ 가 존재한다. 따라서 $g\circ f$ 는 고른연속이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_13}
+
+#### Rudin 4.13
+
+$E$ 는 $X$ 의 조밀한 부분집합이며 $f:E \to \R$ 은 고른 연속이다. $f$ 에 대한 $X$ 로의 확장이 존재함을 보여라. (용어에 대해서는 @exr-part2_rudin_4_5 를 참고하라). 함수의 치역이 $\R^n$ 일 일 경우, 옹골 거리집합일 경우, complete metric space 일 경우, 일반적인 metric space 일 경우에도 가능한가?
+
+:::
+</div></br>
+
+:::{.solution}
+
+임의의 $p\in X$ 에 대해 $V_n := N_X(p,\, 1/n)\cap E$ 이라고 하자. $A = \bigcup_{n=1}^\infty V_n$ 이며 @exr-part2_rudin_4_9 에 따라 $\text{diam}(A)=0$ 이며 $A\ne \varnothing$ 이므로 $A$ 는 단 하나의 원소로 된 집합이며 이 원소를 $g(p)$ 라고 놓자. $p\in E$ 일 경우 $g(p) = f(p)$ 이며 @exr-part2_rudin_4_4 에 따라 이런 $g$ 는 유일하게 정해진다. 이제 이렇게 정해진 $g$ 가 연속임을 보이자. 
+
+$p\in X\backslash E$ 이며 $\langle p_n \rangle$ 이 $p$ 로 수렴한다고 하자. @thm-part2_cauchy_sequence ($1$) 에 따라 $\langle p_n\rangle$ 은 코시수열이며 @exr-part2_rudin_4_11 에 따라 $\langle f(p_n)\rangle$ 도 $\R$ 에서의 코시수열이다. $\R$ 은 complete metric space 이므로 $\langle f(p_n)\rangle$ 도 수렴하며 따라서 $g$ 는 연속이다.
+
+여기서 치역이 $\R$ 이 아닐 경우를 생각하자. 일반적인 거리공간에서의 경우와 다른 것은 코시수열이 수렴하는지 여부이다. @thm-part2_cauchy_sequence 에 따라 $\R^n$ 과 옹골 거리집합인 경우 수렴하나 complete metric space 의 정의에 따라 수렴한다. 그러나 incomplete metric space 의 겨우 코시 수열의 수렴을 보장 할 수 없으므로 확장이 존재한다는 것을 보장하지 못한다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_14}
+
+#### Rudin 4.14
+
+$I=[0,\,1]$ 에 대해 $f:I \to I$ 가 연속이다. 최소한 하나의 $x\in I$ 에 대해 $f(x)=x$ 임을 보여라.
+
+:::
+</div></br>
+
+:::{.solution}
+
+@thm-part2_fixed_point_theorem
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_15}
+
+#### Rudin 4.15
+
+$f:X\to Y$ 일 때 모든 $X$ 의 열린 부분집합 $U$ 에 대해 $f(U)$ 가 열린집합이면 $f$ 를 열린 사상(open mapping) 이라고 한다. $\R \mapsto \R$ 로의 연속인 열린 사상은 단조함수임을 보여라.
+
+:::
+
+</div></br>
+
+:::{.solution}
+
+$f : \R \to \R$ 이 연속이지만 단조함수가 아니라고 하자. 어떤 $a<b<c$ 에 대해 ($i$) $f(a) > f(b)$, $f(b) < f(c)$ 이거나 ($ii$) $f(a)<f(b)$, $f(b)>f(c)$ 이다. ($i$) 의 경우를 생각하자. $[a,\,c]$ 구간에서 항상 $f([a,\,c])$ 는 최대값과 최소값이 존재하는데 최소값은 $f(a)$ 나 $f(c)$ 가 아니며 따라서 어떤 $x\in (a,\,c)$ 에서 $f(x)$ 가 최소값이다. 즉 $f((a,\,c))$ 는 $(y,\, f(x)]$ 이거나 $[y,\, f(x)]$ 꼴이며 열린 집합이 아니다. 즉 $f$ 는 열린 함수가 아니다. ($ii$) 의 경우는 최대값에 대해 같은 방식으로 보일 수 있다.
+
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_19}
+
+#### Rudin 4.19
+
+$f:\R \to \R$ 이 중간값 성질을 갖는다고 하자. 즉 $f(a) < c <f(b)$ 이면 $f(x) = c$ 인 $x$ 가 $a$ 와 $b$ 사이에 항상 존재한다. 또한 모든 유리수 $r$ 에 대해 $f^{-1}(\{r\})$ 은 닫힌 집합이다. $f$ 가 연속임을 보여라.
+
+*Hint* : $\langle x_n \rangle \to x_0$ 이지만 어떤 유리수 $r$ 과 모든 $n\in \mathbb{Z}_+$ 에 대해 $f(x_n)> r > f(x_0)$ 라고 하자. 그렇다면 중간값 성질에 의해 $f(t_n)=r$ 이 되도록 하는 $t_n$ 이 $x_0$ 와 $x_n$ 사이에 존재하며 $\langle t_n \rangle \to x_0$ 이다. 모순을 찾아라. 
+:::
+
+</div></br>
+
+::: {.solution}
+
+$f$ 가 $x_0$ 에서 연속이 아니라고 하자. @prp-part2_limit_and_convergent_series 에 따라 $x_0$ 를 포함하지 않는, 그러나 $x_0$ 로 수렴하는 수열 $\langle x_n \rangle$ 에 대해 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴하지 않는다. 그렇다면 일반성을 잃지 않고 *Hint* 처럼 가정 할 수 있다. 그렇다면 $x_0$ 는 $f^{-1}(\{r\})$ 의 극한점이지만 $x_0$ 는 여기에 포함되지 않는다. 이는 가정에 모순이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_20}
+
+#### Rudin 4.20
+
+$E$ 가 거리공간 $X$ 의 부분집합이며 공집합이 아니라고 하자. @exr-part2_KKK_2_7_8 과 같이 집합 $E$ 와 $x\in E$ 사이의 거리 $\rho_E(x) := \rho(x,\,E)$ 를 정의한다.
+
+($1$) $\rho_E(x)= 0 \iff x\in \overline{E}$ 임을 보여라.
+
+($2$) $\rho_E(x)$ 가 $X$ 에서의 고른 연속임을 보여라. 모든 $x,\, y\in X$ 에 대해 
+
+$$
+|\rho_E(x) - \rho_E(y)| \le \|x-y\|_X 
+$$ {#eq-part2_rudin_4_20}
+
+임을 보이면 된다.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) $\impliedby$ 는 자명하다. $\rho_E(x)=0$ 이라고 하자. $x\notin \overline{E}$ 이면 어떤 $\varepsilon>0$ 에 대해 $N(x,\, \varepsilon) \cap E=\varnothing$ 이므로 $\rho_E(x)\ge \varepsilon$ 이며 이는 $\rho_E(x)=0$ 이라는 가정에 모순된다. 따라서 $\rho_E(x) = 0 \implies x\in \overline{E}$ 이다.
+
+
+($2$) 임의의 $z\in E$ 에 대해 $\rho_E(x) \le \|x-z\|_X \le \|x-y\|_X + \|y-z\|_X$ 이며, 따라서
+
+$$
+\rho_E(x) \le \|x-y\|_X + \rho_E(y)
+$$
+
+이다. 마찬가지로 $\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)$ 이므로 @eq-part2_rudin_4_20 식이 성립한다. 따라서 $\rho_E(x)$ 는 고른 연속이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_21}
+
+#### Rudin 4.21
+
+$K$ 와 $F$ 는 거리공간 $X$ 의 서로소인 부분집합이다. $K$ 는 옹골집합이며 $F$ 는 닫힌집합이다. 어떤 $\delta >0$ 에 대해 $p\in K,\, q\in F \implies \|p-q\|_X>\delta$ 임을 보여라. 만약 $K$ 와 $F$ 가 모두 서로소인 닫힌집합이며 둘 다 옹골집합이 아니면 명제가 성립하지 않는다는 것을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\rho_F(x) = \inf \{ \|x-q\|_X : q\in F\}$ 는 연속함수이다. 따라서 $\rho_F(K)$ 는 옹골집합이다. 어떤 $p\in K$ 에 대해 $\rho_F(p)=0$ 이라면 $p \in F$ 이므로 두 집합이 서로소라는 가정에 모순된다. 따라서 모든 $p\in K$ 에 대해 $f(p)>0$ 이다. $\rho_F(K)$ 는 옹골집합이므로 최대값과 최소값을 포함하며 $m = \min \{\rho_F(K)\} > 0$ 이다. $0<\delta <m$ 에 대해 $\|p-q\|_X > \delta$ 이다.
+
+@exr-part2_kkk_3_5_4 로부터 $A=\{(x,\, 0):x\in \R \}$ 와 $B=\left\{ \left(x,\, \dfrac{1}{1+x^2}\right) : x\in\R\right\}$ 은 닫힌 집합임을 안다. $A\cap B=\varnothing$ 이지만 $\inf \{\|a,\,b\|_X: a\in A,\, b\in B\} = 0$ 임을 알 수 있다.
+  
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_22}
+
+#### Rudin 4.22
+
+$A,\,B$ 는 거리공간 $X$ 의 부분집합이며 서로소인 닫힌 집합이다. $f:X \to \R$ 을 다음과 같이 정의한다.
+
+$$
+f(p) = \dfrac{\rho_A(p)}{\rho_A(p) + \rho_B(p)} .
+$$
+
+$f$ 는 $X$ 에서 연속이며 $f(X) = [0,\,1]$ 임을 보여라. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임을 보여라. 이것은 @exr-part2_rudin_4_3 의 역이 성립함을 알게 해 준다. $X$ 의 닫힌 부분집합 $A$ 와 $X$ 에서 연속인 함수 $f$ 에 대해 $V=f^{-1}([0, \frac{1}{2}))$, $W=f^{-1}((\frac{1}{2}, 1])$ 라고 하자. $V$ 와 $W$ 는 열린 집합이며 서로소임을 보이고 $A \subset V,\, B\subset W$ 임을 보여라.
+
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+@exr-part2_rudin_4_20 으로부터 $\rho_A(p)=0 \iff p\in A$ 이며 $A \cap B=\varnothing$ 이므로 $\rho_A(p)+\rho_B(p) >0$ 이다. $\rho_A,\, \rho_B$ 가 모두 연속이므로 $f(p)$ 는 연속이다. 
+
+$0\le \rho_A(p) \le \rho_A(p)+\rho_B(p)$ 이므로 $f(X) \subset [0,\,1]$ 이다. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임은 쉽게 알 수 있다. 중간값 정리에 따라 $f(X) = [0,\,1]$ 이다. 
+
+$\overline{I}=[0,\,1]$ 에 대해 $[0,\,\frac{1}{2})$ 와 $(\frac{1}{2},\,1]$ 은 $I_0$ 에서 열린 집합이며, $f$ 가 연속이므로 $V,\,W$ 는 연속이고, 서로소임은 자명하다. 또한 $A \subset V,\, B\subset W$ 도 자명하다.
+  
+:::
+
+</br>
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_KKK_3_5_10}
+
+#### KKK 3.5.10
+
+거리공간의 부분집합 $X$ 위에서 정의된 함수 $f:X\to X$ 가 어떤 $r\in (0,\,1)$ 에 대해
+
+$$
+x,\, y \in X \implies \|f(x)-f(y)\| \le r \|x-y\|
+$$
+
+라고 하자.
+
+&emsp;($1$) $f$ 가 연속임을 보여라.
+
+&emsp;($2$) $x_0\in X$ 를 선택한 후 $x_{n+1}=f(x_n)$ 이라고 하면 수열 $\langle x_n\rangle$ 은 코시수열임을 보여라.
+
+&emsp;($3$) $X$ 가 닫힌 집합이면 $\langle x_n\rangle$ 의 극한점 $x$ 는 $x\in X$ 이며 $f$ 의 고정점임을 보여라.
+
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+($1$)  임의의 $\varepsilon >0$ 에 대해 $\delta = \dfrac{\varepsilon}{2r}$ 로 잡으면 $\|x-y\|<\delta$ 일 때
+
+$$
+\|f(x)-f(y)\| \le r\|x-y\| \le \dfrac{\varepsilon}{2} < \varepsilon
+$$
+
+이므로 $f$ 는 연속이다.
+
+($2$) $x=x_{n+1},\, y=x_n$ 에 대해 주어진 식은 $\|x_{n+2}-x_{n+1}\| \le r\|x_{n+1}-x_{n}\|$ 이며 @exr-part2_kkk_2_7_13 에 따라 $\langle x_n \rangle$ 은 코시수열이다.
+
+($3$) $X$ 가 닫힌집합이므로 $x\in X$ 이다. $x_{n+1}=f(x_n)$ 이므로 $x=f(x)$ 이며, 따라서 고정점이다. 
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_4_23}
+
+#### Rudin 4.23
+
+$f:(a,\,b) \to \R$ 이 $a < x,\,y < b$, $0<\lambda<1$ 에 대해
+
+$$
+f(\lambda x + (1-\lambda) y) \le \lambda f(x) + (1-\lambda )f(y)
+$$ {#eq-part2_convex_function}
+
+를 만족 할 때 $f$ 를 **볼록함수 (convex function)** 이라고 한다. 모든 볼록 함수가 연속임을 보여라. $g$ 가 단조증가인 볼록함수 이고 $f$ 가 볼록함수 일 때 $g\circ f$ 도 볼록함수 임을 보여라. 
+
+$f$ 가 $(a,\,b)$ 에서 볼록 함수 이고 $a<s<t<u<b$ 이면
+
+$$
+\dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(s)}{u-s} \le \dfrac{f(u)-f(t)}{u-t}
+$$ {#eq-part2_convex_function_2}
+
+임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($1$) 볼록 함수 $f$ 가 연속임을 보인다. $a<c<t<d<b$ 에 대해 $t=\lambda c + (1-\lambda)d$ 인 $\lambda\in (0,\,1)$ 이 존재한다. $M_1 = \max \{f(a),\, f(b)\}$ 라고 하면
+
+$$
+f(t) = f(\lambda c + (1-\lambda)d) \le \lambda f(c) + (1-\lambda)f(d) \le \lambda M_1 + (1-\lambda)M_1 = M_1
+$$
+
+이다. 즉 $(c,\,d)$ 구간에서 $f$ 는 위로 유계이다. 이제 $f$ 가 $(c,\,d)$ 구간에서 아래로 유계임을 보이자. 
+
+($i$) $\dfrac{c+d}{2} < t < d$ 인 경우 $c<\dfrac{c+d}{2}<t$ 이며 따라서 $\dfrac{c+d}{2} =\lambda t + (1-\lambda)c$ 인 $\lambda\in (0,\,1)$ 이 존재하며, 
+
+$$
+f\left(\dfrac{c+d}{2}\right) \le \lambda f(t) + (1-\lambda)f(c) 
+$$
+
+이므로 $m_1 = \min\left( f\left(\dfrac{c+d}{2}\right),\, f(c) \right)$ 라 하면
+
+$$
+f(t) \ge \dfrac{1}{\lambda}f\left(\dfrac{c+d}{2}\right) + \left(1-\dfrac{1}{\lambda}\right) f(c) \ge m_1
+$$
+
+이다. 
+
+($ii$) $c<t<\dfrac{c+d}{2}$ 인 경우 $t<\dfrac{c+d}{2}<d$ 이며 따라서 $\dfrac{c+d}{2} = \lambda t+ (1-\lambda d)$ 인 $\lambda\in (0,\,1)$ 이 존재한다. $m_2 =  \min\left( f\left(\dfrac{c+d}{2}\right),\, f(d) \right)$ 라 하면 ($i$) 과 같은 방법으로 $f(t) \ge m_2$ 임을 보일 수 있다. 즉 $M_2 = \max (m_1,\,m_2)$ 라 하면 $f(t)\ge M_2$ 이다.
+
+
+($i$), ($ii$) 로부터 $f$ 는 $\left(c,\, \dfrac{c+d}{2}\right) \cup \left(\dfrac{c+d}{2},\, d\right)$ 구간에서 유계임을 안다. $c,\,d$ 가 $a<c<d<b$ 인 임의의 값이므로 적당한 $c',\,d'$ 값에 대해 $\dfrac{c+d}{2}$ 가 유계임을 보일 수 있다. 또한 같은 방법으로 $[c,\,d]$ 구간에 대해 유계임을 보일 수 있다. 즉 $f$ 는 $[c,\,d]$ 구간예서 유계이다. 즉 $t\in [c,\,d]$ 에 대해 $|f(t)|<M$ 인 $M>0$ 이 존재한다.
+
+이제 $x,\,y\in (c,\,d)$ 에 대해 $x<y$ 일 때
+
+$$
+x = \lambda c + (1-\lambda)y
+$$
+
+인 $\lambda\in (0,\,1)$ 이 존재한다. 그렇다면 $\lambda = \dfrac{y-x}{y-c}$ 이며 
+$$
+f(x)-f(y) \le \lambda f(c) + (1-\lambda)f(y) - f(y) = \lambda (f(c)-f(y)) = \dfrac{y-x}{y-c} (f(c)-f(y))
+$$
+
+이다. $0<y-c<d-c$ 이므로 $D=d-c$ 라 하면
+
+$$
+f(x)-f(y) \le (y-x)\dfrac{f(c)-f(y)}{D} \le (y-x)\dfrac{2M}{D}
+$${#eq-part2_rudin_4_23_1}
+
+이다. $x<y<d$ 이므로 비슷한 방법으로 $y = (1-\theta)x + \theta d$ 라 놓으면 $\theta = \dfrac{y-x}{d-x} \in (0,\,1)$ 이며, 
+
+$$
+f(y)-f(x)  \le (1-\theta) f(x) + \theta f(d) - f(x) = \dfrac{y-x}{d-x}(f(d)-f(x))
+$$
+
+이므로
+
+$$
+f(y)-f(x)  \le (y-x)\dfrac{2M}{D}
+$${#eq-part2_rudin_4_23_2}
+
+임을 알 수 있다. @eq-part2_rudin_4_23_1 과 @eq-part2_rudin_4_23_2 로부터
+
+$$
+|f(x) - f(y) | \le \dfrac{2M}{D}|x-y|
+$$
+
+을 얻는다. 이제 임의의 $\varepsilon>0$ 에 대해 $\delta  := \dfrac{D\varepsilon}{2M}$ 이라면 $|x-y|<\delta$ 일 때
+
+$$
+|f(x)-f(y) | <\dfrac{2M}{D}\delta <\varepsilon
+$$
+
+임을 안다. 즉 $f(x)$ 는 연속이다. 
+
+($2$) $g$ 가 단조증가인 볼록함수이고 $f$ 가 볼록함수라고 하자. 
+
+$$
+\begin{aligned}
+(g\circ f)(\lambda x + (1-\lambda) y) &\le g(\lambda f(x) + (1-\lambda)f(y))  \\
+&\le \lambda (g\circ f)(x) + (1-\lambda) (g\circ f)(y)
+\end{aligned}
+$$
+
+이다. 첫번째 부등식은 $g$ 가 단조증가 함수이므로 성립한다. 
+
+
+($3$) @eq-part2_convex_function_2 가 성립함을 보이자. $a<c<d<b$ 인 $c,\,d$ 를 잡자. 임의의 $\eta <\dfrac{d-c}{2}$ 를 선택하고 $c+\eta \le x <y \le d-\eta$ 가 되도록 $x,\,y$ 를 잡자. 
+
+
+$f$ 가 볼록함수이면 @eq-part2_convex_function_2 를 만족함을 보이자. $a<s<t<u<b$ 이면 $t=\lambda_0 s + (1-\lambda_0) u$ 인 $\lambda_0 \in (0,\,1)$ 이 존재한다. 즉 $\lambda_0 = \dfrac{u-t}{u-s}$ 이다. 또한
+
+$$
+f(t) = f(\lambda_0 s + (1-\lambda_0) u)  \le \lambda_0 f(s) + (1-\lambda_0) f(u)
+$$
+
+이므로
+
+$$
+f(u)-f(t) \ge \lambda_0 (f(u) - f(s)) = \dfrac{u-t}{u-s}(f(u)-f(s))
+$$
+
+이다. 따라서 
+
+
+$$
+\dfrac{f(u)-f(s)}{u-s} \le \dfrac{f(u)-f(t)}{u-t} 
+$$ {#eq-part2_rudin_4_23_4}
+
+이다. $\lambda_1 = 1-\lambda_0$ 로 놓으면 $t=(1-\lambda_1)s + \lambda_1 u$ 이며 $\lambda_1 \in (0,\,1)$ 이다. $\lambda_1 = \dfrac{t-s}{u-s}$ 이며 
+
+$$
+f(t) = f((1-\lambda_1)s + \lambda_1 u) \le \lambda_1 f(u) + (1-\lambda_1) f(s)
+$$
+
+이므로
+
+$$
+f(t) - f(s) \le  \lambda_1 (f(u)-f(x)) = \dfrac{t-s}{u-s}  (f(u)-f(s))
+$$
+
+이다. 따라서
+
+$$
+\dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(s)}{u-s}
+$${#eq-part2_rudin_4_23_5}
+
+이다. @eq-part2_rudin_4_23_4 과 @eq-part2_rudin_4_23_5 로 부터 @eq-part2_convex_function_2 을 얻는다. 
+
+:::
+
+</br>
