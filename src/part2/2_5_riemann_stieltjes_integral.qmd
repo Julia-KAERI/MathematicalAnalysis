@@ -1,0 +1,345 @@
+---
+title: "리만-스틸체스 적분"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+## 적분의 정의와 존재
+
+이 장에서의 $f:E\subset\R \to \R$ 은 특별한 언급이 없는 한 유계인 함수이다.
+
+
+### 리만 적분 {#sec-part2_riemann_integral}
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_partition}
+
+#### 분할
+
+닫힌 구간 $[a,\,b]$ 에서 어떤 유한개의 점 $x_0,\ldots,\,x_n$ 이
+
+$$
+a=x_0 < x_1 < x_2 < \cdots < x_{n-1}< x_n = b
+$$
+
+일 때 $P=\{x_0,\ldots,\,x_n\}$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체를 $\mathcal{P}[a,\,b]$ 라고 표기한다. 
+
+::: 
+:::
+
+</br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_upper_lower_riemann_sum}
+
+#### 리만 상합, 리만 하합
+
+$f:[a,\,b]\to \R,\, P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+\begin{aligned}
+M_i &:= \sup f([x_{i-1},\,x_{i}]), \\[0.2em]
+m_i &:= \inf f([x_{i-1},\,x_{i}]). \\
+\end{aligned}
+$$
+
+라고 하자. 이 때 **리만 상합(Riemann upper sum)** $U(f,\,P)$ 와 **리만 하합 (Riemann lower sum)** $L(f,\,P)$ 는 다음과 같이 정의된다.
+
+$$
+\begin{aligned}
+U(f,\,P) &:= \sum_{i=1}^n M_i (x_{i}-x_{i-1}), \\[0.2em]
+L(f,\,P) &:= \sum_{i=1}^n m_i (x_{i}-x_{i-1}).
+\end{aligned}
+$$
+
+::: 
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_properties_of_rieman_sum_1}
+
+$P_1,\,P_2\in \mathcal{P}[a,\,b]$ 이며 $P_1 \subset P_2$ 일 때 다음이 성립한다.
+
+$$
+L(f,\, P_1) \le L(f,\,P_2) \le U(f,\,P_2) \le U(f,\,P_1)
+$${#eq-part2_inequalitiy_of_riemann_sum_1}
+
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+임의의 분할 $P$ 에 대해 $L(f,\,P) \le U(f,\,P)$ 임은 자명하다. $P_1$ 에 의한 부분구간 $[x_{k-1},\,x_k]$ 의 에 대해 $z_m=x_{k-1} < z_{m+1}< \cdots <z_{m+n} = x_k$ 라고 하자. $j=0,\ldots,\,n-1$ 에 대해 $\inf f([z_{m+j},\, z_{m+j+1}]) \le \inf f[(x_{k-1},\, x_{k})]$ 이므로 $L(f,\, P_1) \le L(f,\,P_2)$ 이다. 같은 방법으로 $U(f,\,P_2) \le U(f,\,P_2)$ 를 보일 수 있다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part2_properties_of_rieman_sum_2}
+
+임의의 $P_1,\, P_2\in \mathcal{P}[a,\,b]$ 에 대해 다음이 성립한다.
+
+$$
+L(f,\,P_1) \le U(f,\, P_2)
+$$ {#eq-part2_inequalitiy_of_riemann_sum_2}
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$P = P_1 \cup P_2$ 라고 하면 $P\in \mathcal{P}[a,\,b]$ 이며, $P_1\subset P,\, P_2 \subset P$ 이므로
+
+$$
+L(f,\, P_1) \le L(f,\, P) \le U(f,\, P) \le U(f,\, P_2)
+$$
+
+이다. $\square$
+
+:::
+
+</br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_riemann_integral}
+
+#### 리만 적분
+
+@def-part2_upper_lower_riemann_sum 에 대해
+
+$$
+\begin{aligned}
+\overline{{\int}_{a}^b} f\,dx := \inf \{U(P,\,f): P\in \mathcal{P}[a,\,b]\}, \\[0.3em]
+\underline{{\int}_{a}^{b}} f\,dx := \sup \{L(P,\,f): P\in \mathcal{P}[a,\,b]\}.
+\end{aligned}
+$$ {#eq-part2_riemann_upper_lower_integral}
+
+를 각각 **리만 상적분 (Riemann upper integral)** 과 **리만 하적분 (Riemann lower integral)** 이라고 한다. 리만 상적분과 리만 하적분 값이 같을 때 그 값을 **리만적분 (Riemann integral)** 이라고 하며 
+
+$$
+\int_{a}^b f\,dx \qquad\text{or}\qquad  \int_a^b f(x)\,dx
+$$
+
+라고 쓴다. $[a,\,b]$ 구간에서 $f$ 의 리만적분이 존재한다면 $f$ 는 $[a,\,b]$ 구간에서 리만적분이 가능하다고 한다.
+
+::: 
+:::
+
+</br>
+
+$f$ 가 유계이므로 $M=\sup f([a,\,b])$ 와 $m=\inf f([a,\,b])$ 가 존재한다. @thm-part2_properties_of_rieman_sum_1 에 따라 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+m(b-a) \le L(f,\, P) \le U(f,\,P) \le M(b-a)
+$$
+
+가 성립하므로 $L(f,\,P)$ 와 $U(f,\, P)$ 는 유계이다. 
+
+
+</br>
+
+### 스틸체스 적분 {#sec-part2_stieltjes_integral}
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_stieltjes_integral}
+
+#### 스틸체스 적분
+
+$\alpha :[a,\,b]\to \R$ 이 단조증가함수일 때 $P\in \mathcal{P}[a,\,b]$ 에 대해 
+
+$$
+\Delta \alpha_i := \alpha (x_i)- \alpha (x_{i-1})
+$$
+
+라고 하자. $\Delta \alpha_i \ge 0$ 임은 자명하다. $[a,\,b]$ 구간에서 유게인 함수 $f$ 에 대해
+
+$$
+\begin{aligned}
+U(f,\, P,\, \alpha) &:= \sum_{i=1}^n M_i \Delta \alpha_i, \\[0.2em]
+L(f,\, P,\, \alpha) &:= \sum_{i=1}^n m_i \Delta \alpha_i
+\end{aligned}
+$$
+
+라고 하자. $M_i,\, m_i$ 는 @def-part2_upper_lower_riemann_sum 에서와 같다. 이 때 
+
+$$
+\begin{aligned}
+\overline{\int_{a}^b} f\, d\alpha &:= \inf \{ U(f,\, P,\, \alpha): P\in \mathcal{P}[a,\,b]\} \\[0.2em]
+\underline{\int_a^b} f\, d\alpha &:= \sup \{ L(f,\, P,\, \alpha) : P \in \mathcal{P}[a,\,b]\}
+\end{aligned}
+$$ {#eq-part2_upper_and_lower_stieltjes_sum}
+
+라고 하자. 두 값이 같을 때 $f$ 는 $\alpha$ 에 대해 **스틸체스 적분 (Stieltjes integral)** 이 가능하다고 하며 
+
+$$
+\int_a^b f\, d\alpha, \qquad \text{or} \qquad \int_a^b f(x)\, d\alpha(x)
+$$
+
+라고 쓴다. 
+
+
+::: 
+:::
+
+
+</br>
+
+$\alpha(x)=x$ 일 경우 스틸체스 적분은 리만 적분이 된다. 즉 리만 적분은 스틸체스 적분의 특수한 형태이다. 이제 @thm-part2_properties_of_rieman_sum_1 과 @cor-part2_properties_of_rieman_sum_2 가 스틸체스 적분의 형태에 대해서도 성립함을 보일 수 있다.
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_properties_of_stieltjes_sum_1}
+
+$P_1,\,P_2\in \mathcal{P}[a,\,b]$ 이며 $P_1 \subset P_2$ 일 때 다음이 성립한다.
+
+$$
+L(f,\, P_1,\, \alpha) \le L(f,\,P_2,\,\alpha) \le U(f,\,P_2,\alpha) \le U(f,\,P_1,\, \alpha)
+$$ {#eq-part2_inequalitiy_of_stieltjes_sum_1}
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part2_properties_of_stieltjes_sum_2}
+
+임의의 $P_1,\, P_2\in \mathcal{P}[a,\,b]$ 에 대해 다음이 성립한다.
+
+$$
+L(f,\,P_1,\, \alpha) \le U(f,\, P_2,\, \alpha)
+$$ {#eq-part2_inequalitiy_of_stieltjes_sum_2}
+
+:::
+
+</div>
+
+</br>
+
+또한 @thm-part2_properties_of_stieltjes_sum_1 로부터 다음을 알 수 있다.
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part2_properties_of_stieltjes_sum_3}
+
+$\displaystyle \underline{\int_a^b} f\, d\alpha \le \overline{\int_a^b} f\, d\alpha$
+
+:::
+
+</div>
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_properties_of_stieltjes_integral_1}
+
+$f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음 두 명제는 동치이다.
+
+&emsp;($1$) $f$ 가 $[a,\,b]$ 구간에서 $\alpha$ 에 대해 스틸체스 적분이 가능하다.
+
+&emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 다음을 만족하는 $P\in \mathcal{P}[a,\,b]$ 가 존재한다.
+
+$$
+U(f,\, P,\, \alpha) - L(f,\, P,\, \alpha) <\varepsilon.
+$$ {#eq-part2_condition_for_stieltjes_integrablity}
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1 \implies 2$) @eq-part2_upper_and_lower_stieltjes_sum 과 스틸체스 적분의 정의로부터 임의의 $\varepsilon >0$ 에 대해 
+
+$$
+U(f,\, P_1,\, \alpha) - \int_a^b f\, d\alpha < \dfrac{\varepsilon}{2}
+$$
+
+를 만족하는 $P_1\in \mathcal{P}[a,\,b]$ 가 존재한다. 또한
+
+$$
+\int_a^b f\, d\alpha -L(f,\, P,\, \alpha) < \dfrac{\varepsilon}{2}
+$$
+
+를 만족하는 $P_2 \in \mathcal{P}[a,\,b]$ 도 존재한다. $P =P_1 \cup P_2 \in P[a,\,b]$ 에 대해서도 위의 두 부등식이 성립하므로 여기서의 부등식을 더하면 ($2$) 가성립함을 안다.
+
+($2\implies 1$) $P\in\mathcal{P}[a,\,b]$ 이면
+
+$$
+L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} f\,d\alpha \le U(f,\, P,\,\alpha)
+$$
+
+이며 @eq-part2_condition_for_stieltjes_integrablity 가 성립한다면 임의의 $\varepsilon >0$ 에 대해
+
+$$
+ \overline{\int_a^b} f\,d\alpha -  \underline{\int_a^b}f\, d\alpha <\varepsilon
+$$
+
+이 성립함을 의미한다. 즉 두 값은 같으며 따라서 $f$ 는 $\alpha$ 에 대해 스틸체스 적분 가능하다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_stieltjes_integral_2}
+
+$f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음이 성립한다. 
+
+($1$) $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 $P \subset Q$ 인 $Q\in \mathcal{P}[a,\,b]$ 에 대해서도 @eq-part2_condition_for_stieltjes_integrablity 가 성립한다.
+
+($2$) $P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t\in \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
+
+$$
+\sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i <\varepsilon.
+$$
+
+($3$) $f$ 가 $\alpha$ 에 대해 스틸체스 적분가능하고 $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 임의의 $t_i \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
+
+$$
+\left| \sum_{i=1}^n f(t_i)\Delta \alpha_i - \int_a^b f\, d\alpha \right|<\varepsilon.
+$$
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) @thm-part2_properties_of_stieltjes_sum_1 .
+
+($2$) $|f(s_i)-s(t_i)| \le M_i - m_i$ 이므로
+
+$$
+\sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i \le \sum_{i=1} (M_i-m_i) \Delta \alpha_i = U(f,\, P,\, \alpha)- L(f,\, P,\, \alpha) < \varepsilon
+$$
+
+이다.
+
+($3$) $L(f,\,P,\,\alpha) \le \sum f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)$ 이며 $L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)$ 이므로 성립한다. $\square$
+
+
+:::
