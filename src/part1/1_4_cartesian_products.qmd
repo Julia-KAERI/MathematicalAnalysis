@@ -1,10 +1,13 @@
----
+<!-- ---
 title: "데카르트 곱"
 number-sections: true
 number-depth : 3
 crossref:
   chapters: true
----
+--- -->
+
+# 데카르트 곱
+
 
 ## 집합족
 

@@ -9,8 +9,15 @@ book:
   repo-url: https://github.com/Julia-KAERI/MathematicalAnalysis
   repo-branch: main
   date: "7/18/2023"
-  language: _language-ko_custom.yml
-
+  page-navigation: true
+  reader-mode: true
+  #language: _language-ko_custom.yml
+  sidebar:
+    search: true
+    style: floating
+    collapse-level: 1
+    border: true
+  
   chapters:
     - index.qmd
     - part : src/part1/part1.qmd
@@ -37,9 +44,9 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    fontsize: 0.95em
+    fontsize: 0.9em
     # html-math-method: mathml
-  #  css: custom.css
+    css: custom.css
   # pdf:
   #   documentclass: scrreprt
 

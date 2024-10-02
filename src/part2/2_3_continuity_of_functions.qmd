@@ -1467,9 +1467,9 @@ $f : \R \to \R$ 이 연속이지만 단조함수가 아니라고 하자. 어떤 
 
 #### Rudin 4.19
 
-$f:\R \to \R$ 이 중간값 성질을 갖는다고 하자. 즉 $f(a) < c <f(b)$ 이면 $f(x) = c$ 인 $x$ 가 $a$ 와 $b$ 사이에 항상 존재한다. 또한 모든 유리수 $r$ 에 대해 $f^{-1}(\{r\})$ 은 닫힌 집합이다. $f$ 가 연속임을 보여라.
+$f:\R \to \R$ 이 사잇값 성질을 갖는다고 하자. 즉 $f(a) < c <f(b)$ 이면 $f(x) = c$ 인 $x$ 가 $a$ 와 $b$ 사이에 항상 존재한다. 또한 모든 유리수 $r$ 에 대해 $f^{-1}(\{r\})$ 은 닫힌 집합이다. $f$ 가 연속임을 보여라.
 
-*Hint* : $\langle x_n \rangle \to x_0$ 이지만 어떤 유리수 $r$ 과 모든 $n\in \mathbb{Z}_+$ 에 대해 $f(x_n)> r > f(x_0)$ 라고 하자. 그렇다면 중간값 성질에 의해 $f(t_n)=r$ 이 되도록 하는 $t_n$ 이 $x_0$ 와 $x_n$ 사이에 존재하며 $\langle t_n \rangle \to x_0$ 이다. 모순을 찾아라. 
+*Hint* : $\langle x_n \rangle \to x_0$ 이지만 어떤 유리수 $r$ 과 모든 $n\in \mathbb{Z}_+$ 에 대해 $f(x_n)> r > f(x_0)$ 라고 하자. 그렇다면 사잇값 성질에 의해 $f(t_n)=r$ 이 되도록 하는 $t_n$ 이 $x_0$ 와 $x_n$ 사이에 존재하며 $\langle t_n \rangle \to x_0$ 이다. 모순을 찾아라. 
 :::
 
 </div></br>
@@ -1566,7 +1566,7 @@ $f$ 는 $X$ 에서 연속이며 $f(X) = [0,\,1]$ 임을 보여라. $p\in A \iff 
 
 @exr-part2_rudin_4_20 으로부터 $\rho_A(p)=0 \iff p\in A$ 이며 $A \cap B=\varnothing$ 이므로 $\rho_A(p)+\rho_B(p) >0$ 이다. $\rho_A,\, \rho_B$ 가 모두 연속이므로 $f(p)$ 는 연속이다. 
 
-$0\le \rho_A(p) \le \rho_A(p)+\rho_B(p)$ 이므로 $f(X) \subset [0,\,1]$ 이다. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임은 쉽게 알 수 있다. 중간값 정리에 따라 $f(X) = [0,\,1]$ 이다. 
+$0\le \rho_A(p) \le \rho_A(p)+\rho_B(p)$ 이므로 $f(X) \subset [0,\,1]$ 이다. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임은 쉽게 알 수 있다. 사잇값 정리(@thm-part2_intermediate_value_theorem) 에 따라 $f(X) = [0,\,1]$ 이다. 
 
 $\overline{I}=[0,\,1]$ 에 대해 $[0,\,\frac{1}{2})$ 와 $(\frac{1}{2},\,1]$ 은 $I_0$ 에서 열린 집합이며, $f$ 가 연속이므로 $V,\,W$ 는 연속이고, 서로소임은 자명하다. 또한 $A \subset V,\, B\subset W$ 도 자명하다.
   

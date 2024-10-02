@@ -407,7 +407,7 @@ $$
 
 #### $\R \mapsto \mathbb{C}$ 함수와 평균값 정리
 
-$f:\R \to \mathbb{C}$ 가 $f(x) = e^{ix}= \cos x + i \sin x$ 라고 하자. $f(2\pi) = f(0) = 0$ 이며 $f'(x) = ie^{ix}$ 이지만 $|f'(x) | = 1$ 이므로 중간값 정리가 성립하지 않는다. 즉 $\R \mapsto \mathbb{C}$ 함수의 경우 중간값 정리가 성립함을 보장 할 수 없다.
+$f:\R \to \mathbb{C}$ 가 $f(x) = e^{ix}= \cos x + i \sin x$ 라고 하자. $f(2\pi) = f(0) = 0$ 이며 $f'(x) = ie^{ix}$ 이지만 $|f'(x) | = 1$ 이므로 평균값 정리가 성립하지 않는다. 즉 $\R \mapsto \mathbb{C}$ 함수의 경우 평균값 정리가 성립함을 보장 할 수 없다.
 
 :::
 
@@ -722,7 +722,7 @@ $$
 
 ::: {.solution}
 
-$g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}$ 라고 하자. $g(0) = g(1) = 0$ 이다. 중간값 정리(@thm-part2_mean_value_theorem) 에 따라 $g'(x)=0$ 의 해가 $(0,\,1)$ 사이에 존재한다.  
+$g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}$ 라고 하자. $g(0) = g(1) = 0$ 이다. 평균값 정리(@thm-part2_mean_value_theorem) 에 따라 $g'(x)=0$ 의 해가 $(0,\,1)$ 사이에 존재한다.  
 
 :::
 
@@ -778,7 +778,7 @@ $$
 g'(x) = \dfrac{xf'(x) - f(x)}{x^2}
 $$
 
-이며 중간값 정리에 의해 $f(x)-f(0) = xf'(t)$ 인 $t\in (0,\,x)$ 가 존재한다. $f'$ 이 단조증가함수이므로 $f'(x)\ge f'(t)$ 이며 따라서 
+이며 평균값 정리에 의해 $f(x)-f(0) = xf'(t)$ 인 $t\in (0,\,x)$ 가 존재한다. $f'$ 이 단조증가함수이므로 $f'(x)\ge f'(t)$ 이며 따라서 
 
 $$
 g'(x) = \dfrac{x(f'(x)-f'(t))}{x^2}\ge 0
@@ -843,7 +843,7 @@ $$
 
 ::: {.solution}
 
-$a,\,b\in R$ 에 대해 큰 값과 작은 값 사이의 열린 구간을 $I_{ab}$ 라고 하자. $a<b$ 이면 $I_{a,b}=(a,\,b)$ 이고 $a>b$ 이면 $I_{ab}=(b,\,a)$ 이다. $x \in (a,\,b)$ 를 고정시키자. 중간값 정리에 의해 $f(t)-f(x) = (t-x)f'(y)$ 인 $y\in I_{tx}$  가 존재한다. $f'$ 이 연속이므로 임의의 $\varepsilon>0$ 에 대해
+$a,\,b\in R$ 에 대해 큰 값과 작은 값 사이의 열린 구간을 $I_{ab}$ 라고 하자. $a<b$ 이면 $I_{a,b}=(a,\,b)$ 이고 $a>b$ 이면 $I_{ab}=(b,\,a)$ 이다. $x \in (a,\,b)$ 를 고정시키자. 평균값 정리에 의해 $f(t)-f(x) = (t-x)f'(y)$ 인 $y\in I_{tx}$  가 존재한다. $f'$ 이 연속이므로 임의의 $\varepsilon>0$ 에 대해
 
 $$
 |y-x|<\delta_x \implies |f'(y)-f'(x)|<\varepsilon
@@ -1054,7 +1054,7 @@ f(z)-\lambda f(x) - (1-\lambda)f(y) &= f(z) - \dfrac{y-z}{y-x}f(x) - \dfrac{z-x}
 \end{aligned}
 $$
 
-이다. 중간값 정리에 의해 $f(z)-f(x) = (z-x)f'(c)$ 인 $c\in (x,\,z)$ 가 존재하며 $f(y)-f(z) = (z-y)f'(d)$ 인 $d\in (z,\,y)$ 가 존재한다. 즉 $c<d$ 이다. 그렇다면
+이다. 평균값 정리에 의해 $f(z)-f(x) = (z-x)f'(c)$ 인 $c\in (x,\,z)$ 가 존재하며 $f(y)-f(z) = (z-y)f'(d)$ 인 $d\in (z,\,y)$ 가 존재한다. 즉 $c<d$ 이다. 그렇다면
 
 $$
 \begin{aligned}

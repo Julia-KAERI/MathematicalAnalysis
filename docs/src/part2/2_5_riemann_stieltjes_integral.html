@@ -99,6 +99,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../../custom.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -128,6 +129,11 @@ window.Quarto = {
       <a href="../../">Mathematical Analysis</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/Julia-KAERI/MathematicalAnalysis" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
     </div>
       </div>
@@ -148,11 +154,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">해석학의 기반</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
@@ -230,11 +236,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
@@ -263,6 +269,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-part2_riemann_integral" id="toc-sec-part2_riemann_integral" class="nav-link" data-scroll-target="#sec-part2_riemann_integral"><span class="header-section-number">10.1.1</span> 리만 적분</a></li>
   <li><a href="#sec-part2_stieltjes_integral" id="toc-sec-part2_stieltjes_integral" class="nav-link" data-scroll-target="#sec-part2_stieltjes_integral"><span class="header-section-number">10.1.2</span> 스틸체스 적분</a></li>
+  <li><a href="#sec-part2_stieltjes_integrability" id="toc-sec-part2_stieltjes_integrability" class="nav-link" data-scroll-target="#sec-part2_stieltjes_integrability"><span class="header-section-number">10.1.3</span> 스틸체스 적분 가능의 조건들</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -525,6 +532,66 @@ L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} 
 \]</span></p>
 <p>이다.</p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(L(f,\,P,\,\alpha) \le \sum f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)\)</span> 이며 <span class="math inline">\(L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)\)</span> 이므로 성립한다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-part2_stieltjes_integrability" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="sec-part2_stieltjes_integrability"><span class="header-section-number">10.1.3</span> 스틸체스 적분 가능의 조건들</h3>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part2_continuity_and_integrability" class="theorem">
+<p><span class="theorem-title"><strong>정리 10.4</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 연속이면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 에서 스틸체스 적분가능하다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>주어진 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\([\alpha(b)-\alpha(a)]&lt;\varepsilon/\eta\)</span> 가 되도록 <span class="math inline">\(\eta\)</span> 를 잡자. <a href="2_3_continuity_of_functions.html#thm-part2_uniform_continuity_and_compact_set" class="quarto-xref">정리&nbsp;<span>8.7</span></a> 에 의해 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 에서 고른연속며, 따라서 <span class="math inline">\(x,\,t\in [a,\,b]\)</span> 일 때</p>
+<p><span class="math display">\[
+|x-t| &lt;\delta \implies |f(x)-f(t)|&lt;\eta
+\]</span></p>
+<p>인 <span class="math inline">\(\delta &gt;0\)</span> 이 존재한다. <span class="math inline">\(P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]\)</span> 가 모든 <span class="math inline">\(i\)</span> 에 대해 <span class="math inline">\(x_{i}-x_{i-1}&lt;\delta\)</span> 가 되도록 잡을 수 있으며 이 경우</p>
+<p><span class="math display">\[
+M_i-m_i \le \eta
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+U(f,\,P,\,\alpha) - L(f,\,P,\, \alpha) = \sum_{i=1}^n (M_i-m_i) \Delta \alpha_i &lt;\varepsilon
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(f\)</span> 는 스틸체스 적분가능하다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part2_monitonic_function_and_integrability" class="theorem">
+<p><span class="theorem-title"><strong>정리 10.5</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 단조함수이며 <span class="math inline">\(\alpha\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 연속이면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분가능 함수이다. (당연히 <span class="math inline">\(\alpha\)</span> 는 단조증가함수이다.)</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varepsilon&gt;0\)</span> 을 고정시킨다. 임의의 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해</p>
+<p><span class="math display">\[
+\Delta \alpha_i = \alpha (x_i) - \alpha(x_{i-1}) =\dfrac{\alpha(b)-\alpha (a)}{n}
+\]</span></p>
+<p>이 되도록 <span class="math inline">\(x_0,\ldots,\,x_n\)</span> 을 정할 수 있다. 이것은 <span class="math inline">\(\alpha\)</span> 가 단조증가인 연속함수이므로 사잇값 정리(<a href="2_3_continuity_of_functions.html#thm-part2_intermediate_value_theorem" class="quarto-xref">정리&nbsp;<span>8.8</span></a>) 에 따라 항상 가능하다. <span class="math inline">\(\Delta \alpha_i\)</span> 가 상수이므로 <span class="math inline">\(\Delta \alpha\)</span> 라고 하자.</p>
+<p><span class="math inline">\(f\)</span> 가 단조증가함수라고 가정하자. 그렇다면 <span class="math inline">\(M_i = f(x_i),\, m_i = f(x_{i-1})\)</span> 이며</p>
+<p><span class="math display">\[
+\begin{aligned}
+U(f,\,P,\,\alpha)- L(f,\,P,\,\alpha) = \Delta\alpha \sum_{i=1}^n (M_i-m_i) = \Delta \alpha (f(b)-f(a))
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\Delta \alpha = \dfrac{\alpha(b)-\alpha(a)}n &lt; \dfrac{\varepsilon}{f(b)-f(a)}
+\]</span></p>
+<p>가 되도록 <span class="math inline">\(n\)</span> 을 충분히 크게 잡으면 <a href="#thm-part2_properties_of_stieltjes_integral_1" class="quarto-xref">정리&nbsp;<span>10.3</span></a> 에 따라 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분 가능함을 알 수 있다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part3_discontinuity_and_integrability" class="theorem">
+<p><span class="theorem-title"><strong>정리 10.6</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\([a,\,b]\)</span> 구간에서 유한개의 불연속점을 가지며, <span class="math inline">\(\alpha\)</span> 는 <span class="math inline">\(f\)</span> 의 불연속점에서 연속이라고 하자. <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분가능하다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varepsilon&gt;0\)</span> 을 고정시키자. <span class="math inline">\(M=\sup \{|f(x)|:x\in [a,\,b]\}\)</span> 이며 <span class="math inline">\(E\)</span> 를 <span class="math inline">\(f\)</span> 에서의 불연속점의 집합이라고 하자.</p>
 </div>
 
 

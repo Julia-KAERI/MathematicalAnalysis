@@ -341,5 +341,101 @@ $$
 
 ($3$) $L(f,\,P,\,\alpha) \le \sum f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)$ 이며 $L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)$ 이므로 성립한다. $\square$
 
+:::
+
+</br>
+
+### 스틸체스 적분 가능의 조건들 {#sec-part2_stieltjes_integrability}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_continuity_and_integrability}
+
+$f:[a,\,b] \to \R$ 이 연속이면 $f$ 는 $[a,\,b]$ 에서 스틸체스 적분가능하다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+주어진 $\varepsilon>0$ 에 대해 $[\alpha(b)-\alpha(a)]<\varepsilon/\eta$ 가 되도록 $\eta$ 를 잡자. @thm-part2_uniform_continuity_and_compact_set 에 의해 $f$ 는 $[a,\,b]$ 에서 고른연속며, 따라서 $x,\,t\in [a,\,b]$ 일 때
+
+$$
+|x-t| <\delta \implies |f(x)-f(t)|<\eta
+$$
+
+인 $\delta >0$ 이 존재한다. $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 가 모든 $i$ 에 대해 $x_{i}-x_{i-1}<\delta$ 가 되도록 잡을 수 있으며 이 경우
+
+$$
+M_i-m_i \le \eta
+$$
+
+이므로
+
+$$
+U(f,\,P,\,\alpha) - L(f,\,P,\, \alpha) = \sum_{i=1}^n (M_i-m_i) \Delta \alpha_i <\varepsilon
+$$
+
+이다. 따라서 $f$ 는 스틸체스 적분가능하다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_monitonic_function_and_integrability}
+
+$f:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 단조함수이며 $\alpha$ 가 $[a,\,b]$ 에서 연속이면 $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능 함수이다. (당연히 $\alpha$ 는 단조증가함수이다.)
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$\varepsilon>0$ 을 고정시킨다. 임의의 $n \in \mathbb{Z}_+$ 에 대해 
+
+$$
+\Delta \alpha_i = \alpha (x_i) - \alpha(x_{i-1}) =\dfrac{\alpha(b)-\alpha (a)}{n} 
+$$
+
+이 되도록 $x_0,\ldots,\,x_n$ 을 정할 수 있다. 이것은 $\alpha$ 가 단조증가인 연속함수이므로 사잇값 정리(@thm-part2_intermediate_value_theorem) 에 따라 항상 가능하다. $\Delta \alpha_i$ 가 상수이므로 $\Delta \alpha$ 라고 하자.
+
+$f$ 가 단조증가함수라고 가정하자. 그렇다면 $M_i = f(x_i),\, m_i = f(x_{i-1})$ 이며
+
+$$
+\begin{aligned}
+U(f,\,P,\,\alpha)- L(f,\,P,\,\alpha) = \Delta\alpha \sum_{i=1}^n (M_i-m_i) = \Delta \alpha (f(b)-f(a))
+\end{aligned}
+$$
+
+이므로 
+
+$$
+\Delta \alpha = \dfrac{\alpha(b)-\alpha(a)}n < \dfrac{\varepsilon}{f(b)-f(a)}
+$$
+
+가 되도록 $n$ 을 충분히 크게 잡으면 @thm-part2_properties_of_stieltjes_integral_1 에 따라 $f$ 가 $\alpha$ 에 대해 스틸체스 적분 가능함을 알 수 있다. $\square$
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_discontinuity_and_integrability}
+
+$f:[a,\,b] \to \R$ 가 유계이며 $[a,\,b]$ 구간에서 유한개의 불연속점을 가지며, $\alpha$ 는 $f$ 의 불연속점에서 연속이라고 하자. $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능하다. 
+:::
+
+</div></br>
+
+::: {.proof}
+
+$\varepsilon>0$ 을 고정시키자. $M=\sup \{|f(x)|:x\in [a,\,b]\}$ 이며 $E$ 를 $f$ 에서의 불연속점의 집합이라고 하자. 
+
 
 :::
