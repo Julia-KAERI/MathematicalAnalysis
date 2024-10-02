@@ -260,7 +260,7 @@ $$
 
 ::: {.solution}
 
-($a$) $\mathbb{Z}^\omega \subset \mathbb{R}^\omega$ (see @exr-munkres_1_5_3).
+($a$) $\mathbb{Z}^\omega \subset \mathbb{R}^\omega$ (see @exr-part1_munkres_1_5_3).
 
 ($b$) $B_m =\{x\in \mathbb{R}: x\ge m\} \subset \mathbb{R}$ 이다. $\prod_{m=1} B_m \subset \mathbb{R}^\omega$.
 

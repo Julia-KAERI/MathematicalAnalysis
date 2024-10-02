@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mathematical Analysis - 10&nbsp; 리만-스틸체스 적분</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/figures/figures.html" rel="next">
+<link href="../../src/part2/2_4_differentiation.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part2/part2.html">일변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part2/2_5_riemann_stieltjes_integral.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Mathematical Analysis</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">해석학의 기반</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_2_functions_and_relations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">함수와 관계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_3_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_4_cartesian_products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">일변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_1_basic_topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">기본적인 위상수학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_2_sequences_and_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_3_continuity_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">함수의 연속성</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_4_differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_5_riemann_stieltjes_integral.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">그림들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#적분의-정의와-존재" id="toc-적분의-정의와-존재" class="nav-link active" data-scroll-target="#적분의-정의와-존재"><span class="header-section-number">10.1</span> 적분의 정의와 존재</a>
+  <ul class="collapse">
+  <li><a href="#sec-part2_riemann_integral" id="toc-sec-part2_riemann_integral" class="nav-link" data-scroll-target="#sec-part2_riemann_integral"><span class="header-section-number">10.1.1</span> 리만 적분</a></li>
+  <li><a href="#sec-part2_stieltjes_integral" id="toc-sec-part2_stieltjes_integral" class="nav-link" data-scroll-target="#sec-part2_stieltjes_integral"><span class="header-section-number">10.1.2</span> 스틸체스 적분</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part2/part2.html">일변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part2/2_5_riemann_stieltjes_integral.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
+<section id="적분의-정의와-존재" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="적분의-정의와-존재"><span class="header-section-number">10.1</span> 적분의 정의와 존재</h2>
+<p>이 장에서의 <span class="math inline">\(f:E\subset\mathbb{R}\to \mathbb{R}\)</span> 은 특별한 언급이 없는 한 유계인 함수이다.</p>
+<section id="sec-part2_riemann_integral" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="sec-part2_riemann_integral"><span class="header-section-number">10.1.1</span> 리만 적분</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part2_partition" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 10.1 (분할)</strong></span> 닫힌 구간 <span class="math inline">\([a,\,b]\)</span> 에서 어떤 유한개의 점 <span class="math inline">\(x_0,\ldots,\,x_n\)</span> 이</p>
+<p><span class="math display">\[
+a=x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_{n-1}&lt; x_n = b
+\]</span></p>
+<p>일 때 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\)</span> 를 <span class="math inline">\([a,\,b]\)</span> 의 <strong>분할 (partition)</strong> 이라고 한다. 또한 <span class="math inline">\([a,\,b]\)</span> 구간에서의 분할 전체를 <span class="math inline">\(\mathcal{P}[a,\,b]\)</span> 라고 표기한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part2_upper_lower_riemann_sum" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 10.2 (리만 상합, 리만 하합)</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R},\, P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_i &amp;:= \sup f([x_{i-1},\,x_{i}]), \\[0.2em]
+m_i &amp;:= \inf f([x_{i-1},\,x_{i}]). \\
+\end{aligned}
+\]</span></p>
+<p>라고 하자. 이 때 <strong>리만 상합(Riemann upper sum)</strong> <span class="math inline">\(U(f,\,P)\)</span> 와 <strong>리만 하합 (Riemann lower sum)</strong> <span class="math inline">\(L(f,\,P)\)</span> 는 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+U(f,\,P) &amp;:= \sum_{i=1}^n M_i (x_{i}-x_{i-1}), \\[0.2em]
+L(f,\,P) &amp;:= \sum_{i=1}^n m_i (x_{i}-x_{i-1}).
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part2_properties_of_rieman_sum_1" class="theorem">
+<p><span class="theorem-title"><strong>정리 10.1</strong></span> <span class="math inline">\(P_1,\,P_2\in \mathcal{P}[a,\,b]\)</span> 이며 <span class="math inline">\(P_1 \subset P_2\)</span> 일 때 다음이 성립한다.</p>
+<p><span id="eq-part2_inequalitiy_of_riemann_sum_1"><span class="math display">\[
+L(f,\, P_1) \le L(f,\,P_2) \le U(f,\,P_2) \le U(f,\,P_1)
+\tag{10.1}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(L(f,\,P) \le U(f,\,P)\)</span> 임은 자명하다. <span class="math inline">\(P_1\)</span> 에 의한 부분구간 <span class="math inline">\([x_{k-1},\,x_k]\)</span> 의 에 대해 <span class="math inline">\(z_m=x_{k-1} &lt; z_{m+1}&lt; \cdots &lt;z_{m+n} = x_k\)</span> 라고 하자. <span class="math inline">\(j=0,\ldots,\,n-1\)</span> 에 대해 <span class="math inline">\(\inf f([z_{m+j},\, z_{m+j+1}]) \le \inf f[(x_{k-1},\, x_{k})]\)</span> 이므로 <span class="math inline">\(L(f,\, P_1) \le L(f,\,P_2)\)</span> 이다. 같은 방법으로 <span class="math inline">\(U(f,\,P_2) \le U(f,\,P_2)\)</span> 를 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-part2_properties_of_rieman_sum_2" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 10.1</strong></span> 임의의 <span class="math inline">\(P_1,\, P_2\in \mathcal{P}[a,\,b]\)</span> 에 대해 다음이 성립한다.</p>
+<p><span id="eq-part2_inequalitiy_of_riemann_sum_2"><span class="math display">\[
+L(f,\,P_1) \le U(f,\, P_2)
+\tag{10.2}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P = P_1 \cup P_2\)</span> 라고 하면 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 이며, <span class="math inline">\(P_1\subset P,\, P_2 \subset P\)</span> 이므로</p>
+<p><span class="math display">\[
+L(f,\, P_1) \le L(f,\, P) \le U(f,\, P) \le U(f,\, P_2)
+\]</span></p>
+<p>이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part2_riemann_integral" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 10.3 (리만 적분)</strong></span> <a href="#def-part2_upper_lower_riemann_sum" class="quarto-xref">정의&nbsp;<span>10.2</span></a> 에 대해</p>
+<p><span id="eq-part2_riemann_upper_lower_integral"><span class="math display">\[
+\begin{aligned}
+\overline{{\int}_{a}^b} f\,dx := \inf \{U(P,\,f): P\in \mathcal{P}[a,\,b]\}, \\[0.3em]
+\underline{{\int}_{a}^{b}} f\,dx := \sup \{L(P,\,f): P\in \mathcal{P}[a,\,b]\}.
+\end{aligned}
+\tag{10.3}\]</span></span></p>
+<p>를 각각 <strong>리만 상적분 (Riemann upper integral)</strong> 과 <strong>리만 하적분 (Riemann lower integral)</strong> 이라고 한다. 리만 상적분과 리만 하적분 값이 같을 때 그 값을 <strong>리만적분 (Riemann integral)</strong> 이라고 하며</p>
+<p><span class="math display">\[
+\int_{a}^b f\,dx \qquad\text{or}\qquad  \int_a^b f(x)\,dx
+\]</span></p>
+<p>라고 쓴다. <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(f\)</span> 의 리만적분이 존재한다면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 구간에서 리만적분이 가능하다고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><span class="math inline">\(f\)</span> 가 유계이므로 <span class="math inline">\(M=\sup f([a,\,b])\)</span> 와 <span class="math inline">\(m=\inf f([a,\,b])\)</span> 가 존재한다. <a href="#thm-part2_properties_of_rieman_sum_1" class="quarto-xref">정리&nbsp;<span>10.1</span></a> 에 따라 임의의 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
+<p><span class="math display">\[
+m(b-a) \le L(f,\, P) \le U(f,\,P) \le M(b-a)
+\]</span></p>
+<p>가 성립하므로 <span class="math inline">\(L(f,\,P)\)</span> 와 <span class="math inline">\(U(f,\, P)\)</span> 는 유계이다.</p>
+<p><br></p>
+</section>
+<section id="sec-part2_stieltjes_integral" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="sec-part2_stieltjes_integral"><span class="header-section-number">10.1.2</span> 스틸체스 적분</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part2_stieltjes_integral" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 10.4 (스틸체스 적분)</strong></span> <span class="math inline">\(\alpha :[a,\,b]\to \mathbb{R}\)</span> 이 단조증가함수일 때 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
+<p><span class="math display">\[
+\Delta \alpha_i := \alpha (x_i)- \alpha (x_{i-1})
+\]</span></p>
+<p>라고 하자. <span class="math inline">\(\Delta \alpha_i \ge 0\)</span> 임은 자명하다. <span class="math inline">\([a,\,b]\)</span> 구간에서 유게인 함수 <span class="math inline">\(f\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+U(f,\, P,\, \alpha) &amp;:= \sum_{i=1}^n M_i \Delta \alpha_i, \\[0.2em]
+L(f,\, P,\, \alpha) &amp;:= \sum_{i=1}^n m_i \Delta \alpha_i
+\end{aligned}
+\]</span></p>
+<p>라고 하자. <span class="math inline">\(M_i,\, m_i\)</span> 는 <a href="#def-part2_upper_lower_riemann_sum" class="quarto-xref">정의&nbsp;<span>10.2</span></a> 에서와 같다. 이 때</p>
+<p><span id="eq-part2_upper_and_lower_stieltjes_sum"><span class="math display">\[
+\begin{aligned}
+\overline{\int_{a}^b} f\, d\alpha &amp;:= \inf \{ U(f,\, P,\, \alpha): P\in \mathcal{P}[a,\,b]\} \\[0.2em]
+\underline{\int_a^b} f\, d\alpha &amp;:= \sup \{ L(f,\, P,\, \alpha) : P \in \mathcal{P}[a,\,b]\}
+\end{aligned}
+\tag{10.4}\]</span></span></p>
+<p>라고 하자. 두 값이 같을 때 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\alpha\)</span> 에 대해 <strong>스틸체스 적분 (Stieltjes integral)</strong> 이 가능하다고 하며</p>
+<p><span class="math display">\[
+\int_a^b f\, d\alpha, \qquad \text{or} \qquad \int_a^b f(x)\, d\alpha(x)
+\]</span></p>
+<p>라고 쓴다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><span class="math inline">\(\alpha(x)=x\)</span> 일 경우 스틸체스 적분은 리만 적분이 된다. 즉 리만 적분은 스틸체스 적분의 특수한 형태이다. 이제 <a href="#thm-part2_properties_of_rieman_sum_1" class="quarto-xref">정리&nbsp;<span>10.1</span></a> 과 <a href="#cor-part2_properties_of_rieman_sum_2" class="quarto-xref">따름정리&nbsp;<span>10.1</span></a> 가 스틸체스 적분의 형태에 대해서도 성립함을 보일 수 있다.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part2_properties_of_stieltjes_sum_1" class="theorem">
+<p><span class="theorem-title"><strong>정리 10.2</strong></span> <span class="math inline">\(P_1,\,P_2\in \mathcal{P}[a,\,b]\)</span> 이며 <span class="math inline">\(P_1 \subset P_2\)</span> 일 때 다음이 성립한다.</p>
+<p><span id="eq-part2_inequalitiy_of_stieltjes_sum_1"><span class="math display">\[
+L(f,\, P_1,\, \alpha) \le L(f,\,P_2,\,\alpha) \le U(f,\,P_2,\alpha) \le U(f,\,P_1,\, \alpha)
+\tag{10.5}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-part2_properties_of_stieltjes_sum_2" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 10.2</strong></span> 임의의 <span class="math inline">\(P_1,\, P_2\in \mathcal{P}[a,\,b]\)</span> 에 대해 다음이 성립한다.</p>
+<p><span id="eq-part2_inequalitiy_of_stieltjes_sum_2"><span class="math display">\[
+L(f,\,P_1,\, \alpha) \le U(f,\, P_2,\, \alpha)
+\tag{10.6}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<p>또한 <a href="#thm-part2_properties_of_stieltjes_sum_1" class="quarto-xref">정리&nbsp;<span>10.2</span></a> 로부터 다음을 알 수 있다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-part2_properties_of_stieltjes_sum_3" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 10.3</strong></span> <span class="math inline">\(\displaystyle \underline{\int_a^b} f\, d\alpha \le \overline{\int_a^b} f\, d\alpha\)</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part2_properties_of_stieltjes_integral_1" class="theorem">
+<p><span class="theorem-title"><strong>정리 10.3</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 유계이며 <span class="math inline">\(\alpha:[a,\,b]\to \mathbb{R}\)</span> 이 단조증가함수일 때 다음 두 명제는 동치이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분이 가능하다.</p>
+<p> (<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 다음을 만족하는 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 가 존재한다.</p>
+<p><span id="eq-part2_condition_for_stieltjes_integrablity"><span class="math display">\[
+U(f,\, P,\, \alpha) - L(f,\, P,\, \alpha) &lt;\varepsilon.
+\tag{10.7}\]</span></span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <a href="#eq-part2_upper_and_lower_stieltjes_sum" class="quarto-xref">식&nbsp;<span>10.4</span></a> 과 스틸체스 적분의 정의로부터 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
+<p><span class="math display">\[
+U(f,\, P_1,\, \alpha) - \int_a^b f\, d\alpha &lt; \dfrac{\varepsilon}{2}
+\]</span></p>
+<p>를 만족하는 <span class="math inline">\(P_1\in \mathcal{P}[a,\,b]\)</span> 가 존재한다. 또한</p>
+<p><span class="math display">\[
+\int_a^b f\, d\alpha -L(f,\, P,\, \alpha) &lt; \dfrac{\varepsilon}{2}
+\]</span></p>
+<p>를 만족하는 <span class="math inline">\(P_2 \in \mathcal{P}[a,\,b]\)</span> 도 존재한다. <span class="math inline">\(P =P_1 \cup P_2 \in P[a,\,b]\)</span> 에 대해서도 위의 두 부등식이 성립하므로 여기서의 부등식을 더하면 (<span class="math inline">\(2\)</span>) 가성립함을 안다.</p>
+<p>(<span class="math inline">\(2\implies 1\)</span>) <span class="math inline">\(P\in\mathcal{P}[a,\,b]\)</span> 이면</p>
+<p><span class="math display">\[
+L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} f\,d\alpha \le U(f,\, P,\,\alpha)
+\]</span></p>
+<p>이며 <a href="#eq-part2_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.7</span></a> 가 성립한다면 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
+<p><span class="math display">\[
+\overline{\int_a^b} f\,d\alpha -  \underline{\int_a^b}f\, d\alpha &lt;\varepsilon
+\]</span></p>
+<p>이 성립함을 의미한다. 즉 두 값은 같으며 따라서 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분 가능하다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part2_properties_of_stieltjes_integral_2" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 10.1</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 유계이며 <span class="math inline">\(\alpha:[a,\,b]\to \mathbb{R}\)</span> 이 단조증가함수일 때 다음이 성립한다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <a href="#eq-part2_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.7</span></a> 가 성립하면 <span class="math inline">\(P \subset Q\)</span> 인 <span class="math inline">\(Q\in \mathcal{P}[a,\,b]\)</span> 에 대해서도 <a href="#eq-part2_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.7</span></a> 가 성립한다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}\)</span> 에 대해 <a href="#eq-part2_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.7</span></a> 가 성립하면 임의의 <span class="math inline">\(s_i,\, t\in \in [x_{i-1},\,x_i]\)</span> 에 대해 다음이 성립한다.</p>
+<p><span class="math display">\[
+\sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i &lt;\varepsilon.
+\]</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분가능하고 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <a href="#eq-part2_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.7</span></a> 가 성립하면 임의의 <span class="math inline">\(t_i \in [x_{i-1},\,x_i]\)</span> 에 대해 다음이 성립한다.</p>
+<p><span class="math display">\[
+\left| \sum_{i=1}^n f(t_i)\Delta \alpha_i - \int_a^b f\, d\alpha \right|&lt;\varepsilon.
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#thm-part2_properties_of_stieltjes_sum_1" class="quarto-xref">정리&nbsp;<span>10.2</span></a> .</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(|f(s_i)-s(t_i)| \le M_i - m_i\)</span> 이므로</p>
+<p><span class="math display">\[
+\sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i \le \sum_{i=1} (M_i-m_i) \Delta \alpha_i = U(f,\, P,\, \alpha)- L(f,\, P,\, \alpha) &lt; \varepsilon
+\]</span></p>
+<p>이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(L(f,\,P,\,\alpha) \le \sum f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)\)</span> 이며 <span class="math inline">\(L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)\)</span> 이므로 성립한다. <span class="math inline">\(\square\)</span></p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/part2/2_4_differentiation.html" class="pagination-link" aria-label="미분">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">미분</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/figures/figures.html" class="pagination-link" aria-label="그림들">
+        <span class="nav-page-text">그림들</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

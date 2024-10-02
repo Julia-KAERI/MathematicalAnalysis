@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mathematical Analysis - 3&nbsp; 수</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/part1/1_4_cartesian_products.html" rel="next">
+<link href="../../src/part1/1_2_functions_and_relations.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_3_numbers.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Mathematical Analysis</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">해석학의 기반</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_2_functions_and_relations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">함수와 관계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_3_numbers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_4_cartesian_products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">일변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_1_basic_topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">기본적인 위상수학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_2_sequences_and_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_3_continuity_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">함수의 연속성</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_4_differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_5_riemann_stieltjes_integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">그림들</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#실수-mathbbr" id="toc-실수-mathbbr" class="nav-link active" data-scroll-target="#실수-mathbbr"><span class="header-section-number">3.1</span> 실수 (<span class="math inline">\(\mathbb{R}\)</span>)</a></li>
+  <li><a href="#정수-mathbbz-와-유리수-mathbbq" id="toc-정수-mathbbz-와-유리수-mathbbq" class="nav-link" data-scroll-target="#정수-mathbbz-와-유리수-mathbbq"><span class="header-section-number">3.2</span> 정수 (<span class="math inline">\(\mathbb{Z}\)</span>) 와 유리수 (<span class="math inline">\(\mathbb{Q}\)</span>)</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_3_numbers.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="실수-mathbbr" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="실수-mathbbr"><span class="header-section-number">3.1</span> 실수 (<span class="math inline">\(\mathbb{R}\)</span>)</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_binary_operation" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.1 (이항 연산)</strong></span> 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(f:A\times A \to A\)</span> 를 <span class="math inline">\(A\)</span> 에 대한 <strong>이항연산(binary operation)</strong> 이라 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_field" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.2 (체(Field))</strong></span> 덧셈과 곱셈 이항연산이 정의된 집합 <span class="math inline">\(\mathbb{F}\)</span> 가 다음을 만족 할 때 <span class="math inline">\(\mathbb{F}\)</span> 를 <strong>체(Field)</strong> 라고 한다.</p>
+<p><strong>덧셈에 대한 공리</strong></p>
+<ol type="1">
+<li><p>[덧셈에 대해 닫혀있음] <span class="math inline">\(a,\,b\in \mathbb{F} \implies a+b\in \mathbb{F}\)</span>.</p></li>
+<li><p>[덧셈에 대한 결합법칙] <span class="math inline">\(a,\,b,\,c\in \mathbb{F} \implies a+(b+c)=(a+b)+c\)</span>.</p></li>
+<li><p>[덧셈의 항등원] <span class="math inline">\(\exists 0 \in \mathbb{F} \,\forall a\in \mathbb{F},\, a+0 = 0+a = a\)</span>.</p></li>
+<li><p>[덧셈의 역원] <span class="math inline">\(\forall a\in \mathbb{F} \exists x\in \mathbb{F}, \, a+x = x+a = 0\)</span>. 이 때 <span class="math inline">\(a+x=0\)</span> 이 되도록 하는 <span class="math inline">\(x\)</span> 를 <span class="math inline">\(a\)</span> 의 덧셈에 대한 역원이라고 하며 <span class="math inline">\(-a\)</span> 라고 쓴다. <span class="math inline">\(a+(-b)\)</span> 를 줄여서 <span class="math inline">\(a-b\)</span> 라고 쓴다.</p></li>
+<li><p>[덧셈에 대한 교환법칙] <span class="math inline">\(a,\,b\in \mathbb{F} \implies a+b=b+a\)</span>.</p></li>
+</ol>
+<p><strong>곱셈에 대한 공리</strong></p>
+<ol start="6" type="1">
+<li><p>[곱셈에 대해 닫혀 있음] <span class="math inline">\(a,\,b\in \mathbb{F}\implies ab\in \mathbb{F}\)</span>.</p></li>
+<li><p>[곱셈애 대한 결합법칙] <span class="math inline">\(a,\,b,\,c \in \mathbb{F}\implies (ab)c = a(bc)\)</span>.</p></li>
+<li><p>[곱셈의 항등원] <span class="math inline">\(\exists 1 \in \mathbb{F},\, \forall a\in \mathbb{F},\, a\ne 1 \implies a1 = 1a = 1\)</span>.</p></li>
+<li><p>[곱셈에 대한 역원] <span class="math inline">\(\forall a\in \mathbb{F}\backslash \{0\} \, \exists x\in \mathbb{F},\, ax=xa=1\)</span>. 이 때 <span class="math inline">\(x\)</span> 를 <span class="math inline">\(a\)</span> 에 대한 곱셈의 역원이라고 하며 <span class="math inline">\(1/a\)</span> 혹은 <span class="math inline">\(a^{-1}\)</span> 이라고 쓴다.</p></li>
+<li><p>[곱셍에 대한 결합법칙] <span class="math inline">\(a,\,b\in\mathbb{F}, ab=ba\)</span>.</p></li>
+</ol>
+<p><strong>분배법칙</strong></p>
+<ol start="11" type="1">
+<li>[분배법칙] <span class="math inline">\(a,\,b,\,c \in \mathbb{F} \implies a(b+c)= ab + ac\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_ordered_field" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.3 (음수와 양수, 순서체(Ordered field))</strong></span> 체 <span class="math inline">\(\mathbb{F}\)</span> 가 전순서 집합일 때 <span class="math inline">\(x&lt;0\)</span> 이면 <span class="math inline">\(x\)</span> 를 음수라 한다. <span class="math inline">\(0&lt;y\)</span> 이면 <span class="math inline">\(y\)</span> 를 양수라 한다. <span class="math inline">\(x&lt;y\)</span> 일 때 <span class="math inline">\(y&gt;x\)</span> 라 쓸 수 있다.</p>
+<p>체 <span class="math inline">\(\mathbb{F}\)</span> 가 전순서 집합이며 다음 성질을 만족하면 <span class="math inline">\(\mathbb{F}\)</span> 를 <strong>순서체 (ordered field)</strong> 라 한다.</p>
+<ol start="12" type="1">
+<li><p><span class="math inline">\(x &lt; y\implies x+z &lt; y+z\)</span>,</p></li>
+<li><p><span class="math inline">\(x&gt;y,\, z&gt;0 \implies xz &gt; yz\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_linear_continuum" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.4 (Linear continuum)</strong></span> 아래의 성질을 가지는 집합을 <strong>linear continuum</strong> 이라 한다.</p>
+<ol start="14" type="1">
+<li>관계 <span class="math inline">\(&lt;\)</span> 는 최소 상계 성질을 가진다.</li>
+<li><span class="math inline">\(x&lt;y\)</span> 일 때 <span class="math inline">\(x&lt;z&lt;y\)</span> 인 <span class="math inline">\(z\)</span> 가 집합 내에 존재한다.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><b>실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 의 존재 가정</b></p>
+<p>Linear continuum 이며 순서체인 실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 이 존재한다.</p>
+</div>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part1_linear_continuum_is_dense" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 3.1</strong></span> <span class="math inline">\(\mathbb{F}\)</span> 가 선형 연속체이고 <span class="math inline">\(x,\, y\in \mathbb{F},\, x&lt;y\)</span> 이면 <span class="math inline">\(x&lt;z,\, z&lt;y\)</span> 를 만족하는 <span class="math inline">\(z\in \mathbb{F}\)</span> 가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(x+x&lt;x+y&lt;y+y\)</span> 이며 <span class="math inline">\(1/2&gt;0\)</span> 이므로 <span class="math inline">\(x&lt;\dfrac{x+y}{2} &lt;y\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p>실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 은 선형 연속체이다.</p>
+<p><br></p>
+</section>
+<section id="정수-mathbbz-와-유리수-mathbbq" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="정수-mathbbz-와-유리수-mathbbq"><span class="header-section-number">3.2</span> 정수 (<span class="math inline">\(\mathbb{Z}\)</span>) 와 유리수 (<span class="math inline">\(\mathbb{Q}\)</span>)</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_positive_integer" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.5 (양의 정수)</strong></span> <span class="math inline">\(A\subset \mathbb{R}\)</span> 이 다음 성질을 가지면 <strong>귀납적(inductive)</strong> 하다고 한다. </p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(1\in A\)</span>,</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(n\in A \implies n+1 \in A\)</span>.</p>
+<p><span class="math inline">\(\mathcal{A}\)</span> 를 inductive 한 집합의 집합족이라 할 때, 다음과 같이 정의된 <span class="math inline">\(\mathbb{Z}_+\)</span> 를 양의 정수라 한다.</p>
+<p><span class="math display">\[
+\mathbb{Z}_+ = \bigcap_{A\in \mathcal{A}}A.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><span class="margin-aside callout-margin-content callout-margin-content-simple">수학에서의 귀납적(inductive)이라는 말은 논리학에서의 귀납법과는 무관하다.</span></div><p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part1_positive_integers_are_inductive" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 3.2</strong></span> 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\mathbb{Z}_+\)</span> 는 귀납적이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathbb{Z}_+\)</span> 의 귀납적인 부분집합은 <span class="math inline">\(\mathbb{Z}_+\)</span> 뿐이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 은 쉽게 보일 수 있다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(A\subset \mathbb{Z}_+\)</span> 가 귀납적이라면 <span class="math inline">\(Z_+ \subset A\)</span> 이어야 하므로 <span class="math inline">\(Z_+ = A\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_integer" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.6 (정수)</strong></span> 정수 <span class="math inline">\(\mathbb{Z}\)</span> 는 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+\mathbb{Z}= \mathbb{Z}_+ \cup \{0\} \cup \{-z: z\in \mathbb{Z}_+\}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_rational_irrational" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.7 (유리수(rational number) 와 무리수(irrational number))</strong></span> 아래와 같이 정의된 <span class="math inline">\(\mathbb{Q}\)</span> 의 원소를 <strong>유리수</strong> 라 한다. 어떤 실수가 유리수가 아니면 <strong>무리수</strong> 라 한다. <span class="math display">\[
+\mathbb{Q} = \left\{\dfrac{p}{q} : p\in \mathbb{Z},\, q\in \mathbb{Z}\backslash\{0\}\right\}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part1_section" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 3.8 (Section)</strong></span> 양의 정수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(1\)</span> 보다 크거나 같고 <span class="math inline">\(n\)</span> 보다 작은 양의 정수의 집합을 <strong>section</strong> 이라 하며 <span class="math inline">\(S_n\)</span> 으로 쓴다.</p>
+<p><span class="math display">\[
+S_n = \{m\in \mathbb{Z}_+ : 1\le m &lt; n\}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part1_well_ordering_property" class="theorem">
+<p><span class="theorem-title"><strong>정리 3.1 (양의 정수의 정렬성)</strong></span> 모든 공집합이 아닌 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 부분집합은 최소값을 가진다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 다음을 보인다.</p>
+<blockquote class="blockquote">
+<p>각각의 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 의 공집합이 아닌 부분집합은 최소값을 가진다.</p>
+</blockquote>
+<p><span class="math inline">\(A\)</span> 를 위 명제가 성립하는 양의 정수의 집합이라 하자. <span class="math inline">\(1\in A\)</span> 임은 자명하다. 이제 <span class="math inline">\(n\in A \implies n+1\in A\)</span> 임을 보이자. <span class="math inline">\(\{1,\,2,\ldots,n+1\}\)</span> 의 부분집합 <span class="math inline">\(C\)</span> 를 생각하자. <span class="math inline">\(C=\{n+1\}\)</span> 일 경우 최소값은 <span class="math inline">\(n+1\)</span> 이다. <span class="math inline">\(C\)</span> 가 <span class="math inline">\(n+1\)</span> 이외의 원소를 포함한다면 <span class="math inline">\(C \cap \{1,\ldots,\,n\} \ne \varnothing\)</span> 이며 <span class="math inline">\(n\in A\)</span> 이므로 <span class="math inline">\(C\cap \{1,\ldots,n\}\)</span> 에 최소값이 존재하며 그것은 <span class="math inline">\(n+1\)</span> 보다 크므로 <span class="math inline">\(C\)</span> 의 최소값이다. 즉 <span class="math inline">\(A\)</span> 는 inductive 하며 <a href="#prp-part1_positive_integers_are_inductive" class="quarto-xref">명제&nbsp;<span>3.2</span></a> 에 의해 <span class="math inline">\(A=\mathbb{Z}_+\)</span> 이다. 즉 위의 명제가 성립함을 보였다.</p>
+<p>이제 모든 공집합이 아닌 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 부분집합은 최소값을 가진다는 것을 보이자. <span class="math inline">\(D\)</span> 가 공집합이 아닌 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 부분집이라 하자. 임의의 <span class="math inline">\(m \in D\)</span> 에 대해 <span class="math inline">\(A=D\cap \{1,\ldots,m\}\ne \varnothing\)</span> 이며 <span class="math inline">\(A\)</span> 는 <span class="math inline">\(\{1,\ldots,m\}\)</span> 의 부분집합이므로 최소값 <span class="math inline">\(k\)</span> 를 가진다. 이 <span class="math inline">\(k\)</span> 가 <span class="math inline">\(D\)</span> 의 최소값임은 자명하다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part1_strong_induction_principle" class="theorem">
+<p><span class="theorem-title"><strong>정리 3.2 (강한 귀납법)</strong></span> <span class="math inline">\(A\subset \mathbb{Z}_+\)</span> 이며 각각의 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해</p>
+<p><span class="math display">\[
+S_n \subset A \implies n\in A
+\]</span></p>
+<p>이 성립하면 <span class="math inline">\(A=\mathbb{Z}_+\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(\varnothing = S_1 \subset A\)</span> 이므로 <span class="math inline">\(1\in A\)</span> 이다. <span class="math inline">\(A\ne \mathbb{Z}_+\)</span> 이면 <span class="math inline">\(B=\mathbb{Z}_+-A\ \ne \varnothing\)</span> 이며 <span class="math inline">\(B \subset \mathbb{Z}_+\)</span> 이므로 <span class="math inline">\(B\)</span> 의 최소값 <span class="math inline">\(m\)</span> 이 존재한다. <span class="math inline">\(m \not\in A\)</span> 이므로 <span class="math inline">\(m \ne 1\)</span> 이다. 그런데 <span class="math inline">\(S_m\subset A\)</span> 이므로 <span class="math inline">\(m\in A\)</span> 인데 이는 모순된다. 따라서 <span class="math inline">\(A=\mathbb{Z}_+\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part1_archmedian_ordering_property" class="theorem">
+<p><span class="theorem-title"><strong>정리 3.3 (아르키메데스의 성질)</strong></span> <span class="math inline">\(\mathbb{Z}_+\)</span> 는 위로 유계가 아니다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\mathbb{Z}_+\)</span> 가 위로 유계임을 가정하자. 실수의 최소 상계 성질에 의해 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 상한 <span class="math inline">\(r\in \mathbb{R}\)</span> 이 존재한다. 즉 <span class="math inline">\(n\in \mathbb{Z}_+ \implies n \le r\)</span> 이다. 그렇다면 어떤 <span class="math inline">\(m\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(m&gt;r-1\)</span> 이다. 그렇지 않다면 <span class="math inline">\(r-1\)</span> 이 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 상계이므로 <span class="math inline">\(r\)</span> 이 최소상계라는 가정에 모순된다.</p>
+<p><span class="math inline">\(m\in \mathbb{Z}_+\)</span> 이므로 귀납적 성질에 의해 <span class="math inline">\(m+1\in \mathbb{Z}_+\)</span> 인데 <span class="math inline">\(m+1&gt;r\)</span> 이다. 즉 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 위로 유계가 아니다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-part1_archimedean_ordering_property" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 3.1</strong></span> 임의의 <span class="math inline">\(a\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(n&gt;a\)</span> 인 양의 정수 <span class="math inline">\(n\)</span> 이 존재한다. 또한 <span class="math inline">\(a\)</span> 가 양수일 경우 <span class="math inline">\(0&lt;\dfrac{1}{n}&lt;a\)</span> 인 자연수 <span class="math inline">\(n\)</span> 이 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-part1_archimedian_law" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 3.2 (아르키메데스의 법칙)</strong></span> 임의의 <span class="math inline">\(a&gt;0,\, b\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(na&gt;b\)</span> 를 만족하는 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 이 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="연습문제" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.1 (Munkres 1.4.1)</strong></span> 아래의 대수적 관계를 <a href="#def-part1_field" class="quarto-xref">정의&nbsp;<span>3.2</span></a> 의 공리를 이용하여 증명하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x+y=x\implies y=0\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+y&amp;=0+y &amp; \qquad &amp;;공리 \;3\\
+&amp;= (x+(-x))+y &amp; &amp;;공리 \;4\\
+&amp;=(x+y) + (-x) &amp; &amp;;공리 \;2 \\
+&amp;= x+(-x) &amp; &amp;;\text{문제의 조건 }x+y=x\;\\
+&amp;= 0
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(0 \cdot x = 0\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+x\cdot x &amp;= (x+0) \cdot x &amp; &amp;; 공리 \;3 \\
+&amp;= x\cdot x + 0 \cdot x &amp; &amp;; 공리 \;11
+\end{aligned}
+\]</span></p>
+<p>이며 (<span class="math inline">\(1\)</span>) 에 의해 <span class="math inline">\(0 \cdot x = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(-0 = 0\)</span></p>
+<p>공리 <span class="math inline">\(4\)</span> 에 의해 <span class="math inline">\(0 = (0)+ (-0)\)</span> 이며 (<span class="math inline">\(1\)</span>) 에 의해 <span class="math inline">\(-0=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(-(-x)=x\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+-(-x) &amp;= 0+(-(-x)) &amp; &amp;;공리 \;3\\
+&amp;= (x+(-x)) + (-(-x)) &amp; &amp;;공리\;4 \\
+&amp;=  x+ (-x+ (-(-x))) = x &amp; &amp;;공리\;4
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(x(-y)=-(xy) = (-x)y\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=x(y+(-y)) &amp; &amp; ;공리\;4 와 \;(2)\\
+&amp;= xy + x(-y) &amp; &amp;; 공리 \;11
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(x(-y) = -(xy)\)</span> 이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp; = (x+(-x))y &amp; &amp;; 공리 \;4 와\; (2)\\
+&amp;= xy + (-x)y &amp; &amp;; 공리 \; 11
+\end{aligned}
+\]</span> 이므로 <span class="math inline">\((-x)y = -(xy)\)</span> 이다.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\((-1)x=-x\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=(1-1)x  &amp; &amp;; (2), \; 공리 \; 4 \\
+&amp;= 1\cdot x + (-1)x &amp; &amp;; 공리 \;11 \\
+&amp;= x+(-1)x &amp; &amp;;공리 \;3
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\((-1)x = -x\)</span> 이다.</p>
+<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(x(y-z) = xy - xz\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+x(y-z) &amp;=  x(y+(-z)) \\
+&amp; =  xy + x(-z) &amp; &amp;; 공리 \;11\\
+&amp;= xy -xz &amp; &amp;;(5)
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(-(x+y) =  -x -y; -(x-y) = -x+y\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=(x+(-x))+ (y+(-y))  &amp; &amp;;공리 \;4 \\
+&amp;= (x+y) + (-x-y) &amp; &amp;; 공리 \;2,\, 공리\; 5 \\
+\implies &amp; -x-y = -(x+y), \\
+0 &amp;=(x+(-x)) + (y+(-y)) &amp; &amp;;공리 \;4 \\
+&amp;= (x-y)+ (-x+y) &amp; &amp; ; 공리 \;2,\, 공리 \; 5\\
+\implies&amp; -(x-y) = -x+y.
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(9\)</span>) <span class="math inline">\((x\ne 0) \land (x \cdot y =x) \implies y=1\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+y &amp;= 1 \cdot y  &amp; &amp;; 공리\;8  \\
+&amp;= (1/x \cdot x) \cdot y  &amp; &amp;; x\ne 0,\; 공리 \;9\\
+&amp;= 1/x  \cdot (xy) &amp; &amp;; 공리 \; 7 \\
+&amp;= 1/x \cdot x= 1 &amp; &amp;; 공리\; 9
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(10\)</span>) <span class="math inline">\(x\ne 0 \implies x/x=1\)</span></p>
+<p><span class="math inline">\(1/x\)</span> 의 정의.</p>
+<p>(<span class="math inline">\(11\)</span>) <span class="math inline">\(x/1=x\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+x/1 &amp;= (x\cdot 1)/1 &amp; &amp;;공리\;8 \\
+&amp;= x (1/ 1) &amp; &amp;; 공리\; 7\\
+&amp;= x\cdot 1 = x &amp; &amp;; 공리 \;8,\, 9
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(12\)</span>) <span class="math inline">\((x \ne 0)\land (y \ne 0) \implies xy \ne 0\)</span></p>
+<p><span class="math inline">\((xy)\cdot ((1/x) \cdot (1/y)) = x \cdot (1/x) \cdot y \cdot (1/y) =1\)</span> 이다. (<span class="math inline">\(2\)</span>) 에 의해 <span class="math inline">\(0 \cdot z = 1\)</span> 인 <span class="math inline">\(z\in \mathbb{R}\)</span> 이 존재하지 않으므로 <span class="math inline">\(xy\ne 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(13\)</span>) <span class="math inline">\(y,\, z\ne 0\)</span> 이면 <span class="math inline">\((1/y)(1/z) = 1/(yz)\)</span> 이다.</p>
+<p><span class="math inline">\((yz)(1/y)(1/z)= (y(1/y)) (z(1/z))=1\)</span> 이므로 <span class="math inline">\((1/y)(1/z)= 1/(yz)\)</span> 이다.</p>
+<p>(<span class="math inline">\(14\)</span>) <span class="math inline">\(y,\, z\ne 0\)</span> 이면 <span class="math inline">\((x/y)(w/z) = (xw)/(yz)\)</span> 이다.</p>
+<p><span class="math display">\[
+(x/y)(w/z) = (x \cdot (1/y))\cdot (w\cdot (1/z)) =  (xw) \cdot ((1/y)(1/z)) = (xw)(1/(yz)) =  (xw)/(yz)
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.2 (Munkres 1.4.2)</strong></span> 아래의 부등식 규칙을 <a href="#def-part1_field" class="quarto-xref">정의&nbsp;<span>3.2</span></a> 와 <a href="#def-part1_ordered_field" class="quarto-xref">정의&nbsp;<span>3.3</span></a> 의 공리를 이용하여 증명하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x&gt;y\)</span> 이고 <span class="math inline">\(w&gt;z\)</span> 이면 <span class="math inline">\(x+w &gt; y+z\)</span> 이다.</p>
+<p>공리 12 에 의해 <span class="math inline">\(x+w &gt; y+w\)</span> 이다. 역시 공리 11 에 의해 <span class="math inline">\(y+w &gt; y+z\)</span> 이다. 전순서 집합이므로 <span class="math inline">\(x+w &gt; y+z\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x&gt;0,\, y&gt;0\)</span> 이면 <span class="math inline">\(x+y&gt;0\)</span> 이며 <span class="math inline">\(x \cdot y &gt;0\)</span> 이다.</p>
+<p>공리 12 에 의해 <span class="math inline">\(x&gt;0 \implies x+y &gt; y\)</span> 이며 <span class="math inline">\(y &gt;0\)</span> 이므로 <span class="math inline">\(x+y&gt;0\)</span> 이다. 공리 13 에 의해 <span class="math inline">\(x&gt;0,\, y&gt;0\)</span> 이므로 <span class="math inline">\(x \cdot y &gt; 0 \cdot y = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(x&gt;0 \implies -x&lt;0\)</span>.</p>
+<p><span class="math inline">\(x&gt;0\)</span> 이므로 <span class="math inline">\(x+(-x)&gt; 0+(-x)\)</span> 이며 <span class="math inline">\(0&gt; -x\)</span> 이다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(x&gt;y \implies -x&lt;-y\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+x&gt;y &amp;\implies x-y &gt; y-y=0 &amp; &amp;; 공리 \; 12\\
+&amp;\implies -(x-y)&lt;0 &amp; &amp;;(3) \\
+&amp;\implies y-x&lt;0 \\
+&amp;\implies (y-x)-y &lt; 0-y &amp; &amp; \; 공리 \;12 \\
+&amp;\implies -x &lt; -y
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\((x&gt;y) \land (z&lt;0) \implies xz&lt;yz\)</span></p>
+<p>문제 (<span class="math inline">\(4\)</span>) 에 의해 <span class="math inline">\(0&gt;z\)</span> 이므로 <span class="math inline">\((-z)&gt;-0=0\)</span> 이다. 공리 13 에 의해 <span class="math inline">\(x(-z)&gt; y(-z)\)</span> 이며 <span class="math inline">\(-xz &gt; -yz\)</span> 이다. (<span class="math inline">\(4\)</span>) 에 의해 <span class="math inline">\(xz&lt;yz\)</span> 이다.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(x\ne 0 \implies x^2&gt;0\)</span>. 여기서 <span class="math inline">\(x^2 = x \cdot x\)</span> 이다.</p>
+<p><span class="math inline">\(x&gt;0\)</span> 이면 공리 13 에 의해 <span class="math inline">\(x\cdot x &gt; x \cdot 0 =0\)</span> 이다. <span class="math inline">\(x&lt;0\)</span> 이면 (<span class="math inline">\(5\)</span>) 에 의해 <span class="math inline">\(x \cdot x &gt;0\)</span> 이다.</p>
+<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(-1&lt;0&lt;1\)</span></p>
+<p>문제 (<span class="math inline">\(6\)</span>) 에 의해 <span class="math inline">\(1 = 1 \cdot 1 &gt;0\)</span> 이며 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(-1&lt;0\)</span> 이다.</p>
+<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(xy&gt;0 \iff x \text{ 와 } y \text{ 는 동시에 양수이거나 동시에 음수이다.}\)</span></p>
+<p><span class="math inline">\(x =0\)</span> 이거나 <span class="math inline">\(y=0\)</span> 이면 <span class="math inline">\(xy=0\)</span> 이므로 <span class="math inline">\(x\ne 0,\, y\ne 0\)</span> 일 때만 생각한다. <span class="math inline">\(x&gt;0,\, y&gt;0\)</span> 이면 공리 13 에 의해 <span class="math inline">\(xy&gt;0\)</span> 이다. <span class="math inline">\(x&lt;0,\, y&lt;0\)</span> 이면 문제 (<span class="math inline">\(5\)</span>) 의해 <span class="math inline">\(0=0 \cdot y&lt;x \cdot y\)</span> 이다. <span class="math inline">\(x&gt;0,\, y&lt;0\)</span> 이면 문제 (<span class="math inline">\(5\)</span>) 에 의해 <span class="math inline">\(x \cdot y &lt; 0 \cdot y= 0\)</span> 이며 <span class="math inline">\(x&lt;0,\, y&gt;0\)</span> 이면 공리 12 에 의해 <span class="math inline">\(xy&lt; 0 \cdot y = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(9\)</span>) <span class="math inline">\(x&gt;0 \implies 1/x&gt;0\)</span>.</p>
+<p><span class="math inline">\(x \cdot 1/x = 1 &gt;0\)</span> 이므로 문제 (<span class="math inline">\(8\)</span>) 에 의해 <span class="math inline">\(1/x&gt;0\)</span> 이다.</p>
+<p>(<span class="math inline">\(10\)</span>) <span class="math inline">\(x&gt;y&gt;0 \implies 1/x&lt;1/y\)</span>.</p>
+<p>문제 (<span class="math inline">\(9\)</span>) 에 의해 <span class="math inline">\(1/x&gt;0,\,1/y&gt;0\)</span> 이다. 공리 13 에 의해 <span class="math inline">\(1= x \cdot 1/x &gt; y \cdot 1/x\)</span> 이며 <span class="math inline">\(1/y = 1 \cdot 1/y &gt; y \cdot 1/x \cdot 1/y = 1/x\)</span> 이다.</p>
+<p>(<span class="math inline">\(11\)</span>) <span class="math inline">\(x&lt;y \implies x&lt;(x+y)/2 &lt; y\)</span>.</p>
+<p><span class="math display">\[
+x&lt;y \implies 2x = x+x &lt; y+x &lt; y+y =2y.
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.3 (Munkres 1.4.4)</strong></span> (<span class="math inline">\(1\)</span>) <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 일 때 <span class="math inline">\(\{1,\ldots,n\}\)</span> 의 공집합이 아닌 부분집합은 최대값을 가짐을 귀납법으로 보이시오.</p>
+<p>(<span class="math inline">\(2\)</span>) 우리는 왜 (<span class="math inline">\(1\)</span>) 로부터 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 공집합이 아닌 부분집합이 최대값을 가진다는 결론을 내릴 수 없는가?</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(A\subset Z_{+}\)</span> 를 (<span class="math inline">\(1\)</span>) 이 참인 <span class="math inline">\(n\)</span> 의 집합이라 하자. <span class="math inline">\(n=1\)</span> 일 경우 <span class="math inline">\(1\)</span> 이 그 집합의 최대값이다. <span class="math inline">\(n\in A\)</span> 라 하자. <span class="math inline">\(B = \{1,\ldots,\, n+1\}\)</span> 에 대해 <span class="math inline">\(C\subset B\)</span> 이고 <span class="math inline">\(n+1\in C\)</span> 라면 <span class="math inline">\(n+1\)</span> 이 최대값이다. <span class="math inline">\(n+1\not\in C\)</span> 이면 <span class="math inline">\(C \subset \{1,\ldots,\,n\}\)</span> 이므로 최대값을 가진다. 즉 <span class="math inline">\(A=\mathbb{Z}_+\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 이 명제가 의미하는 것은 특정한 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에서 <span class="math inline">\(n\)</span> 보다 작은 자연수의 집합은 최대값을 가진다는 것이지 <span class="math inline">\(\mathbb{Z}_+\)</span> 의 부분집합이 최대값을 가진다는 것이 아니다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.4 (Munkres 1.4.5)</strong></span> <span class="math inline">\(\mathbb{Z}\)</span> 와 <span class="math inline">\(\mathbb{Z}_+\)</span> 에 대해 다음을 보이시오.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(a,\,b\in \mathbb{Z}_+ \implies a+b\in \mathbb{Z}_+\)</span>.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(a,\,b\in \mathbb{Z}_+ \implies a\cdot b\in \mathbb{Z}_+\)</span>.</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(a\in \mathbb{Z}_+ \implies a-1 \in \mathbb{Z}_+ \cup \{0\}\)</span>.</p>
+<p>  (<span class="math inline">\(4\)</span>) <span class="math inline">\(c,\,d\in \mathbb{Z} \implies c+d \in \mathbb{Z},\, c-d\in \mathbb{Z}\)</span>.</p>
+<p>  (<span class="math inline">\(5\)</span>) <span class="math inline">\(c,\,d\in \mathbb{Z} \implies c\cdot d \in \mathbb{Z}\)</span>.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 임의의 <span class="math inline">\(a\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(B_a=\{b\in \mathbb{Z}_+ : a+b\in \mathbb{Z}_+\}\)</span> 라 하자. <span class="math inline">\(a+1\in \mathbb{Z}_+\)</span> 이므로 <span class="math inline">\(1 \in B_a\)</span> 이다. <span class="math inline">\(m\in B_a\)</span> 라 하자. <span class="math inline">\(a+m\in \mathbb{Z}_+\)</span> 이면 <span class="math inline">\(a+m+1 = a+ (m+1)\in \mathbb{Z}_+\)</span> 이므로 <span class="math inline">\(m+1\in B_a\)</span> 이다. 즉 <span class="math inline">\(B_a=\mathbb{Z}_+\)</span> 이다. 임의의 <span class="math inline">\(a\in \mathbb{Z}_+\)</span> 에 대해 성립하므로 <span class="math inline">\(a,\,b\in \mathbb{Z}_+ \implies a+b\in \mathbb{Z}_+\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(a\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(B_a = \{b\in \mathbb{Z}_+ : a\cdot b\in \mathbb{Z}_+\}\)</span> 라 하자. <span class="math inline">\(a=a\cdot 1\)</span> 이므로 <span class="math inline">\(1\in B_a\)</span> 이다. <span class="math inline">\(m\in B_a\)</span> 라 하자. <span class="math inline">\(a\cdot (m+1) =  am + a\)</span> 이며 <span class="math inline">\(am\in \mathbb{Z}_+,\, a\in \mathbb{Z}_+\)</span> 이므로 (<span class="math inline">\(1\)</span>) 에 의해 <span class="math inline">\(a(m+1)\in \mathbb{Z}_+\)</span> 이다. 즉 <span class="math inline">\(B_a = \mathbb{Z}_+\)</span> 이므로 명제가 성립한다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(X=\{x: x\in \mathbb{R},\, x-1\in \mathbb{Z}_+ \cup \{0\}\}\)</span> 라 하자. <span class="math inline">\(1\in X\)</span> 이다. <span class="math inline">\(n\in X\)</span> 임을 가정하면 <span class="math inline">\(n\in \mathbb{R}\)</span> 이며 <span class="math inline">\(n-1\in \mathbb{Z}\cup \{0\}\)</span> 이다. <span class="math inline">\(\mathbb{R}\)</span> 은 덧셈에 대해 닫혀있으며 <span class="math inline">\(1\in \mathbb{R}\)</span> 이므로 <span class="math inline">\(n+1\in \mathbb{R}\)</span> 이다. <span class="math inline">\(n-1\in \mathbb{Z}\cup \{0\}\)</span> 이므로 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 이다. 즉 <span class="math inline">\(X\)</span> 는 귀납적이다. 따라서 <span class="math inline">\(\mathbb{Z}_+ \subset X\)</span> 이다. 따라서 <span class="math inline">\(m\in \mathbb{Z}_+\)</span> 이면 <span class="math inline">\(n-1 \in \mathbb{Z}_+ \cup \{0\}\)</span> 이다.</p>
+<p><br></p>
+<p>이제 (<span class="math inline">\(4\)</span>) 와 (<span class="math inline">\(5\)</span>) 에 앞서 우선 다음을 보이자.</p>
+<blockquote class="blockquote">
+<p><strong>명제 1</strong></p>
+<p><span class="math inline">\(A_- \subset \mathbb{R}\)</span> 에 대해 <span class="math inline">\(-1\in A_-\)</span> 이고 <span class="math inline">\(n\in A_- \implies n-1\in A_-\)</span> 라면 <span class="math inline">\(\mathbb{Z}_-\subset A_-\)</span> 이다.</p>
+</blockquote>
+<p>(<em>증명</em>) <span class="math inline">\(A_+ = \{-a \mid a\in A_-\}\)</span> 라 하자. <span class="math inline">\(1\in A\)</span> 이며 <span class="math inline">\(m=-n \in A_+\)</span> 이면 <span class="math inline">\(n\in A_-\)</span> 이며 <span class="math inline">\(n-1\in A_-\)</span> 이므로 <span class="math inline">\(-(n-1)=-n+1 =m+1\in A_+\)</span> 이므로 <span class="math inline">\(\mathbb{Z}_+ \in A_+\)</span> 이다. 따라서 <span class="math inline">\(\mathbb{Z}_-\subset A_-\)</span> 이다.</p>
+<blockquote class="blockquote">
+<p><strong>명제 2</strong></p>
+<p><span class="math inline">\(A\subset \mathbb{Z}\)</span> 에 대해</p>
+<ol type="1">
+<li><p><span class="math inline">\(0 \in A\)</span>,</p></li>
+<li><p><span class="math inline">\(n \in A \implies n-1\in A,\, n+1\in A\)</span></p></li>
+</ol>
+<p>이면 <span class="math inline">\(\mathbb{Z}= A\)</span> 이다.</p>
+</blockquote>
+<p>(<em>증명</em>) <span class="math inline">\(0\in A\)</span> 이므로 <span class="math inline">\(-1,\, 1 \in A\)</span> 이다. <span class="math inline">\(n\in A\implies n+1 \in \mathbb{A}\)</span> 이므로 <span class="math inline">\(\mathbb{Z}_+ \subset A\)</span> 이다. 명제 1 에 의해 <span class="math inline">\(\mathbb{Z}_- \subset A\)</span> 이다. <span class="math inline">\(0\in A\)</span> 이므로 <span class="math inline">\(\mathbb{Z}\in A\)</span> 이다. 그런데 문제의 조건에 의해 <span class="math inline">\(A \subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(A=\mathbb{Z}\)</span> 이다.</p>
+<blockquote class="blockquote">
+<p><strong>명제 3</strong></p>
+<p><span class="math inline">\(a\in \mathbb{Z}_+\)</span> 일 때 <span class="math inline">\(a-1 \in \mathbb{Z}_{+}\cup \{0\}\)</span> 이다. <span class="math inline">\(b\in \mathbb{Z}_-\)</span> 에 대해 <span class="math inline">\(b+1 \in \mathbb{Z}_-\cup \{0\}\)</span> 이다.</p>
+</blockquote>
+<p>(<em>증명</em>) <span class="math inline">\(a\in \mathbb{Z}_+\)</span> 일 때 <span class="math inline">\(a-1\in \mathbb{Z}_+ \cup \{0\}\)</span> 은 (<span class="math inline">\(3\)</span>) 에서 보였다. <span class="math inline">\(b \in \mathbb{Z}_-\)</span> 일 때 <span class="math inline">\(-b\in \mathbb{Z}_+\)</span> 이므로 <span class="math inline">\(-b-1\in \mathbb{Z}_+ \cup \{0\}\)</span> 이다. 따라서 <span class="math inline">\(b+1 \in \mathbb{Z}_- \cup \{0\}\)</span> 이다.</p>
+<p><br></p>
+<p>(<span class="math inline">\(4\)</span>) 고정된 임의의 <span class="math inline">\(c\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(X_+ = \{d \in \mathbb{Z} \mid c+d\in \mathbb{Z}\}\)</span> 라 하자. <span class="math inline">\(c+0=c\in \mathbb{Z}\)</span> 이므로 <span class="math inline">\(0\in X_+\)</span> 이다. <span class="math inline">\(d\in \mathbb{X}_+\)</span> 일 때 <span class="math inline">\(c+(d+1)= (c+d)+1\)</span> 이다. <span class="math inline">\(c+d&gt;0\)</span> 일 경우 <span class="math inline">\((c+d)+1\in \mathbb{Z}_+ \subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(d+1\in X_+\)</span> 이다. <span class="math inline">\(c+d=0\)</span> 일 경우 <span class="math inline">\(c+d+1=1\in \mathbb{Z}_+\subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(d+1\in \mathbb{Z}\)</span> 이다. <span class="math inline">\(c+d&lt;0\)</span> 일 경우 <span class="math inline">\((c+d)+1 \in \mathbb{Z}_+\cup \{0\} \subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(d+1\in X_+\)</span> 이다.</p>
+<p>이제 <span class="math inline">\(d\in X_+\)</span> 이면 <span class="math inline">\(d-1\in \mathbb{X}_+\)</span> 임을 보이자. <span class="math inline">\(c+d&gt;0\)</span> 이면 문제 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(c+(d-1)=(c+d)-1\in \mathbb{Z}_+ \cup\{0\}\subset \mathbb{Z}\)</span> 이다. <span class="math inline">\(c+d=0\)</span> 이면 <span class="math inline">\(c+d-1=-1\in \mathbb{Z}\)</span> 이다. <span class="math inline">\(c+d&lt;0\)</span> 이라면 <span class="math inline">\(c+d-1\in \mathbb{Z}_- \subset \mathbb{Z}\)</span> 이다. 즉 <span class="math inline">\(d\in X_+ \implies d-1\in \mathbb{X}_+\)</span> 이다. 따라서 <span class="math inline">\(\mathbb{Z}\subset X_+\)</span> 이며 문제의 조건에 의해 <span class="math inline">\(X_+\subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(X_+ = \mathbb{Z}\)</span> 이다. 즉 <span class="math inline">\(c,\, d\in \mathbb{Z}\implies c+d\in \mathbb{Z}\)</span> 이다. <span class="math inline">\(d\in \mathbb{Z}\)</span> 이면 <span class="math inline">\(-d\in \mathbb{Z}\)</span> 이므로 <span class="math inline">\(c-d\in \mathbb{Z}\)</span> 이다.</p>
+<p>(<span class="math inline">\(5\)</span>) 고정된 임의의 <span class="math inline">\(c\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(X = \{d\in \mathbb{Z} \mid c\cdot d \in \mathbb{Z}\}\)</span> 라 하자. <span class="math inline">\(c \cdot 0 = 0\in \mathbb{Z}\)</span> 이므로 <span class="math inline">\(0 \in X\)</span> 이다. <span class="math inline">\(d\in X\)</span> 임을 가정하자. <span class="math inline">\(c\cdot (d+1) = c\cdot d + c\)</span> 인데 <span class="math inline">\(X\)</span> 의 정의에 의해 <span class="math inline">\(c\cdot d\in \mathbb{Z}\)</span> 이며 <span class="math inline">\(c\in \mathbb{Z}\)</span> 이므로 (<span class="math inline">\(4\)</span>) 에 의해 <span class="math inline">\(d+1\in X\)</span> 이다. 마찬가지로 <span class="math inline">\(d\in X \implies d-1\in X\)</span> 임을 보일 수 있다. <span class="math inline">\(\mathbb{Z}\subset X \subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(X=\mathbb{Z}\)</span> 이다. 즉 모든 정수 <span class="math inline">\(c,\,d\)</span> 에 대해 <span class="math inline">\(c \cdot d\)</span> 는 정수이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1.4.6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.5 (Munkres 1.4.6)</strong></span> <span class="math inline">\(a\in \mathbb{R}\)</span> 일 때 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 재귀적으로</p>
+<p><span class="math display">\[
+\begin{aligned}
+a^1 &amp;= a,\\
+a^{n+1} &amp;= a^n \cdot a
+\end{aligned}
+\]</span></p>
+<p>라 정의한다. <span class="math inline">\(m,\,n \in \mathbb{Z}_+\)</span>, <span class="math inline">\(a,\, b\in \mathbb{R}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+a^n a^m &amp;= a^{n+m},\\
+(a^n)^m &amp;= a^{nm},\\
+a^m b^m &amp;= (ab)^m
+\end{aligned}
+\]</span></p>
+<p>임을 보이시오. 이것을 지수 법칙이라 한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>고정된 <span class="math inline">\(a\in \mathbb{R}\)</span> 과 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(X_1 = \{m\in \mathbb{Z}_+ \mid a^n a^m = a^{n+m}\}\)</span> 이라 하자. 귀납적 정의에 의해 <span class="math inline">\(1\in X_1\)</span> 이다. <span class="math inline">\(m\in X_1\)</span> 일 때 <span class="math inline">\(a^n a^{m+1}= a^n a^m a = a^{n +m} a = a^{n + m +1}\)</span> 이므로 <span class="math inline">\(m+1\in X_1\)</span> 이다. 즉 <span class="math inline">\(\mathbb{Z}_+ \subset X \subset X_1\)</span> 이므로 <span class="math inline">\(a^n a^m = a^{n+m}\)</span> 이다.</p>
+<p>고정된 <span class="math inline">\(a\in \mathbb{R}\)</span> 과 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(X_2 = \{m \in \mathbb{Z}_+ \mid (a^n)^m = a^{mn}\}\)</span> 라 하자. <span class="math inline">\((a^n)^1 = a^n\)</span> 이므로 <span class="math inline">\(1\in X_2\)</span> 이다. <span class="math inline">\(m\in X_2\)</span> 라 하자. <span class="math inline">\((a^n)^{m+1} =  (a^n)^m (a^n)=a^{nm} a^n = a^{nm+n}= a^{n(m+1)}\)</span> 이므로 <span class="math inline">\(m+1\in X_2\)</span> 이다. 즉 <span class="math inline">\(\mathbb{Z}_+ \subset X_2 \subset \mathbb{Z}_+\)</span> 이므로 <span class="math inline">\(X_2=\mathbb{Z}_+\)</span> 이다.</p>
+<p>고정된 <span class="math inline">\(a,\,b\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(X_3 = \{m\in \mathbb{Z} \mid a^mb^m = (ab)^m\}\)</span> 라 하자. <span class="math inline">\(a^1b^1 = ab=(ab)^1\)</span> 이므로 <span class="math inline">\(1\in X_3\)</span> 이다. <span class="math inline">\(m\in X_3\)</span> 라 하자. <span class="math display">\[
+a^{m+1}b^{m+1} = a^m a b^m b = (ab)^m ab = (ab)^{m+1}
+\]</span></p>
+<p>이므로 <span class="math inline">\(m\in X_3 \implies m+1\in X_3\)</span> 이다. 즉 <span class="math inline">\(\mathbb{Z}_+ \subset X_3 \subset \mathbb{Z}_+\)</span> 이므로 <span class="math inline">\(X_3= \mathbb{Z}_+\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.6 (Munkres 1.4.7)</strong></span> <span class="math inline">\(a\in \mathbb{R},\, a\ne 0\)</span> 일 때 <span class="math inline">\(a^0=1\)</span> 로 정의한다. 또한 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a^{-n}= 1/a^n\)</span> 으로 정의한다. 지수법칙이 <span class="math inline">\(a,\,b\ne 0,\, n,\,m\in \mathbb{Z}\)</span> 에 대해 성립함을 보이시오.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 우선 양의 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(a^{m-1} = a^m a^{-1}\)</span> 임을 보이자. <span class="math inline">\(m=1\)</span> 일 경우는 쉽게 보일 수 있다. <span class="math inline">\(m\)</span> 일 때 성립함을 가정한다. <span class="math inline">\(a^{(m+1)-1} =  a^m\)</span> 이며 <span class="math inline">\(a^{m+1} a^{-1} = a^m a a^{-1}= a^m\)</span> 이므로, 양의 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(a^{m-1}= a^m a^{-1}\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(n\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(a^{n+1}= a^n a\)</span> 임을 보이자. <span class="math inline">\(X_0 = \{n\in \mathbb{Z} \mid a^{n+1}= a^n a\}\)</span> 이라 하자. 지수 법칙에 의해 <span class="math inline">\(\mathbb{Z}_+ \subset X_0\)</span> 이다. <span class="math inline">\(a^{0+1}= a^0 a = a\)</span> 이므로 <span class="math inline">\(0\in X_0\)</span> 이다. <span class="math inline">\(n=-1\)</span> 일 때 <span class="math inline">\(a^{-1+1} =  a^0=1=a^{-1}a\)</span> 이므로 <span class="math inline">\(-1\in X_0\)</span> 이다. <span class="math inline">\(n&lt;-1\)</span> 일 때 <span class="math inline">\(n+1&lt;0\)</span> 이다. <span class="math inline">\(m=-n &gt;1\)</span> 이며, (<span class="math inline">\(1\)</span>) 을 이용하면 <span class="math inline">\(1/a^m \cdot a \cdot a^{m-1} = 1/a^m \cdot a \cdot a^m a^{-1} = 1\)</span> 이다. 즉 <span class="math inline">\(a^{n+1} = a^{-m+1} = 1/a^{m-1} = 1/a^m a = a^{-m} a = a^n a\)</span> 이다. 따라서 <span class="math inline">\(\mathbb{Z} \subset X_0 \subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(X_0=Z\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(n\in \mathbb{Z}_-\)</span> 일 때 <span class="math inline">\(a^{n-1}= a^n a^{-1}\)</span> 임을 보이자. <span class="math inline">\(m=-n\)</span> 이라 하면</p>
+<p><span class="math display">\[
+a^{n-1} = a^{-m-1}= 1/(a^m a) = a^{-m} a^{-1} = a^{n} a^{-1}
+\]</span></p>
+<p>이다. (<span class="math inline">\(1\)</span>) 과 함께라면 모든 정수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(a^{n-1} = a^n a^{-1}\)</span> 이다. (<span class="math inline">\(n=0\)</span> 일 경우는 정의에 의해 자명하다.)</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(a^n a^m = a^{m+m}\)</span> 임을 보이자. 고정된 <span class="math inline">\(n\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(X_1 = \{m\in \mathbb{Z} \mid a^na^m = a^{n+m}\}\)</span> 이라 하고 <span class="math inline">\(X_1 = \mathbb{Z}\)</span> 임을 보이면 된다. <span class="math inline">\(a^na^0 = a^n\)</span> 이므로 <span class="math inline">\(0\in X_1\)</span> 이다. <span class="math inline">\(m\in X_1\)</span> 일 때 <span class="math inline">\(m+1\in X_1\)</span> 임을 보이자.</p>
+<p><span class="math display">\[
+a^n a^{m+1} = a^n a^m a = a^{n+m}a = a^{n+(m+1)}
+\]</span></p>
+<p>이므로 <span class="math inline">\(m\in X_1 \implies m+1 \in X_1\)</span> 이다. 또한 (<span class="math inline">\(3\)</span>) 의 결과를 통해</p>
+<p><span class="math display">\[
+a^n a^{m-1} = a^n a^m a^{-1} = a^{n+m}a^{-1} = a^{n+m-1}
+\]</span></p>
+<p>임을 안다. 즉 <span class="math inline">\(\mathbb{Z} \subset X_1 \subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(X_1 = \mathbb{Z}\)</span> 이다.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\((a^n)^m = a^{nm}\)</span> 임을 보이자. 고정된 <span class="math inline">\(n\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(X_2 = \{m\in \mathbb{Z} \mid (a^n)^m = a^{nm}\}\)</span> 가 <span class="math inline">\(\mathbb{Z}\)</span> 와 같음을 보이면 된다. <span class="math inline">\(0 \in X_2\)</span> 임은 쉽게 보일 수 있다. <span class="math inline">\(n\in X_2\)</span> 라 하자.</p>
+<p><span class="math display">\[
+(a^n)^{m+1} = (a^n)^m a^n = a^{nm} a^n = a^{nm+n} = a^{n (m+1)}
+\]</span></p>
+<p>이다. 또한</p>
+<p><span class="math display">\[
+(a^{n})^{m-1} =  (a^n)^m (a^n)^{-1} =  a^{nm} (1/a^n)= a^{nm} a^{-n} =  a^{nm-n} = a^{n(m-1)}
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(\mathbb{Z}\subset X_2\)</span> 이며 <span class="math inline">\(X_2\)</span> 의 정의에 의해 <span class="math inline">\(X_2\subset \mathbb{Z}\)</span> 이므로 <span class="math inline">\(X_2=\mathbb{Z}\)</span> 이다.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(a^m b^m = (ab)^m\)</span> 임을 보이자. <span class="math inline">\(X_3 =\{ m\in \mathbb{Z} \mid a^m b^m = (ab)^m\}\)</span> 라 하고 <span class="math inline">\(X_3=\mathbb{Z}\)</span> 임을 보이면 된다. <span class="math inline">\(a^0b^0=1\)</span> 이며 <span class="math inline">\((ab)^0=1\)</span> 이므로 <span class="math inline">\(0\in X_3\)</span> 이다. <span class="math inline">\(n\in X_3\)</span> 임을 가정한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+a^{m+1}b^{m+1} &amp;= a^m a b^m b = (ab)^m (ab) = (ab)^{m+1} \\
+a^{m-1} b^{m-1} &amp;=  a^{m}a^{-1}b^{m}b^{-1} = a^{m}b^m 1/a 1/b = (ab)^{m} 1/(ab)= (ab)^m (ab)^{-1} = (ab)^{m-1}
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(X_3 = \mathbb{Z}\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_Munkres_1_4_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.7 (Munkres 1.4.8)</strong></span> 다음을 보이시오.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\mathbb{R}\)</span> 은 최대 하계 성질을 가진다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\inf \{ 1/n : n \in \mathbb{Z}_+ \} =0\)</span> 이다.</p>
+<p> (<span class="math inline">\(3\)</span>) 주어진 <span class="math inline">\(a\)</span> 가 <span class="math inline">\(0&lt;a&lt;1\)</span> 일 때 <span class="math inline">\(\inf \{a^n : n\in \mathbb{Z}_+\}=0\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="1_2_functions_and_relations.html#thm-part1_least_upper_bound_property_greatest_lower_bound_property" class="quarto-xref">정리&nbsp;<span>2.2</span></a> 에서 최소상계 성질을 갖는 집합은 최대 하계 성질을 가짐을 보였다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(A=\{1/n: n\in \mathbb{Z}+\}\)</span> 라 하자. <a href="#exr-part1_munkres_1_4_2" class="quarto-xref">연습문제&nbsp;<span>3.2</span></a> 의 (<span class="math inline">\(9\)</span>) 에 의해 <span class="math inline">\(0\)</span> 은 <span class="math inline">\(A\)</span> 의 하계이다. (<span class="math inline">\(1\)</span>) 에 의해 <span class="math inline">\(A\)</span> 는 최대 하계를 가진다. <span class="math inline">\(a=\inf A\)</span> 라 하자. <span class="math inline">\(a&gt;0\)</span> 이라면 <a href="#thm-part1_archmedian_ordering_property" class="quarto-xref">정리&nbsp;<span>3.3</span></a> 에 의해 <span class="math inline">\(m&gt;1/a\)</span> 인 <span class="math inline">\(m\in \mathbb{Z}_+\)</span> 이 존재하며 <span class="math inline">\(1/m&lt;a,\, 1/m \in A\)</span> 이므로 <span class="math inline">\(a\)</span> 가 최대 하계라는 가정에 모순된다. <span class="math inline">\(a&lt;0\)</span> 이라면 모든 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(1/a&lt;1/(2a)&lt;n\)</span> 이므로 역시 <span class="math inline">\(a\)</span> 가 최대 하계라는 가정에 모순된다. 따라서 <span class="math inline">\(\inf A=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) 우선 양수 <span class="math inline">\(h\)</span> 와 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\((1+h)^n \ge 1+nh\)</span> 임을 보이자. 임의의 고정된 <span class="math inline">\(h&gt;0\)</span> 에 대해 <span class="math inline">\(X = \{n\in \mathbb{Z}_+ \mid (1+h)^n \ge 1+nh\}\)</span> 라 하자.</p>
+<p><span class="math inline">\(n=1\)</span> 일 때 성립함은 자명하다. <span class="math inline">\(n\)</span> 에서 성립한다고 가정하자.</p>
+<p><span class="math display">\[
+(1+h)^{n+1} =(1+h)^n (1+h) \ge (1+nh)(1+h) = 1+(n+1)h + nh^2 &gt; 1+(n+1)h
+\]</span></p>
+<p>이므로 <span class="math inline">\(X=\mathbb{Z}_+\)</span> 이다. 이제 <span class="math inline">\(0&lt;a&lt;1\)</span> 일 때 <span class="math inline">\(h=(1-a)/a\)</span> 라고 하면 <span class="math inline">\(h&gt;0\)</span> 이며, <span class="math inline">\((1+h)^n \ge 1+nh\)</span> 로 부터 다음을 얻는다.</p>
+<p><span class="math display">\[
+0&lt;a^n \le \dfrac{1}{1+n(1-a)/a}
+\]</span></p>
+<p>아르키메데스 성질에 의해 <span class="math inline">\(\inf \left\{\dfrac{1}{1+n(1-a)/a} \mid n\in \mathbb{Z}_+\right\}=0\)</span> 이며, 따라서 <span class="math inline">\(\inf \{a^n \mid n\in \mathbb{Z}\}=0\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_Munkres_1_4_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.8 (Munrkes 1.4.9)</strong></span> 다음을 보이시오.</p>
+<p>  (<span class="math inline">\(1\)</span>) 공집합이 아니며 위로 유계인 <span class="math inline">\(\mathbb{Z}\)</span> 의 부분집합은 최대값을 가진다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(x\notin\mathbb{Z}\)</span> 이면 <span class="math inline">\(n&lt;x&lt;n+1\)</span> 을 만족하는 정수 <span class="math inline">\(n\)</span> 은 하나 뿐이다.</p>
+<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(x-y&gt;1\)</span> 이라면 <span class="math inline">\(y&lt;n&lt;x\)</span> 를 만족하는 정수는 최소한 하나이다.</p>
+<p>  (<span class="math inline">\(4\)</span>) <span class="math inline">\(y&lt;x\)</span> 라면 <span class="math inline">\(y&lt;z&lt;x\)</span> 를 만족하는 유리수 <span class="math inline">\(z\)</span> 가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(A\subset \mathbb{Z},\, A\ne \varnothing\)</span> 이며 위로 유계라고 하자. <span class="math inline">\(A\)</span> 가 모두 양의 정수의 집합이라면 <a href="#exr-part1_munkres_1_4_4" class="quarto-xref">연습문제&nbsp;<span>3.3</span></a> (<span class="math inline">\(1\)</span>) 에 의해 최대값을 가진다. <span class="math inline">\(A\)</span> 가 양의 정수를 포함하는 집합이라면 <span class="math inline">\(A \cap \mathbb{Z}_+\)</span> 는 최대값을 가지며 이 값이 <span class="math inline">\(A\)</span> 의 최대값이다. <span class="math inline">\(A\)</span> 가 <span class="math inline">\(0\)</span> 과 음의 정수로 이루어진 집합이라면 <span class="math inline">\(0\)</span> 이 최대값이다. <span class="math inline">\(A\)</span> 가 음의 정수만으로 이루어진 집합이라고 하자. <span class="math inline">\(A'=\{-a\mid a\in A\}\)</span> 는 양의 정수의 집합이며 <a href="#thm-part1_well_ordering_property" class="quarto-xref">정리&nbsp;<span>3.1</span></a> 에 의해 최소값 <span class="math inline">\(m\)</span> 을 가진다. 즉 모든 <span class="math inline">\(n\in A'\)</span> 에 재해 <span class="math inline">\(m\le n\)</span> 이며 <span class="math inline">\(-n \le -m\)</span> 이므로 <span class="math inline">\(-m\)</span> 이 <span class="math inline">\(A\)</span> 의 최대값이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(A_x =\{m\in \mathbb{Z}\mid m&lt;x\}\)</span> 라 하자. 우선 <span class="math inline">\(A_x \ne \varnothing\)</span> 임을 보이자. <span class="math inline">\(x&gt;0\)</span> 이라면 <span class="math inline">\(0\in A_x\)</span> 이므로 <span class="math inline">\(A_x\ne \varnothing\)</span> 이다. <span class="math inline">\(x=0\)</span> 이라면 <span class="math inline">\(-1\in A_x\)</span> 이므로 <span class="math inline">\(A_x \ne \varnothing\)</span> 이다. <span class="math inline">\(x&lt;0\)</span> 이라면 <a href="#thm-part1_archmedian_ordering_property" class="quarto-xref">정리&nbsp;<span>3.3</span></a> 에 의해 <span class="math inline">\(p&gt;-x\)</span> 인 <span class="math inline">\(m\in \mathbb{Z}_+\)</span> 가 존재하며 <span class="math inline">\(-p&lt;x\)</span> 이므로 <span class="math inline">\(-p\in A_x\)</span> 이다. 즉 <span class="math inline">\(A_x \ne \varnothing\)</span> 이다.</p>
+<p>또한 <span class="math inline">\(A_x\)</span> 는 유계이므로 (<span class="math inline">\(1\)</span>) 에 의해 최대값이 존재한다. 이를 <span class="math inline">\(n\)</span> 이라 하자. 따라서 <span class="math inline">\(n+1\notin A_x\)</span> 이므로 <span class="math inline">\(n+1\le x\)</span> 이다. <span class="math inline">\(n+1=x\)</span> 이면 <span class="math inline">\(x \in \mathbb{Z}\)</span> 이므로 가정에 위배된다. 따라서 <span class="math inline">\(n&lt;x&lt;n+1\)</span> 을 만족하는 정수 <span class="math inline">\(n\)</span> 이 존재한다.</p>
+<p>만족하는 정수가 두 개 이상일 때 그중 둘을 <span class="math inline">\(n_1,\,n_2\)</span> 라 하자. <span class="math inline">\(n_1&lt;x&lt;n_1+1\)</span>, <span class="math inline">\(n_2&lt;x&lt;n_2+1\)</span> 이다. <span class="math inline">\(n_1 &gt; n_2\)</span> 라면 <span class="math inline">\(0&lt;n_1-n_2 &lt; 0 &lt;n_1-n_2\)</span> 이므로 모순. <span class="math inline">\(n_2&gt;n_1\)</span> 이어도 모순. 따라서 <span class="math inline">\(n_1=n_2\)</span> 이다. 즉 <span class="math inline">\(n&lt;x&lt;n+1\)</span> 을 만족하는 <span class="math inline">\(n\in \mathbb{Z}\)</span> 는 하나 뿐이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(x-y&gt;1\)</span> 일 때 <span class="math inline">\(y&lt;n&lt;x\)</span> 를 만족하는 정수가 하나도 없다고 가정하자. <span class="math inline">\(x\)</span> 가 정수라면 <span class="math inline">\(x-1&gt;y\)</span> 도 정수이며 <span class="math inline">\(y&lt;x-1&lt;x\)</span> 이므로 모순된다. 따라서 <span class="math inline">\(x\)</span> 는 정수가 아니다. <span class="math inline">\(x\)</span> 가 정수가 아니라면 (<span class="math inline">\(2\)</span>) 에 의해 <span class="math inline">\(n&lt;x&lt;n+1\)</span> 을 만족하는 정수가 <span class="math inline">\(n\)</span> 이 존재하며 <span class="math inline">\(y&lt;x-1&lt;n&lt;x&lt;n+1\)</span> 이므로 만족하는 정수 <span class="math inline">\(n\)</span> 이 존재한다.</p>
+<p>(<span class="math inline">\(4\)</span>) 이것은 중요하므로 아래 <a href="#prp-part1_Q_is_dense" class="quarto-xref">명제&nbsp;<span>3.3</span></a> 로 정리하도록 한다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part1_Q_is_dense" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 3.3 (유리수의 조밀성)</strong></span> 두 실수 <span class="math inline">\(y&lt;x\)</span> 에 대해 <span class="math inline">\(y&lt;z&lt;x\)</span> 를 만족하는 유리수 <span class="math inline">\(z\)</span> 가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(y=0\)</span> 이면 <a href="#cor-part1_archimedean_ordering_property" class="quarto-xref">따름정리&nbsp;<span>3.1</span></a> 으로 보일 수 있다. <span class="math inline">\(0&lt;y&lt;x\)</span> 인 경우 아르키메데스 법칙(<a href="#cor-part1_archimedian_law" class="quarto-xref">따름정리&nbsp;<span>3.2</span></a>) 에 의해</p>
+<p><span class="math display">\[
+0 &lt; \dfrac{1}{n}&lt;x-y
+\]</span></p>
+<p>를 만족하는 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 이 존재하며, 역시 아르키메데스 법칙에 의해</p>
+<p><span class="math display">\[
+\left\{k\in \mathbb{Z}_+ : k \cdot \dfrac{1}{n} &gt; y \right\} \ne \varnothing
+\]</span></p>
+<p>이다. 위의 집합은 최소값 <span class="math inline">\(m\)</span> 을 가지며 <span class="math inline">\(\dfrac{m-1}{n} \le y &lt; \dfrac{m}{n}\)</span> 이므로</p>
+<p><span class="math display">\[
+y&lt;\dfrac{m}{n} = \dfrac{m-1}{n} + \dfrac{1}{n} \le y + \dfrac{1}{n}&lt;x
+\]</span></p>
+<p>이다. 따라서 유리수 <span class="math inline">\(\dfrac{m}{n}\)</span> 이 우리가 찾는 값이다. <span class="math inline">\(y&lt;0\)</span> 인 경우에는 <span class="math inline">\(0&lt;y+r &lt; x+r\)</span> 인 자연수 <span class="math inline">\(r\)</span> 이 존재하며 <span class="math inline">\(y+r &lt; \dfrac{m}{n}&lt;x+r\)</span> 을 만족하는 유리수 <span class="math inline">\(\dfrac{m}{n}\)</span> 을 찾을 수 있다. 이 경우 <span class="math inline">\(\dfrac{m}{n}-r\)</span> 이 우리가 찾는 값이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.9 (Munkres 1.4.10)</strong></span> 모든 양수 <span class="math inline">\(a\)</span> 는 단 하나의 양의 제곱근을 갖는다는 것을 다음 순서로 보이고자 한다.</p>
+<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(x&gt;0\)</span> 이며 <span class="math inline">\(0\le h &lt;1\)</span> 이면 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(x+h)^2 &amp;\le x^2 + h(2x+1), \\
+(x-h)^2 &amp;\ge x^2 - h(2x).
+\end{aligned}
+\]</span></p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(x&gt;0\)</span> 이라 하자. <span class="math inline">\(x^2&lt;a\)</span> 이면 어떤 <span class="math inline">\(h&gt;0\)</span> 에 대해 <span class="math inline">\((x+h)^2&lt;a\)</span> 임을 보여라. <span class="math inline">\(x^2&gt;a\)</span> 이면 어떤 <span class="math inline">\(h&gt;0\)</span> 에 대해 <span class="math inline">\((x-h)^2&gt;a\)</span> 를 만족함을 보여라.</p>
+<p> (<span class="math inline">\(3\)</span>) 주어진 <span class="math inline">\(a&gt;0\)</span> 에 대해 <span class="math inline">\(B=\{x\in \mathbb{R} \mid x^2&lt;a\}\)</span> 라 하자. <span class="math inline">\(B\)</span> 는 위로 유계이며 최소한 하나의 양수를 포함한다는 것을 보여라. <span class="math inline">\(b=\sup B\)</span> 라면 <span class="math inline">\(b^2=a\)</span> 임을 보여라.</p>
+<p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(b&gt;0,\, c&gt;0,\, b^2=c^2\)</span> 이면 <span class="math inline">\(b=c\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(0\le h &lt; 1\)</span> 이므로 <span class="math inline">\(h^2\le h\)</span> 이다. 따라서 다음이 성립한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(x+h)^2 &amp;= x^2+h(2x) + h^2 \le x^2 + h(2x) + h = x^2+h(2x+1), \\
+(x-h)^2 &amp;= x^2 -h(2x) + h^2 \ge x^2 -h(2x)
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(h=\dfrac{a-x^2}{2(2x+1)}\)</span> 이라 하자. <span class="math inline">\(h&gt;0\)</span> 이다.</p>
+<p><span class="math display">\[
+(x+h)^2 \le x^2+h(2x+1) = x^2 + \dfrac{a-x^2}{2} = \dfrac{a+x^2}{2}&lt;a
+\]</span></p>
+<p>이다. 이제 <span class="math inline">\(h=\dfrac{x^2-a}{4x}\)</span> 라 하자. <span class="math inline">\(h&gt;0\)</span> 이다.</p>
+<p><span class="math display">\[
+(x-h)^2 \ge x^2-h(2x) = x^2- \dfrac{x^2-a}{2}=\dfrac{x^2+a}{2} &gt; a
+\]</span></p>
+<p>이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(a&gt;1\)</span> 일 경우 <span class="math inline">\(1^2=1&lt;a\)</span> 이다. <span class="math inline">\(0&lt;a&lt;1\)</span> 일 경우 <span class="math inline">\(0&lt;a^2&lt;a\)</span> 이므로 <span class="math inline">\(a\in B\)</span> 이다. <span class="math inline">\(a=1\)</span> 일 경우 <span class="math inline">\(1/2\in B\)</span> 이다. 따라서 <span class="math inline">\(B\ne \varnothing\)</span> 이다. 이제 <span class="math inline">\(b=\sup B\)</span> 라고 하자. <span class="math inline">\(b^2&lt;a\)</span> 이면 (<span class="math inline">\(2\)</span>) 에서 보았듯이 어떤 <span class="math inline">\(h&gt;0\)</span> 에 대해 <span class="math inline">\((b+h)^2&lt;a\)</span> 이므로 <span class="math inline">\(b=\sup B\)</span> 라는 가정에 모순된다. <span class="math inline">\(b^2&lt;a\)</span> 이면 역시 (<span class="math inline">\(2\)</span>) 에서 보았듯이 어떤 <span class="math inline">\(h&lt;0\)</span> 에 대해 <span class="math inline">\((b-h)^2&lt;a\)</span> 이므로 <span class="math inline">\(b=\sup B\)</span> 라는 가정에 모순된다. 따라서 <span class="math inline">\(b=a^2\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part1_munkres_1_4_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.10 (Munkres 1.4.11)</strong></span> 주어진 <span class="math inline">\(m\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(m/2\in \mathbb{Z}\)</span> 일 때 <span class="math inline">\(m\)</span> 을 짝수라고 하며, 그렇지 않을 경우 홀수라고 한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(m\)</span> 이 홀수라면 어떤 <span class="math inline">\(n\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(m=2n+1\)</span> 임을 보여라.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(p\)</span> 와 <span class="math inline">\(q\)</span> 가 홀수라면 <span class="math inline">\(p\cdot q\)</span> 도 홀수이며, <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(p^n\)</span> 도 홀수임을 보여라.</p>
+<p> (<span class="math inline">\(3\)</span>) 양의 유리수 <span class="math inline">\(a\)</span> 는 둘 다 짝수는 아닌 어떤 정수 <span class="math inline">\(m,\, n\)</span> 에 대해 <span class="math inline">\(a=m/n\)</span> 임을 보여라.</p>
+<p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(\sqrt{2}\)</span> 는 무리수임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#exr-part1_Munkres_1_4_9" class="quarto-xref">연습문제&nbsp;<span>3.8</span></a> (<span class="math inline">\(2\)</span>) 에 의해 <span class="math inline">\(m/2\notin \mathbb{Z}\)</span> 이면 <span class="math inline">\(n&lt;m/2&lt;n+1\)</span> 을 만족하는 정수 <span class="math inline">\(n\)</span> 이 유일하게 존재한다. 이 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(2n&lt;m&lt;2n+2\)</span> 이므로 <span class="math inline">\(m=2n+1\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 어떤 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(2m+1\)</span> 은 홀수이다. <span class="math inline">\(p=2m+1,\, q=2n+1\)</span> 이라 하면</p>
+<p><span class="math display">\[
+p \cdot q = 2(2mn + m + n) +1
+\]</span></p>
+<p>이므로 <span class="math inline">\(p \cdot q\)</span> 는 홀수이다. 이제 <span class="math inline">\(p^n\)</span> 이 홀수임을 보이자. <span class="math inline">\(n=1\)</span> 일 때 홀수이며, <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(p^n\)</span> 이 홀수라면 <span class="math inline">\(p^{n+1}= p^n \cdot p\)</span> 이므로 홀수이다. 따라서 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(p^n\)</span> 은 홀수이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <a href="#def-part1_rational_irrational" class="quarto-xref">정의&nbsp;<span>3.7</span></a> 에 의해 <span class="math inline">\(a\in \mathbb{Q}\)</span> 는 어떤 정수 <span class="math inline">\(p,\,q\)</span> 에 대해 <span class="math inline">\(a=p/q\)</span> 이다. 만약 둘 다 짝수이면 <span class="math inline">\(p=2m,\, q=2n\)</span> 이므로 <span class="math inline">\(a=m/n\)</span> 이다. 이 과정을 <span class="math inline">\(m,\,n\)</span> 둘 중 하나가 짝수가 아닐 때까지 반복 할 수 있다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\sqrt{2}\in \mathbb{Q}\)</span> 라고 하자. <span class="math inline">\(\sqrt{2}=p/q\)</span> 이고 둘 중 최소한 <span class="math inline">\(p,\,q\)</span> 중 최소한 하나는 짝수가 아니라고 할 수 있다(<span class="math inline">\(3\)</span>). <span class="math inline">\(2=p^2/q^2\)</span> 이므로 <span class="math inline">\(p^2 = 2q^2\)</span> 이다. <span class="math inline">\(p^2\)</span> 가 짝수이므로 <span class="math inline">\(p=2m,\, m\in \mathbb{Z}\)</span> 이며, <span class="math inline">\(2m^2 = q^2\)</span> 이므로 <span class="math inline">\(q=2n\)</span> 이다. <span class="math inline">\(p,\,q\)</span> 중 최소한 하나는 짝수라는 가정에 위배된다. 따라서 <span class="math inline">\(\sqrt{2}\)</span> 는 무리수이다.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/part1/1_2_functions_and_relations.html" class="pagination-link" aria-label="함수와 관계">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">함수와 관계</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/part1/1_4_cartesian_products.html" class="pagination-link" aria-label="데카르트 곱">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
