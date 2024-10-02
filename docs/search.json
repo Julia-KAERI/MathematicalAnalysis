@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Mathematical Analysis",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n명제는 다음과 같이 표기한다.\n\n\n명제 1 자연수는 무한집합이다.\n\n\n\n예제(example) 은 다음과 같이 표기한다.\n\n\n예제 1 예제\n\n\n\n연습문제는 다음과 같이 표기한다.\n\n\n연습문제 1 연습문제",
+    "text": "Preface\n명제는 다음과 같이 표기한다.\n\n\n명제 1 자연수는 무한집합이다.\n\n\n\n예제(example) 은 다음과 같이 표기한다.\n\n\n예제 1 예제\n\n\n\n연습문제는 다음과 같이 표기한다.\n\n\n연습문제 1 연습문제",
     "crumbs": [
       "Preface"
     ]

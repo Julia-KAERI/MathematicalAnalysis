@@ -4,7 +4,10 @@ project:
 
 book:
   title: "Mathematical Analysis"
-  author: "Norah Jones"
+  author: "julia.kaeri@gmail.con"
+  site-url: https://julia-kaeri.github.io/MathematicalAnalysis/
+  repo-url: https://github.com/Julia-KAERI/MathematicalAnalysis
+  repo-branch: main
   date: "7/18/2023"
   language: _language-ko_custom.yml
 

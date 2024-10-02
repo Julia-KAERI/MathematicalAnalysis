@@ -1,11 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-
-
 명제는  다음과 같이 표기한다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
