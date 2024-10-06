@@ -27,7 +27,7 @@ $$
 a=x_0 < x_1 < x_2 < \cdots < x_{n-1}< x_n = b
 $$
 
-일 때 $P=\{x_0,\ldots,\,x_n\}$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체를 $\mathcal{P}[a,\,b]$ 라고 표기한다. 
+일 때 $P=\{x_0,\ldots,\,x_n\}$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체의 집합을 $\mathcal{P}[a,\,b]$ 라고 표기한다. 
 
 ::: 
 :::
@@ -48,7 +48,7 @@ $$
 M_i &:= \sup f([x_{i-1},\,x_{i}]), \\[0.2em]
 m_i &:= \inf f([x_{i-1},\,x_{i}]). \\
 \end{aligned}
-$$
+$$ {#eq-part2_upper_lower_riemann_sum_1}
 
 라고 하자. 이 때 **리만 상합(Riemann upper sum)** $U(f,\,P)$ 와 **리만 하합 (Riemann lower sum)** $L(f,\,P)$ 는 다음과 같이 정의된다.
 
@@ -57,7 +57,7 @@ $$
 U(f,\,P) &:= \sum_{i=1}^n M_i (x_{i}-x_{i-1}), \\[0.2em]
 L(f,\,P) &:= \sum_{i=1}^n m_i (x_{i}-x_{i-1}).
 \end{aligned}
-$$
+$$ {#eq-part2_upper_lower_riemann_sum_2}
 
 ::: 
 :::
@@ -126,18 +126,18 @@ $$
 
 $$
 \begin{aligned}
-\overline{{\int}_{a}^b} f\,dx := \inf \{U(P,\,f): P\in \mathcal{P}[a,\,b]\}, \\[0.3em]
-\underline{{\int}_{a}^{b}} f\,dx := \sup \{L(P,\,f): P\in \mathcal{P}[a,\,b]\}.
+\overline{{\int}_{a}^b} f\,dx := \inf \{U(f,\,P): P\in \mathcal{P}[a,\,b]\}, \\[0.3em]
+\underline{{\int}_{a}^{b}} f\,dx := \sup \{L(f,\,P): P\in \mathcal{P}[a,\,b]\}.
 \end{aligned}
 $$ {#eq-part2_riemann_upper_lower_integral}
 
-를 각각 **리만 상적분 (Riemann upper integral)** 과 **리만 하적분 (Riemann lower integral)** 이라고 한다. 리만 상적분과 리만 하적분 값이 같을 때 그 값을 **리만적분 (Riemann integral)** 이라고 하며 
+를 각각 **리만 상적분 (Riemann upper integral)** 과 **리만 하적분 (Riemann lower integral)** 이라고 한다. 리만 상적분과 리만 하적분 값이 같을 때 $f$ 가 $[a,\,b]$ 구간에서 리만 적분 가능하다고 하며 그 값을 **리만적분 (Riemann integral)** 이라고 하고
 
 $$
 \int_{a}^b f\,dx \qquad\text{or}\qquad  \int_a^b f(x)\,dx
 $$
 
-라고 쓴다. $[a,\,b]$ 구간에서 $f$ 의 리만적분이 존재한다면 $f$ 는 $[a,\,b]$ 구간에서 리만적분이 가능하다고 한다.
+라고 쓴다. $[a,\,b]$ 구간에서 리만적분 가능한 함수의 집합을 $\mathcal{R}[a,\,b]$ 라고 쓴다.
 
 ::: 
 :::
@@ -188,13 +188,13 @@ $$
 \end{aligned}
 $$ {#eq-part2_upper_and_lower_stieltjes_sum}
 
-라고 하자. 두 값이 같을 때 $f$ 는 $\alpha$ 에 대해 **스틸체스 적분 (Stieltjes integral)** 이 가능하다고 하며 
+라고 하자. 두 값이 같을 때 $f$ 는 $[a,\,b]$ 구간에서 $\alpha$ 에 대해 **스틸체스 적분 (Stieltjes integral)** 이 가능하다고 하며 그 값을
 
 $$
 \int_a^b f\, d\alpha, \qquad \text{or} \qquad \int_a^b f(x)\, d\alpha(x)
 $$
 
-라고 쓴다. 
+라고 쓴다. $[a,\,b]$ 구간에서 $\alpha$ 에 대해 스틸체스 적분 가능한 함수의 집합을 $\mathcal{R}(\alpha)[a,\,b]$ 라고 쓴다.
 
 
 ::: 
@@ -251,13 +251,15 @@ $\displaystyle \underline{\int_a^b} f\, d\alpha \le \overline{\int_a^b} f\, d\al
 </div>
 </br>
 
+이제 앞으로 스틸체스 적분에 대한 여러가지 성질을 보이는데 사용되는 유용한 정리를 소개한다.
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-part2_properties_of_stieltjes_integral_1}
 
 $f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음 두 명제는 동치이다.
 
-&emsp;($1$) $f$ 가 $[a,\,b]$ 구간에서 $\alpha$ 에 대해 스틸체스 적분이 가능하다.
+&emsp;($1$) $f\in \mathcal{R}(\alpha)[a,\,b]$.
 
 &emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 다음을 만족하는 $P\in \mathcal{P}[a,\,b]$ 가 존재한다.
 
@@ -280,7 +282,7 @@ $$
 를 만족하는 $P_1\in \mathcal{P}[a,\,b]$ 가 존재한다. 또한
 
 $$
-\int_a^b f\, d\alpha -L(f,\, P,\, \alpha) < \dfrac{\varepsilon}{2}
+\int_a^b f\, d\alpha -L(f,\, P_2,\, \alpha) < \dfrac{\varepsilon}{2}
 $$
 
 를 만족하는 $P_2 \in \mathcal{P}[a,\,b]$ 도 존재한다. $P =P_1 \cup P_2 \in P[a,\,b]$ 에 대해서도 위의 두 부등식이 성립하므로 여기서의 부등식을 더하면 ($2$) 가성립함을 안다.
@@ -303,15 +305,15 @@ $$
 
 </br>
 
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#prp-part2_properties_of_stieltjes_integral_2}
+::: {#exr-part2_properties_of_stieltjes_integral_2}
 
-$f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음이 성립한다. 
+$f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음을 보여라. 
 
 ($1$) $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 $P \subset Q$ 인 $Q\in \mathcal{P}[a,\,b]$ 에 대해서도 @eq-part2_condition_for_stieltjes_integrablity 가 성립한다.
 
-($2$) $P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t\in \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
+($2$) $P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
 
 $$
 \sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i <\varepsilon.
@@ -327,7 +329,7 @@ $$
 
 </div></br>
 
-::: {.proof}
+::: {.solution}
 
 ($1$) @thm-part2_properties_of_stieltjes_sum_1 .
 
@@ -339,7 +341,7 @@ $$
 
 이다.
 
-($3$) $L(f,\,P,\,\alpha) \le \sum f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)$ 이며 $L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)$ 이므로 성립한다. $\square$
+($3$) $L(f,\,P,\,\alpha) \le \sum_i f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)$ 이며 $L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)$ 이므로 성립한다. $\square$
 
 :::
 
@@ -351,7 +353,7 @@ $$
 
 ::: {#thm-part2_continuity_and_integrability}
 
-$f:[a,\,b] \to \R$ 이 연속이면 $f$ 는 $[a,\,b]$ 에서 스틸체스 적분가능하다.
+$f:[a,\,b] \to \R$ 이 연속이면 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 
 :::
 
@@ -387,7 +389,7 @@ $$
 
 ::: {#thm-part2_monitonic_function_and_integrability}
 
-$f:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 단조함수이며 $\alpha$ 가 $[a,\,b]$ 에서 연속이면 $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능 함수이다. (당연히 $\alpha$ 는 단조증가함수이다.)
+$f:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 단조함수이며 $\alpha$ 가 $[a,\,b]$ 에서 연속이면 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. (당연히 $\alpha$ 는 단조증가함수이다.)
 
 :::
 
@@ -426,16 +428,537 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_discontinuity_and_integrability}
+::: {#thm-part2_discontinuity_and_integrability}
 
-$f:[a,\,b] \to \R$ 가 유계이며 $[a,\,b]$ 구간에서 유한개의 불연속점을 가지며, $\alpha$ 는 $f$ 의 불연속점에서 연속이라고 하자. $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능하다. 
+$f:[a,\,b] \to \R$ 가 유계이며 $[a,\,b]$ 구간에서 유한개의 불연속점을 가진다고 하자. 그리고 $\alpha$ 는 $f$ 의 불연속점에서 연속이라고 하자. $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능하다. 
 :::
 
 </div></br>
 
 ::: {.proof}
 
-$\varepsilon>0$ 을 고정시키자. $M=\sup \{|f(x)|:x\in [a,\,b]\}$ 이며 $E$ 를 $f$ 에서의 불연속점의 집합이라고 하자. 
+$\varepsilon>0$ 을 고정시키자. $M=\sup \{|f(x)|:x\in [a,\,b]\}$ 이며 $E$ 를 $f$ 에서의 불연속점의 집합이고 그 갯수가 $n$ 개라고 하자. $E$ 에 속하는 모든 점에서 $\alpha$ 가 연속이므로 $x_i\in E$ 일 때 $x_i \in (u_i,\,v_i)$ 이며 $\alpha(v_j)-\alpha(u_j)<\varepsilon /n$ 인 열린 구간 $(u_j,\,v_j) \subset [a,\,b]$ 를 찾을 수 있다. 그렇다면 $\sum_{j} (\alpha(v_j)-\alpha(u_j)) < \varepsilon$ 이다.
+
+이제 $[a,\,b]$ 에서 모든 $(u_j,\,v_j)$ 를 뺀 집합을 $K$ 라고 하자. 즉,
+
+$$
+K=[a,\,b]- \bigcup (u_j,\,v_j)
+$$
+
+라고 하면 $K$ 는 옹골집합이며, $f$ 는 $K$ 에서 연속이므로 고른 연속이다. 즉 $s,\,t\in K$ 에 대해 $|s-t|<\delta \implies |f(s)-f(t)|<\varepsilon$ 인 $\delta >0$ 이 존재한다.
+
+이제 $[a,\,b]$ 의 분할 $P$ 를 잡자. 우선 $P$ 가 모든 $u_j$ 와 $v_j$ 를 포함하도록 하자. 그리고 $[u_j,\,v_j]$ 에 포함되지 않는 부분은 $\delta$ 보다 작은 간격의 구간으로 나누고 이를 $P$ 에 포함시킨다. 이제 $P=\{x_0=a,\,x_1,\ldots,\,x_n=b\}$ 라고 하자. 
+
+이제 $U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)$ 를 계산하자. $f$ 가 유계이므로 $[x_{i-1},\, x_i]$ 가 불연속점을 포함해도 $|f(x_i)-f(x_{i-1})|<2M$ 이다. 그렇다면 $[x_{i-1},\,x_i]=[u_j,\,v_j]$ 일 경우에 해당하는 $U-L$ 값은
+
+$$
+\sum_j [\alpha(v_j)-\alpha(u_j)] (M_j-m_j) \le [\alpha(v_j)-\alpha(u_j)] (2M) < 2M\varepsilon
+$$
+
+이다. $[x_{i-1},\,x_i] \ne [u_j,\,v_j]$ 일 경우에 해당하는 $U-L$ 값은
+
+$$
+\sum_{i,\, x_i\ne u_j} [\alpha(x_i)-\alpha(x_{i-1})](M_i-m_i) < \sum_{i,\,x_i \ne u_j} \varepsilon[\alpha(x_i)-\alpha(x_{i-1})] \le [\alpha(b)-\alpha(a)] \varepsilon
+$$
+
+이므로
+
+$$
+U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha) < \left[2M + \alpha(b)-\alpha(a)\right]\varepsilon
+$$
+
+
+이다. 즉 $f\in \mathcal{R}(\alpha)$ 이다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-warning appearance="minimal"}
+@thm-part2_discontinuity_and_integrability 과는 달리 $\alpha$ 와 $f$ 가 공통의 불연속점을 가진다면 $f\not\in \mathcal{R}(\alpha)$ 일 수 있다. @exr-part2_rudin_6_3 을 보라.
+:::
+
+</br>
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_stieltjes_integrability_of_composite_function}
+
+$f:[a,\,b]\to \R$ 이 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $m\le f\le M$ 이라고 하자. $\phi:[m,\,M]\to \R$ 이 연속이며 $h(x) = \phi (f(x))$ 이면 $h\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
+:::
+
+</div></br>
+
+::: {.proof}
+
+$\varepsilon >0$ 을 선택한다. $\phi$ 가 $[m,\,M]$ 에서 연속이므로 고른 연속이다. 따라서 
+
+$$
+\forall s,\,t\in [m,\,M] ,\, |s-t|<\delta \implies |\phi(s)-\phi(t)|<\varepsilon
+$$
+
+을 만족하는 $\delta>0,\, \delta<\varepsilon$ 이 존재한다. 
+
+$f\in \mathcal{R}(\alpha)$ 이므로 
+
+$$
+U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)<\delta^2
+$$ {#eq-part2_thm-part2_stieltjes_integrability_of_composite_function_1}
+
+인 $P=\{x_0,\ldots,\,x_n\},\, P\in \mathcal{P}[a,\,b]$ 가 존재한다. $M_i=\sup f([a,\,b])$, $m_i = \inf f[a,\,b]$, $M^\ast_i = \sup h([a,\,b])$, $m^\ast_i = \inf h([a,\,b])$ 라고 하자. 
+
+이제 $i=1,\ldots,\,n$ 을 두가지로 나누자. ($i$) $M_i-m_i < \delta$ 인 경우 $i\in A$ 이고 ($ii$) $M_i-m_i \ge \delta$ 인 경우는 $i\in B$ 라고 하자.
+
+$i\in A$ 인 경우 $M^\ast_i - m^\ast_i < \varepsilon$ 이다.
+
+$i\in B$ 인 경우 $K=\sup \{|\phi(t)|: t\in [m,\, M]\}$ 에 대해 $M_i^\ast-m_i^\ast<2K$ 이다. @eq-part2_thm-part2_stieltjes_integrability_of_composite_function_1 의 조건에 의해 
+
+$$
+\delta \sum_{i\in B} (\Delta \alpha_i) \le \sum_{i\in B} (M_i-m_i) \Delta \alpha_i <\delta^2
+$$ {#eq-part2_thm-part2_stieltjes_integrability_of_composite_function_2}
+
+이다. 따라서 $\sum_{i\in B} \Delta \alpha_i < \delta$ 이며 이로부터
+
+$$
+\begin{aligned}
+U(h,\,P,\,\alpha) - L(h,\, P,\, \alpha) &= \sum_{i\in A} (M_i^\ast - m_i^\ast)\Delta \alpha_i + \sum_{i\in B} (M_i^\ast - m_i^\ast)\Delta \alpha_i \\
+&\le \varepsilon \left[\alpha(b) - \alpha (a)\right]+ 2K\delta < \varepsilon [\alpha(b)-\alpha(a)+2K]
+\end{aligned}
+$$
+
+이다. 따라서 $[a,\,b]$ 구간에서 $h\in \mathcal{R}(\alpha)$ 이다. $\square$
 
 
 :::
+
+</br>
+
+
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_stieltjes_integrability_of_composite_function}
+
+$f\in \mathcal{R}(\alpha)[a,\,b]$ 라면 @thm-part2_stieltjes_integrability_of_composite_function 로부터 다음을 알 수 있다.
+
+&emsp;($1$)  $n\in \mathbb{Z}_+$ 에 대해 $f^n \in \mathcal{R}(\alpha)[a,\,b]$ 이다. 
+
+&emsp;($2$) $0 \not\in f([a,\,b])$ 면 $n\in \mathbb{Z}_+$ 에 대해 $f^{-n} \in \mathcal{R}(\alpha)[a,\,b]$ 이다.
+
+&emsp;($3$) $|f|\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 
+:::
+
+</div>
+
+<br>
+
+## 적분의 성질
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_integral_1}
+
+$f,\,g \in \mathcal{R}(\alpha)[a,\,b]$ 이고 $c\in \R$ 이 상수라고 하자.
+
+($1$) $f+g \in  \mathcal{R}(\alpha)[a,\,b]$ 이고 $cf\in  \mathcal{R}(\alpha)[a,\,b]$ 이며 다음이 성립한다.
+
+$$
+\begin{aligned}
+\int_a^b (f+g)\, d\alpha &= \int_a^b f\,d\alpha + \int_a^b g\,d\alpha, \\
+\int_a^b cf\ d\alpha &= c\int_a^b f\,d\alpha.
+\end{aligned}
+$$
+
+($2$) $x\in [a,\, b]$ 에 대해 $f(x)\le g(x)$ 이면 다음이 성립한다.
+
+$$
+\int_a^b f\,d\alpha \le \int_a^b g\,d\alpha.
+$$
+
+($3$) $d\in [a,\,b]$ 에 대해 $f\in \mathcal{R}(\alpha)[a,\,d]$, $f\in \mathcal{R}(\alpha)[d,\,b]$ 이며 다음이 성립한다. 
+
+$$
+\int_a^b f\,d\alpha = \int_a^d f\, d\alpha + \int_d^b f\, d\alpha.
+$$
+
+($4$) $x\in [a,\,b]\implies |f(x)|<M$ 이면 다음이 성립한다.
+
+$$
+\left| \int_a^b f\,d\alpha \right| \le M[\alpha(b) - \alpha (a)]
+$$
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) $h=f+g$ 라고 하면 $P\in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+\begin{aligned}
+L(f,\,P,\,\alpha) + L(g,\,P,\,\alpha) & \le L(h,\,P,\,\alpha) \\[0.2em]
+&\le U(h,\,P,\,\alpha) \le U(f,\,P,\,\alpha) + U(g,\, P,\, \alpha)
+\end{aligned}
+$$
+
+이 성립한다. 이제 $P$ 를 $U(f,\,P,\, \alpha)-L(f,\,P,\,\alpha)<\frac{\varepsilon}{2}$, $U(g,\,P,\,\alpha)-L(g,\,P,\,\alpha)<\frac{\varepsilon}{2}$ 를 만족하는 분할이라고 하자. ($f,\,g$ 각각에 대해 부등호가 성립하는 분할 $P_f,\,P_g$ 가 항상 존재하며 $P=P_f \cup P_g$ 로 잡으면 된다.) 그러면 아래가 성립한다.
+
+$$
+\begin{aligned}
+U(h,\,P,\, \alpha) - & L(h,\,P,\, \alpha) \\
+&\le U(f,\, P,\, \alpha) + U(g,\, P,\, \alpha) - L(f,\, P,\, \alpha) - L(g,\,P,\, \alpha) < \varepsilon
+\end{aligned}
+$$
+
+이므로 $h=f+g\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 
+
+또한 이 분할 $P$ 에서
+
+$$
+U(f,\,P,\,\alpha)< \int_a^b f\,d\alpha+\dfrac{\varepsilon}{2},\qquad U(g,\,P,\,\alpha)< \int_a^b g\,d\alpha+\dfrac{\varepsilon}{2},
+$$
+
+이므로 
+
+$$
+\int_a^b h \, d\alpha \le U(f,\, P,\,\alpha) < \int_a^b f\,d\alpha + \int_a^b g\,d\alpha + \varepsilon
+$$
+
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로
+
+$$
+\int_a^b h\,d\alpha \le \int_a^b f\,d\alpha + \int_a^b g\,d\alpha
+$$ {#eq-prp-part2_properties_of_integral_1_1}
+
+임을 안다. 또한
+
+$$
+L(f,\,P,\, \alpha) > \int_a^b f\,d\alpha - \dfrac{\varepsilon}{2},\qquad L(g,\,P,\, \alpha) > \int_a^b g\,d\alpha - \dfrac{\varepsilon}{2}
+$$
+
+이므로 
+
+$$
+\int_a^b f\, d\alpha + \int_a^b g\,d\alpha -\varepsilon < L(h,\, P,\, \alpha) \le \int_a^b h\,d\alpha
+$$
+
+이다. 역시 임의의 $\varepsilon>0$ 에 대해 성립하므로
+
+$$
+\int_a^b f\, d\alpha + \int_a^b g\,d\alpha \le \int_a^b h\,d\alpha
+$$ {#eq-prp-part2_properties_of_integral_1_2}
+
+이다. @eq-prp-part2_properties_of_integral_1_1 과 @eq-prp-part2_properties_of_integral_1_1 로 부터 
+
+$$
+\int_a^b (f+g)\, d\alpha = \int_a^b f\,d\alpha + \int_a^b g\,d\alpha
+$$
+
+임을 안다. 
+
+이제 $cf$ 에 대해 생각하자. $c=0$ 이면 자명하므로 $c\ne 0$ 인 경우만 생각한다. 우선 $c>0$ 인 경우 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해  $U(cf,\, P,\, \alpha) = cU(f,\,P,\, \alpha)$ 이며 $L(cf,\,P,\, \alpha)= cL(f,\, P,\, \alpha)$ 이다. 따라서 
+
+$$
+U(cf,\,P,\, \alpha)-L(cf,\, P,\, \alpha) = |c|\left[U(f,\, P,\, \alpha)- L(f,\, P,\, \alpha)\right]
+$$ {#eq-thm-part2_properties_of_integral_1_3}
+
+이므로 $cf\in \mathcal{R}(\alpha)[a,\,b]$ 임을 안다. $c<0$ 인 경우 역시 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해 $U(cf,\, P,\, \alpha)=cL(f,\,P,\,\alpha)$ 이며 $L(cf,\, P,\, \alpha) = cU(f,\, P,\, \alpha)$ 이므로 역시 @eq-thm-part2_properties_of_integral_1_3 이 성립한다. 따라서 $cf \in \mathcal{R}(\alpha)[a,\,b]$ 이다. 이제 $U(f,\, P,\, \alpha)-L(f,\, P,\, \alpha)<\frac{\varepsilon}{|c|}$ 인 $P\in \mathcal{P}[a,\,b]$ 를 생각하자. 
+
+$c>0$ 인 경우 
+
+$$
+\int_a^b (cf)\,d\alpha < U(cf,\, P,\,\alpha) = cU(f,\, P,\, \alpha) < c\int_a^b f\, d\alpha+ \varepsilon
+$$
+
+이며 임의의 $\varepsilon$ 에서 성립하므로 $\int_a^b (cf)\,d\alpha \le c\int_a^b f\,d\alpha$ 임을 안다. 또한 
+
+$$
+c\int_a^b f\,d\alpha -\varepsilon < cL(f,\, P,\, \alpha) = L(cf,\, P,\, \alpha) < \int_a^b (cf)\,d\alpha
+$$
+
+이며, 역시 임의의 $\varepsilon$ 에서 성립하므로 $\int_a^b (cf)\, d\alpha \ge c\int_a^b f\,d\alpha$ 임을 안다. 즉
+
+$$
+\int_a^b (cf)\,d\alpha = c\int_a^b f\,d\alpha
+$$
+
+이다. 
+
+($2$) $h=g-f$ 라고 하면 $h\ge 0$ 이며 따라서 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해 $L(f,\, P,\, \alpha)\ge 0$ 이다. ($1$) 에 의해 $\int h\, d\alpha = \int g\,d\alpha -\int f\,d\alpha$ 이며 $\int h\,d\alpha \ge 0$ 이므로 명제가 성립한다.
+
+($3$) $d$ 를 포함하는 분할을 생각하라. 
+
+($4$) $|f(x)|\le M$ 이므로 $-M\le f(x)\le M$ 이다. ($2$) 로 부터
+
+$$
+-M[\alpha(b)-\alpha(a)] \le \int_a^b (-M)\,d\alpha \le \int_a^b f\,d\alpha  \le \int_a^b M\, d\alpha \le M[\alpha(b)-\alpha(a)]
+$$
+
+이므로 명제가 성립한다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_integral_2}
+
+$f\in \mathcal{R}(\alpha)[a,\,b]$, $f\in \mathcal{R}(\beta)[a,\,b]$ 이면 $f\in \mathcal{R}(\alpha+\beta)[a,\,b]$ 이며 다음이 성립한다.
+
+$$
+\int_a^b f\,d (\alpha+\beta) = \int_a^b f\,d\alpha + \int_a^b f\,d\beta
+$$
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$\alpha,\,\beta$ 가 $[a,\,b]$ 구간에서 단조증가이므로 $\alpha + \beta$ 도 단조증가이다. $P=\{x_0,\,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 라 하자.
+
+$$
+\begin{aligned}
+L(f,\, P,\, \alpha+\beta) &= \sum_{i=1}^n (M_i-m_i)\left[\alpha (x_i) + \beta(x_i) - \alpha (x_{i-1} - \beta (x_i)\right] \\[0.2em]
+&=\sum_{i=1}^n (M_i-m_i)\Delta \alpha_i + \sum_{i=1}^n (M_i-m_i) \Delta \beta_i\\[0.2em]
+&= L(f,\,P,\, \alpha) + L(f,\, P,\,\beta)
+\end{aligned}
+$$
+
+이며 같은 방법으로
+
+$$
+U(f,\, P,\, \alpha+\beta) = U(f,\, P,\, \alpha) + U(f,\, P,\, \beta)
+$$
+
+임을 보일 수 있다. 임의의 $\varepsilon>0$ 에 대해 $U(f,\, P,\, \alpha)-L(f,\, P,\, \alpha)<\varepsilon/2$ 이며 $U(f,\, P,\,\beta) - L(f,\, P,\, \beta)<\varepsilon/2$ 인 $P\in \mathcal{P}[a,\,b]$ 를 잡을 수 있으며 이 때
+
+$$
+U(f,\,P,\, \alpha+\beta) - L(f,\, P,\, \alpha+\beta)< \varepsilon
+$$
+
+이므로 $f\in \mathcal{R}(\alpha+\beta)[a,\,b]$ 이며
+
+$$
+\int_a^b f d(\alpha+ \beta) = \int_a^b f\,d\alpha + \int_a^b f\,d\beta
+$$
+
+이다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_integral_3}
+
+$f,\,g\in \mathcal{R}(\alpha)[a,\,b]$ 일 때 다음이 성립한다.
+
+&emsp;($1$) $fg\in \mathcal{R}(\alpha)[a,\,b]$.
+
+&emsp;($2$) $|f|\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $\displaystyle \left|\int_a^b f\,d\alpha\,\right| \le \int_a^b |f|\,d\alpha$.
+ 
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+($1$) $f+g,\, f-g\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $(f+g)^2,\, (f-g)^2\in \mathcal{R}(\alpha)[a,\,b]$ 이다(@exm-part2_stieltjes_integrability_of_composite_function). 따라서 다음이 성립한다.
+
+$$
+fg=\dfrac{(f+g)^2 - (f-g)^2}{4} \in \mathcal{R}(\alpha)[a,\,b].
+$$ 
+
+($2$) @exm-part2_stieltjes_integrability_of_composite_function 에서 $|f|\in \mathcal{R}(\alpha)[a,\,b]$ 임을 보였다. $c\int^a_b f\,d\alpha\ge 0$ 이 되도록 $c=\pm 1$ 중에 선택하자.  $cf\le |f|$ 이므로 다음이 성립한다.
+
+$$
+\left|\int_a^b f\,d\alpha\right| = c\int_a^b f\,d\alpha = \int_a^b cf\, d\alpha \le \int_a^b |f|\,d\alpha.
+$$
+$\square$
+
+:::
+
+</br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_unit_step_function}
+
+#### 단위 계단 함수
+
+**단위 계단 함수(unit step function)** $\theta(x):\R \to \{0,\,1\}$ 은 다음과 같이 정의된다.
+
+$$
+\theta (x) = \left\{\begin{array}{ll} 0, \qquad & x\le 0, \\ 1,&x>0.\end{array}\right. 
+$$
+
+::: 
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_integral_4}
+
+$f$ 가 $[a,\,b]$ 구간예서 유계이며 $s\in (a,\,b)$ 에서 연속이라고 하자. 또 $\alpha(x) = \theta(x-s)$ 라고 하자. 그렇다면 다음이 성립한다.
+
+$$
+\int_a^b f\, d\alpha = f(x).
+$$
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$P\in \mathcal{P}[a,\,b]$ 를 $\{x_0,\, x_1,\,x_2,\,x_3\}$ 로 잡고 아래의 성질을 가진다고 하자.
+
+$$
+x_0=a < x_1=s < x_2 < x_3=b.
+$$
+
+그렇다면 $U(f,\,P,\,\alpha) = M_2 = \sup f([x_1,\,x_2])$, $L(f,\,P,\,\alpha) = m_2 =\inf f([x_1,\,x_2])$ 이다. $f$ 가 $s$ 에서 연속이므로 $x_2\to x_1$ 일 때 $M_2$ 와 $m_2$ 는 $f(s)$ 로 수렴한다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_properties_of_integral_5}
+
+양의 수열 $\langle c_k\rangle$ 에서 $\sum_k c_k$ 가 수렴하며 $\langle s_k \rangle$ 은 $(a,\,b)$ 구간에서 정의된 수열이고
+
+$$
+\alpha (x) = \sum_{k=1}^\infty c_k \theta(x-s_k)
+$$ {#eq-part2_properties_of_integral_5_1}
+
+라고 하자. $f$ 가 $[a,\,b]$ 에서 연속이라면 다음이 성립한다.
+
+$$
+\int_a^b f\,d\alpha = \sum_{k=1}^\infty c_k f(s_k).
+$$ {#eq-part2_properties_of_integral_5_2}
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+임의의 $x$ 에 대해 $|c_k \theta (x-s_k)| \le |c_k|$ 이므로 @eq-part2_properties_of_integral_5_1 의 $\sum$ 부분은 수렴한다. 즉 $\alpha(x)$ 는 잘 정의된다. 또한 $\alpha(x)$ 는 단조증가함수임은 명백하며 $\alpha(a)=0$, $\alpha(b)= \sum_k c_k$ 이다.
+
+고정된 $\varepsilon>0$ 에 대해 $\displaystyle \sum_{k=N+1}^\infty c_k < \varepsilon$ 이 되는 $N\in \mathbb{Z}_+$ 가 항상 존재한다. 이제 
+
+$$
+\alpha_1 (x) = \sum_{k=1}^N c_k \theta(x-s_k),\qquad \alpha_2(x) = \sum_{k=N+1}^\infty c_k \theta (x-s_k)
+$$
+
+라고 하자. @prp-part2_properties_of_integral_2 와 @prp-part2_properties_of_integral_4 로부터
+
+$$
+\int_a^b f\, d\alpha_1 = \sum_{k=1} c_k f(s_k)
+$$ {#eq-part2_properties_of_integral_5_3}
+
+이다. $\alpha_2(b)-\alpha_2(a)<\varepsilon$ 이므로 $M=\sup \{|f(x)|: x\in [a,\,b]\}$ 라고 하면
+
+$$
+\left|\int_a^b f\, d\alpha_2 \right| \le M\varepsilon
+$$ {#eq-part2_properties_of_integral_5_4}
+
+이다. $\alpha = \alpha_1 + \alpha_2$ 이므로 @eq-part2_properties_of_integral_5_3, @eq-part2_properties_of_integral_5_4 로부터
+
+$$
+\left| \int_a^b f\, d\alpha - \sum_{k=1}^N c_k f(s_k)\right| \le M\varepsilon
+$$ {#eq-prp-part2_properties_of_integral_5_5}
+
+이다. 이제 $N \to \infty$ 극한을 취하면 @eq-part2_properties_of_integral_5_2 를 얻는다. $\square$
+
+:::
+
+</br>
+
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_properties_of_integral_6}
+$\alpha$ 가 단조증가이며 $\alpha'\in \mathcal{R}[a,\,b]$ 이라고 하자. $f$ 가 $[a,\,b]$ 구간에서 유계인 실함수라면 
+
+$$
+f\in \mathcal{R}(\alpha)[a,\,b] \iff f\alpha' \in \mathcal{R}[a,\,b]
+$$ {#eq-part2_properties_of_integral_6_1}
+
+가 성립하며 이 경우
+
+$$
+\int_a^b f\,d\alpha = \int_a^b f(x)\, \alpha'(x)\, dx
+$$ {#eq-part2_properties_of_integral_6_2}
+
+이다.
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$\alpha'\in \mathcal{R}[a,\,b]$ 이므로 고정된 $\varepsilon>0$ 에 대해 
+
+$$
+U(\alpha',\, P)- L(\alpha',\, P)<\varepsilon
+$$
+
+인 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 가 존재한다. 평균값 정리에 따라 각각의 $[x_{i-1},\,x_i]$ 구간에서
+
+$$
+\Delta \alpha_i = \alpha(x_{i})- \alpha(x_{i-1}) = \alpha'(t_i)(x_{i}-x_{i-1})
+$$
+
+을 만족하는 $t_i\in [x_{i-1},\,x_i]$ 가 존재한다. 
+
+
+
+
+:::
+
+
+## 연습문제 {.unnumbered}
+
+
+
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_6_3}
+
+#### Rudin 6.3
+
+
+
+:::
+
+</div>
+
+</br>
