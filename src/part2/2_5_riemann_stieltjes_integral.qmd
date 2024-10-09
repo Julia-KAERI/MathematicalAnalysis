@@ -27,7 +27,11 @@ $$
 a=x_0 < x_1 < x_2 < \cdots < x_{n-1}< x_n = b
 $$
 
-일 때 $P=\{x_0,\ldots,\,x_n\}$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체의 집합을 $\mathcal{P}[a,\,b]$ 라고 표기한다. 
+일 때 $P=\{x_0,\ldots,\,x_n\}$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체의 집합을 $\mathcal{P}[a,\,b]$ 라고 표기한다. 분할 $P$ 에 대한 **노름(norm)** $\|P\|$ 는 다음과 같이 정의된다.
+
+$$
+\|P\| := \max \{|x_{i}-x_{i-1}|: i=1,\ldots,\,n\}.
+$$ {#eq-part2_definition_of_the_norm_of_partition}
 
 ::: 
 :::
@@ -50,12 +54,12 @@ m_i &:= \inf f([x_{i-1},\,x_{i}]). \\
 \end{aligned}
 $$ {#eq-part2_upper_lower_riemann_sum_1}
 
-라고 하자. 이 때 **리만 상합(Riemann upper sum)** $U(f,\,P)$ 와 **리만 하합 (Riemann lower sum)** $L(f,\,P)$ 는 다음과 같이 정의된다.
+라고 하자. 그리고 $\Delta x_i := x_i - x_{i-1}$ 이라고 하자. 이 때 **리만 상합(Riemann upper sum)** $U(f,\,P)$ 와 **리만 하합 (Riemann lower sum)** $L(f,\,P)$ 는 다음과 같이 정의된다.
 
 $$
 \begin{aligned}
-U(f,\,P) &:= \sum_{i=1}^n M_i (x_{i}-x_{i-1}), \\[0.2em]
-L(f,\,P) &:= \sum_{i=1}^n m_i (x_{i}-x_{i-1}).
+U(f,\,P) &:= \sum_{i=1}^n M_i \Delta x_i, \\[0.2em]
+L(f,\,P) &:= \sum_{i=1}^n m_i\Delta x_i.
 \end{aligned}
 $$ {#eq-part2_upper_lower_riemann_sum_2}
 
@@ -73,7 +77,6 @@ $P_1,\,P_2\in \mathcal{P}[a,\,b]$ 이며 $P_1 \subset P_2$ 일 때 다음이 성
 $$
 L(f,\, P_1) \le L(f,\,P_2) \le U(f,\,P_2) \le U(f,\,P_1)
 $${#eq-part2_inequalitiy_of_riemann_sum_1}
-
 
 :::
 
@@ -202,6 +205,29 @@ $$
 
 
 </br>
+
+아래의 명제는 아주 자명하지만 앞으로 많이 사용되므로 기억을 위해 남겨둔다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_sum_of_alpha}
+
+@def-part2_stieltjes_integral $\alpha$ 와 $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+\sum_{i=1}^n \Delta \alpha_i = \alpha (b)-\alpha(a)
+$$
+
+이다.
+
+:::
+
+</div>
+
+</br>
+
+
+
 
 $\alpha(x)=x$ 일 경우 스틸체스 적분은 리만 적분이 된다. 즉 리만 적분은 스틸체스 적분의 특수한 형태이다. 이제 @thm-part2_properties_of_rieman_sum_1 과 @cor-part2_properties_of_rieman_sum_2 가 스틸체스 적분의 형태에 대해서도 성립함을 보일 수 있다.
 
@@ -367,7 +393,7 @@ $$
 |x-t| <\delta \implies |f(x)-f(t)|<\eta
 $$
 
-인 $\delta >0$ 이 존재한다. $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 가 모든 $i$ 에 대해 $x_{i}-x_{i-1}<\delta$ 가 되도록 잡을 수 있으며 이 경우
+인 $\delta >0$ 이 존재한다. 분할 $P\in \mathcal{P}[a,\,b]$ 를 $\|P\|<\delta$ 가 되도록 잡으면 
 
 $$
 M_i-m_i \le \eta
@@ -437,25 +463,31 @@ $f:[a,\,b] \to \R$ 가 유계이며 $[a,\,b]$ 구간에서 유한개의 불연�
 
 ::: {.proof}
 
-$\varepsilon>0$ 을 고정시키자. $M=\sup \{|f(x)|:x\in [a,\,b]\}$ 이며 $E$ 를 $f$ 에서의 불연속점의 집합이고 그 갯수가 $n$ 개라고 하자. $E$ 에 속하는 모든 점에서 $\alpha$ 가 연속이므로 $x_i\in E$ 일 때 $x_i \in (u_i,\,v_i)$ 이며 $\alpha(v_j)-\alpha(u_j)<\varepsilon /n$ 인 열린 구간 $(u_j,\,v_j) \subset [a,\,b]$ 를 찾을 수 있다. 그렇다면 $\sum_{j} (\alpha(v_j)-\alpha(u_j)) < \varepsilon$ 이다.
+$E=\{t_1,\ldots,\,t_n\}$ 이라고 하고 $\varepsilon>0$ 을 고정시키자. $M=\sup \{|f(x)|:x\in [a,\,b]\}$ 이며 $E$ 를 $f$ 에서의 불연속점의 집합이고 그 갯수가 $n$ 개라고 하자. $E$ 에 속하는 모든 점에서 $\alpha$ 가 연속이므로 다음의 ($i$) ~ ($iii$) 를 만족하는 열린구간의 집합 $\{(u_j,\,v_j):j=1,\ldots,\,n\}$ 이 존재한다.
 
-이제 $[a,\,b]$ 에서 모든 $(u_j,\,v_j)$ 를 뺀 집합을 $K$ 라고 하자. 즉,
+&emsp;($i$) $t_j \in (u_j,\,v_j) \subset [a,\,b]$ 이며,
+
+&emsp;($ii$) $\displaystyle \alpha(v_j)-\alpha(u_j)<\dfrac{\varepsilon}{n}$ 이고,
+
+&emsp;($iii$) 각각의 $(u_j,\,v_j)$ 는 서로소이다.
+
+그렇다면 $\sum_{j} (\alpha(v_j)-\alpha(u_j)) < \varepsilon$ 이다. 이제 $[a,\,b]$ 에서 모든 $(u_j,\,v_j)$ 를 뺀 집합을 $K$ 라고 하자. 즉,
 
 $$
-K=[a,\,b]- \bigcup (u_j,\,v_j)
+K=[a,\,b]- \bigcup_{j=1}^n (u_j,\,v_j)
 $$
 
 라고 하면 $K$ 는 옹골집합이며, $f$ 는 $K$ 에서 연속이므로 고른 연속이다. 즉 $s,\,t\in K$ 에 대해 $|s-t|<\delta \implies |f(s)-f(t)|<\varepsilon$ 인 $\delta >0$ 이 존재한다.
 
 이제 $[a,\,b]$ 의 분할 $P$ 를 잡자. 우선 $P$ 가 모든 $u_j$ 와 $v_j$ 를 포함하도록 하자. 그리고 $[u_j,\,v_j]$ 에 포함되지 않는 부분은 $\delta$ 보다 작은 간격의 구간으로 나누고 이를 $P$ 에 포함시킨다. 이제 $P=\{x_0=a,\,x_1,\ldots,\,x_n=b\}$ 라고 하자. 
 
-이제 $U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)$ 를 계산하자. $f$ 가 유계이므로 $[x_{i-1},\, x_i]$ 가 불연속점을 포함해도 $|f(x_i)-f(x_{i-1})|<2M$ 이다. 그렇다면 $[x_{i-1},\,x_i]=[u_j,\,v_j]$ 일 경우에 해당하는 $U-L$ 값은
+이제 $U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)$ 를 계산하자. $f$ 가 유계이므로 $[x_{i-1},\, x_i]$ 가 불연속점을 포함해도 $|f(x_i)-f(x_{i-1})|<2M$ 이다. 그렇다면 $[x_{i-1},\,x_i]=[u_j,\,v_j]$ 일 경우, 즉 $[x_{i-1},\,x_i]$ 가 불연속점을 포함하는 경우에 해당하는 $U-L$ 값은
 
 $$
 \sum_j [\alpha(v_j)-\alpha(u_j)] (M_j-m_j) \le [\alpha(v_j)-\alpha(u_j)] (2M) < 2M\varepsilon
 $$
 
-이다. $[x_{i-1},\,x_i] \ne [u_j,\,v_j]$ 일 경우에 해당하는 $U-L$ 값은
+이다. 그렇다면 $[x_{i-1},\,x_i]$ 가 불연속점을 포함하지 않은 경우, 즉 $[x_{i-1},\,x_i] \ne [u_j,\,v_j]$ 일 경우에 해당하는 $U-L$ 값은
 
 $$
 \sum_{i,\, x_i\ne u_j} [\alpha(x_i)-\alpha(x_{i-1})](M_i-m_i) < \sum_{i,\,x_i \ne u_j} \varepsilon[\alpha(x_i)-\alpha(x_{i-1})] \le [\alpha(b)-\alpha(a)] \varepsilon
@@ -485,7 +517,7 @@ $$
 
 ::: {#thm-part2_stieltjes_integrability_of_composite_function}
 
-$f:[a,\,b]\to \R$ 이 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $m\le f\le M$ 이라고 하자. $\phi:[m,\,M]\to \R$ 이 연속이며 $h(x) = \phi (f(x))$ 이면 $h\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
+$f:[a,\,b]\to \R$ 이 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $m\le f\le M$ 이라고 하자. $\phi :[m,\,M]\to \R$ 이 연속이며 $h(x) = \phi (f(x))$ 이면 $h\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 :::
 
 </div></br>
@@ -498,7 +530,7 @@ $$
 \forall s,\,t\in [m,\,M] ,\, |s-t|<\delta \implies |\phi(s)-\phi(t)|<\varepsilon
 $$
 
-을 만족하는 $\delta>0,\, \delta<\varepsilon$ 이 존재한다. 
+을 만족하는 $\delta>0$ 가 존재하며 $\delta<\varepsilon$ 가 되도록 잡을 수 있다.
 
 $f\in \mathcal{R}(\alpha)$ 이므로 
 
@@ -529,11 +561,9 @@ $$
 
 이다. 따라서 $[a,\,b]$ 구간에서 $h\in \mathcal{R}(\alpha)$ 이다. $\square$
 
-
 :::
 
 </br>
-
 
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -893,9 +923,6 @@ $$ {#eq-prp-part2_properties_of_integral_5_5}
 
 </br>
 
-
-</br>
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-part2_properties_of_integral_6}
@@ -925,27 +952,513 @@ $\alpha'\in \mathcal{R}[a,\,b]$ 이므로 고정된 $\varepsilon>0$ 에 대해
 
 $$
 U(\alpha',\, P)- L(\alpha',\, P)<\varepsilon
-$$
+$$ {#eq-part2_properties_of_integral_6_3}
 
 인 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 가 존재한다. 평균값 정리에 따라 각각의 $[x_{i-1},\,x_i]$ 구간에서
 
 $$
-\Delta \alpha_i = \alpha(x_{i})- \alpha(x_{i-1}) = \alpha'(t_i)(x_{i}-x_{i-1})
+\Delta \alpha_i = \alpha(x_{i})- \alpha(x_{i-1}) = \alpha'(t_i)\Delta x_i
+$$ {#eq-part2_properties_of_integral_6_4}
+
+을 만족하는 $t_i\in [x_{i-1},\,x_i]$ 가 존재한다. @eq-part2_properties_of_integral_6_3 으로부터 $i=1,\ldots,\, n$ 에 대해 $s_i \in [x_{i-1},\,x_i]$ 라면
+
+$$
+\sum_{i=1}^n |\alpha'(s_i)-\alpha'(t_i)|\Delta x_i \le U(\alpha',\,P)-L(\alpha',\, P)<\varepsilon
+$$ {#eq-part2_properties_of_integral_6_5}
+
+이다. 이제 $M=\sup \{|f(x)|: x\in [a,\,b]\}$ 라고 하자.
+
+$$
+\sum_{i=1}^n f(s_i)\Delta \alpha_i = \sum_{i=1}^n f(s_i) \alpha'(t_i)\Delta x_i
+$$ {#eq-part2_properties_of_integral_6_6}
+
+이며, @eq-part2_properties_of_integral_6_6, 그리고 @eq-part2_properties_of_integral_6_5 를 이용하면 
+
+$$
+\begin{aligned}
+\left| \sum_{i=1}^n f(s_i) \Delta \alpha_i\right. &- \left.\sum_{i=1}^n f(s_i)\alpha'(s_i)\Delta x_i \right| \\
+&= \sum_{i=1}^n |f(s_i)| \left| \alpha'(t_i)\Delta x_i-\alpha'(s_i) \Delta x_i\right| < M\varepsilon
+\end{aligned}
+$$ {#eq-part2_properties_of_integral_6_7}
+
+이다. 즉 $s_i$ 를 $[x_{i-1},\,x_i]$ 가운데 어떤 값을 선택해도
+
+$$
+\begin{aligned}
+\sum_{i=1}^n f(s_i)\Delta \alpha_i &\le \sum_{i=1}^n f(s_i)\alpha'(s_i)\Delta x_i + M\varepsilon \le U(f\alpha',\, P) + M\varepsilon 
+\end{aligned}
 $$
 
-을 만족하는 $t_i\in [x_{i-1},\,x_i]$ 가 존재한다. 
+이므로
+
+$$
+U(f,\,P,\, \alpha) \le U(f\alpha',\, P)+ M\varepsilon
+$$
+
+이다. 같은 방식으로
+
+$$
+U(f\alpha',\, P) \le U(f,\,P,\,\alpha) + M\varepsilon
+$$
+
+임을 보일 수 있다. 따라서 
+
+$$
+|U(f,\,P,\, \alpha)- U(f\alpha',\, P)| \le M\varepsilon
+$$
+
+이다. $\varepsilon$ 이 임의의 양수이므로
+
+$$
+\overline{\int_a^b} f\,d\alpha = \overline{\int_a^b} f(x)\,\alpha'(x) \,dx
+$$
+
+이다. 같은 방법으로 
+$$
+\underline{\int_a^b} f\,d\alpha = \underline{\int_a^b} f(x)\,\alpha'(x) \,dx
+$$
+
+임을 보일 수 있다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이므로
+
+$$
+\overline{\int_a^b} f(x)\,\alpha'(x) \,dx = \overline{\int_a^b} f\,d\alpha = \underline{\int_a^b} f\,d\alpha =  \underline{\int_a^b} f(x)\,\alpha'(x) \,dx
+$$
+
+이다. 즉 $f\alpha'\in \mathcal{R}[a,\,b]$ 이며 명제가 성립한다. $\square$
+
+:::
+
+</br>
 
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
+::: {#thm-part2_change_of_varialble}
+
+#### 변수 변환 적분
+
+$\varphi : [A,\,B] \to [a,\,b]$ 가 연속인 순증가 함수이고 전사함수라고 하자. $\alpha :[a,\,b] \to \R$ 은 단조응가함수이며 $f\in\mathcal{R}(\alpha)[a,\,b]$ 라고 하자. 이 때 $[A,\,B]$ 에서 정의된 $\beta,\,g$ 를 다음과 같이 정의한다.
+
+$$
+\beta(y) := \alpha (\varphi(y)), \qquad g(y) := f(\varphi (y)).
+$$ {#eq-part2_change_of_varialble_1}
+
+그렇다면 $g\in \mathcal{R}(\beta)[A,\,B]$ 이며
+
+$$
+\int_A^B g\,d\beta = \int_a^b f\,d\alpha
+$$ {#eq-part2_change_of_varialble_2}
+
+이다. 
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$\varphi$ 가 연속인 순증가 함수이고 전사함수이면 전단사이므로 $[a,\,b]$ 에서의 분할과 $[A,\,B]$ 에서의 분할이 일대일 대응한다. 즉 $Q = \{y_0,\ldots,\,y_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $P\in \mathcal{P}[a,\,b]$ 가 정해지며 $P=\{x_0,\ldots,\,x_n\}$ 에 대해 $Q=\{y_i : y_i = \varphi^{-1}(x_i)\}$ 가 정해진다. 이렇게 정해진 분할 $P,\,Q$ 에 대해
+
+$$
+U(g,\,Q,\,\beta) = U(f,\,P,\,\alpha),\qquad L(g,\,Q,\,\beta)= L(f,\, P,\,\alpha)
+$$
+
+임은 쉽게 알 수 있다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이므로 $g\in \mathcal{R}(\beta)[A,\,B]$ 이며 @eq-part2_change_of_varialble_2 가 성립한다. $\square$
+
+:::
+
+</br>
+
+## 미적분의 기본정리 
+
+### 미적분의 제1 기본정리 {#sec-part2_first_fundamental_theorem_of_calculus}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-part2_first_fundamental_theorem_of_calculus}
+
+$f\in\mathcal{R}[a,\,b]$ 일 때 $x\in [a,\,b]$ 에 대해 아래와 같이 정의된 $F(x)$ 는 $[a,\,b]$ 에서 고른 연속이다.
+
+$$
+F(x) := \int_a^x f(t)\,dt.
+$$ {#eq-part2_first_fundamental_theorem_of_calculus}
+:::
+
+</div>
+
+</br>
+
+
+::: {.proof}
+
+$f\in \mathcal{R}$ 이므로 $f$ 는 유계이다. $t\in [a,\,b]$ 에 대해 $|f(t)|<M$ 이라고 하자.  $a<x<y<b$ 일 때 @prp-part2_properties_of_integral_1 의 ($3$), ($4$) 로부터
+
+$$
+\left|F(y)-F(x)\right| = \left|\int_x^y f(t)\, dt\right| \le M(y-x)
+$$
+
+임의의 $\varepsilon>0$ 에 대해 $|y-x|<\dfrac{\varepsilon}{M}$ 이면 $|F(y)-F(x)|<\varepsilon$ 이다. 즉 $F$ 는 $[a,\,b]$ 구간에서 연속이며, $[a,\,b]$ 가 옹골집합이므로 고른 연속이다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_first_fundamental_theorem_of_calculus}
+
+#### 미적분의 제1 기본정리
+
+@lem-part2_first_fundamental_theorem_of_calculus 과 같이 정의된 $f,\,F$ 에 대해 $f$ 가 $x_0\in [a,\,b]$ 에서 연속이면 $F$ 는 $x_0$ 에서 미분가능하며
+
+$$
+F'(x_0)= f(x_0)
+$$
+
+이다. 
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$f$ 가 $x_0$ 에서 연속이면 정해진 임의의 $\varepsilon>0$ 에 대해 
+
+$$
+t\in [a,\,b],\, |t-x_0|<\delta \implies |f(t)-f(x_0)|<\varepsilon
+$$
+
+인 $\delta>0$ 이 존재한다. 그렇다면 $x\in N(x_0,\, \delta)\cap [a,\,b]$ 일 때 
+
+$$
+\left|\dfrac{F(x)-F(x_0)}{x-x_0}-f(x_0)\right| = \left|\dfrac{1}{x-x_0}\int_{x_0}^x \left[ f(t)-f(x_0)\right]\,dt\right| < \varepsilon
+$$
+
+이다. 즉 $F'(x_0)=f(x_0)$ 이다. $\square$
+
+:::
+
+</br>
+
+
+아래의 따름정리는 평균값 정리의 적분 버젼으로 평균값 정리(@thm-part2_mean_value_theorem) 으로 쉽게 증명 가능하다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part2_mean_value_theorem_for_integration}
+
+#### 적분의 평균값 정리
+
+함수 $f:[a,\,b]\to \R$ 이 연속이면 
+
+$$
+\dfrac{1}{b-a}\int_a^b f(t)\, dt = f(x_0)
+$$ {#eq-part2_mean_value_theorem_for_integration}
+
+
+를 만족하는 $x_0\in (a,\,b)$ 가 존재한다.
+
+:::
+
+</div>
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_KKK_5_3_1}
+
+#### KKK 5.3.1
+@thm-part2_first_fundamental_theorem_of_calculus 에서 $F$ 가 $x_0$ 에서 미분가능하면 $f$ 는 $x_0$ 에서 연속임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$$
+F'(x_0) = \lim_{h \to 0} \dfrac{F(x_0+h)-F(x_0)}{h}= \lim_{h \to 0}\dfrac{1}{h}\int_{x_0}^{x_0+h} f(t)\, dt
+$$
+
+에서 $f(t)$ 가 연속이 아니라면 우변의 극한이 발산한다. 다라서 $F$ 가 $x_0$ 에서 미분가능하면 $f$ 는 $x_0$ 에서 연속이다.
+
+:::
+
+</br>
+
+### 미적분의 제2 기본정리 {#sec-part2_second_fundamental_theorem_of_calculus}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_second_fundamental_theorem_of_calculus}
+
+#### 미적분의 제2 기본정리
+
+$f\in \mathcal{R}[a,\,b]$ 이고 $[a,\,b]$ 에서 미분가능한 함수 $F$ 에 대해 $F' = f$ 이면 다음이 성립한다.
+
+$$
+\int_a^b f(x)\, dx = F(b)-F(a).
+$$ {#eq-part2_second_fundamental_theorem_of_calculus}
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+주어진 $\varepsilon>0$ 에 대해 $f\in\mathcal{R}[a,\,b]$ 이므로 $U(F,\,P)-L(F,\,P)<\varepsilon$ 인 $P = \{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 가 존재한다. 또한 $F$ 가 미분가능 함수이므로 
+
+$$
+F(x_{i})-F(x_{i-1}) = F'(t_i)\Delta x_i
+$$
+
+인 $t_i\in [x_{i-1},\,x_i],\,(i=1,\ldots,\,n)$ 가 존재한다. 따라서 
+
+$$
+F(b)-F(a) = \sum_{i=1}^n F'(t_i)\Delta x_i = \sum_{i=1}^n f(t_i)\Delta x_i
+$$
+
+이다. 그런데 $L(f,\,P) \le \sum_{i=1}^n f(t_i)\Delta x_i \le U(f,\,P)$ 이므로
+
+$$
+\left| F(b)-F(a) - \int_a^b f(x)\,dx \right| < \varepsilon
+$$
+
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 @eq-part2_second_fundamental_theorem_of_calculus 가 성립한다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_integration_by_parts}
+
+#### 부분적분
+
+$F,\,G$ 가 $[a,\,b]$ 에서 미분가능한 함수이며 $F'=f,\,G'=g$ 라고 하자. $f,\, g\in \mathcal{R}[a,\,b]$ 일 때 다음이 성립한다.
+$$
+\int_a^b F(x)\, g(x)\, dx = F(b)G(b)-F(a)G(a)-\int_a^b f(x)\, G(x)\,dx
+$$ {#eq-part2_integration_by_parts}
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$(F(x)G(x))' = F'(x)G(x) + F(x)G'(x) = f(x)G(x)+F(x)g(x)$ 이므로
+
+$$
+F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
+$$
+
+이다. $\square$
+
+:::
+
+</br>
+
+## 벡터값 함수의 적분
+
+### 벡터값 함수의 적분 {#sec-integration_of_vector_valued_functions}
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_integration_of_vector_valued_function}
+
+$f_1,\ldots,\,f_n :[a,\,b]\to \R$ 에 대해 $\boldsymbol{f}:[a,\,b]\to \R^n$ 이 $\boldsymbol{f}(t) = (f_1(t),\ldots,\,f_n(t))$ 라고 하자. $\alpha:[a,\,b]\to \R$ 이 단조증가 함수일 때 각각의 $f_i$ 가 $f_i\in\mathcal{R}[a,\,b]$ 이면 $\bf{f}$ 도 $[a,\,b]$ 구간에서의 리만적분 가능 함수라고 하며 역시 $\bf{f}\in \mathcal{R}[a,\,b]$ 로 표기한다. 이 때 $\boldsymbol{f}$ 의 적분은 다음과 같이 정의된다.
+
+$$
+\int_a^b \boldsymbol{f}\, d\alpha = \left(\int_a^b f_1\, d\alpha,\ldots,\, \int_a^b f_n \,d\alpha \right)
+$$
+
+::: 
+:::
+
+
+</br>
+
+### 길이를 잴 수 있는 곡선 
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_curve}
+
+#### 곡선
+
+$\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 연속일 때 $\gamma$ 를 $[a,\,b]$ 에서의 **곡선 (curve)** 이라고 한다. $\gamma$ 가 단사이면 $\gamma$ 를 **호(arc)** 라고 하며, $\gamma(b)=\gamma(a)$ 이면 $\gamma$ 를 **닫힌 곡선 (closed curve)** 라고 한다.
+
+::: 
+:::
+
+</br>
+
+즉 곡선은 유클리드공간상의 점의 집합이 아니라 함수이다. 이 때 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 다음의 값을 정의 할 수 있다.
+
+$$
+\Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|
+$$ {#eq-part2_polygonal_length_of_rectifiable_curve}
+
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part2_rectifiable_curve}
+
+#### 길이를 잴 수 있는
+
+$\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 곡선일 때
+
+$$
+\Lambda (\gamma) = \sup \{\Lambda(\gamma,\, P) : P\in \mathcal{P}[a,\,b]\}
+$$ {#eq-part2_length_of__curve}
+
+
+를 $\gamma$ 의 **길이 (length)** 라고 한다. $\Lambda (\gamma)<\infty$ 일 때 $\gamma$ 를 **길이를 잴 수 있는 곡선 (rectifiable curve)** 이라고 한다. 
+
+::: 
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_length_of_C1_rectifiable_curve}
+
+길이를 잴 수 있는 곡선 $\gamma :[a,\,b]\to \R^n$ 이 $C^1$ 급 함수일 때 그 길이는 다음과 같다.
+
+$$
+\Lambda (\gamma) = \int_a^b \|\gamma'(t)\|\, dt.
+$$ {#eq-part2_length_of_C1_rectifiable_curve}
+
+:::
+
+</div>
+
+</br>
+
+::: {.proof}
+
+$P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+\|\gamma(x_{i}) - \gamma(x_{i-1})\| = \left\|\int_{x_{i-1}}^{x_i} \gamma'(t)\, dt\right\| \le \int_{x_{i-1}}^{x_i} \|\gamma' (t)\| \, dt
+$$
+
+이므로 다음이 성립한다.
+
+$$
+\Lambda (\gamma,\, P) \le \int_a^b \|\gamma'(t)\|\, dt.
+$$ {#eq-part2_length_of_C1_rectifiable_curve_1}
+
+
+이제 위 식의 부등호가 $\ge$ 로 바뀐 것을 증명하자. $\gamma'$ 이 $[a,\,b]$ 구간에서 연속이므로 이 구간에서 고른 연속이다. 임의의 $\varepsilon>0$ 에 대해 아래를 만족하는 $\delta>0$ 이 존재한다.
+
+$$
+s,\,t\in [a,\,b],\, |s-t|<\delta \implies \|\gamma'(s)-\gamma'(t)\|<\varepsilon.
+$$
+
+$\|P\|<\delta$ 인 $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 를 생각하자. $t\in [x_{i-1},\,x_i]$ 이면
+
+$$
+\|\gamma'(t) \| \le \|\gamma'(x_i)\|+\varepsilon
+$$
+
+이므로
+
+$$
+\begin{aligned}
+\int_{x_{i-1}}^{x_i} \|\gamma'(t)\|\, dt &= \|\gamma'(x_i)\|\Delta x_i + \varepsilon \Delta x_i \\
+&= \left\|\int_{x_{i-1}}^{x_i} \left[\gamma'(t) + \gamma'(x_i) - \gamma'(t)\right] \, dt\right\| + \varepsilon \Delta x_i\\
+&\le \left\|\int_{x_{i-1}}^{x_i} \gamma'(t) \, dt\right\| + \left\|\int_{x_{i-1}}^{x_i} \left[ \gamma'(x_i) - \gamma'(t)\right] \, dt\right\| + \varepsilon \Delta x_i \\[0.2em]
+&\le \|\gamma (x_{i})-\gamma(x_{i-1})\| + 2\varepsilon \Delta x_i
+\end{aligned}
+$$
+
+이다. 전체 $[a,\,b]$ 구간을 생각하면
+
+$$
+\int_a^b \|\gamma'(t)\|\,dt \le \Lambda (\gamma,\, P) + 2\varepsilon(b-a) \le \Lambda (\gamma) + 2\varepsilon (b-a)
+$$
+
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 
+
+$$
+\int_a^b \|\gamma'(t)\|\, dt \le \Lambda (\gamma)
+$$ {#eq-part2_length_of_C1_rectifiable_curve_2}
+
+이다. @eq-part2_length_of_C1_rectifiable_curve_1, @eq-part2_length_of_C1_rectifiable_curve_2 로부터 @eq-part2_length_of_C1_rectifiable_curve 가 성립함을 알 수 있다. $\square$
 
 :::
 
 
+</br>
+
 ## 연습문제 {.unnumbered}
 
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_6_1}
+
+#### Rudin 6.1
+
+$\alpha$ 가 $[a,\,b]$ 에서 증가함수이며 $x_0\in [a,\,b]$ 에서 연속이고 $f(x_\ast)=1$ 이며, $f(x\ne x_\ast)=0$ 이다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $\int f\,d\alpha = 0$ 임을 보여라
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+@thm-part2_discontinuity_and_integrability 에 따라 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 임의의 $\varepsilon>0$ 에 대해  $[a,\,b]$ 의 분할 $P = \{x_0,\ldots,\,x_n\}$ 를 $\|P\|<\varepsilon$ 이며 $x_\ast \not\in P$ 가 되도록 잡으면
+
+$$
+U(f,\,P,\, \alpha)< \varepsilon, \qquad L(f,\,P,\, \alpha)=0
+$$
+
+이므로 $U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)<\varepsilon$ 이다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_6_2}
+
+#### Rudin 6.2
+
+$f\ge 0$ 이며 $[a,\,b]$ 에서 연속이고 $\displaystyle \int_a^b f(x)\,dx=0$ 이라고 하자. 모든 $x\in [a,\,b]$ 에서 $f(x) = 0$ 임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+어떤 $x_\ast \in [a,\,b]$ 에서 $f(x_\ast) = c>0$ 이라면 $f$ 가 연속이므로 $x_\ast$ 를 포함하는 어떤 $[x_{i-1},\,x_i]$ 구간에서 $f(x)>0$ 이며 따라서 $L(f,\,P,\, \alpha) >0$ 인 $P\in \mathcal{P}[a,\,b]$ 가 존재한다. 즉 $\displaystyle \int_a^b f(x)\,dx \ge L(f,\,P,\,\alpha)>0$ 이므로 가정에 위배된다. 
 
 
+:::
 
 </br>
 
@@ -955,10 +1468,100 @@ $$
 
 #### Rudin 6.3
 
+$\beta_1,\,\beta_2,\,\beta_3$ 가 모두 $x>0$ 일 때 $\beta_j(x)=1$, $x<0$ 일 때 $\beta_j(x)=0$, 이며 $\beta_1(0)=0$, $\beta_2(0)=1$, $\beta_3(0)=\frac{1}{2}$ 라고 하자. $f$ 는 $[a,\,b]$ 구간에서 유계라고 하자. 
 
+($1$) $f\in \mathcal{R}(\beta_1)[0,\,1]$ 일 필요충분조건은 $f(0+)=f(0)$ 이며, 이 경우 $\int f\,d\beta_1 = f(0)$ 임을 보여라.
+
+($2$) $\beta_2$ 에 대해 ($1$) 과 유사한 관계가 성립함을 보여라.
+
+($3$) $f\in \mathcal{R}(\beta_3)[0,\,1]$ 일 필요충분조건은 $f$ 가 $0$ 에서 연속임을 보여라.
+
+($4$) $f$ 가 $0$ 에서 연속이라면 $\int f\,d\beta_1 = \int f\, d\beta_2 = \int f\,d\beta3 = f(0)$ 임을 보여라.
 
 :::
 
 </div>
 
 </br>
+
+::: {.solution}
+
+($1$) $f\in \mathcal{R}(\beta_1)[-1,\,1]$ 임을 가정하자. $P=\{t_0=-1,\ldots,\,t_n=1\} \in \mathcal{P}[-0,\,1]$ 에 대해 $t_k=0$ 이라고 하면 임의의 $\varepsilon>0$ 에 대해
+
+$$
+U(f,\,P,\,\beta_1)-L(f,\,P,\,\beta_2) = M_{k+1}-m_{k+1} <\varepsilon
+$$ {#eq-_rudin_6_3_1}
+
+이므로 $M_{k+1}-m_{k+1}=0$ 이어야 한다. 여기서 $M_{k+1}:=\sup f([t_{k}=0,\,t_{k+1}])$, $m_{k+1}=\inf f([t_{k}=0,\,t_{k+1}])$ 이다. 즉 $f(0+)=f(0)$ 이어야 한다. 
+
+이제 $f(0+)=f(0)$ 임을 가정하면. @eq-_rudin_6_3_1 를 만족하는 $[-1,\,1]$ 에서의 분할을 잡을 수 있으므로 $f\in \mathcal{R}(\beta_1)[-1,\,1]$ 이다. 
+
+$f(0+)=f(0)$ 일 경우 $t_{k+1}\to 0$ 일 때 $U(f,\,P,\,\beta_1)= L(f,\, P,\, \beta_1)=f(0)$ 이므로 $\int f\,d\beta=f(0)$ 이다.
+
+($2$) ($1$) 의 경우와 같은 분할 $P$ 에서
+
+$$
+U(f,\,P,\,\beta_2)-L(f,\,P,\,\beta_2) = M_{k}-m_k
+$$
+
+이므로 $f\in \mathcal{R}(\beta_2)[0,\,1]$ 일 필요충분조건은 $f(0-)=f(0)$ 이며 이 경우 $\int f\,d\beta_2 = f(0)$ 이다.
+
+($3$) ($1$), ($2$) 의 경우와 같은 분항 $P$ 에서 
+
+$$
+U(f,\,P,\,\beta_3)-L(f,\,P,\,\beta_3) = \dfrac{1}{2}(M_{k}-m_k)+ \dfrac{1}{2}(M_{k+1}-m_k)
+$$
+
+이므로 $f\in \mathcal{R}(\beta_2)[0,\,1]$ 일 필요충분조건은 $f(0-)=f(0)=f(0-)$ 이다. 이 경우 $\int f\,d\beta_3 = f(0)$ 이다.
+
+($4$) 앞에서 보였다. 
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_6_4}
+
+#### Rudin 6.4
+
+$x\in \mathbb{R}\backslash\Q$ 일 때 $f(x)=0$ 이며 $x\in \Q$ 일 때 $f(x) = 1$ 이다. $f\not\in \mathcal{R}[a,\,b]$ 임을 보여라. 
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+유리수와 무리수의 조밀성에 의해 어떤 $P\in \mathcal{P}[a,\,b]$ 에 대해서도 $U(f,\,P)=1,\, L(f,\,P)=0$ 이므로 $f\not\in \mathcal{R}[a,\,b]$ 이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_6_5}
+
+#### Rudin 6.5
+
+$f:[a,\,b]\to\R$ 이 유계이며 $f^2\in \mathcal{R}[a,\,b]$ 라면 $f\in \mathcal{R}[a,\,b]$ 인가? $f^3\in \mathcal{R}[a,\,b]$ 라는 조건에서는 $f\in \mathcal{R}[a,\,b]$ 인가?
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f(x) = \left\{\begin{array}{ll} -1,\quad & x\in \R\backslash\Q\\ 1,& x\in \Q.\end{array}\right.\quad$ 에 대해서는 $f^2\in \mathcal{R}[a,\,b]$ 지만 $f\not\in \mathcal{R}[a,\,b]$ 이다.
+
+$f^3\in \mathcal{R}[a,\,b]$ 인 경우는 @thm-part2_stieltjes_integrability_of_composite_function 을 생각하자 $\phi (t) = \sqrt[3]{t}$ 는 $\R$ 에서 연속이므로 $f\in \mathcal{R}[a,\,b]$ 이다.
+
+
+:::

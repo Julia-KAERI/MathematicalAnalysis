@@ -403,22 +403,7 @@ $$
 
 </br>
 
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-
-::: {#exm-part2_mean_value_theorem_is_not_valid_for_complex_function}
-
-#### $\R \mapsto \mathbb{C}$ 함수와 평균값 정리
-
-$f:\R \to \mathbb{C}$ 가 $f(x) = e^{ix}= \cos x + i \sin x$ 라고 하자. $f(2\pi) = f(0) = 0$ 이며 $f'(x) = ie^{ix}$ 이지만 $|f'(x) | = 1$ 이므로 평균값 정리가 성립하지 않는다. 즉 $\R \mapsto \mathbb{C}$ 함수의 경우 평균값 정리가 성립함을 보장 할 수 없다.
-
-:::
-
-</div>
-</br>
-
-
 ### 로피탈 정리 {#sec-part2_Lhopital_theorem}
-
 
 로피탈 정리는 실제 극한값을 계산할 때 아주 유용한 정리이다. 
 
@@ -501,50 +486,6 @@ $$
 
 </br>
 
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-
-::: {#exm-part2_Lhopital_theorem_for_complex_function}
-
-#### $\R \mapsto \mathbb{C}$ 함수와 로피탈 정리
-
-$f,\,g:(0,\,1) \to \mathbb{C}$ 가 $f(x) := x$, $g(x) := x+x^2e^{i/x^2}$ 으로 정의되었다고 하자. $x\to 0$ 에 대해 $f(x) \to 0,\, g(x) \to 0$ 이다. 또한
-
-$$
-\lim_{x \to 0}\dfrac{f(x)}{g(x)} = 1
-$$
-
-이다. 여기서 
-
-$$
-g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
-$$
-
-이므로
-
-$$
-|g'(x)| \ge \left| 2x - \dfrac{2i}{x} \right| -1 \ge \dfrac{2}{x}-1
-$$
-
-이다. 이로부터
-
-$$
-\left|\dfrac{f'(x)}{g'(x)}\right| = \dfrac{1}{|g'(x)|} \le \dfrac{x}{2-x}
-$$
-
-이므로
-
-$$
-\lim_{x \to 0} \dfrac{f'(x)}{g'(x)} = 0
-$$
-
-이다. 즉 $\R\mapsto \mathbb{C}$ 함수의 경우 로피탈의 정리가 성립하지 않는다.
-
-:::
-
-</div>
-</br>
-
-
 ## 테일러 정리
 
 
@@ -593,6 +534,136 @@ $$
 
 임을 안다. @eq-part2_tayler_theorem_1 로부터 $g(x) = 0$ 이므로 $g'(x_1) = 0$ 인 $x_1$ 이 $t$ 와 $x$ 사이에 존재하며 $g''(x_2)$ 인 $x_2$ 가 $x_1$ 과 $t$ 사이에 존재한다. 이것을 계속하면 $g^{(n-1)}(x_{n-1}) = 0$ 인 $x_{n-1}$ 이 $t$ 와 $x_{n-2}$ 사이에 존재하므로 $g^{(n)}(x_n)=0$ 인 $x_n$ 도 $t$ 와 $x_{n-1}$ 사이에 존재한다. $g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0$ 이므로 $M=f^{(n)}(x_n)/n!$ 이다. $\square$
 
+:::
+
+</br>
+
+## 복소함수와 벡터값 함수의 미분 {#sec-differentiation_of_complex_and_vector_valued_function}
+
+$f:[a,\,b]\to \mathbb{C}$ 가 실함수 $f_R,\,f_I$ 에 대해 $f(x)= f_R(x)+ if_I(x)$ 라고 하자. 이 때 
+
+$$
+\dfrac{f(x+h)-f(x)}{h} = \dfrac{f_R(x+h)-f_R(x)}{h}+ i \dfrac{f_I(x+h)-f_I(x)}{h}
+$$
+
+이므로 $f_R,\,f_I$ 가 $t$ 에서 미분가능하면 $f'(x) = f'_R(x)+ if'_I(x)$ 로 정의하는 것이 자연스럽다. 역으로 $f$ 가 미분가능하다면 $f$ 의 실수부와 허수부가 각각 미분가능하다고 할 수 있다.
+
+</br>
+
+이제 벡터값 함수 $\bf{f}:[a,\,b]\to \R^n$ 를 생각하자. $\boldsymbol{f}(x) = (f_1(x),\ldots,\,f_n(x))$ 라고 하면
+
+$$
+\dfrac{\|\bf{f}(x+h)-\bf{f}(x)\|}{|h|} = \dfrac{\|f_1(x+h)-f_1(x),\ldots,\, f_n(x+h)-f_n(x)\|}{|h|}
+$$
+
+이다. 함수의 연속성을 생각하면 각각의 $f_j$ 가 $x$ 에서 미분가능 할 때 $\boldsymbol{f}$ 가 $x$ 에서 미분가능하며 
+
+$$
+\boldsymbol{f}'(x) = (f_1'(x),\ldots,\, f_n'(x))
+$$
+
+라고 할 수 있다.
+
+</br>
+
+복소함수의 경우 미분은 실함수와 같은 방법으로 정의 할 수 있지만 평균값 정리나 로피탈 정리는 성립하지 않을 수 있다. 아래의 두 예를 보자.
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_mean_value_theorem_is_not_valid_for_complex_function}
+
+#### $\R \mapsto \mathbb{C}$ 함수와 평균값 정리
+
+$f:\R \to \mathbb{C}$ 가 $f(x) = e^{ix}= \cos x + i \sin x$ 라고 하자. $f(2\pi) = f(0) = 0$ 이며 $f'(x) = ie^{ix}$ 이지만 $|f'(x) | = 1$ 이므로 평균값 정리가 성립하지 않는다. 즉 $\R \mapsto \mathbb{C}$ 함수의 경우 평균값 정리가 성립함을 보장 할 수 없다.
+
+:::
+
+</div>
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_Lhopital_theorem_for_complex_function}
+
+#### $\R \mapsto \mathbb{C}$ 함수와 로피탈 정리
+
+$f,\,g:(0,\,1) \to \mathbb{C}$ 가 $f(x) := x$, $g(x) := x+x^2e^{i/x^2}$ 으로 정의되었다고 하자. $x\to 0$ 에 대해 $f(x) \to 0,\, g(x) \to 0$ 이다. 또한
+
+$$
+\lim_{x \to 0}\dfrac{f(x)}{g(x)} = 1
+$$
+
+이다. 여기서 
+
+$$
+g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
+$$
+
+이므로
+
+$$
+|g'(x)| \ge \left| 2x - \dfrac{2i}{x} \right| -1 \ge \dfrac{2}{x}-1
+$$
+
+이다. 이로부터
+
+$$
+\left|\dfrac{f'(x)}{g'(x)}\right| = \dfrac{1}{|g'(x)|} \le \dfrac{x}{2-x}
+$$
+
+이므로
+
+$$
+\lim_{x \to 0} \dfrac{f'(x)}{g'(x)} = 0
+$$
+
+이다. 즉 $\R\mapsto \mathbb{C}$ 함수의 경우 로피탈의 정리가 성립하지 않는다.
+
+:::
+
+</div>
+</br>
+
+벡터값 함수의 경우 평균값 정리가 그대로 성립하지 않지만 변형된 형태의 어떤 명제가 성립한다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part2_mean_value_theorem_for_vector_valued_function}
+
+$\boldsymbol{f}:[a,\,b]\to\R^n$ 이 연속이며 $(a,\,b)$ 구간에서 미분가능하다고 하자. 이 때 
+
+$$
+\|\bf{f}(b)-\bf{f}(a)\| \le (b-a)\|\bf{f}'(t) \|
+$$ {#eq-part2_mean_value_theorem_for_vector_valued_function}
+
+인 $t\in (a,\,b)$ 가 존재한다.
+
+:::
+
+</div>
+</br>
+
+::: {.proof}
+
+$\bf{z} = \bf{f}(b)-\bf{f}(a)$ 에 대해 $\varphi:[a,\,b]\to\R$ 을 $\varphi (t) := \bf{z\cdot f}(t)$ 라고 정한다. $\varphi$ 는 $(a,\,b)$ 구간에서 미분가능한 함수이며 $\varphi'(t) = \bf{z\cdot f}'(t)$ 이다. 평균값 정리에 의해
+
+$$
+\varphi (b) - \varphi (a) = (b-a)\varphi' (x) = (b-a)\bf{z\cdot f}'(t)
+$$
+
+인 $x\in (b,\,a)$ 가 존재한다. 또한
+
+$$
+\varphi (b) - \varphi (a) = \bf{z\cdot} (\bf{f}(b)-\bf{f}(a)) = \|\bf{z}\|^2
+$$
+
+이다. 슈바르츠 부등식에 의해
+
+$$
+\|\bf{z}\|^2 = (b-a)|\bf{z\cdot f}'(t)| \le (b-a)\|\bf{z}\| \|\bf{f}'(t)\|
+$$
+
+이므로 @eq-part2_mean_value_theorem_for_vector_valued_function 가 성립한다. $\square$
 
 :::
 

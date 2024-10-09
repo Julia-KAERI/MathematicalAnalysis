@@ -277,6 +277,7 @@ window.Quarto = {
   <li><a href="#sec-part2_Lhopital_theorem" id="toc-sec-part2_Lhopital_theorem" class="nav-link" data-scroll-target="#sec-part2_Lhopital_theorem"><span class="header-section-number">9.2.2</span> 로피탈 정리</a></li>
   </ul></li>
   <li><a href="#테일러-정리" id="toc-테일러-정리" class="nav-link" data-scroll-target="#테일러-정리"><span class="header-section-number">9.3</span> 테일러 정리</a></li>
+  <li><a href="#sec-differentiation_of_complex_and_vector_valued_function" id="toc-sec-differentiation_of_complex_and_vector_valued_function" class="nav-link" data-scroll-target="#sec-differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul>
 </nav>
@@ -572,12 +573,6 @@ f(x_2)-f(x_1)= (x_2-x_1)f'(x)
 <p>를 만족하는 <span class="math inline">\(x\in (x_1,\,x_2)\)</span> 가 존재한다. <span class="math inline">\(x_2&gt;x_1\)</span> 이라면 <span class="math inline">\(f(x_2)-f(x_1)=(x_2-x_1)f'(x) &gt;0\)</span> 이므로 단조증가함수이다. 나머지 경우에 대해서도 쉽게 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-part2_mean_value_theorem_is_not_valid_for_complex_function" class="theorem example">
-<p><span class="theorem-title"><strong>예제 9.3 (<span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수와 평균값 정리)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{C}\)</span> 가 <span class="math inline">\(f(x) = e^{ix}= \cos x + i \sin x\)</span> 라고 하자. <span class="math inline">\(f(2\pi) = f(0) = 0\)</span> 이며 <span class="math inline">\(f'(x) = ie^{ix}\)</span> 이지만 <span class="math inline">\(|f'(x) | = 1\)</span> 이므로 평균값 정리가 성립하지 않는다. 즉 <span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수의 경우 평균값 정리가 성립함을 보장 할 수 없다.</p>
-</div>
-</div>
-<p><br></p>
 </section>
 <section id="sec-part2_Lhopital_theorem" class="level3" data-number="9.2.2">
 <h3 data-number="9.2.2" class="anchored" data-anchor-id="sec-part2_Lhopital_theorem"><span class="header-section-number">9.2.2</span> 로피탈 정리</h3>
@@ -628,32 +623,6 @@ l-\varepsilon &lt; \dfrac{f(t)-f(x)}{g(t)-g(x)} &lt; l+\varepsilon
 <p>이며 <span class="math inline">\(t\to x_0\)</span> 극한에서, <span class="math inline">\(f(t)/g(t) \to l\)</span> 임을 알 수 있다. 또한 같은 방법으로 <span class="math inline">\(\displaystyle \lim_{x\to x_0} g(x) = -\infty\)</span> 의 경우에도 성립함을 알 수 있다.</p>
 </div>
 <p><br></p>
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-part2_Lhopital_theorem_for_complex_function" class="theorem example">
-<p><span class="theorem-title"><strong>예제 9.4 (<span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수와 로피탈 정리)</strong></span> <span class="math inline">\(f,\,g:(0,\,1) \to \mathbb{C}\)</span> 가 <span class="math inline">\(f(x) := x\)</span>, <span class="math inline">\(g(x) := x+x^2e^{i/x^2}\)</span> 으로 정의되었다고 하자. <span class="math inline">\(x\to 0\)</span> 에 대해 <span class="math inline">\(f(x) \to 0,\, g(x) \to 0\)</span> 이다. 또한</p>
-<p><span class="math display">\[
-\lim_{x \to 0}\dfrac{f(x)}{g(x)} = 1
-\]</span></p>
-<p>이다. 여기서</p>
-<p><span class="math display">\[
-g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
-\]</span></p>
-<p>이므로</p>
-<p><span class="math display">\[
-|g'(x)| \ge \left| 2x - \dfrac{2i}{x} \right| -1 \ge \dfrac{2}{x}-1
-\]</span></p>
-<p>이다. 이로부터</p>
-<p><span class="math display">\[
-\left|\dfrac{f'(x)}{g'(x)}\right| = \dfrac{1}{|g'(x)|} \le \dfrac{x}{2-x}
-\]</span></p>
-<p>이므로</p>
-<p><span class="math display">\[
-\lim_{x \to 0} \dfrac{f'(x)}{g'(x)} = 0
-\]</span></p>
-<p>이다. 즉 <span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수의 경우 로피탈의 정리가 성립하지 않는다.</p>
-</div>
-</div>
-<p><br></p>
 </section>
 </section>
 <section id="테일러-정리" class="level2" data-number="9.3">
@@ -685,6 +654,85 @@ g^{(n)}(y) = f^{(n)}(y) - n!M
 g(t) = g'(t) = \cdots = g^{(n-1)}(t) = 0
 \]</span></p>
 <p>임을 안다. <a href="#eq-part2_tayler_theorem_1" class="quarto-xref">식&nbsp;<span>9.12</span></a> 로부터 <span class="math inline">\(g(x) = 0\)</span> 이므로 <span class="math inline">\(g'(x_1) = 0\)</span> 인 <span class="math inline">\(x_1\)</span> 이 <span class="math inline">\(t\)</span> 와 <span class="math inline">\(x\)</span> 사이에 존재하며 <span class="math inline">\(g''(x_2)\)</span> 인 <span class="math inline">\(x_2\)</span> 가 <span class="math inline">\(x_1\)</span> 과 <span class="math inline">\(t\)</span> 사이에 존재한다. 이것을 계속하면 <span class="math inline">\(g^{(n-1)}(x_{n-1}) = 0\)</span> 인 <span class="math inline">\(x_{n-1}\)</span> 이 <span class="math inline">\(t\)</span> 와 <span class="math inline">\(x_{n-2}\)</span> 사이에 존재하므로 <span class="math inline">\(g^{(n)}(x_n)=0\)</span> 인 <span class="math inline">\(x_n\)</span> 도 <span class="math inline">\(t\)</span> 와 <span class="math inline">\(x_{n-1}\)</span> 사이에 존재한다. <span class="math inline">\(g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0\)</span> 이므로 <span class="math inline">\(M=f^{(n)}(x_n)/n!\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-differentiation_of_complex_and_vector_valued_function" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</h2>
+<p><span class="math inline">\(f:[a,\,b]\to \mathbb{C}\)</span> 가 실함수 <span class="math inline">\(f_R,\,f_I\)</span> 에 대해 <span class="math inline">\(f(x)= f_R(x)+ if_I(x)\)</span> 라고 하자. 이 때</p>
+<p><span class="math display">\[
+\dfrac{f(x+h)-f(x)}{h} = \dfrac{f_R(x+h)-f_R(x)}{h}+ i \dfrac{f_I(x+h)-f_I(x)}{h}
+\]</span></p>
+<p>이므로 <span class="math inline">\(f_R,\,f_I\)</span> 가 <span class="math inline">\(t\)</span> 에서 미분가능하면 <span class="math inline">\(f'(x) = f'_R(x)+ if'_I(x)\)</span> 로 정의하는 것이 자연스럽다. 역으로 <span class="math inline">\(f\)</span> 가 미분가능하다면 <span class="math inline">\(f\)</span> 의 실수부와 허수부가 각각 미분가능하다고 할 수 있다.</p>
+<p><br></p>
+<p>이제 벡터값 함수 <span class="math inline">\(\boldsymbol{f}:[a,\,b]\to \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\boldsymbol{f}(x) = (f_1(x),\ldots,\,f_n(x))\)</span> 라고 하면</p>
+<p><span class="math display">\[
+\dfrac{\|\boldsymbol{f}(x+h)-\boldsymbol{f}(x)\|}{|h|} = \dfrac{\|f_1(x+h)-f_1(x),\ldots,\, f_n(x+h)-f_n(x)\|}{|h|}
+\]</span></p>
+<p>이다. 함수의 연속성을 생각하면 각각의 <span class="math inline">\(f_j\)</span> 가 <span class="math inline">\(x\)</span> 에서 미분가능 할 때 <span class="math inline">\(\boldsymbol{f}\)</span> 가 <span class="math inline">\(x\)</span> 에서 미분가능하며</p>
+<p><span class="math display">\[
+\boldsymbol{f}'(x) = (f_1'(x),\ldots,\, f_n'(x))
+\]</span></p>
+<p>라고 할 수 있다.</p>
+<p><br></p>
+<p>복소함수의 경우 미분은 실함수와 같은 방법으로 정의 할 수 있지만 평균값 정리나 로피탈 정리는 성립하지 않을 수 있다. 아래의 두 예를 보자.</p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-part2_mean_value_theorem_is_not_valid_for_complex_function" class="theorem example">
+<p><span class="theorem-title"><strong>예제 9.3 (<span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수와 평균값 정리)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{C}\)</span> 가 <span class="math inline">\(f(x) = e^{ix}= \cos x + i \sin x\)</span> 라고 하자. <span class="math inline">\(f(2\pi) = f(0) = 0\)</span> 이며 <span class="math inline">\(f'(x) = ie^{ix}\)</span> 이지만 <span class="math inline">\(|f'(x) | = 1\)</span> 이므로 평균값 정리가 성립하지 않는다. 즉 <span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수의 경우 평균값 정리가 성립함을 보장 할 수 없다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-part2_Lhopital_theorem_for_complex_function" class="theorem example">
+<p><span class="theorem-title"><strong>예제 9.4 (<span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수와 로피탈 정리)</strong></span> <span class="math inline">\(f,\,g:(0,\,1) \to \mathbb{C}\)</span> 가 <span class="math inline">\(f(x) := x\)</span>, <span class="math inline">\(g(x) := x+x^2e^{i/x^2}\)</span> 으로 정의되었다고 하자. <span class="math inline">\(x\to 0\)</span> 에 대해 <span class="math inline">\(f(x) \to 0,\, g(x) \to 0\)</span> 이다. 또한</p>
+<p><span class="math display">\[
+\lim_{x \to 0}\dfrac{f(x)}{g(x)} = 1
+\]</span></p>
+<p>이다. 여기서</p>
+<p><span class="math display">\[
+g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+|g'(x)| \ge \left| 2x - \dfrac{2i}{x} \right| -1 \ge \dfrac{2}{x}-1
+\]</span></p>
+<p>이다. 이로부터</p>
+<p><span class="math display">\[
+\left|\dfrac{f'(x)}{g'(x)}\right| = \dfrac{1}{|g'(x)|} \le \dfrac{x}{2-x}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\lim_{x \to 0} \dfrac{f'(x)}{g'(x)} = 0
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수의 경우 로피탈의 정리가 성립하지 않는다.</p>
+</div>
+</div>
+<p><br></p>
+<p>벡터값 함수의 경우 평균값 정리가 그대로 성립하지 않지만 변형된 형태의 어떤 명제가 성립한다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part2_mean_value_theorem_for_vector_valued_function" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 9.4</strong></span> <span class="math inline">\(\boldsymbol{f}:[a,\,b]\to\mathbb{R}^n\)</span> 이 연속이며 <span class="math inline">\((a,\,b)\)</span> 구간에서 미분가능하다고 하자. 이 때</p>
+<p><span id="eq-part2_mean_value_theorem_for_vector_valued_function"><span class="math display">\[
+\|\boldsymbol{f}(b)-\boldsymbol{f}(a)\| \le (b-a)\|\boldsymbol{f}'(t) \|
+\tag{9.14}\]</span></span></p>
+<p>인 <span class="math inline">\(t\in (a,\,b)\)</span> 가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{z} = \boldsymbol{f}(b)-\boldsymbol{f}(a)\)</span> 에 대해 <span class="math inline">\(\varphi:[a,\,b]\to\mathbb{R}\)</span> 을 <span class="math inline">\(\varphi (t) := \boldsymbol{z\cdot f}(t)\)</span> 라고 정한다. <span class="math inline">\(\varphi\)</span> 는 <span class="math inline">\((a,\,b)\)</span> 구간에서 미분가능한 함수이며 <span class="math inline">\(\varphi'(t) = \boldsymbol{z\cdot f}'(t)\)</span> 이다. 평균값 정리에 의해</p>
+<p><span class="math display">\[
+\varphi (b) - \varphi (a) = (b-a)\varphi' (x) = (b-a)\boldsymbol{z\cdot f}'(t)
+\]</span></p>
+<p>인 <span class="math inline">\(x\in (b,\,a)\)</span> 가 존재한다. 또한</p>
+<p><span class="math display">\[
+\varphi (b) - \varphi (a) = \boldsymbol{z\cdot} (\boldsymbol{f}(b)-\boldsymbol{f}(a)) = \|\boldsymbol{z}\|^2
+\]</span></p>
+<p>이다. 슈바르츠 부등식에 의해</p>
+<p><span class="math display">\[
+\|\boldsymbol{z}\|^2 = (b-a)|\boldsymbol{z\cdot f}'(t)| \le (b-a)\|\boldsymbol{z}\| \|\boldsymbol{f}'(t)\|
+\]</span></p>
+<p>이므로 <a href="#eq-part2_mean_value_theorem_for_vector_valued_function" class="quarto-xref">식&nbsp;<span>9.14</span></a> 가 성립한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
