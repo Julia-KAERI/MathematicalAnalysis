@@ -61,3 +61,32 @@ crossref:
 \draw[red, thick] plot[variable=\t, domain=0:0.08, samples=600, thick] ({10*\t}, {-60*\t*\t});
 \end{tikzpicture}
 ```
+
+
+```{r, engine = 'tikz'}
+#| label: fig-part2_fixed_point
+#| code-fold: true
+#| output: asis
+#| fig-width: 6
+#| fig-align: center
+#| fig-cap: "연속과 미분 가능"
+
+
+\begin{tikzpicture}[scale=2]
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary {calc}
+
+\coordinate (P1) at (3, 0.5);
+\coordinate (P2) at (0.5, 0.5);
+\draw[thick, -{Stealth[length=2mm]}] (-1, 0) -- (4, 0) node[right] {$x$} ;
+\draw[thick, -{Stealth[length=2mm]}] (0, -1) -- (0, 4) node[above] {$y$};
+
+\draw[thick, teal] (-0.5, -0.5) -- (3.5, 3.5) node [above] {$y=x$};
+\draw[thick, red] (-0.5, 2.25) -- (3.5, 0.25);
+
+\node[above right] at (P1) {$(x_1,\,x_1)$} ;
+\draw[blue] (P1) -- (P2);
+
+\draw[teal, thick] plot[variable=\t, domain=0.011:0.08, samples=600, thick] ({\t}, {\t})  ;
+\end{tikzpicture}
+```

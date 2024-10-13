@@ -210,10 +210,39 @@ $$
 
 우리는 앞서 @prp-part2_continuity_and_differentiability 에서 $f:[a,\,b] \to \R$ 이 $x_0\in [a,\,b]$ 에서 미분가능하면 $x_0$ 에서 연속이라는 것을 보였다. $f$ 의 도함수 $f'(x)$ 의 경우는 연속함수가 아닐 수 있다.
 
+</br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part2_case_of_derivative_without_continuity_1}
+
+$f:\R \to \R$ 이 다음과 같이 정의되어 있다고 하자. 
+
+$$
+f(x) = \left\{\begin{array}{ll} 0, & x=0, \\ x \sin \dfrac{1}{x},\,&x\ne 0\end{array}\right.
+$$
+
+$f(x)$ 는 우선 $x\ne 0$ 에서 미분가능하며
+
+$$
+f'(x) =  \sin \dfrac{1}{x}- \dfrac{1}{x}\cos \dfrac{1}{x}
+$$
+
+이다. 이제 $f'(0)$ 값을 구할 수 있는지 살펴보자. 미분의 정의로부터
+
+$$
+f'(0) = \lim_{t\to 0}\dfrac{f(t)-f(0)}{t-0}= \sin \dfrac{1}{t}
+$$
+
+이며 이 값은 정의되지 않고 $t\to 0$ 극한도 존재하지 않는다. 즉 $f(x)$ 는 $x=0$ 을 제외한 구간에서 미분가능한 함수이다.
+
+:::
+
+</div>
+</br>
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_case_of_derivative_without_continuity}
+::: {#exm-part2_case_of_derivative_without_continuity_2}
 
 $f:\R \to \R$ 이 다음과 같이 정의되어 있다고 하자. 
 
@@ -248,7 +277,7 @@ $$
 
 </br>
 
-@exm-part2_case_of_derivative_without_continuity 에서 보았듯이 $n$-차 도함수가 연속일 수도 있고 아닐 수도 있다. $n$ 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.
+@exm-part2_case_of_derivative_without_continuity_1 과 @exm-part2_case_of_derivative_without_continuity_2 에서 보았듯이 $n$-차 도함수가 연속일 수도 있고 아닐 수도 있다. $n$ 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.
 
 </br>
 
@@ -403,6 +432,50 @@ $$
 
 </br>
 
+### 도함수의 연속성 {#sec-part2_the_continuity_of_derivatives}
+
+@exm-part2_case_of_derivative_without_continuity_2 에서 보았듯이 함수 $f$ 에 대한 도함수 $f'(x)$ 가 모든 값에서 존재하지만 특정 값에서 불연속일 수 있다. 하지만 도함수의 불연속은 항상 2종 불연속인데 여기서는 그것을 보인다.
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part2_continuity_of_derivative}
+
+#### 도함수의 사잇값 특성 
+
+$f$ 가 $[a,\,b]$ 구간에서 미분가능한 실함수이고 $f'(a)< \lambda <f'(b)$ 일 때 어떤 $t\in (a,\,b)$ 에서 $f'(t) = \lambda$ 이다. $f'(a)>f'(b)$ 일 때에도 유사한 결과가 성립한다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$g(t) = f(t)-\lambda t$ 라고 하자. $g'(t) = f'(t)-\lambda$ 이므로 $g'(a)<0,\, g'(b)>0$ 이다. 따라서 어떤 $t_1\in (a,\,b)$ 에서 $g(t_1)>g(a)$ 이며, 역시 어떤 $t_2\in (a,\,b)$ 에서 $g(t_2)<g(b)$ 이다. @thm-part2_extreme_value_theorem 에 따라 어떤 $x\in (a,\,b)$ 에서 $g$ 는 최소값을 가진다. 이 때 $g'(x)=0$ 이며 따라서 $f'(x) = \lambda$ 이다. $\square$
+
+:::
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part2_continuity_of_derivative}
+
+$f$ 가 $[a,\,b]$ 에서 미분가능하다면 $f'$ 은 $[a,\,b]$ 에서 단순 불연속점을 가질 수 없다.
+:::
+
+</div>
+</br>
+
+::: {.proof}
+
+$x\in (a,\,b)$ 가 $f'(x)$ 의 단순불연속점이라고 하자. $f'(x^-)=\alpha,\,f'(x^+)=\beta$ 일 때 $\varepsilon < \dfrac{|\beta-\alpha|}{2}$ 에 대해 $0<x-t<\delta \implies |f'(t)-\alpha|<\varepsilon$ 이며 $0<t-x<\delta \implies |f'(t)-\beta|<\varepsilon$ 인 $\delta>0$ 이 존재한다. 이 때 $\dfrac{\beta+\alpha}{2}\not\in f'(N(x,\,\delta))$ 인데 이는 @thm-part2_continuity_of_derivative 에 위배된다. 즉 도함수는 단순 불연속점을 가질 수 없다. $\square$
+
+:::
+
+
+</br>
+
 ### 로피탈 정리 {#sec-part2_Lhopital_theorem}
 
 로피탈 정리는 실제 극한값을 계산할 때 아주 유용한 정리이다. 
@@ -432,7 +505,6 @@ $$
 $${#eq-part2_lhopital_2}
 
 이다.
-
 
 :::
 
@@ -1217,8 +1289,7 @@ $f$ 가 $(0,\,\infty)$ 구간에서 두번 미분 가능하며 $f''$ 은 유계�
 
 #### Rudin 5.18
 
-$f:[a,\,b]\to \R$ 이 $n-1$ 번 미분 가능한 함수이다. $\alpha,\,\beta\in (a,\,b)$ 에 대해 $Q:[a,\,b] \to \R$ 을 $t\ne \beta$ 에 대해
-
+$f:[a,\,b]\to \R$ 이 $n-1$ 번 미분 가능한 함수이다. $\alpha,\,\beta \in (a,\,b)$ 와 $t\in [a,\,b]$ 에 대해 $Q:[a,\,b] \to \R$ 을 
 $$
 Q(t) := \dfrac{f(t)-f(\beta)}{t-\beta}
 $$
@@ -1226,12 +1297,8 @@ $$
 라고 하자. $f(t) - f(\beta) = (t-\beta) Q(t)$ 를 $t=\alpha$ 에서 $n-1$ 번 미분하여 아래 식을 구하라.
 
 $$
-f(\beta) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(\beta)}{k!} + \dfrac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n.
-$$
-
-
-
-@thm-part2_tayler_theorem 의 
+f(\beta) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(\alpha)}{k!}(\beta-\alpha)^k + \dfrac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n.
+$$ {#eq-exr-part2_rudin_5_18}
 
 :::
 
@@ -1241,13 +1308,395 @@ $$
 
 ::: {.solution}
 
-$f(t) - f(\beta) = (t-\beta) Q(t)$ 를 $n-1$ 번 미분하면 
+$f(t) - f(\beta) = (t-\beta) Q(t)$ 를 $t=\alpha$ 에 대해 $n-1$ 번 미분하면 
 
 $$
-f^{(n-1)}(t) = (n-1)Q^{(n-2)} + (t-\beta) Q^{(n-1)}(t)
+f^{(n-1)}(\alpha) = (n-1)Q^{(n-2)}(\alpha) + (\alpha-\beta) Q^{(n-1)}(\alpha)
 $$
 
-를 얻는다. 
+를 얻는다. 즉 $0 \le k < n$ 에 대해 
+
+$$
+f^{(k)} (\alpha) =  kQ^{(k-1)}(\alpha) + (\alpha-\beta) Q^{(k)}(\alpha)
+$$
+
+
+이며, $k=1$ 부터 $n-1$ 까지 더하면 
+
+$$
+\begin{aligned}
+\sum_{k=1}^{n-1}\dfrac{f^{(k)}(\alpha)}{k!} (\beta-\alpha)^k &= \sum_{k=1}^{n-1} \dfrac{Q^{(k-1)}(\alpha)}{(k-1)!}(\beta-\alpha)^{k} - \sum_{k=1}^{n-1} \dfrac{Q^{(k)}}{k!} (\beta-\alpha)^{k+1} \\
+&= Q(\alpha)(\beta - \alpha) - \dfrac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n \\
+&= f(\beta)-f(\alpha) -\dfrac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n \\
+\end{aligned}
+$$
+
+이다 $f(\alpha) = \dfrac{f^{(0)}(\alpha)}{0!}(\beta-\alpha)^0$ 이므로 @eq-exr-part2_rudin_5_18 이 성립한다. 
 
 :::
 
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_19}
+
+#### Rudin 5.19
+
+$f$ 가 $(-1,\,1)$ 에서 정의되어 있고 $f'(0)$ 이 존재한다. $-1<\alpha_n <\beta_n<1$ 이며 $\langle \alpha_n \rangle \to 0$, $\langle \beta_n \rangle \to 0$ 이라고 하자. $D_n$ 을 다음과 같이 정의한다.
+
+$$
+D_n := \dfrac{f(\beta_n)-f(\alpha_n)}{\beta_n - \alpha_n}
+$$ {#eq-part2_rudin_5_19}
+
+다음을 보여라.
+
+&emsp;($1$) $\alpha_n <0<\beta_n$ 이면 $\displaystyle\lim_{n \to \infty} D_n = f'(0)$ 이다.
+
+&emsp;($2$) $0<\alpha_n <\beta_n<0$ 이고 $\dfrac{\beta_n}{\beta_n -\alpha_n}$ 은 유계이면 $\displaystyle \lim_{n \to \infty} D_n = f'(0)$ 이다.
+
+&emsp;($3$) $f'$ 이 $(-1,\,1)$ 에서 연속이면 $\displaystyle \lim_{n \to \infty}D_n = f'(0)$ 이다.
+
+$f$ 가 $(-1,\,1)$ 에서 미분가능하지만 (그러나 $f'$ 은 연속이 아닐 때) $\displaystyle \lim_{n\to \infty} D_n$ 이 존재하지만 $f'(0)$ 과 다른 예를 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f'(0)$ 이 존재하므로 $f$ 는 $0$ 에서 연속이다.
+
+($1$) @eq-part2_rudin_5_19 을 아래와 같이 바꿀 수 있다.
+
+$$
+\begin{aligned}
+D_n = \dfrac{f(\beta_n)-f(\alpha_n)}{\beta_n - \alpha_n} = \dfrac{\beta_n}{\beta_n-\alpha_n} \dfrac{f(\beta_n)-f(0)}{\beta_n} - \dfrac{\alpha_n}{\beta_n-\alpha_n} \dfrac{f(\alpha_n)-f(0)}{\alpha_n}
+\end{aligned}
+$$
+
+$f'(0)$ 이 존재하므로 주어진 $\varepsilon>0$ 에 대해 아래 식을 만족하는 $\delta >0$ 이 존재한다.
+
+$$
+|x-0|<\delta \implies \left|\dfrac{f(x)-f(0)}{x}\right|<\varepsilon
+$$
+
+$a_n,\,b_n$ 의 극한이 $0$ 이므로 $n\ge N\implies |a_n|<\delta,\, |b_n|<\delta$ 인 $N\in \mathbb{Z}_+$ 가 존재한다. 그렇다면 $n\ge N$ 일 때
+
+$$
+\begin{aligned}
+|D_{n} - f'(0)| &= \left|\dfrac{\beta_n}{\beta_n-\alpha_n} \left(\dfrac{f(\beta_n)-f(0)}{\beta_n} -f'(0)\right) \right. \\
+&\qquad \qquad- \left.\dfrac{\alpha_n}{\beta_n-\alpha_n} \left(\dfrac{f(\alpha_n)-f(0)}{\alpha_n}-f'(0)\right)\right| \\
+&< \dfrac{\beta_n}{\beta_n-\alpha_n} \varepsilon - \dfrac{\alpha_n}{\beta_n-\alpha_n}\varepsilon = \varepsilon
+\end{aligned}
+$$ {#eq-part2_rudin_5_19_1}
+
+이다. 따라서 $\displaystyle \lim_{n \to \infty} D_n = f'(0)$ 이다.
+
+
+($2$) $0<\alpha_n<\beta_n<1$ 이면 @eq-part2_rudin_5_19_1 식은 다음과 같이 변한다.
+
+$$
+|D_n -f'(0)| < \dfrac{\beta_n}{\beta_n-\alpha_n}\varepsilon + \dfrac{\alpha_n}{\beta_n-\alpha_n}\varepsilon
+$$
+
+$\dfrac{\beta_n}{\beta_n-\alpha_n}$ 이 유계이므로 어떤 양수 $M>0$ 에 대해 
+
+$$
+\dfrac{\beta_n}{\beta_n-\alpha_n}<M
+$$
+
+이며 이로부터 $\alpha_n < \dfrac{M-1}{M}\beta_n,\, \dfrac{\alpha_n}{\beta_n-\alpha_n}< \dfrac{M-1}{M} \dfrac{\beta_n}{\beta_n-\alpha_n}<M-1$ 임을 안다. 즉
+
+$$
+|D_n -f'(0)| < M\varepsilon + (M-1)\varepsilon = (2M-1)\varepsilon
+$$
+
+이므로 $\displaystyle \lim_{n \to \infty} D_n = f'(0)$ 이다.
+
+($3$) 평균값 정리에 의해 $D_n = f'(\gamma_n)$ 을 만족하는 $\gamma_n \in (\alpha_n,\,\beta_n)$ 이 존재하며 $\displaystyle \lim_{n \to \infty} \gamma_n = 0$ 이다. $f'$ 이 $(0,\,1)$ 에서 연속이므로 $\displaystyle \lim_{n \to \infty} D_n = \lim_{n \to \infty}f'(\gamma_n) = f'(0)$ 이다.
+
+</br>
+
+-- to be done --
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_22}
+
+#### Rudin 5.22
+
+$f:\R \to \R$ 이다.
+
+($a$) $f$ 가 미분가능하며 모든 $t\in \R$ 에 대해 $f'(t)\ne 1$ 이면 $f$ 는 많아야 하나의 고정점을 가짐을 보여라.
+
+($b$) $f(t) = t + (1+e^t)^{-1}$ 은 $0<f'(t)<1$ 이며 고정점이 없음을 보여라.
+
+($c$) 모든 $t\in \R$ 에 대해 $|f'(t)| \le \alpha$ 인 상수 $\alpha<1$ 가 존재한다면 $f$ 의 고정점이 존재하며 임의의 $x_1\in \R$ 에 대해 $x_{n+1}=f(x_n)$ 인 수열 $\langle x_n\rangle$ 의 극한이 이 고정점으로 수렴함을 보여라.
+
+($d$) ($c$) 의 과정은 아래와 같은 지그재그 경로로 설명됨을 보여라.
+
+$$
+(x_1,\,x_2) \to (x_2,\,x_2) \to (x_2,\,x_3) \to (x_3,\,x_3) \to (x_3,\,x_4) \to \cdots
+$$
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+($a$) $g(t) := f(t)-t$ 라고 하면 $g'(t)=f'(t)-1$ 이므로 $g'(t)\ne 0$ 이다. $t_1,\,t_2\in \R$ 에 대해 $g'(t_1)g'(t_2)<0$ 이면 @thm-part2_continuity_of_derivative 에 따라 $t_1,\,t_2$ 사이에 $g'(t)=0$ 인 $t$ 가 존재하므로 모든 $t$ 에 대해 $g'(t)>0$ 이거나 $g'(t)<0$ 이다. 즉 단조증가이거나 단조감소이므로 $g(t)=0$ 는 하나 이상의 해를 가질 수 없다. 
+
+($b$) $f'(t) = 1-e^t(1+e^t)^{-2}$ 이므로 $0<f'(t)<1$ 이다. $f(t)=t \implies (1+e^t)^{-1}=0$ 이므로 $f$ 는 고정점이 없다.
+
+($c$) $y_n = x_{n+1}-x_n = f(x_n)-x_n$ 이라 하자. 
+
+$$
+\begin{aligned}
+|x_{n+2}-x_{n+1}| = |f(x_{n+1})-f(x_n)| = |f'(t)(x_{n+1}-x_{n})| \le \alpha |x_{n+1}-x_n|
+\end{aligned}
+$$
+
+이다. 즉 $|x_{n+2}-x_{n+1}| \le \alpha^n |x_2-x_1|$ 이다. 
+
+$$
+\begin{aligned}
+|x_{n+k}-x_n| &\le |x_{n+k}-x_{n+k-1}| + \cdots + |x_{n+1}-x_n| \\
+&= (\alpha^{n+k-2} + \alpha^{n+k-3} + \cdots +\alpha^{n-1})|x_2-x_1|\\
+&= \dfrac{\alpha^{n-1}(1-\alpha^k)}{1-\alpha} |x_2-x_1|
+\end{aligned}
+$$
+
+이며 $n \to \infty$ 극한에서 $|x_{n+k}-x_{n+1}|\to 0$ 이므로 코시수열이다. 즉 $\langle x_n \rangle$ 은 수렴한다. 또한 $y_n = f(x_n)-x_n$ 이 $0$ 으로 수렴하므로 $\displaystyle \lim_{n \to x_n}f(x_n) = x_n$ 이다. 즉 $\displaystyle x=\lim_{n \to x_n}x_n$ 은 고정점이다. 
+
+($d$) $P_1=(x_1,\,x_2)=(x_1,\,f(x_1))$ 으로부터 시작한다. $P_1$ 을 지나며 $y=x_2$ 와의 교점이 $Q_1 = (x_2,\,x_2)$ 이며 $Q_1$ 을 지나며 $x=x_2$ 와의 교점이 $P_2 = (x_2,\,x_3=f(x_2))$ 이렇게 $P_i$, $Q_i$ 를 정해가면서 $x$ 축과 평핸한 직선, $y$ 축과 평행한 직선을 번갈아 가며 그으면
+
+$$
+P_n = (x_n,\, f(x_n)),\qquad Q_n = (x_{n+1},\,x_{n+1})
+$$
+
+의 2차원 평면상의 수열이 정해지며 각각 $\langle x_n\rangle$ 이 $x_0$ 로 수렴한다면 $P_n$ 과 $Q_n$ 이 모두 $(x_0,\,x_0)$ 로 수렴한다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_23}
+
+#### Rudin 5.23
+
+함수 $f$ 다음과 같이 정의되었다.
+
+$$
+f(x) = \dfrac{x^3+1}{3}.
+$$
+
+이 함수에는 3 개의 고정점 $\alpha,\,\beta,\,\gamma$ 이 존재하며
+
+$$
+-2<\alpha < -1,\qquad 0<\beta<1,\qquad 1< \gamma < 2
+$$
+
+이다. 임의로 선택된 $x_1$ 에 대해 수열 $\langle x_n \rangle$ 이 $x_{n+1}=f(x_n)$ 으로 정의되었다.
+
+&emsp;($a$) $x_1<\alpha$ 라면 $\displaystyle\lim_{n \to \infty} x_n = -\infty$ 임을 보여라.
+
+&emsp;($b$) $\alpha  < x_1 <\gamma$ 라면 $\displaystyle\lim_{n \to \infty} x_n = \beta$ 임을 보여라.
+
+&emsp;($c$) $\gamma <x_1$ 라면 $\displaystyle\lim_{n \to\infty} x_n = +\infty$ 임을 보여라.
+
+따라서 $\beta$ 는 이 방법으로 값을 알 수 있지만 $\alpha,\, \gamma$ 는 그렇지 못하다.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+$f'(x) = x^2 \ge 0$ 이므로 $f(x)$ 는 단조증가함수이다. $g(x) := f(x)-x$ 라 하자. $\alpha,\,\beta\,\gamma$ 는 $g(x)=0$ 의 해이며 $x<\alpha$ 이면 $g(x)<0$, $\alpha<x<\beta$ 이면 $g(x)>0$, $\beta <x <\gamma$ 이면 $g(x)<0$, $x>\gamma$ 이면 $g(x)>0$ 임을 안다. 
+
+($a$) $x_1<\alpha$ 일 때 $x_{n+1}<x_n$ 이며 $|x_{n+1}-x_n|> |x_{n}-x_{n-1}|$ 임을 보이자. 우선 $x_2<x_1<\alpha$ 임을 보인다. 중간값 정리에 의해 $f(x_1)-f(\alpha) = f'(t_1)(x_1-\alpha)$ 인 $t_1 \in (x_1,\,\alpha)$ 이 존재한다. $t_1<\alpha<-1$ 이므로 $f'(t_1)>1$ 이며 따라서 $x_2-\alpha = f'(t_1)(x_1-\alpha)$ 로부터 $x_2<x_1<\alpha$ 임을 알 수 있다. 역시 중간값 정리에 의해
+
+$$
+x_{n+2}-x_{n+1} = f(x_{n+1})-f(x_{n}) = f'(t_{n+1})(x_{n+1} - x_n)
+$$
+
+을 만족하는 $t_{n+1}$ 이 $x_{n+1}$ 과 $x_n$ 사이에 존재하며 $f'(t_{n+1})>1$ 이므로 $x_{n+2}<x_{n+1}$ 이며 $|x_{n+2}-x_{n+1}|> |x_{n+1}-x_n|$ 이므로 $\langle x_n \rangle$ 은 $-\infty$ 로 발산한다.
+
+($b$) $\alpha<x_n<\beta$ 일 경우 $x_{n+1}-x_n = \dfrac{x_n^3+1}{3}-x_n =g(x_n)>0$ 이므로 $\alpha<x_n<x_{n+1}$ 이다. 또한 $\beta = (\beta^3+1)/3$ 을 이용하면 
+
+$$
+\beta - x_{n+1}=  \dfrac{\beta^3+1}{3}-\dfrac{x_n^3+1}{3} =\dfrac{\beta^3-x_n^3}{3} = \dfrac{1}{3}(\beta-x_n)(\beta^2+\beta x_n + x_n^2)
+$$
+
+이다. 일단 우변이 항상 $0$ 보다 크므로 $\beta-x_{n+1}>0$ 임을 안다. 즉 $\alpha<x_n<x_{n+1}<\beta$ 이며 수열 $\angle x_n\rangle$ 은 유계인 단조증가수열이므로 수렴한다. 이 수열은 $x=f(x)$ 의 해로 수렴하므로 $\beta$ 로 수렴한다.
+
+$x_n=\beta$ 일 경우는 $x_{n+1}-x_n = \dfrac{x_n^3+1}{3}-x_n = 0$ 이므로 $x_{n+1}=x_n=\beta$ 이다.
+
+$\beta <x_n <\gamma$ 일 경우 $x_{n+1}-x_n = g(x_n)<0$ 이므로 $x_{n+1}<x_n<\gamma$ 이다. 앞서와 같은 방법으로 $\beta <x_{n+1}<x_n<\gamma$ 임을 보일 수 있으며, 역시 같은 이유로 $\langle x_n \rangle$ 은 $\beta$ 로 수렴한다.
+
+($c$) ($a$) 와 같은 방법으로 부호만 바뀌어서 성립한다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_24}
+
+#### Rudin 5.24
+
+@exr-part2_rudin_5_22 의 ($d$) 에서 설명된 과정은 $(0,\,\infty) \mapsto (0,\,\infty)$ 함수에도 적용 될 수 있다. 고정된 $\alpha>1$ 에 대해 
+
+$$
+f(x) = \dfrac{1}{2} \left(x+\dfrac{\alpha}{x}\right),\qquad g(x) = \dfrac{\alpha+x}{1+x}
+$$
+
+라고 하자. $f,\,g$ 모두 $\sqrt{\alpha}$ 가 $(0,\,\infty)$ 에서의 유일한 고정점이다. $f,\,g$ 의 성질로부터 @exr-part2_rudin_3_16 의 수렴이 @exr-part2_rudin_3_17 의 수렴보다 빠른지 설명하라. 
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+아래 그림에서 보듯이 $\alpha=3$ 에서 $f(x)$ 가 $g(x)$ 보다 변화가 적다. 지그재그 방법을 생각해보면 $f(x)$ 가 빨리 수렴한다.
+
+![Plots of $f(x)$ and $g(x)$ with $\alpha =3$](images/pp1.png){#fig-part2_rudin_5_24 width=400}
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_25}
+
+#### Rudin 5.25
+
+$f$ 는 $[a,\,b]$ 구간에서 두번 미분 가능하며 $f(a)<0,\, f(b)>0$, $f'(x) \ge \delta >0$ 이며 어떤 양수 $M$ 에 대해 모든 $x\in [a,\,b]$ 에서 $0\le f''(x)\le M$ 라고 하자. $\xi$ 는 $[a,\,b]$ 구간에서 $f(x)=0$ 인 유일한 점이라고 하자. 아래는 **뉴턴 방법(Newton method)** 라고 불리는 $\xi$ 를 구하는 방법이다. 세부적인 사항을 완성하라.
+
+($a$) $x_1\in (\xi,\,b)$ 를 선택하고 $\langle x_n \rangle$ 을 다음과 같이 정의한다.
+
+$$
+x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}
+$$
+
+$f$ 의 그래프에 대한 탄젠트 개념을 이용하여 기하학적인 의미를 설명하라.
+
+($b$) $x_{n+1}<x_n$ 이며 $\displaystyle \lim_{n \to \infty}x_n = \xi$ 임을 보여라.
+
+($c$) 테일러 정리를 이용하여 어떤 $t_n \in (\xi,\,x_n)$ 에서 다음 식이 성립함을 보여라.
+
+$$
+x_{n+1}-\xi = \dfrac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2
+$$
+
+($d$) $A=M/2\delta$ 일 때 다음을 유도하라.
+
+$$
+0 \le x_{n+1}-\xi \le \dfrac{1}{M}\left[A(x_1-\xi)\right]^{2^n}.
+$$
+
+($e$) $g(x) = x-\dfrac{f(x)}{f'(x)}$ 의 고정점을 찾는 것이 뉴턴 방법을 설명함을 보여라. $x$ 가 $\xi$ 근처의 값일 때 $g'(x)$ 는 어떻게 행동하는가?
+
+($f$) $(-\infty,\, \infty)$ 구간에서 $f(x) = x^{1/3}$ 에 대한 뉴텬 방법을 시험하라. 무슨 일이 발생하는가?
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+($a$) $(x_n,\,f(x_n))$ 에서의 접선의 방정식은 $y = f'(x_n)(x-x_n) + f(x_n)$ 이며 이 직선과 $x$ 축과의 교점을 $x_{n+1}$ 이라고 하면
+
+$$
+x_{n+1}= x_n -\dfrac{f(x_n)}{f'(x_n)}
+$$ {#eq-part2_rudin_5_25_1}
+
+이다. 
+
+($b$) $f(x_n)>0$ 이면 $f'(x_n)\ge \delta >0$ 이므로 $x_{n+1} < x_n$ 이다. 중간값 정리에 의해 $f(x_{n+1})-f(x_n)=f'(c_n)(x_{n+1}-x_n)$ 인 $c_n$ 이 $x_n$ 과 $x_{n+1}$ 사이의 열린 구간에 존재한다. 즉 $x_{n+1}<c_n < x_n$ 이다. $f(x_{n+1}) = f(x_n) - f'(c_n)(x_n-x_{n+1})$ 인데 $0\le  f''(x)\le M$ 이므로 $f'(c_n)\le f'(x_n)$ 이며, $x_n -x_{n+1}>0$ 이므로
+
+$$
+f(x_{n+1}) > f(x_n) -f'(x_n)(x_{n}-x_{n+1}) = 0
+$$
+
+이다. 즉 $\xi<x_{n+1}<x_n$ 이다. $\langle x_n \rangle$ 은 유계인 단조수열이므로 수렴한다. $\lim_{n \to \infty} x_n = t$ 라 하면 @eq-part2_rudin_5_25_1 로부터 $t=t-f(t)/f'(t)$ 를 만족해야 하는데 이 값은 $\xi$ 뿐이다. 
+
+($c$) 테일러 정리에 의해 다음을 만족하는 $t_n \in (\xi,\,x_n)$ 이 항상 존재한다.
+
+$$
+f(\xi) = f(x_n) + f'(x_n) (\xi-x_n) + \dfrac{f'(t_n)}{2} (\xi-x_n)^2
+$$
+
+$f(\xi)=0$ 이며 @eq-part2_rudin_5_25_1 를 이용하면
+
+$$
+f'(x_n)x_{n+1} = \xi f'(x_n) + \dfrac{f'(t_n)}{2} (\xi-x_n)^2
+$$
+
+이것을 정리하면 문제의 식이 나온다.
+
+($d$) $0<x_{n+1}-\xi = \dfrac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2 < \dfrac{M}{2\delta}(x_n-\xi)^2= A(x_n-\xi)^2$ 이다. 따라서 
+
+$$
+x_{n+1}-\xi < A(x_n-\xi)^{2^1} < A^3(x_{n-1}-\xi)^{2^2}<A^7(x_{n-2}-\xi)^{2^3} < \cdots <\dfrac{[A(x_1-\xi)]^{2^n}}{A}
+$$
+
+이다.
+
+($e$) $g(x)$ 의 고정점 $\zeta$ 는 $g(\zeta)=\zeta$ 을 만족하며 이는 $f(\zeta)=0$ 이다. 또한
+
+$$
+g'(x) = \dfrac{f(x)f''(x)}{(f'(x))^2}
+$$
+
+
+이며 $f(x)$ 가 $0$ 에 가까울 때 $g'(x)=0$ 이다.
+
+($f$) $f(x) = x^{1/3}$ 의 해는 $x=0$ 뿐이다. @eq-part2_rudin_5_25_1 로 부터 $x_{n+1}=x_n - 3x_n=-2x_n$ 이 되어 $\langle x_n \rangle$ 이 발산한다. 
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part2_rudin_5_26}
+
+#### Rudin 5.26
+
+$f$ 가 $[a,\,b]$ 구간에서 미분가능하며 $f(a)=0$ 이고 $[a,\,b]$ 구간에서 $|f'(x)|\le A|f(x)|$ 를 만족하는 실수 $A$ 가 존재한다. $[a,\,b]$ 구간에서 $f(x)=0$ 임을 보여라.
+
+:::
+
+</div>
+
+</br>
+
+::: {.solution}
+
+-- to be done --
+
+:::
