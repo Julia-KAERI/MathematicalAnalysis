@@ -1,0 +1,851 @@
+---
+title: "유클리드 공간에서의 함수"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+</br>
+
+## 기본 개념과 표기법
+
+여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-part2_Euclidean_space 와 @prp-part2_norm_of_Euclidean_space 를 보라.
+
+유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 를 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 로도 표기하기로 한다. 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\mathcal{M}_{n}(\mathbb{R})$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\mathcal{M}_{m\times n}(\R)$ 이라고 쓴다.
+
+$\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
+
+<br>
+
+### 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_1}
+#### Spivak 1.1
+
+$\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
+
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+$\bf{x} = \sum_{i=1}^n x_i \bf{e}_i$ 이다. @prp-part2_norm_of_Euclidean_space ($5$) 로 부터
+
+$$
+\|\bf{x}\| = \left\|\sum_{i=1}^n x_i \bf{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \bf{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
+$$
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_4}
+#### Spivak 1.4
+
+$\left| \|\bf{x}\| -\|\bf{y}\|\right| \le \|\bf{x}-\bf{y}\|$ 임을 보여라.
+
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+@prp-part2_norm_of_Euclidean_space ($5$) 에서 $\bf{y} \to \bf{y}-\bf{x}$ 로 바꾸면
+
+$$
+\|\bf{y}\| \le \|\bf{x}\|+ \|\bf{y}-\bf{x}\|
+$$
+
+이므로 $\|\bf{x}-\bf{y}\| \ge \|\bf{y}\| - \|\bf{x}\|$ 이다. 여기에 $\bf{x}$ 와 $\bf{y}$ 를 바꾸면 $\|\bf{x}\|-\bf{y}\| \le \|\bf{x}-\bf{y}\|$ 이다. 이로부터 주어진 식을 얻는다.
+
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_6}
+#### Spivak 1.6
+
+$f,\,g \in \mathcal{R}[a,\,b]$ 이다.
+
+($a$) $\left| \int_a^b f\cdot g \right| \le \left(\int_a^b f^2\right)^{1/2}\left(\int_a^b g^2\right)^{1/2}$ 임을 보여라.
+
+($b$) ($a$) 에서 등호가 성립한다면 항상 어떤 $\lambda \in \R$ 에 대해 $f =\lambda g$ 인가? $f,\,g$ 가 연속이면 어떠한가?
+
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+($a$) 임의의 $\lambda \in \R$ 에 대해 $\int_a^b (f-\lambda g)^2 \ge 0$ 이며 따라서 모든 $\lambda \in \R$ 에 대해
+
+$$
+\lambda^2 \int_a^b g^2 - 2\lambda \int_a^b f\cdot g + \int_a^b f^2 \ge 0
+$$
+
+이므로
+
+$$
+\left(\int_a^b f\cdot g\right)^2 \le \left(\int_a^b f^2\right) \left(\int_a^b g^2\right)
+$$
+
+이어야 한다.
+
+($b$) 등호가 성립한다면 어떤 $\lambda\in\R$ 에 대해 
+
+$$
+\int_a^b (f - \lambda g)^2 = 0
+$$
+
+이며 이를 위해서는 가산개의 $t\in [a,\,b]$ 를 제외한 점에서 $f=\lambda g$ 이어야 한다. $f,\,g$ 가 연속이라면 $f=\lambda g$ 인 $\lambda \in \R$ 이 존재해야 한다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_7}
+#### Spivak 1.7
+
+선형 변환 $T:\R^n \to \R^n$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $T(\bf{x})
+\bf{\cdot} T(\bf{y})= \bf{x \cdot y}$ 이면 **inner product preserving** 이라고 한다. 
+
+($a$) $T$ 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라.
+
+($b$) 이 변환은 전단사이며 $T^{-1}$ 도 그러함을 보여라. 
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+($a$) $T$ 가 innerproduct preserving 이면 $\|T(\bf{x})\|^2  = T(\bf{x})\bf{\cdot}T(\bf{x}) = \bf{x\cdot x}=\|\bf{x}\|^2$ 이므로 norm preserving 이다. 이제 $T$ 가 norm-preservign 임을 가정하자. $T$ 가 선형결합이므로
+
+$$
+\begin{aligned}
+\|T(\bf{x}-\bf{y})\|^2 &= \|T(\bf{x})-T(\bf{y})\|^2 = \|T(\bf{x})\|^2 - 2 T(\bf{x})\bf{\cdot}T(\bf{y})+ \|T(\bf{y})\|^2 \\
+&=\|\bf{x}\|^2 - 2T(\bf{x})\bf{\cdot}T(\bf{y}) + \|\bf{y}\|^2 
+\end{aligned}
+$$
+
+이며 $T$ 가 norm-preserving 이므로
+
+$$
+\|T(\bf{x}-\bf{y})\|^2 = \|\bf{x}-\bf{y}\|^2 = \|\bf{x}\|^2 - 2\bf{x\cdot y}+ \|\bf{y}\|^2
+$$
+
+이다. 따라서 $T(\bf{x})\bf{\cdot}T(\bf{y})= \bf{x\cdot y}$ 이므로 $T$ 는 inner product preserving 이다.
+
+($b$) $T(\bf{x})=\bf{0}$ 이라면 $\bf{x}=\bf{0}$ 이므로 $\ker T=\{\bf{0}\}$ 이다. 따라서 $T$ 는 전단사이다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_8}
+#### Spivak 1.8
+
+$\bf{x},\,\bf{y}\in \R^n$ 이 영벡터가 아닐 때 $\bf{x}$ 와 $\bf{y}$ 사이의 각을 $\angle (\bf{x},\bf{y})$ 라고 쓰며 다음과 같이 정의된다.
+
+$$
+\angle (\bf{x},\bf{y}) := \arccos \left(\dfrac{\bf{x\cdot y}}{\|\bf{x}\| \cdot \|\bf{y}\|}\right).
+$$ {#eq-part3_angle_between_vectors}
+
+선형 결합 $T$ 가 전단사이며 모든 $0$ 벡터가 아닌 $\bf{x},\,\bf{y}$ 에 대해 $\angle (T(\bf{x}),T(\bf{y}))= \angle (\bf{x},\bf{y})$ 일 때 $T$ 를 **angle preserving** 이라고 한다.
+
+
+($a$) $T$ 가 norm-presreving 이면 $T$ 가 angle-preservng 임을 보여라.
+
+($b$) $\R^n$ 의 어떤 기저 $(\bf{x}_1,\ldots,\,\bf{x}_n)$ 에 대해 $T(\bf{x}_i)=\lambda_i \bf{x}_i$ 를
+만족하는 $\lambda_1,\ldots,\,\lambda_n$ 이 존재한다고 하자. 이 때 $T$ 가 angle preserving 인 것의 필요충분조건은 모든 $|\lambda_i|$ 가 같은 것임을 보여라.
+
+($c$) $T:\R^n \to \R^n$ 가운데 angle preserving 인 것을 모두 찾아라.
+
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+($a$) $T$ 가 norm preserving 이면 inner product preserving 이므로 (@exr-part3_spivak_1_7 ($a$)) @eq-part3_angle_between_vectors 값이 변하지 않는다.
+
+($b$) 문제 오류. $\bf{x}_1=(-1, -1)$, $\bf{x}_2=(1, 0)$, $T(\bf{x}_1)=3\bf{x}_1$, $T(\bf{x}_2)=-3\bf{x}_2$ 이어도
+
+$$
+\angle (\bf{x}_1,\,\bf{x}_2)= \dfrac{3\pi}{4},\qquad \angle (T(\bf{x}_1), T(\bf{x}_2))= \dfrac{\pi}{4}
+$$
+
+이므로 angle preserving 이 아니다. 
+
+($c$)
+
+:::
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_9}
+#### Spivak 1.9
+
+$0\le \theta < \pi$ 에 대해 $T:\R^2 \to \R^2$ 가 $\begin{bmatrix} \cos \theta & \sin \theta \\ - \sin \theta & \cos \theta\end{bmatrix}$ 라고 하자. $T$ 가 angle preserving 이며 $\bf{x}\ne \bf{0}$ 일 때 $\angle (\bf{x},\, T(\bf{x}))= \theta$ 임을 보여라.
+
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+$\bf{x} = (x_1,\,x_2),\, \bf{y}= (y_1,\,y_2)$ 에 대해 
+$$
+\angle (T(\bf{x}),\, T(\bf{y})) = \arccos \left(\dfrac{\bf{x\cdot y}}{\|\bf{x}\| \|\bf{y}\|}\right) = \angle (\bf{x},\, \bf{y})
+$$
+
+이므로 angle preserving 이다. 또한
+
+$$
+\angle (\bf{x},T(\bf{x}))= \arccos \left(\dfrac{\cos \theta \|\bf{x}\|^2}{\|\bf{x}\|^2}\right) = \theta
+$$
+
+이다. 
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_10}
+#### Spivak 1.10
+
+선형변환 $T:\R^m \to \R^n$ 를 생각하자. 모든 $\boldsymbol{h}\in \R^m$ 에 대해 $\|T(\bf{h})\| \le M \|\bf{h}\|$ 인 $M$ 이 존재함을 보여라. 
+
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+$\bf{h} = (h_1,\ldots,\,h_m)$ 이며 $(T(\bf{h}))_i = \sum_{j=1}^m T_{ij}h_j$ 라 하자. 
+
+$$
+\left|\left(T(\bf{h})_i\right)\right| = \left| \sum_{j=1}^m T_{ij}h_j\right| \le \sum_{j=1}^m |T_{ij}|\cdot |h_j|
+$$
+
+이다. $M_0 = \max \{|T_{ij}| : 1 \le i \le n,\, 1 \le j \le m\}$ 이라고 하자. 
+
+$$
+\||T(\bf{h})\| \le \sum_{i=1}^n \left|\left(T(\bf{h})_i\right)\right| \le \sum_{i=1}^m \sum_{j=1}^n |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
+$$
+
+이므로 $M=mnM_0$ 로 잡으면 된다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_11}
+#### Spivak 1.11
+
+$\bf{x},\,\bf{y}\in \R^n$, $\bf{z},\,\bf{w}\in \R^m$ 일 때 $(\bf{x}\oplus \bf{z}) \bf{\cdot} (\bf{y}\oplus \bf{w}) = \bf{x \cdot y} + \bf{z \cdot w}$ 이며 $\|\bf{x}\oplus \bf{z}\| = \sqrt{\|\bf{x}\|^2 + \|\bf{z}\|^2}$ 임을 보여라. 이 때 
+
+$$
+(\bf{x}\oplus \bf{z}) = (x_1,\ldots,\,x_n,\,z_1,\,\ldots,\,z_m) \in \R^{n+m}
+$$
+
+이다. 
+:::
+
+</div>
+</br>
+
+::: {.solution}
+
+trivial
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_12}
+#### Spivak 1.12
+
+$(\R^n)^\ast$ 는 $\R^n$ 의 쌍대공간이다. 정해진 $\bf{x}\in \R^n$ 에 대해 $\varphi_\bf{x} (\bf{y}) :=\bf{x \cdot y}$ 는 $\varphi_\bf{x} \in (\R^n)^\ast$ 이다. $T:\R^n \to (\R^n)^\ast$ 를 $T(\bf{x})= \varphi_\bf{x}$ 로 정의한다면 $T$ 는 전단사 선형변환임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+우선 $T$ 가 선형변환임을 보이자. $\bf{x}_1,\,\bf{x}_2 \in\R^n$ 과 $c\in\R$ 에 대해 $T(\bf{x}_1 + c\bf{x}_2)= T(\bf{x}_1)+cT(\bf{x}_2)$ 이면 $T$ 는 선형변환이다. $T(\bf{x}_1 + c\bf{x}_2)= \varphi _{\bf{x}_1+c\bf{x}_2}$ 이며 
+
+$$
+\varphi_{\bf{x}_1+c\bf{x}_2}(\bf{y})= (\bf{x}_1+c\bf{x}_2)\bf{\cdot y}= \bf{x}_1 \bf{\cdot y}+ c\bf{x}_2 \bf{\cdot y} = \varphi_{x_1}(\bf{y}) + c\varphi_{x_2}(\bf{y})
+$$
+
+이므로 
+$$
+T(\bf{x}_1+c\bf{x}_2)= \varphi_{x_1}(\bf{y}) + c\varphi_{x_2}(\bf{y}) = T(\bf{x}_1) + cT(\bf{x}_2)
+$$
+
+이다. 즉 $T$ 는 선형변환이다.
+
+$\psi_x \in \ker (T)$ 라면 모든 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{x}(\bf{y})=\bf{0}$ 이어야 한다. 이 경우는 $\bf{x}=\bf{0}$ 인 경우밖에 없으므로 $\ker (T)=\{\bf{0}\}$ 이므로 $T$ 는 단사이다. 따라서 $T$ 는 전단사이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_13}
+#### Spivak 1.13
+
+$\bf{x},\,\bf{y}\in\R^n$ 에 대해 $\bf{x \cdot y}=0$ 이면 $\bf{x}$ 와 $\bf{y}$ 는 서로 직교(perpendicular, orthogonal) 한다고 한다. $\bf{x},\,\bf{y}$ 가 직교한다면 $\|\bf{x}+\bf{y}\|^2 = \|\bf{x}\|^2+\|\bf{y}\|^2$ 임을 보여라. 
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$$
+\|\bf{x}+\bf{y}\|^2 = \|\bf{x}\|^2 + 2\bf{x \cdot y} + \|\bf{y}\|^2 = \|\bf{x}\|^2 + \|\bf{y}\|^2
+$$
+
+:::
+
+</br>
+
+## 유클리드 공간의 부분공간
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_cartesian_product}
+
+#### 데카르트곱
+
+$\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x}\,\bf{y})$ 를 다음과 같이 정의한다. 
+
+$$
+(\bf{x},\,\bf{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \R^{m+n}.
+$$
+
+또한 $A\subset \R^m,\,B\subset \R^n$ 에 대해 $A\times B \subset \R^{m + n}$ 를 아래와 같이 정의한다.
+
+$$
+A \times B := \{(\bf{x},\,\bf{y}) : \bf{x}\in A,\, \bf{y}\in B\}
+$$
+
+::: 
+:::
+
+</br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_cartesian_product}
+
+#### 데카르트곱
+
+$\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x}\,\bf{y})$ 를 다음과 같이 정의한다. 
+
+$$
+(\bf{x},\,\bf{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \R^{m+n}.
+$$
+
+또한 $A\subset \R^m,\,B\subset \R^n$ 에 대해 $A\times B \subset \R^{m + n}$ 를 아래와 같이 정의한다.
+
+$$
+A \times B := \{(\bf{x},\,\bf{y}) : \bf{x}\in A,\, \bf{y}\in B\}
+$$
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_cartesian_product}
+
+#### 열린 $n$-cell
+
+@def-part2_countable 에서 $n$-cell 을 정의하였다. 이와 비슷하게 
+
+$$
+(a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \R^n
+$$
+
+은 열린 집합이며 이를 열린 $n$-cell 이라고 한다.
+
+:::
+
+:::
+
+
+앞서 일변수 해석학에서는 $\bf{a}\in \R^n$ 주위의 열린 집합을 잡을 때 $N(\bf{a},\,\delta) := \{\bf{x}\in \R^n : \|\bf{x}-\bf{a}\|<\delta\}$ 을 생각했지만 여기서는 자주 $\bf{a}$ 주위의 열린 $n$-cell 을 잡게 된다. 
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_neighboring_cube}
+
+#### 열린/닫힌 cube
+
+$\bf{a} = (a_1,\ldots,\,a_n) \in \R^n$ 에 대해 $\bf{a}$ 를 중심으로 모서리의 길이가 모두 같은 열린 $n$-cell 을 아래와 같이 정의 할 수 있다. 
+
+$$
+\begin{aligned}
+C(\bf{a},\,\delta) &:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
+\overline{C}(\bf{a},\,\delta) &:=  [a_1-\delta,\,a_1+\delta] \times \cdots \times [a_n - \delta,\, a_n+\delta]. 
+\end{aligned}
+$$
+
+이 때 $C(\bf{a},\,\delta)$ 를 열린 입방체라고 하며 $\overline{C}(\bf{a},\,\delta)$ 를 닫힌 입방체라고 한다.
+
+:::
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_open_sphere_and_cube}
+
+$\R^n$ 에서 다음이 성립한다.
+
+$$
+N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta) \subset N(\bf{a},\,\sqrt{n}\delta)
+$$
+
+:::
+
+</div></br>
+
+::: {.proof}
+$N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol{a},\,\delta)$ 의 한 모서리에서 $\boldsymbol{a}$ 까지의 거리는 $\sqrt{n}\delta$ 이므로 $C(\bf{a},\,\delta) \subset N(\bf{a},\,\sqrt{n}\delta)$ 이다. $\square$
+
+:::
+
+</br>
+
+[기본적인 위상수학](../part2/2_1_basic_topology.qmd) 의 옹골집합 부분과 하이네 보렐 정리(@thm-part2_heine_borrel) 를 참고하라. 또한 @exr-part2_KKK_2_7_20 을 통해 $A\subset \R^m$ 과 $B\subset \R^n$ 이 옹골집합이면 $A \times B$ 도 옹골집합임을 보였다.
+
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_17}
+#### Spivak 1.17
+
+$[0,\,1]\times [0,\,1]$ 의 어떤 부분집합 $A$ 는 각각의 수직선과 수평선에 대해 많아야 하나의 점만을 포함하며 $A$ 의 경계 $\partial A$ 는 $[0,\,1]\times [0,\,1]$ 이다. $A$ 를 구하라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+*to be done*
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_18}
+#### Spivak 1.18
+
+$A\subset [0,\,1]$ 은 $A=\bigcup (a_i,\,b_i)$ 이며 모든 $(0,\,1)$ 에 포함되는 유리수는 어떤 $(a_i,\,b_i)$ 에 포함되어 있다. $\partial A = [0,\,1]-A$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$x\in A$ 이면 $x$ 는 어떤 열린 구간 $(a_i,\,b_i)$ 에 포함되므로 $N(x,\,\delta) \subset (a_i,\,b_i)$ 인 $\delta>0$ 이 존재한다. 따라서 $x\notin \partial A$ 이다. 즉 $\partial A \subset [0,\,1]-A$ 이다. 
+
+$x\notin A$ 라고 하자. 유리수의 조밀성에 의해 모든 $\delta>0$ 에 대해 $N(x,\,\delta) \cap A \ne \varnothing$ 이다. 그런데 $x\notin A$ 이므로 $x\in \partial A$ 이다. 즉 $[0,\,1]-A \subset \partial A$ 이다. 따라서 $\partial A [0,\,1]-A$ 이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_19}
+#### Spivak 1.19
+
+$A$ 가 닫힌 집합이며 모든 $[0,\,1]$ 에 포함되는 유리수를 포함한다면 $[0,\,1]\subset A$ 임을 보여라.
+:::
+
+</div></br>
+
+::: {.solution}
+
+$A$ 가 닫힌 집합이며 $C\subset A$ 이면 $\overline{C}\subset A$ 이다. $\overline{[0,\,1]\cap \Q}=[0,\,1]$ 이므로 $[0,\,1]\subset A$ 이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_21}
+#### Spivak 1.21
+
+($a$) $A$ 가 닫힌 집합이고 $x\notin A$ 일 때 모든 $y\in A$ 에 대해 $\|y-x\| \ge d$ 인 $d>0$ 이 존재함을 보여라.
+
+($b$) $A$ 가 닫힌 집합이고 $B$ 가 옹골집합이며 $A \cap B=\varnothing$ 일 때 모든 $y\in A,\, x \in B$ 에 대해 $\|y-x\|\ge d$ 인 $d\ge 0$ 이 존재함을 보여라.
+
+($c$) $A$, $B$ 가 닫힌 집합이지만 옹골집합은 아닐 때 $\R^2$ 에서 ($b$) 가 성립하지 않는 예를 들어라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $A^C$ 는 열린집합이며 $x\in A^C$ 이므로 $N(x,\,\delta)\subset A^C$ 인 $\delta>0$ 이 존재한다. 따라서 $\|y-x\| \ge \delta$ 이다.
+
+($b$) $B$ 의 열린 덮개 $\Gamma_0 =\{U_\alpha\}$ 에 대해 $\Gamma_1 = \{V_\alpha = U_\alpha \cap A^C\}$ 도 $B$ 의 열린 덮개이다. $B$ 가 옹골집합이므로 $B$ 의 유한 열린 덮개 $\Gamma =\{V_1,\ldots,\,V_m\}$ 를 생각 할 수 있다. $x\in B$ 이므로 어떤 $V_i\in \Gamma$ 에 대해 $x\in V_i$ 이며 $V_i$ 가 열린집합이므로 $N(x,\,d)\subset V_i$ 인 $d>0$ 이 존재한다. $V_i \cap A= \varnothing$ 이므로 $N(x,\,d)\cap A=\varnothing$ 이다. 즉 $\|y-x\| \ge d$ 이다.
+
+($c$) $A=\{(n,\,n): n\in \mathbb{Z}_+\}$, $B = \left\{\left(n,\, n+\dfrac{1}{n}\right) : n\in \mathbb{Z}_+\right\}$ 은 모두 고립점의 집합이므로 닫힌집합이지만 유계가 아니므로 옹골집합이 아니다. 임의의 $m\in \mathbb{Z}_+$ 에 대해 
+
+$$
+\|x-y\|<\dfrac{1}{m}
+$$
+
+을 만족하는 $x\in A,\, y\in B$ 를 찾을 수 있으므로 ($b$) 에 위배된다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_22}
+#### Spivak 1.22
+
+$U$ 는 열린집합이며 $C\subset U$ 는 옹골집합이라면 $C \subset \text{int} (D)$ 이며 $D\subset U$ 를 만족하는 옹골집합 $D$ 가 존재함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_spivak_1_21 ($b$) 에서 보였듯이 모든 $y\in A,\, x\in B$ 에 대해 $\|y-x\|\ge d$ 인 $d>0$ 이 존재한다. 
+
+이제 $\Gamma = \{N(x,\, d/2) : x\in C\}$ 는 $C$ 의 열린 덮개이며 $C$ 가 옹골집합이므로 $C$ 의 유한 열린 덮개 $\{B_1,\ldots,\,B_m\}\subset \Gamma$ 가 존재한다. $D = \bigcup \overline{B_i}$ 라고 하면 각각의 $\overline{B_i}$ 는 옹골집합이며 따라서 $D$ 도 옹골집합이다. $\text{int} (D) = \bigcup B_i$ 이므로 $C\subset \text{int}(D)$ 이며 $D\subset U$ 이다. 
+
+:::
+
+</br>
+
+## 함수와 연속성 {#sec-part3_functions_and_continuity}
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_component_functions}
+
+#### 성분 함수
+
+함수 $\bf{f}:A\subset \R^m \to \R^n$ 은 $n$ 개의 **성분 함수(component function)** $f_i :\R^m \to \R$ $(i=1,\ldots,\,n)$ 를 가진다. 이 때 $\bf{f}(\bf{x}) = (f_1(\bf{x}),\ldots,\,f_n(\bf{x}))$ 와 같이 쓴다. 
+
+:::
+:::
+
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_projection_function}
+
+#### 성분 함수
+항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 한다.
+
+:::
+:::
+
+</br>
+
+연속성에 대해 [함수의 극한과 연속](../part2/2_3_continuity_of_functions.qmd#sec-part2_limit_and_continuity_of_functions) 을 참고하라.
+
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_oscillation} 
+
+#### Oscillation
+
+$f:A\subset \R^m \to \R$ 가 유계이며 $a\in A$ 일 때 정해진 $\delta>0$ 에 대해
+
+$$
+\begin{aligned}
+M(f,\,\bf{a},\,\delta) &:= \sup \{f(\bf{x}): \bf{x}\in A,\, \|\bf{x}-\bf{a}\|<\delta\}, \\
+m(f,\,\bf{a},\,\delta) &:= \inf \{f(\bf{x}): \bf{x}\in A,\, \|\bf{x}-\bf{a}\|<\delta\}
+\end{aligned} 
+$$
+
+라 하자. 그리고 $\displaystyle o(f,\,\bf{a}) := \lim_{\delta \to 0} M(f,\,\bf{a},\,\delta) - m(f,\,\bf{a},\,\delta)$ 라고 정의하자. 이 때 $o(f,\bf{a})$ 를 $\bf{a}$ 에서의 $f$ 의 **oscillation** 이라고 한다.
+
+:::
+:::
+
+</br>
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_oscillation_and_continuity}
+
+$f:A\subset \R^m \to \R$ 이 유계이리 때 $f$ 가 연속인 것의 필요충분조건은 $o(f,\,\bf{a}) = 0$ 인 것이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$f$ 가 연속임을 가정하자. 임의의 $\varepsilon>0$ 에 대해 $\|\bf{x}-\bf{a}\|<\delta \implies |f(\bf{x})-f(\bf{a})| < \varepsilon$ 인 $\delta>0$ 이 존재한다. 따라서 $\|\bf{x}-\bf{a}\|<\delta$ 일 때
+
+$$
+||f(\bf{x})| - |f(\bf{a})||< |f(\bf{x}) - f(\bf{a})| < \varepsilon
+$$
+
+이므로 
+
+$$
+|f(\bf{a})|-\varepsilon < f(\bf{x}) < |f(\bf{a})|+ \varepsilon
+$$
+
+이다. 즉 $o(f,\,\bf{a}) < 2\varepsilon$ 인데 임의의 $\varepsilon>0$ 에 대해 성립하므로 $o(f,\,\bf{a})=0$ 이다.
+
+이제 $o(f,\,\bf{a})=0$ 임을 가정하자. Osillation 의 정의에 의해 임의의 $\varepsilon >0$ 에 대해 어떤 $\delta_\bf{x}>0$ 이 존재하여 $M(f,\,\bf{a},\,\delta_\bf{x})- m(f,\, \bf{a},\,\delta_\bf{x})<\varepsilon$ 이다. $\|\bf{x}-\bf{a}\|<\delta_\bf{x}$ 이면 
+
+$$
+|f(\bf{x})-f(\bf{a})| \le M(f,\,\bf{a},\,\delta_\bf{x})- m (f,\,\bf{a},\,\delta_\bf{x})<\varepsilon
+$$ 
+
+이므로 $f$ 는 $\bf{a}$ 에서 연속이다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_oscillation_and_closed_set}
+
+닫힌 집합 $A\subset \R^m$ 에 대해 $f:A \to \R$ 이 유계일 때 임의의 $\varepsilon>0$ 에 대해 $\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 은 닫힌 집합이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^m-B$ 가 열린 집합임을 보이자. $\bf{x}\in \R^m-B$ 이면 ($i$) $\bf{x}\notin A$ 이거나, ($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x}) <\varepsilon$ 이다. 
+
+($i$) $\bf{x}\not\in A$ 이면 $A$ 가 닫힌 집합이므로 어떤 $\delta_x>0$ 에 대해 $N(\bf{x},\,\delta_x)\subset \R^m-A \subset \R^m-B$ 가 존재한다.
+
+($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x})<\varepsilon$ 인 경우. 즉 어떤 $\delta>0$ 에 대해 $M(f,\,\bf{x},\,\delta)-m(f,\,\bf{x},\,\delta)<\varepsilon$ 이다. $\bf{y}\in N(\bf{x},\,\delta)$ 라면 어떤 $N(\bf{y},\, \delta_1)\subset N(\bf{x},\, \delta)$ 인 $\delta_1>0$ 이 존재한다. 즉 $N(\bf{x},\,\delta)\subset \R^m-B$ 이다. 
+
+즉 $R^m-B$ 는 열린 집합이므로 $B$ 는 닫힌 집합이다.
+
+:::
+
+
+</br>
+
+## 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_23}
+#### Spivak 1.23
+
+$\bf{f}:A \subset \R^m \to \R^n$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
+
+$$
+\displaystyle \lim_{\bf{x}\to \bf{a}} \bf{f}(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,n\}\, \lim_{\bf{x}\to \bf{a}} f_i(\bf{x}) = b_i
+$$
+
+:::
+
+</div></br>
+
+
+::: {.solution}
+
+($\implies$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies \|\bf{f}(\bf{x})-\bf{b}\|<\varepsilon$ 인 $\delta>0$ 이 존재한다. $|f_i(\bf{x})-b_i|\le\|f(\bf{x})-\bf{b}\|$ 이므로 성립한다. 
+
+
+($\impliedby$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies |f_i(\bf{x})-b_i|<\varepsilon/n$ 인 $\delta>0$ 이 존재한다. 그렇다면.
+
+$$
+\|\bf{f}(\bf{x})-\bf{b}\| \le \sum_{i=1}^n |f_i(\bf{x})-b_i| < n \cdot \dfrac{\varepsilon}{n} = \varepsilon
+$$
+
+이므로 성립한다.
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_24}
+#### Spivak 1.24
+
+$f:A\subset \R^m \to \R^n$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 연속인 것임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+$\bf{b}$ 를 $\bf{f}(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한다. 
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_25}
+#### Spivak 1.25
+
+선형변환 $T:\R^m \to \R^n$ 은 연속임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+@exr-part3_spivak_1_10 에서 보였듯이 $\|T(\bf{h})\|\le M\|\bf{h}\|$ 인 $M>0$ 이 존재한다. $\bf{a}\in \R^m$ 에 대해 $\|T(\bf{x})-T(\bf{a})\| = \|T(\bf{x}-\bf{a})\| \le M \|\bf{x}-\bf{a}\|$ 이므로 $T$ 는 연속이다.
+
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_26}
+#### Spivak 1.26
+
+$A=\{(x,\,y) \in \R^2 : x>0 \text{ and } 0<y<x^2\}$ 이라고 하자.
+
+($a$) $(0,\,0)$ 을 지나는 모든 직선은 $\R^2-A$ 에 포함되는 $(0,\,0)$ 근처의 구간을 포함함을 보여라.
+
+($b$) $f:\R^2 \to \R$ 을 $\bf{x}\notin A$ 일 경우 $f(\bf{x})=0$, $\bf{x}\in A$ 일 경우는 $f(\bf{x})=1$ 로 정의하자. $\bf{h}\in \R^2$ 에 대해 $g_\bf{h}:\R \to \R$ 을 $g_\bf{h}(t) = f(t\bf{h})$ 라고 정의한다. 각각의 $g_\bf{h}$ 는 $0$ 에서 연속이지만 $f$ 는 $(0,\,0)$ 에서 연속이 아님을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) 원점을 지나는 직선 $y=ax$ 를 생각하자. $a=0$ 일 경우는 전체 구간에서 직선이 $\R^2-A$ 에 포함되며 $a\ne 0$ 일 경우 $$[-|a|,\, |a|]$ 구간에서 $\R^2-A$ 에 포함된다.
+
+($b$) $\lim_{s \to 0} f(s,\, s^2/2) = 1 \ne 0 =  f(0,\,0)$ 이므로 $f$ 는 $(0,\,0)$ 에서 연속이 아니다. ($a$) 로부터 $\lim_{t \to 0} g_\bf{h}(t) = 0 = g_\bf{h}(0)$ 임을 안다. 
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_28}
+#### Spivak 1.28
+
+$A\subset \R^n$ 이 닫힌 집합이 아니면 어떤 연속함수 $f:A\to \R$ 은 유계가 아님을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\bf{x}\in \R^n -A,\, \bf{x}\notin \text{int}(\R^n-A)$ 에 대해 $f(\bf{y}) := \dfrac{1}{\|\bf{x}-\bf{y}\|}$ 라고 하자. $\bf{x} \notin \text{int}(\R^n-A)$ 이므로 모든 $\bf{x}$ 의 근방은 $A$ 와의 교집합이 $\varnothing$ 이 아니다. 따라서 $\|\bf{x}-\bf{y}\|$ 를 임의로 작게 할 수 있으며 $f(\bf{y})$ 는 유계가 아니다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_29}
+#### Spivak 1.29
+
+$A$ 가 옹골집합이면 모든 연속함수 $f:A\to \R$ 은 최대값과 최소값을 가짐을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+see @thm-part2_extreme_value_theorem
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_1_30}
+#### Spivak 1.30
+
+$f:[a,\,b] \to \R$ 이 증가함수이다. $x_1,\ldots,\,x_n \in [a,\,b]$ 가 모두 다른 값이라면 $\sum_{i=1}^n o(f,\,x_i) < f(b)-f(a)$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+임의의 $\delta>0$ 에 대해 $o(f,\,x_i) < f(x_{i}+\delta)- f(x_i-\delta)$ 이다. 일반성을 잃지 않고 $x_1<\cdots <x_n$ 라고 할 수 있다. $\delta < \frac{1}{2}\min \{x_{k}-x_{k-1}: k=2,\ldots,\,n\}$ 으로 잡자. 그렇다면 $f(x_{k+1}-\delta) - f(x_k+\delta )>0$ 이며 
+
+$$
+\begin{aligned}
+\sum_{i=1}^n o(f,\,x_i) &< f(x_1+\delta)- f(x_1-\delta) + \cdots + f(x_n+\delta)- f(x_n-\delta) \\
+&= f(x_n+\delta) - (f(x_n-\delta)-f(x_{n-1}+\delta))  \\
+&\qquad \qquad \cdots - (f(x_2-\delta)+ f(x_1+\delta)) - f(x_1-\delta)\\
+&< f(x_n+\delta) - f(x_1-\delta)
+\end{aligned}
+$$
+
+이다. 임의의 작은 $\delta>0$ 에 대해 성립하므로 $\sum_{i=1}^n o(f,\,x_i) < f(b)-f(a)$ 이다.
+
+:::

@@ -38,6 +38,13 @@ $$ {#eq-part2_definition_of_the_norm_of_partition}
 
 </br>
 
+::: {.callout-caution}
+
+앞으로 $P=\{x_0,\ldots,\,x_n\}$ 이 구간 $[a,\,b]$ 의 분할이라고 하면 명시적으로 언급하지 않더라도 $a=x_0 < x_1 <\cdots < x_n=b$ 임을 가정한다.
+
+:::
+
+</br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -84,7 +91,7 @@ $${#eq-part2_inequalitiy_of_riemann_sum_1}
 
 ::: {.proof}
 
-임의의 분할 $P$ 에 대해 $L(f,\,P) \le U(f,\,P)$ 임은 자명하다. $P_1$ 에 의한 부분구간 $[x_{k-1},\,x_k]$ 의 에 대해 $z_m=x_{k-1} < z_{m+1}< \cdots <z_{m+n} = x_k$ 라고 하자. $j=0,\ldots,\,n-1$ 에 대해 $\inf f([z_{m+j},\, z_{m+j+1}]) \le \inf f[(x_{k-1},\, x_{k})]$ 이므로 $L(f,\, P_1) \le L(f,\,P_2)$ 이다. 같은 방법으로 $U(f,\,P_2) \le U(f,\,P_2)$ 를 보일 수 있다. $\square$
+임의의 분할 $P$ 에 대해 $L(f,\,P) \le U(f,\,P)$ 임은 자명하다. $P_1$ 에 의한 부분구간 $[x_{k-1},\,x_k]$  에 대해 $z_m=x_{k-1} < z_{m+1}< \cdots <z_{m+n} = x_k$ 라고 하자. $j=0,\ldots,\,n-1$ 에 대해 $\inf f[(x_{k-1},\, x_{k})] \le \inf f([z_{m+j},\, z_{m+j+1}])$ 이므로 $L(f,\, P_1) \le L(f,\,P_2)$ 이다. 같은 방법으로 $U(f,\,P_2) \le U(f,\,P_1)$ 임을 보일 수 있다. $\square$
 
 :::
 

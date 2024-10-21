@@ -241,7 +241,7 @@ $$
 
 ::: {#prp-part2_norm_of_Euclidean_space}
 
-$\boldsymbol{x},\, \boldsymbol{y},\,\boldsymbol{z}\in \mathbb{R}^k$ 과 $a\in \mathbb{R}$ 에 대해 다음이 성립한다.
+$\boldsymbol{x},\, \boldsymbol{y},\,\boldsymbol{z}\in \mathbb{R}^n$ 과 $a\in \mathbb{R}$ 에 대해 다음이 성립한다.
 
 &emsp;($1$) $\|\boldsymbol{x}\| \ge 0$ 이며 $\|\boldsymbol{x}\|=0 \iff \boldsymbol{x}=\boldsymbol{0}$ 이다.
 
@@ -279,7 +279,7 @@ $$
 
 </br>
 
-### 열린집합과 닫힌집합 {#sec-open_set_and_closed_set}
+### 열린집합과 닫힌집합 {#sec-part2_open_set_and_closed_set}
 
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -626,7 +626,7 @@ $E\backslash X$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 
 ## 옹골 집합
 
-### 옹골 집합의 정의 {#sec-compact_set}
+### 옹골 집합의 정의 {#sec-part2_compact_set}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -725,6 +725,8 @@ $W=W_{q_1} \cup \cdots \cup W_{q_n}$ 라 하고 $V=V_{q_1}\cap \cdots \cap V_{q_
 
 </div></br>
 
+### 옹골집합의 기본 성질 {#sec-part2_basic_properties_of_compact_set}
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-part2_finite_intesection_of_compact_sets}
@@ -782,7 +784,11 @@ $\{I_k\}$ 이 $\mathbb{R}^n$ 에서의 $n$-cell 의 수열이며 $I_k \subset I_
 
 :::
 
-</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</div>
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-part2_k_cell_is_compact}
 
@@ -797,7 +803,7 @@ $\{I_k\}$ 이 $\mathbb{R}^n$ 에서의 $n$-cell 의 수열이며 $I_k \subset I_
 $n$-cell $I = [a_1,\,b_1] \times \cdots \times [a_n,\,b_n]$ 을 생각하자. 이 $n$-cell 에 대해
 
 $$
-\delta = \left(\sum_{i-1}^n (b_j-a_j)^2\right)^{1/2}
+\delta = \left(\sum_{i=1}^n (b_j-a_j)^2\right)^{1/2}
 $$
 
 라 하자. $x,\,y\in I$ 이면 $d(x,\,y)<\delta$ 이다.
@@ -814,7 +820,12 @@ $$
 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+
+
+### 하이네 보렐 정리 {#sec-part2_heine_borel_theorem}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-part2_heine_borrel}
 

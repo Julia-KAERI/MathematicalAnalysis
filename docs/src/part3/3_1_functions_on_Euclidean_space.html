@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; 유클리드 공간에서의 함수 – Mathematical Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/figures/figures.html" rel="next">
+<link href="../../src/part3/part3.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../custom.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_1_functions_on_Euclidean_space.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Mathematical Analysis</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Julia-KAERI/MathematicalAnalysis" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">해석학의 기반</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_2_functions_and_relations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">함수와 관계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_3_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_4_cartesian_products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">일변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_1_basic_topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">기본적인 위상수학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_2_sequences_and_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_3_continuity_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">함수의 연속성</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_4_differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_5_riemann_stieltjes_integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">다변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">그림들</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#기본-개념과-표기법" id="toc-기본-개념과-표기법" class="nav-link active" data-scroll-target="#기본-개념과-표기법"><span class="header-section-number">11.1</span> 기본 개념과 표기법</a>
+  <ul class="collapse">
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
+  </ul></li>
+  <li><a href="#유클리드-공간의-부분공간" id="toc-유클리드-공간의-부분공간" class="nav-link" data-scroll-target="#유클리드-공간의-부분공간"><span class="header-section-number">11.2</span> 유클리드 공간의 부분공간</a>
+  <ul class="collapse">
+  <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
+  </ul></li>
+  <li><a href="#sec-part3_functions_and_continuity" id="toc-sec-part3_functions_and_continuity" class="nav-link" data-scroll-target="#sec-part3_functions_and_continuity"><span class="header-section-number">11.3</span> 함수와 연속성</a></li>
+  <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_1_functions_on_Euclidean_space.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
+<p><br></p>
+<section id="기본-개념과-표기법" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="기본-개념과-표기법"><span class="header-section-number">11.1</span> 기본 개념과 표기법</h2>
+<p>여기서는 유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 <a href="../part2/2_1_basic_topology.html#def-part2_Euclidean_space" class="quarto-xref">정의&nbsp;<span>6.5</span></a> 와 <a href="../part2/2_1_basic_topology.html#prp-part2_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> 를 보라.</p>
+<p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 를 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 로도 표기하기로 한다. 실수를 성분으로 갖는 <span class="math inline">\(n \times 1\)</span> 행렬의 집합은 <span class="math inline">\(\mathcal{M}_{n}(\mathbb{R})\)</span> 로 표기하기로 한다. 또한 실계수를 갖는 <span class="math inline">\(m\times n\)</span> 행렬의 집합을 <span class="math inline">\(\mathcal{M}_{m\times n}(\mathbb{R})\)</span> 이라고 쓴다.</p>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저, 즉 <span class="math inline">\(i\)</span> 번째 성분만 <span class="math inline">\(1\)</span> 이며 나머지 성분은 <span class="math inline">\(0\)</span> 인 벡터를 <span class="math inline">\(\boldsymbol{e}_i\)</span> 라고 쓰기로 한다.</p>
+<p><br></p>
+<section id="연습문제" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.1 (Spivak 1.1)</strong></span> <span class="math inline">\(\|\boldsymbol{x}\| \le \sum_{i=1}^n |x_i|\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = \sum_{i=1}^n x_i \boldsymbol{e}_i\)</span> 이다. <a href="../part2/2_1_basic_topology.html#prp-part2_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> (<span class="math inline">\(5\)</span>) 로 부터</p>
+<p><span class="math display">\[
+\|\boldsymbol{x}\| = \left\|\sum_{i=1}^n x_i \boldsymbol{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \boldsymbol{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.2 (Spivak 1.4)</strong></span> <span class="math inline">\(\left| \|\boldsymbol{x}\| -\|\boldsymbol{y}\|\right| \le \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="../part2/2_1_basic_topology.html#prp-part2_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> (<span class="math inline">\(5\)</span>) 에서 <span class="math inline">\(\boldsymbol{y} \to \boldsymbol{y}-\boldsymbol{x}\)</span> 로 바꾸면</p>
+<p><span class="math display">\[
+\|\boldsymbol{y}\| \le \|\boldsymbol{x}\|+ \|\boldsymbol{y}-\boldsymbol{x}\|
+\]</span></p>
+<p>이므로 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{y}\| \ge \|\boldsymbol{y}\| - \|\boldsymbol{x}\|\)</span> 이다. 여기에 <span class="math inline">\(\boldsymbol{x}\)</span> 와 <span class="math inline">\(\boldsymbol{y}\)</span> 를 바꾸면 <span class="math inline">\(\|\boldsymbol{x}\|-\boldsymbol{y}\| \le \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 이다. 이로부터 주어진 식을 얻는다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.3 (Spivak 1.6)</strong></span> <span class="math inline">\(f,\,g \in \mathcal{R}[a,\,b]\)</span> 이다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\left| \int_a^b f\cdot g \right| \le \left(\int_a^b f^2\right)^{1/2}\left(\int_a^b g^2\right)^{1/2}\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) (<span class="math inline">\(a\)</span>) 에서 등호가 성립한다면 항상 어떤 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(f =\lambda g\)</span> 인가? <span class="math inline">\(f,\,g\)</span> 가 연속이면 어떠한가?</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 임의의 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\int_a^b (f-\lambda g)^2 \ge 0\)</span> 이며 따라서 모든 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\lambda^2 \int_a^b g^2 - 2\lambda \int_a^b f\cdot g + \int_a^b f^2 \ge 0
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\left(\int_a^b f\cdot g\right)^2 \le \left(\int_a^b f^2\right) \left(\int_a^b g^2\right)
+\]</span></p>
+<p>이어야 한다.</p>
+<p>(<span class="math inline">\(b\)</span>) 등호가 성립한다면 어떤 <span class="math inline">\(\lambda\in\mathbb{R}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\int_a^b (f - \lambda g)^2 = 0
+\]</span></p>
+<p>이며 이를 위해서는 가산개의 <span class="math inline">\(t\in [a,\,b]\)</span> 를 제외한 점에서 <span class="math inline">\(f=\lambda g\)</span> 이어야 한다. <span class="math inline">\(f,\,g\)</span> 가 연속이라면 <span class="math inline">\(f=\lambda g\)</span> 인 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 이 존재해야 한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.4 (Spivak 1.7)</strong></span> 선형 변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\|T(\boldsymbol{x})\|=\|\boldsymbol{x}\|\)</span> 이면 <strong>norm preserving</strong> 이라고 하고 <span class="math inline">\(T(\boldsymbol{x})
+\boldsymbol{\cdot} T(\boldsymbol{y})= \boldsymbol{x \cdot y}\)</span> 이면 <strong>inner product preserving</strong> 이라고 한다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) 이 변환은 전단사이며 <span class="math inline">\(T^{-1}\)</span> 도 그러함을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 innerproduct preserving 이면 <span class="math inline">\(\|T(\boldsymbol{x})\|^2  = T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{x}) = \boldsymbol{x\cdot x}=\|\boldsymbol{x}\|^2\)</span> 이므로 norm preserving 이다. 이제 <span class="math inline">\(T\)</span> 가 norm-preservign 임을 가정하자. <span class="math inline">\(T\)</span> 가 선형결합이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|T(\boldsymbol{x}-\boldsymbol{y})\|^2 &amp;= \|T(\boldsymbol{x})-T(\boldsymbol{y})\|^2 = \|T(\boldsymbol{x})\|^2 - 2 T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{y})+ \|T(\boldsymbol{y})\|^2 \\
+&amp;=\|\boldsymbol{x}\|^2 - 2T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{y}) + \|\boldsymbol{y}\|^2
+\end{aligned}
+\]</span></p>
+<p>이며 <span class="math inline">\(T\)</span> 가 norm-preserving 이므로</p>
+<p><span class="math display">\[
+\|T(\boldsymbol{x}-\boldsymbol{y})\|^2 = \|\boldsymbol{x}-\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 - 2\boldsymbol{x\cdot y}+ \|\boldsymbol{y}\|^2
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{y})= \boldsymbol{x\cdot y}\)</span> 이므로 <span class="math inline">\(T\)</span> 는 inner product preserving 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(T(\boldsymbol{x})=\boldsymbol{0}\)</span> 이라면 <span class="math inline">\(\boldsymbol{x}=\boldsymbol{0}\)</span> 이므로 <span class="math inline">\(\ker T=\{\boldsymbol{0}\}\)</span> 이다. 따라서 <span class="math inline">\(T\)</span> 는 전단사이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.5 (Spivak 1.8)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in \mathbb{R}^n\)</span> 이 영벡터가 아닐 때 <span class="math inline">\(\boldsymbol{x}\)</span> 와 <span class="math inline">\(\boldsymbol{y}\)</span> 사이의 각을 <span class="math inline">\(\angle (\boldsymbol{x},\boldsymbol{y})\)</span> 라고 쓰며 다음과 같이 정의된다.</p>
+<p><span id="eq-part3_angle_between_vectors"><span class="math display">\[
+\angle (\boldsymbol{x},\boldsymbol{y}) := \arccos \left(\dfrac{\boldsymbol{x\cdot y}}{\|\boldsymbol{x}\| \cdot \|\boldsymbol{y}\|}\right).
+\tag{11.1}\]</span></span></p>
+<p>선형 결합 <span class="math inline">\(T\)</span> 가 전단사이며 모든 <span class="math inline">\(0\)</span> 벡터가 아닌 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 에 대해 <span class="math inline">\(\angle (T(\boldsymbol{x}),T(\boldsymbol{y}))= \angle (\boldsymbol{x},\boldsymbol{y})\)</span> 일 때 <span class="math inline">\(T\)</span> 를 <strong>angle preserving</strong> 이라고 한다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 norm-presreving 이면 <span class="math inline">\(T\)</span> 가 angle-preservng 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\mathbb{R}^n\)</span> 의 어떤 기저 <span class="math inline">\((\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\)</span> 에 대해 <span class="math inline">\(T(\boldsymbol{x}_i)=\lambda_i \boldsymbol{x}_i\)</span> 를 만족하는 <span class="math inline">\(\lambda_1,\ldots,\,\lambda_n\)</span> 이 존재한다고 하자. 이 때 <span class="math inline">\(T\)</span> 가 angle preserving 인 것의 필요충분조건은 모든 <span class="math inline">\(|\lambda_i|\)</span> 가 같은 것임을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^n\)</span> 가운데 angle preserving 인 것을 모두 찾아라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 norm preserving 이면 inner product preserving 이므로 (<a href="#exr-part3_spivak_1_7" class="quarto-xref">연습문제&nbsp;<span>11.4</span></a> (<span class="math inline">\(a\)</span>)) <a href="#eq-part3_angle_between_vectors" class="quarto-xref">식&nbsp;<span>11.1</span></a> 값이 변하지 않는다.</p>
+<p>(<span class="math inline">\(b\)</span>) 문제 오류. <span class="math inline">\(\boldsymbol{x}_1=(-1, -1)\)</span>, <span class="math inline">\(\boldsymbol{x}_2=(1, 0)\)</span>, <span class="math inline">\(T(\boldsymbol{x}_1)=3\boldsymbol{x}_1\)</span>, <span class="math inline">\(T(\boldsymbol{x}_2)=-3\boldsymbol{x}_2\)</span> 이어도</p>
+<p><span class="math display">\[
+\angle (\boldsymbol{x}_1,\,\boldsymbol{x}_2)= \dfrac{3\pi}{4},\qquad \angle (T(\boldsymbol{x}_1), T(\boldsymbol{x}_2))= \dfrac{\pi}{4}
+\]</span></p>
+<p>이므로 angle preserving 이 아니다.</p>
+<p>(<span class="math inline">\(c\)</span>)</p>
+</div>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.6 (Spivak 1.9)</strong></span> <span class="math inline">\(0\le \theta &lt; \pi\)</span> 에 대해 <span class="math inline">\(T:\mathbb{R}^2 \to \mathbb{R}^2\)</span> 가 <span class="math inline">\(\begin{bmatrix} \cos \theta &amp; \sin \theta \\ - \sin \theta &amp; \cos \theta\end{bmatrix}\)</span> 라고 하자. <span class="math inline">\(T\)</span> 가 angle preserving 이며 <span class="math inline">\(\boldsymbol{x}\ne \boldsymbol{0}\)</span> 일 때 <span class="math inline">\(\angle (\boldsymbol{x},\, T(\boldsymbol{x}))= \theta\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = (x_1,\,x_2),\, \boldsymbol{y}= (y_1,\,y_2)\)</span> 에 대해 <span class="math display">\[
+\angle (T(\boldsymbol{x}),\, T(\boldsymbol{y})) = \arccos \left(\dfrac{\boldsymbol{x\cdot y}}{\|\boldsymbol{x}\| \|\boldsymbol{y}\|}\right) = \angle (\boldsymbol{x},\, \boldsymbol{y})
+\]</span></p>
+<p>이므로 angle preserving 이다. 또한</p>
+<p><span class="math display">\[
+\angle (\boldsymbol{x},T(\boldsymbol{x}))= \arccos \left(\dfrac{\cos \theta \|\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2}\right) = \theta
+\]</span></p>
+<p>이다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.7 (Spivak 1.10)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^m \to \mathbb{R}^n\)</span> 를 생각하자. 모든 <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\|T(\boldsymbol{h})\| \le M \|\boldsymbol{h}\|\)</span> 인 <span class="math inline">\(M\)</span> 이 존재함을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_m)\)</span> 이며 <span class="math inline">\((T(\boldsymbol{h}))_i = \sum_{j=1}^m T_{ij}h_j\)</span> 라 하자.</p>
+<p><span class="math display">\[
+\left|\left(T(\boldsymbol{h})_i\right)\right| = \left| \sum_{j=1}^m T_{ij}h_j\right| \le \sum_{j=1}^m |T_{ij}|\cdot |h_j|
+\]</span></p>
+<p>이다. <span class="math inline">\(M_0 = \max \{|T_{ij}| : 1 \le i \le n,\, 1 \le j \le m\}\)</span> 이라고 하자.</p>
+<p><span class="math display">\[
+\||T(\boldsymbol{h})\| \le \sum_{i=1}^n \left|\left(T(\boldsymbol{h})_i\right)\right| \le \sum_{i=1}^m \sum_{j=1}^n |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\boldsymbol{h}\|= mnM_0\|\boldsymbol{h}\|
+\]</span></p>
+<p>이므로 <span class="math inline">\(M=mnM_0\)</span> 로 잡으면 된다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.8 (Spivak 1.11)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in \mathbb{R}^n\)</span>, <span class="math inline">\(\boldsymbol{z},\,\boldsymbol{w}\in \mathbb{R}^m\)</span> 일 때 <span class="math inline">\((\boldsymbol{x}\oplus \boldsymbol{z}) \boldsymbol{\cdot} (\boldsymbol{y}\oplus \boldsymbol{w}) = \boldsymbol{x \cdot y} + \boldsymbol{z \cdot w}\)</span> 이며 <span class="math inline">\(\|\boldsymbol{x}\oplus \boldsymbol{z}\| = \sqrt{\|\boldsymbol{x}\|^2 + \|\boldsymbol{z}\|^2}\)</span> 임을 보여라. 이 때</p>
+<p><span class="math display">\[
+(\boldsymbol{x}\oplus \boldsymbol{z}) = (x_1,\ldots,\,x_n,\,z_1,\,\ldots,\,z_m) \in \mathbb{R}^{n+m}
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>trivial</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.9 (Spivak 1.12)</strong></span> <span class="math inline">\((\mathbb{R}^n)^\ast\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 쌍대공간이다. 정해진 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\varphi_\boldsymbol{x} (\boldsymbol{y}) :=\boldsymbol{x \cdot y}\)</span> 는 <span class="math inline">\(\varphi_\boldsymbol{x} \in (\mathbb{R}^n)^\ast\)</span> 이다. <span class="math inline">\(T:\mathbb{R}^n \to (\mathbb{R}^n)^\ast\)</span> 를 <span class="math inline">\(T(\boldsymbol{x})= \varphi_\boldsymbol{x}\)</span> 로 정의한다면 <span class="math inline">\(T\)</span> 는 전단사 선형변환임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>우선 <span class="math inline">\(T\)</span> 가 선형변환임을 보이자. <span class="math inline">\(\boldsymbol{x}_1,\,\boldsymbol{x}_2 \in\mathbb{R}^n\)</span> 과 <span class="math inline">\(c\in\mathbb{R}\)</span> 에 대해 <span class="math inline">\(T(\boldsymbol{x}_1 + c\boldsymbol{x}_2)= T(\boldsymbol{x}_1)+cT(\boldsymbol{x}_2)\)</span> 이면 <span class="math inline">\(T\)</span> 는 선형변환이다. <span class="math inline">\(T(\boldsymbol{x}_1 + c\boldsymbol{x}_2)= \varphi _{\boldsymbol{x}_1+c\boldsymbol{x}_2}\)</span> 이며</p>
+<p><span class="math display">\[
+\varphi_{\boldsymbol{x}_1+c\boldsymbol{x}_2}(\boldsymbol{y})= (\boldsymbol{x}_1+c\boldsymbol{x}_2)\boldsymbol{\cdot y}= \boldsymbol{x}_1 \boldsymbol{\cdot y}+ c\boldsymbol{x}_2 \boldsymbol{\cdot y} = \varphi_{x_1}(\boldsymbol{y}) + c\varphi_{x_2}(\boldsymbol{y})
+\]</span></p>
+<p>이므로 <span class="math display">\[
+T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_{x_2}(\boldsymbol{y}) = T(\boldsymbol{x}_1) + cT(\boldsymbol{x}_2)
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(T\)</span> 는 선형변환이다.</p>
+<p><span class="math inline">\(\psi_x \in \ker (T)\)</span> 라면 모든 <span class="math inline">\(\boldsymbol{y}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\phi_\boldsymbol{x}(\boldsymbol{y})=\boldsymbol{0}\)</span> 이어야 한다. 이 경우는 <span class="math inline">\(\boldsymbol{x}=\boldsymbol{0}\)</span> 인 경우밖에 없으므로 <span class="math inline">\(\ker (T)=\{\boldsymbol{0}\}\)</span> 이므로 <span class="math inline">\(T\)</span> 는 단사이다. 따라서 <span class="math inline">\(T\)</span> 는 전단사이다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_13" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.10 (Spivak 1.13)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in\mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x \cdot y}=0\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 와 <span class="math inline">\(\boldsymbol{y}\)</span> 는 서로 직교(perpendicular, orthogonal) 한다고 한다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 가 직교한다면 <span class="math inline">\(\|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2+\|\boldsymbol{y}\|^2\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 + 2\boldsymbol{x \cdot y} + \|\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 + \|\boldsymbol{y}\|^2
+\]</span></p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="유클리드-공간의-부분공간" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="유클리드-공간의-부분공간"><span class="header-section-number">11.2</span> 유클리드 공간의 부분공간</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_cartesian_product" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.1 (데카르트곱)</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x}\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+(\boldsymbol{x},\,\boldsymbol{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \mathbb{R}^{m+n}.
+\]</span></p>
+<p>또한 <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A\times B \subset \mathbb{R}^{m + n}\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \boldsymbol{y}\in B\}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_cartesian_product" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.2 (데카르트곱)</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x}\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+(\boldsymbol{x},\,\boldsymbol{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \mathbb{R}^{m+n}.
+\]</span></p>
+<p>또한 <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A\times B \subset \mathbb{R}^{m + n}\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \boldsymbol{y}\in B\}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_cartesian_product" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.3 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="../part2/2_1_basic_topology.html#def-part2_countable" class="quarto-xref">정의&nbsp;<span>6.1</span></a> 에서 <span class="math inline">\(n\)</span>-cell 을 정의하였다. 이와 비슷하게</p>
+<p><span class="math display">\[
+(a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \mathbb{R}^n
+\]</span></p>
+<p>은 열린 집합이며 이를 열린 <span class="math inline">\(n\)</span>-cell 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p>앞서 일변수 해석학에서는 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 주위의 열린 집합을 잡을 때 <span class="math inline">\(N(\boldsymbol{a},\,\delta) := \{\boldsymbol{x}\in \mathbb{R}^n : \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}\)</span> 을 생각했지만 여기서는 자주 <span class="math inline">\(\boldsymbol{a}\)</span> 주위의 열린 <span class="math inline">\(n\)</span>-cell 을 잡게 된다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_neighboring_cube" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.4 (열린/닫힌 cube)</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+C(\boldsymbol{a},\,\delta) &amp;:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
+\overline{C}(\boldsymbol{a},\,\delta) &amp;:=  [a_1-\delta,\,a_1+\delta] \times \cdots \times [a_n - \delta,\, a_n+\delta].
+\end{aligned}
+\]</span></p>
+<p>이 때 <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 를 열린 입방체라고 하며 <span class="math inline">\(\overline{C}(\boldsymbol{a},\,\delta)\)</span> 를 닫힌 입방체라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part3_open_sphere_and_cube" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 11.1</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 다음이 성립한다.</p>
+<p><span class="math display">\[
+N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsymbol{a},\,\sqrt{n}\delta)
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta)\)</span> 는 자명하다. <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 의 한 모서리에서 <span class="math inline">\(\boldsymbol{a}\)</span> 까지의 거리는 <span class="math inline">\(\sqrt{n}\delta\)</span> 이므로 <span class="math inline">\(C(\boldsymbol{a},\,\delta) \subset N(\boldsymbol{a},\,\sqrt{n}\delta)\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p><a href="../../src/part2/2_1_basic_topology.html">기본적인 위상수학</a> 의 옹골집합 부분과 하이네 보렐 정리(<a href="../part2/2_1_basic_topology.html#thm-part2_heine_borrel" class="quarto-xref">정리&nbsp;<span>6.4</span></a>) 를 참고하라. 또한 <a href="../part2/2_1_basic_topology.html#exr-part2_KKK_2_7_20" class="quarto-xref">연습문제&nbsp;<span>6.8</span></a> 을 통해 <span class="math inline">\(A\subset \mathbb{R}^m\)</span> 과 <span class="math inline">\(B\subset \mathbb{R}^n\)</span> 이 옹골집합이면 <span class="math inline">\(A \times B\)</span> 도 옹골집합임을 보였다.</p>
+<p><br></p>
+<section id="연습문제-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.11 (Spivak 1.17)</strong></span> <span class="math inline">\([0,\,1]\times [0,\,1]\)</span> 의 어떤 부분집합 <span class="math inline">\(A\)</span> 는 각각의 수직선과 수평선에 대해 많아야 하나의 점만을 포함하며 <span class="math inline">\(A\)</span> 의 경계 <span class="math inline">\(\partial A\)</span> 는 <span class="math inline">\([0,\,1]\times [0,\,1]\)</span> 이다. <span class="math inline">\(A\)</span> 를 구하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><em>to be done</em></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_18" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.12 (Spivak 1.18)</strong></span> <span class="math inline">\(A\subset [0,\,1]\)</span> 은 <span class="math inline">\(A=\bigcup (a_i,\,b_i)\)</span> 이며 모든 <span class="math inline">\((0,\,1)\)</span> 에 포함되는 유리수는 어떤 <span class="math inline">\((a_i,\,b_i)\)</span> 에 포함되어 있다. <span class="math inline">\(\partial A = [0,\,1]-A\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\in A\)</span> 이면 <span class="math inline">\(x\)</span> 는 어떤 열린 구간 <span class="math inline">\((a_i,\,b_i)\)</span> 에 포함되므로 <span class="math inline">\(N(x,\,\delta) \subset (a_i,\,b_i)\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(x\notin \partial A\)</span> 이다. 즉 <span class="math inline">\(\partial A \subset [0,\,1]-A\)</span> 이다.</p>
+<p><span class="math inline">\(x\notin A\)</span> 라고 하자. 유리수의 조밀성에 의해 모든 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(N(x,\,\delta) \cap A \ne \varnothing\)</span> 이다. 그런데 <span class="math inline">\(x\notin A\)</span> 이므로 <span class="math inline">\(x\in \partial A\)</span> 이다. 즉 <span class="math inline">\([0,\,1]-A \subset \partial A\)</span> 이다. 따라서 <span class="math inline">\(\partial A [0,\,1]-A\)</span> 이다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_19" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.13 (Spivak 1.19)</strong></span> <span class="math inline">\(A\)</span> 가 닫힌 집합이며 모든 <span class="math inline">\([0,\,1]\)</span> 에 포함되는 유리수를 포함한다면 <span class="math inline">\([0,\,1]\subset A\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A\)</span> 가 닫힌 집합이며 <span class="math inline">\(C\subset A\)</span> 이면 <span class="math inline">\(\overline{C}\subset A\)</span> 이다. <span class="math inline">\(\overline{[0,\,1]\cap \mathbb{Q}}=[0,\,1]\)</span> 이므로 <span class="math inline">\([0,\,1]\subset A\)</span> 이다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_21" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.14 (Spivak 1.21)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(A\)</span> 가 닫힌 집합이고 <span class="math inline">\(x\notin A\)</span> 일 때 모든 <span class="math inline">\(y\in A\)</span> 에 대해 <span class="math inline">\(\|y-x\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재함을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A\)</span> 가 닫힌 집합이고 <span class="math inline">\(B\)</span> 가 옹골집합이며 <span class="math inline">\(A \cap B=\varnothing\)</span> 일 때 모든 <span class="math inline">\(y\in A,\, x \in B\)</span> 에 대해 <span class="math inline">\(\|y-x\|\ge d\)</span> 인 <span class="math inline">\(d\ge 0\)</span> 이 존재함을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> 가 닫힌 집합이지만 옹골집합은 아닐 때 <span class="math inline">\(\mathbb{R}^2\)</span> 에서 (<span class="math inline">\(b\)</span>) 가 성립하지 않는 예를 들어라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(A^C\)</span> 는 열린집합이며 <span class="math inline">\(x\in A^C\)</span> 이므로 <span class="math inline">\(N(x,\,\delta)\subset A^C\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(\|y-x\| \ge \delta\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(B\)</span> 의 열린 덮개 <span class="math inline">\(\Gamma_0 =\{U_\alpha\}\)</span> 에 대해 <span class="math inline">\(\Gamma_1 = \{V_\alpha = U_\alpha \cap A^C\}\)</span> 도 <span class="math inline">\(B\)</span> 의 열린 덮개이다. <span class="math inline">\(B\)</span> 가 옹골집합이므로 <span class="math inline">\(B\)</span> 의 유한 열린 덮개 <span class="math inline">\(\Gamma =\{V_1,\ldots,\,V_m\}\)</span> 를 생각 할 수 있다. <span class="math inline">\(x\in B\)</span> 이므로 어떤 <span class="math inline">\(V_i\in \Gamma\)</span> 에 대해 <span class="math inline">\(x\in V_i\)</span> 이며 <span class="math inline">\(V_i\)</span> 가 열린집합이므로 <span class="math inline">\(N(x,\,d)\subset V_i\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다. <span class="math inline">\(V_i \cap A= \varnothing\)</span> 이므로 <span class="math inline">\(N(x,\,d)\cap A=\varnothing\)</span> 이다. 즉 <span class="math inline">\(\|y-x\| \ge d\)</span> 이다.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(A=\{(n,\,n): n\in \mathbb{Z}_+\}\)</span>, <span class="math inline">\(B = \left\{\left(n,\, n+\dfrac{1}{n}\right) : n\in \mathbb{Z}_+\right\}\)</span> 은 모두 고립점의 집합이므로 닫힌집합이지만 유계가 아니므로 옹골집합이 아니다. 임의의 <span class="math inline">\(m\in \mathbb{Z}_+\)</span> 에 대해</p>
+<p><span class="math display">\[
+\|x-y\|&lt;\dfrac{1}{m}
+\]</span></p>
+<p>을 만족하는 <span class="math inline">\(x\in A,\, y\in B\)</span> 를 찾을 수 있으므로 (<span class="math inline">\(b\)</span>) 에 위배된다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_22" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.15 (Spivak 1.22)</strong></span> <span class="math inline">\(U\)</span> 는 열린집합이며 <span class="math inline">\(C\subset U\)</span> 는 옹골집합이라면 <span class="math inline">\(C \subset \text{int} (D)\)</span> 이며 <span class="math inline">\(D\subset U\)</span> 를 만족하는 옹골집합 <span class="math inline">\(D\)</span> 가 존재함을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(U^C\)</span> 는 닫힌 집합이며 <span class="math inline">\(C \cap U^C = \varnothing\)</span> 이므로 <a href="#exr-part3_spivak_1_21" class="quarto-xref">연습문제&nbsp;<span>11.14</span></a> (<span class="math inline">\(b\)</span>) 에서 보였듯이 모든 <span class="math inline">\(y\in A,\, x\in B\)</span> 에 대해 <span class="math inline">\(\|y-x\|\ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다.</p>
+<p>이제 <span class="math inline">\(\Gamma = \{N(x,\, d/2) : x\in C\}\)</span> 는 <span class="math inline">\(C\)</span> 의 열린 덮개이며 <span class="math inline">\(C\)</span> 가 옹골집합이므로 <span class="math inline">\(C\)</span> 의 유한 열린 덮개 <span class="math inline">\(\{B_1,\ldots,\,B_m\}\subset \Gamma\)</span> 가 존재한다. <span class="math inline">\(D = \bigcup \overline{B_i}\)</span> 라고 하면 각각의 <span class="math inline">\(\overline{B_i}\)</span> 는 옹골집합이며 따라서 <span class="math inline">\(D\)</span> 도 옹골집합이다. <span class="math inline">\(\text{int} (D) = \bigcup B_i\)</span> 이므로 <span class="math inline">\(C\subset \text{int}(D)\)</span> 이며 <span class="math inline">\(D\subset U\)</span> 이다.</p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="sec-part3_functions_and_continuity" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-part3_functions_and_continuity"><span class="header-section-number">11.3</span> 함수와 연속성</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_component_functions" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.5 (성분 함수)</strong></span> 함수 <span class="math inline">\(\boldsymbol{f}:A\subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(n\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^m \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,n)\)</span> 를 가진다. 이 때 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{x}) = (f_1(\boldsymbol{x}),\ldots,\,f_n(\boldsymbol{x}))\)</span> 와 같이 쓴다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_projection_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.6 (성분 함수)</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>연속성에 대해 <a href="../../src/part2/2_3_continuity_of_functions.html#sec-part2_limit_and_continuity_of_functions">함수의 극한과 연속</a> 을 참고하라.</p>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_oscillation" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.7 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^m \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(a\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+M(f,\,\boldsymbol{a},\,\delta) &amp;:= \sup \{f(\boldsymbol{x}): \boldsymbol{x}\in A,\, \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}, \\
+m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\in A,\, \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}
+\end{aligned}
+\]</span></p>
+<p>라 하자. 그리고 <span class="math inline">\(\displaystyle o(f,\,\boldsymbol{a}) := \lim_{\delta \to 0} M(f,\,\boldsymbol{a},\,\delta) - m(f,\,\boldsymbol{a},\,\delta)\)</span> 라고 정의하자. 이 때 <span class="math inline">\(o(f,\boldsymbol{a})\)</span> 를 <span class="math inline">\(\boldsymbol{a}\)</span> 에서의 <span class="math inline">\(f\)</span> 의 <strong>oscillation</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part3_oscillation_and_continuity" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 11.2</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^m \to \mathbb{R}\)</span> 이 유계이리 때 <span class="math inline">\(f\)</span> 가 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\)</span> 가 연속임을 가정하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f(\boldsymbol{x})-f(\boldsymbol{a})| &lt; \varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\)</span> 일 때</p>
+<p><span class="math display">\[
+||f(\boldsymbol{x})| - |f(\boldsymbol{a})||&lt; |f(\boldsymbol{x}) - f(\boldsymbol{a})| &lt; \varepsilon
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+|f(\boldsymbol{a})|-\varepsilon &lt; f(\boldsymbol{x}) &lt; |f(\boldsymbol{a})|+ \varepsilon
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(o(f,\,\boldsymbol{a}) &lt; 2\varepsilon\)</span> 인데 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로 <span class="math inline">\(o(f,\,\boldsymbol{a})=0\)</span> 이다.</p>
+<p>이제 <span class="math inline">\(o(f,\,\boldsymbol{a})=0\)</span> 임을 가정하자. Osillation 의 정의에 의해 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\delta_\boldsymbol{x}&gt;0\)</span> 이 존재하여 <span class="math inline">\(M(f,\,\boldsymbol{a},\,\delta_\boldsymbol{x})- m(f,\, \boldsymbol{a},\,\delta_\boldsymbol{x})&lt;\varepsilon\)</span> 이다. <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta_\boldsymbol{x}\)</span> 이면</p>
+<p><span class="math display">\[
+|f(\boldsymbol{x})-f(\boldsymbol{a})| \le M(f,\,\boldsymbol{a},\,\delta_\boldsymbol{x})- m (f,\,\boldsymbol{a},\,\delta_\boldsymbol{x})&lt;\varepsilon
+\]</span></p>
+<p>이므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part3_oscillation_and_closed_set" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 11.3</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 라고 하고 <span class="math inline">\(\mathbb{R}^m-B\)</span> 가 열린 집합임을 보이자. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m-B\)</span> 이면 (<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 이거나, (<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이다.</p>
+<p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\not\in A\)</span> 이면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 어떤 <span class="math inline">\(\delta_x&gt;0\)</span> 에 대해 <span class="math inline">\(N(\boldsymbol{x},\,\delta_x)\subset \mathbb{R}^m-A \subset \mathbb{R}^m-B\)</span> 가 존재한다.</p>
+<p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x})&lt;\varepsilon\)</span> 인 경우. 즉 어떤 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(M(f,\,\boldsymbol{x},\,\delta)-m(f,\,\boldsymbol{x},\,\delta)&lt;\varepsilon\)</span> 이다. <span class="math inline">\(\boldsymbol{y}\in N(\boldsymbol{x},\,\delta)\)</span> 라면 어떤 <span class="math inline">\(N(\boldsymbol{y},\, \delta_1)\subset N(\boldsymbol{x},\, \delta)\)</span> 인 <span class="math inline">\(\delta_1&gt;0\)</span> 이 존재한다. 즉 <span class="math inline">\(N(\boldsymbol{x},\,\delta)\subset \mathbb{R}^m-B\)</span> 이다.</p>
+<p>즉 <span class="math inline">\(R^m-B\)</span> 는 열린 집합이므로 <span class="math inline">\(B\)</span> 는 닫힌 집합이다.</p>
+</div>
+<p><br></p>
+</section>
+<section id="연습문제-2" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h2>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_23" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.16 (Spivak 1.23)</strong></span> <span class="math inline">\(\boldsymbol{f}:A \subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,n\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f_i(\boldsymbol{x}) = b_i
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f_i(\boldsymbol{x})-b_i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
+<p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f_i(\boldsymbol{x})-b_i|&lt;\varepsilon/n\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 그렇다면.</p>
+<p><span class="math display">\[
+\|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^n |f_i(\boldsymbol{x})-b_i| &lt; n \cdot \dfrac{\varepsilon}{n} = \varepsilon
+\]</span></p>
+<p>이므로 성립한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_24" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.17 (Spivak 1.24)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속일 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속인 것임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{b}\)</span> 를 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{a})\)</span> 로 고치고 <a href="#exr-part3_spivak_1_23" class="quarto-xref">연습문제&nbsp;<span>11.16</span></a> 를 적용한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_25" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.18 (Spivak 1.25)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^m \to \mathbb{R}^n\)</span> 은 연속임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-part3_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 에서 보였듯이 <span class="math inline">\(\|T(\boldsymbol{h})\|\le M\|\boldsymbol{h}\|\)</span> 인 <span class="math inline">\(M&gt;0\)</span> 이 존재한다. <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\|T(\boldsymbol{x})-T(\boldsymbol{a})\| = \|T(\boldsymbol{x}-\boldsymbol{a})\| \le M \|\boldsymbol{x}-\boldsymbol{a}\|\)</span> 이므로 <span class="math inline">\(T\)</span> 는 연속이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_26" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.19 (Spivak 1.26)</strong></span> <span class="math inline">\(A=\{(x,\,y) \in \mathbb{R}^2 : x&gt;0 \text{ and } 0&lt;y&lt;x^2\}\)</span> 이라고 하자.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\((0,\,0)\)</span> 을 지나는 모든 직선은 <span class="math inline">\(\mathbb{R}^2-A\)</span> 에 포함되는 <span class="math inline">\((0,\,0)\)</span> 근처의 구간을 포함함을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 일 경우 <span class="math inline">\(f(\boldsymbol{x})=0\)</span>, <span class="math inline">\(\boldsymbol{x}\in A\)</span> 일 경우는 <span class="math inline">\(f(\boldsymbol{x})=1\)</span> 로 정의하자. <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^2\)</span> 에 대해 <span class="math inline">\(g_\boldsymbol{h}:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g_\boldsymbol{h}(t) = f(t\boldsymbol{h})\)</span> 라고 정의한다. 각각의 <span class="math inline">\(g_\boldsymbol{h}\)</span> 는 <span class="math inline">\(0\)</span> 에서 연속이지만 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아님을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 원점을 지나는 직선 <span class="math inline">\(y=ax\)</span> 를 생각하자. <span class="math inline">\(a=0\)</span> 일 경우는 전체 구간에서 직선이 <span class="math inline">\(\mathbb{R}^2-A\)</span> 에 포함되며 <span class="math inline">\(a\ne 0\)</span> 일 경우 $<span class="math inline">\([-|a|,\, |a|]\)</span> 구간에서 <span class="math inline">\(\mathbb{R}^2-A\)</span> 에 포함된다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\lim_{s \to 0} f(s,\, s^2/2) = 1 \ne 0 =  f(0,\,0)\)</span> 이므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아니다. (<span class="math inline">\(a\)</span>) 로부터 <span class="math inline">\(\lim_{t \to 0} g_\boldsymbol{h}(t) = 0 = g_\boldsymbol{h}(0)\)</span> 임을 안다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_28" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.20 (Spivak 1.28)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 닫힌 집합이 아니면 어떤 연속함수 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 은 유계가 아님을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n -A,\, \boldsymbol{x}\notin \text{int}(\mathbb{R}^n-A)\)</span> 에 대해 <span class="math inline">\(f(\boldsymbol{y}) := \dfrac{1}{\|\boldsymbol{x}-\boldsymbol{y}\|}\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{x} \notin \text{int}(\mathbb{R}^n-A)\)</span> 이므로 모든 <span class="math inline">\(\boldsymbol{x}\)</span> 의 근방은 <span class="math inline">\(A\)</span> 와의 교집합이 <span class="math inline">\(\varnothing\)</span> 이 아니다. 따라서 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 를 임의로 작게 할 수 있으며 <span class="math inline">\(f(\boldsymbol{y})\)</span> 는 유계가 아니다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_29" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.21 (Spivak 1.29)</strong></span> <span class="math inline">\(A\)</span> 가 옹골집합이면 모든 연속함수 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 은 최대값과 최소값을 가짐을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>see <a href="../part2/2_3_continuity_of_functions.html#thm-part2_extreme_value_theorem" class="quarto-xref">정리&nbsp;<span>8.5</span></a></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_1_30" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.22 (Spivak 1.30)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(x_1,\ldots,\,x_n \in [a,\,b]\)</span> 가 모두 다른 값이라면 <span class="math inline">\(\sum_{i=1}^n o(f,\,x_i) &lt; f(b)-f(a)\)</span> 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(o(f,\,x_i) &lt; f(x_{i}+\delta)- f(x_i-\delta)\)</span> 이다. 일반성을 잃지 않고 <span class="math inline">\(x_1&lt;\cdots &lt;x_n\)</span> 라고 할 수 있다. <span class="math inline">\(\delta &lt; \frac{1}{2}\min \{x_{k}-x_{k-1}: k=2,\ldots,\,n\}\)</span> 으로 잡자. 그렇다면 <span class="math inline">\(f(x_{k+1}-\delta) - f(x_k+\delta )&gt;0\)</span> 이며</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i=1}^n o(f,\,x_i) &amp;&lt; f(x_1+\delta)- f(x_1-\delta) + \cdots + f(x_n+\delta)- f(x_n-\delta) \\
+&amp;= f(x_n+\delta) - (f(x_n-\delta)-f(x_{n-1}+\delta))  \\
+&amp;\qquad \qquad \cdots - (f(x_2-\delta)+ f(x_1+\delta)) - f(x_1-\delta)\\
+&amp;&lt; f(x_n+\delta) - f(x_1-\delta)
+\end{aligned}
+\]</span></p>
+<p>이다. 임의의 작은 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 성립하므로 <span class="math inline">\(\sum_{i=1}^n o(f,\,x_i) &lt; f(b)-f(a)\)</span> 이다.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/part3/part3.html" class="pagination-link" aria-label="다변수 함수의 해석학">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">다변수 함수의 해석학</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/figures/figures.html" class="pagination-link" aria-label="그림들">
+        <span class="nav-page-text">그림들</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

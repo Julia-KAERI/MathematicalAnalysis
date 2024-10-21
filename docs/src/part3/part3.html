@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; 집합 – Mathematical Analysis</title>
+<title>다변수 함수의 해석학 – Mathematical Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/part1/1_2_functions_and_relations.html" rel="next">
-<link href="../../src/part1/part1.html" rel="prev">
+<link href="../../src/part3/3_1_functions_on_Euclidean_space.html" rel="next">
+<link href="../../src/part2/2_5_riemann_stieltjes_integral.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../custom.css">
 </head>
@@ -111,7 +82,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_1_basic_of_naive_set_theory.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,14 +125,14 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">해석학의 기반</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></span></a>
   </div>
 </li>
@@ -234,13 +205,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">다변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
@@ -277,21 +248,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul>
-  <li><a href="#기본-개념" id="toc-기본-개념" class="nav-link active" data-scroll-target="#기본-개념"><span class="header-section-number">1.1</span> 기본 개념</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_1_basic_of_naive_set_theory.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">집합</span></h1>
+<h1 class="title">다변수 함수의 해석학</h1>
 </div>
 
 
@@ -308,276 +273,8 @@ window.Quarto = {
 </header>
 
 
-<p>우리는 여기서 일단 집합에 대해 잘 안다고 가정한다.</p>
-<p><br></p>
-<section id="기본-개념" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="기본-개념"><span class="header-section-number">1.1</span> 기본 개념</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_set_and_element" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.1 (집합에의 포함관계)</strong></span> 어떤 객체 <span class="math inline">\(a\)</span> 가 집합 <span class="math inline">\(A\)</span> 에 포함되면 <span class="math inline">\(a\)</span> 를 <span class="math inline">\(A\)</span> 의 원소라고 하고 <span class="math inline">\(a\in A\)</span> 라 쓴다. <span class="math inline">\(a\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되지 않을 때는 <span class="math inline">\(a\not\in A\)</span> 라고 쓴다.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_subset" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.2 (부분 집합, 동일한 집합, 진부분 집합)</strong></span> 집합 <span class="math inline">\(A\)</span> 의 모든 원소가 집합 <span class="math inline">\(B\)</span> 의 원소일 때 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(B\)</span> 의 <strong>부분집합(subset)</strong>이라고 하고 <span class="math inline">\(A \subset B\)</span> 라고 쓴다. <span class="math inline">\(A\subset B\)</span> 일 때 <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 를 포함한다고 한다. <span class="math inline">\(A \subset B\)</span> 이고 <span class="math inline">\(B \subset A\)</span> 일 때 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 를 같다고 하고 <span class="math inline">\(A=B\)</span> 라고 쓴다. <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 가 같지 않을 때 <span class="math inline">\(A \ne b\)</span> 라고 쓴다. <span class="math inline">\(A \subset B\)</span> 이며 <span class="math inline">\(A\ne B\)</span> 일 때 어떤 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(B\)</span> 의 <strong>진부분집합(proper subset)</strong> 이라고 하며 <span class="math inline">\(A \subsetneq B\)</span> 라고 쓴다.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<p><span class="math inline">\(A\)</span> 의 원소들을 <span class="math inline">\(\{\;\}\)</span> 안에 나열하여 표현 할 수 있다. 즉 <span class="math inline">\(A\)</span> 가 <span class="math inline">\(a,\,b,\,c\)</span> 의 세 원소로만 이루어진 집합일 때</p>
-<p><span class="math display">\[
-A = \{a,\,b,\,c\}
-\]</span></p>
-<p>와 같이 쓸 수 있다. 혹은 집합의 원소가 만족해야 할 성질을 아래와 같이 표현하여 집합을 정할 수 있다.</p>
-<p><span class="math display">\[
-B=\{x | x \text{ is an even integer}\}
-\]</span></p>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_union_and_intersection_of_sets" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.3 (합집합과 교집합)</strong></span> 집합 <span class="math inline">\(A,\, B\)</span> 에 대해 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 의 합집합 <span class="math inline">\(A \cup B\)</span> 는 다음과 같이 정의된다.</p>
-<p><span class="math display">\[
-A \cup B = \{x | x\in A \text{ or }x \in B\}
-\]</span></p>
-<p>그리고 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 의 교집합 <span class="math inline">\(A \cap B\)</span> 는 다음과 같이 정의된다.</p>
-<p><span class="math display">\[
-A \cup B = \{ x | x\in A \text{ and } x \in B\}
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<p>아래 두 명제는 정의로부터 자명하다.</p>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_associativity_of_union_and_intersection" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 1.1</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(A \cup B = B \cup A\)</span> 이고 <span class="math inline">\(A \cap B = B \cap A\)</span> 이다.</p>
-</div>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_commutativity_of_union_and_intersection" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 1.2</strong></span> 집합 <span class="math inline">\(A,\,B,\, C\)</span> 에 대해 <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> 이고 <span class="math inline">\(A \cap (B\cap C) = (A \cap B) \cap C\)</span> 이다.</p>
-</div>
-</div>
-<p><br></p>
-<p>세 집합의 합집합 혹은 교집합이 순서에 무관하므로 <span class="math inline">\(A\cup B \cup C\)</span> 나 <span class="math inline">\(A \cap B \cap C\)</span> 라 쓸 수 있다.</p>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_empty_set" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.4 (공집합, 서로소)</strong></span> 원소를 하나도 포함하지 않은 집합을 <strong>공집합(empty set)</strong> 이라고 하며 <span class="math inline">\(\varnothing\)</span> 이라 쓴다. 두 집합 <span class="math inline">\(A,\,B\)</span> 가 <span class="math inline">\(A\cap B=\varnothing\)</span> 이면 두 집합을 <strong>서로소</strong> 라고 한다.</p>
-</div>
-</div>
-</div>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_union_intersection_with_empty_set" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 1.3</strong></span> 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(A \cap \varnothing = \varnothing\)</span> 이며 <span class="math inline">\(A \cup \varnothing = A\)</span> 이다.</p>
-</div>
-</div>
-<p><br></p>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-part1_empty_set_is_subset_of_every_set" class="theorem">
-<p><span class="theorem-title"><strong>정리 1.1</strong></span> 공집합은 모든 집합의 부분집합이다.</p>
-</div>
-</div>
-<p><br></p>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>부분집합의 정의에 의해 <span class="math inline">\(x\in \varnothing \implies x \in A\)</span> 이면 <span class="math inline">\(\varnothing \subset A\)</span> 이다. 공집합의 정의에 의해 <span class="math inline">\(x\in \varnothing\)</span> 은 항상 거짓이므로 위의 명제는 항상 참이다. 따라서 공집합은 모든 집합의 부분집합이다. <span class="math inline">\(\square\)</span></p>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_diffeence_of_two_sets" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.5 (차집합)</strong></span> 두 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(A\)</span> 에만 포함되고 <span class="math inline">\(B\)</span> 에는 포함되지 않는 원소의 집합을 차집합 이라 하며 <span class="math inline">\(A-B\)</span> 로 표현한다. 즉,</p>
-<p><span class="math display">\[
-A-B =\{x | x\in A \text{ and }x\not\in B\}
-\]</span></p>
-<p>이다.</p>
-</div>
-</div>
-</div>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_distribution_law_for_sets" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 1.4 (집합에서의 분배법칙)</strong></span> 집합 <span class="math inline">\(A,\,B,\,C\)</span> 에 대해 다음이 성립하며 이를 집합에서의 분배법칙(distribution law) 라고 한다.</p>
-<p><span class="math display">\[
-\begin{aligned}
-A \cap (B \cup C) &amp;= (A \cap B) \cup (A \cap C), \\
-A \cup (B \cap C) &amp;= (A \cup B) \cap (A \cup C).
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<p><br></p>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span> 는 다음과 같이 증명 할 수 있다. <span class="math display">\[
-\begin{aligned}
-x\in A \cap (B \cup C) &amp;\iff x\in A \land x \in (B \cup C) \\
-&amp;\iff x \in A \land (x \in B \lor x \in C) \\
-&amp;\iff (x\in A \land x \in B) \lor (x\in A \land x \in C) \\
-&amp;\iff x\in (A \cap B) \cup (A \cap C)
-\end{aligned}
-\]</span></p>
-<p><span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span> 도 같은 방법으로 증명 할 수 있다.</p>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_complement_of_set" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.6 (여집합)</strong></span> 어떤 전체집합 <span class="math inline">\(X\)</span> 의 부분집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(X-A\)</span> 를 <span class="math inline">\(A\)</span> 의 여집합이라 하고 <span class="math inline">\(A^C\)</span> 혹은 <span class="math inline">\(X\backslash A\)</span> 라 쓴다. 즉</p>
-<p><span class="math display">\[
-X\backslash A = A^C = X-A
-\]</span></p>
-<p>이다.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<p>이제부터 별도로 언급하지 않아도 집합을 언급할 때는 어떤 전체집합의 부분집합임을 가정한다.</p>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_difference_and_intersection" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 1.5</strong></span> <span class="math inline">\(X\)</span> 의 부분집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(A-B = A \cap B^C\)</span> 이다.</p>
-</div>
-</div>
-<p><br></p>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(x\in (A-B) \iff x\in A \land x\not\in B \iff x\in A \cap B^C\)</span> <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_complement_of_union_and_intersection" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 1.6</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\((A\cup B)^C = A^C \cap B^C\)</span> 이며 <span class="math inline">\((A \cap B)^C = A^C \cup B^C\)</span> 이다.</p>
-</div>
-</div>
-<p><br></p>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
-\begin{aligned}
-x\in (A\cup B)^C &amp;\iff x\not\in (A \cup B) \iff x\not\in A \land x \not\in B \iff x\in (A^C \cap B^C)  \\
-x\in (A \cap B)^C &amp;\iff x\not\in (A \cap B) \iff x\not\in A \lor x\not\in B \iff x\in (A^C \cup B^C)
-\end{aligned}
-\]</span></p>
-<p><span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-part1_DeMorgrans_law" class="theorem">
-<p><span class="theorem-title"><strong>정리 1.2 (드 모르강의 법칙)</strong></span> 집합 <span class="math inline">\(A,\,B,\,C\)</span> 에 대해 다음이 성립한다.</p>
-<p><span class="math display">\[
-\begin{aligned}
-A-(B\cup C) &amp;=  (A-B)\cap (A-C),\\
-A-(B \cap C) &amp; = (A-B)\cup (A-C).
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<p><br></p>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
-\begin{aligned}
-A-(B\cup C) &amp;=  A \cap (B \cup C)^C = A \cap (B^C \cap C^C) = (A\cap B^C)\cap (A\cap C^C) \\
-&amp;=  (A-B)\cap (A-C) \\
-A-(B\cap C) &amp;= A \cap (B \cap C)^C = A \cap (B^C \cup C^C) =  (A \cap B^C) \cup (A \cap C^C) \\
-&amp;= (A-B) \cup (A-C) \qquad \square
-\end{aligned}
-\]</span></p>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_collection" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.7 (집합족(collection, family)과 멱집합 (power set))</strong></span> 집합의 원소가 모두 집합인 집합을 <strong>집합족</strong>이라 한다. 특히 집합 <span class="math inline">\(A\)</span> 의 부분집합의 집합은 집합족으로 <span class="math inline">\(A\)</span> 의 <strong>멱집합</strong> 이라 하며 <span class="math inline">\(\mathcal{P}(A)\)</span> 라 쓴다.</p>
-</div>
-</div>
-</div>
-</div>
-<p>집합족 <span class="math inline">\(\Gamma\)</span> 에 대한 합집합과 교집합을 다음과 같이 정의한다.</p>
-<p><span class="math display">\[
-\begin{aligned}
-\bigcup_{A\in \Gamma} A &amp;= \{x|x \text{ 는 최소한 하나의 } A\in \Gamma \text{ 에 포함된다.}\}, \\
-\bigcap_{A \in \Gamma} A &amp;= \{x|x \text{ 는 모든 } A\in \Gamma \text{ 에 포함된다.}\},
-\end{aligned}
-\]</span></p>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_ordered_pair" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.8 (순서쌍(ordered pair) 과 좌표(coordinate))</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(a\in A,\, b\in B\)</span> 일 때 <span class="math inline">\((a,\,b) = \{ \{a\}, \, \{a, b\}\}\)</span> 를 순서쌍 이라 한다. 이 때 <span class="math inline">\((a,\,b)\)</span> 에서 <span class="math inline">\(a\)</span> 를 첫번째 <strong>좌표</strong>, <span class="math inline">\(b\)</span> 를 두번째 좌표라고 한다.</p>
-</div>
-</div>
-</div>
-</div>
-<br>
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-part1_ordered_pair" class="theorem example">
-<p><span class="theorem-title"><strong>예제 1.1</strong></span> <span class="math inline">\(a \ne b\)</span> 이면 <span class="math inline">\((a,\,b) \ne (b,\,a)\)</span> 이다.</p>
-</div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part1_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.9 (데카르트 곱)</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(A\times B\)</span> 를 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 에 의한 데카르트 곱이라 한다.</p>
-<p><span class="math display">\[
-A \times B = \{(a,b)| a\in A,\, b\in B\}.
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1002,13 +699,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/part1/part1.html" class="pagination-link" aria-label="해석학의 기반">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">해석학의 기반</span>
+      <a href="../../src/part2/2_5_riemann_stieltjes_integral.html" class="pagination-link" aria-label="리만-스틸체스 적분">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/part1/1_2_functions_and_relations.html" class="pagination-link" aria-label="함수와 관계">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">함수와 관계</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="pagination-link" aria-label="유클리드 공간에서의 함수">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

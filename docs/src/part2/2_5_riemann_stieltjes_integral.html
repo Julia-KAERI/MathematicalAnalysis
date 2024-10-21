@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/figures/figures.html" rel="next">
+<link href="../../src/part3/part3.html" rel="next">
 <link href="../../src/part2/2_4_differentiation.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -234,8 +234,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">그림들</span></a>
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">다변수 함수의 해석학</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -243,8 +243,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">그림들</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -341,6 +358,20 @@ a=x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_{n-1}&lt; x_n = b
 </div>
 </div>
 <p><br></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+주의
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>앞으로 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\)</span> 이 구간 <span class="math inline">\([a,\,b]\)</span> 의 분할이라고 하면 명시적으로 언급하지 않더라도 <span class="math inline">\(a=x_0 &lt; x_1 &lt;\cdots &lt; x_n=b\)</span> 임을 가정한다.</p>
+</div>
+</div>
+<p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -377,7 +408,7 @@ L(f,\, P_1) \le L(f,\,P_2) \le U(f,\,P_2) \le U(f,\,P_1)
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(L(f,\,P) \le U(f,\,P)\)</span> 임은 자명하다. <span class="math inline">\(P_1\)</span> 에 의한 부분구간 <span class="math inline">\([x_{k-1},\,x_k]\)</span> 의 에 대해 <span class="math inline">\(z_m=x_{k-1} &lt; z_{m+1}&lt; \cdots &lt;z_{m+n} = x_k\)</span> 라고 하자. <span class="math inline">\(j=0,\ldots,\,n-1\)</span> 에 대해 <span class="math inline">\(\inf f([z_{m+j},\, z_{m+j+1}]) \le \inf f[(x_{k-1},\, x_{k})]\)</span> 이므로 <span class="math inline">\(L(f,\, P_1) \le L(f,\,P_2)\)</span> 이다. 같은 방법으로 <span class="math inline">\(U(f,\,P_2) \le U(f,\,P_2)\)</span> 를 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span>임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(L(f,\,P) \le U(f,\,P)\)</span> 임은 자명하다. <span class="math inline">\(P_1\)</span> 에 의한 부분구간 <span class="math inline">\([x_{k-1},\,x_k]\)</span> 에 대해 <span class="math inline">\(z_m=x_{k-1} &lt; z_{m+1}&lt; \cdots &lt;z_{m+n} = x_k\)</span> 라고 하자. <span class="math inline">\(j=0,\ldots,\,n-1\)</span> 에 대해 <span class="math inline">\(\inf f[(x_{k-1},\, x_{k})] \le \inf f([z_{m+j},\, z_{m+j+1}])\)</span> 이므로 <span class="math inline">\(L(f,\, P_1) \le L(f,\,P_2)\)</span> 이다. 같은 방법으로 <span class="math inline">\(U(f,\,P_2) \le U(f,\,P_1)\)</span> 임을 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -1737,8 +1768,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/figures/figures.html" class="pagination-link" aria-label="그림들">
-        <span class="nav-page-text">그림들</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/part3/part3.html" class="pagination-link" aria-label="다변수 함수의 해석학">
+        <span class="nav-page-text">다변수 함수의 해석학</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

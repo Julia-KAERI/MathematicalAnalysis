@@ -234,8 +234,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">그림들</span></a>
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">다변수 함수의 해석학</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -243,8 +243,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">그림들</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -1320,7 +1337,110 @@ g'(x) = \dfrac{f(x)f''(x)}{(f'(x))^2}
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>– to be done –</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A=0\)</span> 이면 자명하므로 <span class="math inline">\(A&gt;0\)</span> 인 경우만 생각한다. <span class="math inline">\(x_o \in [a,\,b]\)</span> 를 고정하고</p>
+<p><span class="math display">\[
+M_o = \sup \{ |f(x)| : x\in [a,\,x_0]\},\qquad M_1 = \sup \{ |f'(x)| : x\in [a,\,x_0]\}
+\]</span></p>
+<p>라 하자. <span class="math inline">\(x\in [a,\,x_o]\)</span> 에 대해</p>
+<p><span class="math display">\[
+|f(x)| = |f(x)-f(a)| \le M_1(x-a) \le M_1 (x_o-a) \le AM_0 (x_o-a)
+\]</span></p>
+<p>이다. <span class="math inline">\(|f(x)|&lt;M_o\)</span> 이어야 하므로 <span class="math inline">\(A(x_o-a)&lt;1\)</span> 이면 <span class="math inline">\(M_o=0\)</span> 이어야 한다. <span class="math inline">\(x_o\)</span> 를 <span class="math inline">\(x_o-a&lt;1/A\)</span> 가 되도록 잡는다면 <span class="math inline">\(f([a,\,x_0])=\{0\}\)</span> 이며 역시 <span class="math inline">\(x_1-x_o &lt; 1/A\)</span> 가 되도록 <span class="math inline">\(x_1\in [x_o,\,b]\)</span> 에서 잡는 다면 같은 결과가 반복된다. 이것을 <span class="math inline">\(b\)</span> 까지 반복하면 <span class="math inline">\(f(x) = 0\)</span> 임을 보일 수 있다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part2_rudin_5_27" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.23 (Rudin 5.27, 미분방정식의 해의 유일성 1)</strong></span> <span class="math inline">\(R=[a,\,b]\times [\alpha,\,\beta]\subset \mathbb{R}^2\)</span> 에서 정의된 함수 <span class="math inline">\(\phi :R\to \mathbb{R}\)</span> 를 생각하자. 미분방정식의 초기값 문제가 아래와 같이 주어졌다고 하자.</p>
+<p><span class="math display">\[
+y'=\phi (x,\,y) ,\qquad \phi(a) = c,\qquad (\alpha \le c \le \beta)
+\]</span></p>
+<p>이 방정식의 해 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(f[a,\,b]\to \mathbb{R}\)</span> 인 미분가능한 함수이며 <span class="math inline">\(f(a)= c\)</span> 이고 <span class="math inline">\(\alpha \le f(c)\le \beta\)</span> 이며</p>
+<p><span class="math display">\[
+f'(x) = \phi (x,\, f(x)),\qquad (a\le x\le b)
+\]</span></p>
+<p>를 찾는 문제이다.어떤 상수 <span class="math inline">\(A\)</span> 와 각각의 <span class="math inline">\((x,\,y_1)\in R,\, (x,\,y_2)\in R\)</span> 에 대해</p>
+<p><span class="math display">\[
+|\phi (x,\,y_2)-\phi(x,\,y_1)| \le A|y_2-y_1|
+\]</span></p>
+<p>라면 위의 미분방정식은 많아야 하나의 해를 가진다는 것을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f_1,\,f_2\)</span> 가 위의 미분방정식을 만족하는 두 해라고 하고 <span class="math inline">\(g(x) = f_1(x)-f_2(x)\)</span> 라고 하자. <span class="math inline">\(f_1(a)=f_2(a) = c\)</span> 이므로 <span class="math inline">\(g(a)=0\)</span> 이며</p>
+<p><span class="math display">\[
+\begin{aligned}
+|g'(x)| &amp;= |f'_2(x)-f'_1(x)| = |\phi(x,\, f_2(x)) - \phi(x,\, f_1(x0))|  \\[0.2em]
+&amp; \le A|f_2(x) - f_1(x)| = A|g(x)|
+\end{aligned}
+\]</span></p>
+<p>이다. <a href="#exr-part2_rudin_5_26" class="quarto-xref">연습문제&nbsp;<span>9.22</span></a> 에 따라 <span class="math inline">\(f([a,\,b])= \{0\}\)</span> 이므로 <span class="math inline">\(f_1=f_2\)</span> 이다. 즉 위의 미분방정식을 만족하는 해는 많아야 하나 존재한다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part2_rudin_5_28" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.24 (Rudin 5.28, 미분방정식의 해의 유일성 2)</strong></span> <a href="#exr-part2_rudin_5_27" class="quarto-xref">연습문제&nbsp;<span>9.23</span></a> 과 유사한 유일성 정리를 미분방정식 시스템에 대해 증명한다. 아래와 같은 미분방정식들이 존재한다고 하자.</p>
+<p><span class="math display">\[
+y'_j = \phi_j (x,\,y_1,\ldots,\,y_n),\qquad y_j (a) = c_j,\qquad (j=1,\ldots,\,n).
+\]</span></p>
+<p>이 미분방정식은 아래와 같은 형태로 쓰일 수 있다.</p>
+<p><span class="math display">\[
+\boldsymbol{y}' = \boldsymbol{\phi}(x,\, \boldsymbol{y}),\qquad \boldsymbol{y}(a) = \boldsymbol{c}.
+\]</span></p>
+<p>여기서 <span class="math inline">\(\boldsymbol{y} = (y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 이며 <span class="math inline">\(\boldsymbol{\phi}\)</span> 는 <span class="math inline">\(\mathbb{R}^{n+1}\mapsto \mathbb{R}^n\)</span> 함수이고 <span class="math inline">\(\boldsymbol{\phi} = (\phi_1,\ldots,\,\phi_n)\)</span> 이다. 또한 <span class="math inline">\(\boldsymbol{c}\in \mathbb{R}^n\)</span> 이다. 미분방정식의 유일성을 증명하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{y}_1\)</span> 와 <span class="math inline">\(\boldsymbol{y}_2\)</span> 가 미분방정식의 두 해이며 <span class="math inline">\(\boldsymbol{z}= \boldsymbol{y}_2-\boldsymbol{y}_2\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{z}(a)=\boldsymbol{0}\)</span> 이며</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|\boldsymbol{z}'(x) \| = \|\boldsymbol{\phi}(x,\, \boldsymbol{y}_2) - \boldsymbol{\phi} (x,\,\boldsymbol{y}_1)\| \le A\|\boldsymbol{y}_2-\boldsymbol{y}_1\|= A\|\boldsymbol{z}(x)\|
+\end{aligned}
+\]</span></p>
+<p>이므로 미분방정식 시스템은 많아야 하나의 해만 존재한다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part2_rudin_5_29" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.25 (Rudin 5.29, 미분방정식의 해의 유일성 3)</strong></span> 아래와 같은 미분방정식 시스템을 생각하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+y'_j &amp;= y_{j+1},\qquad (j=1,\ldots,\,n-1), \\
+y'_n &amp;= f(x) - \sum_{j=1}^n g_j (x) y_j .
+\end{aligned}
+\]</span></p>
+<p>여기서 <span class="math inline">\(f,\,g_1,\ldots,\,g_n\)</span> 은 <span class="math inline">\([a,\,b]\)</span> 구간에서 연속인 함수이다. 아래의 미분방정식</p>
+<p><span class="math display">\[
+y^{(n)} + g_n(x) y^{(n-1)} + \cdots + g_2(x) y' + g_1(x) y = f(x)
+\]</span></p>
+<p>과 초기조건</p>
+<p><span class="math display">\[
+y(a) = c_1,\, y'(a) = c_2,\ldots,\, y^{(n-1)}(a) = c_n
+\]</span></p>
+<p>에 대해 유일성을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{y}(x) = (y_1,\ldots,\,y_n) = \left(y(x),\,y'(x),\ldots,\, y^{(n-1)}(x)\right) \subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{\phi}(x,\, \boldsymbol{y}) = \boldsymbol{y}'\)</span> 와 초기조건 <span class="math inline">\(\boldsymbol{y}(a)= \boldsymbol{c} = (c_1,\ldots,\,c_n)\)</span> 을 만족하는 해가 <span class="math inline">\(\boldsymbol{y},\,\boldsymbol{z}\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{w}= \boldsymbol{z}-\boldsymbol{y}\)</span> 이라고 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|\boldsymbol{w}'(x)\| &amp;= \|\boldsymbol{\phi}(x,\,\boldsymbol{z}) - \boldsymbol{\phi}(x,\,\boldsymbol{y})\| \\
+&amp;= \left\| \left( z-y,\ldots,\, z^{(n-1)},\, y^{(n-1)},\, \sum_{j=1}^n g_j(x)(z_j-y_j) \right) \right\|
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(M = \sup \{|g_j(x)| : x\in [a,\,b],\, j=1,\ldots,\,n\}\)</span> 라고 하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|\boldsymbol{w}'(x)\| &amp;\le |z_1-y_1| + \cdots + |z_{n}-y_n| + \left|\sum_{j=1}^n g_j(x)(z_j-y_j)\right| \\
+&amp;\le |z_1-y_1| + \cdots + |z_{n}-y_n| + \sum_{j=1}^n |g_j(x)|\,|z_j-y_j| \\
+&amp;= \sum_{j=1}^n (1+|g_j(x)|) |z_j-y_j| \\
+&amp;\le n(1+M)|z_j-y_j| \\
+&amp;\le n(1+M)\|\boldsymbol{z}-\boldsymbol{y}\| = n(1+M)\|\boldsymbol{w}\|
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(\boldsymbol{w}=\boldsymbol{0}\)</span> 이다. 즉 위 미분방정식의 해는 유일하다.</p>
 </div>
 
 

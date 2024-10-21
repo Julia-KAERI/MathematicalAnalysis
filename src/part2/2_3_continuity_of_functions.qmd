@@ -10,7 +10,7 @@ crossref:
 
 ## 함수의 극한과 연속
 
-### 함수의 극한과 연속
+### 함수의 극한과 연속 {#sec-part2_limit_and_continuity_of_functions}
 
 ::: {.callout-note appearance="simple" icon="false"}
 

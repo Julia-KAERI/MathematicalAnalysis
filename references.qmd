@@ -1,4 +1,15 @@
 # References {.unnumbered}
 
+
 ::: {#refs}
+
+@MyAlgebra
+
+@Munkres2000topology
+
+@Rudin1976
+
+@Spivak1965
+
+@KKK2011
 :::

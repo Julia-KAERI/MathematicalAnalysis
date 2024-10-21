@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html</loc>
-    <lastmod>2024-10-06T05:28:31.082Z</lastmod>
+    <lastmod>2024-10-20T04:17:49.876Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_2_sequences_and_series.html</loc>
@@ -34,15 +34,19 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html</loc>
-    <lastmod>2024-10-08T06:11:48.434Z</lastmod>
+    <lastmod>2024-10-20T11:42:01.169Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html</loc>
-    <lastmod>2024-10-13T09:14:45.017Z</lastmod>
+    <lastmod>2024-10-19T04:35:11.212Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html</loc>
-    <lastmod>2024-10-13T03:00:40.535Z</lastmod>
+    <lastmod>2024-10-19T05:02:01.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_1_functions_on_Euclidean_space.html</loc>
+    <lastmod>2024-10-21T03:44:28.473Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/figures/figure01.html</loc>
@@ -50,7 +54,7 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/references.html</loc>
-    <lastmod>2024-10-06T05:28:31.081Z</lastmod>
+    <lastmod>2024-10-19T05:03:05.985Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/part1.html</loc>
@@ -59,6 +63,10 @@
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/part2.html</loc>
     <lastmod>2024-10-06T05:28:31.083Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/part3.html</loc>
+    <lastmod>2024-10-19T07:42:04.516Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/figures/figures.html</loc>
