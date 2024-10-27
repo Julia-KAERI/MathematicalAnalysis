@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_1_functions_on_Euclidean_space.html</loc>
-    <lastmod>2024-10-21T03:44:28.473Z</lastmod>
+    <lastmod>2024-10-26T13:48:00.997Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/figures/figure01.html</loc>
@@ -71,5 +71,9 @@
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/figures/figures.html</loc>
     <lastmod>2024-10-06T05:28:31.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_2_differentiation_of_manifolds.html</loc>
+    <lastmod>2024-10-26T14:04:13.219Z</lastmod>
   </url>
 </urlset>

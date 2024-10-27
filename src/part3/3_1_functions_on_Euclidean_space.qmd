@@ -18,6 +18,8 @@ crossref:
 
 $\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
 
+두 벡터의 일반적인 내적은 $\langle \bf{x},\, \bf{y}\rangle$ 라고 쓰며 유클리드 내적은 $\bf{x}^T\bf{\cdot y}$ 라고 쓴다. 
+
 <br>
 
 ### 연습문제 {.unnumbered}
@@ -51,7 +53,7 @@ $$
 ::: {#exr-part3_spivak_1_4}
 #### Spivak 1.4
 
-$\left| \|\bf{x}\| -\|\bf{y}\|\right| \le \|\bf{x}-\bf{y}\|$ 임을 보여라.
+${\large|} \|\bf{x}\| -\|\bf{y}\| {\large |} \le \|\bf{x}-\bf{y}\|$ 임을 보여라.
 
 :::
 
@@ -120,8 +122,7 @@ $$
 ::: {#exr-part3_spivak_1_7}
 #### Spivak 1.7
 
-선형 변환 $T:\R^n \to \R^n$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $T(\bf{x})
-\bf{\cdot} T(\bf{y})= \bf{x \cdot y}$ 이면 **inner product preserving** 이라고 한다. 
+선형 변환 $T:\R^n \to \R^n$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $\langle T(\bf{x}),\, T(\bf{y}) \rangle = \langle \bf{x},\,  \bf{y}\rangle$ 이면 **inner product preserving** 이라고 한다. 
 
 ($a$) $T$ 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라.
 
@@ -133,22 +134,22 @@ $$
 
 ::: {.solution}
 
-($a$) $T$ 가 innerproduct preserving 이면 $\|T(\bf{x})\|^2  = T(\bf{x})\bf{\cdot}T(\bf{x}) = \bf{x\cdot x}=\|\bf{x}\|^2$ 이므로 norm preserving 이다. 이제 $T$ 가 norm-preservign 임을 가정하자. $T$ 가 선형결합이므로
+($a$) $T$ 가 innerproduct preserving 이면 $\|T(\bf{x})\|^2  = \langle T(\bf{x}),\,T(\bf{x}) \rangle = \langle \bf{x},\, \bf{x}\rangle =\|\bf{x}\|^2$ 이므로 norm preserving 이다. 이제 $T$ 가 norm-preservign 임을 가정하자. $T$ 가 선형결합이므로
 
 $$
 \begin{aligned}
-\|T(\bf{x}-\bf{y})\|^2 &= \|T(\bf{x})-T(\bf{y})\|^2 = \|T(\bf{x})\|^2 - 2 T(\bf{x})\bf{\cdot}T(\bf{y})+ \|T(\bf{y})\|^2 \\
-&=\|\bf{x}\|^2 - 2T(\bf{x})\bf{\cdot}T(\bf{y}) + \|\bf{y}\|^2 
+\|T(\bf{x}-\bf{y})\|^2 &= \|T(\bf{x})-T(\bf{y})\|^2 = \|T(\bf{x})\|^2 - 2\langle T(\bf{x}),\,T(\bf{y})\rangle + \|T(\bf{y})\|^2 \\
+&=\|\bf{x}\|^2 - 2\langle T(\bf{x}),\,T(\bf{y})\rangle + \|\bf{y}\|^2 
 \end{aligned}
 $$
 
 이며 $T$ 가 norm-preserving 이므로
 
 $$
-\|T(\bf{x}-\bf{y})\|^2 = \|\bf{x}-\bf{y}\|^2 = \|\bf{x}\|^2 - 2\bf{x\cdot y}+ \|\bf{y}\|^2
+\|T(\bf{x}-\bf{y})\|^2 = \|\bf{x}-\bf{y}\|^2 = \|\bf{x}\|^2 - 2\langle \bf{x},\, \bf{y}\rangle + \|\bf{y}\|^2
 $$
 
-이다. 따라서 $T(\bf{x})\bf{\cdot}T(\bf{y})= \bf{x\cdot y}$ 이므로 $T$ 는 inner product preserving 이다.
+이다. 따라서 $\langle T(\bf{x}),\, T(\bf{y})\rangle= \langle\bf{x},\,\bf{y}\rangle$ 이므로 $T$ 는 inner product preserving 이다.
 
 ($b$) $T(\bf{x})=\bf{0}$ 이라면 $\bf{x}=\bf{0}$ 이므로 $\ker T=\{\bf{0}\}$ 이다. 따라서 $T$ 는 전단사이다.
 
@@ -233,7 +234,7 @@ $$
 ::: {#exr-part3_spivak_1_10}
 #### Spivak 1.10
 
-선형변환 $T:\R^m \to \R^n$ 를 생각하자. 모든 $\boldsymbol{h}\in \R^m$ 에 대해 $\|T(\bf{h})\| \le M \|\bf{h}\|$ 인 $M$ 이 존재함을 보여라. 
+선형변환 $T:\R^n \to \R^m$ 를 생각하자. 모든 $\boldsymbol{h}\in \R^n$ 에 대해 $\|T(\bf{h})\| \le M \|\bf{h}\|$ 인 $M$ 이 존재함을 보여라. 
 
 :::
 
@@ -242,16 +243,16 @@ $$
 
 ::: {.solution}
 
-$\bf{h} = (h_1,\ldots,\,h_m)$ 이며 $(T(\bf{h}))_i = \sum_{j=1}^m T_{ij}h_j$ 라 하자. 
+$\bf{h} = (h_1,\ldots,\,h_n)$ 이며 $(T(\bf{h}))_i = \sum_{j=1}^n T_{ij}h_j$ 라 하자. 
 
 $$
-\left|\left(T(\bf{h})_i\right)\right| = \left| \sum_{j=1}^m T_{ij}h_j\right| \le \sum_{j=1}^m |T_{ij}|\cdot |h_j|
+\left|\left(T(\bf{h})_i\right)\right| = \left| \sum_{j=1}^n T_{ij}h_j\right| \le \sum_{j=1}^n |T_{ij}|\cdot |h_j|
 $$
 
-이다. $M_0 = \max \{|T_{ij}| : 1 \le i \le n,\, 1 \le j \le m\}$ 이라고 하자. 
+이다. $M_0 = \max \{|T_{ij}| : 1 \le i \le m,\, 1 \le j \le n\}$ 이라고 하자. 
 
 $$
-\||T(\bf{h})\| \le \sum_{i=1}^n \left|\left(T(\bf{h})_i\right)\right| \le \sum_{i=1}^m \sum_{j=1}^n |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
+\||T(\bf{h})\| \le \sum_{j=1}^n \left|\left(T(\bf{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
 $$
 
 이므로 $M=mnM_0$ 로 잡으면 된다.
@@ -340,38 +341,13 @@ $$
 
 ## 유클리드 공간의 부분공간
 
-
 ::: {.callout-note appearance="simple" icon="false"}
 
 ::: {#def-part3_cartesian_product}
 
 #### 데카르트곱
 
-$\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x}\,\bf{y})$ 를 다음과 같이 정의한다. 
-
-$$
-(\bf{x},\,\bf{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \R^{m+n}.
-$$
-
-또한 $A\subset \R^m,\,B\subset \R^n$ 에 대해 $A\times B \subset \R^{m + n}$ 를 아래와 같이 정의한다.
-
-$$
-A \times B := \{(\bf{x},\,\bf{y}) : \bf{x}\in A,\, \bf{y}\in B\}
-$$
-
-::: 
-:::
-
-</br>
-
-
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-part3_cartesian_product}
-
-#### 데카르트곱
-
-$\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x}\,\bf{y})$ 를 다음과 같이 정의한다. 
+$\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x},\,\bf{y})$ 를 다음과 같이 정의한다. 
 
 $$
 (\bf{x},\,\bf{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \R^{m+n}.
@@ -575,14 +551,13 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 ## 함수와 연속성 {#sec-part3_functions_and_continuity}
 
-
 ::: {.callout-note appearance="simple" icon="false"}
 
 ::: {#def-part3_component_functions}
 
 #### 성분 함수
 
-함수 $\bf{f}:A\subset \R^m \to \R^n$ 은 $n$ 개의 **성분 함수(component function)** $f_i :\R^m \to \R$ $(i=1,\ldots,\,n)$ 를 가진다. 이 때 $\bf{f}(\bf{x}) = (f_1(\bf{x}),\ldots,\,f_n(\bf{x}))$ 와 같이 쓴다. 
+함수 $\bf{f}:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f_i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $\bf{f}(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots & f_m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\bf{x}) \\ \vdots \\ f_m(\bf{x}) \end{bmatrix}$ 와 같이 열벡터로 표기한다.
 
 :::
 :::
@@ -594,11 +569,29 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 ::: {#def-part3_projection_function}
 
-#### 성분 함수
-항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 한다.
+#### 사영 함수
+항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 하고 $\pi_i$ 라고 쓴다. 즉 $\pi_i (\bf{x})= x_i$ 이다.
 
 :::
 :::
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part3_projection_functions}
+
+다음은 쉽게 보일 수 있다.
+
+($1$) 항등함수 $\bf{\pi}$ 는 선형사상이며 $\bf{\pi}:\R^n \to \R^n$ 은 $n \times n$ 항등행렬 $\bf{I}_n$ 과 같다. 
+
+($2$) 사영함수 $\pi_i :\R^n \to \R$ 역시 선형사상이며 표준기저 $\bf{e}_i$ 에 대해 $\pi_i (\bf{x}) = \bf{e}_i^T \bf{\cdot x}$ 이다.  
+
+($3$) $\bf{f} = \begin{bmatrix} f_1 & \cdots & f_m\end{bmatrix}^T$ 일 때 $f_i = \pi_i (\bf{f})$ 이다.
+
+:::
+
+</div>
 
 </br>
 
@@ -613,7 +606,7 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 #### Oscillation
 
-$f:A\subset \R^m \to \R$ 가 유계이며 $a\in A$ 일 때 정해진 $\delta>0$ 에 대해
+$f:A\subset \R^n \to \R$ 가 유계이며 $a\in A$ 일 때 정해진 $\delta>0$ 에 대해
 
 $$
 \begin{aligned}
@@ -634,7 +627,7 @@ $$
 
 ::: {#prp-part3_oscillation_and_continuity}
 
-$f:A\subset \R^m \to \R$ 이 유계이리 때 $f$ 가 연속인 것의 필요충분조건은 $o(f,\,\bf{a}) = 0$ 인 것이다.
+$f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 연속인 것의 필요충분조건은 $o(f,\,\bf{a}) = 0$ 인 것이다.
 
 :::
 
@@ -672,7 +665,7 @@ $$
 
 ::: {#prp-part3_oscillation_and_closed_set}
 
-닫힌 집합 $A\subset \R^m$ 에 대해 $f:A \to \R$ 이 유계일 때 임의의 $\varepsilon>0$ 에 대해 $\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 은 닫힌 집합이다.
+닫힌 집합 $A\subset \R^n$ 에 대해 $f:A \to \R$ 이 유계일 때 임의의 $\varepsilon>0$ 에 대해 $\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 은 닫힌 집합이다.
 
 :::
 
@@ -680,13 +673,13 @@ $$
 
 ::: {.proof}
 
-$B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^m-B$ 가 열린 집합임을 보이자. $\bf{x}\in \R^m-B$ 이면 ($i$) $\bf{x}\notin A$ 이거나, ($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x}) <\varepsilon$ 이다. 
+$B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 열린 집합임을 보이자. $\bf{x}\in \R^m-B$ 이면 ($i$) $\bf{x}\notin A$ 이거나, ($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x}) <\varepsilon$ 이다. 
 
-($i$) $\bf{x}\not\in A$ 이면 $A$ 가 닫힌 집합이므로 어떤 $\delta_x>0$ 에 대해 $N(\bf{x},\,\delta_x)\subset \R^m-A \subset \R^m-B$ 가 존재한다.
+($i$) $\bf{x}\not\in A$ 이면 $A$ 가 닫힌 집합이므로 어떤 $\delta_x>0$ 에 대해 $N(\bf{x},\,\delta_x)\subset \R^n-A \subset \R^n-B$ 가 존재한다.
 
-($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x})<\varepsilon$ 인 경우. 즉 어떤 $\delta>0$ 에 대해 $M(f,\,\bf{x},\,\delta)-m(f,\,\bf{x},\,\delta)<\varepsilon$ 이다. $\bf{y}\in N(\bf{x},\,\delta)$ 라면 어떤 $N(\bf{y},\, \delta_1)\subset N(\bf{x},\, \delta)$ 인 $\delta_1>0$ 이 존재한다. 즉 $N(\bf{x},\,\delta)\subset \R^m-B$ 이다. 
+($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x})<\varepsilon$ 인 경우. 즉 어떤 $\delta>0$ 에 대해 $M(f,\,\bf{x},\,\delta)-m(f,\,\bf{x},\,\delta)<\varepsilon$ 이다. $\bf{y}\in N(\bf{x},\,\delta)$ 라면 어떤 $N(\bf{y},\, \delta_1)\subset N(\bf{x},\, \delta)$ 인 $\delta_1>0$ 이 존재한다. 즉 $N(\bf{x},\,\delta)\subset \R^n-B$ 이다. 
 
-즉 $R^m-B$ 는 열린 집합이므로 $B$ 는 닫힌 집합이다.
+즉 $\R^n-B$ 는 열린 집합이므로 $B$ 는 닫힌 집합이다.
 
 :::
 
@@ -701,10 +694,10 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^m-B$ 가 �
 ::: {#exr-part3_spivak_1_23}
 #### Spivak 1.23
 
-$\bf{f}:A \subset \R^m \to \R^n$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
+$\bf{f}:A \subset \R^n \to \R^m$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
 
 $$
-\displaystyle \lim_{\bf{x}\to \bf{a}} \bf{f}(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,n\}\, \lim_{\bf{x}\to \bf{a}} f_i(\bf{x}) = b_i
+\displaystyle \lim_{\bf{x}\to \bf{a}} \bf{f}(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\bf{x}\to \bf{a}} f_i(\bf{x}) = b_i
 $$
 
 :::
@@ -717,10 +710,10 @@ $$
 ($\implies$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies \|\bf{f}(\bf{x})-\bf{b}\|<\varepsilon$ 인 $\delta>0$ 이 존재한다. $|f_i(\bf{x})-b_i|\le\|f(\bf{x})-\bf{b}\|$ 이므로 성립한다. 
 
 
-($\impliedby$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies |f_i(\bf{x})-b_i|<\varepsilon/n$ 인 $\delta>0$ 이 존재한다. 그렇다면.
+($\impliedby$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies |f_i(\bf{x})-b_i|<\varepsilon/m$ 인 $\delta>0$ 이 존재한다. 그렇다면.
 
 $$
-\|\bf{f}(\bf{x})-\bf{b}\| \le \sum_{i=1}^n |f_i(\bf{x})-b_i| < n \cdot \dfrac{\varepsilon}{n} = \varepsilon
+\|\bf{f}(\bf{x})-\bf{b}\| \le \sum_{i=1}^m |f_i(\bf{x})-b_i| < m \cdot \dfrac{\varepsilon}{m} = \varepsilon
 $$
 
 이므로 성립한다.
@@ -732,7 +725,7 @@ $$
 ::: {#exr-part3_spivak_1_24}
 #### Spivak 1.24
 
-$f:A\subset \R^m \to \R^n$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 연속인 것임을 보여라.
+$f:A\subset \R^n \to \R^m$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 연속인 것임을 보여라.
 
 :::
 
@@ -749,7 +742,7 @@ $\bf{b}$ 를 $\bf{f}(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한
 ::: {#exr-part3_spivak_1_25}
 #### Spivak 1.25
 
-선형변환 $T:\R^m \to \R^n$ 은 연속임을 보여라.
+선형변환 $T:\R^n \to \R^m$ 은 연속임을 보여라.
 
 :::
 

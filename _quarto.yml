@@ -37,6 +37,7 @@ book:
     - part : src/part3/part3.qmd
       chapters :
         - src/part3/3_1_functions_on_Euclidean_space.qmd
+        - src/part3/3_2_differentiation_of_manifolds.qmd
     - part : src/figures/figures.qmd
       chapters :
         - src/figures/figure01.qmd

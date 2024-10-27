@@ -1,0 +1,1032 @@
+---
+title: "다변수 함수의 미분"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+</br>
+
+## 기본 개념
+
+
+### 다변수 함수의 미분 {#sec-part3_differentiation_of_multivariable_function}
+
+선형변환 $T:\R^n \to \R^m$ 은 $m \times n$ 행렬로 표현할 수 있다는 것을 안다. 물론 미리 $\R^n$ 과 $\R^m$ 의 기저가 정해져야 한다. $\R^n$ 의 기저 $\mathcal{B}_n=(\bf{v}_1,\ldots,\,\bf{v}_n)$ 과 $\R^m$ 의 기저 $\mathcal{B}_m=(\bf{u}_1,\ldots,\,\bf{u}_m)$ 에 대한 $T$ 에 대한 행렬 표현을 $[T]_{\mathcal{B}_n,\, \mathcal{B}_m}$ 라고 하자. $\R^m$ 과 $\R^n$ 각각의 표준기저에 대한 행렬표현은 $[T]$ 라고 쓰기로 하자. 즉 $T(\bf{x}) = [T]\cdot \bf{x}$ 이다. 
+
+혼동의 여지가 있지만 $[T]$ 의 $i$ 행 $j$ 열 성분을 $[T]_{ij}$ 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 $\bf{x} = \begin{bmatrix} x_1 & \ldots & x_n\end{bmatrix}^T \in \R^m$ 과 $\bf{y} = T(\bf{x})$ 에 대해  
+
+$$
+y_i = (T(\bf{x}))_i = \sum_{i=1}^m [T]_{ij}x_j
+$$
+
+이다. 
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_differentiation_of_multivariable_function}
+
+#### 다변수 함수의 미분
+
+함수 $\bf{f}:\R^n\to \R^m$ 와 $\bf{a}\in \R^n$ 에 대해 어떤 선형변환 $T:\R^n \to \R^m$ 이 존재하여
+
+$$
+\lim_{\bf{h} \to \bf{0}} \dfrac{\|\bf{f}(\bf{a}+\bf{h}) - \bf{f}(\bf{a}) - T(\bf{h})\|}{\|\bf{h}\|} = 0
+$$ {#eq-part3_derivative_of_vector_function}
+
+일 때 $\bf{f}$ 는 $\bf{a}$ 에서 미분가능하다 라고 하며 $T$ 를 $D\bf{f}(\bf{a})$ 혹은 $\bf{f}'(\bf{a})$ 라고 쓴다. 
+
+::: 
+:::
+
+</br>
+
+즉 $D\bf{f}(\bf{a}) \in \mathcal{M}_{m \times n}(\mathbb{R})$ 이다. 
+
+</br>
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_uniqueness_of_derivative}
+
+$\bf{f}:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 @eq-part3_derivative_of_vector_function 를 만족하는 선형변환은 유일하다. 
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$T,\, L\in \mathcal{L}(\R^n,\, \R^m)$ 이 @eq-part3_derivative_of_vector_function 를 만족한다고 하자. 그리고 $\bf{d}(\bf{h}) = \bf{f}(\bf{x}-\bf{a})-\bf{f}(\bf{a})$ 라고 하자. 
+
+$$
+\begin{aligned}
+\|T(\bf{h})-L(\bf{h})\| &= \|T(\bf{h})-\bf{d}(\bf{h}) + \bf{d}(\bf{h})- L(\bf{h})\| \\[0.3em]
+&\le \|T(\bf{h})-\bf{d}(\bf{h}) \| + \|L(\bf{h})- \bf{d}(\bf{h})\|
+\end{aligned}
+$$
+
+이다. 위 식의 양변을 $\|\bf{h}\|$ 로 나누고 $\lim_{\bf{h}\to \bf{0}}$ 을 취하면 @eq-part3_derivative_of_vector_function 로 부터 
+
+$$
+\lim_{\bf{h}\to \bf{0}} \dfrac{\|T(\bf{h})-L(\bf{h})\|}{\|\bf{h}\|} =0
+$$ {#eq-part3_uniqueness_of_derivative_1}
+
+임을 안다. 이제 두 선형변환 $T,\,L$ 이 @eq-part3_uniqueness_of_derivative_1 를 만족하면 $T=L$ 임을 보이자. 임의의 $\bf{x}\in \R^n$ 에 대해 
+
+$$
+0 = \lim_{t\to 0} \dfrac{\|T(t\bf{x})-L(t\bf{x})\|}{\| t\bf{x}\|} = \dfrac{\|T(\bf{x})- L(\bf{x})\|}{\|\bf{x}\|}
+$$
+
+이므로 $T=L$ 이다. $\square$
+
+:::
+
+</br>
+
+### 야코비 행렬 {#sec-part3_jacobian}
+
+$\bf{f}:\R^n\to\R^m$ 이 모든 $\bf{x}\in \R^n$ 에서 미분가능하면 마치 일변수 함수의 $f'(x)$ 처럼 $D\bf{f}(\bf{x})$ 와 같이 쓸 수 있다. 이 때는 $\bf{x}$ 를 제외하고 $D\bf{f}$ 와 같이 표기 할 수 있다.
+
+$\bf{f}:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능 할 때의 $D\bf{f}(\bf{a})$ 는 선형변환이므로 행렬로 표현할 때 기저에 따라 그 성분값이 달라진다. 여기에 기준이 되는 야코비 행렬을 아래와 같이 정의한다.
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_jacobian}
+
+#### 야코비 행렬
+
+$\bf{f}:A \subset \R^n \to \R^m$ 에 대해 $D\bf{f}(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 표준기저에 대해 표현한 행렬을 **야코비 행렬 (Jacobian matrix)** 이라고 하며 $\bf{J}[\bf{f}](\bf{a})$ 혹은 $\bf{J}_\bf{f}(\bf{a})$ 와 같이 표기한다. 모든 $A\subset \R^n$ 에서 미분가능할 때는 $A$ 에서 정의된 함수로서 $\bf{J}_\bf{f}(\bf{x})$ 라고 표기한다.
+
+::: 
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_differentiability_of_identity_function}
+
+@def-part3_projection_function 에서 정의된 $\bf{\pi}:\R^n \to \R^n$ 은 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라. 사영함수 $\pi_i:\R^n \to \R$ 도 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라.
+
+:::
+</div></br>
+
+::: {.solution}
+
+$I_n :\R^n \to \R^n$ 을 항등사상이라고 하자. $\bf{\pi} = I_n$ 이며 $\pi_i = \bf{e}_i^T$ 임을 안다.
+$$
+\|\bf{\pi}(\bf{x}+\bf{h})-\bf{\pi}(\bf{x})-I(\bf{h})\| = 0 
+$$
+
+이므로 $D\bf{\pi}'(\bf{x})=I_n$ 이다. 또한
+
+$$
+\|\pi_i (\bf{x}+\bf{h})-\pi_i (\bf{x})-\pi_i(\bf{h})\| = 0
+$$
+
+이므로 $D\pi_i(\bf{x})= \pi_i = \bf{e}_i^T$ 이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_1}
+#### Spivak 2_1
+
+$\bf{f}:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능하면 $\bf{a}$ 에서 연속임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+@eq-part3_derivative_of_vector_function 로부터 $\displaystyle \lim_{\bf{h}\to \bf{0}} \|\bf{f}(\bf{a}+\bf{h}) - \bf{f}(\bf{a}) - T(\bf{h})\| = 0$ 이며 @exr-part3_spivak_1_10 로부터 $\displaystyle \lim_{\bf{h} \to \bf{0}} T(\bf{h})=\bf{0}$ 이므로 $\displaystyle \lim_{\bf{h}\to \bf{0}} \bf{f}(\bf{a}+\bf{h})-\bf{f}(\bf{a}) = \bf{0}$ 이다. 즉 $\bf{f}$ 는 $\bf{a}$ 에서 연속이다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_2}
+#### Spivak 2_2
+
+$f:\R^2 \to \R$ 이 모든 $y_1,\,y_2\in \R$ 에 대해 $f(x,\,y_1) = f(x,\,y_2)$ 일 때 $f$ 가 두번째 변수에 대해 독립이라고 한다. $f$ 가 두번째 변수에 대해 독립일 필요충분조건이 어떤 $g:\R \to \R$ 이 존재하여 $f(x,\,y)=g(x)$ 임을 보여라. $f'(a,\,b)$ 를 $g'$ 으로 표현하면 무엇인가?
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$f(x,\,y)=g(x)$ 이면 $f$ 가 두번째 변수에 대해 독립임은 자명하다. 임의의 고정된 $y_1,\,y_2\in \R$ 에 대해 $g_1(x) = f(x,\,y_1)$, $g_2(x) = f(x,\,y_2)$ 이면 $g_1=g_2$ 이다. 따라서 $f$ 가 두번째 변수에 대해 독립이면 $g(x) = f(x,\,y)$ 인 함수 $g$ 가 존재한다.
+
+$f'(a,\,b) = g'(a)$ 임은 쉽게 알 수 있다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_4}
+#### Spivak 2_4
+
+$g$ 는 단위원 $\{\bf{x}\in \R^2 : \|\bf{x}\|=1\}$ 에서 정의된 연속인 실함수이며 $g(0,\,1)= g(1,\,0)=0$, $g(-\bf{x})=-g(\bf{x})$ 이다. $f:\R^2 \to \R$ 은 다음과 같이 정의된다.
+
+$$
+f(\bf{x}) = \left\{\begin{array}{ll} \|\bf{x}\| \cdot g\left(\dfrac{\bf{x}}{\|\bf{x}\|}\right), \qquad &\bf{x}\ne \bf{0}, \\ 0. & \bf{x}=\bf{0} \end{array}\right.
+$$
+
+($a$) $\bf{x}\in \R^2$ 이고 $h:\R\to\R$ 이 $h(t) := f(t\bf{x})$ 로 정의되었다면 $h$ 가 미분가능함을 보여라.
+
+($b$) $g = 0$ 일 때를 제외하면 $f$ 가 $(0,\,0)$ 에서 미분가능하지 않음을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $h(t) = tf(\bf{x})$ 이므로 $h'(t) = f(\bf{x})$ 이다.
+
+($b$) $g=0$ 이면 $f$ 는 자연스럽게 미분가능. 이제 $g\ne 0$ 임을 가정한다. $Df(\bf{0})$ 이 존재한다면 어떤 $1 \times 2$ 행렬 $T=\begin{bmatrix} a & b \end{bmatrix}$ 에 대해
+
+$$
+\lim_{\bf{h} \to \bf{0}}\dfrac{|f(\bf{h})-f(\bf{0}) - T(\bf{h})|}{\|\bf{h}\|} = \lim_{(h,\,k) \to \bf{0}} \dfrac{|f(h,\,k) - (ah+bk)|}{\sqrt{h^2+k^2}} = 0
+$$
+
+이어야 한다. 우선 $h=0,\, k\to 0$ 을 보면 
+
+$$
+0=\lim_{k \to 0}\dfrac{|f(0,\,k) - bk|}{|k|} = \lim_{k \to 0}\dfrac{|(|k|g(0,\,1)) - bk|}{|k|} = |b|
+$$
+
+이어야 한다. 즉 $b=0$ 이다. 같은 방법으로 $a=0$ 임을 보일 수 있다. $f$ 가 $(0,\,0)$ 에서 미분가능하다면 임의의 $\bf{x}\in \R^2$ 에 대해
+
+$$
+\lim_{\bf{x}\to \bf{0}}  g\left(\dfrac{\bf{x}}{\|\bf{x}\|}\right) =0 
+$$
+
+이며 $g$ 는 연속이므로 $g=0$ 이다. 즉 $g\ne 0$ 이면 $f$ 는 $(0,\,0)$ 에서 미분가능하지 않다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_5}
+#### Spivak 2_5
+
+$f:\R^2 \to \R$ 이 아래와 같이 정의되었다.
+
+$$
+f(x,\,y) = \left\{ \begin{array}{ll} \dfrac{x|y|}{\sqrt{x^2+y^2}}, \qquad & (x,\,y) \ne \bf{0}, \\ 0,&(x,\,y) = \bf{0}.\end{array}\right.
+$$
+
+$f$ 는 @exr-part3_spivak_2_4 와 같은 종류의 문제로 $(0,\,0)$ 에서 미분가능하지 않음을 보여라.
+
+:::
+
+</div></br>
+
+::: {solution}
+
+$f$ 가 $0,\,0$ 에서 미분가능하다면 $\bf{h}= (h,\,k)$ 에 대해 어떤 $T=\begin{bmatrix}a & b\end{bmatrix}$ 가 존재하여
+$$
+0 = \lim_{\bf{h}\to\bf{0}} \dfrac{|f(h,\,k)-f(0,\,0) - (ah+bk)|}{\|\bf{h}\|} =  \lim_{\bf{h}\to\bf{0}} \dfrac{|f(h,\,k) - (ah+bk)|}{\|\bf{h}\|} 
+$$
+
+이어야 한다. 
+
+$(0,\,k)$ 에서 $k\to 0$ 극한을 생각하면 $b=0$ 이며 $(h,\,0)$ 에서 $h\to 0$ 극한을 생각하면 $a=0$ 이다. 에제 $(h,\,h)$ 에서 $h\to 0$ 인 극한을 생각하자.
+
+$$
+\lim_{h \to 0} \dfrac{h|h|}{2h^2} = \pm \dfrac{1}{2} \ne 0
+$$
+
+이므로 $f$ 는 $(0,\,0)$ 에서 미분가능하지 않다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_6}
+#### Spivak 2_6
+
+$f:\R^2 \to \R$ 이 $f(x,\,y) = \sqrt{|xy|}$ 로 정의되었다. $f$ 가 $(0,\,0)$ 에서 미분가능하지 않음을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$f(0,\,0)=0$ 이다. $f$ 가 $(0,\,0)$ 에서 미분가능하다면 어떤 $T=\begin{bmatrix} a & b\end{bmatrix}$ 가 존재하여
+$$
+0 = \lim_{(h,\,k)\to \bf{0}}\dfrac{|f(h,\,k)- (ah+bk)|}{\sqrt{h^2+k^2}} =  \lim_{(h,\,k)\to \bf{0}}\dfrac{|\sqrt{|hk|}- (ah+bk)|}{\sqrt{h^2+k^2}}
+$$
+
+이어야 한다. $(h,\,0)$ 에서 $h \to 0$ 인 극한을 취하면 위 식은
+
+$$
+0=\lim_{h \to 0}\dfrac{|ah|}{|h|} = |a|
+$$
+
+이며, 같은 방법으로 $b=0$ 임을 구할 수 있다. 이제 $(h,\,h)$ 에서 $h\to 0$ 인 극한을 취하면
+
+$$
+\lim_{h \to 0}\dfrac{|h|}{\sqrt{2}|h|} = \dfrac{1}{\sqrt{2}}
+$$
+
+이므로 $f$ 는 $(0,\,0)$ 에서 미분가능하지 않다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_7}
+#### Spivak 2_7
+
+$f: \R^2 \to \R$ 이 $|f(\bf{x})|\le \|\bf{x}\|^2$ 을 만족한다고 하자. $f$ 가 $(0,\,0)$ 에서 미분가능함을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$f(0,\,0)=0$ 이다. 어떤 $T=\begin{bmatrix}a & b \end{bmatrix}$ 에 대해
+
+$$
+0 = \lim_{(h,\,k)\to \bf{0}}\dfrac{|f(h,\,k)- (ah+bk)|}{\sqrt{h^2+k^2}} 
+$$ {#eq-part3_spivak_2_7}
+
+이어야 한다. 
+
+$$
+\dfrac{f(\bf{h})}{\|\bf{h}\|^2}\le \|\bf{h}\|
+$$
+
+이므로 $a=b=0$ 에 대해 @eq-part3_spivak_2_7 를 만족한다. 따라서 $Df(\bf{0})= \begin{bmatrix}0 & 0\end{bmatrix}^T$ 이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_8}
+#### Spivak 2_8
+
+$\bf{f}:\R \to \R^2$ 이며 $\bf{f} = (f_1,\, f_2)$ 라 하자. $\bf{f}$ 가 $a\in R$ 에서 미분가능할 필요충분조건은 $f_1,\,f_2$ 가 각각 $a$ 에서 미분가능하며 $\bf{f'}(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\bf{f}$ 가 $a$ 에서 미분가능하다면 $T=\begin{bmatrix} c_1 & c_2\end{bmatrix}^T$ 가 존재하여
+$$
+0 = \lim_{h \to 0}\dfrac{\|\bf{f}(a+h) - \bf{f}(a) - (c_1h, c_2h)\|}{|h|}
+$$
+
+이어야 한다. $i=1,\,2$ 에 대해
+
+$$
+\dfrac{|f_i(a+h) - f_i(a) - c_ih|}{|h|} \le \dfrac{\|\bf{f}(a+h) - \bf{f}(a) - (c_1h, c_2h)\|}{|h|}
+$$
+
+이므로 양변에 $h \to 0$ 극한을 취하면 좌변의 극한은 $0$ 이며 미분의 정의에 의해 $c_i = f_i'(a)$ 이다. 즉 $\bf{f'}(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 이다. 
+
+역으로 $f_1,\,, f_2$ 가 각각 $a$ 에서 미분가능하다고 하면 
+
+$$
+\begin{aligned}
+&\dfrac{\|\bf{f}(a+h) - \bf{f}(a) - (f_1'(a)h, f_2'(a)h)\|}{|h|} \\
+&\qquad \qquad \qquad \le \dfrac{|f_1(a+h) - f_1(a) - f_1'(a)h|}{|h|} +\dfrac{|f_2(a+h) - f_2(a) - f_2'(a) h|}{|h|} 
+\end{aligned}
+$$
+
+이므로 양변에 극한을 취하면 $0$ 좌변이 $0$ 이 됨을 안다. 즉 $\bf{f}$ 는 $a$ 에서 미분가능하며 $\bf{f'}(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 이다.
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_9}
+#### Spivak 2_9
+
+$f,\,g :\R \to \R$ 이 $n\in \mathbb{Z}_+$ 에 대해
+
+$$
+\lim_{h \to 0}\dfrac{f(a+h)-g(a+h)}{h^n} = 0
+$$
+
+이면 $f$ 와 $g$ 는 $a$ 에서 $n$ 차 까지 같다 라고 한다.
+
+($a$) $f$ 가 $a$ 에서 미분가능할 필요충분조건은 $g(x) = a_0+a_1(x-a)$ 인 함수 $g$ 가 존재하여 $f$ 와 $g$ 는 $a$ 에서 $1$ 차 까지 같은것임을 보여라.
+
+($b$) $f'(a),\ldots,\, f^{(n)}(a)$ 가 존재하며 $g$ 는 아래와 같다고 하자.
+
+$$
+g(x) = \sum_{i=0}^n \dfrac{f^{(i)}(a)}{i!} (x-a)^i
+$$
+
+이 때 $f$ 와 $g$ 는 $n$ 차 까지 같음을 보여라.
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $f$ 가 $a$ 에서 미분가능하고 $g(x) = f(a) + f'(a)(x-a)$ 라고 하자. 
+
+$$
+\lim_{h \to 0} \dfrac{f(a+h)-g(a+h)}{h} = \lim_{h \to 0} \dfrac{f(a+h) - f(a) + f'(a) h}{h} = 0
+$$
+
+이므로 $f$ 와 $g$ 는 1차 까지 같다. 이제 $g(x)  = a_0 + a_1(x-a)$ 와 $f$ 가 $1$ 차 까지 같다고 하자.
+
+$$
+0 = \lim_{h \to 0} \dfrac{f(a+h) - a_0 + a_1(h)}{h}
+$$
+
+이다. $a_0 = f(a)$ 라고 하면 $f$ 의 미분가능성의 정의에 의해 $f$ 는 $a$ 에서 미분가능하며 $a_1=f'(a)$ 이다.
+
+($b$) $k\in \mathbb{Z}_+$ 에 대해 
+
+$$
+\lim_{h \to 0}\dfrac{\displaystyle f(a+h) - \sum_{i=0}^n \dfrac{f^{(i)}(a)}{i!} (h)^i}{h^k}
+$$
+
+임을 보이자. 로피탈의 정리를 사용할 수 있으며 $h$ 에 대해 미분하면 쉽게 보일 수 있다.
+
+:::
+
+</br>
+
+## 연쇄규칙과 미분의 기본 성질
+
+### 다변수 함수의 연쇄규칙 {#sec-part3_chain_rule_for_mutivariable_function}
+
+일변수 함수에 대한 연쇄규칙은 @thm-part2_chain_rule 을 참고하라.
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_chain_rule}
+
+#### 다변수 함수의 연쇄규칙
+
+$\bf{f}:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능하며 $\bf{g}:\R^m \to \R^p$ 가 $\bf{f}(\bf{a})$ 에서 미분가능하다면 $\bf{g} \circ \bf{f}$ 도 $\bf{a}$ 에서 미분가능하며 다음이 성립한다.
+
+$$
+D(\bf{g}\circ \bf{f})(\bf{a})= D\bf{g}(\bf{f}(\bf{a})) \circ D\bf{f}(\bf{a})
+$$ {#eq-part3_chain_rule}
+
+위 식은 아래와 같이 쓸 수 있다.
+
+$$
+(\bf{g}\circ \bf{f})'(\bf{a)}) = \bf{g}'(\bf{f}(\bf{a})) \cdot \bf{f}'(\bf{a}).
+$$ {#eq-part3_chain_rule_2}
+:::
+
+</div></br>
+
+::: {.proof}
+
+$\bf{b}=\bf{f}(\bf{a})$, $T=D\bf{f}(\bf{a}),\, L = D\bf{g}(\bf{f}(\bf{a}))$ 라고 하자. 그리고 다음과 같이 정의한다.
+
+$$
+\begin{aligned}
+\bf{\varphi} (\bf{x}) &:= \bf{f}(\bf{x}) - \bf{f}(\bf{a}) - T(\bf{x}-\bf{a}),\\[0.3em]
+\bf{\psi} (\bf{y}) &:= \bf{g}(\bf{y})- \bf{g}(\bf{b})-L(\bf{y}-\bf{b}), \\[0.3em]
+\bf{\rho}(\bf{x}) &:= \bf{g}\circ \bf{f}(\bf{x})- \bf{g}\circ \bf{f}(\bf{a}) - L\circ T (\bf{x}-\bf{a}).
+\end{aligned}
+$$ {#eq-thm_part3_chainrule_1}
+
+미분가능성의 정의로부터
+
+$$
+\lim_{\bf{x}\to\bf{a}}\dfrac{\|\bf{\varphi}(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0, \qquad \lim_{\bf{y}\to\bf{b}}\dfrac{\|\bf{\psi}(\bf{y})\|}{\|\bf{y}-\bf{b}\|} = 0
+$$ {#eq-thm_part3_chainrule_2}
+
+
+이다. 우리는 이제 다음을 보이면 된다.
+
+$$
+\lim_{\bf{x}\to\bf{a}}\dfrac{\|\bf{\rho}(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0.
+$$ {#eq-thm_part3_chainrule_3}
+
+그렇다면
+
+$$
+\begin{aligned}
+\bf{\rho}(\bf{x}) &= \bf{g}(\bf{f}(\bf{x})) -  \bf{g}(\bf{b}) - (L \circ T)(\bf{x}-\bf{a})\\[0.3em]
+&=\bf{g}(\bf{f}(\bf{x})) - bf{g}(\bf{b}) - L(\bf{f}(\bf{x}) - \bf{f}(\bf{a})- \bf{\varphi}(\bf{x})) \\[0.3em]
+&= \left[\bf{g}(\bf{f}(\bf{x})) - \bf{g}(\bf{b}) -L(\bf{f}(\bf{x})-\bf{f}(\bf{a})\right] + L(\bf{\varphi}(\bf{x})) \\[0.3em]
+&=\bf{\psi}(\bf{f}(\bf{x})) + L(\bf{\varphi}(\bf{x}))
+\end{aligned}
+$$ {#eq-thm_part3_chainrule_4}
+
+이다. 우선 $\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|L(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0$ 임을 보이자. @exr-part3_spivak_1_10 으로부터 어떤 $M_L>0$ 에 대해
+
+$$
+\dfrac{\|L(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}\le \dfrac{M_L\|\bf{\varphi}(\bf{x})\|}{\|\bf{x}-\bf{a}\|}
+$$ {#eq-thm_part3_chainrule_5}
+
+이며 @eq-thm_part3_chainrule_2 의 첫번째 극한으로부터 다음을 알 수 있다.
+
+$$
+\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|L(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0
+$$ {#eq-thm_part3_chainrule_6}
+
+또한 @eq-thm_part3_chainrule_2 의 두번째 극한으로부터 임의의 $\varepsilon>0$ 에 대해 다음을 만족하는 $\delta>0$ 이 존재한다는 것을 안다.
+
+$$
+\|\bf{f}(\bf{x})-\bf{b}\|<\delta \implies \|\bf{\psi}(\bf{f}(\bf{x}))\| < \varepsilon \|\bf{f}(\bf{x})-\bf{b}\|
+$$
+
+그렇다면 @eq-thm_part3_chainrule_1 로부터
+
+$$
+\begin{aligned}
+\varepsilon \|\bf{f}(\bf{x})-\bf{b}\| &= \varepsilon \| \bf{\varphi}(\bf{x})- T(\bf{x}-\bf{a})\| \\[0.3em]
+& \le \varepsilon \|\bf{\varphi}(\bf{x})\| + \varepsilon\|T(\bf{x}-\bf{a})\|
+\end{aligned}
+$$
+
+이며 역시  @exr-part3_spivak_1_10 로부터 어떤 $M_T>0$ 가 존재하여 $\|T(\bf{x}-\bf{a})\| \le M_T \|\bf{x}-\bf{a}\|$ 임을 안다. 이 결과와 @eq-thm_part3_chainrule_2 의 첫번째 식을 이용하면 어떤 $\eta>0$ 에 대해
+
+$$
+\|\bf{x}-\bf{a}\|<\eta \implies \|\bf{\varphi}(\bf{x})\| <\|\bf{x}-\bf{a}\|
+$$
+
+이므로 임의의 $\varepsilon>0$ 에 대해 어떤 $\eta>0$ 이 존재하여 
+
+$$
+\|\bf{x}-\bf{a}\|<\eta \implies \|\bf{\psi}(\bf{f}(\bf{x}))\| \le \varepsilon(M_T+1) \|\bf{x}-\bf{a}\|
+$$
+
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 
+
+$$
+\lim_{\bf{x}\to \bf{a}}\dfrac{\|\bf{\psi}(\bf{f}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|} = 0
+$${#eq-thm_part3_chainrule_7}
+
+
+이다. 따라서 @eq-thm_part3_chainrule_4 로 부터
+
+$$
+\lim_{\bf{x}\to \bf{a}} \dfrac{\|\bf{\rho}(\bf{x})\|}{\|\bf{x}-\bf{a}\|} =0
+$$
+
+이므로 $(\bf{g}\circ \bf{f})'(\bf{a}) = L\circ T = D\bf{g}(\bf{f}(\bf{a})) \circ D\bf{f}(\bf{a})$ 이다. $\square$
+:::
+
+</br>
+
+### 다변수 함수 미분의 기분 성질 {#sec-part3_basic_properties_of_derivative_of_multivariable_functions}
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_basic_properties_of_derivative_of_multivariable_functions}
+
+$\bf{f}:\R^n \to \R^m$, $\bf{f}(\bf{x}) = (f_1(\bf{x}),\ldots,\, f_m(\bf{x}))$ 이라고 하자.
+
+($1$) $\bf{f}$ 가 상수함수이면 모든 $\bf{x}\in \R^n$ 에 대해 $D\bf{f}(\bf{x}) = \bf{0}$ 이다.
+
+($2$) $\bf{f}$ 가 선형사상이면 $\bf{f}'(\bf{a})= \bf{f}$ 이다. 
+
+($3$) $\bf{f}$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능한 것이며 
+
+$$
+\bf{f}'(\bf{a}) = (f_1'(\bf{a}),\ldots,\, f_m'(\bf{a}))
+$$
+
+이다. 따라서 $\bf{f}'(\bf{a})\in \mathcal{M}_{m \times n}(\R)$ 이며 $i$ 번째 열은 $(f_i)'(\bf{a})$ 이다.
+
+($4$) $s:\R^2 \to \R$ 이 $s(x,\,y) = x+y$ 이면 $Ds(a,\,b)= s$ 이다.
+
+($5$) $p:\R^2 \to \R$ 이 $p(x,\,y) = x \cdot y$ 이면 $Dp(a,\,b) (x,\,y) = bx+ay$ 이다. 따라서 $p'(a,\,b)= (b,\,a)$ 이다. 
+
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$)  $\|\bf{f}(\bf{x}+\bf{h})- \bf{f}(\bf{x})\|=0$ 이다. 
+
+($2$) $\|\bf{f}(\bf{x}+\bf{h})- \bf{f}(\bf{x})- \bf{f}(\bf{h})\| = 0$ 이다. 
+
+($3$) 우선 $f_i'(\bf{a})$ 는 $1 \times n$ 행렬, 즉 열행렬임을 안다. $1 \times n$ 열행렬 $\bf{a}_1,\ldots,\, \bf{a}_m$ 에 대해 
+
+$$
+\begin{bmatrix} \bf{a}_1 \\ \vdots \\ \bf{a}_m \end{bmatrix} = \begin{bmatrix} (\bf{a}_1)_1 & \cdots & (\bf{a}_1)_n \\ \vdots & & \vdots \\ (\bf{a}_m)_1 & \cdots & (\bf{a}_m)_n\end{bmatrix}
+$$ 
+
+이라고 하자. 
+
+
+이제 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능하며 $T=\begin{bmatrix} f_1'(\bf{a}) \\ \vdots \\ f_m'(\bf{a})\end{bmatrix}$ 라고 하자. 
+
+$$
+\begin{aligned}
+\dfrac{\|\bf{f}(\bf{a}+\bf{h})-\bf{f}(\bf{a})-T(\bf{h})\|}{\|\bf{h}\|}  \le \sum_{i=1}^m \dfrac{|f_i(\bf{a}+\bf{h}) - f_i(\bf{a})- f_i'(\bf{a})(\bf{h})|}{\|\bf{h}\|}
+\end{aligned}
+$$
+
+이며 $\bf{h}\to \bf{0}$ 극한에서 우변이 $0$ 이므로 좌변도 $0$ 이다. 즉 $D\bf{f}(\bf{a}) = T$ 이다. 
+
+이제 $\bf{f}$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-part3_projection_function) $\pi_i$ 에 대해 @exr-part3_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-part3_chain_rule 에 의해 $\pi_i \circ \bf{f}$ 도 $\bf{a}$ 에서 미분가능하다. 
+
+($4$) $s$ 가 선형사상이므로 ($2$) 에 의해 성립한다.
+
+($5$) $T(x,\,y) = bx+ay$ 라고 하자. $|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)| = hk$ 이므로 
+
+$$
+\lim_{(h,\,k) \to \bf{0}}\dfrac{|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)|}{\sqrt{|h|^2+|k|^2}} = \lim_{(h,\,k) \to \bf{0}}\dfrac{|hk|}{\sqrt{h^2+k^2}} 
+$$
+
+이다. 우리는 $|h|^2+|k|^2 \le 2|hk|$ 임을 안다. 따라서 위의 극한은 $0$ 이므로 $Dp(a,\,b)(x,\,y) = bx+ay$ 이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-part3_basic_properties_of_derivative_of_multivariable_functions}
+
+$f,\,g :\R^n \to \R$ 이 $\bf{a}$ 에서 미분가능하다면 다음이 성립한다. 
+
+$$
+\begin{aligned}
+D(f+g)(\bf{a})  &= Df(\bf{a}) + Dg(\bf{a}), \\[0.3em]
+D(f\cdot g)(\bf{a}) &= g(\bf{a}) Df(\bf{a}) + f(\bf{a}) Dg(\bf{a}).
+\end{aligned}
+$$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_1}
+
+또한 $g(\bf{a})\ne 0$ 이면 다음이 성립한다.
+
+$$
+D(f/g)(\bf{a}) = \dfrac{g(\bf{a})Df(\bf{a}) - f(\bf{a})Dg(\bf{a})}{[g(\bf{a})]^2}
+$$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2}
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+@prp-part3_basic_properties_of_derivative_of_multivariable_functions ($4$) 의 $s(x,\,y)=x+y$ 를 이용한다. $f+g = s\circ (f,\,g)$ 이므로
+
+$$
+\begin{aligned}
+D(f+g)(\bf{a}) &= Ds(f(\bf{a}),\, g(\bf{a})) \circ D(f,\,g)(\bf{a}) \\[0.3em]
+&= s \circ (D(f,\,g)(\bf{a}) ) = D(f)(\bf{a}) + D(g)(\bf{a})
+\end{aligned}
+$$
+
+이다. 
+
+@prp-part3_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $p(x,\,y) = x\cdot y$ 를 이용한다. $f\cdot g = p\circ(f,\,g)$ 이므로
+
+$$
+\begin{aligned}
+D(f \cdot g)(\bf{a}) &= Dp(f(\bf{a}),\, g(\bf{a}))\circ D(f,\, g)(\bf{a})\\[0.3em]
+&= g(\bf{a})Df(\bf{a}) + f(\bf{a})Dg(\bf{a})
+\end{aligned}
+$$
+
+이다. 
+
+이제 @eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2 를 보이기 위해 $g(\bf{a})\ne 0$ 이며 $\bf{a}$ 에서 미분가능할 때 $D(1/g)(\bf{a})$ 를 구해보자. $h(x) = 1/g(x)$ 라고 하면 $g\cdot h = 1$ 이며 $D1(\bf{x})=0$ 이므로
+
+$$
+0 = g(\bf{a})Dh(\bf{a}) + h(\bf{a})Dg(\bf{a})
+$$
+
+이며 따라서 
+
+$$
+D(1/g)(\bf{a})= - \dfrac{Dg(\bf{a})}{[g(\bf{a})]^2}
+$$
+
+이다. $f/g= f\cdot h$ 이므로
+
+$$
+\begin{aligned}
+D(f/g)(\bf{a}) &= D(f\cdot h)(\bf{a}) = \dfrac{Df(\bf{a})}{g(\bf{a})} - \dfrac{f(\bf{a}) Dg(\bf{a})}{[g(\bf{a})]^2} \\[0.3em]
+&= \dfrac{g(\bf{a})Df(\bf{a})-f(\bf{a})Dg(\bf{a}) }{[g(\bf{a})]^2}
+\end{aligned}
+$$
+
+이다. 
+
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_10}
+#### Spivak 2_10
+
+다음 함수에 대해 $f'$ 을 구하라.
+
+&emsp;($a$) $f(x,\,y,\,z) = x^y$.
+
+&emsp;($b$) $f(x,\,y,\,z) = (x^y,\,z)$.
+
+&emsp;($c$) $f(x,\,y) = \sin (x \sin y)$.
+
+&emsp;($d$) $f(x,\,y,\,z) = \sin (x \sin (y \sin z))$.
+
+&emsp;($e$) $f(x,\,y,\,z) = x^{y^z}$.
+
+&emsp;($f$) $f(x,\,y,\,z) =  x^{y+z}$.
+
+&emsp;($g$) $f(x,\,y,\,z) = (x+y)^z$.
+
+&emsp;($h$) $f(x,\,y) = \sin (xy)$.
+
+&emsp;($i$) $f(x,\,y) = [\sin (xy)]^8$.
+
+&emsp;($j$) $f(x,\,y) = (\sin (xy),\, \sin(x \sin y),\, x^t)$.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $x^y = e^{y\ln (x)}$ 임을 안다. $\bf{x} = (x,\,y,\,z) \in R^3$ 에 대해 $f(\bf{x}) = e^{\pi_2 (\bf{x}) \ln(\pi_1(\bf{x}))}$ 이다. $g:\R \to \R$ 을 $g(t) := e^t$, $h:\R^3 \to \R$ 을 $h(\bf{x}) := \pi_2 \cdot \ln (\pi_1)$ 이라고 하면 $f = g \circ h$ 이다. $g'(t) = g(t)$ 임을 안다. 또한 $\pi_i'=\pi_i$ 이며 $(\ln x)'=1/x$ 이므로
+
+$$
+\begin{aligned}
+Dh(\bf{x}) &= \begin{bmatrix}0 & 1 & 0\end{bmatrix} \ln (\pi_1(\bf{x})) + \begin{bmatrix} 1 & 0 & 0 \end{bmatrix}\dfrac{\pi_2(\bf{x})}{\pi_1(\bf{x})} \\
+&= \begin{bmatrix} \dfrac{y}{x} & \ln x & 0\end{bmatrix}
+\end{aligned}
+$$
+
+이다. 이로부터 $f'(x,\,y,\,z)$ 가 아래와 같음을 안다.
+
+$$
+\begin{aligned}
+f'(x,\,y,\,z) &= g'(h(\bf{x})) \cdot h'(\bf{x}) = x^y \begin{bmatrix} \dfrac{y}{x} & \ln x & 0\end{bmatrix} \\[0.3em]
+&= \begin{bmatrix} y x^{y-1} & x^y \ln x & 0\end{bmatrix}.
+\end{aligned}
+$$
+
+($b$) $\bf{f}(\bf{x}) = (h(\bf{x}),\, \pi_3(\bf{x})) = \begin{bmatrix} h(\bf{x}) \\ \pi_3(\bf{x})\end{bmatrix}$, 이며 $h$ 는 ($a$) 의 $f$ 이다. 이로부터
+
+$$
+D\bf{f} = \begin{bmatrix}  y x^{y-1} & x^y \ln x & 0 \\ 0 & 0 & 1 \end{bmatrix}
+$$
+
+이다. 
+
+($c$) $f(\bf{x}) = \sin (\pi_1(\bf{x}) \cdot \sin (\pi_2(\bf{x})))$ 이다. $g(x) = \sin (x)$, $h(\bf{x}) = \pi_1(\bf{x})\cdot \sin (\pi_2(\bf{x}))$ 라고 하면, $f= g\circ h$ 이다. $g'(x) = \cos (x)$ 이며, 
+
+$$
+\begin{aligned}
+h'(\bf{x}) &= \bf{e}_1^T \sin (\pi_2(\bf{x})) + \pi_1(\bf{x})\bf{e}_2^T \cos (\pi_2(\bf{x})) \\[0.3em]
+&= \begin{bmatrix} \sin y & x \cos y & 0 \end{bmatrix} 
+\end{aligned}
+$$
+
+이다. 따라서
+
+$$
+f'(x,\,y,\,z) = \cos(x\sin y) \begin{bmatrix} \sin y & x \cos y & 0\end{bmatrix}
+$$
+
+이다. 
+
+($d$) ($c$) 와 유사한 방법으로 구할 수 있다.
+
+$$
+f'(x,\,y,\,z) = \cos (x \sin (y \sin z))\begin{bmatrix} \sin(y \sin z) & x\sin z \cos (y \sin z) & xy \cos z \cos (y \sin z) \end{bmatrix}
+$$
+
+</br>
+$\vdots$
+</br>
+
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_11}
+#### Spivak 2_11
+
+$g:\R \to \R$ 이 연속일 대 다음 함수 $f$ 에 대해 $f'$ 을 구하라.
+
+&emsp;($1$) $\displaystyle f(x,\,y) = \int_a^{x+y} g$.
+
+&emsp;($2$) $\displaystyle f(x,\,y) = \int_{a}^{x\cdot y} g$.
+
+&emsp;($3$) $\displaystyle f(x,\,y,\,z) = \int_{x^y}^{\sin (x \sin (y \sin z))} g$.
+:::
+
+</div></br>
+
+::: {.solution}
+$G(t) = \int_0^t g$ 인 $G:\R \to R$ 이 존재한다. 이 때 $G' = g$ 이다.
+
+($a$) $f(x,\,y) = G(x+y)- G(a)$ 이므로 
+
+$$
+f'(x,\,y) = G'(x+y)\begin{bmatrix} 1 & 1 \end{bmatrix} = \begin{bmatrix} g(x+y) & g(x+y)\end{bmatrix}.
+$$ 
+
+($b$) $f(x,\,y) = G(x \cdot y) - G(a)$ 이므로
+
+$$
+f'(x,\,y)= G'(x \cdot y) \begin{bmatrix} y & x\end{bmatrix} = \begin{bmatrix} y\cdot g(xy) & x \cdot g(xy)\end{bmatrix}
+$$
+
+($c$) @exr-part3_spivak_2_10 ($d$) 를 이용한다. $f(x,\,y,\,z) = G(\sin (x \sin (y \sin z))) - G(xy)$ 이므로 
+
+$$
+f'(x,\,y,\,z) = ...
+$$
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_12}
+#### Spivak 2_12
+
+$\bf{f}:\R^n \times \R^m \to \R^p$ 가 $\bf{x},\, \bf{x}_1,\,\bf{x}_2\in \R^n$, $\bf{y},\,\bf{y}_1,\,\bf{y}_2\in \R^m$,\, $a\in \R$ 에 대해 다음을 만족하면 $f$ 를 **쌍선형(bilinear)** 이라고 한다.
+
+$$
+\begin{aligned}
+\bf{f}(a\bf{x},\, \bf{y}) &= a\bf{f}(\bf{x},\, \bf{y}) = \bf{f}(\bf{x},\, a\bf{y}),\\[0.3em]
+\bf{f}(\bf{x}_1 + \bf{x}_2,\, \bf{y}) &= \bf{f}(\bf{x}_1,\, \bf{y}) + \bf{f}(\bf{x}_2,\, \bf{y}),\\[0.3em]
+\bf{f}(\bf{x},\, \bf{y}_1+\bf{y}_2) &= \bf{f}(\bf{x},\, \bf{y}_1) + \bf{f}(\bf{x},\, \bf{y}_2).
+\end{aligned}
+$$ {#eq-part3_spivak_2_12_1}
+
+($a$) $\bf{f}$ 가 쌍선형이면 다음이 성립함을 보여라.
+
+$$
+\lim_{(\bf{h},\,\bf{k}) \to \bf{0}} \dfrac{\|\bf{f}(\bf{h},\,\bf{k})\|}{\|(\bf{h},\,\bf{k})\|} = 0.
+$$
+
+($b$) $D\bf{f}(\bf{a},\,\bf{b})(\bf{x},\,\bf{y}) = \bf{f}(\bf{a},\,\bf{y}) + \bf{f}(\bf{x},\, \bf{b})$ 임을 보여라.
+
+($c$) @prp-part3_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $Dp(a,\,b)$ 는 ($b$) 의 특별한 형태임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+여기서는 쌍선형 형식에 대해 다음을 증명하자.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_bilinear_1}
+
+$\bf{f}:\R^n \times \R^m \to \R^p$ 가 쌍선형 형식일 대 다음이 성립한다.
+
+&emsp;($1$) $\bf{f}(\bf{0},\,\bf{0}) = \bf{0}$ 이다.
+
+&emsp;($2$) 어떤 $M>0$ 이 존재하여 $\|\bf{f}(\bf{x},\,\bf{y})\| \le M\|(\bf{x},\,\bf{y})\|^2$ 이다.
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) @eq-part3_spivak_2_12_1 의 첫번째 식으로부터  $\bf{f}(-\bf{x},\,\bf{y}) = - \bf{f}(\bf{x},\, \bf{y})= \bf{f}(\bf{x},\, -\bf{y})$ 임을 안다. 이를 이용하면 $\bf{f}(\bf{0},\, \bf{y})= \bf{f}(\bf{x},\, \bf{0})= \bf{0}$ 임을 안다. 
+
+($2$) $\R^n,\, \R^m$ 에서의 표준기저를 각각 $(\bf{e}_i),\, (\bf{t}_j)$ 라고 하자. $\bf{x} = \sum_i x_i \bf{e}_i$, $\bf{y}= \sum_j y_j \bf{t}_j$ 라고 하면 
+
+$$
+\begin{aligned}
+\bf{f}(\bf{x},\,\bf{y}) = \sum_{i, j} x_i y_j \bf{f}(\bf{e}_i,\, \bf{t}_j)
+\end{aligned}
+$$
+
+임을 안다. $M_{ij} = \|\bf{f}(\bf{e}_i,\, \bf{t}_j)\|$, 이며 $M_0=\max \{M_{ij}\}$ 라고 하자. 또한 
+
+$$
+|x_iy_j| \le \|\bf{x}\||y_j| \le \|\bf{x}\|\cdot \|\bf{y}\| \le  \|\bf{x}\|^2+\|\bf{y}\|^2 = \|(\bf{x},\, \bf{y})\|^2
+$$ 
+
+이므로 
+$$
+\|\bf{f}(\bf{x},\,\bf{y})\| = \sum_{i, j} |x_i y_j| M_{ij} \le \sum_{i, j}|x_iy_j|M \le mn\|(\bf{x},\, \bf{y})\|^2M_0
+$$
+
+이 성립한다. $M=mnM_0$ 라고 놓으면 ($2$) 가 성립함을 안다. $\square$
+
+:::
+
+</br>
+
+이제 ($2$) 로부터
+
+$$
+\lim_{(\bf{h},\, \bf{k}) \to \bf{0}} \dfrac{\|\bf{f}(\bf{h},\, \bf{k})\|}{\|(\bf{h},\, \bf{k})\|} \le \lim_{(\bf{h},\, \bf{k})\to \bf{0}}M\|(\bf{h},\, \bf{k})\| = 0
+$$
+
+이므로 ($a$) 가 증명되었다.
+
+($2$) 
+
+$$
+\begin{aligned}
+\bf{f}(\bf{x}+\bf{h},\bf{y}+\bf{k}) &- \bf{f}(\bf{x},\, \bf{y}) - \bf{f}(\bf{x},\, \bf{k}) - \bf{f}(\bf{h},\, \bf{y}) = \bf{f}(\bf{h},\, \bf{k})
+\end{aligned}
+$$
+
+이므로
+
+$$
+\lim_{(\bf{h},\bf{k})\to \bf{0}}\dfrac{\|\bf{f}(\bf{x}+\bf{h},\bf{y}+\bf{k}) - \bf{f}(\bf{x},\, \bf{y}) - \bf{f}(\bf{x},\, \bf{k}) - \bf{f}(\bf{h},\, \bf{y})\|}{\|(\bf{h},\, \bf{k})\|} = 0
+$$
+
+이다. 미분의 정의에 의해 $D\bf{f}(\bf{x},\,\bf{y}) (\bf{h,\, \bf{k}})= f(\bf{x},\, \bf{k}) + \bf{f}(\bf{h},\, \bf{y})$ 이다.
+
+($c$) $f(x,\,y) =xy$ 는 쌍선형 형식이다. ($b$) 를 적용하라.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_13}
+#### Spivak 2_13
+
+$IP:\R^n \times \R^n \to \R$ 을 $IP(\bf{x},\, \bf{y}) := \langle \bf{x},\,\bf{y}\rangle = \bf{x}^T \bf{y}$ 로 정의한다.
+
+($a$) $D(IP)(\bf{a},\,\bf{b})$ 와 $(IP)'(\bf{a},\,\bf{b})$ 를 구하라
+
+($b$) $\bf{f},\,\bf{g} : \R \to \R^n$ 이 미분가능하고 $h:\R \to \R$ 이 $h(t) = \langle \bf{f}(t),\, \bf{g}(t)\rangle$ 로 정의되었을 때 다음이 성립함을 보여라.
+
+$$
+h'(\bf{a}) = \langle \bf{f}'(a)^T,\, \bf{g}(a)\rangle + \langle \bf{f}(a),\, \bf{g}'(\bf{a})^T\rangle.
+$$
+
+($c$) $\bf{f}:\R \to \R^n$ 이 미분가능하고 모든 $t\in \R$ 에 대해 $\|\bf{f}\|=1$ 이면 $\langle \bf{f}'(t),\, \bf{f}(t)\rangle = 0$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $IP$ 는 쌍선형 형식이다. 따라서 $D(IP)(\bf{a},\,\bf{b})(\bf{x},\,\bf{y}) = \langle \bf{a},\, \bf{y}\rangle + \langle \bf{x},\, \bf{b}\rangle$ 이다. $(IP)'(\bf{a},\, \bf{b}) = \begin{bmatrix} \bf{b}^T & \bf{a}^T\end{bmatrix}$ 이다.
+
+($b$) $h(t) = \langle \bf{f}(t),\, \bf{g}(t) \rangle = \displaystyle \sum_{i=1}^n f_i (t) g_i (t)$ 이므로
+
+$$
+h'(t) = \sum_{i=1}^n f'_i(t)g_i(t) + f_i(t) g'_i(t) = \langle \bf{f}'(t),\, \bf{g}(t)\rangle + \langle \bf{f}(t),\, \bf{g}'(t)\rangle.
+$$
+
+
+($c$) $g:\R \to \R$ 을 $g(t) = \langle \bf{f}(t),\, \bf{f}(t)\rangle$ 로 정의하면 $g=1$ 이므로
+
+$$
+0 = g'(t) = 2 \langle \bf{f}'(t),\, \bf{f}(t) \rangle
+$$
+
+이다.
+
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_14}
+#### Spivak 2_14
+
+$i=1,\ldots,\,k$ 에 대해 $E_i$ 는 각각의 차원을 가진 유클리드 공간이다. $\bf{f}:E_1 \times \cdots \times E_k \to \R^p$ 이다. 각각의 $x_j \in E_j,\, j \ne i$ 에 대해 아래와 같은 $\bf{g}:\R \to \R^p$ 가 선형함수라면 $\bf{f}$ 를 다중선형함수라고 한다.
+$$
+\bf{g}(x) = \bf{f}(x_1,\ldots,\,x_{i-1},\,x,\, x_{i+1},\ldots,\,x_k)
+$$
+
+($a$) $\bf{f}$ 가 다중선형함수이고 $i\ne j$ 일 때 $\bf{h} = (h_1,\ldots,\,h_k),\, h_l \in E_l$ 에 대해
+
+$$
+\lim_{\bf{h} \to 0} \dfrac{\|\bf{f}(a_1,\ldots,\,h_i,\ldots,\, h_j,\ldots,\,a_k)\|}{\|\bf{h}\|} = 0
+$$
+
+임을 보여라.
+
+($b$) 다음이 성립함을 보여라.
+
+$$
+\begin{aligned}
+D\bf{f}(a_1,\ldots,\,a_k)&(x_1,\ldots,\,x_k) = \sum_{i=1}^k \bf{f}(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
+\end{aligned}
+$$
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) 정해진 $i,\,j,\, i\ne j$ 에 대해 
+
+$$
+\bf{g}_{ij}(x,\,y) = \bf{f}(x_1,\ldots,\,x_{i-1},\,x,\,x_{i+1},\ldots,\,x_{j-1},\,y,\, x_{j+1},\ldots,\,x_k)
+$$ 
+
+는 쌍선형 함수이다. 따라서 @exr-part3_spivak_2_12 ($a$) 에 의해 ($a$) 가 성립한다.
+
+($b$) Multilinear 의 정의에 의해
+
+$$
+\begin{aligned}
+&f(x_1+h_1,\ldots, x_k +h_k) - f(x_1,\ldots,\,x_k) \\[0.3em]
+&\quad = f(x_1,\,x_2+h_2,\ldots,\,x_k+h_k) + f(h_1,\,x_2+h_2,\ldots,\,x_k+h_k ) - f(x_1,\ldots,\,x_k)\\[0.3em]
+&\quad = 
+\end{aligned}
+$$
+
+
+
+:::

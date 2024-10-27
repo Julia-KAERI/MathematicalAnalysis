@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/figures/figures.html" rel="next">
+<link href="../../src/part3/3_2_differentiation_of_manifolds.html" rel="next">
 <link href="../../src/part3/part3.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -247,6 +247,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_2_differentiation_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -261,7 +267,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -331,6 +337,7 @@ window.Quarto = {
 <p>여기서는 유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 <a href="../part2/2_1_basic_topology.html#def-part2_Euclidean_space" class="quarto-xref">정의&nbsp;<span>6.5</span></a> 와 <a href="../part2/2_1_basic_topology.html#prp-part2_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> 를 보라.</p>
 <p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 를 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 로도 표기하기로 한다. 실수를 성분으로 갖는 <span class="math inline">\(n \times 1\)</span> 행렬의 집합은 <span class="math inline">\(\mathcal{M}_{n}(\mathbb{R})\)</span> 로 표기하기로 한다. 또한 실계수를 갖는 <span class="math inline">\(m\times n\)</span> 행렬의 집합을 <span class="math inline">\(\mathcal{M}_{m\times n}(\mathbb{R})\)</span> 이라고 쓴다.</p>
 <p><span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저, 즉 <span class="math inline">\(i\)</span> 번째 성분만 <span class="math inline">\(1\)</span> 이며 나머지 성분은 <span class="math inline">\(0\)</span> 인 벡터를 <span class="math inline">\(\boldsymbol{e}_i\)</span> 라고 쓰기로 한다.</p>
+<p>두 벡터의 일반적인 내적은 <span class="math inline">\(\langle \boldsymbol{x},\, \boldsymbol{y}\rangle\)</span> 라고 쓰며 유클리드 내적은 <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{\cdot y}\)</span> 라고 쓴다.</p>
 <p><br></p>
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
@@ -349,7 +356,7 @@ window.Quarto = {
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.2 (Spivak 1.4)</strong></span> <span class="math inline">\(\left| \|\boldsymbol{x}\| -\|\boldsymbol{y}\|\right| \le \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.2 (Spivak 1.4)</strong></span> <span class="math inline">\({\large|} \|\boldsymbol{x}\| -\|\boldsymbol{y}\| {\large |} \le \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
@@ -388,26 +395,25 @@ window.Quarto = {
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_7" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.4 (Spivak 1.7)</strong></span> 선형 변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\|T(\boldsymbol{x})\|=\|\boldsymbol{x}\|\)</span> 이면 <strong>norm preserving</strong> 이라고 하고 <span class="math inline">\(T(\boldsymbol{x})
-\boldsymbol{\cdot} T(\boldsymbol{y})= \boldsymbol{x \cdot y}\)</span> 이면 <strong>inner product preserving</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>연습문제 11.4 (Spivak 1.7)</strong></span> 선형 변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\|T(\boldsymbol{x})\|=\|\boldsymbol{x}\|\)</span> 이면 <strong>norm preserving</strong> 이라고 하고 <span class="math inline">\(\langle T(\boldsymbol{x}),\, T(\boldsymbol{y}) \rangle = \langle \boldsymbol{x},\,  \boldsymbol{y}\rangle\)</span> 이면 <strong>inner product preserving</strong> 이라고 한다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) 이 변환은 전단사이며 <span class="math inline">\(T^{-1}\)</span> 도 그러함을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 innerproduct preserving 이면 <span class="math inline">\(\|T(\boldsymbol{x})\|^2  = T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{x}) = \boldsymbol{x\cdot x}=\|\boldsymbol{x}\|^2\)</span> 이므로 norm preserving 이다. 이제 <span class="math inline">\(T\)</span> 가 norm-preservign 임을 가정하자. <span class="math inline">\(T\)</span> 가 선형결합이므로</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 innerproduct preserving 이면 <span class="math inline">\(\|T(\boldsymbol{x})\|^2  = \langle T(\boldsymbol{x}),\,T(\boldsymbol{x}) \rangle = \langle \boldsymbol{x},\, \boldsymbol{x}\rangle =\|\boldsymbol{x}\|^2\)</span> 이므로 norm preserving 이다. 이제 <span class="math inline">\(T\)</span> 가 norm-preservign 임을 가정하자. <span class="math inline">\(T\)</span> 가 선형결합이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
-\|T(\boldsymbol{x}-\boldsymbol{y})\|^2 &amp;= \|T(\boldsymbol{x})-T(\boldsymbol{y})\|^2 = \|T(\boldsymbol{x})\|^2 - 2 T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{y})+ \|T(\boldsymbol{y})\|^2 \\
-&amp;=\|\boldsymbol{x}\|^2 - 2T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{y}) + \|\boldsymbol{y}\|^2
+\|T(\boldsymbol{x}-\boldsymbol{y})\|^2 &amp;= \|T(\boldsymbol{x})-T(\boldsymbol{y})\|^2 = \|T(\boldsymbol{x})\|^2 - 2\langle T(\boldsymbol{x}),\,T(\boldsymbol{y})\rangle + \|T(\boldsymbol{y})\|^2 \\
+&amp;=\|\boldsymbol{x}\|^2 - 2\langle T(\boldsymbol{x}),\,T(\boldsymbol{y})\rangle + \|\boldsymbol{y}\|^2
 \end{aligned}
 \]</span></p>
 <p>이며 <span class="math inline">\(T\)</span> 가 norm-preserving 이므로</p>
 <p><span class="math display">\[
-\|T(\boldsymbol{x}-\boldsymbol{y})\|^2 = \|\boldsymbol{x}-\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 - 2\boldsymbol{x\cdot y}+ \|\boldsymbol{y}\|^2
+\|T(\boldsymbol{x}-\boldsymbol{y})\|^2 = \|\boldsymbol{x}-\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 - 2\langle \boldsymbol{x},\, \boldsymbol{y}\rangle + \|\boldsymbol{y}\|^2
 \]</span></p>
-<p>이다. 따라서 <span class="math inline">\(T(\boldsymbol{x})\boldsymbol{\cdot}T(\boldsymbol{y})= \boldsymbol{x\cdot y}\)</span> 이므로 <span class="math inline">\(T\)</span> 는 inner product preserving 이다.</p>
+<p>이다. 따라서 <span class="math inline">\(\langle T(\boldsymbol{x}),\, T(\boldsymbol{y})\rangle= \langle\boldsymbol{x},\,\boldsymbol{y}\rangle\)</span> 이므로 <span class="math inline">\(T\)</span> 는 inner product preserving 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(T(\boldsymbol{x})=\boldsymbol{0}\)</span> 이라면 <span class="math inline">\(\boldsymbol{x}=\boldsymbol{0}\)</span> 이므로 <span class="math inline">\(\ker T=\{\boldsymbol{0}\}\)</span> 이다. 따라서 <span class="math inline">\(T\)</span> 는 전단사이다.</p>
 </div>
 <br>
@@ -452,18 +458,18 @@ window.Quarto = {
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_10" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.7 (Spivak 1.10)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^m \to \mathbb{R}^n\)</span> 를 생각하자. 모든 <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\|T(\boldsymbol{h})\| \le M \|\boldsymbol{h}\|\)</span> 인 <span class="math inline">\(M\)</span> 이 존재함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.7 (Spivak 1.10)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^m\)</span> 를 생각하자. 모든 <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\|T(\boldsymbol{h})\| \le M \|\boldsymbol{h}\|\)</span> 인 <span class="math inline">\(M\)</span> 이 존재함을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_m)\)</span> 이며 <span class="math inline">\((T(\boldsymbol{h}))_i = \sum_{j=1}^m T_{ij}h_j\)</span> 라 하자.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_n)\)</span> 이며 <span class="math inline">\((T(\boldsymbol{h}))_i = \sum_{j=1}^n T_{ij}h_j\)</span> 라 하자.</p>
 <p><span class="math display">\[
-\left|\left(T(\boldsymbol{h})_i\right)\right| = \left| \sum_{j=1}^m T_{ij}h_j\right| \le \sum_{j=1}^m |T_{ij}|\cdot |h_j|
+\left|\left(T(\boldsymbol{h})_i\right)\right| = \left| \sum_{j=1}^n T_{ij}h_j\right| \le \sum_{j=1}^n |T_{ij}|\cdot |h_j|
 \]</span></p>
-<p>이다. <span class="math inline">\(M_0 = \max \{|T_{ij}| : 1 \le i \le n,\, 1 \le j \le m\}\)</span> 이라고 하자.</p>
+<p>이다. <span class="math inline">\(M_0 = \max \{|T_{ij}| : 1 \le i \le m,\, 1 \le j \le n\}\)</span> 이라고 하자.</p>
 <p><span class="math display">\[
-\||T(\boldsymbol{h})\| \le \sum_{i=1}^n \left|\left(T(\boldsymbol{h})_i\right)\right| \le \sum_{i=1}^m \sum_{j=1}^n |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\boldsymbol{h}\|= mnM_0\|\boldsymbol{h}\|
+\||T(\boldsymbol{h})\| \le \sum_{j=1}^n \left|\left(T(\boldsymbol{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\boldsymbol{h}\|= mnM_0\|\boldsymbol{h}\|
 \]</span></p>
 <p>이므로 <span class="math inline">\(M=mnM_0\)</span> 로 잡으면 된다.</p>
 </div>
@@ -523,7 +529,7 @@ T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_
 </div>
 <div class="callout-body-container">
 <div id="def-part3_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.1 (데카르트곱)</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x}\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 11.1 (데카르트곱)</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
 (\boldsymbol{x},\,\boldsymbol{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \mathbb{R}^{m+n}.
 \]</span></p>
@@ -543,27 +549,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 <div class="callout-body-container">
 <div id="def-part3_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.2 (데카르트곱)</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x}\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
-<p><span class="math display">\[
-(\boldsymbol{x},\,\boldsymbol{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \mathbb{R}^{m+n}.
-\]</span></p>
-<p>또한 <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A\times B \subset \mathbb{R}^{m + n}\)</span> 를 아래와 같이 정의한다.</p>
-<p><span class="math display">\[
-A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \boldsymbol{y}\in B\}
-\]</span></p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="def-part3_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.3 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="../part2/2_1_basic_topology.html#def-part2_countable" class="quarto-xref">정의&nbsp;<span>6.1</span></a> 에서 <span class="math inline">\(n\)</span>-cell 을 정의하였다. 이와 비슷하게</p>
+<p><span class="theorem-title"><strong>정의 11.2 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="../part2/2_1_basic_topology.html#def-part2_countable" class="quarto-xref">정의&nbsp;<span>6.1</span></a> 에서 <span class="math inline">\(n\)</span>-cell 을 정의하였다. 이와 비슷하게</p>
 <p><span class="math display">\[
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \mathbb{R}^n
 \]</span></p>
@@ -580,7 +566,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 <div class="callout-body-container">
 <div id="def-part3_neighboring_cube" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.4 (열린/닫힌 cube)</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
+<p><span class="theorem-title"><strong>정의 11.3 (열린/닫힌 cube)</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 C(\boldsymbol{a},\,\delta) &amp;:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
@@ -681,7 +667,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_component_functions" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.5 (성분 함수)</strong></span> 함수 <span class="math inline">\(\boldsymbol{f}:A\subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(n\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^m \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,n)\)</span> 를 가진다. 이 때 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{x}) = (f_1(\boldsymbol{x}),\ldots,\,f_n(\boldsymbol{x}))\)</span> 와 같이 쓴다.</p>
+<p><span class="theorem-title"><strong>정의 11.4 (성분 함수)</strong></span> 함수 <span class="math inline">\(\boldsymbol{f}:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
 </div>
 </div>
 </div>
@@ -694,9 +680,18 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_projection_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.6 (성분 함수)</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 11.5 (사영 함수)</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi_i (\boldsymbol{x})= x_i\)</span> 이다.</p>
 </div>
 </div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-part3_projection_functions" class="theorem example">
+<p><span class="theorem-title"><strong>예제 11.1</strong></span> 다음은 쉽게 보일 수 있다.</p>
+<p>(<span class="math inline">\(1\)</span>) 항등함수 <span class="math inline">\(\boldsymbol{\pi}\)</span> 는 선형사상이며 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(n \times n\)</span> 항등행렬 <span class="math inline">\(\boldsymbol{I}_n\)</span> 과 같다.</p>
+<p>(<span class="math inline">\(2\)</span>) 사영함수 <span class="math inline">\(\pi_i :\mathbb{R}^n \to \mathbb{R}\)</span> 역시 선형사상이며 표준기저 <span class="math inline">\(\boldsymbol{e}_i\)</span> 에 대해 <span class="math inline">\(\pi_i (\boldsymbol{x}) = \boldsymbol{e}_i^T \boldsymbol{\cdot x}\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\boldsymbol{f} = \begin{bmatrix} f_1 &amp; \cdots &amp; f_m\end{bmatrix}^T\)</span> 일 때 <span class="math inline">\(f_i = \pi_i (\boldsymbol{f})\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -709,7 +704,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_oscillation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.7 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^m \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(a\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 11.6 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(a\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
 M(f,\,\boldsymbol{a},\,\delta) &amp;:= \sup \{f(\boldsymbol{x}): \boldsymbol{x}\in A,\, \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}, \\
@@ -725,7 +720,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_oscillation_and_continuity" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.2</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^m \to \mathbb{R}\)</span> 이 유계이리 때 <span class="math inline">\(f\)</span> 가 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
+<p><span class="theorem-title"><strong>명제 11.2</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -748,15 +743,15 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_oscillation_and_closed_set" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.3</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
+<p><span class="theorem-title"><strong>명제 11.3</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 라고 하고 <span class="math inline">\(\mathbb{R}^m-B\)</span> 가 열린 집합임을 보이자. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m-B\)</span> 이면 (<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 이거나, (<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이다.</p>
-<p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\not\in A\)</span> 이면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 어떤 <span class="math inline">\(\delta_x&gt;0\)</span> 에 대해 <span class="math inline">\(N(\boldsymbol{x},\,\delta_x)\subset \mathbb{R}^m-A \subset \mathbb{R}^m-B\)</span> 가 존재한다.</p>
-<p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x})&lt;\varepsilon\)</span> 인 경우. 즉 어떤 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(M(f,\,\boldsymbol{x},\,\delta)-m(f,\,\boldsymbol{x},\,\delta)&lt;\varepsilon\)</span> 이다. <span class="math inline">\(\boldsymbol{y}\in N(\boldsymbol{x},\,\delta)\)</span> 라면 어떤 <span class="math inline">\(N(\boldsymbol{y},\, \delta_1)\subset N(\boldsymbol{x},\, \delta)\)</span> 인 <span class="math inline">\(\delta_1&gt;0\)</span> 이 존재한다. 즉 <span class="math inline">\(N(\boldsymbol{x},\,\delta)\subset \mathbb{R}^m-B\)</span> 이다.</p>
-<p>즉 <span class="math inline">\(R^m-B\)</span> 는 열린 집합이므로 <span class="math inline">\(B\)</span> 는 닫힌 집합이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 라고 하고 <span class="math inline">\(\mathbb{R}^n-B\)</span> 가 열린 집합임을 보이자. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m-B\)</span> 이면 (<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 이거나, (<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이다.</p>
+<p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\not\in A\)</span> 이면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 어떤 <span class="math inline">\(\delta_x&gt;0\)</span> 에 대해 <span class="math inline">\(N(\boldsymbol{x},\,\delta_x)\subset \mathbb{R}^n-A \subset \mathbb{R}^n-B\)</span> 가 존재한다.</p>
+<p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x})&lt;\varepsilon\)</span> 인 경우. 즉 어떤 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(M(f,\,\boldsymbol{x},\,\delta)-m(f,\,\boldsymbol{x},\,\delta)&lt;\varepsilon\)</span> 이다. <span class="math inline">\(\boldsymbol{y}\in N(\boldsymbol{x},\,\delta)\)</span> 라면 어떤 <span class="math inline">\(N(\boldsymbol{y},\, \delta_1)\subset N(\boldsymbol{x},\, \delta)\)</span> 인 <span class="math inline">\(\delta_1&gt;0\)</span> 이 존재한다. 즉 <span class="math inline">\(N(\boldsymbol{x},\,\delta)\subset \mathbb{R}^n-B\)</span> 이다.</p>
+<p>즉 <span class="math inline">\(\mathbb{R}^n-B\)</span> 는 열린 집합이므로 <span class="math inline">\(B\)</span> 는 닫힌 집합이다.</p>
 </div>
 <p><br></p>
 </section>
@@ -764,25 +759,25 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <h2 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_23" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.16 (Spivak 1.23)</strong></span> <span class="math inline">\(\boldsymbol{f}:A \subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.16 (Spivak 1.23)</strong></span> <span class="math inline">\(\boldsymbol{f}:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
-\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,n\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f_i(\boldsymbol{x}) = b_i
+\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f_i(\boldsymbol{x}) = b_i
 \]</span></p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f_i(\boldsymbol{x})-b_i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
-<p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f_i(\boldsymbol{x})-b_i|&lt;\varepsilon/n\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 그렇다면.</p>
+<p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f_i(\boldsymbol{x})-b_i|&lt;\varepsilon/m\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 그렇다면.</p>
 <p><span class="math display">\[
-\|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^n |f_i(\boldsymbol{x})-b_i| &lt; n \cdot \dfrac{\varepsilon}{n} = \varepsilon
+\|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^m |f_i(\boldsymbol{x})-b_i| &lt; m \cdot \dfrac{\varepsilon}{m} = \varepsilon
 \]</span></p>
 <p>이므로 성립한다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_24" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.17 (Spivak 1.24)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속일 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속인 것임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.17 (Spivak 1.24)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속일 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속인 것임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
@@ -792,7 +787,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_25" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.18 (Spivak 1.25)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^m \to \mathbb{R}^n\)</span> 은 연속임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.18 (Spivak 1.25)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^m\)</span> 은 연속임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
@@ -1283,8 +1278,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/figures/figures.html" class="pagination-link" aria-label="그림들">
-        <span class="nav-page-text">그림들</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/part3/3_2_differentiation_of_manifolds.html" class="pagination-link" aria-label="다변수 함수의 미분">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
