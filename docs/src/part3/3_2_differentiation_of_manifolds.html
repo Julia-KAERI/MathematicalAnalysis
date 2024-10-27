@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; 다변수 함수의 미분 – Mathematical Analysis</title>
+<title>Mathematical Analysis - 12&nbsp; 다변수 함수의 미분</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -108,13 +108,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_2_differentiation_of_manifolds.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -154,7 +154,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">해석학의 기반</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -195,7 +195,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">일변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -236,7 +236,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">다변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -259,7 +259,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,6 +299,10 @@ window.Quarto = {
   <li><a href="#sec-part3_chain_rule_for_mutivariable_function" id="toc-sec-part3_chain_rule_for_mutivariable_function" class="nav-link" data-scroll-target="#sec-part3_chain_rule_for_mutivariable_function"><span class="header-section-number">12.2.1</span> 다변수 함수의 연쇄규칙</a></li>
   <li><a href="#sec-part3_basic_properties_of_derivative_of_multivariable_functions" id="toc-sec-part3_basic_properties_of_derivative_of_multivariable_functions" class="nav-link" data-scroll-target="#sec-part3_basic_properties_of_derivative_of_multivariable_functions"><span class="header-section-number">12.2.2</span> 다변수 함수 미분의 기분 성질</a></li>
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
+  </ul></li>
+  <li><a href="#편미분" id="toc-편미분" class="nav-link" data-scroll-target="#편미분"><span class="header-section-number">12.3</span> 편미분</a>
+  <ul class="collapse">
+  <li><a href="#편미분의-정의" id="toc-편미분의-정의" class="nav-link" data-scroll-target="#편미분의-정의"><span class="header-section-number">12.3.1</span> 편미분의 정의</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -974,15 +978,123 @@ D\boldsymbol{f}(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k \boldsym
 \boldsymbol{g}_{ij}(x,\,y) = \boldsymbol{f}(x_1,\ldots,\,x_{i-1},\,x,\,x_{i+1},\ldots,\,x_{j-1},\,y,\, x_{j+1},\ldots,\,x_k)
 \]</span></p>
 <p>는 쌍선형 함수이다. 따라서 <a href="#exr-part3_spivak_2_12" class="quarto-xref">연습문제&nbsp;<span>12.12</span></a> (<span class="math inline">\(a\)</span>) 에 의해 (<span class="math inline">\(a\)</span>) 가 성립한다.</p>
-<p>(<span class="math inline">\(b\)</span>) Multilinear 의 정의에 의해</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(n\)</span> 선형 형식에 대해 다음 명제를 증명한다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part3_multilinear_1" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 12.3</strong></span> 유클리드 공간 <span class="math inline">\(E_1,\ldots,\,E_n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{f}:E_1 \times \cdots \times E_n \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(n\)</span>-선형 형식일 때 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{f}(0,\ldots,0) = \boldsymbol{0}\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|\boldsymbol{f}(x_1,\ldots,\,x_n)\| \le M\|(x_1,\ldots,\,x_n)\|^n\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 은 <a href="#prp-part3_bilinear_1" class="quarto-xref">명제&nbsp;<span>12.2</span></a> 과 같은 방법으로 쉽게 증명 할 수 있다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(E_i\)</span> 의 차원이 <span class="math inline">\(d_i\)</span> 라고 하고 <span class="math inline">\(\left(\boldsymbol{e}^{(i)}_j\right)\)</span> 가 <span class="math inline">\(E_i\)</span> 의 표준기저라고 하자. <span class="math inline">\(x_i = \sum_{j_i} c_{j_i}^{(i)}\boldsymbol{e}_{j_i}^{(i)}\)</span> 라고 하면</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;f(x_1+h_1,\ldots, x_k +h_k) - f(x_1,\ldots,\,x_k) \\[0.3em]
-&amp;\quad = f(x_1,\,x_2+h_2,\ldots,\,x_k+h_k) + f(h_1,\,x_2+h_2,\ldots,\,x_k+h_k ) - f(x_1,\ldots,\,x_k)\\[0.3em]
-&amp;\quad =
+\|\boldsymbol{f}(x_1,\ldots,\,x_n)\| &amp;= \left\|\boldsymbol{f}\left(\sum_{j_1} c^{(1)}_{j_1} \boldsymbol{e}^{(1)}_{j_1}, \ldots,\, \sum_{j_n} c^{(n)}_{j_n} \boldsymbol{e}^{(n)}_{j_n}\right) \right\| \\[0.3em]
+&amp;= \sum_{j_1,\ldots,\,j_n} \left|c^{(1)}_{j_1} \cdots c^{(n)}_{j_n}\right| \boldsymbol{f}\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\\[0.3em]
+&amp; \le \sum_{j_1,\ldots,\,j_n} \|\boldsymbol{x}_1\|\cdots \|\boldsymbol{x}_n\| \boldsymbol{f}\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\\[0.3em]
 \end{aligned}
 \]</span></p>
+<p><span class="math inline">\(M_0 = \max \left\{\left\| \boldsymbol{f}\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\right\|\right\}\)</span> 라고 하자. 또한</p>
+<p><span class="math display">\[
+\|\boldsymbol{x}_1\|\cdots \|\boldsymbol{x}_n\| \le \|\boldsymbol{x}_1\|^n + \cdots + \|\boldsymbol{x}_1\|^n \le (\|\boldsymbol{x}_1\|^2 + \cdots + \|\boldsymbol{x}_n\|^2)^{n/2} = \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\|^{n}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\|\boldsymbol{f}(x_1,\ldots,\,x_n)\| \le d_1 \cdots d_n M_0 \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\|^n
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(M=d_1 \cdots d_n M_0 \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\)</span> 로 잡으면 (<span class="math inline">\(2\)</span>) 이다. <span class="math inline">\(\square\)</span></p>
 </div>
+<p>문제로 돌아와서 Multilinear 의 정의에 의해</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\boldsymbol{f}(a_1+h_1,\ldots, a_k +h_k) - \boldsymbol{f}(a_1,\ldots,\,a_k) \\[0.3em]
+&amp;\quad = \boldsymbol{f}(a_1,\,a_2+h_2,\ldots,\,a_k+h_k) + \boldsymbol{f}(h_1,\,a_2+h_2,\ldots,\,a_k+h_k ) - \boldsymbol{f}(a_1,\ldots,\,a_k)\\[0.3em]
+&amp;\quad = \boldsymbol{f}(a_1,\,a_2,\,a_3+h_3,\ldots,a_k+h_k) + \boldsymbol{f}(a_1,\,h_2,\,a_3+h_3,\ldots,,a_k+h_k) \\[0.3em]
+&amp;\qquad\qquad \qquad + \boldsymbol{f}(h_1,a_2,\,a_3+h_3,\ldots,\,a_k+h_k) + \boldsymbol{f}(h_1,\,h_2,\,a_3+h_3,\ldots,\,a_k+h_k) \\[0.3em]
+&amp;\qquad\qquad\qquad - \boldsymbol{f}(a_1,\ldots,\,a_k)
+\end{aligned}
+\]</span></p>
+<p>이며 이것을 계속 반복하다보면 <span class="math inline">\(\boldsymbol{f}\)</span> 의 인자로 주어지는 <span class="math inline">\(k\)</span> 개의 coordinate index 가운데 <span class="math inline">\(\boldsymbol{h}\)</span> 의 성분이 1개 있는 것부터 <span class="math inline">\(k\)</span> 개 있는 것까지의 합이 된다.</p>
+<p>이제 주어진 <span class="math inline">\(\displaystyle D\boldsymbol{f}(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k \boldsymbol{f}(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)\)</span> 의 우변은 <span class="math inline">\(\boldsymbol{f}(a_1,\ldots,\,a_k)\)</span> 의 <span class="math inline">\(k\)</span> 개의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 하나만 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것이다. 그렇다면</p>
+<p><span class="math display">\[
+\lim_{\boldsymbol{h}\to \boldsymbol{0}}\dfrac{\displaystyle \left\|\boldsymbol{f}(a_1+h_1,\ldots,\,a_k+h+k) - \boldsymbol{f}(a_1,\ldots,\, a_k) - \sum_{i=1}^n \boldsymbol{f}(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\boldsymbol{h}\|}
+\]</span></p>
+<p>를 생각해보자. 분자의 <span class="math inline">\(\| \cdots \|\)</span> 안에는 <span class="math inline">\(\boldsymbol{f}\)</span> 의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 두개 이상을 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것만 남는다. 이제 우리가 증명한 <a href="#prp-part3_multilinear_1" class="quarto-xref">명제&nbsp;<span>12.3</span></a> 에 의해 위의 극한이 <span class="math inline">\(0\)</span> 이 됨을 알 수 있다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_15" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.15 (Spivak 2_15)</strong></span> <span class="math inline">\(n\times n\)</span> 행렬은 <span class="math inline">\(n\)</span> 개의 <span class="math inline">\(\mathbb{R}^n\)</span> 의 데카르트곱 <span class="math inline">\(\mathbb{R}^n \times \cdots \times R^n\)</span> 의 한 점으로 간주 할 수 있다. 이 때 행렬의 각 행은 <span class="math inline">\(\mathbb{R}^n\)</span> 의 원소이다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\det:\mathbb{R}^n \times \cdots \times \mathbb{R}^n \to \mathbb{R}\)</span> 이 미분가능이며</p>
+<p><span class="math display">\[
+D(\det) (a_1,\ldots,\,a_n) (x_1,\ldots,\,x_n) = \sum_{i=1}^n \det \begin{bmatrix} a_1 \\ \vdots  \\ x_i  \\ \vdots  \\ a_n\end{bmatrix}
+\]</span></p>
+<p>임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(a_{ij}: \mathbb{R}\to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(f(t) = \det (a_{ij}(t))\)</span> 라면 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+f'(t) = \sum_{j=1}^n \det \begin{bmatrix} a_{11}(t) &amp; \cdots &amp; a_{1n}(t) \\ \vdots &amp; &amp; \vdots \\ a_{j1}'(t) &amp; \cdots &amp; a_{jn}'(t) \\ \vdots &amp; &amp; \vdots \\ a_{n1}(t) &amp; \cdots &amp; a_{nn}(t) \end{bmatrix}
+\]</span></p>
+<p>(<span class="math inline">\(c\)</span>) 모든 <span class="math inline">\(t\)</span> 에 대해 <span class="math inline">\(\det (a_{ij}(t)) \ne 0\)</span> 이며 <span class="math inline">\(b_1,\ldots,\,b_n : \mathbb{R}\to \mathbb{R}\)</span> 이 미분가능할 때 <span class="math inline">\(s_1,\ldots,s_n :\mathbb{R}\to \mathbb{R}\)</span> 을 다음 방정식의 해라고 하자.</p>
+<p><span class="math display">\[
+\sum_{j=1}^n a_{ji}(t) s_j(t) = b_i(t), \qquad i=1,\ldots,\,n.
+\]</span></p>
+<p>이 때 <span class="math inline">\(s_i\)</span> 는 미분가능함을 보이고 <span class="math inline">\(s_i'(t)\)</span> 를 구하라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 우리는 <span class="math inline">\(n \times n\)</span> 행렬의 행렬식이 <span class="math inline">\(n\)</span>-선형 형식임을 안다. 따라서 <a href="#exr-part3_spivak_2_14" class="quarto-xref">연습문제&nbsp;<span>12.14</span></a> (<span class="math inline">\(b\)</span>) 에 의해 주어진 식이 성립함을 안다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f'(t) = D(\det)(a_{ij}(t))(a'_{ij}(t))\)</span> 이므로 식시 성립한다.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\([a_{ij}(t)]=\boldsymbol{A}(t)\)</span>, <span class="math inline">\([s_j(t)]=\boldsymbol{s}(t)\)</span>, <span class="math inline">\([b_i(t)]=\boldsymbol{b}(t)\)</span> 라고 하면 주어진 방정식은 <span class="math inline">\(\boldsymbol{sA}=\boldsymbol{b}\)</span> 이다. <span class="math inline">\(\det(\boldsymbol{A})\ne 0\)</span> 이므로 역행렬이 존재하므로 방정식의 해 <span class="math inline">\(\boldsymbol{s}\)</span> 가 존재한다. <span class="math inline">\(\boldsymbol{sA}=\boldsymbol{b}\)</span> 의 양변을 미분하면</p>
+<p><span class="math display">\[
+\boldsymbol{s}'\boldsymbol{A}+ \boldsymbol{s}\boldsymbol{A}' = \boldsymbol{b}'
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\boldsymbol{s}' = (\boldsymbol{b}'-\boldsymbol{sA}')\boldsymbol{A}^{-1}
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_16" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.16 (Spivak 2_16)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 미분가능하며 미분가능한 역함수 <span class="math inline">\(\boldsymbol{f}^{-1}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 존재한다고 하자. 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+(\boldsymbol{f}^{-1})'(\boldsymbol{a}) = \left[\boldsymbol{f}'\left(\boldsymbol{f}^{-1}(\boldsymbol{a})\right)\right]^{-1}
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{f}\circ \boldsymbol{f}^{-1} = \boldsymbol{\pi}\)</span> 이며 양변을 미분하면 <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{f}^{-1}(\boldsymbol{a})) (\boldsymbol{f}^{-1})'(\boldsymbol{a}) = \boldsymbol{I}_n\)</span> 이므로 주어진 식이 성립한다.</p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="편미분" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="편미분"><span class="header-section-number">12.3</span> 편미분</h2>
+<section id="편미분의-정의" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="편미분의-정의"><span class="header-section-number">12.3.1</span> 편미분의 정의</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_partial_derivative" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 12.3 (편미분)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 과 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에 대해 아래와 같이 정의된 <span class="math inline">\(D_if(\boldsymbol{a})\)</span> 가 존재할 때 이를 <span class="math inline">\(f\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에서의 <span class="math inline">\(i\)</span> 번째 편미분이라고 한다.</p>
+<p><span id="eq-part3_ith_partial_derivative"><span class="math display">\[
+D_i f(\boldsymbol{a}) :=\lim_{h \to 0} \dfrac{f(a_1,\ldots,\,a_{i-1}, a_{i}+h,\, a_{i+1},\ldots,\,a_n) - f(a_1,\ldots,\,a_n)}{h}.
+\tag{12.16}\]</span></span></p>
+<p><span class="math inline">\(D_if(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\partial_i f(\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(\dfrac{\partial f(\boldsymbol{a})}{\partial x_i}\)</span> 와 같이 쓰기도 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 
 
 </section>
@@ -1024,7 +1136,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1056,29 +1179,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
@@ -1086,7 +1187,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

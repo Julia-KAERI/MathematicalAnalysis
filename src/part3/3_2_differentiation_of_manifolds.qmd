@@ -1017,16 +1017,176 @@ $$
 
 는 쌍선형 함수이다. 따라서 @exr-part3_spivak_2_12 ($a$) 에 의해 ($a$) 가 성립한다.
 
-($b$) Multilinear 의 정의에 의해
+($b$) $n$ 선형 형식에 대해 다음 명제를 증명한다.
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_multilinear_1}
+
+유클리드 공간 $E_1,\ldots,\,E_n$ 에 대해 $\bf{f}:E_1 \times \cdots \times E_n \to \R^p$ 가 $n$-선형 형식일 때 다음이 성립한다.
+
+&emsp;($1$) $\bf{f}(0,\ldots,0) = \bf{0}$ 이다.
+
+&emsp;($2$) 어떤 $M>0$ 이 존재하여 $\|\bf{f}(x_1,\ldots,\,x_n)\| \le M\|(x_1,\ldots,\,x_n)\|^n$ 이다.
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) 은 @prp-part3_bilinear_1 과 같은 방법으로 쉽게 증명 할 수 있다.  
+
+($2$) $E_i$ 의 차원이 $d_i$ 라고 하고 $\left(\bf{e}^{(i)}_j\right)$ 가 $E_i$ 의 표준기저라고 하자. $x_i = \sum_{j_i} c_{j_i}^{(i)}\bf{e}_{j_i}^{(i)}$ 라고 하면 
 
 $$
 \begin{aligned}
-&f(x_1+h_1,\ldots, x_k +h_k) - f(x_1,\ldots,\,x_k) \\[0.3em]
-&\quad = f(x_1,\,x_2+h_2,\ldots,\,x_k+h_k) + f(h_1,\,x_2+h_2,\ldots,\,x_k+h_k ) - f(x_1,\ldots,\,x_k)\\[0.3em]
-&\quad = 
+\|\bf{f}(x_1,\ldots,\,x_n)\| &= \left\|\bf{f}\left(\sum_{j_1} c^{(1)}_{j_1} \bf{e}^{(1)}_{j_1}, \ldots,\, \sum_{j_n} c^{(n)}_{j_n} \bf{e}^{(n)}_{j_n}\right) \right\| \\[0.3em]
+&= \sum_{j_1,\ldots,\,j_n} \left|c^{(1)}_{j_1} \cdots c^{(n)}_{j_n}\right| \bf{f}\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\\[0.3em]
+& \le \sum_{j_1,\ldots,\,j_n} \|\bf{x}_1\|\cdots \|\bf{x}_n\| \bf{f}\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\\[0.3em]
 \end{aligned}
 $$
 
+$M_0 = \max \left\{\left\| \bf{f}\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\right\|\right\}$ 라고 하자. 또한
 
+$$
+\|\bf{x}_1\|\cdots \|\bf{x}_n\| \le \|\bf{x}_1\|^n + \cdots + \|\bf{x}_1\|^n \le (\|\bf{x}_1\|^2 + \cdots + \|\bf{x}_n\|^2)^{n/2} = \|(\bf{x}_1,\ldots,\,\bf{x}_n)\|^{n}
+$$
+
+이므로 
+
+$$
+\|\bf{f}(x_1,\ldots,\,x_n)\| \le d_1 \cdots d_n M_0 \|(\bf{x}_1,\ldots,\,\bf{x}_n)\|^n
+$$
+
+이다. 즉 $M=d_1 \cdots d_n M_0 \|(\bf{x}_1,\ldots,\,\bf{x}_n)$ 로 잡으면 ($2$) 이다. $\square$
 
 :::
+
+
+문제로 돌아와서 Multilinear 의 정의에 의해
+
+$$
+\begin{aligned}
+&\bf{f}(a_1+h_1,\ldots, a_k +h_k) - \bf{f}(a_1,\ldots,\,a_k) \\[0.3em]
+&\quad = \bf{f}(a_1,\,a_2+h_2,\ldots,\,a_k+h_k) + \bf{f}(h_1,\,a_2+h_2,\ldots,\,a_k+h_k ) - \bf{f}(a_1,\ldots,\,a_k)\\[0.3em]
+&\quad = \bf{f}(a_1,\,a_2,\,a_3+h_3,\ldots,a_k+h_k) + \bf{f}(a_1,\,h_2,\,a_3+h_3,\ldots,,a_k+h_k) \\[0.3em]
+&\qquad\qquad \qquad + \bf{f}(h_1,a_2,\,a_3+h_3,\ldots,\,a_k+h_k) + \bf{f}(h_1,\,h_2,\,a_3+h_3,\ldots,\,a_k+h_k) \\[0.3em]
+&\qquad\qquad\qquad - \bf{f}(a_1,\ldots,\,a_k)
+\end{aligned}
+$$
+
+이며 이것을 계속 반복하다보면 $\bf{f}$ 의 인자로 주어지는 $k$ 개의 coordinate index 가운데 $\bf{h}$ 의 성분이 1개 있는 것부터 $k$ 개 있는 것까지의 합이 된다. 
+
+이제 주어진 $\displaystyle D\bf{f}(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k \bf{f}(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)$ 의 우변은 $\bf{f}(a_1,\ldots,\,a_k)$ 의 $k$ 개의 인자 $a_1,\ldots,\,a_k$ 가운데 하나만 $\bf{h}$ 의 해당 성분으로 바꾼 것이다. 그렇다면
+
+$$
+\lim_{\bf{h}\to \bf{0}}\dfrac{\displaystyle \left\|\bf{f}(a_1+h_1,\ldots,\,a_k+h+k) - \bf{f}(a_1,\ldots,\, a_k) - \sum_{i=1}^n \bf{f}(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\bf{h}\|}
+$$
+
+를 생각해보자. 분자의 $\| \cdots \|$ 안에는 $\bf{f}$ 의 인자 $a_1,\ldots,\,a_k$ 가운데 두개 이상을 $\bf{h}$ 의 해당 성분으로 바꾼 것만 남는다. 이제 우리가 증명한 @prp-part3_multilinear_1 에 의해 위의 극한이 $0$ 이 됨을 알 수 있다. 
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_15}
+#### Spivak 2_15
+
+$n\times n$ 행렬은 $n$ 개의 $\R^n$ 의 데카르트곱 $\R^n \times \cdots \times R^n$ 의 한 점으로 간주 할 수 있다. 이 때 행렬의 각 행은 $\R^n$ 의 원소이다.
+
+($a$) $\det:\R^n \times \cdots \times \R^n \to \R$ 이 미분가능이며
+
+$$
+D(\det) (a_1,\ldots,\,a_n) (x_1,\ldots,\,x_n) = \sum_{i=1}^n \det \begin{bmatrix} a_1 \\ \vdots  \\ x_i  \\ \vdots  \\ a_n\end{bmatrix}
+$$
+
+임을 보여라.
+
+($b$) $a_{ij}: \R \to \R$ 이 미분가능하며 $f(t) = \det (a_{ij}(t))$ 라면 다음이 성립함을 보여라.
+
+$$
+f'(t) = \sum_{j=1}^n \det \begin{bmatrix} a_{11}(t) & \cdots & a_{1n}(t) \\ \vdots & & \vdots \\ a_{j1}'(t) & \cdots & a_{jn}'(t) \\ \vdots & & \vdots \\ a_{n1}(t) & \cdots & a_{nn}(t) \end{bmatrix}
+$$
+
+($c$) 모든 $t$ 에 대해 $\det (a_{ij}(t)) \ne 0$ 이며 $b_1,\ldots,\,b_n : \R\to \R$ 이 미분가능할 때 $s_1,\ldots,s_n :\R\to \R$ 을 다음 방정식의 해라고 하자.
+
+$$
+\sum_{j=1}^n a_{ji}(t) s_j(t) = b_i(t), \qquad i=1,\ldots,\,n.
+$$
+
+이 때 $s_i$ 는 미분가능함을 보이고 $s_i'(t)$ 를 구하라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) 우리는 $n \times n$ 행렬의 행렬식이 $n$-선형 형식임을 안다. 따라서 @exr-part3_spivak_2_14 ($b$) 에 의해 주어진 식이 성립함을 안다.
+
+($b$) $f'(t) = D(\det)(a_{ij}(t))(a'_{ij}(t))$ 이므로 식시 성립한다.
+
+($c$) $[a_{ij}(t)]=\bf{A}(t)$, $[s_j(t)]=\bf{s}(t)$, $[b_i(t)]=\bf{b}(t)$ 라고 하면 주어진 방정식은 $\bf{sA}=\bf{b}$ 이다. $\det(\bf{A})\ne 0$ 이므로 역행렬이 존재하므로 방정식의 해 $\bf{s}$ 가 존재한다. $\bf{sA}=\bf{b}$ 의 양변을 미분하면
+
+$$
+\bf{s}'\bf{A}+ \bf{s}\bf{A}' = \bf{b}'
+$$
+
+이므로 
+
+$$
+\bf{s}' = (\bf{b}'-\bf{sA}')\bf{A}^{-1}
+$$
+
+이다. 
+
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_16}
+#### Spivak 2_16
+
+$\bf{f}:\R^n \to \R^n$ 이 미분가능하며 미분가능한 역함수 $\bf{f}^{-1}:\R^n \to \R^n$ 이 존재한다고 하자. 다음이 성립함을 보여라.
+
+$$
+(\bf{f}^{-1})'(\bf{a}) = \left[\bf{f}'\left(\bf{f}^{-1}(\bf{a})\right)\right]^{-1}
+$$
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\bf{f}\circ \bf{f}^{-1} = \bf{\pi}$ 이며 양변을 미분하면 $\bf{f}'(\bf{f}^{-1}(\bf{a})) (\bf{f}^{-1})'(\bf{a}) = \bf{I}_n$ 이므로 주어진 식이 성립한다. 
+:::
+
+</br>
+
+## 편미분
+
+### 편미분의 정의
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_partial_derivative}
+
+#### 편미분
+
+$f:\R^n \to \R$ 과 $\bf{a}\in \R^n$ 에 대해 아래와 같이 정의된 $D_if(\bf{a})$ 가 존재할 때 이를 $f$ 의 $\bf{a}$ 에서의 $i$ 번째 편미분이라고 한다.
+
+$$
+D_i f(\bf{a}) :=\lim_{h \to 0} \dfrac{f(a_1,\ldots,\,a_{i-1}, a_{i}+h,\, a_{i+1},\ldots,\,a_n) - f(a_1,\ldots,\,a_n)}{h}.
+$$ {#eq-part3_ith_partial_derivative}
+
+
+$D_if(\bf{a})$ 를 $\partial_i f(\bf{a})$ 혹은 $\dfrac{\partial f(\bf{a})}{\partial x_i}$ 와 같이 쓰기도 한다. 
+::: 
+:::
+
+</br>
