@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mathematical Analysis - 12&nbsp; 다변수 함수의 미분</title>
+<title>12&nbsp; 다변수 함수의 미분 – Mathematical Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -108,13 +108,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_2_differentiation_of_manifolds.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -154,7 +154,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">해석학의 기반</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -195,7 +195,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">일변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -236,7 +236,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">다변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -259,7 +259,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -303,6 +303,8 @@ window.Quarto = {
   <li><a href="#편미분" id="toc-편미분" class="nav-link" data-scroll-target="#편미분"><span class="header-section-number">12.3</span> 편미분</a>
   <ul class="collapse">
   <li><a href="#편미분의-정의" id="toc-편미분의-정의" class="nav-link" data-scroll-target="#편미분의-정의"><span class="header-section-number">12.3.1</span> 편미분의 정의</a></li>
+  <li><a href="#편미분의-기본-성질" id="toc-편미분의-기본-성질" class="nav-link" data-scroll-target="#편미분의-기본-성질"><span class="header-section-number">12.3.2</span> 편미분의 기본 성질</a></li>
+  <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -468,7 +470,7 @@ f(\boldsymbol{x}) = \left\{\begin{array}{ll} \|\boldsymbol{x}\| \cdot g\left(\df
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(h(t) = tf(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(h'(t) = f(\boldsymbol{x})\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(g=0\)</span> 이면 <span class="math inline">\(f\)</span> 는 자연스럽게 미분가능. 이제 <span class="math inline">\(g\ne 0\)</span> 임을 가정한다. <span class="math inline">\(Df(\boldsymbol{0})\)</span> 이 존재한다면 어떤 <span class="math inline">\(1 \times 2\)</span> 행렬 <span class="math inline">\(T=\begin{bmatrix} a &amp; b \end{bmatrix}\)</span> 에 대해</p>
 <p><span class="math display">\[
-\lim_{\boldsymbol{h} \to \boldsymbol{0}}\dfrac{|f(\boldsymbol{h})-f(\boldsymbol{0}) - T(\boldsymbol{h})|}{\|\boldsymbol{h}\|} = \lim_{(h,\,k) \to \boldsymbol{0}} \dfrac{|f(h,\,k) - (ah+bk)|}{\sqrt{h^2+k^2}} = 0
+\lim_{\boldsymbol{h} \to \boldsymbol{0}}\dfrac{f(\boldsymbol{h})-f(\boldsymbol{0}) - T(\boldsymbol{h})|}{\|\boldsymbol{h}\|} = \lim_{(h,\,k) \to \boldsymbol{0}} \dfrac{|f(h,\,k) - (ah+bk)|}{\sqrt{h^2+k^2}} = 0
 \]</span></p>
 <p>이어야 한다. 우선 <span class="math inline">\(h=0,\, k\to 0\)</span> 을 보면</p>
 <p><span class="math display">\[
@@ -1095,6 +1097,129 @@ D_i f(\boldsymbol{a}) :=\lim_{h \to 0} \dfrac{f(a_1,\ldots,\,a_{i-1}, a_{i}+h,\,
 </div>
 </div>
 <p><br></p>
+</section>
+<section id="편미분의-기본-성질" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="편미분의-기본-성질"><span class="header-section-number">12.3.2</span> 편미분의 기본 성질</h3>
+<p>만약 <span class="math inline">\(D_i f(\boldsymbol{x})\)</span> 가 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 존재한다면 <span class="math inline">\(D_i f\)</span> 는 <span class="math inline">\(\mathbb{R}^n \mapsto \mathbb{R}\)</span> 함수이다. 즉 <span class="math inline">\(D_i f\)</span> 에 대한 <span class="math inline">\(j\)</span> 번째 편미분이 존재 할 수 있다. 이를 <span class="math inline">\(D_j (D_i f)(\boldsymbol{x})\)</span> 혹은 <span class="math inline">\(D_jD_i f(\boldsymbol{x})\)</span> 혹은 <span class="math inline">\(D_{i,j}f\)</span> 라고 쓴다. 물론 <span class="math inline">\(\partial_j \partial_i f(\boldsymbol{x})\)</span> 나 <span class="math inline">\(\partial_{i, j}f(\boldsymbol{x})\)</span> 라고 쓸 수도 있다. 일반적으로는 아니지만 특수한 경우 <span class="math inline">\(D_iD_j f = D_j D_i f\)</span> 인데 이것이 성립하는 조건은 다음과 같다. 다만 여기에 대한 증명은 잠시 미뤄두기로 하자.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part3_exchange_of_the_order_of_partial_derivative" class="theorem">
+<p><span class="theorem-title"><strong>정리 12.3</strong></span> <span class="math inline">\(D_jD_i f\)</span> 와 <span class="math inline">\(D_j D_if\)</span> 가 <span class="math inline">\(\boldsymbol{a} \in \mathbb{R}^n\)</span> 을 포함하는 어떤 열린 집합에서 연속일 때 <span class="math inline">\(D_jD_if(\boldsymbol{a}) = D_jD_if(\boldsymbol{a})\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<p><span class="math inline">\(D_iD_jf\)</span> 와 같이 두번 편미분 한 것을 <strong>2 계 편미분(2nd-order partial derivative)</strong> 이라고 한다. 비슷한 방법으로 <span class="math inline">\(n\)</span> 계 편미분을 정의할 수 있다. 우리는 미분가능한 1변수 함수 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(a\in \mathbb{R}\)</span> 에서 극값을 가지면 <span class="math inline">\(f'(a)=0\)</span> 임을 알고 있다. 이와 비슷한 것이 편미분에 대해서도 성립한다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part3_extrema_and_partial_derivative" class="theorem">
+<p><span class="theorem-title"><strong>정리 12.4</strong></span> <span class="math inline">\(f : A \subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \text{int}(A)\)</span> 에서 극값을 갖고 <span class="math inline">\(D_i f\)</span> 가 <span class="math inline">\(A\)</span> 에서 존재한다면 <span class="math inline">\(D_i f(\boldsymbol{a})=0\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(g_i(x) = f(a_1,\ldots,\,a_{i-1},\,x.,\,a_{i+1},\ldots,\,a_n)\)</span> 이라고 하자. <span class="math inline">\(g_i(x)\)</span> 는 <span class="math inline">\(a_i\)</span> 에서 극값을 가지며 따라서 <span class="math inline">\(g_i'(a_i) = 0\)</span> 이다. 이는 <span class="math inline">\(D_i f(\boldsymbol{a})=0\)</span> 과 같다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="연습문제-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.17 (Spivak 2_17)</strong></span> 다음 함수의 편미분을 구하라.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f(x,\,y,\,z) = x^y\)</span>.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(f(x,\,y,\,z) = z\)</span>.</p>
+<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x,\,y) = \sin (x \sin y)\)</span>.</p>
+<p> (<span class="math inline">\(d\)</span>) <span class="math inline">\(f(x,\,y,\,z) = \sin (x \sin (y \sin z))\)</span>.</p>
+<p> (<span class="math inline">\(e\)</span>) <span class="math inline">\(f(x,\,y,\,z) = x^{y^z}\)</span>.</p>
+<p> (<span class="math inline">\(f\)</span>) <span class="math inline">\(f(x,\,y,\,z) = x^{y+z}\)</span>.</p>
+<p> (<span class="math inline">\(g\)</span>) <span class="math inline">\(f(x,\,y,\,z) = (x+y)^z\)</span>.</p>
+<p> (<span class="math inline">\(h\)</span>) <span class="math inline">\(f(x,\,y) = \sin (xy)\)</span>.</p>
+<p> (<span class="math inline">\(i\)</span>) <span class="math inline">\(f(x,\,y) = (\sin (xy))^{\cos 8}\)</span>.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_18" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.18 (Spivak 2_18)</strong></span> <span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 이 연속일 때 다음 함수의 편미분을 구하라</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(\displaystyle f(x,\,y) = \int_{a}^{x+y} g\)</span>.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(\displaystyle f(x,\,y) = \int_y^x g\)</span>.</p>
+<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(\displaystyle f(x,\,y) = \int_a^{xy}g\)</span>.</p>
+<p> (<span class="math inline">\(d\)</span>) <span class="math inline">\(\displaystyle f(x,\,y) = \int_a^{\displaystyle \int_b^y g} g\)</span>.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(G(t) = \int_0^t g\)</span> 라고 하자. <span class="math inline">\(g\)</span> 가 연속이므로 <span class="math inline">\(G(t)\)</span> 는 항상 존재하며 <span class="math inline">\(G'(t) = g(t)\)</span> 이다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(f(x,\,y) = G(x+y)-G(a)\)</span> 이므로, <span class="math inline">\(D_1 f(x,\,y)= D_2 f(x,\,y) =  g(x+y)\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f(x,\,y) = G(x)-G(y)\)</span> 이므로 <span class="math inline">\(D_1 f(x,\,y) = g(x)\)</span>, <span class="math inline">\(D_2 f(x,\,y)= -g(y)\)</span> 이다.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x,\,y) = G(xy)- G(a)\)</span> 이므로 <span class="math inline">\(D_1 f(x,\,y)= y g(xy)\)</span>, <span class="math inline">\(D_2 f(x,\,y) = xg(xy)\)</span> 이다.</p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(f(x,\,y) = G\left(\int_b^y g\right) - G(a)\)</span> 이므로 <span class="math inline">\(D_1f(x,\,y)=0\)</span>, <span class="math inline">\(D_2f(x,\,y) = g(y) g\left(\int_b^y g\right)\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_19" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.19 (Spivak 2_19)</strong></span> <span class="math inline">\(f(x,\,y) = x^{x^{x^y}} + (\log x) (\arctan (\arctan (\arctan (\sin (\cos xy)- \log (x+y)))))\)</span> 일 때 <span class="math inline">\(D_2 f(1,\,y)\)</span> 를 구하라</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g(x,\,y) =  (\arctan (\arctan (\arctan (\sin (\cos xy)- \log (x+y)))))\)</span> 라고 하자.</p>
+<p><span class="math display">\[
+D_2f(x,\,y)= \log \left(x^{x^x}\right) x^{x^{x^y}} + \log (x) D_2g(x,\,y)
+\]</span></p>
+<p>이므로 <span class="math inline">\(D_2 f(1,\,y) = 0\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_20" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.20 (Spivak 2_20)</strong></span> <span class="math inline">\(f\)</span> 의 편미분을 <span class="math inline">\(g\)</span> 와 <span class="math inline">\(h\)</span> 의 미분을 이용하여 구하라.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f(x,\,y) = g(x)h(y)\)</span>.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(f(x,\,y) = g(x)^{h(y)}\)</span>.</p>
+<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x,\,y) = g(x)\)</span>.</p>
+<p> (<span class="math inline">\(d\)</span>) <span class="math inline">\(f(x,\,y) = g(y)\)</span>.</p>
+<p> (<span class="math inline">\(e\)</span>) <span class="math inline">\(f(x,\,y) = g(x+y)\)</span>.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(D_1 f(x,\,y) =  g'(x)h(y)\)</span>, <span class="math inline">\(D_2f(x,\,y) = g(x)h'(y)\)</span>.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(D_1 f(x,\,y) = g'(x) g(x)^{h(y)-1}\)</span>, <span class="math inline">\(D_2 f(x,\,y) =  h'(y)\log (g(x)) g(x)^{h(y)}\)</span>.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(D_1 f(x,\,y) = g'(x)\)</span>, <span class="math inline">\(D_2f(x,\,y)=0\)</span>.</p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(D_1 f(x,\,y) = 0\)</span>, <span class="math inline">\(D_2f(x,\,y)=g'(y)\)</span>.</p>
+<p>(<span class="math inline">\(e\)</span>) <span class="math inline">\(D_1 f(x,\,y) = g'(x+y) = D_2 f(x,\,y)\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_21" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.21 (Spivak 2_21)</strong></span> <span class="math inline">\(g_1,\,g_2 :\mathbb{R}^2 \to \mathbb{R}\)</span> 이 연속이다. <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+f(x,\,y) = \int_0^x g_1(t,\,0)\, dt + \int_0^y g_2(x,\,t)\, dt.
+\]</span></p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(D_2 f(x,\,y) = g_2(x,\,y)\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(D_1 f(x,\,y)= g_1(x,\,y)\)</span> 가 되려면 <span class="math inline">\(f\)</span> 는 어떻게 정의되어야 하는가?</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(D_1f(x,\,y)=x\)</span>, <span class="math inline">\(D_2f(x,\,y) = y\)</span> 인 <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 을 찾아라. <span class="math inline">\(D_1f(x,\,y) = y\)</span>, <span class="math inline">\(D_2 f(x,\,y)= x\)</span> 인 <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 을 찾아라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(G_1(x) := \int_0^x g_1(t,0)\, dt\)</span>, <span class="math inline">\(G_2(x,\,y) := \int_0^y g_2(x,\,y)\, dt\)</span> 라고 하자. <span class="math inline">\(f(x,\,y)= G_1(x) +G_2(x,\,y)\)</span> 이며 <span class="math inline">\(G_1'(x) = g_1(x,\,0)\)</span>, <span class="math inline">\(D_2 G_2(x,\,y) = g_2(x,\,y)\)</span> 이다. 따라서 <span class="math inline">\(D_2 f(x,\,y)= g_2(x,\,y)\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f(x,\,y) = \int_0^x g_1(t,\,y)\, dt\)</span> 이면 <span class="math inline">\(D_1 f(x,\,y) = g_1(x,\,y)\)</span> 이다.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x) = \dfrac{1}{2}x^2+ \dfrac{1}{2}y^2 +c\)</span> d이면 <span class="math inline">\(D_1f(x,\,y)=x,\, D_2f(x,\,y)=y\)</span>. <span class="math inline">\(f(x,\,y) = xy\)</span> 이면 <span class="math inline">\(D_1f(x,\,y) = y\)</span>, <span class="math inline">\(D_2 f(x,\,y)=x\)</span>.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_22" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.22 (Spivak 2_22)</strong></span> <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(D_2f=0\)</span> 일 때 <span class="math inline">\(f\)</span> 는 두번째 변수에 독립임을 보여라. <span class="math inline">\(D_1f = D_2f=0\)</span> 이면 <span class="math inline">\(f\)</span> 는 상수임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(D_2 f\)</span> 가 일단 존재하므로 <span class="math inline">\(f\)</span> 는 미분 가능이며 따라서 연속이다. 고정된 <span class="math inline">\(x=x_0\)</span> 에 대해 <span class="math inline">\(g(y) = f(x_0,\,y)\)</span> 라고 하면 <span class="math inline">\(D_2f(x_0,\,y) = g'(y)\)</span> 이며 따라서 <span class="math inline">\(g\)</span> 는 미분가능하다. 중간값 정리에 의해 <span class="math inline">\(g(y_2)-g(y_1) = g'(c)(y_2-y_1)\)</span> 인 <span class="math inline">\(c\)</span> 가 <span class="math inline">\(y_1\)</span> 과 <span class="math inline">\(y_2\)</span> 사이에 있으야 하는데 <span class="math inline">\(g'(c) = 0\)</span> 이므로 <span class="math inline">\(g(y_1) = g(y_2)\)</span> 이다. 즉 <span class="math inline">\(g\)</span> 는 상수함수이며 <span class="math inline">\(f(x,\,y)\)</span> 는 <span class="math inline">\(y\)</span> 값에 무관하게 <span class="math inline">\(x\)</span> 에 의해서만 정해진다. 따라서 <span class="math inline">\(f\)</span> 는 두번째 변수에 대해 독립이다.</p>
+<p><span class="math inline">\(D_1 f = D_2f = 0\)</span> 이라면 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x,\,y\)</span> 값 모두에 대해 독립이므로 <span class="math inline">\(f\)</span> 는 상수이다.</p>
+</div>
 
 
 </section>
@@ -1136,18 +1261,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1179,7 +1293,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
@@ -1187,7 +1323,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
