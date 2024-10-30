@@ -550,15 +550,15 @@ $$
 
 </br>
 
-### 다변수 함수 미분의 기분 성질 {#sec-part3_basic_properties_of_derivative_of_multivariable_functions}
+### 다변수 함수 미분의 기본 성질 {#sec-part3_basic_properties_of_derivative_of_multivariable_functions}
 
 </br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_basic_properties_of_derivative_of_multivariable_functions}
+::: {#thm-part3_basic_properties_of_derivative_of_multivariable_functions}
 
-$\bf{f}:\R^n \to \R^m$, $\bf{f}(\bf{x}) = (f_1(\bf{x}),\ldots,\, f_m(\bf{x}))$ 이라고 하자.
+$\bf{f}:\R^n \to \R^m$, $\bf{f}(\bf{x}) = \begin{bmatrix}f_1(\bf{x}) &\cdots & f_m(\bf{x})\end{bmatrix}^T$ 이라고 하자.
 
 ($1$) $\bf{f}$ 가 상수함수이면 모든 $\bf{x}\in \R^n$ 에 대해 $D\bf{f}(\bf{x}) = \bf{0}$ 이다.
 
@@ -567,7 +567,7 @@ $\bf{f}:\R^n \to \R^m$, $\bf{f}(\bf{x}) = (f_1(\bf{x}),\ldots,\, f_m(\bf{x}))$ �
 ($3$) $\bf{f}$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능한 것이며 
 
 $$
-\bf{f}'(\bf{a}) = (f_1'(\bf{a}),\ldots,\, f_m'(\bf{a}))
+\bf{f}'(\bf{a}) = \begin{bmatrix} f_1'(\bf{a}) & \cdots &f_m'(\bf{a})\end{bmatrix}^T
 $$
 
 이다. 따라서 $\bf{f}'(\bf{a})\in \mathcal{M}_{m \times n}(\R)$ 이며 $i$ 번째 열은 $(f_i)'(\bf{a})$ 이다.
@@ -583,9 +583,9 @@ $$
 
 ::: {.proof}
 
-($1$)  $\|\bf{f}(\bf{x}+\bf{h})- \bf{f}(\bf{x})\|=0$ 이다. 
+($1$) $\bf{f}$ 가 상수함수이면 $\|\bf{f}(\bf{x}+\bf{h})- \bf{f}(\bf{x})\|=0$ 이다. 
 
-($2$) $\|\bf{f}(\bf{x}+\bf{h})- \bf{f}(\bf{x})- \bf{f}(\bf{h})\| = 0$ 이다. 
+($2$) $\bf{f}$ 가 선형사상이면 $\|\bf{f}(\bf{x}+\bf{h})- \bf{f}(\bf{x})- \bf{f}(\bf{h})\| = 0$ 이다. 
 
 ($3$) 우선 $f_i'(\bf{a})$ 는 $1 \times n$ 행렬, 즉 열행렬임을 안다. $1 \times n$ 열행렬 $\bf{a}_1,\ldots,\, \bf{a}_m$ 에 대해 
 
@@ -1385,7 +1385,6 @@ $$
 
 :::
 
-
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1404,3 +1403,297 @@ $D_2 f$ 가 일단 존재하므로 $f$ 는 미분 가능이며 따라서 연속�
 
 $D_1 f = D_2f = 0$ 이라면 $f$ 가 $x,\,y$ 값 모두에 대해 독립이므로 $f$ 는 상수이다.
 :::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_23}
+#### Spivak 2_23
+
+$A=\{(x,\,y) \subset \R^2 : x<0,\text{ or } x\ge 0 \text{ and } y\ne 0\}$ 에 대해 다음을 보여라.
+
+($a$) $f:A \to \R$ 이며 $D_1f = D_2 f = 0$ 이면 $f$ 는 상수이다.
+
+($b$) $f:A\to \R$ 이며 $D_2 f = 0$ 이지만 $f$ 가 두번째 변수에 독립적이지 않은 함수를 찾아라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $A$ 의 임의의 두 점 $(x_1,\,y_1)$ 과 $(x_2,\,y_2)$ 는 $x$ 축 혹은 $y$ 축과 평행한 선분으로 연결된다. 이 선분을 따라 두 편미분 값이 모두 같으므로 $D_1 f=D_2f=0$ 이면 $f$ 는 상수이다.
+
+($b$) 아래의 함수는 $Df_2 = 0$ 이지만 $y$ 에 의존한다. 
+
+$$
+f(x) = \left\{\begin{array}{ll} 0,\qquad & x < 0,\\ x & x\ge 0,\text{ and } y>0 \\ -x & x\ge 0 \text{ and } y < 0 \end{array} \right.
+$$
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_24}
+#### Spivak 2_24
+
+$f:\R^2 \to \R$ 이 아래와 같이 정의되었다.
+
+$$
+f(x,\,y) = \left\{\begin{array}{ll} xy\dfrac{x^2-y^2}{x^2+y^2},\qquad & (x,\,y) = 0, \\ 0 & (x,\,y) = (0,\,0).\end{array}\right.
+$$
+
+($a$) 모든 $x$ 에 대해 $D_2 f(x,\,0) = x$ 이며 모든 $y$ 에 대해 $D_1 f(0,\,y)=-y$ 임을 보여라.
+
+($b$) $D_{1,2}f(0,\,0) \ne  D_{2,\,1}f(0,\,0)$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) 
+
+$$
+\begin{aligned}
+D_2f(x,\,0) &= \lim_{h \to 0}\dfrac{1}{h}\dfrac{xh(x^2-h^2)}{x^2+h^2} = x, \\
+D_1f(0,\,y) &= \lim_{k \to 0} \dfrac{1}{k} \dfrac{ky(k^2-y^2)}{k^2+y^2} = -y.
+\end{aligned}
+$$
+
+($b$) ($a$) 로부터 $D_{1,\,2}f(0,\,0) =  -1$, $D_{2,\,1}f(0,\,0) = 1$ 
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_25}
+#### Spivak 2_25
+
+$f:\R \to \R$ 을 아래와 같이 정의한다.
+
+$$
+f(x) = \left\{\begin{array}{ll} e^{-x^{-2}},\qquad & x\ne 0, \\ 0 & x = 0\end{array}\right.
+$$
+
+$f$ 가 $C^\infty$ 급 함수임을 보이고 모든 $i$ 에 대해 $f^{(i)}(0)= 0$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$f'(x) = \dfrac{2}{x^3}e^{-1/x^2}$ 이다. 다항식 $p(x)$ 에 대해
+
+$$
+\dfrac{d}{dx}\left[p\left(\dfrac{1}{x}\right) e^{-1/x^2}\right] = - \dfrac{1}{x^2}p'\left(\dfrac{1}{x}\right) e^{-1/x^2} + \dfrac{2}{x^3}\,p\left(\dfrac{1}{x}\right) e^{-1/x^2}
+$$
+
+이므로 어떤 다항식 $q(x)$ 에 대해 $q(1/x)e^{-1/x^2}$ 꼴이다. $f'(x)$ 가 이 형태이므로 우리는 $f^{(i)}$ 가 $p(1/x)e^{-1/x^2}$ 꼴임을 알 수 있다. 이제 임의의 자연수 $n$ 과 $m>n/2$ 인 자연수 $m$ 을 생각하자. 테일러 정리 에 의해 $e^{1/x^2} > 1 + \cdots + 1/(m!x^{2m})$ 이므로 
+
+$$
+\lim_{x \to 0} x^n e^{1/x^2}  \ge \lim_{x \to 0} x^n + \cdots + \dfrac{1}{m!}x^{-2m+n} = \infty
+$$
+
+임을 알 수 있다. 즉 임의의 자연수 $n$ 에 대해 
+
+$$
+\lim_{x \to 0}\dfrac{e^{-1/x^2}}{x^n} = \lim_{x \to 0}\dfrac{1}{x^n e^{1/x^2}} = 0
+$$
+
+이이다. 따라서 $f^{(i)}(0)=0$ 이다. $f\in C^\infty$ 인 것은 자연스럽게 알 수 있다.
+
+:::
+
+
+</br>
+
+## 다변수 벡터 함수의 미분
+
+### 다변수 벡터함수의 미분과 편미분 {#sec-part3_derivative_and_partial_derivatives_of_multivariable_vector_valued_function}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_derivative_and_partial_derivative_1}
+
+#### 다변수 벡터함수의 미분과 편미분 1
+
+$\bf{f}:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 각각의 $1 \le i \le m,\, 1 \le j \le n$ 에 대해 $D_jf_i(\bf{a})$ 가 존재하며, $\bf{f}'(\bf{a})$ 는 $m\times n$ 행렬로 $D_jf_i(\bf{a})$ 를 $i$ 행 $j$ 열 성분으로 가진다. 즉
+
+$$
+\bf{f}'(\bf{a}) = \begin{bmatrix} D_1f_1(\bf{a}) & \cdots & D_nf_1(\bf{a})\\ \vdots & & \vdots \\ D_1 f_m(\bf{a}) & \cdots & D_n f_m(\bf{a}) \end{bmatrix}
+$$ 
+
+이다.
+::: 
+
+</div></br>
+
+::: {.proof}
+
+@thm-part3_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $\bf{h}:\R \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
+
+$$
+\bf{h}(\bf{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
+$$
+
+이다. 그렇다면 $D_j f_i(\bf{a}) = (f_i \circ \bf{h})'(a_j) = f_i'(\bf{a}) \cdot \bf{h}'(a_j) =f'_i(\bf{a})\cdot \bf{e}_j= (f'_i(\bf{a}))_j$ 이다. 따라서 
+
+$$
+f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}
+$$
+
+이다. $\square$
+
+:::
+
+</br>
+
+즉 우리는 $\bf{f}:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능할경우 $\bf{f}'(\bf{a})$ 를 $D_jf_i(\bf{a})$ 로 표현 가능하다는 것을 알았다. 그러나 그 역은 성립하지 않는데 $\bf{a}$ 에 대해 $\bf{f}$ 의 모든 편미분이 존재하더라도 $\bf{f}$ 가 미분가능하지 않을 수 있다. 여기에는 하나의 조건이 더 필요하다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_derivative_and_partial_derivative_2}
+
+#### 다변수 벡터함수의 미분과 편미분 2
+
+$\bf{f}:\R^n \to \R^m$ 에 대해 $\bf{a}$ 를 포함하는 어떤 열린 공간에서 $D_jf_i(\bf{a})$ 가 존재하며 연속이면 $\bf{f}$ 는 $\bf{a}$ 에서 미분가능하다.
+::: 
+
+</div></br>
+
+::: {.proof}
+
+$f_i = \pi_i\circ \bf{f}$ 라고 하자. 또한 $\bf{a}$ 를 포함하는 위의 조건을 만족하는 열린 공간에서만 생각한다. 
+
+$$
+\begin{aligned}
+f_i(\bf{a}+\bf{h})-f_i(\bf{a}) &= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
+&\quad + f_i(a_1+h_1, a_2+h_2,a_3,\ldots,\,a_n) - f_i(a_1+h_1,a_2,\ldots,\,a_n) \\[0.3em]
+&\quad + \qquad \qquad \vdots \\[0.3em]
+&\quad + f_i(a_1+h+1, \ldots,a_n+h_n) - f_i(a_1+h_1,\ldots,a_{n-1}+h_{n-1},a_n)
+\end{aligned}
+$$
+
+이다. 평균값정리를 이용하면 $j=1,\ldots,\,n$ 에 대해 
+
+$$
+\begin{aligned}
+f_i(a_1+h_1,\ldots,\,a_{j}+h_j,\,a_{j+1},\ldots,\,a_n) &- f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
+&= h_j D_j f_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
+\end{aligned}
+$$
+
+을 만족하는 $b_j$ 가 $a_j$ 와 $a_j+h_j$ 사이에 존재한다. 즉 이 $b_1,\ldots,\,b_n$ 에 대해 
+
+$$
+f_i(\bf{a}+\bf{h})-f_i(\bf{a}) = \sum_{j=1}^n h_jD_jf_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
+$$
+
+이다. 이제 $\bf{c}_j =(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)$ 라고 하자. 
+
+$$
+\begin{aligned}
+&\left\|\bf{f}(\bf{a}+\bf{h})-\bf{f}(\bf{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\bf{a}) \cdot h_j\right\| \\[0.3em] 
+&\qquad \qquad \qquad=\sum_{i=1}^m \left| f_i(\bf{a}+\bf{h})-f_i(\bf{a}) - \sum_{j=1}^n D_j f_i(\bf{a}) h_j\right| \\[0.3em]
+&\qquad \qquad \qquad=\sum_{i=1}^m \left| \sum_{j=1}^n D_j f_i(\bf{c}_j) h_j- D_j f_i (\bf{a})h_j \right| \\[0.3em]
+&\qquad \qquad \qquad\le \sum_{i=1}^m \sum_{j=1}^n \left|D_j f_i(\bf{c}_j) - D_j f_i (\bf{a})\right||h_j|
+\end{aligned}
+$$
+
+이다. $|h_j|\le \|\bf{h}\|$ 임을 이용하면
+
+$$
+\lim_{\bf{h}\to \bf{0}} \dfrac{\displaystyle \left\|\bf{f}(\bf{a}+\bf{h})-\bf{f}(\bf{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\bf{a}) \cdot h_j\right\| }{\|\bf{h}\|} \le \lim_{\bf{h}\to \bf{0}}\sum_{i=1}^m \sum_{j=1}^n\left|D_j f_i(\bf{c}_j) - D_j f_i (\bf{a})\right| = 0
+$$
+
+이며 $\bf{h}\to \bf{0}$ 이면 $\bf{c}_j \to \bf{a}$ 이며 $\bf{a}$ 에서 연속이므로 위의 극한이 $0$ 임을 알 수 있다. $\square$
+
+:::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_chain_rule_for_multivariable_vector_valued_function}
+
+#### 다변수 벡터함수의 연쇄 규칙
+
+$\bf{g}:\R^n \to \R^m$ 이 $C^1$ 급 함수이고 $\bf{f}:\R^m \to \R^p$ 이 $\bf{g}(\bf{a})$ 에서 미분가능 할 때 다음이 성립한다.
+
+$$
+D(\bf{f} \circ \bf{g})(\bf{a}) = D\bf{f}(\bf{g})\cdot D\bf{g}(\bf{a})
+$$
+
+
+
+::: 
+
+</div></br>
+
+### 연습문제 {.unnumbered}
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_28}
+#### Spivak 2_28
+
+다음 함수의 편미분을 구하라.
+
+&emsp;($a$) $F(x,\,y) = f(g(x)k(y),\, g(x)+h(y))$.
+
+&emsp;($b$) $F(x,\,y,\,z) = f(g(x+y),\, h(y+z))$.
+
+&emsp;($c$) $F(x,\,y,\,z) = f(x^y,\, y^z,\,z^x)$.
+
+&emsp;($d$) $F(x,\,y,\,z) = f(x,\,g(x),\, h(x,\,y))$.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $p(x,\,y) = g(x)k(y),\,q(x,\,y) = g(x)+h(y)$ 라고 놓으면
+
+$$
+\begin{aligned}
+D_1F (x,\,y) &= g'(x) k(y) D_1 f(p(x,\,y),\,q(x,\,y)) + g'(x)D_2 f(p(x,\,y),\,q(x,\,y)), \\[0.3em]
+D_2F(x,\,y) &= g(x)k'(y) D_1 f(p(x,\,y),\,q(x,\,y)) + h'(y) D_2 f(p(x,\,y),\,q(x,\,y)).
+\end{aligned}
+$$
+
+($b$) $D_1F(x,\,y)= g'(x+y) D_1 f(g(x+y),\, h(y+z))$, $D_2F(x,\,y) = g'(x+y)D_1f(g(x,\,y),\,h(y,\,z)) + h'(y+z)D_2f(g(x,\,y),\,h(y+z))$, $D_3F(x,\,y,\,z) = h'(y+z)D_2f(g(x+y),\, h(y+z))$.
+
+($c$) $D_1F(x,\,y,\,z) = x^{y-1}D_1 f(x^y,\, y^z,\,z^x) + (\ln z) z^x D_3 f(x^y,\, y^z,\,z^x)$ 이며 나머지도 같은 방법으로 ...
+
+($d$) $D_1F(x,\,y,\,z) = D_1f(x,\,g(x),\,h(x,\,y)) + g'(x)D_2f(x,\,g(x),\,h(x,\,y)) + D_1h(x,\,y) D_3f(x,\,g(x),\,h(x,\,y))$, $D_2F(x,\,y,\,z) = D_2h(x,\,y)D_3f(x,\,g(x),\,h(x,\,y))$
+
+:::
+
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_29}
+#### Spivak 2_29
+
+$f:\R^n \to \R$ 과 $\bf{x}\in \R^n$ 에 대해 
+
+$$
+\lim_{t \to 0} \dfrac{f(\bf{a}+t\bf{x}) - f(\bf{a})}{t}
+$$
+
+가 존재할 때 $D_\bf{x}f(\bf{a})$ 라 쓰고 $f$ 의 $\bf{a}$ 에서의 $\bf{x}$ 방향의 방향미분이라고 한다. 
+
+&emsp;($a$) $D_{\bf{e}_i} f(\bf{a}) = D_i f(\bf{a})$ 임을 보여라.
+
+&emsp;($b$) $D_{t\bf{x}} f(\bf{a}) = tD_\bf{x}f(\bf{a})$ 임을 보여라.
+
+&emsp;($c$) $f$ 가 $\bf{a}$ 에서 미분가능하면 $D_\bf{x}f(\bf{a}) = Df(\bf{a})(\bf{x})$ 이며, 따라서 $D_{\bf{x}+\bf{y}}f(\bf{a}) = D_\bf{x}f(\bf{a})+ D_{\bf{y}}f(\bf{a})$ 임을 보여라.
+
+:::
+
+</div></br>
