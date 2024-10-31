@@ -18,7 +18,11 @@ crossref:
 
 $\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
 
-두 벡터의 일반적인 내적은 $\langle \bf{x},\, \bf{y}\rangle$ 라고 쓰며 유클리드 내적은 $\bf{x}^T\bf{\cdot y}$ 라고 쓴다. 
+두 벡터의 일반적인 내적은 $\langle \bf{x},\, \bf{y}\rangle$ 라고 쓰며 유클리드 내적은 $\bf{x}^T\bf{\cdot y}$ 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.
+
+벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. $F:\R^n \to \R^m$ 혹은 $\bf{f}:\R^n \to \R^m$ 과 같이 사용한다. $\mathcal{L}(R^m,\,R^n)$ 은 $\R^m \mapsto \R^n$ 선형사상의 집합이다.
+
+
 
 <br>
 
@@ -557,11 +561,13 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 #### 성분 함수
 
-함수 $\bf{f}:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f_i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $\bf{f}(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots & f_m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\bf{x}) \\ \vdots \\ f_m(\bf{x}) \end{bmatrix}$ 와 같이 열벡터로 표기한다.
+함수 $F:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f_i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots & f_m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\bf{x}) \\ \vdots \\ f_m(\bf{x}) \end{bmatrix}$ 와 같이 열벡터로 표기한다.
 
 :::
 :::
 
+
+벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 $F:\R^n \to \R^m$ 나 $\bf{f}:\R^n \to \R^m$ 에 대해 $f_i$ 는 성분함수이다.
 
 </br>
 
@@ -587,7 +593,7 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 ($2$) 사영함수 $\pi_i :\R^n \to \R$ 역시 선형사상이며 표준기저 $\bf{e}_i$ 에 대해 $\pi_i (\bf{x}) = \bf{e}_i^T \bf{\cdot x}$ 이다.  
 
-($3$) $\bf{f} = \begin{bmatrix} f_1 & \cdots & f_m\end{bmatrix}^T$ 일 때 $f_i = \pi_i (\bf{f})$ 이다.
+($3$) $F = \begin{bmatrix} f_1 & \cdots & f_m\end{bmatrix}^T$ 일 때 $f_i = \pi_i (F)$ 이다.
 
 :::
 
@@ -694,10 +700,10 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 �
 ::: {#exr-part3_spivak_1_23}
 #### Spivak 1.23
 
-$\bf{f}:A \subset \R^n \to \R^m$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
+$F:A \subset \R^n \to \R^m$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
 
 $$
-\displaystyle \lim_{\bf{x}\to \bf{a}} \bf{f}(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\bf{x}\to \bf{a}} f_i(\bf{x}) = b_i
+\displaystyle \lim_{\bf{x}\to \bf{a}} F(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\bf{x}\to \bf{a}} f_i(\bf{x}) = b_i
 $$
 
 :::
@@ -707,13 +713,13 @@ $$
 
 ::: {.solution}
 
-($\implies$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies \|\bf{f}(\bf{x})-\bf{b}\|<\varepsilon$ 인 $\delta>0$ 이 존재한다. $|f_i(\bf{x})-b_i|\le\|f(\bf{x})-\bf{b}\|$ 이므로 성립한다. 
+($\implies$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies \|F(\bf{x})-\bf{b}\|<\varepsilon$ 인 $\delta>0$ 이 존재한다. $|f_i(\bf{x})-b_i|\le\|f(\bf{x})-\bf{b}\|$ 이므로 성립한다. 
 
 
 ($\impliedby$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies |f_i(\bf{x})-b_i|<\varepsilon/m$ 인 $\delta>0$ 이 존재한다. 그렇다면.
 
 $$
-\|\bf{f}(\bf{x})-\bf{b}\| \le \sum_{i=1}^m |f_i(\bf{x})-b_i| < m \cdot \dfrac{\varepsilon}{m} = \varepsilon
+\|F(\bf{x})-\bf{b}\| \le \sum_{i=1}^m |f_i(\bf{x})-b_i| < m \cdot \dfrac{\varepsilon}{m} = \varepsilon
 $$
 
 이므로 성립한다.
@@ -725,14 +731,14 @@ $$
 ::: {#exr-part3_spivak_1_24}
 #### Spivak 1.24
 
-$f:A\subset \R^n \to \R^m$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 연속인 것임을 보여라.
+$F:A\subset \R^n \to \R^m$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 연속인 것임을 보여라.
 
 :::
 
 </div></br>
 
 ::: {.solution}
-$\bf{b}$ 를 $\bf{f}(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한다. 
+$\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한다. 
 :::
 
 

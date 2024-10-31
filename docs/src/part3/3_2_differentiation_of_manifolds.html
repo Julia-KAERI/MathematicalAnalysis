@@ -311,6 +311,7 @@ window.Quarto = {
   <li><a href="#sec-part3_derivative_and_partial_derivatives_of_multivariable_vector_valued_function" id="toc-sec-part3_derivative_and_partial_derivatives_of_multivariable_vector_valued_function" class="nav-link" data-scroll-target="#sec-part3_derivative_and_partial_derivatives_of_multivariable_vector_valued_function"><span class="header-section-number">12.4.1</span> 다변수 벡터함수의 미분과 편미분</a></li>
   <li><a href="#연습문제-3" id="toc-연습문제-3" class="nav-link" data-scroll-target="#연습문제-3">연습문제</a></li>
   </ul></li>
+  <li><a href="#역함수-정리" id="toc-역함수-정리" class="nav-link" data-scroll-target="#역함수-정리"><span class="header-section-number">12.5</span> 역함수 정리</a></li>
   </ul>
 </nav>
     </div>
@@ -336,6 +337,13 @@ window.Quarto = {
 </header>
 
 
+<!-- ---
+title: "다변수 함수의 미분"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+--- -->
 <div class="hidden">
 <p>% %</p>
 %
@@ -363,30 +371,30 @@ y_i = (T(\boldsymbol{x}))_i = \sum_{i=1}^m [T]_{ij}x_j
 </div>
 <div class="callout-body-container">
 <div id="def-part3_differentiation_of_multivariable_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 12.1 (다변수 함수의 미분)</strong></span> 함수 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n\to \mathbb{R}^m\)</span> 와 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에 대해 어떤 선형변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정의 12.1 (다변수 함수의 미분)</strong></span> 함수 <span class="math inline">\(F:\mathbb{R}^n\to \mathbb{R}^m\)</span> 와 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에 대해 어떤 선형변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 존재하여</p>
 <p><span id="eq-part3_derivative_of_vector_function"><span class="math display">\[
-\lim_{\boldsymbol{h} \to \boldsymbol{0}} \dfrac{\|\boldsymbol{f}(\boldsymbol{a}+\boldsymbol{h}) - \boldsymbol{f}(\boldsymbol{a}) - T(\boldsymbol{h})\|}{\|\boldsymbol{h}\|} = 0
+\lim_{\boldsymbol{h} \to \boldsymbol{0}} \dfrac{\|F(\boldsymbol{a}+\boldsymbol{h}) - F(\boldsymbol{a}) - T(\boldsymbol{h})\|}{\|\boldsymbol{h}\|} = 0
 \tag{12.1}\]</span></span></p>
-<p>일 때 <span class="math inline">\(\boldsymbol{f}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다 라고 하며 <span class="math inline">\(T\)</span> 를 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{a})\)</span> 라고 쓴다.</p>
+<p>일 때 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다 라고 하며 <span class="math inline">\(T\)</span> 를 <span class="math inline">\(DF(\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 라고 쓴다.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>즉 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{a}) \in \mathcal{M}_{m \times n}(\mathbb{R})\)</span> 이다.</p>
+<p>즉 <span class="math inline">\(DF(\boldsymbol{a}) \in \mathcal{M}_{m \times n}(\mathbb{R})\)</span> 이다.</p>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_uniqueness_of_derivative" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.1</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능하다면 <a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 를 만족하는 선형변환은 유일하다.</p>
+<p><span class="theorem-title"><strong>정리 12.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능하다면 <a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 를 만족하는 선형변환은 유일하다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(T,\, L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이 <a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 를 만족한다고 하자. 그리고 <span class="math inline">\(\boldsymbol{d}(\boldsymbol{h}) = \boldsymbol{f}(\boldsymbol{x}-\boldsymbol{a})-\boldsymbol{f}(\boldsymbol{a})\)</span> 라고 하자.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(T,\, L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이 <a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 를 만족한다고 하자. 그리고 <span class="math inline">\(D(\boldsymbol{h}) = F(\boldsymbol{x}-\boldsymbol{a})-F(\boldsymbol{a})\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\|T(\boldsymbol{h})-L(\boldsymbol{h})\| &amp;= \|T(\boldsymbol{h})-\boldsymbol{d}(\boldsymbol{h}) + \boldsymbol{d}(\boldsymbol{h})- L(\boldsymbol{h})\| \\[0.3em]
-&amp;\le \|T(\boldsymbol{h})-\boldsymbol{d}(\boldsymbol{h}) \| + \|L(\boldsymbol{h})- \boldsymbol{d}(\boldsymbol{h})\|
+\|T(\boldsymbol{h})-L(\boldsymbol{h})\| &amp;= \|T(\boldsymbol{h})-D(\boldsymbol{h}) + D(\boldsymbol{h})- L(\boldsymbol{h})\| \\[0.3em]
+&amp;\le \|T(\boldsymbol{h})-D(\boldsymbol{h}) \| + \|L(\boldsymbol{h})- D(\boldsymbol{h})\|
 \end{aligned}
 \]</span></p>
 <p>이다. 위 식의 양변을 <span class="math inline">\(\|\boldsymbol{h}\|\)</span> 로 나누고 <span class="math inline">\(\lim_{\boldsymbol{h}\to \boldsymbol{0}}\)</span> 을 취하면 <a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 로 부터</p>
@@ -403,8 +411,8 @@ y_i = (T(\boldsymbol{x}))_i = \sum_{i=1}^m [T]_{ij}x_j
 </section>
 <section id="sec-part3_jacobian" class="level3" data-number="12.1.2">
 <h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-part3_jacobian"><span class="header-section-number">12.1.2</span> 야코비 행렬</h3>
-<p><span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n\to\mathbb{R}^m\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능하면 마치 일변수 함수의 <span class="math inline">\(f'(x)\)</span> 처럼 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{x})\)</span> 와 같이 쓸 수 있다. 이 때는 <span class="math inline">\(\boldsymbol{x}\)</span> 를 제외하고 <span class="math inline">\(D\boldsymbol{f}\)</span> 와 같이 표기 할 수 있다.</p>
-<p><span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능 할 때의 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{a})\)</span> 는 선형변환이므로 행렬로 표현할 때 기저에 따라 그 성분값이 달라진다. 여기에 기준이 되는 야코비 행렬을 아래와 같이 정의한다.</p>
+<p><span class="math inline">\(F:\mathbb{R}^n\to\mathbb{R}^m\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능하면 마치 일변수 함수의 <span class="math inline">\(f'(x)\)</span> 처럼 <span class="math inline">\(DF(\boldsymbol{x})\)</span> 와 같이 쓸 수 있다. 이 때는 <span class="math inline">\(\boldsymbol{x}\)</span> 를 제외하고 <span class="math inline">\(DF\)</span> 와 같이 표기 할 수 있다.</p>
+<p><span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능 할 때의 <span class="math inline">\(DF(\boldsymbol{a})\)</span> 는 선형변환이므로 행렬로 표현할 때 기저에 따라 그 성분값이 달라진다. 여기에 기준이 되는 야코비 행렬을 아래와 같이 정의한다.</p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -413,7 +421,7 @@ y_i = (T(\boldsymbol{x}))_i = \sum_{i=1}^m [T]_{ij}x_j
 </div>
 <div class="callout-body-container">
 <div id="def-part3_jacobian" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 12.2 (야코비 행렬)</strong></span> <span class="math inline">\(\boldsymbol{f}:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 표준기저에 대해 표현한 행렬을 <strong>야코비 행렬 (Jacobian matrix)</strong> 이라고 하며 <span class="math inline">\(\boldsymbol{J}[\boldsymbol{f}](\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(\boldsymbol{J}_\boldsymbol{f}(\boldsymbol{a})\)</span> 와 같이 표기한다. 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 미분가능할 때는 <span class="math inline">\(A\)</span> 에서 정의된 함수로서 <span class="math inline">\(\boldsymbol{J}_\boldsymbol{f}(\boldsymbol{x})\)</span> 라고 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 12.2 (야코비 행렬)</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(DF(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 표준기저에 대해 표현한 행렬을 <strong>야코비 행렬 (Jacobian matrix)</strong> 이라고 하며 <span class="math inline">\(J[F](\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(J_F(\boldsymbol{a})\)</span> 와 같이 표기한다. 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 미분가능할 때는 <span class="math inline">\(A\)</span> 에서 정의된 함수로서 <span class="math inline">\(J_F(\boldsymbol{x})\)</span> 라고 표기한다.</p>
 </div>
 </div>
 </div>
@@ -441,12 +449,12 @@ y_i = (T(\boldsymbol{x}))_i = \sum_{i=1}^m [T]_{ij}x_j
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_2_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.2 (Spivak 2_1)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하면 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.2 (Spivak 2_1)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하면 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 로부터 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{h}\to \boldsymbol{0}} \|\boldsymbol{f}(\boldsymbol{a}+\boldsymbol{h}) - \boldsymbol{f}(\boldsymbol{a}) - T(\boldsymbol{h})\| = 0\)</span> 이며 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 로부터 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{h} \to \boldsymbol{0}} T(\boldsymbol{h})=\boldsymbol{0}\)</span> 이므로 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{h}\to \boldsymbol{0}} \boldsymbol{f}(\boldsymbol{a}+\boldsymbol{h})-\boldsymbol{f}(\boldsymbol{a}) = \boldsymbol{0}\)</span> 이다. 즉 <span class="math inline">\(\boldsymbol{f}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-part3_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>12.1</span></a> 로부터 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{h}\to \boldsymbol{0}} \|F(\boldsymbol{a}+\boldsymbol{h}) - F(\boldsymbol{a}) - T(\boldsymbol{h})\| = 0\)</span> 이며 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 로부터 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{h} \to \boldsymbol{0}} T(\boldsymbol{h})=\boldsymbol{0}\)</span> 이므로 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{h}\to \boldsymbol{0}} F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) = \boldsymbol{0}\)</span> 이다. 즉 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속이다.</p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -551,27 +559,27 @@ f(x,\,y) = \left\{ \begin{array}{ll} \dfrac{x|y|}{\sqrt{x^2+y^2}}, \qquad &amp; 
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_2_8" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.8 (Spivak 2_8)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}\to \mathbb{R}^2\)</span> 이며 <span class="math inline">\(\boldsymbol{f} = (f_1,\, f_2)\)</span> 라 하자. <span class="math inline">\(\boldsymbol{f}\)</span> 가 <span class="math inline">\(a\in R\)</span> 에서 미분가능할 필요충분조건은 <span class="math inline">\(f_1,\,f_2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(\boldsymbol{f'}(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.8 (Spivak 2_8)</strong></span> <span class="math inline">\(F:\mathbb{R}\to \mathbb{R}^2\)</span> 이며 <span class="math inline">\(F = \begin{bmatrix} f_1 &amp; f_2\end{bmatrix}^T\)</span> 라 하자. <span class="math inline">\(F\)</span> 가 <span class="math inline">\(a\in R\)</span> 에서 미분가능할 필요충분조건은 <span class="math inline">\(f_1,\,f_2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(F'(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{f}\)</span> 가 <span class="math inline">\(a\)</span> 에서 미분가능하다면 <span class="math inline">\(T=\begin{bmatrix} c_1 &amp; c_2\end{bmatrix}^T\)</span> 가 존재하여 <span class="math display">\[
-0 = \lim_{h \to 0}\dfrac{\|\boldsymbol{f}(a+h) - \boldsymbol{f}(a) - (c_1h, c_2h)\|}{|h|}
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(F\)</span> 가 <span class="math inline">\(a\)</span> 에서 미분가능하다면 <span class="math inline">\(T=\begin{bmatrix} c_1 &amp; c_2\end{bmatrix}^T\)</span> 가 존재하여 <span class="math display">\[
+0 = \lim_{h \to 0}\dfrac{\|F(a+h) - F(a) - Th\|}{|h|}
 \]</span></p>
 <p>이어야 한다. <span class="math inline">\(i=1,\,2\)</span> 에 대해</p>
 <p><span class="math display">\[
-\dfrac{|f_i(a+h) - f_i(a) - c_ih|}{|h|} \le \dfrac{\|\boldsymbol{f}(a+h) - \boldsymbol{f}(a) - (c_1h, c_2h)\|}{|h|}
+\dfrac{|f_i(a+h) - f_i(a) - c_ih|}{|h|} \le \dfrac{\|F(a+h) - F(a) - \begin{bmatrix} c_1h &amp; c_2h\end{bmatrix}^T\|}{|h|}
 \]</span></p>
-<p>이므로 양변에 <span class="math inline">\(h \to 0\)</span> 극한을 취하면 좌변의 극한은 <span class="math inline">\(0\)</span> 이며 미분의 정의에 의해 <span class="math inline">\(c_i = f_i'(a)\)</span> 이다. 즉 <span class="math inline">\(\boldsymbol{f'}(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 이다.</p>
+<p>이므로 양변에 <span class="math inline">\(h \to 0\)</span> 극한을 취하면 좌변의 극한은 <span class="math inline">\(0\)</span> 이며 미분의 정의에 의해 <span class="math inline">\(c_i = f_i'(a)\)</span> 이다. 즉 <span class="math inline">\(F'(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 이다.</p>
 <p>역으로 <span class="math inline">\(f_1,\,, f_2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하다고 하면</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\dfrac{\|\boldsymbol{f}(a+h) - \boldsymbol{f}(a) - (f_1'(a)h, f_2'(a)h)\|}{|h|} \\
+&amp;\dfrac{\|F(a+h) - F(a) - \begin{bmatrix} f_1'(a)h &amp; f_2'(a)h\end{bmatrix}^T\|}{|h|} \\
 &amp;\qquad \qquad \qquad \le \dfrac{|f_1(a+h) - f_1(a) - f_1'(a)h|}{|h|} +\dfrac{|f_2(a+h) - f_2(a) - f_2'(a) h|}{|h|}
 \end{aligned}
 \]</span></p>
-<p>이므로 양변에 극한을 취하면 <span class="math inline">\(0\)</span> 좌변이 <span class="math inline">\(0\)</span> 이 됨을 안다. 즉 <span class="math inline">\(\boldsymbol{f}\)</span> 는 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(\boldsymbol{f'}(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 이다.</p>
+<p>이므로 양변에 극한을 취하면 <span class="math inline">\(0\)</span> 좌변이 <span class="math inline">\(0\)</span> 이 됨을 안다. 즉 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(F'(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 이다.</p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -617,24 +625,24 @@ g(x) = \sum_{i=0}^n \dfrac{f^{(i)}(a)}{i!} (x-a)^i
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_chain_rule" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.2 (다변수 함수의 연쇄규칙)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 <span class="math inline">\(\boldsymbol{g}:\mathbb{R}^m \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{a})\)</span> 에서 미분가능하다면 <span class="math inline">\(\boldsymbol{g} \circ \boldsymbol{f}\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>정리 12.2 (다변수 함수의 연쇄규칙)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 <span class="math inline">\(G:\mathbb{R}^m \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(F(\boldsymbol{a})\)</span> 에서 미분가능하다면 <span class="math inline">\(G\circ F\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 다음이 성립한다.</p>
 <p><span id="eq-part3_chain_rule"><span class="math display">\[
-D(\boldsymbol{g}\circ \boldsymbol{f})(\boldsymbol{a})= D\boldsymbol{g}(\boldsymbol{f}(\boldsymbol{a})) \circ D\boldsymbol{f}(\boldsymbol{a})
+D(G\circ F)(\boldsymbol{a})= DG(F(\boldsymbol{a})) \circ DF(\boldsymbol{a})
 \tag{12.4}\]</span></span></p>
 <p>위 식은 아래와 같이 쓸 수 있다.</p>
 <p><span id="eq-part3_chain_rule_2"><span class="math display">\[
-(\boldsymbol{g}\circ \boldsymbol{f})'(\boldsymbol{a)}) = \boldsymbol{g}'(\boldsymbol{f}(\boldsymbol{a})) \cdot \boldsymbol{f}'(\boldsymbol{a}).
+(G\circ F)'(\boldsymbol{a}) = G'(F(\boldsymbol{a})) \cdot F'(\boldsymbol{a}).
 \tag{12.5}\]</span></span></p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{b}=\boldsymbol{f}(\boldsymbol{a})\)</span>, <span class="math inline">\(T=D\boldsymbol{f}(\boldsymbol{a}),\, L = D\boldsymbol{g}(\boldsymbol{f}(\boldsymbol{a}))\)</span> 라고 하자. 그리고 다음과 같이 정의한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{b}=F(\boldsymbol{a})\)</span>, <span class="math inline">\(T=DF(\boldsymbol{a}),\, L = DG(F(\boldsymbol{a}))\)</span> 라고 하자. 그리고 다음과 같이 정의한다.</p>
 <p><span id="eq-thm_part3_chainrule_1"><span class="math display">\[
 \begin{aligned}
-\boldsymbol{\varphi} (\boldsymbol{x}) &amp;:= \boldsymbol{f}(\boldsymbol{x}) - \boldsymbol{f}(\boldsymbol{a}) - T(\boldsymbol{x}-\boldsymbol{a}),\\[0.3em]
-\boldsymbol{\psi} (\boldsymbol{y}) &amp;:= \boldsymbol{g}(\boldsymbol{y})- \boldsymbol{g}(\boldsymbol{b})-L(\boldsymbol{y}-\boldsymbol{b}), \\[0.3em]
-\boldsymbol{\rho}(\boldsymbol{x}) &amp;:= \boldsymbol{g}\circ \boldsymbol{f}(\boldsymbol{x})- \boldsymbol{g}\circ \boldsymbol{f}(\boldsymbol{a}) - L\circ T (\boldsymbol{x}-\boldsymbol{a}).
+\boldsymbol{\varphi} (\boldsymbol{x}) &amp;:= F(\boldsymbol{x}) - F(\boldsymbol{a}) - T(\boldsymbol{x}-\boldsymbol{a}),\\[0.3em]
+\boldsymbol{\psi} (\boldsymbol{y}) &amp;:= G(\boldsymbol{y})- G(\boldsymbol{b})-L(\boldsymbol{y}-\boldsymbol{b}), \\[0.3em]
+\boldsymbol{\rho}(\boldsymbol{x}) &amp;: = G\circ F(\boldsymbol{x})- G \circ F(\boldsymbol{a}) - L\circ T (\boldsymbol{x}-\boldsymbol{a}).
 \end{aligned}
 \tag{12.6}\]</span></span></p>
 <p>미분가능성의 정의로부터</p>
@@ -648,10 +656,10 @@ D(\boldsymbol{g}\circ \boldsymbol{f})(\boldsymbol{a})= D\boldsymbol{g}(\boldsymb
 <p>그렇다면</p>
 <p><span id="eq-thm_part3_chainrule_4"><span class="math display">\[
 \begin{aligned}
-\boldsymbol{\rho}(\boldsymbol{x}) &amp;= \boldsymbol{g}(\boldsymbol{f}(\boldsymbol{x})) -  \boldsymbol{g}(\boldsymbol{b}) - (L \circ T)(\boldsymbol{x}-\boldsymbol{a})\\[0.3em]
-&amp;=\boldsymbol{g}(\boldsymbol{f}(\boldsymbol{x})) - bf{g}(\boldsymbol{b}) - L(\boldsymbol{f}(\boldsymbol{x}) - \boldsymbol{f}(\boldsymbol{a})- \boldsymbol{\varphi}(\boldsymbol{x})) \\[0.3em]
-&amp;= \left[\boldsymbol{g}(\boldsymbol{f}(\boldsymbol{x})) - \boldsymbol{g}(\boldsymbol{b}) -L(\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{f}(\boldsymbol{a})\right] + L(\boldsymbol{\varphi}(\boldsymbol{x})) \\[0.3em]
-&amp;=\boldsymbol{\psi}(\boldsymbol{f}(\boldsymbol{x})) + L(\boldsymbol{\varphi}(\boldsymbol{x}))
+\boldsymbol{\rho}(\boldsymbol{x}) &amp;= \boldsymbol{g}(F(\boldsymbol{x})) -  \boldsymbol{g}(\boldsymbol{b}) - (L \circ T)(\boldsymbol{x}-\boldsymbol{a})\\[0.3em]
+&amp;=\boldsymbol{g}(F(\boldsymbol{x})) - bf{g}(\boldsymbol{b}) - L(F(\boldsymbol{x}) - F(\boldsymbol{a})- \boldsymbol{\varphi}(\boldsymbol{x})) \\[0.3em]
+&amp;= \left[\boldsymbol{g}(F(\boldsymbol{x})) - \boldsymbol{g}(\boldsymbol{b}) -L(F(\boldsymbol{x})-F(\boldsymbol{a})\right] + L(\boldsymbol{\varphi}(\boldsymbol{x})) \\[0.3em]
+&amp;=\boldsymbol{\psi}(F(\boldsymbol{x})) + L(\boldsymbol{\varphi}(\boldsymbol{x}))
 \end{aligned}
 \tag{12.9}\]</span></span></p>
 <p>이다. 우선 <span class="math inline">\(\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} \dfrac{\|L(\boldsymbol{\varphi}(\boldsymbol{x}))\|}{\|\boldsymbol{x}-\boldsymbol{a}\|}=0\)</span> 임을 보이자. <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 으로부터 어떤 <span class="math inline">\(M_L&gt;0\)</span> 에 대해</p>
@@ -664,12 +672,12 @@ D(\boldsymbol{g}\circ \boldsymbol{f})(\boldsymbol{a})= D\boldsymbol{g}(\boldsymb
 \tag{12.11}\]</span></span></p>
 <p>또한 <a href="#eq-thm_part3_chainrule_2" class="quarto-xref">식&nbsp;<span>12.7</span></a> 의 두번째 극한으로부터 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 다음을 만족하는 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다는 것을 안다.</p>
 <p><span class="math display">\[
-\|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\|&lt;\delta \implies \|\boldsymbol{\psi}(\boldsymbol{f}(\boldsymbol{x}))\| &lt; \varepsilon \|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\|
+\|F(\boldsymbol{x})-\boldsymbol{b}\|&lt;\delta \implies \|\boldsymbol{\psi}(F(\boldsymbol{x}))\| &lt; \varepsilon \|F(\boldsymbol{x})-\boldsymbol{b}\|
 \]</span></p>
 <p>그렇다면 <a href="#eq-thm_part3_chainrule_1" class="quarto-xref">식&nbsp;<span>12.6</span></a> 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
-\varepsilon \|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\| &amp;= \varepsilon \| \boldsymbol{\varphi}(\boldsymbol{x})- T(\boldsymbol{x}-\boldsymbol{a})\| \\[0.3em]
+\varepsilon \|F(\boldsymbol{x})-\boldsymbol{b}\| &amp;= \varepsilon \| \boldsymbol{\varphi}(\boldsymbol{x})- T(\boldsymbol{x}-\boldsymbol{a})\| \\[0.3em]
 &amp; \le \varepsilon \|\boldsymbol{\varphi}(\boldsymbol{x})\| + \varepsilon\|T(\boldsymbol{x}-\boldsymbol{a})\|
 \end{aligned}
 \]</span></p>
@@ -679,17 +687,17 @@ D(\boldsymbol{g}\circ \boldsymbol{f})(\boldsymbol{a})= D\boldsymbol{g}(\boldsymb
 \]</span></p>
 <p>이므로 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\eta&gt;0\)</span> 이 존재하여</p>
 <p><span class="math display">\[
-\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\eta \implies \|\boldsymbol{\psi}(\boldsymbol{f}(\boldsymbol{x}))\| \le \varepsilon(M_T+1) \|\boldsymbol{x}-\boldsymbol{a}\|
+\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\eta \implies \|\boldsymbol{\psi}(F(\boldsymbol{x}))\| \le \varepsilon(M_T+1) \|\boldsymbol{x}-\boldsymbol{a}\|
 \]</span></p>
 <p>이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로</p>
 <p><span id="eq-thm_part3_chainrule_7"><span class="math display">\[
-\lim_{\boldsymbol{x}\to \boldsymbol{a}}\dfrac{\|\boldsymbol{\psi}(\boldsymbol{f}(\boldsymbol{x}))\|}{\|\boldsymbol{x}-\boldsymbol{a}\|} = 0
+\lim_{\boldsymbol{x}\to \boldsymbol{a}}\dfrac{\|\boldsymbol{\psi}(F(\boldsymbol{x}))\|}{\|\boldsymbol{x}-\boldsymbol{a}\|} = 0
 \tag{12.12}\]</span></span></p>
 <p>이다. 따라서 <a href="#eq-thm_part3_chainrule_4" class="quarto-xref">식&nbsp;<span>12.9</span></a> 로 부터</p>
 <p><span class="math display">\[
 \lim_{\boldsymbol{x}\to \boldsymbol{a}} \dfrac{\|\boldsymbol{\rho}(\boldsymbol{x})\|}{\|\boldsymbol{x}-\boldsymbol{a}\|} =0
 \]</span></p>
-<p>이므로 <span class="math inline">\((\boldsymbol{g}\circ \boldsymbol{f})'(\boldsymbol{a}) = L\circ T = D\boldsymbol{g}(\boldsymbol{f}(\boldsymbol{a})) \circ D\boldsymbol{f}(\boldsymbol{a})\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p>이므로 <span class="math inline">\((G\circ F)'(\boldsymbol{a}) = L\circ T = DG(F(\boldsymbol{a})) \circ DF(\boldsymbol{a})\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -698,22 +706,22 @@ D(\boldsymbol{g}\circ \boldsymbol{f})(\boldsymbol{a})= D\boldsymbol{g}(\boldsymb
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_basic_properties_of_derivative_of_multivariable_functions" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.3</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(\boldsymbol{f}(\boldsymbol{x}) = \begin{bmatrix}f_1(\boldsymbol{x}) &amp;\cdots &amp; f_m(\boldsymbol{x})\end{bmatrix}^T\)</span> 이라고 하자.</p>
-<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 상수함수이면 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{0}\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 선형사상이면 <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{a})= \boldsymbol{f}\)</span> 이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분 가능한 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능한 것이며</p>
+<p><span class="theorem-title"><strong>정리 12.3</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix}f_1(\boldsymbol{x}) &amp;\cdots &amp; f_m(\boldsymbol{x})\end{bmatrix}^T\)</span> 이라고 하자.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(F\)</span> 가 상수함수이면 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(DF(\boldsymbol{x}) = \boldsymbol{0}\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(F\)</span> 가 선형사상이면 <span class="math inline">\(F'(\boldsymbol{a})= F\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분 가능한 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능한 것이며</p>
 <p><span class="math display">\[
-\boldsymbol{f}'(\boldsymbol{a}) = \begin{bmatrix} f_1'(\boldsymbol{a}) &amp; \cdots &amp;f_m'(\boldsymbol{a})\end{bmatrix}^T
+F'(\boldsymbol{a}) = \begin{bmatrix} f_1'(\boldsymbol{a}) &amp; \cdots &amp;f_m'(\boldsymbol{a})\end{bmatrix}^T
 \]</span></p>
-<p>이다. 따라서 <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{a})\in \mathcal{M}_{m \times n}(\mathbb{R})\)</span> 이며 <span class="math inline">\(i\)</span> 번째 열은 <span class="math inline">\((f_i)'(\boldsymbol{a})\)</span> 이다.</p>
+<p>이다. 따라서 <span class="math inline">\(F'(\boldsymbol{a})\in \mathcal{M}_{m \times n}(\mathbb{R})\)</span> 이며 <span class="math inline">\(i\)</span> 번째 열은 <span class="math inline">\((f_i)'(\boldsymbol{a})\)</span> 이다.</p>
 <p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(s:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(s(x,\,y) = x+y\)</span> 이면 <span class="math inline">\(Ds(a,\,b)= s\)</span> 이다.</p>
 <p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(p:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(p(x,\,y) = x \cdot y\)</span> 이면 <span class="math inline">\(Dp(a,\,b) (x,\,y) = bx+ay\)</span> 이다. 따라서 <span class="math inline">\(p'(a,\,b)= (b,\,a)\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 상수함수이면 <span class="math inline">\(\|\boldsymbol{f}(\boldsymbol{x}+\boldsymbol{h})- \boldsymbol{f}(\boldsymbol{x})\|=0\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 선형사상이면 <span class="math inline">\(\|\boldsymbol{f}(\boldsymbol{x}+\boldsymbol{h})- \boldsymbol{f}(\boldsymbol{x})- \boldsymbol{f}(\boldsymbol{h})\| = 0\)</span> 이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(F\)</span> 가 상수함수이면 <span class="math inline">\(\|F(\boldsymbol{x}+\boldsymbol{h})- F(\boldsymbol{x})\|=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(F\)</span> 가 선형사상이면 <span class="math inline">\(\|F(\boldsymbol{x}+\boldsymbol{h})- F(\boldsymbol{x})- F(\boldsymbol{h})\| = 0\)</span> 이다.</p>
 <p>(<span class="math inline">\(3\)</span>) 우선 <span class="math inline">\(f_i'(\boldsymbol{a})\)</span> 는 <span class="math inline">\(1 \times n\)</span> 행렬, 즉 열행렬임을 안다. <span class="math inline">\(1 \times n\)</span> 열행렬 <span class="math inline">\(\boldsymbol{a}_1,\ldots,\, \boldsymbol{a}_m\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{bmatrix} \boldsymbol{a}_1 \\ \vdots \\ \boldsymbol{a}_m \end{bmatrix} = \begin{bmatrix} (\boldsymbol{a}_1)_1 &amp; \cdots &amp; (\boldsymbol{a}_1)_n \\ \vdots &amp; &amp; \vdots \\ (\boldsymbol{a}_m)_1 &amp; \cdots &amp; (\boldsymbol{a}_m)_n\end{bmatrix}
@@ -722,11 +730,11 @@ D(\boldsymbol{g}\circ \boldsymbol{f})(\boldsymbol{a})= D\boldsymbol{g}(\boldsymb
 <p>이제 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 <span class="math inline">\(T=\begin{bmatrix} f_1'(\boldsymbol{a}) \\ \vdots \\ f_m'(\boldsymbol{a})\end{bmatrix}\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\dfrac{\|\boldsymbol{f}(\boldsymbol{a}+\boldsymbol{h})-\boldsymbol{f}(\boldsymbol{a})-T(\boldsymbol{h})\|}{\|\boldsymbol{h}\|}  \le \sum_{i=1}^m \dfrac{|f_i(\boldsymbol{a}+\boldsymbol{h}) - f_i(\boldsymbol{a})- f_i'(\boldsymbol{a})(\boldsymbol{h})|}{\|\boldsymbol{h}\|}
+\dfrac{\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a})-T(\boldsymbol{h})\|}{\|\boldsymbol{h}\|}  \le \sum_{i=1}^m \dfrac{|f_i(\boldsymbol{a}+\boldsymbol{h}) - f_i(\boldsymbol{a})- f_i'(\boldsymbol{a})(\boldsymbol{h})|}{\|\boldsymbol{h}\|}
 \end{aligned}
 \]</span></p>
-<p>이며 <span class="math inline">\(\boldsymbol{h}\to \boldsymbol{0}\)</span> 극한에서 우변이 <span class="math inline">\(0\)</span> 이므로 좌변도 <span class="math inline">\(0\)</span> 이다. 즉 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{a}) = T\)</span> 이다.</p>
-<p>이제 <span class="math inline">\(\boldsymbol{f}\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다고 하자. 사영함수(<a href="3_1_functions_on_Euclidean_space.html#def-part3_projection_function" class="quarto-xref">정의&nbsp;<span>11.5</span></a>) <span class="math inline">\(\pi_i\)</span> 에 대해 <a href="#exr-part3_differentiability_of_identity_function" class="quarto-xref">연습문제&nbsp;<span>12.1</span></a> 에서 미분가능함을 보였다. <a href="#thm-part3_chain_rule" class="quarto-xref">정리&nbsp;<span>12.2</span></a> 에 의해 <span class="math inline">\(\pi_i \circ \boldsymbol{f}\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
+<p>이며 <span class="math inline">\(\boldsymbol{h}\to \boldsymbol{0}\)</span> 극한에서 우변이 <span class="math inline">\(0\)</span> 이므로 좌변도 <span class="math inline">\(0\)</span> 이다. 즉 <span class="math inline">\(DF(\boldsymbol{a}) = T\)</span> 이다.</p>
+<p>이제 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다고 하자. 사영함수(<a href="3_1_functions_on_Euclidean_space.html#def-part3_projection_function" class="quarto-xref">정의&nbsp;<span>11.5</span></a>) <span class="math inline">\(\pi_i\)</span> 에 대해 <a href="#exr-part3_differentiability_of_identity_function" class="quarto-xref">연습문제&nbsp;<span>12.1</span></a> 에서 미분가능함을 보였다. <a href="#thm-part3_chain_rule" class="quarto-xref">정리&nbsp;<span>12.2</span></a> 에 의해 <span class="math inline">\(\pi_i \circ F\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
 <p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(s\)</span> 가 선형사상이므로 (<span class="math inline">\(2\)</span>) 에 의해 성립한다.</p>
 <p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(T(x,\,y) = bx+ay\)</span> 라고 하자. <span class="math inline">\(|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)| = hk\)</span> 이므로</p>
 <p><span class="math display">\[
@@ -752,7 +760,7 @@ D(f/g)(\boldsymbol{a}) = \dfrac{g(\boldsymbol{a})Df(\boldsymbol{a}) - f(\boldsym
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="quarto-unresolved-ref">?prp-part3_basic_properties_of_derivative_of_multivariable_functions</span> (<span class="math inline">\(4\)</span>) 의 <span class="math inline">\(s(x,\,y)=x+y\)</span> 를 이용한다. <span class="math inline">\(f+g = s\circ (f,\,g)\)</span> 이므로</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-part3_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>12.3</span></a> (<span class="math inline">\(4\)</span>) 의 <span class="math inline">\(s(x,\,y)=x+y\)</span> 를 이용한다. <span class="math inline">\(f+g = s\circ (f,\,g)\)</span> 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
 D(f+g)(\boldsymbol{a}) &amp;= Ds(f(\boldsymbol{a}),\, g(\boldsymbol{a})) \circ D(f,\,g)(\boldsymbol{a}) \\[0.3em]
@@ -760,7 +768,7 @@ D(f+g)(\boldsymbol{a}) &amp;= Ds(f(\boldsymbol{a}),\, g(\boldsymbol{a})) \circ D
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
-<p><span class="quarto-unresolved-ref">?prp-part3_basic_properties_of_derivative_of_multivariable_functions</span> (<span class="math inline">\(5\)</span>) 의 <span class="math inline">\(p(x,\,y) = x\cdot y\)</span> 를 이용한다. <span class="math inline">\(f\cdot g = p\circ(f,\,g)\)</span> 이므로</p>
+<p><a href="#thm-part3_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>12.3</span></a> (<span class="math inline">\(5\)</span>) 의 <span class="math inline">\(p(x,\,y) = x\cdot y\)</span> 를 이용한다. <span class="math inline">\(f\cdot g = p\circ(f,\,g)\)</span> 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
 D(f \cdot g)(\boldsymbol{a}) &amp;= Dp(f(\boldsymbol{a}),\, g(\boldsymbol{a}))\circ D(f,\, g)(\boldsymbol{a})\\[0.3em]
@@ -820,9 +828,9 @@ f'(x,\,y,\,z) &amp;= g'(h(\boldsymbol{x})) \cdot h'(\boldsymbol{x}) = x^y \begin
 &amp;= \begin{bmatrix} y x^{y-1} &amp; x^y \ln x &amp; 0\end{bmatrix}.
 \end{aligned}
 \]</span></p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\boldsymbol{f}(\boldsymbol{x}) = (h(\boldsymbol{x}),\, \pi_3(\boldsymbol{x})) = \begin{bmatrix} h(\boldsymbol{x}) \\ \pi_3(\boldsymbol{x})\end{bmatrix}\)</span>, 이며 <span class="math inline">\(h\)</span> 는 (<span class="math inline">\(a\)</span>) 의 <span class="math inline">\(f\)</span> 이다. 이로부터</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F(\boldsymbol{x}) = (h(\boldsymbol{x}),\, \pi_3(\boldsymbol{x})) = \begin{bmatrix} h(\boldsymbol{x}) \\ \pi_3(\boldsymbol{x})\end{bmatrix}\)</span>, 이며 <span class="math inline">\(h\)</span> 는 (<span class="math inline">\(a\)</span>) 의 <span class="math inline">\(f\)</span> 이다. 이로부터</p>
 <p><span class="math display">\[
-D\boldsymbol{f} = \begin{bmatrix}  y x^{y-1} &amp; x^y \ln x &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+DF = \begin{bmatrix}  y x^{y-1} &amp; x^y \ln x &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
 \]</span></p>
 <p>이다.</p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f(\boldsymbol{x}) = \sin (\pi_1(\boldsymbol{x}) \cdot \sin (\pi_2(\boldsymbol{x})))\)</span> 이다. <span class="math inline">\(g(x) = \sin (x)\)</span>, <span class="math inline">\(h(\boldsymbol{x}) = \pi_1(\boldsymbol{x})\cdot \sin (\pi_2(\boldsymbol{x}))\)</span> 라고 하면, <span class="math inline">\(f= g\circ h\)</span> 이다. <span class="math inline">\(g'(x) = \cos (x)\)</span> 이며,</p>
@@ -871,20 +879,20 @@ f'(x,\,y,\,z) = ...
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_2_12" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.12 (Spivak 2_12)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(\boldsymbol{x},\, \boldsymbol{x}_1,\,\boldsymbol{x}_2\in \mathbb{R}^n\)</span>, <span class="math inline">\(\boldsymbol{y},\,\boldsymbol{y}_1,\,\boldsymbol{y}_2\in \mathbb{R}^m\)</span>,, <span class="math inline">\(a\in \mathbb{R}\)</span> 에 대해 다음을 만족하면 <span class="math inline">\(f\)</span> 를 <strong>쌍선형(bilinear)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>연습문제 12.12 (Spivak 2_12)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(\boldsymbol{x},\, \boldsymbol{x}_1,\,\boldsymbol{x}_2\in \mathbb{R}^n\)</span>, <span class="math inline">\(\boldsymbol{y},\,\boldsymbol{y}_1,\,\boldsymbol{y}_2\in \mathbb{R}^m\)</span>, <span class="math inline">\(a\in \mathbb{R}\)</span> 에 대해 다음을 만족하면 <span class="math inline">\(f\)</span> 를 <strong>쌍선형(bilinear)</strong> 이라고 한다.</p>
 <p><span id="eq-part3_spivak_2_12_1"><span class="math display">\[
 \begin{aligned}
-\boldsymbol{f}(a\boldsymbol{x},\, \boldsymbol{y}) &amp;= a\boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y}) = \boldsymbol{f}(\boldsymbol{x},\, a\boldsymbol{y}),\\[0.3em]
-\boldsymbol{f}(\boldsymbol{x}_1 + \boldsymbol{x}_2,\, \boldsymbol{y}) &amp;= \boldsymbol{f}(\boldsymbol{x}_1,\, \boldsymbol{y}) + \boldsymbol{f}(\boldsymbol{x}_2,\, \boldsymbol{y}),\\[0.3em]
-\boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y}_1+\boldsymbol{y}_2) &amp;= \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y}_1) + \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y}_2).
+F(a\boldsymbol{x},\, \boldsymbol{y}) &amp;= aF(\boldsymbol{x},\, \boldsymbol{y}) = F(\boldsymbol{x},\, a\boldsymbol{y}),\\[0.3em]
+F(\boldsymbol{x}_1 + \boldsymbol{x}_2,\, \boldsymbol{y}) &amp;= F(\boldsymbol{x}_1,\, \boldsymbol{y}) + F(\boldsymbol{x}_2,\, \boldsymbol{y}),\\[0.3em]
+F(\boldsymbol{x},\, \boldsymbol{y}_1+\boldsymbol{y}_2) &amp;= F(\boldsymbol{x},\, \boldsymbol{y}_1) + F(\boldsymbol{x},\, \boldsymbol{y}_2).
 \end{aligned}
 \tag{12.15}\]</span></span></p>
-<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 쌍선형이면 다음이 성립함을 보여라.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(F\)</span> 가 쌍선형이면 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
-\lim_{(\boldsymbol{h},\,\boldsymbol{k}) \to \boldsymbol{0}} \dfrac{\|\boldsymbol{f}(\boldsymbol{h},\,\boldsymbol{k})\|}{\|(\boldsymbol{h},\,\boldsymbol{k})\|} = 0.
+\lim_{(\boldsymbol{h},\,\boldsymbol{k}) \to \boldsymbol{0}} \dfrac{\|F(\boldsymbol{h},\,\boldsymbol{k})\|}{\|(\boldsymbol{h},\,\boldsymbol{k})\|} = 0.
 \]</span></p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{x},\,\boldsymbol{y}) = \boldsymbol{f}(\boldsymbol{a},\,\boldsymbol{y}) + \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{b})\)</span> 임을 보여라.</p>
-<p>(<span class="math inline">\(c\)</span>) <span class="quarto-unresolved-ref">?prp-part3_basic_properties_of_derivative_of_multivariable_functions</span> (<span class="math inline">\(5\)</span>) 의 <span class="math inline">\(Dp(a,\,b)\)</span> 는 (<span class="math inline">\(b\)</span>) 의 특별한 형태임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(DF(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{x},\,\boldsymbol{y}) = F(\boldsymbol{a},\,\boldsymbol{y}) + F(\boldsymbol{x},\, \boldsymbol{b})\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <a href="#thm-part3_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>12.3</span></a> (<span class="math inline">\(5\)</span>) 의 <span class="math inline">\(Dp(a,\,b)\)</span> 는 (<span class="math inline">\(b\)</span>) 의 특별한 형태임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
@@ -892,46 +900,46 @@ f'(x,\,y,\,z) = ...
 <p><span class="proof-title"><em>(해답)</em>. </span>여기서는 쌍선형 형식에 대해 다음을 증명하자.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_bilinear_1" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 12.1</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p\)</span> 가 쌍선형 형식일 대 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{f}(\boldsymbol{0},\,\boldsymbol{0}) = \boldsymbol{0}\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|\boldsymbol{f}(\boldsymbol{x},\,\boldsymbol{y})\| \le M\|(\boldsymbol{x},\,\boldsymbol{y})\|^2\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 12.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p\)</span> 가 쌍선형 형식일 대 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(F(\boldsymbol{0},\,\boldsymbol{0}) = \boldsymbol{0}\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|F(\boldsymbol{x},\,\boldsymbol{y})\| \le M\|(\boldsymbol{x},\,\boldsymbol{y})\|^2\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-part3_spivak_2_12_1" class="quarto-xref">식&nbsp;<span>12.15</span></a> 의 첫번째 식으로부터 <span class="math inline">\(\boldsymbol{f}(-\boldsymbol{x},\,\boldsymbol{y}) = - \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y})= \boldsymbol{f}(\boldsymbol{x},\, -\boldsymbol{y})\)</span> 임을 안다. 이를 이용하면 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{0},\, \boldsymbol{y})= \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{0})= \boldsymbol{0}\)</span> 임을 안다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-part3_spivak_2_12_1" class="quarto-xref">식&nbsp;<span>12.15</span></a> 의 첫번째 식으로부터 <span class="math inline">\(F(-\boldsymbol{x},\,\boldsymbol{y}) = - F(\boldsymbol{x},\, \boldsymbol{y})= F(\boldsymbol{x},\, -\boldsymbol{y})\)</span> 임을 안다. 이를 이용하면 <span class="math inline">\(F(\boldsymbol{0},\, \boldsymbol{y})= F(\boldsymbol{x},\, \boldsymbol{0})= \boldsymbol{0}\)</span> 임을 안다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathbb{R}^n,\, \mathbb{R}^m\)</span> 에서의 표준기저를 각각 <span class="math inline">\((\boldsymbol{e}_i),\, (\boldsymbol{t}_j)\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{x} = \sum_i x_i \boldsymbol{e}_i\)</span>, <span class="math inline">\(\boldsymbol{y}= \sum_j y_j \boldsymbol{t}_j\)</span> 라고 하면</p>
 <p><span class="math display">\[
 \begin{aligned}
-\boldsymbol{f}(\boldsymbol{x},\,\boldsymbol{y}) = \sum_{i, j} x_i y_j \boldsymbol{f}(\boldsymbol{e}_i,\, \boldsymbol{t}_j)
+F(\boldsymbol{x},\,\boldsymbol{y}) = \sum_{i, j} x_i y_j F(\boldsymbol{e}_i,\, \boldsymbol{t}_j)
 \end{aligned}
 \]</span></p>
-<p>임을 안다. <span class="math inline">\(M_{ij} = \|\boldsymbol{f}(\boldsymbol{e}_i,\, \boldsymbol{t}_j)\|\)</span>, 이며 <span class="math inline">\(M_0=\max \{M_{ij}\}\)</span> 라고 하자. 또한</p>
+<p>임을 안다. <span class="math inline">\(M_{ij} = \|F(\boldsymbol{e}_i,\, \boldsymbol{t}_j)\|\)</span>, 이며 <span class="math inline">\(M_0=\max \{M_{ij}\}\)</span> 라고 하자. 또한</p>
 <p><span class="math display">\[
 |x_iy_j| \le \|\boldsymbol{x}\||y_j| \le \|\boldsymbol{x}\|\cdot \|\boldsymbol{y}\| \le  \|\boldsymbol{x}\|^2+\|\boldsymbol{y}\|^2 = \|(\boldsymbol{x},\, \boldsymbol{y})\|^2
 \]</span></p>
 <p>이므로 <span class="math display">\[
-\|\boldsymbol{f}(\boldsymbol{x},\,\boldsymbol{y})\| = \sum_{i, j} |x_i y_j| M_{ij} \le \sum_{i, j}|x_iy_j|M \le mn\|(\boldsymbol{x},\, \boldsymbol{y})\|^2M_0
+\|F(\boldsymbol{x},\,\boldsymbol{y})\| = \sum_{i, j} |x_i y_j| M_{ij} \le \sum_{i, j}|x_iy_j|M \le mn\|(\boldsymbol{x},\, \boldsymbol{y})\|^2M_0
 \]</span></p>
 <p>이 성립한다. <span class="math inline">\(M=mnM_0\)</span> 라고 놓으면 (<span class="math inline">\(2\)</span>) 가 성립함을 안다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <p>이제 (<span class="math inline">\(2\)</span>) 로부터</p>
 <p><span class="math display">\[
-\lim_{(\boldsymbol{h},\, \boldsymbol{k}) \to \boldsymbol{0}} \dfrac{\|\boldsymbol{f}(\boldsymbol{h},\, \boldsymbol{k})\|}{\|(\boldsymbol{h},\, \boldsymbol{k})\|} \le \lim_{(\boldsymbol{h},\, \boldsymbol{k})\to \boldsymbol{0}}M\|(\boldsymbol{h},\, \boldsymbol{k})\| = 0
+\lim_{(\boldsymbol{h},\, \boldsymbol{k}) \to \boldsymbol{0}} \dfrac{\|F(\boldsymbol{h},\, \boldsymbol{k})\|}{\|(\boldsymbol{h},\, \boldsymbol{k})\|} \le \lim_{(\boldsymbol{h},\, \boldsymbol{k})\to \boldsymbol{0}}M\|(\boldsymbol{h},\, \boldsymbol{k})\| = 0
 \]</span></p>
 <p>이므로 (<span class="math inline">\(a\)</span>) 가 증명되었다.</p>
 <p>(<span class="math inline">\(2\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
-\boldsymbol{f}(\boldsymbol{x}+\boldsymbol{h},\boldsymbol{y}+\boldsymbol{k}) &amp;- \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y}) - \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{k}) - \boldsymbol{f}(\boldsymbol{h},\, \boldsymbol{y}) = \boldsymbol{f}(\boldsymbol{h},\, \boldsymbol{k})
+F(\boldsymbol{x}+\boldsymbol{h},\boldsymbol{y}+\boldsymbol{k}) &amp;- F(\boldsymbol{x},\, \boldsymbol{y}) - F(\boldsymbol{x},\, \boldsymbol{k}) - F(\boldsymbol{h},\, \boldsymbol{y}) = F(\boldsymbol{h},\, \boldsymbol{k})
 \end{aligned}
 \]</span></p>
 <p>이므로</p>
 <p><span class="math display">\[
-\lim_{(\boldsymbol{h},\boldsymbol{k})\to \boldsymbol{0}}\dfrac{\|\boldsymbol{f}(\boldsymbol{x}+\boldsymbol{h},\boldsymbol{y}+\boldsymbol{k}) - \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{y}) - \boldsymbol{f}(\boldsymbol{x},\, \boldsymbol{k}) - \boldsymbol{f}(\boldsymbol{h},\, \boldsymbol{y})\|}{\|(\boldsymbol{h},\, \boldsymbol{k})\|} = 0
+\lim_{(\boldsymbol{h},\boldsymbol{k})\to \boldsymbol{0}}\dfrac{\|F(\boldsymbol{x}+\boldsymbol{h},\boldsymbol{y}+\boldsymbol{k}) - F(\boldsymbol{x},\, \boldsymbol{y}) - F(\boldsymbol{x},\, \boldsymbol{k}) - F(\boldsymbol{h},\, \boldsymbol{y})\|}{\|(\boldsymbol{h},\, \boldsymbol{k})\|} = 0
 \]</span></p>
-<p>이다. 미분의 정의에 의해 <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{x},\,\boldsymbol{y}) (\boldsymbol{h,\, \boldsymbol{k}})= f(\boldsymbol{x},\, \boldsymbol{k}) + \boldsymbol{f}(\boldsymbol{h},\, \boldsymbol{y})\)</span> 이다.</p>
+<p>이다. 미분의 정의에 의해 <span class="math inline">\(DF(\boldsymbol{x},\,\boldsymbol{y}) (\boldsymbol{h,\, \boldsymbol{k}})= F(\boldsymbol{x},\, \boldsymbol{k}) + F(\boldsymbol{h},\, \boldsymbol{y})\)</span> 이다.</p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x,\,y) =xy\)</span> 는 쌍선형 형식이다. (<span class="math inline">\(b\)</span>) 를 적용하라.</p>
 </div>
 <br>
@@ -939,41 +947,41 @@ f'(x,\,y,\,z) = ...
 <div id="exr-part3_spivak_2_13" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 12.13 (Spivak 2_13)</strong></span> <span class="math inline">\(IP:\mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(IP(\boldsymbol{x},\, \boldsymbol{y}) := \langle \boldsymbol{x},\,\boldsymbol{y}\rangle = \boldsymbol{x}^T \boldsymbol{y}\)</span> 로 정의한다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(D(IP)(\boldsymbol{a},\,\boldsymbol{b})\)</span> 와 <span class="math inline">\((IP)'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 구하라</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\boldsymbol{f},\,\boldsymbol{g} : \mathbb{R}\to \mathbb{R}^n\)</span> 이 미분가능하고 <span class="math inline">\(h:\mathbb{R}\to \mathbb{R}\)</span> 이 <span class="math inline">\(h(t) = \langle \boldsymbol{f}(t),\, \boldsymbol{g}(t)\rangle\)</span> 로 정의되었을 때 다음이 성립함을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F,\,G : \mathbb{R}\to \mathbb{R}^n\)</span> 이 미분가능하고 <span class="math inline">\(h:\mathbb{R}\to \mathbb{R}\)</span> 이 <span class="math inline">\(h(t) = \langle F(t),\, G(t)\rangle\)</span> 로 정의되었을 때 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
-h'(\boldsymbol{a}) = \langle \boldsymbol{f}'(a)^T,\, \boldsymbol{g}(a)\rangle + \langle \boldsymbol{f}(a),\, \boldsymbol{g}'(\boldsymbol{a})^T\rangle.
+h'(\boldsymbol{a}) = \langle F'(a)^T,\, G(a)\rangle + \langle F(a),\, G'(\boldsymbol{a})^T\rangle.
 \]</span></p>
-<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(\boldsymbol{f}:\mathbb{R}\to \mathbb{R}^n\)</span> 이 미분가능하고 모든 <span class="math inline">\(t\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{f}\|=1\)</span> 이면 <span class="math inline">\(\langle \boldsymbol{f}'(t),\, \boldsymbol{f}(t)\rangle = 0\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(F:\mathbb{R}\to \mathbb{R}^n\)</span> 이 미분가능하고 모든 <span class="math inline">\(t\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\|F\|=1\)</span> 이면 <span class="math inline">\(\langle F'(t),\, F(t)\rangle = 0\)</span> 임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(IP\)</span> 는 쌍선형 형식이다. 따라서 <span class="math inline">\(D(IP)(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{x},\,\boldsymbol{y}) = \langle \boldsymbol{a},\, \boldsymbol{y}\rangle + \langle \boldsymbol{x},\, \boldsymbol{b}\rangle\)</span> 이다. <span class="math inline">\((IP)'(\boldsymbol{a},\, \boldsymbol{b}) = \begin{bmatrix} \boldsymbol{b}^T &amp; \boldsymbol{a}^T\end{bmatrix}\)</span> 이다.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(h(t) = \langle \boldsymbol{f}(t),\, \boldsymbol{g}(t) \rangle = \displaystyle \sum_{i=1}^n f_i (t) g_i (t)\)</span> 이므로</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(h(t) = \langle F(t),\, G(t) \rangle = \displaystyle \sum_{i=1}^n f_i (t) g_i (t)\)</span> 이므로</p>
 <p><span class="math display">\[
-h'(t) = \sum_{i=1}^n f'_i(t)g_i(t) + f_i(t) g'_i(t) = \langle \boldsymbol{f}'(t),\, \boldsymbol{g}(t)\rangle + \langle \boldsymbol{f}(t),\, \boldsymbol{g}'(t)\rangle.
+h'(t) = \sum_{i=1}^n f'_i(t)g_i(t) + f_i(t) g'_i(t) = \langle F'(t),\, \boldsymbol{g}(t)\rangle + \langle F(t),\, \boldsymbol{g}'(t)\rangle.
 \]</span></p>
-<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g(t) = \langle \boldsymbol{f}(t),\, \boldsymbol{f}(t)\rangle\)</span> 로 정의하면 <span class="math inline">\(g=1\)</span> 이므로</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g(t) = \langle F(t),\, F(t)\rangle\)</span> 로 정의하면 <span class="math inline">\(g=1\)</span> 이므로</p>
 <p><span class="math display">\[
-0 = g'(t) = 2 \langle \boldsymbol{f}'(t),\, \boldsymbol{f}(t) \rangle
+0 = g'(t) = 2 \langle F'(t),\, F(t) \rangle
 \]</span></p>
 <p>이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_2_14" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.14 (Spivak 2_14)</strong></span> <span class="math inline">\(i=1,\ldots,\,k\)</span> 에 대해 <span class="math inline">\(E_i\)</span> 는 각각의 차원을 가진 유클리드 공간이다. <span class="math inline">\(\boldsymbol{f}:E_1 \times \cdots \times E_k \to \mathbb{R}^p\)</span> 이다. 각각의 <span class="math inline">\(x_j \in E_j,\, j \ne i\)</span> 에 대해 아래와 같은 <span class="math inline">\(\boldsymbol{g}:\mathbb{R}\to \mathbb{R}^p\)</span> 가 선형함수라면 <span class="math inline">\(\boldsymbol{f}\)</span> 를 다중선형함수라고 한다. <span class="math display">\[
-\boldsymbol{g}(x) = \boldsymbol{f}(x_1,\ldots,\,x_{i-1},\,x,\, x_{i+1},\ldots,\,x_k)
+<p><span class="theorem-title"><strong>연습문제 12.14 (Spivak 2_14)</strong></span> <span class="math inline">\(i=1,\ldots,\,k\)</span> 에 대해 <span class="math inline">\(E_i\)</span> 는 각각의 차원을 가진 유클리드 공간이다. <span class="math inline">\(F:E_1 \times \cdots \times E_k \to \mathbb{R}^p\)</span> 이다. 각각의 <span class="math inline">\(x_j \in E_j,\, j \ne i\)</span> 에 대해 아래와 같은 <span class="math inline">\(G:\mathbb{R}\to \mathbb{R}^p\)</span> 가 선형함수라면 <span class="math inline">\(F\)</span> 를 다중선형함수라고 한다. <span class="math display">\[
+G(x) = F(x_1,\ldots,\,x_{i-1},\,x,\, x_{i+1},\ldots,\,x_k)
 \]</span></p>
-<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\boldsymbol{f}\)</span> 가 다중선형함수이고 <span class="math inline">\(i\ne j\)</span> 일 때 <span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_k),\, h_l \in E_l\)</span> 에 대해</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(F\)</span> 가 다중선형함수이고 <span class="math inline">\(i\ne j\)</span> 일 때 <span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_k),\, h_l \in E_l\)</span> 에 대해</p>
 <p><span class="math display">\[
-\lim_{\boldsymbol{h} \to 0} \dfrac{\|\boldsymbol{f}(a_1,\ldots,\,h_i,\ldots,\, h_j,\ldots,\,a_k)\|}{\|\boldsymbol{h}\|} = 0
+\lim_{\boldsymbol{h} \to 0} \dfrac{\|F(a_1,\ldots,\,h_i,\ldots,\, h_j,\ldots,\,a_k)\|}{\|\boldsymbol{h}\|} = 0
 \]</span></p>
 <p>임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
 \begin{aligned}
-D\boldsymbol{f}(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k \boldsymbol{f}(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
+DF(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
 \end{aligned}
 \]</span></p>
 </div>
@@ -982,15 +990,15 @@ D\boldsymbol{f}(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k \boldsym
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 정해진 <span class="math inline">\(i,\,j,\, i\ne j\)</span> 에 대해</p>
 <p><span class="math display">\[
-\boldsymbol{g}_{ij}(x,\,y) = \boldsymbol{f}(x_1,\ldots,\,x_{i-1},\,x,\,x_{i+1},\ldots,\,x_{j-1},\,y,\, x_{j+1},\ldots,\,x_k)
+G_{ij}(x,\,y) = F(x_1,\ldots,\,x_{i-1},\,x,\,x_{i+1},\ldots,\,x_{j-1},\,y,\, x_{j+1},\ldots,\,x_k)
 \]</span></p>
 <p>는 쌍선형 함수이다. 따라서 <a href="#exr-part3_spivak_2_12" class="quarto-xref">연습문제&nbsp;<span>12.12</span></a> (<span class="math inline">\(a\)</span>) 에 의해 (<span class="math inline">\(a\)</span>) 가 성립한다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(n\)</span> 선형 형식에 대해 다음 명제를 증명한다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_multilinear_1" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 12.2</strong></span> 유클리드 공간 <span class="math inline">\(E_1,\ldots,\,E_n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{f}:E_1 \times \cdots \times E_n \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(n\)</span>-선형 형식일 때 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{f}(0,\ldots,0) = \boldsymbol{0}\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|\boldsymbol{f}(x_1,\ldots,\,x_n)\| \le M\|(x_1,\ldots,\,x_n)\|^n\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 12.2</strong></span> 유클리드 공간 <span class="math inline">\(E_1,\ldots,\,E_n\)</span> 에 대해 <span class="math inline">\(F:E_1 \times \cdots \times E_n \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(n\)</span>-선형 형식일 때 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(F(0,\ldots,0) = \boldsymbol{0}\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|F(x_1,\ldots,\,x_n)\| \le M\|(x_1,\ldots,\,x_n)\|^n\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -999,37 +1007,37 @@ D\boldsymbol{f}(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k \boldsym
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(E_i\)</span> 의 차원이 <span class="math inline">\(d_i\)</span> 라고 하고 <span class="math inline">\(\left(\boldsymbol{e}^{(i)}_j\right)\)</span> 가 <span class="math inline">\(E_i\)</span> 의 표준기저라고 하자. <span class="math inline">\(x_i = \sum_{j_i} c_{j_i}^{(i)}\boldsymbol{e}_{j_i}^{(i)}\)</span> 라고 하면</p>
 <p><span class="math display">\[
 \begin{aligned}
-\|\boldsymbol{f}(x_1,\ldots,\,x_n)\| &amp;= \left\|\boldsymbol{f}\left(\sum_{j_1} c^{(1)}_{j_1} \boldsymbol{e}^{(1)}_{j_1}, \ldots,\, \sum_{j_n} c^{(n)}_{j_n} \boldsymbol{e}^{(n)}_{j_n}\right) \right\| \\[0.3em]
-&amp;= \sum_{j_1,\ldots,\,j_n} \left|c^{(1)}_{j_1} \cdots c^{(n)}_{j_n}\right| \boldsymbol{f}\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\\[0.3em]
-&amp; \le \sum_{j_1,\ldots,\,j_n} \|\boldsymbol{x}_1\|\cdots \|\boldsymbol{x}_n\| \boldsymbol{f}\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\\[0.3em]
+\|F(x_1,\ldots,\,x_n)\| &amp;= \left\|F\left(\sum_{j_1} c^{(1)}_{j_1} \boldsymbol{e}^{(1)}_{j_1}, \ldots,\, \sum_{j_n} c^{(n)}_{j_n} \boldsymbol{e}^{(n)}_{j_n}\right) \right\| \\[0.3em]
+&amp;= \sum_{j_1,\ldots,\,j_n} \left|c^{(1)}_{j_1} \cdots c^{(n)}_{j_n}\right| F\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\\[0.3em]
+&amp; \le \sum_{j_1,\ldots,\,j_n} \|\boldsymbol{x}_1\|\cdots \|\boldsymbol{x}_n\| F\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\\[0.3em]
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(M_0 = \max \left\{\left\| \boldsymbol{f}\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\right\|\right\}\)</span> 라고 하자. 또한</p>
+<p><span class="math inline">\(M_0 = \max \left\{\left\| F\left(\boldsymbol{e}^{(1)}_{j_1},\ldots,\, \boldsymbol{e}^{(n)}_{j_n}\right)\right\|\right\}\)</span> 라고 하자. 또한</p>
 <p><span class="math display">\[
 \|\boldsymbol{x}_1\|\cdots \|\boldsymbol{x}_n\| \le \|\boldsymbol{x}_1\|^n + \cdots + \|\boldsymbol{x}_1\|^n \le (\|\boldsymbol{x}_1\|^2 + \cdots + \|\boldsymbol{x}_n\|^2)^{n/2} = \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\|^{n}
 \]</span></p>
 <p>이므로</p>
 <p><span class="math display">\[
-\|\boldsymbol{f}(x_1,\ldots,\,x_n)\| \le d_1 \cdots d_n M_0 \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\|^n
+\|F(x_1,\ldots,\,x_n)\| \le d_1 \cdots d_n M_0 \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\|^n
 \]</span></p>
 <p>이다. 즉 <span class="math inline">\(M=d_1 \cdots d_n M_0 \|(\boldsymbol{x}_1,\ldots,\,\boldsymbol{x}_n)\)</span> 로 잡으면 (<span class="math inline">\(2\)</span>) 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p>문제로 돌아와서 Multilinear 의 정의에 의해</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\boldsymbol{f}(a_1+h_1,\ldots, a_k +h_k) - \boldsymbol{f}(a_1,\ldots,\,a_k) \\[0.3em]
-&amp;\quad = \boldsymbol{f}(a_1,\,a_2+h_2,\ldots,\,a_k+h_k) + \boldsymbol{f}(h_1,\,a_2+h_2,\ldots,\,a_k+h_k ) - \boldsymbol{f}(a_1,\ldots,\,a_k)\\[0.3em]
-&amp;\quad = \boldsymbol{f}(a_1,\,a_2,\,a_3+h_3,\ldots,a_k+h_k) + \boldsymbol{f}(a_1,\,h_2,\,a_3+h_3,\ldots,,a_k+h_k) \\[0.3em]
-&amp;\qquad\qquad \qquad + \boldsymbol{f}(h_1,a_2,\,a_3+h_3,\ldots,\,a_k+h_k) + \boldsymbol{f}(h_1,\,h_2,\,a_3+h_3,\ldots,\,a_k+h_k) \\[0.3em]
-&amp;\qquad\qquad\qquad - \boldsymbol{f}(a_1,\ldots,\,a_k)
+&amp;F(a_1+h_1,\ldots, a_k +h_k) - F(a_1,\ldots,\,a_k) \\[0.3em]
+&amp;\quad = F(a_1,\,a_2+h_2,\ldots,\,a_k+h_k) + F(h_1,\,a_2+h_2,\ldots,\,a_k+h_k ) - F(a_1,\ldots,\,a_k)\\[0.3em]
+&amp;\quad = F(a_1,\,a_2,\,a_3+h_3,\ldots,a_k+h_k) + F(a_1,\,h_2,\,a_3+h_3,\ldots,,a_k+h_k) \\[0.3em]
+&amp;\qquad\qquad \qquad + F(h_1,a_2,\,a_3+h_3,\ldots,\,a_k+h_k) + F(h_1,\,h_2,\,a_3+h_3,\ldots,\,a_k+h_k) \\[0.3em]
+&amp;\qquad\qquad\qquad - F(a_1,\ldots,\,a_k)
 \end{aligned}
 \]</span></p>
-<p>이며 이것을 계속 반복하다보면 <span class="math inline">\(\boldsymbol{f}\)</span> 의 인자로 주어지는 <span class="math inline">\(k\)</span> 개의 coordinate index 가운데 <span class="math inline">\(\boldsymbol{h}\)</span> 의 성분이 1개 있는 것부터 <span class="math inline">\(k\)</span> 개 있는 것까지의 합이 된다.</p>
-<p>이제 주어진 <span class="math inline">\(\displaystyle D\boldsymbol{f}(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k \boldsymbol{f}(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)\)</span> 의 우변은 <span class="math inline">\(\boldsymbol{f}(a_1,\ldots,\,a_k)\)</span> 의 <span class="math inline">\(k\)</span> 개의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 하나만 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것이다. 그렇다면</p>
+<p>이며 이것을 계속 반복하다보면 <span class="math inline">\(F\)</span> 의 인자로 주어지는 <span class="math inline">\(k\)</span> 개의 coordinate index 가운데 <span class="math inline">\(\boldsymbol{h}\)</span> 의 성분이 1개 있는 것부터 <span class="math inline">\(k\)</span> 개 있는 것까지의 합이 된다.</p>
+<p>이제 주어진 <span class="math inline">\(\displaystyle DF(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)\)</span> 의 우변은 <span class="math inline">\(F(a_1,\ldots,\,a_k)\)</span> 의 <span class="math inline">\(k\)</span> 개의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 하나만 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것이다. 그렇다면</p>
 <p><span class="math display">\[
-\lim_{\boldsymbol{h}\to \boldsymbol{0}}\dfrac{\displaystyle \left\|\boldsymbol{f}(a_1+h_1,\ldots,\,a_k+h+k) - \boldsymbol{f}(a_1,\ldots,\, a_k) - \sum_{i=1}^n \boldsymbol{f}(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\boldsymbol{h}\|}
+\lim_{\boldsymbol{h}\to \boldsymbol{0}}\dfrac{\displaystyle \left\|F(a_1+h_1,\ldots,\,a_k+h+k) - F(a_1,\ldots,\, a_k) - \sum_{i=1}^n F(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\boldsymbol{h}\|}
 \]</span></p>
-<p>를 생각해보자. 분자의 <span class="math inline">\(\| \cdots \|\)</span> 안에는 <span class="math inline">\(\boldsymbol{f}\)</span> 의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 두개 이상을 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것만 남는다. 이제 우리가 증명한 <a href="#prp-part3_multilinear_1" class="quarto-xref">명제&nbsp;<span>12.2</span></a> 에 의해 위의 극한이 <span class="math inline">\(0\)</span> 이 됨을 알 수 있다.</p>
+<p>를 생각해보자. 분자의 <span class="math inline">\(\| \cdots \|\)</span> 안에는 <span class="math inline">\(F\)</span> 의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 두개 이상을 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것만 남는다. 이제 우리가 증명한 <a href="#prp-part3_multilinear_1" class="quarto-xref">명제&nbsp;<span>12.2</span></a> 에 의해 위의 극한이 <span class="math inline">\(0\)</span> 이 됨을 알 수 있다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1068,15 +1076,15 @@ f'(t) = \sum_{j=1}^n \det \begin{bmatrix} a_{11}(t) &amp; \cdots &amp; a_{1n}(t)
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_2_16" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 12.16 (Spivak 2_16)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 미분가능하며 미분가능한 역함수 <span class="math inline">\(\boldsymbol{f}^{-1}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 존재한다고 하자. 다음이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 12.16 (Spivak 2_16)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 미분가능하며 미분가능한 역함수 <span class="math inline">\(F^{-1}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 존재한다고 하자. 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
-(\boldsymbol{f}^{-1})'(\boldsymbol{a}) = \left[\boldsymbol{f}'\left(\boldsymbol{f}^{-1}(\boldsymbol{a})\right)\right]^{-1}
+(F^{-1})'(\boldsymbol{a}) = \left[F'\left(F^{-1}(\boldsymbol{a})\right)\right]^{-1}
 \]</span></p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{f}\circ \boldsymbol{f}^{-1} = \boldsymbol{\pi}\)</span> 이며 양변을 미분하면 <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{f}^{-1}(\boldsymbol{a})) (\boldsymbol{f}^{-1})'(\boldsymbol{a}) = \boldsymbol{I}_n\)</span> 이므로 주어진 식이 성립한다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(F\circ F^{-1} = \boldsymbol{\pi}\)</span> 이며 양변을 미분하면 <span class="math inline">\(F'(F^{-1}(\boldsymbol{a})) (F^{-1})'(\boldsymbol{a}) = \boldsymbol{I}_n\)</span> 이므로 주어진 식이 성립한다.</p>
 </div>
 <p><br></p>
 </section>
@@ -1298,36 +1306,36 @@ f(x) = \left\{\begin{array}{ll} e^{-x^{-2}},\qquad &amp; x\ne 0, \\ 0 &amp; x = 
 <h3 data-number="12.4.1" class="anchored" data-anchor-id="sec-part3_derivative_and_partial_derivatives_of_multivariable_vector_valued_function"><span class="header-section-number">12.4.1</span> 다변수 벡터함수의 미분과 편미분</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_derivative_and_partial_derivative_1" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.6 (다변수 벡터함수의 미분과 편미분 1)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능하다면 각각의 <span class="math inline">\(1 \le i \le m,\, 1 \le j \le n\)</span> 에 대해 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며, <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{a})\)</span> 는 <span class="math inline">\(m\times n\)</span> 행렬로 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 를 <span class="math inline">\(i\)</span> 행 <span class="math inline">\(j\)</span> 열 성분으로 가진다. 즉</p>
+<p><span class="theorem-title"><strong>정리 12.6 (다변수 벡터함수의 미분과 편미분 1)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능하다면 각각의 <span class="math inline">\(1 \le i \le m,\, 1 \le j \le n\)</span> 에 대해 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며, <span class="math inline">\(F'(\boldsymbol{a})\)</span> 는 <span class="math inline">\(m\times n\)</span> 행렬로 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 를 <span class="math inline">\(i\)</span> 행 <span class="math inline">\(j\)</span> 열 성분으로 가진다. 즉</p>
 <p><span class="math display">\[
-\boldsymbol{f}'(\boldsymbol{a}) = \begin{bmatrix} D_1f_1(\boldsymbol{a}) &amp; \cdots &amp; D_nf_1(\boldsymbol{a})\\ \vdots &amp; &amp; \vdots \\ D_1 f_m(\boldsymbol{a}) &amp; \cdots &amp; D_n f_m(\boldsymbol{a}) \end{bmatrix}
+F'(\boldsymbol{a}) = \begin{bmatrix} D_1f_1(\boldsymbol{a}) &amp; \cdots &amp; D_nf_1(\boldsymbol{a})\\ \vdots &amp; &amp; \vdots \\ D_1 f_m(\boldsymbol{a}) &amp; \cdots &amp; D_n f_m(\boldsymbol{a}) \end{bmatrix}
 \]</span></p>
 <p>이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-part3_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>12.3</span></a> 의 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}\)</span> 임을 보이면 된다. <span class="math inline">\(\boldsymbol{h}:\mathbb{R}\to \mathbb{R}^n\)</span> 를 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 <span class="math inline">\(j\)</span> 번째 성분만 <span class="math inline">\(x\)</span> 인 함수라고 하자. 즉</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-part3_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>12.3</span></a> 의 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}\)</span> 임을 보이면 된다. <span class="math inline">\(H:\mathbb{R}\to \mathbb{R}^n\)</span> 를 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 <span class="math inline">\(j\)</span> 번째 성분만 <span class="math inline">\(x\)</span> 인 함수라고 하자. 즉</p>
 <p><span class="math display">\[
-\boldsymbol{h}(\boldsymbol{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
+H(\boldsymbol{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
 \]</span></p>
-<p>이다. 그렇다면 <span class="math inline">\(D_j f_i(\boldsymbol{a}) = (f_i \circ \boldsymbol{h})'(a_j) = f_i'(\boldsymbol{a}) \cdot \boldsymbol{h}'(a_j) =f'_i(\boldsymbol{a})\cdot \boldsymbol{e}_j= (f'_i(\boldsymbol{a}))_j\)</span> 이다. 따라서</p>
+<p>이다. 그렇다면 <span class="math inline">\(D_j f_i(\boldsymbol{a}) = (f_i \circ H)'(a_j) = f_i'(\boldsymbol{a}) \cdot H'(a_j) =f'_i(\boldsymbol{a})\cdot \boldsymbol{e}_j= (f'_i(\boldsymbol{a}))_j\)</span> 이다. 따라서</p>
 <p><span class="math display">\[
 f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}
 \]</span></p>
 <p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>즉 우리는 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능할경우 <span class="math inline">\(\boldsymbol{f}'(\boldsymbol{a})\)</span> 를 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 로 표현 가능하다는 것을 알았다. 그러나 그 역은 성립하지 않는데 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{f}\)</span> 의 모든 편미분이 존재하더라도 <span class="math inline">\(\boldsymbol{f}\)</span> 가 미분가능하지 않을 수 있다. 여기에는 하나의 조건이 더 필요하다.</p>
+<p>즉 우리는 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능할경우 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 를 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 로 표현 가능하다는 것을 알았다. 그러나 그 역은 성립하지 않는데 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 <span class="math inline">\(F\)</span> 의 모든 편미분이 존재하더라도 <span class="math inline">\(F\)</span> 가 미분가능하지 않을 수 있다. 여기에는 하나의 조건이 더 필요하다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_derivative_and_partial_derivative_2" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.7 (다변수 벡터함수의 미분과 편미분 2)</strong></span> <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 공간에서 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며 연속이면 <span class="math inline">\(\boldsymbol{f}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
+<p><span class="theorem-title"><strong>정리 12.7 (다변수 벡터함수의 미분과 편미분 2)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 공간에서 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며 연속이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f_i = \pi_i\circ \boldsymbol{f}\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 위의 조건을 만족하는 열린 공간에서만 생각한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f_i = \pi_i\circ F\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 위의 조건을 만족하는 열린 공간에서만 생각한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
@@ -1350,24 +1358,24 @@ f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) = \sum_{j=1}^n h_jD_jf_i 
 <p>이다. 이제 <span class="math inline">\(\boldsymbol{c}_j =(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\left\|\boldsymbol{f}(\boldsymbol{a}+\boldsymbol{h})-\boldsymbol{f}(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| \\[0.3em]
-&amp;\qquad \qquad \qquad=\sum_{i=1}^m \left| f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) - \sum_{j=1}^n D_j f_i(\boldsymbol{a}) h_j\right| \\[0.3em]
+&amp;\left\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| \\[0.3em]
+&amp;\qquad \qquad \qquad\le\sum_{i=1}^m \left| f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) - \sum_{j=1}^n D_j f_i(\boldsymbol{a}) h_j\right| \\[0.3em]
 &amp;\qquad \qquad \qquad=\sum_{i=1}^m \left| \sum_{j=1}^n D_j f_i(\boldsymbol{c}_j) h_j- D_j f_i (\boldsymbol{a})h_j \right| \\[0.3em]
 &amp;\qquad \qquad \qquad\le \sum_{i=1}^m \sum_{j=1}^n \left|D_j f_i(\boldsymbol{c}_j) - D_j f_i (\boldsymbol{a})\right||h_j|
 \end{aligned}
 \]</span></p>
 <p>이다. <span class="math inline">\(|h_j|\le \|\boldsymbol{h}\|\)</span> 임을 이용하면</p>
 <p><span class="math display">\[
-\lim_{\boldsymbol{h}\to \boldsymbol{0}} \dfrac{\displaystyle \left\|\boldsymbol{f}(\boldsymbol{a}+\boldsymbol{h})-\boldsymbol{f}(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| }{\|\boldsymbol{h}\|} \le \lim_{\boldsymbol{h}\to \boldsymbol{0}}\sum_{i=1}^m \sum_{j=1}^n\left|D_j f_i(\boldsymbol{c}_j) - D_j f_i (\boldsymbol{a})\right| = 0
+\lim_{\boldsymbol{h}\to \boldsymbol{0}} \dfrac{\displaystyle \left\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| }{\|\boldsymbol{h}\|} \le \lim_{\boldsymbol{h}\to \boldsymbol{0}}\sum_{i=1}^m \sum_{j=1}^n\left|D_j f_i(\boldsymbol{c}_j) - D_j f_i (\boldsymbol{a})\right| = 0
 \]</span></p>
 <p>이며 <span class="math inline">\(\boldsymbol{h}\to \boldsymbol{0}\)</span> 이면 <span class="math inline">\(\boldsymbol{c}_j \to \boldsymbol{a}\)</span> 이며 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속이므로 위의 극한이 <span class="math inline">\(0\)</span> 임을 알 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_chain_rule_for_multivariable_vector_valued_function" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.8 (다변수 벡터함수의 연쇄 규칙)</strong></span> <span class="math inline">\(\boldsymbol{g}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이고 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^m \to \mathbb{R}^p\)</span> 이 <span class="math inline">\(\boldsymbol{g}(\boldsymbol{a})\)</span> 에서 미분가능 할 때 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>정리 12.8 (다변수 벡터함수의 연쇄 규칙)</strong></span> <span class="math inline">\(G:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이고 <span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^p\)</span> 이 <span class="math inline">\(G(\boldsymbol{a})\)</span> 에서 미분가능 할 때 다음이 성립한다.</p>
 <p><span class="math display">\[
-D(\boldsymbol{f} \circ \boldsymbol{g})(\boldsymbol{a}) = D\boldsymbol{f}(\boldsymbol{g})\cdot D\boldsymbol{g}(\boldsymbol{a})
+D(F \circ G)(\boldsymbol{a}) = DF(G(\boldsymbol{a}))\cdot DG(\boldsymbol{a})
 \]</span></p>
 </div>
 </div>
@@ -1412,9 +1420,244 @@ D_2F(x,\,y) &amp;= g(x)k'(y) D_1 f(p(x,\,y),\,q(x,\,y)) + h'(y) D_2 f(p(x,\,y),\
 </div>
 </div>
 <p><br></p>
-
-
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>)</p>
+<p><span class="math display">\[
+\lim_{t\to 0}\dfrac{f(\boldsymbol{a}+t\boldsymbol{e}_i)-f(\boldsymbol{a})}{t} =\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} = D_if(\boldsymbol{a})
+\]</span></p>
+<p>(<span class="math inline">\(b\)</span>)</p>
+<p><span class="math display">\[
+D_{t\boldsymbol{x}}f(\boldsymbol{a})= \lim_{s \to 0}\dfrac{f(\boldsymbol{a}+st\boldsymbol{x})-f(\boldsymbol{a})}{s} = \lim_{s \to 0}t\dfrac{f(\boldsymbol{a}+st\boldsymbol{x})-f(\boldsymbol{a})}{ts}=tD_\boldsymbol{x}f(\boldsymbol{a})
+\]</span></p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(Df(\boldsymbol{a})(\boldsymbol{x})= \sum_i x_iD_i f(\boldsymbol{a})=D_{\boldsymbol{x}}f(\boldsymbol{a})\)</span> 이다. 이로부터</p>
+<p><span class="math display">\[
+D_{\boldsymbol{x}+\boldsymbol{y}}f(\boldsymbol{(}a)) = Df(\boldsymbol{a})(\boldsymbol{x}+\boldsymbol{y}) = Df(\boldsymbol{a})(\boldsymbol{x})+ Df(\boldsymbol{a})(\boldsymbol{y}) = D_\boldsymbol{x}f(\boldsymbol{a}) + D_\boldsymbol{y}f(\boldsymbol{a})$
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_30" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.28 (Spivak 2_30)</strong></span> <span class="math inline">\(f\)</span> 가 <a href="#exr-part3_spivak_2_4" class="quarto-xref">연습문제&nbsp;<span>12.4</span></a> 의 그것과 같다. <span class="math inline">\(D_\boldsymbol{x}f(0,\,0)\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\)</span> 에서 정의됨을 보여라. 그러나 <span class="math inline">\(g\ne 0\)</span> 이면 <span class="math inline">\(D_{\boldsymbol{x}+\boldsymbol{y}}f(0,\,0) = D_\boldsymbol{x}f(0,\,0) + D_\boldsymbol{y}f(0,\,0)\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x},\, \boldsymbol{y}\)</span> 에서 성립하는 것은 아님을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+D_{\boldsymbol{x}}f(0,0) = \lim_{t \to 0}\dfrac{f(t\boldsymbol{x})}{t} = \lim_{t \to 0} \dfrac{1}{t}\|t\boldsymbol{x}\|g\left(\dfrac{t\boldsymbol{x}}{\|t\boldsymbol{x}\|}\right)
+\]</span></p>
+<p>이며 <span class="math inline">\(g(-\boldsymbol{x})=-g(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(t\to 0^+\)</span> 이든 <span class="math inline">\(t \to 0^-\)</span> 이든 <span class="math inline">\(D_{\boldsymbol{x}}f(0,\,0) = f(\boldsymbol{x})\)</span> 이다.</p>
+<p><span class="math inline">\(g \ne 0\)</span> 이면 <span class="math inline">\(g(a,\,b)\ne 0\)</span> 인 <span class="math inline">\((a,\,b)\)</span> 가 존재한다. 그런데 <span class="math inline">\(D_{(a,0)}f(0,\,0) = aD_{\boldsymbol{e}_1}f(0,\,0)=0\)</span>, <span class="math inline">\(D_{(0,\,b)}f(0,\,0)=bD_{\boldsymbol{e}_2}f(0,\,0)=0\)</span> 이지만 <span class="math inline">\(D_{(a,\,b)}f(0,\,0) = f(a,\,b) \ne 0\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_31" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.29 (Spivak 2_31)</strong></span> <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_26" class="quarto-xref">연습문제&nbsp;<span>11.19</span></a> 과 같이 정의되었다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아니지만 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^2\)</span> 에서 <span class="math inline">\(D_{\boldsymbol{x}} f(0,\,0)\)</span> 이 존재함을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아님은 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_26" class="quarto-xref">연습문제&nbsp;<span>11.19</span></a> 에서 보였다. <span class="math inline">\(D_{\boldsymbol{x}}(0,\,0) = \lim_{t \to 0}\dfrac{f(t\boldsymbol{x})}{t}=0\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_32" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.30 (Spivak 2_32)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
+<p><span class="math display">\[
+f(x) = \left\{\begin{array}{ll} x^2 \sin \dfrac{1}{x},\qquad &amp; x\ne 0 \\ 0,&amp; x=0.\end{array}\right.
+\]</span></p>
+<p><span class="math inline">\(f\)</span> 가 <span class="math inline">\(0\)</span> 에서 미분가능하지만 <span class="math inline">\(f'\)</span> 은 <span class="math inline">\(0\)</span> 에서 연속이 아님을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
+<p><span class="math display">\[
+f(x,\,y) = \left\{\begin{array}{ll} (x^2+y^2) \sin \dfrac{1}{\sqrt{x^2+y^2}},\qquad &amp; (x,\,y) \ne \boldsymbol{0} \\ 0,&amp; (x,\,0) = \boldsymbol{0}.\end{array}\right.
+\]</span></p>
+<p><span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 미분가능이지만 <span class="math inline">\(D_if\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아님을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\left|t \sin \left(\dfrac{1}{t}\right)\right| \le |t|\)</span> 이므로</p>
+<p><span class="math display">\[
+f'(0) = \lim_{t \to 0}\dfrac{t^2 \sin (1/t)}{t} = \lim_{t \to 0}t \sin \left(\dfrac{1}{t}\right) = 0
+\]</span></p>
+<p>이다. <span class="math inline">\(x\ne 0\)</span> 에 대해</p>
+<p><span class="math display">\[
+f'(x) = x\sin \dfrac{1}{x} - \cos \dfrac{1}{x}
+\]</span></p>
+<p>이며 <span class="math inline">\(x \to 0\)</span> 에 대해 수렴하지 않으므로 <span class="math inline">\(f'\)</span> 은 <span class="math inline">\(0\)</span> 에서 연속이 아니다.</p>
+<p>(<span class="math inline">\(b\)</span>) (<span class="math inline">\(a\)</span>) 와 같은 이유로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 미분가능이다.</p>
+<p><span class="math display">\[
+D_1f(0,\,0) = \lim_{h \to 0} h^2\sin \dfrac{1}{|h|} = 0 = D_2f(0,\,0)
+\]</span></p>
+<p>이다. 그러나</p>
+<p><span class="math display">\[
+\begin{aligned}
+D_1 f(x,\,y) &amp;= 2x \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{x}{\sqrt{x^2+y^2}} \cos \dfrac{1}{\sqrt{x^2+y^2}}, \\[0.3em]
+D_2 f(x,\,y) &amp;= 2y \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{y}{\sqrt{x^2+y^2}} \cos \dfrac{1}{\sqrt{x^2+y^2}}.
+\end{aligned}
+\]</span></p>
+<p>이며 둘 다 <span class="math inline">\((0,\,0)\)</span> 으로의 극한이 존재하지 않는다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_33" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.31 (Spivak 2_33)</strong></span> <a href="#thm-part3_derivative_and_partial_derivative_2" class="quarto-xref">정리&nbsp;<span>12.7</span></a> 에서 <span class="math inline">\(D_1f_i(\boldsymbol{a})\)</span> 가 연속인 조건을 제거해도 된다는 것을 보여라. (<span class="math inline">\(D_2f_j\)</span> 부터는 연속이어야 한다.)</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#thm-part3_derivative_and_partial_derivative_2" class="quarto-xref">정리&nbsp;<span>12.7</span></a> 의 증명에서 <span class="math inline">\(D_1f_i\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
+&amp;\quad + f_i(a_1+h_1, a_2+h_2,a_3,\ldots,\,a_n) - f_i(a_1+h_1,a_2,\ldots,\,a_n) \\[0.3em]
+&amp;\quad + \qquad \qquad \vdots \\[0.3em]
+&amp;\quad + f_i(a_1+h+1, \ldots,a_n+h_n) - f_i(a_1+h_1,\ldots,a_{n-1}+h_{n-1},a_n) \\[0.3em]
+&amp;=f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n)  \\[0.3em]
+&amp;+ \sum_{j=2}^n h_j D_jf_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| \\[0.3em]
+&amp; \qquad\le\sum_{i=1}^m \left| f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) - \sum_{j=1}^n D_j f_i(\boldsymbol{a}) h_j\right| \\[0.3em]
+&amp; \qquad=\sum_{i=1}^m \left| f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) + \sum_{j=2}^n D_j f_i(\boldsymbol{c}_j) h_j- \sum_{j=1}^nD_j f_i (\boldsymbol{a})h_j \right| \\[0.3em]
+&amp;\qquad \le \sum_{i=1}^m \left| f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) - D_1 f_i (\boldsymbol{a})h_1 \right| \\[0.3em]
+&amp;\qquad \qquad \qquad + \sum_{i=1}^m \sum_{j=2}^n \left| D_jf_i(\boldsymbol{c}_j)h_j - D_jf_i(\boldsymbol{a})h_j\right|
+\end{aligned}
+\]</span></p>
+<p>이다. 마지막 의 첫번째 항은 편미분의 정의에 의해 <span class="math inline">\(0\)</span> 으로 수렴하며 두번째 항부터는 <span class="math inline">\(D_jf_i\)</span> 의 연속성에 의해 <span class="math inline">\(0\)</span> 으로 수렴한다. 즉 <span class="math inline">\(D_1f_i\)</span> 는 연속이 아니더라도 미분가능성에는 문제가 없다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_34" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.32 (Spivak 2_34)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 자연수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(f(t\boldsymbol{x})=t^mf(\boldsymbol{x})\)</span> 라면 <strong>homogeneous of degree <span class="math inline">\(m\)</span></strong> 라고 한다. <span class="math inline">\(f\)</span> 가 미분가능하다면 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\sum_{i=1}^n x_i D_i f(\boldsymbol{x}) = mf(\boldsymbol{x}).
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>정해진 <span class="math inline">\(\boldsymbol{x}\)</span> 에 대해 <span class="math inline">\(g(t) = f(t\boldsymbol{x})\)</span> 라고 하면 <span class="math inline">\(\dfrac{dg(t)}{dt} = mt^{m-1}f(\boldsymbol{x})\)</span> 이다.</p>
+<p><span class="math display">\[
+\dfrac{df(t\boldsymbol{x})}{dt} = \boldsymbol{x}\cdot Df(t\boldsymbol{x}) = \sum_{i=1}^n x_i D_i f(t\boldsymbol{x})
+\]</span></p>
+<p>이므로 <span class="math inline">\(t=1\)</span> 을 넣으면 <span class="math inline">\(\sum_{i=1}^n x_i D_i f(\boldsymbol{x})= mf(\boldsymbol{x})\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_35" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.33 (Spivak 2_35)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(f(\boldsymbol{0})=0\)</span> 일 때 다음을 만족하는 <span class="math inline">\(g:\mathbb{R}^n \to \mathbb{R}\)</span> 이 존재함을 보여라.</p>
+<p><span class="math display">\[
+f(x) = \sum_{i=1}^n x_i g_i(x).
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(h_\boldsymbol{x}(t) = f(t\boldsymbol{x})\)</span> 라고 하자. <span class="math inline">\(\displaystyle \dfrac{dh_\boldsymbol{x}(t)}{dt} = \sum_{i=1}^n x_i D_i f (t\boldsymbol{x})\)</span> 이며</p>
+<p><span class="math display">\[
+f(\boldsymbol{x}) = f(\boldsymbol{x})- f(\boldsymbol{0}) = \int_0^1 \dfrac{d h_{\boldsymbol{x}}(t)}{dt}\, dt = \sum_{i=1}^n \int_0^1 x_i D_if(t\boldsymbol{x})\, dt
+\]</span></p>
+<p>이므로 <span class="math inline">\(g_i(x) = \int_0^1 D_i f(t\boldsymbol{x})\, dt\)</span> 이다.</p>
+</div>
+<p><br></p>
 </section>
+</section>
+<section id="역함수-정리" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="역함수-정리"><span class="header-section-number">12.5</span> 역함수 정리</h2>
+<p><span class="math inline">\(C^1\)</span> 급 함수 <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 <span class="math inline">\(f'(a)\ne 0\)</span> 일 때 <span class="math inline">\((f^{-1})'(a) = 1/f'(a)\)</span> 임을 안다. <span class="math inline">\(f'(a)&gt;0\)</span> 일 경우 <span class="math inline">\(a\)</span> 의 어떤 근방에서 <span class="math inline">\(f\)</span> 는 전단사 함수이며 국소적으로 역함수가 존재하고 그 도함수도 구할 수 있다는 의미이다. 다변수 함수에서도 똑같은 일을 할 수 있다. 그 전에 미리 알아야 할 것이 있다.</p>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="lem-part3_inverse_function_theorem_1" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 12.1</strong></span> 큐브 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(F:A \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(C^1\)</span> 급이라고 하자. 어떤 양수 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 모든 <span class="math inline">\(\boldsymbol{x}\in \text{int}(A)\)</span> 에 대해 <span class="math inline">\(|D_jf_i(\boldsymbol{x})|\le M\)</span> 이면 다음이 성립한다.</p>
+<p><span class="math display">\[
+\boldsymbol{x},\,\boldsymbol{y}\in A \implies \|F(\boldsymbol{y})-F(\boldsymbol{x})\|\le n^2M \|\boldsymbol{y}-\boldsymbol{x}\|.
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1 (\boldsymbol{x}) &amp; \cdots &amp; f_n (\boldsymbol{x})\end{bmatrix}^T\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+f_i(\boldsymbol{y})-F(\boldsymbol{x}) &amp;= f_i(y_1,\,x_2,\ldots,\,x_n) - F(x_1,\ldots,\,x_n) \\[0.3em]
+&amp;\qquad + f_i(y_1,y_2,x_3,\ldots,x_n) - f_i(y_1,x_2,\ldots,x_n)\\[0.3em]
+&amp;\qquad + \qquad \vdots \\[0.3em]
+&amp;\qquad + f_i(y_1,\ldots,\,y_n) - f_i(y_1,\ldots,\,y_{n-1},x_n).
+\end{aligned}
+\]</span></p>
+<p>각 줄마다 편미분에 대한 중간값 정리를 사용하면</p>
+<p><span class="math display">\[
+f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldots,\,y_{j-1},\, z_{ij},\, x_{j+1},\ldots,\,x_n)
+\]</span></p>
+<p>을 만족하는 <span class="math inline">\(z_{ij}\)</span> 가 <span class="math inline">\(x_i\)</span> 와 <span class="math inline">\(y_i\)</span> 사이에 존재한다. 이로부터 다음을 보일 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|F(\boldsymbol{y}) - F(\boldsymbol{x})\| &amp;\le \sum_{i=1}^n |f_i(\boldsymbol{y}) - f_i(\boldsymbol{x})| \\[0.3em]
+&amp; =\sum_{i=1}^n \sum_{j=1}^n |y_j-x_j| \cdot |D_j f_i (y_1,\ldots,\,y_{j-1},z_{ij},x_{j+1},\ldots,x_n)| \\[0.3em]
+&amp;\le \sum_{i=1}^n \sum_{j=1}^n \|\boldsymbol{y}-\boldsymbol{x}\| M = n^2M\|\boldsymbol{y}-\boldsymbol{x}\|. \qquad \square
+\end{aligned}
+\]</span></p>
+</div>
+<p>이제 역함수 정리를 보여야 한다. 그 전에 역함수 정리를 위해 필요한 몇가지를 짚고 넘어가자.</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_for_inverse_function_theorem_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.34</strong></span> <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 가역이며 <span class="math inline">\(U\in \mathbb{R}^n\)</span> 이 열린 집합이고 <span class="math inline">\(F:U \to \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(F\in C^1\)</span> 일 필요충분조건은 <span class="math inline">\(L\circ F\in C^1\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(L\)</span> 이 선형사상이며 <span class="math inline">\(L\)</span> 은 <span class="math inline">\(\mathbb{R}^n\)</span> 전체 에서 연속이며 미분가능하다. 또한 <span class="math inline">\(DL(\boldsymbol{x}) = L\)</span> 이므로 <span class="math inline">\(L\in C^1\)</span> 이다. <span class="math inline">\(D(L\circ F)(\boldsymbol{x}) = L(F(\boldsymbol{x})) DF(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(L \circ F\)</span> 는 미분가능하며, <a href="../part2/2_3_continuity_of_functions.html#prp-part2_continuity_of_composited_function" class="quarto-xref">명제&nbsp;<span>8.3</span></a> 에 의해 <span class="math inline">\(F\in C^1\)</span> 이면 <span class="math inline">\(L \circ F\in C^1\)</span> 이다. <span class="math inline">\(F = L^{-1}\circ (L \circ F)\)</span> 이므로 <span class="math inline">\(L\circ F \in C^1\)</span> 이면 <span class="math inline">\(F\in C^1\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_for_inverse_function_theorem_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.35</strong></span> <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 가역이며 열린 집합 <span class="math inline">\(U\in \mathbb{R}^n\)</span> 에서 정의된 미분가능한 함수 <span class="math inline">\(F:U \to \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(W=F(U),\, G=L\circ F\)</span> 라고 하자. 이 때 다음은 동치이다.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(F:U\to \mathbb{R}^n\)</span> 에 대해 미분가능한 역함수 <span class="math inline">\(F^{-1}: F(U) \to U\)</span> 가 존재한다.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(G:U\to \mathbb{R}^n\)</span> 에 대해 미분가능한 역함수 <span class="math inline">\(G^{-1}: G(U) \to U\)</span> 가 존재한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a \implies b\)</span>) <span class="math inline">\(H=F^{-1}\circ L^{-1}\)</span> 라고 하면 <span class="math inline">\(F^{-1}\)</span> 는 미분가능하므로 <span class="math inline">\(H\)</span> 도 미분가능하다. <span class="math inline">\(H\circ G = I\)</span> 이므로 <span class="math inline">\(G^{-1}=H=F^{-1}\circ L^{-1}\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\implies c\)</span>) <span class="math inline">\(F=L^{-1}\circ G\)</span> 이므로 위의 논리를 똑같이 적용 할 수 있다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part3_inverse_function_theorem" class="theorem">
+<p><span class="theorem-title"><strong>정리 12.9</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 을 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급이며 <span class="math inline">\(\det(F'(\boldsymbol{a}))\ne 0\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V\)</span> 와 <span class="math inline">\(F(\boldsymbol{a})\)</span> 를 포함하는 열린 집합 <span class="math inline">\(W\)</span> 가 존재하여 <span class="math inline">\(F:V\to W\)</span> 에 대한 연속인 역함수 <span class="math inline">\(F^{-1}:W \to V\)</span> 가 존재하여 <span class="math inline">\(F^{-1}\)</span> 은 미분가능하며 모든 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해</p>
+<p><span class="math display">\[
+(F^{-1})'(\boldsymbol{y}) = \left[F'(F^{-1}(\boldsymbol{y}))\right]^{-1}.
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(L=F'(\boldsymbol{a})\)</span> 라고 하면 <span class="math inline">\(\det (L) \ne 0\)</span> 이므로 <span class="math inline">\(L\)</span> 은 가역이다.</p>
+<p><span class="math display">\[
+D(L^{-1}\circ F)(\boldsymbol{a}) = L^{-1} \circ L = \boldsymbol{I}_n
+\]</span></p>
+<p>이므로 정리가 <span class="math inline">\(F\)</span> 에 대해 성립하는 것과 <span class="math inline">\(L^{-1}\circ F\)</span> 에 대해 성립하는 것은 동치이다. 즉 이제부터 <span class="math inline">\(L=\boldsymbol{I}_n\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 내부에 포함하는 닫힌 cube <span class="math inline">\(\overline{U}\)</span> 에서 <span class="math inline">\(\boldsymbol{x}\in \overline{U},\, \boldsymbol{x}\ne \boldsymbol{x} \implies F(\boldsymbol{x})\neF(\boldsymbol{a})\)</span> 임을 보이자. <span class="math inline">\(F(\boldsymbol{x})= F(\boldsymbol{a})\)</span> 라면 <span class="math inline">\(\boldsymbol{h}=\boldsymbol{x}-\boldsymbol{a}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\dfrac{\|F(\boldsymbol{a}+\boldsymbol{h})-f(\boldsymbol{a}) - L(\boldsymbol{h})\|}{\|\boldsymbol{h}\|}= \dfrac{\|\boldsymbol{h}\|}{\|\boldsymbol{h}\|} =1
+\]</span></p>
+<p>이어야 하는데 <span class="math inline">\(DF(\boldsymbol{a})=L = \boldsymbol{I}_n\)</span> 이므로</p>
+<p><span class="math display">\[
+\lim_{\boldsymbol{h}\to \boldsymbol{0}}\dfrac{\|F(\boldsymbol{a}+\boldsymbol{h})-f(\boldsymbol{a}) - L(\boldsymbol{h})\|}{\|\boldsymbol{h}\|} = 0
+\]</span></p>
+<p>이어야 함을 안다.</p>
+<p>(<span class="math inline">\(3\)</span>) 이제 다음 세 조건을 만족하는 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(U\)</span> 가 존재함을 안다.</p>
+<p> <strong>C1.</strong> <span class="math inline">\(\boldsymbol{x}\in U,\, \boldsymbol{x}\ne \boldsymbol{a} \implies F(\boldsymbol{x})\ne F(\boldsymbol{a})\)</span>,</p>
+<p> <strong>C2.</strong> <span class="math inline">\(\boldsymbol{x}\in U \implies\det(F'(\boldsymbol{x})) \ne 0\)</span>,</p>
+<p> <strong>C3.</strong> <span class="math inline">\(\forall \boldsymbol{x}\in U,\, 1\le i,\, j \le n,\;|D_jf_i(\boldsymbol{x})-D_jf_i(\boldsymbol{a})|&lt;\dfrac{1}{2}n^2\)</span>.</p>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

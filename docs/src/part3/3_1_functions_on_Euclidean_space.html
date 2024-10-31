@@ -337,7 +337,8 @@ window.Quarto = {
 <p>여기서는 유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 <a href="../part2/2_1_basic_topology.html#def-part2_Euclidean_space" class="quarto-xref">정의&nbsp;<span>6.5</span></a> 와 <a href="../part2/2_1_basic_topology.html#prp-part2_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> 를 보라.</p>
 <p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 를 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 로도 표기하기로 한다. 실수를 성분으로 갖는 <span class="math inline">\(n \times 1\)</span> 행렬의 집합은 <span class="math inline">\(\mathcal{M}_{n}(\mathbb{R})\)</span> 로 표기하기로 한다. 또한 실계수를 갖는 <span class="math inline">\(m\times n\)</span> 행렬의 집합을 <span class="math inline">\(\mathcal{M}_{m\times n}(\mathbb{R})\)</span> 이라고 쓴다.</p>
 <p><span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저, 즉 <span class="math inline">\(i\)</span> 번째 성분만 <span class="math inline">\(1\)</span> 이며 나머지 성분은 <span class="math inline">\(0\)</span> 인 벡터를 <span class="math inline">\(\boldsymbol{e}_i\)</span> 라고 쓰기로 한다.</p>
-<p>두 벡터의 일반적인 내적은 <span class="math inline">\(\langle \boldsymbol{x},\, \boldsymbol{y}\rangle\)</span> 라고 쓰며 유클리드 내적은 <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{\cdot y}\)</span> 라고 쓴다.</p>
+<p>두 벡터의 일반적인 내적은 <span class="math inline">\(\langle \boldsymbol{x},\, \boldsymbol{y}\rangle\)</span> 라고 쓰며 유클리드 내적은 <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{\cdot y}\)</span> 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.</p>
+<p>벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 혹은 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 같이 사용한다. <span class="math inline">\(\mathcal{L}(R^m,\,R^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^m \mapsto \mathbb{R}^n\)</span> 선형사상의 집합이다.</p>
 <p><br></p>
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
@@ -667,11 +668,12 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_component_functions" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.4 (성분 함수)</strong></span> 함수 <span class="math inline">\(\boldsymbol{f}:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 11.4 (성분 함수)</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
 </div>
 </div>
 </div>
 </div>
+<p>벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 나 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(f_i\)</span> 는 성분함수이다.</p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -691,7 +693,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <p><span class="theorem-title"><strong>예제 11.1</strong></span> 다음은 쉽게 보일 수 있다.</p>
 <p>(<span class="math inline">\(1\)</span>) 항등함수 <span class="math inline">\(\boldsymbol{\pi}\)</span> 는 선형사상이며 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(n \times n\)</span> 항등행렬 <span class="math inline">\(\boldsymbol{I}_n\)</span> 과 같다.</p>
 <p>(<span class="math inline">\(2\)</span>) 사영함수 <span class="math inline">\(\pi_i :\mathbb{R}^n \to \mathbb{R}\)</span> 역시 선형사상이며 표준기저 <span class="math inline">\(\boldsymbol{e}_i\)</span> 에 대해 <span class="math inline">\(\pi_i (\boldsymbol{x}) = \boldsymbol{e}_i^T \boldsymbol{\cdot x}\)</span> 이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\boldsymbol{f} = \begin{bmatrix} f_1 &amp; \cdots &amp; f_m\end{bmatrix}^T\)</span> 일 때 <span class="math inline">\(f_i = \pi_i (\boldsymbol{f})\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F = \begin{bmatrix} f_1 &amp; \cdots &amp; f_m\end{bmatrix}^T\)</span> 일 때 <span class="math inline">\(f_i = \pi_i (F)\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -759,30 +761,30 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <h2 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_23" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.16 (Spivak 1.23)</strong></span> <span class="math inline">\(\boldsymbol{f}:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.16 (Spivak 1.23)</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
-\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} \boldsymbol{f}(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f_i(\boldsymbol{x}) = b_i
+\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} F(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f_i(\boldsymbol{x}) = b_i
 \]</span></p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f_i(\boldsymbol{x})-b_i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|F(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f_i(\boldsymbol{x})-b_i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
 <p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f_i(\boldsymbol{x})-b_i|&lt;\varepsilon/m\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 그렇다면.</p>
 <p><span class="math display">\[
-\|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^m |f_i(\boldsymbol{x})-b_i| &lt; m \cdot \dfrac{\varepsilon}{m} = \varepsilon
+\|F(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^m |f_i(\boldsymbol{x})-b_i| &lt; m \cdot \dfrac{\varepsilon}{m} = \varepsilon
 \]</span></p>
 <p>이므로 성립한다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_24" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 11.17 (Spivak 1.24)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속일 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속인 것임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 11.17 (Spivak 1.24)</strong></span> <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속일 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속인 것임을 보여라.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{b}\)</span> 를 <span class="math inline">\(\boldsymbol{f}(\boldsymbol{a})\)</span> 로 고치고 <a href="#exr-part3_spivak_1_23" class="quarto-xref">연습문제&nbsp;<span>11.16</span></a> 를 적용한다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{b}\)</span> 를 <span class="math inline">\(F(\boldsymbol{a})\)</span> 로 고치고 <a href="#exr-part3_spivak_1_23" class="quarto-xref">연습문제&nbsp;<span>11.16</span></a> 를 적용한다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
