@@ -387,7 +387,7 @@ $$
 :::
 
 
-앞서 일변수 해석학에서는 $\bf{a}\in \R^n$ 주위의 열린 집합을 잡을 때 $N(\bf{a},\,\delta) := \{\bf{x}\in \R^n : \|\bf{x}-\bf{a}\|<\delta\}$ 을 생각했지만 여기서는 자주 $\bf{a}$ 주위의 열린 $n$-cell 을 잡게 된다. 
+앞서 일변수 해석학에서는 $\bf{a}\in \R^n$ 주위의 열린 집합을 잡을 때 $N(\bf{a},\,\delta)$ 을 생각했지만 여기서는 자주 $\bf{a}$ 주위의 열린 $n$-cell 을 잡게 된다. 
 
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -818,7 +818,6 @@ $A$ 가 옹골집합이면 모든 연속함수 $f:A\to \R$ 은 최대값과 최�
 
 see @thm-part2_extreme_value_theorem
 :::
-
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
