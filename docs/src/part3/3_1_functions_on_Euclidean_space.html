@@ -296,8 +296,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
-  <li><a href="#sec-part3_functions_and_continuity" id="toc-sec-part3_functions_and_continuity" class="nav-link" data-scroll-target="#sec-part3_functions_and_continuity"><span class="header-section-number">11.3</span> 함수와 연속성</a></li>
+  <li><a href="#함수와-연속성" id="toc-함수와-연속성" class="nav-link" data-scroll-target="#함수와-연속성"><span class="header-section-number">11.3</span> 함수와 연속성</a>
+  <ul class="collapse">
+  <li><a href="#sec-part3_norm_of_matrix" id="toc-sec-part3_norm_of_matrix" class="nav-link" data-scroll-target="#sec-part3_norm_of_matrix"><span class="header-section-number">11.3.1</span> 행렬의 노름</a></li>
+  <li><a href="#sec-part3_functions_and_continuity" id="toc-sec-part3_functions_and_continuity" class="nav-link" data-scroll-target="#sec-part3_functions_and_continuity"><span class="header-section-number">11.3.2</span> 함수의 연속성</a></li>
   <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -659,8 +663,53 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <p><br></p>
 </section>
 </section>
-<section id="sec-part3_functions_and_continuity" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="sec-part3_functions_and_continuity"><span class="header-section-number">11.3</span> 함수와 연속성</h2>
+<section id="함수와-연속성" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="함수와-연속성"><span class="header-section-number">11.3</span> 함수와 연속성</h2>
+<section id="sec-part3_norm_of_matrix" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="sec-part3_norm_of_matrix"><span class="header-section-number">11.3.1</span> 행렬의 노름</h3>
+<p><a href="#exr-part3_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 에서 우리는 선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 에 대해 <span class="math inline">\(\|L(\boldsymbol{x})\|\le M\|\boldsymbol{x}\|\)</span> 인 양수 <span class="math inline">\(M\)</span> 이 존재함을 보였다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-part3_norm_of_matrix" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.4 (행렬의 norm)</strong></span> 선형사상 <span class="math inline">\(L\in \mathcal{L}{\mathbb{R}^n,\, \mathbb{R}^m}\)</span> 에 대해 행렬의 norm <span class="math inline">\(\|L\|\)</span> 은 아래와 같이 정의된다.</p>
+<p><span id="eq-part3_definition_of_matrix_norm"><span class="math display">\[
+\|L\| := \sup \{\|L\boldsymbol{x}\| : \boldsymbol{x} \in \mathbb{R}^n,\, \|\boldsymbol{x}\|=1\}.
+\tag{11.2}\]</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-part3_properties_of_matrix_norm_1" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 11.2</strong></span> 행렬의 노름에 대해 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\boldsymbol{x}\|\le \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\|&lt;\infty\)</span> 이며 <span class="math inline">\(A\)</span> 는 고른 연속이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(L,\, T\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이며 <span class="math inline">\(c\in \mathbb{R}\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="math display">\[
+\|L+T\| \le \|L\|+\|T\|,\qquad \|cL\| = |c|\cdot \|L\|.
+\]</span></p>
+<p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m),\, T\in \mathcal{L}(\mathbb{R}^m,\, \mathbb{R}^p)\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="math display">\[
+\|T\circ L\| \le \|T\|\cdot \|L\|
+\]</span></p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\|\boldsymbol{u}\|=\dfrac{\boldsymbol{x}}{\|\boldsymbol{x}\|}\)</span> 라고 하면 <span class="math inline">\(\|L\| \ge \|L\boldsymbol{u}\| = \dfrac{\|L\boldsymbol{x}\|}{\|\boldsymbol{x}\|}\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\|L\|&lt;\infty\)</span> 는 <a href="#exr-part3_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 에서 보였다. (<span class="math inline">\(1\)</span>) 로부터 <span class="math inline">\(\|L(\boldsymbol{x}-\boldsymbol{y})\|\le \|L\|\cdot \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 이므로 고른 연속이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\|(L+T)(\boldsymbol{x})\|=\|L\boldsymbol{x}+T\boldsymbol{x}\|\le \|L\boldsymbol{x}\|+\|T\boldsymbol{x}\|\le (\|L\|+\|T\|)\|\boldsymbol{x}\|\)</span> 이다. 임의의 <span class="math inline">\(\|x\|=1\)</span> 에 대해 <span class="math inline">\(\|L\|+\|T\| \ge \|(L+T)(\boldsymbol{x})\|\)</span> 이므로 <span class="math inline">\(\|L\|+\|T\| \ge \|L+T\|\)</span> 이다. <span class="math inline">\(\|cL\boldsymbol{x}\| = |c|\cdot \|L\boldsymbol{x}\|\)</span> 이므로 <span class="math inline">\(\|cL\| = |c|\cdot \|L\|\)</span> 이다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\|T\circ L(\boldsymbol{x})\| \le \|T\| \cdot \|L\boldsymbol{x}\| \le \|T\|\cdot \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-part3_functions_and_continuity" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="sec-part3_functions_and_continuity"><span class="header-section-number">11.3.2</span> 함수의 연속성</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -668,7 +717,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_component_functions" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.4 (성분 함수)</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 11.5 (성분 함수)</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
 </div>
 </div>
 </div>
@@ -682,7 +731,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_projection_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.5 (사영 함수)</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi_i (\boldsymbol{x})= x_i\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>정의 11.6 (사영 함수)</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi_i (\boldsymbol{x})= x_i\)</span> 이다.</p>
 </div>
 </div>
 </div>
@@ -706,7 +755,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_oscillation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.6 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(a\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 11.7 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(a\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
 M(f,\,\boldsymbol{a},\,\delta) &amp;:= \sup \{f(\boldsymbol{x}): \boldsymbol{x}\in A,\, \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}, \\
@@ -722,7 +771,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_oscillation_and_continuity" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.2</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
+<p><span class="theorem-title"><strong>명제 11.3</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -745,7 +794,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_oscillation_and_closed_set" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.3</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
+<p><span class="theorem-title"><strong>명제 11.4</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -757,8 +806,8 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 </div>
 <p><br></p>
 </section>
-<section id="연습문제-2" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h2>
+<section id="연습문제-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_1_23" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.16 (Spivak 1.23)</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
@@ -850,6 +899,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

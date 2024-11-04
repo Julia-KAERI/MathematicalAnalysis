@@ -553,7 +553,72 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 </br>
 
-## 함수와 연속성 {#sec-part3_functions_and_continuity}
+## 함수와 연속성 
+
+### 행렬의 노름 {#sec-part3_norm_of_matrix}
+
+@exr-part3_spivak_1_10 에서 우리는 선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 $\|L(\bf{x})\|\le M\|\bf{x}\|$ 인 양수 $M$ 이 존재함을 보였다. 
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_norm_of_matrix}
+
+#### 행렬의 norm
+
+선형사상 $L\in \mathcal{L}{\R^n,\, \R^m}$ 에 대해 행렬의 norm $\|L\|$ 은 아래와 같이 정의된다.
+
+$$
+\|L\| := \sup \{\|L\bf{x}\| : \bf{x} \in \R^n,\, \|\bf{x}\|=1\}.
+$$ {#eq-part3_definition_of_matrix_norm}
+
+:::
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_properties_of_matrix_norm_1}
+
+행렬의 노름에 대해 다음이 성립한다. 
+
+&emsp;($1$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\bf{x}\|\le \|L\|\cdot \|\bf{x}\|$ 이다.
+
+&emsp;($2$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\|<\infty$ 이며 $A$ 는 고른 연속이다.
+
+&emsp;($3$) $L,\, T\in \mathcal{L}(\R^n,\, \R^m)$ 이며 $c\in \R$ 일 때 다음이 성립한다.
+
+$$
+\|L+T\| \le \|L\|+\|T\|,\qquad \|cL\| = |c|\cdot \|L\|.
+$$
+
+&emsp;($4$) $L\in \mathcal{L}(\R^n,\, \R^m),\, T\in \mathcal{L}(\R^m,\, \R^p)$ 일 때 다음이 성립한다. 
+
+$$
+\|T\circ L\| \le \|T\|\cdot \|L\|
+$$
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) $\|\bf{u}\|=\dfrac{\bf{x}}{\|\bf{x}\|}$ 라고 하면 $\|L\| \ge \|L\bf{u}\| = \dfrac{\|L\bf{x}\|}{\|\bf{x}\|}$ 이다. 
+
+($2$) $\|L\|<\infty$ 는 @exr-part3_spivak_1_10 에서 보였다. ($1$) 로부터 $\|L(\bf{x}-\bf{y})\|\le \|L\|\cdot \|\bf{x}-\bf{y}\|$ 이므로 고른 연속이다.
+
+($3$) $\|(L+T)(\bf{x})\|=\|L\bf{x}+T\bf{x}\|\le \|L\bf{x}\|+\|T\bf{x}\|\le (\|L\|+\|T\|)\|\bf{x}\|$ 이다. 임의의 $\|x\|=1$ 에 대해 $\|L\|+\|T\| \ge \|(L+T)(\bf{x})\|$ 이므로 $\|L\|+\|T\| \ge \|L+T\|$ 이다. $\|cL\bf{x}\| = |c|\cdot \|L\bf{x}\|$ 이므로 $\|cL\| = |c|\cdot \|L\|$ 이다. 
+
+($4$) $\|T\circ L(\bf{x})\| \le \|T\| \cdot \|L\bf{x}\| \le \|T\|\cdot \|L\|\cdot \|\bf{x}\|$ 이다.  $\square$
+
+:::
+
+</br>
+
+
+### 함수의 연속성 {#sec-part3_functions_and_continuity}
+
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -692,7 +757,7 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 �
 
 </br>
 
-## 연습문제 {.unnumbered}
+### 연습문제 {.unnumbered}
 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
