@@ -659,7 +659,6 @@ $A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots
 
 $\Q \subset \R$ 은 measure zero 이지만 옹골집합이 아니며 content zero 도 아니다.
 
-
 :::
 
 </div></br>
