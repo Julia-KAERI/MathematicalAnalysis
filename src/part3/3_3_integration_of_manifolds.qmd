@@ -1,0 +1,485 @@
+---
+title: "다변수 함수의 적분"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+## 다변수 함수의 적분
+
+### 정의와 기본적 성질
+
+
+
+
+::: {.callout-tip appearance="minimal"}
+- $\R$ 에서의 분할은 @def-part2_partition 을 참고하라. 전체적으로 [리만-스틸체스 적분](../part2/2_5_riemann_stieltjes_integral.qmd) 를 참고하라.
+
+- 여기서의 $n$-cell 은 특별한 언급이 없는 한 닫힌 $n$-cell 을 의미한다.
+:::
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_volume_of_n_cell}
+
+#### $n$-cell 의 부피
+
+$\R^n$ 에서 정의된 $n$-cell $Q=[a_1,b_1] \times \cdots \times [a_n,b_n]$ 의 부피 $\text{vol(Q)}$ 는 다음과 같이 정의된다.
+
+$$
+\text{vol}(Q) := (b_1-a_1) (b_2-a_2)\cdots (b_n-a_n).
+$$
+
+
+
+::: 
+:::
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_partition_of_cube}
+
+#### $n$-cell 의 분할과 subcell
+
+닫힌 $n$-cell $Q=[a_1,\,b_1] \times \cdots \times [a_n,\,b_n]$ 을 생각하자. 각각의 $i=1,\ldots,\,n$ 에 대해 $P_i$ 가 $[a_i,\,b_i]$ 의 분할 일 때 $P = (P_1,\ldots,\,P_n)$ 를 $Q$ 의 **분할 (partition)** 이라고 한다. $Q$ 에 대한 모든 분할의 집합을 $\mathcal{P}[Q]$ 라고 표기한다. 
+
+$n$ cell $q=[a^{(1)}_{i_1},\,a^{(1)}_{i_1+1}] \times \cdots \times [a^{(n)}_{i_n},\,a^{(n)}_{i_{n}+1}]$ 가 각각의 $k=1,\ldots,\,n$ 에 대해 $a^{(k)}_{i_k},\, a^{(k)}_{i_k+1} \in P_k$ 일 때 이 $n$-cell $q$ 를 분할 $P$ 에 의한 $Q$ 의 subcell 이라고 한다.
+
+
+
+::: 
+:::
+
+</br>
+
+짐작하듯이 $n$-cell $Q$ 에 대한 분할 $P$ 가 정해지면 $n$-cell 에 대한 모든 subcell 도 정해진다. 
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_refinement_of_partition}
+
+#### refinement
+
+$n$-cell $Q$ 에 대한 두 분할 $P_1$, $P_2$ 를 생각하자. $P_1$ 에 의한 subcell 이 모두 $P_2$ 에 의한 subcell 이거나 $P_2$ 의 subcell 에 포함된다면 $P_2$ 를 $P_1$ 의 **refinement** 라고 한다. $P_2$ 가 $P_1$ 의 refinement 일 때 $P_1 \subset P_2$ 라고 표기한다.
+
+::: 
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_riemann_upper_sum_and_lower_sum}
+
+#### 리만 상합, 리만 하합
+
+$Q\subset \R^n$ 이 $n$-cell 이고 $Q$ 에 대해 정의된 함수 $f:Q \to \R$ 이 유계라고 하자. $P$ 가 $Q$ 의 분할이며 $S$ 가 $P$ 의 subcell 일 때
+
+$$
+\begin{aligned}
+M_S(F) &:= \sup \{f(\bf{x}) : \bf{x}\in S\}, \\[0.3em]
+m_S(F) &:= \inf \{f(\bf{f}): \bf{x}\in S\}
+\end{aligned}
+$$
+
+라고 하자. $\text{vol}(S)$ 를 cubcell $S$ 의 부피라고 할 때 분할 $P$ 에 대한 $f$ 의 리만 상합 $U(f,\, P)$ 와 리만 하합 $L(f,\,P)$ 는 다음과 같이 정의된다.
+
+$$
+\begin{aligned}
+U(f,\,P) := \sum_{S} m_S \cdot \text{vol}(S), \\[0.3em]
+L(f,\,P) := \sum_{S} M_S \cdot \text{vol}(S).
+\end{aligned}
+$$
+
+::: 
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_properties_of_riemann_sum}
+
+$n$-cell $Q$ 에서 정의된 유계인 함수 $f : Q \to \R$ 와 $P,\,P_1,\,P_2\in \mathcal{P}[Q]$ 에 대해 다음이 성립한다. 
+
+&emsp;($1$) $L(f,\,P) \le U(f,\, P)$.
+
+&emsp;($2$) $P_1 \subset P_2 \implies L(f,\,P_1) \le L(f,\, P_2),\, U(f,\,P_2) \le U(f,\,P_1)$.
+
+&emsp;($3$) $L(f,\, P_1) \le U(f,\,P_2)$
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1$) 각각의 subcell $S$ 에 대해 $m_S \le M_S$ 이므로 자명하다.
+
+($2$) $S$ 가 $P_1$ 에 의한 subcell 일 때 하나 이상의 $P_2$ 의 subcell $S_1,\ldots,\,S_m$ 의 합집합이다. 이 때 각각의 $i=1,\ldots,\,m$ 에 대해 $m_S \le m_{S_i}$ 이며 $M_S \ge M_{S_i}$ 이고 $\text{vol}(S) = \sum_{i=1}^m \text{vol}(S_i)$ 이므로 ($2$) 가 성립한다. 
+
+($3$) $P_1$ 과 $P_2$ 의 공동의 refinement $P_3$ 를 생각 할 수 있다. 그렇다면 ($2$) 에 의해
+
+$$
+L(f,\,P_1) \le L(f,\, P_3) \le U(f,\, P_3) \le L(f,\,P_2)
+$$ 
+
+이다. $\square$
+:::
+
+
+</br>
+
+@prp-part3_properties_of_riemann_sum 의 ($3$) 으로부터 $f:Q\to \R$ 에 대해 $\{L(f,\,P): P\in \mathcal{P}[Q]\}$ 와 $\{U(f,\,P) : P\in \mathcal{P}[Q]\}$ 는 유계임을 안다. 또한
+
+$$
+\sup \{L(f,\,P):P\in \mathcal{P}[Q]\} \le \inf \{ U(f,\,P): P\in \mathcal{P}[Q] \}
+$$
+
+임도 안다. 일변수 함수의 적분에서와 같이 다변수 실함수에 대한 리만 적분을 정의 할 수 있다.
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_riemann_integration_of_multivariable_function}
+
+#### 리만 적분
+
+$n$-cell $Q$ 에서 정의된 유계인 함수 $f:Q\to \R$ 에 대해 리만 상적분 $\displaystyle \overline{\int_Q}f$ 와 리만 하적분 $\displaystyle \underline{\int_Q}f$ 를 다음과 같이 정의한다.
+
+$$
+\underline{\int_Q} f := \sup \{L(f,\,P):P\in \mathcal{P}[Q]\},\qquad  \overline{\int_Q} f := \inf \{ U(f,\,P): P\in \mathcal{P}[Q] \}
+$$
+
+$\displaystyle \underline{\int_Q} f = \displaystyle \overline{\int_Q} f$ 일 때 $f$ 가 $Q$ 에서 **리만 적분 가능하다(Riemann-integrable)**, 혹은 단순히 **적분 가능하다(integrable)** 고 하고 이 값을
+
+$$
+\int_Q f
+$$
+
+라고 쓴다. $Q$ 에서 적분 가능한 모든 함수의 집합을 $\mathcal{R}[Q]$ 라고 쓴다.
+
+::: 
+:::
+
+</br>
+
+일변수 함수에서의 @thm-part2_properties_of_stieltjes_integral_1 와 유사한 아래 정리는 아주 유용하다.
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_properties_of_integral}
+
+$n$-cell $Q$ 에서 정의된 유계함수 $f:Q \to \R$ 에 대해 다음은 동치이다.
+
+&emsp;($1$) $f\in \mathcal{R}[Q]$, 
+
+&emsp;($2$) 임의의 $\varepsilon >0$ 에 대해 $U(f,\,P)-L(f,\,P)<\varepsilon$ 인 $P\in \mathcal{P}[Q]$ 가 존재한다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+($1\implies 2$) $\sup \{L(f,\, P)\} = \int_Q f$ 이므로 $\int_Q f - L(f,\,P_1)<\varepsilon/2$ 를 민족하는 $P_1\in \mathcal{P}[Q]$ 가 존재한다. 마찬가지로 $U(f,\,P_2) - \int_Q f < \varepsilon/2$ 를 만족하는 $P_2\in \mathcal{P}[Q]$ 가 존재한다. $P_1,\,P_2$ 의 공통 refinement $P$ 에 대해서도 두 부등식이 성립하며 두 부등식을 더하면 $U(f,\,P) - L(f,\,P) \le \varepsilon$ 이다.
+
+($2\implies 1$) $\displaystyle L(f,\,P) \le \underline{\int_Q}f \le \overline{\int_Q} f \le U(f,\,P)$ 이므로 임의의 $\varepsilon>0$ 에 대해
+
+$$
+\overline{\int_Q} f - \underline{\int_Q}f < \varepsilon
+$$
+
+이다. 이는 상적분과 하적분 값이 같음을 의미하므로 $f$ 는 리만 적분 가능하다. $\square$
+
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_1}
+
+#### Spivak 3.1
+
+$f: [0,\,1]\times [0,\,1] \to \R$ 이 다음과 같이 정의되었다.
+
+$$
+f(x,\,y) = \left\{ \begin{array}{ll} 0, \qquad & \text{if } 0 \le x < \frac{1}{2}, \\ 1 & \text{if } \frac{1}{2} \le x < 1. \end{array}\right. .
+$$
+
+$f$ 가 적분가능하며 $\int_{[0,\,1]\times [0,\,1]} f = \frac{1}{2}$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+임의의 $0<\varepsilon <1$ 에 대해 $[0,1]\times [0,\,1]$ 에 대한 분할 $P$ 를 다음과 같이 잡는다.
+
+$$
+P = \left\{ \left[0,\, \dfrac{1}{2}-\dfrac{\varepsilon}{4}\right] \times [0,\,1], \, \left[\dfrac{1}{2}-\dfrac{\varepsilon}{4},\, \dfrac{1}{2}+\dfrac{\varepsilon}{4}\right] \times [0,\,1], \,  \left[\dfrac{1}{2}+\dfrac{\varepsilon}{4},\, 1\right] \times [0,\,1] \right\}
+$$
+
+이 때
+
+$$
+U(f,\,P) = \dfrac{2+\varepsilon}{4},\qquad L(f,\,P) = \dfrac{2-\varepsilon}{4}
+$$
+
+이므로 
+
+$$
+U(f,\,P)-L(f,\,P) = \dfrac{\varepsilon}{2} < \varepsilon
+$$
+
+이다. @thm-part3_properties_of_integral 에 의해 $f$ 는 적분가능하다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_2}
+
+#### Spivak 3.2
+
+$f:A \to \R$ 이 적분가능하며 $g$ 는 유한개의 점을 제외하고는 $f$ 와 같다. $g$ 가 적분가능하며 $\int_A f = \int_A g$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$f\ne g$ 인 점을 $x_1,\ldots,\,x_m$ 이라고 하자. 그리고 $M=\max \{|f(x_i)-g(x_i)|\}$ 이라고 하자.
+
+$n$ 차원 유클리드 공간에서 한 점이 포함될 수 있는 $n$-cell 의 갯수를 $N_c$ 라고 하자. $\R$ 에서 $N_c=1$ 이며 $\R^2$ 에서는 $N_c=4$ 이고 유한차원 유클리드 공간에서 $N_c$ 는 정해져 있다. $\varepsilon >0$ 을 고정시킨다. 어떤 분할 $P_1\in \mathcal{P}[A]$ 에서 $U(f,\,P_1)-L(f,\,P_1)<\frac{\varepsilon}{2}$ 이라고 하자. $P_1$ 에 의한 subcell 이 $\{x_1,\ldots,\,x_m\}$ 가운데 두개 이상을 포함한다면 이것을 하나만 포함하도록 하는 $P_1$ 에 대한 refinement $P_2$ 가 존재하며 $U(f,\,P_2)-L(f,\,P_2)<\varepsilon$ 이다.
+
+이 $P_2$ 에서 ${x_i}$ 를 포함하는 subcell 에 대해 각각의 subcell 의 부피가 $V_0$ 보다 작도록 $P_2$ 를 refine 할 수 있다. 이 분할을 $P_3$ 라고 하자. 그렇다면
+
+$$
+\begin{aligned}
+U(f,\,P_3) - N_cV_0M &\le U(g,\,P_3) \le U(f,\,P_3) + N_cV_0M,\\[0.3em]
+L(f,\,P_3) - N_cV_0M &\le L(g,\,P_3) \le L(f,\,P_3) + N_c V_0 M
+\end{aligned}
+$${#eq-part3_spivka_3_2_1}
+
+이며
+
+$$
+U(g,\,P_3)-L(g,\,P_3) \le U(f,\,P_3)-L(f,\,P_3) + 2N_cV_0M \le \dfrac{\varepsilon}{2} + 2N_CV_0M
+$$
+
+이다. 여기서 우리가 $V_0 < \dfrac{\varepsilon}{4N_cM}$ 으로 잡는다면 임의의 $\varepsilon>0$ 에 대해
+
+$$
+U(g,\,P_3)-L(g,\,P_3) \le \varepsilon
+$$
+
+이므로 $g$ 가 적분가능함을 안다. 또한 @eq-part3_spivka_3_2_1 로 부터 임의의 $\varepsilon>0$ 에 대해
+
+$$
+L(f,\,P)-\dfrac{\varepsilon}{4} \le L(g,\,P) \le U(g,\, P) \le U(f,\,P)+ \dfrac{\varepsilon}{4}
+$$
+
+를 만족하는 분할 $P$ 가 존재하며 $f,\,g$ 가 적분가능하므로 $\int_A f = \int_A g$ 임을 알 수 있다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_3}
+
+#### Spivak 3.3
+
+$f,\,g:A \to \R$ 은 적분가능하다.
+
+($a$) 임의의 분할 $P$ 와 $P$ 에 의한 $n$-cell $S$ 에 대해 
+
+$$
+m_S(f)+m_S(g) \le m_S(f+g),\qquad M_S(f+g) \le M_S(f)+M_S(g)
+$$ {#eq-part3_spivak_3_3_1}
+
+이며, 따라서
+
+$$
+\begin{aligned}
+L(f,\,P) + L(g,\,P) \le L(f+g,\,P),\qquad U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
+\end{aligned}
+$$ {#eq-part3_spivak_3_3_2}
+
+임을 보여라.
+
+
+($b$) $f+g$ 는 적분가능하며 $\int_A(f+g) = \int_A f+ \int_Ag$ 임을 보여라.
+
+($c$) 어떤 상수 $c$ 에 대해 $\int_A(cf)= c\int_Af$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) trivial
+
+($b$) 임의의 $\varepsilon>0$ 에 대해 $U(f,\,P_1)-L(f,\,P_1)<\frac{\varepsilon}{2}$ 인 $A$ 의 분할 $P_1$ 과 $U(g,\,P_2)-L(g,\,P_2)<\frac{\varepsilon}{2}$ 인 $A$ 의 분할 $P_2$ 가 존재한다. $P_1$ 과 $P_2$ 의 공통 refinement 인 $P$ 에 대해서도 위의 부등식이 성립하며,
+
+$$
+U(f+g,\,P)-L(f+g,\,P) \le U(f,\,P)-L(f,\,P) + U(g,\,P)-L(g,\,P) < \varepsilon
+$$
+
+이다. 따라서 $f+g \in \mathcal{R}[A]$ 이다. 임의의 $\varepsilon>0$ 에 대해 $\int_A f - L(f,\,P_1)<\frac{\varepsilon}{2}$, $\int_A g - L(g,\,P_1)<\frac{\varepsilon}{2}$ 인 분할 $P_1$ 이 존재하며 $U(f,\,P_2)-\int_A f<\frac{\varepsilon}{2}$, $U(g,\,P_2)-\int_A g<\frac{\varepsilon}{2}$ 인 분할 $P_2$ 가 존재한다. $P$ 를 $P_1$ 과 $P_2$ 의 공통의 refinement 라고 하면 위의 부등식이 모두 성립하며
+
+$$
+\left(\int_A f + \int_A g \right) -\varepsilon \le  \int_A (f+g) \le \left(\int_A f + \int_A g \right)+ \varepsilon 
+$$
+
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 $\displaystyle \int_A (f+g) = \int_A f + \int_A g$ 이다.
+
+
+($c$) trivial.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_4}
+
+#### Spivak 3.4
+
+$f:A \to \R$ 과 $P\in \mathcal{P}[A]$ 를 생각하자. $f\in \mathcal{R}[A]$ 일 필요충분조건은 각각의 $P$ 의 $n$-cell $S$ 에 대해 $f|_S \in \mathcal{R}[S]$ 인 것임을 보여라. 그리고 이 경우 $\int_A f = \sum_S \int_S f|_S$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$A$ 에 대한 분할 $P$ 에 의해 정해진 $n$-cell 의 집합을 $\mathcal{S}[P]$ 라고 하자. 이 때 다음은 자명하다.
+
+$$
+L(f,\,P) = \sum_{S \in \mathcal{S}[P]} L(f|_S,\, S) ,\qquad U(f,\,P) = \sum_{S \in \mathcal{S}[P]} U(f|_S,\, S)
+$${#eq-part3_spivak_3_4_1}
+
+여기서 $U(f|_S,\,S)-L(f|_S,\,S) \le U(f,\,P)-L(f,\,P)$ 이며 임의의 정해진 $\varepsilon<0$ 에 대해 $U(f,\,P)-L(f,\,P)<\varepsilon$ 인 분할 $P$ 가 존재하며 이 분할에 대해 $U(f|_S,\,S)-L(f|_S,\,S)<\varepsilon$ 이므로 $f|_S$ 는 $S$ 에서 적분가능하다. 
+
+이제 각각의 $f|_S$ 가 적분가능함을 가정하자. $P$ 에 의한 $n$-cell 이 $N$ 개라고 하자. $S$ 에 대한 분할 $P_S$ 에 대해
+
+$$
+U(f|S,\, P_S)-L(f|S,\, P_S) \le \dfrac{\varepsilon}{N}
+$$
+
+이 성립하며, 각각의 $P_S$ 에 대한 공통의 refinement $P'$ 에 대해
+
+$$
+U(f,\,P')-L(f,\,P') \le \varepsilon
+$$
+
+이므로 $f$ 는 적분 가능하다. $\int_A = \sum_S \int_S f|_S$ 임은 @eq-part3_spivak_3_4_1 로 부터 자명하다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_5}
+
+#### Spivak 3.5
+
+$f,\,g: A \to \R$ 가 적분가능하고 $f\le g$ 라면 $\int_A f \le \int_A g$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$h=g-f$ 이면 $h\ge 0$ 이다. 임의의 분할 $P$ 에 대해 $U(f,\,P) \ge L(f,\,P) \ge 0$ 이므로 $\int_A h \ge 0$ 이다. @exr-part3_spivak_3_3 에 의해 
+
+$$
+\int_A g- \int_A f = \int_A (g-f) = \int_A h \ge 0
+$$
+
+이다.
+
+:::
+
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_6}
+
+#### Spivak 3.6
+
+$f:A \to \R$ 이 적분가능하다면 $|f|$ 역시 적분가능하며 $\left|\int_A f\right| \le \int_A|f|$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$f^+(x) := \max (f(x),\,0),\, f^-(x) = \min (f(x),\,0)$ 이라고 하자. $f = f^+ + f^-$ 이며 $|f|=f^+ - f^-$ 이다. $A$ 에 포함되는 임의의 $n$-cell $S$ 에 대해
+
+($i$) $M_s(f)\ge 0,\, m_s(f) \ge 0$ 이면 $M_S(f^+) = M_S(f)$, $m_s(f^+) = m_S(f)$, $M_S(f^-)=M_S(f^-)=0$
+
+($ii$) $M_s(f) \ge0,\, m_S(f) \le 0$ 이면 $M_S(f^+) = M_S(f),\, m_S(f^{+})=0$, $M_S(f^-)=0$, $m_S(f^-) = m_S(F)$, 
+
+($iii$) $M_s(f) \le 0,\, m_S(f) \le 0$ 이면 $M_S(f^+) = m_S(f^{+})=0$, $M_S(f^-)=M_S(f)$, $m_S(f^-) = m_S(F)$, 
+
+이다. $M_S(f^+) - m_S(f^+) \le M_S(f)- m_S(f)$ 이며 $M_S(f^-)-m_S(f^-)\le M_S(f)- m_S(f)$ 이므로
+
+$f^+$ 와 $f^-$ 는 적분가능하며 $|f| = f^+ - f^-$ 이므로 $|f|$ 도 적분가능하다. 또한
+
+$$
+\left|\int_A f \right| = \left|\int_A (f^+ + f^-)\right| \le \left|\int_A f^+ \right| + \left|\int_a f^-\right| = \int_A |f|
+$$
+
+이다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_7}
+
+#### Spivak 3.7
+
+$f:[0,\,1]\times [0,\,1]\to \R$ 이 다음과 같이 정의되었다.
+
+$$
+f(x,\,y) = \left\{\begin{array}{ll} 0, \qquad & x\in \R\backslash \Q, \\  0, & x\in \Q,\, y \in \R\backslash\Q \\ 1/q & x\in \Q,\, y=p/q \text{ in lowest terms}. \end{array}\right.
+$$
+
+$f$ 가 적분가능하며 $\int_{[0,\,1]\times [0,\,1]} f = 0$ 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+
+:::

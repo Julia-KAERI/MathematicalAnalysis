@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/figures/figures.html" rel="next">
+<link href="../../src/part3/3_3_integration_of_manifolds.html" rel="next">
 <link href="../../src/part3/3_1_functions_on_Euclidean_space.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -253,6 +253,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_3_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -267,7 +273,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,7 +321,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#연습문제-4" id="toc-연습문제-4" class="nav-link" data-scroll-target="#연습문제-4">연습문제</a></li>
   </ul></li>
-  <li><a href="#음함수-정리" id="toc-음함수-정리" class="nav-link" data-scroll-target="#음함수-정리"><span class="header-section-number">12.6</span> 음함수 정리</a></li>
+  <li><a href="#음함수-정리" id="toc-음함수-정리" class="nav-link" data-scroll-target="#음함수-정리"><span class="header-section-number">12.6</span> 음함수 정리</a>
+  <ul class="collapse">
+  <li><a href="#연습문제-5" id="toc-연습문제-5" class="nav-link" data-scroll-target="#연습문제-5"><span class="header-section-number">12.6.1</span> 연습문제</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1871,19 +1880,20 @@ f'(0) = \lim_{t \to 0}\left(\dfrac{1}{2} + t \sin \dfrac{1}{t}\right) = \dfrac{1
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-part3_pts_of_inverse_function" class="theorem example">
-<p><span class="theorem-title"><strong>예제 12.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 이 <span class="math inline">\(F(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, F_1(\boldsymbol{x,\,y}))\)</span> 꼴이며 역함수가 존재한다면 <span class="math inline">\(F^{-1}(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, F_2(\boldsymbol{x}))\)</span> 꼴임을 보이자. <span class="math inline">\(F^{-1}=G=\begin{bmatrix} g_1 &amp; \cdots &amp; g_{n+m}\end{bmatrix}^T\)</span> 라고 하자.</p>
+<p><span class="theorem-title"><strong>예제 12.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 이 <span class="math inline">\(F(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, H(\boldsymbol{x,\,y}))\)</span> 꼴이며 역함수가 존재한다면 <span class="math inline">\(F^{-1}(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, K(\boldsymbol{x}))\)</span> 꼴임을 보이자. <span class="math inline">\(F^{-1}=G=\begin{bmatrix} g_1 &amp; \cdots &amp; g_{n+m}\end{bmatrix}^T\)</span> 라고 하자.</p>
+<p><span class="math inline">\(i \le n\)</span> 에 대해서만 보면 된다. <span class="math inline">\(x_i = (G\circ F)_i = g_i (\boldsymbol{x},\, F_1(\boldsymbol{x},\, \boldsymbol{y}))\)</span> 이므로 <span class="math inline">\(g_i = x_i\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_implicit_function_theorem_1" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.11</strong></span> <span class="math inline">\(F: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 이 <span class="math inline">\((\boldsymbol{a}, \boldsymbol{b})\)</span> 를 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수이며 <span class="math inline">\(F(\boldsymbol{a}, \boldsymbol{b})=0\)</span> 이라고 하자. <span class="math inline">\(m \times m\)</span> 행렬 <span class="math inline">\(M\)</span> 에 대해 <span class="math inline">\(M_{ij} = D_{n+j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 이고 <span class="math inline">\(\det (M) \ne 0\)</span> 이면 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(\boldsymbol{b}\)</span> 를 포함하는 어떤 열린집합 <span class="math inline">\(B\subset \mathbb{R}^m\)</span> 에서 정의된 단사 함수 <span class="math inline">\(G:A \to B\)</span> 가 존재하여 <span class="math inline">\(F(\boldsymbol{x},\, G(\boldsymbol{x})) = 0\)</span> 이 되도록 한다.</p>
+<p><span class="theorem-title"><strong>정리 12.11</strong></span> <span class="math inline">\(F: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 이 <span class="math inline">\((\boldsymbol{a}, \boldsymbol{b})\)</span> 를 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수이며 <span class="math inline">\(F(\boldsymbol{a}, \boldsymbol{b})=0\)</span> 이라고 하자. <span class="math inline">\(m \times m\)</span> 행렬 <span class="math inline">\(M\)</span> 에 대해 <span class="math inline">\(M_{ij} = D_{n+j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 이고 <span class="math inline">\(\det (M) \ne 0\)</span> 이면 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(\boldsymbol{b}\)</span> 를 포함하는 어떤 열린집합 <span class="math inline">\(B\subset \mathbb{R}^m\)</span> 에서 정의된 미분가능한 단사 함수 <span class="math inline">\(G:A \to B\)</span> 가 존재하여 <span class="math inline">\(F(\boldsymbol{x},\, G(\boldsymbol{x})) = 0\)</span> 이 되도록 한다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\widetilde{F}: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 <span class="math inline">\(\widetilde{F}(\boldsymbol{x},\,\boldsymbol{y}) := (\boldsymbol{x},\, F(\boldsymbol{x},\,\boldsymbol{y}))\)</span> 로 정의하자. <span class="math inline">\(\det (\widetilde{F}'(\boldsymbol{a},\, \boldsymbol{b}))\)</span><span class="math inline">\(= \det (M) \ne 0\)</span> 이다. 역함수 정리 (<a href="#thm-part3_inverse_function_theorem" class="quarto-xref">정리&nbsp;<span>12.10</span></a>) 에 따라 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V\)</span> 와 <span class="math inline">\(F(\boldsymbol{a},\, \boldsymbol{b})=(\boldsymbol{a},\, \boldsymbol{0})\)</span> 을 포함하는 열린 집합 <span class="math inline">\(W\)</span> 에서 정의된 <span class="math inline">\(\widetilde{F}\)</span> 의 역함수이자 <span class="math inline">\(C^1\)</span> 급 함수인 <span class="math inline">\(\widetilde{F}^{-1}:W \to V\)</span> 가 존재한다.</p>
-<p><span class="math inline">\(V\)</span> 를 <span class="math inline">\(A\subset \mathbb{R}^n,\, B\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(V=A \times B\)</span> 가 되도록 할 수 있으며 그렇다면 <span class="math inline">\(\widetilde{F}^{-1}: W \to A \times B\)</span> 는 어떤 함수 미분가능한 함수 <span class="math inline">\(K:W \to B\)</span> 에 대해 <span class="math inline">\(\widetilde{F}^{-1}(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y}))\)</span> 이다. 이제 <span class="math inline">\(\Phi:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 을 <span class="math inline">\(\Phi (\boldsymbol{x},\, \boldsymbol{y}) := \boldsymbol{y}\)</span> 로 정의하자. <span class="math inline">\(\Phi \circ \widetilde{F} = F\)</span> 이다. 따라서</p>
+<p><span class="math inline">\(V\)</span> 를 <span class="math inline">\(A\subset \mathbb{R}^n,\, B\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(V=A \times B\)</span> 가 되도록 할 수 있으며 그렇다면 <span class="math inline">\(\widetilde{F}^{-1}: W \to A \times B\)</span> 는 어떤 함수 미분가능한 함수 <span class="math inline">\(K:W \to B\)</span> 에 대해 <span class="math inline">\(\widetilde{F}^{-1}(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y}))\)</span> 이다(<a href="#exm-part3_pts_of_inverse_function" class="quarto-xref">예제&nbsp;<span>12.1</span></a>). 이제 <span class="math inline">\(\Phi:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 을 <span class="math inline">\(\Phi (\boldsymbol{x},\, \boldsymbol{y}) := \boldsymbol{y}\)</span> 로 정의하면 <span class="math inline">\(\Phi \circ \widetilde{F} = F\)</span> 이다. 따라서</p>
 <p><span class="math display">\[
 F(\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y})) = (F \circ \widetilde{F}^{-1})(\boldsymbol{x},\, \boldsymbol{y}) = (\Phi \circ \widetilde{F} \circ \widetilde{F}^{-1})(\boldsymbol{x},\, \boldsymbol{y}) = \boldsymbol{y}
 \]</span></p>
@@ -1898,20 +1908,74 @@ F(\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y})) = (F \circ \widetilde{F
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_implicit_function_theorem_2" class="theorem">
-<p><span class="theorem-title"><strong>정리 12.12</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^p\)</span> 가 <span class="math inline">\(\boldsymbol{a}\in R^n\)</span> 을 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수이고 <span class="math inline">\(p\le n\)</span> 이라고 하자. <span class="math inline">\(F(\boldsymbol{a})=\boldsymbol{0}\)</span> 이며 <span class="math inline">\(p\times n\)</span> 행렬 <span class="math inline">\(M_{ij} = D_{j}f_i(\boldsymbol{a})\)</span> 에 대해 <span class="math inline">\(\text{rank}(M)=p\)</span> 라면 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된, 아래의 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 를 만족하는 <span class="math inline">\(H: A\to \mathbb{R}^n\)</span> 이 존재한다.</p>
+<p><span class="theorem-title"><strong>정리 12.12</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m  \to \mathbb{R}^m\)</span> 가 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\in \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수라고 하자. <span class="math inline">\(F(\boldsymbol{a},\,\boldsymbol{b})=\boldsymbol{0}\)</span> 이며 <span class="math inline">\(m\times (n+m)\)</span> 행렬 <span class="math inline">\(M_{ij} = D_{j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 에 대해 <span class="math inline">\(\text{rank}(M)=m\)</span> 라면 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^{n+m}\)</span> 에서 정의된, 아래의 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 를 만족하는 <span class="math inline">\(H: A\to \mathbb{R}^n \times \mathbb{R}^m\)</span> 이 존재한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(H^{-1}\)</span> 이 존재하고 미분가능하며,</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\((F\circ H)(x_1,\ldots,\,x_n) = (x^{n-p+1},\ldots,\,x_n)\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\((F\circ H)(\boldsymbol{x},\,\boldsymbol{y}) = \boldsymbol{y}\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(F\)</span> 를 <span class="math inline">\(F:\mathbb{R}^{n-p}\times \mathbb{R}^p \to \mathbb{R}^p\)</span> 로 생각하고 <a href="#thm-part3_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>12.11</span></a> 의 증명과정을 다시 보자. <span class="math inline">\(H:A \to \mathbb{R}^n\)</span> 을 <span class="math inline">\(H(\boldsymbol{x},\, \boldsymbol{y})= (\boldsymbol{x},\, K(\boldsymbol{x},\,\boldsymbol{y}))\)</span> 라고 놓으면</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <a href="#thm-part3_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>12.11</span></a> 와의 차이를 보자. <span class="math inline">\(F'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 는 <span class="math inline">\(m \times (n +m )\)</span> 행렬이며 <a href="#thm-part3_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>12.11</span></a> 은 정체 행과 마지막 <span class="math inline">\(m\)</span> 개의 열로 이루어진 행렬의 행렬식이 <span class="math inline">\(0\)</span> 이 아난 경우이며, 즉 마지막 <span class="math inline">\(m\)</span> 개의 열이 선형독립인 경우이며, 여기는 전체 <span class="math inline">\(m+n\)</span> 개의 열 가운데 위치에 무관하게 <span class="math inline">\(m\)</span> 개의 열이 선형독립인 경우이다.</p>
+<p>이제 <span class="math inline">\(m\)</span> 개의 선형독립인 열의 인덱스를 <span class="math inline">\(j_1,\ldots,\,j_m\)</span> 이라고 하고 열에 대한 permutation <span class="math inline">\(G: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 <span class="math inline">\(G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})\)</span> 이라고 하면 <span class="math inline">\(F\circ G\)</span> 는 <a href="#thm-part3_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>12.11</span></a> 의 <span class="math inline">\(F\)</span> 와 똑같은 경우이다. 물론 <span class="math inline">\(G\)</span> 는 선형변환이며 따라서 전체 <span class="math inline">\(\mathbb{R}^n \times \mathbb{R}^m\)</span> 에서 <span class="math inline">\(C^\infty\)</span> 급 함수이다.</p>
+<p><a href="#thm-part3_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>12.11</span></a> 에 따라 <span class="math inline">\(F \circ G\)</span> 에 대해</p>
 <p><span class="math display">\[
-(F\circ H)(\boldsymbol{x},\,\boldsymbol{y}) = \boldsymbol{y}
+(F \circ G)(\boldsymbol{x},\,K(\boldsymbol{x},\, \boldsymbol{y})) = \boldsymbol{y}
+\]</span></p>
+<p>인 <span class="math inline">\(C^1\)</span> 급 함수 <span class="math inline">\(K:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 이 존재하며 <span class="math inline">\(H=G \circ (\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y}))\)</span> 라고 놓으면 된다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<section id="연습문제-5" class="level3" data-number="12.6.1">
+<h3 data-number="12.6.1" class="anchored" data-anchor-id="연습문제-5"><span class="header-section-number">12.6.1</span> 연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_40" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.40 (Spivak 2.40)</strong></span> 음함수 정리를 이용하여 <a href="#exr-part3_spivak_2_15" class="quarto-xref">연습문제&nbsp;<span>12.15</span></a> (<span class="math inline">\(c\)</span>) 를 다시 풀어라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-part3_spivak_2_15" class="quarto-xref">연습문제&nbsp;<span>12.15</span></a> (<span class="math inline">\(c\)</span>) 에서 <span class="math inline">\(F = \mathbb{R}\times \mathbb{R}^n \to \mathbb{R}^n\)</span> 을 <span class="math inline">\(F=\begin{bmatrix}f_1 &amp; \cdots f_n\end{bmatrix}^T\)</span> 이며</p>
+<p><span class="math display">\[
+f_i (t,\,\boldsymbol{x}) = \sum_{j=1}^n a_{ij}(t)x_j - b_i(t)
+\]</span></p>
+<p>로 정의한다. <span class="math inline">\(\det ([a_{ij}]) \ne 0\)</span> 이므로 <a href="#thm-part3_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>12.11</span></a> 에 의해 <span class="math inline">\(F(t,\, X(t)) = 0\)</span> 이 되도록 하는 미분가능한 <span class="math inline">\(X(t) = \begin{bmatrix} x_1(t) &amp; \cdots &amp; x_n(t)\end{bmatrix}^T\)</span> 가 존재한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_2_41" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 12.41 (Spivak 2.41)</strong></span> <span class="math inline">\(f:\mathbb{R}\times \mathbb{R}\to \mathbb{R}\)</span> 이 미분가능하다. 각각의 <span class="math inline">\(x\in\mathbb{R}\)</span> 에 대해 <span class="math inline">\(g_x:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g_x(y)= f(x,\,y)\)</span> 로 정의하자. 각각의 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(g_x'(y) = 0\)</span> 이 되도록 하는 <span class="math inline">\(y\)</span> 가 유일하게 존재한다고 가정하고 이 <span class="math inline">\(y\)</span> 를 <span class="math inline">\(c(x)\)</span> 라고 하자.</p>
+<p>(<span class="math inline">\(a\)</span>) 모든 <span class="math inline">\((x,\,y)\)</span> 에 대해 <span class="math inline">\(D_{2,2} f(x,\,y) \ne 0\)</span> 이면 <span class="math inline">\(c\)</span> 는 미분가능하며</p>
+<p><span class="math display">\[
+c'(x) = - \dfrac{D_{2,1}f(x,\,c(x))}{D_{2,\,2}f(x,\,c(x))}
+\]</span></p>
+<p>임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(c'(x) =0\)</span> 이면 어떤 <span class="math inline">\(y\)</span> 에서</p>
+<p><span class="math display">\[
+D_{2,1}f(x,\,y) = 0,\qquad D_2f(x,\,y) = 0
+\]</span></p>
+<p>임을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x,\,y) = x(y \ln y - y) - y \ln x\)</span> 라고 하자. 다음을 구하라.</p>
+<p><span class="math display">\[
+\max_{\frac{1}{2} \le x \le 2} \left(\min_{\frac{1}{2} \le y \le 1} f(x,\,y)\right)
 \]</span></p>
 </div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(g_x'(y) = 0\)</span> 은 <span class="math inline">\(D_{2}f(x,\,y)=0\)</span> 과 같다는 것을 안다. <span class="math inline">\(h(x,\,y)= D_2f(x,\,y)\)</span> 라고 하자. <span class="math inline">\(D_2 h = D_{2,2}f  \ne 0\)</span> 이므로 <span class="math inline">\(h(x,\, k(x)) = 0\)</span> 을 만족하는 <span class="math inline">\(y=k(x)\)</span> 가 존재하며 이는 <span class="math inline">\(c(x)\)</span> 와 같다. 모든 <span class="math inline">\(x\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(h(x,\,c(x))=0\)</span> 이므로,</p>
+<p><span class="math display">\[
+0 = D_1 h(x,\,c(x)) = D_1h(x,\,c(x)) + c'(x) D_2h(x,\, c(x))
+\]</span></p>
+<p>이다. 따라서</p>
+<p><span class="math display">\[
+c'(x) = -\dfrac{D_1h(x,\,c(x))}{D_2 h(x,\,c(x))} = - \dfrac{D_{2, 1}h(x,\,c(x))}{D_{2,\,2} h(x,\,c(x))}
+\]</span></p>
+<p>이다.</p>
+<p>(<span class="math inline">\(b\)</span>) (<span class="math inline">\(a\)</span>) 로부터 <span class="math inline">\(D_{2,1}f(x,\,c{x}) = 0\)</span> 이므로 <span class="math inline">\(y=c(x)\)</span> 에서 <span class="math inline">\(D_{2,1}f(x,\,y)=0\)</span> 이다. <span class="math inline">\(c(x)\)</span> 의 정의에 의해 <span class="math inline">\(D_2f(x,\,y) = g'(x,\,c(x))=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(c\)</span>)</p>
 
 
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -2342,8 +2406,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/figures/figures.html" class="pagination-link" aria-label="그림들">
-        <span class="nav-page-text">그림들</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/part3/3_3_integration_of_manifolds.html" class="pagination-link" aria-label="다변수 함수의 적분">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

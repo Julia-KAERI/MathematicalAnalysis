@@ -459,8 +459,9 @@ $$
 
 ::: {#exm-part3_pts_of_inverse_function}
 
-$F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, F_1(\bf{x,\,y}))$ 꼴이며 역함수가 존재한다면 $F^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, F_2(\bf{x}))$ 꼴임을 보이자. $F^{-1}=G=\begin{bmatrix} g_1 & \cdots & g_{n+m}\end{bmatrix}^T$ 라고 하자. 
+$F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, H(\bf{x,\,y}))$ 꼴이며 역함수가 존재한다면 $F^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x}))$ 꼴임을 보이자. $F^{-1}=G=\begin{bmatrix} g_1 & \cdots & g_{n+m}\end{bmatrix}^T$ 라고 하자. 
 
+$i \le n$ 에 대해서만 보면 된다. $x_i = (G\circ F)_i = g_i (\bf{x},\, F_1(\bf{x},\, \bf{y}))$ 이므로 $g_i = x_i$ 이다. 
 
 :::
 
@@ -472,7 +473,7 @@ $F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, F
 
 ::: {#thm-part3_implicit_function_theorem_1}
 
-$F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 집합에서 $C^1$ 급 함수이며 $F(\bf{a}, \bf{b})=0$ 이라고 하자. $m \times m$ 행렬 $M$ 에 대해 $M_{ij} = D_{n+j}f_i(\bf{a},\,\bf{b})$ 이고 $\det (M) \ne 0$ 이면 $\bf{a}$ 를 포함하는 어떤 열린 집합 $A\subset \R^n$ 와 $\bf{b}$ 를 포함하는 어떤 열린집합 $B\subset \R^m$ 에서 정의된 단사 함수 $G:A \to B$ 가 존재하여 $F(\bf{x},\, G(\bf{x})) = 0$ 이 되도록 한다.
+$F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 집합에서 $C^1$ 급 함수이며 $F(\bf{a}, \bf{b})=0$ 이라고 하자. $m \times m$ 행렬 $M$ 에 대해 $M_{ij} = D_{n+j}f_i(\bf{a},\,\bf{b})$ 이고 $\det (M) \ne 0$ 이면 $\bf{a}$ 를 포함하는 어떤 열린 집합 $A\subset \R^n$ 와 $\bf{b}$ 를 포함하는 어떤 열린집합 $B\subset \R^m$ 에서 정의된 미분가능한 단사 함수 $G:A \to B$ 가 존재하여 $F(\bf{x},\, G(\bf{x})) = 0$ 이 되도록 한다.
 
 :::
 
@@ -482,7 +483,7 @@ $F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 �
 
 $\widetilde{F}: \R^n \times \R^m \to \R^n \times \R^m$ 을 $\widetilde{F}(\bf{x},\,\bf{y}) := (\bf{x},\, F(\bf{x},\,\bf{y}))$ 로 정의하자. $\det (\widetilde{F}'(\bf{a},\, \bf{b}))$$= \det (M) \ne 0$ 이다. 역함수 정리 (@thm-part3_inverse_function_theorem) 에 따라 $(\bf{a},\,\bf{b})$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a},\, \bf{b})=(\bf{a},\, \bf{0})$ 을 포함하는 열린 집합 $W$ 에서 정의된 $\widetilde{F}$ 의 역함수이자 $C^1$ 급 함수인 $\widetilde{F}^{-1}:W \to V$ 가 존재한다.
 
-$V$ 를 $A\subset \R^n,\, B\subset \R^m$ 에 대해 $V=A \times B$ 가 되도록 할 수 있으며 그렇다면 $\widetilde{F}^{-1}: W \to A \times B$ 는 어떤 함수 미분가능한 함수 $K:W \to B$ 에 대해 $\widetilde{F}^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\, \bf{y}))$ 이다. 이제 $\Phi:\R^n \times \R^m \to \R^m$ 을 $\Phi (\bf{x},\, \bf{y}) := \bf{y}$ 로 정의하자. $\Phi \circ \widetilde{F} = F$ 이다. 따라서
+$V$ 를 $A\subset \R^n,\, B\subset \R^m$ 에 대해 $V=A \times B$ 가 되도록 할 수 있으며 그렇다면 $\widetilde{F}^{-1}: W \to A \times B$ 는 어떤 함수 미분가능한 함수 $K:W \to B$ 에 대해 $\widetilde{F}^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\, \bf{y}))$ 이다(@exm-part3_pts_of_inverse_function). 이제 $\Phi:\R^n \times \R^m \to \R^m$ 을 $\Phi (\bf{x},\, \bf{y}) := \bf{y}$ 로 정의하면 $\Phi \circ \widetilde{F} = F$ 이다. 따라서
 
 $$
 F(\bf{x},\, K(\bf{x},\, \bf{y})) = (F \circ \widetilde{F}^{-1})(\bf{x},\, \bf{y}) = (\Phi \circ \widetilde{F} \circ \widetilde{F}^{-1})(\bf{x},\, \bf{y}) = \bf{y}
@@ -508,12 +509,12 @@ $$
 
 ::: {#thm-part3_implicit_function_theorem_2}
 
-$F:\R^n \to \R^p$ 가 $\bf{a}\in R^n$ 을 포함하는 열린 집합에서 $C^1$ 급 함수이고 $p\le n$ 이라고 하자. $F(\bf{a})=\bf{0}$ 이며 $p\times n$ 행렬 $M_{ij} = D_{j}f_i(\bf{a})$ 에 대해 $\text{rank}(M)=p$ 라면 $\bf{a}$ 를 포함하는 어떤 열린 집합 $A\subset \R^n$ 에서 정의된, 아래의 ($1$), ($2$) 를 만족하는 $H: A\to \R^n$ 이 존재한다. 
+$F:\R^n \times \R^m  \to \R^m$ 가 $(\bf{a},\,\bf{b})\in \R^n \times \R^m$ 을 포함하는 열린 집합에서 $C^1$ 급 함수라고 하자. $F(\bf{a},\,\bf{b})=\bf{0}$ 이며 $m\times (n+m)$ 행렬 $M_{ij} = D_{j}f_i(\bf{a},\,\bf{b})$ 에 대해 $\text{rank}(M)=m$ 라면 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $A\subset \R^{n+m}$ 에서 정의된, 아래의 ($1$), ($2$) 를 만족하는 $H: A\to \R^n \times \R^m$ 이 존재한다. 
 
 
 &emsp;($1$) $H^{-1}$ 이 존재하고 미분가능하며,
 
-&emsp;($2$) $(F\circ H)(x_1,\ldots,\,x_n) = (x^{n-p+1},\ldots,\,x_n)$ 이다.
+&emsp;($2$) $(F\circ H)(\bf{x},\,\bf{y}) = \bf{y}$ 이다.
 
 :::
 
@@ -521,11 +522,97 @@ $F:\R^n \to \R^p$ 가 $\bf{a}\in R^n$ 을 포함하는 열린 집합에서 $C^1$
 
 ::: {.proof}
 
-$F$ 를 $F:\R^{n-p}\times \R^p \to \R^p$ 로 생각하고 @thm-part3_implicit_function_theorem_1 의 증명과정을 다시 보자. $H:A \to \R^n$ 을 $H(\bf{x},\, \bf{y})= (\bf{x},\, K(\bf{x},\,\bf{y}))$ 라고 놓으면 
+우선 @thm-part3_implicit_function_theorem_1 와의 차이를 보자. $F'(\bf{a},\,\bf{b})$ 는 $m \times (n +m )$ 행렬이며 @thm-part3_implicit_function_theorem_1 은 정체 행과 마지막 $m$ 개의 열로 이루어진 행렬의 행렬식이 $0$ 이 아난 경우이며, 즉 마지막 $m$ 개의 열이 선형독립인 경우이며, 여기는 전체 $m+n$ 개의 열 가운데 위치에 무관하게 $m$ 개의 열이 선형독립인 경우이다. 
+
+이제 $m$ 개의 선형독립인 열의 인덱스를 $j_1,\ldots,\,j_m$ 이라고 하고 열에 대한 permutation $G: \R^n \times \R^m \to \R^n \times \R^m$ 을 $G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})$ 이라고 하면 $F\circ G$ 는 @thm-part3_implicit_function_theorem_1 의 $F$ 와 똑같은 경우이다. 물론 $G$ 는 선형변환이며 따라서 전체 $\R^n \times \R^m$ 에서 $C^\infty$ 급 함수이다.
+
+@thm-part3_implicit_function_theorem_1 에 따라 $F \circ G$ 에 대해
 
 $$
-(F\circ H)(\bf{x},\,\bf{y}) = \bf{y}
+(F \circ G)(\bf{x},\,K(\bf{x},\, \bf{y})) = \bf{y}
 $$
 
+인 $C^1$ 급 함수 $K:\R^n \times \R^m \to \R^m$ 이 존재하며 $H=G \circ (\bf{x},\, K(\bf{x},\, \bf{y}))$ 라고 놓으면 된다. $\square$
 
 :::
+
+</br>
+
+### 연습문제
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_40}
+#### Spivak 2.40
+
+음함수 정리를 이용하여 @exr-part3_spivak_2_15 ($c$) 를 다시 풀어라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+@exr-part3_spivak_2_15 ($c$) 에서 $F = \R\times \R^n \to \R^n$ 을 $F=\begin{bmatrix}f_1 & \cdots f_n\end{bmatrix}^T$ 이며
+
+$$
+f_i (t,\,\bf{x}) = \sum_{j=1}^n a_{ij}(t)x_j - b_i(t)
+$$
+
+로 정의한다. $\det ([a_{ij}]) \ne 0$ 이므로 @thm-part3_implicit_function_theorem_1 에 의해 $F(t,\, X(t)) = 0$ 이 되도록 하는 미분가능한 $X(t) = \begin{bmatrix} x_1(t) & \cdots & x_n(t)\end{bmatrix}^T$ 가 존재한다.
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_2_41}
+#### Spivak 2.41
+
+$f:\R \times \R \to \R$ 이 미분가능하다. 각각의 $x\in\R$ 에 대해 $g_x:\R \to \R$ 을 $g_x(y)= f(x,\,y)$ 로 정의하자. 각각의 $x$ 에 대해 $g_x'(y) = 0$ 이 되도록 하는 $y$ 가 유일하게 존재한다고 가정하고 이 $y$ 를 $c(x)$ 라고 하자.
+
+($a$) 모든 $(x,\,y)$ 에 대해 $D_{2,2} f(x,\,y) \ne 0$ 이면 $c$ 는 미분가능하며
+
+$$
+c'(x) = - \dfrac{D_{2,1}f(x,\,c(x))}{D_{2,\,2}f(x,\,c(x))}
+$$
+
+임을 보여라.
+
+($b$) $c'(x) =0$ 이면 어떤 $y$ 에서
+
+$$
+D_{2,1}f(x,\,y) = 0,\qquad D_2f(x,\,y) = 0
+$$
+
+임을 보여라.
+
+($c$) $f(x,\,y) = x(y \ln y - y) - y \ln x$ 라고 하자. 다음을 구하라.
+
+$$
+\max_{\frac{1}{2} \le x \le 2} \left(\min_{\frac{1}{2} \le y \le 1} f(x,\,y)\right)
+$$
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $g_x'(y) = 0$ 은 $D_{2}f(x,\,y)=0$ 과 같다는 것을 안다. $h(x,\,y)= D_2f(x,\,y)$ 라고 하자. $D_2 h = D_{2,2}f  \ne 0$ 이므로 $h(x,\, k(x)) = 0$ 을 만족하는 $y=k(x)$ 가 존재하며 이는 $c(x)$ 와 같다. 모든 $x\in \R$ 에 대해 $h(x,\,c(x))=0$ 이므로,
+
+$$
+0 = D_1 h(x,\,c(x)) = D_1h(x,\,c(x)) + c'(x) D_2h(x,\, c(x))
+$$
+
+이다. 따라서
+
+$$
+c'(x) = -\dfrac{D_1h(x,\,c(x))}{D_2 h(x,\,c(x))} = - \dfrac{D_{2, 1}h(x,\,c(x))}{D_{2,\,2} h(x,\,c(x))}
+$$
+
+이다.
+
+($b$) ($a$) 로부터 $D_{2,1}f(x,\,c{x}) = 0$ 이므로 $y=c(x)$ 에서 $D_{2,1}f(x,\,y)=0$ 이다. $c(x)$ 의 정의에 의해 $D_2f(x,\,y) = g'(x,\,c(x))=0$ 이다.
+
+($c$) 

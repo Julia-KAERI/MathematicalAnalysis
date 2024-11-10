@@ -14,13 +14,17 @@ crossref:
 
 여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-part2_Euclidean_space 와 @prp-part2_norm_of_Euclidean_space 를 보라.
 
-유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 를 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 로도 표기하기로 한다. 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\mathcal{M}_{n}(\mathbb{R})$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\mathcal{M}_{m\times n}(\R)$ 이라고 쓴다.
+- 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x_1,\ldots,\,x_n)$ 식 표기법과 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
-$\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
+- $F:\R^m \to \R^n$ 에서 $\bf{x} = \begin{bmatrix} x_1 & \cdots & x_m \end{bmatrix}$ 에 대해 $F(\bf{x})$ 를 $F(x_1,\ldots,\,x_m)$ 으로 표기하기도 한다.
+  
+- 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\mathcal{M}_{n}(\mathbb{R})$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\mathcal{M}_{m\times n}(\R)$ 이라고 쓴다.
 
-두 벡터의 일반적인 내적은 $\langle \bf{x},\, \bf{y}\rangle$ 라고 쓰며 유클리드 내적은 $\bf{x}^T\bf{\cdot y}$ 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.
+- $\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
 
-벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. $F:\R^n \to \R^m$ 혹은 $\bf{f}:\R^n \to \R^m$ 과 같이 사용한다. $\mathcal{L}(R^m,\,R^n)$ 은 $\R^m \mapsto \R^n$ 선형사상의 집합이다.
+- 두 벡터의 일반적인 내적은 $\langle \bf{x},\, \bf{y}\rangle$ 라고 쓰며 유클리드 내적은 $\bf{x}^T\bf{\cdot y}$ 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.
+
+- 벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. $F:\R^n \to \R^m$ 혹은 $\bf{f}:\R^n \to \R^m$ 과 같이 사용한다. $\mathcal{L}(R^m,\,R^n)$ 은 $\R^m \mapsto \R^n$ 선형사상의 집합이다.
 
 
 
