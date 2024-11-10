@@ -317,9 +317,9 @@ $$ {#eq-part3_spivak_3_3_1}
 이며, 따라서
 
 $$
-\begin{aligned}
-L(f,\,P) + L(g,\,P) \le L(f+g,\,P),\qquad U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
-\end{aligned}
+\begin{eqnarray}
+L(f,\,P) + L(g,\,P) \le L(f+g,\,P) \le U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
+\end{eqnarray}
 $$ {#eq-part3_spivak_3_3_2}
 
 임을 보여라.
@@ -481,5 +481,185 @@ $f$ 가 적분가능하며 $\int_{[0,\,1]\times [0,\,1]} f = 0$ 임을 보여라
 
 ::: {.solution}
 
+임의의 partition $P\in \mathcal{P}{[0,1]\times [0,\,1]}$ 에 대해 $L(f,\,P)=0$ 임은 자명하다.
+
+$f(x,\,y)=1$ 인 값은 $y=1$ 인 경우밖에 없다. $f(x,\,y)=1/2$ 인 것은 $y=2$ 인 경우, $f(x,\,y)=1/3$ 인 것은 $y=1/3,\, 2/3$ 인 경우이다. 즉 $f(x,\,y)=1/q$ 인 $y$ 값은 $q=1$ 인 경우를 제외하면 최대 $q-1$ 개이다. 
+
+
+$[0,\,1] \times [a_i,\,b_i]$ 형태의 partition 을 생각한다. 이제 subcell $S_1 = [0,\,1] \times [0,\, 1/2]$ 로 잡고 $q\in \mathbb{Z}_+, \, q\ge 2$ 에 대해 $S_q$ 를 $f(x,\,y)=1/q$ 가 가능한 $y$ 값을 중심으로 $x$ 축방향으로 폭이 1, $y$ 축 방향으로 폭이 $1/2^{q}$ 만큼 되도록 잡자. 겹치는 부분이 있어도 $U(f,\,P)$ 의 상한을 정하는 것이므로 상관 없이 계산한다. $f(x,\,y) = 1/q$ 인 값은 최대 $q-1$ 개임을 다시 기억한다. $q=1,\ldots,\, m$ 까지 계산하면 여기에 포함되지 않은 면적은 $\dfrac{1}{2} + \cdots + \dfrac{1}{2^{m+1}}$ 만큼이며 여기에서의 함수값은 $\dfrac{1}{m+1}$ 보다 작으므로
+
+$$
+\begin{aligned}
+U(f,\,P) &\le 1 \cdot \dfrac{1}{2} + \dfrac{1}{2}\cdot \dfrac{1}{2^2}\cdot (2-1) + \dfrac{1}{3} \cdot \dfrac{1}{2^3}\cdot (3-1)+\cdots \dfrac{1}{m}\cdot \dfrac{1}{2^m}\cdot (m-1) \\
+&\quad + \dfrac{1}{m+1} \left[1- \left(\dfrac{1}{2} + \dfrac{1}{2^2} + \cdots + \dfrac{1}{2^m} \right)\right] \\
+&\le \dfrac{1}{2} + \dfrac{1}{2^2} + \cdots + \dfrac{1}{2^m} + \dfrac{1}{m+1} \left[1- \left(\dfrac{1}{2} + \dfrac{1}{2^2} + \cdots + \dfrac{1}{2^m} \right)\right] \\
+&=\dfrac{1}{m+1}
+\end{aligned}
+$$
+
+이다. 정해진 작은 $\varepsilon>0$ 에 대해 $m>\dfrac{1}{\varepsilon} -1$ 로 잡으면 $L(f,\,P)=0$ 이므로
+
+$$
+U(f,\,P) - L(f,\,P) < \varepsilon
+$$
+
+이 되는 $P$ 를 잡을 수 있다. 
 
 :::
+
+</br>
+
+## Measure zero 와 Content zero
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_measure_zero}
+
+#### Measure zero
+
+$A\subset \R^n$ 을 생각하자. 만약 각각의 $\varepsilon>0$ 에 대해 닫힌 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\,U_2,\ldots\}$ 가 존재하여 다음의 두 조건을 만족한다면 $A$ 는 **measure zero** 라고 한다.
+
+&emsp;($1$) $A \subset \bigcup_{U_i\in \mathcal{U}}U_i$, 
+
+&emsp;($2$) $\sum_{U_i\in \mathcal{U}} \text{vol}(U_i) < \varepsilon$
+
+::: 
+:::
+
+</br>
+
+즉 $A$ 가 가산 무한(countably infinite) 개의 집합족 $\mathcal{U}$ 로 덮일 수 있으며 집합족의 부피의 합이 임의로 작아질 수 있다면 $A$ 는 measure zero 이다.
+
+<br>
+
+다음은 쉽게 보일 수 있다.
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_meazure_zero}
+
+$A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
+
+&emsp;($1$) $B\subset A$ 이면 $B$ 도 measure zero 이다.
+
+&emsp;($2$) @def-part3_measure_zero 에서 $\mathcal{U}$ 를 닫힌 $n$-cell 의 집합이 아닌 열린 $n$-cell 의 집합라고 해도 성립한다.
+
+&emsp;($3$) $A\subset \R^n$ 이 유한개의 점의 집합이면 measure zero 이다.
+
+:::
+
+</div></br>
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_meazure_zero}
+
+$A=A_1 \cup A_2 \cup \cdots$ 이며 각각의 $A_i$ 가 measure zero 이면 $A$ 도 measure zero 이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+각각의 $A_i$ 가 가산무한개의 집합족 $\mathcal{U}_i$ 로 덮일 수 있으며 $A$ 가 가산무한개의 집합의 합집합이므로 가산무한개의 집합족으로 덮인다. 각각의 $A_i$ 에 대해 닫힌 $n$-cell 의 집합 $\mathcal{U}_i = \{U^{i}_1,\, U^{i}_2,\ldots\}$ 이 존재하여 $\sum_{j}\text{vol}\left(U^{i}_j\right) < \dfrac{\varepsilon}{2^{j}}$ 이 될 수 있다. 그렇다면
+
+$$
+\mathcal{U} = \bigcup \mathcal{U}_i
+$$
+
+라고 하면
+
+$$
+\sum_{U\in \mathcal{U}} \text{vol}(U) \le \sum_{j=1}^\infty \dfrac{\varepsilon}{2^{j+1}} < \dfrac{\varepsilon}{2}
+$$
+
+이므로 $A$ 도 measure zero 이다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-part3_content_zero}
+
+#### Content zero
+
+$A\subset \R^n$ 을 생각하자. 각각의 $\varepsilon>0$ 에 대해 유한개의 닫힌 $n$-cell 의 집합 $\mathcal{U} = \{U_1,\ldots,\,U_m\}$ 이 존재하여 다음의 두 조건을 만족하면 $A$ 를 **content zero** 라고 한다.
+
+
+&emsp;($1$) $A \subset \bigcup_{U_i\in \mathcal{U}}U_i$, 
+
+&emsp;($2$) $\sum_{U_i\in \mathcal{U}} \text{vol}(U_i) < \varepsilon$
+
+::: 
+:::
+
+</br>
+
+아래 명제는 쉽게 보일 수 있다.
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_content_zero}
+
+$A\subset \R^n$ 이 content zero 일 때 다음이 성립한다.
+
+&emsp;($1$) $A$ 는 measure zero 이다.
+
+&emsp;($2$) @def-part3_content_zero 에서 $\mathcal{U}$ 를 닫힌 $n$-cell 의 집합이 아닌 열린 $n$-cell 의 집합라고 해도 성립한다.
+
+&emsp;($3$) $A\subset \R^n$ 이 유한개의 점의 집합이면 content zero 이다.
+
+:::
+
+</div></br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part3_content_zero}
+
+$a<b$ 에 대해 $[a,\,b]\subset \R$ 은 content zero 가 아니다. $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 이 $[a,\,b]$ 에 대한 닫힌 $1$-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 $U_i$ 의 끝점을 $a=t_0 < t_1< \cdots <t_k=b$ 가 되도록 놓을 수 있다. $\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}$ 이므로 $\sum_{i}\text{vol}{U_i}$ 를 임의로 작게 할 수 없다. $\square$
+
+
+:::
+
+</div></br>
+
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-part3_content_zero_and_compact}
+
+$A\subset \R^n$ 이 measure zero 이고 옹골 집합이면 $A$ 는 content zero 이다.
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots\}$ 가 $A$ 의 열린 덮개이며 $\sum_{U_i \in \mathcal{U}} \text{vol}(U_i)<\varepsilon$ 이라고 하자. $A$ 가 옹골집합이므로 유한개의 $\{U_1,\ldots,\,U_m\}$ 으로 덮어지며 따라서 그 부피의 합도 $\varepsilon$ 보다 작다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part3_measure_zero_not_compact}
+
+$\Q \subset \R$ 은 measure zero 이지만 옹골집합이 아니며 content zero 도 아니다.
+
+
+:::
+
+</div></br>
