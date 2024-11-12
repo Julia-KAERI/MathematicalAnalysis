@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mathematical Analysis - 13&nbsp; 다변수 함수의 적분</title>
+<title>13&nbsp; 다변수 함수의 적분 – Mathematical Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -108,13 +108,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_3_integration_of_manifolds.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -154,7 +154,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">해석학의 기반</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -195,7 +195,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">일변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -236,7 +236,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">다변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -265,7 +265,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,7 +299,10 @@ window.Quarto = {
   <li><a href="#정의와-기본적-성질" id="toc-정의와-기본적-성질" class="nav-link" data-scroll-target="#정의와-기본적-성질"><span class="header-section-number">13.1.1</span> 정의와 기본적 성질</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#measure-zero-와-content-zero" id="toc-measure-zero-와-content-zero" class="nav-link" data-scroll-target="#measure-zero-와-content-zero"><span class="header-section-number">13.2</span> Measure zero 와 Content zero</a></li>
+  <li><a href="#measure-zero-와-content-zero" id="toc-measure-zero-와-content-zero" class="nav-link" data-scroll-target="#measure-zero-와-content-zero"><span class="header-section-number">13.2</span> Measure zero 와 Content zero</a>
+  <ul class="collapse">
+  <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -694,6 +697,13 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 </div>
 </div>
 <p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-part3_Q_is_measure_zero" class="theorem example">
+<p><span class="theorem-title"><strong>예제 13.1</strong></span> (<span class="math inline">\(1\)</span>) 양의 정수의 집합 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 measure zero 이다. 임의의 작은 <span class="math inline">\(\varepsilon&gt;0\)</span> 과 <span class="math inline">\(i\in\mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(U_i = \left[i -\dfrac{\varepsilon}{2^{i+1}},\, i+\dfrac{\varepsilon}{2^{2+i}}\right]\)</span> 라고 하면 <span class="math inline">\(\sum_{U_i}\text{vol}(U_i) \le \varepsilon\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 유리수의 집합 <span class="math inline">\(Q\)</span> 가 measure zero 이다. 우리는 <span class="math inline">\(\mathbb{Q}\)</span> 와 <span class="math inline">\(\mathbb{Z}_+\)</span> 사이에 전단사 함수 <span class="math inline">\(f:\mathbb{Q}\to \mathbb{Z}_+\)</span> 가 존재함을 안다. 이 전단사 함수를 <span class="math inline">\(f\)</span> 라고 하면 (<span class="math inline">\(1\)</span>) 에 의해 measure zero 이다.</p>
+</div>
+</div>
+<p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-part3_meazure_zero" class="theorem">
 <p><span class="theorem-title"><strong>정리 13.2</strong></span> <span class="math inline">\(A=A_1 \cup A_2 \cup \cdots\)</span> 이며 각각의 <span class="math inline">\(A_i\)</span> 가 measure zero 이면 <span class="math inline">\(A\)</span> 도 measure zero 이다.</p>
@@ -740,7 +750,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-part3_content_zero" class="theorem example">
-<p><span class="theorem-title"><strong>예제 13.1</strong></span> <span class="math inline">\(a&lt;b\)</span> 에 대해 <span class="math inline">\([a,\,b]\subset \mathbb{R}\)</span> 은 content zero 가 아니다. <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 에 대한 닫힌 <span class="math inline">\(1\)</span>-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 <span class="math inline">\(U_i\)</span> 의 끝점을 <span class="math inline">\(a=t_0 &lt; t_1&lt; \cdots &lt;t_k=b\)</span> 가 되도록 놓을 수 있다. <span class="math inline">\(\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}\)</span> 이므로 <span class="math inline">\(\sum_{i}\text{vol}{U_i}\)</span> 를 임의로 작게 할 수 없다. <span class="math inline">\(\square\)</span></p>
+<p><span class="theorem-title"><strong>예제 13.2</strong></span> <span class="math inline">\(a&lt;b\)</span> 에 대해 <span class="math inline">\([a,\,b]\subset \mathbb{R}\)</span> 은 content zero 가 아니다. <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 에 대한 닫힌 <span class="math inline">\(1\)</span>-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 <span class="math inline">\(U_i\)</span> 의 끝점을 <span class="math inline">\(a=t_0 &lt; t_1&lt; \cdots &lt;t_k=b\)</span> 가 되도록 놓을 수 있다. <span class="math inline">\(\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}\)</span> 이므로 <span class="math inline">\(\sum_{i}\text{vol}{U_i}\)</span> 를 임의로 작게 할 수 없다. <span class="math inline">\(\square\)</span></p>
 </div>
 </div>
 <p><br></p>
@@ -757,12 +767,58 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-part3_measure_zero_not_compact" class="theorem example">
-<p><span class="theorem-title"><strong>예제 13.2</strong></span> <span class="math inline">\(\mathbb{Q}\subset \mathbb{R}\)</span> 은 measure zero 이지만 옹골집합이 아니며 content zero 도 아니다.</p>
+<p><span class="theorem-title"><strong>예제 13.3</strong></span> <a href="#prp-part3_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>13.4</span></a> 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 인 집합이 존재한다. <span class="math inline">\(A\)</span> 를 <span class="math inline">\([0,\,1]\)</span> 사이의 유리수의 집합이라고 하자. <span class="math inline">\(A\subset \mathbb{Q}\)</span> 이며 <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로(<a href="#exm-part3_Q_is_measure_zero" class="quarto-xref">예제&nbsp;<span>13.1</span></a>) <span class="math inline">\(A\)</span> 도 measure zero 이다. <span class="math inline">\(A\)</span> 가 content zero 라면 유한개의 <span class="math inline">\(\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}\)</span> 에 대해 <span class="math inline">\([0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]\)</span> 이어야 한다. 즉 <span class="math inline">\(\sum \text{vol} \ge 1\)</span> 이므로 <span class="math inline">\(A\)</span> 는 content zero 가 아니다.</p>
 </div>
 </div>
 <p><br></p>
+<section id="연습문제-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_3_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.8 (Spivak 3.8)</strong></span> 각각의 <span class="math inline">\(i\in \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 라면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 는 content zero 가 될 수 없음을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdots \times (b_n-a_n)&gt;0\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_3_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.9 (Spivak 3.9)</strong></span> (<span class="math inline">\(a\)</span>) 유계가 아닌 집합은 content zero 일 수 없음을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) measure zero 이지만 content zero 가 아닌 닫힌 집합의 예를 들어라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(A\subset\mathbb{R}^n\)</span> 가 content zero 라고 하자. <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\(A\)</span> 의 덮개라고 하면 <span class="math inline">\(d_M=\max \{\|\boldsymbol{x}\| : \boldsymbol{x}\in \bigcup_{i=1}^n U_i \}\)</span> 가 존재하며 모든 <span class="math inline">\(\boldsymbol{y}\in A\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{y}\|\le d_M\)</span> 이어야 하는데 이는 <span class="math inline">\(A\)</span> 가 유계임을 의미한다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\mathbb{Z}\)</span></p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_3_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.10 (Spivak 3.10)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(C\)</span> 가 content zero 집합이라면 <span class="math inline">\(C\)</span> 의 경계도 content zero 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) Measure zero 이며, 유계이지만 <span class="math inline">\(C\)</span> 의 경계가 measure zero 가 아닌 집합의 예를 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 가 <span class="math inline">\(C\)</span> 의 덮개이고 <span class="math inline">\(U=\text{vol}\left(\bigcup_{i=1}^n U_i\right)\)</span> 라고 하자. <span class="math inline">\(C\subset U\)</span> 이며 <span class="math inline">\(C\)</span> 는 닫힌 집합이므로 <span class="math inline">\(\text{Bd}(C)\subset U\)</span> 이다. 따라서 <span class="math inline">\(C\)</span> 의 경계도 content zero 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A=\mathbb{Q}\cap [0,\,1]\)</span>. <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로 <span class="math inline">\(A\)</span> 도 measure zero 이며 유계이다. 그러나 <span class="math inline">\(\text{Bd}(A)=[0,\,1]\)</span> 이므로 measure zero 가 아니다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_3_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.11 (Spivak 3.11)</strong></span> <span class="math inline">\(A\)</span> 가 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>11.12</span></a> 의 <span class="math inline">\(A\)</span> 라고 하자. <span class="math inline">\(\sum_{i=1}^\infty (b_i-a_i)&lt;1\)</span> 이면 <span class="math inline">\(A\)</span> 의 경계는 measure zero 가 아님을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\partial A \cap A = \varnothing\)</span> 이다.</p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -801,18 +857,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -844,7 +889,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
@@ -852,7 +919,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

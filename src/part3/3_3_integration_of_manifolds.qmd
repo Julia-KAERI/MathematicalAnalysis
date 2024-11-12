@@ -553,6 +553,20 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 </div></br>
 
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-part3_Q_is_measure_zero}
+
+($1$) 양의 정수의 집합 $\Z_+$ 는 measure zero 이다. 임의의 작은 $\varepsilon>0$ 과 $i\in\Z_+$ 에 대해 $U_i = \left[i -\dfrac{\varepsilon}{2^{i+1}},\, i+\dfrac{\varepsilon}{2^{2+i}}\right]$ 라고 하면 $\sum_{U_i}\text{vol}(U_i) \le \varepsilon$ 이다.
+
+
+($2$) 유리수의 집합 $Q$ 가 measure zero 이다. 우리는 $\Q$ 와 $\Z_+$ 사이에 전단사 함수 $f:\Q \to \Z_+$ 가 존재함을 안다. 이 전단사 함수를 $f$ 라고 하면 ($1$) 에 의해 measure zero 이다.
+
+:::
+
+</div></br>
+
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-part3_meazure_zero}
@@ -582,6 +596,8 @@ $$
 :::
 
 </br>
+
+
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -657,8 +673,94 @@ $A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots
 
 ::: {#exm-part3_measure_zero_not_compact}
 
-$\Q \subset \R$ 은 measure zero 이지만 옹골집합이 아니며 content zero 도 아니다.
+@prp-part3_content_zero_and_compact 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 인 집합이 존재한다. $A$ 를 $[0,\,1]$ 사이의 유리수의 집합이라고 하자. $A\subset \Q$ 이며 $\Q$ 가 measure zero 이므로(@exm-part3_Q_is_measure_zero) $A$ 도 measure zero 이다. $A$ 가 content zero 라면 유한개의 $\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}$ 에 대해 $[0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]$ 이어야 한다. 즉 $\sum \text{vol} \ge 1$ 이므로 $A$ 는 content zero 가 아니다.
+:::
+
+</div></br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_8}
+
+#### Spivak 3.8
+
+각각의 $i\in \{1,\ldots,\,n\}$ 에 대해 $a_i<b_i$ 라면 $[a_1,\,b_1]\times \cdots \times [a_n,\,b_n]$ 는 content zero 가 될 수 없음을 보여라.
 
 :::
 
 </div></br>
+
+::: {.solution}
+
+$\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdots \times (b_n-a_n)>0$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_9}
+
+#### Spivak 3.9
+
+($a$) 유계가 아닌 집합은 content zero 일 수 없음을 보여라.
+
+($b$) measure zero 이지만 content zero 가 아닌 닫힌 집합의 예를 들어라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $A\subset\R^n$ 가 content zero 라고 하자. $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 이 $A$ 의 덮개라고 하면 $d_M=\max \{\|\bf{x}\| : \bf{x}\in \bigcup_{i=1}^n U_i \}$ 가 존재하며 모든 $\bf{y}\in A$ 에 대해 $\|\bf{y}\|\le d_M$ 이어야 하는데 이는 $A$ 가 유계임을 의미한다.
+
+($b$) $\Z$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_10}
+
+#### Spivak 3.10
+
+($a$) $C$ 가 content zero 집합이라면 $C$ 의 경계도 content zero 임을 보여라.
+
+($b$) Measure zero 이며, 유계이지만 $C$ 의 경계가 measure zero 가 아닌 집합의 예를 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 가 $C$ 의 덮개이고 $U=\text{vol}\left(\bigcup_{i=1}^n U_i\right)$ 라고 하자. $C\subset U$ 이며 $C$ 는 닫힌 집합이므로 $\text{Bd}(C)\subset U$ 이다. 따라서 $C$ 의 경계도 content zero 이다.
+
+($b$) $A=\Q \cap [0,\,1]$. $\Q$ 가 measure zero 이므로 $A$ 도 measure zero 이며 유계이다. 그러나 $\text{Bd}(A)=[0,\,1]$ 이므로 measure zero 가 아니다. 
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_11}
+
+#### Spivak 3.11
+
+$A$ 가 @exr-part3_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_i)<1$ 이면 $A$ 의 경계는 measure zero 가 아님을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+$\partial A \cap A = \varnothing$ 이다. 
+
+:::

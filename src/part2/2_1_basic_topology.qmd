@@ -1109,13 +1109,22 @@ $B:=\{x\in X : \forall \varepsilon>0\; N(x,\, \varepsilon) \cap A \ne \varnothin
 
 #### 김김계 2.7.6
 
+::: {.callout-note appearance="minimal"}
+
+::: {#def-part2_boundary}
+
+#### 경계점 
+
 $A\subset \mathbb{R}^n,\, x\in \mathbb{R}^n$ 일 때 임의의 $\varepsilon>0$ 에 대해 
 
 $$
 N(x,\, \varepsilon) \cap A \ne \varnothing,\qquad N(x,\, \varepsilon) \cap (\mathbb{R}^n \backslash A) \ne \varnothing
 $$
 
-일 때 $x$ 를 $A$ 의 경계점이라고 하며 $A$ 의 경계점의 집합을 $\partial A$ 라고 쓴다. 
+일 때 $x$ 를 $A$ 의 **경계점** 이라고 하며 $A$ 의 경계점의 집합을 $\partial A$ 혹은 $\text{Bd}(A)$ 라고 표기한다. 
+
+:::
+:::
 
 ($1$) 임의의 $A\subset\mathbb{R}^n$ 에 대해 $\partial A = \overline{A} \cap \overline{\mathbb{R}^n \backslash A}$ 임을 보여라. 또한 $\partial A$ 는 항상 닫힌 집합임을 보여라.
 
