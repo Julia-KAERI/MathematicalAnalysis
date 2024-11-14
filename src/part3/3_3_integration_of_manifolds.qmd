@@ -761,6 +761,6 @@ $A$ 가 @exr-part3_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_
 
 ::: {.solution}
 
-$\partial A \cap A = \varnothing$ 이다. 
+$A=\bigcup_{i=1}^\infty (a_i,\,b_i)$ 이다.  @exr-part3_spivak_1_18 $\partial A=[0,\,1]-A$ 이다. 
 
 :::
