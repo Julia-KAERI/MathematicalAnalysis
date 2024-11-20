@@ -681,7 +681,7 @@ $$
 
 #### Oscillation
 
-$f:A\subset \R^n \to \R$ 가 유계이며 $a\in A$ 일 때 정해진 $\delta>0$ 에 대해
+$f:A\subset \R^n \to \R$ 가 유계이며 $\bf{a}\in A$ 일 때 정해진 $\delta>0$ 에 대해
 
 $$
 \begin{aligned}
@@ -702,7 +702,7 @@ $$
 
 ::: {#prp-part3_oscillation_and_continuity}
 
-$f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 연속인 것의 필요충분조건은 $o(f,\,\bf{a}) = 0$ 인 것이다.
+$f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 $\bf{a}\in A$ 에서 연속인 것의 필요충분조건은 $o(f,\,\bf{a}) = 0$ 인 것이다.
 
 :::
 
@@ -735,7 +735,6 @@ $$
 :::
 
 </br>
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-part3_oscillation_and_closed_set}
@@ -748,7 +747,7 @@ $$
 
 ::: {.proof}
 
-$B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 열린 집합임을 보이자. $\bf{x}\in \R^m-B$ 이면 ($i$) $\bf{x}\notin A$ 이거나, ($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x}) <\varepsilon$ 이다. 
+$B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 열린 집합임을 보이자. $\bf{x}\in \R^n-B$ 이면 $(i)$ $\bf{x}\notin A$ 이거나, $(ii)$ $\bf{x}\in A$ 이며 $o(f,\,\bf{x}) <\varepsilon$ 이다. 
 
 ($i$) $\bf{x}\not\in A$ 이면 $A$ 가 닫힌 집합이므로 어떤 $\delta_x>0$ 에 대해 $N(\bf{x},\,\delta_x)\subset \R^n-A \subset \R^n-B$ 가 존재한다.
 

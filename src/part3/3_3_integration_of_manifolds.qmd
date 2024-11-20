@@ -509,8 +509,7 @@ $$
 
 </br>
 
-## Measure zero 와 Content zero
-
+## Measure zero 와 Content zero {#sec-part3_measure_zero_and_content_zero}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -597,8 +596,6 @@ $$
 
 </br>
 
-
-
 ::: {.callout-note appearance="simple" icon="false"}
 
 ::: {#def-part3_content_zero}
@@ -606,7 +603,6 @@ $$
 #### Content zero
 
 $A\subset \R^n$ 을 생각하자. 각각의 $\varepsilon>0$ 에 대해 유한개의 닫힌 $n$-cell 의 집합 $\mathcal{U} = \{U_1,\ldots,\,U_m\}$ 이 존재하여 다음의 두 조건을 만족하면 $A$ 를 **content zero** 라고 한다.
-
 
 &emsp;($1$) $A \subset \bigcup_{U_i\in \mathcal{U}}U_i$, 
 
@@ -620,7 +616,6 @@ $A\subset \R^n$ 을 생각하자. 각각의 $\varepsilon>0$ 에 대해 유한개
 아래 명제는 쉽게 보일 수 있다.
 
 </br>
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-part3_content_zero}
@@ -647,9 +642,6 @@ $a<b$ 에 대해 $[a,\,b]\subset \R$ 은 content zero 가 아니다. $\mathcal{U
 :::
 
 </div></br>
-
-
-</br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -699,7 +691,6 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 :::
 
 </br>
-
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part3_spivak_3_9}
@@ -723,7 +714,6 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 :::
 
 </br>
-
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part3_spivak_3_10}
@@ -746,7 +736,6 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 :::
 
 </br>
-
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-part3_spivak_3_11}
@@ -762,5 +751,150 @@ $A$ 가 @exr-part3_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_
 ::: {.solution}
 
 $A=\bigcup_{i=1}^\infty (a_i,\,b_i)$ 이다.  @exr-part3_spivak_1_18 $\partial A=[0,\,1]-A$ 이다. 
+
+:::
+
+</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_12}
+
+#### Spivak 3.12
+
+$f:[a,\,b] \to \R$ 이 증가함수이다. $\{x: f\text{ is discontinuous at }x\}$ 는 measure zero 임을 보여라.
+
+:::
+
+</div></br>
+
+::: {.solution}
+
+정해진 자연수 $n$ 에 대해 $X_n = \{x:o(f,\,x)> \frac{1}{n}\}$ 라고 하자. @prp-part3_oscillation_and_continuity 로부터 $X_n \subset X$ 이다. 
+
+$X_n = \{x_1,\,x_2,\ldots\}$ 이고 $x_1<x_2<\cdots$ 라고 하면 @exr-part3_spivak_1_30 에 따라
+
+$$
+f(b)-f(a)>f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})> \dfrac{k-1}{n}
+$$
+
+이다. $X_n$ 이 무한집합이면 $f$ 가 유계가 아니므로 $X_n$ 은 유한집합이다. $\displaystyle X=\bigcup_{i=1}^n X_n$ 이므로 @thm-part3_meazure_zero 에 따라 $X$ 는 measure zero 이다. 
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-part3_spivak_3_13}
+
+#### Spivak 3.13
+
+($a$) $n$-cell $[a_1,b_1]\times \cdots \times [a_n,b_n]$ 에서 모든 $a_i,\,b_i$ 가 유리수인 것들의 집합은 나열 될 수 있음을 보여라.
+
+($b$) 집합 $A\subset \R^n$ 과 그 열린 덮개인 집합족 $\mathcal{O}$ 를 생각하자. $A$ 를 덮는 $\mathcal{O}$ 의 부분집합인 수열 $U_1,\,U_2,\ldots$ 가 존재함을 보여라.
+:::
+
+</div></br>
+
+::: {.solution}
+
+($a$) $\Q^{2n}$ 은 가산집합이다.
+
+($b$) 각각의 $x\in A$ 에 대해 $x$ 를 포함하는 $U_x\in \mathcal{O}$ 가 존재하며 $x\in B_x \subset U_x$ 인 경계가 유리수인(($a$) 에서 말한 그것) $n$-cell $B_x$ 가 존재한다. 이런 $B_x$ 에 대해 $U_x$ 를 하나씩 모으면 $B_x$ 의 집합은 countable 이므로 이런 $U_x$ 의 집합도 countable 이다.
+
+:::
+
+</br>
+
+## 적분가능한 함수 {#sec-part3_integrable_functions}
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-part3_integrability}
+
+닫힌 $n$-cell $A\subset \R^n$ 에서 정의된 함수 $f:A \to \R$ 이 유계이며 모든 $\bf{x}\in A$ 에서 $o(f,\,\bf{x}) <\varepsilon$ 이면 어떤 $P\in \mathcal{P}[A]$ 가 존재하여 $U(f,\,P) - L(f,\,P)<\varepsilon \cdot \text{vol}(A)$ 를 만족한다.  
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$\bf{x}\in A$ 이면 $x$ 를 포함하는 어떤 $n$-cell $U_x$ 에서 $M_{U_x}(f) - m_{U_x}(f) <\varepsilon$ 이다. 
+$A$ 가 옹골집합이므로 유한개의 $U_{x_1},\ldots,\,U_{x_n}$ 이 존재하여 $A$ 를 덮는다. $A$ 의 분할 $P$ 를 $P$ 의 각각의 subcell 이 어떤 $U_{x_i}$ 에 포함되도록 잡을 수 있다. $S$ 가 그런 subcell 이라면 $M_S(f)-m_S(f)<\varepsilon$ 이며, 따라서
+
+$$
+U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) < \varepsilon \cdot \text{vol}(A)
+$$
+
+이다. $\square$
+:::
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-part3_integrability}
+
+닫힌 $n$-cell $A\subset \R^n$ 에서 정의된 유계인 함수 $f:A \to \R$ 을 생각하자. $B=\{\bf{x}\in A:f\text{ is not continuous at }f\}$ 일 때 $f$ 가 적분가능한 것의 필요충분조건은 $B$ 가 measure zero 인 것이다. 
+
+:::
+
+</div></br>
+
+::: {.proof}
+
+$B_\varepsilon := \{\bf{x}\in A: o(f,\,\bf{x})\ge \varepsilon\}$ 라고 하자.
+
+($1$) 우선 $B$ 가 measure zero 임을 가정하자 $\varepsilon>0$ 에 대해 $B_\varepsilon \subset B$ 이므로 $B_\varepsilon$ 은 measure zero 이다. @prp-part3_oscillation_and_closed_set 에 의해 $B_\varepsilon$ 은 닫힌집합이며 $B_\varepsilon \subset A$ 이므로 유계이다. 따라서 $B_\varepsilon$ 은 옹골집합이므로 content zero 이다(@prp-part3_content_zero_and_compact). 따라서 유한개의 닫힌 $n$-cell $U_1,\ldots,\,U_n$ 로 $\sum_{i=1}^n \text{vol}(U_i)<\varepsilon$ 이며 $B_\varepsilon$ 을 덮을 수 있다. 이제 $A$ 에 대한 분할 $P$ 를 $P$ 에 따라 정해지는 subcell 이 아래의 $\mathcal{S}_1$ 이나 $\mathcal{S}_2$ 중의 하나에 속하도록 잡자.(@fig-part3_integrability_1)
+
+($1$) $\mathcal{S}_1$ : 어떤 $U_i$ 에 대해 $S \subset U_i$ 이면 $S$ 는 $\mathcal{S}_1$ 에 포힘된다.
+
+($2$) $\mathcal{S}_2$ : $S\cap B_\varepsilon = \varnothing$ 이면 $S$ 는 $\mathcal{S}_2$ 에 포함된다.
+
+![The shaded rectagles are in $\mathcal{S}_1$](fig-part3_integrability-1.png){#fig-part3_integrability_1 width=400}
+
+이제 $|f(\bf{x})|<M$ 이라고 하자. 각각의 subcell $S$ 에 대해 $M_S(f)-m_S(f)<2M$ 이므로
+
+$$
+\sum_{S\in \mathcal{S}_1} \left[M_S(f) - m_S(f) \right]\cdot \text{vol}(S) < 2M \sum_{i=1}^n \text{vol}(U_i) < 2M\varepsilon
+$$
+
+이제 $S\in \mathcal{S}_2$ 이면 $o(f,\bf{x})<\varepsilon$ 이므로 @lem-part3_integrability 에 따라 $P$ 의 어떤 refinement $P'$ 이 존재하여 $S\subset \mathcal{S}_2$ 일 때
+
+$$
+\sum_{S'}\subset S [M_{S'}(f) - m_{S'}(f)]\cdot \text{vol}(S') < \varepsilon \cdot \text{vol}(S)
+$$
+
+이다. 그렇다면
+
+$$
+\begin{aligned}
+U(f,\,P') - L(f,\,P') &= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f) - m_{S'}(f)\right]\cdot \text{vol}(S') \\[0.3em]
+&\qquad + \sum_{S'\in S\in \mathcal{S}_2} \left[M_{S'}(f) - m_{S'}(f)\right]\cdot \text{vol}(S') \\[0.3em] 
+&< 2M\varepsilon + \sum_{S \in \mathcal{S}_2} \varepsilon \cdot \text{vol}(S) \\[0.3em] 
+&\le 2M\varepsilon + \varepsilon \cdot \text{vol}(A)
+\end{aligned}
+$$
+
+이 성립한다. $M$ 과 $\text{vol}(A)$ 는 정해져 있으므로 우리는 $U(f,\,P')-L(f,\,P')$ 을 원하는 만큼 작게 만들 수 있다. 따라서 $f$ 는 적분가능하다.
+
+
+이제 $f$ 가 적분가능함을 가정하자. $B= B_1 \cup B_{1/2} \cup \cdots$ 이므로 각각의 $B_{1/n}$ 이 meausure zero 라면 @thm-part3_meazure_zero 에 의해 $B$ 가 measure zero 임을 알게 된다. 실제로 우리는 각각의 $B_{1/n}$ 이 content zero 임을 보일 것이다. 
+
+$f$ 가 적분가능하므로 $\varepsilon>0$ 에 대해 $P \in \mathcal{P}[A]$ 를 $U(f,\,P)-L(f,\,P)< \varepsilon/n$ 이 되도록 잡을 수 있다. $\mathcal{S}$ 를 $B_{1/n}$ 과의 교집합이 공집합이 아닌 $P$ 의 subcell 의 집합족이라고 하자. 그렇다면 $\mathcal{S}$ 는 $B_{1/n}$ 의 덮개이며 $S\in \mathcal{S}$ 에 대해 $M_S(f)-m_S(f)\ge 1/n$ 이다. 그렇다면
+
+$$
+\begin{aligned}
+\dfrac{1}{n} \cdot \sum_{S\in \mathcal{S}} \text{vol}(S) & \le \sum_{S\in \mathcal{S}} \left[M_S(f) - m_S(f)\right] \cdot \text{vol}(S) \\[0.3em]
+&\le \sum_{S} \left[M_S(f)- m_S(f)\right]]\cdot \text{vol}(S)  < \dfrac{\varepsilon}{n}
+\end{aligned}
+$$
+
+이므로 결론적으로 $\sum_{S\in \mathcal{S}} \text{vol}(S)< \varepsilon$ 이다. $\square$
+
+
+
+
 
 :::

@@ -299,10 +299,11 @@ window.Quarto = {
   <li><a href="#정의와-기본적-성질" id="toc-정의와-기본적-성질" class="nav-link" data-scroll-target="#정의와-기본적-성질"><span class="header-section-number">13.1.1</span> 정의와 기본적 성질</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#measure-zero-와-content-zero" id="toc-measure-zero-와-content-zero" class="nav-link" data-scroll-target="#measure-zero-와-content-zero"><span class="header-section-number">13.2</span> Measure zero 와 Content zero</a>
+  <li><a href="#sec-part3_measure_zero_and_content_zero" id="toc-sec-part3_measure_zero_and_content_zero" class="nav-link" data-scroll-target="#sec-part3_measure_zero_and_content_zero"><span class="header-section-number">13.2</span> Measure zero 와 Content zero</a>
   <ul class="collapse">
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
+  <li><a href="#sec-part3_integrable_functions" id="toc-sec-part3_integrable_functions" class="nav-link" data-scroll-target="#sec-part3_integrable_functions"><span class="header-section-number">13.3</span> 적분가능한 함수</a></li>
   </ul>
 </nav>
     </div>
@@ -667,8 +668,8 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><br></p>
 </section>
 </section>
-<section id="measure-zero-와-content-zero" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="measure-zero-와-content-zero"><span class="header-section-number">13.2</span> Measure zero 와 Content zero</h2>
+<section id="sec-part3_measure_zero_and_content_zero" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="sec-part3_measure_zero_and_content_zero"><span class="header-section-number">13.2</span> Measure zero 와 Content zero</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -738,7 +739,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 </div>
 <p><br></p>
 <p>아래 명제는 쉽게 보일 수 있다.</p>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_content_zero" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 13.3</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 content zero 일 때 다음이 성립한다.</p>
@@ -753,7 +754,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>예제 13.2</strong></span> <span class="math inline">\(a&lt;b\)</span> 에 대해 <span class="math inline">\([a,\,b]\subset \mathbb{R}\)</span> 은 content zero 가 아니다. <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 에 대한 닫힌 <span class="math inline">\(1\)</span>-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 <span class="math inline">\(U_i\)</span> 의 끝점을 <span class="math inline">\(a=t_0 &lt; t_1&lt; \cdots &lt;t_k=b\)</span> 가 되도록 놓을 수 있다. <span class="math inline">\(\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}\)</span> 이므로 <span class="math inline">\(\sum_{i}\text{vol}{U_i}\)</span> 를 임의로 작게 할 수 없다. <span class="math inline">\(\square\)</span></p>
 </div>
 </div>
-<p><br></p>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_content_zero_and_compact" class="theorem proposition">
@@ -782,7 +782,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdots \times (b_n-a_n)&gt;0\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_3_9" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 13.9 (Spivak 3.9)</strong></span> (<span class="math inline">\(a\)</span>) 유계가 아닌 집합은 content zero 일 수 없음을 보여라.</p>
@@ -794,7 +794,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(A\subset\mathbb{R}^n\)</span> 가 content zero 라고 하자. <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\(A\)</span> 의 덮개라고 하면 <span class="math inline">\(d_M=\max \{\|\boldsymbol{x}\| : \boldsymbol{x}\in \bigcup_{i=1}^n U_i \}\)</span> 가 존재하며 모든 <span class="math inline">\(\boldsymbol{y}\in A\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{y}\|\le d_M\)</span> 이어야 하는데 이는 <span class="math inline">\(A\)</span> 가 유계임을 의미한다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\mathbb{Z}\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_3_10" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 13.10 (Spivak 3.10)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(C\)</span> 가 content zero 집합이라면 <span class="math inline">\(C\)</span> 의 경계도 content zero 임을 보여라.</p>
@@ -806,7 +806,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 가 <span class="math inline">\(C\)</span> 의 덮개이고 <span class="math inline">\(U=\text{vol}\left(\bigcup_{i=1}^n U_i\right)\)</span> 라고 하자. <span class="math inline">\(C\subset U\)</span> 이며 <span class="math inline">\(C\)</span> 는 닫힌 집합이므로 <span class="math inline">\(\text{Bd}(C)\subset U\)</span> 이다. 따라서 <span class="math inline">\(C\)</span> 의 경계도 content zero 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A=\mathbb{Q}\cap [0,\,1]\)</span>. <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로 <span class="math inline">\(A\)</span> 도 measure zero 이며 유계이다. 그러나 <span class="math inline">\(\text{Bd}(A)=[0,\,1]\)</span> 이므로 measure zero 가 아니다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-part3_spivak_3_11" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 13.11 (Spivak 3.11)</strong></span> <span class="math inline">\(A\)</span> 가 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>11.12</span></a> 의 <span class="math inline">\(A\)</span> 라고 하자. <span class="math inline">\(\sum_{i=1}^\infty (b_i-a_i)&lt;1\)</span> 이면 <span class="math inline">\(A\)</span> 의 경계는 measure zero 가 아님을 보여라.</p>
@@ -816,9 +816,104 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A=\bigcup_{i=1}^\infty (a_i,\,b_i)\)</span> 이다. <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>11.12</span></a> <span class="math inline">\(\partial A=[0,\,1]-A\)</span> 이다.</p>
 </div>
-
-
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_3_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.12 (Spivak 3.12)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(\{x: f\text{ is discontinuous at }x\}\)</span> 는 measure zero 임을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>정해진 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(X_n = \{x:o(f,\,x)&gt; \frac{1}{n}\}\)</span> 라고 하자. <a href="3_1_functions_on_Euclidean_space.html#prp-part3_oscillation_and_continuity" class="quarto-xref">명제&nbsp;<span>11.3</span></a> 로부터 <span class="math inline">\(X_n \subset X\)</span> 이다.</p>
+<p><span class="math inline">\(X_n = \{x_1,\,x_2,\ldots\}\)</span> 이고 <span class="math inline">\(x_1&lt;x_2&lt;\cdots\)</span> 라고 하면 <a href="3_1_functions_on_Euclidean_space.html#exr-part3_spivak_1_30" class="quarto-xref">연습문제&nbsp;<span>11.22</span></a> 에 따라</p>
+<p><span class="math display">\[
+f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n}
+\]</span></p>
+<p>이다. <span class="math inline">\(X_n\)</span> 이 무한집합이면 <span class="math inline">\(f\)</span> 가 유계가 아니므로 <span class="math inline">\(X_n\)</span> 은 유한집합이다. <span class="math inline">\(\displaystyle X=\bigcup_{i=1}^n X_n\)</span> 이므로 <a href="#thm-part3_meazure_zero" class="quarto-xref">정리&nbsp;<span>13.2</span></a> 에 따라 <span class="math inline">\(X\)</span> 는 measure zero 이다.</p>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-part3_spivak_3_13" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.13 (Spivak 3.13)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell <span class="math inline">\([a_1,b_1]\times \cdots \times [a_n,b_n]\)</span> 에서 모든 <span class="math inline">\(a_i,\,b_i\)</span> 가 유리수인 것들의 집합은 나열 될 수 있음을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 그 열린 덮개인 집합족 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. <span class="math inline">\(A\)</span> 를 덮는 <span class="math inline">\(\mathcal{O}\)</span> 의 부분집합인 수열 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 가 존재함을 보여라.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\mathbb{Q}^{2n}\)</span> 은 가산집합이다.</p>
+<p>(<span class="math inline">\(b\)</span>) 각각의 <span class="math inline">\(x\in A\)</span> 에 대해 <span class="math inline">\(x\)</span> 를 포함하는 <span class="math inline">\(U_x\in \mathcal{O}\)</span> 가 존재하며 <span class="math inline">\(x\in B_x \subset U_x\)</span> 인 경계가 유리수인((<span class="math inline">\(a\)</span>) 에서 말한 그것) <span class="math inline">\(n\)</span>-cell <span class="math inline">\(B_x\)</span> 가 존재한다. 이런 <span class="math inline">\(B_x\)</span> 에 대해 <span class="math inline">\(U_x\)</span> 를 하나씩 모으면 <span class="math inline">\(B_x\)</span> 의 집합은 countable 이므로 이런 <span class="math inline">\(U_x\)</span> 의 집합도 countable 이다.</p>
+</div>
+<p><br></p>
 </section>
+</section>
+<section id="sec-part3_integrable_functions" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="sec-part3_integrable_functions"><span class="header-section-number">13.3</span> 적분가능한 함수</h2>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="lem-part3_integrability" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 13.1</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계이며 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에서 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이면 어떤 <span class="math inline">\(P\in \mathcal{P}[A]\)</span> 가 존재하여 <span class="math inline">\(U(f,\,P) - L(f,\,P)&lt;\varepsilon \cdot \text{vol}(A)\)</span> 를 만족한다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{x}\in A\)</span> 이면 <span class="math inline">\(x\)</span> 를 포함하는 어떤 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_x\)</span> 에서 <span class="math inline">\(M_{U_x}(f) - m_{U_x}(f) &lt;\varepsilon\)</span> 이다. <span class="math inline">\(A\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(U_{x_1},\ldots,\,U_{x_n}\)</span> 이 존재하여 <span class="math inline">\(A\)</span> 를 덮는다. <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 의 각각의 subcell 이 어떤 <span class="math inline">\(U_{x_i}\)</span> 에 포함되도록 잡을 수 있다. <span class="math inline">\(S\)</span> 가 그런 subcell 이라면 <span class="math inline">\(M_S(f)-m_S(f)&lt;\varepsilon\)</span> 이며, 따라서</p>
+<p><span class="math display">\[
+U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt; \varepsilon \cdot \text{vol}(A)
+\]</span></p>
+<p>이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-part3_integrability" class="theorem">
+<p><span class="theorem-title"><strong>정리 13.3</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 유계인 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(B=\{\boldsymbol{x}\in A:f\text{ is not continuous at }f\}\)</span> 일 때 <span class="math inline">\(f\)</span> 가 적분가능한 것의 필요충분조건은 <span class="math inline">\(B\)</span> 가 measure zero 인 것이다.</p>
+</div>
+</div>
+<p><br></p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B_\varepsilon := \{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x})\ge \varepsilon\}\)</span> 라고 하자.</p>
+<p>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(B\)</span> 가 measure zero 임을 가정하자 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(B_\varepsilon \subset B\)</span> 이므로 <span class="math inline">\(B_\varepsilon\)</span> 은 measure zero 이다. <a href="3_1_functions_on_Euclidean_space.html#prp-part3_oscillation_and_closed_set" class="quarto-xref">명제&nbsp;<span>11.4</span></a> 에 의해 <span class="math inline">\(B_\varepsilon\)</span> 은 닫힌집합이며 <span class="math inline">\(B_\varepsilon \subset A\)</span> 이므로 유계이다. 따라서 <span class="math inline">\(B_\varepsilon\)</span> 은 옹골집합이므로 content zero 이다(<a href="#prp-part3_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>13.4</span></a>). 따라서 유한개의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_1,\ldots,\,U_n\)</span> 로 <span class="math inline">\(\sum_{i=1}^n \text{vol}(U_i)&lt;\varepsilon\)</span> 이며 <span class="math inline">\(B_\varepsilon\)</span> 을 덮을 수 있다. 이제 <span class="math inline">\(A\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 에 따라 정해지는 subcell 이 아래의 <span class="math inline">\(\mathcal{S}_1\)</span> 이나 <span class="math inline">\(\mathcal{S}_2\)</span> 중의 하나에 속하도록 잡자.(<a href="#fig-part3_integrability_1" class="quarto-xref">그림&nbsp;<span>13.1</span></a>)</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\mathcal{S}_1\)</span> : 어떤 <span class="math inline">\(U_i\)</span> 에 대해 <span class="math inline">\(S \subset U_i\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_1\)</span> 에 포힘된다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{S}_2\)</span> : <span class="math inline">\(S\cap B_\varepsilon = \varnothing\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_2\)</span> 에 포함된다.</p>
+<div id="fig-part3_integrability_1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-part3_integrability_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig-part3_integrability-1.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-part3_integrability_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;13.1: The shaded rectagles are in <span class="math inline">\(\mathcal{S}_1\)</span>
+</figcaption>
+</figure>
+</div>
+<p>이제 <span class="math inline">\(|f(\boldsymbol{x})|&lt;M\)</span> 이라고 하자. 각각의 subcell <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(M_S(f)-m_S(f)&lt;2M\)</span> 이므로</p>
+<p><span class="math display">\[
+\sum_{S\in \mathcal{S}_1} \left[M_S(f) - m_S(f) \right]\cdot \text{vol}(S) &lt; 2M \sum_{i=1}^n \text{vol}(U_i) &lt; 2M\varepsilon
+\]</span></p>
+<p>이제 <span class="math inline">\(S\in \mathcal{S}_2\)</span> 이면 <span class="math inline">\(o(f,\boldsymbol{x})&lt;\varepsilon\)</span> 이므로 <a href="#lem-part3_integrability" class="quarto-xref">보조정리&nbsp;<span>13.1</span></a> 에 따라 <span class="math inline">\(P\)</span> 의 어떤 refinement <span class="math inline">\(P'\)</span> 이 존재하여 <span class="math inline">\(S\subset \mathcal{S}_2\)</span> 일 때</p>
+<p><span class="math display">\[
+\sum_{S'}\subset S [M_{S'}(f) - m_{S'}(f)]\cdot \text{vol}(S') &lt; \varepsilon \cdot \text{vol}(S)
+\]</span></p>
+<p>이다. 그렇다면</p>
+<p><span class="math display">\[
+\begin{aligned}
+U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f) - m_{S'}(f)\right]\cdot \text{vol}(S') \\[0.3em]
+&amp;\qquad + \sum_{S'\in S\in \mathcal{S}_2} \left[M_{S'}(f) - m_{S'}(f)\right]\cdot \text{vol}(S') \\[0.3em]
+&amp;&lt; 2M\varepsilon + \sum_{S \in \mathcal{S}_2} \varepsilon \cdot \text{vol}(S) \\[0.3em]
+&amp;\le 2M\varepsilon + \varepsilon \cdot \text{vol}(A)
+\end{aligned}
+\]</span></p>
+<p>이 성립한다. <span class="math inline">\(M\)</span> 과 <span class="math inline">\(\text{vol}(A)\)</span> 는 정해져 있으므로 우리는 <span class="math inline">\(U(f,\,P')-L(f,\,P')\)</span> 을 원하는 만큼 작게 만들 수 있다. 따라서 <span class="math inline">\(f\)</span> 는 적분가능하다.</p>
+<p>이제 <span class="math inline">\(f\)</span> 가 적분가능함을 가정하자. <span class="math inline">\(B= B_1 \cup B_{1/2} \cup \cdots\)</span> 이므로 각각의 <span class="math inline">\(B_{1/n}\)</span> 이 meausure zero 라면 <a href="#thm-part3_meazure_zero" class="quarto-xref">정리&nbsp;<span>13.2</span></a> 에 의해 <span class="math inline">\(B\)</span> 가 measure zero 임을 알게 된다. 실제로 우리는 각각의 <span class="math inline">\(B_{1/n}\)</span> 이 content zero 임을 보일 것이다.</p>
+<p><span class="math inline">\(f\)</span> 가 적분가능하므로 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(P \in \mathcal{P}[A]\)</span> 를 <span class="math inline">\(U(f,\,P)-L(f,\,P)&lt; \varepsilon/n\)</span> 이 되도록 잡을 수 있다. <span class="math inline">\(\mathcal{S}\)</span> 를 <span class="math inline">\(B_{1/n}\)</span> 과의 교집합이 공집합이 아닌 <span class="math inline">\(P\)</span> 의 subcell 의 집합족이라고 하자. 그렇다면 <span class="math inline">\(\mathcal{S}\)</span> 는 <span class="math inline">\(B_{1/n}\)</span> 의 덮개이며 <span class="math inline">\(S\in \mathcal{S}\)</span> 에 대해 <span class="math inline">\(M_S(f)-m_S(f)\ge 1/n\)</span> 이다. 그렇다면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dfrac{1}{n} \cdot \sum_{S\in \mathcal{S}} \text{vol}(S) &amp; \le \sum_{S\in \mathcal{S}} \left[M_S(f) - m_S(f)\right] \cdot \text{vol}(S) \\[0.3em]
+&amp;\le \sum_{S} \left[M_S(f)- m_S(f)\right]]\cdot \text{vol}(S)  &lt; \dfrac{\varepsilon}{n}
+\end{aligned}
+\]</span></p>
+<p>이므로 결론적으로 <span class="math inline">\(\sum_{S\in \mathcal{S}} \text{vol}(S)&lt; \varepsilon\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

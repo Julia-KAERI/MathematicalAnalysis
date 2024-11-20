@@ -765,7 +765,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="callout-body-container">
 <div id="def-part3_oscillation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 11.7 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(a\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 11.7 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
 M(f,\,\boldsymbol{a},\,\delta) &amp;:= \sup \{f(\boldsymbol{x}): \boldsymbol{x}\in A,\, \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}, \\
@@ -781,7 +781,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_oscillation_and_continuity" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 11.3</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
+<p><span class="theorem-title"><strong>명제 11.3</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에서 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -801,7 +801,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 \]</span></p>
 <p>이므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-part3_oscillation_and_closed_set" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 11.4</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
@@ -809,7 +809,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 라고 하고 <span class="math inline">\(\mathbb{R}^n-B\)</span> 가 열린 집합임을 보이자. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m-B\)</span> 이면 (<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 이거나, (<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 라고 하고 <span class="math inline">\(\mathbb{R}^n-B\)</span> 가 열린 집합임을 보이자. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n-B\)</span> 이면 <span class="math inline">\((i)\)</span> <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 이거나, <span class="math inline">\((ii)\)</span> <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이다.</p>
 <p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\not\in A\)</span> 이면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 어떤 <span class="math inline">\(\delta_x&gt;0\)</span> 에 대해 <span class="math inline">\(N(\boldsymbol{x},\,\delta_x)\subset \mathbb{R}^n-A \subset \mathbb{R}^n-B\)</span> 가 존재한다.</p>
 <p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x})&lt;\varepsilon\)</span> 인 경우. 즉 어떤 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(M(f,\,\boldsymbol{x},\,\delta)-m(f,\,\boldsymbol{x},\,\delta)&lt;\varepsilon\)</span> 이다. <span class="math inline">\(\boldsymbol{y}\in N(\boldsymbol{x},\,\delta)\)</span> 라면 어떤 <span class="math inline">\(N(\boldsymbol{y},\, \delta_1)\subset N(\boldsymbol{x},\, \delta)\)</span> 인 <span class="math inline">\(\delta_1&gt;0\)</span> 이 존재한다. 즉 <span class="math inline">\(N(\boldsymbol{x},\,\delta)\subset \mathbb{R}^n-B\)</span> 이다.</p>
 <p>즉 <span class="math inline">\(\mathbb{R}^n-B\)</span> 는 열린 집합이므로 <span class="math inline">\(B\)</span> 는 닫힌 집합이다.</p>
