@@ -1,21 +1,20 @@
-<!-- ---
+---
 title: "데카르트 곱"
 number-sections: true
 number-depth : 3
 crossref:
   chapters: true
---- -->
+---
 
-# 데카르트 곱
-
+{{< include ../../latexmacros.qmd >}}
 
 ## 집합족
 
-### 집합족 {#sec-part1_collection}
+### 집합족 {#sec-FA_collection}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_collection_and_indexing}
+::: {#def-FA_collection_and_indexing}
 
 #### 집합족과 인덱스
 
@@ -38,7 +37,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_union_and_intersection_for_collection}
+::: {#def-FA_union_and_intersection_for_collection}
 
 #### 집합족에 대한 합집합과 교집합
 
@@ -61,7 +60,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_union_and_intersection_for_collection}
+::: {#def-FA_union_and_intersection_for_collection}
 
 #### $\boldsymbol{n}$-tuple
 
@@ -79,7 +78,6 @@ $$
 
 과 같이 쓸 수 있다.
 
-
 ::: 
 :::
 
@@ -87,7 +85,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_union_and_intersection_for_collection}
+::: {#def-FA_union_and_intersection_for_collection}
 
 #### 데카르트 곱 (Cartesian Product)
 
@@ -103,7 +101,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part1_order_of_m_tuple}
+::: {#exm-FA_order_of_m_tuple}
 
 집합 $A,\,B,\,C$ 에 대해 $A \times B \times C$, $A\times (B \times C)$ 와 $(A \times B) \times C$ 사이에 각각 전단사 함수가 존재함을 보일 수 있다. 
 
@@ -112,7 +110,7 @@ $$
 </div></br>
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-part1_omega_tuple_and_sequence}
+::: {#def-FA_omega_tuple_and_sequence}
 
 #### $\boldsymbol{\omega}$-tuple 과 수열
 
@@ -138,14 +136,14 @@ $$
 ### 연습문제 {.unnumbered}
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exm-part1_munkres_1_5_1}
+::: {#exm-FA_munkres_1_5_1}
 
 #### Munkres 1.5.1
 
 $A\times B$ 에서 $B \times A$ 로의 전단사 함수가 존재함을 보이시오.
 
 :::
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -156,7 +154,7 @@ $\phi :A \times B \to B \times A,\, \phi ((a,\,b)) = (b,\,a)$ 는 전단사 함�
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_5_3}
+::: {#exr-FA_munkres_1_5_3}
 
 #### Munkres 1.5.3
 
@@ -172,7 +170,7 @@ $A=A_1\times A_2 \times \cdots,\, B=B_1 \times B_2\times \cdots$ 일 때 다음�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 ($1$) trivial
@@ -192,7 +190,7 @@ $x\in A\cap B$ 이면 $\forall i\in \mathbb{Z}_+,\, x_i A_i \cap B_i$ 이므로 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_5_4}
+::: {#exr-FA_munkres_1_5_4}
 
 #### Munkres 1.5.4
 
@@ -212,7 +210,7 @@ $m,\,n\in \mathbb{Z}$ 이고 $X \ne \varnothing$ 일 때 다음을 보여라.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -244,7 +242,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_5_5}
+::: {#exr-FA_munkres_1_5_5}
 
 #### Munkres 1.5.5
 
@@ -259,11 +257,11 @@ $$
 &emsp;($d$) $\{\boldsymbol{x} \mid x_2= x_3 \}$.
 
 :::
-</div></br>
+</div>
 
 ::: {.solution}
 
-($a$) $\mathbb{Z}^\omega \subset \mathbb{R}^\omega$ (see @exr-part1_munkres_1_5_3).
+($a$) $\mathbb{Z}^\omega \subset \mathbb{R}^\omega$ (see @exr-FA_munkres_1_5_3).
 
 ($b$) $B_m =\{x\in \mathbb{R}: x\ge m\} \subset \mathbb{R}$ 이다. $\prod_{m=1} B_m \subset \mathbb{R}^\omega$.
 

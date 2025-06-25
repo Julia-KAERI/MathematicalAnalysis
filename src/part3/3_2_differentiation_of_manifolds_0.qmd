@@ -13,7 +13,7 @@ crossref:
 ## 기본 개념
 
 
-### 다변수 함수의 미분 {#sec-part3_differentiation_of_multivariable_function}
+### 다변수 함수의 미분 {#sec-CM_differentiation_of_multivariable_function}
 
 선형변환 $T:\R^n \to \R^m$ 은 $m \times n$ 행렬로 표현할 수 있다는 것을 안다. 물론 미리 $\R^n$ 과 $\R^m$ 의 기저가 정해져야 한다. $\R^n$ 의 기저 $\mathcal{B}_n=(\bf{v}_1,\ldots,\,\bf{v}_n)$ 과 $\R^m$ 의 기저 $\mathcal{B}_m=(\bf{u}_1,\ldots,\,\bf{u}_m)$ 에 대한 $T$ 에 대한 행렬 표현을 $[T]_{\mathcal{B}_n,\, \mathcal{B}_m}$ 라고 하자. $\R^m$ 과 $\R^n$ 각각의 표준기저에 대한 행렬표현은 $[T]$ 라고 쓰기로 하자. 즉 $T(\bf{x}) = [T]\cdot \bf{x}$ 이다. 
 
@@ -29,7 +29,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_differentiation_of_multivariable_function}
+::: {#def-CM_differentiation_of_multivariable_function}
 
 #### 다변수 함수의 미분
 
@@ -37,7 +37,7 @@ $$
 
 $$
 \lim_{\bf{h} \to \bf{0}} \dfrac{\|F(\bf{a}+\bf{h}) - F(\bf{a}) - T(\bf{h})\|}{\|\bf{h}\|} = 0
-$$ {#eq-part3_derivative_of_vector_function}
+$$ {#eq-CM_derivative_of_vector_function}
 
 일 때 $F$ 는 $\bf{a}$ 에서 미분가능하다 라고 하며 $T$ 를 $DF(\bf{a})$ 혹은 $F'(\bf{a})$ 라고 쓴다. 
 
@@ -53,9 +53,9 @@ $$ {#eq-part3_derivative_of_vector_function}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_uniqueness_of_derivative}
+::: {#thm-CM_uniqueness_of_derivative}
 
-$F:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 @eq-part3_derivative_of_vector_function 를 만족하는 선형변환은 유일하다. 
+$F:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 @eq-CM_derivative_of_vector_function 를 만족하는 선형변환은 유일하다. 
 
 :::
 
@@ -63,7 +63,7 @@ $F:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 @eq-part3_de
 
 ::: {.proof}
 
-$T,\, L\in \mathcal{L}(\R^n,\, \R^m)$ 이 @eq-part3_derivative_of_vector_function 를 만족한다고 하자. 그리고 $D(\bf{h}) = F(\bf{x}-\bf{a})-F(\bf{a})$ 라고 하자. 
+$T,\, L\in \mathcal{L}(\R^n,\, \R^m)$ 이 @eq-CM_derivative_of_vector_function 를 만족한다고 하자. 그리고 $D(\bf{h}) = F(\bf{x}-\bf{a})-F(\bf{a})$ 라고 하자. 
 
 $$
 \begin{aligned}
@@ -72,13 +72,13 @@ $$
 \end{aligned}
 $$
 
-이다. 위 식의 양변을 $\|\bf{h}\|$ 로 나누고 $\lim_{\bf{h}\to \bf{0}}$ 을 취하면 @eq-part3_derivative_of_vector_function 로 부터 
+이다. 위 식의 양변을 $\|\bf{h}\|$ 로 나누고 $\lim_{\bf{h}\to \bf{0}}$ 을 취하면 @eq-CM_derivative_of_vector_function 로 부터 
 
 $$
 \lim_{\bf{h}\to \bf{0}} \dfrac{\|T(\bf{h})-L(\bf{h})\|}{\|\bf{h}\|} =0
-$$ {#eq-part3_uniqueness_of_derivative_1}
+$$ {#eq-CM_uniqueness_of_derivative_1}
 
-임을 안다. 이제 두 선형변환 $T,\,L$ 이 @eq-part3_uniqueness_of_derivative_1 를 만족하면 $T=L$ 임을 보이자. 임의의 $\bf{x}\in \R^n$ 에 대해 
+임을 안다. 이제 두 선형변환 $T,\,L$ 이 @eq-CM_uniqueness_of_derivative_1 를 만족하면 $T=L$ 임을 보이자. 임의의 $\bf{x}\in \R^n$ 에 대해 
 
 $$
 0 = \lim_{t\to 0} \dfrac{\|T(t\bf{x})-L(t\bf{x})\|}{\| t\bf{x}\|} = \dfrac{\|T(\bf{x})- L(\bf{x})\|}{\|\bf{x}\|}
@@ -90,7 +90,7 @@ $$
 
 </br>
 
-### 야코비 행렬 {#sec-part3_jacobian}
+### 야코비 행렬 {#sec-CM_jacobian}
 
 $F:\R^n\to\R^m$ 이 모든 $\bf{x}\in \R^n$ 에서 미분가능하면 마치 일변수 함수의 $f'(x)$ 처럼 $F'(\bf{x})$ 와 같이 쓸 수 있다. 이 때 $F'(\bf{a})$ 는 선형변환이므로 행렬로 표현할 때 기저에 따라 그 성분값이 달라진다. 여기에 기준이 되는 야코비 행렬을 아래와 같이 정의한다.
 
@@ -98,7 +98,7 @@ $F:\R^n\to\R^m$ 이 모든 $\bf{x}\in \R^n$ 에서 미분가능하면 마치 일
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_jacobian}
+::: {#def-CM_jacobian}
 
 #### 야코비 행렬
 
@@ -115,9 +115,9 @@ $F:A \subset \R^n \to \R^m$ 에 대해 $DF(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_differentiability_of_identity_function}
+::: {#exr-CM_differentiability_of_identity_function}
 
-@def-part3_projection_function 에서 정의된 $\bf{\pi}:\R^n \to \R^n$ 은 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라. 사영함수 $\pi_i:\R^n \to \R$ 도 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라.
+@def-CM_projection_function 에서 정의된 $\bf{\pi}:\R^n \to \R^n$ 은 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라. 사영함수 $\pi_i:\R^n \to \R$ 도 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라.
 
 :::
 </div></br>
@@ -143,7 +143,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_1}
+::: {#exr-CM_spivak_2_1}
 #### Spivak 2_1
 
 $F:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능하면 $\bf{a}$ 에서 연속임을 보여라.
@@ -154,14 +154,14 @@ $F:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능하면 $\bf{a}$ 에서 연속�
 
 ::: {.solution}
 
-@eq-part3_derivative_of_vector_function 로부터 $\displaystyle \lim_{\bf{h}\to \bf{0}} \|F(\bf{a}+\bf{h}) - F(\bf{a}) - T(\bf{h})\| = 0$ 이며 @exr-part3_spivak_1_10 로부터 $\displaystyle \lim_{\bf{h} \to \bf{0}} T(\bf{h})=\bf{0}$ 이므로 $\displaystyle \lim_{\bf{h}\to \bf{0}} F(\bf{a}+\bf{h})-F(\bf{a}) = \bf{0}$ 이다. 즉 $F$ 는 $\bf{a}$ 에서 연속이다.
+@eq-CM_derivative_of_vector_function 로부터 $\displaystyle \lim_{\bf{h}\to \bf{0}} \|F(\bf{a}+\bf{h}) - F(\bf{a}) - T(\bf{h})\| = 0$ 이며 @exr-CM_spivak_1_10 로부터 $\displaystyle \lim_{\bf{h} \to \bf{0}} T(\bf{h})=\bf{0}$ 이므로 $\displaystyle \lim_{\bf{h}\to \bf{0}} F(\bf{a}+\bf{h})-F(\bf{a}) = \bf{0}$ 이다. 즉 $F$ 는 $\bf{a}$ 에서 연속이다.
 :::
 
 </br>
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_2}
+::: {#exr-CM_spivak_2_2}
 #### Spivak 2_2
 
 $f:\R^2 \to \R$ 이 모든 $y_1,\,y_2\in \R$ 에 대해 $f(x,\,y_1) = f(x,\,y_2)$ 일 때 $f$ 가 두번째 변수에 대해 독립이라고 한다. $f$ 가 두번째 변수에 대해 독립일 필요충분조건이 어떤 $g:\R \to \R$ 이 존재하여 $f(x,\,y)=g(x)$ 임을 보여라. $f'(a,\,b)$ 를 $g'$ 으로 표현하면 무엇인가?
@@ -182,7 +182,7 @@ $f'(a,\,b) = g'(a)$ 임은 쉽게 알 수 있다.
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_4}
+::: {#exr-CM_spivak_2_4}
 #### Spivak 2_4
 
 $g$ 는 단위원 $\{\bf{x}\in \R^2 : \|\bf{x}\|=1\}$ 에서 정의된 연속인 실함수이며 $g(0,\,1)= g(1,\,0)=0$, $g(-\bf{x})=-g(\bf{x})$ 이다. $f:\R^2 \to \R$ 은 다음과 같이 정의된다.
@@ -229,7 +229,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_5}
+::: {#exr-CM_spivak_2_5}
 #### Spivak 2_5
 
 $f:\R^2 \to \R$ 이 아래와 같이 정의되었다.
@@ -238,7 +238,7 @@ $$
 f(x,\,y) = \left\{ \begin{array}{ll} \dfrac{x|y|}{\sqrt{x^2+y^2}}, \qquad & (x,\,y) \ne \bf{0}, \\ 0,&(x,\,y) = \bf{0}.\end{array}\right.
 $$
 
-$f$ 는 @exr-part3_spivak_2_4 와 같은 종류의 문제로 $(0,\,0)$ 에서 미분가능하지 않음을 보여라.
+$f$ 는 @exr-CM_spivak_2_4 와 같은 종류의 문제로 $(0,\,0)$ 에서 미분가능하지 않음을 보여라.
 
 :::
 
@@ -267,7 +267,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_6}
+::: {#exr-CM_spivak_2_6}
 #### Spivak 2_6
 
 $f:\R^2 \to \R$ 이 $f(x,\,y) = \sqrt{|xy|}$ 로 정의되었다. $f$ 가 $(0,\,0)$ 에서 미분가능하지 않음을 보여라.
@@ -303,7 +303,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_7}
+::: {#exr-CM_spivak_2_7}
 #### Spivak 2_7
 
 $f: \R^2 \to \R$ 이 $|f(\bf{x})|\le \|\bf{x}\|^2$ 을 만족한다고 하자. $f$ 가 $(0,\,0)$ 에서 미분가능함을 보여라.
@@ -318,7 +318,7 @@ $f(0,\,0)=0$ 이다. 어떤 $T=\begin{bmatrix}a & b \end{bmatrix}$ 에 대해
 
 $$
 0 = \lim_{(h,\,k)\to \bf{0}}\dfrac{|f(h,\,k)- (ah+bk)|}{\sqrt{h^2+k^2}} 
-$$ {#eq-part3_spivak_2_7}
+$$ {#eq-CM_spivak_2_7}
 
 이어야 한다. 
 
@@ -326,7 +326,7 @@ $$
 \dfrac{f(\bf{h})}{\|\bf{h}\|^2}\le \|\bf{h}\|
 $$
 
-이므로 $a=b=0$ 에 대해 @eq-part3_spivak_2_7 를 만족한다. 따라서 $Df(\bf{0})= \begin{bmatrix}0 & 0\end{bmatrix}^T$ 이다.
+이므로 $a=b=0$ 에 대해 @eq-CM_spivak_2_7 를 만족한다. 따라서 $Df(\bf{0})= \begin{bmatrix}0 & 0\end{bmatrix}^T$ 이다.
 
 :::
 
@@ -334,7 +334,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_8}
+::: {#exr-CM_spivak_2_8}
 #### Spivak 2_8
 
 $F:\R \to \R^2$ 이며 $F = \begin{bmatrix} f_1 & f_2\end{bmatrix}^T$ 라 하자. $F$ 가 $a\in R$ 에서 미분가능할 필요충분조건은 $f_1,\,f_2$ 가 각각 $a$ 에서 미분가능하며 $F'(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 임을 보여라.
@@ -374,7 +374,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_9}
+::: {#exr-CM_spivak_2_9}
 #### Spivak 2_9
 
 $f,\,g :\R \to \R$ 이 $n\in \mathbb{Z}_+$ 에 대해
@@ -428,15 +428,15 @@ $$
 
 ## 연쇄규칙과 미분의 기본 성질
 
-### 다변수 함수의 연쇄규칙 {#sec-part3_chain_rule_for_mutivariable_function}
+### 다변수 함수의 연쇄규칙 {#sec-CM_chain_rule_for_mutivariable_function}
 
-일변수 함수에 대한 연쇄규칙은 @thm-part2_chain_rule 을 참고하라.
+일변수 함수에 대한 연쇄규칙은 @thm-MA_chain_rule 을 참고하라.
 
 </br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_chain_rule}
+::: {#thm-CM_chain_rule}
 
 #### 다변수 함수의 연쇄규칙
 
@@ -444,13 +444,13 @@ $F:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능하며 $G:\R^m \to \R^p$ 가 $
 
 $$
 D(G\circ F)(\bf{a})= DG(F(\bf{a})) \circ DF(\bf{a})
-$$ {#eq-part3_chain_rule}
+$$ {#eq-CM_chain_rule}
 
 위 식은 아래와 같이 쓸 수 있다.
 
 $$
 (G\circ F)'(\bf{a}) = G'(F(\bf{a})) \cdot F'(\bf{a}).
-$$ {#eq-part3_chain_rule_2}
+$$ {#eq-CM_chain_rule_2}
 :::
 
 </div></br>
@@ -491,7 +491,7 @@ $$
 \end{aligned}
 $$ {#eq-thm_part3_chainrule_4}
 
-이다. 우선 $\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0$ 임을 보이자. @exr-part3_spivak_1_10 으로부터 어떤 $M_T>0$ 에 대해
+이다. 우선 $\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0$ 임을 보이자. @exr-CM_spivak_1_10 으로부터 어떤 $M_T>0$ 에 대해
 
 $$
 \dfrac{\|T(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}\le \dfrac{M_T\|\bf{\varphi}(\bf{x})\|}{\|\bf{x}-\bf{a}\|}
@@ -518,7 +518,7 @@ $$
 \end{aligned}
 $$
 
-이며 역시  @exr-part3_spivak_1_10 로부터 어떤 $M_L>0$ 가 존재하여 $\|L(\bf{x}-\bf{a})\| \le M_L \|\bf{x}-\bf{a}\|$ 임을 안다. 이 결과와 @eq-thm_part3_chainrule_2 의 첫번째 식을 이용하면 어떤 $\eta>0$ 에 대해
+이며 역시  @exr-CM_spivak_1_10 로부터 어떤 $M_L>0$ 가 존재하여 $\|L(\bf{x}-\bf{a})\| \le M_L \|\bf{x}-\bf{a}\|$ 임을 안다. 이 결과와 @eq-thm_part3_chainrule_2 의 첫번째 식을 이용하면 어떤 $\eta>0$ 에 대해
 
 $$
 \|\bf{x}-\bf{a}\|<\eta \implies \|\bf{\varphi}(\bf{x})\| <\|\bf{x}-\bf{a}\|
@@ -548,13 +548,13 @@ $$
 
 </br>
 
-### 다변수 함수 미분의 기본 성질 {#sec-part3_basic_properties_of_derivative_of_multivariable_functions}
+### 다변수 함수 미분의 기본 성질 {#sec-CM_basic_properties_of_derivative_of_multivariable_functions}
 
 </br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_basic_properties_of_derivative_of_multivariable_functions}
+::: {#thm-CM_basic_properties_of_derivative_of_multivariable_functions}
 
 $F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix}f_1(\bf{x}) &\cdots & f_m(\bf{x})\end{bmatrix}^T$ 이라고 하자.
 
@@ -604,7 +604,7 @@ $$
 
 이며 $\bf{h}\to \bf{0}$ 극한에서 우변이 $0$ 이므로 좌변도 $0$ 이다. 즉 $DF(\bf{a}) = T$ 이다. 
 
-이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-part3_projection_function) $\pi_i$ 에 대해 @exr-part3_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-part3_chain_rule 에 의해 $\pi_i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. 
+이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-CM_projection_function) $\pi_i$ 에 대해 @exr-CM_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-CM_chain_rule 에 의해 $\pi_i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. 
 
 ($4$) $s$ 가 선형사상이므로 ($2$) 에 의해 성립한다.
 
@@ -622,7 +622,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part3_basic_properties_of_derivative_of_multivariable_functions}
+::: {#cor-CM_basic_properties_of_derivative_of_multivariable_functions}
 
 $f,\,g :\R^n \to \R$ 이 $\bf{a}$ 에서 미분가능하다면 다음이 성립한다. 
 
@@ -645,7 +645,7 @@ $$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2}
 
 ::: {.proof}
 
-@thm-part3_basic_properties_of_derivative_of_multivariable_functions ($4$) 의 $s(x,\,y)=x+y$ 를 이용한다. $f+g = s\circ (f,\,g)$ 이므로
+@thm-CM_basic_properties_of_derivative_of_multivariable_functions ($4$) 의 $s(x,\,y)=x+y$ 를 이용한다. $f+g = s\circ (f,\,g)$ 이므로
 
 $$
 \begin{aligned}
@@ -656,7 +656,7 @@ $$
 
 이다. 
 
-@thm-part3_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $p(x,\,y) = x\cdot y$ 를 이용한다. $f\cdot g = p\circ(f,\,g)$ 이므로
+@thm-CM_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $p(x,\,y) = x\cdot y$ 를 이용한다. $f\cdot g = p\circ(f,\,g)$ 이므로
 
 $$
 \begin{aligned}
@@ -698,7 +698,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_10}
+::: {#exr-CM_spivak_2_10}
 #### Spivak 2_10
 
 다음 함수에 대해 $f'$ 을 구하라.
@@ -789,7 +789,7 @@ $\vdots$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_11}
+::: {#exr-CM_spivak_2_11}
 #### Spivak 2_11
 
 $g:\R \to \R$ 이 연속일 대 다음 함수 $f$ 에 대해 $f'$ 을 구하라.
@@ -818,7 +818,7 @@ $$
 f'(x,\,y)= G'(x \cdot y) \begin{bmatrix} y & x\end{bmatrix} = \begin{bmatrix} y\cdot g(xy) & x \cdot g(xy)\end{bmatrix}
 $$
 
-($c$) @exr-part3_spivak_2_10 ($d$) 를 이용한다. $f(x,\,y,\,z) = G(\sin (x \sin (y \sin z))) - G(xy)$ 이므로 
+($c$) @exr-CM_spivak_2_10 ($d$) 를 이용한다. $f(x,\,y,\,z) = G(\sin (x \sin (y \sin z))) - G(xy)$ 이므로 
 
 $$
 f'(x,\,y,\,z) = ...
@@ -829,7 +829,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_12}
+::: {#exr-CM_spivak_2_12}
 #### Spivak 2_12
 
 $F:\R^n \times \R^m \to \R^p$ 가 $\bf{x},\, \bf{x}_1,\,\bf{x}_2\in \R^n$, $\bf{y},\,\bf{y}_1,\,\bf{y}_2\in \R^m$, $a\in \R$ 에 대해 다음을 만족하면 $f$ 를 **쌍선형(bilinear)** 이라고 한다.
@@ -840,7 +840,7 @@ F(a\bf{x},\, \bf{y}) &= aF(\bf{x},\, \bf{y}) = F(\bf{x},\, a\bf{y}),\\[0.3em]
 F(\bf{x}_1 + \bf{x}_2,\, \bf{y}) &= F(\bf{x}_1,\, \bf{y}) + F(\bf{x}_2,\, \bf{y}),\\[0.3em]
 F(\bf{x},\, \bf{y}_1+\bf{y}_2) &= F(\bf{x},\, \bf{y}_1) + F(\bf{x},\, \bf{y}_2).
 \end{aligned}
-$$ {#eq-part3_spivak_2_12_1}
+$$ {#eq-CM_spivak_2_12_1}
 
 ($a$) $F$ 가 쌍선형이면 다음이 성립함을 보여라.
 
@@ -850,7 +850,7 @@ $$
 
 ($b$) $DF(\bf{a},\,\bf{b})(\bf{x},\,\bf{y}) = F(\bf{a},\,\bf{y}) + F(\bf{x},\, \bf{b})$ 임을 보여라.
 
-($c$) @thm-part3_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $Dp(a,\,b)$ 는 ($b$) 의 특별한 형태임을 보여라.
+($c$) @thm-CM_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $Dp(a,\,b)$ 는 ($b$) 의 특별한 형태임을 보여라.
 
 :::
 
@@ -862,7 +862,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_bilinear_1}
+::: {#prp-CM_bilinear_1}
 
 $F:\R^n \times \R^m \to \R^p$ 가 쌍선형 형식일 대 다음이 성립한다.
 
@@ -875,7 +875,7 @@ $F:\R^n \times \R^m \to \R^p$ 가 쌍선형 형식일 대 다음이 성립한다
 
 ::: {.proof}
 
-($1$) @eq-part3_spivak_2_12_1 의 첫번째 식으로부터  $F(-\bf{x},\,\bf{y}) = - F(\bf{x},\, \bf{y})= F(\bf{x},\, -\bf{y})$ 임을 안다. 이를 이용하면 $F(\bf{0},\, \bf{y})= F(\bf{x},\, \bf{0})= \bf{0}$ 임을 안다. 
+($1$) @eq-CM_spivak_2_12_1 의 첫번째 식으로부터  $F(-\bf{x},\,\bf{y}) = - F(\bf{x},\, \bf{y})= F(\bf{x},\, -\bf{y})$ 임을 안다. 이를 이용하면 $F(\bf{0},\, \bf{y})= F(\bf{x},\, \bf{0})= \bf{0}$ 임을 안다. 
 
 ($2$) $\R^n,\, \R^m$ 에서의 표준기저를 각각 $(\bf{e}_i),\, (\bf{t}_j)$ 라고 하자. $\bf{x} = \sum_i x_i \bf{e}_i$, $\bf{y}= \sum_j y_j \bf{t}_j$ 라고 하면 
 
@@ -933,7 +933,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_13}
+::: {#exr-CM_spivak_2_13}
 #### Spivak 2_13
 
 $IP:\R^n \times \R^n \to \R$ 을 $IP(\bf{x},\, \bf{y}) := \langle \bf{x},\,\bf{y}\rangle = \bf{x}^T \bf{y}$ 로 정의한다.
@@ -977,7 +977,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_14}
+::: {#exr-CM_spivak_2_14}
 #### Spivak 2_14
 
 $i=1,\ldots,\,k$ 에 대해 $E_i$ 는 각각의 차원을 가진 유클리드 공간이다. $F:E_1 \times \cdots \times E_k \to \R^p$ 이다. 각각의 $x_j \in E_j,\, j \ne i$ 에 대해 아래와 같은 $G:\R \to \R^p$ 가 선형함수라면 $F$ 를 다중선형함수라고 한다.
@@ -1013,14 +1013,14 @@ $$
 G_{ij}(x,\,y) = F(x_1,\ldots,\,x_{i-1},\,x,\,x_{i+1},\ldots,\,x_{j-1},\,y,\, x_{j+1},\ldots,\,x_k)
 $$ 
 
-는 쌍선형 함수이다. 따라서 @exr-part3_spivak_2_12 ($a$) 에 의해 ($a$) 가 성립한다.
+는 쌍선형 함수이다. 따라서 @exr-CM_spivak_2_12 ($a$) 에 의해 ($a$) 가 성립한다.
 
 ($b$) $n$ 선형 형식에 대해 다음 명제를 증명한다.
 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_multilinear_1}
+::: {#prp-CM_multilinear_1}
 
 유클리드 공간 $E_1,\ldots,\,E_n$ 에 대해 $F:E_1 \times \cdots \times E_n \to \R^p$ 가 $n$-선형 형식일 때 다음이 성립한다.
 
@@ -1033,7 +1033,7 @@ $$
 
 ::: {.proof}
 
-($1$) 은 @prp-part3_bilinear_1 과 같은 방법으로 쉽게 증명 할 수 있다.  
+($1$) 은 @prp-CM_bilinear_1 과 같은 방법으로 쉽게 증명 할 수 있다.  
 
 ($2$) $E_i$ 의 차원이 $d_i$ 라고 하고 $\left(\bf{e}^{(i)}_j\right)$ 가 $E_i$ 의 표준기저라고 하자. $x_i = \sum_{j_i} c_{j_i}^{(i)}\bf{e}_{j_i}^{(i)}$ 라고 하면 
 
@@ -1082,14 +1082,14 @@ $$
 \lim_{\bf{h}\to \bf{0}}\dfrac{\displaystyle \left\|F(a_1+h_1,\ldots,\,a_k+h+k) - F(a_1,\ldots,\, a_k) - \sum_{i=1}^n F(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\bf{h}\|}
 $$
 
-를 생각해보자. 분자의 $\| \cdots \|$ 안에는 $F$ 의 인자 $a_1,\ldots,\,a_k$ 가운데 두개 이상을 $\bf{h}$ 의 해당 성분으로 바꾼 것만 남는다. 이제 우리가 증명한 @prp-part3_multilinear_1 에 의해 위의 극한이 $0$ 이 됨을 알 수 있다. 
+를 생각해보자. 분자의 $\| \cdots \|$ 안에는 $F$ 의 인자 $a_1,\ldots,\,a_k$ 가운데 두개 이상을 $\bf{h}$ 의 해당 성분으로 바꾼 것만 남는다. 이제 우리가 증명한 @prp-CM_multilinear_1 에 의해 위의 극한이 $0$ 이 됨을 알 수 있다. 
 
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_15}
+::: {#exr-CM_spivak_2_15}
 #### Spivak 2_15
 
 $n\times n$ 행렬은 $n$ 개의 $\R^n$ 의 데카르트곱 $\R^n \times \cdots \times R^n$ 의 한 점으로 간주 할 수 있다. 이 때 행렬의 각 행은 $\R^n$ 의 원소이다.
@@ -1122,7 +1122,7 @@ $$
 
 ::: {.solution}
 
-($a$) 우리는 $n \times n$ 행렬의 행렬식이 $n$-선형 형식임을 안다. 따라서 @exr-part3_spivak_2_14 ($b$) 에 의해 주어진 식이 성립함을 안다.
+($a$) 우리는 $n \times n$ 행렬의 행렬식이 $n$-선형 형식임을 안다. 따라서 @exr-CM_spivak_2_14 ($b$) 에 의해 주어진 식이 성립함을 안다.
 
 ($b$) $f'(t) = D(\det)(a_{ij}(t))(a'_{ij}(t))$ 이므로 식시 성립한다.
 
@@ -1145,7 +1145,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_16}
+::: {#exr-CM_spivak_2_16}
 #### Spivak 2_16
 
 $F:\R^n \to \R^n$ 이 미분가능하며 미분가능한 역함수 $F^{-1}:\R^n \to \R^n$ 이 존재한다고 하자. 다음이 성립함을 보여라.
@@ -1171,7 +1171,7 @@ $F\circ F^{-1} = \bf{\pi}$ 이며 양변을 미분하면 $F'(F^{-1}(\bf{a})) (F^
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_partial_derivative}
+::: {#def-CM_partial_derivative}
 
 #### 편미분
 
@@ -1179,7 +1179,7 @@ $f:\R^n \to \R$ 과 $\bf{a}\in \R^n$ 에 대해 아래와 같이 정의된 $D_if
 
 $$
 D_i f(\bf{a}) :=\lim_{h \to 0} \dfrac{f(a_1,\ldots,\,a_{i-1}, a_{i}+h,\, a_{i+1},\ldots,\,a_n) - f(a_1,\ldots,\,a_n)}{h}.
-$$ {#eq-part3_ith_partial_derivative}
+$$ {#eq-CM_ith_partial_derivative}
 
 
 $D_if(\bf{a})$ 를 $\partial_i f(\bf{a})$ 혹은 $\dfrac{\partial f(\bf{a})}{\partial x_i}$ 와 같이 쓰기도 한다. 
@@ -1196,7 +1196,7 @@ $D_if(\bf{a})$ 를 $\partial_i f(\bf{a})$ 혹은 $\dfrac{\partial f(\bf{a})}{\pa
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_exchange_of_the_order_of_partial_derivative}
+::: {#thm-CM_exchange_of_the_order_of_partial_derivative}
 
 $D_jD_i f$ 와 $D_j D_if$ 가 $\bf{a} \in \R^n$ 을 포함하는 어떤 열린 집합에서 연속일 때 $D_jD_if(\bf{a}) = D_jD_if(\bf{a})$ 이다.
 
@@ -1208,7 +1208,7 @@ $D_iD_jf$ 와 같이 두번 편미분 한 것을 **2 계 편미분(2nd-order par
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_extrema_and_partial_derivative}
+::: {#thm-CM_extrema_and_partial_derivative}
 
 $f : A \subset \R^n \to \R$ 이 $\bf{a}\in \text{int}(A)$ 에서 극값을 갖고 $D_i f$ 가 $A$ 에서 존재한다면 $D_i f(\bf{a})=0$ 이다. 
 
@@ -1228,7 +1228,7 @@ $g_i(x) = f(a_1,\ldots,\,a_{i-1},\,x.,\,a_{i+1},\ldots,\,a_n)$ 이라고 하자.
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_17}
+::: {#exr-CM_spivak_2_17}
 #### Spivak 2_17
 
 다음 함수의 편미분을 구하라.
@@ -1262,7 +1262,7 @@ $g_i(x) = f(a_1,\ldots,\,a_{i-1},\,x.,\,a_{i+1},\ldots,\,a_n)$ 이라고 하자.
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_18}
+::: {#exr-CM_spivak_2_18}
 #### Spivak 2_18
 
 $g:\R \to \R$ 이 연속일 때 다음 함수의 편미분을 구하라
@@ -1296,7 +1296,7 @@ $G(t) = \int_0^t g$ 라고 하자. $g$ 가 연속이므로 $G(t)$ 는 항상 존
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_19}
+::: {#exr-CM_spivak_2_19}
 #### Spivak 2_19
 
 $f(x,\,y) = x^{x^{x^y}} + (\log x) (\arctan (\arctan (\arctan (\sin (\cos xy)- \log (x+y)))))$ 일 때 $D_2 f(1,\,y)$ 를 구하라
@@ -1320,7 +1320,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_20}
+::: {#exr-CM_spivak_2_20}
 #### Spivak 2_20
 
 $f$ 의 편미분을 $g$ 와 $h$ 의 미분을 이용하여 구하라.
@@ -1354,7 +1354,7 @@ $f$ 의 편미분을 $g$ 와 $h$ 의 미분을 이용하여 구하라.
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_21}
+::: {#exr-CM_spivak_2_21}
 #### Spivak 2_21
 
 $g_1,\,g_2 :\R^2 \to \R$ 이 연속이다. $f:\R^2 \to \R$ 을 다음과 같이 정의한다.
@@ -1386,7 +1386,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_22}
+::: {#exr-CM_spivak_2_22}
 #### Spivak 2_22
 
 $f:\R^2 \to \R$ 이 $D_2f=0$ 일 때 $f$ 는 두번째 변수에 독립임을 보여라. $D_1f = D_2f=0$ 이면 $f$ 는 상수임을 보여라.
@@ -1405,7 +1405,7 @@ $D_1 f = D_2f = 0$ 이라면 $f$ 가 $x,\,y$ 값 모두에 대해 독립이므�
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_23}
+::: {#exr-CM_spivak_2_23}
 #### Spivak 2_23
 
 $A=\{(x,\,y) \subset \R^2 : x<0,\text{ or } x\ge 0 \text{ and } y\ne 0\}$ 에 대해 다음을 보여라.
@@ -1432,7 +1432,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_24}
+::: {#exr-CM_spivak_2_24}
 #### Spivak 2_24
 
 $f:\R^2 \to \R$ 이 아래와 같이 정의되었다.
@@ -1467,7 +1467,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_25}
+::: {#exr-CM_spivak_2_25}
 #### Spivak 2_25
 
 $f:\R \to \R$ 을 아래와 같이 정의한다.
@@ -1511,11 +1511,11 @@ $$
 
 ## 다변수 벡터 함수의 미분
 
-### 다변수 벡터함수의 미분과 편미분 {#sec-part3_derivative_and_partial_derivatives_of_multivariable_vector_valued_function}
+### 다변수 벡터함수의 미분과 편미분 {#sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_derivative_and_partial_derivative_1}
+::: {#thm-CM_derivative_and_partial_derivative_1}
 
 #### 다변수 벡터함수의 미분과 편미분 1
 
@@ -1532,7 +1532,7 @@ $$
 
 ::: {.proof}
 
-@thm-part3_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
+@thm-CM_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
 
 $$
 H(\bf{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
@@ -1554,7 +1554,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_derivative_and_partial_derivative_2}
+::: {#thm-CM_derivative_and_partial_derivative_2}
 
 #### 다변수 벡터함수의 미분과 편미분 2
 
@@ -1614,7 +1614,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_chain_rule_for_multivariable_vector_valued_function}
+::: {#thm-CM_chain_rule_for_multivariable_vector_valued_function}
 
 #### 다변수 벡터함수의 연쇄 규칙
 
@@ -1635,7 +1635,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_mean_value_theorem_for_vector_function}
+::: {#thm-CM_mean_value_theorem_for_vector_function}
 
 #### 다변수 함수의 중간값 정리
 
@@ -1667,7 +1667,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_28}
+::: {#exr-CM_spivak_2_28}
 #### Spivak 2_28
 
 다음 함수의 편미분을 구하라.
@@ -1706,7 +1706,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_29}
+::: {#exr-CM_spivak_2_29}
 #### Spivak 2_29
 
 $f:\R^n \to \R$ 과 $\bf{x}\in \R^n$ 에 대해 
@@ -1754,10 +1754,10 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_30}
+::: {#exr-CM_spivak_2_30}
 #### Spivak 2_30
 
-$f$ 가 @exr-part3_spivak_2_4 의 그것과 같다. $D_\bf{x}f(0,\,0)$ 이 모든 $\bf{x}$ 에서 정의됨을 보여라. 그러나 $g\ne 0$ 이면 $D_{\bf{x}+\bf{y}}f(0,\,0) = D_\bf{x}f(0,\,0) + D_\bf{y}f(0,\,0)$ 은 모든 $\bf{x},\, \bf{y}$ 에서 성립하는 것은 아님을 보여라.
+$f$ 가 @exr-CM_spivak_2_4 의 그것과 같다. $D_\bf{x}f(0,\,0)$ 이 모든 $\bf{x}$ 에서 정의됨을 보여라. 그러나 $g\ne 0$ 이면 $D_{\bf{x}+\bf{y}}f(0,\,0) = D_\bf{x}f(0,\,0) + D_\bf{y}f(0,\,0)$ 은 모든 $\bf{x},\, \bf{y}$ 에서 성립하는 것은 아님을 보여라.
 
 :::
 
@@ -1779,10 +1779,10 @@ $g \ne 0$ 이면 $g(a,\,b)\ne 0$ 인 $(a,\,b)$ 가 존재한다. 그런데 $D_{(
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_31}
+::: {#exr-CM_spivak_2_31}
 #### Spivak 2_31
 
-$f:\R^2 \to \R$ 이 @exr-part3_spivak_1_26 과 같이 정의되었다. $f$ 가 $(0,\,0)$ 에서 연속이 아니지만 모든 $\bf{x}\in \R^2$ 에서 $D_{\bf{x}} f(0,\,0)$ 이 존재함을 보여라.
+$f:\R^2 \to \R$ 이 @exr-CM_spivak_1_26 과 같이 정의되었다. $f$ 가 $(0,\,0)$ 에서 연속이 아니지만 모든 $\bf{x}\in \R^2$ 에서 $D_{\bf{x}} f(0,\,0)$ 이 존재함을 보여라.
 
 :::
 
@@ -1790,13 +1790,13 @@ $f:\R^2 \to \R$ 이 @exr-part3_spivak_1_26 과 같이 정의되었다. $f$ 가 $
 
 ::: {.solution}
 
-$f$ 가 $(0,\,0)$ 에서 연속이 아님은  @exr-part3_spivak_1_26 에서 보였다. $D_{\bf{x}}(0,\,0) = \lim_{t \to 0}\dfrac{f(t\bf{x})}{t}=0$ 이다.
+$f$ 가 $(0,\,0)$ 에서 연속이 아님은  @exr-CM_spivak_1_26 에서 보였다. $D_{\bf{x}}(0,\,0) = \lim_{t \to 0}\dfrac{f(t\bf{x})}{t}=0$ 이다.
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_32}
+::: {#exr-CM_spivak_2_32}
 #### Spivak 2_32
 
 ($a$) $f:\R\to\R$ 이 다음과 같이 정의되었다.
@@ -1857,17 +1857,17 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_33}
+::: {#exr-CM_spivak_2_33}
 #### Spivak 2_33
 
-@thm-part3_derivative_and_partial_derivative_2 에서 $D_1f_i(\bf{a})$ 가 연속인 조건을 제거해도 된다는 것을 보여라. ($D_2f_j$ 부터는 연속이어야 한다.)
+@thm-CM_derivative_and_partial_derivative_2 에서 $D_1f_i(\bf{a})$ 가 연속인 조건을 제거해도 된다는 것을 보여라. ($D_2f_j$ 부터는 연속이어야 한다.)
 
 :::
 
 </div></br>
 
 ::: {.solution}
-@thm-part3_derivative_and_partial_derivative_2 의 증명에서 $D_1f_i$ 
+@thm-CM_derivative_and_partial_derivative_2 의 증명에서 $D_1f_i$ 
 
 $$
 \begin{aligned}
@@ -1899,7 +1899,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_34}
+::: {#exr-CM_spivak_2_34}
 #### Spivak 2_34
 
 $f:\R^n \to \R$ 이 자연수 $m$ 에 대해 $f(t\bf{x})=t^mf(\bf{x})$ 라면 **homogeneous of degree $m$** 라고 한다. $f$ 가 미분가능하다면 다음이 성립함을 보여라.
@@ -1927,7 +1927,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_35}
+::: {#exr-CM_spivak_2_35}
 #### Spivak 2_35
 
 $f:\R^n \to \R$ 이 미분가능하며 $f(\bf{0})=0$ 일 때 다음을 만족하는 $g:\R^n \to \R$ 이 존재함을 보여라.

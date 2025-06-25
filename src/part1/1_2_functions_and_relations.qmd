@@ -6,13 +6,15 @@ crossref:
   chapters: true
 ---
 
+{{< include ../../latexmacros.qmd >}}
+
 ## 함수
 
-### 함수 {#sec-part1_functions}
+### 함수 {#sec-FA_functions}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_rule_of_assignment}
+::: {#def-FA_rule_of_assignment}
 
 #### 할당 규칙 
 
@@ -27,11 +29,11 @@ $R\subset C \times D$ 에 대해 $C$ 의 각각의 원소가 $R$ 의 첫번째 �
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_function}
+::: {#def-FA_function}
 
 #### 함수 
 
-할당 규칙 $R$ 에 대해 정의역 $A$ 와 상을 포함하는 집합 $B$ 를 생각하자. 이 때 $B$ 를 공역(codomain) 이라 한다. 이 할당규칙을 $A$ 에서 $B$ 로의 **함수(function)** 라고 하며 할당규칙 $R$ 에 대한 함수를 $f$ 라고 하면 $f:A \to B$ 라 표현한다. $(a,\,b)\in R$ 이면 $f(a) = b$ 라고 쓴다.
+할당 규칙 $R$ 에 대해 정의역 $A$ 와 상을 포함하는 집합 $B$ 를 생각하자. 이 때 $B$ 를 공역(codomain) 이라 한다. 이 할당규칙을 $A$ 에서 $B$ 로의 **함수(function)** 라고 하며 할당규칙 $R$ 에 대한 함수를 $f$ 라고 하면 $f:A \to B$ 라 표현한다. $(a,\,b)\in R$ 이면 $f(a) = b$ 라고 표기한다.
 
 ::: 
 :::
@@ -50,11 +52,11 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_restriction_of_function}
+::: {#def-FA_restriction_of_function}
 
 #### 함수의 제한
 
-$f:A \to B$ 와 $A_0 \subset A$ 에 대해 정의역을 $A_0$ 로 제한하는 함수를 생각 할 수 있으며 이를 $f\mid_{A_0}$ 라고 쓴다.
+$f:A \to B$ 와 $A_0 \subset A$ 에 대해 정의역을 $A_0$ 로 제한하는 함수를 생각 할 수 있으며 이를 $f\mid_{A_0}$ 라고 표기한다.
 
 ::: 
 :::
@@ -63,7 +65,7 @@ $f:A \to B$ 와 $A_0 \subset A$ 에 대해 정의역을 $A_0$ 로 제한하는 �
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_composite_of_function}
+::: {#def-FA_composite_of_function}
 
 #### 함수의 합성
 
@@ -77,7 +79,7 @@ $f: A \to B$, $g: f(A) \to C$ 에 대해 $g \circ f : A \to C$ 는 $(g \circ f)(
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_injection_surjection_bijection}
+::: {#def-FA_injection_surjection_bijection}
 
 #### 전사함수, 단사함수, 전단사 함수
 
@@ -89,13 +91,13 @@ $f:A \to B$ 에 대해 $f(A)=B$ 일 때 $f$ 를 **전사함수(surjection)**라 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_inverse_function}
+::: {#prp-FA_inverse_function}
 
 $f:A \to B$ 를 생각하자. 어떤 함수 $g: B \to A,\, h : B \to A$ 가 존재하여 모든 $a\in A$ 에 대해 $g(f(a)) =a$ 이며 모든 $b\in B$ 에 대해 $f(h(b))=b$ 이면 $f$ 는 전단사이며 $g=f$ 이다. 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -108,11 +110,11 @@ $f:A \to B$ 를 생각하자. 어떤 함수 $g: B \to A,\, h : B \to A$ 가 존�
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_inverse_function}
+::: {#def-FA_inverse_function}
 
 #### 역함수
 
-$f:A \to B$ 가 전단사 함수 일 때 @prp-part1_inverse_function 에서의 $g=h$ 를 $f$ 에 대한 **역함수(inverse)** 라 하고 $f^{-1}$ 이라 쓴다. 
+$f:A \to B$ 가 전단사 함수 일 때 @prp-FA_inverse_function 에서의 $g=h$ 를 $f$ 에 대한 **역함수(inverse)** 라 하고 $f^{-1}$ 이라 쓴다. 
 
 
 ::: 
@@ -122,7 +124,7 @@ $f:A \to B$ 가 전단사 함수 일 때 @prp-part1_inverse_function 에서의 $
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_inverse_function}
+::: {#def-FA_inverse_function}
 
 #### 역상
 
@@ -139,7 +141,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_properties_of_inverse_image}
+::: {#prp-FA_properties_of_inverse_image}
 $f:A \to B$ 이고 $A_0 \subset A,\,B_0 \subset B$ 일 때 다음이 성립한다.
 
 $$
@@ -149,7 +151,7 @@ $$
 $f$ 가 단사이면 $A_0 = f^{-1}(f(A_0))$ 이며 $f$ 가 전사이면 $f(f^{-1}(B_0)) = B_0$ 이다.
 
 :::
-</div></br> 
+</div>
 
 ::: {.proof}
 
@@ -164,27 +166,27 @@ $b\in f(f^{-1}(B_0))$ 라 하자. 어떤 $x\in f^{-1}(B_0)$ 에 대해 $b=f(x)$ 
 ### 연습 문제 {.unnumbered}
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_2_2}
+::: {#exr-FA_munkres_1_2_2}
 
 #### Munkres 1.2.2
 
 $f:A \to B$ 이며 $i=0,\,1$ 에 대해 $A_i\subset A$, $B_i \subset B$ 일 때 다음이 성립함을 보여라.
 
-&emsp; ($1$) $B_0 \subset B_1 \implies f^{-1}(B_0) \subset f^{-1}(B_1)$.
+&emsp;($1$) $B_0 \subset B_1 \implies f^{-1}(B_0) \subset f^{-1}(B_1)$.
 
-&emsp; ($2$) $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
+&emsp;($2$) $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
 
-&emsp; ($3$) $f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$.
+&emsp;($3$) $f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$.
 
-&emsp; ($4$) $f^{-1}(B_0 - B_1) = f^{-1}(B_0 - B_1)$.
+&emsp;($4$) $f^{-1}(B_0 - B_1) = f^{-1}(B_0 - B_1)$.
 
-&emsp; ($5$) $A_0 \subset A_1 \implies f(A_0) \subset f(A_1)$.
+&emsp;($5$) $A_0 \subset A_1 \implies f(A_0) \subset f(A_1)$.
 
-&emsp; ($6$) $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+&emsp;($6$) $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
 
-&emsp; ($7$) $f(A_0 \cap A_1) \subset f(A_0)\cap f(A_1)$ 이며 $f$ 가 단사일 경우 등호가 성립한다.
+&emsp;($7$) $f(A_0 \cap A_1) \subset f(A_0)\cap f(A_1)$ 이며 $f$ 가 단사일 경우 등호가 성립한다.
 
-&emsp; ($8$) $f(A_0 - A_1) \supset f(A_0)-f(A_1)$ 이며 $f$ 가 단사일 경우 등호가 성립한다.
+&emsp;($8$) $f(A_0 - A_1) \supset f(A_0)-f(A_1)$ 이며 $f$ 가 단사일 경우 등호가 성립한다.
 
 ::: 
 </div></br>
@@ -260,27 +262,27 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_2_4}
+::: {#exr-FA_munkres_1_2_4}
 
 #### Munkres 1.2.4
 
 $f:A \to B,\, g:B \to C$ 이다.
 
-&emsp; ($1$) $C_0 \subset C$ 이면 $(g \circ f)^{-1} (C_0) = f^{-1}(g^{-1})(C_0)$ 임을 보여라.
+&emsp;($1$) $C_0 \subset C$ 이면 $(g \circ f)^{-1} (C_0) = f^{-1}(g^{-1})(C_0)$ 임을 보여라.
 
-&emsp; ($2$) $f,\, g$ 가 단사이면 $g \circ f$ 도 단사임을 보여라.
+&emsp;($2$) $f,\, g$ 가 단사이면 $g \circ f$ 도 단사임을 보여라.
 
-&emsp; ($3$) $g \circ f$ 가 단사일 때 $f,\,g$ 의 단사함수 여부에 대해 무엇을 알 수 있는가?
+&emsp;($3$) $g \circ f$ 가 단사일 때 $f,\,g$ 의 단사함수 여부에 대해 무엇을 알 수 있는가?
 
-&emsp; ($4$) $f,\,g$ 가 전사이면 $g \circ f$ 가 전사임을 보여라.
+&emsp;($4$) $f,\,g$ 가 전사이면 $g \circ f$ 가 전사임을 보여라.
 
-&emsp; ($5$) $g \circ f$ 가 전사일 때 $f,\,g$ 의 전사함수 여부에 대해 무엇을 알 수 있는가?
+&emsp;($5$) $g \circ f$ 가 전사일 때 $f,\,g$ 의 전사함수 여부에 대해 무엇을 알 수 있는가?
 
-&emsp; ($6$) ($2$) 에서 ($6$) 까지의 결과를 정리 형식으로 요약하라.
+&emsp;($6$) ($2$) 에서 ($6$) 까지의 결과를 정리 형식으로 요약하라.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -307,24 +309,24 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_2_5}
+::: {#exr-FA_munkres_1_2_5}
 
 #### Munkres 1.2.5
 
 $i_C : C \to C,\, i_C (x)=x$ 를 $C$ 에서의 **항등 함수(identity function)** 이라 한다. $f:A \to B$ 에 대해 어떤 $g:B \to A$ 가 $g \circ f = i_A$ 일 때 $g$ 를 $f$ 에 대한 좌역함수(left inverse) 라고 하며, 어떤 $h:B \to A$ 가 $f \circ h = i_B$ 일 때 $h$ 를 $f$ 에 대한 우역함수(right inverse) 라고 한다.
 
-&emsp; ($1$) $f$ 에 대한 좌역함수가 존재하면 $f$ 는 단사이며, $f$ 에 대한 우역함수가 존재하면 $f$ 는 전사임을 보여라.
+&emsp;($1$) $f$ 에 대한 좌역함수가 존재하면 $f$ 는 단사이며, $f$ 에 대한 우역함수가 존재하면 $f$ 는 전사임을 보여라.
 
-&emsp; ($2$) 좌역함수는 존재하지만 우역함수는 존재하지 않는 함수의 예를 들어라.
+&emsp;($2$) 좌역함수는 존재하지만 우역함수는 존재하지 않는 함수의 예를 들어라.
 
-&emsp; ($3$) 우역함수는 존재하지만 좌역함수는 존재하지 않는 함수의 예를 들어라.
+&emsp;($3$) 우역함수는 존재하지만 좌역함수는 존재하지 않는 함수의 예를 들어라.
 
-&emsp; ($4$) 하나 이상의 좌역함수가 존재 할 수 있는가? 하나 이상의 우역함수가 존재할 수 있는가?
+&emsp;($4$) 하나 이상의 좌역함수가 존재 할 수 있는가? 하나 이상의 우역함수가 존재할 수 있는가?
 
-&emsp; ($5$) 함수 $f$ 에 대한 좌역함수 $g$ 와 우역함수 $h$ 가 존재한다면 $f$ 는 전단사이며 $g=h=f^{-1}$ 임을 보여라.
+&emsp;($5$) 함수 $f$ 에 대한 좌역함수 $g$ 와 우역함수 $h$ 가 존재한다면 $f$ 는 전단사이며 $g=h=f^{-1}$ 임을 보여라.
 
 :::
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -340,17 +342,15 @@ $i_C : C \to C,\, i_C (x)=x$ 를 $C$ 에서의 **항등 함수(identity function
 
 :::
 
-
 </br>
-
 
 ## 관계
 
-### 관계와 동치관계 {#sec-part1_relations}
+### 관계와 동치관계 {#sec-FA_relations}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_relation}
+::: {#def-FA_relation}
 
 #### 관계
 
@@ -362,7 +362,7 @@ $i_C : C \to C,\, i_C (x)=x$ 를 $C$ 에서의 **항등 함수(identity function
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_equivalence_relation}
+::: {#def-FA_equivalence_relation}
 
 #### 동치 관계
 
@@ -381,7 +381,7 @@ $R$ 이 $A$ 에 서의 관계일 때 다음 조건을 모두 만족하면 $R$ �
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_equivalence_class}
+::: {#def-FA_equivalence_class}
 
 #### 동치류
 
@@ -393,12 +393,12 @@ $A$ 에 대한 관계 $R$ 에 대해 $\{y\in A : x\sim y\}$ 를 $x$ 에 대한 *
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_properties_of_equivalence_class}
+::: {#prp-FA_properties_of_equivalence_class}
 
 두 동치류는 같거나 서로소이다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -411,7 +411,7 @@ $A$ 에 대한 관계 $R$ 에 대해 $\{y\in A : x\sim y\}$ 를 $x$ 에 대한 *
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_partition}
+::: {#def-FA_partition}
 
 #### 분할
 
@@ -422,28 +422,28 @@ $\Gamma$ 가 $A$ 의 부분집합으로 이루어진 집합족이며 $A_1,\, A_2
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part1_equivalence_relation_and_partition}
+::: {#thm-FA_equivalence_relation_and_partition}
 
 집합 $A$ 에서의 동치관계 $R$ 에 의한 동치류의 집합족은 $A$ 를 분할한다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
-Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된다. 따라서 동치류의 합집합은 $A$ 이다. @prp-part1_properties_of_equivalence_class 에 의해 두 동치류는 같거나 서로소이므로 동치류의 집합족은 $A$ 를 분할한다. 
+Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된다. 따라서 동치류의 합집합은 $A$ 이다. @prp-FA_properties_of_equivalence_class 에 의해 두 동치류는 같거나 서로소이므로 동치류의 집합족은 $A$ 를 분할한다. 
 
 :::
 
 </br>
 
-### 순서 관계와 순서집합
+### 순서 관계와 순서집합 {#sec-FA_ordr_relations}
 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_order_relation}
+::: {#def-FA_order_relation}
 
 #### 전순서 관계와 전순서 집합
 
@@ -451,14 +451,13 @@ Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된�
 
 집합 $A$ 에서의 관계 $\sim$ 이 다음을 만족할 때 $\sim$ 을 $A$ 에서의 **전순서관계(total order relation)** 라 하며 전순서관계가 존재하는 집합을 **전순서 집합(totally ordered set)** 이라 한다.
 
-&emsp; ($1$) (Comparability) 모든 서로 다른 $x,\,y\in A$ 에 대해 $x \sim y$ 이거나 $y \sim x$ 이다.
+&emsp;($1$) (Comparability) 모든 서로 다른 $x,\,y\in A$ 에 대해 $x \sim y$ 이거나 $y \sim x$ 이다.
 
-&emsp; ($2$) (Nonreflectivity) $\forall x \in A$, $x \not\sim x$ 이다. 
+&emsp;($2$) (Nonreflectivity) $\forall x \in A$, $x \not\sim x$ 이다. 
 
-&emsp; ($3$) (Transitivity) $x \sim y$ 이고 $y \sim z$ 이면 $x \sim z$ 이다.
+&emsp;($3$) (Transitivity) $x \sim y$ 이고 $y \sim z$ 이면 $x \sim z$ 이다.
 
 순서관계 $\sim$ 에 대해 $a\sim b$ 일 때 $a<b$ 라고 쓴다. 혹은 정해진 순서관계를 $<$ 이라고 할 수 있다.
-
 
 ::: 
 :::
@@ -467,14 +466,14 @@ Reflectivity 에 의해 모든 $a$ 의 집합은 어떤 동치류에 포함된�
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_open_interval}
+::: {#def-FA_open_interval}
 
 #### 열린 구간 (open interval)
 
 집합 $X$ 에서 정의된 전순서관계 $<$ 에서 $a<b$ 일 때 $a,\,b$ 사이의 열린구간 $(a,\,b)$ 는
 
 $$
-(a,\,b) = \{x \mid a<x<b\}
+(a,\,b) := \{x \mid a<x<b\}
 $$
 
 로 정의된다. $(a,\,b)=\varnothing$ 일 때 $a$ 를 $b$ 의 **즉각 선행자(immediate predecessor)** 라 하고 $b$ 를 $a$ 의 **즉각 후행자(immediate successor)** 라 한다. 
@@ -487,7 +486,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_order_type}
+::: {#def-FA_order_type}
 
 #### 순서형(Order type)
 
@@ -502,9 +501,10 @@ $$
 ::: 
 :::
 
-</br> <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br> 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part1_order_type_1}
+::: {#exm-FA_order_type_1}
 
 $f:(-1,\,1) \to \mathbb{R}$, $f(x) = \dfrac{x}{1-x^2}$ 를 생각하면 $(-1,\,1)$ 과 $\mathbb{R}$ 는 같은 순서형을 가진다.
 
@@ -514,7 +514,7 @@ $f:(-1,\,1) \to \mathbb{R}$, $f(x) = \dfrac{x}{1-x^2}$ 를 생각하면 $(-1,\,1
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_dictionary_order}
+::: {#def-FA_dictionary_order}
 
 #### 사전 순서 (dictionary order)
 
@@ -533,21 +533,23 @@ $$
 ::: 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_dictionary_order_is_order_relation}
+::: {#prp-FA_dictionary_order_is_order_relation}
 
-@def-part1_dictionary_order 에서의 사전 순서는 $A \times B$ 에서의 전순서 관계 이다.
+@def-FA_dictionary_order 에서의 사전 순서는 $A \times B$ 에서의 전순서 관계 이다.
 
 :::
+</div>
 
 증명은 trivial 하다.
 
-</div></br>
+</br>
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-:::{#exm-part1_order_relation_1}
+:::{#exm-FA_order_relation_1}
 
 $[0,\,1)$ 과 $\mathbb{Z}_{+}$ 는 각각 통상적인 전순서관계를 가지고 있다. $\mathbb{Z}_+ \times [0, 1)$ 과 양의 실수의 집합 사이에서 정의된 함수
 
@@ -561,11 +563,11 @@ $$
 </div></br>
 
 
-### 최소 상계 성질 {#sec-part1_least_upper_bound_property}
+### 최소 상계 성질 {#sec-FA_least_upper_bound_property}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_maximum_minimum}
+::: {#def-FA_maximum_minimum}
 
 #### 최대값과 최소값
 
@@ -578,7 +580,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_bounded}
+::: {#def-FA_bounded}
 
 #### 위로 유계, 아래로 유계, 최소상계(상한), 최대하계(하한))
 
@@ -594,7 +596,7 @@ $A$ 의 부분집합 $A_0$ 가 위로 유계일 때 $A_0$ 의 상계의 집합�
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_least_upper_bound_property}
+::: {#def-FA_least_upper_bound_property}
 
 #### 최소 상계 성질, 최대 하계 성질
 
@@ -606,17 +608,16 @@ $A$ 의 부분집합 $A_0$ 가 위로 유계일 때 $A_0$ 의 상계의 집합�
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part1_least_upper_bound_property_greatest_lower_bound_property}
+::: {#thm-FA_least_upper_bound_property_greatest_lower_bound_property}
 다음 두 명제는 동치이다.
 
-&emsp; ($1$) 집합 $A$ 는 최소 상계 성질을 가진다.
+&emsp;($1$) 집합 $A$ 는 최소 상계 성질을 가진다.
 
-&emsp; ($2$) 집합 $A$ 는 최대 하계 성질을 가진다.
-
+&emsp;($2$) 집합 $A$ 는 최대 하계 성질을 가진다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 ($1 \implies 2$) $B$ 가 공집합이 아닌 아래로 유계인 $A$ 의 부분집합이라고 하자. $B$ 의 하계들의 집합 $T$ 는 위로 유계이며 ($1$) 에 의해 최소상계를 가진다 이를 $m$ 이라 하자. $m$ 이 $B$ 의 하계임을 보이자. 어떤 $b\in B$ 에 대해 $b<m$ 이라면 $T$ 의 모든 집합은 $b$ 보다 작거나 같아야 하므로 $T$ 의 최소상계는 $b$ 보다 작거나 같아야 한다. 즉 $m$ 이 $T$ 의 최소상계란 가정에 모순이 되므로 모든 $b\in B$ 에 대해 $b\ge m$ 이다. 즉 $m$ 은 $B$ 의 하계이며 $m$ 보다 큰 값은 $B$ 의 하계가 아니므로 $m$ 은 $B$ 의 최대하계이다. 
@@ -629,7 +630,7 @@ $A$ 의 부분집합 $A_0$ 가 위로 유계일 때 $A_0$ 의 상계의 집합�
 ### 연습 문제 {.unnumbered}
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_3_3}
+::: {#exr-FA_munkres_1_3_3}
 
 #### Munkres 1.3.3
 
@@ -641,7 +642,7 @@ Symmetric 하고 transitive 한 관계 $C$ 는 reflective 하다는 것을 다�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -651,19 +652,19 @@ Symmetric 하고 transitive 한 관계 $C$ 는 reflective 하다는 것을 다�
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part1_munkres_1_3_4}
+::: {#exr-FA_munkres_1_3_4}
 
 #### Munkres 1.3.4
 
 $f: A \to B$ 는 전사함수이다. $A$ 에 서의 관계 $\sim$ 을 $f(a_1) = f(a_2)$ 이면 $a_1 \sim a_2$ 라고 정의하자.
 
-&emsp; ($1$) 이 관계가 동치관계 임을 보이시오.
+&emsp;($1$) 이 관계가 동치관계 임을 보이시오.
 
-&emsp; ($2$) $A^\ast$ 가 동치류의 집합이라고 하자. $A^\ast$ 와 $B$ 사이에 전단사 함수가 존재함을 보이시오.
+&emsp;($2$) $A^\ast$ 가 동치류의 집합이라고 하자. $A^\ast$ 와 $B$ 사이에 전단사 함수가 존재함을 보이시오.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 ($1$) 은 쉽게 보일 수 있다.

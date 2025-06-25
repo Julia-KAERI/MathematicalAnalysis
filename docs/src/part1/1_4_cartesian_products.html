@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -261,23 +261,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../references.html" class="sidebar-item-text sidebar-link">
@@ -296,7 +279,7 @@ window.Quarto = {
   <ul>
   <li><a href="#집합족" id="toc-집합족" class="nav-link active" data-scroll-target="#집합족"><span class="header-section-number">4.1</span> 집합족</a>
   <ul class="collapse">
-  <li><a href="#sec-part1_collection" id="toc-sec-part1_collection" class="nav-link" data-scroll-target="#sec-part1_collection"><span class="header-section-number">4.1.1</span> 집합족</a></li>
+  <li><a href="#sec-FA_collection" id="toc-sec-FA_collection" class="nav-link" data-scroll-target="#sec-FA_collection"><span class="header-section-number">4.1.1</span> 집합족</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
   </ul>
@@ -324,24 +307,25 @@ window.Quarto = {
 </header>
 
 
-<!-- ---
-title: "데카르트 곱"
-number-sections: true
-number-depth : 3
-crossref:
-  chapters: true
---- -->
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
 <section id="집합족" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="집합족"><span class="header-section-number">4.1</span> 집합족</h2>
-<section id="sec-part1_collection" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-part1_collection"><span class="header-section-number">4.1.1</span> 집합족</h3>
+<section id="sec-FA_collection" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-FA_collection"><span class="header-section-number">4.1.1</span> 집합족</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_collection_and_indexing" class="theorem definition">
+<div id="def-FA_collection_and_indexing" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 4.1 (집합족과 인덱스)</strong></span> 공집합이 아닌 집합족 <span class="math inline">\(\mathcal{A}\)</span> 를 생각하자. 어떤 집합 <span class="math inline">\(J\)</span> 에 대해 함수 <span class="math inline">\(f:J \to \mathcal{A}\)</span> 가 전사함수 일 때 <span class="math inline">\(f\)</span> 를 인덱스 함수라하고 <span class="math inline">\(J\)</span> 를 인덱스 집합이라고 한다. 주어진 <span class="math inline">\(\alpha\in J\)</span> 에 대해 <span class="math inline">\(f(\alpha)\)</span> 를 <span class="math inline">\(A_{\alpha}\)</span> 라고 쓴다. 앞으로 집합족을 표기할 때는 인덱스 집합 <span class="math inline">\(J\)</span> 에 대해</p>
 <p><span class="math display">\[
 \{A_\alpha\}_{\alpha\in J}
@@ -360,7 +344,7 @@ crossref:
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_union_and_intersection_for_collection" class="theorem definition">
+<div id="def-FA_union_and_intersection_for_collection" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 4.2 (집합족에 대한 합집합과 교집합)</strong></span> 집합족 <span class="math inline">\(\mathcal{A}=\{A_\alpha\}_{\alpha\in J}\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -380,7 +364,7 @@ crossref:
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_union_and_intersection_for_collection" class="theorem definition">
+<div id="def-FA_union_and_intersection_for_collection" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 4.3 (<span class="math inline">\(\boldsymbol{n}\)</span>-tuple)</strong></span> <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 라 하자. 주어진 집합 <span class="math inline">\(X\)</span> 에 대해 함수</p>
 <p><span class="math display">\[
 \boldsymbol{x} : \{1,\ldots,n\} \to X
@@ -401,7 +385,7 @@ crossref:
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_union_and_intersection_for_collection" class="theorem definition">
+<div id="def-FA_union_and_intersection_for_collection" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 4.4 (데카르트 곱 (Cartesian Product))</strong></span> 집합족 <span class="math inline">\(\{A_1,\ldots,A_m\}\)</span> 과 인덱스 집합 <span class="math inline">\(J_m=\{1,\ldots,\,m\}\)</span> 에 대해 <span class="math inline">\(X=A_1 \cup \cdots \cup A_m\)</span> 이라 하자. <span class="math inline">\(\boldsymbol{x}:J_m \to X\)</span> 이 <span class="math inline">\(\forall i\in J_m,\, x_i \in A_i\)</span> 인 집합을 <strong>데카르트 곱</strong> 이라 하며 다음과 같이 표기한다.</p>
 <p><span class="math display">\[
 \prod_{i=1}^m A_i \qquad \text{or} \qquad A_1 \times \cdots \times A_m .
@@ -412,7 +396,7 @@ crossref:
 </div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-part1_order_of_m_tuple" class="theorem example">
+<div id="exm-FA_order_of_m_tuple" class="theorem example">
 <p><span class="theorem-title"><strong>예제 4.1</strong></span> 집합 <span class="math inline">\(A,\,B,\,C\)</span> 에 대해 <span class="math inline">\(A \times B \times C\)</span>, <span class="math inline">\(A\times (B \times C)\)</span> 와 <span class="math inline">\((A \times B) \times C\)</span> 사이에 각각 전단사 함수가 존재함을 보일 수 있다.</p>
 </div>
 </div>
@@ -423,7 +407,7 @@ crossref:
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_omega_tuple_and_sequence" class="theorem definition">
+<div id="def-FA_omega_tuple_and_sequence" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 4.5 (<span class="math inline">\(\boldsymbol{\omega}\)</span>-tuple 과 수열)</strong></span> 집합 <span class="math inline">\(X\)</span> 에 대해 <span class="math inline">\(\mathbb{Z}_+\)</span> 를 정의역으로, <span class="math inline">\(X\)</span> 를 공역으로 정의된 함수 <span class="math inline">\(\boldsymbol{x}:\mathbb{Z}_+ \to X\)</span> 를 <span class="math inline">\(\boldsymbol{\omega}\)</span><strong>-tuple</strong> 혹은 <span class="math inline">\(X\)</span> 에서의 <strong>수열(sequence)</strong> 이라고 하며 <span class="math inline">\(\boldsymbol{x}(i)\)</span> 를 <span class="math inline">\(x_i\)</span> 라고 쓴다. <span class="math inline">\(\omega\)</span>-tuple 을 <span class="math inline">\(\langle x_i \rangle\)</span> 이라고 흔히 쓴다. <span class="math inline">\(n\)</span>-tuple 과 유사하게</p>
 <p><span class="math display">\[
 (x_1,\,x_2,\ldots)
@@ -442,17 +426,16 @@ crossref:
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exm-part1_munkres_1_5_1" class="theorem example">
+<div id="exm-FA_munkres_1_5_1" class="theorem example">
 <p><span class="theorem-title"><strong>예제 4.2 (Munkres 1.5.1)</strong></span> <span class="math inline">\(A\times B\)</span> 에서 <span class="math inline">\(B \times A\)</span> 로의 전단사 함수가 존재함을 보이시오.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\phi :A \times B \to B \times A,\, \phi ((a,\,b)) = (b,\,a)\)</span> 는 전단사 함수임을 쉽게 보일 수 있다.</p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part1_munkres_1_5_3" class="theorem exercise">
+<div id="exr-FA_munkres_1_5_3" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 4.1 (Munkres 1.5.3)</strong></span> <span class="math inline">\(A=A_1\times A_2 \times \cdots,\, B=B_1 \times B_2\times \cdots\)</span> 일 때 다음을 보이시오.</p>
 <p> (<span class="math inline">\(1\)</span>) 각각의 <span class="math inline">\(i\)</span> 에 대해 <span class="math inline">\(B_i \subset A_i\)</span> 이면 <span class="math inline">\(B \subset A\)</span> 이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(B\ne \varnothing\)</span> 이면 (<span class="math inline">\(1\)</span>) 의 역이 성립한다.</p>
@@ -460,7 +443,6 @@ crossref:
 <p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(A \cup B\)</span> 와 <span class="math inline">\(\prod (A_i \cup B_i)\)</span> 의 관계는 무엇인가. <span class="math inline">\(A \cap B\)</span> 와 <span class="math inline">\(\prod (A_i \cap B_i)\)</span> 의 관계는 무엇인가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) trivial</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(B\ne \varnothing\)</span> 이면 <span class="math inline">\(b\in B\)</span> 의 <span class="math inline">\(i\)</span> 번째 좌표는 <span class="math inline">\(b_i\in B_i \subset A_i\)</span> 이므로 (<span class="math inline">\(1\)</span>) 의 역이 성립한다.</p>
@@ -470,7 +452,7 @@ crossref:
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part1_munkres_1_5_4" class="theorem exercise">
+<div id="exr-FA_munkres_1_5_4" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 4.2 (Munkres 1.5.4)</strong></span> <span class="math inline">\(m,\,n\in \mathbb{Z}\)</span> 이고 <span class="math inline">\(X \ne \varnothing\)</span> 일 때 다음을 보여라.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(m\le n\)</span> 이면 <span class="math inline">\(f:X^m \to X^n\)</span> 인 단사함수 <span class="math inline">\(f\)</span> 가 존재한다.</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(g:X^m \times X^n \to X^{m + n}\)</span> 인 전단사 함수 <span class="math inline">\(g\)</span> 가 존재한다.</p>
@@ -480,7 +462,6 @@ crossref:
 <p>  (<span class="math inline">\(6\)</span>) <span class="math inline">\(A \subset B\)</span> 이면 단사함수 <span class="math inline">\(m: \left(A^\omega \right)^n \to B^\omega\)</span> 가 존재함을 보이시오.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(p\in X\)</span> 에 대해 <span class="math inline">\(f(x_1,\ldots,x_m) = (x_1,\ldots,x_m,p,\cdots,p)\)</span> 는 단사함수이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x\in X^m,\, y\in X^n\)</span> 에 대해</p>
@@ -498,7 +479,7 @@ m((\boldsymbol{a}_1,\ldots,\, \boldsymbol{a}_n))_k = (\boldsymbol{a}_{q+1})_{p+1
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part1_munkres_1_5_5" class="theorem exercise">
+<div id="exr-FA_munkres_1_5_5" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 4.3 (Munkres 1.5.5)</strong></span> 아래의 <span class="math inline">\(\mathbb{R}^\omega\)</span> 의 부분집합중에 <span class="math inline">\(\mathbb{R}\)</span> 의 부분집합들의 데카르트 곱으로 표현 될 수 있는것은?</p>
 <p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(\{\boldsymbol{x} \mid x_i \in \mathbb{Z}\}\)</span>.</p>
 <p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(\{\boldsymbol{x} \mid \forall i,\, x_i \ge i\}\)</span>.</p>
@@ -506,9 +487,8 @@ m((\boldsymbol{a}_1,\ldots,\, \boldsymbol{a}_n))_k = (\boldsymbol{a}_{q+1})_{p+1
 <p> (<span class="math inline">\(d\)</span>) <span class="math inline">\(\{\boldsymbol{x} \mid x_2= x_3 \}\)</span>.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\mathbb{Z}^\omega \subset \mathbb{R}^\omega\)</span> (see <a href="#exr-part1_munkres_1_5_3" class="quarto-xref">연습문제&nbsp;<span>4.1</span></a>).</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\mathbb{Z}^\omega \subset \mathbb{R}^\omega\)</span> (see <a href="#exr-FA_munkres_1_5_3" class="quarto-xref">연습문제&nbsp;<span>4.1</span></a>).</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(B_m =\{x\in \mathbb{R}: x\ge m\} \subset \mathbb{R}\)</span> 이다. <span class="math inline">\(\prod_{m=1} B_m \subset \mathbb{R}^\omega\)</span>.</p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(C_i = \left\{\begin{array}{ll} \mathbb{R}\quad &amp; \text{if } i&lt; 100 \\ \mathbb{Z}&amp; \text{if } i \ge 100 \end{array}\right.\)</span> 일 때 <span class="math inline">\(C_i \subset \mathbb{R}\)</span> 이며 따라서 <span class="math inline">\(\prod C_i \subset \mathbb{R}^\omega\)</span>.</p>
 <p>(<span class="math inline">\(d\)</span>) 는 표현 될 수 없다.</p>
@@ -601,8 +581,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -713,7 +691,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

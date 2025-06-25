@@ -7,6 +7,8 @@ crossref:
 ---
 
 
+{{< include ../../latexmacros.qmd >}}
+
 우리는 여기서 일단 집합에 대해 잘 안다고 가정한다. 
 
 </br>
@@ -15,12 +17,11 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_set_and_element}
+::: {#def-FA_set_and_element}
 
 #### 집합에의 포함관계
 
 어떤 객체 $a$ 가 집합 $A$ 에 포함되면 $a$ 를 $A$ 의 원소라고 하고 $a\in A$ 라 쓴다. $a$ 가 $A$ 에 포함되지 않을 때는 $a\not\in A$ 라고 쓴다.
-
 
 ::: 
 :::
@@ -29,7 +30,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_subset}
+::: {#def-FA_subset}
 
 #### 부분 집합, 동일한 집합, 진부분 집합
 
@@ -60,7 +61,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_union_and_intersection_of_sets}
+::: {#def-FA_union_and_intersection_of_sets}
 
 #### 합집합과 교집합
 
@@ -85,7 +86,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_associativity_of_union_and_intersection}
+::: {#prp-FA_associativity_of_union_and_intersection}
 
 집합 $A,\,B$ 에 대해 $A \cup B = B \cup A$ 이고 $A \cap B = B \cap A$ 이다. 
 
@@ -96,7 +97,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_commutativity_of_union_and_intersection}
+::: {#prp-FA_commutativity_of_union_and_intersection}
 
 집합 $A,\,B,\, C$ 에 대해 $A \cup (B \cup C) = (A \cup B) \cup C$ 이고 $A \cap (B\cap C) = (A \cap B) \cap C$ 이다. 
 
@@ -114,7 +115,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_empty_set}
+::: {#def-FA_empty_set}
 
 #### 공집합, 서로소
 
@@ -126,24 +127,23 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_union_intersection_with_empty_set}
+::: {#prp-FA_union_intersection_with_empty_set}
 
 집합 $A$ 에 대해 $A \cap \varnothing = \varnothing$ 이며 $A \cup \varnothing = A$ 이다.
 
 :::
 
-
 </div></br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part1_empty_set_is_subset_of_every_set}
+::: {#thm-FA_empty_set_is_subset_of_every_set}
 
 공집합은 모든 집합의 부분집합이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -155,7 +155,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_diffeence_of_two_sets}
+::: {#def-FA_diffeence_of_two_sets}
 
 #### 차집합
 
@@ -172,7 +172,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_distribution_law_for_sets}
+::: {#prp-FA_distribution_law_for_sets}
 
 #### 집합에서의 분배법칙
 
@@ -186,7 +186,8 @@ A \cup (B \cap C) &= (A \cup B) \cap (A \cup C).
 $$
 
 :::
-</div></br>
+
+</div> 
 
 ::: {.proof}
 $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ 는 다음과 같이 증명 할 수 있다.
@@ -207,7 +208,7 @@ $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ 도 같은 방법으로 증명 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_complement_of_set}
+::: {#def-FA_complement_of_set}
 
 #### 여집합
 
@@ -229,13 +230,13 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_difference_and_intersection}
+::: {#prp-FA_difference_and_intersection}
 
 $X$ 의 부분집합 $A,\,B$ 에 대해 $A-B = A \cap B^C$ 이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -246,12 +247,12 @@ $x\in (A-B) \iff x\in A \land x\not\in B \iff x\in A \cap B^C$ $\square$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part1_complement_of_union_and_intersection}
+::: {#prp-FA_complement_of_union_and_intersection}
 
 집합 $A,\,B$ 에 대해 $(A\cup B)^C = A^C \cap B^C$ 이며 $(A \cap B)^C = A^C \cup B^C$ 이다. 
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -268,7 +269,7 @@ $\square$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part1_DeMorgrans_law}
+::: {#thm-FA_DeMorgrans_law}
 
 #### 드 모르강의 법칙
 
@@ -282,7 +283,7 @@ A-(B \cap C) & = (A-B)\cup (A-C).
 $$
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -302,7 +303,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_collection}
+::: {#def-FA_collection}
 
 #### 집합족(collection, family)과 멱집합 (power set)
 
@@ -325,7 +326,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_ordered_pair}
+::: {#def-FA_ordered_pair}
 
 #### 순서쌍(ordered pair) 과 좌표(coordinate)
 
@@ -337,7 +338,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part1_ordered_pair}
+::: {#exm-FA_ordered_pair}
 
 $a \ne b$ 이면 $(a,\,b) \ne (b,\,a)$ 이다. 
 :::
@@ -346,7 +347,7 @@ $a \ne b$ 이면 $(a,\,b) \ne (b,\,a)$ 이다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part1_cartesian_product}
+::: {#def-FA_cartesian_product}
 
 #### 데카르트 곱
 

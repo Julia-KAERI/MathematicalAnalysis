@@ -17,7 +17,7 @@ $C^1$ 급 함수 $f:\R\to \R$ 이 $f'(a)\ne 0$ 일 때 $(f^{-1})'(a) = 1/f'(a)$ 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-part3_inverse_function_theorem_1}
+::: {#lem-CM_inverse_function_theorem_1}
 
 큐브 $A\subset \R^n$ 에서 정의된 $F:A \to \R^n$ 이 $C^1$ 급이라고 하자. 어떤 양수 $M>0$ 이 존재하여 모든 $\bf{x}\in \text{int}(A)$ 에 대해 $|D_jf_i(\bf{x})|\le M$ 이면 다음이 성립한다.
 
@@ -68,7 +68,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_for_inverse_function_theorem_1}
+::: {#exr-CM_for_inverse_function_theorem_1}
 
 $L\in \mathcal{L}(\R^n)$ 이 가역이며 $U\in \R^n$ 이 열린 집합이고 $F:U \to \R^n$ 일 때 $F\in C^1$ 일 필요충분조건은 $L\circ F\in C^1$ 이다.
 
@@ -78,14 +78,14 @@ $L\in \mathcal{L}(\R^n)$ 이 가역이며 $U\in \R^n$ 이 열린 집합이고 $F
 
 ::: {.solution}
 
-선형사상 $L\in \mathcal{L}(\R^n)$ 은 $\R^n$ 전체 에서 연속이며 미분가능하다. 또한 $DL(\bf{x}) = L$ 이므로 $L\in C^1$ 이다. $D(L\circ F)(\bf{x}) = L(F(\bf{x})) DF(\bf{x})$ 이므로 $L \circ F$ 는 미분가능하며, @prp-part2_continuity_of_composited_function 에 의해 $F\in C^1$ 이면 $L \circ F\in C^1$ 이다. $F = L^{-1}\circ (L \circ F)$ 이므로 $L\circ F \in C^1$ 이면 $F\in C^1$ 이다.
+선형사상 $L\in \mathcal{L}(\R^n)$ 은 $\R^n$ 전체 에서 연속이며 미분가능하다. 또한 $DL(\bf{x}) = L$ 이므로 $L\in C^1$ 이다. $D(L\circ F)(\bf{x}) = L(F(\bf{x})) DF(\bf{x})$ 이므로 $L \circ F$ 는 미분가능하며, @prp-MA_continuity_of_composited_function 에 의해 $F\in C^1$ 이면 $L \circ F\in C^1$ 이다. $F = L^{-1}\circ (L \circ F)$ 이므로 $L\circ F \in C^1$ 이면 $F\in C^1$ 이다.
 
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_for_inverse_function_theorem_2}
+::: {#exr-CM_for_inverse_function_theorem_2}
 
 $L\in \mathcal{L}(\R^n)$ 이 가역이며 열린 집합 $U\in \R^n$ 에서 정의된 미분가능한 함수 $F:U \to \R^n$ 에 대해 $W=F(U),\, G=L\circ F$ 라고 하자. 이 때 다음은 동치이다.
 
@@ -107,7 +107,7 @@ $L\in \mathcal{L}(\R^n)$ 이 가역이며 열린 집합 $U\in \R^n$ 에서 정�
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-part3_inverse_function_theorem_2}
+::: {#lem-CM_inverse_function_theorem_2}
 
 열린 집합 $A\subset \R^n$ 에 대해 $F: A\to \R^n$ 이며 $F \in C^1$ 이라고 하자. $\bf{a}\in A$ 이며 $\det(F'(\bf{a}))\ne 0$ 일 때 $\bf{a}$ 를 포함하는 열린 cube $U\subset A$ 에 대해 아래의 부등식이 성립하는 $\alpha>0$ 가 존재한다.
 
@@ -139,7 +139,7 @@ $$
 \bf{x}\in K \implies \|H'(\bf{x})\|\le \dfrac{1}{2nM_2}
 $$ 
 
-이다. $H(\bf{x}) = \begin{bmatrix} h_1(\bf{x})  & \cdots & h_n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 중간값 정리(@thm-part3_mean_value_theorem_for_vector_function) 를 이용하면 
+이다. $H(\bf{x}) = \begin{bmatrix} h_1(\bf{x})  & \cdots & h_n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 를 이용하면 
 
 $$
 |h_i(\bf{x}_1)-h_i(\bf{x}_2)| = |Dh_i(\bf{c}_i)\cdot (\bf{x}_1-\bf{x}_2)|  \le \dfrac{1}{2nM_2}\|\bf{x}_1-\bf{x}_2\|
@@ -174,13 +174,13 @@ $$
 
 </br>
 
-@lem-part3_inverse_function_theorem_2 은 $\det(F'(\bf{a}))\ne 0$ 이면 $\bf{a}$ 를 중심으로 하는 어떤 열린 cube 에서 $F$ 가 단사가 됨을 의미한다. $\bf{x}_1\ne \bf{x}_2$ 이면 $\|F(\bf{x}_1)-F(\bf{x}_2)\|>0$ 이 기 때문이다. 이제 위의 보조정리에서 계속 진행해보자.
+@lem-CM_inverse_function_theorem_2 은 $\det(F'(\bf{a}))\ne 0$ 이면 $\bf{a}$ 를 중심으로 하는 어떤 열린 cube 에서 $F$ 가 단사가 됨을 의미한다. $\bf{x}_1\ne \bf{x}_2$ 이면 $\|F(\bf{x}_1)-F(\bf{x}_2)\|>0$ 이 기 때문이다. 이제 위의 보조정리에서 계속 진행해보자.
 
 </br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-part3_inverse_function_theorem_3}
+::: {#lem-CM_inverse_function_theorem_3}
 
 열린 집합 $A\subset \R^n$ 에 대해 $F:A \to \R^n$ 이 $F \in C^1$ 이며 $\det(F'(\bf{a}))\ne 0$ 라고 하자. $\bf{a}$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a})$ 를 포함하는 열린 집합 $W$ 가 존재하여 $F:V\to W$ 에 대한 역함수 $F^{-1}: W \to V$ 가 존재한다.
 
@@ -191,7 +191,7 @@ $$
 ::: {.proof}
 $F$ 가 열린 집합 $U_0$ 에서 $C^1$ 이라고 하자. $F$ 는 아래의 명제 ($C-1$), ($C-2$), ($C-3$) 를 모두 만족한다.
 
-($C-1$) @lem-part3_inverse_function_theorem_2 로 부터 $\bf{a}$ 를 중심으로 하는 열린 cube $U_1\subset A$ 이 존재하여 어떤 $\alpha>0$ 에 대해 
+($C-1$) @lem-CM_inverse_function_theorem_2 로 부터 $\bf{a}$ 를 중심으로 하는 열린 cube $U_1\subset A$ 이 존재하여 어떤 $\alpha>0$ 에 대해 
 
 $$
 \bf{x}_1,\,\bf{x}_2\in U_1 \implies \|F(\bf{x}_1)-F(\bf{x}_2)\| \ge \alpha\|\bf{x}_1-\bf{x}_2\|
@@ -207,9 +207,9 @@ $$
 \bf{x}\in U_3 \implies \|D_jf_i(\bf{x})-D_jf_i(\bf{a})\|< \dfrac{1}{2n^2}
 $$
 
-이며, 따라서 $U_3$ 에서 $D_jf_i(\bf{x})$ 는 유계이다. (@lem-part3_inverse_function_theorem_1 의 조건)
+이며, 따라서 $U_3$ 에서 $D_jf_i(\bf{x})$ 는 유계이다. (@lem-CM_inverse_function_theorem_1 의 조건)
 
-이제 $\bf{a}$ 를 중심으로 하는 작은 cube $U$ 가 존재하여 $U \subset (U_1 \cap U_2 \cap U_3)$ 이다. $U$ 를 작게 잡아 $\partial U \cap \partial U_1 = \varnothing$ 이 되도록 잡을 수 있다. 이 때 $\partial U$ 는 $U$ 의 경계점(@exr-part2_KKK_2_7_6) 이다. $\partial U$ 는 유계인 닫힌 집합이므로 옹골집합이며 $\bf{a}$ 를 포함하지 않고 $\partial U \subset U_1$ 이므로, 그리고 $U_1$ 에서 $F$ 는 단사이므로 $F(\bf{a}) \notin F(\partial U)$ 이다. $F$ 가 연속이므로 $F(\partial U)$ 도 옹골집합이며 따라서 모든 $\bf{x}\in \partial U$ 에 대해 $\|F(\bf{x})-F(\bf{a})\| \ge d$ 인 $d>0$ 이 존재한다. 이제 집합 $W$ 를 다음과 같이 정의한다.
+이제 $\bf{a}$ 를 중심으로 하는 작은 cube $U$ 가 존재하여 $U \subset (U_1 \cap U_2 \cap U_3)$ 이다. $U$ 를 작게 잡아 $\partial U \cap \partial U_1 = \varnothing$ 이 되도록 잡을 수 있다. 이 때 $\partial U$ 는 $U$ 의 경계점(@exr-MA_KKK_2_7_6) 이다. $\partial U$ 는 유계인 닫힌 집합이므로 옹골집합이며 $\bf{a}$ 를 포함하지 않고 $\partial U \subset U_1$ 이므로, 그리고 $U_1$ 에서 $F$ 는 단사이므로 $F(\bf{a}) \notin F(\partial U)$ 이다. $F$ 가 연속이므로 $F(\partial U)$ 도 옹골집합이며 따라서 모든 $\bf{x}\in \partial U$ 에 대해 $\|F(\bf{x})-F(\bf{a})\| \ge d$ 인 $d>0$ 이 존재한다. 이제 집합 $W$ 를 다음과 같이 정의한다.
 
 $$
 W:= \{\bf{y} \in \R^n : \|\bf{y}-F(\bf{a})\|<d/2\}.
@@ -256,7 +256,7 @@ $V=U \cap F^{-1}(W)$ 는 열린 집합이며 $V\subset U_1$ 이므로 $F:V\to W$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_inverse_function_theorem}
+::: {#thm-CM_inverse_function_theorem}
 
 #### 역함수 정리
 
@@ -264,7 +264,7 @@ $V=U \cap F^{-1}(W)$ 는 열린 집합이며 $V\subset U_1$ 이므로 $F:V\to W$
 
 $$
 (F^{-1})'(\bf{y}) = \left[F'(F^{-1}(\bf{y}))\right]^{-1}.
-$$ {#eq-thm-part3_inverse_function_theorem_1}
+$$ {#eq-thm-CM_inverse_function_theorem_1}
 
 이다.
 :::
@@ -273,15 +273,15 @@ $$ {#eq-thm-part3_inverse_function_theorem_1}
 
 ::: {.proof}
 
-우리는 @lem-part3_inverse_function_theorem_3 까지 오면서 $F:V \to W$ 를 전단사가 되게 하는 열린 집합 $V,\,W$ 가 존재함을 보였다. 이제 $F^{-1}$ 이 연속임을 보이자. $V,\,W$ 는 @lem-part3_inverse_function_theorem_3 의 증명에서의 그것과 같다. $\bf{y}_1,\,\bf{y}_2 \in W$ 일 때 @lem-part3_inverse_function_theorem_3 증명의 ($C-1$) 조건으로부터
+우리는 @lem-CM_inverse_function_theorem_3 까지 오면서 $F:V \to W$ 를 전단사가 되게 하는 열린 집합 $V,\,W$ 가 존재함을 보였다. 이제 $F^{-1}$ 이 연속임을 보이자. $V,\,W$ 는 @lem-CM_inverse_function_theorem_3 의 증명에서의 그것과 같다. $\bf{y}_1,\,\bf{y}_2 \in W$ 일 때 @lem-CM_inverse_function_theorem_3 증명의 ($C-1$) 조건으로부터
 
 $$
 \|F^{-1}(\bf{y}_1)-F^{-1}(\bf{y}_2)\|  \le  \dfrac{1}{\alpha} \|\bf{y}_1-\bf{y}_2\|
-$${#eq-thm-part3_inverse_function_theorem_2}
+$${#eq-thm-CM_inverse_function_theorem_2}
 
 이다. 따라서 $F^{-1}$ 은 $W$ 에서 연속이다.
 
-$L= F'(\bf{x})$ 라고 하자. @thm-part3_chain_rule 의 증명에서 나온 $\bf{\varphi}$ 를 이용하자. $\bf{x}'\in V$ 에 대해
+$L= F'(\bf{x})$ 라고 하자. @thm-CM_chain_rule 의 증명에서 나온 $\bf{\varphi}$ 를 이용하자. $\bf{x}'\in V$ 에 대해
 
 $$
 F(\bf{x}_1) = F(\bf{x}) + L(\bf{x}'-\bf{x}) + \bf{\varphi}(\bf{x}'-\bf{x})
@@ -291,7 +291,7 @@ $$
 
 $$
 \lim_{\bf{x}'\to \bf{x}} \dfrac{\|\bf{\varphi}(\bf{x}'-\bf{x})\|}{\|\bf{x}'-\bf{x}\|} = 0
-$$ {#eq-thm-part3_inverse_function_theorem_3}
+$$ {#eq-thm-CM_inverse_function_theorem_3}
 
 이다. 따라서
 
@@ -311,11 +311,11 @@ $$
 \lim_{\bf{y}'\to \bf{y}} \dfrac{\left\| L^{-1}(\bf{\varphi}(F^{-1}(\bf{y}') - F^{-1}(\bf{y})))\right\|}{\|\bf{y}'-\bf{y}\|} = 0
 $$
 
-임을 보이면 된다. $L^{-1}$ 이 선형변환이므로 @exr-part3_spivak_1_10 에 따라
+임을 보이면 된다. $L^{-1}$ 이 선형변환이므로 @exr-CM_spivak_1_10 에 따라
 
 $$
 \lim_{\bf{y}'\to \bf{y}} \dfrac{\left\| \bf{\varphi}(F^{-1}(\bf{y}') - F^{-1}(\bf{y}))\right\|}{\|\bf{y}'-\bf{y}\|} = 0
-$$ {#eq-thm-part3_inverse_function_theorem_4}
+$$ {#eq-thm-CM_inverse_function_theorem_4}
 
 만 보이면 된다. 
 
@@ -323,7 +323,7 @@ $$
 \dfrac{\left\| \bf{\varphi}(F^{-1}(\bf{y}') - F^{-1}(\bf{y}))\right\|}{\|\bf{y}'-\bf{y}\|} = \dfrac{\left\| \bf{\varphi}(F^{-1}(\bf{y}') - F^{-1}(\bf{y}))\right\|}{\|F^{-1}(\bf{y}')-F^{-1}(\bf{y})\|}  \dfrac{{\|F^{-1}(\bf{y}')-F^{-1}(\bf{y})\|}}{\|\bf{y}'-\bf{y}\|}
 $$
 
-인데. $F^{-1}$ 이 연속이므로 @eq-thm-part3_inverse_function_theorem_3 에 따라 첫번째 항의 $\bf{y}'\to \bf{y}$ 극한은 $0$ 이다. 또한 @eq-thm-part3_inverse_function_theorem_2 에 따라 두번째 항은 $1/\alpha$ 보다 작으므로 @eq-thm-part3_inverse_function_theorem_4 가 성립한다. 
+인데. $F^{-1}$ 이 연속이므로 @eq-thm-CM_inverse_function_theorem_3 에 따라 첫번째 항의 $\bf{y}'\to \bf{y}$ 극한은 $0$ 이다. 또한 @eq-thm-CM_inverse_function_theorem_2 에 따라 두번째 항은 $1/\alpha$ 보다 작으므로 @eq-thm-CM_inverse_function_theorem_4 가 성립한다. 
 
 즉 $\bf{y}=F(\bf{x})$ 일 때 
 
@@ -343,7 +343,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_36}
+::: {#exr-CM_spivak_2_36}
 #### Spivak 2.36
 
 $A\subset \R^n$ 이 열린 집합이며 $F:A \to \R^n$ 이 $C^1$ 급 함수이고 모든 $\bf{x}\in A$ 에 대해 $\det (F'(\bf{x}))\ne 0$ 이다. $F(A)$ 는 열린 집합이며 $F^{-1}:F(A)\to A$ 는 미분가능함을 보여라. $B\subset A$ 가 열린 집합이면 $F(B)$ 도 열린 집합임을 보여라.
@@ -353,7 +353,7 @@ $A\subset \R^n$ 이 열린 집합이며 $F:A \to \R^n$ 이 $C^1$ 급 함수이�
 
 ::: {.solution}
 
-@thm-part2_continuity_and_inverse_of_map 로부터 $F:\R^n \to \R^m$ 에서 $F$ 가 연속가 연속인 것과 임의의 열린 집합 $W\subset \R^m$ 에 대해 $F^{-1}(W)$ 가 열린 집합인 것은 동치이다. 
+@thm-MA_continuity_and_inverse_of_map 로부터 $F:\R^n \to \R^m$ 에서 $F$ 가 연속가 연속인 것과 임의의 열린 집합 $W\subset \R^m$ 에 대해 $F^{-1}(W)$ 가 열린 집합인 것은 동치이다. 
 
 역함수 정리에 의해 $\bf{x}\in A$ 에 대해 $\bf{x}$ 를 포함하는 열린 집합 $V_x$ 와 $F(\bf{x})$ 를 포함하는 열린 집합 $W_x$ 가 존재하여 $F^{-1} : W_x \to V_x$ 가 미분 가능하다. $\bf{y}\in F(A)$ 이면 $\bf{y}$ 를 포함하는 열린 집합 $W_y$ 에 대해 $F^{-1}(W_y)$ 가 열린 집합이며 $F^{-1}(W_y)\cap A$ 도 열린 집합이다. $F(F^{-1}(W_y)\cap A) \subset W_y$ 이며 $\bf{y}\in F(F^{-1}(W_y)\cap A)$ 이고 $F(F^{-1}(W_y)\cap A)$ 는 열린 집합이므로 $F(A)$ 도 열린 집합이다. 같은 이유로 열린 집합 $B$ 에 대해 $F(B)$ 도 열린 집합이다.
 
@@ -362,7 +362,7 @@ $A\subset \R^n$ 이 열린 집합이며 $F:A \to \R^n$ 이 $C^1$ 급 함수이�
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_37}
+::: {#exr-CM_spivak_2_37}
 #### Spivak 2.37
 
 ($a$) $f:\R^2 \to \R$ 이 $C^1$ 급 함수이다. $f$ 가 단사함수가 될 수 없음을 보여라.
@@ -381,7 +381,7 @@ $$
 \det (G'(a_1,\,a_2)) = \det \left(\begin{bmatrix} D_1f(a_1,\,a_2) & D_2f(a_1,\,a_2) \\ 0 & 1 \end{bmatrix}\right) = D_1f(a_1,\,a_2) \ne 0
 $$  
 
-이며 @exr-part3_spivak_2_36 에 의해 $G(A)$ 는 열린집합이다. $(a_1,\,a_2) \in A$ 이면 $G(a_1,\,a_2)=$$(f(a_1,\,a_2),\, a_2)$$\in G(A)$ 이므로 어떤 $\widetilde{a}_2 \ne a_2$ 에 대해 $(f(a_1,\,a_2),\,\widetilde{a}_2) \in G(A)$ 이다. 그런데 $f$ 가 단사이므로 $f(a_1,\,\widetilde{a}_2) \ne f(a_1,\,a_2)$ 이다. 따라서 $(f(a_1,\,a_2),\,\widetilde{a}_2) \notin G(A)$ 이어야 하므로 모순. 따라서 $f$ 는 단사 일 수 없다.
+이며 @exr-CM_spivak_2_36 에 의해 $G(A)$ 는 열린집합이다. $(a_1,\,a_2) \in A$ 이면 $G(a_1,\,a_2)=$$(f(a_1,\,a_2),\, a_2)$$\in G(A)$ 이므로 어떤 $\widetilde{a}_2 \ne a_2$ 에 대해 $(f(a_1,\,a_2),\,\widetilde{a}_2) \in G(A)$ 이다. 그런데 $f$ 가 단사이므로 $f(a_1,\,\widetilde{a}_2) \ne f(a_1,\,a_2)$ 이다. 따라서 $(f(a_1,\,a_2),\,\widetilde{a}_2) \notin G(A)$ 이어야 하므로 모순. 따라서 $f$ 는 단사 일 수 없다.
 
 어떤 $(x_1,\,y_1)\in A$ 에 대해 $D_1f(x_1,\,y_1)= 0$ 이라고 하자. $D_2f(x_1,\,y_1) \ne 0$ 일 때는 앞의 경우와 마찬가지로 $f$ 가 단사가 될 수 없음을 보일 수 있다. 
 
@@ -395,7 +395,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_38}
+::: {#exr-CM_spivak_2_38}
 #### Spivak 2.38
 
 ($a$) $f:\R \to \R$ 이 모든 $x\in \R$ 에 대해 $f'(x) \ne 0$ 이면 $f$ 는 단사임을 보여라.
@@ -418,7 +418,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_39}
+::: {#exr-CM_spivak_2_39}
 #### Spivak 2.39
 $f:\R \to \R$ 이 다음과 같이 정의되었다.
 
@@ -457,7 +457,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part3_pts_of_inverse_function}
+::: {#exm-CM_pts_of_inverse_function}
 
 $F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, H(\bf{x,\,y}))$ 꼴이며 역함수가 존재한다면 $F^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x}))$ 꼴임을 보이자. $F^{-1}=G=\begin{bmatrix} g_1 & \cdots & g_{n+m}\end{bmatrix}^T$ 라고 하자. 
 
@@ -471,7 +471,7 @@ $i \le n$ 에 대해서만 보면 된다. $x_i = (G\circ F)_i = g_i (\bf{x},\, F
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_implicit_function_theorem_1}
+::: {#thm-CM_implicit_function_theorem_1}
 
 $F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 집합에서 $C^1$ 급 함수이며 $F(\bf{a}, \bf{b})=0$ 이라고 하자. $m \times m$ 행렬 $M$ 에 대해 $M_{ij} = D_{n+j}f_i(\bf{a},\,\bf{b})$ 이고 $\det (M) \ne 0$ 이면 $\bf{a}$ 를 포함하는 어떤 열린 집합 $A\subset \R^n$ 와 $\bf{b}$ 를 포함하는 어떤 열린집합 $B\subset \R^m$ 에서 정의된 미분가능한 단사 함수 $G:A \to B$ 가 존재하여 $F(\bf{x},\, G(\bf{x})) = 0$ 이 되도록 한다.
 
@@ -481,9 +481,9 @@ $F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 �
 
 ::: {.proof}
 
-$\widetilde{F}: \R^n \times \R^m \to \R^n \times \R^m$ 을 $\widetilde{F}(\bf{x},\,\bf{y}) := (\bf{x},\, F(\bf{x},\,\bf{y}))$ 로 정의하자. $\det (\widetilde{F}'(\bf{a},\, \bf{b}))$$= \det (M) \ne 0$ 이다. 역함수 정리 (@thm-part3_inverse_function_theorem) 에 따라 $(\bf{a},\,\bf{b})$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a},\, \bf{b})=(\bf{a},\, \bf{0})$ 을 포함하는 열린 집합 $W$ 에서 정의된 $\widetilde{F}$ 의 역함수이자 $C^1$ 급 함수인 $\widetilde{F}^{-1}:W \to V$ 가 존재한다.
+$\widetilde{F}: \R^n \times \R^m \to \R^n \times \R^m$ 을 $\widetilde{F}(\bf{x},\,\bf{y}) := (\bf{x},\, F(\bf{x},\,\bf{y}))$ 로 정의하자. $\det (\widetilde{F}'(\bf{a},\, \bf{b}))$$= \det (M) \ne 0$ 이다. 역함수 정리 (@thm-CM_inverse_function_theorem) 에 따라 $(\bf{a},\,\bf{b})$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a},\, \bf{b})=(\bf{a},\, \bf{0})$ 을 포함하는 열린 집합 $W$ 에서 정의된 $\widetilde{F}$ 의 역함수이자 $C^1$ 급 함수인 $\widetilde{F}^{-1}:W \to V$ 가 존재한다.
 
-$V$ 를 $A\subset \R^n,\, B\subset \R^m$ 에 대해 $V=A \times B$ 가 되도록 할 수 있으며 그렇다면 $\widetilde{F}^{-1}: W \to A \times B$ 는 어떤 함수 미분가능한 함수 $K:W \to B$ 에 대해 $\widetilde{F}^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\, \bf{y}))$ 이다(@exm-part3_pts_of_inverse_function). 이제 $\Phi:\R^n \times \R^m \to \R^m$ 을 $\Phi (\bf{x},\, \bf{y}) := \bf{y}$ 로 정의하면 $\Phi \circ \widetilde{F} = F$ 이다. 따라서
+$V$ 를 $A\subset \R^n,\, B\subset \R^m$ 에 대해 $V=A \times B$ 가 되도록 할 수 있으며 그렇다면 $\widetilde{F}^{-1}: W \to A \times B$ 는 어떤 함수 미분가능한 함수 $K:W \to B$ 에 대해 $\widetilde{F}^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\, \bf{y}))$ 이다(@exm-CM_pts_of_inverse_function). 이제 $\Phi:\R^n \times \R^m \to \R^m$ 을 $\Phi (\bf{x},\, \bf{y}) := \bf{y}$ 로 정의하면 $\Phi \circ \widetilde{F} = F$ 이다. 따라서
 
 $$
 F(\bf{x},\, K(\bf{x},\, \bf{y})) = (F \circ \widetilde{F}^{-1})(\bf{x},\, \bf{y}) = (\Phi \circ \widetilde{F} \circ \widetilde{F}^{-1})(\bf{x},\, \bf{y}) = \bf{y}
@@ -507,7 +507,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_implicit_function_theorem_2}
+::: {#thm-CM_implicit_function_theorem_2}
 
 $F:\R^n \times \R^m  \to \R^m$ 가 $(\bf{a},\,\bf{b})\in \R^n \times \R^m$ 을 포함하는 열린 집합에서 $C^1$ 급 함수라고 하자. $F(\bf{a},\,\bf{b})=\bf{0}$ 이며 $m\times (n+m)$ 행렬 $M_{ij} = D_{j}f_i(\bf{a},\,\bf{b})$ 에 대해 $\text{rank}(M)=m$ 라면 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $A\subset \R^{n+m}$ 에서 정의된, 아래의 ($1$), ($2$) 를 만족하는 $H: A\to \R^n \times \R^m$ 이 존재한다. 
 
@@ -522,11 +522,11 @@ $F:\R^n \times \R^m  \to \R^m$ 가 $(\bf{a},\,\bf{b})\in \R^n \times \R^m$ 을 �
 
 ::: {.proof}
 
-우선 @thm-part3_implicit_function_theorem_1 와의 차이를 보자. $F'(\bf{a},\,\bf{b})$ 는 $m \times (n +m )$ 행렬이며 @thm-part3_implicit_function_theorem_1 은 정체 행과 마지막 $m$ 개의 열로 이루어진 행렬의 행렬식이 $0$ 이 아난 경우이며, 즉 마지막 $m$ 개의 열이 선형독립인 경우이며, 여기는 전체 $m+n$ 개의 열 가운데 위치에 무관하게 $m$ 개의 열이 선형독립인 경우이다. 
+우선 @thm-CM_implicit_function_theorem_1 와의 차이를 보자. $F'(\bf{a},\,\bf{b})$ 는 $m \times (n +m )$ 행렬이며 @thm-CM_implicit_function_theorem_1 은 정체 행과 마지막 $m$ 개의 열로 이루어진 행렬의 행렬식이 $0$ 이 아난 경우이며, 즉 마지막 $m$ 개의 열이 선형독립인 경우이며, 여기는 전체 $m+n$ 개의 열 가운데 위치에 무관하게 $m$ 개의 열이 선형독립인 경우이다. 
 
-이제 $m$ 개의 선형독립인 열의 인덱스를 $j_1,\ldots,\,j_m$ 이라고 하고 열에 대한 permutation $G: \R^n \times \R^m \to \R^n \times \R^m$ 을 $G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})$ 이라고 하면 $F\circ G$ 는 @thm-part3_implicit_function_theorem_1 의 $F$ 와 똑같은 경우이다. 물론 $G$ 는 선형변환이며 따라서 전체 $\R^n \times \R^m$ 에서 $C^\infty$ 급 함수이다.
+이제 $m$ 개의 선형독립인 열의 인덱스를 $j_1,\ldots,\,j_m$ 이라고 하고 열에 대한 permutation $G: \R^n \times \R^m \to \R^n \times \R^m$ 을 $G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})$ 이라고 하면 $F\circ G$ 는 @thm-CM_implicit_function_theorem_1 의 $F$ 와 똑같은 경우이다. 물론 $G$ 는 선형변환이며 따라서 전체 $\R^n \times \R^m$ 에서 $C^\infty$ 급 함수이다.
 
-@thm-part3_implicit_function_theorem_1 에 따라 $F \circ G$ 에 대해
+@thm-CM_implicit_function_theorem_1 에 따라 $F \circ G$ 에 대해
 
 $$
 (F \circ G)(\bf{x},\,K(\bf{x},\, \bf{y})) = \bf{y}
@@ -542,10 +542,10 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_40}
+::: {#exr-CM_spivak_2_40}
 #### Spivak 2.40
 
-음함수 정리를 이용하여 @exr-part3_spivak_2_15 ($c$) 를 다시 풀어라.
+음함수 정리를 이용하여 @exr-CM_spivak_2_15 ($c$) 를 다시 풀어라.
 
 :::
 
@@ -553,20 +553,20 @@ $$
 
 ::: {.solution}
 
-@exr-part3_spivak_2_15 ($c$) 에서 $F = \R\times \R^n \to \R^n$ 을 $F=\begin{bmatrix}f_1 & \cdots f_n\end{bmatrix}^T$ 이며
+@exr-CM_spivak_2_15 ($c$) 에서 $F = \R\times \R^n \to \R^n$ 을 $F=\begin{bmatrix}f_1 & \cdots f_n\end{bmatrix}^T$ 이며
 
 $$
 f_i (t,\,\bf{x}) = \sum_{j=1}^n a_{ij}(t)x_j - b_i(t)
 $$
 
-로 정의한다. $\det ([a_{ij}]) \ne 0$ 이므로 @thm-part3_implicit_function_theorem_1 에 의해 $F(t,\, X(t)) = 0$ 이 되도록 하는 미분가능한 $X(t) = \begin{bmatrix} x_1(t) & \cdots & x_n(t)\end{bmatrix}^T$ 가 존재한다.
+로 정의한다. $\det ([a_{ij}]) \ne 0$ 이므로 @thm-CM_implicit_function_theorem_1 에 의해 $F(t,\, X(t)) = 0$ 이 되도록 하는 미분가능한 $X(t) = \begin{bmatrix} x_1(t) & \cdots & x_n(t)\end{bmatrix}^T$ 가 존재한다.
 
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_2_41}
+::: {#exr-CM_spivak_2_41}
 #### Spivak 2.41
 
 $f:\R \times \R \to \R$ 이 미분가능하다. 각각의 $x\in\R$ 에 대해 $g_x:\R \to \R$ 을 $g_x(y)= f(x,\,y)$ 로 정의하자. 각각의 $x$ 에 대해 $g_x'(y) = 0$ 이 되도록 하는 $y$ 가 유일하게 존재한다고 가정하고 이 $y$ 를 $c(x)$ 라고 하자.
@@ -616,3 +616,5 @@ $$
 ($b$) ($a$) 로부터 $D_{2,1}f(x,\,c{x}) = 0$ 이므로 $y=c(x)$ 에서 $D_{2,1}f(x,\,y)=0$ 이다. $c(x)$ 의 정의에 의해 $D_2f(x,\,y) = g'(x,\,c(x))=0$ 이다.
 
 ($c$) 
+
+:::

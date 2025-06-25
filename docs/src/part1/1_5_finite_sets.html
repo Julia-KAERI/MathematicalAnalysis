@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -261,23 +261,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../references.html" class="sidebar-item-text sidebar-link">
@@ -322,6 +305,14 @@ window.Quarto = {
 </header>
 
 
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
 <section id="유한집합의-정의" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="유한집합의-정의"><span class="header-section-number">5.1</span> 유한집합의 정의</h2>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -330,21 +321,20 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_finte_set" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 5.1 (유한 집합)</strong></span> 집합 <span class="math inline">\(A\)</span> 가 공집합이거나 <span class="math inline">\(A\)</span> 에서 section(<a href="1_3_numbers.html#def-part1_section" class="quarto-xref">정의&nbsp;<span>3.8</span></a>) 로 가는 전단사 함수가 존재할 때 이 <span class="math inline">\(A\)</span> 를 <strong>유한집합</strong>이라 한다. <span class="math inline">\(A\)</span> 가 공집합일 경우 <strong>cardinality 0</strong> 라 하며, <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 과 전단사 관계가 존재할경우 <strong>cardinality n</strong> 이라 한다.</p>
+<div id="def-FA_finte_set" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 5.1 (유한 집합)</strong></span> 집합 <span class="math inline">\(A\)</span> 가 공집합이거나 <span class="math inline">\(A\)</span> 에서 section(<a href="1_3_numbers.html#def-FA_section" class="quarto-xref">정의&nbsp;<span>3.8</span></a>) 로 가는 전단사 함수가 존재할 때 이 <span class="math inline">\(A\)</span> 를 <strong>유한집합</strong>이라 한다. <span class="math inline">\(A\)</span> 가 공집합일 경우 <strong>cardinality 0</strong> 라 하며, <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 과 전단사 관계가 존재할경우 <strong>cardinality n</strong> 이라 한다.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="lem-part1_finite_set1" class="theorem lemma">
+<div id="lem-FA_finite_set1" class="theorem lemma">
 <p><span class="theorem-title"><strong>보조정리 5.1</strong></span> <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 일 때 집합 <span class="math inline">\(A\)</span> 에 대해 다음은 동치이다.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n+1\}\)</span> 사이에 전단사 함수가 존재한다.</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(a\in A\)</span> 일 때 <span class="math inline">\(A\backslash\{a\}\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 사이에 전단사 함수가 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(f:A \to \{1,\ldots,\,n+1\}\)</span> 이 전단사 함수이며 <span class="math inline">\(f(a)=k\)</span> 라 하자. <span class="math inline">\(f(b) = n+1\)</span> 인 <span class="math inline">\(b\in A\)</span> 가 유일하게 존재한다. 이 때 <span class="math inline">\(h:A\backslash\{a\}\to \{1,\ldots,n\}\)</span> 을 다음과 같이 정의하자.</p>
 <p><span class="math display">\[
@@ -362,68 +352,62 @@ k(x) = \left\{\begin{array}{ll} g(x),\quad&amp;\text{if }x\ne a\\ n+1, &amp;\tex
 <section id="유한집합의-기본-성질" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="유한집합의-기본-성질"><span class="header-section-number">5.2</span> 유한집합의 기본 성질</h2>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-part1_finite_set2" class="theorem">
+<div id="thm-FA_finite_set2" class="theorem">
 <p><span class="theorem-title"><strong>정리 5.1</strong></span> 집합 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(f:A \to \{1,\ldots,\,n\}\)</span> 인 전단사 함수 <span class="math inline">\(f\)</span> 가 존재한다고 하자. <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 의 진부분 집합이라면 <span class="math inline">\(B \mapsto \{1,\ldots,\,n\}\)</span> 인 전단사 함수는 존재하지 않으며, <span class="math inline">\(B\ne \varnothing\)</span> 일 경우 어떤 <span class="math inline">\(m&lt;n\)</span> 에 대해 <span class="math inline">\(B \mapsto \{1,\ldots,m\}\)</span> 인 전단사 함수가 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\varnothing\)</span> 일 경우 <span class="math inline">\(B \to \{1,\ldots,n\}\)</span> 인 전단사 함수가 존재하지 않음은 자명하다. 이제 <span class="math inline">\(B\ne \varnothing\)</span> 일 경우 induction 으로 증명한다. 정리가 만족하는 양의 정수의 의 집합을 <span class="math inline">\(C\)</span> 라 하자. <span class="math inline">\(n=1\)</span> 일 경우는 성립한다는 것을 쉽게 알 수 있다.</p>
-<p><span class="math inline">\(n\in C\)</span> 임을 가정한다. <span class="math inline">\(f:A \to \{1,\ldots,n+1\}\)</span> 이 전단사 함수라고 하자. <span class="math inline">\(A\)</span> 의 진부분집합 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(a_0\in B\)</span> 와 <span class="math inline">\(a_1\in A\backslash B\)</span> 를 선택한다. <a href="#lem-part1_finite_set1" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에 의해 전단사 함수 <span class="math inline">\(g:A\backslash \{a_0\} \to \{1,\ldots,n\}\)</span> 가 존재한다. 이로부터 가정에 의해 아래의 결론을 내릴 수 있다.</p>
+<p><span class="math inline">\(n\in C\)</span> 임을 가정한다. <span class="math inline">\(f:A \to \{1,\ldots,n+1\}\)</span> 이 전단사 함수라고 하자. <span class="math inline">\(A\)</span> 의 진부분집합 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(a_0\in B\)</span> 와 <span class="math inline">\(a_1\in A\backslash B\)</span> 를 선택한다. <a href="#lem-FA_finite_set1" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에 의해 전단사 함수 <span class="math inline">\(g:A\backslash \{a_0\} \to \{1,\ldots,n\}\)</span> 가 존재한다. 이로부터 가정에 의해 아래의 결론을 내릴 수 있다.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(B\backslash\{a_0\} \mapsto \{1,\ldots,n\}\)</span> 인 전단사 함수는 존재하지 않으며,</p>
 <p>  (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(m&lt;n\)</span> 에 대해 전단사 함수 <span class="math inline">\(h:B\backslash\{a_0\} \to \{1,\ldots,\,m\}\)</span> 이 존재한다.</p>
-<p><a href="#lem-part1_finite_set1" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(B \mapsto \{1,\ldots,n+1\}\)</span> 인 전단사 함수는 존재하지 않는다. 또한 <span class="math inline">\(B\backslash \{a_0\} \ne \varnothing\)</span> 일 경우 <span class="math inline">\(B\mapsto \{1,\ldots,\,m+1\}\)</span> 인 전단사 함수가 존재한다. 즉 <span class="math inline">\(C=\mathbb{Z}_+\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p><a href="#lem-FA_finite_set1" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(B \mapsto \{1,\ldots,n+1\}\)</span> 인 전단사 함수는 존재하지 않는다. 또한 <span class="math inline">\(B\backslash \{a_0\} \ne \varnothing\)</span> 일 경우 <span class="math inline">\(B\mapsto \{1,\ldots,\,m+1\}\)</span> 인 전단사 함수가 존재한다. 즉 <span class="math inline">\(C=\mathbb{Z}_+\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-part1_finite_set2" class="theorem corollary">
+<div id="cor-FA_finite_set2" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 5.1</strong></span> <span class="math inline">\(A\)</span> 가 유한집합이고 <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 의 진부분집합이라면 <span class="math inline">\(A \mapsto B\)</span> 인 전단사함수는 존재하지 않는다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f:A \to B\)</span> 가 전단사 함수라 하자. <span class="math inline">\(g:A \to \{1,\ldots,\,n\}\)</span> 이 전단사함수라면 <span class="math inline">\(g\circ f^{-1}\)</span> 는 <span class="math inline">\(B \mapsto \{1,\ldots,n\}\)</span> 전단사 함수인데 이는 <a href="#thm-part1_finite_set2" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 위배된다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f:A \to B\)</span> 가 전단사 함수라 하자. <span class="math inline">\(g:A \to \{1,\ldots,\,n\}\)</span> 이 전단사함수라면 <span class="math inline">\(g\circ f^{-1}\)</span> 는 <span class="math inline">\(B \mapsto \{1,\ldots,n\}\)</span> 전단사 함수인데 이는 <a href="#thm-FA_finite_set2" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 위배된다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-part1_Z_plus_is_not_finite" class="theorem corollary">
+<div id="cor-FA_Z_plus_is_not_finite" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 5.2</strong></span> <span class="math inline">\(\mathbb{Z}_+\)</span> 는 유한집합이 아니다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}\)</span> 을 <span class="math inline">\(f(n) =n+1\)</span> 로 정의하면 전단사 함수이다. 그런데 <span class="math inline">\(\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+\)</span> 이므로 <a href="#cor-part1_finite_set2" class="quarto-xref">따름정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 유한집합이 아니다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}\)</span> 을 <span class="math inline">\(f(n) =n+1\)</span> 로 정의하면 전단사 함수이다. 그런데 <span class="math inline">\(\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+\)</span> 이므로 <a href="#cor-FA_finite_set2" class="quarto-xref">따름정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 유한집합이 아니다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-part1_cardinality_of_finit_set" class="theorem corollary">
+<div id="cor-FA_cardinality_of_finit_set" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 5.3</strong></span> 유한집합의 cardinality 는 유일하게 정해진다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 사이의 전단사 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,m\}\)</span> 사이의 전단사 함수 <span class="math inline">\(g\)</span> 가 존재한다고 하자. <span class="math inline">\(g \circ f^{-1}\)</span> 은 <span class="math inline">\(\{1,\ldots, n\}\)</span> 에서 <span class="math inline">\(\{1,\ldots,\,m\}\)</span> 으로의 전단사 함수이어야 하는데, <span class="math inline">\(m\ne n\)</span> 이라면 둘중 하나는 나머지의 진부분집합이므로 <a href="#cor-part1_finite_set2" class="quarto-xref">따름정리&nbsp;<span>5.1</span></a> 에 의해 전단사 함수가 존재하지 않는다. 즉 <span class="math inline">\(m=n\)</span> 이므로 유한집합의 cardinaility 는 유일하게 정해진다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 사이의 전단사 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,m\}\)</span> 사이의 전단사 함수 <span class="math inline">\(g\)</span> 가 존재한다고 하자. <span class="math inline">\(g \circ f^{-1}\)</span> 은 <span class="math inline">\(\{1,\ldots, n\}\)</span> 에서 <span class="math inline">\(\{1,\ldots,\,m\}\)</span> 으로의 전단사 함수이어야 하는데, <span class="math inline">\(m\ne n\)</span> 이라면 둘중 하나는 나머지의 진부분집합이므로 <a href="#cor-FA_finite_set2" class="quarto-xref">따름정리&nbsp;<span>5.1</span></a> 에 의해 전단사 함수가 존재하지 않는다. 즉 <span class="math inline">\(m=n\)</span> 이므로 유한집합의 cardinaility 는 유일하게 정해진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-part1_cardinality_of_subset" class="theorem corollary">
+<div id="cor-FA_cardinality_of_subset" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 5.4</strong></span> <span class="math inline">\(A\)</span> 가 유한집합이고 <span class="math inline">\(B \subset A\)</span> 이면 <span class="math inline">\(B\)</span> 는 유한집합이다. <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 의 진부분집합이라면 <span class="math inline">\(B\)</span> 의 cardinality 는 <span class="math inline">\(A\)</span> 보다 적다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 의 cardinality 가 <span class="math inline">\(n\)</span> 이라면 <a href="#thm-part1_finite_set2" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(B\)</span> 의 cardinality 는 <span class="math inline">\(n\)</span> 보다 작다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 의 cardinality 가 <span class="math inline">\(n\)</span> 이라면 <a href="#thm-FA_finite_set2" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(B\)</span> 의 cardinality 는 <span class="math inline">\(n\)</span> 보다 작다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-part1_properties_of_finite_set" class="theorem corollary">
+<div id="cor-FA_properties_of_finite_set" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 5.5</strong></span> <span class="math inline">\(A\)</span> 가 공집합이 아닐 때 아래의 세 명제는 동치이다.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 는 유한집합이다.</p>
 <p>  (<span class="math inline">\(2\)</span>) 어떤 양의 정수의 section 에서 <span class="math inline">\(A\)</span> 로의 전사함수가 존재한다.</p>
 <p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(A\)</span> 에서 어떤 양의 정수에 대한 section 으로의 단사함수가 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(A\)</span> 가 유한집합이므로 정의에 의해 section 으로의 전단사 함수가 존재한다.</p>
 <p>(<span class="math inline">\(2 \implies 3\)</span>) <span class="math inline">\(f:\{1,\ldots,\,n\} \to A\)</span> 가 전사함수라 하자. <span class="math inline">\(g: A \to \{1,\ldots,\,n\}\)</span>, <span class="math inline">\(g(a)=\min \{f^{-1}(\{a\})\}\)</span> 는 단사함수이다.</p>
@@ -435,11 +419,10 @@ B = \{i \in \{1,\ldots,\,n\}: f^{-1}(\{i\})\ne\varnothing\}
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_finite_cartesian_product_of_finite_sets" class="theorem proposition">
+<div id="prp-FA_finite_cartesian_product_of_finite_sets" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 5.1</strong></span> 유한집합의 유한 합집합은 유한집합이다. 유한집합의 유한 데카르트곱도 유한집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>집합 <span class="math inline">\(A,\,B\)</span> 가 공집합일경우 합집합과 데카르트곱은 공집합이므로 유한집합이다. 둘중의 하나만 공집합일 경우는 자명하다. <span class="math inline">\(f:A \to \{1,\ldots,\,m\}\)</span> 과 <span class="math inline">\(g:B \to \{1,\ldots,\,n\}\)</span> 이 전단사 함수 일 때, <span class="math inline">\(h:A \cup B \to \{1,\ldots,m+n\}\)</span> 을 다음과 같이 정의하자.</p>
 <p><span class="math display">\[
@@ -457,21 +440,19 @@ k(a,\,b) = n \times (f(a)-1) + g(b)
 <section id="연습문제" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part1_muknres_1_6_2" class="theorem exercise">
+<div id="exr-FA_muknres_1_6_2" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 5.1 (Munkres 1.6.2)</strong></span> <span class="math inline">\(B\)</span> 가 유한집합이 아니고 <span class="math inline">\(B \subset A\)</span> 이면 <span class="math inline">\(A\)</span> 는 유한집합이 아님을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A\)</span> 가 유한집합이라면 어떤 양의 정수 <span class="math inline">\(n\)</span> 에 대해 전단사 함수 <span class="math inline">\(f: A \to \{1,\ldots,\,n\}\)</span> 가 존재한다. <span class="math inline">\(B \subset A\)</span> 이면 <a href="#cor-part1_cardinality_of_subset" class="quarto-xref">따름정리&nbsp;<span>5.4</span></a> 에 의해 <span class="math inline">\(B\)</span> 는 유한집합이어야 하므로 가정에 위배된다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A\)</span> 가 유한집합이라면 어떤 양의 정수 <span class="math inline">\(n\)</span> 에 대해 전단사 함수 <span class="math inline">\(f: A \to \{1,\ldots,\,n\}\)</span> 가 존재한다. <span class="math inline">\(B \subset A\)</span> 이면 <a href="#cor-FA_cardinality_of_subset" class="quarto-xref">따름정리&nbsp;<span>5.4</span></a> 에 의해 <span class="math inline">\(B\)</span> 는 유한집합이어야 하므로 가정에 위배된다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part1_munkres_1_6_3" class="theorem exercise">
+<div id="exr-FA_munkres_1_6_3" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 5.2 (Munkres 1.6.3)</strong></span> <span class="math inline">\(X=\{0,\,1\}\)</span> 일 때 <span class="math inline">\(X^\omega\)</span> 애서 <span class="math inline">\(X^\omega\)</span> 의 진부분집합으로의 전단사 함수가 존재함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\in X^\omega\)</span> 에 대해 <span class="math inline">\(x_i\)</span> 는 <span class="math inline">\(x\)</span> 의 <span class="math inline">\(i\)</span> 번째 좌표라 하자.</p>
 <p><span class="math display">\[
@@ -481,13 +462,12 @@ P = \{(0,\,a_1,\,a_2,\ldots): a_i \in \{0,\,1\},\, i=1,\,2,\ldots\}
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-part1_munkres_1_6_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.3 (Munkres 1.6.4)</strong></span> <span class="math inline">\(A\)</span> 는 공집합이 아닌 유한 전순서 집합(<a href="1_2_functions_and_relations.html#def-part1_order_relation" class="quarto-xref">정의&nbsp;<span>2.12</span></a>) 이라 하자.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 에 최대값이 존재함을 보이시오.</p>
-<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 는 어떤 section 과 같은 순서형(<a href="1_1_basic_of_naive_set_theory.html#def-part1_ordered_pair" class="quarto-xref">정의&nbsp;<span>1.8</span></a>) 을 가짐을 보이시오.</p>
+<div id="exr-FA_munkres_1_6_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 5.3 (Munkres 1.6.4)</strong></span> <span class="math inline">\(A\)</span> 는 공집합이 아닌 유한 전순서 집합(<a href="1_2_functions_and_relations.html#def-FA_order_relation" class="quarto-xref">정의&nbsp;<span>2.12</span></a>) 이라 하자.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 에 최대값이 존재함을 보이시오.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 는 어떤 section 과 같은 순서형(<a href="1_1_basic_of_naive_set_theory.html#def-FA_ordered_pair" class="quarto-xref">정의&nbsp;<span>1.8</span></a>) 을 가짐을 보이시오.</p>
 </div>
 </div>
-<p><br></p>
 <div class="soluion">
 
 </div>
@@ -578,8 +558,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -690,7 +668,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

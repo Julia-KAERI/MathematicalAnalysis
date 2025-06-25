@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -261,23 +261,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../src/figures/figures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">그림들</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../src/figures/figure01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">그림 1</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../references.html" class="sidebar-item-text sidebar-link">
@@ -320,6 +303,14 @@ window.Quarto = {
 </header>
 
 
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
 <p>우리는 여기서 일단 집합에 대해 잘 안다고 가정한다.</p>
 <p><br></p>
 <section id="기본-개념" class="level2" data-number="1.1">
@@ -330,7 +321,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_set_and_element" class="theorem definition">
+<div id="def-FA_set_and_element" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.1 (집합에의 포함관계)</strong></span> 어떤 객체 <span class="math inline">\(a\)</span> 가 집합 <span class="math inline">\(A\)</span> 에 포함되면 <span class="math inline">\(a\)</span> 를 <span class="math inline">\(A\)</span> 의 원소라고 하고 <span class="math inline">\(a\in A\)</span> 라 쓴다. <span class="math inline">\(a\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되지 않을 때는 <span class="math inline">\(a\not\in A\)</span> 라고 쓴다.</p>
 </div>
 </div>
@@ -343,7 +334,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_subset" class="theorem definition">
+<div id="def-FA_subset" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.2 (부분 집합, 동일한 집합, 진부분 집합)</strong></span> 집합 <span class="math inline">\(A\)</span> 의 모든 원소가 집합 <span class="math inline">\(B\)</span> 의 원소일 때 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(B\)</span> 의 <strong>부분집합(subset)</strong>이라고 하고 <span class="math inline">\(A \subset B\)</span> 라고 쓴다. <span class="math inline">\(A\subset B\)</span> 일 때 <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 를 포함한다고 한다. <span class="math inline">\(A \subset B\)</span> 이고 <span class="math inline">\(B \subset A\)</span> 일 때 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 를 같다고 하고 <span class="math inline">\(A=B\)</span> 라고 쓴다. <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 가 같지 않을 때 <span class="math inline">\(A \ne b\)</span> 라고 쓴다. <span class="math inline">\(A \subset B\)</span> 이며 <span class="math inline">\(A\ne B\)</span> 일 때 어떤 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(B\)</span> 의 <strong>진부분집합(proper subset)</strong> 이라고 하며 <span class="math inline">\(A \subsetneq B\)</span> 라고 쓴다.</p>
 </div>
 </div>
@@ -365,7 +356,7 @@ B=\{x | x \text{ is an even integer}\}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_union_and_intersection_of_sets" class="theorem definition">
+<div id="def-FA_union_and_intersection_of_sets" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.3 (합집합과 교집합)</strong></span> 집합 <span class="math inline">\(A,\, B\)</span> 에 대해 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 의 합집합 <span class="math inline">\(A \cup B\)</span> 는 다음과 같이 정의된다.</p>
 <p><span class="math display">\[
 A \cup B = \{x | x\in A \text{ or }x \in B\}
@@ -381,13 +372,13 @@ A \cup B = \{ x | x\in A \text{ and } x \in B\}
 <p><br></p>
 <p>아래 두 명제는 정의로부터 자명하다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_associativity_of_union_and_intersection" class="theorem proposition">
+<div id="prp-FA_associativity_of_union_and_intersection" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.1</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(A \cup B = B \cup A\)</span> 이고 <span class="math inline">\(A \cap B = B \cap A\)</span> 이다.</p>
 </div>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_commutativity_of_union_and_intersection" class="theorem proposition">
+<div id="prp-FA_commutativity_of_union_and_intersection" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.2</strong></span> 집합 <span class="math inline">\(A,\,B,\, C\)</span> 에 대해 <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> 이고 <span class="math inline">\(A \cap (B\cap C) = (A \cap B) \cap C\)</span> 이다.</p>
 </div>
 </div>
@@ -400,7 +391,7 @@ A \cup B = \{ x | x\in A \text{ and } x \in B\}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_empty_set" class="theorem definition">
+<div id="def-FA_empty_set" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.4 (공집합, 서로소)</strong></span> 원소를 하나도 포함하지 않은 집합을 <strong>공집합(empty set)</strong> 이라고 하며 <span class="math inline">\(\varnothing\)</span> 이라 쓴다. 두 집합 <span class="math inline">\(A,\,B\)</span> 가 <span class="math inline">\(A\cap B=\varnothing\)</span> 이면 두 집합을 <strong>서로소</strong> 라고 한다.</p>
 </div>
 </div>
@@ -408,17 +399,16 @@ A \cup B = \{ x | x\in A \text{ and } x \in B\}
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_union_intersection_with_empty_set" class="theorem proposition">
+<div id="prp-FA_union_intersection_with_empty_set" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.3</strong></span> 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(A \cap \varnothing = \varnothing\)</span> 이며 <span class="math inline">\(A \cup \varnothing = A\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-part1_empty_set_is_subset_of_every_set" class="theorem">
+<div id="thm-FA_empty_set_is_subset_of_every_set" class="theorem">
 <p><span class="theorem-title"><strong>정리 1.1</strong></span> 공집합은 모든 집합의 부분집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>부분집합의 정의에 의해 <span class="math inline">\(x\in \varnothing \implies x \in A\)</span> 이면 <span class="math inline">\(\varnothing \subset A\)</span> 이다. 공집합의 정의에 의해 <span class="math inline">\(x\in \varnothing\)</span> 은 항상 거짓이므로 위의 명제는 항상 참이다. 따라서 공집합은 모든 집합의 부분집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -429,7 +419,7 @@ A \cup B = \{ x | x\in A \text{ and } x \in B\}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_diffeence_of_two_sets" class="theorem definition">
+<div id="def-FA_diffeence_of_two_sets" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.5 (차집합)</strong></span> 두 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(A\)</span> 에만 포함되고 <span class="math inline">\(B\)</span> 에는 포함되지 않는 원소의 집합을 차집합 이라 하며 <span class="math inline">\(A-B\)</span> 로 표현한다. 즉,</p>
 <p><span class="math display">\[
 A-B =\{x | x\in A \text{ and }x\not\in B\}
@@ -441,7 +431,7 @@ A-B =\{x | x\in A \text{ and }x\not\in B\}
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_distribution_law_for_sets" class="theorem proposition">
+<div id="prp-FA_distribution_law_for_sets" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.4 (집합에서의 분배법칙)</strong></span> 집합 <span class="math inline">\(A,\,B,\,C\)</span> 에 대해 다음이 성립하며 이를 집합에서의 분배법칙(distribution law) 라고 한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -451,7 +441,6 @@ A \cup (B \cap C) &amp;= (A \cup B) \cap (A \cup C).
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span> 는 다음과 같이 증명 할 수 있다. <span class="math display">\[
 \begin{aligned}
@@ -470,7 +459,7 @@ x\in A \cap (B \cup C) &amp;\iff x\in A \land x \in (B \cup C) \\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_complement_of_set" class="theorem definition">
+<div id="def-FA_complement_of_set" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.6 (여집합)</strong></span> 어떤 전체집합 <span class="math inline">\(X\)</span> 의 부분집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(X-A\)</span> 를 <span class="math inline">\(A\)</span> 의 여집합이라 하고 <span class="math inline">\(A^C\)</span> 혹은 <span class="math inline">\(X\backslash A\)</span> 라 쓴다. 즉</p>
 <p><span class="math display">\[
 X\backslash A = A^C = X-A
@@ -484,21 +473,19 @@ X\backslash A = A^C = X-A
 <p>이제부터 별도로 언급하지 않아도 집합을 언급할 때는 어떤 전체집합의 부분집합임을 가정한다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_difference_and_intersection" class="theorem proposition">
+<div id="prp-FA_difference_and_intersection" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.5</strong></span> <span class="math inline">\(X\)</span> 의 부분집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(A-B = A \cap B^C\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(x\in (A-B) \iff x\in A \land x\not\in B \iff x\in A \cap B^C\)</span> <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-part1_complement_of_union_and_intersection" class="theorem proposition">
+<div id="prp-FA_complement_of_union_and_intersection" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.6</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\((A\cup B)^C = A^C \cap B^C\)</span> 이며 <span class="math inline">\((A \cap B)^C = A^C \cup B^C\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -510,7 +497,7 @@ x\in (A \cap B)^C &amp;\iff x\not\in (A \cap B) \iff x\not\in A \lor x\not\in B 
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-part1_DeMorgrans_law" class="theorem">
+<div id="thm-FA_DeMorgrans_law" class="theorem">
 <p><span class="theorem-title"><strong>정리 1.2 (드 모르강의 법칙)</strong></span> 집합 <span class="math inline">\(A,\,B,\,C\)</span> 에 대해 다음이 성립한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -520,7 +507,6 @@ A-(B \cap C) &amp; = (A-B)\cup (A-C).
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -538,7 +524,7 @@ A-(B\cap C) &amp;= A \cap (B \cap C)^C = A \cap (B^C \cup C^C) =  (A \cap B^C) \
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_collection" class="theorem definition">
+<div id="def-FA_collection" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.7 (집합족(collection, family)과 멱집합 (power set))</strong></span> 집합의 원소가 모두 집합인 집합을 <strong>집합족</strong>이라 한다. 특히 집합 <span class="math inline">\(A\)</span> 의 부분집합의 집합은 집합족으로 <span class="math inline">\(A\)</span> 의 <strong>멱집합</strong> 이라 하며 <span class="math inline">\(\mathcal{P}(A)\)</span> 라 쓴다.</p>
 </div>
 </div>
@@ -558,7 +544,7 @@ A-(B\cap C) &amp;= A \cap (B \cap C)^C = A \cap (B^C \cup C^C) =  (A \cap B^C) \
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_ordered_pair" class="theorem definition">
+<div id="def-FA_ordered_pair" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.8 (순서쌍(ordered pair) 과 좌표(coordinate))</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 <span class="math inline">\(a\in A,\, b\in B\)</span> 일 때 <span class="math inline">\((a,\,b) = \{ \{a\}, \, \{a, b\}\}\)</span> 를 순서쌍 이라 한다. 이 때 <span class="math inline">\((a,\,b)\)</span> 에서 <span class="math inline">\(a\)</span> 를 첫번째 <strong>좌표</strong>, <span class="math inline">\(b\)</span> 를 두번째 좌표라고 한다.</p>
 </div>
 </div>
@@ -566,7 +552,7 @@ A-(B\cap C) &amp;= A \cap (B \cap C)^C = A \cap (B^C \cup C^C) =  (A \cap B^C) \
 </div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-<div id="exm-part1_ordered_pair" class="theorem example">
+<div id="exm-FA_ordered_pair" class="theorem example">
 <p><span class="theorem-title"><strong>예제 1.1</strong></span> <span class="math inline">\(a \ne b\)</span> 이면 <span class="math inline">\((a,\,b) \ne (b,\,a)\)</span> 이다.</p>
 </div>
 </div>
@@ -577,7 +563,7 @@ A-(B\cap C) &amp;= A \cap (B \cap C)^C = A \cap (B^C \cup C^C) =  (A \cap B^C) \
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-part1_cartesian_product" class="theorem definition">
+<div id="def-FA_cartesian_product" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 1.9 (데카르트 곱)</strong></span> 집합 <span class="math inline">\(A,\,B\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(A\times B\)</span> 를 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 에 의한 데카르트 곱이라 한다.</p>
 <p><span class="math display">\[
 A \times B = \{(a,b)| a\in A,\, b\in B\}.
@@ -674,8 +660,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -786,7 +770,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

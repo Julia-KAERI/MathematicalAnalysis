@@ -6,15 +6,17 @@ crossref:
   chapters: true
 ---
 
+{{< include ../../latexmacros.qmd >}}
+
 ## 수열(Sequence) 과 급수 (Series)
 
 ### 수열의 수렴
 
-수열은 @def-part2_sequence 에서 정의하였다. 급수(series) 는 다음과 같이 정의된다.
+수열은 @def-MA_sequence 에서 정의하였다. 급수(series) 는 다음과 같이 정의된다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_series}
+::: {#def-MA_series}
 
 #### 부분합, 급수, 무한급수
 
@@ -33,7 +35,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_convergence_of_series}
+::: {#def-MA_convergence_of_series}
 
 #### 수열의 수렴과 발산
 
@@ -50,7 +52,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_convergence_and_space}
+::: {#exm-MA_convergence_and_space}
 
 수렴 여부는 거리공간에 의존한다. 예를 들어 $\langle 1/n \rangle$ 은 $[0,\,1]$ 에서 수렴하지만 $(0,\,1]$ 에서는 수렴하지 않는다.
 
@@ -62,7 +64,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_convergence_1}
+::: {#prp-MA_properties_of_convergence_1}
 
 거리공간 $X$ 에서 정의된 수열 $\langle a_k \rangle$ 에 대해 다음이 성립한다.
 
@@ -73,7 +75,7 @@ $$
 &emsp;($3$) 수렴하는 수열은 유계이다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -96,7 +98,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_convergence_2}
+::: {#prp-MA_properties_of_convergence_2}
 
 #### 수열과 극한점
 
@@ -108,7 +110,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -121,10 +123,9 @@ $$
 
 </br>
 
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_convergence_3}
+::: {#prp-MA_properties_of_convergence_3}
 
 $\mathbb{R}^n$ 에서 정의된 수열 $\langle a_k\rangle,\, \langle b_k \rangle$ 이 각각 $a,\,b$ 로 수렴할 때 다음이 성립한다.
 
@@ -140,7 +141,7 @@ $\mathbb{R}^n$ 에서 정의된 수열 $\langle a_k\rangle,\, \langle b_k \rangl
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -188,7 +189,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_in_Euclidean_space}
+::: {#prp-MA_convergence_in_Euclidean_space}
 
 $\mathbb{R}^k$ 에서의 수열 $\boldsymbol{x}_n = ( x_{1, n},\ldots,\, x_{k, n})$ 에 대해 $\boldsymbol{x}_n$ 이 $\boldsymbol{x} = (x_1,\ldots,\,x_k)$ 로 수렴할 필요충분조건은
 
@@ -200,7 +201,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -222,7 +223,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_monotonic_sequence}
+::: {#def-MA_monotonic_sequence}
 
 #### 단조 수열
 
@@ -233,13 +234,13 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_bounded_monotonic_sequence}
+::: {#prp-MA_bounded_monotonic_sequence}
 
 유계인 단조수열은 수렴한다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -251,7 +252,7 @@ $\langle a_n\rangle$ 이 단조 감소 수열이며 유계라고 하자. $a_1$ �
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_subsequence}
+::: {#def-MA_subsequence}
 
 #### 부분수열
 
@@ -262,44 +263,44 @@ $\langle a_n\rangle$ 이 단조 감소 수열이며 유계라고 하자. $a_1$ �
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_subsequence}
+::: {#prp-MA_properties_of_subsequence}
 
 거리공간 $X$ 의 옹골집합 $K$ 에서 정의된 수열을 생각하자. 이 수열의 어떤 부분 수열은 $K$ 의 점으로 수렴한다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 $\langle a_n \rangle \subset K$ 라고 하자. $\langle a_n \rangle$ 이 유한집합이면 최소한 하나의 $a\in \langle a_n \rangle$ 에 대해 $\{k: a_k = a\}$ 가 무한집합이므로 이 인덱스의 집합으로 부분수열을 만들면 $a$ 로 수렴하는 부분수열이다. 
 
-이제 $\langle a_n \rangle$ 이 무한집합일 경우에 대해 생각하기로 하자. @prp-part2_infinite_subset_in_compact_set_has_limit_point_in_compact_set 의해 $\langle a_n \rangle$ 은 극한점을 가지며, 따라서 $k\in \mathbb{Z}_+$ 에 대해 $N(a,\, 1/k)\cap \langle a_n \rangle$ 은 무한개의 원소를 갖는다. $p_1=1$ 로 하고  $N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)$  가운데 $a_m$ 을 골라 $p_{k+1}= m$ 이라고 하자. 그렇다면 $\langle a_{p_k}\rangle$ 은 $a$ 로 수렴하는 부분수열이다. $\square$
+이제 $\langle a_n \rangle$ 이 무한집합일 경우에 대해 생각하기로 하자. @prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set 의해 $\langle a_n \rangle$ 은 극한점을 가지며, 따라서 $k\in \mathbb{Z}_+$ 에 대해 $N(a,\, 1/k)\cap \langle a_n \rangle$ 은 무한개의 원소를 갖는다. $p_1=1$ 로 하고  $N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)$  가운데 $a_m$ 을 골라 $p_{k+1}= m$ 이라고 하자. 그렇다면 $\langle a_{p_k}\rangle$ 은 $a$ 로 수렴하는 부분수열이다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_properties_of_subsequence}
+::: {#cor-MA_properties_of_subsequence}
 $\mathbb{R}^n$ 에서 정의된 유계인 수열은 수렴하는 부분수열을 갖는다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
-유계인 수열을 포함하는 $n$-cell 은 옹골집합이므로 @prp-part2_properties_of_subsequence 에 의해 수렴하는 부분수열을 가진다. $\square$
+유계인 수열을 포함하는 $n$-cell 은 옹골집합이므로 @prp-MA_properties_of_subsequence 에 의해 수렴하는 부분수열을 가진다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_ubsequential_limit_forms_closed_subset}
+::: {#prp-MA_ubsequential_limit_forms_closed_subset}
 
 거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 의 부분수열의 극한의 집합은 닫힌 집합이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -316,18 +317,18 @@ $$
 
 </br>
 
-### $e$ {#sec-part2_e}
+### $e$ {#sec-MA_e}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_of_geometric_series}
+::: {#prp-MA_convergence_of_geometric_series}
 
 #### 등비급수
 
 $0 \le r < 1$ 일 때 $\displaystyle \sum_{k=0}^\infty r^k = \dfrac{1}{1-r}$ 로 수렴하며 $r\ge 1$ 이면 $\displaystyle \sum_{k=0}^\infty r^k$ 는 발산한다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -341,7 +342,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_e}
+::: {#exm-MA_e}
 
 #### $e$
 
@@ -398,12 +399,12 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_e_is_irrational}
+::: {#prp-MA_e_is_irrational}
 
 $e$ 는 무리수이다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -433,7 +434,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_series}
+::: {#def-MA_series}
 
 #### 코시 수열
 
@@ -454,7 +455,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_diameter}
+::: {#def-MA_diameter}
 
 #### 집합의 지름
 
@@ -462,7 +463,7 @@ $$
 
 $$
 \text{diam}(E):= \max \{\|x-y\|_X: x,\,y \in E\}. 
-$$ {#eq-part2_definition_of_diameter}
+$$ {#eq-MA_definition_of_diameter}
 
 
 ::: 
@@ -472,7 +473,7 @@ $$ {#eq-part2_definition_of_diameter}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_diameter}
+::: {#prp-MA_properties_of_diameter}
 
  거리공간 $X$ 를 생각하자. 
 
@@ -482,7 +483,7 @@ $$ {#eq-part2_definition_of_diameter}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -500,7 +501,7 @@ $$
 
 이므로 $\text{diam}(\overline{E}) = \text{diam}(E)$ 이다.
 
-($2$) $K = \bigcap K_n$ 이라고 하자. @prp-part2_finite_intesection_of_compact_sets 에 의해 $K \ne \varnothing$ 이다. $K$ 가 두개 이상의 원소로 이루어졌다면 $\text{diam}(K) >0$ 이며, 따라서 $\displaystyle \lim_{n \to \infty} \text{diam}(K_n) >0$ 이므로 가정에 위배된다. 따라서 $K$ 는 오직 하나의 원소로만 이루어진다. $\square$
+($2$) $K = \bigcap K_n$ 이라고 하자. @prp-MA_finite_intesection_of_compact_sets 에 의해 $K \ne \varnothing$ 이다. $K$ 가 두개 이상의 원소로 이루어졌다면 $\text{diam}(K) >0$ 이며, 따라서 $\displaystyle \lim_{n \to \infty} \text{diam}(K_n) >0$ 이므로 가정에 위배된다. 따라서 $K$ 는 오직 하나의 원소로만 이루어진다. $\square$
 
 :::
 
@@ -514,7 +515,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_cauchy_sequence}
+::: {#thm-MA_cauchy_sequence}
 
 #### 코시 수열의 성질 
 
@@ -528,11 +529,9 @@ $$
 
 &emsp;($4$) 옹골집합인 거리공간 $X$ 에서 정의된 코시 수열은 $X$ 위의 한 점으로 수렴한다.
 
-
-
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -554,7 +553,7 @@ $$
 
 이므로 $\langle a_n \rangle$ 은 $a$ 로 수렴한다. 
 
-($4$) @prp-part2_properties_of_subsequence 과 ($3$) 에 의해 성립한다. $\square$ 
+($4$) @prp-MA_properties_of_subsequence 과 ($3$) 에 의해 성립한다. $\square$ 
 
 :::
 
@@ -564,13 +563,12 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_cauchy_sequence_in_Rn}
+::: {#cor-MA_cauchy_sequence_in_Rn}
 
 $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 :::
-</div> 
 
-</br>
+</div> 
 
 ::: {.proof}
 
@@ -586,7 +584,7 @@ $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_complete_metic_space}
+::: {#def-MA_complete_metic_space}
 
 #### 완비 거리 공간
 
@@ -602,7 +600,7 @@ $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_diverge_to_infinite}
+::: {#def-MA_diverge_to_infinite}
 
 #### 무한대로 발산
 
@@ -627,7 +625,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_limsup_liminf}
+::: {#def-MA_limsup_liminf}
 
 #### 상극한과 하극한
 
@@ -648,7 +646,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_limsup}
+::: {#prp-MA_properties_of_limsup}
 
 유계인 실수열 $\langle a_n \rangle$ 의 상극한이 $a$ 일 때 다음이 성립한다.
 
@@ -660,7 +658,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -678,7 +676,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_liminf}
+::: {#prp-MA_properties_of_liminf}
 
 유계인 실수열 $\langle b_n \rangle$ 의 하극한이 $b$ 일 때 다음이 성립한다.
 
@@ -690,9 +688,13 @@ $$
 
 :::
 
-</div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</div></br>
 
-::: {#thm-part2_limsup_liminf_limit}
+수열의 극한과 상극한, 하극한은 아래의 관계가 성립한다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-MA_limsup_liminf_limit}
 
 실수열 $\langle a_n \rangle$ 에 대해 다음은 동치이다.
 
@@ -702,12 +704,12 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
-(1 $\implies$ 2) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies |a_n - a|<\varepsilon$ 이므로 @prp-part2_properties_of_limsup 과 @prp-part2_properties_of_liminf 를 만족한다.
+(1 $\implies$ 2) 임의의 $\varepsilon>0$ 에 대해 $n \ge N \implies |a_n - a|<\varepsilon$ 이므로 @prp-MA_properties_of_limsup 과 @prp-MA_properties_of_liminf 를 만족한다.
 
-(2 $\implies$ 1) @prp-part2_properties_of_limsup 과 @prp-part2_properties_of_liminf 각각의 1번 조건에 의해 $\displaystyle \lim_{n \to \infty}a_n = a$ 이다. $\square$
+(2 $\implies$ 1) @prp-MA_properties_of_limsup 과 @prp-MA_properties_of_liminf 각각의 1번 조건에 의해 $\displaystyle \lim_{n \to \infty}a_n = a$ 이다. $\square$
 
 :::
 
@@ -717,7 +719,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_sequences}
+::: {#exm-MA_sequences}
 
 #### 중요한 수열들
 
@@ -776,15 +778,15 @@ $$
 </div></br>
 
 
-## 급수의 수렴과 발산 {#sec-part2_convergence_of_series}
+## 급수의 수렴과 발산 {#sec-MA_convergence_of_series}
 
 지금부터 다룰 수열과 급수는 $\mathbb{C}^1$ 에서 정의된 수열과 급수이다. $\mathbb{R}^n$ 에서의 급수에 대해서는 별도로 다루기로 한다.
 
-### 코시 판정법 
+### 코시 판정법 {#sec-MA_cauchy_criteria}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_convergence_of_series_1}
+::: {#thm-MA_convergence_of_series_1}
 
 #### 코시 판정법 {#sec-cauchy_criterion}
 
@@ -798,16 +800,16 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
-$s_n = \displaystyle \sum_{k=1}^n a_k$ 라고 하면 위의 조건은 $s_m - s_{n-1}$ 인 코시수열이 된다. @thm-part2_cauchy_sequence 을 보라. $\square$
+$s_n = \displaystyle \sum_{k=1}^n a_k$ 라고 하면 위의 조건은 $s_m - s_{n-1}$ 인 코시수열이 된다. @thm-MA_cauchy_sequence 을 보라. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_convergence_of_series_2}
+::: {#cor-MA_convergence_of_series_2}
 
 $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
@@ -816,23 +818,23 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: {.proof}
 
-@thm-part2_convergence_of_series_1 에서 $m=n$ 일 경우.
+@thm-MA_convergence_of_series_1 에서 $m=n$ 일 경우.
 
 ::: 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_partial_sum_of_nonnegative_sequence}
+::: {#prp-MA_partial_sum_of_nonnegative_sequence}
 
 음수가 아닌 항으로 이루어진 수열의 급수가 수렴할 필요충분조건은 수열의 부분합이 유계인 수열을 이루는 것이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof} 
 
-음수가 아닌 항으로 이루어진 수열의 급수는 단조 증가 수열이다. 단조증가 수열이 유계이면 수렴하며(@prp-part2_bounded_monotonic_sequence), 수열이 수렴하면 유계이다. $\square$
+음수가 아닌 항으로 이루어진 수열의 급수는 단조 증가 수열이다. 단조증가 수열이 유계이면 수렴하며(@prp-MA_bounded_monotonic_sequence), 수열이 수렴하면 유계이다. $\square$
 
 :::
 
@@ -840,7 +842,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_absolute_convergence}
+::: {#def-MA_absolute_convergence}
 
 #### 절대수렴 
 
@@ -851,7 +853,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_of_series_3}
+::: {#prp-MA_convergence_of_series_3}
 
 수열 $\langle a_k\rangle,\, \langle b_k\rangle$ 에 대해
 
@@ -865,9 +867,9 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: {.proof}
 
-($1$) 코시 판정법(@thm-part2_convergence_of_series_1) 에 의해 $\sum_k b_k$ 이 수렴하면 임의의 $\varepsilon>0$ 에 대해 $N \in \mathbb{Z}_+$ 이 존재하여 $m\ge n \ge N$ 이면 $\displaystyle \sum_{k=n}^m b_k < \varepsilon$ 이며, 따라서 $\displaystyle\sum_{k=n}^m a_k <\varepsilon$ 이다.
+($1$) 코시 판정법(@thm-MA_convergence_of_series_1) 에 의해 $\sum_k b_k$ 이 수렴하면 임의의 $\varepsilon>0$ 에 대해 $N \in \mathbb{Z}_+$ 이 존재하여 $m\ge n \ge N$ 이면 $\displaystyle \sum_{k=n}^m b_k < \varepsilon$ 이며, 따라서 $\displaystyle\sum_{k=n}^m a_k <\varepsilon$ 이다.
 
-($2$) $\sum_k a_k$ 이 수렴한다면 코시 판정법(@thm-part2_convergence_of_series_1) 에 의해 $\sum_k b_k$ 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 $\sum a_k$ 은 발산한다. $\square$
+($2$) $\sum_k a_k$ 이 수렴한다면 코시 판정법(@thm-MA_convergence_of_series_1) 에 의해 $\sum_k b_k$ 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 $\sum a_k$ 은 발산한다. $\square$
 
 :::
 
@@ -877,7 +879,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 ### 음수가 아닌 수로 이루어진 급수
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_series_of_power_of_2}
+::: {#prp-MA_series_of_power_of_2}
 수열 $\langle a_k\rangle$ 에 대해 $a_1 \ge a_2 \ge \cdots \ge 0$ 일 때 다음은 동치이다.
 
 &emsp;($1$) $\displaystyle \sum_{k=1}^\infty a_k$ 는 수렴한다.
@@ -927,7 +929,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_of_1_over_n_p}
+::: {#prp-MA_convergence_of_1_over_n_p}
 
 $\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}$ 는 $p>1$ 일 때 수렴하며 그 외에는 발산한다.
 :::
@@ -936,29 +938,29 @@ $\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}$ 는 $p>1$ 일 때 수렴하며 
 
 ::: {.proof}
 
-$p \le 0$ 이면 $k^p\ge 1$ 이며, 따라서 $\displaystyle \lim_{k\to \infty}\dfrac{1}{k^p} \ne 0$ 이다. @cor-part2_convergence_of_series_2 에 의해 발산한다. $p>0$ 인 경우 @prp-part2_series_of_power_of_2 를 사용하여 증명 할 수 있다. 
+$p \le 0$ 이면 $k^p\ge 1$ 이며, 따라서 $\displaystyle \lim_{k\to \infty}\dfrac{1}{k^p} \ne 0$ 이다. @cor-MA_convergence_of_series_2 에 의해 발산한다. $p>0$ 인 경우 @prp-MA_series_of_power_of_2 를 사용하여 증명 할 수 있다. 
 
 $$
 \sum_{k=0}^\infty 2^k \cdot \dfrac{1}{2^{kp}} = \sum_{k=0}^\infty 2^{(1-p)k}
 $$
 
-이며 $2^{(1-p)}<1 \iff p>1$ 이므로 @prp-part2_convergence_of_geometric_series 와 @prp-part2_series_of_power_of_2 에 의해 $p>1$ 일 때만 수렴하며 나머지 경우에는 발산한다. $\square$
+이며 $2^{(1-p)}<1 \iff p>1$ 이므로 @prp-MA_convergence_of_geometric_series 와 @prp-MA_series_of_power_of_2 에 의해 $p>1$ 일 때만 수렴하며 나머지 경우에는 발산한다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_convergence_of_series_1}
+::: {#exm-MA_convergence_of_series_1}
 
 급수 $\displaystyle \sum_{k=2}^\infty \dfrac{1}{k(\log k)^p}$ 는 $p>1$ 에서 수렴하며 나머지 경우에는 발산함을 보일 수 있다.
 
-우리는 $k>1 \implies \log k > 0$ 이며 $\log (k)$ 이 단조증가함수라는 것을 안다. 따라서 $p>0$ 에 대해  $1/(k (\log (k)))^p$ 는 단조감소수열므로 @prp-part2_series_of_power_of_2 를 사용 할 수 있다.
+우리는 $k>1 \implies \log k > 0$ 이며 $\log (k)$ 이 단조증가함수라는 것을 안다. 따라서 $p>0$ 에 대해  $1/(k (\log (k)))^p$ 는 단조감소수열므로 @prp-MA_series_of_power_of_2 를 사용 할 수 있다.
 
 $$
 \sum_{k=1}^\infty 2^k \cdot \dfrac{1}{2^k (\log (2^k))^p} = \sum_{k=1}^\infty \dfrac{1}{(k \log 2)^p} = \dfrac{1}{(\log 2)^p} \sum_{k=1}^\infty \dfrac{1}{k^p}
 $$
 
-이므로 @prp-part2_convergence_of_1_over_n_p 에 의해 $p>1$ 일 때 수렴하고 $0<p\le 1$ 일 때 발산한다.
+이므로 @prp-MA_convergence_of_1_over_n_p 에 의해 $p>1$ 일 때 수렴하고 $0<p\le 1$ 일 때 발산한다.
 
 $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
@@ -966,11 +968,11 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
 </div></br>
 
-### 근 판정법 {#sec-part2_root_criteria}
+### 근 판정법 {#sec-MA_root_criteria}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_series_root_test}
+::: {#thm-MA_series_root_test}
 
 급수 $\sum a_k$ 에 대해 $\displaystyle \alpha = \limsup_{k \to \infty} \sqrt[k]{|a_k|}$ 이라 할 때, 
 
@@ -985,22 +987,22 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 </div></br>
 
 ::: {.proof}
-($1$) $\alpha<1$ 이라 하자. $\alpha< \beta < 1$ 인 임의의 $\beta$ 를 생각하자. @prp-part2_properties_of_limsup 에 의해 $k\ge N \implies \sqrt[k]{|a_k|}<\beta$ 인 자연수 $N$ 이 존재한다. 즉 $k \ge N \implies |a_n|< \beta^n$ 이므로 $\sum_k a_k$ 는 절대수렴한다.
+($1$) $\alpha<1$ 이라 하자. $\alpha< \beta < 1$ 인 임의의 $\beta$ 를 생각하자. @prp-MA_properties_of_limsup 에 의해 $k\ge N \implies \sqrt[k]{|a_k|}<\beta$ 인 자연수 $N$ 이 존재한다. 즉 $k \ge N \implies |a_n|< \beta^n$ 이므로 $\sum_k a_k$ 는 절대수렴한다.
 
-($2$) $\alpha>1$ 이라 하자. @prp-part2_properties_of_limsup 에 의해 $1<\beta<\alpha$ 일 때 무한히 많은 $k$ 에 대해 $|\alpha_k|> \beta^k > 1$ 이다. 따라서 $\sum_k a_k$ 는 발산한다.
+($2$) $\alpha>1$ 이라 하자. @prp-MA_properties_of_limsup 에 의해 $1<\beta<\alpha$ 일 때 무한히 많은 $k$ 에 대해 $|\alpha_k|> \beta^k > 1$ 이다. 따라서 $\sum_k a_k$ 는 발산한다.
 
-($3$) @exm-part2_sequences 에서 $\displaystyle \lim_{k \to \infty} \sqrt[k]{k}=1$ 임을 보였다. 따라서 $\displaystyle \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k}} = \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k^2}}=1$ 이다. 그런데 $\alpha=1$ 인 두 수열 $\sum 1/k,\, \sum 1/k^2$ 은 각각 발산하고 수렴한다. (@prp-part2_convergence_of_1_over_n_p) $\square$
+($3$) @exm-MA_sequences 에서 $\displaystyle \lim_{k \to \infty} \sqrt[k]{k}=1$ 임을 보였다. 따라서 $\displaystyle \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k}} = \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k^2}}=1$ 이다. 그런데 $\alpha=1$ 인 두 수열 $\sum 1/k,\, \sum 1/k^2$ 은 각각 발산하고 수렴한다. (@prp-MA_convergence_of_1_over_n_p) $\square$
 
 :::
 
 
 </br>
 
-### 비율 판정법 {#sec-part2_ratio_criteria}
+### 비율 판정법 {#sec-MA_ratio_criteria}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_series_ratio_test}
+::: {#thm-MA_series_ratio_test}
 
 급수 $\sum_k a_k$ 에 대해 
 
@@ -1014,14 +1016,14 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
 ::: {.proof}
 
-($1$) $\displaystyle \limsup_{k \to \infty} \left|\dfrac{a_{k+1}}{a_k}\right| =\alpha$ 라고 하자. 임의의 $\alpha <\beta< 1$ 인 $\beta$ 에 대해 $k \ge N_0 \implies \left|\dfrac{a_{k+1}}{a_k}\right|<\beta$ 인 $N_0 \in \mathbb{Z}_+$ 이 존재한다(@prp-part2_properties_of_limsup). 임의의 $m\in \mathbb{Z}_+$ 에 대해 $|a_{N_0 + m}|< \beta^m |a_{N_0}|$ 이므로 $\sum_k a_k$ 는 수렴한다. 
+($1$) $\displaystyle \limsup_{k \to \infty} \left|\dfrac{a_{k+1}}{a_k}\right| =\alpha$ 라고 하자. 임의의 $\alpha <\beta< 1$ 인 $\beta$ 에 대해 $k \ge N_0 \implies \left|\dfrac{a_{k+1}}{a_k}\right|<\beta$ 인 $N_0 \in \mathbb{Z}_+$ 이 존재한다(@prp-MA_properties_of_limsup). 임의의 $m\in \mathbb{Z}_+$ 에 대해 $|a_{N_0 + m}|< \beta^m |a_{N_0}|$ 이므로 $\sum_k a_k$ 는 수렴한다. 
 
-($2$) $k \ge N \implies |a_{k+1}|\ge |a_k|$ 이면 $\displaystyle \lim_{k \to \infty}a_k \ne 0$ 이므로 $\sum_k a_k$ 은 발산한다 (@cor-part2_convergence_of_series_2). $\square$
+($2$) $k \ge N \implies |a_{k+1}|\ge |a_k|$ 이면 $\displaystyle \lim_{k \to \infty}a_k \ne 0$ 이므로 $\sum_k a_k$ 은 발산한다 (@cor-MA_convergence_of_series_2). $\square$
 :::
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_convergence_test_of_series}
+::: {#exm-MA_convergence_test_of_series}
 
 근 판정법으로 판단할수 있지만 비율판정법으로는 판단 할 수 없는 경우를 보자.
 
@@ -1057,7 +1059,7 @@ $$
 
 </div></br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_root_test_and_ratio_test}
+::: {#prp-MA_root_test_and_ratio_test}
 
 양수로 이루어진 수열 $\langle a_k \rangle$ 에 대해 다음이 성립한다.
 
@@ -1083,7 +1085,7 @@ $$
 k \ge N \implies \dfrac{a_{k+1}}{a_k} \ge \alpha - \varepsilon > 0
 $$ 
 
-이므로(@prp-part2_properties_of_limsup), $m\in \mathbb{Z}_+$ 에 대해 $a_{N+m} \ge a_N(\alpha - \varepsilon)^m$ 이며, 
+이므로(@prp-MA_properties_of_limsup), $m\in \mathbb{Z}_+$ 에 대해 $a_{N+m} \ge a_N(\alpha - \varepsilon)^m$ 이며, 
 
 $$
 k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\right)^{1/k} ( \alpha - \varepsilon)
@@ -1105,7 +1107,7 @@ $$
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_convergence_of_some_series}
+::: {#exm-MA_convergence_of_some_series}
 
 다음 급수의 수렴 여부를 알아보자.
 
@@ -1153,11 +1155,11 @@ $a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴�
 
 </br>
 
-### 멱급수 {#sec-part2_power_series}
+### 멱급수 {#sec-MA_power_series}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_power_series}
+::: {#def-MA_power_series}
 
 #### 멱급수
 
@@ -1168,7 +1170,7 @@ $a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴�
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_radius_of_convergence}
+::: {#prp-MA_radius_of_convergence}
 
 멱급수 $\sum a_n z^n$ 에 대해 
 
@@ -1187,7 +1189,7 @@ $$
 \sqrt[n]{|a_n z^{n}|} = |z|\sqrt[n]{|a_n|}
 $$
 
-이므로 근 판정법(@thm-part2_series_root_test) 을 사용하면 증명된다. $\square$
+이므로 근 판정법(@thm-MA_series_root_test) 을 사용하면 증명된다. $\square$
 :::
 
 </br>
@@ -1198,14 +1200,14 @@ $$
 
 #### 수렴반경
 
-멱급수 $\sum a_n z^n$ 에 대해 @prp-part2_radius_of_convergence 에서의 $R$ 을 **수렴 반경(radius of convergence)** 이라고 한다.
+멱급수 $\sum a_n z^n$ 에 대해 @prp-MA_radius_of_convergence 에서의 $R$ 을 **수렴 반경(radius of convergence)** 이라고 한다.
 
 ::: 
 :::
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_convergence_of_radius}
+::: {#exm-MA_convergence_of_radius}
 
 다음 멱급수에 대한 수렴반경 $R$ 은 다음과 같다.
 
@@ -1220,7 +1222,7 @@ $$
 
 ($1$) $\displaystyle \limsup_{n \to \infty} n = \infty$ 
 
-($2$) 비율판정법을 사용한다. $c_n = \dfrac{z^n}{n!}$ 이라고 하면, $\displaystyle \limsup_{n \to \infty} \dfrac{c_{n+1}}{c_n} = \lim_{n \to \infty} \dfrac{|z|}{n+1} = 0$ 이므로 @prp-part2_root_test_and_ratio_test 에 의해 $R= +\infty$ 이다.
+($2$) 비율판정법을 사용한다. $c_n = \dfrac{z^n}{n!}$ 이라고 하면, $\displaystyle \limsup_{n \to \infty} \dfrac{c_{n+1}}{c_n} = \lim_{n \to \infty} \dfrac{|z|}{n+1} = 0$ 이므로 @prp-MA_root_test_and_ratio_test 에 의해 $R= +\infty$ 이다.
 
 ($3$), ($4$) 는 쉽게 보일 수 있기때문에 생략한다. 
 
@@ -1233,7 +1235,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_partial_summation_formula}
+::: {#prp-MA_partial_summation_formula}
 
 두 수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 에 대해 $\displaystyle A_n = \sum_{k=0}^n a_k$ 라 하고 $A_{-1}=0$ 이라 하자. $0 \le p \le q$ 일 때
 
@@ -1264,7 +1266,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_of_product_of_sequences}
+::: {#prp-MA_convergence_of_product_of_sequences}
 
 수열 $\langle a_n \rangle,\, \langle b_n \rangle$ 이 아래의 두 조건을 만족하면 $\sum_n a_n b_n$ 은 수렴한다.
 
@@ -1287,7 +1289,7 @@ $$
 \end{aligned}
 $$
 
-이므로 @thm-part2_convergence_of_series_1 (코시 판정법) 에 의해 $\sum_n a_n b_n$ 은 수렴한다. $\square$
+이므로 @thm-MA_convergence_of_series_1 (코시 판정법) 에 의해 $\sum_n a_n b_n$ 은 수렴한다. $\square$
 
 
 :::
@@ -1296,7 +1298,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_summation_of_series}
+::: {#prp-MA_summation_of_series}
 
 $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한 상수 $c$ 에 대해 $\sum ca_n = cA$ 이다.
 
@@ -1312,7 +1314,7 @@ $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_cauchy_product}
+::: {#def-MA_cauchy_product}
 
 #### 코시 곱
 
@@ -1332,7 +1334,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_of_cauchy_product}
+::: {#prp-MA_convergence_of_cauchy_product}
 
 급수 $\sum a_n,\, \sum b_n$ 이
 
@@ -1390,7 +1392,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_rearangement_of_series}
+::: {#def-MA_rearangement_of_series}
 
 #### 재배열 급수
 
@@ -1401,7 +1403,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_convergence_of_rearanged_series}
+::: {#prp-MA_convergence_of_rearanged_series}
 
 양의 실수열 $\langle a_n \rangle$ 에 대해 $\sum a_n$ 이 $\alpha$ 로 수렴하면 재배열 급수도 $\alpha$ 로 수렴한다. $\sum a_n$ 이 발산하면 재배열 급수도 발산한다.
 
@@ -1428,7 +1430,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_alternating_series}
+::: {#prp-MA_alternating_series}
 
 #### 교대 급수 판정법
 
@@ -1456,7 +1458,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_1_6_7}
+::: {#exr-MA_KKK_1_6_7}
 
 #### 김김계 1.6.7
 
@@ -1477,7 +1479,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_2_6_11_12}
+::: {#exr-MA_KKK_2_6_11_12}
 
 #### 김김계 1.6.11, 1.6.12
 
@@ -1526,7 +1528,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_2_7_9}
+::: {#exr-MA_KKK_2_7_9}
 
 ### 김김계 2.7.9
 
@@ -1543,7 +1545,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_3}
+::: {#exr-MA_rudin_3_3}
 
 #### Rudin 3.3
 
@@ -1566,7 +1568,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_4}
+::: {#exr-MA_rudin_3_4}
 
 #### Rudin 3.4
 
@@ -1601,7 +1603,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_5}
+::: {#exr-MA_rudin_3_5}
 
 #### Rudin 3.5
 
@@ -1622,7 +1624,7 @@ $$
 c=\limsup_{n \to \infty} (a_n + b_n) > \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n = a+b
 $$
 
-임을 가정하자. $r= \dfrac{c-(a+b)}{2}$ 라 하면 $r>0$ 이다. @prp-part2_properties_of_limsup 에 의해 $\varepsilon < \dfrac{r}{2}$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 이 존재하여,
+임을 가정하자. $r= \dfrac{c-(a+b)}{2}$ 라 하면 $r>0$ 이다. @prp-MA_properties_of_limsup 에 의해 $\varepsilon < \dfrac{r}{2}$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 이 존재하여,
 
 $$
 n \ge N \implies a_n< a+\varepsilon,\, b_n < b+\varepsilon
@@ -1647,7 +1649,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_7}
+::: {#exr-MA_rudin_3_7}
 
 #### Rudin 3.7
 
@@ -1671,7 +1673,7 @@ $$
 \sum_n \dfrac{\sqrt{a_n}}{n} \le \sqrt{\sum_n a_n} \sqrt{\sum_n \dfrac{1}{n^2}}
 $$
 
-이다. $\sqrt{\sum_n a_n}$ 는 문제의 조건에 의해 수렴하며, $\sqrt{\sum_n \dfrac{1}{n^2}}$ 가 수렴함은 @prp-part2_convergence_of_1_over_n_p 로부터 안다.
+이다. $\sqrt{\sum_n a_n}$ 는 문제의 조건에 의해 수렴하며, $\sqrt{\sum_n \dfrac{1}{n^2}}$ 가 수렴함은 @prp-MA_convergence_of_1_over_n_p 로부터 안다.
 
 :::
 
@@ -1679,7 +1681,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_8}
+::: {#exr-MA_rudin_3_8}
 
 #### Rudin 3.8
 
@@ -1697,7 +1699,7 @@ $$
 \sum_n a_n b_n = \sum_{n} a_n (b-c_n) = b\sum_n a_n - \sum_n a_n c_n 
 $$
 
-이며 @prp-part2_convergence_of_product_of_sequences 에 의해 $\sum_n a_n c_n$ 은 수렴하므로 위 식은 수렴하는 두 수열의 차이므로 수렴한다. $b_n$ 이 단조감소수열이라면 $c_n = b_n -b$ 는 $0$ 으로 수렴하는 단조감소수열이고 
+이며 @prp-MA_convergence_of_product_of_sequences 에 의해 $\sum_n a_n c_n$ 은 수렴하므로 위 식은 수렴하는 두 수열의 차이므로 수렴한다. $b_n$ 이 단조감소수열이라면 $c_n = b_n -b$ 는 $0$ 으로 수렴하는 단조감소수열이고 
 
 $$
 \sum_n a_n b_n = \sum_{n} a_n (c_n + b) = b\sum_n a_n + \sum_n a_n c_n 
@@ -1712,7 +1714,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_9}
+::: {#exr-MA_rudin_3_9}
 
 #### Rudin 3.9
 
@@ -1738,7 +1740,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_11}
+::: {#exr-MA_rudin_3_11}
 
 #### Rudin 3.11
 
@@ -1820,7 +1822,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_12}
+::: {#exr-MA_rudin_3_12}
 
 #### Rudin 3.12
 
@@ -1876,7 +1878,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_13}
+::: {#exr-MA_rudin_3_13}
 
 #### Rudin 3.13
 
@@ -1916,7 +1918,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_kkk_2_7_11}
+::: {#exr-MA_kkk_2_7_11}
 
 #### 김김계 2.7.11
 
@@ -1963,7 +1965,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_kkk_2_7_12}
+::: {#exr-MA_kkk_2_7_12}
 
 #### 김김계 2.7.12
 
@@ -2005,7 +2007,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_kkk_2_7_13}
+::: {#exr-MA_kkk_2_7_13}
 
 #### 김김계 2.7.13
 
@@ -2063,7 +2065,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_16}
+::: {#exr-MA_rudin_3_16}
 
 #### Rudin 3.16
 
@@ -2127,7 +2129,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_3_17}
+::: {#exr-MA_rudin_3_17}
 
 #### Rudin 3.17
 
@@ -2143,7 +2145,7 @@ $$
 
 &emsp;($c$) $\displaystyle \lim_{n \to \infty} x_n = \sqrt{\alpha}$ 임을 보여라.
 
-&emsp;($d$) 수렴 속도를 @exr-part2_rudin_3_16 과 비교하라.
+&emsp;($d$) 수렴 속도를 @exr-MA_rudin_3_16 과 비교하라.
 
 :::
 
@@ -2179,7 +2181,7 @@ $$
 
 $$
 x_{n+2} = \dfrac{\alpha+x_{n+1}}{1+x_{n+1}}= \dfrac{\alpha + (\alpha+x_n)/(1+x_n)}{1+ (\alpha+x_n)/(1+x_n)} = x_n + \dfrac{\alpha-x_n^2}{x_n + (\alpha+1)/2}
-$$ {#eq-part2_rudin_3_17}
+$$ {#eq-MA_rudin_3_17}
 
 로부터 $x_n>\sqrt{\alpha}$ 이면 $x_{n+2}<x_n$ 임을 안다. 즉
 
@@ -2189,7 +2191,7 @@ $$
 
 이다.
 
-($b$) $x_2<\sqrt{\alpha}$ 이므로 $x_{2n}<\sqrt{\alpha}$ 임을 안다. @eq-part2_rudin_3_17 로부터 $x_{n+2}> x_n$ 임을 안다. 즉
+($b$) $x_2<\sqrt{\alpha}$ 이므로 $x_{2n}<\sqrt{\alpha}$ 임을 안다. @eq-MA_rudin_3_17 로부터 $x_{n+2}> x_n$ 임을 안다. 즉
 
 $$
 x_2 < x_4 < x_6 <\cdots < \sqrt{\alpha}
@@ -2197,7 +2199,7 @@ $$
 
 이다. 
 
-($c$) $\langle x_{2n}\rangle$ 과 $\langle x_{2n-1}\rangle$ 이 모두 유계인 단조수열이므로 수렴한다. 수렴하는 지점에서 @eq-part2_rudin_3_17 로부터
+($c$) $\langle x_{2n}\rangle$ 과 $\langle x_{2n-1}\rangle$ 이 모두 유계인 단조수열이므로 수렴한다. 수렴하는 지점에서 @eq-MA_rudin_3_17 로부터
 
 $$
 x= x + \dfrac{\alpha-x^2}{x+ (\alpha+1)/2}
@@ -2226,6 +2228,6 @@ $$
 \varepsilon_5 < 0.060,\qquad \varepsilon_6 < 0.044
 $$
 
-이다. @exr-part2_rudin_3_16 보다 수렴 속도가 매우 느림을 알 수 있다.
+이다. @exr-MA_rudin_3_16 보다 수렴 속도가 매우 느림을 알 수 있다.
 
 :::

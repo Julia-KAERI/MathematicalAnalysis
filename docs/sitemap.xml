@@ -5,79 +5,71 @@
     <lastmod>2024-10-06T05:28:31.081Z</lastmod>
   </url>
   <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/part1.html</loc>
+    <lastmod>2024-10-06T05:28:31.082Z</lastmod>
+  </url>
+  <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_1_basic_of_naive_set_theory.html</loc>
-    <lastmod>2024-10-06T05:28:31.081Z</lastmod>
+    <lastmod>2025-06-25T04:41:24.117Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_2_functions_and_relations.html</loc>
-    <lastmod>2024-10-06T05:28:31.081Z</lastmod>
+    <lastmod>2025-06-25T04:52:12.064Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_3_numbers.html</loc>
-    <lastmod>2024-10-06T05:28:31.082Z</lastmod>
+    <lastmod>2025-06-25T05:01:43.746Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_4_cartesian_products.html</loc>
-    <lastmod>2024-10-06T05:28:31.082Z</lastmod>
+    <lastmod>2025-06-25T05:05:38.127Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_5_finite_sets.html</loc>
-    <lastmod>2024-10-06T05:28:31.082Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html</loc>
-    <lastmod>2024-11-12T13:33:45.837Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_2_sequences_and_series.html</loc>
-    <lastmod>2024-10-13T02:59:56.604Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html</loc>
-    <lastmod>2024-10-20T11:42:01.169Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html</loc>
-    <lastmod>2024-10-19T04:35:11.212Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html</loc>
-    <lastmod>2024-10-19T05:02:01.216Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_1_functions_on_Euclidean_space.html</loc>
-    <lastmod>2024-11-17T10:16:09.772Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_2_differentiation_of_manifolds.html</loc>
-    <lastmod>2024-11-08T03:49:19.655Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_3_integration_of_manifolds.html</loc>
-    <lastmod>2025-01-11T08:22:33.879Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/figures/figure01.html</loc>
-    <lastmod>2024-11-17T03:33:19.295Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/references.html</loc>
-    <lastmod>2024-11-03T02:04:25.859Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/part1.html</loc>
-    <lastmod>2024-10-06T05:28:31.082Z</lastmod>
+    <lastmod>2025-06-25T05:07:43.294Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/part2.html</loc>
     <lastmod>2024-10-06T05:28:31.083Z</lastmod>
   </url>
   <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html</loc>
+    <lastmod>2025-06-25T06:36:31.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_2_sequences_and_series.html</loc>
+    <lastmod>2025-06-25T06:52:26.335Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html</loc>
+    <lastmod>2025-06-25T04:35:01.153Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html</loc>
+    <lastmod>2025-06-25T04:35:01.148Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html</loc>
+    <lastmod>2025-06-25T04:35:01.142Z</lastmod>
+  </url>
+  <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/part3.html</loc>
     <lastmod>2024-10-19T07:42:04.516Z</lastmod>
   </url>
   <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/figures/figures.html</loc>
-    <lastmod>2024-10-06T05:28:31.081Z</lastmod>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_1_functions_on_Euclidean_space.html</loc>
+    <lastmod>2025-06-25T04:35:54.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_2_differentiation_of_manifolds.html</loc>
+    <lastmod>2025-06-25T04:38:22.133Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_3_integration_of_manifolds.html</loc>
+    <lastmod>2025-06-25T04:37:54.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/references.html</loc>
+    <lastmod>2024-11-03T02:04:25.859Z</lastmod>
   </url>
 </urlset>

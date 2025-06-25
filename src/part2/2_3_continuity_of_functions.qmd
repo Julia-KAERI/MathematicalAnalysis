@@ -10,11 +10,11 @@ crossref:
 
 ## 함수의 극한과 연속
 
-### 함수의 극한과 연속 {#sec-part2_limit_and_continuity_of_functions}
+### 함수의 극한과 연속 {#sec-MA_limit_and_continuity_of_functions}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_limits_and_continuity_of_functions}
+::: {#def-MA_limits_and_continuity_of_functions}
 
 #### 함수의 극한과 연속
 
@@ -38,9 +38,9 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_limit_and_convergent_series}
+::: {#prp-MA_limit_and_convergent_series}
 
-$X,\, Y,\, E,\, f$ 가 @def-part2_limits_and_continuity_of_functions 와 같다고 하자. 이 때 아래 두 명제는 동치이다. 
+$X,\, Y,\, E,\, f$ 가 @def-MA_limits_and_continuity_of_functions 와 같다고 하자. 이 때 아래 두 명제는 동치이다. 
 
 &emsp;($1$) $f$ 는 $x_0$ 에서 연속이다.
    
@@ -71,7 +71,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_uniqueness_of_limit}
+::: {#cor-MA_uniqueness_of_limit}
 
 함수 $f$ 가 $x_0$ 에서 극한을 갖는다면, 그 극한은 유일하다. 
 
@@ -82,7 +82,7 @@ $$
 
 ::: {.proof}
 
-@prp-part2_properties_of_convergence_1 의 ($2$) 에서 보였듯이 수열의 극한은 유일하며 $\langle x_n \rangle \to x_0$ 인 수열을 잡으면 @prp-part2_limit_and_convergent_series 에 의해 그 극한값은 $\displaystyle \lim_{n \to \infty} f(x_n)= f(x_0)$ 이다. $\square$
+@prp-MA_properties_of_convergence_1 의 ($2$) 에서 보였듯이 수열의 극한은 유일하며 $\langle x_n \rangle \to x_0$ 인 수열을 잡으면 @prp-MA_limit_and_convergent_series 에 의해 그 극한값은 $\displaystyle \lim_{n \to \infty} f(x_n)= f(x_0)$ 이다. $\square$
 
 :::
 
@@ -90,7 +90,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_Q_and_R_continuity}
+::: {#exr-MA_Q_and_R_continuity}
 
 두 연속함수 $f,\,g:\mathbb{R}\to\mathbb{R}$ 이 각각의 $q\in \mathbb{Q}$ 에서 함수값이 같다면 $f=g$ 임을 보여라.
 
@@ -109,7 +109,7 @@ $x\in \mathbb{R}\backslash \mathbb{Q}$ 일 때 $x$ 로 수렴하는 유리수열
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_basic_properties_of_limit_of_functions}
+::: {#prp-MA_basic_properties_of_limit_of_functions}
 거리공간 $X$ 와 $E\subset X$ 에 대해 $f,\,g$ 가 $E \mapsto \mathbb{C}$ 함수이며 $x_0$ 가 $E$ 의 극한점이고 $\displaystyle \lim_{x\to x_0} f(x) = a$, $\displaystyle \lim_{x \to x_0} g(x) = b$ 일 때 다음이 성립한다. 
 
 &emsp; (1) $\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b$, 
@@ -122,12 +122,12 @@ $x\in \mathbb{R}\backslash \mathbb{Q}$ 일 때 $x$ 로 수렴하는 유리수열
 </div></br>
 
 ::: {.proof}
-@prp-part2_limit_and_convergent_series 에 의해 $\langle x_n \rangle \to x_0$ 인 수열 $x_n$ 을 생각하자. @prp-part2_properties_of_convergence_3 를 이용하여 증명 할 수 있다. $\square$
+@prp-MA_limit_and_convergent_series 에 의해 $\langle x_n \rangle \to x_0$ 인 수열 $x_n$ 을 생각하자. @prp-MA_properties_of_convergence_3 를 이용하여 증명 할 수 있다. $\square$
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_continuity_of_composited_function}
+::: {#prp-MA_continuity_of_composited_function}
 
 거리공간 $X,\,Y,\,Z$ 에서 $f:X \to Y,\, g:f(X) \to Z$ 이며 $h = g \circ f$ 라 하자. $f$ 가 $x_0\in X$ 에서 연속이며 $g$ 가 $f(x_0)$ 에서 연속이면 $h$ 도 $x_0$ 에서 연속이다.
 
@@ -161,14 +161,14 @@ $$
 </br>
 
 
-### 함수의 연속과 역사상 {#sec-part2_continuity_and_inverse_image}
+### 함수의 연속과 역사상 {#sec-MA_continuity_and_inverse_image}
 
 
 함수의 상과 역상의 정의, 그리고 이에 대한 명제들은 진행을 위해 필요하다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_inverse_image_of_function}
+::: {#def-MA_inverse_image_of_function}
 
 #### 함수의 상과 역상
 
@@ -179,7 +179,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_image_and_inverse_image_of_fucntion}
+::: {#prp-MA_properties_of_image_and_inverse_image_of_fucntion}
 
 $f:X \to Y$ 에서 $\{E_i\}$ 가 $X$ 의 부분집합족이고 $\{V_i\}$ 가 $Y$ 의 부분집합족일 때, 다음이 성립한다.
 
@@ -227,7 +227,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_inclusion_of_function_and_inverse_image}
+::: {#prp-MA_inclusion_of_function_and_inverse_image}
 
 $f:X \to Y$ 이며 $A\subset X,\, B \subset Y$ 라고 할 때 다음이 성립한다.
 $$
@@ -255,7 +255,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_inverse_image_of_complement}
+::: {#prp-MA_inverse_image_of_complement}
 
 $f:X \to Y$ 이며 $V\subset Y$ 일 때 $f^{-1}(Y\backslash V) = X \backslash f^{-1}(V)$ 이다.
 
@@ -272,7 +272,7 @@ $x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\i
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_equivalent_expression}
+::: {#prp-MA_equivalent_expression}
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f: X\to Y$ 에 대해 다음은 동치이다. 
 
@@ -292,7 +292,7 @@ $x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\i
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_continuity_and_inverse_of_map}
+::: {#thm-MA_continuity_and_inverse_of_map}
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f:X \to Y$ 에 대해 다음 세 명제는 동치이다.
 
@@ -310,17 +310,17 @@ $x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\i
 
 $(1) \iff (2)$ 와 $(2) \iff (3)$ 을 보인다.
 
-($1 \implies 2$) $x_0 \in X,\, f(x_0)\in V$ 이며 $V$ 가 열린집합이라고 하자. 어떤 $f(x_0)$ 근방은 $V$ 에 포함되므로 $N_Y(f(x_0),\, \varepsilon)\subset V$ 인 $\varepsilon>0$ 이 존재한다. @prp-part2_equivalent_expression 에 따라 어떤 $\delta>0$ 에 대해 $f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\varepsilon) \subset V$ 이며 @prp-part2_inclusion_of_function_and_inverse_image 을 이용하면
+($1 \implies 2$) $x_0 \in X,\, f(x_0)\in V$ 이며 $V$ 가 열린집합이라고 하자. 어떤 $f(x_0)$ 근방은 $V$ 에 포함되므로 $N_Y(f(x_0),\, \varepsilon)\subset V$ 인 $\varepsilon>0$ 이 존재한다. @prp-MA_equivalent_expression 에 따라 어떤 $\delta>0$ 에 대해 $f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\varepsilon) \subset V$ 이며 @prp-MA_inclusion_of_function_and_inverse_image 을 이용하면
 
 $$
 N_X (x_0,\, \delta) \subset f^{-1}(f(N_X (x_0,\delta))) \subset f^{-1}(N_Y(f(x_0),\varepsilon) )\subset f^{-1}(V)
 $$
 이다. $V$ 가 열린 집합 일 때 임의의 $x_0 \in f^{-1}(V)$ 에 대해 성립하므로 $f^{-1}(V)$ 는 열린집합이다.
 
-($2 \implies 1$) 임의의 $Y$ 에서의 열린집합 $V$ 에 대해 $f^{-1}(V)$ 가 열린집합이라 하자. $V$ 가 열린집합이므로 $y\in V$ 에 대해 $N_Y(y,\, \varepsilon)\subset V$ 인 $\varepsilon>0$ 가 존재한다. $y\not\in f(X)$ 이면 생각 할 것이 없으므로 $y\in f(X)$ 인 경우에만 생각하자. $N_Y(y,\varepsilon)$ 역시 $Y$ 에서의 열린집합이므로 $f^{-1}(N_Y(y,\varepsilon))$ 도 열린집합이다. $f(x) = y$ 라 하면 $x\in f^{-1}(N_Y(y,\varepsilon))$ 이며 $f^{-1}(N_Y(y,\varepsilon))$ 가 $X$ 에서의 열린집합이므로 $N_X(x,\delta)\subset f^{-1}(N_Y(y,\varepsilon))$ 인 $\delta>0$ 이 존재한다. @prp-part2_inclusion_of_function_and_inverse_image 에 의해 $f(N_X(x,\delta)) \subset (f\circ f^{-1})(N_Y(y,\varepsilon)) \subset N_Y(y,\varepsilon)$ 이므로 $f$ 는 연속이다. 
+($2 \implies 1$) 임의의 $Y$ 에서의 열린집합 $V$ 에 대해 $f^{-1}(V)$ 가 열린집합이라 하자. $V$ 가 열린집합이므로 $y\in V$ 에 대해 $N_Y(y,\, \varepsilon)\subset V$ 인 $\varepsilon>0$ 가 존재한다. $y\not\in f(X)$ 이면 생각 할 것이 없으므로 $y\in f(X)$ 인 경우에만 생각하자. $N_Y(y,\varepsilon)$ 역시 $Y$ 에서의 열린집합이므로 $f^{-1}(N_Y(y,\varepsilon))$ 도 열린집합이다. $f(x) = y$ 라 하면 $x\in f^{-1}(N_Y(y,\varepsilon))$ 이며 $f^{-1}(N_Y(y,\varepsilon))$ 가 $X$ 에서의 열린집합이므로 $N_X(x,\delta)\subset f^{-1}(N_Y(y,\varepsilon))$ 인 $\delta>0$ 이 존재한다. @prp-MA_inclusion_of_function_and_inverse_image 에 의해 $f(N_X(x,\delta)) \subset (f\circ f^{-1})(N_Y(y,\varepsilon)) \subset N_Y(y,\varepsilon)$ 이므로 $f$ 는 연속이다. 
 
 
-($2 \implies 3$) $V\subset Y$ 가 닫힌집합이면 $V\backslash Y$ 는 열린집합이므로 $f^{-1}(V\backslash Y)$ 도 열린집합이다. @prp-part2_inverse_image_of_complement 에 의해 $f^{-1}(V)\backslash X$ 가 열린집합이므로 $f^{-1}(Y)$ 는 닫힌집합이다. 
+($2 \implies 3$) $V\subset Y$ 가 닫힌집합이면 $V\backslash Y$ 는 열린집합이므로 $f^{-1}(V\backslash Y)$ 도 열린집합이다. @prp-MA_inverse_image_of_complement 에 의해 $f^{-1}(V)\backslash X$ 가 열린집합이므로 $f^{-1}(Y)$ 는 닫힌집합이다. 
 
 ($3 \implies 2$) $V \subset Y$ 가 열린집합이면 같은 과정으로 $f^{-1}(V)$ 가 열린집합이라는 것을 보일 수 있다. $\square$
 :::
@@ -331,7 +331,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_continuity_of_complex_valued_function}
+::: {#thm-MA_continuity_of_complex_valued_function}
 
 거리공간 $X$ 에 대해 $f,\,g$ 가 $X\mapsto \mathbb{C}$ 인 연속함수일 때 $f+g,\, fg,\, f/g$ 도 연속함수이다.
 
@@ -345,7 +345,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_continuity_of_vector_valued_function}
+::: {#thm-MA_continuity_of_vector_valued_function}
 
 거리공간 $X$ 에서 정의된 함수들 $f_1,\ldots,\,f_n :X \to \mathbb{R}$ 을 생각하자. 벡터 함수 $\boldsymbol{f}:X\to \mathbb{R}^n$ 이 $\boldsymbol{f}(x) := (f_1(x),\ldots,\,f_n(x))$ 일 때 $\boldsymbol{f}$ 가 연속인 것의 필요충분조건은 각각의 $f_1,\ldots,\,f_n$ 이 연속인 것이다. 또한 $\boldsymbol{f},\,\boldsymbol{g}:X \to \mathbb{R}^n$ 일 때 $\boldsymbol{f}+\boldsymbol{g}$ 와 $\boldsymbol{f\cdot g}$ 도 연속이다.
 
@@ -380,11 +380,11 @@ $$
 
 ## 연속함수와 옹골집합
 
-### 최대-최소 정리 {#sec-part2_extreme_value_theorem}
+### 최대-최소 정리 {#sec-MA_extreme_value_theorem}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_bounded_function}
+::: {#def-MA_bounded_function}
 
 #### 유계함수
 
@@ -395,7 +395,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_continuity_and_compactness}
+::: {#thm-MA_continuity_and_compactness}
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f:X\to Y$ 가 옹골집합 $K \subset X$ 에서 연속일 때 $f(K)$ 는 옹골집합이다.
 
@@ -405,7 +405,7 @@ $$
 
 ::: {.proof}
 
-$\{V_{\alpha}\}$ 가 $f(K)$ 의 열린 덮개라고 하자. @thm-part2_continuity_and_inverse_of_map 에 따라 $\{f^{-1}(V_{\alpha})\}$ 도 $K$ 의 열린 덮개이다. 따라서 유한개의 $\{f^{-1}(V_\alpha)\}$ 로 $K$ 를 덮을 수 있으며 이를 $\{f^{-1}(V_1),\ldots,\, f^{-1}(V_n)\}$ 이라 하자. @prp-part2_inclusion_of_function_and_inverse_image 에 의해 
+$\{V_{\alpha}\}$ 가 $f(K)$ 의 열린 덮개라고 하자. @thm-MA_continuity_and_inverse_of_map 에 따라 $\{f^{-1}(V_{\alpha})\}$ 도 $K$ 의 열린 덮개이다. 따라서 유한개의 $\{f^{-1}(V_\alpha)\}$ 로 $K$ 를 덮을 수 있으며 이를 $\{f^{-1}(V_1),\ldots,\, f^{-1}(V_n)\}$ 이라 하자. @prp-MA_inclusion_of_function_and_inverse_image 에 의해 
 $$
 f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 $$ 
@@ -414,20 +414,20 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_continuity_and_compactness_in_Rk}
+::: {#cor-MA_continuity_and_compactness_in_Rk}
 거리공간 $X$ 와 유클리드공간에서 정의된 함수 $f:X \to \mathbb{R}^n$ 가 옹골집합 $K \subset X$ 에서 연속일 때 $f(K)$ 는 유계이며 닫힌 집합이다.
 
 :::
 </div></br>
 
 ::: {.proof}
-@thm-part2_continuity_and_compactness 와 @thm-part2_heine_borrel 에 의해 증명된다. $\square$
+@thm-MA_continuity_and_compactness 와 @thm-MA_heine_borrel 에 의해 증명된다. $\square$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_extreme_value_theorem}
+::: {#thm-MA_extreme_value_theorem}
 
 #### 최대-최소 정리 (Extreme value theorem)
 거리공간 $X$ 위에서 정의된 함수 $f:X \to \mathbb{R}$ 가 옹골집합 $K\subset X$ 에서 연속일 때 $f(K)$ 는 최소값과 최대값을 가진다.
@@ -436,13 +436,13 @@ $$
 </div></br>
 
 ::: {.proof}
-@cor-part2_continuity_and_compactness_in_Rk 에 의해 $f(K)$ 는 유계이며 닫힌 집합이다. $\mathbb{R}$ 에서 유계이므로 최소상계와 최대하계를 갖고 닫힌 집합이므로 최소상계와 최대하계가 $f(K)$ 에 포함된다. $\square$ 
+@cor-MA_continuity_and_compactness_in_Rk 에 의해 $f(K)$ 는 유계이며 닫힌 집합이다. $\mathbb{R}$ 에서 유계이므로 최소상계와 최대하계를 갖고 닫힌 집합이므로 최소상계와 최대하계가 $f(K)$ 에 포함된다. $\square$ 
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_bijective_continuous_function_on_compact_set}
+::: {#thm-MA_bijective_continuous_function_on_compact_set}
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f:X \to Y$ 가 옹골집합 $K \subset X$ 위에서 연속이며 전단사일 때 $K$ 위에서 의 $f$ 의 역함수 $f^{-1}$ 도 연속이다. 
 
@@ -450,9 +450,9 @@ $$
 </div></br>
 
 ::: {.proof}
-$f$ 를 $K$ 위에서만 생각하자. 즉 $f:K \to Y$ 만 생각해도 된다. @thm-part2_continuity_and_inverse_of_map 에 의해 열린집합 $U\subset K$ 에 대해 $f(U)$ 가 열린집합임을 보이면 된다. 
+$f$ 를 $K$ 위에서만 생각하자. 즉 $f:K \to Y$ 만 생각해도 된다. @thm-MA_continuity_and_inverse_of_map 에 의해 열린집합 $U\subset K$ 에 대해 $f(U)$ 가 열린집합임을 보이면 된다. 
 
-우선 $U\backslash K$ 가 닫힌집합이므로 @prp-part2_closed_subset_of_compact_set_is_compact 에 의해 옹골집합이다. 그리고 @thm-part2_continuity_and_compactness 에 의해 $f(U\backslash K)$ 옹골집합이다. $f$ 가 $K$ 위에서 전단사이므로 $f(U\backslash K) = f(U)\backslash f(K)$ 이다. 따라서 $f(U)\backslash f(K)$ 가 옹골집합이므로 $f(U)$ 는 열린집합이다. $\square$
+우선 $U\backslash K$ 가 닫힌집합이므로 @prp-MA_closed_subset_of_compact_set_is_compact 에 의해 옹골집합이다. 그리고 @thm-MA_continuity_and_compactness 에 의해 $f(U\backslash K)$ 옹골집합이다. $f$ 가 $K$ 위에서 전단사이므로 $f(U\backslash K) = f(U)\backslash f(K)$ 이다. 따라서 $f(U)\backslash f(K)$ 가 옹골집합이므로 $f(U)$ 는 열린집합이다. $\square$
 
 :::
 
@@ -460,11 +460,11 @@ $f$ 를 $K$ 위에서만 생각하자. 즉 $f:K \to Y$ 만 생각해도 된다. 
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_continuity_of_inverse_function}
+::: {#exm-MA_continuity_of_inverse_function}
 
-![연속인 함수의 역함수가 연속이 아닌 경우](images/fig-continuity_of_inverse.png){#fig-part2_continuity_of_inverse width=400}
+![연속인 함수의 역함수가 연속이 아닌 경우](images/fig-continuity_of_inverse.png){#fig-MA_continuity_of_inverse width=400}
 
-아래와 같이 정의된 함수 $f(x)$ 를 생각하자.(@fig-part2_continuity_of_inverse)
+아래와 같이 정의된 함수 $f(x)$ 를 생각하자.(@fig-MA_continuity_of_inverse)
 
 $$
 f(x) = \left\{\begin{array}{ll} 0, & x=0,\\x-1,\qquad & 1<x\le 2\end{array}\right.
@@ -480,11 +480,11 @@ $$
 </br>
 
 
-### 고른 연속 함수 {#sec-part2_uniform_continuity}
+### 고른 연속 함수 {#sec-MA_uniform_continuity}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_uniformly_continuous}
+::: {#def-MA_uniformly_continuous}
 
 #### 고른 연속 함수
 
@@ -505,7 +505,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_uniform_continuity}
+::: {#prp-MA_uniform_continuity}
 
 $E\subset X$ 에서 고른 연속인 함수 $f:X \to Y$ 는 $E$ 전체에서 연속이다.
 :::
@@ -516,7 +516,7 @@ $E\subset X$ 에서 고른 연속인 함수 $f:X \to Y$ 는 $E$ 전체에서 연
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_not_uniformly_continuous_function_1}
+::: {#exm-MA_not_uniformly_continuous_function_1}
 
 함수 $f:[0,\, +\infty) \to \mathbb{R},\, f(x) = x^2$ 는 고른 연속이 아니다. 그러나 정의역이 유계이면 고른 연속인데 이것을 보이자.
 
@@ -538,7 +538,7 @@ $$
 
 </div></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_3_3_1}
+::: {#exr-MA_KKK_3_3_1}
 
 #### 김김계 문제 3.3.1
 
@@ -604,7 +604,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_uniform_continuity_and_compact_set}
+::: {#thm-MA_uniform_continuity_and_compact_set}
 
 옹골 거리 집합 $X$ 와 거리집합 $Y$ 에서 정의된 함수 $f:X \to Y$ 가 $X$ 에서 연속이면 $f$ 는 $X$ 에서 고른 연속이다.
 
@@ -655,7 +655,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_non_compact_domain_in_R1}
+::: {#prp-MA_non_compact_domain_in_R1}
 
 $E\subset \mathbb{R}^1$ 이 옹골집합이 아니라고 하자. 그렇다면, 
 
@@ -671,7 +671,7 @@ $E\subset \mathbb{R}^1$ 이 옹골집합이 아니라고 하자. 그렇다면,
 
 ::: {.proof}
 
-@thm-part2_heine_borrel 에 따라 $E\subset{R}^1$ 이 옹골집합이 아니라면 유계가 아니거나, 닫힌 집합이 아니다.
+@thm-MA_heine_borrel 에 따라 $E\subset{R}^1$ 이 옹골집합이 아니라면 유계가 아니거나, 닫힌 집합이 아니다.
 
 ($1$) $E$ 가 유계라면 닫힌집합이 아니며, 따라서 $E$ 에 포함되지 않는 $E$ 의 극한점 $x_0$ 가 존재한다. $f(x) = 1/(x-x_0)$ 는 유계가 아닌 연속함수이다. $E$ 가 유계가 아니라면 $g(x)=x$ 는 유계가 아닌 연속함수이다.
 
@@ -698,12 +698,12 @@ $$
 
 ## 연속과 연결 
 
-### 사잇값 정리 {#sec-part2_intermediate_value_theorem}
+### 사잇값 정리 {#sec-MA_intermediate_value_theorem}
 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_continuity_and_connectivity}
+::: {#prp-MA_continuity_and_connectivity}
 
 거리공간 $X,\,Y$ 에서 정의된 연속 함수 $f:X\to Y$ 를 생각하자. $E\subset X$ 가 연결집합이면 $f(E)$ 도 연결집합이다. 
 
@@ -712,7 +712,7 @@ $$
 
 ::: {.proof}
 
-귀류법을 통해 증명한다. $f(E)=A \cup B$ 이며 $A,\,B$ 가 공집합이 아닌 $Y$ 의 부분집합이고 서로 분리되어 있다고 하자. $G=E \cap f^{-1}(A)$, $H = E \cap f^{-1}(B)$ 라고 하자. $G=\varnothing$ 이라면 $f^{-1}(A)=\varnothing$ 이거나 $f^{-1}(A) \subset Y\backslash E$ 인데 가정에 의해 $A\ne \varnothing$ 이며, 따라서 $f^{-1}(A) \cap E \ne \varnothing$ 이므로 $G \ne \varnothing$ 이다. 같은 이유로 $H \ne \varnothing$ 이다. 이로부터 (@prp-part2_properties_of_image_and_inverse_image_of_fucntion 를 참고하라)
+귀류법을 통해 증명한다. $f(E)=A \cup B$ 이며 $A,\,B$ 가 공집합이 아닌 $Y$ 의 부분집합이고 서로 분리되어 있다고 하자. $G=E \cap f^{-1}(A)$, $H = E \cap f^{-1}(B)$ 라고 하자. $G=\varnothing$ 이라면 $f^{-1}(A)=\varnothing$ 이거나 $f^{-1}(A) \subset Y\backslash E$ 인데 가정에 의해 $A\ne \varnothing$ 이며, 따라서 $f^{-1}(A) \cap E \ne \varnothing$ 이므로 $G \ne \varnothing$ 이다. 같은 이유로 $H \ne \varnothing$ 이다. 이로부터 (@prp-MA_properties_of_image_and_inverse_image_of_fucntion 를 참고하라)
 
 $$
 G \cup H = E \cap (f^{-1}(A)\cup f^{-1}(B)) = E \cap f^{-1}(A \cup B) = E
@@ -720,7 +720,7 @@ $$
 
 이다. 즉 $E= G \cup H$ 이며 $G,\, H$ 도 공집합이 아니다.
 
-$A \subset \overline{A}$ 이므로 $G \subset f^{-1}(\overline{A})$ 이다. $f$ 가 연속이며 $\overline{A}$ 는 닫힌집합이므로 @thm-part2_continuity_and_inverse_of_map 에 의해 $f^{-1}(\overline{A})$ 는 닫힌집합이다. 따라서 $\overline{G} \subset f^{-1}(\overline{A})$ 이며, 따라서 $f(\overline{G})\subset \overline{A}$ 이다. 
+$A \subset \overline{A}$ 이므로 $G \subset f^{-1}(\overline{A})$ 이다. $f$ 가 연속이며 $\overline{A}$ 는 닫힌집합이므로 @thm-MA_continuity_and_inverse_of_map 에 의해 $f^{-1}(\overline{A})$ 는 닫힌집합이다. 따라서 $\overline{G} \subset f^{-1}(\overline{A})$ 이며, 따라서 $f(\overline{G})\subset \overline{A}$ 이다. 
 
 우선 $f(H) = B$ 임을 보이자. $H = E \cap f^{-1}(B)$ 이므로
 
@@ -743,7 +743,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_intermediate_value_theorem}
+::: {#thm-MA_intermediate_value_theorem}
 
 #### 사잇값 정리
 
@@ -753,7 +753,7 @@ $f : [a,\,b]\subset\mathbb{R}^1 \to \mathbb{R}^1$ 이 연속함수이고 $f(a)<f
 
 ::: {.proof}
 
-$[a,\,b]$ 는 연결집합이며 @prp-part2_continuity_and_connectivity 에 의해 $f([a,\,b])$ 도 연결집합이다. @thm-part2_connected_set_in_R1 에 의해 $c\in f([a,\,b])$ 이다. $\square$ 
+$[a,\,b]$ 는 연결집합이며 @prp-MA_continuity_and_connectivity 에 의해 $f([a,\,b])$ 도 연결집합이다. @thm-MA_connected_set_in_R1 에 의해 $c\in f([a,\,b])$ 이다. $\square$ 
 
 :::
 
@@ -761,7 +761,7 @@ $[a,\,b]$ 는 연결집합이며 @prp-part2_continuity_and_connectivity 에 의�
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_intermediate_value_theorem}
+::: {#cor-MA_intermediate_value_theorem}
 
 $-\infty < a < b < \infty$ 에 대해 $f:[a,\,b]\to \mathbb{R}$ 이 연속일 때 $f([a,\,b])$ 는 유계인 닫힌 구간이다.
 
@@ -771,7 +771,7 @@ $-\infty < a < b < \infty$ 에 대해 $f:[a,\,b]\to \mathbb{R}$ 이 연속일 �
 
 ::: {.proof}
 
-$[a,\,b]$ 는 옹골집합이므로 @thm-part2_extreme_value_theorem 에 의해 최대값 $M$ 과 최소값 $m$ 을 가진다. @thm-part2_intermediate_value_theorem 에 따라 $[m, M]=f([a,\,b])$ 이다. $\square$
+$[a,\,b]$ 는 옹골집합이므로 @thm-MA_extreme_value_theorem 에 의해 최대값 $M$ 과 최소값 $m$ 을 가진다. @thm-MA_intermediate_value_theorem 에 따라 $[m, M]=f([a,\,b])$ 이다. $\square$
 
 :::
 
@@ -780,11 +780,11 @@ $[a,\,b]$ 는 옹골집합이므로 @thm-part2_extreme_value_theorem 에 의해 
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_function_with_closed_interval_image}
+::: {#exm-MA_function_with_closed_interval_image}
 
 #### KKK 보기 3.2.2
 
-위의 @cor-part2_intermediate_value_theorem 는 연속함수 $f:X\to \mathbb{R}$ 에 대해 닫힌 구간 $[a,\,b]\subset X$ 에 대해 $f([a,\,b])$ 는 항상 닫힌 구간임을 말한다. 하지만 그 역은 성립하지 않는데 다음과 같은 함수를 보자.
+위의 @cor-MA_intermediate_value_theorem 는 연속함수 $f:X\to \mathbb{R}$ 에 대해 닫힌 구간 $[a,\,b]\subset X$ 에 대해 $f([a,\,b])$ 는 항상 닫힌 구간임을 말한다. 하지만 그 역은 성립하지 않는데 다음과 같은 함수를 보자.
 
 $$
 f(x) = \left\{\begin{array}{ll} 0, & x=0, \\ \sin \dfrac{1}{x}, \qquad & x\ne 0\end{array}\right.
@@ -802,11 +802,11 @@ $f:X\to X$ 에서 $f(x)=x$ 인 $x$ 를 $f$ 의 **고정점 (fixed point)** 라�
 
 </br>
 
-### 고정점 정리 {#sec-part2_fixed_point}
+### 고정점 정리 {#sec-MA_fixed_point}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_fixed_point_theorem}
+::: {#thm-MA_fixed_point_theorem}
 
 #### 고정점 정리
 
@@ -825,11 +825,11 @@ $g(x)=f(x)-x$ 라고 하자. $g(a)=f(a)-a \ge 0$ 이며 $g(b) =f(b)-b\le 0$ 이�
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_3_2_4}
+::: {#exr-MA_KKK_3_2_4}
 
 #### 김김계 3.2.4
 
-@thm-part2_fixed_point_theorem 에서 $x,\,y\in [a,\,b],\, x\ne y$ 에 대해 $|f(x)-f(y)|< |x-y|$ 이면 고정점이 유일함을 보여라.
+@thm-MA_fixed_point_theorem 에서 $x,\,y\in [a,\,b],\, x\ne y$ 에 대해 $|f(x)-f(y)|< |x-y|$ 이면 고정점이 유일함을 보여라.
 
 :::
 
@@ -850,7 +850,7 @@ $g(x)=f(x)-x$ 라고 하자. $g(a)=f(a)-a \ge 0$ 이며 $g(b) =f(b)-b\le 0$ 이�
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_left_limit_and_right_limit}
+::: {#def-MA_left_limit_and_right_limit}
 
 #### 좌극한과 우극한
 
@@ -876,7 +876,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_1st_2nd_kind_discontinuity}
+::: {#def-MA_1st_2nd_kind_discontinuity}
 
 #### 1종 불연속과 2종 불연속
 
@@ -892,11 +892,11 @@ $f$ 가 $x$ 에서 1종 불연속인 경우는 $f(x^+)\ne f(x^-)$ 이거나 $f(x
 
 </br>
 
-### 단조함수 {#sec-part2_monitonic_functions}
+### 단조함수 {#sec-MA_monitonic_functions}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_monotonic_function}
+::: {#def-MA_monotonic_function}
 
 #### 단조증가/단조감소
 
@@ -909,7 +909,7 @@ $f:(a,\,b)\to \mathbb{R}$ 함수 일 때 $a<x<y<b$ 에 대해 $f(x)\le f(y)$ 이
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_existance_of_left_right_limit_for_monotonic_function}
+::: {#prp-MA_existance_of_left_right_limit_for_monotonic_function}
 
 $f$ 가 $(a,\,b)$ 에서 단조증가함수라면  모든 $x\in (a,\,b)$ 에 대해 $f(x^+)$ 와 $f(x^-)$ 가 존재한다. 정확하게는
 
@@ -972,7 +972,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_monitonic_and_countable_number_of_discontinuity}
+::: {#cor-MA_monitonic_and_countable_number_of_discontinuity}
 
 단조함수의 불연속은 항상 1종 불연속이다.
 
@@ -983,7 +983,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_monitonic_and_countable_number_of_discontinuity}
+::: {#prp-MA_monitonic_and_countable_number_of_discontinuity}
 
 $f:(a,\,b)\to \mathbb{R}$ 이 단조함수이면 $f$ 가 불연속인 $(a,\,b)$ 구간의 점은 countable 이다.
 
@@ -1008,7 +1008,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_3_5_1}
+::: {#exr-MA_KKK_3_5_1}
 
 #### 김김계 3.5.1
 
@@ -1054,7 +1054,7 @@ $f(\mathbb{R})$ 은 $[0, \infty)$ 이다. $F=[0, \infty)$ 는 $\mathbb{R}$ 에 �
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_3_5_2}
+::: {#exr-MA_KKK_3_5_2}
 
 #### 김김계 3.5.2
 
@@ -1100,7 +1100,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4.1}
+::: {#exr-MA_rudin_4.1}
 
 #### Rudin 4.1
 
@@ -1123,7 +1123,7 @@ $f(x) = \left\{ \begin{array}{ll} x \qquad &; x\ne 0 \\ 1 &;x=0\end{array} \righ
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_2}
+::: {#exr-MA_rudin_4_2}
 
 #### Rudin 4.2
 
@@ -1143,7 +1143,7 @@ $f(E)\subset \overline{f(E)}$ 이다. $x\in E'\backslash E$ 라 하자. $\lim_n 
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_3}
+::: {#exr-MA_rudin_4_3}
 
 #### Rudin 4.3
 
@@ -1162,7 +1162,7 @@ $p \in X\backslash Z(f)$ 라 하자. $f(p)=y>0$ 이면 $f$ 가 연속이므로 $
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_4}
+::: {#exr-MA_rudin_4_4}
 
 #### Rudin 4.4
 
@@ -1176,13 +1176,13 @@ $p \in X\backslash Z(f)$ 라 하자. $f(p)=y>0$ 이면 $f$ 가 연속이므로 $
 
 $y\in f(X)$ 이면 $f(x)=y$ 인 $x\in X$ 가 존재한다. $x\notin E$ 이면 $x$ 로 수렴하는 $E$ 에서 정의된 수열 $\langle x_n\rangle$ 이 존재하며 $\langle f(x_n)\rangle$ 은 $x$ 로 수렴한다. $\langle f(x_n)\rangle \subset f(E)$ 이므로 $f(E)$ 는 $f(X)$ 에 대해 조밀하다.
 
-$x\in X=\overline{E}$ 라 하자. $x$ 로 수렴하는 $E$ 에서 정의된 수열 $\langle p_i \rangle$ 이 존재하며 $g(p_i)= f(p_i)$ 이다. @prp-part2_limit_and_convergent_series 에 의해 $\lim_k g(p_k) = g(x)=f(x)$ 이다. 
+$x\in X=\overline{E}$ 라 하자. $x$ 로 수렴하는 $E$ 에서 정의된 수열 $\langle p_i \rangle$ 이 존재하며 $g(p_i)= f(p_i)$ 이다. @prp-MA_limit_and_convergent_series 에 의해 $\lim_k g(p_k) = g(x)=f(x)$ 이다. 
 
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_5}
+::: {#exr-MA_rudin_4_5}
 
 #### Rudin 4.5
 
@@ -1210,7 +1210,7 @@ $f:(0,\,\infty) \to \mathbb{R}$ 을 $f(x) = 1/x$ 로 정의하자. $(0,\,\infty)
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_6}
+::: {#exr-MA_rudin_4_6}
 
 #### Rudin 4.6
 
@@ -1232,7 +1232,7 @@ $$
 \end{aligned}
 $$
 
-이다. 즉 $f$ 가 연속이면 $\bf{g}$ 는 연속이다. 따라서 $E$ 가 옹골집합이면 @thm-part2_continuity_and_compactness 에 따라 $\bf{g}(E)=A$ 는 옹골집합이다. 
+이다. 즉 $f$ 가 연속이면 $\bf{g}$ 는 연속이다. 따라서 $E$ 가 옹골집합이면 @thm-MA_continuity_and_compactness 에 따라 $\bf{g}(E)=A$ 는 옹골집합이다. 
 
 이제 $A$ 가 옹골집합임을 가정하자. $E$ 에서 정의된 $x$ 로 수렴하는 수열 $\langle x_k\rangle$ 을 생각하자. $A$ 가 옹골집합이므로 $\langle (x_k,\, f(x_k))\rangle$ 은 $A$ 상의 한 점으로 수렴하며 $\langle x_k \rangle \to x$ 이므로 $\langle f(x_k) \rangle \to f(x)$ 이다. 임의의 $x\in E$ 에 대해 성립하므로 $f$ 는 연속이다.
 
@@ -1242,7 +1242,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_kkk_3_5_4}
+::: {#exr-MA_kkk_3_5_4}
 
 #### 김김계 3.5.4
 
@@ -1260,11 +1260,11 @@ $$
 
 ::: {.solution}
 
-$\boldsymbol{g}:\mathbb{R}\to \mathbb{R}^2$ 를 $\boldsymbol{g}(x):=(x,\,f(x))$ 로 정의하고 $A: = \{ (x,\,f(x)) \in \mathbb{R}\times \mathbb{R} : x\in \mathbb{R}\}$ 라고 하면 $A=\boldsymbol{g}(\mathbb{R})$ 이다. @thm-part2_continuity_of_vector_valued_function 에 따라 $f$ 가 연속인것과 $\boldsymbol{g}$ 가 연속인 것은 동치이다. 이제 $\boldsymbol{g}$ 가 연속인 것과 $A$ 가 닫힌 집합인 것이 동치임을 보이면 된다.
+$\boldsymbol{g}:\mathbb{R}\to \mathbb{R}^2$ 를 $\boldsymbol{g}(x):=(x,\,f(x))$ 로 정의하고 $A: = \{ (x,\,f(x)) \in \mathbb{R}\times \mathbb{R} : x\in \mathbb{R}\}$ 라고 하면 $A=\boldsymbol{g}(\mathbb{R})$ 이다. @thm-MA_continuity_of_vector_valued_function 에 따라 $f$ 가 연속인것과 $\boldsymbol{g}$ 가 연속인 것은 동치이다. 이제 $\boldsymbol{g}$ 가 연속인 것과 $A$ 가 닫힌 집합인 것이 동치임을 보이면 된다.
 
-$\boldsymbol{g}$ 가 연속임을 가정한다. $\boldsymbol{y}_0 \in A'$ 이라고 하자. @prp-part2_properties_of_convergence_2 에 의해 $\boldsymbol{y}_0$ 로 수렴하는 $A\backslash \{\boldsymbol{y}_0\}$ 에서 정의된 수열 $\langle \boldsymbol{y}_k\rangle = \langle (x_k,\,f(x_k))\rangle$ 이 존재하며 $\boldsymbol{g}$ 가 연속이므로(따라서 $f$ 가 연속이므로) @prp-part2_limit_and_convergent_series 에 따라 $\boldsymbol{y} = (x_0,\, f(x_0)) \in A$ 이다. 즉 $A'\subset A$ 이므로 $A$ 는 닫힌 집합이다.
+$\boldsymbol{g}$ 가 연속임을 가정한다. $\boldsymbol{y}_0 \in A'$ 이라고 하자. @prp-MA_properties_of_convergence_2 에 의해 $\boldsymbol{y}_0$ 로 수렴하는 $A\backslash \{\boldsymbol{y}_0\}$ 에서 정의된 수열 $\langle \boldsymbol{y}_k\rangle = \langle (x_k,\,f(x_k))\rangle$ 이 존재하며 $\boldsymbol{g}$ 가 연속이므로(따라서 $f$ 가 연속이므로) @prp-MA_limit_and_convergent_series 에 따라 $\boldsymbol{y} = (x_0,\, f(x_0)) \in A$ 이다. 즉 $A'\subset A$ 이므로 $A$ 는 닫힌 집합이다.
 
-이제 $A$ 가 닫힌집합임을 가정하자. @thm-part2_continuity_and_inverse_of_map 에 따라 임의의 닫힌 집합 $K\subset \mathbb{R}^2$ 에 대해 $\boldsymbol{g}^{-1}(K)$ 가 닫힌 집합이면 $\boldsymbol{g}$ 는 연속이다. 
+이제 $A$ 가 닫힌집합임을 가정하자. @thm-MA_continuity_and_inverse_of_map 에 따라 임의의 닫힌 집합 $K\subset \mathbb{R}^2$ 에 대해 $\boldsymbol{g}^{-1}(K)$ 가 닫힌 집합이면 $\boldsymbol{g}$ 는 연속이다. 
 
 $K\cap A=\varnothing$ 이면 $\bf{g}^{-1}(K)=\varnothing$ 이므로 닫힌 집합이다. 
 
@@ -1276,7 +1276,7 @@ $K\cap A=\varnothing$ 이면 $\bf{g}^{-1}(K)=\varnothing$ 이므로 닫힌 집�
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_7}
+::: {#exr-MA_rudin_4_7}
 
 #### Rudin 4.7
 
@@ -1315,7 +1315,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_8}
+::: {#exr-MA_rudin_4_8}
 
 #### Rudin 4.8
 
@@ -1350,7 +1350,7 @@ $f(x)=x$ 는 균등수렴하지만 $\mathbb{R}$ 에서 유계가 아니다.
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_9}
+::: {#exr-MA_rudin_4_9}
 
 #### Rudin 4.9
 
@@ -1371,11 +1371,11 @@ trivial
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_10}
+::: {#exr-MA_rudin_4_10}
 
 #### Rudin 4.10
 
-@thm-part2_uniform_continuity_and_compact_set 를 다르게 증명해보자. 옹골 거리 집합 $X$ 와 거리집합에서 정의된 함수 $f:X \to Y$ 를 생각하자. $f$ 가 고른 연속이 아니면 $f$ 는 $X$ 에서 연속이 아님을 보여라.
+@thm-MA_uniform_continuity_and_compact_set 를 다르게 증명해보자. 옹골 거리 집합 $X$ 와 거리집합에서 정의된 함수 $f:X \to Y$ 를 생각하자. $f$ 가 고른 연속이 아니면 $f$ 는 $X$ 에서 연속이 아님을 보여라.
 
 :::
 </div></br>
@@ -1391,7 +1391,7 @@ $f$ 가 고른 연속이 아니므로 어떤 $\varepsilon>0$ 에 대해 각각 $
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_11}
+::: {#exr-MA_rudin_4_11}
 
 #### Rudin 4.11
 
@@ -1417,7 +1417,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_12}
+::: {#exr-MA_rudin_4_12}
 
 #### Rudin 4.12
 
@@ -1436,22 +1436,22 @@ $g$ 가 고른연속이므로 임의의 $\varepsilon>0$ 에 대해 $|y_1-y_2|_Y<
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_13}
+::: {#exr-MA_rudin_4_13}
 
 #### Rudin 4.13
 
-$E$ 는 $X$ 의 조밀한 부분집합이며 $f:E \to \R$ 은 고른 연속이다. $f$ 에 대한 $X$ 로의 확장이 존재함을 보여라. (용어에 대해서는 @exr-part2_rudin_4_5 를 참고하라). 함수의 치역이 $\R^n$ 일 일 경우, 옹골 거리집합일 경우, complete metric space 일 경우, 일반적인 metric space 일 경우에도 가능한가?
+$E$ 는 $X$ 의 조밀한 부분집합이며 $f:E \to \R$ 은 고른 연속이다. $f$ 에 대한 $X$ 로의 확장이 존재함을 보여라. (용어에 대해서는 @exr-MA_rudin_4_5 를 참고하라). 함수의 치역이 $\R^n$ 일 일 경우, 옹골 거리집합일 경우, complete metric space 일 경우, 일반적인 metric space 일 경우에도 가능한가?
 
 :::
 </div></br>
 
 :::{.solution}
 
-임의의 $p\in X$ 에 대해 $V_n := N_X(p,\, 1/n)\cap E$ 이라고 하자. $A = \bigcup_{n=1}^\infty V_n$ 이며 @exr-part2_rudin_4_9 에 따라 $\text{diam}(A)=0$ 이며 $A\ne \varnothing$ 이므로 $A$ 는 단 하나의 원소로 된 집합이며 이 원소를 $g(p)$ 라고 놓자. $p\in E$ 일 경우 $g(p) = f(p)$ 이며 @exr-part2_rudin_4_4 에 따라 이런 $g$ 는 유일하게 정해진다. 이제 이렇게 정해진 $g$ 가 연속임을 보이자. 
+임의의 $p\in X$ 에 대해 $V_n := N_X(p,\, 1/n)\cap E$ 이라고 하자. $A = \bigcup_{n=1}^\infty V_n$ 이며 @exr-MA_rudin_4_9 에 따라 $\text{diam}(A)=0$ 이며 $A\ne \varnothing$ 이므로 $A$ 는 단 하나의 원소로 된 집합이며 이 원소를 $g(p)$ 라고 놓자. $p\in E$ 일 경우 $g(p) = f(p)$ 이며 @exr-MA_rudin_4_4 에 따라 이런 $g$ 는 유일하게 정해진다. 이제 이렇게 정해진 $g$ 가 연속임을 보이자. 
 
-$p\in X\backslash E$ 이며 $\langle p_n \rangle$ 이 $p$ 로 수렴한다고 하자. @thm-part2_cauchy_sequence ($1$) 에 따라 $\langle p_n\rangle$ 은 코시수열이며 @exr-part2_rudin_4_11 에 따라 $\langle f(p_n)\rangle$ 도 $\R$ 에서의 코시수열이다. $\R$ 은 complete metric space 이므로 $\langle f(p_n)\rangle$ 도 수렴하며 따라서 $g$ 는 연속이다.
+$p\in X\backslash E$ 이며 $\langle p_n \rangle$ 이 $p$ 로 수렴한다고 하자. @thm-MA_cauchy_sequence ($1$) 에 따라 $\langle p_n\rangle$ 은 코시수열이며 @exr-MA_rudin_4_11 에 따라 $\langle f(p_n)\rangle$ 도 $\R$ 에서의 코시수열이다. $\R$ 은 complete metric space 이므로 $\langle f(p_n)\rangle$ 도 수렴하며 따라서 $g$ 는 연속이다.
 
-여기서 치역이 $\R$ 이 아닐 경우를 생각하자. 일반적인 거리공간에서의 경우와 다른 것은 코시수열이 수렴하는지 여부이다. @thm-part2_cauchy_sequence 에 따라 $\R^n$ 과 옹골 거리집합인 경우 수렴하나 complete metric space 의 정의에 따라 수렴한다. 그러나 incomplete metric space 의 겨우 코시 수열의 수렴을 보장 할 수 없으므로 확장이 존재한다는 것을 보장하지 못한다. 
+여기서 치역이 $\R$ 이 아닐 경우를 생각하자. 일반적인 거리공간에서의 경우와 다른 것은 코시수열이 수렴하는지 여부이다. @thm-MA_cauchy_sequence 에 따라 $\R^n$ 과 옹골 거리집합인 경우 수렴하나 complete metric space 의 정의에 따라 수렴한다. 그러나 incomplete metric space 의 겨우 코시 수열의 수렴을 보장 할 수 없으므로 확장이 존재한다는 것을 보장하지 못한다. 
 
 :::
 
@@ -1459,7 +1459,7 @@ $p\in X\backslash E$ 이며 $\langle p_n \rangle$ 이 $p$ 로 수렴한다고 �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_14}
+::: {#exr-MA_rudin_4_14}
 
 #### Rudin 4.14
 
@@ -1470,7 +1470,7 @@ $I=[0,\,1]$ 에 대해 $f:I \to I$ 가 연속이다. 최소한 하나의 $x\in I
 
 :::{.solution}
 
-@thm-part2_fixed_point_theorem
+@thm-MA_fixed_point_theorem
 
 :::
 
@@ -1479,7 +1479,7 @@ $I=[0,\,1]$ 에 대해 $f:I \to I$ 가 연속이다. 최소한 하나의 $x\in I
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_15}
+::: {#exr-MA_rudin_4_15}
 
 #### Rudin 4.15
 
@@ -1500,7 +1500,7 @@ $f : \R \to \R$ 이 연속이지만 단조함수가 아니라고 하자. 어떤 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_19}
+::: {#exr-MA_rudin_4_19}
 
 #### Rudin 4.19
 
@@ -1513,7 +1513,7 @@ $f:\R \to \R$ 이 사잇값 성질을 갖는다고 하자. 즉 $f(a) < c <f(b)$ 
 
 ::: {.solution}
 
-$f$ 가 $x_0$ 에서 연속이 아니라고 하자. @prp-part2_limit_and_convergent_series 에 따라 $x_0$ 를 포함하지 않는, 그러나 $x_0$ 로 수렴하는 수열 $\langle x_n \rangle$ 에 대해 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴하지 않는다. 그렇다면 일반성을 잃지 않고 *Hint* 처럼 가정 할 수 있다. 그렇다면 $x_0$ 는 $f^{-1}(\{r\})$ 의 극한점이지만 $x_0$ 는 여기에 포함되지 않는다. 이는 가정에 모순이다.
+$f$ 가 $x_0$ 에서 연속이 아니라고 하자. @prp-MA_limit_and_convergent_series 에 따라 $x_0$ 를 포함하지 않는, 그러나 $x_0$ 로 수렴하는 수열 $\langle x_n \rangle$ 에 대해 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴하지 않는다. 그렇다면 일반성을 잃지 않고 *Hint* 처럼 가정 할 수 있다. 그렇다면 $x_0$ 는 $f^{-1}(\{r\})$ 의 극한점이지만 $x_0$ 는 여기에 포함되지 않는다. 이는 가정에 모순이다.
 
 :::
 
@@ -1521,11 +1521,11 @@ $f$ 가 $x_0$ 에서 연속이 아니라고 하자. @prp-part2_limit_and_converg
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_20}
+::: {#exr-MA_rudin_4_20}
 
 #### Rudin 4.20
 
-$E$ 가 거리공간 $X$ 의 부분집합이며 공집합이 아니라고 하자. @exr-part2_KKK_2_7_8 과 같이 집합 $E$ 와 $x\in E$ 사이의 거리 $\rho_E(x) := \rho(x,\,E)$ 를 정의한다.
+$E$ 가 거리공간 $X$ 의 부분집합이며 공집합이 아니라고 하자. @exr-MA_KKK_2_7_8 과 같이 집합 $E$ 와 $x\in E$ 사이의 거리 $\rho_E(x) := \rho(x,\,E)$ 를 정의한다.
 
 ($1$) $\rho_E(x)= 0 \iff x\in \overline{E}$ 임을 보여라.
 
@@ -1533,7 +1533,7 @@ $E$ 가 거리공간 $X$ 의 부분집합이며 공집합이 아니라고 하자
 
 $$
 |\rho_E(x) - \rho_E(y)| \le \|x-y\|_X 
-$$ {#eq-part2_rudin_4_20}
+$$ {#eq-MA_rudin_4_20}
 
 임을 보이면 된다.
 
@@ -1552,7 +1552,7 @@ $$
 \rho_E(x) \le \|x-y\|_X + \rho_E(y)
 $$
 
-이다. 마찬가지로 $\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)$ 이므로 @eq-part2_rudin_4_20 식이 성립한다. 따라서 $\rho_E(x)$ 는 고른 연속이다.
+이다. 마찬가지로 $\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)$ 이므로 @eq-MA_rudin_4_20 식이 성립한다. 따라서 $\rho_E(x)$ 는 고른 연속이다.
 
 :::
 
@@ -1560,7 +1560,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_21}
+::: {#exr-MA_rudin_4_21}
 
 #### Rudin 4.21
 
@@ -1574,7 +1574,7 @@ $K$ 와 $F$ 는 거리공간 $X$ 의 서로소인 부분집합이다. $K$ 는 �
 
 $\rho_F(x) = \inf \{ \|x-q\|_X : q\in F\}$ 는 연속함수이다. 따라서 $\rho_F(K)$ 는 옹골집합이다. 어떤 $p\in K$ 에 대해 $\rho_F(p)=0$ 이라면 $p \in F$ 이므로 두 집합이 서로소라는 가정에 모순된다. 따라서 모든 $p\in K$ 에 대해 $f(p)>0$ 이다. $\rho_F(K)$ 는 옹골집합이므로 최대값과 최소값을 포함하며 $m = \min \{\rho_F(K)\} > 0$ 이다. $0<\delta <m$ 에 대해 $\|p-q\|_X > \delta$ 이다.
 
-@exr-part2_kkk_3_5_4 로부터 $A=\{(x,\, 0):x\in \R \}$ 와 $B=\left\{ \left(x,\, \dfrac{1}{1+x^2}\right) : x\in\R\right\}$ 은 닫힌 집합임을 안다. $A\cap B=\varnothing$ 이지만 $\inf \{\|a,\,b\|_X: a\in A,\, b\in B\} = 0$ 임을 알 수 있다.
+@exr-MA_kkk_3_5_4 로부터 $A=\{(x,\, 0):x\in \R \}$ 와 $B=\left\{ \left(x,\, \dfrac{1}{1+x^2}\right) : x\in\R\right\}$ 은 닫힌 집합임을 안다. $A\cap B=\varnothing$ 이지만 $\inf \{\|a,\,b\|_X: a\in A,\, b\in B\} = 0$ 임을 알 수 있다.
   
 :::
 
@@ -1582,7 +1582,7 @@ $\rho_F(x) = \inf \{ \|x-q\|_X : q\in F\}$ 는 연속함수이다. 따라서 $\r
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_22}
+::: {#exr-MA_rudin_4_22}
 
 #### Rudin 4.22
 
@@ -1592,7 +1592,7 @@ $$
 f(p) = \dfrac{\rho_A(p)}{\rho_A(p) + \rho_B(p)} .
 $$
 
-$f$ 는 $X$ 에서 연속이며 $f(X) = [0,\,1]$ 임을 보여라. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임을 보여라. 이것은 @exr-part2_rudin_4_3 의 역이 성립함을 알게 해 준다. $X$ 의 닫힌 부분집합 $A$ 와 $X$ 에서 연속인 함수 $f$ 에 대해 $V=f^{-1}([0, \frac{1}{2}))$, $W=f^{-1}((\frac{1}{2}, 1])$ 라고 하자. $V$ 와 $W$ 는 열린 집합이며 서로소임을 보이고 $A \subset V,\, B\subset W$ 임을 보여라.
+$f$ 는 $X$ 에서 연속이며 $f(X) = [0,\,1]$ 임을 보여라. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임을 보여라. 이것은 @exr-MA_rudin_4_3 의 역이 성립함을 알게 해 준다. $X$ 의 닫힌 부분집합 $A$ 와 $X$ 에서 연속인 함수 $f$ 에 대해 $V=f^{-1}([0, \frac{1}{2}))$, $W=f^{-1}((\frac{1}{2}, 1])$ 라고 하자. $V$ 와 $W$ 는 열린 집합이며 서로소임을 보이고 $A \subset V,\, B\subset W$ 임을 보여라.
 
 
 :::
@@ -1601,9 +1601,9 @@ $f$ 는 $X$ 에서 연속이며 $f(X) = [0,\,1]$ 임을 보여라. $p\in A \iff 
 
 ::: {.solution}
 
-@exr-part2_rudin_4_20 으로부터 $\rho_A(p)=0 \iff p\in A$ 이며 $A \cap B=\varnothing$ 이므로 $\rho_A(p)+\rho_B(p) >0$ 이다. $\rho_A,\, \rho_B$ 가 모두 연속이므로 $f(p)$ 는 연속이다. 
+@exr-MA_rudin_4_20 으로부터 $\rho_A(p)=0 \iff p\in A$ 이며 $A \cap B=\varnothing$ 이므로 $\rho_A(p)+\rho_B(p) >0$ 이다. $\rho_A,\, \rho_B$ 가 모두 연속이므로 $f(p)$ 는 연속이다. 
 
-$0\le \rho_A(p) \le \rho_A(p)+\rho_B(p)$ 이므로 $f(X) \subset [0,\,1]$ 이다. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임은 쉽게 알 수 있다. 사잇값 정리(@thm-part2_intermediate_value_theorem) 에 따라 $f(X) = [0,\,1]$ 이다. 
+$0\le \rho_A(p) \le \rho_A(p)+\rho_B(p)$ 이므로 $f(X) \subset [0,\,1]$ 이다. $p\in A \iff f(p) = 0$ 이며 $p\in B \iff f(p)=1$ 임은 쉽게 알 수 있다. 사잇값 정리(@thm-MA_intermediate_value_theorem) 에 따라 $f(X) = [0,\,1]$ 이다. 
 
 $\overline{I}=[0,\,1]$ 에 대해 $[0,\,\frac{1}{2})$ 와 $(\frac{1}{2},\,1]$ 은 $I_0$ 에서 열린 집합이며, $f$ 가 연속이므로 $V,\,W$ 는 연속이고, 서로소임은 자명하다. 또한 $A \subset V,\, B\subset W$ 도 자명하다.
   
@@ -1614,7 +1614,7 @@ $\overline{I}=[0,\,1]$ 에 대해 $[0,\,\frac{1}{2})$ 와 $(\frac{1}{2},\,1]$ �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_3_5_10}
+::: {#exr-MA_KKK_3_5_10}
 
 #### KKK 3.5.10
 
@@ -1649,7 +1649,7 @@ $$
 
 이므로 $f$ 는 연속이다.
 
-($2$) $x=x_{n+1},\, y=x_n$ 에 대해 주어진 식은 $\|x_{n+2}-x_{n+1}\| \le r\|x_{n+1}-x_{n}\|$ 이며 @exr-part2_kkk_2_7_13 에 따라 $\langle x_n \rangle$ 은 코시수열이다.
+($2$) $x=x_{n+1},\, y=x_n$ 에 대해 주어진 식은 $\|x_{n+2}-x_{n+1}\| \le r\|x_{n+1}-x_{n}\|$ 이며 @exr-MA_kkk_2_7_13 에 따라 $\langle x_n \rangle$ 은 코시수열이다.
 
 ($3$) $X$ 가 닫힌집합이므로 $x\in X$ 이다. $x_{n+1}=f(x_n)$ 이므로 $x=f(x)$ 이며, 따라서 고정점이다. 
 :::
@@ -1658,7 +1658,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_4_23}
+::: {#exr-MA_rudin_4_23}
 
 #### Rudin 4.23
 
@@ -1666,7 +1666,7 @@ $f:(a,\,b) \to \R$ 이 $a < x,\,y < b$, $0<\lambda<1$ 에 대해
 
 $$
 f(\lambda x + (1-\lambda) y) \le \lambda f(x) + (1-\lambda )f(y)
-$$ {#eq-part2_convex_function}
+$$ {#eq-MA_convex_function}
 
 를 만족 할 때 $f$ 를 **볼록함수 (convex function)** 이라고 한다. 모든 볼록 함수가 연속임을 보여라. $g$ 가 단조증가인 볼록함수 이고 $f$ 가 볼록함수 일 때 $g\circ f$ 도 볼록함수 임을 보여라. 
 
@@ -1674,7 +1674,7 @@ $f$ 가 $(a,\,b)$ 에서 볼록 함수 이고 $a<s<t<u<b$ 이면
 
 $$
 \dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(s)}{u-s} \le \dfrac{f(u)-f(t)}{u-t}
-$$ {#eq-part2_convex_function_2}
+$$ {#eq-MA_convex_function_2}
 
 임을 보여라.
 
@@ -1726,7 +1726,7 @@ $$
 
 $$
 f(x)-f(y) \le (y-x)\dfrac{f(c)-f(y)}{D} \le (y-x)\dfrac{2M}{D}
-$${#eq-part2_rudin_4_23_1}
+$${#eq-MA_rudin_4_23_1}
 
 이다. $x<y<d$ 이므로 비슷한 방법으로 $y = (1-\theta)x + \theta d$ 라 놓으면 $\theta = \dfrac{y-x}{d-x} \in (0,\,1)$ 이며, 
 
@@ -1738,9 +1738,9 @@ $$
 
 $$
 f(y)-f(x)  \le (y-x)\dfrac{2M}{D}
-$${#eq-part2_rudin_4_23_2}
+$${#eq-MA_rudin_4_23_2}
 
-임을 알 수 있다. @eq-part2_rudin_4_23_1 과 @eq-part2_rudin_4_23_2 로부터
+임을 알 수 있다. @eq-MA_rudin_4_23_1 과 @eq-MA_rudin_4_23_2 로부터
 
 $$
 |f(x) - f(y) | \le \dfrac{2M}{D}|x-y|
@@ -1766,10 +1766,10 @@ $$
 이다. 첫번째 부등식은 $g$ 가 단조증가 함수이므로 성립한다. 
 
 
-($3$) @eq-part2_convex_function_2 가 성립함을 보이자. $a<c<d<b$ 인 $c,\,d$ 를 잡자. 임의의 $\eta <\dfrac{d-c}{2}$ 를 선택하고 $c+\eta \le x <y \le d-\eta$ 가 되도록 $x,\,y$ 를 잡자. 
+($3$) @eq-MA_convex_function_2 가 성립함을 보이자. $a<c<d<b$ 인 $c,\,d$ 를 잡자. 임의의 $\eta <\dfrac{d-c}{2}$ 를 선택하고 $c+\eta \le x <y \le d-\eta$ 가 되도록 $x,\,y$ 를 잡자. 
 
 
-$f$ 가 볼록함수이면 @eq-part2_convex_function_2 를 만족함을 보이자. $a<s<t<u<b$ 이면 $t=\lambda_0 s + (1-\lambda_0) u$ 인 $\lambda_0 \in (0,\,1)$ 이 존재한다. 즉 $\lambda_0 = \dfrac{u-t}{u-s}$ 이다. 또한
+$f$ 가 볼록함수이면 @eq-MA_convex_function_2 를 만족함을 보이자. $a<s<t<u<b$ 이면 $t=\lambda_0 s + (1-\lambda_0) u$ 인 $\lambda_0 \in (0,\,1)$ 이 존재한다. 즉 $\lambda_0 = \dfrac{u-t}{u-s}$ 이다. 또한
 
 $$
 f(t) = f(\lambda_0 s + (1-\lambda_0) u)  \le \lambda_0 f(s) + (1-\lambda_0) f(u)
@@ -1786,7 +1786,7 @@ $$
 
 $$
 \dfrac{f(u)-f(s)}{u-s} \le \dfrac{f(u)-f(t)}{u-t} 
-$$ {#eq-part2_rudin_4_23_4}
+$$ {#eq-MA_rudin_4_23_4}
 
 이다. $\lambda_1 = 1-\lambda_0$ 로 놓으면 $t=(1-\lambda_1)s + \lambda_1 u$ 이며 $\lambda_1 \in (0,\,1)$ 이다. $\lambda_1 = \dfrac{t-s}{u-s}$ 이며 
 
@@ -1804,9 +1804,9 @@ $$
 
 $$
 \dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(s)}{u-s}
-$${#eq-part2_rudin_4_23_5}
+$${#eq-MA_rudin_4_23_5}
 
-이다. @eq-part2_rudin_4_23_4 과 @eq-part2_rudin_4_23_5 로 부터 @eq-part2_convex_function_2 을 얻는다. 
+이다. @eq-MA_rudin_4_23_4 과 @eq-MA_rudin_4_23_5 로 부터 @eq-MA_convex_function_2 을 얻는다. 
 
 :::
 

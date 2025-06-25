@@ -12,7 +12,7 @@ crossref:
 
 ## 기본 개념과 표기법
 
-여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-part2_Euclidean_space 와 @prp-part2_norm_of_Euclidean_space 를 보라.
+여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-MA_Euclidean_space 와 @prp-MA_norm_of_Euclidean_space 를 보라.
 
 - 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x_1,\ldots,\,x_n)$ 식 표기법과 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
@@ -35,7 +35,7 @@ crossref:
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_1}
+::: {#exr-CM_spivak_1_1}
 #### Spivak 1.1
 
 $\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
@@ -47,7 +47,7 @@ $\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
 
 ::: {.solution}
 
-$\bf{x} = \sum_{i=1}^n x_i \bf{e}_i$ 이다. @prp-part2_norm_of_Euclidean_space ($5$) 로 부터
+$\bf{x} = \sum_{i=1}^n x_i \bf{e}_i$ 이다. @prp-MA_norm_of_Euclidean_space ($5$) 로 부터
 
 $$
 \|\bf{x}\| = \left\|\sum_{i=1}^n x_i \bf{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \bf{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
@@ -58,7 +58,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_4}
+::: {#exr-CM_spivak_1_4}
 #### Spivak 1.4
 
 ${\large|} \|\bf{x}\| -\|\bf{y}\| {\large |} \le \|\bf{x}-\bf{y}\|$ 임을 보여라.
@@ -70,7 +70,7 @@ ${\large|} \|\bf{x}\| -\|\bf{y}\| {\large |} \le \|\bf{x}-\bf{y}\|$ 임을 보�
 
 ::: {.solution}
 
-@prp-part2_norm_of_Euclidean_space ($5$) 에서 $\bf{y} \to \bf{y}-\bf{x}$ 로 바꾸면
+@prp-MA_norm_of_Euclidean_space ($5$) 에서 $\bf{y} \to \bf{y}-\bf{x}$ 로 바꾸면
 
 $$
 \|\bf{y}\| \le \|\bf{x}\|+ \|\bf{y}-\bf{x}\|
@@ -84,7 +84,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_6}
+::: {#exr-CM_spivak_1_6}
 #### Spivak 1.6
 
 $f,\,g \in \mathcal{R}[a,\,b]$ 이다.
@@ -127,7 +127,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_7}
+::: {#exr-CM_spivak_1_7}
 #### Spivak 1.7
 
 선형 변환 $T:\R^n \to \R^n$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $\langle T(\bf{x}),\, T(\bf{y}) \rangle = \langle \bf{x},\,  \bf{y}\rangle$ 이면 **inner product preserving** 이라고 한다. 
@@ -166,14 +166,14 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_8}
+::: {#exr-CM_spivak_1_8}
 #### Spivak 1.8
 
 $\bf{x},\,\bf{y}\in \R^n$ 이 영벡터가 아닐 때 $\bf{x}$ 와 $\bf{y}$ 사이의 각을 $\angle (\bf{x},\bf{y})$ 라고 쓰며 다음과 같이 정의된다.
 
 $$
 \angle (\bf{x},\bf{y}) := \arccos \left(\dfrac{\bf{x\cdot y}}{\|\bf{x}\| \cdot \|\bf{y}\|}\right).
-$$ {#eq-part3_angle_between_vectors}
+$$ {#eq-CM_angle_between_vectors}
 
 선형 결합 $T$ 가 전단사이며 모든 $0$ 벡터가 아닌 $\bf{x},\,\bf{y}$ 에 대해 $\angle (T(\bf{x}),T(\bf{y}))= \angle (\bf{x},\bf{y})$ 일 때 $T$ 를 **angle preserving** 이라고 한다.
 
@@ -192,7 +192,7 @@ $$ {#eq-part3_angle_between_vectors}
 
 ::: {.solution}
 
-($a$) $T$ 가 norm preserving 이면 inner product preserving 이므로 (@exr-part3_spivak_1_7 ($a$)) @eq-part3_angle_between_vectors 값이 변하지 않는다.
+($a$) $T$ 가 norm preserving 이면 inner product preserving 이므로 (@exr-CM_spivak_1_7 ($a$)) @eq-CM_angle_between_vectors 값이 변하지 않는다.
 
 ($b$) 문제 오류. $\bf{x}_1=(-1, -1)$, $\bf{x}_2=(1, 0)$, $T(\bf{x}_1)=3\bf{x}_1$, $T(\bf{x}_2)=-3\bf{x}_2$ 이어도
 
@@ -209,7 +209,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_9}
+::: {#exr-CM_spivak_1_9}
 #### Spivak 1.9
 
 $0\le \theta < \pi$ 에 대해 $T:\R^2 \to \R^2$ 가 $\begin{bmatrix} \cos \theta & \sin \theta \\ - \sin \theta & \cos \theta\end{bmatrix}$ 라고 하자. $T$ 가 angle preserving 이며 $\bf{x}\ne \bf{0}$ 일 때 $\angle (\bf{x},\, T(\bf{x}))= \theta$ 임을 보여라.
@@ -239,7 +239,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_10}
+::: {#exr-CM_spivak_1_10}
 #### Spivak 1.10
 
 선형변환 $T:\R^n \to \R^m$ 를 생각하자. 모든 $\boldsymbol{h}\in \R^n$ 에 대해 $\|T(\bf{h})\| \le M \|\bf{h}\|$ 인 $M$ 이 존재함을 보여라. 
@@ -271,7 +271,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_11}
+::: {#exr-CM_spivak_1_11}
 #### Spivak 1.11
 
 $\bf{x},\,\bf{y}\in \R^n$, $\bf{z},\,\bf{w}\in \R^m$ 일 때 $(\bf{x}\oplus \bf{z}) \bf{\cdot} (\bf{y}\oplus \bf{w}) = \bf{x \cdot y} + \bf{z \cdot w}$ 이며 $\|\bf{x}\oplus \bf{z}\| = \sqrt{\|\bf{x}\|^2 + \|\bf{z}\|^2}$ 임을 보여라. 이 때 
@@ -296,7 +296,7 @@ trivial
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_12}
+::: {#exr-CM_spivak_1_12}
 #### Spivak 1.12
 
 $(\R^n)^\ast$ 는 $\R^n$ 의 쌍대공간이다. 정해진 $\bf{x}\in \R^n$ 에 대해 $\varphi_\bf{x} (\bf{y}) :=\bf{x \cdot y}$ 는 $\varphi_\bf{x} \in (\R^n)^\ast$ 이다. $T:\R^n \to (\R^n)^\ast$ 를 $T(\bf{x})= \varphi_\bf{x}$ 로 정의한다면 $T$ 는 전단사 선형변환임을 보여라.
@@ -328,7 +328,7 @@ $\psi_x \in \ker (T)$ 라면 모든 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{x}(\bf
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_13}
+::: {#exr-CM_spivak_1_13}
 #### Spivak 1.13
 
 $\bf{x},\,\bf{y}\in\R^n$ 에 대해 $\bf{x \cdot y}=0$ 이면 $\bf{x}$ 와 $\bf{y}$ 는 서로 직교(perpendicular, orthogonal) 한다고 한다. $\bf{x},\,\bf{y}$ 가 직교한다면 $\|\bf{x}+\bf{y}\|^2 = \|\bf{x}\|^2+\|\bf{y}\|^2$ 임을 보여라. 
@@ -351,7 +351,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_cartesian_product}
+::: {#def-CM_cartesian_product}
 
 #### 데카르트곱
 
@@ -374,11 +374,11 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_cartesian_product}
+::: {#def-CM_cartesian_product}
 
 #### 열린 $n$-cell
 
-@def-part2_countable 에서 $n$-cell 을 정의하였다. 이와 비슷하게 
+@def-MA_countable 에서 $n$-cell 을 정의하였다. 이와 비슷하게 
 
 $$
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \R^n
@@ -396,7 +396,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_neighboring_cube}
+::: {#def-CM_neighboring_cube}
 
 #### 열린/닫힌 cube
 
@@ -419,7 +419,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_open_sphere_and_cube}
+::: {#prp-CM_open_sphere_and_cube}
 
 $\R^n$ 에서 다음이 성립한다.
 
@@ -438,7 +438,7 @@ $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol
 
 </br>
 
-[기본적인 위상수학](../part2/2_1_basic_topology.qmd) 의 옹골집합 부분과 하이네 보렐 정리(@thm-part2_heine_borrel) 를 참고하라. 또한 @exr-part2_KKK_2_7_20 을 통해 $A\subset \R^m$ 과 $B\subset \R^n$ 이 옹골집합이면 $A \times B$ 도 옹골집합임을 보였다.
+[기본적인 위상수학](../part2/2_1_basic_topology.qmd) 의 옹골집합 부분과 하이네 보렐 정리(@thm-MA_heine_borrel) 를 참고하라. 또한 @exr-MA_KKK_2_7_20 을 통해 $A\subset \R^m$ 과 $B\subset \R^n$ 이 옹골집합이면 $A \times B$ 도 옹골집합임을 보였다.
 
 
 </br>
@@ -447,7 +447,7 @@ $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_17}
+::: {#exr-CM_spivak_1_17}
 #### Spivak 1.17
 
 $[0,\,1]\times [0,\,1]$ 의 어떤 부분집합 $A$ 는 각각의 수직선과 수평선에 대해 많아야 하나의 점만을 포함하며 $A$ 의 경계 $\partial A$ 는 $[0,\,1]\times [0,\,1]$ 이다. $A$ 를 구하라.
@@ -466,7 +466,7 @@ $[0,\,1]\times [0,\,1]$ 의 어떤 부분집합 $A$ 는 각각의 수직선과 �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_18}
+::: {#exr-CM_spivak_1_18}
 #### Spivak 1.18
 
 $A\subset [0,\,1]$ 은 $A=\bigcup (a_i,\,b_i)$ 이며 모든 $(0,\,1)$ 에 포함되는 유리수는 어떤 $(a_i,\,b_i)$ 에 포함되어 있다. $\partial A = [0,\,1]-A$ 임을 보여라.
@@ -487,7 +487,7 @@ $x\notin A$ 라고 하자. 유리수의 조밀성에 의해 모든 $\delta>0$ �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_19}
+::: {#exr-CM_spivak_1_19}
 #### Spivak 1.19
 
 $A$ 가 닫힌 집합이며 모든 $[0,\,1]$ 에 포함되는 유리수를 포함한다면 $[0,\,1]\subset A$ 임을 보여라.
@@ -505,7 +505,7 @@ $A$ 가 닫힌 집합이며 $C\subset A$ 이면 $\overline{C}\subset A$ 이다. 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_21}
+::: {#exr-CM_spivak_1_21}
 #### Spivak 1.21
 
 ($a$) $A$ 가 닫힌 집합이고 $x\notin A$ 일 때 모든 $y\in A$ 에 대해 $\|y-x\| \ge d$ 인 $d>0$ 이 존재함을 보여라.
@@ -538,7 +538,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_22}
+::: {#exr-CM_spivak_1_22}
 #### Spivak 1.22
 
 $U$ 는 열린집합이며 $C\subset U$ 는 옹골집합이라면 $C \subset \text{int} (D)$ 이며 $D\subset U$ 를 만족하는 옹골집합 $D$ 가 존재함을 보여라.
@@ -549,7 +549,7 @@ $U$ 는 열린집합이며 $C\subset U$ 는 옹골집합이라면 $C \subset \te
 
 ::: {.solution}
 
-$U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_spivak_1_21 ($b$) 에서 보였듯이 모든 $y\in A,\, x\in B$ 에 대해 $\|y-x\|\ge d$ 인 $d>0$ 이 존재한다. 
+$U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-CM_spivak_1_21 ($b$) 에서 보였듯이 모든 $y\in A,\, x\in B$ 에 대해 $\|y-x\|\ge d$ 인 $d>0$ 이 존재한다. 
 
 이제 $\Gamma = \{N(x,\, d/2) : x\in C\}$ 는 $C$ 의 열린 덮개이며 $C$ 가 옹골집합이므로 $C$ 의 유한 열린 덮개 $\{B_1,\ldots,\,B_m\}\subset \Gamma$ 가 존재한다. $D = \bigcup \overline{B_i}$ 라고 하면 각각의 $\overline{B_i}$ 는 옹골집합이며 따라서 $D$ 도 옹골집합이다. $\text{int} (D) = \bigcup B_i$ 이므로 $C\subset \text{int}(D)$ 이며 $D\subset U$ 이다. 
 
@@ -559,13 +559,13 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 ## 함수와 연속성 
 
-### 행렬의 노름 {#sec-part3_norm_of_matrix}
+### 행렬의 노름 {#sec-CM_norm_of_matrix}
 
-@exr-part3_spivak_1_10 에서 우리는 선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 $\|L(\bf{x})\|\le M\|\bf{x}\|$ 인 양수 $M$ 이 존재함을 보였다. 
+@exr-CM_spivak_1_10 에서 우리는 선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 $\|L(\bf{x})\|\le M\|\bf{x}\|$ 인 양수 $M$ 이 존재함을 보였다. 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_norm_of_matrix}
+::: {#def-CM_norm_of_matrix}
 
 #### 행렬의 norm
 
@@ -573,7 +573,7 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-part3_sp
 
 $$
 \|L\| := \sup \{\|L\bf{x}\| : \bf{x} \in \R^n,\, \|\bf{x}\|=1\}.
-$$ {#eq-part3_definition_of_matrix_norm}
+$$ {#eq-CM_definition_of_matrix_norm}
 
 :::
 :::
@@ -582,7 +582,7 @@ $$ {#eq-part3_definition_of_matrix_norm}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_properties_of_matrix_norm_1}
+::: {#prp-CM_properties_of_matrix_norm_1}
 
 행렬의 노름에 대해 다음이 성립한다. 
 
@@ -610,7 +610,7 @@ $$
 
 ($1$) $\|\bf{u}\|=\dfrac{\bf{x}}{\|\bf{x}\|}$ 라고 하면 $\|L\| \ge \|L\bf{u}\| = \dfrac{\|L\bf{x}\|}{\|\bf{x}\|}$ 이다. 
 
-($2$) $\|L\|<\infty$ 는 @exr-part3_spivak_1_10 에서 보였다. ($1$) 로부터 $\|L(\bf{x}-\bf{y})\|\le \|L\|\cdot \|\bf{x}-\bf{y}\|$ 이므로 고른 연속이다.
+($2$) $\|L\|<\infty$ 는 @exr-CM_spivak_1_10 에서 보였다. ($1$) 로부터 $\|L(\bf{x}-\bf{y})\|\le \|L\|\cdot \|\bf{x}-\bf{y}\|$ 이므로 고른 연속이다.
 
 ($3$) $\|(L+T)(\bf{x})\|=\|L\bf{x}+T\bf{x}\|\le \|L\bf{x}\|+\|T\bf{x}\|\le (\|L\|+\|T\|)\|\bf{x}\|$ 이다. 임의의 $\|x\|=1$ 에 대해 $\|L\|+\|T\| \ge \|(L+T)(\bf{x})\|$ 이므로 $\|L\|+\|T\| \ge \|L+T\|$ 이다. $\|cL\bf{x}\| = |c|\cdot \|L\bf{x}\|$ 이므로 $\|cL\| = |c|\cdot \|L\|$ 이다. 
 
@@ -621,12 +621,12 @@ $$
 </br>
 
 
-### 함수의 연속성 {#sec-part3_functions_and_continuity}
+### 함수의 연속성 {#sec-CM_functions_and_continuity}
 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_component_functions}
+::: {#def-CM_component_functions}
 
 #### 성분 함수
 
@@ -642,7 +642,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_projection_function}
+::: {#def-CM_projection_function}
 
 #### 사영 함수
 항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 하고 $\pi_i$ 라고 쓴다. 즉 $\pi_i (\bf{x})= x_i$ 이다.
@@ -654,7 +654,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part3_projection_functions}
+::: {#exm-CM_projection_functions}
 
 다음은 쉽게 보일 수 있다.
 
@@ -670,14 +670,14 @@ $$
 
 </br>
 
-연속성에 대해 [함수의 극한과 연속](../part2/2_3_continuity_of_functions.qmd#sec-part2_limit_and_continuity_of_functions) 을 참고하라.
+연속성에 대해 [함수의 극한과 연속](../part2/2_3_continuity_of_functions.qmd#sec-MA_limit_and_continuity_of_functions) 을 참고하라.
 
 
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_oscillation} 
+::: {#def-CM_oscillation} 
 
 #### Oscillation
 
@@ -700,7 +700,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_oscillation_and_continuity}
+::: {#prp-CM_oscillation_and_continuity}
 
 $f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 $\bf{a}\in A$ 에서 연속인 것의 필요충분조건은 $o(f,\,\bf{a}) = 0$ 인 것이다.
 
@@ -737,7 +737,7 @@ $$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_oscillation_and_closed_set}
+::: {#prp-CM_oscillation_and_closed_set}
 
 닫힌 집합 $A\subset \R^n$ 에 대해 $f:A \to \R$ 이 유계일 때 임의의 $\varepsilon>0$ 에 대해 $\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 은 닫힌 집합이다.
 
@@ -765,7 +765,7 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 �
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_23}
+::: {#exr-CM_spivak_1_23}
 #### Spivak 1.23
 
 $F:A \subset \R^n \to \R^m$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
@@ -796,7 +796,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_24}
+::: {#exr-CM_spivak_1_24}
 #### Spivak 1.24
 
 $F:A\subset \R^n \to \R^m$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 연속인 것임을 보여라.
@@ -806,14 +806,14 @@ $F:A\subset \R^n \to \R^m$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 �
 </div></br>
 
 ::: {.solution}
-$\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한다. 
+$\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-CM_spivak_1_23 를 적용한다. 
 :::
 
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_25}
+::: {#exr-CM_spivak_1_25}
 #### Spivak 1.25
 
 선형변환 $T:\R^n \to \R^m$ 은 연속임을 보여라.
@@ -824,7 +824,7 @@ $\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한다.
 
 ::: {.solution}
 
-@exr-part3_spivak_1_10 에서 보였듯이 $\|T(\bf{h})\|\le M\|\bf{h}\|$ 인 $M>0$ 이 존재한다. $\bf{a}\in \R^m$ 에 대해 $\|T(\bf{x})-T(\bf{a})\| = \|T(\bf{x}-\bf{a})\| \le M \|\bf{x}-\bf{a}\|$ 이므로 $T$ 는 연속이다.
+@exr-CM_spivak_1_10 에서 보였듯이 $\|T(\bf{h})\|\le M\|\bf{h}\|$ 인 $M>0$ 이 존재한다. $\bf{a}\in \R^m$ 에 대해 $\|T(\bf{x})-T(\bf{a})\| = \|T(\bf{x}-\bf{a})\| \le M \|\bf{x}-\bf{a}\|$ 이므로 $T$ 는 연속이다.
 
 :::
 
@@ -832,7 +832,7 @@ $\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-part3_spivak_1_23 를 적용한다.
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_26}
+::: {#exr-CM_spivak_1_26}
 #### Spivak 1.26
 
 $A=\{(x,\,y) \in \R^2 : x>0 \text{ and } 0<y<x^2\}$ 이라고 하자.
@@ -855,7 +855,7 @@ $A=\{(x,\,y) \in \R^2 : x>0 \text{ and } 0<y<x^2\}$ 이라고 하자.
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_28}
+::: {#exr-CM_spivak_1_28}
 #### Spivak 1.28
 
 $A\subset \R^n$ 이 닫힌 집합이 아니면 어떤 연속함수 $f:A\to \R$ 은 유계가 아님을 보여라.
@@ -873,7 +873,7 @@ $\bf{x}\in \R^n -A,\, \bf{x}\notin \text{int}(\R^n-A)$ 에 대해 $f(\bf{y}) := 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_29}
+::: {#exr-CM_spivak_1_29}
 #### Spivak 1.29
 
 $A$ 가 옹골집합이면 모든 연속함수 $f:A\to \R$ 은 최대값과 최소값을 가짐을 보여라.
@@ -884,13 +884,13 @@ $A$ 가 옹골집합이면 모든 연속함수 $f:A\to \R$ 은 최대값과 최�
 
 ::: {.solution}
 
-see @thm-part2_extreme_value_theorem
+see @thm-MA_extreme_value_theorem
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_1_30}
+::: {#exr-CM_spivak_1_30}
 #### Spivak 1.30
 
 $f:[a,\,b] \to \R$ 이 증가함수이다. $x_1,\ldots,\,x_n \in [a,\,b]$ 가 모두 다른 값이라면 $\sum_{i=1}^n o(f,\,x_i) < f(b)-f(a)$ 임을 보여라.

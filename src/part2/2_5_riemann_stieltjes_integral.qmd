@@ -13,11 +13,11 @@ crossref:
 이 장에서의 $f:E\subset\R \to \R$ 은 특별한 언급이 없는 한 유계인 함수이다.
 
 
-### 리만 적분 {#sec-part2_riemann_integral}
+### 리만 적분 {#sec-MA_riemann_integral}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_partition}
+::: {#def-MA_partition}
 
 #### 분할
 
@@ -31,7 +31,7 @@ $$
 
 $$
 \|P\| := \max \{|x_{i}-x_{i-1}|: i=1,\ldots,\,n\}.
-$$ {#eq-part2_definition_of_the_norm_of_partition}
+$$ {#eq-MA_definition_of_the_norm_of_partition}
 
 ::: 
 :::
@@ -48,7 +48,7 @@ $$ {#eq-part2_definition_of_the_norm_of_partition}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_upper_lower_riemann_sum}
+::: {#def-MA_upper_lower_riemann_sum}
 
 #### 리만 상합, 리만 하합
 
@@ -59,7 +59,7 @@ $$
 M_i &:= \sup f([x_{i-1},\,x_{i}]), \\[0.2em]
 m_i &:= \inf f([x_{i-1},\,x_{i}]). \\
 \end{aligned}
-$$ {#eq-part2_upper_lower_riemann_sum_1}
+$$ {#eq-MA_upper_lower_riemann_sum_1}
 
 라고 하자. 그리고 $\Delta x_i := x_i - x_{i-1}$ 이라고 하자. 이 때 **리만 상합(Riemann upper sum)** $U(f,\,P)$ 와 **리만 하합 (Riemann lower sum)** $L(f,\,P)$ 는 다음과 같이 정의된다.
 
@@ -68,7 +68,7 @@ $$
 U(f,\,P) &:= \sum_{i=1}^n M_i \Delta x_i, \\[0.2em]
 L(f,\,P) &:= \sum_{i=1}^n m_i\Delta x_i.
 \end{aligned}
-$$ {#eq-part2_upper_lower_riemann_sum_2}
+$$ {#eq-MA_upper_lower_riemann_sum_2}
 
 ::: 
 :::
@@ -77,13 +77,13 @@ $$ {#eq-part2_upper_lower_riemann_sum_2}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_properties_of_rieman_sum_1}
+::: {#thm-MA_properties_of_rieman_sum_1}
 
 $P_1,\,P_2\in \mathcal{P}[a,\,b]$ 이며 $P_1 \subset P_2$ 일 때 다음이 성립한다.
 
 $$
 L(f,\, P_1) \le L(f,\,P_2) \le U(f,\,P_2) \le U(f,\,P_1)
-$${#eq-part2_inequalitiy_of_riemann_sum_1}
+$${#eq-MA_inequalitiy_of_riemann_sum_1}
 
 :::
 
@@ -99,13 +99,13 @@ $${#eq-part2_inequalitiy_of_riemann_sum_1}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_properties_of_rieman_sum_2}
+::: {#cor-MA_properties_of_rieman_sum_2}
 
 임의의 $P_1,\, P_2\in \mathcal{P}[a,\,b]$ 에 대해 다음이 성립한다.
 
 $$
 L(f,\,P_1) \le U(f,\, P_2)
-$$ {#eq-part2_inequalitiy_of_riemann_sum_2}
+$$ {#eq-MA_inequalitiy_of_riemann_sum_2}
 
 :::
 
@@ -128,18 +128,18 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_riemann_integral}
+::: {#def-MA_riemann_integral}
 
 #### 리만 적분
 
-@def-part2_upper_lower_riemann_sum 에 대해
+@def-MA_upper_lower_riemann_sum 에 대해
 
 $$
 \begin{aligned}
 \overline{{\int}_{a}^b} f\,dx := \inf \{U(f,\,P): P\in \mathcal{P}[a,\,b]\}, \\[0.3em]
 \underline{{\int}_{a}^{b}} f\,dx := \sup \{L(f,\,P): P\in \mathcal{P}[a,\,b]\}.
 \end{aligned}
-$$ {#eq-part2_riemann_upper_lower_integral}
+$$ {#eq-MA_riemann_upper_lower_integral}
 
 를 각각 **리만 상적분 (Riemann upper integral)** 과 **리만 하적분 (Riemann lower integral)** 이라고 한다. 리만 상적분과 리만 하적분 값이 같을 때 $f$ 가 $[a,\,b]$ 구간에서 리만 적분 가능하다고 하며 그 값을 **리만적분 (Riemann integral)** 이라고 하고
 
@@ -154,7 +154,7 @@ $$
 
 </br>
 
-$f$ 가 유계이므로 $M=\sup f([a,\,b])$ 와 $m=\inf f([a,\,b])$ 가 존재한다. @thm-part2_properties_of_rieman_sum_1 에 따라 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해
+$f$ 가 유계이므로 $M=\sup f([a,\,b])$ 와 $m=\inf f([a,\,b])$ 가 존재한다. @thm-MA_properties_of_rieman_sum_1 에 따라 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해
 
 $$
 m(b-a) \le L(f,\, P) \le U(f,\,P) \le M(b-a)
@@ -165,12 +165,12 @@ $$
 
 </br>
 
-### 스틸체스 적분 {#sec-part2_stieltjes_integral}
+### 스틸체스 적분 {#sec-MA_stieltjes_integral}
 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_stieltjes_integral}
+::: {#def-MA_stieltjes_integral}
 
 #### 스틸체스 적분
 
@@ -189,14 +189,14 @@ L(f,\, P,\, \alpha) &:= \sum_{i=1}^n m_i \Delta \alpha_i
 \end{aligned}
 $$
 
-라고 하자. $M_i,\, m_i$ 는 @def-part2_upper_lower_riemann_sum 에서와 같다. 이 때 
+라고 하자. $M_i,\, m_i$ 는 @def-MA_upper_lower_riemann_sum 에서와 같다. 이 때 
 
 $$
 \begin{aligned}
 \overline{\int_{a}^b} f\, d\alpha &:= \inf \{ U(f,\, P,\, \alpha): P\in \mathcal{P}[a,\,b]\} \\[0.2em]
 \underline{\int_a^b} f\, d\alpha &:= \sup \{ L(f,\, P,\, \alpha) : P \in \mathcal{P}[a,\,b]\}
 \end{aligned}
-$$ {#eq-part2_upper_and_lower_stieltjes_sum}
+$$ {#eq-MA_upper_and_lower_stieltjes_sum}
 
 라고 하자. 두 값이 같을 때 $f$ 는 $[a,\,b]$ 구간에서 $\alpha$ 에 대해 **스틸체스 적분 (Stieltjes integral)** 이 가능하다고 하며 그 값을
 
@@ -217,9 +217,9 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_sum_of_alpha}
+::: {#prp-MA_sum_of_alpha}
 
-@def-part2_stieltjes_integral $\alpha$ 와 $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+@def-MA_stieltjes_integral $\alpha$ 와 $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
 
 $$
 \sum_{i=1}^n \Delta \alpha_i = \alpha (b)-\alpha(a)
@@ -236,19 +236,19 @@ $$
 
 
 
-$\alpha(x)=x$ 일 경우 스틸체스 적분은 리만 적분이 된다. 즉 리만 적분은 스틸체스 적분의 특수한 형태이다. 이제 @thm-part2_properties_of_rieman_sum_1 과 @cor-part2_properties_of_rieman_sum_2 가 스틸체스 적분의 형태에 대해서도 성립함을 보일 수 있다.
+$\alpha(x)=x$ 일 경우 스틸체스 적분은 리만 적분이 된다. 즉 리만 적분은 스틸체스 적분의 특수한 형태이다. 이제 @thm-MA_properties_of_rieman_sum_1 과 @cor-MA_properties_of_rieman_sum_2 가 스틸체스 적분의 형태에 대해서도 성립함을 보일 수 있다.
 
 </br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_properties_of_stieltjes_sum_1}
+::: {#thm-MA_properties_of_stieltjes_sum_1}
 
 $P_1,\,P_2\in \mathcal{P}[a,\,b]$ 이며 $P_1 \subset P_2$ 일 때 다음이 성립한다.
 
 $$
 L(f,\, P_1,\, \alpha) \le L(f,\,P_2,\,\alpha) \le U(f,\,P_2,\alpha) \le U(f,\,P_1,\, \alpha)
-$$ {#eq-part2_inequalitiy_of_stieltjes_sum_1}
+$$ {#eq-MA_inequalitiy_of_stieltjes_sum_1}
 
 :::
 
@@ -256,13 +256,13 @@ $$ {#eq-part2_inequalitiy_of_stieltjes_sum_1}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_properties_of_stieltjes_sum_2}
+::: {#cor-MA_properties_of_stieltjes_sum_2}
 
 임의의 $P_1,\, P_2\in \mathcal{P}[a,\,b]$ 에 대해 다음이 성립한다.
 
 $$
 L(f,\,P_1,\, \alpha) \le U(f,\, P_2,\, \alpha)
-$$ {#eq-part2_inequalitiy_of_stieltjes_sum_2}
+$$ {#eq-MA_inequalitiy_of_stieltjes_sum_2}
 
 :::
 
@@ -270,12 +270,12 @@ $$ {#eq-part2_inequalitiy_of_stieltjes_sum_2}
 
 </br>
 
-또한 @thm-part2_properties_of_stieltjes_sum_1 로부터 다음을 알 수 있다.
+또한 @thm-MA_properties_of_stieltjes_sum_1 로부터 다음을 알 수 있다.
 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_properties_of_stieltjes_sum_3}
+::: {#cor-MA_properties_of_stieltjes_sum_3}
 
 $\displaystyle \underline{\int_a^b} f\, d\alpha \le \overline{\int_a^b} f\, d\alpha$
 
@@ -288,7 +288,7 @@ $\displaystyle \underline{\int_a^b} f\, d\alpha \le \overline{\int_a^b} f\, d\al
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_properties_of_stieltjes_integral_1}
+::: {#thm-MA_properties_of_stieltjes_integral_1}
 
 $f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음 두 명제는 동치이다.
 
@@ -298,7 +298,7 @@ $f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함�
 
 $$
 U(f,\, P,\, \alpha) - L(f,\, P,\, \alpha) <\varepsilon.
-$$ {#eq-part2_condition_for_stieltjes_integrablity}
+$$ {#eq-MA_condition_for_stieltjes_integrablity}
 
 :::
 
@@ -306,7 +306,7 @@ $$ {#eq-part2_condition_for_stieltjes_integrablity}
 
 ::: {.proof}
 
-($1 \implies 2$) @eq-part2_upper_and_lower_stieltjes_sum 과 스틸체스 적분의 정의로부터 임의의 $\varepsilon >0$ 에 대해 
+($1 \implies 2$) @eq-MA_upper_and_lower_stieltjes_sum 과 스틸체스 적분의 정의로부터 임의의 $\varepsilon >0$ 에 대해 
 
 $$
 U(f,\, P_1,\, \alpha) - \int_a^b f\, d\alpha < \dfrac{\varepsilon}{2}
@@ -326,7 +326,7 @@ $$
 L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} f\,d\alpha \le U(f,\, P,\,\alpha)
 $$
 
-이며 @eq-part2_condition_for_stieltjes_integrablity 가 성립한다면 임의의 $\varepsilon >0$ 에 대해
+이며 @eq-MA_condition_for_stieltjes_integrablity 가 성립한다면 임의의 $\varepsilon >0$ 에 대해
 
 $$
  \overline{\int_a^b} f\,d\alpha -  \underline{\int_a^b}f\, d\alpha <\varepsilon
@@ -340,19 +340,19 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_properties_of_stieltjes_integral_2}
+::: {#exr-MA_properties_of_stieltjes_integral_2}
 
 $f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함수일 때 다음을 보여라. 
 
-($1$) $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 $P \subset Q$ 인 $Q\in \mathcal{P}[a,\,b]$ 에 대해서도 @eq-part2_condition_for_stieltjes_integrablity 가 성립한다.
+($1$) $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-MA_condition_for_stieltjes_integrablity 가 성립하면 $P \subset Q$ 인 $Q\in \mathcal{P}[a,\,b]$ 에 대해서도 @eq-MA_condition_for_stieltjes_integrablity 가 성립한다.
 
-($2$) $P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
+($2$) $P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}$ 에 대해 @eq-MA_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
 
 $$
 \sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i <\varepsilon.
 $$
 
-($3$) $f$ 가 $\alpha$ 에 대해 스틸체스 적분가능하고 $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-part2_condition_for_stieltjes_integrablity 가 성립하면 임의의 $t_i \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
+($3$) $f$ 가 $\alpha$ 에 대해 스틸체스 적분가능하고 $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-MA_condition_for_stieltjes_integrablity 가 성립하면 임의의 $t_i \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
 
 $$
 \left| \sum_{i=1}^n f(t_i)\Delta \alpha_i - \int_a^b f\, d\alpha \right|<\varepsilon.
@@ -364,7 +364,7 @@ $$
 
 ::: {.solution}
 
-($1$) @thm-part2_properties_of_stieltjes_sum_1 .
+($1$) @thm-MA_properties_of_stieltjes_sum_1 .
 
 ($2$) $|f(s_i)-s(t_i)| \le M_i - m_i$ 이므로
 
@@ -380,11 +380,11 @@ $$
 
 </br>
 
-### 스틸체스 적분 가능의 조건들 {#sec-part2_stieltjes_integrability}
+### 스틸체스 적분 가능의 조건들 {#sec-MA_stieltjes_integrability}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_continuity_and_integrability}
+::: {#thm-MA_continuity_and_integrability}
 
 $f:[a,\,b] \to \R$ 이 연속이면 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 
@@ -394,7 +394,7 @@ $f:[a,\,b] \to \R$ 이 연속이면 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 
 ::: {.proof}
 
-주어진 $\varepsilon>0$ 에 대해 $[\alpha(b)-\alpha(a)]<\varepsilon/\eta$ 가 되도록 $\eta$ 를 잡자. @thm-part2_uniform_continuity_and_compact_set 에 의해 $f$ 는 $[a,\,b]$ 에서 고른연속며, 따라서 $x,\,t\in [a,\,b]$ 일 때
+주어진 $\varepsilon>0$ 에 대해 $[\alpha(b)-\alpha(a)]<\varepsilon/\eta$ 가 되도록 $\eta$ 를 잡자. @thm-MA_uniform_continuity_and_compact_set 에 의해 $f$ 는 $[a,\,b]$ 에서 고른연속며, 따라서 $x,\,t\in [a,\,b]$ 일 때
 
 $$
 |x-t| <\delta \implies |f(x)-f(t)|<\eta
@@ -420,7 +420,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_monitonic_function_and_integrability}
+::: {#thm-MA_monitonic_function_and_integrability}
 
 $f:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 단조함수이며 $\alpha$ 가 $[a,\,b]$ 에서 연속이면 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. (당연히 $\alpha$ 는 단조증가함수이다.)
 
@@ -436,7 +436,7 @@ $$
 \Delta \alpha_i = \alpha (x_i) - \alpha(x_{i-1}) =\dfrac{\alpha(b)-\alpha (a)}{n} 
 $$
 
-이 되도록 $x_0,\ldots,\,x_n$ 을 정할 수 있다. 이것은 $\alpha$ 가 단조증가인 연속함수이므로 사잇값 정리(@thm-part2_intermediate_value_theorem) 에 따라 항상 가능하다. $\Delta \alpha_i$ 가 상수이므로 $\Delta \alpha$ 라고 하자.
+이 되도록 $x_0,\ldots,\,x_n$ 을 정할 수 있다. 이것은 $\alpha$ 가 단조증가인 연속함수이므로 사잇값 정리(@thm-MA_intermediate_value_theorem) 에 따라 항상 가능하다. $\Delta \alpha_i$ 가 상수이므로 $\Delta \alpha$ 라고 하자.
 
 $f$ 가 단조증가함수라고 가정하자. 그렇다면 $M_i = f(x_i),\, m_i = f(x_{i-1})$ 이며
 
@@ -452,7 +452,7 @@ $$
 \Delta \alpha = \dfrac{\alpha(b)-\alpha(a)}n < \dfrac{\varepsilon}{f(b)-f(a)}
 $$
 
-가 되도록 $n$ 을 충분히 크게 잡으면 @thm-part2_properties_of_stieltjes_integral_1 에 따라 $f$ 가 $\alpha$ 에 대해 스틸체스 적분 가능함을 알 수 있다. $\square$
+가 되도록 $n$ 을 충분히 크게 잡으면 @thm-MA_properties_of_stieltjes_integral_1 에 따라 $f$ 가 $\alpha$ 에 대해 스틸체스 적분 가능함을 알 수 있다. $\square$
 
 :::
 
@@ -461,7 +461,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_discontinuity_and_integrability}
+::: {#thm-MA_discontinuity_and_integrability}
 
 $f:[a,\,b] \to \R$ 가 유계이며 $[a,\,b]$ 구간에서 유한개의 불연속점을 가진다고 하자. 그리고 $\alpha$ 는 $f$ 의 불연속점에서 연속이라고 하자. $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능하다. 
 :::
@@ -514,7 +514,7 @@ $$
 </br>
 
 ::: {.callout-warning appearance="minimal"}
-@thm-part2_discontinuity_and_integrability 과는 달리 $\alpha$ 와 $f$ 가 공통의 불연속점을 가진다면 $f\not\in \mathcal{R}(\alpha)$ 일 수 있다. @exr-part2_rudin_6_3 을 보라.
+@thm-MA_discontinuity_and_integrability 과는 달리 $\alpha$ 와 $f$ 가 공통의 불연속점을 가진다면 $f\not\in \mathcal{R}(\alpha)$ 일 수 있다. @exr-MA_rudin_6_3 을 보라.
 :::
 
 </br>
@@ -522,7 +522,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_stieltjes_integrability_of_composite_function}
+::: {#thm-MA_stieltjes_integrability_of_composite_function}
 
 $f:[a,\,b]\to \R$ 이 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $m\le f\le M$ 이라고 하자. $\phi :[m,\,M]\to \R$ 이 연속이며 $h(x) = \phi (f(x))$ 이면 $h\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 :::
@@ -543,7 +543,7 @@ $f\in \mathcal{R}(\alpha)$ 이므로
 
 $$
 U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)<\delta^2
-$$ {#eq-part2_thm-part2_stieltjes_integrability_of_composite_function_1}
+$$ {#eq-MA_thm-MA_stieltjes_integrability_of_composite_function_1}
 
 인 $P=\{x_0,\ldots,\,x_n\},\, P\in \mathcal{P}[a,\,b]$ 가 존재한다. $M_i=\sup f([a,\,b])$, $m_i = \inf f[a,\,b]$, $M^\ast_i = \sup h([a,\,b])$, $m^\ast_i = \inf h([a,\,b])$ 라고 하자. 
 
@@ -551,11 +551,11 @@ $$ {#eq-part2_thm-part2_stieltjes_integrability_of_composite_function_1}
 
 $i\in A$ 인 경우 $M^\ast_i - m^\ast_i < \varepsilon$ 이다.
 
-$i\in B$ 인 경우 $K=\sup \{|\phi(t)|: t\in [m,\, M]\}$ 에 대해 $M_i^\ast-m_i^\ast<2K$ 이다. @eq-part2_thm-part2_stieltjes_integrability_of_composite_function_1 의 조건에 의해 
+$i\in B$ 인 경우 $K=\sup \{|\phi(t)|: t\in [m,\, M]\}$ 에 대해 $M_i^\ast-m_i^\ast<2K$ 이다. @eq-MA_thm-MA_stieltjes_integrability_of_composite_function_1 의 조건에 의해 
 
 $$
 \delta \sum_{i\in B} (\Delta \alpha_i) \le \sum_{i\in B} (M_i-m_i) \Delta \alpha_i <\delta^2
-$$ {#eq-part2_thm-part2_stieltjes_integrability_of_composite_function_2}
+$$ {#eq-MA_thm-MA_stieltjes_integrability_of_composite_function_2}
 
 이다. 따라서 $\sum_{i\in B} \Delta \alpha_i < \delta$ 이며 이로부터
 
@@ -575,9 +575,9 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_stieltjes_integrability_of_composite_function}
+::: {#exm-MA_stieltjes_integrability_of_composite_function}
 
-$f\in \mathcal{R}(\alpha)[a,\,b]$ 라면 @thm-part2_stieltjes_integrability_of_composite_function 로부터 다음을 알 수 있다.
+$f\in \mathcal{R}(\alpha)[a,\,b]$ 라면 @thm-MA_stieltjes_integrability_of_composite_function 로부터 다음을 알 수 있다.
 
 &emsp;($1$)  $n\in \mathbb{Z}_+$ 에 대해 $f^n \in \mathcal{R}(\alpha)[a,\,b]$ 이다. 
 
@@ -595,7 +595,7 @@ $f\in \mathcal{R}(\alpha)[a,\,b]$ 라면 @thm-part2_stieltjes_integrability_of_c
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_integral_1}
+::: {#prp-MA_properties_of_integral_1}
 
 $f,\,g \in \mathcal{R}(\alpha)[a,\,b]$ 이고 $c\in \R$ 이 상수라고 하자.
 
@@ -668,7 +668,7 @@ $$
 
 $$
 \int_a^b h\,d\alpha \le \int_a^b f\,d\alpha + \int_a^b g\,d\alpha
-$$ {#eq-prp-part2_properties_of_integral_1_1}
+$$ {#eq-prp-MA_properties_of_integral_1_1}
 
 임을 안다. 또한
 
@@ -686,9 +686,9 @@ $$
 
 $$
 \int_a^b f\, d\alpha + \int_a^b g\,d\alpha \le \int_a^b h\,d\alpha
-$$ {#eq-prp-part2_properties_of_integral_1_2}
+$$ {#eq-prp-MA_properties_of_integral_1_2}
 
-이다. @eq-prp-part2_properties_of_integral_1_1 과 @eq-prp-part2_properties_of_integral_1_1 로 부터 
+이다. @eq-prp-MA_properties_of_integral_1_1 과 @eq-prp-MA_properties_of_integral_1_1 로 부터 
 
 $$
 \int_a^b (f+g)\, d\alpha = \int_a^b f\,d\alpha + \int_a^b g\,d\alpha
@@ -700,9 +700,9 @@ $$
 
 $$
 U(cf,\,P,\, \alpha)-L(cf,\, P,\, \alpha) = |c|\left[U(f,\, P,\, \alpha)- L(f,\, P,\, \alpha)\right]
-$$ {#eq-thm-part2_properties_of_integral_1_3}
+$$ {#eq-thm-MA_properties_of_integral_1_3}
 
-이므로 $cf\in \mathcal{R}(\alpha)[a,\,b]$ 임을 안다. $c<0$ 인 경우 역시 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해 $U(cf,\, P,\, \alpha)=cL(f,\,P,\,\alpha)$ 이며 $L(cf,\, P,\, \alpha) = cU(f,\, P,\, \alpha)$ 이므로 역시 @eq-thm-part2_properties_of_integral_1_3 이 성립한다. 따라서 $cf \in \mathcal{R}(\alpha)[a,\,b]$ 이다. 이제 $U(f,\, P,\, \alpha)-L(f,\, P,\, \alpha)<\frac{\varepsilon}{|c|}$ 인 $P\in \mathcal{P}[a,\,b]$ 를 생각하자. 
+이므로 $cf\in \mathcal{R}(\alpha)[a,\,b]$ 임을 안다. $c<0$ 인 경우 역시 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해 $U(cf,\, P,\, \alpha)=cL(f,\,P,\,\alpha)$ 이며 $L(cf,\, P,\, \alpha) = cU(f,\, P,\, \alpha)$ 이므로 역시 @eq-thm-MA_properties_of_integral_1_3 이 성립한다. 따라서 $cf \in \mathcal{R}(\alpha)[a,\,b]$ 이다. 이제 $U(f,\, P,\, \alpha)-L(f,\, P,\, \alpha)<\frac{\varepsilon}{|c|}$ 인 $P\in \mathcal{P}[a,\,b]$ 를 생각하자. 
 
 $c>0$ 인 경우 
 
@@ -742,7 +742,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_integral_2}
+::: {#prp-MA_properties_of_integral_2}
 
 $f\in \mathcal{R}(\alpha)[a,\,b]$, $f\in \mathcal{R}(\beta)[a,\,b]$ 이면 $f\in \mathcal{R}(\alpha+\beta)[a,\,b]$ 이며 다음이 성립한다.
 
@@ -793,7 +793,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_integral_3}
+::: {#prp-MA_properties_of_integral_3}
 
 $f,\,g\in \mathcal{R}(\alpha)[a,\,b]$ 일 때 다음이 성립한다.
 
@@ -809,13 +809,13 @@ $f,\,g\in \mathcal{R}(\alpha)[a,\,b]$ 일 때 다음이 성립한다.
 
 ::: {.proof}
 
-($1$) $f+g,\, f-g\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $(f+g)^2,\, (f-g)^2\in \mathcal{R}(\alpha)[a,\,b]$ 이다(@exm-part2_stieltjes_integrability_of_composite_function). 따라서 다음이 성립한다.
+($1$) $f+g,\, f-g\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $(f+g)^2,\, (f-g)^2\in \mathcal{R}(\alpha)[a,\,b]$ 이다(@exm-MA_stieltjes_integrability_of_composite_function). 따라서 다음이 성립한다.
 
 $$
 fg=\dfrac{(f+g)^2 - (f-g)^2}{4} \in \mathcal{R}(\alpha)[a,\,b].
 $$ 
 
-($2$) @exm-part2_stieltjes_integrability_of_composite_function 에서 $|f|\in \mathcal{R}(\alpha)[a,\,b]$ 임을 보였다. $c\int^a_b f\,d\alpha\ge 0$ 이 되도록 $c=\pm 1$ 중에 선택하자.  $cf\le |f|$ 이므로 다음이 성립한다.
+($2$) @exm-MA_stieltjes_integrability_of_composite_function 에서 $|f|\in \mathcal{R}(\alpha)[a,\,b]$ 임을 보였다. $c\int^a_b f\,d\alpha\ge 0$ 이 되도록 $c=\pm 1$ 중에 선택하자.  $cf\le |f|$ 이므로 다음이 성립한다.
 
 $$
 \left|\int_a^b f\,d\alpha\right| = c\int_a^b f\,d\alpha = \int_a^b cf\, d\alpha \le \int_a^b |f|\,d\alpha.
@@ -829,7 +829,7 @@ $\square$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_unit_step_function}
+::: {#def-MA_unit_step_function}
 
 #### 단위 계단 함수
 
@@ -846,7 +846,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_integral_4}
+::: {#prp-MA_properties_of_integral_4}
 
 $f$ 가 $[a,\,b]$ 구간예서 유계이며 $s\in (a,\,b)$ 에서 연속이라고 하자. 또 $\alpha(x) = \theta(x-s)$ 라고 하자. 그렇다면 다음이 성립한다.
 
@@ -876,19 +876,19 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_properties_of_integral_5}
+::: {#prp-MA_properties_of_integral_5}
 
 양의 수열 $\langle c_k\rangle$ 에서 $\sum_k c_k$ 가 수렴하며 $\langle s_k \rangle$ 은 $(a,\,b)$ 구간에서 정의된 수열이고
 
 $$
 \alpha (x) = \sum_{k=1}^\infty c_k \theta(x-s_k)
-$$ {#eq-part2_properties_of_integral_5_1}
+$$ {#eq-MA_properties_of_integral_5_1}
 
 라고 하자. $f$ 가 $[a,\,b]$ 에서 연속이라면 다음이 성립한다.
 
 $$
 \int_a^b f\,d\alpha = \sum_{k=1}^\infty c_k f(s_k).
-$$ {#eq-part2_properties_of_integral_5_2}
+$$ {#eq-MA_properties_of_integral_5_2}
 
 :::
 
@@ -898,7 +898,7 @@ $$ {#eq-part2_properties_of_integral_5_2}
 
 ::: {.proof}
 
-임의의 $x$ 에 대해 $|c_k \theta (x-s_k)| \le |c_k|$ 이므로 @eq-part2_properties_of_integral_5_1 의 $\sum$ 부분은 수렴한다. 즉 $\alpha(x)$ 는 잘 정의된다. 또한 $\alpha(x)$ 는 단조증가함수임은 명백하며 $\alpha(a)=0$, $\alpha(b)= \sum_k c_k$ 이다.
+임의의 $x$ 에 대해 $|c_k \theta (x-s_k)| \le |c_k|$ 이므로 @eq-MA_properties_of_integral_5_1 의 $\sum$ 부분은 수렴한다. 즉 $\alpha(x)$ 는 잘 정의된다. 또한 $\alpha(x)$ 는 단조증가함수임은 명백하며 $\alpha(a)=0$, $\alpha(b)= \sum_k c_k$ 이다.
 
 고정된 $\varepsilon>0$ 에 대해 $\displaystyle \sum_{k=N+1}^\infty c_k < \varepsilon$ 이 되는 $N\in \mathbb{Z}_+$ 가 항상 존재한다. 이제 
 
@@ -906,25 +906,25 @@ $$
 \alpha_1 (x) = \sum_{k=1}^N c_k \theta(x-s_k),\qquad \alpha_2(x) = \sum_{k=N+1}^\infty c_k \theta (x-s_k)
 $$
 
-라고 하자. @prp-part2_properties_of_integral_2 와 @prp-part2_properties_of_integral_4 로부터
+라고 하자. @prp-MA_properties_of_integral_2 와 @prp-MA_properties_of_integral_4 로부터
 
 $$
 \int_a^b f\, d\alpha_1 = \sum_{k=1} c_k f(s_k)
-$$ {#eq-part2_properties_of_integral_5_3}
+$$ {#eq-MA_properties_of_integral_5_3}
 
 이다. $\alpha_2(b)-\alpha_2(a)<\varepsilon$ 이므로 $M=\sup \{|f(x)|: x\in [a,\,b]\}$ 라고 하면
 
 $$
 \left|\int_a^b f\, d\alpha_2 \right| \le M\varepsilon
-$$ {#eq-part2_properties_of_integral_5_4}
+$$ {#eq-MA_properties_of_integral_5_4}
 
-이다. $\alpha = \alpha_1 + \alpha_2$ 이므로 @eq-part2_properties_of_integral_5_3, @eq-part2_properties_of_integral_5_4 로부터
+이다. $\alpha = \alpha_1 + \alpha_2$ 이므로 @eq-MA_properties_of_integral_5_3, @eq-MA_properties_of_integral_5_4 로부터
 
 $$
 \left| \int_a^b f\, d\alpha - \sum_{k=1}^N c_k f(s_k)\right| \le M\varepsilon
-$$ {#eq-prp-part2_properties_of_integral_5_5}
+$$ {#eq-prp-MA_properties_of_integral_5_5}
 
-이다. 이제 $N \to \infty$ 극한을 취하면 @eq-part2_properties_of_integral_5_2 를 얻는다. $\square$
+이다. 이제 $N \to \infty$ 극한을 취하면 @eq-MA_properties_of_integral_5_2 를 얻는다. $\square$
 
 :::
 
@@ -932,18 +932,18 @@ $$ {#eq-prp-part2_properties_of_integral_5_5}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_properties_of_integral_6}
+::: {#thm-MA_properties_of_integral_6}
 $\alpha$ 가 단조증가이며 $\alpha'\in \mathcal{R}[a,\,b]$ 이라고 하자. $f$ 가 $[a,\,b]$ 구간에서 유계인 실함수라면 
 
 $$
 f\in \mathcal{R}(\alpha)[a,\,b] \iff f\alpha' \in \mathcal{R}[a,\,b]
-$$ {#eq-part2_properties_of_integral_6_1}
+$$ {#eq-MA_properties_of_integral_6_1}
 
 가 성립하며 이 경우
 
 $$
 \int_a^b f\,d\alpha = \int_a^b f(x)\, \alpha'(x)\, dx
-$$ {#eq-part2_properties_of_integral_6_2}
+$$ {#eq-MA_properties_of_integral_6_2}
 
 이다.
 
@@ -959,34 +959,34 @@ $\alpha'\in \mathcal{R}[a,\,b]$ 이므로 고정된 $\varepsilon>0$ 에 대해
 
 $$
 U(\alpha',\, P)- L(\alpha',\, P)<\varepsilon
-$$ {#eq-part2_properties_of_integral_6_3}
+$$ {#eq-MA_properties_of_integral_6_3}
 
 인 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 가 존재한다. 평균값 정리에 따라 각각의 $[x_{i-1},\,x_i]$ 구간에서
 
 $$
 \Delta \alpha_i = \alpha(x_{i})- \alpha(x_{i-1}) = \alpha'(t_i)\Delta x_i
-$$ {#eq-part2_properties_of_integral_6_4}
+$$ {#eq-MA_properties_of_integral_6_4}
 
-을 만족하는 $t_i\in [x_{i-1},\,x_i]$ 가 존재한다. @eq-part2_properties_of_integral_6_3 으로부터 $i=1,\ldots,\, n$ 에 대해 $s_i \in [x_{i-1},\,x_i]$ 라면
+을 만족하는 $t_i\in [x_{i-1},\,x_i]$ 가 존재한다. @eq-MA_properties_of_integral_6_3 으로부터 $i=1,\ldots,\, n$ 에 대해 $s_i \in [x_{i-1},\,x_i]$ 라면
 
 $$
 \sum_{i=1}^n |\alpha'(s_i)-\alpha'(t_i)|\Delta x_i \le U(\alpha',\,P)-L(\alpha',\, P)<\varepsilon
-$$ {#eq-part2_properties_of_integral_6_5}
+$$ {#eq-MA_properties_of_integral_6_5}
 
 이다. 이제 $M=\sup \{|f(x)|: x\in [a,\,b]\}$ 라고 하자.
 
 $$
 \sum_{i=1}^n f(s_i)\Delta \alpha_i = \sum_{i=1}^n f(s_i) \alpha'(t_i)\Delta x_i
-$$ {#eq-part2_properties_of_integral_6_6}
+$$ {#eq-MA_properties_of_integral_6_6}
 
-이며, @eq-part2_properties_of_integral_6_6, 그리고 @eq-part2_properties_of_integral_6_5 를 이용하면 
+이며, @eq-MA_properties_of_integral_6_6, 그리고 @eq-MA_properties_of_integral_6_5 를 이용하면 
 
 $$
 \begin{aligned}
 \left| \sum_{i=1}^n f(s_i) \Delta \alpha_i\right. &- \left.\sum_{i=1}^n f(s_i)\alpha'(s_i)\Delta x_i \right| \\
 &= \sum_{i=1}^n |f(s_i)| \left| \alpha'(t_i)\Delta x_i-\alpha'(s_i) \Delta x_i\right| < M\varepsilon
 \end{aligned}
-$$ {#eq-part2_properties_of_integral_6_7}
+$$ {#eq-MA_properties_of_integral_6_7}
 
 이다. 즉 $s_i$ 를 $[x_{i-1},\,x_i]$ 가운데 어떤 값을 선택해도
 
@@ -1040,7 +1040,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_change_of_varialble}
+::: {#thm-MA_change_of_varialble}
 
 #### 변수 변환 적분
 
@@ -1048,13 +1048,13 @@ $\varphi : [A,\,B] \to [a,\,b]$ 가 연속인 순증가 함수이고 전사함�
 
 $$
 \beta(y) := \alpha (\varphi(y)), \qquad g(y) := f(\varphi (y)).
-$$ {#eq-part2_change_of_varialble_1}
+$$ {#eq-MA_change_of_varialble_1}
 
 그렇다면 $g\in \mathcal{R}(\beta)[A,\,B]$ 이며
 
 $$
 \int_A^B g\,d\beta = \int_a^b f\,d\alpha
-$$ {#eq-part2_change_of_varialble_2}
+$$ {#eq-MA_change_of_varialble_2}
 
 이다. 
 
@@ -1072,7 +1072,7 @@ $$
 U(g,\,Q,\,\beta) = U(f,\,P,\,\alpha),\qquad L(g,\,Q,\,\beta)= L(f,\, P,\,\alpha)
 $$
 
-임은 쉽게 알 수 있다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이므로 $g\in \mathcal{R}(\beta)[A,\,B]$ 이며 @eq-part2_change_of_varialble_2 가 성립한다. $\square$
+임은 쉽게 알 수 있다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이므로 $g\in \mathcal{R}(\beta)[A,\,B]$ 이며 @eq-MA_change_of_varialble_2 가 성립한다. $\square$
 
 :::
 
@@ -1080,17 +1080,17 @@ $$
 
 ## 미적분의 기본정리 
 
-### 미적분의 제1 기본정리 {#sec-part2_first_fundamental_theorem_of_calculus}
+### 미적분의 제1 기본정리 {#sec-MA_first_fundamental_theorem_of_calculus}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-part2_first_fundamental_theorem_of_calculus}
+::: {#lem-MA_first_fundamental_theorem_of_calculus}
 
 $f\in\mathcal{R}[a,\,b]$ 일 때 $x\in [a,\,b]$ 에 대해 아래와 같이 정의된 $F(x)$ 는 $[a,\,b]$ 에서 고른 연속이다.
 
 $$
 F(x) := \int_a^x f(t)\,dt.
-$$ {#eq-part2_first_fundamental_theorem_of_calculus}
+$$ {#eq-MA_first_fundamental_theorem_of_calculus}
 :::
 
 </div>
@@ -1100,7 +1100,7 @@ $$ {#eq-part2_first_fundamental_theorem_of_calculus}
 
 ::: {.proof}
 
-$f\in \mathcal{R}$ 이므로 $f$ 는 유계이다. $t\in [a,\,b]$ 에 대해 $|f(t)|<M$ 이라고 하자.  $a<x<y<b$ 일 때 @prp-part2_properties_of_integral_1 의 ($3$), ($4$) 로부터
+$f\in \mathcal{R}$ 이므로 $f$ 는 유계이다. $t\in [a,\,b]$ 에 대해 $|f(t)|<M$ 이라고 하자.  $a<x<y<b$ 일 때 @prp-MA_properties_of_integral_1 의 ($3$), ($4$) 로부터
 
 $$
 \left|F(y)-F(x)\right| = \left|\int_x^y f(t)\, dt\right| \le M(y-x)
@@ -1114,11 +1114,11 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_first_fundamental_theorem_of_calculus}
+::: {#thm-MA_first_fundamental_theorem_of_calculus}
 
 #### 미적분의 제1 기본정리
 
-@lem-part2_first_fundamental_theorem_of_calculus 과 같이 정의된 $f,\,F$ 에 대해 $f$ 가 $x_0\in [a,\,b]$ 에서 연속이면 $F$ 는 $x_0$ 에서 미분가능하며
+@lem-MA_first_fundamental_theorem_of_calculus 과 같이 정의된 $f,\,F$ 에 대해 $f$ 가 $x_0\in [a,\,b]$ 에서 연속이면 $F$ 는 $x_0$ 에서 미분가능하며
 
 $$
 F'(x_0)= f(x_0)
@@ -1153,11 +1153,11 @@ $$
 </br>
 
 
-아래의 따름정리는 평균값 정리의 적분 버젼으로 평균값 정리(@thm-part2_mean_value_theorem) 으로 쉽게 증명 가능하다.
+아래의 따름정리는 평균값 정리의 적분 버젼으로 평균값 정리(@thm-MA_mean_value_theorem) 으로 쉽게 증명 가능하다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_mean_value_theorem_for_integration}
+::: {#cor-MA_mean_value_theorem_for_integration}
 
 #### 적분의 평균값 정리
 
@@ -1165,7 +1165,7 @@ $$
 
 $$
 \dfrac{1}{b-a}\int_a^b f(t)\, dt = f(x_0)
-$$ {#eq-part2_mean_value_theorem_for_integration}
+$$ {#eq-MA_mean_value_theorem_for_integration}
 
 
 를 만족하는 $x_0\in (a,\,b)$ 가 존재한다.
@@ -1178,10 +1178,10 @@ $$ {#eq-part2_mean_value_theorem_for_integration}
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_KKK_5_3_1}
+::: {#exr-MA_KKK_5_3_1}
 
 #### KKK 5.3.1
-@thm-part2_first_fundamental_theorem_of_calculus 에서 $F$ 가 $x_0$ 에서 미분가능하면 $f$ 는 $x_0$ 에서 연속임을 보여라.
+@thm-MA_first_fundamental_theorem_of_calculus 에서 $F$ 가 $x_0$ 에서 미분가능하면 $f$ 는 $x_0$ 에서 연속임을 보여라.
 
 :::
 
@@ -1199,11 +1199,11 @@ $$
 
 </br>
 
-### 미적분의 제2 기본정리 {#sec-part2_second_fundamental_theorem_of_calculus}
+### 미적분의 제2 기본정리 {#sec-MA_second_fundamental_theorem_of_calculus}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_second_fundamental_theorem_of_calculus}
+::: {#thm-MA_second_fundamental_theorem_of_calculus}
 
 #### 미적분의 제2 기본정리
 
@@ -1211,7 +1211,7 @@ $f\in \mathcal{R}[a,\,b]$ 이고 $[a,\,b]$ 에서 미분가능한 함수 $F$ 에
 
 $$
 \int_a^b f(x)\, dx = F(b)-F(a).
-$$ {#eq-part2_second_fundamental_theorem_of_calculus}
+$$ {#eq-MA_second_fundamental_theorem_of_calculus}
 
 :::
 
@@ -1239,7 +1239,7 @@ $$
 \left| F(b)-F(a) - \int_a^b f(x)\,dx \right| < \varepsilon
 $$
 
-이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 @eq-part2_second_fundamental_theorem_of_calculus 가 성립한다. $\square$
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 @eq-MA_second_fundamental_theorem_of_calculus 가 성립한다. $\square$
 
 :::
 
@@ -1247,14 +1247,14 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_integration_by_parts}
+::: {#thm-MA_integration_by_parts}
 
 #### 부분적분
 
 $F,\,G$ 가 $[a,\,b]$ 에서 미분가능한 함수이며 $F'=f,\,G'=g$ 라고 하자. $f,\, g\in \mathcal{R}[a,\,b]$ 일 때 다음이 성립한다.
 $$
 \int_a^b F(x)\, g(x)\, dx = F(b)G(b)-F(a)G(a)-\int_a^b f(x)\, G(x)\,dx
-$$ {#eq-part2_integration_by_parts}
+$$ {#eq-MA_integration_by_parts}
 
 :::
 
@@ -1283,7 +1283,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_integration_of_vector_valued_function}
+::: {#def-MA_integration_of_vector_valued_function}
 
 $f_1,\ldots,\,f_n :[a,\,b]\to \R$ 에 대해 $\boldsymbol{f}:[a,\,b]\to \R^n$ 이 $\boldsymbol{f}(t) = (f_1(t),\ldots,\,f_n(t))$ 라고 하자. $\alpha:[a,\,b]\to \R$ 이 단조증가 함수일 때 각각의 $f_i$ 가 $f_i\in\mathcal{R}[a,\,b]$ 이면 $\bf{f}$ 도 $[a,\,b]$ 구간에서의 리만적분 가능 함수라고 하며 역시 $\bf{f}\in \mathcal{R}[a,\,b]$ 로 표기한다. 이 때 $\boldsymbol{f}$ 의 적분은 다음과 같이 정의된다.
 
@@ -1302,7 +1302,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_curve}
+::: {#def-MA_curve}
 
 #### 곡선
 
@@ -1317,14 +1317,14 @@ $\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 연속일 때 $\gamma$ 를 $[a,\,
 
 $$
 \Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|
-$$ {#eq-part2_polygonal_length_of_rectifiable_curve}
+$$ {#eq-MA_polygonal_length_of_rectifiable_curve}
 
 
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_rectifiable_curve}
+::: {#def-MA_rectifiable_curve}
 
 #### 길이를 잴 수 있는
 
@@ -1332,7 +1332,7 @@ $\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 곡선일 때
 
 $$
 \Lambda (\gamma) = \sup \{\Lambda(\gamma,\, P) : P\in \mathcal{P}[a,\,b]\}
-$$ {#eq-part2_length_of__curve}
+$$ {#eq-MA_length_of__curve}
 
 
 를 $\gamma$ 의 **길이 (length)** 라고 한다. $\Lambda (\gamma)<\infty$ 일 때 $\gamma$ 를 **길이를 잴 수 있는 곡선 (rectifiable curve)** 이라고 한다. 
@@ -1345,13 +1345,13 @@ $$ {#eq-part2_length_of__curve}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_length_of_C1_rectifiable_curve}
+::: {#thm-MA_length_of_C1_rectifiable_curve}
 
 길이를 잴 수 있는 곡선 $\gamma :[a,\,b]\to \R^n$ 이 $C^1$ 급 함수일 때 그 길이는 다음과 같다.
 
 $$
 \Lambda (\gamma) = \int_a^b \|\gamma'(t)\|\, dt.
-$$ {#eq-part2_length_of_C1_rectifiable_curve}
+$$ {#eq-MA_length_of_C1_rectifiable_curve}
 
 :::
 
@@ -1371,7 +1371,7 @@ $$
 
 $$
 \Lambda (\gamma,\, P) \le \int_a^b \|\gamma'(t)\|\, dt.
-$$ {#eq-part2_length_of_C1_rectifiable_curve_1}
+$$ {#eq-MA_length_of_C1_rectifiable_curve_1}
 
 
 이제 위 식의 부등호가 $\ge$ 로 바뀐 것을 증명하자. $\gamma'$ 이 $[a,\,b]$ 구간에서 연속이므로 이 구간에서 고른 연속이다. 임의의 $\varepsilon>0$ 에 대해 아래를 만족하는 $\delta>0$ 이 존재한다.
@@ -1407,9 +1407,9 @@ $$
 
 $$
 \int_a^b \|\gamma'(t)\|\, dt \le \Lambda (\gamma)
-$$ {#eq-part2_length_of_C1_rectifiable_curve_2}
+$$ {#eq-MA_length_of_C1_rectifiable_curve_2}
 
-이다. @eq-part2_length_of_C1_rectifiable_curve_1, @eq-part2_length_of_C1_rectifiable_curve_2 로부터 @eq-part2_length_of_C1_rectifiable_curve 가 성립함을 알 수 있다. $\square$
+이다. @eq-MA_length_of_C1_rectifiable_curve_1, @eq-MA_length_of_C1_rectifiable_curve_2 로부터 @eq-MA_length_of_C1_rectifiable_curve 가 성립함을 알 수 있다. $\square$
 
 :::
 
@@ -1421,7 +1421,7 @@ $$ {#eq-part2_length_of_C1_rectifiable_curve_2}
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_6_1}
+::: {#exr-MA_rudin_6_1}
 
 #### Rudin 6.1
 
@@ -1435,7 +1435,7 @@ $\alpha$ 가 $[a,\,b]$ 에서 증가함수이며 $x_0\in [a,\,b]$ 에서 연속�
 
 ::: {.solution}
 
-@thm-part2_discontinuity_and_integrability 에 따라 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 임의의 $\varepsilon>0$ 에 대해  $[a,\,b]$ 의 분할 $P = \{x_0,\ldots,\,x_n\}$ 를 $\|P\|<\varepsilon$ 이며 $x_\ast \not\in P$ 가 되도록 잡으면
+@thm-MA_discontinuity_and_integrability 에 따라 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 임의의 $\varepsilon>0$ 에 대해  $[a,\,b]$ 의 분할 $P = \{x_0,\ldots,\,x_n\}$ 를 $\|P\|<\varepsilon$ 이며 $x_\ast \not\in P$ 가 되도록 잡으면
 
 $$
 U(f,\,P,\, \alpha)< \varepsilon, \qquad L(f,\,P,\, \alpha)=0
@@ -1448,7 +1448,7 @@ $$
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_6_2}
+::: {#exr-MA_rudin_6_2}
 
 #### Rudin 6.2
 
@@ -1471,7 +1471,7 @@ $f\ge 0$ 이며 $[a,\,b]$ 에서 연속이고 $\displaystyle \int_a^b f(x)\,dx=0
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_6_3}
+::: {#exr-MA_rudin_6_3}
 
 #### Rudin 6.3
 
@@ -1530,7 +1530,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_6_4}
+::: {#exr-MA_rudin_6_4}
 
 #### Rudin 6.4
 
@@ -1552,7 +1552,7 @@ $x\in \mathbb{R}\backslash\Q$ 일 때 $f(x)=0$ 이며 $x\in \Q$ 일 때 $f(x) = 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_6_5}
+::: {#exr-MA_rudin_6_5}
 
 #### Rudin 6.5
 
@@ -1568,7 +1568,7 @@ $f:[a,\,b]\to\R$ 이 유계이며 $f^2\in \mathcal{R}[a,\,b]$ 라면 $f\in \math
 
 $f(x) = \left\{\begin{array}{ll} -1,\quad & x\in \R\backslash\Q\\ 1,& x\in \Q.\end{array}\right.\quad$ 에 대해서는 $f^2\in \mathcal{R}[a,\,b]$ 지만 $f\not\in \mathcal{R}[a,\,b]$ 이다.
 
-$f^3\in \mathcal{R}[a,\,b]$ 인 경우는 @thm-part2_stieltjes_integrability_of_composite_function 을 생각하자 $\phi (t) = \sqrt[3]{t}$ 는 $\R$ 에서 연속이므로 $f\in \mathcal{R}[a,\,b]$ 이다.
+$f^3\in \mathcal{R}[a,\,b]$ 인 경우는 @thm-MA_stieltjes_integrability_of_composite_function 을 생각하자 $\phi (t) = \sqrt[3]{t}$ 는 $\R$ 에서 연속이므로 $f\in \mathcal{R}[a,\,b]$ 이다.
 
 
 :::

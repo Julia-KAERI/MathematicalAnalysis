@@ -10,11 +10,11 @@ crossref:
 
 ## 실함수의 미분
 
-### 미분가능성과 도함수 {#sec-part2_differentiability}
+### 미분가능성과 도함수 {#sec-MA_differentiability}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_differentiable}
+::: {#def-MA_differentiable}
 
 #### 미분가능과 도함수
 
@@ -22,9 +22,9 @@ $f:[a,\,b] \subset \R \to \R$ 과 $x\in [a,\,b]$ 에 대해
 
 $$
 \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}
-$$ {#eq-part2_differentiability}
+$$ {#eq-MA_differentiability}
 
-가 존재할 때 $f$ 가 $x$ 에서 **미분 가능하다(be differentiable)** 고 하며 @eq-part2_differentiability 의 극한값을 $f'(x)$ 라고 표기한다. $f$ 가 $[a,\,b]$ 의 모든 값에서 미분가능할 할 때 $f'$ 값을 $[a,\,b]$ 에서 정의된 함수로 생각 할 수 있으며 $f'(x)$ 를 $f(x)$ 의 **도함수 (derivative)** 라고 한다.
+가 존재할 때 $f$ 가 $x$ 에서 **미분 가능하다(be differentiable)** 고 하며 @eq-MA_differentiability 의 극한값을 $f'(x)$ 라고 표기한다. $f$ 가 $[a,\,b]$ 의 모든 값에서 미분가능할 할 때 $f'$ 값을 $[a,\,b]$ 에서 정의된 함수로 생각 할 수 있으며 $f'(x)$ 를 $f(x)$ 의 **도함수 (derivative)** 라고 한다.
 
 ::: 
 :::
@@ -34,7 +34,7 @@ $$ {#eq-part2_differentiability}
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_continuity_and_differentiability}
+::: {#prp-MA_continuity_and_differentiability}
 
 $f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하면 $f$ 는 $x$ 에서 연속이다.
 
@@ -51,7 +51,7 @@ $\lim_{h \to 0} f(x+h)-f(x) \ne 0$ 이면 $x$ 에서 미분가능하지 않으�
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_continuity_and_differentiability}
+::: {#prp-MA_continuity_and_differentiability}
 
 $[a,\,b]$ 구간에서 정의된 함수 $f,\,g$ 가 $x \in [a,\,b]$ 에서 미분가능하면 $f+g,\, fg,\, f/g$ 가 $x$ 에서 미분가능하며, 
 
@@ -101,7 +101,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_other_form_of_differentiability}
+::: {#prp-MA_other_form_of_differentiability}
 
 $f:(a,\,b) \to \R$ 과 $x\in (a,\,b)$ 에 대해 다음은 동치이다.
 
@@ -111,7 +111,7 @@ $f:(a,\,b) \to \R$ 과 $x\in (a,\,b)$ 에 대해 다음은 동치이다.
 
 $$
 f(x +h) -f(x) = ah + |h| \eta (h)
-$$ {#eq-part2_other_form_of_differentiability}
+$$ {#eq-MA_other_form_of_differentiability}
 
 이다. 
 :::
@@ -126,7 +126,7 @@ $$
 \eta(h) = \left\{\begin{array}{ll} \dfrac{f(x+h)-f(x)}{h} - f'(x), \qquad &h>0, \\ -\dfrac{f(x+h)-f(x)}{h} + f'(x), \qquad &h<0 \end{array}\right.
 $$
 
-그렇다면 $\displaystyle \lim_{h \to 0}\eta(h) = 0$ 이며 @eq-part2_other_form_of_differentiability 를 만족한다. 그리고 $a=f'(x)$ 이다. 
+그렇다면 $\displaystyle \lim_{h \to 0}\eta(h) = 0$ 이며 @eq-MA_other_form_of_differentiability 를 만족한다. 그리고 $a=f'(x)$ 이다. 
 
 
 ($2\implies 1$) 미분가능의 정의에 의해
@@ -144,7 +144,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_derivatives_of_simplie_functions}
+::: {#exm-MA_derivatives_of_simplie_functions}
 
 다음은 쉽게 보일 수 있다. 
 
@@ -159,11 +159,11 @@ $$
 
 <br>
 
-### 연쇄 규칙 {#sec-part2_chain_rule}
+### 연쇄 규칙 {#sec-MA_chain_rule}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_chain_rule}
+::: {#thm-MA_chain_rule}
 
 #### 연쇄 규칙
 
@@ -172,7 +172,7 @@ $f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하며 $f(x)$ 를 포함
 
 $$
 (g\circ f)'(x) = g'(f(x))f'(x).
-$$ {#eq-part2_chain_rule}
+$$ {#eq-MA_chain_rule}
 
 :::
 
@@ -180,7 +180,7 @@ $$ {#eq-part2_chain_rule}
 
 ::: {.proof}
 
-$h=g \circ f,\, y=f(x)$ 라고 하자. @prp-part2_other_form_of_differentiability 에 의해 
+$h=g \circ f,\, y=f(x)$ 라고 하자. @prp-MA_other_form_of_differentiability 에 의해 
 
 $$
 \begin{aligned}
@@ -200,7 +200,7 @@ h(x+h)-h(x) &= g(f(x+h)) - g(f(x)) \\
 \end{aligned}
 $$
 
-이며 마지막 줄 두번째 항의 $[\cdots]$ 부분은 $h \to 0$ 극한에서 $s\to 0$ 이므로 $\to 0$ 이다. 따라서,  @eq-part2_chain_rule 가 성립한다. $\square$
+이며 마지막 줄 두번째 항의 $[\cdots]$ 부분은 $h \to 0$ 극한에서 $s\to 0$ 이므로 $\to 0$ 이다. 따라서,  @eq-MA_chain_rule 가 성립한다. $\square$
 
 :::
 
@@ -208,12 +208,12 @@ $$
 
 ### 도함수의 연속성과 계층 {#sec-continuity_of_derivatives}
 
-우리는 앞서 @prp-part2_continuity_and_differentiability 에서 $f:[a,\,b] \to \R$ 이 $x_0\in [a,\,b]$ 에서 미분가능하면 $x_0$ 에서 연속이라는 것을 보였다. $f$ 의 도함수 $f'(x)$ 의 경우는 연속함수가 아닐 수 있다.
+우리는 앞서 @prp-MA_continuity_and_differentiability 에서 $f:[a,\,b] \to \R$ 이 $x_0\in [a,\,b]$ 에서 미분가능하면 $x_0$ 에서 연속이라는 것을 보였다. $f$ 의 도함수 $f'(x)$ 의 경우는 연속함수가 아닐 수 있다.
 
 </br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_case_of_derivative_without_continuity_1}
+::: {#exm-MA_case_of_derivative_without_continuity_1}
 
 $f:\R \to \R$ 이 다음과 같이 정의되어 있다고 하자. 
 
@@ -242,7 +242,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_case_of_derivative_without_continuity_2}
+::: {#exm-MA_case_of_derivative_without_continuity_2}
 
 $f:\R \to \R$ 이 다음과 같이 정의되어 있다고 하자. 
 
@@ -266,7 +266,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_differentiable}
+::: {#def-MA_differentiable}
 
 #### 도함수의 차수
 
@@ -277,13 +277,13 @@ $$
 
 </br>
 
-@exm-part2_case_of_derivative_without_continuity_1 과 @exm-part2_case_of_derivative_without_continuity_2 에서 보았듯이 $n$-차 도함수가 연속일 수도 있고 아닐 수도 있다. $n$ 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.
+@exm-MA_case_of_derivative_without_continuity_1 과 @exm-MA_case_of_derivative_without_continuity_2 에서 보았듯이 $n$-차 도함수가 연속일 수도 있고 아닐 수도 있다. $n$ 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.
 
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_class_of_derivatives}
+::: {#def-MA_class_of_derivatives}
 
 #### 도함수의 계층
 
@@ -302,7 +302,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part2_extreme_value}
+::: {#def-MA_extreme_value}
 
 #### 극대값과 극소값
 
@@ -314,7 +314,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_derivative_of_extreme_value}
+::: {#thm-MA_derivative_of_extreme_value}
 
 함수 $f:[a,\,b] \to \R$ 이 미분가능하며 $p\in (a,\,b)$ 가 극값일 경우 $f'(p)=0$ 이다.
 
@@ -333,7 +333,7 @@ $p$ 가 극대값이라고 하자. 어떤 $I_p=(p-\delta,\, p+\delta)$ 에서 $x
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-part2_generalized_mean_value_theorem}
+::: {#lem-MA_generalized_mean_value_theorem}
 
 $f:[a,\,b]\to \R$ 가 미분가능함수일 때 $f(a)=f(b)$ 이면 어떤 $c\in (a,\,b)$ 에서 $f'(c) = 0$ 이다.
 
@@ -343,7 +343,7 @@ $f:[a,\,b]\to \R$ 가 미분가능함수일 때 $f(a)=f(b)$ 이면 어떤 $c\in 
 
 ::: {.proof}
 
-$f$ 가 상수함수이면 자명하므로 $f$ 가 상수함수가 아니라고 하자. $[a,\,b]$ 는 옹골집합이므로 @thm-part2_extreme_value_theorem 에 의해 최소값과 최대값을 가지며 최소한 둘 중 하나는 $f(a)$ 값과 (그리고 $f(b)$ 값과) 다르다. $c\in (a,\,b)$ 에서 최대값 혹은 최소값을 가진다면 당연히 $c$ 에서 극값을 가지므로 $f'(c) = 0$ 이다. $\square$
+$f$ 가 상수함수이면 자명하므로 $f$ 가 상수함수가 아니라고 하자. $[a,\,b]$ 는 옹골집합이므로 @thm-MA_extreme_value_theorem 에 의해 최소값과 최대값을 가지며 최소한 둘 중 하나는 $f(a)$ 값과 (그리고 $f(b)$ 값과) 다르다. $c\in (a,\,b)$ 에서 최대값 혹은 최소값을 가진다면 당연히 $c$ 에서 극값을 가지므로 $f'(c) = 0$ 이다. $\square$
 
 :::
 
@@ -351,7 +351,7 @@ $f$ 가 상수함수이면 자명하므로 $f$ 가 상수함수가 아니라고 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_generalized_mean_value_theorem}
+::: {#thm-MA_generalized_mean_value_theorem}
 
 #### 일반화된 평균값 정리
 
@@ -373,7 +373,7 @@ $$
 h(t) := [f(b) -f(a)] g(t) - [g(b)-g(a)] f(t).
 $$ 
 
-$h(a) = h(b)=f(b)g(a) - f(a)g(b)$ 이다. @lem-part2_generalized_mean_value_theorem 의해 $h'(c)=0$ 인 $c\in (a,\,b)$ 가 존재한다. $\square$ 
+$h(a) = h(b)=f(b)g(a) - f(a)g(b)$ 이다. @lem-MA_generalized_mean_value_theorem 의해 $h'(c)=0$ 인 $c\in (a,\,b)$ 가 존재한다. $\square$ 
 
 :::
 
@@ -381,7 +381,7 @@ $h(a) = h(b)=f(b)g(a) - f(a)g(b)$ 이다. @lem-part2_generalized_mean_value_theo
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_mean_value_theorem}
+::: {#thm-MA_mean_value_theorem}
 
 #### 평균값 정리
 
@@ -389,14 +389,14 @@ $f:[a,\,b] \to \R$ 이 $(a,\,b)$ 에서 미분가능하면 다음을 만족하�
 
 $$
 f(b)-f(a) = (b-a)f'(c)
-$$ {#eq-part2_mean_value_theorem}
+$$ {#eq-MA_mean_value_theorem}
 
 :::
 
 </div></br>
 
 ::: {.proof}
-@thm-part2_generalized_mean_value_theorem 에서 $g(x) = x$ 로 놓으면 된다. $\square$ 
+@thm-MA_generalized_mean_value_theorem 에서 $g(x) = x$ 로 놓으면 된다. $\square$ 
 
 :::
 
@@ -404,7 +404,7 @@ $$ {#eq-part2_mean_value_theorem}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_mean_value_theorem}
+::: {#cor-MA_mean_value_theorem}
 
 $f:[a,\,b]\to \R$ 이 $I=(a,\,b)$ 에서 미분가능하면 다음이 성립한다.
 
@@ -420,7 +420,7 @@ $f:[a,\,b]\to \R$ 이 $I=(a,\,b)$ 에서 미분가능하면 다음이 성립한�
 
 ::: {.proof}
 
-평균값정리(@thm-part2_mean_value_theorem) 에 따라 임의의 $x_1,\,x\in \in I$ 에 대해 
+평균값정리(@thm-MA_mean_value_theorem) 에 따라 임의의 $x_1,\,x\in \in I$ 에 대해 
 
 $$
 f(x_2)-f(x_1)= (x_2-x_1)f'(x)
@@ -432,15 +432,15 @@ $$
 
 </br>
 
-### 도함수의 연속성 {#sec-part2_the_continuity_of_derivatives}
+### 도함수의 연속성 {#sec-MA_the_continuity_of_derivatives}
 
-@exm-part2_case_of_derivative_without_continuity_2 에서 보았듯이 함수 $f$ 에 대한 도함수 $f'(x)$ 가 모든 값에서 존재하지만 특정 값에서 불연속일 수 있다. 하지만 도함수의 불연속은 항상 2종 불연속인데 여기서는 그것을 보인다.
+@exm-MA_case_of_derivative_without_continuity_2 에서 보았듯이 함수 $f$ 에 대한 도함수 $f'(x)$ 가 모든 값에서 존재하지만 특정 값에서 불연속일 수 있다. 하지만 도함수의 불연속은 항상 2종 불연속인데 여기서는 그것을 보인다.
 
 </br>
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_continuity_of_derivative}
+::: {#thm-MA_continuity_of_derivative}
 
 #### 도함수의 사잇값 특성 
 
@@ -452,14 +452,14 @@ $f$ 가 $[a,\,b]$ 구간에서 미분가능한 실함수이고 $f'(a)< \lambda <
 
 ::: {.proof}
 
-$g(t) = f(t)-\lambda t$ 라고 하자. $g'(t) = f'(t)-\lambda$ 이므로 $g'(a)<0,\, g'(b)>0$ 이다. 따라서 어떤 $t_1\in (a,\,b)$ 에서 $g(t_1)>g(a)$ 이며, 역시 어떤 $t_2\in (a,\,b)$ 에서 $g(t_2)<g(b)$ 이다. @thm-part2_extreme_value_theorem 에 따라 어떤 $x\in (a,\,b)$ 에서 $g$ 는 최소값을 가진다. 이 때 $g'(x)=0$ 이며 따라서 $f'(x) = \lambda$ 이다. $\square$
+$g(t) = f(t)-\lambda t$ 라고 하자. $g'(t) = f'(t)-\lambda$ 이므로 $g'(a)<0,\, g'(b)>0$ 이다. 따라서 어떤 $t_1\in (a,\,b)$ 에서 $g(t_1)>g(a)$ 이며, 역시 어떤 $t_2\in (a,\,b)$ 에서 $g(t_2)<g(b)$ 이다. @thm-MA_extreme_value_theorem 에 따라 어떤 $x\in (a,\,b)$ 에서 $g$ 는 최소값을 가진다. 이 때 $g'(x)=0$ 이며 따라서 $f'(x) = \lambda$ 이다. $\square$
 
 :::
 
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-part2_continuity_of_derivative}
+::: {#cor-MA_continuity_of_derivative}
 
 $f$ 가 $[a,\,b]$ 에서 미분가능하다면 $f'$ 은 $[a,\,b]$ 에서 단순 불연속점을 가질 수 없다.
 :::
@@ -469,20 +469,20 @@ $f$ 가 $[a,\,b]$ 에서 미분가능하다면 $f'$ 은 $[a,\,b]$ 에서 단순 
 
 ::: {.proof}
 
-$x\in (a,\,b)$ 가 $f'(x)$ 의 단순불연속점이라고 하자. $f'(x^-)=\alpha,\,f'(x^+)=\beta$ 일 때 $\varepsilon < \dfrac{|\beta-\alpha|}{2}$ 에 대해 $0<x-t<\delta \implies |f'(t)-\alpha|<\varepsilon$ 이며 $0<t-x<\delta \implies |f'(t)-\beta|<\varepsilon$ 인 $\delta>0$ 이 존재한다. 이 때 $\dfrac{\beta+\alpha}{2}\not\in f'(N(x,\,\delta))$ 인데 이는 @thm-part2_continuity_of_derivative 에 위배된다. 즉 도함수는 단순 불연속점을 가질 수 없다. $\square$
+$x\in (a,\,b)$ 가 $f'(x)$ 의 단순불연속점이라고 하자. $f'(x^-)=\alpha,\,f'(x^+)=\beta$ 일 때 $\varepsilon < \dfrac{|\beta-\alpha|}{2}$ 에 대해 $0<x-t<\delta \implies |f'(t)-\alpha|<\varepsilon$ 이며 $0<t-x<\delta \implies |f'(t)-\beta|<\varepsilon$ 인 $\delta>0$ 이 존재한다. 이 때 $\dfrac{\beta+\alpha}{2}\not\in f'(N(x,\,\delta))$ 인데 이는 @thm-MA_continuity_of_derivative 에 위배된다. 즉 도함수는 단순 불연속점을 가질 수 없다. $\square$
 
 :::
 
 
 </br>
 
-### 로피탈 정리 {#sec-part2_Lhopital_theorem}
+### 로피탈 정리 {#sec-MA_Lhopital_theorem}
 
 로피탈 정리는 실제 극한값을 계산할 때 아주 유용한 정리이다. 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_Lhopital_theorem}
+::: {#thm-MA_Lhopital_theorem}
 
 #### 로피탈 정리
 
@@ -496,13 +496,13 @@ $x_0$ 를 포함하는 어떤 열린 구간 $I$ 에서 미분가능한 함수 $f
 
 $$
 \lim_{x\to x_0}\dfrac{f'(x)}{g'(x)} = l
-$$ {#eq-part2_lhopital_1}
+$$ {#eq-MA_lhopital_1}
 
 라면
 
 $$
 \lim_{x\to x_0}\dfrac{f(x)}{g(x)} = l
-$${#eq-part2_lhopital_2}
+$${#eq-MA_lhopital_2}
 
 이다.
 
@@ -518,34 +518,34 @@ $$
 |x-x_0|<\delta \implies \left|\dfrac{f'(x)}{g'(x)}-l\right|<\varepsilon
 $$
 
-인 $\delta > 0$ 이 존재한다. 구간 $N:=\left(x_0-\frac{\delta}{2},\,x_0+\frac{\delta}{2}\right) \cap I$ 라고 정하자. $x,\,t\in N,\, t>x$ 이면 @thm-part2_generalized_mean_value_theorem 에 따라
+인 $\delta > 0$ 이 존재한다. 구간 $N:=\left(x_0-\frac{\delta}{2},\,x_0+\frac{\delta}{2}\right) \cap I$ 라고 정하자. $x,\,t\in N,\, t>x$ 이면 @thm-MA_generalized_mean_value_theorem 에 따라
 
 $$
 \dfrac{f(t)-f(x)}{g(t)-g(x)} = \dfrac{f'(y)}{g'(y)}
-$${#eq-part2_lhopital_3}
+$${#eq-MA_lhopital_3}
 
 인 $y\in (x,\,t) \subset N$ 가 존재하며, 따라서,
 
 $$
 \left|\dfrac{f(t)-f(x)}{g(t)-g(x)} - l\right|<\varepsilon
-$${#eq-part2_lhopital_4}
+$${#eq-MA_lhopital_4}
 
 이다. ($1$) 의 경우 즉, $\displaystyle \lim_{x\to x_0} f(x) = \lim_{x\to x_0} g(x) = 0$ 라면 
 
 $$
 \left| \dfrac{f(t)}{g(t)} - l \right | <\varepsilon
-$${#eq-part2_lhopital_6}
+$${#eq-MA_lhopital_6}
 
 이다. 즉 $\displaystyle \lim_{x\to x_0} \dfrac{f(x)}{g(x)} = l$ 이다.
 
 이제 ($2$) 의 경우를 생각하자. 우선 $\displaystyle \lim_{x \to x_0}g(x) = \infty$ 라고 하자. 
-@eq-part2_lhopital_3 로부터
+@eq-MA_lhopital_3 로부터
 
 $$
 l-\varepsilon < \dfrac{f(t)-f(x)}{g(t)-g(x)} < l+\varepsilon
-$${#eq-part2_lhopital_7}
+$${#eq-MA_lhopital_7}
 
-에서 $x \in N,\, x > x_0$ 로 고정하면 $t \in (x_0,\,c) \implies g(t)>g(x)$ 인 $c<x$ 가 존재한다. @eq-part2_lhopital_7 에 $(g(t)-g(x))/g(t)$ 를 곱하면 
+에서 $x \in N,\, x > x_0$ 로 고정하면 $t \in (x_0,\,c) \implies g(t)>g(x)$ 인 $c<x$ 가 존재한다. @eq-MA_lhopital_7 에 $(g(t)-g(x))/g(t)$ 를 곱하면 
 
 $$
 \dfrac{f(x)}{g(t)} + (l-\varepsilon)\dfrac{g(t)-g(x)}{g(t)} < \dfrac{f(t)}{g(t)} <\dfrac{f(x)}{g(t)} + (l+\varepsilon)\dfrac{g(t)-g(x)}{g(t)}
@@ -563,14 +563,14 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part2_tayler_theorem}
+::: {#thm-MA_tayler_theorem}
 
 #### 테일러 정리
 
 $f:[a,\,b]\to \R$ 이 $C^{n-1}$ 급 함수이며 $(a,\,b)$ 구간에서 $n$ 번 미분 가능하다고 하자. $x,\,t\in (a,\,b)$ 에 대해 
 $$
 f(x) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(t)}{k!}(x-t)^{k} + \dfrac{f^{(n)}(c)}{n!}(x-t)^n 
-$$ {#eq-part2_tayler_theorem}
+$$ {#eq-MA_tayler_theorem}
 
 을 만족하는 $\xi$ 가 $x,\,t$ 사이에 반드시 존재한다. 
 
@@ -584,13 +584,13 @@ $n=1$ 일 경우는 평균값 정리이다.
 
 $$
 f(x) = \sum_{k=0}^{n-1} \dfrac{f^{(k)}(t)}{k!}(x-t)^k + M(x-t)^n
-$$ {#eq-part2_tayler_theorem_1}
+$$ {#eq-MA_tayler_theorem_1}
 
 를 만족하는 $M$ 을 생각하자. $y\in [a,\,b]$ 에 대해
 
 $$
 g(y) := f(y) - \sum_{k=0}^{n-1} \dfrac{f^{(k)}(t)}{k!}(y-t)^k - M(y-t)^n
-$$ {#eq-part2_tayler_theorem_2}
+$$ {#eq-MA_tayler_theorem_2}
 
 라고 하면
 
@@ -598,13 +598,13 @@ $$
 g^{(n)}(y) = f^{(n)}(y) - n!M
 $$
 
-이다. 이제 $g^{(n)}(y)=0$ 인 $y$ 가 반드시 존재한다는 것을 보이면 된다. @eq-part2_tayler_theorem_2 를 생각하면
+이다. 이제 $g^{(n)}(y)=0$ 인 $y$ 가 반드시 존재한다는 것을 보이면 된다. @eq-MA_tayler_theorem_2 를 생각하면
 
 $$
 g(t) = g'(t) = \cdots = g^{(n-1)}(t) = 0
 $$
 
-임을 안다. @eq-part2_tayler_theorem_1 로부터 $g(x) = 0$ 이므로 $g'(x_1) = 0$ 인 $x_1$ 이 $t$ 와 $x$ 사이에 존재하며 $g''(x_2)$ 인 $x_2$ 가 $x_1$ 과 $t$ 사이에 존재한다. 이것을 계속하면 $g^{(n-1)}(x_{n-1}) = 0$ 인 $x_{n-1}$ 이 $t$ 와 $x_{n-2}$ 사이에 존재하므로 $g^{(n)}(x_n)=0$ 인 $x_n$ 도 $t$ 와 $x_{n-1}$ 사이에 존재한다. $g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0$ 이므로 $M=f^{(n)}(x_n)/n!$ 이다. $\square$
+임을 안다. @eq-MA_tayler_theorem_1 로부터 $g(x) = 0$ 이므로 $g'(x_1) = 0$ 인 $x_1$ 이 $t$ 와 $x$ 사이에 존재하며 $g''(x_2)$ 인 $x_2$ 가 $x_1$ 과 $t$ 사이에 존재한다. 이것을 계속하면 $g^{(n-1)}(x_{n-1}) = 0$ 인 $x_{n-1}$ 이 $t$ 와 $x_{n-2}$ 사이에 존재하므로 $g^{(n)}(x_n)=0$ 인 $x_n$ 도 $t$ 와 $x_{n-1}$ 사이에 존재한다. $g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0$ 이므로 $M=f^{(n)}(x_n)/n!$ 이다. $\square$
 
 :::
 
@@ -642,7 +642,7 @@ $$
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_mean_value_theorem_is_not_valid_for_complex_function}
+::: {#exm-MA_mean_value_theorem_is_not_valid_for_complex_function}
 
 #### $\R \mapsto \mathbb{C}$ 함수와 평균값 정리
 
@@ -655,7 +655,7 @@ $f:\R \to \mathbb{C}$ 가 $f(x) = e^{ix}= \cos x + i \sin x$ 라고 하자. $f(2
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part2_Lhopital_theorem_for_complex_function}
+::: {#exm-MA_Lhopital_theorem_for_complex_function}
 
 #### $\R \mapsto \mathbb{C}$ 함수와 로피탈 정리
 
@@ -700,13 +700,13 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part2_mean_value_theorem_for_vector_valued_function}
+::: {#prp-MA_mean_value_theorem_for_vector_valued_function}
 
 $\boldsymbol{f}:[a,\,b]\to\R^n$ 이 연속이며 $(a,\,b)$ 구간에서 미분가능하다고 하자. 이 때 
 
 $$
 \|\bf{f}(b)-\bf{f}(a)\| \le (b-a)\|\bf{f}'(t) \|
-$$ {#eq-part2_mean_value_theorem_for_vector_valued_function}
+$$ {#eq-MA_mean_value_theorem_for_vector_valued_function}
 
 인 $t\in (a,\,b)$ 가 존재한다.
 
@@ -735,7 +735,7 @@ $$
 \|\bf{z}\|^2 = (b-a)|\bf{z\cdot f}'(t)| \le (b-a)\|\bf{z}\| \|\bf{f}'(t)\|
 $$
 
-이므로 @eq-part2_mean_value_theorem_for_vector_valued_function 가 성립한다. $\square$
+이므로 @eq-MA_mean_value_theorem_for_vector_valued_function 가 성립한다. $\square$
 
 :::
 
@@ -746,7 +746,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_1}
+::: {#exr-MA_rudin_5_1}
 
 #### Rudin 5.1
 
@@ -784,7 +784,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_2}
+::: {#exr-MA_rudin_5_2}
 
 #### Rudin 5.2
 
@@ -817,7 +817,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_3}
+::: {#exr-MA_rudin_5_3}
 
 #### Rudin 5.3
 
@@ -840,7 +840,7 @@ $f'(x) = 1+\varepsilon g'(x)$ 이므로 $\varepsilon < 1/M$ 이라면 $f'(x)>0$ 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_4}
+::: {#exr-MA_rudin_5_4}
 
 #### Rudin 5.4
 
@@ -867,14 +867,14 @@ $$
 
 ::: {.solution}
 
-$g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}$ 라고 하자. $g(0) = g(1) = 0$ 이다. 평균값 정리(@thm-part2_mean_value_theorem) 에 따라 $g'(x)=0$ 의 해가 $(0,\,1)$ 사이에 존재한다.  
+$g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}$ 라고 하자. $g(0) = g(1) = 0$ 이다. 평균값 정리(@thm-MA_mean_value_theorem) 에 따라 $g'(x)=0$ 의 해가 $(0,\,1)$ 사이에 존재한다.  
 
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_5}
+::: {#exr-MA_rudin_5_5}
 
 #### Rudin 5.5
 
@@ -895,7 +895,7 @@ $g(x) = f(x+1)-f(x) = f'(c)$ 인 $c\in (x,\, x+1)$ 이 존재한다.
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_6}
+::: {#exr-MA_rudin_5_6}
 
 #### Rudin 5.6
 
@@ -937,7 +937,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_7}
+::: {#exr-MA_rudin_5_7}
 
 #### Rudin 5.7
 
@@ -970,7 +970,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_8}
+::: {#exr-MA_rudin_5_8}
 
 #### Rudin 5.8
 
@@ -1008,7 +1008,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_9}
+::: {#exr-MA_rudin_5_9}
 
 #### Rudin 5.9
 
@@ -1037,7 +1037,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_10}
+::: {#exr-MA_rudin_5_10}
 
 #### Rudin 5.10
 
@@ -1047,7 +1047,7 @@ $$
 \lim_{x \to 0} \dfrac{f(x)}{g(x)} = \dfrac{A}{B}.
 $$
 
-그리고 @exm-part2_Lhopital_theorem_for_complex_function 과 비교하라.
+그리고 @exm-MA_Lhopital_theorem_for_complex_function 과 비교하라.
 
 
 :::
@@ -1085,7 +1085,7 @@ $$
 \lim_{x\to 0} \dfrac{f(x)}{g(x)} = A(B_r+iB_i)^{-1} = \dfrac{A}{B}
 $$
 
-이다. @exm-part2_Lhopital_theorem_for_complex_function 의 경우 $\lim_{x \to 0} g'(x)$ 가 발산하는 차이가 있다.
+이다. @exm-MA_Lhopital_theorem_for_complex_function 의 경우 $\lim_{x \to 0} g'(x)$ 가 발산하는 차이가 있다.
 
 :::
 
@@ -1093,7 +1093,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_11}
+::: {#exr-MA_rudin_5_11}
 
 #### Rudin 5.11
 
@@ -1137,7 +1137,7 @@ $x=0$ 에서 연속이 아니므로 도함수 및 이차도함수는 존재하�
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_12}
+::: {#exr-MA_rudin_5_12}
 
 #### Rudin 5.12
 
@@ -1162,11 +1162,11 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_14}
+::: {#exr-MA_rudin_5_14}
 
 #### Rudin 5.14
 
-$f:(a,\,b)\to \R$ 이 미분가능하다. 이 때 $f$ 가 볼록함수(@exr-part2_rudin_4_23) 일 필요충분조건이 $f'$ 이 단조증가함수인 것임을 보여라. 또한 $f''(x)$ 가 모든 $x\in (a,\,b)$ 에서 존재한다면 $f$ 가 볼록함수일 필요충분조건은 $\forall x\in (a,\,b), f''(x)\ge 0$ 인 것임을 보여라.
+$f:(a,\,b)\to \R$ 이 미분가능하다. 이 때 $f$ 가 볼록함수(@exr-MA_rudin_4_23) 일 필요충분조건이 $f'$ 이 단조증가함수인 것임을 보여라. 또한 $f''(x)$ 가 모든 $x\in (a,\,b)$ 에서 존재한다면 $f$ 가 볼록함수일 필요충분조건은 $\forall x\in (a,\,b), f''(x)\ge 0$ 인 것임을 보여라.
 
 :::
 
@@ -1176,7 +1176,7 @@ $f:(a,\,b)\to \R$ 이 미분가능하다. 이 때 $f$ 가 볼록함수(@exr-part
 
 ::: {.solution}
 
-$f$ 가 볼록함수 임을 가정한다. @exr-part2_rudin_4_23 의 @eq-part2_convex_function_2 을 이용한다. $a<s<t<u<b$ 에 대해
+$f$ 가 볼록함수 임을 가정한다. @exr-MA_rudin_4_23 의 @eq-MA_convex_function_2 을 이용한다. $a<s<t<u<b$ 에 대해
 
 $$
 \dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(t)}{u-t}
@@ -1223,7 +1223,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_15}
+::: {#exr-MA_rudin_5_15}
 
 #### Rudin 5.15
 
@@ -1262,7 +1262,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_16}
+::: {#exr-MA_rudin_5_16}
 
 #### Rudin 5.16
 
@@ -1276,7 +1276,7 @@ $f$ 가 $(0,\,\infty)$ 구간에서 두번 미분 가능하며 $f''$ 은 유계�
 
 ::: {.solution}
 
-@exr-part2_rudin_5_15 를 이용한다. $\displaystyle \lim_{x\to \infty}f(x) = 0$ 이므로 정해진 $\varepsilon >0$ 에 대해 $x>x_0 \implies |f(x)|<\varepsilon$ 인 $x_0$ 가 존재한다. 그렇다면 $x>x_0$ 이면 $(x_0,\, \infty)$ 구간에서 $|f'(x)|< 2 \sqrt{\varepsilon M}$ 이 성립하므로 $\displaystyle \lim_{x\to \infty} f'(x) = 0$ 이다. 
+@exr-MA_rudin_5_15 를 이용한다. $\displaystyle \lim_{x\to \infty}f(x) = 0$ 이므로 정해진 $\varepsilon >0$ 에 대해 $x>x_0 \implies |f(x)|<\varepsilon$ 인 $x_0$ 가 존재한다. 그렇다면 $x>x_0$ 이면 $(x_0,\, \infty)$ 구간에서 $|f'(x)|< 2 \sqrt{\varepsilon M}$ 이 성립하므로 $\displaystyle \lim_{x\to \infty} f'(x) = 0$ 이다. 
 
 :::
 
@@ -1285,7 +1285,7 @@ $f$ 가 $(0,\,\infty)$ 구간에서 두번 미분 가능하며 $f''$ 은 유계�
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_18}
+::: {#exr-MA_rudin_5_18}
 
 #### Rudin 5.18
 
@@ -1298,7 +1298,7 @@ $$
 
 $$
 f(\beta) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(\alpha)}{k!}(\beta-\alpha)^k + \dfrac{Q^{(n-1)}(\alpha)}{(n-1)!}(\beta-\alpha)^n.
-$$ {#eq-exr-part2_rudin_5_18}
+$$ {#eq-exr-MA_rudin_5_18}
 
 :::
 
@@ -1331,7 +1331,7 @@ $$
 \end{aligned}
 $$
 
-이다 $f(\alpha) = \dfrac{f^{(0)}(\alpha)}{0!}(\beta-\alpha)^0$ 이므로 @eq-exr-part2_rudin_5_18 이 성립한다. 
+이다 $f(\alpha) = \dfrac{f^{(0)}(\alpha)}{0!}(\beta-\alpha)^0$ 이므로 @eq-exr-MA_rudin_5_18 이 성립한다. 
 
 :::
 
@@ -1339,7 +1339,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_19}
+::: {#exr-MA_rudin_5_19}
 
 #### Rudin 5.19
 
@@ -1347,7 +1347,7 @@ $f$ 가 $(-1,\,1)$ 에서 정의되어 있고 $f'(0)$ 이 존재한다. $-1<\alp
 
 $$
 D_n := \dfrac{f(\beta_n)-f(\alpha_n)}{\beta_n - \alpha_n}
-$$ {#eq-part2_rudin_5_19}
+$$ {#eq-MA_rudin_5_19}
 
 다음을 보여라.
 
@@ -1369,7 +1369,7 @@ $f$ 가 $(-1,\,1)$ 에서 미분가능하지만 (그러나 $f'$ 은 연속이 �
 
 $f'(0)$ 이 존재하므로 $f$ 는 $0$ 에서 연속이다.
 
-($1$) @eq-part2_rudin_5_19 을 아래와 같이 바꿀 수 있다.
+($1$) @eq-MA_rudin_5_19 을 아래와 같이 바꿀 수 있다.
 
 $$
 \begin{aligned}
@@ -1391,12 +1391,12 @@ $$
 &\qquad \qquad- \left.\dfrac{\alpha_n}{\beta_n-\alpha_n} \left(\dfrac{f(\alpha_n)-f(0)}{\alpha_n}-f'(0)\right)\right| \\
 &< \dfrac{\beta_n}{\beta_n-\alpha_n} \varepsilon - \dfrac{\alpha_n}{\beta_n-\alpha_n}\varepsilon = \varepsilon
 \end{aligned}
-$$ {#eq-part2_rudin_5_19_1}
+$$ {#eq-MA_rudin_5_19_1}
 
 이다. 따라서 $\displaystyle \lim_{n \to \infty} D_n = f'(0)$ 이다.
 
 
-($2$) $0<\alpha_n<\beta_n<1$ 이면 @eq-part2_rudin_5_19_1 식은 다음과 같이 변한다.
+($2$) $0<\alpha_n<\beta_n<1$ 이면 @eq-MA_rudin_5_19_1 식은 다음과 같이 변한다.
 
 $$
 |D_n -f'(0)| < \dfrac{\beta_n}{\beta_n-\alpha_n}\varepsilon + \dfrac{\alpha_n}{\beta_n-\alpha_n}\varepsilon
@@ -1428,7 +1428,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_22}
+::: {#exr-MA_rudin_5_22}
 
 #### Rudin 5.22
 
@@ -1454,7 +1454,7 @@ $$
 
 ::: {.solution}
 
-($a$) $g(t) := f(t)-t$ 라고 하면 $g'(t)=f'(t)-1$ 이므로 $g'(t)\ne 0$ 이다. $t_1,\,t_2\in \R$ 에 대해 $g'(t_1)g'(t_2)<0$ 이면 @thm-part2_continuity_of_derivative 에 따라 $t_1,\,t_2$ 사이에 $g'(t)=0$ 인 $t$ 가 존재하므로 모든 $t$ 에 대해 $g'(t)>0$ 이거나 $g'(t)<0$ 이다. 즉 단조증가이거나 단조감소이므로 $g(t)=0$ 는 하나 이상의 해를 가질 수 없다. 
+($a$) $g(t) := f(t)-t$ 라고 하면 $g'(t)=f'(t)-1$ 이므로 $g'(t)\ne 0$ 이다. $t_1,\,t_2\in \R$ 에 대해 $g'(t_1)g'(t_2)<0$ 이면 @thm-MA_continuity_of_derivative 에 따라 $t_1,\,t_2$ 사이에 $g'(t)=0$ 인 $t$ 가 존재하므로 모든 $t$ 에 대해 $g'(t)>0$ 이거나 $g'(t)<0$ 이다. 즉 단조증가이거나 단조감소이므로 $g(t)=0$ 는 하나 이상의 해를 가질 수 없다. 
 
 ($b$) $f'(t) = 1-e^t(1+e^t)^{-2}$ 이므로 $0<f'(t)<1$ 이다. $f(t)=t \implies (1+e^t)^{-1}=0$ 이므로 $f$ 는 고정점이 없다.
 
@@ -1492,7 +1492,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_23}
+::: {#exr-MA_rudin_5_23}
 
 #### Rudin 5.23
 
@@ -1556,17 +1556,17 @@ $\beta <x_n <\gamma$ 일 경우 $x_{n+1}-x_n = g(x_n)<0$ 이므로 $x_{n+1}<x_n<
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_24}
+::: {#exr-MA_rudin_5_24}
 
 #### Rudin 5.24
 
-@exr-part2_rudin_5_22 의 ($d$) 에서 설명된 과정은 $(0,\,\infty) \mapsto (0,\,\infty)$ 함수에도 적용 될 수 있다. 고정된 $\alpha>1$ 에 대해 
+@exr-MA_rudin_5_22 의 ($d$) 에서 설명된 과정은 $(0,\,\infty) \mapsto (0,\,\infty)$ 함수에도 적용 될 수 있다. 고정된 $\alpha>1$ 에 대해 
 
 $$
 f(x) = \dfrac{1}{2} \left(x+\dfrac{\alpha}{x}\right),\qquad g(x) = \dfrac{\alpha+x}{1+x}
 $$
 
-라고 하자. $f,\,g$ 모두 $\sqrt{\alpha}$ 가 $(0,\,\infty)$ 에서의 유일한 고정점이다. $f,\,g$ 의 성질로부터 @exr-part2_rudin_3_16 의 수렴이 @exr-part2_rudin_3_17 의 수렴보다 빠른지 설명하라. 
+라고 하자. $f,\,g$ 모두 $\sqrt{\alpha}$ 가 $(0,\,\infty)$ 에서의 유일한 고정점이다. $f,\,g$ 의 성질로부터 @exr-MA_rudin_3_16 의 수렴이 @exr-MA_rudin_3_17 의 수렴보다 빠른지 설명하라. 
 
 :::
 
@@ -1578,7 +1578,7 @@ $$
 
 아래 그림에서 보듯이 $\alpha=3$ 에서 $f(x)$ 가 $g(x)$ 보다 변화가 적다. 지그재그 방법을 생각해보면 $f(x)$ 가 빨리 수렴한다.
 
-![Plots of $f(x)$ and $g(x)$ with $\alpha =3$](images/pp1.png){#fig-part2_rudin_5_24 width=400}
+![Plots of $f(x)$ and $g(x)$ with $\alpha =3$](images/pp1.png){#fig-MA_rudin_5_24 width=400}
 
 :::
 
@@ -1587,7 +1587,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_25}
+::: {#exr-MA_rudin_5_25}
 
 #### Rudin 5.25
 
@@ -1631,7 +1631,7 @@ $$
 
 $$
 x_{n+1}= x_n -\dfrac{f(x_n)}{f'(x_n)}
-$$ {#eq-part2_rudin_5_25_1}
+$$ {#eq-MA_rudin_5_25_1}
 
 이다. 
 
@@ -1641,7 +1641,7 @@ $$
 f(x_{n+1}) > f(x_n) -f'(x_n)(x_{n}-x_{n+1}) = 0
 $$
 
-이다. 즉 $\xi<x_{n+1}<x_n$ 이다. $\langle x_n \rangle$ 은 유계인 단조수열이므로 수렴한다. $\lim_{n \to \infty} x_n = t$ 라 하면 @eq-part2_rudin_5_25_1 로부터 $t=t-f(t)/f'(t)$ 를 만족해야 하는데 이 값은 $\xi$ 뿐이다. 
+이다. 즉 $\xi<x_{n+1}<x_n$ 이다. $\langle x_n \rangle$ 은 유계인 단조수열이므로 수렴한다. $\lim_{n \to \infty} x_n = t$ 라 하면 @eq-MA_rudin_5_25_1 로부터 $t=t-f(t)/f'(t)$ 를 만족해야 하는데 이 값은 $\xi$ 뿐이다. 
 
 ($c$) 테일러 정리에 의해 다음을 만족하는 $t_n \in (\xi,\,x_n)$ 이 항상 존재한다.
 
@@ -1649,7 +1649,7 @@ $$
 f(\xi) = f(x_n) + f'(x_n) (\xi-x_n) + \dfrac{f'(t_n)}{2} (\xi-x_n)^2
 $$
 
-$f(\xi)=0$ 이며 @eq-part2_rudin_5_25_1 를 이용하면
+$f(\xi)=0$ 이며 @eq-MA_rudin_5_25_1 를 이용하면
 
 $$
 f'(x_n)x_{n+1} = \xi f'(x_n) + \dfrac{f'(t_n)}{2} (\xi-x_n)^2
@@ -1674,7 +1674,7 @@ $$
 
 이며 $f(x)$ 가 $0$ 에 가까울 때 $g'(x)=0$ 이다.
 
-($f$) $f(x) = x^{1/3}$ 의 해는 $x=0$ 뿐이다. @eq-part2_rudin_5_25_1 로 부터 $x_{n+1}=x_n - 3x_n=-2x_n$ 이 되어 $\langle x_n \rangle$ 이 발산한다. 
+($f$) $f(x) = x^{1/3}$ 의 해는 $x=0$ 뿐이다. @eq-MA_rudin_5_25_1 로 부터 $x_{n+1}=x_n - 3x_n=-2x_n$ 이 되어 $\langle x_n \rangle$ 이 발산한다. 
 
 :::
 
@@ -1683,7 +1683,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_26}
+::: {#exr-MA_rudin_5_26}
 
 #### Rudin 5.26
 
@@ -1717,7 +1717,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_27}
+::: {#exr-MA_rudin_5_27}
 
 #### Rudin 5.27, 미분방정식의 해의 유일성 1
 
@@ -1759,7 +1759,7 @@ $$
 \end{aligned}
 $$
 
-이다. @exr-part2_rudin_5_26 에 따라 $f([a,\,b])= \{0\}$ 이므로 $f_1=f_2$ 이다. 즉 위의 미분방정식을 만족하는 해는 많아야 하나 존재한다.
+이다. @exr-MA_rudin_5_26 에 따라 $f([a,\,b])= \{0\}$ 이므로 $f_1=f_2$ 이다. 즉 위의 미분방정식을 만족하는 해는 많아야 하나 존재한다.
 
 :::
 
@@ -1768,11 +1768,11 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_28}
+::: {#exr-MA_rudin_5_28}
 
 #### Rudin 5.28, 미분방정식의 해의 유일성 2
 
-@exr-part2_rudin_5_27 과 유사한 유일성 정리를 미분방정식 시스템에 대해 증명한다. 아래와 같은 미분방정식들이 존재한다고 하자.
+@exr-MA_rudin_5_27 과 유사한 유일성 정리를 미분방정식 시스템에 대해 증명한다. 아래와 같은 미분방정식들이 존재한다고 하자.
 
 $$
 y'_j = \phi_j (x,\,y_1,\ldots,\,y_n),\qquad y_j (a) = c_j,\qquad (j=1,\ldots,\,n).
@@ -1811,7 +1811,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part2_rudin_5_29}
+::: {#exr-MA_rudin_5_29}
 
 #### Rudin 5.29, 미분방정식의 해의 유일성 3
 

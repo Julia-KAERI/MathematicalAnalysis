@@ -16,7 +16,7 @@ crossref:
 
 
 ::: {.callout-tip appearance="minimal"}
-- $\R$ 에서의 분할은 @def-part2_partition 을 참고하라. 전체적으로 [리만-스틸체스 적분](../part2/2_5_riemann_stieltjes_integral.qmd) 를 참고하라.
+- $\R$ 에서의 분할은 @def-MA_partition 을 참고하라. 전체적으로 [리만-스틸체스 적분](../part2/2_5_riemann_stieltjes_integral.qmd) 를 참고하라.
 
 - 여기서의 $n$-cell 은 특별한 언급이 없는 한 닫힌 $n$-cell 을 의미한다.
 :::
@@ -24,7 +24,7 @@ crossref:
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_volume_of_n_cell}
+::: {#def-CM_volume_of_n_cell}
 
 #### $n$-cell 의 부피
 
@@ -42,7 +42,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_partition_of_cube}
+::: {#def-CM_partition_of_cube}
 
 #### $n$-cell 의 분할과 subcell
 
@@ -63,7 +63,7 @@ $n$ cell $q=[a^{(1)}_{i_1},\,a^{(1)}_{i_1+1}] \times \cdots \times [a^{(n)}_{i_n
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_refinement_of_partition}
+::: {#def-CM_refinement_of_partition}
 
 #### refinement
 
@@ -76,7 +76,7 @@ $n$-cell $Q$ 에 대한 두 분할 $P_1$, $P_2$ 를 생각하자. $P_1$ 에 의�
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_riemann_upper_sum_and_lower_sum}
+::: {#def-CM_riemann_upper_sum_and_lower_sum}
 
 #### 리만 상합, 리만 하합
 
@@ -105,7 +105,7 @@ $$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_properties_of_riemann_sum}
+::: {#prp-CM_properties_of_riemann_sum}
 
 $n$-cell $Q$ 에서 정의된 유계인 함수 $f : Q \to \R$ 와 $P,\,P_1,\,P_2\in \mathcal{P}[Q]$ 에 대해 다음이 성립한다. 
 
@@ -136,7 +136,7 @@ $$
 
 </br>
 
-@prp-part3_properties_of_riemann_sum 의 ($3$) 으로부터 $f:Q\to \R$ 에 대해 $\{L(f,\,P): P\in \mathcal{P}[Q]\}$ 와 $\{U(f,\,P) : P\in \mathcal{P}[Q]\}$ 는 유계임을 안다. 또한
+@prp-CM_properties_of_riemann_sum 의 ($3$) 으로부터 $f:Q\to \R$ 에 대해 $\{L(f,\,P): P\in \mathcal{P}[Q]\}$ 와 $\{U(f,\,P) : P\in \mathcal{P}[Q]\}$ 는 유계임을 안다. 또한
 
 $$
 \sup \{L(f,\,P):P\in \mathcal{P}[Q]\} \le \inf \{ U(f,\,P): P\in \mathcal{P}[Q] \}
@@ -147,7 +147,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_riemann_integration_of_multivariable_function}
+::: {#def-CM_riemann_integration_of_multivariable_function}
 
 #### 리만 적분
 
@@ -170,12 +170,12 @@ $$
 
 </br>
 
-일변수 함수에서의 @thm-part2_properties_of_stieltjes_integral_1 와 유사한 아래 정리는 아주 유용하다.
+일변수 함수에서의 @thm-MA_properties_of_stieltjes_integral_1 와 유사한 아래 정리는 아주 유용하다.
 
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_properties_of_integral}
+::: {#thm-CM_properties_of_integral}
 
 $n$-cell $Q$ 에서 정의된 유계함수 $f:Q \to \R$ 에 대해 다음은 동치이다.
 
@@ -208,7 +208,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_1}
+::: {#exr-CM_spivak_3_1}
 
 #### Spivak 3.1
 
@@ -244,14 +244,14 @@ $$
 U(f,\,P)-L(f,\,P) = \dfrac{\varepsilon}{2} < \varepsilon
 $$
 
-이다. @thm-part3_properties_of_integral 에 의해 $f$ 는 적분가능하다.
+이다. @thm-CM_properties_of_integral 에 의해 $f$ 는 적분가능하다.
 
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_2}
+::: {#exr-CM_spivak_3_2}
 
 #### Spivak 3.2
 
@@ -274,7 +274,7 @@ $$
 U(f,\,P_3) - N_cV_0M &\le U(g,\,P_3) \le U(f,\,P_3) + N_cV_0M,\\[0.3em]
 L(f,\,P_3) - N_cV_0M &\le L(g,\,P_3) \le L(f,\,P_3) + N_c V_0 M
 \end{aligned}
-$${#eq-part3_spivka_3_2_1}
+$${#eq-CM_spivka_3_2_1}
 
 이며
 
@@ -288,7 +288,7 @@ $$
 U(g,\,P_3)-L(g,\,P_3) \le \varepsilon
 $$
 
-이므로 $g$ 가 적분가능함을 안다. 또한 @eq-part3_spivka_3_2_1 로 부터 임의의 $\varepsilon>0$ 에 대해
+이므로 $g$ 가 적분가능함을 안다. 또한 @eq-CM_spivka_3_2_1 로 부터 임의의 $\varepsilon>0$ 에 대해
 
 $$
 L(f,\,P)-\dfrac{\varepsilon}{4} \le L(g,\,P) \le U(g,\, P) \le U(f,\,P)+ \dfrac{\varepsilon}{4}
@@ -302,7 +302,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_3}
+::: {#exr-CM_spivak_3_3}
 
 #### Spivak 3.3
 
@@ -312,7 +312,7 @@ $f,\,g:A \to \R$ 은 적분가능하다.
 
 $$
 m_S(f)+m_S(g) \le m_S(f+g),\qquad M_S(f+g) \le M_S(f)+M_S(g)
-$$ {#eq-part3_spivak_3_3_1}
+$$ {#eq-CM_spivak_3_3_1}
 
 이며, 따라서
 
@@ -320,7 +320,7 @@ $$
 \begin{eqnarray}
 L(f,\,P) + L(g,\,P) \le L(f+g,\,P) \le U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
 \end{eqnarray}
-$$ {#eq-part3_spivak_3_3_2}
+$$ {#eq-CM_spivak_3_3_2}
 
 임을 보여라.
 
@@ -360,7 +360,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_4}
+::: {#exr-CM_spivak_3_4}
 
 #### Spivak 3.4
 
@@ -376,7 +376,7 @@ $A$ 에 대한 분할 $P$ 에 의해 정해진 $n$-cell 의 집합을 $\mathcal{
 
 $$
 L(f,\,P) = \sum_{S \in \mathcal{S}[P]} L(f|_S,\, S) ,\qquad U(f,\,P) = \sum_{S \in \mathcal{S}[P]} U(f|_S,\, S)
-$${#eq-part3_spivak_3_4_1}
+$${#eq-CM_spivak_3_4_1}
 
 여기서 $U(f|_S,\,S)-L(f|_S,\,S) \le U(f,\,P)-L(f,\,P)$ 이며 임의의 정해진 $\varepsilon<0$ 에 대해 $U(f,\,P)-L(f,\,P)<\varepsilon$ 인 분할 $P$ 가 존재하며 이 분할에 대해 $U(f|_S,\,S)-L(f|_S,\,S)<\varepsilon$ 이므로 $f|_S$ 는 $S$ 에서 적분가능하다. 
 
@@ -392,7 +392,7 @@ $$
 U(f,\,P')-L(f,\,P') \le \varepsilon
 $$
 
-이므로 $f$ 는 적분 가능하다. $\int_A = \sum_S \int_S f|_S$ 임은 @eq-part3_spivak_3_4_1 로 부터 자명하다.
+이므로 $f$ 는 적분 가능하다. $\int_A = \sum_S \int_S f|_S$ 임은 @eq-CM_spivak_3_4_1 로 부터 자명하다.
 
 :::
 
@@ -400,7 +400,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_5}
+::: {#exr-CM_spivak_3_5}
 
 #### Spivak 3.5
 
@@ -412,7 +412,7 @@ $f,\,g: A \to \R$ 가 적분가능하고 $f\le g$ 라면 $\int_A f \le \int_A g$
 
 ::: {.solution}
 
-$h=g-f$ 이면 $h\ge 0$ 이다. 임의의 분할 $P$ 에 대해 $U(f,\,P) \ge L(f,\,P) \ge 0$ 이므로 $\int_A h \ge 0$ 이다. @exr-part3_spivak_3_3 에 의해 
+$h=g-f$ 이면 $h\ge 0$ 이다. 임의의 분할 $P$ 에 대해 $U(f,\,P) \ge L(f,\,P) \ge 0$ 이므로 $\int_A h \ge 0$ 이다. @exr-CM_spivak_3_3 에 의해 
 
 $$
 \int_A g- \int_A f = \int_A (g-f) = \int_A h \ge 0
@@ -427,7 +427,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_6}
+::: {#exr-CM_spivak_3_6}
 
 #### Spivak 3.6
 
@@ -463,7 +463,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_7}
+::: {#exr-CM_spivak_3_7}
 
 #### Spivak 3.7
 
@@ -509,11 +509,11 @@ $$
 
 </br>
 
-## Measure zero 와 Content zero {#sec-part3_measure_zero_and_content_zero}
+## Measure zero 와 Content zero {#sec-CM_measure_zero_and_content_zero}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_measure_zero}
+::: {#def-CM_measure_zero}
 
 #### Measure zero
 
@@ -537,13 +537,13 @@ $A\subset \R^n$ 을 생각하자. 만약 각각의 $\varepsilon>0$ 에 대해 �
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_meazure_zero}
+::: {#prp-CM_meazure_zero}
 
 $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 
 &emsp;($1$) $B\subset A$ 이면 $B$ 도 measure zero 이다.
 
-&emsp;($2$) @def-part3_measure_zero 에서 $\mathcal{U}$ 를 닫힌 $n$-cell 의 집합이 아닌 열린 $n$-cell 의 집합라고 해도 성립한다.
+&emsp;($2$) @def-CM_measure_zero 에서 $\mathcal{U}$ 를 닫힌 $n$-cell 의 집합이 아닌 열린 $n$-cell 의 집합라고 해도 성립한다.
 
 &emsp;($3$) $A\subset \R^n$ 이 유한개의 점의 집합이면 measure zero 이다.
 
@@ -554,7 +554,7 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part3_Q_is_measure_zero}
+::: {#exm-CM_Q_is_measure_zero}
 
 ($1$) 양의 정수의 집합 $\Z_+$ 는 measure zero 이다. 임의의 작은 $\varepsilon>0$ 과 $i\in\Z_+$ 에 대해 $U_i = \left[i -\dfrac{\varepsilon}{2^{i+1}},\, i+\dfrac{\varepsilon}{2^{2+i}}\right]$ 라고 하면 $\sum_{U_i}\text{vol}(U_i) \le \varepsilon$ 이다.
 
@@ -568,7 +568,7 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_meazure_zero}
+::: {#thm-CM_meazure_zero}
 
 $A=A_1 \cup A_2 \cup \cdots$ 이며 각각의 $A_i$ 가 measure zero 이면 $A$ 도 measure zero 이다.
 
@@ -598,7 +598,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-part3_content_zero}
+::: {#def-CM_content_zero}
 
 #### Content zero
 
@@ -618,13 +618,13 @@ $A\subset \R^n$ 을 생각하자. 각각의 $\varepsilon>0$ 에 대해 유한개
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_content_zero}
+::: {#prp-CM_content_zero}
 
 $A\subset \R^n$ 이 content zero 일 때 다음이 성립한다.
 
 &emsp;($1$) $A$ 는 measure zero 이다.
 
-&emsp;($2$) @def-part3_content_zero 에서 $\mathcal{U}$ 를 닫힌 $n$-cell 의 집합이 아닌 열린 $n$-cell 의 집합라고 해도 성립한다.
+&emsp;($2$) @def-CM_content_zero 에서 $\mathcal{U}$ 를 닫힌 $n$-cell 의 집합이 아닌 열린 $n$-cell 의 집합라고 해도 성립한다.
 
 &emsp;($3$) $A\subset \R^n$ 이 유한개의 점의 집합이면 content zero 이다.
 
@@ -634,7 +634,7 @@ $A\subset \R^n$ 이 content zero 일 때 다음이 성립한다.
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part3_content_zero}
+::: {#exm-CM_content_zero}
 
 $a<b$ 에 대해 $[a,\,b]\subset \R$ 은 content zero 가 아니다. $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 이 $[a,\,b]$ 에 대한 닫힌 $1$-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 $U_i$ 의 끝점을 $a=t_0 < t_1< \cdots <t_k=b$ 가 되도록 놓을 수 있다. $\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}$ 이므로 $\sum_{i}\text{vol}{U_i}$ 를 임의로 작게 할 수 없다. $\square$
 
@@ -645,7 +645,7 @@ $a<b$ 에 대해 $[a,\,b]\subset \R$ 은 content zero 가 아니다. $\mathcal{U
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-part3_content_zero_and_compact}
+::: {#prp-CM_content_zero_and_compact}
 
 $A\subset \R^n$ 이 measure zero 이고 옹골 집합이면 $A$ 는 content zero 이다.
 
@@ -663,9 +663,9 @@ $A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots
 
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-::: {#exm-part3_measure_zero_not_compact}
+::: {#exm-CM_measure_zero_not_compact}
 
-@prp-part3_content_zero_and_compact 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 인 집합이 존재한다. $A$ 를 $[0,\,1]$ 사이의 유리수의 집합이라고 하자. $A\subset \Q$ 이며 $\Q$ 가 measure zero 이므로(@exm-part3_Q_is_measure_zero) $A$ 도 measure zero 이다. $A$ 가 content zero 라면 유한개의 $\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}$ 에 대해 $[0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]$ 이어야 한다. 즉 $\sum \text{vol} \ge 1$ 이므로 $A$ 는 content zero 가 아니다.
+@prp-CM_content_zero_and_compact 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 인 집합이 존재한다. $A$ 를 $[0,\,1]$ 사이의 유리수의 집합이라고 하자. $A\subset \Q$ 이며 $\Q$ 가 measure zero 이므로(@exm-CM_Q_is_measure_zero) $A$ 도 measure zero 이다. $A$ 가 content zero 라면 유한개의 $\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}$ 에 대해 $[0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]$ 이어야 한다. 즉 $\sum \text{vol} \ge 1$ 이므로 $A$ 는 content zero 가 아니다.
 :::
 
 </div></br>
@@ -674,7 +674,7 @@ $A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_8}
+::: {#exr-CM_spivak_3_8}
 
 #### Spivak 3.8
 
@@ -693,7 +693,7 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_9}
+::: {#exr-CM_spivak_3_9}
 
 #### Spivak 3.9
 
@@ -716,7 +716,7 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_10}
+::: {#exr-CM_spivak_3_10}
 
 #### Spivak 3.10
 
@@ -738,11 +738,11 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_11}
+::: {#exr-CM_spivak_3_11}
 
 #### Spivak 3.11
 
-$A$ 가 @exr-part3_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_i)<1$ 이면 $A$ 의 경계는 measure zero 가 아님을 보여라.
+$A$ 가 @exr-CM_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_i)<1$ 이면 $A$ 의 경계는 measure zero 가 아님을 보여라.
 
 :::
 
@@ -750,14 +750,14 @@ $A$ 가 @exr-part3_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_
 
 ::: {.solution}
 
-$A=\bigcup_{i=1}^\infty (a_i,\,b_i)$ 이다.  @exr-part3_spivak_1_18 $\partial A=[0,\,1]-A$ 이다. 
+$A=\bigcup_{i=1}^\infty (a_i,\,b_i)$ 이다.  @exr-CM_spivak_1_18 $\partial A=[0,\,1]-A$ 이다. 
 
 :::
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_12}
+::: {#exr-CM_spivak_3_12}
 
 #### Spivak 3.12
 
@@ -769,15 +769,15 @@ $f:[a,\,b] \to \R$ 이 증가함수이다. $\{x: f\text{ is discontinuous at }x\
 
 ::: {.solution}
 
-정해진 자연수 $n$ 에 대해 $X_n = \{x:o(f,\,x)> \frac{1}{n}\}$ 라고 하자. @prp-part3_oscillation_and_continuity 로부터 $X_n \subset X$ 이다. 
+정해진 자연수 $n$ 에 대해 $X_n = \{x:o(f,\,x)> \frac{1}{n}\}$ 라고 하자. @prp-CM_oscillation_and_continuity 로부터 $X_n \subset X$ 이다. 
 
-$X_n = \{x_1,\,x_2,\ldots\}$ 이고 $x_1<x_2<\cdots$ 라고 하면 @exr-part3_spivak_1_30 에 따라
+$X_n = \{x_1,\,x_2,\ldots\}$ 이고 $x_1<x_2<\cdots$ 라고 하면 @exr-CM_spivak_1_30 에 따라
 
 $$
 f(b)-f(a)>f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})> \dfrac{k-1}{n}
 $$
 
-이다. $X_n$ 이 무한집합이면 $f$ 가 유계가 아니므로 $X_n$ 은 유한집합이다. $\displaystyle X=\bigcup_{i=1}^n X_n$ 이므로 @thm-part3_meazure_zero 에 따라 $X$ 는 measure zero 이다. 
+이다. $X_n$ 이 무한집합이면 $f$ 가 유계가 아니므로 $X_n$ 은 유한집합이다. $\displaystyle X=\bigcup_{i=1}^n X_n$ 이므로 @thm-CM_meazure_zero 에 따라 $X$ 는 measure zero 이다. 
 
 :::
 
@@ -785,7 +785,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-part3_spivak_3_13}
+::: {#exr-CM_spivak_3_13}
 
 #### Spivak 3.13
 
@@ -806,12 +806,12 @@ $$
 
 </br>
 
-## 적분가능한 함수 {#sec-part3_integrable_functions}
+## 적분가능한 함수 {#sec-CM_integrable_functions}
 
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-part3_integrability}
+::: {#lem-CM_integrability}
 
 닫힌 $n$-cell $A\subset \R^n$ 에서 정의된 함수 $f:A \to \R$ 이 유계이며 모든 $\bf{x}\in A$ 에서 $o(f,\,\bf{x}) <\varepsilon$ 이면 어떤 $P\in \mathcal{P}[A]$ 가 존재하여 $U(f,\,P) - L(f,\,P)<\varepsilon \cdot \text{vol}(A)$ 를 만족한다.  
 
@@ -834,7 +834,7 @@ $$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-part3_integrability}
+::: {#thm-CM_integrability}
 
 닫힌 $n$-cell $A\subset \R^n$ 에서 정의된 유계인 함수 $f:A \to \R$ 을 생각하자. $B=\{\bf{x}\in A:f\text{ is not continuous at }f\}$ 일 때 $f$ 가 적분가능한 것의 필요충분조건은 $B$ 가 measure zero 인 것이다. 
 
@@ -846,13 +846,13 @@ $$
 
 $B_\varepsilon := \{\bf{x}\in A: o(f,\,\bf{x})\ge \varepsilon\}$ 라고 하자.
 
-($1$) 우선 $B$ 가 measure zero 임을 가정하자 $\varepsilon>0$ 에 대해 $B_\varepsilon \subset B$ 이므로 $B_\varepsilon$ 은 measure zero 이다. @prp-part3_oscillation_and_closed_set 에 의해 $B_\varepsilon$ 은 닫힌집합이며 $B_\varepsilon \subset A$ 이므로 유계이다. 따라서 $B_\varepsilon$ 은 옹골집합이므로 content zero 이다(@prp-part3_content_zero_and_compact). 따라서 유한개의 닫힌 $n$-cell $U_1,\ldots,\,U_n$ 로 $\sum_{i=1}^n \text{vol}(U_i)<\varepsilon$ 이며 $B_\varepsilon$ 을 덮을 수 있다. 이제 $A$ 에 대한 분할 $P$ 를 $P$ 에 따라 정해지는 subcell 이 아래의 $\mathcal{S}_1$ 이나 $\mathcal{S}_2$ 중의 하나에 속하도록 잡자.(@fig-part3_integrability_1)
+($1$) 우선 $B$ 가 measure zero 임을 가정하자 $\varepsilon>0$ 에 대해 $B_\varepsilon \subset B$ 이므로 $B_\varepsilon$ 은 measure zero 이다. @prp-CM_oscillation_and_closed_set 에 의해 $B_\varepsilon$ 은 닫힌집합이며 $B_\varepsilon \subset A$ 이므로 유계이다. 따라서 $B_\varepsilon$ 은 옹골집합이므로 content zero 이다(@prp-CM_content_zero_and_compact). 따라서 유한개의 닫힌 $n$-cell $U_1,\ldots,\,U_n$ 로 $\sum_{i=1}^n \text{vol}(U_i)<\varepsilon$ 이며 $B_\varepsilon$ 을 덮을 수 있다. 이제 $A$ 에 대한 분할 $P$ 를 $P$ 에 따라 정해지는 subcell 이 아래의 $\mathcal{S}_1$ 이나 $\mathcal{S}_2$ 중의 하나에 속하도록 잡자.(@fig-CM_integrability_1)
 
 ($1$) $\mathcal{S}_1$ : 어떤 $U_i$ 에 대해 $S \subset U_i$ 이면 $S$ 는 $\mathcal{S}_1$ 에 포힘된다.
 
 ($2$) $\mathcal{S}_2$ : $S\cap B_\varepsilon = \varnothing$ 이면 $S$ 는 $\mathcal{S}_2$ 에 포함된다.
 
-![The shaded rectagles are in $\mathcal{S}_1$](fig-part3_integrability-1.png){#fig-part3_integrability_1 width=400}
+![The shaded rectagles are in $\mathcal{S}_1$](fig-CM_integrability-1.png){#fig-CM_integrability_1 width=400}
 
 이제 $|f(\bf{x})|<M$ 이라고 하자. 각각의 subcell $S$ 에 대해 $M_S(f)-m_S(f)<2M$ 이므로
 
@@ -860,7 +860,7 @@ $$
 \sum_{S\in \mathcal{S}_1} \left[M_S(f) - m_S(f) \right]\cdot \text{vol}(S) < 2M \sum_{i=1}^n \text{vol}(U_i) < 2M\varepsilon
 $$
 
-이제 $S\in \mathcal{S}_2$ 이면 $o(f,\bf{x})<\varepsilon$ 이므로 @lem-part3_integrability 에 따라 $P$ 의 어떤 refinement $P'$ 이 존재하여 $S\subset \mathcal{S}_2$ 일 때
+이제 $S\in \mathcal{S}_2$ 이면 $o(f,\bf{x})<\varepsilon$ 이므로 @lem-CM_integrability 에 따라 $P$ 의 어떤 refinement $P'$ 이 존재하여 $S\subset \mathcal{S}_2$ 일 때
 
 $$
 \sum_{S'}\subset S [M_{S'}(f) - m_{S'}(f)]\cdot \text{vol}(S') < \varepsilon \cdot \text{vol}(S)
@@ -880,7 +880,7 @@ $$
 이 성립한다. $M$ 과 $\text{vol}(A)$ 는 정해져 있으므로 우리는 $U(f,\,P')-L(f,\,P')$ 을 원하는 만큼 작게 만들 수 있다. 따라서 $f$ 는 적분가능하다.
 
 
-이제 $f$ 가 적분가능함을 가정하자. $B= B_1 \cup B_{1/2} \cup \cdots$ 이므로 각각의 $B_{1/n}$ 이 meausure zero 라면 @thm-part3_meazure_zero 에 의해 $B$ 가 measure zero 임을 알게 된다. 실제로 우리는 각각의 $B_{1/n}$ 이 content zero 임을 보일 것이다. 
+이제 $f$ 가 적분가능함을 가정하자. $B= B_1 \cup B_{1/2} \cup \cdots$ 이므로 각각의 $B_{1/n}$ 이 meausure zero 라면 @thm-CM_meazure_zero 에 의해 $B$ 가 measure zero 임을 알게 된다. 실제로 우리는 각각의 $B_{1/n}$ 이 content zero 임을 보일 것이다. 
 
 $f$ 가 적분가능하므로 $\varepsilon>0$ 에 대해 $P \in \mathcal{P}[A]$ 를 $U(f,\,P)-L(f,\,P)< \varepsilon/n$ 이 되도록 잡을 수 있다. $\mathcal{S}$ 를 $B_{1/n}$ 과의 교집합이 공집합이 아닌 $P$ 의 subcell 의 집합족이라고 하자. 그렇다면 $\mathcal{S}$ 는 $B_{1/n}$ 의 덮개이며 $S\in \mathcal{S}$ 에 대해 $M_S(f)-m_S(f)\ge 1/n$ 이다. 그렇다면
 
@@ -892,9 +892,5 @@ $$
 $$
 
 이므로 결론적으로 $\sum_{S\in \mathcal{S}} \text{vol}(S)< \varepsilon$ 이다. $\square$
-
-
-
-
 
 :::
