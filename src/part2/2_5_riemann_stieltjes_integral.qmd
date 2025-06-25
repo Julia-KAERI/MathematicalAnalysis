@@ -12,7 +12,6 @@ crossref:
 
 이 장에서의 $f:E\subset\R \to \R$ 은 특별한 언급이 없는 한 유계인 함수이다.
 
-
 ### 리만 적분 {#sec-MA_riemann_integral}
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -87,7 +86,7 @@ $${#eq-MA_inequalitiy_of_riemann_sum_1}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -95,9 +94,7 @@ $${#eq-MA_inequalitiy_of_riemann_sum_1}
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-MA_properties_of_rieman_sum_2}
 
@@ -109,7 +106,7 @@ $$ {#eq-MA_inequalitiy_of_riemann_sum_2}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -124,7 +121,6 @@ $$
 :::
 
 </br>
-
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -233,9 +229,6 @@ $$
 
 </br>
 
-
-
-
 $\alpha(x)=x$ 일 경우 스틸체스 적분은 리만 적분이 된다. 즉 리만 적분은 스틸체스 적분의 특수한 형태이다. 이제 @thm-MA_properties_of_rieman_sum_1 과 @cor-MA_properties_of_rieman_sum_2 가 스틸체스 적분의 형태에 대해서도 성립함을 보일 수 있다.
 
 </br>
@@ -302,7 +295,7 @@ $$ {#eq-MA_condition_for_stieltjes_integrablity}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -360,7 +353,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -390,7 +383,7 @@ $f:[a,\,b] \to \R$ 이 연속이면 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -416,9 +409,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_monitonic_function_and_integrability}
 
@@ -426,7 +417,7 @@ $f:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 단조함수이며 $\alpha$ 가 $[a,\,b]
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -457,16 +448,14 @@ $$
 :::
 
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_discontinuity_and_integrability}
 
 $f:[a,\,b] \to \R$ 가 유계이며 $[a,\,b]$ 구간에서 유한개의 불연속점을 가진다고 하자. 그리고 $\alpha$ 는 $f$ 의 불연속점에서 연속이라고 하자. $f$ 는 $\alpha$ 에 대해 스틸체스 적분가능하다. 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -527,7 +516,7 @@ $$
 $f:[a,\,b]\to \R$ 이 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $m\le f\le M$ 이라고 하자. $\phi :[m,\,M]\to \R$ 이 연속이며 $h(x) = \phi (f(x))$ 이면 $h\in \mathcal{R}(\alpha)[a,\,b]$ 이다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -570,10 +559,7 @@ $$
 
 :::
 
-</br>
-
-
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-MA_stieltjes_integrability_of_composite_function}
 
@@ -628,7 +614,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -738,9 +724,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_properties_of_integral_2}
 
@@ -752,8 +736,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -804,8 +786,6 @@ $f,\,g\in \mathcal{R}(\alpha)[a,\,b]$ 일 때 다음이 성립한다.
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -858,8 +838,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.proof}
 
 $P\in \mathcal{P}[a,\,b]$ 를 $\{x_0,\, x_1,\,x_2,\,x_3\}$ 로 잡고 아래의 성질을 가진다고 하자.
@@ -872,9 +850,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_properties_of_integral_5}
 
@@ -893,8 +869,6 @@ $$ {#eq-MA_properties_of_integral_5_2}
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -928,9 +902,7 @@ $$ {#eq-prp-MA_properties_of_integral_5_5}
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_properties_of_integral_6}
 $\alpha$ 가 단조증가이며 $\alpha'\in \mathcal{R}[a,\,b]$ 이라고 하자. $f$ 가 $[a,\,b]$ 구간에서 유계인 실함수라면 
@@ -950,8 +922,6 @@ $$ {#eq-MA_properties_of_integral_6_2}
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -1035,10 +1005,7 @@ $$
 
 :::
 
-</br>
-
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_change_of_varialble}
 
@@ -1061,8 +1028,6 @@ $$ {#eq-MA_change_of_varialble_2}
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -1095,9 +1060,6 @@ $$ {#eq-MA_first_fundamental_theorem_of_calculus}
 
 </div>
 
-</br>
-
-
 ::: {.proof}
 
 $f\in \mathcal{R}$ 이므로 $f$ 는 유계이다. $t\in [a,\,b]$ 에 대해 $|f(t)|<M$ 이라고 하자.  $a<x<y<b$ 일 때 @prp-MA_properties_of_integral_1 의 ($3$), ($4$) 로부터
@@ -1110,9 +1072,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_first_fundamental_theorem_of_calculus}
 
@@ -1129,8 +1089,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -1167,14 +1125,11 @@ $$
 \dfrac{1}{b-a}\int_a^b f(t)\, dt = f(x_0)
 $$ {#eq-MA_mean_value_theorem_for_integration}
 
-
 를 만족하는 $x_0\in (a,\,b)$ 가 존재한다.
 
 :::
 
-</div>
-
-</br>
+</div></br>
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1185,7 +1140,7 @@ $$ {#eq-MA_mean_value_theorem_for_integration}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1216,8 +1171,6 @@ $$ {#eq-MA_second_fundamental_theorem_of_calculus}
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -1260,8 +1213,6 @@ $$ {#eq-MA_integration_by_parts}
 
 </div>
 
-</br>
-
 ::: {.proof}
 
 $(F(x)G(x))' = F'(x)G(x) + F(x)G'(x) = f(x)G(x)+F(x)g(x)$ 이므로
@@ -1297,8 +1248,7 @@ $$
 
 </br>
 
-### 길이를 잴 수 있는 곡선 
-
+### 길이를 잴 수 있는 곡선  {#sec-MA_rectifiable_curve}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -1316,7 +1266,7 @@ $\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 연속일 때 $\gamma$ 를 $[a,\,
 즉 곡선은 유클리드공간상의 점의 집합이 아니라 함수이다. 이 때 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 다음의 값을 정의 할 수 있다.
 
 $$
-\Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|
+\Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|.
 $$ {#eq-MA_polygonal_length_of_rectifiable_curve}
 
 
@@ -1334,16 +1284,12 @@ $$
 \Lambda (\gamma) = \sup \{\Lambda(\gamma,\, P) : P\in \mathcal{P}[a,\,b]\}
 $$ {#eq-MA_length_of__curve}
 
-
 를 $\gamma$ 의 **길이 (length)** 라고 한다. $\Lambda (\gamma)<\infty$ 일 때 $\gamma$ 를 **길이를 잴 수 있는 곡선 (rectifiable curve)** 이라고 한다. 
 
 ::: 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_length_of_C1_rectifiable_curve}
 
@@ -1356,8 +1302,6 @@ $$ {#eq-MA_length_of_C1_rectifiable_curve}
 :::
 
 </div>
-
-</br>
 
 ::: {.proof}
 
@@ -1413,11 +1357,9 @@ $$ {#eq-MA_length_of_C1_rectifiable_curve_2}
 
 :::
 
-
 </br>
 
 ## 연습문제 {.unnumbered}
-
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1430,8 +1372,6 @@ $\alpha$ 가 $[a,\,b]$ 에서 증가함수이며 $x_0\in [a,\,b]$ 에서 연속�
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1458,8 +1398,6 @@ $f\ge 0$ 이며 $[a,\,b]$ 에서 연속이고 $\displaystyle \int_a^b f(x)\,dx=0
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 어떤 $x_\ast \in [a,\,b]$ 에서 $f(x_\ast) = c>0$ 이라면 $f$ 가 연속이므로 $x_\ast$ 를 포함하는 어떤 $[x_{i-1},\,x_i]$ 구간에서 $f(x)>0$ 이며 따라서 $L(f,\,P,\, \alpha) >0$ 인 $P\in \mathcal{P}[a,\,b]$ 가 존재한다. 즉 $\displaystyle \int_a^b f(x)\,dx \ge L(f,\,P,\,\alpha)>0$ 이므로 가정에 위배된다. 
@@ -1467,9 +1405,7 @@ $f\ge 0$ 이며 $[a,\,b]$ 에서 연속이고 $\displaystyle \int_a^b f(x)\,dx=0
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_6_3}
 
@@ -1488,8 +1424,6 @@ $\beta_1,\,\beta_2,\,\beta_3$ 가 모두 $x>0$ 일 때 $\beta_j(x)=1$, $x<0$ 일
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1525,10 +1459,7 @@ $$
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_6_4}
 
@@ -1540,17 +1471,13 @@ $x\in \mathbb{R}\backslash\Q$ 일 때 $f(x)=0$ 이며 $x\in \Q$ 일 때 $f(x) = 
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 유리수와 무리수의 조밀성에 의해 어떤 $P\in \mathcal{P}[a,\,b]$ 에 대해서도 $U(f,\,P)=1,\, L(f,\,P)=0$ 이므로 $f\not\in \mathcal{R}[a,\,b]$ 이다.
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_6_5}
 
@@ -1561,8 +1488,6 @@ $f:[a,\,b]\to\R$ 이 유계이며 $f^2\in \mathcal{R}[a,\,b]$ 라면 $f\in \math
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 

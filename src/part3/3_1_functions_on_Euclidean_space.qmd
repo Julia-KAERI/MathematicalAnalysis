@@ -18,13 +18,13 @@ crossref:
 
 - $F:\R^m \to \R^n$ 에서 $\bf{x} = \begin{bmatrix} x_1 & \cdots & x_m \end{bmatrix}$ 에 대해 $F(\bf{x})$ 를 $F(x_1,\ldots,\,x_m)$ 으로 표기하기도 한다.
   
-- 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\mathcal{M}_{n}(\mathbb{R})$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\mathcal{M}_{m\times n}(\R)$ 이라고 쓴다.
+- 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\R^n$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $R^{m\times n}$ 으로 표기한다.
 
 - $\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
 
 - 두 벡터의 일반적인 내적은 $\langle \bf{x},\, \bf{y}\rangle$ 라고 쓰며 유클리드 내적은 $\bf{x}^T\bf{\cdot y}$ 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.
 
-- 벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. $F:\R^n \to \R^m$ 혹은 $\bf{f}:\R^n \to \R^m$ 과 같이 사용한다. $\mathcal{L}(R^m,\,R^n)$ 은 $\R^m \mapsto \R^n$ 선형사상의 집합이다.
+- 벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. $F:\R^n \to \R^m$ 혹은 $\bf{f}:\R^n \to \R^m$ 과 같이 사용한다. $\mathcal{L}(\R^m,\,\R^n)$ 은 $\R^m \mapsto \R^n$ 선형사상의 집합이다.
 
 
 
@@ -43,7 +43,6 @@ $\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -66,7 +65,6 @@ ${\large|} \|\bf{x}\| -\|\bf{y}\| {\large |} \le \|\bf{x}-\bf{y}\|$ 임을 보�
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -79,7 +77,6 @@ $$
 이므로 $\|\bf{x}-\bf{y}\| \ge \|\bf{y}\| - \|\bf{x}\|$ 이다. 여기에 $\bf{x}$ 와 $\bf{y}$ 를 바꾸면 $\|\bf{x}\|-\bf{y}\| \le \|\bf{x}-\bf{y}\|$ 이다. 이로부터 주어진 식을 얻는다.
 
 :::
-
 
 </br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -96,7 +93,6 @@ $f,\,g \in \mathcal{R}[a,\,b]$ 이다.
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -132,13 +128,14 @@ $$
 
 선형 변환 $T:\R^n \to \R^n$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $\langle T(\bf{x}),\, T(\bf{y}) \rangle = \langle \bf{x},\,  \bf{y}\rangle$ 이면 **inner product preserving** 이라고 한다. 
 
-($a$) $T$ 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라.
+($a$) $T$ 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라. 
 
 ($b$) 이 변환은 전단사이며 $T^{-1}$ 도 그러함을 보여라. 
+
+$T\in \mathcal{L}(\R^n)$ 이 inner product preserving 이면, 즉 norm preserving 이면 **직교 연산자(Orthogonal operator)**, 즉 **Isometry** 이다.
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -188,7 +185,6 @@ $$ {#eq-CM_angle_between_vectors}
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -206,7 +202,7 @@ $$
 
 :::
 
-
+</br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_9}
@@ -217,7 +213,6 @@ $0\le \theta < \pi$ 에 대해 $T:\R^2 \to \R^2$ 가 $\begin{bmatrix} \cos \thet
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -247,7 +242,6 @@ $$
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -267,9 +261,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_11}
 #### Spivak 1.11
@@ -284,7 +276,6 @@ $$
 :::
 
 </div>
-</br>
 
 ::: {.solution}
 
@@ -303,7 +294,7 @@ $(\R^n)^\ast$ 는 $\R^n$ 의 쌍대공간이다. 정해진 $\bf{x}\in \R^n$ 에 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -324,9 +315,7 @@ $\psi_x \in \ker (T)$ 라면 모든 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{x}(\bf
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_13}
 #### Spivak 1.13
@@ -335,7 +324,7 @@ $\bf{x},\,\bf{y}\in\R^n$ 에 대해 $\bf{x \cdot y}=0$ 이면 $\bf{x}$ 와 $\bf{
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -415,9 +404,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_open_sphere_and_cube}
 
@@ -429,7 +416,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol{a},\,\delta)$ 의 한 모서리에서 $\boldsymbol{a}$ 까지의 거리는 $\sqrt{n}\delta$ 이므로 $C(\bf{a},\,\delta) \subset N(\bf{a},\,\sqrt{n}\delta)$ 이다. $\square$
@@ -473,7 +460,7 @@ $A\subset [0,\,1]$ 은 $A=\bigcup (a_i,\,b_i)$ 이며 모든 $(0,\,1)$ 에 포�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -483,9 +470,7 @@ $x\notin A$ 라고 하자. 유리수의 조밀성에 의해 모든 $\delta>0$ �
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_19}
 #### Spivak 1.19
@@ -493,7 +478,7 @@ $x\notin A$ 라고 하자. 유리수의 조밀성에 의해 모든 $\delta>0$ �
 $A$ 가 닫힌 집합이며 모든 $[0,\,1]$ 에 포함되는 유리수를 포함한다면 $[0,\,1]\subset A$ 임을 보여라.
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -501,9 +486,7 @@ $A$ 가 닫힌 집합이며 $C\subset A$ 이면 $\overline{C}\subset A$ 이다. 
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_21}
 #### Spivak 1.21
@@ -516,7 +499,7 @@ $A$ 가 닫힌 집합이며 $C\subset A$ 이면 $\overline{C}\subset A$ 이다. 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -534,9 +517,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_22}
 #### Spivak 1.22
@@ -545,7 +526,7 @@ $U$ 는 열린집합이며 $C\subset U$ 는 옹골집합이라면 $C \subset \te
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -695,9 +676,6 @@ $$
 :::
 :::
 
-</br>
-
-
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_oscillation_and_continuity}
@@ -706,7 +684,7 @@ $f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 $\bf{a}\in A$ 에서 연속�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -734,8 +712,7 @@ $$
 
 :::
 
-</br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_oscillation_and_closed_set}
 
@@ -743,7 +720,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -756,7 +733,6 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 �
 즉 $\R^n-B$ 는 열린 집합이므로 $B$ 는 닫힌 집합이다.
 
 :::
-
 
 </br>
 
@@ -776,8 +752,7 @@ $$
 
 :::
 
-</div></br>
-
+</div>
 
 ::: {.solution}
 
@@ -793,8 +768,7 @@ $$
 이므로 성립한다.
 :::
 
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_24}
 #### Spivak 1.24
@@ -803,15 +777,13 @@ $F:A\subset \R^n \to \R^m$ 이 $\bf{a}$ 에서 연속일 필요충분조건은 �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 $\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-CM_spivak_1_23 를 적용한다. 
 :::
 
-
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_25}
 #### Spivak 1.25
@@ -820,7 +792,7 @@ $\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-CM_spivak_1_23 를 적용한다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -828,9 +800,7 @@ $\bf{b}$ 를 $F(\bf{a})$ 로 고치고 @exr-CM_spivak_1_23 를 적용한다.
 
 :::
 
-
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_26}
 #### Spivak 1.26
@@ -843,7 +813,7 @@ $A=\{(x,\,y) \in \R^2 : x>0 \text{ and } 0<y<x^2\}$ 이라고 하자.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -852,8 +822,7 @@ $A=\{(x,\,y) \in \R^2 : x>0 \text{ and } 0<y<x^2\}$ 이라고 하자.
 ($b$) $\lim_{s \to 0} f(s,\, s^2/2) = 1 \ne 0 =  f(0,\,0)$ 이므로 $f$ 는 $(0,\,0)$ 에서 연속이 아니다. ($a$) 로부터 $\lim_{t \to 0} g_\bf{h}(t) = 0 = g_\bf{h}(0)$ 임을 안다. 
 :::
 
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_28}
 #### Spivak 1.28
@@ -862,7 +831,7 @@ $A\subset \R^n$ 이 닫힌 집합이 아니면 어떤 연속함수 $f:A\to \R$ �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -870,8 +839,7 @@ $\bf{x}\in \R^n -A,\, \bf{x}\notin \text{int}(\R^n-A)$ 에 대해 $f(\bf{y}) := 
 
 :::
 
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_29}
 #### Spivak 1.29
@@ -880,15 +848,14 @@ $A$ 가 옹골집합이면 모든 연속함수 $f:A\to \R$ 은 최대값과 최�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
 see @thm-MA_extreme_value_theorem
 :::
 
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_1_30}
 #### Spivak 1.30
@@ -897,7 +864,7 @@ $f:[a,\,b] \to \R$ 이 증가함수이다. $x_1,\ldots,\,x_n \in [a,\,b]$ 가 �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 

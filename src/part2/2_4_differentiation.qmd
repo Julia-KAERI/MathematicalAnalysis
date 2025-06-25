@@ -30,9 +30,7 @@ $$ {#eq-MA_differentiability}
 :::
 
 </br>
-
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_continuity_and_differentiability}
 
@@ -40,11 +38,11 @@ $f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하면 $f$ 는 $x$ 에�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
-$\lim_{h \to 0} f(x+h)-f(x) \ne 0$ 이면 $x$ 에서 미분가능하지 않으므로 $x$ 에서 미분가능하면 $\lim_{h \to 0} f(x+h)-f(x) = 0$ 이다. 즉 $f$ 는 $x$ 에서 연속이다. $\square$
+$\displaystyle \lim_{h \to 0} f(x+h)-f(x) \ne 0$ 이면 $x$ 에서 미분가능하지 않으므로 $x$ 에서 미분가능하면 $\displaystyle \lim_{h \to 0} f(x+h)-f(x) = 0$ 이다. 즉 $f$ 는 $x$ 에서 연속이다. $\square$
 :::
 
 </br>
@@ -65,7 +63,7 @@ $[a,\,b]$ 구간에서 정의된 함수 $f,\,g$ 가 $x \in [a,\,b]$ 에서 미�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -116,7 +114,7 @@ $$ {#eq-MA_other_form_of_differentiability}
 이다. 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -167,7 +165,6 @@ $$
 
 #### 연쇄 규칙
 
-
 $f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하며 $f(x)$ 를 포함하는 구간 $I$ 에서 정의된 함수 $g$ 가 $f(x)$ 에서 미분가능하다고 하자. 이 때 $g\circ f$ 는 $x$ 에서 미분 가능하며 그 미분값은 다음과 같다.
 
 $$
@@ -176,7 +173,7 @@ $$ {#eq-MA_chain_rule}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -294,11 +291,11 @@ $$
 ::: 
 :::
 
-
+</br>
 
 ## 평균값 정리와 로피탈 정리
 
-### 평균값 정리 {#sec-mean_value_theorem}
+### 평균값 정리 {#sec-MA_mean_value_theorem}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -320,7 +317,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -330,7 +327,6 @@ $p$ 가 극대값이라고 하자. 어떤 $I_p=(p-\delta,\, p+\delta)$ 에서 $x
 
 </br>
 
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#lem-MA_generalized_mean_value_theorem}
@@ -339,7 +335,7 @@ $f:[a,\,b]\to \R$ 가 미분가능함수일 때 $f(a)=f(b)$ 이면 어떤 $c\in 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -363,7 +359,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -393,7 +389,7 @@ $$ {#eq-MA_mean_value_theorem}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 @thm-MA_generalized_mean_value_theorem 에서 $g(x) = x$ 로 놓으면 된다. $\square$ 
@@ -416,7 +412,7 @@ $f:[a,\,b]\to \R$ 이 $I=(a,\,b)$ 에서 미분가능하면 다음이 성립한�
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -448,7 +444,7 @@ $f$ 가 $[a,\,b]$ 구간에서 미분가능한 실함수이고 $f'(a)< \lambda <
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -465,7 +461,6 @@ $f$ 가 $[a,\,b]$ 에서 미분가능하다면 $f'$ 은 $[a,\,b]$ 에서 단순 
 :::
 
 </div>
-</br>
 
 ::: {.proof}
 
@@ -508,7 +503,7 @@ $${#eq-MA_lhopital_2}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -553,13 +548,11 @@ $$
 
 이며 $t\to x_0$ 극한에서, $f(t)/g(t) \to l$ 임을 알 수 있다. 또한 같은 방법으로 $\displaystyle \lim_{x\to x_0} g(x) = -\infty$ 의 경우에도 성립함을 알 수 있다. 
 
-
 :::
 
 </br>
 
 ## 테일러 정리
-
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -610,7 +603,7 @@ $$
 
 </br>
 
-## 복소함수와 벡터값 함수의 미분 {#sec-differentiation_of_complex_and_vector_valued_function}
+## 복소함수와 벡터값 함수의 미분 {#sec-MA_differentiation_of_complex_and_vector_valued_function}
 
 $f:[a,\,b]\to \mathbb{C}$ 가 실함수 $f_R,\,f_I$ 에 대해 $f(x)= f_R(x)+ if_I(x)$ 라고 하자. 이 때 
 
@@ -713,7 +706,6 @@ $$ {#eq-MA_mean_value_theorem_for_vector_valued_function}
 :::
 
 </div>
-</br>
 
 ::: {.proof}
 
@@ -762,8 +754,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $$
@@ -800,8 +790,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 임의의 $a<x<y<b$ 에 대해 $f(y)-f(x) = (y-x)f'(c)$ 를 만족하는 $c\in(x,\,y)$ 가 존재하는데 $f'(c)>0$ 이므로 $f(y)-f(x) >0$ 이다. 즉 $f$ 는 $(a,\,b)$ 구간에서 strictily increasing 하다. $f$ 가 $(a,\,b)$ 구간에서 strictily increasing 이므로 전단사이며, 따라서 역함수가 존재한다. 즉 $g$ 는 $(f(a),\, f(b))$ 구간에서 strictly increasing 이다. $y,\,s$ 에 대해 $g(y)=x,\, g(s)=t$ 라고 하자. 
@@ -813,9 +801,7 @@ $$
 이다.
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_3}
 
@@ -828,17 +814,13 @@ $g:\R \to \R$ 의 도함수는 유계이다 (즉 $|g'|<M$). 고정된 $\varepsil
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $f'(x) = 1+\varepsilon g'(x)$ 이므로 $\varepsilon < 1/M$ 이라면 $f'(x)>0$ 이다. 
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_4}
 
@@ -858,12 +840,9 @@ $$
 
 은 $0$ 과 $1$ 사이에서 최소한 하나의 근을 가짐을 보여라.
 
-
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -871,8 +850,7 @@ $g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}$ 라고 하
 
 :::
 
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_5}
 
@@ -884,16 +862,13 @@ $f$ 가 모든 $x>0$ 에서 미분가능하며 $\displaystyle \lim_{x \to \infty
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $g(x) = f(x+1)-f(x) = f'(c)$ 인 $c\in (x,\, x+1)$ 이 존재한다. 
 
 :::
 
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_6}
 
@@ -915,8 +890,6 @@ $f:[0,\,\infty) \to \R$ 에 대해
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $$
@@ -933,9 +906,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_7}
 
@@ -953,8 +924,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $t \ne x$ 에 대해
@@ -966,9 +935,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_8}
 
@@ -983,8 +950,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1004,9 +969,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_9}
 
@@ -1017,8 +980,6 @@ $f:\R \to \R$ 이 연속이며, $x\ne 0$ 에 대해 도함수가 존재하고 $\
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1033,9 +994,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_10}
 
@@ -1053,8 +1012,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1089,9 +1046,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_11}
 
@@ -1107,8 +1062,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1133,9 +1086,7 @@ $x=0$ 에서 연속이 아니므로 도함수 및 이차도함수는 존재하�
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_12}
 
@@ -1147,8 +1098,6 @@ $f(x)=|x|^3$ 일 때 $f'(x),\, f''(x)$ 를 계산하라. $f^{(3)}(0)$ 이 존재
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $$
@@ -1158,9 +1107,7 @@ $$
 이지만 $f^{(3)}(0^+) = 6$, $f^{(3)}(0^-)=-6$ 이므로 $f^{(3)}(0)$ 은 존재하지 않는다. 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_14}
 
@@ -1171,8 +1118,6 @@ $f:(a,\,b)\to \R$ 이 미분가능하다. 이 때 $f$ 가 볼록함수(@exr-MA_r
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1219,9 +1164,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_15}
 
@@ -1233,12 +1176,9 @@ $$
 {M_1}^2 \le 4M_0 M_2.
 $$
 
-
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1258,9 +1198,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_16}
 
@@ -1272,8 +1210,6 @@ $f$ 가 $(0,\,\infty)$ 구간에서 두번 미분 가능하며 $f''$ 은 유계�
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 @exr-MA_rudin_5_15 를 이용한다. $\displaystyle \lim_{x\to \infty}f(x) = 0$ 이므로 정해진 $\varepsilon >0$ 에 대해 $x>x_0 \implies |f(x)|<\varepsilon$ 인 $x_0$ 가 존재한다. 그렇다면 $x>x_0$ 이면 $(x_0,\, \infty)$ 구간에서 $|f'(x)|< 2 \sqrt{\varepsilon M}$ 이 성립하므로 $\displaystyle \lim_{x\to \infty} f'(x) = 0$ 이다. 
@@ -1281,9 +1217,7 @@ $f$ 가 $(0,\,\infty)$ 구간에서 두번 미분 가능하며 $f''$ 은 유계�
 :::
 
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_18}
 
@@ -1303,8 +1237,6 @@ $$ {#eq-exr-MA_rudin_5_18}
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1335,9 +1267,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_19}
 
@@ -1362,8 +1292,6 @@ $f$ 가 $(-1,\,1)$ 에서 미분가능하지만 (그러나 $f'$ 은 연속이 �
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1424,9 +1352,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_22}
 
@@ -1449,8 +1375,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1488,9 +1412,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_23}
 
@@ -1522,8 +1444,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $f'(x) = x^2 \ge 0$ 이므로 $f(x)$ 는 단조증가함수이다. $g(x) := f(x)-x$ 라 하자. $\alpha,\,\beta\,\gamma$ 는 $g(x)=0$ 의 해이며 $x<\alpha$ 이면 $g(x)<0$, $\alpha<x<\beta$ 이면 $g(x)>0$, $\beta <x <\gamma$ 이면 $g(x)<0$, $x>\gamma$ 이면 $g(x)>0$ 임을 안다. 
@@ -1552,9 +1472,7 @@ $\beta <x_n <\gamma$ 일 경우 $x_{n+1}-x_n = g(x_n)<0$ 이므로 $x_{n+1}<x_n<
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_24}
 
@@ -1572,8 +1490,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 아래 그림에서 보듯이 $\alpha=3$ 에서 $f(x)$ 가 $g(x)$ 보다 변화가 적다. 지그재그 방법을 생각해보면 $f(x)$ 가 빨리 수렴한다.
@@ -1583,9 +1499,7 @@ $$
 :::
 
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_25}
 
@@ -1622,8 +1536,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1678,10 +1590,7 @@ $$
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_26}
 
@@ -1692,8 +1601,6 @@ $f$ 가 $[a,\,b]$ 구간에서 미분가능하며 $f(a)=0$ 이고 $[a,\,b]$ 구�
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1713,14 +1620,11 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_27}
 
 #### Rudin 5.27, 미분방정식의 해의 유일성 1
-
 
 $R=[a,\,b]\times [\alpha,\,\beta]\subset \R^2$ 에서 정의된 함수 $\phi :R\to \R$ 를 생각하자. 미분방정식의 초기값 문제가 아래와 같이 주어졌다고 하자.
 
@@ -1746,8 +1650,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $f_1,\,f_2$ 가 위의 미분방정식을 만족하는 두 해라고 하고 $g(x) = f_1(x)-f_2(x)$ 라고 하자. $f_1(a)=f_2(a) = c$ 이므로 $g(a)=0$ 이며 
@@ -1764,9 +1666,7 @@ $$
 :::
 
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_28}
 
@@ -1790,8 +1690,6 @@ $$
 
 </div>
 
-</br>
-
 ::: {.solution}
 
 $\bf{y}_1$ 와 $\bf{y}_2$ 가 미분방정식의 두 해이며 $\bf{z}= \bf{y}_2-\bf{y}_2$ 라고 하자. $\bf{z}(a)=\bf{0}$ 이며 
@@ -1806,10 +1704,7 @@ $$
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_5_29}
 
@@ -1841,8 +1736,6 @@ $$
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 

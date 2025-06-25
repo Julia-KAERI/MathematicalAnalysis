@@ -255,8 +255,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_3_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
   </div>
 </li>
       </ul>
@@ -285,12 +291,12 @@ window.Quarto = {
   </ul></li>
   <li><a href="#평균값-정리와-로피탈-정리" id="toc-평균값-정리와-로피탈-정리" class="nav-link" data-scroll-target="#평균값-정리와-로피탈-정리"><span class="header-section-number">9.2</span> 평균값 정리와 로피탈 정리</a>
   <ul class="collapse">
-  <li><a href="#sec-mean_value_theorem" id="toc-sec-mean_value_theorem" class="nav-link" data-scroll-target="#sec-mean_value_theorem"><span class="header-section-number">9.2.1</span> 평균값 정리</a></li>
+  <li><a href="#sec-MA_mean_value_theorem" id="toc-sec-MA_mean_value_theorem" class="nav-link" data-scroll-target="#sec-MA_mean_value_theorem"><span class="header-section-number">9.2.1</span> 평균값 정리</a></li>
   <li><a href="#sec-MA_the_continuity_of_derivatives" id="toc-sec-MA_the_continuity_of_derivatives" class="nav-link" data-scroll-target="#sec-MA_the_continuity_of_derivatives"><span class="header-section-number">9.2.2</span> 도함수의 연속성</a></li>
   <li><a href="#sec-MA_Lhopital_theorem" id="toc-sec-MA_Lhopital_theorem" class="nav-link" data-scroll-target="#sec-MA_Lhopital_theorem"><span class="header-section-number">9.2.3</span> 로피탈 정리</a></li>
   </ul></li>
   <li><a href="#테일러-정리" id="toc-테일러-정리" class="nav-link" data-scroll-target="#테일러-정리"><span class="header-section-number">9.3</span> 테일러 정리</a></li>
-  <li><a href="#sec-differentiation_of_complex_and_vector_valued_function" id="toc-sec-differentiation_of_complex_and_vector_valued_function" class="nav-link" data-scroll-target="#sec-differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</a></li>
+  <li><a href="#sec-MA_differentiation_of_complex_and_vector_valued_function" id="toc-sec-MA_differentiation_of_complex_and_vector_valued_function" class="nav-link" data-scroll-target="#sec-MA_differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul>
 </nav>
@@ -345,16 +351,14 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p><br></p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_continuity_and_differentiability" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 9.1</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 <span class="math inline">\(x\in [a,\,b]\)</span> 에서 미분가능하면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x\)</span> 에서 연속이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\lim_{h \to 0} f(x+h)-f(x) \ne 0\)</span> 이면 <span class="math inline">\(x\)</span> 에서 미분가능하지 않으므로 <span class="math inline">\(x\)</span> 에서 미분가능하면 <span class="math inline">\(\lim_{h \to 0} f(x+h)-f(x) = 0\)</span> 이다. 즉 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x\)</span> 에서 연속이다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle \lim_{h \to 0} f(x+h)-f(x) \ne 0\)</span> 이면 <span class="math inline">\(x\)</span> 에서 미분가능하지 않으므로 <span class="math inline">\(x\)</span> 에서 미분가능하면 <span class="math inline">\(\displaystyle \lim_{h \to 0} f(x+h)-f(x) = 0\)</span> 이다. 즉 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x\)</span> 에서 연속이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -366,7 +370,6 @@ window.Quarto = {
 <p>이다. 단 (<span class="math inline">\(3\)</span>) 의 경우 <span class="math inline">\(g(x)\ne 0\)</span> 일 때 성립한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \lim_{t\to x} (f+g)(t)= \lim_{t\to x} f(t) + \lim_{t \to x} g(t)\)</span> 임을 이용한다.</p>
 <p>(<span class="math inline">\(2\)</span>) 아래 식을 이용한다.</p>
@@ -400,7 +403,6 @@ f(x +h) -f(x) = ah + |h| \eta (h)
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(\eta(h)\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
@@ -433,7 +435,6 @@ f(x +h) -f(x) = ah + |h| \eta (h)
 \tag{9.3}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(h=g \circ f,\, y=f(x)\)</span> 라고 하자. <a href="#prp-MA_other_form_of_differentiability" class="quarto-xref">명제&nbsp;<span>9.3</span></a> 에 의해</p>
 <p><span class="math display">\[
@@ -519,12 +520,13 @@ f'(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ 2x \sin \dfrac{1}{x}- \cos \df
 </div>
 </div>
 </div>
+<p><br></p>
 </section>
 </section>
 <section id="평균값-정리와-로피탈-정리" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="평균값-정리와-로피탈-정리"><span class="header-section-number">9.2</span> 평균값 정리와 로피탈 정리</h2>
-<section id="sec-mean_value_theorem" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="sec-mean_value_theorem"><span class="header-section-number">9.2.1</span> 평균값 정리</h3>
+<section id="sec-MA_mean_value_theorem" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="sec-MA_mean_value_theorem"><span class="header-section-number">9.2.1</span> 평균값 정리</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -543,7 +545,6 @@ f'(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ 2x \sin \dfrac{1}{x}- \cos \df
 <p><span class="theorem-title"><strong>정리 9.2</strong></span> 함수 <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(p\in (a,\,b)\)</span> 가 극값일 경우 <span class="math inline">\(f'(p)=0\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(p\)</span> 가 극대값이라고 하자. 어떤 <span class="math inline">\(I_p=(p-\delta,\, p+\delta)\)</span> 에서 <span class="math inline">\(x\in I_p \implies f(x) \le f(p)\)</span> 이다. 이 때 <span class="math inline">\(h&gt;0\)</span> 이면 <span class="math inline">\(\phi_1(h) := \dfrac{f(p+h)-f(p)}{h} &lt;0\)</span> 이며 <span class="math inline">\(h&lt;0\)</span> 이면 <span class="math inline">\(\phi_2(h) := \dfrac{f(p+h)-f(p)}{h} &gt;0\)</span> 이다. <span class="math inline">\(h\to 0\)</span> 극한에서 <span class="math inline">\(\phi_1(h) \le 0\)</span> 이며 <span class="math inline">\(\phi_2(h) \ge 0\)</span> 인데 두 극한이 같아야 하므로 <span class="math inline">\(f'(p) = 0\)</span> 이다. <span class="math inline">\(p\)</span> 가 극소값인 경우도 같은 방법으로 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -553,7 +554,6 @@ f'(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ 2x \sin \dfrac{1}{x}- \cos \df
 <p><span class="theorem-title"><strong>보조정리 9.1</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 가 미분가능함수일 때 <span class="math inline">\(f(a)=f(b)\)</span> 이면 어떤 <span class="math inline">\(c\in (a,\,b)\)</span> 에서 <span class="math inline">\(f'(c) = 0\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\)</span> 가 상수함수이면 자명하므로 <span class="math inline">\(f\)</span> 가 상수함수가 아니라고 하자. <span class="math inline">\([a,\,b]\)</span> 는 옹골집합이므로 <a href="2_3_continuity_of_functions.html#thm-MA_extreme_value_theorem" class="quarto-xref">정리&nbsp;<span>8.5</span></a> 에 의해 최소값과 최대값을 가지며 최소한 둘 중 하나는 <span class="math inline">\(f(a)\)</span> 값과 (그리고 <span class="math inline">\(f(b)\)</span> 값과) 다르다. <span class="math inline">\(c\in (a,\,b)\)</span> 에서 최대값 혹은 최소값을 가진다면 당연히 <span class="math inline">\(c\)</span> 에서 극값을 가지므로 <span class="math inline">\(f'(c) = 0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -566,7 +566,6 @@ f'(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ 2x \sin \dfrac{1}{x}- \cos \df
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>함수 <span class="math inline">\(h:[a,\,b] \to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
@@ -583,7 +582,6 @@ f(b)-f(a) = (b-a)f'(c)
 \tag{9.4}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_generalized_mean_value_theorem" class="quarto-xref">정리&nbsp;<span>9.3</span></a> 에서 <span class="math inline">\(g(x) = x\)</span> 로 놓으면 된다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -596,7 +594,6 @@ f(b)-f(a) = (b-a)f'(c)
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(x\in I \implies f'(x) \le 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단조감소함수이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>평균값정리(<a href="#thm-MA_mean_value_theorem" class="quarto-xref">정리&nbsp;<span>9.4</span></a>) 에 따라 임의의 <span class="math inline">\(x_1,\,x\in \in I\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -615,7 +612,6 @@ f(x_2)-f(x_1)= (x_2-x_1)f'(x)
 <p><span class="theorem-title"><strong>정리 9.5 (도함수의 사잇값 특성)</strong></span> <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 미분가능한 실함수이고 <span class="math inline">\(f'(a)&lt; \lambda &lt;f'(b)\)</span> 일 때 어떤 <span class="math inline">\(t\in (a,\,b)\)</span> 에서 <span class="math inline">\(f'(t) = \lambda\)</span> 이다. <span class="math inline">\(f'(a)&gt;f'(b)\)</span> 일 때에도 유사한 결과가 성립한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(g(t) = f(t)-\lambda t\)</span> 라고 하자. <span class="math inline">\(g'(t) = f'(t)-\lambda\)</span> 이므로 <span class="math inline">\(g'(a)&lt;0,\, g'(b)&gt;0\)</span> 이다. 따라서 어떤 <span class="math inline">\(t_1\in (a,\,b)\)</span> 에서 <span class="math inline">\(g(t_1)&gt;g(a)\)</span> 이며, 역시 어떤 <span class="math inline">\(t_2\in (a,\,b)\)</span> 에서 <span class="math inline">\(g(t_2)&lt;g(b)\)</span> 이다. <a href="2_3_continuity_of_functions.html#thm-MA_extreme_value_theorem" class="quarto-xref">정리&nbsp;<span>8.5</span></a> 에 따라 어떤 <span class="math inline">\(x\in (a,\,b)\)</span> 에서 <span class="math inline">\(g\)</span> 는 최소값을 가진다. 이 때 <span class="math inline">\(g'(x)=0\)</span> 이며 따라서 <span class="math inline">\(f'(x) = \lambda\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -625,7 +621,6 @@ f(x_2)-f(x_1)= (x_2-x_1)f'(x)
 <p><span class="theorem-title"><strong>따름정리 9.2</strong></span> <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 미분가능하다면 <span class="math inline">\(f'\)</span> 은 <span class="math inline">\([a,\,b]\)</span> 에서 단순 불연속점을 가질 수 없다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(x\in (a,\,b)\)</span> 가 <span class="math inline">\(f'(x)\)</span> 의 단순불연속점이라고 하자. <span class="math inline">\(f'(x^-)=\alpha,\,f'(x^+)=\beta\)</span> 일 때 <span class="math inline">\(\varepsilon &lt; \dfrac{|\beta-\alpha|}{2}\)</span> 에 대해 <span class="math inline">\(0&lt;x-t&lt;\delta \implies |f'(t)-\alpha|&lt;\varepsilon\)</span> 이며 <span class="math inline">\(0&lt;t-x&lt;\delta \implies |f'(t)-\beta|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 이 때 <span class="math inline">\(\dfrac{\beta+\alpha}{2}\not\in f'(N(x,\,\delta))\)</span> 인데 이는 <a href="#thm-MA_continuity_of_derivative" class="quarto-xref">정리&nbsp;<span>9.5</span></a> 에 위배된다. 즉 도함수는 단순 불연속점을 가질 수 없다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -650,7 +645,6 @@ f(x_2)-f(x_1)= (x_2-x_1)f'(x)
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -714,8 +708,8 @@ g(t) = g'(t) = \cdots = g^{(n-1)}(t) = 0
 </div>
 <p><br></p>
 </section>
-<section id="sec-differentiation_of_complex_and_vector_valued_function" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="sec-differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</h2>
+<section id="sec-MA_differentiation_of_complex_and_vector_valued_function" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-MA_differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</h2>
 <p><span class="math inline">\(f:[a,\,b]\to \mathbb{C}\)</span> 가 실함수 <span class="math inline">\(f_R,\,f_I\)</span> 에 대해 <span class="math inline">\(f(x)= f_R(x)+ if_I(x)\)</span> 라고 하자. 이 때</p>
 <p><span class="math display">\[
 \dfrac{f(x+h)-f(x)}{h} = \dfrac{f_R(x+h)-f_R(x)}{h}+ i \dfrac{f_I(x+h)-f_I(x)}{h}
@@ -775,7 +769,6 @@ g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
 <p>인 <span class="math inline">\(t\in (a,\,b)\)</span> 가 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{z} = \boldsymbol{f}(b)-\boldsymbol{f}(a)\)</span> 에 대해 <span class="math inline">\(\varphi:[a,\,b]\to\mathbb{R}\)</span> 을 <span class="math inline">\(\varphi (t) := \boldsymbol{z\cdot f}(t)\)</span> 라고 정한다. <span class="math inline">\(\varphi\)</span> 는 <span class="math inline">\((a,\,b)\)</span> 구간에서 미분가능한 함수이며 <span class="math inline">\(\varphi'(t) = \boldsymbol{z\cdot f}'(t)\)</span> 이다. 평균값 정리에 의해</p>
 <p><span class="math display">\[
@@ -804,7 +797,6 @@ g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
 <p>일 때 <span class="math inline">\(f\)</span> 는 상수함수임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \left|\dfrac{f(x+h)-f(x)}{h}\right| \le |h|
@@ -825,7 +817,6 @@ g'(f(x)) = \dfrac{1}{f'(x)},\qquad (a&lt;x&lt;b)
 <p>임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(a&lt;x&lt;y&lt;b\)</span> 에 대해 <span class="math inline">\(f(y)-f(x) = (y-x)f'(c)\)</span> 를 만족하는 <span class="math inline">\(c\in(x,\,y)\)</span> 가 존재하는데 <span class="math inline">\(f'(c)&gt;0\)</span> 이므로 <span class="math inline">\(f(y)-f(x) &gt;0\)</span> 이다. 즉 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((a,\,b)\)</span> 구간에서 strictily increasing 하다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((a,\,b)\)</span> 구간에서 strictily increasing 이므로 전단사이며, 따라서 역함수가 존재한다. 즉 <span class="math inline">\(g\)</span> 는 <span class="math inline">\((f(a),\, f(b))\)</span> 구간에서 strictly increasing 이다. <span class="math inline">\(y,\,s\)</span> 에 대해 <span class="math inline">\(g(y)=x,\, g(s)=t\)</span> 라고 하자.</p>
 <p><span class="math display">\[
@@ -833,17 +824,16 @@ g'(f(t)) = g'(s)=\lim_{y \to s} \dfrac{g(y)- g(s)}{y-s} = \lim_{x \to t} \dfrac{
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_3" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.3 (Rudin 5.3)</strong></span> <span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 의 도함수는 유계이다 (즉 <span class="math inline">\(|g'|&lt;M\)</span>). 고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(f(x) = x+\varepsilon g(x)\)</span> 라고 하자. <span class="math inline">\(\varepsilon\)</span> 이 충분히 작다면 <span class="math inline">\(f\)</span> 는 전단사 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f'(x) = 1+\varepsilon g'(x)\)</span> 이므로 <span class="math inline">\(\varepsilon &lt; 1/M\)</span> 이라면 <span class="math inline">\(f'(x)&gt;0\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_4" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.4 (Rudin 5.4)</strong></span> <span class="math inline">\(C_0,\ldots,\,C_n\)</span> 이 실수 이며</p>
@@ -857,7 +847,6 @@ C_0 + C_1x + \cdots + C_{n-1}x^{n-1} + C_n x^n=0
 <p>은 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 사이에서 최소한 하나의 근을 가짐을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g(x) = C_0 x + \dfrac{C_2}{2}x^2 + \cdots + \dfrac{C_n}{n+1}x^{n+1}\)</span> 라고 하자. <span class="math inline">\(g(0) = g(1) = 0\)</span> 이다. 평균값 정리(<a href="#thm-MA_mean_value_theorem" class="quarto-xref">정리&nbsp;<span>9.4</span></a>) 에 따라 <span class="math inline">\(g'(x)=0\)</span> 의 해가 <span class="math inline">\((0,\,1)\)</span> 사이에 존재한다.</p>
 </div>
@@ -867,7 +856,6 @@ C_0 + C_1x + \cdots + C_{n-1}x^{n-1} + C_n x^n=0
 <p><span class="theorem-title"><strong>연습문제 9.5 (Rudin 5.5)</strong></span> <span class="math inline">\(f\)</span> 가 모든 <span class="math inline">\(x&gt;0\)</span> 에서 미분가능하며 <span class="math inline">\(\displaystyle \lim_{x \to \infty} f'(x) = 0\)</span> 이라고 하자. <span class="math inline">\(g(x) := f(x+1)-f(x)\)</span> 에 대해 <span class="math inline">\(\displaystyle \lim_{x \to \infty} g(x) = 0\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g(x) = f(x+1)-f(x) = f'(c)\)</span> 인 <span class="math inline">\(c\in (x,\, x+1)\)</span> 이 존재한다.</p>
 </div>
@@ -882,7 +870,6 @@ C_0 + C_1x + \cdots + C_{n-1}x^{n-1} + C_n x^n=0
 <p>이 때 <span class="math inline">\(g(x):= \dfrac{f(x)}{x}\)</span> 가 <span class="math inline">\(x&gt;0\)</span> 에서 단조증가함수임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 g'(x) = \dfrac{xf'(x) - f(x)}{x^2}
@@ -893,7 +880,7 @@ g'(x) = \dfrac{x(f'(x)-f'(t))}{x^2}\ge 0
 \]</span></p>
 <p>이다. 즉 <span class="math inline">\(g\)</span> 도 단조증가함수이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_7" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.7 (Rudin 5.7)</strong></span> <span class="math inline">\(f,\,g\)</span> 가 <span class="math inline">\(x\)</span> 에서 미분가능하며 <span class="math inline">\(g'(x) \ne 0\)</span> 이고 <span class="math inline">\(f(x) = g(x) = 0\)</span> 이라고 하자. 이 때</p>
@@ -903,14 +890,13 @@ g'(x) = \dfrac{x(f'(x)-f'(t))}{x^2}\ge 0
 <p>임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(t \ne x\)</span> 에 대해 <span class="math display">\[
 \dfrac{f(t)}{g(t)} = \dfrac{f(t)-f(x)}{g(t)-g(x)} = \dfrac{f'(c)(t-x)}{g'(d)(t-x)}= \dfrac{f'(c)}{g'(d)}
 \]</span></p>
 <p>인 <span class="math inline">\(c,\,d \in (t,\,x)\)</span> 에서 존재한다. <span class="math inline">\(\lim t\to x\)</span> 극한에서 생각하면 성립함을 알 수 있다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_8" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.8 (Rudin 5.8)</strong></span> <span class="math inline">\(f'(x)\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 연속이며 <span class="math inline">\(\varepsilon&gt;0\)</span> 이다. 이 때 다음이 성립하는 <span class="math inline">\(\delta &gt;0\)</span> 이 존재함을 보여라.</p>
@@ -919,7 +905,6 @@ g'(x) = \dfrac{x(f'(x)-f'(t))}{x^2}\ge 0
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(a,\,b\in R\)</span> 에 대해 큰 값과 작은 값 사이의 열린 구간을 <span class="math inline">\(I_{ab}\)</span> 라고 하자. <span class="math inline">\(a&lt;b\)</span> 이면 <span class="math inline">\(I_{a,b}=(a,\,b)\)</span> 이고 <span class="math inline">\(a&gt;b\)</span> 이면 <span class="math inline">\(I_{ab}=(b,\,a)\)</span> 이다. <span class="math inline">\(x \in (a,\,b)\)</span> 를 고정시키자. 평균값 정리에 의해 <span class="math inline">\(f(t)-f(x) = (t-x)f'(y)\)</span> 인 <span class="math inline">\(y\in I_{tx}\)</span> 가 존재한다. <span class="math inline">\(f'\)</span> 이 연속이므로 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -931,13 +916,12 @@ g'(x) = \dfrac{x(f'(x)-f'(t))}{x^2}\ge 0
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_9" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.9 (Rudin 5.9)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 연속이며, <span class="math inline">\(x\ne 0\)</span> 에 대해 도함수가 존재하고 <span class="math inline">\(\lim_{x \to 0} f'(x) = 3\)</span> 이라고 하자. <span class="math inline">\(f'(0)\)</span> 이 존재하는가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>로피탈의 정리에 의해</p>
 <p><span class="math display">\[
@@ -945,7 +929,7 @@ f'(0) = \lim_{t \to 0} \dfrac{f(t)-f(0)}{t-0} = \lim_{t \to 0}\dfrac{f'(t)}{1} =
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_10" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.10 (Rudin 5.10)</strong></span> <span class="math inline">\(f,\,g : (0,\,1) \to \mathbb{C}\)</span> 이며 <span class="math inline">\(x\to 0\)</span> 에 대해 <span class="math inline">\(f(x) \to 0\)</span>, <span class="math inline">\(g(x) \to 0\)</span>, <span class="math inline">\(f'(x) \to A\)</span>, <span class="math inline">\(g'(x) \to B\)</span> 이다. 이 때 <span class="math inline">\(B\ne 0\)</span> 이라고 하자. 다음을 보여라.</p>
@@ -955,7 +939,6 @@ f'(0) = \lim_{t \to 0} \dfrac{f(t)-f(0)}{t-0} = \lim_{t \to 0}\dfrac{f'(t)}{1} =
 <p>그리고 <a href="#exm-MA_Lhopital_theorem_for_complex_function" class="quarto-xref">예제&nbsp;<span>9.5</span></a> 과 비교하라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f(x) = f_r (x) + if_i (x)\)</span>, <span class="math inline">\(g(x) = g_r(x) + ig(x)\)</span> 이며 <span class="math inline">\(f_r,\,f_i,\,g_r,\,g_i\)</span> 가 모두 <span class="math inline">\(\mathbb{R}\mapsto \mathbb{C}\)</span> 함수라고 하자. <span class="math inline">\(A=A_r+iA_i,\, B=B_r+iB_i\)</span> 이며 <span class="math inline">\(A_r,\,A_i,\,B_r,\,B_i\)</span> 가 모두 실수라고 하자.</p>
 <p><span class="math display">\[
@@ -980,7 +963,7 @@ f'(0) = \lim_{t \to 0} \dfrac{f(t)-f(0)}{t-0} = \lim_{t \to 0}\dfrac{f'(t)}{1} =
 \]</span></p>
 <p>이다. <a href="#exm-MA_Lhopital_theorem_for_complex_function" class="quarto-xref">예제&nbsp;<span>9.5</span></a> 의 경우 <span class="math inline">\(\lim_{x \to 0} g'(x)\)</span> 가 발산하는 차이가 있다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_11" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.11 (Rudin 5.11)</strong></span> <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 의 근방에서 정의되어 있고 <span class="math inline">\(f''(x)\)</span> 가 존재한다. 이 때</p>
@@ -990,7 +973,6 @@ f'(0) = \lim_{t \to 0} \dfrac{f(t)-f(0)}{t-0} = \lim_{t \to 0}\dfrac{f'(t)}{1} =
 <p>임을 보여라. <span class="math inline">\(f''(x)\)</span> 가 존재하지 않더라도 위의 극한이 존재할 수 있음을 예를 들어 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\)</span> 를 고정하고 <span class="math inline">\(h\)</span> 에 대해 로피탈의 정리를 적용하면 <span class="math display">\[
 \begin{aligned}
@@ -1006,26 +988,24 @@ f'(0) = \lim_{t \to 0} \dfrac{f(t)-f(0)}{t-0} = \lim_{t \to 0}\dfrac{f'(t)}{1} =
 \]</span></p>
 <p><span class="math inline">\(x=0\)</span> 에서 연속이 아니므로 도함수 및 이차도함수는 존재하지 않지만 위의 극한은 <span class="math inline">\(0\)</span> 으로 존재한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_12" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.12 (Rudin 5.12)</strong></span> <span class="math inline">\(f(x)=|x|^3\)</span> 일 때 <span class="math inline">\(f'(x),\, f''(x)\)</span> 를 계산하라. <span class="math inline">\(f^{(3)}(0)\)</span> 이 존재하지 않음을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 f'(x) = \left\{\begin{array}{ll} 3x^2, \qquad &amp;x\ge 0\\ -3x^2 &amp; x&lt;0\end{array}\right. \qquad f''(x) = \left\{\begin{array}{ll} 6x, \qquad &amp;x\ge 0\\ -6x &amp; x&lt;0\end{array}\right.
 \]</span></p>
 <p>이지만 <span class="math inline">\(f^{(3)}(0^+) = 6\)</span>, <span class="math inline">\(f^{(3)}(0^-)=-6\)</span> 이므로 <span class="math inline">\(f^{(3)}(0)\)</span> 은 존재하지 않는다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_14" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.13 (Rudin 5.14)</strong></span> <span class="math inline">\(f:(a,\,b)\to \mathbb{R}\)</span> 이 미분가능하다. 이 때 <span class="math inline">\(f\)</span> 가 볼록함수(<a href="2_3_continuity_of_functions.html#exr-MA_rudin_4_23" class="quarto-xref">연습문제&nbsp;<span>8.27</span></a>) 일 필요충분조건이 <span class="math inline">\(f'\)</span> 이 단조증가함수인 것임을 보여라. 또한 <span class="math inline">\(f''(x)\)</span> 가 모든 <span class="math inline">\(x\in (a,\,b)\)</span> 에서 존재한다면 <span class="math inline">\(f\)</span> 가 볼록함수일 필요충분조건은 <span class="math inline">\(\forall x\in (a,\,b), f''(x)\ge 0\)</span> 인 것임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 볼록함수 임을 가정한다. <a href="2_3_continuity_of_functions.html#exr-MA_rudin_4_23" class="quarto-xref">연습문제&nbsp;<span>8.27</span></a> 의 <a href="2_3_continuity_of_functions.html#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.3</span></a> 을 이용한다. <span class="math inline">\(a&lt;s&lt;t&lt;u&lt;b\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1056,7 +1036,7 @@ f(\lambda x + (1-\lambda)y) = f(z) \le \lambda f(x) + (1-\lambda)
 <p>이므로 <span class="math inline">\(f\)</span> 는 볼록함수이다.</p>
 <p>이제 <span class="math inline">\(f''(x)\)</span> 가 모든 <span class="math inline">\(x\in (a,\,b)\)</span> 에서 존재함을 가정하자. <span class="math inline">\(f'\)</span> 이 단조증가인 것과 <span class="math inline">\(f''(x)&gt;0\)</span> 인 것은 동치임을 쉽게 보일 수 있다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_15" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.14 (Rudin 5.15)</strong></span> <span class="math inline">\(a\in \mathbb{R}\)</span> 이며 <span class="math inline">\(f\)</span> 가 <span class="math inline">\((a,\,\infty)\)</span> 에서 두번 미분 가능한 함수이고 <span class="math inline">\(M_0,\,M_1,\,M_2\)</span> 는 각각 <span class="math inline">\(|f(x)|,\, |f'(x)|,\, |f''(x)|\)</span> 의 <span class="math inline">\((a,\,\infty)\)</span> 구간에서의 상한이라고 하자. 다음이 성립함을 보여라.</p>
@@ -1065,7 +1045,6 @@ f(\lambda x + (1-\lambda)y) = f(z) \le \lambda f(x) + (1-\lambda)
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>테일러 전개에 의해 <span class="math inline">\(h&gt;0,\, x&gt;a\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1077,17 +1056,16 @@ f'(x) = \dfrac{1}{2h}[f(x+2h)-f(x)] - hf''(\xi)
 \]</span></p>
 <p>가 성립한다. 즉 <span class="math inline">\({M_1}^2 \le 4M_0M_2\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_16" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.15 (Rudin 5.16)</strong></span> <span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,\infty)\)</span> 구간에서 두번 미분 가능하며 <span class="math inline">\(f''\)</span> 은 유계이고 <span class="math inline">\(\displaystyle \lim_{x\to \infty}f(x) = 0\)</span> 이다. <span class="math inline">\(\displaystyle \lim_{x\to \infty} f'(x) = 0\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-MA_rudin_5_15" class="quarto-xref">연습문제&nbsp;<span>9.14</span></a> 를 이용한다. <span class="math inline">\(\displaystyle \lim_{x\to \infty}f(x) = 0\)</span> 이므로 정해진 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(x&gt;x_0 \implies |f(x)|&lt;\varepsilon\)</span> 인 <span class="math inline">\(x_0\)</span> 가 존재한다. 그렇다면 <span class="math inline">\(x&gt;x_0\)</span> 이면 <span class="math inline">\((x_0,\, \infty)\)</span> 구간에서 <span class="math inline">\(|f'(x)|&lt; 2 \sqrt{\varepsilon M}\)</span> 이 성립하므로 <span class="math inline">\(\displaystyle \lim_{x\to \infty} f'(x) = 0\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_18" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.16 (Rudin 5.18)</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 <span class="math inline">\(n-1\)</span> 번 미분 가능한 함수이다. <span class="math inline">\(\alpha,\,\beta \in (a,\,b)\)</span> 와 <span class="math inline">\(t\in [a,\,b]\)</span> 에 대해 <span class="math inline">\(Q:[a,\,b] \to \mathbb{R}\)</span> 을 <span class="math display">\[
@@ -1099,7 +1077,6 @@ f(\beta) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(\alpha)}{k!}(\beta-\alpha)^k + \dfrac{
 \tag{9.15}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f(t) - f(\beta) = (t-\beta) Q(t)\)</span> 를 <span class="math inline">\(t=\alpha\)</span> 에 대해 <span class="math inline">\(n-1\)</span> 번 미분하면</p>
 <p><span class="math display">\[
@@ -1119,7 +1096,7 @@ f^{(k)} (\alpha) =  kQ^{(k-1)}(\alpha) + (\alpha-\beta) Q^{(k)}(\alpha)
 \]</span></p>
 <p>이다 <span class="math inline">\(f(\alpha) = \dfrac{f^{(0)}(\alpha)}{0!}(\beta-\alpha)^0\)</span> 이므로 <a href="#eq-exr-MA_rudin_5_18" class="quarto-xref">식&nbsp;<span>9.15</span></a> 이 성립한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_19" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.17 (Rudin 5.19)</strong></span> <span class="math inline">\(f\)</span> 가 <span class="math inline">\((-1,\,1)\)</span> 에서 정의되어 있고 <span class="math inline">\(f'(0)\)</span> 이 존재한다. <span class="math inline">\(-1&lt;\alpha_n &lt;\beta_n&lt;1\)</span> 이며 <span class="math inline">\(\langle \alpha_n \rangle \to 0\)</span>, <span class="math inline">\(\langle \beta_n \rangle \to 0\)</span> 이라고 하자. <span class="math inline">\(D_n\)</span> 을 다음과 같이 정의한다.</p>
@@ -1133,7 +1110,6 @@ D_n := \dfrac{f(\beta_n)-f(\alpha_n)}{\beta_n - \alpha_n}
 <p><span class="math inline">\(f\)</span> 가 <span class="math inline">\((-1,\,1)\)</span> 에서 미분가능하지만 (그러나 <span class="math inline">\(f'\)</span> 은 연속이 아닐 때) <span class="math inline">\(\displaystyle \lim_{n\to \infty} D_n\)</span> 이 존재하지만 <span class="math inline">\(f'(0)\)</span> 과 다른 예를 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f'(0)\)</span> 이 존재하므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(0\)</span> 에서 연속이다.</p>
 <p>(<span class="math inline">\(1\)</span>) <a href="#eq-MA_rudin_5_19" class="quarto-xref">식&nbsp;<span>9.16</span></a> 을 아래와 같이 바꿀 수 있다.</p>
@@ -1172,7 +1148,7 @@ D_n = \dfrac{f(\beta_n)-f(\alpha_n)}{\beta_n - \alpha_n} = \dfrac{\beta_n}{\beta
 <p><br></p>
 <p>– to be done –</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_22" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.18 (Rudin 5.22)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이다.</p>
@@ -1185,7 +1161,6 @@ D_n = \dfrac{f(\beta_n)-f(\alpha_n)}{\beta_n - \alpha_n} = \dfrac{\beta_n}{\beta
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(g(t) := f(t)-t\)</span> 라고 하면 <span class="math inline">\(g'(t)=f'(t)-1\)</span> 이므로 <span class="math inline">\(g'(t)\ne 0\)</span> 이다. <span class="math inline">\(t_1,\,t_2\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(g'(t_1)g'(t_2)&lt;0\)</span> 이면 <a href="#thm-MA_continuity_of_derivative" class="quarto-xref">정리&nbsp;<span>9.5</span></a> 에 따라 <span class="math inline">\(t_1,\,t_2\)</span> 사이에 <span class="math inline">\(g'(t)=0\)</span> 인 <span class="math inline">\(t\)</span> 가 존재하므로 모든 <span class="math inline">\(t\)</span> 에 대해 <span class="math inline">\(g'(t)&gt;0\)</span> 이거나 <span class="math inline">\(g'(t)&lt;0\)</span> 이다. 즉 단조증가이거나 단조감소이므로 <span class="math inline">\(g(t)=0\)</span> 는 하나 이상의 해를 가질 수 없다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f'(t) = 1-e^t(1+e^t)^{-2}\)</span> 이므로 <span class="math inline">\(0&lt;f'(t)&lt;1\)</span> 이다. <span class="math inline">\(f(t)=t \implies (1+e^t)^{-1}=0\)</span> 이므로 <span class="math inline">\(f\)</span> 는 고정점이 없다.</p>
@@ -1210,7 +1185,7 @@ P_n = (x_n,\, f(x_n)),\qquad Q_n = (x_{n+1},\,x_{n+1})
 \]</span></p>
 <p>의 2차원 평면상의 수열이 정해지며 각각 <span class="math inline">\(\langle x_n\rangle\)</span> 이 <span class="math inline">\(x_0\)</span> 로 수렴한다면 <span class="math inline">\(P_n\)</span> 과 <span class="math inline">\(Q_n\)</span> 이 모두 <span class="math inline">\((x_0,\,x_0)\)</span> 로 수렴한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_23" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.19 (Rudin 5.23)</strong></span> 함수 <span class="math inline">\(f\)</span> 다음과 같이 정의되었다.</p>
@@ -1228,7 +1203,6 @@ f(x) = \dfrac{x^3+1}{3}.
 <p>따라서 <span class="math inline">\(\beta\)</span> 는 이 방법으로 값을 알 수 있지만 <span class="math inline">\(\alpha,\, \gamma\)</span> 는 그렇지 못하다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f'(x) = x^2 \ge 0\)</span> 이므로 <span class="math inline">\(f(x)\)</span> 는 단조증가함수이다. <span class="math inline">\(g(x) := f(x)-x\)</span> 라 하자. <span class="math inline">\(\alpha,\,\beta\,\gamma\)</span> 는 <span class="math inline">\(g(x)=0\)</span> 의 해이며 <span class="math inline">\(x&lt;\alpha\)</span> 이면 <span class="math inline">\(g(x)&lt;0\)</span>, <span class="math inline">\(\alpha&lt;x&lt;\beta\)</span> 이면 <span class="math inline">\(g(x)&gt;0\)</span>, <span class="math inline">\(\beta &lt;x &lt;\gamma\)</span> 이면 <span class="math inline">\(g(x)&lt;0\)</span>, <span class="math inline">\(x&gt;\gamma\)</span> 이면 <span class="math inline">\(g(x)&gt;0\)</span> 임을 안다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(x_1&lt;\alpha\)</span> 일 때 <span class="math inline">\(x_{n+1}&lt;x_n\)</span> 이며 <span class="math inline">\(|x_{n+1}-x_n|&gt; |x_{n}-x_{n-1}|\)</span> 임을 보이자. 우선 <span class="math inline">\(x_2&lt;x_1&lt;\alpha\)</span> 임을 보인다. 중간값 정리에 의해 <span class="math inline">\(f(x_1)-f(\alpha) = f'(t_1)(x_1-\alpha)\)</span> 인 <span class="math inline">\(t_1 \in (x_1,\,\alpha)\)</span> 이 존재한다. <span class="math inline">\(t_1&lt;\alpha&lt;-1\)</span> 이므로 <span class="math inline">\(f'(t_1)&gt;1\)</span> 이며 따라서 <span class="math inline">\(x_2-\alpha = f'(t_1)(x_1-\alpha)\)</span> 로부터 <span class="math inline">\(x_2&lt;x_1&lt;\alpha\)</span> 임을 알 수 있다. 역시 중간값 정리에 의해</p>
@@ -1245,7 +1219,7 @@ x_{n+2}-x_{n+1} = f(x_{n+1})-f(x_{n}) = f'(t_{n+1})(x_{n+1} - x_n)
 <p><span class="math inline">\(\beta &lt;x_n &lt;\gamma\)</span> 일 경우 <span class="math inline">\(x_{n+1}-x_n = g(x_n)&lt;0\)</span> 이므로 <span class="math inline">\(x_{n+1}&lt;x_n&lt;\gamma\)</span> 이다. 앞서와 같은 방법으로 <span class="math inline">\(\beta &lt;x_{n+1}&lt;x_n&lt;\gamma\)</span> 임을 보일 수 있으며, 역시 같은 이유로 <span class="math inline">\(\langle x_n \rangle\)</span> 은 <span class="math inline">\(\beta\)</span> 로 수렴한다.</p>
 <p>(<span class="math inline">\(c\)</span>) (<span class="math inline">\(a\)</span>) 와 같은 방법으로 부호만 바뀌어서 성립한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_24" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.20 (Rudin 5.24)</strong></span> <a href="#exr-MA_rudin_5_22" class="quarto-xref">연습문제&nbsp;<span>9.18</span></a> 의 (<span class="math inline">\(d\)</span>) 에서 설명된 과정은 <span class="math inline">\((0,\,\infty) \mapsto (0,\,\infty)\)</span> 함수에도 적용 될 수 있다. 고정된 <span class="math inline">\(\alpha&gt;1\)</span> 에 대해</p>
@@ -1255,7 +1229,6 @@ f(x) = \dfrac{1}{2} \left(x+\dfrac{\alpha}{x}\right),\qquad g(x) = \dfrac{\alpha
 <p>라고 하자. <span class="math inline">\(f,\,g\)</span> 모두 <span class="math inline">\(\sqrt{\alpha}\)</span> 가 <span class="math inline">\((0,\,\infty)\)</span> 에서의 유일한 고정점이다. <span class="math inline">\(f,\,g\)</span> 의 성질로부터 <a href="2_2_sequences_and_series.html#exr-MA_rudin_3_16" class="quarto-xref">연습문제&nbsp;<span>7.16</span></a> 의 수렴이 <a href="2_2_sequences_and_series.html#exr-MA_rudin_3_17" class="quarto-xref">연습문제&nbsp;<span>7.17</span></a> 의 수렴보다 빠른지 설명하라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>아래 그림에서 보듯이 <span class="math inline">\(\alpha=3\)</span> 에서 <span class="math inline">\(f(x)\)</span> 가 <span class="math inline">\(g(x)\)</span> 보다 변화가 적다. 지그재그 방법을 생각해보면 <span class="math inline">\(f(x)\)</span> 가 빨리 수렴한다.</p>
 <div id="fig-MA_rudin_5_24" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1269,7 +1242,7 @@ f(x) = \dfrac{1}{2} \left(x+\dfrac{\alpha}{x}\right),\qquad g(x) = \dfrac{\alpha
 </figure>
 </div>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_25" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.21 (Rudin 5.25)</strong></span> <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 구간에서 두번 미분 가능하며 <span class="math inline">\(f(a)&lt;0,\, f(b)&gt;0\)</span>, <span class="math inline">\(f'(x) \ge \delta &gt;0\)</span> 이며 어떤 양수 <span class="math inline">\(M\)</span> 에 대해 모든 <span class="math inline">\(x\in [a,\,b]\)</span> 에서 <span class="math inline">\(0\le f''(x)\le M\)</span> 라고 하자. <span class="math inline">\(\xi\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(f(x)=0\)</span> 인 유일한 점이라고 하자. 아래는 <strong>뉴턴 방법(Newton method)</strong> 라고 불리는 <span class="math inline">\(\xi\)</span> 를 구하는 방법이다. 세부적인 사항을 완성하라.</p>
@@ -1291,7 +1264,6 @@ x_{n+1}-\xi = \dfrac{f''(t_n)}{2f'(x_n)}(x_n-\xi)^2
 <p>(<span class="math inline">\(f\)</span>) <span class="math inline">\((-\infty,\, \infty)\)</span> 구간에서 <span class="math inline">\(f(x) = x^{1/3}\)</span> 에 대한 뉴텬 방법을 시험하라. 무슨 일이 발생하는가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\((x_n,\,f(x_n))\)</span> 에서의 접선의 방정식은 <span class="math inline">\(y = f'(x_n)(x-x_n) + f(x_n)\)</span> 이며 이 직선과 <span class="math inline">\(x\)</span> 축과의 교점을 <span class="math inline">\(x_{n+1}\)</span> 이라고 하면</p>
 <p><span id="eq-MA_rudin_5_25_1"><span class="math display">\[
@@ -1324,13 +1296,12 @@ g'(x) = \dfrac{f(x)f''(x)}{(f'(x))^2}
 <p>이며 <span class="math inline">\(f(x)\)</span> 가 <span class="math inline">\(0\)</span> 에 가까울 때 <span class="math inline">\(g'(x)=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(f\)</span>) <span class="math inline">\(f(x) = x^{1/3}\)</span> 의 해는 <span class="math inline">\(x=0\)</span> 뿐이다. <a href="#eq-MA_rudin_5_25_1" class="quarto-xref">식&nbsp;<span>9.18</span></a> 로 부터 <span class="math inline">\(x_{n+1}=x_n - 3x_n=-2x_n\)</span> 이 되어 <span class="math inline">\(\langle x_n \rangle\)</span> 이 발산한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_26" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.22 (Rudin 5.26)</strong></span> <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 미분가능하며 <span class="math inline">\(f(a)=0\)</span> 이고 <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(|f'(x)|\le A|f(x)|\)</span> 를 만족하는 실수 <span class="math inline">\(A\)</span> 가 존재한다. <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(f(x)=0\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A=0\)</span> 이면 자명하므로 <span class="math inline">\(A&gt;0\)</span> 인 경우만 생각한다. <span class="math inline">\(x_o \in [a,\,b]\)</span> 를 고정하고</p>
 <p><span class="math display">\[
@@ -1342,7 +1313,7 @@ M_o = \sup \{ |f(x)| : x\in [a,\,x_0]\},\qquad M_1 = \sup \{ |f'(x)| : x\in [a,\
 \]</span></p>
 <p>이다. <span class="math inline">\(|f(x)|&lt;M_o\)</span> 이어야 하므로 <span class="math inline">\(A(x_o-a)&lt;1\)</span> 이면 <span class="math inline">\(M_o=0\)</span> 이어야 한다. <span class="math inline">\(x_o\)</span> 를 <span class="math inline">\(x_o-a&lt;1/A\)</span> 가 되도록 잡는다면 <span class="math inline">\(f([a,\,x_0])=\{0\}\)</span> 이며 역시 <span class="math inline">\(x_1-x_o &lt; 1/A\)</span> 가 되도록 <span class="math inline">\(x_1\in [x_o,\,b]\)</span> 에서 잡는 다면 같은 결과가 반복된다. 이것을 <span class="math inline">\(b\)</span> 까지 반복하면 <span class="math inline">\(f(x) = 0\)</span> 임을 보일 수 있다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_27" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.23 (Rudin 5.27, 미분방정식의 해의 유일성 1)</strong></span> <span class="math inline">\(R=[a,\,b]\times [\alpha,\,\beta]\subset \mathbb{R}^2\)</span> 에서 정의된 함수 <span class="math inline">\(\phi :R\to \mathbb{R}\)</span> 를 생각하자. 미분방정식의 초기값 문제가 아래와 같이 주어졌다고 하자.</p>
@@ -1360,7 +1331,6 @@ f'(x) = \phi (x,\, f(x)),\qquad (a\le x\le b)
 <p>라면 위의 미분방정식은 많아야 하나의 해를 가진다는 것을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f_1,\,f_2\)</span> 가 위의 미분방정식을 만족하는 두 해라고 하고 <span class="math inline">\(g(x) = f_1(x)-f_2(x)\)</span> 라고 하자. <span class="math inline">\(f_1(a)=f_2(a) = c\)</span> 이므로 <span class="math inline">\(g(a)=0\)</span> 이며</p>
 <p><span class="math display">\[
@@ -1371,7 +1341,7 @@ f'(x) = \phi (x,\, f(x)),\qquad (a\le x\le b)
 \]</span></p>
 <p>이다. <a href="#exr-MA_rudin_5_26" class="quarto-xref">연습문제&nbsp;<span>9.22</span></a> 에 따라 <span class="math inline">\(f([a,\,b])= \{0\}\)</span> 이므로 <span class="math inline">\(f_1=f_2\)</span> 이다. 즉 위의 미분방정식을 만족하는 해는 많아야 하나 존재한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_28" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.24 (Rudin 5.28, 미분방정식의 해의 유일성 2)</strong></span> <a href="#exr-MA_rudin_5_27" class="quarto-xref">연습문제&nbsp;<span>9.23</span></a> 과 유사한 유일성 정리를 미분방정식 시스템에 대해 증명한다. 아래와 같은 미분방정식들이 존재한다고 하자.</p>
@@ -1385,7 +1355,6 @@ y'_j = \phi_j (x,\,y_1,\ldots,\,y_n),\qquad y_j (a) = c_j,\qquad (j=1,\ldots,\,n
 <p>여기서 <span class="math inline">\(\boldsymbol{y} = (y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 이며 <span class="math inline">\(\boldsymbol{\phi}\)</span> 는 <span class="math inline">\(\mathbb{R}^{n+1}\mapsto \mathbb{R}^n\)</span> 함수이고 <span class="math inline">\(\boldsymbol{\phi} = (\phi_1,\ldots,\,\phi_n)\)</span> 이다. 또한 <span class="math inline">\(\boldsymbol{c}\in \mathbb{R}^n\)</span> 이다. 미분방정식의 유일성을 증명하라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{y}_1\)</span> 와 <span class="math inline">\(\boldsymbol{y}_2\)</span> 가 미분방정식의 두 해이며 <span class="math inline">\(\boldsymbol{z}= \boldsymbol{y}_2-\boldsymbol{y}_2\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{z}(a)=\boldsymbol{0}\)</span> 이며</p>
 <p><span class="math display">\[
@@ -1395,7 +1364,7 @@ y'_j = \phi_j (x,\,y_1,\ldots,\,y_n),\qquad y_j (a) = c_j,\qquad (j=1,\ldots,\,n
 \]</span></p>
 <p>이므로 미분방정식 시스템은 많아야 하나의 해만 존재한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_5_29" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 9.25 (Rudin 5.29, 미분방정식의 해의 유일성 3)</strong></span> 아래와 같은 미분방정식 시스템을 생각하자.</p>
@@ -1416,7 +1385,6 @@ y(a) = c_1,\, y'(a) = c_2,\ldots,\, y^{(n-1)}(a) = c_n
 <p>에 대해 유일성을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{y}(x) = (y_1,\ldots,\,y_n) = \left(y(x),\,y'(x),\ldots,\, y^{(n-1)}(x)\right) \subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{\phi}(x,\, \boldsymbol{y}) = \boldsymbol{y}'\)</span> 와 초기조건 <span class="math inline">\(\boldsymbol{y}(a)= \boldsymbol{c} = (c_1,\ldots,\,c_n)\)</span> 을 만족하는 해가 <span class="math inline">\(\boldsymbol{y},\,\boldsymbol{z}\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{w}= \boldsymbol{z}-\boldsymbol{y}\)</span> 이라고 하자.</p>
 <p><span class="math display">\[

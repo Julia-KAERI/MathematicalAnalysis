@@ -42,13 +42,13 @@ $$
 
 $X,\, Y,\, E,\, f$ 가 @def-MA_limits_and_continuity_of_functions 와 같다고 하자. 이 때 아래 두 명제는 동치이다. 
 
-&emsp;($1$) $f$ 는 $x_0$ 에서 연속이다.
+($1$) $f$ 는 $x_0$ 에서 연속이다.
    
-&emsp;($2$) $X$ 에서 정의된 수열 $\langle x_n \rangle$ 이 $x_0$ 를 포함하지 않으면서 $x_0$ 로 수렴하면 수열 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴한다.
+($2$) $X$ 에서 정의된 수열 $\langle x_n \rangle$ 이 $x_0$ 를 포함하지 않으면서 $x_0$ 로 수렴하면 수열 $\langle f(x_n)\rangle$ 은 $f(x_0)$ 로 수렴한다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -77,8 +77,7 @@ $$
 
 :::
 
-</div></br>
-
+</div>
 
 ::: {.proof}
 
@@ -96,7 +95,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -105,22 +104,19 @@ $x\in \mathbb{R}\backslash \mathbb{Q}$ 일 때 $x$ 로 수렴하는 유리수열
 :::
 
 
-
-
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_basic_properties_of_limit_of_functions}
 거리공간 $X$ 와 $E\subset X$ 에 대해 $f,\,g$ 가 $E \mapsto \mathbb{C}$ 함수이며 $x_0$ 가 $E$ 의 극한점이고 $\displaystyle \lim_{x\to x_0} f(x) = a$, $\displaystyle \lim_{x \to x_0} g(x) = b$ 일 때 다음이 성립한다. 
 
-&emsp; (1) $\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b$, 
+&emsp;(1) $\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b$, 
 
-&emsp; (2) $\displaystyle \lim_{x \to x_0}(fg)(x) = ab$, 
+&emsp;(2) $\displaystyle \lim_{x \to x_0}(fg)(x) = ab$, 
 
-&emsp; (3) $b\ne 0$ 일 경우 $\displaystyle \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \dfrac{a}{b}$.
+&emsp;(3) $b\ne 0$ 일 경우 $\displaystyle \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \dfrac{a}{b}$.
 
 :::
-</div></br>
-
+</div>
 ::: {.proof}
 @prp-MA_limit_and_convergent_series 에 의해 $\langle x_n \rangle \to x_0$ 인 수열 $x_n$ 을 생각하자. @prp-MA_properties_of_convergence_3 를 이용하여 증명 할 수 있다. $\square$
 :::
@@ -133,7 +129,7 @@ $x\in \mathbb{R}\backslash \mathbb{Q}$ 일 때 $x$ 로 수렴하는 유리수열
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -192,8 +188,7 @@ $f:X \to Y$ 에서 $\{E_i\}$ 가 $X$ 의 부분집합족이고 $\{V_i\}$ 가 $Y$
 &emsp; (4) $f^{-1}\left(\bigcap_i V_i\right) = \bigcap_i f^{-1}(E_i)$
 
 :::
-</div></br>
-
+</div>
 ::: {.proof}
 ($1$) $\Gamma = \{E_i\}$ 라 하자. 
 $$
@@ -235,7 +230,7 @@ A \subset f^{-1}(f(A)),\qquad f(f^{-1}(B)) \subset B
 $$
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 $a\in A$ 일 때 $a\in f^{-1}(f(A))$ 임은 자명하다. $f(a)=b$ 이며 $f^{-1}(\{b\})$ 가 $A$ 에 포함되지 않는 원소 $x$ 를 포함한다면 $f^{-1}(x)\not\in A$ 이므로 등호는 성립하지 않는다.
@@ -260,7 +255,7 @@ $$
 $f:X \to Y$ 이며 $V\subset Y$ 일 때 $f^{-1}(Y\backslash V) = X \backslash f^{-1}(V)$ 이다.
 
 :::
-</div></br>
+</div>
 
 :::{.proof}
 $x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\in X\backslash f(V)$. $\square$ 
@@ -276,13 +271,13 @@ $x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\i
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f: X\to Y$ 에 대해 다음은 동치이다. 
 
-&emsp; ($1$) $f$ 는 $x_0\in X$ 에서 연속이다.
+&emsp;($1$) $f$ 는 $x_0\in X$ 에서 연속이다.
 
-&emsp; ($2$) 임의의 $\varepsilon>0$ 에 대해 어떤 $\delta >0$ 이 존재하여 $f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\, \varepsilon)$ 이다.
+&emsp;($2$) 임의의 $\varepsilon>0$ 에 대해 어떤 $\delta >0$ 이 존재하여 $f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\, \varepsilon)$ 이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -296,15 +291,15 @@ $x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\i
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f:X \to Y$ 에 대해 다음 세 명제는 동치이다.
 
-&emsp; ($1$) $f$ 는 $X$ 에서 연속이다.
+&emsp;($1$) $f$ 는 $X$ 에서 연속이다.
 
-&emsp; ($2$) $V\subset Y$ 가 열린집합이면 $f^{-1}(V)$ 도 열린집합이다.
+&emsp;($2$) $V\subset Y$ 가 열린집합이면 $f^{-1}(V)$ 도 열린집합이다.
 
-&emsp; ($3$) $V\subset Y$ 가 닫힌집합이면 $f^{-1}(V)$ 도 닫힌집합이다.
+&emsp;($3$) $V\subset Y$ 가 닫힌집합이면 $f^{-1}(V)$ 도 닫힌집합이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -351,7 +346,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -368,8 +363,6 @@ $$
 $$
 
 이므로 $\boldsymbol{f}$ 는 연속이다. $\boldsymbol{f}$ 가 연속이면 각각의 $f_j$ 가 연속임은 쉽게 보일 수 있다. 또한 나머지도 조금만 생각하면 알 수 있다. $\square$
-
-
 
 :::
 
@@ -401,7 +394,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -418,7 +411,7 @@ $$
 거리공간 $X$ 와 유클리드공간에서 정의된 함수 $f:X \to \mathbb{R}^n$ 가 옹골집합 $K \subset X$ 에서 연속일 때 $f(K)$ 는 유계이며 닫힌 집합이다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 @thm-MA_continuity_and_compactness 와 @thm-MA_heine_borrel 에 의해 증명된다. $\square$
@@ -433,7 +426,7 @@ $$
 거리공간 $X$ 위에서 정의된 함수 $f:X \to \mathbb{R}$ 가 옹골집합 $K\subset X$ 에서 연속일 때 $f(K)$ 는 최소값과 최대값을 가진다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 @cor-MA_continuity_and_compactness_in_Rk 에 의해 $f(K)$ 는 유계이며 닫힌 집합이다. $\mathbb{R}$ 에서 유계이므로 최소상계와 최대하계를 갖고 닫힌 집합이므로 최소상계와 최대하계가 $f(K)$ 에 포함된다. $\square$ 
@@ -610,7 +603,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -667,7 +660,7 @@ $E\subset \mathbb{R}^1$ 이 옹골집합이 아니라고 하자. 그렇다면,
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -708,7 +701,7 @@ $$
 거리공간 $X,\,Y$ 에서 정의된 연속 함수 $f:X\to Y$ 를 생각하자. $E\subset X$ 가 연결집합이면 $f(E)$ 도 연결집합이다. 
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -749,7 +742,7 @@ $$
 
 $f : [a,\,b]\subset\mathbb{R}^1 \to \mathbb{R}^1$ 이 연속함수이고 $f(a)<f(b)$ 라고 하자. $f(a)<c<f(b)$ 라면 $f(x)=c$ 를 만족하는 $x$ 가 구간 $(a,\,b)$ 에 존재한다.
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -767,7 +760,7 @@ $-\infty < a < b < \infty$ 에 대해 $f:[a,\,b]\to \mathbb{R}$ 이 연속일 �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -813,7 +806,7 @@ $f:X\to X$ 에서 $f(x)=x$ 인 $x$ 를 $f$ 의 **고정점 (fixed point)** 라�
 $f:[a,\,b]\subset \mathbb{R} \to \mathbb{R}$ 가 연속함수이며 $f([a,\,b])=[a,\,b]$ 이면 $f$ 는 항상 고정점을 가진다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -833,8 +826,7 @@ $g(x)=f(x)-x$ 라고 하자. $g(a)=f(a)-a \ge 0$ 이며 $g(b) =f(b)-b\le 0$ 이�
 
 :::
 
-</div></br>
-
+</div>
 ::: {.solution}
 
 서로 다른 고정점 $x_1,\,x_2$ 를 생각하자. $|f(x_1)-f(x_2)|=|x_1-x_2|< |x_1-x_2|$ 이므로 모순. 
@@ -844,7 +836,6 @@ $g(x)=f(x)-x$ 라고 하자. $g(a)=f(a)-a \ge 0$ 이며 $g(b) =f(b)-b\le 0$ 이�
 </br>
 
 ## 단조 함수
-
 
 ### 좌극한과 우극한 {#sec-left_limit_and_right_limit}
 
@@ -872,7 +863,6 @@ $$
 :::
 
 </br>
-
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -926,7 +916,7 @@ $$
 이다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -978,7 +968,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -989,7 +979,7 @@ $f:(a,\,b)\to \mathbb{R}$ 이 단조함수이면 $f$ 가 불연속인 $(a,\,b)$ 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1024,7 +1014,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1048,9 +1038,7 @@ $$
 
 $f(\mathbb{R})$ 은 $[0, \infty)$ 이다. $F=[0, \infty)$ 는 $\mathbb{R}$ 에 대해 닫힌집합 이지만 $f(F)= [0, 1)$ 로 $f(\mathbb{R})$ 에 대해 닫힌 집합이 아니다.
 
-
 :::
-
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1068,7 +1056,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1113,7 +1101,7 @@ $$
 을 만족 한다고 하자. $f$ 는 연속인가?
 
 :::
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1131,7 +1119,7 @@ $f(x) = \left\{ \begin{array}{ll} x \qquad &; x\ne 0 \\ 1 &;x=0\end{array} \righ
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1151,7 +1139,7 @@ $f(E)\subset \overline{f(E)}$ 이다. $x\in E'\backslash E$ 라 하자. $\lim_n 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1170,7 +1158,7 @@ $p \in X\backslash Z(f)$ 라 하자. $f(p)=y>0$ 이면 $f$ 가 연속이므로 $
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1189,7 +1177,7 @@ $x\in X=\overline{E}$ 라 하자. $x$ 로 수렴하는 $E$ 에서 정의된 수�
 닫힌 집합 $E\subset\mathbb{R}$ 에 대해 $f:E \to \mathbb{R}$ 이 연속 함수라면 모든 $x\in E$ 에 대해 $f(x)=g(x)$ 인 연속 함수 $g: \mathbb{R}\to \mathbb{R}$ 가 존재함을 보여라. (이런 함수 $g$ 를 $E$ 에서 $\mathbb{R}$ 로의 $f$ 의 확장이라고 한다.) 만약 $E$ 가 닫힌 집합이 아니라면 앞의 결과가 성립하지 않을 수 도 있음을 보여라. 
 
 :::
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1217,7 +1205,7 @@ $f:(0,\,\infty) \to \mathbb{R}$ 을 $f(x) = 1/x$ 로 정의하자. $(0,\,\infty)
 $f:E\to \mathbb{R}$ 에 대해 $\{(x,\,f(x)):x\in E\}$ 를 $f$ 의 **그래프 (graph)** 라고 한다. $E\subset \mathbb{R}$ 라면 $f$ 의 그래프는 $\mathbb{R}^2$ 의 부분집합이다. $E$ 가 옹골집합일 때 $f$ 가 연속인 것과 $f$ 의 그래프가 옹골집합인것이 동치임을 보여라.
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1239,7 +1227,6 @@ $$
 :::
 
 
-
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_kkk_3_5_4}
@@ -1256,7 +1243,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1292,7 +1279,7 @@ $$
 라고 하자. $f$ 는 $\mathbb{R}^2$ 에서 유계이며, $g$ 는 $(0,\,0)$ 의 모든 근방에서 유계가 아님을 보여라. 그럼에도 불구하고 $f$ 와 $g$ 의 모든 직선으로의 제한은 연속임을 보여라.
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1321,7 +1308,7 @@ $$
 
 $E\subset \mathbb{R}$ 이 유계이며 $f:E\to \mathbb{R}$ 가 $E$ 에서 고른연속이면 $f(E)$ 는 유계임을 보여라. $E$ 가 유계가 아니라면 $f(E)$ 는 유계가 아닐수도 있음을 보여라.
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1345,10 +1332,7 @@ $f(x)=x$ 는 균등수렴하지만 $\mathbb{R}$ 에서 유계가 아니다.
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_9}
 
@@ -1357,7 +1341,7 @@ $f(x)=x$ 는 균등수렴하지만 $\mathbb{R}$ 에서 유계가 아니다.
 고른 수렴의 정의가 다음과 같이 변형될 수 있음을 보여라. 각각의 $\varepsilon>0$ 에 대해 어떤 $\delta>0$ 이 존재하여 모든 $\text{diam}(E)<\delta$ 인 $E\subset X$ 에 대해 $\text{diam} f(E) < \varepsilon$ 이다.
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1378,7 +1362,7 @@ trivial
 @thm-MA_uniform_continuity_and_compact_set 를 다르게 증명해보자. 옹골 거리 집합 $X$ 와 거리집합에서 정의된 함수 $f:X \to Y$ 를 생각하자. $f$ 가 고른 연속이 아니면 $f$ 는 $X$ 에서 연속이 아님을 보여라.
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1386,10 +1370,7 @@ $f$ 가 고른 연속이 아니므로 어떤 $\varepsilon>0$ 에 대해 각각 $
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_11}
 
@@ -1398,7 +1379,7 @@ $f$ 가 고른 연속이 아니므로 어떤 $\varepsilon>0$ 에 대해 각각 $
 거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 는 고른연속이다. $\langle x_n\rangle$ 이 $X$ 에서의 코시 수열이라면 $\langle f(x_n)\rangle$ 은 $Y$ 에서의 코시 수열임을 보여라.
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1412,10 +1393,7 @@ $$
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_12}
 
@@ -1424,7 +1402,7 @@ $$
 거리공간 $X,\,Y$ 에 대해 $f:X \to Y$ 가 고른 연속이고 $g:f(X) \to Z$ 가 고른연속일 때 $g\circ f$ 도 고른 연속임을 보여라. 
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1432,9 +1410,7 @@ $g$ 가 고른연속이므로 임의의 $\varepsilon>0$ 에 대해 $|y_1-y_2|_Y<
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_13}
 
@@ -1443,7 +1419,7 @@ $g$ 가 고른연속이므로 임의의 $\varepsilon>0$ 에 대해 $|y_1-y_2|_Y<
 $E$ 는 $X$ 의 조밀한 부분집합이며 $f:E \to \R$ 은 고른 연속이다. $f$ 에 대한 $X$ 로의 확장이 존재함을 보여라. (용어에 대해서는 @exr-MA_rudin_4_5 를 참고하라). 함수의 치역이 $\R^n$ 일 일 경우, 옹골 거리집합일 경우, complete metric space 일 경우, 일반적인 metric space 일 경우에도 가능한가?
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1455,9 +1431,7 @@ $p\in X\backslash E$ 이며 $\langle p_n \rangle$ 이 $p$ 로 수렴한다고 �
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_14}
 
@@ -1466,7 +1440,7 @@ $p\in X\backslash E$ 이며 $\langle p_n \rangle$ 이 $p$ 로 수렴한다고 �
 $I=[0,\,1]$ 에 대해 $f:I \to I$ 가 연속이다. 최소한 하나의 $x\in I$ 에 대해 $f(x)=x$ 임을 보여라.
 
 :::
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1475,9 +1449,7 @@ $I=[0,\,1]$ 에 대해 $f:I \to I$ 가 연속이다. 최소한 하나의 $x\in I
 :::
 
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_15}
 
@@ -1487,7 +1459,7 @@ $f:X\to Y$ 일 때 모든 $X$ 의 열린 부분집합 $U$ 에 대해 $f(U)$ 가 
 
 :::
 
-</div></br>
+</div>
 
 :::{.solution}
 
@@ -1496,9 +1468,7 @@ $f : \R \to \R$ 이 연속이지만 단조함수가 아니라고 하자. 어떤 
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_19}
 
@@ -1509,7 +1479,7 @@ $f:\R \to \R$ 이 사잇값 성질을 갖는다고 하자. 즉 $f(a) < c <f(b)$ 
 *Hint* : $\langle x_n \rangle \to x_0$ 이지만 어떤 유리수 $r$ 과 모든 $n\in \mathbb{Z}_+$ 에 대해 $f(x_n)> r > f(x_0)$ 라고 하자. 그렇다면 사잇값 성질에 의해 $f(t_n)=r$ 이 되도록 하는 $t_n$ 이 $x_0$ 와 $x_n$ 사이에 존재하며 $\langle t_n \rangle \to x_0$ 이다. 모순을 찾아라. 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1517,9 +1487,7 @@ $f$ 가 $x_0$ 에서 연속이 아니라고 하자. @prp-MA_limit_and_convergent
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_20}
 
@@ -1539,7 +1507,7 @@ $$ {#eq-MA_rudin_4_20}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1556,9 +1524,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_21}
 
@@ -1568,7 +1534,7 @@ $K$ 와 $F$ 는 거리공간 $X$ 의 서로소인 부분집합이다. $K$ 는 �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1597,7 +1563,7 @@ $f$ 는 $X$ 에서 연속이며 $f(X) = [0,\,1]$ 임을 보여라. $p\in A \iff 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1609,10 +1575,7 @@ $\overline{I}=[0,\,1]$ 에 대해 $[0,\,\frac{1}{2})$ 와 $(\frac{1}{2},\,1]$ �
   
 :::
 
-</br>
-
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_KKK_3_5_10}
 
@@ -1632,12 +1595,9 @@ $$
 
 &emsp;($3$) $X$ 가 닫힌 집합이면 $\langle x_n\rangle$ 의 극한점 $x$ 는 $x\in X$ 이며 $f$ 의 고정점임을 보여라.
 
-
 :::
 
 </div>
-
-</br>
 
 ::: {.solution}
 
@@ -1654,9 +1614,7 @@ $$
 ($3$) $X$ 가 닫힌집합이므로 $x\in X$ 이다. $x_{n+1}=f(x_n)$ 이므로 $x=f(x)$ 이며, 따라서 고정점이다. 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_4_23}
 
@@ -1680,7 +1638,7 @@ $$ {#eq-MA_convex_function_2}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 

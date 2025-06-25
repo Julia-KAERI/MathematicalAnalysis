@@ -255,8 +255,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_3_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
   </div>
 </li>
       </ul>
@@ -295,7 +301,7 @@ window.Quarto = {
   <li><a href="#sec-MA_power_series" id="toc-sec-MA_power_series" class="nav-link" data-scroll-target="#sec-MA_power_series"><span class="header-section-number">7.5.5</span> 멱급수</a></li>
   </ul></li>
   <li><a href="#부분합과-재배열-급수" id="toc-부분합과-재배열-급수" class="nav-link" data-scroll-target="#부분합과-재배열-급수"><span class="header-section-number">7.6</span> 부분합과 재배열 급수</a></li>
-  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제"><span class="header-section-number">7.7</span> 연습문제</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul>
 </nav>
     </div>
@@ -887,7 +893,6 @@ m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 <p>(<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(k \ge N \implies |a_k |\ge b_k \ge 0\)</span> 이고 <span class="math inline">\(\sum b_k\)</span> 이 발산하면, <span class="math inline">\(\sum a_k\)</span> 도 발산한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 코시 판정법(<a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.3</span></a>) 에 의해 <span class="math inline">\(\sum_k b_k\)</span> 이 수렴하면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(m\ge n \ge N\)</span> 이면 <span class="math inline">\(\displaystyle \sum_{k=n}^m b_k &lt; \varepsilon\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle\sum_{k=n}^m a_k &lt;\varepsilon\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sum_k a_k\)</span> 이 수렴한다면 코시 판정법(<a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.3</span></a>) 에 의해 <span class="math inline">\(\sum_k b_k\)</span> 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 <span class="math inline">\(\sum a_k\)</span> 은 발산한다. <span class="math inline">\(\square\)</span></p>
@@ -903,7 +908,6 @@ m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle \sum_{k=0}^\infty 2^k a_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \cdots\)</span> 는 수렴한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(s_n,\,t_k\)</span> 를 다음과 같이 정한다.</p>
 <p><span class="math display">\[
@@ -937,7 +941,6 @@ s_n &amp;= a_1 + \cdots + a_n \\
 <p><span class="theorem-title"><strong>명제 7.16</strong></span> <span class="math inline">\(\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}\)</span> 는 <span class="math inline">\(p&gt;1\)</span> 일 때 수렴하며 그 외에는 발산한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(p \le 0\)</span> 이면 <span class="math inline">\(k^p\ge 1\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{k\to \infty}\dfrac{1}{k^p} \ne 0\)</span> 이다. <a href="#cor-MA_convergence_of_series_2" class="quarto-xref">따름정리&nbsp;<span>7.3</span></a> 에 의해 발산한다. <span class="math inline">\(p&gt;0\)</span> 인 경우 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.15</span></a> 를 사용하여 증명 할 수 있다.</p>
 <p><span class="math display">\[
@@ -969,7 +972,6 @@ s_n &amp;= a_1 + \cdots + a_n \\
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\alpha=1\)</span> 이면 이 조건만으로 수렴 여부를 정할 수 없다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\alpha&lt;1\)</span> 이라 하자. <span class="math inline">\(\alpha&lt; \beta &lt; 1\)</span> 인 임의의 <span class="math inline">\(\beta\)</span> 를 생각하자. <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 에 의해 <span class="math inline">\(k\ge N \implies \sqrt[k]{|a_k|}&lt;\beta\)</span> 인 자연수 <span class="math inline">\(N\)</span> 이 존재한다. 즉 <span class="math inline">\(k \ge N \implies |a_n|&lt; \beta^n\)</span> 이므로 <span class="math inline">\(\sum_k a_k\)</span> 는 절대수렴한다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\alpha&gt;1\)</span> 이라 하자. <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 에 의해 <span class="math inline">\(1&lt;\beta&lt;\alpha\)</span> 일 때 무한히 많은 <span class="math inline">\(k\)</span> 에 대해 <span class="math inline">\(|\alpha_k|&gt; \beta^k &gt; 1\)</span> 이다. 따라서 <span class="math inline">\(\sum_k a_k\)</span> 는 발산한다.</p>
@@ -986,7 +988,6 @@ s_n &amp;= a_1 + \cdots + a_n \\
 <p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(k\ge N \implies \left|\dfrac{a_{k+1}}{a_k}\right| \ge 1\)</span> 이면 발산한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \limsup_{k \to \infty} \left|\dfrac{a_{k+1}}{a_k}\right| =\alpha\)</span> 라고 하자. 임의의 <span class="math inline">\(\alpha &lt;\beta&lt; 1\)</span> 인 <span class="math inline">\(\beta\)</span> 에 대해 <span class="math inline">\(k \ge N_0 \implies \left|\dfrac{a_{k+1}}{a_k}\right|&lt;\beta\)</span> 인 <span class="math inline">\(N_0 \in \mathbb{Z}_+\)</span> 이 존재한다(<a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a>). 임의의 <span class="math inline">\(m\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(|a_{N_0 + m}|&lt; \beta^m |a_{N_0}|\)</span> 이므로 <span class="math inline">\(\sum_k a_k\)</span> 는 수렴한다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(k \ge N \implies |a_{k+1}|\ge |a_k|\)</span> 이면 <span class="math inline">\(\displaystyle \lim_{k \to \infty}a_k \ne 0\)</span> 이므로 <span class="math inline">\(\sum_k a_k\)</span> 은 발산한다 (<a href="#cor-MA_convergence_of_series_2" class="quarto-xref">따름정리&nbsp;<span>7.3</span></a>). <span class="math inline">\(\square\)</span></p>
@@ -1024,7 +1025,6 @@ s_n &amp;= a_1 + \cdots + a_n \\
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle \liminf_{k \to \infty} a_k^{1/k} \le \limsup_{k \to \infty} a^{1/k}\)</span> 임을 안다. 따라서 아래의 (<span class="math inline">\(1\)</span>) 과 (<span class="math inline">\(2\)</span>) 를 보이면 된다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \liminf_{k \to \infty} \dfrac{a_{k+1}}{a_k} \le \liminf_{k \to \infty} {a_k}^{1/k}\)</span></p>
@@ -1097,7 +1097,6 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p>이라 하자. <span class="math inline">\(|z|&lt;R\)</span> 일 때 멱급수는 수렴하고 <span class="math inline">\(|z|&gt;R\)</span> 이면 멱급수는 발산한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \sqrt[n]{|a_n z^{n}|} = |z|\sqrt[n]{|a_n|}
@@ -1145,7 +1144,6 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1165,7 +1163,6 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\langle b_n \rangle\)</span> 은 <span class="math inline">\(0\)</span> 으로 수렴하는 단조감소 수열이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(|A_n|&lt;M\)</span> 이라 하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(b_N \le \varepsilon/(2M)\)</span> 인 <span class="math inline">\(N\)</span> 이 존재한다. <span class="math inline">\(N \le p \le q\)</span> 일 때,</p>
 <p><span class="math display">\[
@@ -1183,7 +1180,6 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p><span class="theorem-title"><strong>명제 7.21</strong></span> <span class="math inline">\(\sum a_n = A\)</span>, <span class="math inline">\(\sum b_n = B\)</span> 일 때 <span class="math inline">\(\sum (a_n + b_n) = A + B\)</span> 이다. 또한 상수 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\sum ca_n = cA\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>수렴하는 수열아 합과 상수곱을 생각하면 쉽다.</p>
 </div>
@@ -1217,7 +1213,6 @@ c_n = \sum_{k=0}^n a_k b_{n-k}
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle A_n = \sum_{k=0}^n a_k,\, B_n = \sum_{k=0}^n b_k,\, C_n = \sum_{k=0}^\infty c_k,\, \beta_n = B_n - B\)</span> 라 하자.</p>
 <p><span class="math display">\[
@@ -1261,7 +1256,6 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p><span class="theorem-title"><strong>명제 7.23</strong></span> 양의 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(\sum a_n\)</span> 이 <span class="math inline">\(\alpha\)</span> 로 수렴하면 재배열 급수도 <span class="math inline">\(\alpha\)</span> 로 수렴한다. <span class="math inline">\(\sum a_n\)</span> 이 발산하면 재배열 급수도 발산한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\sum a_n\)</span> 에 대한 재배열 급수 <span class="math inline">\(\sum a_{\sigma (n)}\)</span> 을 생각한다. <span class="math inline">\(\sum a_n = \alpha\)</span> 라고 하자. <span class="math inline">\(M(n) = \max \{\sigma(1), \ldots,\, \sigma(n)\}\)</span> 이라 하면</p>
 <p><span class="math display">\[
@@ -1279,7 +1273,6 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p><span class="theorem-title"><strong>명제 7.24 (교대 급수 판정법)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(a_1 \ge a_2 \ge \cdots \ge a_n \ge \cdots \ge 0\)</span> 이며 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n = 0\)</span> 이면 급수 <span class="math inline">\(\sum (-1)^n a_n\)</span> 은 수렴한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(b_n = (-1)^n a_n\)</span> 이라 하고 <span class="math inline">\(b_n\)</span> 의 부분합수열 <span class="math inline">\(s_n = \displaystyle \sum_{i=1}^n b_i\)</span> 이 코시 수열임을 보이자. 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(n \ge N \implies a_n &lt; \varepsilon\)</span> 인 <span class="math inline">\(N\in \mathbb{N}\)</span> 이 항상 존재한다.<span class="math inline">\(n&gt;m\ge N\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1290,14 +1283,13 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p>이므로 <span class="math inline">\(\langle s_n \rangle\)</span> 은 코시수열이다. <span class="math inline">\(\square\)</span></p>
 </div>
 </section>
-<section id="연습문제" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="연습문제"><span class="header-section-number">7.7</span> 연습문제</h2>
+<section id="연습문제" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_KKK_1_6_7" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 7.1 (김김계 1.6.7)</strong></span> 임의의 자연수 <span class="math inline">\(n=1,\,2,\ldots\)</span> 에 대하여 <span class="math inline">\(\sqrt{n-1} + \sqrt{n+1}\)</span> 이 무리수임을 증명하여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>우선 <span class="math inline">\((m+1)^2-(m)^2 = 2m+1\)</span> 이므로 인접하는 <span class="math inline">\(0\)</span> 보다 큰 두 자연수의 제곱의 차이는 2보다 크다. 따라서 <span class="math inline">\(\sqrt{n-1}\)</span> 과 <span class="math inline">\(\sqrt{n+1}\)</span> 이 동시에 제곱수일 수는 없다.</p>
 <p>제곱수가 아닌 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(\sqrt{n}\)</span> 이 유리수라고 가정하면 서로소인 어떤 자연수 <span class="math inline">\(p,\,q\)</span> 에 대해 <span class="math inline">\(\sqrt{n}=p/q\)</span> 이며 <span class="math inline">\(q^2 n = p^2\)</span> 인데 이로부터 <span class="math inline">\(q\mid p\)</span> 라는 결론이 나오므로 모순이다. 따라서 제곱수가 아닌 자연수의 제곱근은 무리수이며 따라서 <span class="math inline">\(\sqrt{n-1}+ \sqrt{n+1}\)</span> 은 자연수 + 무리수 이거나, 무리수 + 무리수 이다. 자연수 + 무리수 인 경우는 무리수이므로, 무리수 + 무리수 인 경우만 살펴보면 된다.</p>
@@ -1316,7 +1308,6 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\lim_n n^{1/n}=1\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((1+a)^n = \displaystyle \sum_{k=0}^n \begin{pmatrix}n \\ k\end{pmatrix}a^k\)</span> 에 의해 <span class="math inline">\((1+a)^n \ge 1+ na\)</span> 이다.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(0&lt;a&lt;1\)</span> 이라면 어떤 <span class="math inline">\(b&gt;0\)</span> 에 대해 <span class="math inline">\(a=\dfrac{1}{1+b}\)</span> 이다. <span class="math inline">\(\dfrac{1}{a^n} = (1+b)^n \ge 1+nb\)</span> 이므로, <span class="math inline">\(a^n \le \dfrac{1}{1+nb}\)</span> 이다. 따라서 <span class="math inline">\(\displaystyle \lim_{n\to \infty} \dfrac{1}{1+nb}=0\)</span> 이므로 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a^n = 0\)</span> 이다. <span class="math inline">\(-1&lt;a&lt;0\)</span> 이라면 <span class="math inline">\(\displaystyle \lim_{n\to\infty} (-a)^n = 0\)</span> 이므로 <span class="math inline">\(\displaystyle\lim_{n\to\infty} a^n = 0\)</span> 이다. 따라서 <span class="math inline">\(\displaystyle |a|&lt;1 \implies \lim_{n\to\infty} a^n=0\)</span> 이다. <span class="math inline">\(|a|&gt;1\)</span> 일 경우 <span class="math inline">\(d=1/a\)</span> 에 대해 <span class="math inline">\(\displaystyle \lim_{n\to\infty} |d|^n = 0\)</span> 이므로 <span class="math inline">\(\displaystyle\lim_{n\to \infty} |a|^n\)</span> 은 발산한다.</p>
@@ -1337,7 +1328,6 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p><span class="theorem-title"><strong>연습문제 7.3 (김김계 2.7.9)</strong></span> 집합 <span class="math inline">\(\{ \sin n : n\in \mathbb{Z}_+\}\)</span> 이 구간 <span class="math inline">\([-1,\,1]\)</span> 안에서 조밀함을 보여라. 또한 <span class="math inline">\(\theta\)</span> 가 무리수일 때 <span class="math inline">\(\{e^{2\pi i n \theta}: n \in \mathbb{Z}_+\}\)</span> 이 단위원 <span class="math inline">\(\{e^{2\pi i t}:t\in [0,\,1]\}\)</span> 안에서 조밀함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span></p>
 </div>
@@ -1347,7 +1337,6 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p><span class="theorem-title"><strong>연습문제 7.4 (Rudin 3.3)</strong></span> <span class="math inline">\(s_1 = \sqrt{2}\)</span> 이고 <span class="math inline">\(s_{n+1} = \sqrt{2+\sqrt{s_n}}\)</span>, <span class="math inline">\((n=1,\,2,\,3,\ldots)\)</span> 일 때 <span class="math inline">\(\langle s_n \rangle\)</span> 이 수렴하며 <span class="math inline">\(s_n&lt;2,\, n=1,\,2,\,3,\ldots\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>주어진 점화식에 의해 <span class="math inline">\(s_n&lt;2 \implies s_{n+1}&lt;2\)</span> 이다. 따라서 <span class="math inline">\(\{s_n\}\)</span> 은 유계이다. <span class="math inline">\(s_n&lt;2\)</span> 이므로 <span class="math inline">\(\sqrt{s_n}&gt; \dfrac{s_n}{2}\)</span> 이다.</p>
 <p><span class="math display">\[
@@ -1364,7 +1353,6 @@ s_1=0,\qquad s_{2m} = \dfrac{s_{2m-1}}{2},\qquad s_{2m+1} = \dfrac{1}{2} + s_{2m
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>주어진 조건으로 부터 다음을 알 수 있다. <span class="math display">\[
 s_1=0,\qquad s_2 = 0,\qquad s_{2m+2} = \dfrac{1}{4} + \dfrac{1}{2}s_{2m},\qquad s_{2m+1} =  \dfrac{1+s_{2m-1}}{2}
@@ -1387,7 +1375,6 @@ s_{2m+1} &amp;= -\left(\dfrac{1}{2}\right)^{m-1}+1,
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\displaystyle a=\limsup_{n \to \infty} a_n ,\, b=\limsup_{n \to \infty} b_n\)</span> 라 하자. <span class="math inline">\(a=b=+\infty\)</span> 이거나 <span class="math inline">\(a=b=-\infty\)</span> 인 경우라면 자명하다. 이제 <span class="math inline">\(a,\,b\)</span> 가 실수일 때만 생각한다. 귀류법으로 증명한다. 이제</p>
 <p><span class="math display">\[
@@ -1414,7 +1401,6 @@ n \ge N \implies a_n + b_n &lt; a+b+2\varepsilon &lt; a+b+r =c-r
 <p><span class="theorem-title"><strong>연습문제 7.7 (Rudin 3.7)</strong></span> 양의 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(\sum a_n\)</span> 이 수렴하면 <span class="math inline">\(\sum \dfrac{\sqrt{a_n}}{n}\)</span> 도 수렴함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>Cauchy-Schwartz 부등식을 사용한다. 즉 수열 <span class="math inline">\(a_n,\,b_n\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1432,7 +1418,6 @@ n \ge N \implies a_n + b_n &lt; a+b+2\varepsilon &lt; a+b+r =c-r
 <p><span class="theorem-title"><strong>연습문제 7.8 (Rudin 3.8)</strong></span> <span class="math inline">\(\sum a_n\)</span> 이 수렴하며 <span class="math inline">\(\langle b_n \rangle\)</span> 이 유계인 단조수열일 때 <span class="math inline">\(\sum a_n b_n\)</span> 이 수렴함을 보이시오.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\langle b_n \rangle\)</span> 이 유계인 단조수열이므로 수렴한다. <span class="math inline">\(b=\lim b_n\)</span> 라 하자. <span class="math inline">\(b_n\)</span> 이 단조증가수열이라면 <span class="math inline">\(c_n=b-b_n\)</span> 은 단조감소수열이며 <span class="math inline">\(\lim c_n = 0\)</span> 이다.</p>
 <p><span class="math display">\[
@@ -1451,7 +1436,6 @@ n \ge N \implies a_n + b_n &lt; a+b+2\varepsilon &lt; a+b+r =c-r
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\displaystyle \sum n^3 z^n\qquad\)</span> (<span class="math inline">\(b\)</span>) <span class="math inline">\(\displaystyle \sum\dfrac{2^n}{n!}z^n\qquad\)</span> (<span class="math inline">\(c\)</span>) <span class="math inline">\(\displaystyle \sum \dfrac{2^n}{n^2} z^n\qquad\)</span> (<span class="math inline">\(d\)</span>) <span class="math inline">\(\displaystyle \sum \dfrac{n^3}{3^n}z^n\)</span>.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\left|\dfrac{a_{n+1}}{a_n}\right| = \left(1+\dfrac{1}{n}\right)^3|z| &lt;1\)</span> 이어야 하므로 수렴반경 <span class="math inline">\(R=1\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\left|\dfrac{a_{n+1}}{a_n} \right| = \dfrac{2}{n+1}|z| &lt;1\)</span> 이므로 수렴반경 <span class="math inline">\(R=\infty\)</span> 이다.</p>
@@ -1468,7 +1452,6 @@ n \ge N \implies a_n + b_n &lt; a+b+2\varepsilon &lt; a+b+r =c-r
 <p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\sum \dfrac{a_n}{1+a_n}\)</span> 과 <span class="math inline">\(\sum \dfrac{a_n}{1+n^2a_n}\)</span> 에 대해 더 알 수 있는 것은 무엇인가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sum \dfrac{a_n}{1+a_n}\)</span> 이 수렴함을 가정하자. 그렇다면 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \dfrac{a_n}{1+a_n}=0\)</span> 이며 따라서 <span class="math inline">\(a_n \to 0\)</span> 이다. 그렇다면 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(n\ge N \implies a_n&lt;1\)</span> 이며</p>
 <p><span class="math display">\[
@@ -1520,7 +1503,6 @@ r_n = \sum_{k=n}^\infty a_k.
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\dfrac{a_n}{\sqrt{r_n}} &lt; 2(\sqrt{r_n}- \sqrt{r_{n+1}})\)</span> 임을 보이고 <span class="math inline">\(\sum \dfrac{a_n}{\sqrt{r_n}}\)</span> 이 수렴함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(m&lt;n\)</span> 일 때 <span class="math inline">\(r_m &gt; r_n\)</span> 이다. 즉 <span class="math inline">\(\langle r_n\rangle\)</span> 은 단순 감소 수열(같은 값을 갖는 항이 없는 감소수열) 이다.</p>
 <p><span class="math display">\[
@@ -1579,7 +1561,6 @@ r_n = \sum_{k=n}^\infty a_k.
 <p>를 만족할 때 <span class="math inline">\(\lim_n (x_{n+1}-x_n)=0\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(y_n := x_{n+1}-x_n\)</span> 이라 하자. <span class="math inline">\(\langle x_n\rangle\)</span> 이 유계이므로 <span class="math inline">\(|x_n|&lt;R\)</span> 인 양의 실수 <span class="math inline">\(R\in \mathbb{R}\)</span> 이 존재하며 <span class="math inline">\(|y_n|&lt;2R\)</span> 이므로 <span class="math inline">\(\langle y_n\rangle\)</span> 도 유계이다. 또한 주어진 조건으로 부터 <span class="math inline">\(x_{n+1}-x_n \le x_n -x_{n-1}\)</span> 이므로 <span class="math inline">\(\langle y_{n} \rangle\)</span> 은 단조감소수열이다. 따라서 <span class="math inline">\(\langle y_n \rangle\)</span> 은 수렴한다.</p>
 <p><span class="math inline">\(y:=\displaystyle \lim_{n \to \infty} y_n\)</span> 이라 하자. 우리는 <span class="math inline">\(y=0\)</span> 임을 보이고자 한다.</p>
@@ -1609,7 +1590,6 @@ x_{N} - x_{N+M+1} &amp;= x_{N}-x_{N+1}+ x_{N+1}-x_{N+2} + \cdots + x_{N+M}- x_{N
 <p>과 같이 정의하자. 이 때 <span class="math inline">\(\lim_n a_n = a\)</span> 이면 <span class="math inline">\(\lim_n \sigma_n = a\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>정해진 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(n \ge N \implies |a_n - a|&lt;\varepsilon\)</span> 을 만족하는 <span class="math inline">\(N\)</span> 이 존재한다. <span class="math inline">\(n &gt; N\)</span> 이라 하자.</p>
 <p><span class="math display">\[
@@ -1625,7 +1605,7 @@ x_{N} - x_{N+M+1} &amp;= x_{N}-x_{N+1}+ x_{N+1}-x_{N+2} + \cdots + x_{N+M}- x_{N
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \sigma_n = a\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_kkk_2_7_13" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 7.15 (김김계 2.7.13)</strong></span> 좌표공간의 수얼 <span class="math inline">\(\langle x_n\rangle\)</span> 이 고정된 실수 <span class="math inline">\(r\in 1\)</span> 에 대해</p>
@@ -1639,7 +1619,6 @@ x_{N} - x_{N+M+1} &amp;= x_{N}-x_{N+1}+ x_{N+1}-x_{N+2} + \cdots + x_{N+M}- x_{N
 <p>으로 바뀌면 어떻게 되는지 살펴보아라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>주어진 조건에 의해</p>
 <p><span class="math display">\[
@@ -1662,7 +1641,7 @@ x_{N} - x_{N+M+1} &amp;= x_{N}-x_{N+1}+ x_{N+1}-x_{N+2} + \cdots + x_{N+M}- x_{N
 \]</span></p>
 <p>이지만 <span class="math inline">\(\langle x_n\rangle\)</span> 은 수렴하지 않으므로 코시수열이 아니다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_3_16" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 7.16 (Rudin 3.16)</strong></span> 양수 <span class="math inline">\(\alpha\)</span> 를 고정시킨다. <span class="math inline">\(x_1 &gt; \sqrt{\alpha}\)</span> 를 선택하고 <span class="math display">\[
@@ -1682,7 +1661,6 @@ x_{n+1} = \dfrac{1}{2} \left(x_n + \dfrac{\alpha}{x_n}\right)
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(a+b\ge 2 \sqrt{ab}\)</span> 이므로</p>
 <p><span class="math display">\[
@@ -1699,7 +1677,7 @@ x_n-x_{n+1} = \dfrac{1}{2}\left(x_n - \dfrac{\alpha}{x_n}\right) &gt;0
 \varepsilon_{n+1} &lt; \dfrac{\varepsilon_n^2}{\beta} &lt; \dfrac{1}{\beta}\left(\dfrac{\varepsilon_{n-1}^2}{\beta}\right)^2 = \dfrac{\varepsilon_{n-1}^4}{\beta^3} &lt; \cdots &lt; \beta \left(\dfrac{\varepsilon_1}{\beta}\right)^{2^n}
 \]</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_3_17" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 7.17 (Rudin 3.17)</strong></span> <span class="math inline">\(\alpha&gt;1\)</span> 을 고정시키고 <span class="math inline">\(x_1&gt;\sqrt{\alpha}\)</span> 로 잡고 다음과 같이 수열 <span class="math inline">\(\langle x_n\rangle\)</span> 을 정의하자.</p>
@@ -1712,7 +1690,6 @@ x_{n+1}= \dfrac{\alpha+x_n}{1+x_n} = x_n + \dfrac{\alpha-x_n^2}{1+x_n}.
 <p> (<span class="math inline">\(d\)</span>) 수렴 속도를 <a href="#exr-MA_rudin_3_16" class="quarto-xref">연습문제&nbsp;<span>7.16</span></a> 과 비교하라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x_n&gt;0\)</span> 이면 <span class="math inline">\(x_{n+1}&gt;0\)</span> 임은 주어진 식으로부터 자명하다. 또한</p>
 <p><span class="math display">\[

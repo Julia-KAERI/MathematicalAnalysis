@@ -255,8 +255,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_3_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
   </div>
 </li>
       </ul>
@@ -292,7 +298,7 @@ window.Quarto = {
   <li><a href="#벡터값-함수의-적분" id="toc-벡터값-함수의-적분" class="nav-link" data-scroll-target="#벡터값-함수의-적분"><span class="header-section-number">10.4</span> 벡터값 함수의 적분</a>
   <ul class="collapse">
   <li><a href="#sec-integration_of_vector_valued_functions" id="toc-sec-integration_of_vector_valued_functions" class="nav-link" data-scroll-target="#sec-integration_of_vector_valued_functions"><span class="header-section-number">10.4.1</span> 벡터값 함수의 적분</a></li>
-  <li><a href="#길이를-잴-수-있는-곡선" id="toc-길이를-잴-수-있는-곡선" class="nav-link" data-scroll-target="#길이를-잴-수-있는-곡선"><span class="header-section-number">10.4.2</span> 길이를 잴 수 있는 곡선</a></li>
+  <li><a href="#sec-MA_rectifiable_curve" id="toc-sec-MA_rectifiable_curve" class="nav-link" data-scroll-target="#sec-MA_rectifiable_curve"><span class="header-section-number">10.4.2</span> 길이를 잴 수 있는 곡선</a></li>
   </ul></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul>
@@ -401,11 +407,10 @@ L(f,\, P_1) \le L(f,\,P_2) \le U(f,\,P_2) \le U(f,\,P_1)
 \tag{10.4}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(L(f,\,P) \le U(f,\,P)\)</span> 임은 자명하다. <span class="math inline">\(P_1\)</span> 에 의한 부분구간 <span class="math inline">\([x_{k-1},\,x_k]\)</span> 에 대해 <span class="math inline">\(z_m=x_{k-1} &lt; z_{m+1}&lt; \cdots &lt;z_{m+n} = x_k\)</span> 라고 하자. <span class="math inline">\(j=0,\ldots,\,n-1\)</span> 에 대해 <span class="math inline">\(\inf f[(x_{k-1},\, x_{k})] \le \inf f([z_{m+j},\, z_{m+j+1}])\)</span> 이므로 <span class="math inline">\(L(f,\, P_1) \le L(f,\,P_2)\)</span> 이다. 같은 방법으로 <span class="math inline">\(U(f,\,P_2) \le U(f,\,P_1)\)</span> 임을 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-MA_properties_of_rieman_sum_2" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 10.1</strong></span> 임의의 <span class="math inline">\(P_1,\, P_2\in \mathcal{P}[a,\,b]\)</span> 에 대해 다음이 성립한다.</p>
@@ -414,7 +419,6 @@ L(f,\,P_1) \le U(f,\, P_2)
 \tag{10.5}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P = P_1 \cup P_2\)</span> 라고 하면 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 이며, <span class="math inline">\(P_1\subset P,\, P_2 \subset P\)</span> 이므로</p>
 <p><span class="math display">\[
@@ -540,7 +544,6 @@ U(f,\, P,\, \alpha) - L(f,\, P,\, \alpha) &lt;\varepsilon.
 \tag{10.10}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <a href="#eq-MA_upper_and_lower_stieltjes_sum" class="quarto-xref">식&nbsp;<span>10.7</span></a> 과 스틸체스 적분의 정의로부터 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -576,7 +579,6 @@ L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} 
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#thm-MA_properties_of_stieltjes_sum_1" class="quarto-xref">정리&nbsp;<span>10.2</span></a> .</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(|f(s_i)-s(t_i)| \le M_i - m_i\)</span> 이므로</p>
@@ -595,7 +597,6 @@ L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} 
 <p><span class="theorem-title"><strong>정리 10.4</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 연속이면 <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>주어진 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\([\alpha(b)-\alpha(a)]&lt;\varepsilon/\eta\)</span> 가 되도록 <span class="math inline">\(\eta\)</span> 를 잡자. <a href="2_3_continuity_of_functions.html#thm-MA_uniform_continuity_and_compact_set" class="quarto-xref">정리&nbsp;<span>8.7</span></a> 에 의해 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 에서 고른연속며, 따라서 <span class="math inline">\(x,\,t\in [a,\,b]\)</span> 일 때</p>
 <p><span class="math display">\[
@@ -611,13 +612,12 @@ U(f,\,P,\,\alpha) - L(f,\,P,\, \alpha) = \sum_{i=1}^n (M_i-m_i) \Delta \alpha_i 
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(f\)</span> 는 스틸체스 적분가능하다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_monitonic_function_and_integrability" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.5</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 단조함수이며 <span class="math inline">\(\alpha\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 연속이면 <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다. (당연히 <span class="math inline">\(\alpha\)</span> 는 단조증가함수이다.)</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varepsilon&gt;0\)</span> 을 고정시킨다. 임의의 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -636,13 +636,12 @@ U(f,\,P,\,\alpha)- L(f,\,P,\,\alpha) = \Delta\alpha \sum_{i=1}^n (M_i-m_i) = \De
 \]</span></p>
 <p>가 되도록 <span class="math inline">\(n\)</span> 을 충분히 크게 잡으면 <a href="#thm-MA_properties_of_stieltjes_integral_1" class="quarto-xref">정리&nbsp;<span>10.3</span></a> 에 따라 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분 가능함을 알 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_discontinuity_and_integrability" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.6</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\([a,\,b]\)</span> 구간에서 유한개의 불연속점을 가진다고 하자. 그리고 <span class="math inline">\(\alpha\)</span> 는 <span class="math inline">\(f\)</span> 의 불연속점에서 연속이라고 하자. <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분가능하다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(E=\{t_1,\ldots,\,t_n\}\)</span> 이라고 하고 <span class="math inline">\(\varepsilon&gt;0\)</span> 을 고정시키자. <span class="math inline">\(M=\sup \{|f(x)|:x\in [a,\,b]\}\)</span> 이며 <span class="math inline">\(E\)</span> 를 <span class="math inline">\(f\)</span> 에서의 불연속점의 집합이고 그 갯수가 <span class="math inline">\(n\)</span> 개라고 하자. <span class="math inline">\(E\)</span> 에 속하는 모든 점에서 <span class="math inline">\(\alpha\)</span> 가 연속이므로 다음의 (<span class="math inline">\(i\)</span>) ~ (<span class="math inline">\(iii\)</span>) 를 만족하는 열린구간의 집합 <span class="math inline">\(\{(u_j,\,v_j):j=1,\ldots,\,n\}\)</span> 이 존재한다.</p>
 <p> (<span class="math inline">\(i\)</span>) <span class="math inline">\(t_j \in (u_j,\,v_j) \subset [a,\,b]\)</span> 이며,</p>
@@ -685,7 +684,6 @@ U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha) &lt; \left[2M + \alpha(b)-\alpha(a)\right]\v
 <p><span class="theorem-title"><strong>정리 10.7</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이며 <span class="math inline">\(m\le f\le M\)</span> 이라고 하자. <span class="math inline">\(\phi :[m,\,M]\to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(h(x) = \phi (f(x))\)</span> 이면 <span class="math inline">\(h\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varepsilon &gt;0\)</span> 을 선택한다. <span class="math inline">\(\phi\)</span> 가 <span class="math inline">\([m,\,M]\)</span> 에서 연속이므로 고른 연속이다. 따라서</p>
 <p><span class="math display">\[
@@ -712,7 +710,7 @@ U(h,\,P,\,\alpha) - L(h,\, P,\, \alpha) &amp;= \sum_{i\in A} (M_i^\ast - m_i^\as
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(h\in \mathcal{R}(\alpha)\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-MA_stieltjes_integrability_of_composite_function" class="theorem example">
 <p><span class="theorem-title"><strong>예제 10.1</strong></span> <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 라면 <a href="#thm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">정리&nbsp;<span>10.7</span></a> 로부터 다음을 알 수 있다.</p>
@@ -750,7 +748,6 @@ U(h,\,P,\,\alpha) - L(h,\, P,\, \alpha) &amp;= \sum_{i\in A} (M_i^\ast - m_i^\as
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(h=f+g\)</span> 라고 하면 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -822,7 +819,7 @@ c\int_a^b f\,d\alpha -\varepsilon &lt; cL(f,\, P,\, \alpha) = L(cf,\, P,\, \alph
 \]</span></p>
 <p>이므로 명제가 성립한다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_properties_of_integral_2" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 10.3</strong></span> <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span>, <span class="math inline">\(f\in \mathcal{R}(\beta)[a,\,b]\)</span> 이면 <span class="math inline">\(f\in \mathcal{R}(\alpha+\beta)[a,\,b]\)</span> 이며 다음이 성립한다.</p>
@@ -831,7 +828,6 @@ c\int_a^b f\,d\alpha -\varepsilon &lt; cL(f,\, P,\, \alpha) = L(cf,\, P,\, \alph
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\alpha,\,\beta\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 단조증가이므로 <span class="math inline">\(\alpha + \beta\)</span> 도 단조증가이다. <span class="math inline">\(P=\{x_0,\,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]\)</span> 라 하자.</p>
 <p><span class="math display">\[
@@ -863,7 +859,6 @@ U(f,\,P,\, \alpha+\beta) - L(f,\, P,\, \alpha+\beta)&lt; \varepsilon
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(|f|\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이며 <span class="math inline">\(\displaystyle \left|\int_a^b f\,d\alpha\,\right| \le \int_a^b |f|\,d\alpha\)</span>.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f+g,\, f-g\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이며 <span class="math inline">\((f+g)^2,\, (f-g)^2\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다(<a href="#exm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">예제&nbsp;<span>10.1</span></a>). 따라서 다음이 성립한다.</p>
 <p><span class="math display">\[
@@ -899,7 +894,6 @@ fg=\dfrac{(f+g)^2 - (f-g)^2}{4} \in \mathcal{R}(\alpha)[a,\,b].
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 를 <span class="math inline">\(\{x_0,\, x_1,\,x_2,\,x_3\}\)</span> 로 잡고 아래의 성질을 가진다고 하자.</p>
 <p><span class="math display">\[
@@ -907,7 +901,7 @@ x_0=a &lt; x_1=s &lt; x_2 &lt; x_3=b.
 \]</span></p>
 <p>그렇다면 <span class="math inline">\(U(f,\,P,\,\alpha) = M_2 = \sup f([x_1,\,x_2])\)</span>, <span class="math inline">\(L(f,\,P,\,\alpha) = m_2 =\inf f([x_1,\,x_2])\)</span> 이다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(s\)</span> 에서 연속이므로 <span class="math inline">\(x_2\to x_1\)</span> 일 때 <span class="math inline">\(M_2\)</span> 와 <span class="math inline">\(m_2\)</span> 는 <span class="math inline">\(f(s)\)</span> 로 수렴한다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_properties_of_integral_5" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 10.6</strong></span> 양의 수열 <span class="math inline">\(\langle c_k\rangle\)</span> 에서 <span class="math inline">\(\sum_k c_k\)</span> 가 수렴하며 <span class="math inline">\(\langle s_k \rangle\)</span> 은 <span class="math inline">\((a,\,b)\)</span> 구간에서 정의된 수열이고</p>
@@ -920,7 +914,6 @@ x_0=a &lt; x_1=s &lt; x_2 &lt; x_3=b.
 \tag{10.17}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>임의의 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(|c_k \theta (x-s_k)| \le |c_k|\)</span> 이므로 <a href="#eq-MA_properties_of_integral_5_1" class="quarto-xref">식&nbsp;<span>10.16</span></a> 의 <span class="math inline">\(\sum\)</span> 부분은 수렴한다. 즉 <span class="math inline">\(\alpha(x)\)</span> 는 잘 정의된다. 또한 <span class="math inline">\(\alpha(x)\)</span> 는 단조증가함수임은 명백하며 <span class="math inline">\(\alpha(a)=0\)</span>, <span class="math inline">\(\alpha(b)= \sum_k c_k\)</span> 이다.</p>
 <p>고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\displaystyle \sum_{k=N+1}^\infty c_k &lt; \varepsilon\)</span> 이 되는 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 가 항상 존재한다. 이제</p>
@@ -941,7 +934,7 @@ x_0=a &lt; x_1=s &lt; x_2 &lt; x_3=b.
 \tag{10.20}\]</span></span></p>
 <p>이다. 이제 <span class="math inline">\(N \to \infty\)</span> 극한을 취하면 <a href="#eq-MA_properties_of_integral_5_2" class="quarto-xref">식&nbsp;<span>10.17</span></a> 를 얻는다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_properties_of_integral_6" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.8</strong></span> <span class="math inline">\(\alpha\)</span> 가 단조증가이며 <span class="math inline">\(\alpha'\in \mathcal{R}[a,\,b]\)</span> 이라고 하자. <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 유계인 실함수라면</p>
@@ -955,7 +948,6 @@ f\in \mathcal{R}(\alpha)[a,\,b] \iff f\alpha' \in \mathcal{R}[a,\,b]
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\alpha'\in \mathcal{R}[a,\,b]\)</span> 이므로 고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span id="eq-MA_properties_of_integral_6_3"><span class="math display">\[
@@ -1011,7 +1003,7 @@ U(f\alpha',\, P) \le U(f,\,P,\,\alpha) + M\varepsilon
 \]</span></p>
 <p>이다. 즉 <span class="math inline">\(f\alpha'\in \mathcal{R}[a,\,b]\)</span> 이며 명제가 성립한다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_change_of_varialble" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.9 (변수 변환 적분)</strong></span> <span class="math inline">\(\varphi : [A,\,B] \to [a,\,b]\)</span> 가 연속인 순증가 함수이고 전사함수라고 하자. <span class="math inline">\(\alpha :[a,\,b] \to \mathbb{R}\)</span> 은 단조응가함수이며 <span class="math inline">\(f\in\mathcal{R}(\alpha)[a,\,b]\)</span> 라고 하자. 이 때 <span class="math inline">\([A,\,B]\)</span> 에서 정의된 <span class="math inline">\(\beta,\,g\)</span> 를 다음과 같이 정의한다.</p>
@@ -1025,7 +1017,6 @@ U(f\alpha',\, P) \le U(f,\,P,\,\alpha) + M\varepsilon
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varphi\)</span> 가 연속인 순증가 함수이고 전사함수이면 전단사이므로 <span class="math inline">\([a,\,b]\)</span> 에서의 분할과 <span class="math inline">\([A,\,B]\)</span> 에서의 분할이 일대일 대응한다. 즉 <span class="math inline">\(Q = \{y_0,\ldots,\,y_n\}\in \mathcal{P}[a,\,b]\)</span> 에 대해 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 가 정해지며 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\)</span> 에 대해 <span class="math inline">\(Q=\{y_i : y_i = \varphi^{-1}(x_i)\}\)</span> 가 정해진다. 이렇게 정해진 분할 <span class="math inline">\(P,\,Q\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1047,7 +1038,6 @@ F(x) := \int_a^x f(t)\,dt.
 \tag{10.30}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\in \mathcal{R}\)</span> 이므로 <span class="math inline">\(f\)</span> 는 유계이다. <span class="math inline">\(t\in [a,\,b]\)</span> 에 대해 <span class="math inline">\(|f(t)|&lt;M\)</span> 이라고 하자. <span class="math inline">\(a&lt;x&lt;y&lt;b\)</span> 일 때 <a href="#prp-MA_properties_of_integral_1" class="quarto-xref">명제&nbsp;<span>10.2</span></a> 의 (<span class="math inline">\(3\)</span>), (<span class="math inline">\(4\)</span>) 로부터</p>
 <p><span class="math display">\[
@@ -1055,7 +1045,7 @@ F(x) := \int_a^x f(t)\,dt.
 \]</span></p>
 <p>임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(|y-x|&lt;\dfrac{\varepsilon}{M}\)</span> 이면 <span class="math inline">\(|F(y)-F(x)|&lt;\varepsilon\)</span> 이다. 즉 <span class="math inline">\(F\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 구간에서 연속이며, <span class="math inline">\([a,\,b]\)</span> 가 옹골집합이므로 고른 연속이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_first_fundamental_theorem_of_calculus" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.10 (미적분의 제1 기본정리)</strong></span> <a href="#lem-MA_first_fundamental_theorem_of_calculus" class="quarto-xref">보조정리&nbsp;<span>10.1</span></a> 과 같이 정의된 <span class="math inline">\(f,\,F\)</span> 에 대해 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x_0\in [a,\,b]\)</span> 에서 연속이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(x_0\)</span> 에서 미분가능하며</p>
@@ -1065,7 +1055,6 @@ F'(x_0)= f(x_0)
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\)</span> 가 <span class="math inline">\(x_0\)</span> 에서 연속이면 정해진 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1094,7 +1083,6 @@ t\in [a,\,b],\, |t-x_0|&lt;\delta \implies |f(t)-f(x_0)|&lt;\varepsilon
 <p><span class="theorem-title"><strong>연습문제 10.2 (KKK 5.3.1)</strong></span> <a href="#thm-MA_first_fundamental_theorem_of_calculus" class="quarto-xref">정리&nbsp;<span>10.10</span></a> 에서 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(x_0\)</span> 에서 미분가능하면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x_0\)</span> 에서 연속임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 F'(x_0) = \lim_{h \to 0} \dfrac{F(x_0+h)-F(x_0)}{h}= \lim_{h \to 0}\dfrac{1}{h}\int_{x_0}^{x_0+h} f(t)\, dt
@@ -1113,7 +1101,6 @@ F'(x_0) = \lim_{h \to 0} \dfrac{F(x_0+h)-F(x_0)}{h}= \lim_{h \to 0}\dfrac{1}{h}\
 \tag{10.32}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>주어진 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(f\in\mathcal{R}[a,\,b]\)</span> 이므로 <span class="math inline">\(U(F,\,P)-L(F,\,P)&lt;\varepsilon\)</span> 인 <span class="math inline">\(P = \{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]\)</span> 가 존재한다. 또한 <span class="math inline">\(F\)</span> 가 미분가능 함수이므로</p>
 <p><span class="math display">\[
@@ -1137,7 +1124,6 @@ F(b)-F(a) = \sum_{i=1}^n F'(t_i)\Delta x_i = \sum_{i=1}^n f(t_i)\Delta x_i
 \tag{10.33}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\((F(x)G(x))' = F'(x)G(x) + F(x)G'(x) = f(x)G(x)+F(x)g(x)\)</span> 이므로</p>
 <p><span class="math display">\[
@@ -1169,8 +1155,8 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 </div>
 <p><br></p>
 </section>
-<section id="길이를-잴-수-있는-곡선" class="level3" data-number="10.4.2">
-<h3 data-number="10.4.2" class="anchored" data-anchor-id="길이를-잴-수-있는-곡선"><span class="header-section-number">10.4.2</span> 길이를 잴 수 있는 곡선</h3>
+<section id="sec-MA_rectifiable_curve" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="sec-MA_rectifiable_curve"><span class="header-section-number">10.4.2</span> 길이를 잴 수 있는 곡선</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1186,7 +1172,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 <p><br></p>
 <p>즉 곡선은 유클리드공간상의 점의 집합이 아니라 함수이다. 이 때 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]\)</span> 에 대해 다음의 값을 정의 할 수 있다.</p>
 <p><span id="eq-MA_polygonal_length_of_rectifiable_curve"><span class="math display">\[
-\Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|
+\Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|.
 \tag{10.34}\]</span></span></p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -1205,7 +1191,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 </div>
 </div>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_length_of_C1_rectifiable_curve" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.13</strong></span> 길이를 잴 수 있는 곡선 <span class="math inline">\(\gamma :[a,\,b]\to \mathbb{R}^n\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수일 때 그 길이는 다음과 같다.</p>
@@ -1214,7 +1200,6 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 \tag{10.36}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1261,7 +1246,6 @@ s,\,t\in [a,\,b],\, |s-t|&lt;\delta \implies \|\gamma'(s)-\gamma'(t)\|&lt;\varep
 <p><span class="theorem-title"><strong>연습문제 10.3 (Rudin 6.1)</strong></span> <span class="math inline">\(\alpha\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 증가함수이며 <span class="math inline">\(x_0\in [a,\,b]\)</span> 에서 연속이고 <span class="math inline">\(f(x_\ast)=1\)</span> 이며, <span class="math inline">\(f(x\ne x_\ast)=0\)</span> 이다. <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이며 <span class="math inline">\(\int f\,d\alpha = 0\)</span> 임을 보여라</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><a href="#thm-MA_discontinuity_and_integrability" class="quarto-xref">정리&nbsp;<span>10.6</span></a> 에 따라 <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\([a,\,b]\)</span> 의 분할 <span class="math inline">\(P = \{x_0,\ldots,\,x_n\}\)</span> 를 <span class="math inline">\(\|P\|&lt;\varepsilon\)</span> 이며 <span class="math inline">\(x_\ast \not\in P\)</span> 가 되도록 잡으면</p>
 <p><span class="math display">\[
@@ -1275,11 +1259,10 @@ U(f,\,P,\, \alpha)&lt; \varepsilon, \qquad L(f,\,P,\, \alpha)=0
 <p><span class="theorem-title"><strong>연습문제 10.4 (Rudin 6.2)</strong></span> <span class="math inline">\(f\ge 0\)</span> 이며 <span class="math inline">\([a,\,b]\)</span> 에서 연속이고 <span class="math inline">\(\displaystyle \int_a^b f(x)\,dx=0\)</span> 이라고 하자. 모든 <span class="math inline">\(x\in [a,\,b]\)</span> 에서 <span class="math inline">\(f(x) = 0\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>어떤 <span class="math inline">\(x_\ast \in [a,\,b]\)</span> 에서 <span class="math inline">\(f(x_\ast) = c&gt;0\)</span> 이라면 <span class="math inline">\(f\)</span> 가 연속이므로 <span class="math inline">\(x_\ast\)</span> 를 포함하는 어떤 <span class="math inline">\([x_{i-1},\,x_i]\)</span> 구간에서 <span class="math inline">\(f(x)&gt;0\)</span> 이며 따라서 <span class="math inline">\(L(f,\,P,\, \alpha) &gt;0\)</span> 인 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 가 존재한다. 즉 <span class="math inline">\(\displaystyle \int_a^b f(x)\,dx \ge L(f,\,P,\,\alpha)&gt;0\)</span> 이므로 가정에 위배된다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_6_3" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 10.5 (Rudin 6.3)</strong></span> <span class="math inline">\(\beta_1,\,\beta_2,\,\beta_3\)</span> 가 모두 <span class="math inline">\(x&gt;0\)</span> 일 때 <span class="math inline">\(\beta_j(x)=1\)</span>, <span class="math inline">\(x&lt;0\)</span> 일 때 <span class="math inline">\(\beta_j(x)=0\)</span>, 이며 <span class="math inline">\(\beta_1(0)=0\)</span>, <span class="math inline">\(\beta_2(0)=1\)</span>, <span class="math inline">\(\beta_3(0)=\frac{1}{2}\)</span> 라고 하자. <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 구간에서 유계라고 하자.</p>
@@ -1289,7 +1272,6 @@ U(f,\,P,\, \alpha)&lt; \varepsilon, \qquad L(f,\,P,\, \alpha)=0
 <p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\(0\)</span> 에서 연속이라면 <span class="math inline">\(\int f\,d\beta_1 = \int f\, d\beta_2 = \int f\,d\beta3 = f(0)\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f\in \mathcal{R}(\beta_1)[-1,\,1]\)</span> 임을 가정하자. <span class="math inline">\(P=\{t_0=-1,\ldots,\,t_n=1\} \in \mathcal{P}[-0,\,1]\)</span> 에 대해 <span class="math inline">\(t_k=0\)</span> 이라고 하면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span id="eq-_rudin_6_3_1"><span class="math display">\[
@@ -1310,23 +1292,21 @@ U(f,\,P,\,\beta_3)-L(f,\,P,\,\beta_3) = \dfrac{1}{2}(M_{k}-m_k)+ \dfrac{1}{2}(M_
 <p>이므로 <span class="math inline">\(f\in \mathcal{R}(\beta_2)[0,\,1]\)</span> 일 필요충분조건은 <span class="math inline">\(f(0-)=f(0)=f(0-)\)</span> 이다. 이 경우 <span class="math inline">\(\int f\,d\beta_3 = f(0)\)</span> 이다.</p>
 <p>(<span class="math inline">\(4\)</span>) 앞에서 보였다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_6_4" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 10.6 (Rudin 6.4)</strong></span> <span class="math inline">\(x\in \mathbb{R}\backslash\mathbb{Q}\)</span> 일 때 <span class="math inline">\(f(x)=0\)</span> 이며 <span class="math inline">\(x\in \mathbb{Q}\)</span> 일 때 <span class="math inline">\(f(x) = 1\)</span> 이다. <span class="math inline">\(f\not\in \mathcal{R}[a,\,b]\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>유리수와 무리수의 조밀성에 의해 어떤 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해서도 <span class="math inline">\(U(f,\,P)=1,\, L(f,\,P)=0\)</span> 이므로 <span class="math inline">\(f\not\in \mathcal{R}[a,\,b]\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_6_5" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 10.7 (Rudin 6.5)</strong></span> <span class="math inline">\(f:[a,\,b]\to\mathbb{R}\)</span> 이 유계이며 <span class="math inline">\(f^2\in \mathcal{R}[a,\,b]\)</span> 라면 <span class="math inline">\(f\in \mathcal{R}[a,\,b]\)</span> 인가? <span class="math inline">\(f^3\in \mathcal{R}[a,\,b]\)</span> 라는 조건에서는 <span class="math inline">\(f\in \mathcal{R}[a,\,b]\)</span> 인가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f(x) = \left\{\begin{array}{ll} -1,\quad &amp; x\in \mathbb{R}\backslash\mathbb{Q}\\ 1,&amp; x\in \mathbb{Q}.\end{array}\right.\quad\)</span> 에 대해서는 <span class="math inline">\(f^2\in \mathcal{R}[a,\,b]\)</span> 지만 <span class="math inline">\(f\not\in \mathcal{R}[a,\,b]\)</span> 이다.</p>
 <p><span class="math inline">\(f^3\in \mathcal{R}[a,\,b]\)</span> 인 경우는 <a href="#thm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">정리&nbsp;<span>10.7</span></a> 을 생각하자 <span class="math inline">\(\phi (t) = \sqrt[3]{t}\)</span> 는 <span class="math inline">\(\mathbb{R}\)</span> 에서 연속이므로 <span class="math inline">\(f\in \mathcal{R}[a,\,b]\)</span> 이다.</p>

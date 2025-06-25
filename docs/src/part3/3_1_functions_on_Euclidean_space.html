@@ -255,8 +255,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_3_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
   </div>
 </li>
       </ul>
@@ -331,10 +337,10 @@ window.Quarto = {
 <ul>
 <li><p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 는 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 를 의미한다. 실제로 여기서는 <span class="math inline">\((x_1,\ldots,\,x_n)\)</span> 식 표기법과 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 를 섞어서 사용한다.</p></li>
 <li><p><span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 &amp; \cdots &amp; x_m \end{bmatrix}\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x})\)</span> 를 <span class="math inline">\(F(x_1,\ldots,\,x_m)\)</span> 으로 표기하기도 한다.</p></li>
-<li><p>실수를 성분으로 갖는 <span class="math inline">\(n \times 1\)</span> 행렬의 집합은 <span class="math inline">\(\mathcal{M}_{n}(\mathbb{R})\)</span> 로 표기하기로 한다. 또한 실계수를 갖는 <span class="math inline">\(m\times n\)</span> 행렬의 집합을 <span class="math inline">\(\mathcal{M}_{m\times n}(\mathbb{R})\)</span> 이라고 쓴다.</p></li>
+<li><p>실수를 성분으로 갖는 <span class="math inline">\(n \times 1\)</span> 행렬의 집합은 <span class="math inline">\(\mathbb{R}^n\)</span> 로 표기하기로 한다. 또한 실계수를 갖는 <span class="math inline">\(m\times n\)</span> 행렬의 집합을 <span class="math inline">\(R^{m\times n}\)</span> 으로 표기한다.</p></li>
 <li><p><span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저, 즉 <span class="math inline">\(i\)</span> 번째 성분만 <span class="math inline">\(1\)</span> 이며 나머지 성분은 <span class="math inline">\(0\)</span> 인 벡터를 <span class="math inline">\(\boldsymbol{e}_i\)</span> 라고 쓰기로 한다.</p></li>
 <li><p>두 벡터의 일반적인 내적은 <span class="math inline">\(\langle \boldsymbol{x},\, \boldsymbol{y}\rangle\)</span> 라고 쓰며 유클리드 내적은 <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{\cdot y}\)</span> 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.</p></li>
-<li><p>벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 혹은 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 같이 사용한다. <span class="math inline">\(\mathcal{L}(R^m,\,R^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^m \mapsto \mathbb{R}^n\)</span> 선형사상의 집합이다.</p></li>
+<li><p>벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 혹은 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 같이 사용한다. <span class="math inline">\(\mathcal{L}(\mathbb{R}^m,\,\mathbb{R}^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^m \mapsto \mathbb{R}^n\)</span> 선형사상의 집합이다.</p></li>
 </ul>
 <p><br></p>
 <section id="연습문제" class="level3 unnumbered">
@@ -344,7 +350,6 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>연습문제 11.1 (Spivak 1.1)</strong></span> <span class="math inline">\(\|\boldsymbol{x}\| \le \sum_{i=1}^n |x_i|\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = \sum_{i=1}^n x_i \boldsymbol{e}_i\)</span> 이다. <a href="../part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> (<span class="math inline">\(5\)</span>) 로 부터</p>
 <p><span class="math display">\[
@@ -357,7 +362,6 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>연습문제 11.2 (Spivak 1.4)</strong></span> <span class="math inline">\({\large|} \|\boldsymbol{x}\| -\|\boldsymbol{y}\| {\large |} \le \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><a href="../part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space" class="quarto-xref">명제&nbsp;<span>6.3</span></a> (<span class="math inline">\(5\)</span>) 에서 <span class="math inline">\(\boldsymbol{y} \to \boldsymbol{y}-\boldsymbol{x}\)</span> 로 바꾸면</p>
 <p><span class="math display">\[
@@ -373,7 +377,6 @@ window.Quarto = {
 <p>(<span class="math inline">\(b\)</span>) (<span class="math inline">\(a\)</span>) 에서 등호가 성립한다면 항상 어떤 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(f =\lambda g\)</span> 인가? <span class="math inline">\(f,\,g\)</span> 가 연속이면 어떠한가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 임의의 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\int_a^b (f-\lambda g)^2 \ge 0\)</span> 이며 따라서 모든 <span class="math inline">\(\lambda \in \mathbb{R}\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -396,9 +399,9 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>연습문제 11.4 (Spivak 1.7)</strong></span> 선형 변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\|T(\boldsymbol{x})\|=\|\boldsymbol{x}\|\)</span> 이면 <strong>norm preserving</strong> 이라고 하고 <span class="math inline">\(\langle T(\boldsymbol{x}),\, T(\boldsymbol{y}) \rangle = \langle \boldsymbol{x},\,  \boldsymbol{y}\rangle\)</span> 이면 <strong>inner product preserving</strong> 이라고 한다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) 이 변환은 전단사이며 <span class="math inline">\(T^{-1}\)</span> 도 그러함을 보여라.</p>
+<p><span class="math inline">\(T\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 inner product preserving 이면, 즉 norm preserving 이면 <strong>직교 연산자(Orthogonal operator)</strong>, 즉 <strong>Isometry</strong> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 innerproduct preserving 이면 <span class="math inline">\(\|T(\boldsymbol{x})\|^2  = \langle T(\boldsymbol{x}),\,T(\boldsymbol{x}) \rangle = \langle \boldsymbol{x},\, \boldsymbol{x}\rangle =\|\boldsymbol{x}\|^2\)</span> 이므로 norm preserving 이다. 이제 <span class="math inline">\(T\)</span> 가 norm-preservign 임을 가정하자. <span class="math inline">\(T\)</span> 가 선형결합이므로</p>
 <p><span class="math display">\[
@@ -427,7 +430,6 @@ window.Quarto = {
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^n\)</span> 가운데 angle preserving 인 것을 모두 찾아라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(T\)</span> 가 norm preserving 이면 inner product preserving 이므로 (<a href="#exr-CM_spivak_1_7" class="quarto-xref">연습문제&nbsp;<span>11.4</span></a> (<span class="math inline">\(a\)</span>)) <a href="#eq-CM_angle_between_vectors" class="quarto-xref">식&nbsp;<span>11.1</span></a> 값이 변하지 않는다.</p>
 <p>(<span class="math inline">\(b\)</span>) 문제 오류. <span class="math inline">\(\boldsymbol{x}_1=(-1, -1)\)</span>, <span class="math inline">\(\boldsymbol{x}_2=(1, 0)\)</span>, <span class="math inline">\(T(\boldsymbol{x}_1)=3\boldsymbol{x}_1\)</span>, <span class="math inline">\(T(\boldsymbol{x}_2)=-3\boldsymbol{x}_2\)</span> 이어도</p>
@@ -437,12 +439,12 @@ window.Quarto = {
 <p>이므로 angle preserving 이 아니다.</p>
 <p>(<span class="math inline">\(c\)</span>)</p>
 </div>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_9" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.6 (Spivak 1.9)</strong></span> <span class="math inline">\(0\le \theta &lt; \pi\)</span> 에 대해 <span class="math inline">\(T:\mathbb{R}^2 \to \mathbb{R}^2\)</span> 가 <span class="math inline">\(\begin{bmatrix} \cos \theta &amp; \sin \theta \\ - \sin \theta &amp; \cos \theta\end{bmatrix}\)</span> 라고 하자. <span class="math inline">\(T\)</span> 가 angle preserving 이며 <span class="math inline">\(\boldsymbol{x}\ne \boldsymbol{0}\)</span> 일 때 <span class="math inline">\(\angle (\boldsymbol{x},\, T(\boldsymbol{x}))= \theta\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = (x_1,\,x_2),\, \boldsymbol{y}= (y_1,\,y_2)\)</span> 에 대해 <span class="math display">\[
 \angle (T(\boldsymbol{x}),\, T(\boldsymbol{y})) = \arccos \left(\dfrac{\boldsymbol{x\cdot y}}{\|\boldsymbol{x}\| \|\boldsymbol{y}\|}\right) = \angle (\boldsymbol{x},\, \boldsymbol{y})
@@ -459,7 +461,6 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>연습문제 11.7 (Spivak 1.10)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^m\)</span> 를 생각하자. 모든 <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\|T(\boldsymbol{h})\| \le M \|\boldsymbol{h}\|\)</span> 인 <span class="math inline">\(M\)</span> 이 존재함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_n)\)</span> 이며 <span class="math inline">\((T(\boldsymbol{h}))_i = \sum_{j=1}^n T_{ij}h_j\)</span> 라 하자.</p>
 <p><span class="math display">\[
@@ -471,7 +472,7 @@ window.Quarto = {
 \]</span></p>
 <p>이므로 <span class="math inline">\(M=mnM_0\)</span> 로 잡으면 된다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_11" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.8 (Spivak 1.11)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in \mathbb{R}^n\)</span>, <span class="math inline">\(\boldsymbol{z},\,\boldsymbol{w}\in \mathbb{R}^m\)</span> 일 때 <span class="math inline">\((\boldsymbol{x}\oplus \boldsymbol{z}) \boldsymbol{\cdot} (\boldsymbol{y}\oplus \boldsymbol{w}) = \boldsymbol{x \cdot y} + \boldsymbol{z \cdot w}\)</span> 이며 <span class="math inline">\(\|\boldsymbol{x}\oplus \boldsymbol{z}\| = \sqrt{\|\boldsymbol{x}\|^2 + \|\boldsymbol{z}\|^2}\)</span> 임을 보여라. 이 때</p>
@@ -481,7 +482,6 @@ window.Quarto = {
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>trivial</p>
 </div>
@@ -491,7 +491,6 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>연습문제 11.9 (Spivak 1.12)</strong></span> <span class="math inline">\((\mathbb{R}^n)^\ast\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 쌍대공간이다. 정해진 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\varphi_\boldsymbol{x} (\boldsymbol{y}) :=\boldsymbol{x \cdot y}\)</span> 는 <span class="math inline">\(\varphi_\boldsymbol{x} \in (\mathbb{R}^n)^\ast\)</span> 이다. <span class="math inline">\(T:\mathbb{R}^n \to (\mathbb{R}^n)^\ast\)</span> 를 <span class="math inline">\(T(\boldsymbol{x})= \varphi_\boldsymbol{x}\)</span> 로 정의한다면 <span class="math inline">\(T\)</span> 는 전단사 선형변환임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>우선 <span class="math inline">\(T\)</span> 가 선형변환임을 보이자. <span class="math inline">\(\boldsymbol{x}_1,\,\boldsymbol{x}_2 \in\mathbb{R}^n\)</span> 과 <span class="math inline">\(c\in\mathbb{R}\)</span> 에 대해 <span class="math inline">\(T(\boldsymbol{x}_1 + c\boldsymbol{x}_2)= T(\boldsymbol{x}_1)+cT(\boldsymbol{x}_2)\)</span> 이면 <span class="math inline">\(T\)</span> 는 선형변환이다. <span class="math inline">\(T(\boldsymbol{x}_1 + c\boldsymbol{x}_2)= \varphi _{\boldsymbol{x}_1+c\boldsymbol{x}_2}\)</span> 이며</p>
 <p><span class="math display">\[
@@ -503,13 +502,12 @@ T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_
 <p>이다. 즉 <span class="math inline">\(T\)</span> 는 선형변환이다.</p>
 <p><span class="math inline">\(\psi_x \in \ker (T)\)</span> 라면 모든 <span class="math inline">\(\boldsymbol{y}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\phi_\boldsymbol{x}(\boldsymbol{y})=\boldsymbol{0}\)</span> 이어야 한다. 이 경우는 <span class="math inline">\(\boldsymbol{x}=\boldsymbol{0}\)</span> 인 경우밖에 없으므로 <span class="math inline">\(\ker (T)=\{\boldsymbol{0}\}\)</span> 이므로 <span class="math inline">\(T\)</span> 는 단사이다. 따라서 <span class="math inline">\(T\)</span> 는 전단사이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_13" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.10 (Spivak 1.13)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in\mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x \cdot y}=0\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 와 <span class="math inline">\(\boldsymbol{y}\)</span> 는 서로 직교(perpendicular, orthogonal) 한다고 한다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 가 직교한다면 <span class="math inline">\(\|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2+\|\boldsymbol{y}\|^2\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 + 2\boldsymbol{x \cdot y} + \|\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2 + \|\boldsymbol{y}\|^2
@@ -576,7 +574,7 @@ C(\boldsymbol{a},\,\delta) &amp;:=  (a_1-\delta,\,a_1+\delta) \times \cdots \tim
 </div>
 </div>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_open_sphere_and_cube" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 11.1</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 다음이 성립한다.</p>
@@ -585,7 +583,6 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta)\)</span> 는 자명하다. <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 의 한 모서리에서 <span class="math inline">\(\boldsymbol{a}\)</span> 까지의 거리는 <span class="math inline">\(\sqrt{n}\delta\)</span> 이므로 <span class="math inline">\(C(\boldsymbol{a},\,\delta) \subset N(\boldsymbol{a},\,\sqrt{n}\delta)\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -609,22 +606,20 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <p><span class="theorem-title"><strong>연습문제 11.12 (Spivak 1.18)</strong></span> <span class="math inline">\(A\subset [0,\,1]\)</span> 은 <span class="math inline">\(A=\bigcup (a_i,\,b_i)\)</span> 이며 모든 <span class="math inline">\((0,\,1)\)</span> 에 포함되는 유리수는 어떤 <span class="math inline">\((a_i,\,b_i)\)</span> 에 포함되어 있다. <span class="math inline">\(\partial A = [0,\,1]-A\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\in A\)</span> 이면 <span class="math inline">\(x\)</span> 는 어떤 열린 구간 <span class="math inline">\((a_i,\,b_i)\)</span> 에 포함되므로 <span class="math inline">\(N(x,\,\delta) \subset (a_i,\,b_i)\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(x\notin \partial A\)</span> 이다. 즉 <span class="math inline">\(\partial A \subset [0,\,1]-A\)</span> 이다.</p>
 <p><span class="math inline">\(x\notin A\)</span> 라고 하자. 유리수의 조밀성에 의해 모든 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(N(x,\,\delta) \cap A \ne \varnothing\)</span> 이다. 그런데 <span class="math inline">\(x\notin A\)</span> 이므로 <span class="math inline">\(x\in \partial A\)</span> 이다. 즉 <span class="math inline">\([0,\,1]-A \subset \partial A\)</span> 이다. 따라서 <span class="math inline">\(\partial A [0,\,1]-A\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_19" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.13 (Spivak 1.19)</strong></span> <span class="math inline">\(A\)</span> 가 닫힌 집합이며 모든 <span class="math inline">\([0,\,1]\)</span> 에 포함되는 유리수를 포함한다면 <span class="math inline">\([0,\,1]\subset A\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A\)</span> 가 닫힌 집합이며 <span class="math inline">\(C\subset A\)</span> 이면 <span class="math inline">\(\overline{C}\subset A\)</span> 이다. <span class="math inline">\(\overline{[0,\,1]\cap \mathbb{Q}}=[0,\,1]\)</span> 이므로 <span class="math inline">\([0,\,1]\subset A\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_21" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.14 (Spivak 1.21)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(A\)</span> 가 닫힌 집합이고 <span class="math inline">\(x\notin A\)</span> 일 때 모든 <span class="math inline">\(y\in A\)</span> 에 대해 <span class="math inline">\(\|y-x\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재함을 보여라.</p>
@@ -632,7 +627,6 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> 가 닫힌 집합이지만 옹골집합은 아닐 때 <span class="math inline">\(\mathbb{R}^2\)</span> 에서 (<span class="math inline">\(b\)</span>) 가 성립하지 않는 예를 들어라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(A^C\)</span> 는 열린집합이며 <span class="math inline">\(x\in A^C\)</span> 이므로 <span class="math inline">\(N(x,\,\delta)\subset A^C\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(\|y-x\| \ge \delta\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(B\)</span> 의 열린 덮개 <span class="math inline">\(\Gamma_0 =\{U_\alpha\}\)</span> 에 대해 <span class="math inline">\(\Gamma_1 = \{V_\alpha = U_\alpha \cap A^C\}\)</span> 도 <span class="math inline">\(B\)</span> 의 열린 덮개이다. <span class="math inline">\(B\)</span> 가 옹골집합이므로 <span class="math inline">\(B\)</span> 의 유한 열린 덮개 <span class="math inline">\(\Gamma =\{V_1,\ldots,\,V_m\}\)</span> 를 생각 할 수 있다. <span class="math inline">\(x\in B\)</span> 이므로 어떤 <span class="math inline">\(V_i\in \Gamma\)</span> 에 대해 <span class="math inline">\(x\in V_i\)</span> 이며 <span class="math inline">\(V_i\)</span> 가 열린집합이므로 <span class="math inline">\(N(x,\,d)\subset V_i\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다. <span class="math inline">\(V_i \cap A= \varnothing\)</span> 이므로 <span class="math inline">\(N(x,\,d)\cap A=\varnothing\)</span> 이다. 즉 <span class="math inline">\(\|y-x\| \ge d\)</span> 이다.</p>
@@ -642,13 +636,12 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 \]</span></p>
 <p>을 만족하는 <span class="math inline">\(x\in A,\, y\in B\)</span> 를 찾을 수 있으므로 (<span class="math inline">\(b\)</span>) 에 위배된다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_22" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 11.15 (Spivak 1.22)</strong></span> <span class="math inline">\(U\)</span> 는 열린집합이며 <span class="math inline">\(C\subset U\)</span> 는 옹골집합이라면 <span class="math inline">\(C \subset \text{int} (D)\)</span> 이며 <span class="math inline">\(D\subset U\)</span> 를 만족하는 옹골집합 <span class="math inline">\(D\)</span> 가 존재함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(U^C\)</span> 는 닫힌 집합이며 <span class="math inline">\(C \cap U^C = \varnothing\)</span> 이므로 <a href="#exr-CM_spivak_1_21" class="quarto-xref">연습문제&nbsp;<span>11.14</span></a> (<span class="math inline">\(b\)</span>) 에서 보였듯이 모든 <span class="math inline">\(y\in A,\, x\in B\)</span> 에 대해 <span class="math inline">\(\|y-x\|\ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다.</p>
 <p>이제 <span class="math inline">\(\Gamma = \{N(x,\, d/2) : x\in C\}\)</span> 는 <span class="math inline">\(C\)</span> 의 열린 덮개이며 <span class="math inline">\(C\)</span> 가 옹골집합이므로 <span class="math inline">\(C\)</span> 의 유한 열린 덮개 <span class="math inline">\(\{B_1,\ldots,\,B_m\}\subset \Gamma\)</span> 가 존재한다. <span class="math inline">\(D = \bigcup \overline{B_i}\)</span> 라고 하면 각각의 <span class="math inline">\(\overline{B_i}\)</span> 는 옹골집합이며 따라서 <span class="math inline">\(D\)</span> 도 옹골집합이다. <span class="math inline">\(\text{int} (D) = \bigcup B_i\)</span> 이므로 <span class="math inline">\(C\subset \text{int}(D)\)</span> 이며 <span class="math inline">\(D\subset U\)</span> 이다.</p>
@@ -760,14 +753,12 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 </div>
 </div>
 </div>
-<p><br></p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_oscillation_and_continuity" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 11.3</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에서 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\)</span> 가 연속임을 가정하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f(\boldsymbol{x})-f(\boldsymbol{a})| &lt; \varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\)</span> 일 때</p>
 <p><span class="math display">\[
@@ -790,7 +781,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><span class="theorem-title"><strong>명제 11.4</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 라고 하고 <span class="math inline">\(\mathbb{R}^n-B\)</span> 가 열린 집합임을 보이자. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n-B\)</span> 이면 <span class="math inline">\((i)\)</span> <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 이거나, <span class="math inline">\((ii)\)</span> <span class="math inline">\(\boldsymbol{x}\in A\)</span> 이며 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이다.</p>
 <p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(\boldsymbol{x}\not\in A\)</span> 이면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 어떤 <span class="math inline">\(\delta_x&gt;0\)</span> 에 대해 <span class="math inline">\(N(\boldsymbol{x},\,\delta_x)\subset \mathbb{R}^n-A \subset \mathbb{R}^n-B\)</span> 가 존재한다.</p>
@@ -809,7 +799,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|F(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f_i(\boldsymbol{x})-b_i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
 <p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f_i(\boldsymbol{x})-b_i|&lt;\varepsilon/m\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 그렇다면.</p>
@@ -824,7 +813,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><span class="theorem-title"><strong>연습문제 11.17 (Spivak 1.24)</strong></span> <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속일 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속인 것임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{b}\)</span> 를 <span class="math inline">\(F(\boldsymbol{a})\)</span> 로 고치고 <a href="#exr-CM_spivak_1_23" class="quarto-xref">연습문제&nbsp;<span>11.16</span></a> 를 적용한다.</p>
 </div>
@@ -834,7 +822,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><span class="theorem-title"><strong>연습문제 11.18 (Spivak 1.25)</strong></span> 선형변환 <span class="math inline">\(T:\mathbb{R}^n \to \mathbb{R}^m\)</span> 은 연속임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>11.7</span></a> 에서 보였듯이 <span class="math inline">\(\|T(\boldsymbol{h})\|\le M\|\boldsymbol{h}\|\)</span> 인 <span class="math inline">\(M&gt;0\)</span> 이 존재한다. <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\|T(\boldsymbol{x})-T(\boldsymbol{a})\| = \|T(\boldsymbol{x}-\boldsymbol{a})\| \le M \|\boldsymbol{x}-\boldsymbol{a}\|\)</span> 이므로 <span class="math inline">\(T\)</span> 는 연속이다.</p>
 </div>
@@ -846,7 +833,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\notin A\)</span> 일 경우 <span class="math inline">\(f(\boldsymbol{x})=0\)</span>, <span class="math inline">\(\boldsymbol{x}\in A\)</span> 일 경우는 <span class="math inline">\(f(\boldsymbol{x})=1\)</span> 로 정의하자. <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^2\)</span> 에 대해 <span class="math inline">\(g_\boldsymbol{h}:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g_\boldsymbol{h}(t) = f(t\boldsymbol{h})\)</span> 라고 정의한다. 각각의 <span class="math inline">\(g_\boldsymbol{h}\)</span> 는 <span class="math inline">\(0\)</span> 에서 연속이지만 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아님을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 원점을 지나는 직선 <span class="math inline">\(y=ax\)</span> 를 생각하자. <span class="math inline">\(a=0\)</span> 일 경우는 전체 구간에서 직선이 <span class="math inline">\(\mathbb{R}^2-A\)</span> 에 포함되며 <span class="math inline">\(a\ne 0\)</span> 일 경우 $<span class="math inline">\([-|a|,\, |a|]\)</span> 구간에서 <span class="math inline">\(\mathbb{R}^2-A\)</span> 에 포함된다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\lim_{s \to 0} f(s,\, s^2/2) = 1 \ne 0 =  f(0,\,0)\)</span> 이므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아니다. (<span class="math inline">\(a\)</span>) 로부터 <span class="math inline">\(\lim_{t \to 0} g_\boldsymbol{h}(t) = 0 = g_\boldsymbol{h}(0)\)</span> 임을 안다.</p>
@@ -857,7 +843,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><span class="theorem-title"><strong>연습문제 11.20 (Spivak 1.28)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 닫힌 집합이 아니면 어떤 연속함수 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 은 유계가 아님을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n -A,\, \boldsymbol{x}\notin \text{int}(\mathbb{R}^n-A)\)</span> 에 대해 <span class="math inline">\(f(\boldsymbol{y}) := \dfrac{1}{\|\boldsymbol{x}-\boldsymbol{y}\|}\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{x} \notin \text{int}(\mathbb{R}^n-A)\)</span> 이므로 모든 <span class="math inline">\(\boldsymbol{x}\)</span> 의 근방은 <span class="math inline">\(A\)</span> 와의 교집합이 <span class="math inline">\(\varnothing\)</span> 이 아니다. 따라서 <span class="math inline">\(\|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 를 임의로 작게 할 수 있으며 <span class="math inline">\(f(\boldsymbol{y})\)</span> 는 유계가 아니다.</p>
 </div>
@@ -867,7 +852,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><span class="theorem-title"><strong>연습문제 11.21 (Spivak 1.29)</strong></span> <span class="math inline">\(A\)</span> 가 옹골집합이면 모든 연속함수 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 은 최대값과 최소값을 가짐을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>see <a href="../part2/2_3_continuity_of_functions.html#thm-MA_extreme_value_theorem" class="quarto-xref">정리&nbsp;<span>8.5</span></a></p>
 </div>
@@ -877,7 +861,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <p><span class="theorem-title"><strong>연습문제 11.22 (Spivak 1.30)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(x_1,\ldots,\,x_n \in [a,\,b]\)</span> 가 모두 다른 값이라면 <span class="math inline">\(\sum_{i=1}^n o(f,\,x_i) &lt; f(b)-f(a)\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(o(f,\,x_i) &lt; f(x_{i}+\delta)- f(x_i-\delta)\)</span> 이다. 일반성을 잃지 않고 <span class="math inline">\(x_1&lt;\cdots &lt;x_n\)</span> 라고 할 수 있다. <span class="math inline">\(\delta &lt; \frac{1}{2}\min \{x_{k}-x_{k-1}: k=2,\ldots,\,n\}\)</span> 으로 잡자. 그렇다면 <span class="math inline">\(f(x_{k+1}-\delta) - f(x_k+\delta )&gt;0\)</span> 이며</p>
 <p><span class="math display">\[

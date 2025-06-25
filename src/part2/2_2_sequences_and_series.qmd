@@ -863,7 +863,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -888,7 +888,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -934,7 +934,7 @@ $$
 $\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}$ 는 $p>1$ 일 때 수렴하며 그 외에는 발산한다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -984,7 +984,7 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 ($1$) $\alpha<1$ 이라 하자. $\alpha< \beta < 1$ 인 임의의 $\beta$ 를 생각하자. @prp-MA_properties_of_limsup 에 의해 $k\ge N \implies \sqrt[k]{|a_k|}<\beta$ 인 자연수 $N$ 이 존재한다. 즉 $k \ge N \implies |a_n|< \beta^n$ 이므로 $\sum_k a_k$ 는 절대수렴한다.
@@ -1012,7 +1012,7 @@ $p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1069,7 +1069,7 @@ $$
 
 :::
 
-</div><br>
+</div>
 
 ::: {.proof}
 
@@ -1148,8 +1148,6 @@ $$
 
 $a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴한다. $-1< a \le 1$ 이면 모든 항이 모든 항이 $1/2$ 보다 크거나 같으므로 발산한다. 
 
-
-
 :::
 </div>
 
@@ -1158,7 +1156,6 @@ $a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴�
 ### 멱급수 {#sec-MA_power_series}
 
 ::: {.callout-note appearance="simple" icon="false"}
-
 ::: {#def-MA_power_series}
 
 #### 멱급수
@@ -1181,7 +1178,7 @@ $$
 이라 하자. $|z|<R$ 일 때 멱급수는 수렴하고 $|z|>R$ 이면 멱급수는 발산한다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1245,7 +1242,8 @@ $$
 
 이다.
 :::
-</div></br>
+
+</div>
 
 ::: {.proof}
 
@@ -1275,7 +1273,7 @@ $$
 &emsp;($2$) $\langle b_n \rangle$ 은 $0$ 으로 수렴하는 단조감소 수열이다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1291,7 +1289,6 @@ $$
 
 이므로 @thm-MA_convergence_of_series_1 (코시 판정법) 에 의해 $\sum_n a_n b_n$ 은 수렴한다. $\square$
 
-
 :::
 
 </br>
@@ -1303,7 +1300,7 @@ $$
 $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한 상수 $c$ 에 대해 $\sum ca_n = cA$ 이다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1351,7 +1348,7 @@ $$
 이다.
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1387,7 +1384,6 @@ $$
 :::
 
 
-
 </br>
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -1409,7 +1405,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 $\sum a_n$ 에 대한 재배열 급수 $\sum a_{\sigma (n)}$ 을 생각한다. $\sum a_n = \alpha$ 라고 하자. $M(n) = \max \{\sigma(1), \ldots,\, \sigma(n)\}$ 이라 하면 
@@ -1438,7 +1434,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 $b_n = (-1)^n a_n$ 이라 하고 $b_n$ 의 부분합수열 $s_n = \displaystyle \sum_{i=1}^n b_i$ 이 코시 수열임을 보이자. 임의의 $\varepsilon >0$ 에 대해 $n \ge N \implies a_n < \varepsilon$ 인 $N\in \mathbb{N}$ 이 항상 존재한다.$n>m\ge N$ 에 대해
@@ -1453,7 +1449,7 @@ $$
 :::
 
 
-## 연습문제
+## 연습문제 {.unnumbered}
 
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1466,7 +1462,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1499,7 +1495,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1536,7 +1532,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1553,7 +1549,7 @@ $s_1 = \sqrt{2}$ 이고 $s_{n+1} = \sqrt{2+\sqrt{s_n}}$, $(n=1,\,2,\,3,\ldots)$ 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 주어진 점화식에 의해 $s_n<2 \implies s_{n+1}<2$ 이다. 따라서 $\{s_n\}$ 은 유계이다. $s_n<2$ 이므로 $\sqrt{s_n}> \dfrac{s_n}{2}$ 이다.
@@ -1579,7 +1575,7 @@ s_1=0,\qquad s_{2m} = \dfrac{s_{2m-1}}{2},\qquad s_{2m+1} = \dfrac{1}{2} + s_{2m
 $$
 
 :::
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -1614,7 +1610,7 @@ $$
 $$
 
 :::
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1657,7 +1653,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1689,7 +1685,7 @@ $\sum a_n$ 이 수렴하며 $\langle b_n \rangle$ 이 유계인 단조수열일 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1709,10 +1705,7 @@ $$
 
 :::
 
-
-
-</br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_3_9}
 
@@ -1724,7 +1717,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1756,7 +1749,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1840,7 +1833,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -1931,7 +1924,7 @@ $$
 를 만족할 때 $\lim_n (x_{n+1}-x_n)=0$ 임을 보여라.
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 $y_n := x_{n+1}-x_n$ 이라 하자. $\langle x_n\rangle$ 이 유계이므로 $|x_n|<R$ 인 양의 실수 $R\in \mathbb{R}$ 이 존재하며 $|y_n|<2R$ 이므로 $\langle y_n\rangle$ 도 유계이다. 또한 주어진 조건으로 부터 $x_{n+1}-x_n \le x_n -x_{n-1}$ 이므로 $\langle y_{n} \rangle$ 은 단조감소수열이다. 따라서 $\langle y_n \rangle$ 은 수렴한다. 
@@ -1978,8 +1971,7 @@ $$
 과 같이 정의하자. 이 때 $\lim_n a_n = a$ 이면 $\lim_n \sigma_n = a$ 임을 보여라.
 
 ::: 
-</div></br>
-
+</div>
 ::: {.solution}
 
 정해진 $\varepsilon>0$ 에 대해 $n \ge N \implies |a_n - a|<\varepsilon$ 을 만족하는 $N$ 이 존재한다. $n > N$ 이라 하자. 
@@ -2002,10 +1994,7 @@ $$
 
 :::
 
-</br>
-
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_kkk_2_7_13}
 
@@ -2027,7 +2016,7 @@ $$
 
 
 ::: 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -2061,9 +2050,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_3_16}
 
@@ -2096,7 +2083,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -2125,9 +2112,7 @@ $$
 :::
 
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_3_17}
 
@@ -2149,7 +2134,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 

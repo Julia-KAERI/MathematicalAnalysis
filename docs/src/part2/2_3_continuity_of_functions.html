@@ -255,8 +255,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_3_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
   </div>
 </li>
       </ul>
@@ -359,11 +365,10 @@ window.Quarto = {
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_limit_and_convergent_series" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 8.1</strong></span> <span class="math inline">\(X,\, Y,\, E,\, f\)</span> 가 <a href="#def-MA_limits_and_continuity_of_functions" class="quarto-xref">정의&nbsp;<span>8.1</span></a> 와 같다고 하자. 이 때 아래 두 명제는 동치이다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x_0\)</span> 에서 연속이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle x_n \rangle\)</span> 이 <span class="math inline">\(x_0\)</span> 를 포함하지 않으면서 <span class="math inline">\(x_0\)</span> 로 수렴하면 수열 <span class="math inline">\(\langle f(x_n)\rangle\)</span> 은 <span class="math inline">\(f(x_0)\)</span> 로 수렴한다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x_0\)</span> 에서 연속이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle x_n \rangle\)</span> 이 <span class="math inline">\(x_0\)</span> 를 포함하지 않으면서 <span class="math inline">\(x_0\)</span> 로 수렴하면 수열 <span class="math inline">\(\langle f(x_n)\rangle\)</span> 은 <span class="math inline">\(f(x_0)\)</span> 로 수렴한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 이 성립함을 가정한다. <span class="math inline">\(\displaystyle y_0 = \lim_{x \to x_0} f(x)\)</span> 이면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -381,7 +386,6 @@ n \ge N \implies 0&lt;\|x_n - x_0 \|&lt; \delta
 <p><span class="theorem-title"><strong>따름정리 8.1</strong></span> 함수 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x_0\)</span> 에서 극한을 갖는다면, 그 극한은 유일하다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><a href="2_2_sequences_and_series.html#prp-MA_properties_of_convergence_1" class="quarto-xref">명제&nbsp;<span>7.1</span></a> 의 (<span class="math inline">\(2\)</span>) 에서 보였듯이 수열의 극한은 유일하며 <span class="math inline">\(\langle x_n \rangle \to x_0\)</span> 인 수열을 잡으면 <a href="#prp-MA_limit_and_convergent_series" class="quarto-xref">명제&nbsp;<span>8.1</span></a> 에 의해 그 극한값은 <span class="math inline">\(\displaystyle \lim_{n \to \infty} f(x_n)= f(x_0)\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -391,7 +395,6 @@ n \ge N \implies 0&lt;\|x_n - x_0 \|&lt; \delta
 <p><span class="theorem-title"><strong>연습문제 8.1</strong></span> 두 연속함수 <span class="math inline">\(f,\,g:\mathbb{R}\to\mathbb{R}\)</span> 이 각각의 <span class="math inline">\(q\in \mathbb{Q}\)</span> 에서 함수값이 같다면 <span class="math inline">\(f=g\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\in \mathbb{R}\backslash \mathbb{Q}\)</span> 일 때 <span class="math inline">\(x\)</span> 로 수렴하는 유리수열 <span class="math inline">\(\langle q_n\rangle\)</span> 이 존재한다. <span class="math inline">\(f(q_n)= g(q_n)\)</span> 이며 <span class="math inline">\(f,\,g\)</span> 가 연속이므로 <span class="math inline">\(\displaystyle \lim_{n\to \infty} f(q_n) = \lim_{n \to \infty} g(q_n)\)</span> 이다. 즉 <span class="math inline">\(f(x)=g(x)\)</span> 이다.</p>
 </div>
@@ -399,12 +402,11 @@ n \ge N \implies 0&lt;\|x_n - x_0 \|&lt; \delta
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_basic_properties_of_limit_of_functions" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 8.2</strong></span> 거리공간 <span class="math inline">\(X\)</span> 와 <span class="math inline">\(E\subset X\)</span> 에 대해 <span class="math inline">\(f,\,g\)</span> 가 <span class="math inline">\(E \mapsto \mathbb{C}\)</span> 함수이며 <span class="math inline">\(x_0\)</span> 가 <span class="math inline">\(E\)</span> 의 극한점이고 <span class="math inline">\(\displaystyle \lim_{x\to x_0} f(x) = a\)</span>, <span class="math inline">\(\displaystyle \lim_{x \to x_0} g(x) = b\)</span> 일 때 다음이 성립한다.</p>
-<p>  (1) <span class="math inline">\(\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b\)</span>,</p>
-<p>  (2) <span class="math inline">\(\displaystyle \lim_{x \to x_0}(fg)(x) = ab\)</span>,</p>
-<p>  (3) <span class="math inline">\(b\ne 0\)</span> 일 경우 <span class="math inline">\(\displaystyle \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \dfrac{a}{b}\)</span>.</p>
+<p> (1) <span class="math inline">\(\displaystyle \lim_{x \to x_0}(f+g)(x) = a+b\)</span>,</p>
+<p> (2) <span class="math inline">\(\displaystyle \lim_{x \to x_0}(fg)(x) = ab\)</span>,</p>
+<p> (3) <span class="math inline">\(b\ne 0\)</span> 일 경우 <span class="math inline">\(\displaystyle \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \dfrac{a}{b}\)</span>.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><a href="#prp-MA_limit_and_convergent_series" class="quarto-xref">명제&nbsp;<span>8.1</span></a> 에 의해 <span class="math inline">\(\langle x_n \rangle \to x_0\)</span> 인 수열 <span class="math inline">\(x_n\)</span> 을 생각하자. <a href="2_2_sequences_and_series.html#prp-MA_properties_of_convergence_3" class="quarto-xref">명제&nbsp;<span>7.3</span></a> 를 이용하여 증명 할 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -414,7 +416,6 @@ n \ge N \implies 0&lt;\|x_n - x_0 \|&lt; \delta
 <p><span class="theorem-title"><strong>명제 8.3</strong></span> 거리공간 <span class="math inline">\(X,\,Y,\,Z\)</span> 에서 <span class="math inline">\(f:X \to Y,\, g:f(X) \to Z\)</span> 이며 <span class="math inline">\(h = g \circ f\)</span> 라 하자. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x_0\in X\)</span> 에서 연속이며 <span class="math inline">\(g\)</span> 가 <span class="math inline">\(f(x_0)\)</span> 에서 연속이면 <span class="math inline">\(h\)</span> 도 <span class="math inline">\(x_0\)</span> 에서 연속이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(g\)</span> 가 <span class="math inline">\(f(x_0)\)</span> 에서 연속이므로 주어진 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -457,7 +458,6 @@ n \ge N \implies 0&lt;\|x_n - x_0 \|&lt; \delta
 <p>  (4) <span class="math inline">\(f^{-1}\left(\bigcap_i V_i\right) = \bigcap_i f^{-1}(E_i)\)</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\Gamma = \{E_i\}\)</span> 라 하자. <span class="math display">\[
 \begin{aligned}
@@ -485,7 +485,6 @@ A \subset f^{-1}(f(A)),\qquad f(f^{-1}(B)) \subset B
 \]</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(a\in A\)</span> 일 때 <span class="math inline">\(a\in f^{-1}(f(A))\)</span> 임은 자명하다. <span class="math inline">\(f(a)=b\)</span> 이며 <span class="math inline">\(f^{-1}(\{b\})\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되지 않는 원소 <span class="math inline">\(x\)</span> 를 포함한다면 <span class="math inline">\(f^{-1}(x)\not\in A\)</span> 이므로 등호는 성립하지 않는다.</p>
 <p>이제 <span class="math inline">\(f(f^{-1}(B)) \subset B\)</span> 를 보이자.</p>
@@ -504,7 +503,6 @@ b\in f(f^{-1 }(B)) &amp;\implies \exists x\in f^{-1}(B) \, \text{s.t } f(x) = b 
 <p><span class="theorem-title"><strong>명제 8.6</strong></span> <span class="math inline">\(f:X \to Y\)</span> 이며 <span class="math inline">\(V\subset Y\)</span> 일 때 <span class="math inline">\(f^{-1}(Y\backslash V) = X \backslash f^{-1}(V)\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(x\in f^{-1}(Y\backslash V) \iff f(x) \not\in V \iff x\not\in f^{-1}(V) \iff x\in X\backslash f(V)\)</span>. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -514,11 +512,10 @@ b\in f(f^{-1 }(B)) &amp;\implies \exists x\in f^{-1}(B) \, \text{s.t } f(x) = b 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_equivalent_expression" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 8.7</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에서 정의된 함수 <span class="math inline">\(f: X\to Y\)</span> 에 대해 다음은 동치이다.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x_0\in X\)</span> 에서 연속이다.</p>
-<p>  (<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\delta &gt;0\)</span> 이 존재하여 <span class="math inline">\(f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\, \varepsilon)\)</span> 이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x_0\in X\)</span> 에서 연속이다.</p>
+<p> (<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\delta &gt;0\)</span> 이 존재하여 <span class="math inline">\(f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\, \varepsilon)\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>연속의 정의를 생각하면 두 명제가 동치임을 쉽게 보일 수 있다.</p>
 </div>
@@ -526,12 +523,11 @@ b\in f(f^{-1 }(B)) &amp;\implies \exists x\in f^{-1}(B) \, \text{s.t } f(x) = b 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_continuity_and_inverse_of_map" class="theorem">
 <p><span class="theorem-title"><strong>정리 8.1</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X \to Y\)</span> 에 대해 다음 세 명제는 동치이다.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 는 <span class="math inline">\(X\)</span> 에서 연속이다.</p>
-<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(V\subset Y\)</span> 가 열린집합이면 <span class="math inline">\(f^{-1}(V)\)</span> 도 열린집합이다.</p>
-<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(V\subset Y\)</span> 가 닫힌집합이면 <span class="math inline">\(f^{-1}(V)\)</span> 도 닫힌집합이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 는 <span class="math inline">\(X\)</span> 에서 연속이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(V\subset Y\)</span> 가 열린집합이면 <span class="math inline">\(f^{-1}(V)\)</span> 도 열린집합이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(V\subset Y\)</span> 가 닫힌집합이면 <span class="math inline">\(f^{-1}(V)\)</span> 도 닫힌집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\((1) \iff (2)\)</span> 와 <span class="math inline">\((2) \iff (3)\)</span> 을 보인다.</p>
 <p>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(x_0 \in X,\, f(x_0)\in V\)</span> 이며 <span class="math inline">\(V\)</span> 가 열린집합이라고 하자. 어떤 <span class="math inline">\(f(x_0)\)</span> 근방은 <span class="math inline">\(V\)</span> 에 포함되므로 <span class="math inline">\(N_Y(f(x_0),\, \varepsilon)\subset V\)</span> 인 <span class="math inline">\(\varepsilon&gt;0\)</span> 이 존재한다. <a href="#prp-MA_equivalent_expression" class="quarto-xref">명제&nbsp;<span>8.7</span></a> 에 따라 어떤 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(f(N_X(x_0,\, \delta)) \subset N_Y(f(x_0),\varepsilon) \subset V\)</span> 이며 <a href="#prp-MA_inclusion_of_function_and_inverse_image" class="quarto-xref">명제&nbsp;<span>8.5</span></a> 을 이용하면</p>
@@ -557,7 +553,6 @@ N_X (x_0,\, \delta) \subset f^{-1}(f(N_X (x_0,\delta))) \subset f^{-1}(N_Y(f(x_0
 <p><span class="theorem-title"><strong>정리 8.3</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 함수들 <span class="math inline">\(f_1,\ldots,\,f_n :X \to \mathbb{R}\)</span> 을 생각하자. 벡터 함수 <span class="math inline">\(\boldsymbol{f}:X\to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{f}(x) := (f_1(x),\ldots,\,f_n(x))\)</span> 일 때 <span class="math inline">\(\boldsymbol{f}\)</span> 가 연속인 것의 필요충분조건은 각각의 <span class="math inline">\(f_1,\ldots,\,f_n\)</span> 이 연속인 것이다. 또한 <span class="math inline">\(\boldsymbol{f},\,\boldsymbol{g}:X \to \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(\boldsymbol{f}+\boldsymbol{g}\)</span> 와 <span class="math inline">\(\boldsymbol{f\cdot g}\)</span> 도 연속이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(j=1,\ldots,\,n\)</span> 에 대해 다음의 부등식이 성립한다.</p>
 <p><span class="math display">\[
@@ -595,7 +590,6 @@ N_X (x_0,\, \delta) \subset f^{-1}(f(N_X (x_0,\delta))) \subset f^{-1}(N_Y(f(x_0
 <p><span class="theorem-title"><strong>정리 8.4</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X\to Y\)</span> 가 옹골집합 <span class="math inline">\(K \subset X\)</span> 에서 연속일 때 <span class="math inline">\(f(K)\)</span> 는 옹골집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\{V_{\alpha}\}\)</span> 가 <span class="math inline">\(f(K)\)</span> 의 열린 덮개라고 하자. <a href="#thm-MA_continuity_and_inverse_of_map" class="quarto-xref">정리&nbsp;<span>8.1</span></a> 에 따라 <span class="math inline">\(\{f^{-1}(V_{\alpha})\}\)</span> 도 <span class="math inline">\(K\)</span> 의 열린 덮개이다. 따라서 유한개의 <span class="math inline">\(\{f^{-1}(V_\alpha)\}\)</span> 로 <span class="math inline">\(K\)</span> 를 덮을 수 있으며 이를 <span class="math inline">\(\{f^{-1}(V_1),\ldots,\, f^{-1}(V_n)\}\)</span> 이라 하자. <a href="#prp-MA_inclusion_of_function_and_inverse_image" class="quarto-xref">명제&nbsp;<span>8.5</span></a> 에 의해 <span class="math display">\[
 f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
@@ -607,7 +601,6 @@ f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 <p><span class="theorem-title"><strong>따름정리 8.2</strong></span> 거리공간 <span class="math inline">\(X\)</span> 와 유클리드공간에서 정의된 함수 <span class="math inline">\(f:X \to \mathbb{R}^n\)</span> 가 옹골집합 <span class="math inline">\(K \subset X\)</span> 에서 연속일 때 <span class="math inline">\(f(K)\)</span> 는 유계이며 닫힌 집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 와 <a href="2_1_basic_topology.html#thm-MA_heine_borrel" class="quarto-xref">정리&nbsp;<span>6.4</span></a> 에 의해 증명된다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -617,7 +610,6 @@ f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 <p><span class="theorem-title"><strong>정리 8.5 (최대-최소 정리 (Extreme value theorem))</strong></span> 거리공간 <span class="math inline">\(X\)</span> 위에서 정의된 함수 <span class="math inline">\(f:X \to \mathbb{R}\)</span> 가 옹골집합 <span class="math inline">\(K\subset X\)</span> 에서 연속일 때 <span class="math inline">\(f(K)\)</span> 는 최소값과 최대값을 가진다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><a href="#cor-MA_continuity_and_compactness_in_Rk" class="quarto-xref">따름정리&nbsp;<span>8.2</span></a> 에 의해 <span class="math inline">\(f(K)\)</span> 는 유계이며 닫힌 집합이다. <span class="math inline">\(\mathbb{R}\)</span> 에서 유계이므로 최소상계와 최대하계를 갖고 닫힌 집합이므로 최소상계와 최대하계가 <span class="math inline">\(f(K)\)</span> 에 포함된다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -739,7 +731,6 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0,\\x-1,\qquad &amp; 1&lt;x\le 2\end{
 <p><span class="theorem-title"><strong>정리 8.7</strong></span> 옹골 거리 집합 <span class="math inline">\(X\)</span> 와 거리집합 <span class="math inline">\(Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X \to Y\)</span> 가 <span class="math inline">\(X\)</span> 에서 연속이면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(X\)</span> 에서 고른 연속이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varepsilon&gt;0\)</span> 이 주어졌다고 하자. <span class="math inline">\(f\)</span> 가 연속이기 때문에 각 <span class="math inline">\(p\in X\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -775,7 +766,6 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0,\\x-1,\qquad &amp; 1&lt;x\le 2\end{
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(E\)</span> 가 유계이면 <span class="math inline">\(E \mapsto \mathbb{R}^1\)</span> 인 연속이지만 고른연속은 아닌 함수가 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><a href="2_1_basic_topology.html#thm-MA_heine_borrel" class="quarto-xref">정리&nbsp;<span>6.4</span></a> 에 따라 <span class="math inline">\(E\subset{R}^1\)</span> 이 옹골집합이 아니라면 유계가 아니거나, 닫힌 집합이 아니다.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(E\)</span> 가 유계라면 닫힌집합이 아니며, 따라서 <span class="math inline">\(E\)</span> 에 포함되지 않는 <span class="math inline">\(E\)</span> 의 극한점 <span class="math inline">\(x_0\)</span> 가 존재한다. <span class="math inline">\(f(x) = 1/(x-x_0)\)</span> 는 유계가 아닌 연속함수이다. <span class="math inline">\(E\)</span> 가 유계가 아니라면 <span class="math inline">\(g(x)=x\)</span> 는 유계가 아닌 연속함수이다.</p>
@@ -802,7 +792,6 @@ h(x) = \dfrac{x^2}{1+x^2}
 <p><span class="theorem-title"><strong>명제 8.10</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에서 정의된 연속 함수 <span class="math inline">\(f:X\to Y\)</span> 를 생각하자. <span class="math inline">\(E\subset X\)</span> 가 연결집합이면 <span class="math inline">\(f(E)\)</span> 도 연결집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>귀류법을 통해 증명한다. <span class="math inline">\(f(E)=A \cup B\)</span> 이며 <span class="math inline">\(A,\,B\)</span> 가 공집합이 아닌 <span class="math inline">\(Y\)</span> 의 부분집합이고 서로 분리되어 있다고 하자. <span class="math inline">\(G=E \cap f^{-1}(A)\)</span>, <span class="math inline">\(H = E \cap f^{-1}(B)\)</span> 라고 하자. <span class="math inline">\(G=\varnothing\)</span> 이라면 <span class="math inline">\(f^{-1}(A)=\varnothing\)</span> 이거나 <span class="math inline">\(f^{-1}(A) \subset Y\backslash E\)</span> 인데 가정에 의해 <span class="math inline">\(A\ne \varnothing\)</span> 이며, 따라서 <span class="math inline">\(f^{-1}(A) \cap E \ne \varnothing\)</span> 이므로 <span class="math inline">\(G \ne \varnothing\)</span> 이다. 같은 이유로 <span class="math inline">\(H \ne \varnothing\)</span> 이다. 이로부터 (<a href="#prp-MA_properties_of_image_and_inverse_image_of_fucntion" class="quarto-xref">명제&nbsp;<span>8.4</span></a> 를 참고하라)</p>
 <p><span class="math display">\[
@@ -827,7 +816,6 @@ f(\overline{G}\cap H) \subset f(\overline{G}) \cap f(H) \subset \overline{A} \ca
 <p><span class="theorem-title"><strong>정리 8.8 (사잇값 정리)</strong></span> <span class="math inline">\(f : [a,\,b]\subset\mathbb{R}^1 \to \mathbb{R}^1\)</span> 이 연속함수이고 <span class="math inline">\(f(a)&lt;f(b)\)</span> 라고 하자. <span class="math inline">\(f(a)&lt;c&lt;f(b)\)</span> 라면 <span class="math inline">\(f(x)=c\)</span> 를 만족하는 <span class="math inline">\(x\)</span> 가 구간 <span class="math inline">\((a,\,b)\)</span> 에 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\([a,\,b]\)</span> 는 연결집합이며 <a href="#prp-MA_continuity_and_connectivity" class="quarto-xref">명제&nbsp;<span>8.10</span></a> 에 의해 <span class="math inline">\(f([a,\,b])\)</span> 도 연결집합이다. <a href="2_1_basic_topology.html#thm-MA_connected_set_in_R1" class="quarto-xref">정리&nbsp;<span>6.7</span></a> 에 의해 <span class="math inline">\(c\in f([a,\,b])\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -837,7 +825,6 @@ f(\overline{G}\cap H) \subset f(\overline{G}) \cap f(H) \subset \overline{A} \ca
 <p><span class="theorem-title"><strong>따름정리 8.3</strong></span> <span class="math inline">\(-\infty &lt; a &lt; b &lt; \infty\)</span> 에 대해 <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(f([a,\,b])\)</span> 는 유계인 닫힌 구간이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\([a,\,b]\)</span> 는 옹골집합이므로 <a href="#thm-MA_extreme_value_theorem" class="quarto-xref">정리&nbsp;<span>8.5</span></a> 에 의해 최대값 <span class="math inline">\(M\)</span> 과 최소값 <span class="math inline">\(m\)</span> 을 가진다. <a href="#thm-MA_intermediate_value_theorem" class="quarto-xref">정리&nbsp;<span>8.8</span></a> 에 따라 <span class="math inline">\([m, M]=f([a,\,b])\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -862,7 +849,6 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ \sin \dfrac{1}{x}, \qquad &amp;
 <p><span class="theorem-title"><strong>정리 8.9 (고정점 정리)</strong></span> <span class="math inline">\(f:[a,\,b]\subset \mathbb{R} \to \mathbb{R}\)</span> 가 연속함수이며 <span class="math inline">\(f([a,\,b])=[a,\,b]\)</span> 이면 <span class="math inline">\(f\)</span> 는 항상 고정점을 가진다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(g(x)=f(x)-x\)</span> 라고 하자. <span class="math inline">\(g(a)=f(a)-a \ge 0\)</span> 이며 <span class="math inline">\(g(b) =f(b)-b\le 0\)</span> 이므로 사잇값 정리에 의해 <span class="math inline">\(g(x)=0\)</span> 인 <span class="math inline">\(x\in (a,\,b)\)</span> 가 존재한다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -872,7 +858,6 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ \sin \dfrac{1}{x}, \qquad &amp;
 <p><span class="theorem-title"><strong>연습문제 8.3 (김김계 3.2.4)</strong></span> <a href="#thm-MA_fixed_point_theorem" class="quarto-xref">정리&nbsp;<span>8.9</span></a> 에서 <span class="math inline">\(x,\,y\in [a,\,b],\, x\ne y\)</span> 에 대해 <span class="math inline">\(|f(x)-f(y)|&lt; |x-y|\)</span> 이면 고정점이 유일함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>서로 다른 고정점 <span class="math inline">\(x_1,\,x_2\)</span> 를 생각하자. <span class="math inline">\(|f(x_1)-f(x_2)|=|x_1-x_2|&lt; |x_1-x_2|\)</span> 이므로 모순.</p>
 </div>
@@ -949,7 +934,6 @@ f(x^+) \le f(y^-)
 <p>이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(a&lt;t&lt;x\)</span> 에 대해 <span class="math inline">\(f(t)\le f(x)\)</span> 이므로 <span class="math inline">\(m=\sup \{f(t) : a&lt;t&lt;x\} \le f(x)\)</span> 이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -983,14 +967,12 @@ f(y^-) &amp;= \sup_{a&lt;t&lt;y} f(t) = \sup_{x&lt;t&lt;y} f(t)
 <p><span class="theorem-title"><strong>따름정리 8.4</strong></span> 단조함수의 불연속은 항상 1종 불연속이다.</p>
 </div>
 </div>
-<p><br></p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_monitonic_and_countable_number_of_discontinuity" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 8.12</strong></span> <span class="math inline">\(f:(a,\,b)\to \mathbb{R}\)</span> 이 단조함수이면 <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\((a,\,b)\)</span> 구간의 점은 countable 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>일반성을 잃지 않고 <span class="math inline">\(f\)</span> 를 단조증가라 가정 할 수 있다. <span class="math inline">\(E\)</span> 를 <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\((a,\,b)\)</span> 구간의 점이라고 하자. <span class="math inline">\(x\in E\)</span> 라면 유리수의 조밀성에 의해</p>
 <p><span class="math display">\[
@@ -1012,7 +994,6 @@ f(x^-) &lt; r(x) &lt;f(x^+)
 <p>  (<span class="math inline">\(4\)</span>) <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\mathbb{R}\)</span> 의 닫힌집합이면 <span class="math inline">\(f(F)\)</span> 도 <span class="math inline">\(f(\mathbb{R})\)</span> 의 닫힌집합이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 가 상수함수이면 <span class="math inline">\(f(V)\)</span> 는 닫힌집합이다.</p>
 <p>(<span class="math inline">\(2\)</span>) 다음과 같이 정의된 <span class="math inline">\(f\)</span> 는 연속함수이다.</p>
@@ -1037,7 +1018,6 @@ f(x+y) =  f(x)+ f(y),\qquad x,\, y\in \mathbb{R}
 <p>을 가지면, 적당한 실수 <span class="math inline">\(a\in \mathbb{R}\)</span> 에 대하여 <span class="math inline">\(f(x) = ax\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>우선 실수열 <span class="math inline">\(\langle r_i \rangle\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1065,7 +1045,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p>을 만족 한다고 하자. <span class="math inline">\(f\)</span> 는 연속인가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f(x) = \left\{ \begin{array}{ll} x \qquad &amp;; x\ne 0 \\ 1 &amp;;x=0\end{array} \right.\)</span> 는 위를 만족하지만 연속이 아니다.</p>
 </div>
@@ -1075,7 +1054,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p><span class="theorem-title"><strong>연습문제 8.7 (Rudin 4.2)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에 대해 <span class="math inline">\(f:X \to Y\)</span> 가 연속함수이다. <span class="math inline">\(E \subset X\)</span> 에 대해 <span class="math inline">\(f(\overline{E})\subset \overline{f(E)}\)</span> 임을 보여라. 또한 <span class="math inline">\(f(\overline{E})\)</span> 가 <span class="math inline">\(\overline{f(E)}\)</span> 의 진부분집합인 예를 들어라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f(E)\subset \overline{f(E)}\)</span> 이다. <span class="math inline">\(x\in E'\backslash E\)</span> 라 하자. <span class="math inline">\(\lim_n x_n = x\)</span> 인 <span class="math inline">\(\langle x_n \rangle \subset E\)</span> 가 존재하며 <span class="math inline">\(f(x_n) \in f(E)\)</span> 이다. <span class="math inline">\(f\)</span> 가 연속이므로 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|x-x_n\|_X&lt;\delta\)</span> 이면 <span class="math inline">\(\|f(x)-f(x_n)\|_Y&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하며, 이 <span class="math inline">\(\delta\)</span> 에 대해 <span class="math inline">\(n\ge N \implies \|x-x_n\|_X &lt; \delta\)</span> 인 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재한다. 즉 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(n \ge N\)</span> 이면 <span class="math inline">\(\|f(x)-f(x_n)\|_Y&lt;\varepsilon\)</span> 이다. 따라서 <span class="math inline">\(f(x)\in \overline{f(E)}\)</span> 이다. 따라서 <span class="math inline">\(f(\overline{E})\subset \overline{f(E)}\)</span> 이다.</p>
 <p><span class="math inline">\(f(x) = \dfrac{1}{x}\)</span> 라 하자. <span class="math inline">\(E=\overline{E}=[1,\infty)\)</span> 에 대해 <span class="math inline">\(f(\overline{E})=(0, 1]\)</span> 이지만 <span class="math inline">\(\overline{f(E)} = [0,\,1]\)</span> 이다.</p>
@@ -1086,7 +1064,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p><span class="theorem-title"><strong>연습문제 8.8 (Rudin 4.3)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에 대해 <span class="math inline">\(f:X \to \mathbb{R}\)</span> 이 연속함수이다. <span class="math inline">\(Z(f) = \{x\in X: f(x) = 0\}\)</span> 일 때 <span class="math inline">\(Z(f)\)</span> 는 닫힌 집합임을 보이시오.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(p \in X\backslash Z(f)\)</span> 라 하자. <span class="math inline">\(f(p)=y&gt;0\)</span> 이면 <span class="math inline">\(f\)</span> 가 연속이므로 <span class="math inline">\(\varepsilon=\dfrac{y}{2}\)</span> 에 대해 어떤 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|x-p\|_X&lt;\delta\)</span> 이면 <span class="math inline">\(\|f(x)-f(p)\|&lt;\dfrac{y}{2}\)</span> 이다. 즉 <span class="math inline">\(x\in N_X(p,\, \delta)\)</span> 이면 <span class="math inline">\(f(x)&gt; \dfrac{y}{2}&gt;0\)</span> 이므로 <span class="math inline">\(N_X(p,\, \delta)\subset X\backslash Z(f)\)</span> 이다. <span class="math inline">\(f(p)&lt;0\)</span> 일 때도 같은 방식으로 증명 할 수 있다. 따라서 <span class="math inline">\(X\backslash Z(f)\)</span> 는 열린집합이므로 <span class="math inline">\(Z(f)\)</span> 는 닫힌 집합이다.</p>
 </div>
@@ -1096,7 +1073,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p><span class="theorem-title"><strong>연습문제 8.9 (Rudin 4.4)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에 대해 <span class="math inline">\(f,\,g\)</span> 는 <span class="math inline">\(X\mapsto Y\)</span> 연속함수이다. <span class="math inline">\(E\)</span> 는 <span class="math inline">\(X\)</span> 에서 조밀한 부분집합이다. <span class="math inline">\(f(E)\)</span> 는 <span class="math inline">\(f(X)\)</span> 에 대해 조밀함을 보여라. 모든 <span class="math inline">\(p\in E\)</span> 에 대해 <span class="math inline">\(g(p)=f(p)\)</span> 이면 <span class="math inline">\(g(x)=f(x),\, \forall x\in X\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(y\in f(X)\)</span> 이면 <span class="math inline">\(f(x)=y\)</span> 인 <span class="math inline">\(x\in X\)</span> 가 존재한다. <span class="math inline">\(x\notin E\)</span> 이면 <span class="math inline">\(x\)</span> 로 수렴하는 <span class="math inline">\(E\)</span> 에서 정의된 수열 <span class="math inline">\(\langle x_n\rangle\)</span> 이 존재하며 <span class="math inline">\(\langle f(x_n)\rangle\)</span> 은 <span class="math inline">\(x\)</span> 로 수렴한다. <span class="math inline">\(\langle f(x_n)\rangle \subset f(E)\)</span> 이므로 <span class="math inline">\(f(E)\)</span> 는 <span class="math inline">\(f(X)\)</span> 에 대해 조밀하다.</p>
 <p><span class="math inline">\(x\in X=\overline{E}\)</span> 라 하자. <span class="math inline">\(x\)</span> 로 수렴하는 <span class="math inline">\(E\)</span> 에서 정의된 수열 <span class="math inline">\(\langle p_i \rangle\)</span> 이 존재하며 <span class="math inline">\(g(p_i)= f(p_i)\)</span> 이다. <a href="#prp-MA_limit_and_convergent_series" class="quarto-xref">명제&nbsp;<span>8.1</span></a> 에 의해 <span class="math inline">\(\lim_k g(p_k) = g(x)=f(x)\)</span> 이다.</p>
@@ -1107,7 +1083,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p><span class="theorem-title"><strong>연습문제 8.10 (Rudin 4.5)</strong></span> 닫힌 집합 <span class="math inline">\(E\subset\mathbb{R}\)</span> 에 대해 <span class="math inline">\(f:E \to \mathbb{R}\)</span> 이 연속 함수라면 모든 <span class="math inline">\(x\in E\)</span> 에 대해 <span class="math inline">\(f(x)=g(x)\)</span> 인 연속 함수 <span class="math inline">\(g: \mathbb{R}\to \mathbb{R}\)</span> 가 존재함을 보여라. (이런 함수 <span class="math inline">\(g\)</span> 를 <span class="math inline">\(E\)</span> 에서 <span class="math inline">\(\mathbb{R}\)</span> 로의 <span class="math inline">\(f\)</span> 의 확장이라고 한다.) 만약 <span class="math inline">\(E\)</span> 가 닫힌 집합이 아니라면 앞의 결과가 성립하지 않을 수 도 있음을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(E\)</span> 가 닫힌 집합이므로 <span class="math inline">\(\mathbb{R}\backslash E\)</span> 는 열린 집합이다. <span class="math inline">\(\mathbb{R}\backslash E\)</span> 가 가산개의 서로소인 열린 구간의 합집합이라고 하자. 즉 <span class="math inline">\(\mathbb{R}\backslash E = \bigcup_j (a_j,\,b_j)\)</span> 이며 우리는 <span class="math inline">\(j&lt;k\)</span> 일 때 <span class="math inline">\(a_k \ge b_j\)</span> 가 되도록 잡을 수 있다. <span class="math inline">\(a_j,\,b_j \in E\)</span> 이므로 <span class="math inline">\(\pm \infty\)</span> 가 아닌 경우에는 함수값이 정해져 있다. <span class="math inline">\(b_j\)</span> 와 <span class="math inline">\(a_{j+1}\)</span> 을 잇는 함수를</p>
 <p><span class="math display">\[
@@ -1122,7 +1097,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p><span class="theorem-title"><strong>연습문제 8.11 (Rudin 4.6)</strong></span> <span class="math inline">\(f:E\to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\{(x,\,f(x)):x\in E\}\)</span> 를 <span class="math inline">\(f\)</span> 의 <strong>그래프 (graph)</strong> 라고 한다. <span class="math inline">\(E\subset \mathbb{R}\)</span> 라면 <span class="math inline">\(f\)</span> 의 그래프는 <span class="math inline">\(\mathbb{R}^2\)</span> 의 부분집합이다. <span class="math inline">\(E\)</span> 가 옹골집합일 때 <span class="math inline">\(f\)</span> 가 연속인 것과 <span class="math inline">\(f\)</span> 의 그래프가 옹골집합인것이 동치임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{g}:E\to \mathbb{R}^2\)</span> 를 <span class="math inline">\(\boldsymbol{g}(x) := (x,\,f(x))\)</span> 로 정의하고 <span class="math inline">\(A=\{(x,\,f(x)):x\in E\}\)</span> 라고 하자.</p>
 <p><span class="math inline">\(f\)</span> 가 연속임을 가정한다. 고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\eta&gt;0\)</span> 이 존재하여 <span class="math inline">\(|x-x_0|&lt;\eta \implies |f(x)-f(x_0)|&lt;\varepsilon/2\)</span> 이다. <span class="math inline">\(\delta := \min \{\eta,\,\varepsilon/2\}\)</span> 라고 하면 <span class="math inline">\(|x-x_0| &lt;\delta\)</span> 일 때</p>
@@ -1145,7 +1119,6 @@ f(r) = \sum_i f(q_i)= a\left(q_i\right) = ar
 <p>이 <span class="math inline">\(\mathbb{R}\times \mathbb{R}\)</span> 의 닫힌집합임을 증명하여라. 함수 <span class="math inline">\(f\)</span> 에 유계란 조건이 없으면 어떻게 되겠는가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{g}:\mathbb{R}\to \mathbb{R}^2\)</span> 를 <span class="math inline">\(\boldsymbol{g}(x):=(x,\,f(x))\)</span> 로 정의하고 <span class="math inline">\(A: = \{ (x,\,f(x)) \in \mathbb{R}\times \mathbb{R} : x\in \mathbb{R}\}\)</span> 라고 하면 <span class="math inline">\(A=\boldsymbol{g}(\mathbb{R})\)</span> 이다. <a href="#thm-MA_continuity_of_vector_valued_function" class="quarto-xref">정리&nbsp;<span>8.3</span></a> 에 따라 <span class="math inline">\(f\)</span> 가 연속인것과 <span class="math inline">\(\boldsymbol{g}\)</span> 가 연속인 것은 동치이다. 이제 <span class="math inline">\(\boldsymbol{g}\)</span> 가 연속인 것과 <span class="math inline">\(A\)</span> 가 닫힌 집합인 것이 동치임을 보이면 된다.</p>
 <p><span class="math inline">\(\boldsymbol{g}\)</span> 가 연속임을 가정한다. <span class="math inline">\(\boldsymbol{y}_0 \in A'\)</span> 이라고 하자. <a href="2_2_sequences_and_series.html#prp-MA_properties_of_convergence_2" class="quarto-xref">명제&nbsp;<span>7.2</span></a> 에 의해 <span class="math inline">\(\boldsymbol{y}_0\)</span> 로 수렴하는 <span class="math inline">\(A\backslash \{\boldsymbol{y}_0\}\)</span> 에서 정의된 수열 <span class="math inline">\(\langle \boldsymbol{y}_k\rangle = \langle (x_k,\,f(x_k))\rangle\)</span> 이 존재하며 <span class="math inline">\(\boldsymbol{g}\)</span> 가 연속이므로(따라서 <span class="math inline">\(f\)</span> 가 연속이므로) <a href="#prp-MA_limit_and_convergent_series" class="quarto-xref">명제&nbsp;<span>8.1</span></a> 에 따라 <span class="math inline">\(\boldsymbol{y} = (x_0,\, f(x_0)) \in A\)</span> 이다. 즉 <span class="math inline">\(A'\subset A\)</span> 이므로 <span class="math inline">\(A\)</span> 는 닫힌 집합이다.</p>
@@ -1166,7 +1139,6 @@ g(x,\,y) &amp;= \left\{\begin{array}{ll} 0, &amp;(x,\,y) = (0, 0) \\ \dfrac{xy^2
 <p>라고 하자. <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\mathbb{R}^2\)</span> 에서 유계이며, <span class="math inline">\(g\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 의 모든 근방에서 유계가 아님을 보여라. 그럼에도 불구하고 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 의 모든 직선으로의 제한은 연속임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x^2+y^4\ge 2|x|y^2\)</span> 이므로 <span class="math inline">\(|f(x,\,y)| \le \dfrac{1}{2}\)</span> 이다. 따라서 <span class="math inline">\(f(x,\,y)\)</span> 는 유계이다. <span class="math inline">\(x=y^3\)</span> 을 따라 원점으로 가면 <span class="math inline">\(g(x,\,y) =  \dfrac{1}{2y}\)</span> 이므로 발산한다. 따라서 <span class="math inline">\(g\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 의 모든 근방에서 유계가 아니다.</p>
 <p>정해진 <span class="math inline">\(c\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(E=\{(t,\, ct) : t\in \mathbb{R}\}  \subset\mathbb{R}^2\)</span> 를 생각하자.</p>
@@ -1184,7 +1156,6 @@ g|_E(t) &amp;= \dfrac{c^2t^3}{t^2+c^6t^6}= \dfrac{c^2t}{1+c^6t^4}
 <p><span class="theorem-title"><strong>연습문제 8.14 (Rudin 4.8)</strong></span> <span class="math inline">\(E\subset \mathbb{R}\)</span> 이 유계이며 <span class="math inline">\(f:E\to \mathbb{R}\)</span> 가 <span class="math inline">\(E\)</span> 에서 고른연속이면 <span class="math inline">\(f(E)\)</span> 는 유계임을 보여라. <span class="math inline">\(E\)</span> 가 유계가 아니라면 <span class="math inline">\(f(E)\)</span> 는 유계가 아닐수도 있음을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(a=\inf E,\, b= \sup E\)</span> 라고 하자. 고른 연속의 정의에 의해 <span class="math inline">\(|x-y|&lt;\delta \implies |f(x)-f(y)|&lt;1\)</span> 을 만족하는 <span class="math inline">\(\delta&gt;0\)</span> 가 존재한다. <span class="math inline">\(\Delta = \delta/2\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -1197,13 +1168,12 @@ m_1 - N &lt; f(E) &lt; M_1 +N
 <p>이므로 <span class="math inline">\(f(E)\)</span> 는 유계이다.</p>
 <p><span class="math inline">\(f(x)=x\)</span> 는 균등수렴하지만 <span class="math inline">\(\mathbb{R}\)</span> 에서 유계가 아니다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_9" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.15 (Rudin 4.9)</strong></span> 고른 수렴의 정의가 다음과 같이 변형될 수 있음을 보여라. 각각의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하여 모든 <span class="math inline">\(\text{diam}(E)&lt;\delta\)</span> 인 <span class="math inline">\(E\subset X\)</span> 에 대해 <span class="math inline">\(\text{diam} f(E) &lt; \varepsilon\)</span> 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>trivial</p>
 </div>
@@ -1213,17 +1183,15 @@ m_1 - N &lt; f(E) &lt; M_1 +N
 <p><span class="theorem-title"><strong>연습문제 8.16 (Rudin 4.10)</strong></span> <a href="#thm-MA_uniform_continuity_and_compact_set" class="quarto-xref">정리&nbsp;<span>8.7</span></a> 를 다르게 증명해보자. 옹골 거리 집합 <span class="math inline">\(X\)</span> 와 거리집합에서 정의된 함수 <span class="math inline">\(f:X \to Y\)</span> 를 생각하자. <span class="math inline">\(f\)</span> 가 고른 연속이 아니면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(X\)</span> 에서 연속이 아님을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 고른 연속이 아니므로 어떤 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 각각 <span class="math inline">\(p,\,q\)</span> 로 수렴하는 어떤 수열 <span class="math inline">\(\langle p_n\rangle,\, \langle q_n\rangle\)</span> 이 존재하여 <span class="math inline">\(\|p_n-q_n\|_X \to 0\)</span> 이지만 <span class="math inline">\(\|f(p_n)-f(q_n)\|_Y &gt; \varepsilon\)</span> 이다. <span class="math inline">\(X\)</span> 가 옹골집합이므로 <span class="math inline">\(p,\,q\in X\)</span> 이며 <span class="math inline">\(f\)</span> 가 연속이라면 <span class="math inline">\(\langle f(p_n) \rangle \to f(p)\)</span>, <span class="math inline">\(\langle f(q_n) \rangle \to f(q)\)</span> 이며 따라서 <span class="math inline">\(\|f(p_n)-f(q_n)\|_Y =0\)</span> 이어야 하는데 이는 가정에 모순된다. 따라서 <span class="math inline">\(f\)</span> 가 연속이 아니다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_11" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.17 (Rudin 4.11)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에 대해 <span class="math inline">\(f:X \to Y\)</span> 는 고른연속이다. <span class="math inline">\(\langle x_n\rangle\)</span> 이 <span class="math inline">\(X\)</span> 에서의 코시 수열이라면 <span class="math inline">\(\langle f(x_n)\rangle\)</span> 은 <span class="math inline">\(Y\)</span> 에서의 코시 수열임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 고른연속이므로 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(|x-y|&lt;\delta \implies |f(x)-f(y)|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta\)</span> 가 존재한다. 이 <span class="math inline">\(\delta\)</span> 에 대해 <span class="math inline">\(m,\,n\ge N\implies |x_m-x_n|&lt;\delta\)</span> 인 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 가 존재한다. 즉 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 가 존재하여</p>
 <p><span class="math display">\[
@@ -1231,60 +1199,55 @@ m,\,n \ge N \implies |f(x_m)-f(x_n)|&lt;\varepsilon
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(\langle f(x_n)\rangle\)</span> 은 코시수열이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_12" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.18 (Rudin 4.12)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에 대해 <span class="math inline">\(f:X \to Y\)</span> 가 고른 연속이고 <span class="math inline">\(g:f(X) \to Z\)</span> 가 고른연속일 때 <span class="math inline">\(g\circ f\)</span> 도 고른 연속임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g\)</span> 가 고른연속이므로 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(|y_1-y_2|_Y&lt;\eta \implies |g(y_1)-g(y_2)|_Z&lt;\varepsilon\)</span> 인 <span class="math inline">\(\eta&gt;0\)</span> 이 존재한다. <span class="math inline">\(f\)</span> 가 고른연속이므로 <span class="math inline">\(|x_1-x_2|_X&lt;\delta \implies |f(x_1)-f(x_2)|_Y&lt;\eta\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(y_1=f(x_1),\, y_2=f(x_2)\)</span> 라 하면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(|x_1-x_2|_X&lt;\delta \implies |(g\circ f)(x_1) - (g \circ f)(x_2)|_Z&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 가 존재한다. 따라서 <span class="math inline">\(g\circ f\)</span> 는 고른연속이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_13" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.19 (Rudin 4.13)</strong></span> <span class="math inline">\(E\)</span> 는 <span class="math inline">\(X\)</span> 의 조밀한 부분집합이며 <span class="math inline">\(f:E \to \mathbb{R}\)</span> 은 고른 연속이다. <span class="math inline">\(f\)</span> 에 대한 <span class="math inline">\(X\)</span> 로의 확장이 존재함을 보여라. (용어에 대해서는 <a href="#exr-MA_rudin_4_5" class="quarto-xref">연습문제&nbsp;<span>8.10</span></a> 를 참고하라). 함수의 치역이 <span class="math inline">\(\mathbb{R}^n\)</span> 일 일 경우, 옹골 거리집합일 경우, complete metric space 일 경우, 일반적인 metric space 일 경우에도 가능한가?</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(p\in X\)</span> 에 대해 <span class="math inline">\(V_n := N_X(p,\, 1/n)\cap E\)</span> 이라고 하자. <span class="math inline">\(A = \bigcup_{n=1}^\infty V_n\)</span> 이며 <a href="#exr-MA_rudin_4_9" class="quarto-xref">연습문제&nbsp;<span>8.15</span></a> 에 따라 <span class="math inline">\(\text{diam}(A)=0\)</span> 이며 <span class="math inline">\(A\ne \varnothing\)</span> 이므로 <span class="math inline">\(A\)</span> 는 단 하나의 원소로 된 집합이며 이 원소를 <span class="math inline">\(g(p)\)</span> 라고 놓자. <span class="math inline">\(p\in E\)</span> 일 경우 <span class="math inline">\(g(p) = f(p)\)</span> 이며 <a href="#exr-MA_rudin_4_4" class="quarto-xref">연습문제&nbsp;<span>8.9</span></a> 에 따라 이런 <span class="math inline">\(g\)</span> 는 유일하게 정해진다. 이제 이렇게 정해진 <span class="math inline">\(g\)</span> 가 연속임을 보이자.</p>
 <p><span class="math inline">\(p\in X\backslash E\)</span> 이며 <span class="math inline">\(\langle p_n \rangle\)</span> 이 <span class="math inline">\(p\)</span> 로 수렴한다고 하자. <a href="2_2_sequences_and_series.html#thm-MA_cauchy_sequence" class="quarto-xref">정리&nbsp;<span>7.1</span></a> (<span class="math inline">\(1\)</span>) 에 따라 <span class="math inline">\(\langle p_n\rangle\)</span> 은 코시수열이며 <a href="#exr-MA_rudin_4_11" class="quarto-xref">연습문제&nbsp;<span>8.17</span></a> 에 따라 <span class="math inline">\(\langle f(p_n)\rangle\)</span> 도 <span class="math inline">\(\mathbb{R}\)</span> 에서의 코시수열이다. <span class="math inline">\(\mathbb{R}\)</span> 은 complete metric space 이므로 <span class="math inline">\(\langle f(p_n)\rangle\)</span> 도 수렴하며 따라서 <span class="math inline">\(g\)</span> 는 연속이다.</p>
 <p>여기서 치역이 <span class="math inline">\(\mathbb{R}\)</span> 이 아닐 경우를 생각하자. 일반적인 거리공간에서의 경우와 다른 것은 코시수열이 수렴하는지 여부이다. <a href="2_2_sequences_and_series.html#thm-MA_cauchy_sequence" class="quarto-xref">정리&nbsp;<span>7.1</span></a> 에 따라 <span class="math inline">\(\mathbb{R}^n\)</span> 과 옹골 거리집합인 경우 수렴하나 complete metric space 의 정의에 따라 수렴한다. 그러나 incomplete metric space 의 겨우 코시 수열의 수렴을 보장 할 수 없으므로 확장이 존재한다는 것을 보장하지 못한다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_14" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.20 (Rudin 4.14)</strong></span> <span class="math inline">\(I=[0,\,1]\)</span> 에 대해 <span class="math inline">\(f:I \to I\)</span> 가 연속이다. 최소한 하나의 <span class="math inline">\(x\in I\)</span> 에 대해 <span class="math inline">\(f(x)=x\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><a href="#thm-MA_fixed_point_theorem" class="quarto-xref">정리&nbsp;<span>8.9</span></a></p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_15" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.21 (Rudin 4.15)</strong></span> <span class="math inline">\(f:X\to Y\)</span> 일 때 모든 <span class="math inline">\(X\)</span> 의 열린 부분집합 <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(f(U)\)</span> 가 열린집합이면 <span class="math inline">\(f\)</span> 를 열린 사상(open mapping) 이라고 한다. <span class="math inline">\(\mathbb{R}\mapsto \mathbb{R}\)</span> 로의 연속인 열린 사상은 단조함수임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span> 이 연속이지만 단조함수가 아니라고 하자. 어떤 <span class="math inline">\(a&lt;b&lt;c\)</span> 에 대해 (<span class="math inline">\(i\)</span>) <span class="math inline">\(f(a) &gt; f(b)\)</span>, <span class="math inline">\(f(b) &lt; f(c)\)</span> 이거나 (<span class="math inline">\(ii\)</span>) <span class="math inline">\(f(a)&lt;f(b)\)</span>, <span class="math inline">\(f(b)&gt;f(c)\)</span> 이다. (<span class="math inline">\(i\)</span>) 의 경우를 생각하자. <span class="math inline">\([a,\,c]\)</span> 구간에서 항상 <span class="math inline">\(f([a,\,c])\)</span> 는 최대값과 최소값이 존재하는데 최소값은 <span class="math inline">\(f(a)\)</span> 나 <span class="math inline">\(f(c)\)</span> 가 아니며 따라서 어떤 <span class="math inline">\(x\in (a,\,c)\)</span> 에서 <span class="math inline">\(f(x)\)</span> 가 최소값이다. 즉 <span class="math inline">\(f((a,\,c))\)</span> 는 <span class="math inline">\((y,\, f(x)]\)</span> 이거나 <span class="math inline">\([y,\, f(x)]\)</span> 꼴이며 열린 집합이 아니다. 즉 <span class="math inline">\(f\)</span> 는 열린 함수가 아니다. (<span class="math inline">\(ii\)</span>) 의 경우는 최대값에 대해 같은 방식으로 보일 수 있다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_19" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.22 (Rudin 4.19)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 사잇값 성질을 갖는다고 하자. 즉 <span class="math inline">\(f(a) &lt; c &lt;f(b)\)</span> 이면 <span class="math inline">\(f(x) = c\)</span> 인 <span class="math inline">\(x\)</span> 가 <span class="math inline">\(a\)</span> 와 <span class="math inline">\(b\)</span> 사이에 항상 존재한다. 또한 모든 유리수 <span class="math inline">\(r\)</span> 에 대해 <span class="math inline">\(f^{-1}(\{r\})\)</span> 은 닫힌 집합이다. <span class="math inline">\(f\)</span> 가 연속임을 보여라.</p>
 <p><em>Hint</em> : <span class="math inline">\(\langle x_n \rangle \to x_0\)</span> 이지만 어떤 유리수 <span class="math inline">\(r\)</span> 과 모든 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(f(x_n)&gt; r &gt; f(x_0)\)</span> 라고 하자. 그렇다면 사잇값 성질에 의해 <span class="math inline">\(f(t_n)=r\)</span> 이 되도록 하는 <span class="math inline">\(t_n\)</span> 이 <span class="math inline">\(x_0\)</span> 와 <span class="math inline">\(x_n\)</span> 사이에 존재하며 <span class="math inline">\(\langle t_n \rangle \to x_0\)</span> 이다. 모순을 찾아라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 <span class="math inline">\(x_0\)</span> 에서 연속이 아니라고 하자. <a href="#prp-MA_limit_and_convergent_series" class="quarto-xref">명제&nbsp;<span>8.1</span></a> 에 따라 <span class="math inline">\(x_0\)</span> 를 포함하지 않는, 그러나 <span class="math inline">\(x_0\)</span> 로 수렴하는 수열 <span class="math inline">\(\langle x_n \rangle\)</span> 에 대해 <span class="math inline">\(\langle f(x_n)\rangle\)</span> 은 <span class="math inline">\(f(x_0)\)</span> 로 수렴하지 않는다. 그렇다면 일반성을 잃지 않고 <em>Hint</em> 처럼 가정 할 수 있다. 그렇다면 <span class="math inline">\(x_0\)</span> 는 <span class="math inline">\(f^{-1}(\{r\})\)</span> 의 극한점이지만 <span class="math inline">\(x_0\)</span> 는 여기에 포함되지 않는다. 이는 가정에 모순이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_20" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.23 (Rudin 4.20)</strong></span> <span class="math inline">\(E\)</span> 가 거리공간 <span class="math inline">\(X\)</span> 의 부분집합이며 공집합이 아니라고 하자. <a href="2_1_basic_topology.html#exr-MA_KKK_2_7_8" class="quarto-xref">연습문제&nbsp;<span>6.6</span></a> 과 같이 집합 <span class="math inline">\(E\)</span> 와 <span class="math inline">\(x\in E\)</span> 사이의 거리 <span class="math inline">\(\rho_E(x) := \rho(x,\,E)\)</span> 를 정의한다.</p>
@@ -1296,7 +1259,6 @@ m,\,n \ge N \implies |f(x_m)-f(x_n)|&lt;\varepsilon
 <p>임을 보이면 된다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\impliedby\)</span> 는 자명하다. <span class="math inline">\(\rho_E(x)=0\)</span> 이라고 하자. <span class="math inline">\(x\notin \overline{E}\)</span> 이면 어떤 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(N(x,\, \varepsilon) \cap E=\varnothing\)</span> 이므로 <span class="math inline">\(\rho_E(x)\ge \varepsilon\)</span> 이며 이는 <span class="math inline">\(\rho_E(x)=0\)</span> 이라는 가정에 모순된다. 따라서 <span class="math inline">\(\rho_E(x) = 0 \implies x\in \overline{E}\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(z\in E\)</span> 에 대해 <span class="math inline">\(\rho_E(x) \le \|x-z\|_X \le \|x-y\|_X + \|y-z\|_X\)</span> 이며, 따라서</p>
@@ -1305,13 +1267,12 @@ m,\,n \ge N \implies |f(x_m)-f(x_n)|&lt;\varepsilon
 \]</span></p>
 <p>이다. 마찬가지로 <span class="math inline">\(\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)\)</span> 이므로 <a href="#eq-MA_rudin_4_20" class="quarto-xref">식&nbsp;<span>8.1</span></a> 식이 성립한다. 따라서 <span class="math inline">\(\rho_E(x)\)</span> 는 고른 연속이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_21" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.24 (Rudin 4.21)</strong></span> <span class="math inline">\(K\)</span> 와 <span class="math inline">\(F\)</span> 는 거리공간 <span class="math inline">\(X\)</span> 의 서로소인 부분집합이다. <span class="math inline">\(K\)</span> 는 옹골집합이며 <span class="math inline">\(F\)</span> 는 닫힌집합이다. 어떤 <span class="math inline">\(\delta &gt;0\)</span> 에 대해 <span class="math inline">\(p\in K,\, q\in F \implies \|p-q\|_X&gt;\delta\)</span> 임을 보여라. 만약 <span class="math inline">\(K\)</span> 와 <span class="math inline">\(F\)</span> 가 모두 서로소인 닫힌집합이며 둘 다 옹골집합이 아니면 명제가 성립하지 않는다는 것을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\rho_F(x) = \inf \{ \|x-q\|_X : q\in F\}\)</span> 는 연속함수이다. 따라서 <span class="math inline">\(\rho_F(K)\)</span> 는 옹골집합이다. 어떤 <span class="math inline">\(p\in K\)</span> 에 대해 <span class="math inline">\(\rho_F(p)=0\)</span> 이라면 <span class="math inline">\(p \in F\)</span> 이므로 두 집합이 서로소라는 가정에 모순된다. 따라서 모든 <span class="math inline">\(p\in K\)</span> 에 대해 <span class="math inline">\(f(p)&gt;0\)</span> 이다. <span class="math inline">\(\rho_F(K)\)</span> 는 옹골집합이므로 최대값과 최소값을 포함하며 <span class="math inline">\(m = \min \{\rho_F(K)\} &gt; 0\)</span> 이다. <span class="math inline">\(0&lt;\delta &lt;m\)</span> 에 대해 <span class="math inline">\(\|p-q\|_X &gt; \delta\)</span> 이다.</p>
 <p><a href="#exr-MA_kkk_3_5_4" class="quarto-xref">연습문제&nbsp;<span>8.12</span></a> 로부터 <span class="math inline">\(A=\{(x,\, 0):x\in \mathbb{R}\}\)</span> 와 <span class="math inline">\(B=\left\{ \left(x,\, \dfrac{1}{1+x^2}\right) : x\in\mathbb{R}\right\}\)</span> 은 닫힌 집합임을 안다. <span class="math inline">\(A\cap B=\varnothing\)</span> 이지만 <span class="math inline">\(\inf \{\|a,\,b\|_X: a\in A,\, b\in B\} = 0\)</span> 임을 알 수 있다.</p>
@@ -1326,13 +1287,12 @@ f(p) = \dfrac{\rho_A(p)}{\rho_A(p) + \rho_B(p)} .
 <p><span class="math inline">\(f\)</span> 는 <span class="math inline">\(X\)</span> 에서 연속이며 <span class="math inline">\(f(X) = [0,\,1]\)</span> 임을 보여라. <span class="math inline">\(p\in A \iff f(p) = 0\)</span> 이며 <span class="math inline">\(p\in B \iff f(p)=1\)</span> 임을 보여라. 이것은 <a href="#exr-MA_rudin_4_3" class="quarto-xref">연습문제&nbsp;<span>8.8</span></a> 의 역이 성립함을 알게 해 준다. <span class="math inline">\(X\)</span> 의 닫힌 부분집합 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(X\)</span> 에서 연속인 함수 <span class="math inline">\(f\)</span> 에 대해 <span class="math inline">\(V=f^{-1}([0, \frac{1}{2}))\)</span>, <span class="math inline">\(W=f^{-1}((\frac{1}{2}, 1])\)</span> 라고 하자. <span class="math inline">\(V\)</span> 와 <span class="math inline">\(W\)</span> 는 열린 집합이며 서로소임을 보이고 <span class="math inline">\(A \subset V,\, B\subset W\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-MA_rudin_4_20" class="quarto-xref">연습문제&nbsp;<span>8.23</span></a> 으로부터 <span class="math inline">\(\rho_A(p)=0 \iff p\in A\)</span> 이며 <span class="math inline">\(A \cap B=\varnothing\)</span> 이므로 <span class="math inline">\(\rho_A(p)+\rho_B(p) &gt;0\)</span> 이다. <span class="math inline">\(\rho_A,\, \rho_B\)</span> 가 모두 연속이므로 <span class="math inline">\(f(p)\)</span> 는 연속이다.</p>
 <p><span class="math inline">\(0\le \rho_A(p) \le \rho_A(p)+\rho_B(p)\)</span> 이므로 <span class="math inline">\(f(X) \subset [0,\,1]\)</span> 이다. <span class="math inline">\(p\in A \iff f(p) = 0\)</span> 이며 <span class="math inline">\(p\in B \iff f(p)=1\)</span> 임은 쉽게 알 수 있다. 사잇값 정리(<a href="#thm-MA_intermediate_value_theorem" class="quarto-xref">정리&nbsp;<span>8.8</span></a>) 에 따라 <span class="math inline">\(f(X) = [0,\,1]\)</span> 이다.</p>
 <p><span class="math inline">\(\overline{I}=[0,\,1]\)</span> 에 대해 <span class="math inline">\([0,\,\frac{1}{2})\)</span> 와 <span class="math inline">\((\frac{1}{2},\,1]\)</span> 은 <span class="math inline">\(I_0\)</span> 에서 열린 집합이며, <span class="math inline">\(f\)</span> 가 연속이므로 <span class="math inline">\(V,\,W\)</span> 는 연속이고, 서로소임은 자명하다. 또한 <span class="math inline">\(A \subset V,\, B\subset W\)</span> 도 자명하다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_KKK_3_5_10" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.26 (KKK 3.5.10)</strong></span> 거리공간의 부분집합 <span class="math inline">\(X\)</span> 위에서 정의된 함수 <span class="math inline">\(f:X\to X\)</span> 가 어떤 <span class="math inline">\(r\in (0,\,1)\)</span> 에 대해</p>
@@ -1345,7 +1305,6 @@ x,\, y \in X \implies \|f(x)-f(y)\| \le r \|x-y\|
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(X\)</span> 가 닫힌 집합이면 <span class="math inline">\(\langle x_n\rangle\)</span> 의 극한점 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(x\in X\)</span> 이며 <span class="math inline">\(f\)</span> 의 고정점임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(\delta = \dfrac{\varepsilon}{2r}\)</span> 로 잡으면 <span class="math inline">\(\|x-y\|&lt;\delta\)</span> 일 때</p>
 <p><span class="math display">\[
@@ -1355,7 +1314,7 @@ x,\, y \in X \implies \|f(x)-f(y)\| \le r \|x-y\|
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x=x_{n+1},\, y=x_n\)</span> 에 대해 주어진 식은 <span class="math inline">\(\|x_{n+2}-x_{n+1}\| \le r\|x_{n+1}-x_{n}\|\)</span> 이며 <a href="2_2_sequences_and_series.html#exr-MA_kkk_2_7_13" class="quarto-xref">연습문제&nbsp;<span>7.15</span></a> 에 따라 <span class="math inline">\(\langle x_n \rangle\)</span> 은 코시수열이다.</p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(X\)</span> 가 닫힌집합이므로 <span class="math inline">\(x\in X\)</span> 이다. <span class="math inline">\(x_{n+1}=f(x_n)\)</span> 이므로 <span class="math inline">\(x=f(x)\)</span> 이며, 따라서 고정점이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_4_23" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 8.27 (Rudin 4.23)</strong></span> <span class="math inline">\(f:(a,\,b) \to \mathbb{R}\)</span> 이 <span class="math inline">\(a &lt; x,\,y &lt; b\)</span>, <span class="math inline">\(0&lt;\lambda&lt;1\)</span> 에 대해</p>
@@ -1370,7 +1329,6 @@ f(\lambda x + (1-\lambda) y) \le \lambda f(x) + (1-\lambda )f(y)
 <p>임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 볼록 함수 <span class="math inline">\(f\)</span> 가 연속임을 보인다. <span class="math inline">\(a&lt;c&lt;t&lt;d&lt;b\)</span> 에 대해 <span class="math inline">\(t=\lambda c + (1-\lambda)d\)</span> 인 <span class="math inline">\(\lambda\in (0,\,1)\)</span> 이 존재한다. <span class="math inline">\(M_1 = \max \{f(a),\, f(b)\}\)</span> 라고 하면</p>
 <p><span class="math display">\[
