@@ -178,7 +178,7 @@ $A$ 를 $0$ 과 $1$ 로만 이루어진 수열의 집합이라고 하고 $E$ 는
 
 #### 거리와 거리 공간
 
-집합 $X$ 에 다음과 같은 성질을 갖는 이항함수 $d_X:X\times X \mapsto \mathbb{R}$ 이 정의될 때 이 함수를 **거리 함수(metric)** 라고 하고 $X$ 를 **거리공간(metric space)** 라고 한다. 
+집합 $X$ 에 아래와 같은 성질을 갖는 이항함수 $d_X:X\times X \mapsto \mathbb{R}$ 이 정의될 때 이 함수를 **거리 함수(metric)** 라고 하고 $X$ 를 **거리공간(metric space)** 라고 한다. 
 
 &emsp;($1$) $d_X(p,\,q)  \ge 0$;
 
@@ -291,10 +291,10 @@ $$
 $\mathbb{R}^n$ 에서
 
 $$
-[a_1,\,b_1]\times \cdots \times [a_n,\,b_n] := \{(x_1,\ldots,\,x_k)\in \mathbb{R}^k : a_i \le x_i \le b_i,\, i=1,\ldots,n\}
+[a_1,\,b_1]\times \cdots \times [a_n,\,b_n] := \{(x_1,\ldots,\,x_k)\in \mathbb{R}^n : a_i \le x_i \le b_i,\, i=1,\ldots,n\}
 $$
 
-를 $n$-cell 이라고 한다.
+를 **$n$-cell** 이라고 한다.
 
 ::: 
 :::
@@ -316,12 +316,13 @@ N_X(p,\, \varepsilon) &:= \{x\in X : d_X(p,\,x) <\varepsilon\}, \\
 \end{aligned}
 $$
 
-$N_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 열린 근방이라고 하고, $\overline{N}_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 닫힌 근방이라고 한다. 특별한 언급 없이 근방이라고 할 때는 열린 근방을 의미한다.
+$N_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 **열린 근방 (open neighborhood)** 이라고 하고, $\overline{N}_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 에서의 **닫힌 근방 (closed neighborhood)** 이라고 한다. 특별한 언급 없이 근방이라고 할 때는 열린 근방을 의미한다.
 
 ::: 
 :::
 
 </br>
+
 
 거리공간 $X$ 에 대해 다룬다는 것이 명확할때는 생략하여 $N(p,\,\varepsilon)$ 과 같이 쓰기도 한다. $Y\subset X$ 일 경우 $X$ 에서의 근방과 $Y$ 에서의 근방이 다를 수 있으므로 이런 경우에는 명확하게 어느 거리공간에서의 근방인지를 명시해야 한다. 
 
@@ -357,9 +358,9 @@ $N(p,\,\varepsilon)$ 은 볼록집합임을 보이자. $x,\,y \in N(p,\,\varepsi
 
 $$
 \begin{aligned}
-|(1-t)x+ty-p| &= |(1-t)(x-p) + t(y-p)| \\
-& \le (1-t)|x-p| + t|y-p| \\
-& < (1-t)r +tr = r
+|(1-t)x+ty-p| &= |(1-t)(x-p) + t(y-p)| \\[0.3em]
+& \le (1-t)|x-p| + t|y-p| \\[0.3em]
+& < (1-t)\varepsilon +t\varepsilon = \varepsilon
 \end{aligned}
 $$
 
@@ -390,6 +391,8 @@ $$
 
 </div></br>
 
+
+### 거리공간에서의 위상 {#sec-MA_topology_in_metric_space}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -451,13 +454,16 @@ $E=N(p, \varepsilon)$ 이라 하자. $q\in E$ 이면 $d(p,\,q)<\varepsilon$ 이�
 
 ::: {.proof}
 
-($1\implies 2$) $p\in E'$ 의 근방이 유한개의 $E$ 의 원소를 포함한다고 가정하자. 포함된 $E$ 의 원소중 $p$ 와의 거리가 최소인 $p$ 가 아닌 원소를 $q$ 라 하자. $N(p,\, d(p,\,q)/2)\cup E = \varnothing$ 이므로 $p$ 가 극한점이라는 가정에 모순된다. 따라서 무한개의 $E$ 의 원소를 포함한다. 
+($1\implies 2$) $p\in E'$ 의 근방이 유한개의 $E$ 의 원소를 포함한다고 가정하자. 포함된 $E$ 의 원소중 $p$ 와의 거리가 최소인 $p$ 가 아닌 원소를 $q$ 라 하자. $N(p,\, d(p,\,q)/2)\cup E$ 는 $p \in E$ 이면 $\{p\}$ 이고 $p \notin E$ 이면 $\varnothing$ 이므로 $p$ 가 극한점이라는 가정에 모순된다. 따라서 무한개의 $E$ 의 원소를 포함한다. 
 
 ($2 \implies 1$) 극한점의 정의에 의해 자명하다. $\square$
 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+
+이로부터 아래 따름 정리는 자명하다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-MA_limit_points_1}
 
@@ -475,27 +481,28 @@ $E=N(p, \varepsilon)$ 이라 하자. $q\in E$ 이면 $d(p,\,q)<\varepsilon$ 이�
 
 &emsp;($1$) $E$ 는 열린 집합이다.
 
-&emsp;($2$) $E \backslash X$ 는 닫힌 집합이다.
+&emsp;($2$) $X \backslash E$ 는 닫힌 집합이다.
 
 :::
 </div>
 
 ::: {.proof}
 
-$E$ 가 열린집합임을 가정하자. $p\in (E\backslash X)'$ 일 때 $p$ 의 모든 근방은 $E\backslash X$ 의 $p$ 가 아닌 점을 포함하므로 $p\not \in E$, 즉 $p\in E\backslash X$ 이다. 따라서 $(E\backslash X)'\subset E\backslash X$ 이다. 즉 $E\backslash X$ 는 닫힌 집합이다. 
+$E$ 가 열린집합임을 가정하자. $p\in (X\backslash E)'$ 일 때 $p$ 의 모든 근방은 $X\backslash E$ 의 $p$ 가 아닌 점을 포함하므로 $p\not \in E$, 즉 $p\in X\backslash E$ 이다. 따라서 $(X\backslash E)'\subset X\backslash E$ 이다. 즉 $X\backslash E$ 는 닫힌 집합이다. 
 
-$E\backslash X$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in E\backslash X$ 이며 $E\backslash X$ 는 닫힌집합이므로 $x$ 는 $E\backslash X$ 의 극한점이 아니다. 따라서 어떤 $x$ 의 근방은 $E\backslash X$ 와 의 교집합이 없으므로 $E$ 에 포함된다. 따라서 $E$ 는 열린집합이다. $\square$
+$X\backslash E$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in X\backslash E$ 이며 $X\backslash E$ 는 닫힌집합이므로 $x$ 는 $X\backslash E$ 의 극한점이 아니다. 따라서 어떤 $x$ 의 근방은 $X\backslash E$ 와 의 교집합이 없으므로 $E$ 에 포함된다. 따라서 $E$ 는 열린집합이다. $\square$
 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+이로부터 아래 따름정리는 자명하다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#cor-MA_closed_set_is_complement_of_open_set}
 거리공간 $X$ 의 부분집합 $E$ 에 대해 다음은 동치이다. 
 
 &emsp;($1$) $E$ 는 닫힌 집합이다.
 
-&emsp;($2$) $E \backslash X$ 는 열린 집합이다.
+&emsp;($2$) $X \backslash E$ 는 열린 집합이다.
 :::
 
 </div></br>
@@ -598,7 +605,7 @@ $E\backslash X$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 
 ::: {.proof}
 
-($1 \implies 2$) $p\in E$ 에 대해 $N_Y(p,\,\varepsilon)\subset Y$ 인 $\varepsilon_p>0$ 이 존재한다. $G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)$ 라고 하면 $G$ 는 열린 집합이며 $E\subset Y \cap G$ 이다. 또한 각각의 $p\in E$ 에 대해 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이므로 $Y \cap G \subset E$ 이다. 즉 $Y = Y \cap G$ 이다.
+($1 \implies 2$) $p\in E$ 에 대해 $N_Y(p,\,\varepsilon_p)\subset Y$ 인 $\varepsilon_p>0$ 이 존재한다. $G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)$ 라고 하면 $G$ 는 열린 집합이며 $E\subset Y \cap G$ 이다. 또한 각각의 $p\in E$ 에 대해 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이므로 $Y \cap G \subset E$ 이다. 즉 $Y = Y \cap G$ 이다.
 
 ($2 \implies 1$) $G$ 가 열린집합이고 $E \subset G$ 이므로 각각의 $p\in E$ 에 대해 $N_X(p,\, \varepsilon_p) \subset G$ 인 $\varepsilon_p >0$ 이 존재하며 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이다. 이 때 $N_X(p,\, \varepsilon_p) \cap Y = N_Y (p,\,\varepsilon_p)$ 이므로 정의에 의해 $E$ 는 $Y$ 안에서 열려 있다. $\square$
 :::
@@ -687,14 +694,14 @@ $$
 
 ::: {#prp-MA_compact_set_is_closed}
 
-거리공간 $X$ 에서의 옹골집합은 닫힌 집합이다.
+거리공간에서의 옹골집합은 닫힌 집합이다.
 
 :::
 
 </div>
 
 ::: {.proof}
-$K\subset X$ 가 옹골집합이라고 하자. 고정된 $p \in  X\backslash K$ 와 각각의 $q\in K$ 에 대해 반지름 $r$ 이 $\frac{1}{2}d(p,\,q)$ 보다 작은 $p$ 의 근방 $V_q$ 와 $q$ 의 근방 $W_q$ 를 잡을 수 있다. 집합족 $\{W_q\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개의 근방들을 모아 $K$ 를 덮을 수 있다. 이 유한개의 근방을 각각 $W_{q_1},\ldots,\,W_{q_n}$ 이라고 하고 이 $q_1,\,\ldots,\,q_n$ 의 근방을 정할때의 $p$ 의 근방을 각각 $V_{q_1},\ldots,\,V_{q_n}$ 이라고 하자.
+거리공간 $X$ 에서 $K\subset X$ 가 옹골집합이라고 하자. 고정된 $p \in  X\backslash K$ 와 각각의 $q\in K$ 에 대해 반지름 $r$ 이 $\frac{1}{2}d(p,\,q)$ 보다 작은 $p$ 의 근방 $V_q$ 와 $q$ 의 근방 $W_q$ 를 잡을 수 있다. 집합족 $\{W_q\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개의 근방들을 모아 $K$ 를 덮을 수 있다. 이 유한개의 근방을 각각 $W_{q_1},\ldots,\,W_{q_n}$ 이라고 하고 이 $q_1,\,\ldots,\,q_n$ 의 근방을 정할때의 $p$ 의 근방을 각각 $V_{q_1},\ldots,\,V_{q_n}$ 이라고 하자.
 
 $W=W_{q_1} \cup \cdots \cup W_{q_n}$ 라 하고 $V=V_{q_1}\cap \cdots \cap V_{q_n}$ 라 하자. $V$ 는 $p$ 의 근방이며 $W \cap V = \varnothing$ 이다. 따라서 $V\subset X\backslash K$ 이므로 $K^c$ 는 열린집합이다. 즉 $K$ 는 닫힌 집합이다. $\square$ 
 
@@ -823,7 +830,7 @@ $$
 </br>
 
 
-### 하이네 보렐 정리 {#sec-MA_heine_borel_theorem}
+### 하이네-보렐 정리 {#sec-MA_heine_borel_theorem}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -844,7 +851,7 @@ $\mathbb{R}^n$ 의 부분집합 $E$ 에 대해 다음은 동치이다.
 </div>
 ::: {.proof}
 
-($1 \implies 2$) $E$ 가 유계이므로 $E$ 를 포함하는 $k$-cell 이 존재하며 @prp-MA_closed_subset_of_compact_set_is_compact 에 의해 $E$ 는 옹골집합이다.
+($1 \implies 2$) $E$ 가 유계이므로 $E$ 를 포함하는 $n$-cell 이 존재하며 @prp-MA_closed_subset_of_compact_set_is_compact 에 의해 $E$ 는 옹골집합이다.
 
 ($2 \implies 3$) @prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set 에 의해 성립한다.
 
@@ -892,9 +899,9 @@ $P$ 를 $\mathbb{R}^n$ 에서의 완전집합이라고 하자. 정의(@def-MA_to
 
 ($1$) $r>0$ 에 대해 $V_1 = N(x_1,\,r)$ 이라고 하자. 그렇다면 $\overline{V_1} = \overline{N}(x_1,\,r)$ 이다.
 
-($2$) $V_k\cap P \ne \varnothing$ 이라고 하자. 모든 $p\in P$ 가 $P$ 에서의 극한점이므로 $(i)$ $\overline{V}_{k+1} \subset V_k$ 이며, $(ii)$ $x_k\notin \overline{V}_{k+1}$ 이고 $(iii)$ $V_{k+1}\cap P \ne \varnothing$ 이 되도록 $V_{k+1}$ 을 정할 수 있다. 
+($2$) $V_k\cap P \ne \varnothing$ 이라고 하자. 모든 $p\in P$ 가 $P$ 에서의 극한점이므로 $(i)$ $\overline{V}_{k+1} \subset V_k$ 이며, $(ii)$ $x_k\notin \overline{V}_{k+1}$ 이고 $(iii)$ $V_{k+1}\cap P \ne \varnothing$ 이 되도록 $V_{k+1}$ 을 정할 수 있다. 그리고 $x_1\in V_1 \cap P$ 이므로 $V_1 \cap P \ne \varnothing$ 이다. 따라서 이 세 조건을 만족하는 $V_1,\,V_2,\ldots$ 는 존재한다.
 
-$F_k = \overline{V}_k \cap P$ 라고 하자. $\overline{V}_k$ 가 닫힌 집합이며 유계이므로(따라서 옹골집합이므로) $\overline{V}_k$ 는 옹골집합이다. $x_k\not\in F_{k+1}$ 이므로 $\left(\cap_{k=1}^\infty F_k\right) \cap P = \varnothing$ 이며, $F_k\subset P$ 이므로 $\left(\cap_{k=1}^\infty F_k\right) = \varnothing$ 이다. 그런데 조건 $(iii)$ 로부터 $F_k \ne \varnothing$ 이며 $F_k \supset F_{k+1}$ 이므로 @prp-MA_finite_intesection_of_compact_sets 에 의해 $\left(\cap_{k=1}^\infty F_k\right) \ne \varnothing$ 이어야 한다. 즉 가정이 틀렸으므로 $P$ 는 불가산집합이다. $\square$
+($3$) $F_k = \overline{V}_k \cap P$ 라고 하자. $\overline{V}_k$ 가 닫힌 집합이며 유계이므로(따라서 옹골집합이므로) $\overline{V}_k$ 는 옹골집합이다. $x_k\not\in F_{k+1}$ 이므로 $\left(\cap_{k=1}^\infty F_k\right) \cap P = \varnothing$ 이며, $F_k\subset P$ 이므로 $\left(\cap_{k=1}^\infty F_k\right) = \varnothing$ 이다. 그런데 조건 $(iii)$ 로부터 $F_k \ne \varnothing$ 이며 $F_k \supset F_{k+1}$ 이므로 @prp-MA_finite_intesection_of_compact_sets 에 의해 $\left(\cap_{k=1}^\infty F_k\right) \ne \varnothing$ 이어야 한다. 즉 가정이 틀렸으므로 $P$ 는 불가산집합이다. $\square$
 
 :::
 
@@ -1005,7 +1012,9 @@ $\overline{E} = E \cup E'$ 이므로 $E$ 의 극한점은 $\overline{E}$ 의 극
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_2_7}
 
@@ -1034,7 +1043,9 @@ $A_i=\{1/i\}$ 라고 정의하면 $\overline{A_i}=\varnothing$ 이므로 $\bigcu
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_2_8}
 
@@ -1052,7 +1063,9 @@ $E = \{(0,\,0)\} \cup ([1, 2]\times [1, 2]) \subset \mathbb{R}^2$ 는 닫힌집�
 
 :::
 
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_rudin_2_9}
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -288,12 +288,13 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-MA_metric_space" id="toc-sec-MA_metric_space" class="nav-link" data-scroll-target="#sec-MA_metric_space"><span class="header-section-number">6.2.1</span> 거리공간</a></li>
   <li><a href="#sec-MA_open_set_and_closed_set" id="toc-sec-MA_open_set_and_closed_set" class="nav-link" data-scroll-target="#sec-MA_open_set_and_closed_set"><span class="header-section-number">6.2.2</span> 열린집합과 닫힌집합</a></li>
+  <li><a href="#sec-MA_topology_in_metric_space" id="toc-sec-MA_topology_in_metric_space" class="nav-link" data-scroll-target="#sec-MA_topology_in_metric_space"><span class="header-section-number">6.2.3</span> 거리공간에서의 위상</a></li>
   </ul></li>
   <li><a href="#옹골-집합" id="toc-옹골-집합" class="nav-link" data-scroll-target="#옹골-집합"><span class="header-section-number">6.3</span> 옹골 집합</a>
   <ul class="collapse">
   <li><a href="#sec-MA_compact_set" id="toc-sec-MA_compact_set" class="nav-link" data-scroll-target="#sec-MA_compact_set"><span class="header-section-number">6.3.1</span> 옹골 집합의 정의</a></li>
   <li><a href="#sec-MA_basic_properties_of_compact_set" id="toc-sec-MA_basic_properties_of_compact_set" class="nav-link" data-scroll-target="#sec-MA_basic_properties_of_compact_set"><span class="header-section-number">6.3.2</span> 옹골집합의 기본 성질</a></li>
-  <li><a href="#sec-MA_heine_borel_theorem" id="toc-sec-MA_heine_borel_theorem" class="nav-link" data-scroll-target="#sec-MA_heine_borel_theorem"><span class="header-section-number">6.3.3</span> 하이네 보렐 정리</a></li>
+  <li><a href="#sec-MA_heine_borel_theorem" id="toc-sec-MA_heine_borel_theorem" class="nav-link" data-scroll-target="#sec-MA_heine_borel_theorem"><span class="header-section-number">6.3.3</span> 하이네-보렐 정리</a></li>
   </ul></li>
   <li><a href="#완전집합과-연결집합" id="toc-완전집합과-연결집합" class="nav-link" data-scroll-target="#완전집합과-연결집합"><span class="header-section-number">6.4</span> 완전집합과 연결집합</a>
   <ul class="collapse">
@@ -451,7 +452,7 @@ Q=\{ (p,\,q) : p\in \mathbb{Z},\, p\ne 0,\, q\in \mathbb{N},\, \gcd(|p|,\,q) = 1
 </div>
 <div class="callout-body-container">
 <div id="def-MA_metric_space" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.3 (거리와 거리 공간)</strong></span> 집합 <span class="math inline">\(X\)</span> 에 다음과 같은 성질을 갖는 이항함수 <span class="math inline">\(d_X:X\times X \mapsto \mathbb{R}\)</span> 이 정의될 때 이 함수를 <strong>거리 함수(metric)</strong> 라고 하고 <span class="math inline">\(X\)</span> 를 <strong>거리공간(metric space)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 6.3 (거리와 거리 공간)</strong></span> 집합 <span class="math inline">\(X\)</span> 에 아래와 같은 성질을 갖는 이항함수 <span class="math inline">\(d_X:X\times X \mapsto \mathbb{R}\)</span> 이 정의될 때 이 함수를 <strong>거리 함수(metric)</strong> 라고 하고 <span class="math inline">\(X\)</span> 를 <strong>거리공간(metric space)</strong> 라고 한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(d_X(p,\,q)  \ge 0\)</span>;</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(d_X(p,\,q) = 0 \iff p=q\)</span>;</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(d_X(p,\,q) = d_X(q,\,p)\)</span>;</p>
@@ -535,9 +536,9 @@ Q=\{ (p,\,q) : p\in \mathbb{Z},\, p\ne 0,\, q\in \mathbb{N},\, \gcd(|p|,\,q) = 1
 <div id="def-MA_n_cell" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 6.6 (<span class="math inline">\(n\)</span>-cell)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서</p>
 <p><span class="math display">\[
-[a_1,\,b_1]\times \cdots \times [a_n,\,b_n] := \{(x_1,\ldots,\,x_k)\in \mathbb{R}^k : a_i \le x_i \le b_i,\, i=1,\ldots,n\}
+[a_1,\,b_1]\times \cdots \times [a_n,\,b_n] := \{(x_1,\ldots,\,x_k)\in \mathbb{R}^n : a_i \le x_i \le b_i,\, i=1,\ldots,n\}
 \]</span></p>
-<p>를 <span class="math inline">\(n\)</span>-cell 이라고 한다.</p>
+<p>를 <strong><span class="math inline">\(n\)</span>-cell</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -556,7 +557,7 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 \overline{N}_X(p,\,\varepsilon) &amp; := \{ x \in X : d_X(p,\,x) \le \varepsilon \}.
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(N_X(p,\,\varepsilon)\)</span> 을 <span class="math inline">\(p\)</span> 를 중심으로 반지름 <span class="math inline">\(\varepsilon\)</span> 인 <span class="math inline">\(X\)</span> 에서의 열린 근방이라고 하고, <span class="math inline">\(\overline{N}_X(p,\,\varepsilon)\)</span> 을 <span class="math inline">\(p\)</span> 를 중심으로 반지름 <span class="math inline">\(\varepsilon\)</span> 인 <span class="math inline">\(X\)</span> 에서의 닫힌 근방이라고 한다. 특별한 언급 없이 근방이라고 할 때는 열린 근방을 의미한다.</p>
+<p><span class="math inline">\(N_X(p,\,\varepsilon)\)</span> 을 <span class="math inline">\(p\)</span> 를 중심으로 반지름 <span class="math inline">\(\varepsilon\)</span> 인 <span class="math inline">\(X\)</span> 에서의 <strong>열린 근방 (open neighborhood)</strong> 이라고 하고, <span class="math inline">\(\overline{N}_X(p,\,\varepsilon)\)</span> 을 <span class="math inline">\(p\)</span> 를 중심으로 반지름 <span class="math inline">\(\varepsilon\)</span> 인 <span class="math inline">\(X\)</span> 에서의 <strong>닫힌 근방 (closed neighborhood)</strong> 이라고 한다. 특별한 언급 없이 근방이라고 할 때는 열린 근방을 의미한다.</p>
 </div>
 </div>
 </div>
@@ -586,9 +587,9 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 <p><span class="theorem-title"><strong>예제 6.1 (근방과 볼록집합)</strong></span> <span class="math inline">\(N(p,\,\varepsilon)\)</span> 은 볼록집합임을 보이자. <span class="math inline">\(x,\,y \in N(p,\,\varepsilon)\)</span> 일 때</p>
 <p><span class="math display">\[
 \begin{aligned}
-|(1-t)x+ty-p| &amp;= |(1-t)(x-p) + t(y-p)| \\
-&amp; \le (1-t)|x-p| + t|y-p| \\
-&amp; &lt; (1-t)r +tr = r
+|(1-t)x+ty-p| &amp;= |(1-t)(x-p) + t(y-p)| \\[0.3em]
+&amp; \le (1-t)|x-p| + t|y-p| \\[0.3em]
+&amp; &lt; (1-t)\varepsilon +t\varepsilon = \varepsilon
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(N(p,\,\varepsilon)\)</span> 은 볼록집합이다. <span class="math inline">\(\overline{N}(p,\,\varepsilon)\)</span> 도 볼록집합임을 같은 방법으로 보일 수 있다.</p>
@@ -608,6 +609,9 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 </div>
 </div>
 <p><br></p>
+</section>
+<section id="sec-MA_topology_in_metric_space" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-MA_topology_in_metric_space"><span class="header-section-number">6.2.3</span> 거리공간에서의 위상</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -648,10 +652,11 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\implies 2\)</span>) <span class="math inline">\(p\in E'\)</span> 의 근방이 유한개의 <span class="math inline">\(E\)</span> 의 원소를 포함한다고 가정하자. 포함된 <span class="math inline">\(E\)</span> 의 원소중 <span class="math inline">\(p\)</span> 와의 거리가 최소인 <span class="math inline">\(p\)</span> 가 아닌 원소를 <span class="math inline">\(q\)</span> 라 하자. <span class="math inline">\(N(p,\, d(p,\,q)/2)\cup E = \varnothing\)</span> 이므로 <span class="math inline">\(p\)</span> 가 극한점이라는 가정에 모순된다. 따라서 무한개의 <span class="math inline">\(E\)</span> 의 원소를 포함한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\implies 2\)</span>) <span class="math inline">\(p\in E'\)</span> 의 근방이 유한개의 <span class="math inline">\(E\)</span> 의 원소를 포함한다고 가정하자. 포함된 <span class="math inline">\(E\)</span> 의 원소중 <span class="math inline">\(p\)</span> 와의 거리가 최소인 <span class="math inline">\(p\)</span> 가 아닌 원소를 <span class="math inline">\(q\)</span> 라 하자. <span class="math inline">\(N(p,\, d(p,\,q)/2)\cup E\)</span> 는 <span class="math inline">\(p \in E\)</span> 이면 <span class="math inline">\(\{p\}\)</span> 이고 <span class="math inline">\(p \notin E\)</span> 이면 <span class="math inline">\(\varnothing\)</span> 이므로 <span class="math inline">\(p\)</span> 가 극한점이라는 가정에 모순된다. 따라서 무한개의 <span class="math inline">\(E\)</span> 의 원소를 포함한다.</p>
 <p>(<span class="math inline">\(2 \implies 1\)</span>) 극한점의 정의에 의해 자명하다. <span class="math inline">\(\square\)</span></p>
 </div>
-<br>
+<p><br></p>
+이로부터 아래 따름 정리는 자명하다.
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-MA_limit_points_1" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 6.3</strong></span> 유한집합에 대한 극한점은 존재하지 않는다.</p>
@@ -662,19 +667,19 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 <div id="prp-MA_open_set_is_complement_of_closed_set" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 6.6</strong></span> 거리공간 <span class="math inline">\(X\)</span> 의 부분집합 <span class="math inline">\(E\)</span> 에 대해 다음은 동치이다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(E\)</span> 는 열린 집합이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(E \backslash X\)</span> 는 닫힌 집합이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(X \backslash E\)</span> 는 닫힌 집합이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(E\)</span> 가 열린집합임을 가정하자. <span class="math inline">\(p\in (E\backslash X)'\)</span> 일 때 <span class="math inline">\(p\)</span> 의 모든 근방은 <span class="math inline">\(E\backslash X\)</span> 의 <span class="math inline">\(p\)</span> 가 아닌 점을 포함하므로 <span class="math inline">\(p\not \in E\)</span>, 즉 <span class="math inline">\(p\in E\backslash X\)</span> 이다. 따라서 <span class="math inline">\((E\backslash X)'\subset E\backslash X\)</span> 이다. 즉 <span class="math inline">\(E\backslash X\)</span> 는 닫힌 집합이다.</p>
-<p><span class="math inline">\(E\backslash X\)</span> 가 닫힌 집합임을 가정하자. <span class="math inline">\(x\in E\)</span> 이면 <span class="math inline">\(x\not\in E\backslash X\)</span> 이며 <span class="math inline">\(E\backslash X\)</span> 는 닫힌집합이므로 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(E\backslash X\)</span> 의 극한점이 아니다. 따라서 어떤 <span class="math inline">\(x\)</span> 의 근방은 <span class="math inline">\(E\backslash X\)</span> 와 의 교집합이 없으므로 <span class="math inline">\(E\)</span> 에 포함된다. 따라서 <span class="math inline">\(E\)</span> 는 열린집합이다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(E\)</span> 가 열린집합임을 가정하자. <span class="math inline">\(p\in (X\backslash E)'\)</span> 일 때 <span class="math inline">\(p\)</span> 의 모든 근방은 <span class="math inline">\(X\backslash E\)</span> 의 <span class="math inline">\(p\)</span> 가 아닌 점을 포함하므로 <span class="math inline">\(p\not \in E\)</span>, 즉 <span class="math inline">\(p\in X\backslash E\)</span> 이다. 따라서 <span class="math inline">\((X\backslash E)'\subset X\backslash E\)</span> 이다. 즉 <span class="math inline">\(X\backslash E\)</span> 는 닫힌 집합이다.</p>
+<p><span class="math inline">\(X\backslash E\)</span> 가 닫힌 집합임을 가정하자. <span class="math inline">\(x\in E\)</span> 이면 <span class="math inline">\(x\not\in X\backslash E\)</span> 이며 <span class="math inline">\(X\backslash E\)</span> 는 닫힌집합이므로 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(X\backslash E\)</span> 의 극한점이 아니다. 따라서 어떤 <span class="math inline">\(x\)</span> 의 근방은 <span class="math inline">\(X\backslash E\)</span> 와 의 교집합이 없으므로 <span class="math inline">\(E\)</span> 에 포함된다. 따라서 <span class="math inline">\(E\)</span> 는 열린집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<br>
+이로부터 아래 따름정리는 자명하다.
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-MA_closed_set_is_complement_of_open_set" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 6.4</strong></span> 거리공간 <span class="math inline">\(X\)</span> 의 부분집합 <span class="math inline">\(E\)</span> 에 대해 다음은 동치이다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(E\)</span> 는 닫힌 집합이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(E \backslash X\)</span> 는 열린 집합이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(X \backslash E\)</span> 는 열린 집합이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -739,7 +744,7 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(p\in E\)</span> 에 대해 <span class="math inline">\(N_Y(p,\,\varepsilon)\subset Y\)</span> 인 <span class="math inline">\(\varepsilon_p&gt;0\)</span> 이 존재한다. <span class="math inline">\(G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)\)</span> 라고 하면 <span class="math inline">\(G\)</span> 는 열린 집합이며 <span class="math inline">\(E\subset Y \cap G\)</span> 이다. 또한 각각의 <span class="math inline">\(p\in E\)</span> 에 대해 <span class="math inline">\(N_X(p,\,\varepsilon_p) \cap Y \subset E\)</span> 이므로 <span class="math inline">\(Y \cap G \subset E\)</span> 이다. 즉 <span class="math inline">\(Y = Y \cap G\)</span> 이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(p\in E\)</span> 에 대해 <span class="math inline">\(N_Y(p,\,\varepsilon_p)\subset Y\)</span> 인 <span class="math inline">\(\varepsilon_p&gt;0\)</span> 이 존재한다. <span class="math inline">\(G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)\)</span> 라고 하면 <span class="math inline">\(G\)</span> 는 열린 집합이며 <span class="math inline">\(E\subset Y \cap G\)</span> 이다. 또한 각각의 <span class="math inline">\(p\in E\)</span> 에 대해 <span class="math inline">\(N_X(p,\,\varepsilon_p) \cap Y \subset E\)</span> 이므로 <span class="math inline">\(Y \cap G \subset E\)</span> 이다. 즉 <span class="math inline">\(Y = Y \cap G\)</span> 이다.</p>
 <p>(<span class="math inline">\(2 \implies 1\)</span>) <span class="math inline">\(G\)</span> 가 열린집합이고 <span class="math inline">\(E \subset G\)</span> 이므로 각각의 <span class="math inline">\(p\in E\)</span> 에 대해 <span class="math inline">\(N_X(p,\, \varepsilon_p) \subset G\)</span> 인 <span class="math inline">\(\varepsilon_p &gt;0\)</span> 이 존재하며 <span class="math inline">\(N_X(p,\,\varepsilon_p) \cap Y \subset E\)</span> 이다. 이 때 <span class="math inline">\(N_X(p,\, \varepsilon_p) \cap Y = N_Y (p,\,\varepsilon_p)\)</span> 이므로 정의에 의해 <span class="math inline">\(E\)</span> 는 <span class="math inline">\(Y\)</span> 안에서 열려 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
@@ -803,11 +808,11 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_compact_set_is_closed" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.12</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서의 옹골집합은 닫힌 집합이다.</p>
+<p><span class="theorem-title"><strong>명제 6.12</strong></span> 거리공간에서의 옹골집합은 닫힌 집합이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(K\subset X\)</span> 가 옹골집합이라고 하자. 고정된 <span class="math inline">\(p \in  X\backslash K\)</span> 와 각각의 <span class="math inline">\(q\in K\)</span> 에 대해 반지름 <span class="math inline">\(r\)</span> 이 <span class="math inline">\(\frac{1}{2}d(p,\,q)\)</span> 보다 작은 <span class="math inline">\(p\)</span> 의 근방 <span class="math inline">\(V_q\)</span> 와 <span class="math inline">\(q\)</span> 의 근방 <span class="math inline">\(W_q\)</span> 를 잡을 수 있다. 집합족 <span class="math inline">\(\{W_q\}\)</span> 는 <span class="math inline">\(K\)</span> 에 대한 열린 덮개이므로 유한개의 근방들을 모아 <span class="math inline">\(K\)</span> 를 덮을 수 있다. 이 유한개의 근방을 각각 <span class="math inline">\(W_{q_1},\ldots,\,W_{q_n}\)</span> 이라고 하고 이 <span class="math inline">\(q_1,\,\ldots,\,q_n\)</span> 의 근방을 정할때의 <span class="math inline">\(p\)</span> 의 근방을 각각 <span class="math inline">\(V_{q_1},\ldots,\,V_{q_n}\)</span> 이라고 하자.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>거리공간 <span class="math inline">\(X\)</span> 에서 <span class="math inline">\(K\subset X\)</span> 가 옹골집합이라고 하자. 고정된 <span class="math inline">\(p \in  X\backslash K\)</span> 와 각각의 <span class="math inline">\(q\in K\)</span> 에 대해 반지름 <span class="math inline">\(r\)</span> 이 <span class="math inline">\(\frac{1}{2}d(p,\,q)\)</span> 보다 작은 <span class="math inline">\(p\)</span> 의 근방 <span class="math inline">\(V_q\)</span> 와 <span class="math inline">\(q\)</span> 의 근방 <span class="math inline">\(W_q\)</span> 를 잡을 수 있다. 집합족 <span class="math inline">\(\{W_q\}\)</span> 는 <span class="math inline">\(K\)</span> 에 대한 열린 덮개이므로 유한개의 근방들을 모아 <span class="math inline">\(K\)</span> 를 덮을 수 있다. 이 유한개의 근방을 각각 <span class="math inline">\(W_{q_1},\ldots,\,W_{q_n}\)</span> 이라고 하고 이 <span class="math inline">\(q_1,\,\ldots,\,q_n\)</span> 의 근방을 정할때의 <span class="math inline">\(p\)</span> 의 근방을 각각 <span class="math inline">\(V_{q_1},\ldots,\,V_{q_n}\)</span> 이라고 하자.</p>
 <p><span class="math inline">\(W=W_{q_1} \cup \cdots \cup W_{q_n}\)</span> 라 하고 <span class="math inline">\(V=V_{q_1}\cap \cdots \cap V_{q_n}\)</span> 라 하자. <span class="math inline">\(V\)</span> 는 <span class="math inline">\(p\)</span> 의 근방이며 <span class="math inline">\(W \cap V = \varnothing\)</span> 이다. 따라서 <span class="math inline">\(V\subset X\backslash K\)</span> 이므로 <span class="math inline">\(K^c\)</span> 는 열린집합이다. 즉 <span class="math inline">\(K\)</span> 는 닫힌 집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
@@ -883,7 +888,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <p><br></p>
 </section>
 <section id="sec-MA_heine_borel_theorem" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="sec-MA_heine_borel_theorem"><span class="header-section-number">6.3.3</span> 하이네 보렐 정리</h3>
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="sec-MA_heine_borel_theorem"><span class="header-section-number">6.3.3</span> 하이네-보렐 정리</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_heine_borrel" class="theorem">
 <p><span class="theorem-title"><strong>정리 6.4 (하이네-보렐 정리)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 의 부분집합 <span class="math inline">\(E\)</span> 에 대해 다음은 동치이다.</p>
@@ -893,7 +898,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(E\)</span> 가 유계이므로 <span class="math inline">\(E\)</span> 를 포함하는 <span class="math inline">\(k\)</span>-cell 이 존재하며 <a href="#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.13</span></a> 에 의해 <span class="math inline">\(E\)</span> 는 옹골집합이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(E\)</span> 가 유계이므로 <span class="math inline">\(E\)</span> 를 포함하는 <span class="math inline">\(n\)</span>-cell 이 존재하며 <a href="#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.13</span></a> 에 의해 <span class="math inline">\(E\)</span> 는 옹골집합이다.</p>
 <p>(<span class="math inline">\(2 \implies 3\)</span>) <a href="#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 성립한다.</p>
 <p>(<span class="math inline">\(3 \implies 1\)</span>) <span class="math inline">\(E\)</span> 가 유계가 아니라면 <span class="math inline">\(k=1,\ldots\)</span> 에 대해 <span class="math inline">\(|a_k|&gt;k,\, a_k\in E\)</span> 인 집합 <span class="math inline">\(\{a_k\}\subset E\)</span> 를 생각 할 수 있으며 이는 가정에 위배된다. 따라서 <span class="math inline">\(E\)</span> 는 유계이다. <span class="math inline">\(E\)</span> 가 닫힌 집합이 아니라면 <span class="math inline">\(E\)</span> 의 부분집합의 극한점 가운데 <span class="math inline">\(E\)</span> 에 포함되지 않은 것이 존재한다. 이 점을 <span class="math inline">\(x\)</span> 라고 하자. 임의의 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(d(x,\,x_n)&lt;1/n\)</span> 인 <span class="math inline">\(x_n\in E\)</span> 을 선택하여 <span class="math inline">\(\{x_n\} \subset E\)</span> 을 구성 할 수 있다. 이 <span class="math inline">\(\{x_n\}\)</span> 이 유한집합일 경우는 고려의 대상에서 제외되며, 무한집합 일 경우만 생각한다. 이 때 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(\{x_n\}\)</span> 의 극한점이며 가정에 의해 <span class="math inline">\(E\)</span> 에 포함되어야 한다. 따라서 <span class="math inline">\(E\)</span> 는 닫힌 집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -921,8 +926,8 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 완전집합이라고 하자. 정의(<a href="#def-MA_topologycal_terms" class="quarto-xref">정의&nbsp;<span>6.9</span></a>) 에 의해 <span class="math inline">\(p\in P\)</span> 는 <span class="math inline">\(P\)</span> 극한점이며 <a href="#prp-MA_limit_points_1" class="quarto-xref">명제&nbsp;<span>6.5</span></a> 에 의해 <span class="math inline">\(P\)</span> 는 무한집합이다. <span class="math inline">\(P\)</span> 가 가산집합임을 가정하고 각각의 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(x_1,\,x_2,\ldots\)</span> 라고 하자. 그리고 근방의 수열 <span class="math inline">\(\{V_n\}\)</span> 을 다음과 같이 정의한다.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(r&gt;0\)</span> 에 대해 <span class="math inline">\(V_1 = N(x_1,\,r)\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\overline{V_1} = \overline{N}(x_1,\,r)\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(V_k\cap P \ne \varnothing\)</span> 이라고 하자. 모든 <span class="math inline">\(p\in P\)</span> 가 <span class="math inline">\(P\)</span> 에서의 극한점이므로 <span class="math inline">\((i)\)</span> <span class="math inline">\(\overline{V}_{k+1} \subset V_k\)</span> 이며, <span class="math inline">\((ii)\)</span> <span class="math inline">\(x_k\notin \overline{V}_{k+1}\)</span> 이고 <span class="math inline">\((iii)\)</span> <span class="math inline">\(V_{k+1}\cap P \ne \varnothing\)</span> 이 되도록 <span class="math inline">\(V_{k+1}\)</span> 을 정할 수 있다.</p>
-<p><span class="math inline">\(F_k = \overline{V}_k \cap P\)</span> 라고 하자. <span class="math inline">\(\overline{V}_k\)</span> 가 닫힌 집합이며 유계이므로(따라서 옹골집합이므로) <span class="math inline">\(\overline{V}_k\)</span> 는 옹골집합이다. <span class="math inline">\(x_k\not\in F_{k+1}\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \cap P = \varnothing\)</span> 이며, <span class="math inline">\(F_k\subset P\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) = \varnothing\)</span> 이다. 그런데 조건 <span class="math inline">\((iii)\)</span> 로부터 <span class="math inline">\(F_k \ne \varnothing\)</span> 이며 <span class="math inline">\(F_k \supset F_{k+1}\)</span> 이므로 <a href="#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \ne \varnothing\)</span> 이어야 한다. 즉 가정이 틀렸으므로 <span class="math inline">\(P\)</span> 는 불가산집합이다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(V_k\cap P \ne \varnothing\)</span> 이라고 하자. 모든 <span class="math inline">\(p\in P\)</span> 가 <span class="math inline">\(P\)</span> 에서의 극한점이므로 <span class="math inline">\((i)\)</span> <span class="math inline">\(\overline{V}_{k+1} \subset V_k\)</span> 이며, <span class="math inline">\((ii)\)</span> <span class="math inline">\(x_k\notin \overline{V}_{k+1}\)</span> 이고 <span class="math inline">\((iii)\)</span> <span class="math inline">\(V_{k+1}\cap P \ne \varnothing\)</span> 이 되도록 <span class="math inline">\(V_{k+1}\)</span> 을 정할 수 있다. 그리고 <span class="math inline">\(x_1\in V_1 \cap P\)</span> 이므로 <span class="math inline">\(V_1 \cap P \ne \varnothing\)</span> 이다. 따라서 이 세 조건을 만족하는 <span class="math inline">\(V_1,\,V_2,\ldots\)</span> 는 존재한다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F_k = \overline{V}_k \cap P\)</span> 라고 하자. <span class="math inline">\(\overline{V}_k\)</span> 가 닫힌 집합이며 유계이므로(따라서 옹골집합이므로) <span class="math inline">\(\overline{V}_k\)</span> 는 옹골집합이다. <span class="math inline">\(x_k\not\in F_{k+1}\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \cap P = \varnothing\)</span> 이며, <span class="math inline">\(F_k\subset P\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) = \varnothing\)</span> 이다. 그런데 조건 <span class="math inline">\((iii)\)</span> 로부터 <span class="math inline">\(F_k \ne \varnothing\)</span> 이며 <span class="math inline">\(F_k \supset F_{k+1}\)</span> 이므로 <a href="#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \ne \varnothing\)</span> 이어야 한다. 즉 가정이 틀렸으므로 <span class="math inline">\(P\)</span> 는 불가산집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -997,7 +1002,7 @@ E_{k+1} &amp;= \bigcup_{j=1}^{2^{k+1}} I_{j}^{(k+1)}
 <p><span class="math inline">\(\overline{E} = E \cup E'\)</span> 이므로 <span class="math inline">\(E\)</span> 의 극한점은 <span class="math inline">\(\overline{E}\)</span> 의 극한점이다. 즉 <span class="math inline">\(E' \subset {\overline{E}}'\)</span> 이다. <span class="math inline">\(x\in (\overline{E})'\)</span> 이며 <span class="math inline">\(x\not\in E'\)</span> 라면 어떤 <span class="math inline">\(x\)</span> 의 근방 <span class="math inline">\(N_x\)</span> 는 <span class="math inline">\(x\)</span> 를 제외하면 <span class="math inline">\(E\)</span> 의 원소는 포함하지 않고 <span class="math inline">\(\overline{E}\)</span> 의 원소만을 포함해야 한다. <span class="math inline">\(y\in N_x \cap \overline{E}\)</span> 라면 <span class="math inline">\(y\)</span> 의 모든 근방은 무수히 많은 <span class="math inline">\(E\)</span> 의 원소를 포함해야 하므로 모순이다. 즉 <span class="math inline">\(x\in (\overline{E})' \implies x\in E'\)</span> 이므로 <span class="math inline">\(\overline{E}' \subset E'\)</span> 이다. 따라서 <span class="math inline">\(\overline{E}\)</span> 의 극한점과 <span class="math inline">\(E\)</span> 의 극한점은 같다.</p>
 <p>이제 <span class="math inline">\(E' \ne (E')'\)</span> 인 예를 보이자. <span class="math inline">\(E=\{ 1/n :n\in \mathbb{Z}_+\}\)</span> 일 때 <span class="math inline">\(E'=\{0\}\)</span> 이지만 <span class="math inline">\((E')'=\varnothing\)</span> 이다. 따라서 <span class="math inline">\(E' \ne (E')'\)</span> 이다.</p>
 </div>
-<br>
+<p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_2_7" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 6.2 (Rudin 2.7)</strong></span> <span class="math inline">\(A_1,\,A_2,\,A_3,\ldots\)</span> 가 거리공간의 부분집합일 때 다음을 보이시오.</p>
@@ -1012,7 +1017,7 @@ E_{k+1} &amp;= \bigcup_{j=1}^{2^{k+1}} I_{j}^{(k+1)}
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(B = \bigcup_{i=1}^\infty A_i\)</span> 이면 위에서 밑줄친 부분이 성립하지 않고 나머지는 성립하므로 <span class="math inline">\(\bigcup_{i=1}^\infty \overline{A_i} \subset \overline{B}\)</span> 이다.</p>
 <p><span class="math inline">\(A_i=\{1/i\}\)</span> 라고 정의하면 <span class="math inline">\(\overline{A_i}=\varnothing\)</span> 이므로 <span class="math inline">\(\bigcup_{i=1}^\infty \overline{A_i} =\varnothing\)</span> 이지만 <span class="math inline">\(\overline{B}=\{0\}\)</span> 이다.</p>
 </div>
-<br>
+<p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_2_8" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 6.3 (Rudin 2.8)</strong></span> <span class="math inline">\(E\subset \mathbb{R}^2\)</span> 가 열린집합이면 <span class="math inline">\(E\)</span> 의 모든 점은 <span class="math inline">\(E\)</span> 의 극한점인가? <span class="math inline">\(E\)</span> 가 닫힌집합인 경우는?</p>
@@ -1022,7 +1027,7 @@ E_{k+1} &amp;= \bigcup_{j=1}^{2^{k+1}} I_{j}^{(k+1)}
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(E\)</span> 가 열린집합이라고 하자. <span class="math inline">\(p\in E\)</span> 이면 어떤 <span class="math inline">\(\varepsilon_p&gt;0\)</span> 에 대해 <span class="math inline">\(N(p,\, \varepsilon_p) \subset E\)</span> 이므로 <span class="math inline">\(p\)</span> 의 임의의 근방은 <span class="math inline">\(p\)</span> 이외의 <span class="math inline">\(E\)</span> 의 점을 포함한다. 따라서 <span class="math inline">\(p\)</span> 는 <span class="math inline">\(E\)</span> 의 극한점이다.</p>
 <p><span class="math inline">\(E = \{(0,\,0)\} \cup ([1, 2]\times [1, 2]) \subset \mathbb{R}^2\)</span> 는 닫힌집합이며 <span class="math inline">\((0,\,0) \in E\)</span> 이지만 <span class="math inline">\((0,\,0)\)</span> 은 극한점이 아니다.</p>
 </div>
-<br>
+<p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_rudin_2_9" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 6.4 (Rudin 2.9)</strong></span> <span class="math inline">\(E\)</span> 가 거리공간 <span class="math inline">\(X\)</span> 의 부분집합일 때 <span class="math inline">\(E\)</span> 의 모든 내점의 집합을 <span class="math inline">\(\text{int}(E)\)</span> 라고 한다. 다음을 보여라.</p>
