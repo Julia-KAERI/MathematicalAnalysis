@@ -54,7 +54,7 @@ $$
 
 ::: {#exm-MA_convergence_and_space}
 
-수렴 여부는 거리공간에 의존한다. 예를 들어 $\langle 1/n \rangle$ 은 $[0,\,1]$ 에서 수렴하지만 $(0,\,1]$ 에서는 수렴하지 않는다.
+수열의 수렴 여부는 수열이 정의된 거리공간에 의존한다. 예를 들어 $\langle 1/n \rangle$ 은 $[0,\,1]$ 에서 수렴하지만 $(0,\,1]$ 에서는 수렴하지 않는다.
 
 :::
 
@@ -82,7 +82,7 @@ $$
 ($1$) $\implies$ 는 정의에 의해 자명하다. $a$ 의 임의의 근방 $N_X(a,\,\varepsilon)$ 에 대해 유한개 성분을 제외한 $a_k$ 의 모든 성분이 포함된다고 하자. 유한개의 포함되지 않는 수열 성분 가운데 인덱스가 최대인 것을 $N$ 이라고 하면 $k\ge N \implies a_k \in N_X(a,\,\varepsilon)$ 이므로 $\langle a_k \rangle \to a$ 이다. 
 
 
-($2$) $a_1,\,a_2$ 로 수렴한다고 하자. 고정된 $\varepsilon>0$ 에 대해 $k \ge N_1 \implies d(a_k,\,a_1)<\varepsilon$ 이며 $k \ge N_2 \implies d(a_k,\, a_2)<\varepsilon$ 이라 하자. $k \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_k,\,a_1)+d(a_k,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
+($2$) $a_1,\,a_2$ 로 수렴한다고 하자. 고정된 $\varepsilon>0$ 에 대해 $k \ge N_1 \implies d(a_k,\,a_1)<\varepsilon/2$ 이며 $k \ge N_2 \implies d(a_k,\, a_2)<\varepsilon/2$ 이라 하자. $k \ge \max (N_1,\, N_2)$ 이면 $d(a_1,\,a_2)  \le d(a_k,\,a_1)+d(a_k,\, a_2) < \varepsilon$ 이다. 임의의 $\varepsilon>0$ 에 대해 성립해야 하므로 $a_1=a_2$ 이다.
 
 ($3$) 고정된 $\varepsilon >0$ 에 대해 $k\ge N \implies d(a_k,\, a)<\varepsilon$ 이다. $m = \min \{a_1,\ldots,\,a_{N-1}\}$ $M = \max \{a_1,\ldots,\, a_{N-1}\}$ 이라 하면
 
@@ -127,7 +127,7 @@ $$
 
 ::: {#prp-MA_properties_of_convergence_3}
 
-$\mathbb{R}^n$ 에서 정의된 수열 $\langle a_k\rangle,\, \langle b_k \rangle$ 이 각각 $a,\,b$ 로 수렴할 때 다음이 성립한다.
+$\C$ 에서 정의된 수열 $\langle a_k\rangle,\, \langle b_k \rangle$ 이 각각 $a,\,b$ 로 수렴할 때 다음이 성립한다.
 
 &emsp;($1$) $\displaystyle \lim_{k \to \infty}(a_k+b_k) = a+b$.
 
@@ -227,7 +227,7 @@ $$
 
 #### 단조 수열
 
-수열 $\langle a_n \rangle$ 이 $k\in \mathbb{Z}_+$ 에 대해 $a_k \le a_{k+1}$ 일 때 **단조 증가 수열** 이라고 하고 $a_{k} \ge a_{k+1}$ 일 때 **단조 감수 수열** 이라고 한다. 단조 증가 수열과 단조 감소 수열을 **단조 수열** 이라고 한다.
+$\R$ 에서 정의된 수열 $\langle a_n \rangle$ 이 $k\in \mathbb{Z}_+$ 에 대해 $a_k \le a_{k+1}$ 일 때 **단조 증가 수열** 이라고 하고 $a_{k} \ge a_{k+1}$ 일 때 **단조 감수 수열** 이라고 한다. 단조 증가 수열과 단조 감소 수열을 **단조 수열** 이라고 한다.
 
 ::: 
 :::
@@ -391,7 +391,7 @@ $$
 e \ge \lim_{n \to \infty} a_n \ge \lim_{n \to \infty} b_n \ge s_k
 $$
 
-이며 이 부등식은 모든 $k$ 에 대해 성립하므로 $\displaystyle \lim_{n \to \infty} a_n = e$ 이다. $\square$
+이며 이 부등식은 모든 $k$ 에 대해 성립하므로 $\displaystyle \lim_{n \to \infty} a_n = e$ 이다. 
 
 :::
 

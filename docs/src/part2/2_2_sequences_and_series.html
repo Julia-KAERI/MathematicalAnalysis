@@ -376,7 +376,7 @@ s_n = \sum_{k=1}^n a_k
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-MA_convergence_and_space" class="theorem example">
-<p><span class="theorem-title"><strong>예제 7.1</strong></span> 수렴 여부는 거리공간에 의존한다. 예를 들어 <span class="math inline">\(\langle 1/n \rangle\)</span> 은 <span class="math inline">\([0,\,1]\)</span> 에서 수렴하지만 <span class="math inline">\((0,\,1]\)</span> 에서는 수렴하지 않는다.</p>
+<p><span class="theorem-title"><strong>예제 7.1</strong></span> 수열의 수렴 여부는 수열이 정의된 거리공간에 의존한다. 예를 들어 <span class="math inline">\(\langle 1/n \rangle\)</span> 은 <span class="math inline">\([0,\,1]\)</span> 에서 수렴하지만 <span class="math inline">\((0,\,1]\)</span> 에서는 수렴하지 않는다.</p>
 </div>
 </div>
 <p><br></p>
@@ -390,7 +390,7 @@ s_n = \sum_{k=1}^n a_k
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\implies\)</span> 는 정의에 의해 자명하다. <span class="math inline">\(a\)</span> 의 임의의 근방 <span class="math inline">\(N_X(a,\,\varepsilon)\)</span> 에 대해 유한개 성분을 제외한 <span class="math inline">\(a_k\)</span> 의 모든 성분이 포함된다고 하자. 유한개의 포함되지 않는 수열 성분 가운데 인덱스가 최대인 것을 <span class="math inline">\(N\)</span> 이라고 하면 <span class="math inline">\(k\ge N \implies a_k \in N_X(a,\,\varepsilon)\)</span> 이므로 <span class="math inline">\(\langle a_k \rangle \to a\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(a_1,\,a_2\)</span> 로 수렴한다고 하자. 고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(k \ge N_1 \implies d(a_k,\,a_1)&lt;\varepsilon\)</span> 이며 <span class="math inline">\(k \ge N_2 \implies d(a_k,\, a_2)&lt;\varepsilon\)</span> 이라 하자. <span class="math inline">\(k \ge \max (N_1,\, N_2)\)</span> 이면 <span class="math inline">\(d(a_1,\,a_2)  \le d(a_k,\,a_1)+d(a_k,\, a_2) &lt; \varepsilon\)</span> 이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립해야 하므로 <span class="math inline">\(a_1=a_2\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(a_1,\,a_2\)</span> 로 수렴한다고 하자. 고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(k \ge N_1 \implies d(a_k,\,a_1)&lt;\varepsilon/2\)</span> 이며 <span class="math inline">\(k \ge N_2 \implies d(a_k,\, a_2)&lt;\varepsilon/2\)</span> 이라 하자. <span class="math inline">\(k \ge \max (N_1,\, N_2)\)</span> 이면 <span class="math inline">\(d(a_1,\,a_2)  \le d(a_k,\,a_1)+d(a_k,\, a_2) &lt; \varepsilon\)</span> 이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립해야 하므로 <span class="math inline">\(a_1=a_2\)</span> 이다.</p>
 <p>(<span class="math inline">\(3\)</span>) 고정된 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(k\ge N \implies d(a_k,\, a)&lt;\varepsilon\)</span> 이다. <span class="math inline">\(m = \min \{a_1,\ldots,\,a_{N-1}\}\)</span> <span class="math inline">\(M = \max \{a_1,\ldots,\, a_{N-1}\}\)</span> 이라 하면</p>
 <p><span class="math display">\[
 \min (m, a-\varepsilon) \le a_k \le \max (M, a+\varepsilon)
@@ -412,7 +412,7 @@ s_n = \sum_{k=1}^n a_k
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_properties_of_convergence_3" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.3</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_k\rangle,\, \langle b_k \rangle\)</span> 이 각각 <span class="math inline">\(a,\,b\)</span> 로 수렴할 때 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 7.3</strong></span> <span class="math inline">\(\mathbb{C}\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_k\rangle,\, \langle b_k \rangle\)</span> 이 각각 <span class="math inline">\(a,\,b\)</span> 로 수렴할 때 다음이 성립한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \lim_{k \to \infty}(a_k+b_k) = a+b\)</span>.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(c\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\displaystyle \lim_{k \to \infty} (ca_k)= ca\)</span>.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \lim_{k \to \infty} a_k b_k = ab\)</span>.</p>
@@ -476,7 +476,7 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 </div>
 <div class="callout-body-container">
 <div id="def-MA_monotonic_sequence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.3 (단조 수열)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a_k \le a_{k+1}\)</span> 일 때 <strong>단조 증가 수열</strong> 이라고 하고 <span class="math inline">\(a_{k} \ge a_{k+1}\)</span> 일 때 <strong>단조 감수 수열</strong> 이라고 한다. 단조 증가 수열과 단조 감소 수열을 <strong>단조 수열</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.3 (단조 수열)</strong></span> <span class="math inline">\(\mathbb{R}\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a_k \le a_{k+1}\)</span> 일 때 <strong>단조 증가 수열</strong> 이라고 하고 <span class="math inline">\(a_{k} \ge a_{k+1}\)</span> 일 때 <strong>단조 감수 수열</strong> 이라고 한다. 단조 증가 수열과 단조 감소 수열을 <strong>단조 수열</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -584,7 +584,7 @@ a_n &amp;= \sum_{m=0}^n \begin{pmatrix} n \\ m \end{pmatrix} \left(\dfrac{1}{n}\
 <p><span class="math display">\[
 e \ge \lim_{n \to \infty} a_n \ge \lim_{n \to \infty} b_n \ge s_k
 \]</span></p>
-<p>이며 이 부등식은 모든 <span class="math inline">\(k\)</span> 에 대해 성립하므로 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n = e\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p>이며 이 부등식은 모든 <span class="math inline">\(k\)</span> 에 대해 성립하므로 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n = e\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
