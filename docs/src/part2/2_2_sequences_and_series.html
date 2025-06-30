@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -37,7 +57,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -290,15 +310,16 @@ window.Quarto = {
   <li><a href="#sec-MA_e" id="toc-sec-MA_e" class="nav-link" data-scroll-target="#sec-MA_e"><span class="header-section-number">7.1.3</span> <span class="math inline">\(e\)</span></a></li>
   </ul></li>
   <li><a href="#코시-수열" id="toc-코시-수열" class="nav-link" data-scroll-target="#코시-수열"><span class="header-section-number">7.2</span> 코시 수열</a></li>
-  <li><a href="#상극한과-하극한" id="toc-상극한과-하극한" class="nav-link" data-scroll-target="#상극한과-하극한"><span class="header-section-number">7.3</span> 상극한과 하극한</a></li>
-  <li><a href="#중요한-수열들" id="toc-중요한-수열들" class="nav-link" data-scroll-target="#중요한-수열들"><span class="header-section-number">7.4</span> 중요한 수열들</a></li>
+  <li><a href="#sec-MA_upper_limit_and_lower_limit" id="toc-sec-MA_upper_limit_and_lower_limit" class="nav-link" data-scroll-target="#sec-MA_upper_limit_and_lower_limit"><span class="header-section-number">7.3</span> 상극한과 하극한</a></li>
+  <li><a href="#sec-MA_examples_of_sequences" id="toc-sec-MA_examples_of_sequences" class="nav-link" data-scroll-target="#sec-MA_examples_of_sequences"><span class="header-section-number">7.4</span> 중요한 수열들</a></li>
   <li><a href="#sec-MA_convergence_of_series" id="toc-sec-MA_convergence_of_series" class="nav-link" data-scroll-target="#sec-MA_convergence_of_series"><span class="header-section-number">7.5</span> 급수의 수렴과 발산</a>
   <ul class="collapse">
   <li><a href="#sec-MA_cauchy_criteria" id="toc-sec-MA_cauchy_criteria" class="nav-link" data-scroll-target="#sec-MA_cauchy_criteria"><span class="header-section-number">7.5.1</span> 코시 판정법</a></li>
-  <li><a href="#음수가-아닌-수로-이루어진-급수" id="toc-음수가-아닌-수로-이루어진-급수" class="nav-link" data-scroll-target="#음수가-아닌-수로-이루어진-급수"><span class="header-section-number">7.5.2</span> 음수가 아닌 수로 이루어진 급수</a></li>
-  <li><a href="#sec-MA_root_criteria" id="toc-sec-MA_root_criteria" class="nav-link" data-scroll-target="#sec-MA_root_criteria"><span class="header-section-number">7.5.3</span> 근 판정법</a></li>
-  <li><a href="#sec-MA_ratio_criteria" id="toc-sec-MA_ratio_criteria" class="nav-link" data-scroll-target="#sec-MA_ratio_criteria"><span class="header-section-number">7.5.4</span> 비율 판정법</a></li>
-  <li><a href="#sec-MA_power_series" id="toc-sec-MA_power_series" class="nav-link" data-scroll-target="#sec-MA_power_series"><span class="header-section-number">7.5.5</span> 멱급수</a></li>
+  <li><a href="#sec-MA_comparision_criteria" id="toc-sec-MA_comparision_criteria" class="nav-link" data-scroll-target="#sec-MA_comparision_criteria"><span class="header-section-number">7.5.2</span> 비교판정법</a></li>
+  <li><a href="#음수가-아닌-수로-이루어진-급수" id="toc-음수가-아닌-수로-이루어진-급수" class="nav-link" data-scroll-target="#음수가-아닌-수로-이루어진-급수"><span class="header-section-number">7.5.3</span> 음수가 아닌 수로 이루어진 급수</a></li>
+  <li><a href="#sec-MA_root_criteria" id="toc-sec-MA_root_criteria" class="nav-link" data-scroll-target="#sec-MA_root_criteria"><span class="header-section-number">7.5.4</span> 근 판정법</a></li>
+  <li><a href="#sec-MA_ratio_criteria" id="toc-sec-MA_ratio_criteria" class="nav-link" data-scroll-target="#sec-MA_ratio_criteria"><span class="header-section-number">7.5.5</span> 비율 판정법</a></li>
+  <li><a href="#sec-MA_power_series" id="toc-sec-MA_power_series" class="nav-link" data-scroll-target="#sec-MA_power_series"><span class="header-section-number">7.5.6</span> 멱급수</a></li>
   </ul></li>
   <li><a href="#부분합과-재배열-급수" id="toc-부분합과-재배열-급수" class="nav-link" data-scroll-target="#부분합과-재배열-급수"><span class="header-section-number">7.6</span> 부분합과 재배열 급수</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
@@ -339,7 +360,7 @@ window.Quarto = {
 <h2 data-number="7.1" class="anchored" data-anchor-id="수열sequence-과-급수-series"><span class="header-section-number">7.1</span> 수열(Sequence) 과 급수 (Series)</h2>
 <section id="수열의-수렴" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="수열의-수렴"><span class="header-section-number">7.1.1</span> 수열의 수렴</h3>
-<p>수열은 <a href="2_1_basic_topology.html#def-MA_sequence" class="quarto-xref">정의&nbsp;<span>6.2</span></a> 에서 정의하였다. 급수(series) 는 다음과 같이 정의된다.</p>
+<p>수열은 <a href="2_1_basic_topology.html#def-MA_sequence" class="quarto-xref">정의&nbsp;<span>6.2</span></a> 에서 정의하였다. 수열 가운데 <span class="math inline">\(\mathbb{R}\)</span> 에서 정의된 수열으르 <strong>실수열 (real sequence)</strong>, <span class="math inline">\(\mathbb{C}\)</span> 에서 정의된 수열을 <strong>복소 수열 (complex sequence)</strong> 라고 한다. 급수(series) 는 다음과 같이 정의된다.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -356,6 +377,7 @@ s_n = \sum_{k=1}^n a_k
 </div>
 </div>
 </div>
+<p><br></p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -412,7 +434,7 @@ s_n = \sum_{k=1}^n a_k
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_properties_of_convergence_3" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.3</strong></span> <span class="math inline">\(\mathbb{C}\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_k\rangle,\, \langle b_k \rangle\)</span> 이 각각 <span class="math inline">\(a,\,b\)</span> 로 수렴할 때 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 7.3</strong></span> 실수열 <span class="math inline">\(\langle a_k\rangle,\, \langle b_k \rangle\)</span> 이 각각 <span class="math inline">\(a,\,b\)</span> 로 수렴할 때 다음이 성립한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \lim_{k \to \infty}(a_k+b_k) = a+b\)</span>.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(c\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\displaystyle \lim_{k \to \infty} (ca_k)= ca\)</span>.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \lim_{k \to \infty} a_k b_k = ab\)</span>.</p>
@@ -450,20 +472,20 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_convergence_in_Euclidean_space" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.4</strong></span> <span class="math inline">\(\mathbb{R}^k\)</span> 에서의 수열 <span class="math inline">\(\boldsymbol{x}_n = ( x_{1, n},\ldots,\, x_{k, n})\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}_n\)</span> 이 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_k)\)</span> 로 수렴할 필요충분조건은</p>
+<p><span class="theorem-title"><strong>명제 7.4</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 수열 <span class="math inline">\(\boldsymbol{x}_k = ( x_{1, k},\ldots,\, x_{n, k})\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}_n\)</span> 이 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 로 수렴할 필요충분조건은</p>
 <p><span class="math display">\[
-\lim_{n \to \infty} x_{j, n} = x_j \qquad (1 \le j \le k)
+\lim_{k \to \infty} x_{j, k} = x_j \qquad (1 \le j \le n)
 \]</span></p>
 <p>이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle \lim_{n \to \infty} \boldsymbol{x}_n = \boldsymbol{x}\)</span> 이면 어떤 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(n \ge N \implies \|\boldsymbol{x}_n - \boldsymbol{x}\| &lt; \varepsilon\)</span> 을 만족하는 <span class="math inline">\(N\in \mathbb{N}\)</span> 이 존재한다. <span class="math inline">\(|x_{j,\, n} -x_{j}| \le \|\boldsymbol{x}_n - \boldsymbol{x}\|\)</span> 이므로 <span class="math inline">\(\langle \boldsymbol{x}_n\rangle\)</span> 이 <span class="math inline">\(\boldsymbol{x}\)</span> 로 수렴하면 <span class="math inline">\(\langle x_{j, n}\rangle\)</span> 은 <span class="math inline">\(x_j\)</span> 로 수렴한다.</p>
-<p>역으로 <span class="math inline">\(\displaystyle \lim_{n \to \infty} x_{j, n} = x_j \qquad (1 \le j \le k)\)</span> 이면 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(n \ge N_i \implies |x_{j, n}-x_j|&lt;\varepsilon/k\)</span> 인 <span class="math inline">\(N_i\)</span> 가 존재한다. <span class="math inline">\(N = \max (N_1,\ldots,\, N_k)\)</span> 라고 하면 <span class="math inline">\(n\ge N\)</span> 에 대해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle \lim_{k \to \infty} \boldsymbol{x}_k = \boldsymbol{x}\)</span> 이면 어떤 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(k \ge N \implies \|\boldsymbol{x}_k - \boldsymbol{x}\| &lt; \varepsilon\)</span> 을 만족하는 <span class="math inline">\(N\in \mathbb{N}\)</span> 이 존재한다. <span class="math inline">\(|x_{j,\, k} -x_{j}| \le \|\boldsymbol{x}_k - \boldsymbol{x}\|\)</span> 이므로 <span class="math inline">\(\langle \boldsymbol{x}_k\rangle\)</span> 이 <span class="math inline">\(\boldsymbol{x}\)</span> 로 수렴하면 <span class="math inline">\(\langle x_{j, k}\rangle\)</span> 은 <span class="math inline">\(x_j\)</span> 로 수렴한다.</p>
+<p>역으로 <span class="math inline">\(\displaystyle \lim_{k \to \infty} x_{j, k} = x_j \qquad (1 \le j \le n)\)</span> 이면 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(k \ge N_i \implies |x_{j, k}-x_j|&lt;\varepsilon/k\)</span> 인 <span class="math inline">\(N_i\)</span> 가 존재한다. <span class="math inline">\(N = \max (N_1,\ldots,\, N_n)\)</span> 라고 하면 <span class="math inline">\(k\ge N\)</span> 에 대해</p>
 <p><span class="math display">\[
-\|\boldsymbol{x}_n -\boldsymbol{x}\| \le |x_{1, n}-x_1| + \cdots + |x_{k, n}-x_k| &lt; \varepsilon
+\|\boldsymbol{x}_k -\boldsymbol{x}\| \le |x_{1, k}-x_1| + \cdots + |x_{n, k}-x_k| &lt; \varepsilon
 \]</span></p>
-<p>이므로 <span class="math inline">\(\langle \boldsymbol{x}_n\rangle\)</span> 이 <span class="math inline">\(\boldsymbol{x}\)</span> 로 수렴한다. <span class="math inline">\(\square\)</span></p>
+<p>이므로 <span class="math inline">\(\langle \boldsymbol{x}_k\rangle\)</span> 이 <span class="math inline">\(\boldsymbol{x}\)</span> 로 수렴한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -476,7 +498,7 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 </div>
 <div class="callout-body-container">
 <div id="def-MA_monotonic_sequence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.3 (단조 수열)</strong></span> <span class="math inline">\(\mathbb{R}\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a_k \le a_{k+1}\)</span> 일 때 <strong>단조 증가 수열</strong> 이라고 하고 <span class="math inline">\(a_{k} \ge a_{k+1}\)</span> 일 때 <strong>단조 감수 수열</strong> 이라고 한다. 단조 증가 수열과 단조 감소 수열을 <strong>단조 수열</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.3 (단조 수열)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a_k \le a_{k+1}\)</span> 일 때 <strong>단조 증가 수열</strong> 이라고 하고 <span class="math inline">\(a_{k} \ge a_{k+1}\)</span> 일 때 <strong>단조 감수 수열</strong> 이라고 한다. 단조 증가 수열과 단조 감소 수열을 <strong>단조 수열</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -621,7 +643,7 @@ e-s_q &amp;= \dfrac{1}{(q+1)!}+ \dfrac{1}{(q+2)!} + \cdots \\
 <div id="def-MA_series" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.5 (코시 수열)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하여</p>
 <p><span class="math display">\[
-m,\, n \ge N \implies d(a_m,\, a_n) &lt; \varepsilon
+m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 \]</span></p>
 <p>일 때 <span class="math inline">\(\langle a_n \rangle\)</span> 을 코시 수열 이라고 한다.</p>
 </div>
@@ -639,7 +661,7 @@ m,\, n \ge N \implies d(a_m,\, a_n) &lt; \varepsilon
 <div id="def-MA_diameter" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.6 (집합의 지름)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 의 공집합이 아닌 부분집합 <span class="math inline">\(E\)</span> 에 대해 아래와 같이 정의된 <span class="math inline">\(\text{diam}(E)\)</span> 를 <span class="math inline">\(E\)</span> 의 <strong>지름 (diameter)</strong> 라고 한다.</p>
 <p><span id="eq-MA_definition_of_diameter"><span class="math display">\[
-\text{diam}(E):= \max \{\|x-y\|_X: x,\,y \in E\}.
+\text{diam}(E):= \sup \{\|x-y\|_X: x,\,y \in E\}.
 \tag{7.1}\]</span></span></p>
 </div>
 </div>
@@ -666,7 +688,7 @@ m,\, n \ge N \implies d(a_m,\, a_n) &lt; \varepsilon
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(K = \bigcap K_n\)</span> 이라고 하자. <a href="2_1_basic_topology.html#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(K \ne \varnothing\)</span> 이다. <span class="math inline">\(K\)</span> 가 두개 이상의 원소로 이루어졌다면 <span class="math inline">\(\text{diam}(K) &gt;0\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \text{diam}(K_n) &gt;0\)</span> 이므로 가정에 위배된다. 따라서 <span class="math inline">\(K\)</span> 는 오직 하나의 원소로만 이루어진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>수열의 수렴은 그 수열이 수렴하는 값에 대해 성립하지만 코시 수열은 정의상 수렴하는 값이 없어도 코시 수열인지 여부를 알 수 있다. 수열의 수렴과 코시 수열은 밀접한 관련이 있는데 이제 코시 수열에 대해 알아보기로 하자.</p>
+<p>수열의 수렴은 그 수열이 수렴하는 값을 알아야 수렴 여부를 알 수 있지만 코시 수열 여부는 수렴하는 값이 없어도 코시 수열인지 여부를 알 수 있다. 수열의 수렴과 코시 수열은 밀접한 관련이 있는데 이제 코시 수열에 대해 알아보기로 하자.</p>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_cauchy_sequence" class="theorem">
@@ -678,15 +700,15 @@ m,\, n \ge N \implies d(a_m,\, a_n) &lt; \varepsilon
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle a_n \rangle\)</span> 이 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 <span class="math inline">\(a\)</span> 로 수렴하는 수열이라고 하자. 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(n \ge N \implies d(a_n,\, a)&lt;\varepsilon/2\)</span> 을 만족하는 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하므로 <span class="math inline">\(m,\, n \ge N\)</span> 일 때</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\langle a_n \rangle\)</span> 이 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 <span class="math inline">\(a\)</span> 로 수렴하는 수열이라고 하자. 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(n \ge N \implies \|a_n - a\|&lt;\varepsilon/2\)</span> 을 만족하는 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하므로 <span class="math inline">\(m,\, n \ge N\)</span> 일 때</p>
 <p><span class="math display">\[
-d(a_m,\, a_n) \le d(a_m,\, a)+ d(a_n,\, a)&lt; \varepsilon
+\|a_m - a_n\| \le \| a_m - a \|+  \| a_n - a\|&lt; \varepsilon
 \]</span></p>
 <p>이다. 즉 수렴하는 수열은 코시 수열이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(m,\, n \ge N \implies d(a_m,\, a_n)&lt; \varepsilon\)</span> 인 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하므로 <span class="math inline">\(\{a_1,\ldots,\, a_{N-1}\}\)</span> 과 <span class="math inline">\(a_N-\varepsilon,\, a_N+\varepsilon\)</span> 에 의해 코시수열 <span class="math inline">\(a_n\)</span> 의 한 상계와 하계가 정해진다. 따라서 코시수열은 유계이다.</p>
-<p>(<span class="math inline">\(3\)</span>) 코시수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 부분수열 <span class="math inline">\(\langle a_{n_k} \rangle\)</span> 이 <span class="math inline">\(a\)</span> 로 수렴한다고 하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대헤 <span class="math inline">\(m,\, n \ge N_1 \implies d(a_m,\, a_n)&lt;\varepsilon/2\)</span> 인 <span class="math inline">\(N_1 \in \mathbb{Z}_+\)</span> 이 존재한다. 부분수열이 수렴하므로 <span class="math inline">\(k&gt;K \implies d(a_{n_k},\, a)&lt;\varepsilon/2\)</span> 인 <span class="math inline">\(K\in \mathbb{Z}_+\)</span> 이 존재한다. <span class="math inline">\(K\)</span> 를 충분히 크게 잡아 <span class="math inline">\(n_K \ge N_1\)</span> 이 되게 할 수 있다. 그렇다면 <span class="math inline">\(n \ge n_K\)</span> 일 때</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(m,\, n \ge N \implies \|a_m -  a_n\|&lt; \varepsilon\)</span> 인 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하므로 <span class="math inline">\(\{a_1,\ldots,\, a_{N-1}\}\)</span> 과 <span class="math inline">\(a_N-\varepsilon,\, a_N+\varepsilon\)</span> 에 의해 코시수열 <span class="math inline">\(a_n\)</span> 의 한 상계와 하계가 정해진다. 따라서 코시수열은 유계이다.</p>
+<p>(<span class="math inline">\(3\)</span>) 코시수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 부분수열 <span class="math inline">\(\langle a_{n_k} \rangle\)</span> 이 <span class="math inline">\(a\)</span> 로 수렴한다고 하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대헤 <span class="math inline">\(m,\, n \ge N_1 \implies \|a_m - a_n\| &lt; \varepsilon/2\)</span> 인 <span class="math inline">\(N_1 \in \mathbb{Z}_+\)</span> 이 존재한다. 부분수열이 수렴하므로 <span class="math inline">\(k&gt;K \implies \|a_{n_k} - a \| &lt;\varepsilon/2\)</span> 인 <span class="math inline">\(K\in \mathbb{Z}_+\)</span> 이 존재한다. <span class="math inline">\(K\)</span> 를 충분히 크게 잡아 <span class="math inline">\(n_K \ge N_1\)</span> 이 되게 할 수 있다. 그렇다면 <span class="math inline">\(n \ge n_K\)</span> 일 때</p>
 <p><span class="math display">\[
-d(a_n,\, a) \le d(a_n,\, a_{n_K})+ d(a,\, a_{n_K}) &lt; \varepsilon
+\|a_n -  a\| \le \| a_n - a_{n_K} \|+  \| a - a_{n_K}\| &lt; \varepsilon
 \]</span></p>
 <p>이므로 <span class="math inline">\(\langle a_n \rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴한다.</p>
 <p>(<span class="math inline">\(4\)</span>) <a href="#prp-MA_properties_of_subsequence" class="quarto-xref">명제&nbsp;<span>7.6</span></a> 과 (<span class="math inline">\(3\)</span>) 에 의해 성립한다. <span class="math inline">\(\square\)</span></p>
@@ -717,8 +739,8 @@ d(a_n,\, a) \le d(a_n,\, a_{n_K})+ d(a,\, a_{n_K}) &lt; \varepsilon
 </div>
 <p><br></p>
 </section>
-<section id="상극한과-하극한" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="상극한과-하극한"><span class="header-section-number">7.3</span> 상극한과 하극한</h2>
+<section id="sec-MA_upper_limit_and_lower_limit" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-MA_upper_limit_and_lower_limit"><span class="header-section-number">7.3</span> 상극한과 하극한</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -726,13 +748,13 @@ d(a_n,\, a) \le d(a_n,\, a_{n_K})+ d(a,\, a_{n_K}) &lt; \varepsilon
 </div>
 <div class="callout-body-container">
 <div id="def-MA_diverge_to_infinite" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.8 (무한대로 발산)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 모든 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_M\in \mathbb{N}\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정의 7.8 (무한대로 발산)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 각각의 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_M\in \mathbb{N}\)</span> 이 존재하여</p>
 <p><span class="math display">\[
 n \ge N_M \implies a_n &gt; M
 \]</span></p>
-<p>이면 <span class="math inline">\(a_n\)</span> 은 양의 무한대로 발산한다고 하고 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a_n = + \infty\)</span> 혹은 <span class="math inline">\(a_n \to +\infty\)</span> 라고 쓴다. <span class="math inline">\(a_n\)</span> 이 모든 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_M\in \mathbb{N}\)</span> 이 존재하여</p>
+<p>이면 <span class="math inline">\(a_n\)</span> 은 양의 무한대로 발산한다고 하고 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a_n = + \infty\)</span> 혹은 <span class="math inline">\(a_n \to +\infty\)</span> 라고 쓴다. <span class="math inline">\(a_n\)</span> 이 각각의 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_m\in \mathbb{N}\)</span> 이 존재하여</p>
 <p><span class="math display">\[
-n \ge N_M \implies a_n &lt; -M
+n \ge N_m \implies a_n &lt; -M
 \]</span></p>
 <p>일 때 <span class="math inline">\(a_n\)</span> 은 음의 무한대로 발산한다고 하고 <span class="math inline">\(\displaystyle \lim_{n\to\infty} a_n = - \infty\)</span> 혹은 <span class="math inline">\(a_n \to -\infty\)</span> 라고 쓴다.</p>
 </div>
@@ -747,7 +769,7 @@ n \ge N_M \implies a_n &lt; -M
 </div>
 <div class="callout-body-container">
 <div id="def-MA_limsup_liminf" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.9 (상극한과 하극한)</strong></span> 위로 유계인 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 상극한 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 7.9 (상극한과 하극한)</strong></span> 위로 유계인 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 상극한 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
 \limsup_{n \to \infty} a_n := \lim_{n \to \infty} \sup \{a_n,\, a_{n+1},\,a_{n+2},\ldots\}
 \]</span></p>
@@ -799,12 +821,26 @@ n \ge N_M \implies a_n &lt; -M
 <p>(2 <span class="math inline">\(\implies\)</span> 1) <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 과 <a href="#prp-MA_properties_of_liminf" class="quarto-xref">명제&nbsp;<span>7.12</span></a> 각각의 1번 조건에 의해 <span class="math inline">\(\displaystyle \lim_{n \to \infty}a_n = a\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
+<p><a href="#def-MA_limsup_liminf" class="quarto-xref">정의&nbsp;<span>7.9</span></a> 는 서울대 해석개론(<span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<a href="../../references.html#ref-KKK2011" role="doc-biblioref">2011</a>)</span>) 의 정의이다. 루딘의 PMA(<span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span>) 은 동등한 다른 정의를 사용한다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-MA_another_definition_of_limsup_and_liminf" class="theorem">
+<p><span class="theorem-title"><strong>정리 7.3 (상극한과 하극한의 다른 정의)</strong></span> 유계인 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 부분 수열의 극한의 집합을 <span class="math inline">\(E\)</span> 라고 하자. 이 때 다음이 성립한다.</p>
+<p><span class="math display">\[
+\limsup_{n \to \infty} a_n = \sup E,\qquad \liminf_{n \to \infty} = \inf E
+\]</span></p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>상극한에 대해 우선 보이자. <a href="#prp-MA_ubsequential_limit_forms_closed_subset" class="quarto-xref">명제&nbsp;<span>7.7</span></a> 으로부터 <span class="math inline">\(E\)</span> 는 닫힌 집합이다. 따라서 <span class="math inline">\(a=\limsup_{n\to\infty} a_n\in E\)</span> 이며 <span class="math inline">\(a\)</span> 는 어떤 부분 수열의 극한이므로 <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 의 (<span class="math inline">\(2\)</span>) 를 만족한다. <span class="math inline">\(a\)</span> 가 <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 을 만족하지 않으면 <span class="math inline">\(a\)</span> 는 부분수열의 극한일 수 없다. 따라서 (<span class="math inline">\(1\)</span>) 도 만족한다. 즉 <span class="math inline">\(a=\sup E\)</span> 는 <span class="math inline">\(\langle a_n\rangle\)</span> 의 상극한이다. 하극한에 대해서도 같은 방식으로 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
 </section>
-<section id="중요한-수열들" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="중요한-수열들"><span class="header-section-number">7.4</span> 중요한 수열들</h2>
+<section id="sec-MA_examples_of_sequences" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-MA_examples_of_sequences"><span class="header-section-number">7.4</span> 중요한 수열들</h2>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-MA_sequences" class="theorem example">
-<p><span class="theorem-title"><strong>예제 7.3 (중요한 수열들)</strong></span> 아래의 수열은 많이 사용되는 수열이다.</p>
+<p><span class="theorem-title"><strong>예제 7.3 (중요한 수열들)</strong></span> 아래의 실수열은 중요하다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle p&gt;0 \implies \lim_{n \to \infty} \dfrac{1}{n^p} = 0\)</span>.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle p &gt; 0 \implies \lim_{n \to \infty} \sqrt[n]{p}=1\)</span>.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \lim_{n \to \infty} \sqrt[n]{n}=1\)</span>.</p>
@@ -843,7 +879,7 @@ n = (1+a_n)^n \ge \dfrac{n(n-1)}{2}{a_n}^2
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="sec-MA_cauchy_criteria"><span class="header-section-number">7.5.1</span> 코시 판정법</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_convergence_of_series_1" class="theorem">
-<p><span class="theorem-title"><strong>정리 7.3 (코시 판정법)</strong></span> 급수 <span class="math inline">\(\sum a_n\)</span> 이 수렴할 필요 충분 조건은 임의의 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해 어떤 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정리 7.4 (코시 판정법)</strong></span> 급수 <span class="math inline">\(\sum a_n\)</span> 이 수렴할 필요 충분 조건은 임의의 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해 어떤 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여</p>
 <p><span class="math display">\[
 m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 \]</span></p>
@@ -861,18 +897,21 @@ m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 </div>
 <p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.3</span></a> 에서 <span class="math inline">\(m=n\)</span> 일 경우.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.4</span></a> 에서 <span class="math inline">\(m=n\)</span> 일 경우.</p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_partial_sum_of_nonnegative_sequence" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.13</strong></span> 음수가 아닌 항으로 이루어진 수열의 급수가 수렴할 필요충분조건은 수열의 부분합이 유계인 수열을 이루는 것이다.</p>
+<p><span class="theorem-title"><strong>명제 7.13</strong></span> 음수가 아닌 항으로 이루어진 실수열의 급수가 수렴할 필요충분조건은 수열의 부분합이 유계인 수열을 이루는 것이다.</p>
 </div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>음수가 아닌 항으로 이루어진 수열의 급수는 단조 증가 수열이다. 단조증가 수열이 유계이면 수렴하며(<a href="#prp-MA_bounded_monotonic_sequence" class="quarto-xref">명제&nbsp;<span>7.5</span></a>), 수열이 수렴하면 유계이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
+</section>
+<section id="sec-MA_comparision_criteria" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="sec-MA_comparision_criteria"><span class="header-section-number">7.5.2</span> 비교판정법</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -880,30 +919,39 @@ m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 </div>
 <div class="callout-body-container">
 <div id="def-MA_absolute_convergence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.10 (절대수렴)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대한 급수 <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^\infty |a_k|\)</span> 가 수렴하면 급수 <span class="math inline">\(\displaystyle \sum_{k=1}^\infty a_k\)</span> 가 절대수렴한다고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.10 (절대수렴)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대한 급수 <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^\infty |a_k|\)</span> 가 수렴하면 급수 <span class="math inline">\(\displaystyle \sum_{k=1}^\infty a_k\)</span> 가 <strong>절대수렴 (absolutely convergent)</strong> 한다고 한다.</p>
 </div>
 </div>
 </div>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-MA_convergence_of_absolutely_converging_series" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 7.14</strong></span> <span class="math inline">\(\sum_k a_k\)</span> 가 절대수렴하면 <span class="math inline">\(\sum_k a_k\)</span> 는 수렴한다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(0 \le |\sum_{k=1}^n a_k| \le \sum_{k=1}^n |a_k|\)</span> 이다. 코시판정법을 생각하자. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_convergence_of_series_3" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.14</strong></span> 수열 <span class="math inline">\(\langle a_k\rangle,\, \langle b_k\rangle\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>명제 7.15</strong></span> 실수열 <span class="math inline">\(\langle a_k\rangle,\, \langle b_k\rangle\)</span> 에 대해</p>
 <p>(<span class="math inline">\(1\)</span>) 어떤 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(k \ge N \implies |a_k |\le b_k\)</span> 이고 <span class="math inline">\(\sum b_k\)</span> 이 수렴하면, <span class="math inline">\(\sum a_k\)</span> 도 수렴한다.</p>
 <p>(<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(k \ge N \implies |a_k |\ge b_k \ge 0\)</span> 이고 <span class="math inline">\(\sum b_k\)</span> 이 발산하면, <span class="math inline">\(\sum a_k\)</span> 도 발산한다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 코시 판정법(<a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.3</span></a>) 에 의해 <span class="math inline">\(\sum_k b_k\)</span> 이 수렴하면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(m\ge n \ge N\)</span> 이면 <span class="math inline">\(\displaystyle \sum_{k=n}^m b_k &lt; \varepsilon\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle\sum_{k=n}^m a_k &lt;\varepsilon\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sum_k a_k\)</span> 이 수렴한다면 코시 판정법(<a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.3</span></a>) 에 의해 <span class="math inline">\(\sum_k b_k\)</span> 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 <span class="math inline">\(\sum a_k\)</span> 은 발산한다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 코시 판정법(<a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.4</span></a>) 에 의해 <span class="math inline">\(\sum_k b_k\)</span> 이 수렴하면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재하여 <span class="math inline">\(m\ge n \ge N\)</span> 이면 <span class="math inline">\(\displaystyle \sum_{k=n}^m b_k &lt; \varepsilon\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle\sum_{k=n}^m a_k &lt;\varepsilon\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sum_k a_k\)</span> 이 수렴한다면 코시 판정법(<a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.4</span></a>) 에 의해 <span class="math inline">\(\sum_k b_k\)</span> 도 수렴해야 하는데 이는 조건에 위배된다. 따라서 <span class="math inline">\(\sum a_k\)</span> 은 발산한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
-<section id="음수가-아닌-수로-이루어진-급수" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="음수가-아닌-수로-이루어진-급수"><span class="header-section-number">7.5.2</span> 음수가 아닌 수로 이루어진 급수</h3>
+<section id="음수가-아닌-수로-이루어진-급수" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="음수가-아닌-수로-이루어진-급수"><span class="header-section-number">7.5.3</span> 음수가 아닌 수로 이루어진 급수</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_series_of_power_of_2" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.15</strong></span> 수열 <span class="math inline">\(\langle a_k\rangle\)</span> 에 대해 <span class="math inline">\(a_1 \ge a_2 \ge \cdots \ge 0\)</span> 일 때 다음은 동치이다.</p>
+<p><span class="theorem-title"><strong>명제 7.16</strong></span> 실수열 <span class="math inline">\(\langle a_k\rangle\)</span> 에 대해 <span class="math inline">\(a_1 \ge a_2 \ge \cdots \ge 0\)</span> 일 때 다음은 동치이다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \sum_{k=1}^\infty a_k\)</span> 는 수렴한다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle \sum_{k=0}^\infty 2^k a_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \cdots\)</span> 는 수렴한다.</p>
 </div>
@@ -938,35 +986,35 @@ s_n &amp;= a_1 + \cdots + a_n \\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_convergence_of_1_over_n_p" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.16</strong></span> <span class="math inline">\(\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}\)</span> 는 <span class="math inline">\(p&gt;1\)</span> 일 때 수렴하며 그 외에는 발산한다.</p>
+<p><span class="theorem-title"><strong>명제 7.17</strong></span> <span class="math inline">\(\displaystyle \sum_{k=1}^\infty \dfrac{1}{k^p}\)</span> 는 <span class="math inline">\(p&gt;1\)</span> 일 때 수렴하며 그 외에는 발산한다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(p \le 0\)</span> 이면 <span class="math inline">\(k^p\ge 1\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{k\to \infty}\dfrac{1}{k^p} \ne 0\)</span> 이다. <a href="#cor-MA_convergence_of_series_2" class="quarto-xref">따름정리&nbsp;<span>7.3</span></a> 에 의해 발산한다. <span class="math inline">\(p&gt;0\)</span> 인 경우 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.15</span></a> 를 사용하여 증명 할 수 있다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(p \le 0\)</span> 이면 <span class="math inline">\(k^p\ge 1\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{k\to \infty}\dfrac{1}{k^p} \ne 0\)</span> 이다. <a href="#cor-MA_convergence_of_series_2" class="quarto-xref">따름정리&nbsp;<span>7.3</span></a> 에 의해 발산한다. <span class="math inline">\(p&gt;0\)</span> 인 경우 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.16</span></a> 를 사용하여 증명 할 수 있다.</p>
 <p><span class="math display">\[
 \sum_{k=0}^\infty 2^k \cdot \dfrac{1}{2^{kp}} = \sum_{k=0}^\infty 2^{(1-p)k}
 \]</span></p>
-<p>이며 <span class="math inline">\(2^{(1-p)}&lt;1 \iff p&gt;1\)</span> 이므로 <a href="#prp-MA_convergence_of_geometric_series" class="quarto-xref">명제&nbsp;<span>7.8</span></a> 와 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.15</span></a> 에 의해 <span class="math inline">\(p&gt;1\)</span> 일 때만 수렴하며 나머지 경우에는 발산한다. <span class="math inline">\(\square\)</span></p>
+<p>이며 <span class="math inline">\(2^{(1-p)}&lt;1 \iff p&gt;1\)</span> 이므로 <a href="#prp-MA_convergence_of_geometric_series" class="quarto-xref">명제&nbsp;<span>7.8</span></a> 와 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.16</span></a> 에 의해 <span class="math inline">\(p&gt;1\)</span> 일 때만 수렴하며 나머지 경우에는 발산한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-MA_convergence_of_series_1" class="theorem example">
 <p><span class="theorem-title"><strong>예제 7.4</strong></span> 급수 <span class="math inline">\(\displaystyle \sum_{k=2}^\infty \dfrac{1}{k(\log k)^p}\)</span> 는 <span class="math inline">\(p&gt;1\)</span> 에서 수렴하며 나머지 경우에는 발산함을 보일 수 있다.</p>
-<p>우리는 <span class="math inline">\(k&gt;1 \implies \log k &gt; 0\)</span> 이며 <span class="math inline">\(\log (k)\)</span> 이 단조증가함수라는 것을 안다. 따라서 <span class="math inline">\(p&gt;0\)</span> 에 대해 <span class="math inline">\(1/(k (\log (k)))^p\)</span> 는 단조감소수열므로 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.15</span></a> 를 사용 할 수 있다.</p>
+<p>우리는 <span class="math inline">\(k&gt;1 \implies \log k &gt; 0\)</span> 이며 <span class="math inline">\(\log (k)\)</span> 이 단조증가함수라는 것을 안다. 따라서 <span class="math inline">\(p&gt;0\)</span> 에 대해 <span class="math inline">\(1/(k (\log (k)))^p\)</span> 는 단조감소수열므로 <a href="#prp-MA_series_of_power_of_2" class="quarto-xref">명제&nbsp;<span>7.16</span></a> 를 사용 할 수 있다.</p>
 <p><span class="math display">\[
 \sum_{k=1}^\infty 2^k \cdot \dfrac{1}{2^k (\log (2^k))^p} = \sum_{k=1}^\infty \dfrac{1}{(k \log 2)^p} = \dfrac{1}{(\log 2)^p} \sum_{k=1}^\infty \dfrac{1}{k^p}
 \]</span></p>
-<p>이므로 <a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.16</span></a> 에 의해 <span class="math inline">\(p&gt;1\)</span> 일 때 수렴하고 <span class="math inline">\(0&lt;p\le 1\)</span> 일 때 발산한다.</p>
+<p>이므로 <a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.17</span></a> 에 의해 <span class="math inline">\(p&gt;1\)</span> 일 때 수렴하고 <span class="math inline">\(0&lt;p\le 1\)</span> 일 때 발산한다.</p>
 <p><span class="math inline">\(p\le 0\)</span> 인 경우는 <span class="math inline">\((\log k)^p &lt;1\)</span> 이므로 발산한다. <span class="math inline">\(\square\)</span></p>
 </div>
 </div>
 <p><br></p>
 </section>
-<section id="sec-MA_root_criteria" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="sec-MA_root_criteria"><span class="header-section-number">7.5.3</span> 근 판정법</h3>
+<section id="sec-MA_root_criteria" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="sec-MA_root_criteria"><span class="header-section-number">7.5.4</span> 근 판정법</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_series_root_test" class="theorem">
-<p><span class="theorem-title"><strong>정리 7.4</strong></span> 급수 <span class="math inline">\(\sum a_k\)</span> 에 대해 <span class="math inline">\(\displaystyle \alpha = \limsup_{k \to \infty} \sqrt[k]{|a_k|}\)</span> 이라 할 때,</p>
+<p><span class="theorem-title"><strong>정리 7.5</strong></span> 급수 <span class="math inline">\(\sum a_k\)</span> 에 대해 <span class="math inline">\(\displaystyle \alpha = \limsup_{k \to \infty} \sqrt[k]{|a_k|}\)</span> 이라 할 때,</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\alpha&lt;1\)</span> 이면 <span class="math inline">\(\sum_k a_k\)</span> 은 수렴하며,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\alpha &gt; 1\)</span> 이면 <span class="math inline">\(\sum_k a_k\)</span> 은 발산하고,</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\alpha=1\)</span> 이면 이 조건만으로 수렴 여부를 정할 수 없다.</p>
@@ -975,15 +1023,15 @@ s_n &amp;= a_1 + \cdots + a_n \\
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\alpha&lt;1\)</span> 이라 하자. <span class="math inline">\(\alpha&lt; \beta &lt; 1\)</span> 인 임의의 <span class="math inline">\(\beta\)</span> 를 생각하자. <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 에 의해 <span class="math inline">\(k\ge N \implies \sqrt[k]{|a_k|}&lt;\beta\)</span> 인 자연수 <span class="math inline">\(N\)</span> 이 존재한다. 즉 <span class="math inline">\(k \ge N \implies |a_n|&lt; \beta^n\)</span> 이므로 <span class="math inline">\(\sum_k a_k\)</span> 는 절대수렴한다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\alpha&gt;1\)</span> 이라 하자. <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 에 의해 <span class="math inline">\(1&lt;\beta&lt;\alpha\)</span> 일 때 무한히 많은 <span class="math inline">\(k\)</span> 에 대해 <span class="math inline">\(|\alpha_k|&gt; \beta^k &gt; 1\)</span> 이다. 따라서 <span class="math inline">\(\sum_k a_k\)</span> 는 발산한다.</p>
-<p>(<span class="math inline">\(3\)</span>) <a href="#exm-MA_sequences" class="quarto-xref">예제&nbsp;<span>7.3</span></a> 에서 <span class="math inline">\(\displaystyle \lim_{k \to \infty} \sqrt[k]{k}=1\)</span> 임을 보였다. 따라서 <span class="math inline">\(\displaystyle \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k}} = \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k^2}}=1\)</span> 이다. 그런데 <span class="math inline">\(\alpha=1\)</span> 인 두 수열 <span class="math inline">\(\sum 1/k,\, \sum 1/k^2\)</span> 은 각각 발산하고 수렴한다. (<a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.16</span></a>) <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(3\)</span>) <a href="#exm-MA_sequences" class="quarto-xref">예제&nbsp;<span>7.3</span></a> 에서 <span class="math inline">\(\displaystyle \lim_{k \to \infty} \sqrt[k]{k}=1\)</span> 임을 보였다. 따라서 <span class="math inline">\(\displaystyle \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k}} = \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{k^2}}=1\)</span> 이다. 그런데 <span class="math inline">\(\alpha=1\)</span> 인 두 수열 <span class="math inline">\(\sum 1/k,\, \sum 1/k^2\)</span> 은 각각 발산하고 수렴한다. (<a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.17</span></a>) <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
-<section id="sec-MA_ratio_criteria" class="level3" data-number="7.5.4">
-<h3 data-number="7.5.4" class="anchored" data-anchor-id="sec-MA_ratio_criteria"><span class="header-section-number">7.5.4</span> 비율 판정법</h3>
+<section id="sec-MA_ratio_criteria" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="sec-MA_ratio_criteria"><span class="header-section-number">7.5.5</span> 비율 판정법</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_series_ratio_test" class="theorem">
-<p><span class="theorem-title"><strong>정리 7.5</strong></span> 급수 <span class="math inline">\(\sum_k a_k\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정리 7.6</strong></span> 급수 <span class="math inline">\(\sum_k a_k\)</span> 에 대해</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \limsup_{k \to \infty} \left|\dfrac{a_{k+1}}{a_k}\right| &lt;1\)</span> 이면 수렴한다.</p>
 <p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(k\ge N \implies \left|\dfrac{a_{k+1}}{a_k}\right| \ge 1\)</span> 이면 발산한다.</p>
 </div>
@@ -1019,7 +1067,7 @@ s_n &amp;= a_1 + \cdots + a_n \\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_root_test_and_ratio_test" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.17</strong></span> 양수로 이루어진 수열 <span class="math inline">\(\langle a_k \rangle\)</span> 에 대해 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 7.18</strong></span> 양수로 이루어진 수열 <span class="math inline">\(\langle a_k \rangle\)</span> 에 대해 다음이 성립한다.</p>
 <p><span class="math display">\[
 \liminf_{k \to \infty} \dfrac{a_{k+1}}{a_k} \le \liminf_{k \to \infty} {a_k}^{1/k} \le \limsup_{k \to \infty} {a_k}^{1/k} \le \limsup_{k \to \infty} \dfrac{a_{k+1}}{a_k}
 \]</span></p>
@@ -1073,8 +1121,8 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 </div>
 <p><br></p>
 </section>
-<section id="sec-MA_power_series" class="level3" data-number="7.5.5">
-<h3 data-number="7.5.5" class="anchored" data-anchor-id="sec-MA_power_series"><span class="header-section-number">7.5.5</span> 멱급수</h3>
+<section id="sec-MA_power_series" class="level3" data-number="7.5.6">
+<h3 data-number="7.5.6" class="anchored" data-anchor-id="sec-MA_power_series"><span class="header-section-number">7.5.6</span> 멱급수</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1090,7 +1138,7 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_radius_of_convergence" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.18</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>명제 7.19</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해</p>
 <p><span class="math display">\[
 \dfrac{1}{R} := \limsup_{n \to \infty} \sqrt[n]{|a_n|}
 \]</span></p>
@@ -1101,7 +1149,7 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \sqrt[n]{|a_n z^{n}|} = |z|\sqrt[n]{|a_n|}
 \]</span></p>
-<p>이므로 근 판정법(<a href="#thm-MA_series_root_test" class="quarto-xref">정리&nbsp;<span>7.4</span></a>) 을 사용하면 증명된다. <span class="math inline">\(\square\)</span></p>
+<p>이므로 근 판정법(<a href="#thm-MA_series_root_test" class="quarto-xref">정리&nbsp;<span>7.5</span></a>) 을 사용하면 증명된다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -1111,7 +1159,7 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 </div>
 <div class="callout-body-container">
 <div id="def-radius_of_convergence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.12 (수렴반경)</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해 <a href="#prp-MA_radius_of_convergence" class="quarto-xref">명제&nbsp;<span>7.18</span></a> 에서의 <span class="math inline">\(R\)</span> 을 <strong>수렴 반경(radius of convergence)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.12 (수렴반경)</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해 <a href="#prp-MA_radius_of_convergence" class="quarto-xref">명제&nbsp;<span>7.19</span></a> 에서의 <span class="math inline">\(R\)</span> 을 <strong>수렴 반경(radius of convergence)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -1125,7 +1173,7 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \sum z^n \longrightarrow R=1\)</span>,</p>
 <p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle \sum \dfrac{z^n}{n^2} \longrightarrow R=1\)</span>.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \limsup_{n \to \infty} n = \infty\)</span></p>
-<p>(<span class="math inline">\(2\)</span>) 비율판정법을 사용한다. <span class="math inline">\(c_n = \dfrac{z^n}{n!}\)</span> 이라고 하면, <span class="math inline">\(\displaystyle \limsup_{n \to \infty} \dfrac{c_{n+1}}{c_n} = \lim_{n \to \infty} \dfrac{|z|}{n+1} = 0\)</span> 이므로 <a href="#prp-MA_root_test_and_ratio_test" class="quarto-xref">명제&nbsp;<span>7.17</span></a> 에 의해 <span class="math inline">\(R= +\infty\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 비율판정법을 사용한다. <span class="math inline">\(c_n = \dfrac{z^n}{n!}\)</span> 이라고 하면, <span class="math inline">\(\displaystyle \limsup_{n \to \infty} \dfrac{c_{n+1}}{c_n} = \lim_{n \to \infty} \dfrac{|z|}{n+1} = 0\)</span> 이므로 <a href="#prp-MA_root_test_and_ratio_test" class="quarto-xref">명제&nbsp;<span>7.18</span></a> 에 의해 <span class="math inline">\(R= +\infty\)</span> 이다.</p>
 <p>(<span class="math inline">\(3\)</span>), (<span class="math inline">\(4\)</span>) 는 쉽게 보일 수 있기때문에 생략한다.</p>
 </div>
 </div>
@@ -1137,7 +1185,7 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_partial_summation_formula" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.19</strong></span> 두 수열 <span class="math inline">\(\langle a_n \rangle,\, \langle b_n \rangle\)</span> 에 대해 <span class="math inline">\(\displaystyle A_n = \sum_{k=0}^n a_k\)</span> 라 하고 <span class="math inline">\(A_{-1}=0\)</span> 이라 하자. <span class="math inline">\(0 \le p \le q\)</span> 일 때</p>
+<p><span class="theorem-title"><strong>명제 7.20</strong></span> 두 수열 <span class="math inline">\(\langle a_n \rangle,\, \langle b_n \rangle\)</span> 에 대해 <span class="math inline">\(\displaystyle A_n = \sum_{k=0}^n a_k\)</span> 라 하고 <span class="math inline">\(A_{-1}=0\)</span> 이라 하자. <span class="math inline">\(0 \le p \le q\)</span> 일 때</p>
 <p><span class="math display">\[
 \sum_{n=p}^q a_n b_n = \sum_{n=p}^{q-1} A_n(b_n - b_{n-1}) + A_qb_q - A_{p-1} b_p
 \]</span></p>
@@ -1158,7 +1206,7 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_convergence_of_product_of_sequences" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.20</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle,\, \langle b_n \rangle\)</span> 이 아래의 두 조건을 만족하면 <span class="math inline">\(\sum_n a_n b_n\)</span> 은 수렴한다.</p>
+<p><span class="theorem-title"><strong>명제 7.21</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle,\, \langle b_n \rangle\)</span> 이 아래의 두 조건을 만족하면 <span class="math inline">\(\sum_n a_n b_n\)</span> 은 수렴한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle A_n=\sum_{k=1}^n a_k\)</span> 이 유계인 수열을 이루며,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\langle b_n \rangle\)</span> 은 <span class="math inline">\(0\)</span> 으로 수렴하는 단조감소 수열이다.</p>
 </div>
@@ -1172,12 +1220,12 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 &amp;= 2Mb_p \le 2Mb_N \le \varepsilon
 \end{aligned}
 \]</span></p>
-<p>이므로 <a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.3</span></a> (코시 판정법) 에 의해 <span class="math inline">\(\sum_n a_n b_n\)</span> 은 수렴한다. <span class="math inline">\(\square\)</span></p>
+<p>이므로 <a href="#thm-MA_convergence_of_series_1" class="quarto-xref">정리&nbsp;<span>7.4</span></a> (코시 판정법) 에 의해 <span class="math inline">\(\sum_n a_n b_n\)</span> 은 수렴한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_summation_of_series" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.21</strong></span> <span class="math inline">\(\sum a_n = A\)</span>, <span class="math inline">\(\sum b_n = B\)</span> 일 때 <span class="math inline">\(\sum (a_n + b_n) = A + B\)</span> 이다. 또한 상수 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\sum ca_n = cA\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 7.22</strong></span> <span class="math inline">\(\sum a_n = A\)</span>, <span class="math inline">\(\sum b_n = B\)</span> 일 때 <span class="math inline">\(\sum (a_n + b_n) = A + B\)</span> 이다. 또한 상수 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\sum ca_n = cA\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -1203,7 +1251,7 @@ c_n = \sum_{k=0}^n a_k b_{n-k}
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_convergence_of_cauchy_product" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.22</strong></span> 급수 <span class="math inline">\(\sum a_n,\, \sum b_n\)</span> 이</p>
+<p><span class="theorem-title"><strong>명제 7.23</strong></span> 급수 <span class="math inline">\(\sum a_n,\, \sum b_n\)</span> 이</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n\)</span> 이 절대수렴하며,</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle A=\sum_{n=0}^{\infty} a_n,\, B = \sum_{n = 0}^\infty b_n\)</span></p>
 <p>일 때 코시 곱 <span class="math inline">\(\displaystyle c_n = \sum_{k=0}^n a_k b_{n-k}\)</span> 에 대해</p>
@@ -1253,7 +1301,7 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_convergence_of_rearanged_series" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.23</strong></span> 양의 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(\sum a_n\)</span> 이 <span class="math inline">\(\alpha\)</span> 로 수렴하면 재배열 급수도 <span class="math inline">\(\alpha\)</span> 로 수렴한다. <span class="math inline">\(\sum a_n\)</span> 이 발산하면 재배열 급수도 발산한다.</p>
+<p><span class="theorem-title"><strong>명제 7.24</strong></span> 양의 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(\sum a_n\)</span> 이 <span class="math inline">\(\alpha\)</span> 로 수렴하면 재배열 급수도 <span class="math inline">\(\alpha\)</span> 로 수렴한다. <span class="math inline">\(\sum a_n\)</span> 이 발산하면 재배열 급수도 발산한다.</p>
 </div>
 </div>
 <div class="proof">
@@ -1270,7 +1318,7 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_alternating_series" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 7.24 (교대 급수 판정법)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(a_1 \ge a_2 \ge \cdots \ge a_n \ge \cdots \ge 0\)</span> 이며 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n = 0\)</span> 이면 급수 <span class="math inline">\(\sum (-1)^n a_n\)</span> 은 수렴한다.</p>
+<p><span class="theorem-title"><strong>명제 7.25 (교대 급수 판정법)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(a_1 \ge a_2 \ge \cdots \ge a_n \ge \cdots \ge 0\)</span> 이며 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n = 0\)</span> 이면 급수 <span class="math inline">\(\sum (-1)^n a_n\)</span> 은 수렴한다.</p>
 </div>
 </div>
 <div class="proof">
@@ -1410,7 +1458,7 @@ n \ge N \implies a_n + b_n &lt; a+b+2\varepsilon &lt; a+b+r =c-r
 <p><span class="math display">\[
 \sum_n \dfrac{\sqrt{a_n}}{n} \le \sqrt{\sum_n a_n} \sqrt{\sum_n \dfrac{1}{n^2}}
 \]</span></p>
-<p>이다. <span class="math inline">\(\sqrt{\sum_n a_n}\)</span> 는 문제의 조건에 의해 수렴하며, <span class="math inline">\(\sqrt{\sum_n \dfrac{1}{n^2}}\)</span> 가 수렴함은 <a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.16</span></a> 로부터 안다.</p>
+<p>이다. <span class="math inline">\(\sqrt{\sum_n a_n}\)</span> 는 문제의 조건에 의해 수렴하며, <span class="math inline">\(\sqrt{\sum_n \dfrac{1}{n^2}}\)</span> 가 수렴함은 <a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.17</span></a> 로부터 안다.</p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1423,7 +1471,7 @@ n \ge N \implies a_n + b_n &lt; a+b+2\varepsilon &lt; a+b+r =c-r
 <p><span class="math display">\[
 \sum_n a_n b_n = \sum_{n} a_n (b-c_n) = b\sum_n a_n - \sum_n a_n c_n
 \]</span></p>
-<p>이며 <a href="#prp-MA_convergence_of_product_of_sequences" class="quarto-xref">명제&nbsp;<span>7.20</span></a> 에 의해 <span class="math inline">\(\sum_n a_n c_n\)</span> 은 수렴하므로 위 식은 수렴하는 두 수열의 차이므로 수렴한다. <span class="math inline">\(b_n\)</span> 이 단조감소수열이라면 <span class="math inline">\(c_n = b_n -b\)</span> 는 <span class="math inline">\(0\)</span> 으로 수렴하는 단조감소수열이고</p>
+<p>이며 <a href="#prp-MA_convergence_of_product_of_sequences" class="quarto-xref">명제&nbsp;<span>7.21</span></a> 에 의해 <span class="math inline">\(\sum_n a_n c_n\)</span> 은 수렴하므로 위 식은 수렴하는 두 수열의 차이므로 수렴한다. <span class="math inline">\(b_n\)</span> 이 단조감소수열이라면 <span class="math inline">\(c_n = b_n -b\)</span> 는 <span class="math inline">\(0\)</span> 으로 수렴하는 단조감소수열이고</p>
 <p><span class="math display">\[
 \sum_n a_n b_n = \sum_{n} a_n (c_n + b) = b\sum_n a_n + \sum_n a_n c_n
 \]</span></p>
@@ -1744,6 +1792,14 @@ x= x + \dfrac{\alpha-x^2}{x+ (\alpha+1)/2}
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Rudin1976" class="csl-entry" role="listitem">
+Rudin, W. 1976. <em>Principles of Mathematical Analysis</em>. Third. International Series in Pure and Applied Mathematics. McGraw-Hill.
+</div>
+<div id="ref-KKK2011" class="csl-entry" role="listitem">
+김성기, 김도한, and 계승혁. 2011. <em>해석개론</em>. 2nd ed. 서울대학교 출판문화원.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

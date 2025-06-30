@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -756,6 +756,15 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>유리수의 조밀성(<a href="../part1/1_3_numbers.html#prp-FA_Q_is_dense" class="quarto-xref">명제&nbsp;<span>3.3</span></a>) 을 생각하자. <span class="math inline">\(x\in \mathbb{R}\)</span> 이라면 임의의 <span class="math inline">\(N_\mathbb{R}(x,\,\delta)\)</span> 내에 항상 유리수가 존재한다. <span class="math inline">\(\square\)</span></p>
 </div>
+다음은 유계이며 닫힌 실수의 부분집합의 성질로서 매우 중요하다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-MA_bounded_and_closed_subset_of_real_number_and_maximum_and_minimum" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 6.11 (유계이며 닫힌 실수의 부분집합)</strong></span> <span class="math inline">\(A\subset \mathbb{R}\)</span> 이 유계이고 닫힌 집합이면 <span class="math inline">\(A\)</span> 는 그 상한과 하한을 포함한다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 가 유계이므로 최대값과 최소값이 항상 존재한다. <span class="math inline">\(M =\max (A)\)</span> 라고 하자. <span class="math inline">\(M\)</span> 이 <span class="math inline">\(A\)</span> 의 극한점이라면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 <span class="math inline">\(M\in A\)</span> 이다. <span class="math inline">\(M\)</span> 이 극한점이 아니라고 하자. <span class="math inline">\(M\not\in A\)</span> 이면 어떤 <span class="math inline">\(\delta &gt;0\)</span> 에 대해 <span class="math inline">\(N_\mathbb{R}(M,\, \delta) \in \mathbb{R}\backslash A\)</span> 이므로 <span class="math inline">\(M\)</span> 은 <span class="math inline">\(A\)</span> 의 상한이 아닌데 이는 가정에 모순된다. 따라서 <span class="math inline">\(M\in A\)</span> 이다. <span class="math inline">\(m=\min (A)\)</span> 에 대해서도 똑같이 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+</div>
 <p><br></p>
 </section>
 </section>
@@ -796,7 +805,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_compact_relative" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.11</strong></span> 거리공간 <span class="math inline">\(X\)</span> 와 <span class="math inline">\(K\subset Y \subset X\)</span> 에 대해 다음은 동치이다.</p>
+<p><span class="theorem-title"><strong>명제 6.12</strong></span> 거리공간 <span class="math inline">\(X\)</span> 와 <span class="math inline">\(K\subset Y \subset X\)</span> 에 대해 다음은 동치이다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(K\)</span> 가 <span class="math inline">\(X\)</span> 안에서 옹골집합이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(K\)</span> 가 <span class="math inline">\(Y\)</span> 안에서 옹골집합이다.</p>
 </div>
@@ -808,7 +817,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_compact_set_is_closed" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.12</strong></span> 거리공간에서의 옹골집합은 닫힌 집합이다.</p>
+<p><span class="theorem-title"><strong>명제 6.13</strong></span> 거리공간에서의 옹골집합은 닫힌 집합이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -818,7 +827,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_closed_subset_of_compact_set_is_compact" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.13</strong></span> 거리공간에서 옹골집합의 닫힌 부분집합은 옹골집합이다.</p>
+<p><span class="theorem-title"><strong>명제 6.14</strong></span> 거리공간에서 옹골집합의 닫힌 부분집합은 옹골집합이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -836,7 +845,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="sec-MA_basic_properties_of_compact_set"><span class="header-section-number">6.3.2</span> 옹골집합의 기본 성질</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_finite_intesection_of_compact_sets" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.14</strong></span> <span class="math inline">\(\Gamma = \{K_\alpha\}\)</span> 가 거리공간 <span class="math inline">\(X\)</span> 에서의 옹골집합의 집합족이며 유한개의 <span class="math inline">\(\{K_\alpha\}\)</span> 의 교집합이 항상 공집합이 아니면 <span class="math inline">\(\bigcap_\alpha K_\alpha\)</span> 는 공집합이 아니다.</p>
+<p><span class="theorem-title"><strong>명제 6.15</strong></span> <span class="math inline">\(\Gamma = \{K_\alpha\}\)</span> 가 거리공간 <span class="math inline">\(X\)</span> 에서의 옹골집합의 집합족이며 유한개의 <span class="math inline">\(\{K_\alpha\}\)</span> 의 교집합이 항상 공집합이 아니면 <span class="math inline">\(\bigcap_\alpha K_\alpha\)</span> 는 공집합이 아니다.</p>
 </div>
 </div>
 <div class="proof">
@@ -846,7 +855,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.15</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 <span class="math inline">\(E\subset K\subset X\)</span> 이고 <span class="math inline">\(K\)</span> 가 옹골집합이며 <span class="math inline">\(E\)</span> 가 무한집합이라면 <span class="math inline">\(E\)</span> 는 <span class="math inline">\(K\)</span> 에서의 극한점을 가진다.</p>
+<p><span class="theorem-title"><strong>명제 6.16</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 <span class="math inline">\(E\subset K\subset X\)</span> 이고 <span class="math inline">\(K\)</span> 가 옹골집합이며 <span class="math inline">\(E\)</span> 가 무한집합이라면 <span class="math inline">\(E\)</span> 는 <span class="math inline">\(K\)</span> 에서의 극한점을 가진다.</p>
 </div>
 </div>
 <div class="proof">
@@ -855,7 +864,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_intersection_of_intervals" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.16</strong></span> <span class="math inline">\(\{I_n\}\)</span> 이 <span class="math inline">\(\mathbb{R}^1\)</span> 에서의 닫힌 구간의 수열이며 <span class="math inline">\(I_{n+1} \subset I_{n}\)</span> 일 때 <span class="math inline">\(\bigcap_{n=1}^\infty I_n \ne\varnothing\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 6.17</strong></span> <span class="math inline">\(\{I_n\}\)</span> 이 <span class="math inline">\(\mathbb{R}^1\)</span> 에서의 닫힌 구간의 수열이며 <span class="math inline">\(I_{n+1} \subset I_{n}\)</span> 일 때 <span class="math inline">\(\bigcap_{n=1}^\infty I_n \ne\varnothing\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -898,9 +907,18 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(E\)</span> 가 유계이므로 <span class="math inline">\(E\)</span> 를 포함하는 <span class="math inline">\(n\)</span>-cell 이 존재하며 <a href="#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.13</span></a> 에 의해 <span class="math inline">\(E\)</span> 는 옹골집합이다.</p>
-<p>(<span class="math inline">\(2 \implies 3\)</span>) <a href="#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 성립한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(E\)</span> 가 유계이므로 <span class="math inline">\(E\)</span> 를 포함하는 <span class="math inline">\(n\)</span>-cell 이 존재하며 <a href="#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(E\)</span> 는 옹골집합이다.</p>
+<p>(<span class="math inline">\(2 \implies 3\)</span>) <a href="#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.16</span></a> 에 의해 성립한다.</p>
 <p>(<span class="math inline">\(3 \implies 1\)</span>) <span class="math inline">\(E\)</span> 가 유계가 아니라면 <span class="math inline">\(k=1,\ldots\)</span> 에 대해 <span class="math inline">\(|a_k|&gt;k,\, a_k\in E\)</span> 인 집합 <span class="math inline">\(\{a_k\}\subset E\)</span> 를 생각 할 수 있으며 이는 가정에 위배된다. 따라서 <span class="math inline">\(E\)</span> 는 유계이다. <span class="math inline">\(E\)</span> 가 닫힌 집합이 아니라면 <span class="math inline">\(E\)</span> 의 부분집합의 극한점 가운데 <span class="math inline">\(E\)</span> 에 포함되지 않은 것이 존재한다. 이 점을 <span class="math inline">\(x\)</span> 라고 하자. 임의의 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(d(x,\,x_n)&lt;1/n\)</span> 인 <span class="math inline">\(x_n\in E\)</span> 을 선택하여 <span class="math inline">\(\{x_n\} \subset E\)</span> 을 구성 할 수 있다. 이 <span class="math inline">\(\{x_n\}\)</span> 이 유한집합일 경우는 고려의 대상에서 제외되며, 무한집합 일 경우만 생각한다. 이 때 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(\{x_n\}\)</span> 의 극한점이며 가정에 의해 <span class="math inline">\(E\)</span> 에 포함되어야 한다. 따라서 <span class="math inline">\(E\)</span> 는 닫힌 집합이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-MA_minimum_and_maximum_of_compact_sebset_in_R" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 6.7 (실수의 부분집합인 옹골집합의 최대값과 최소값)</strong></span> <span class="math inline">\(K\subset \mathbb{R}\)</span> 이 옹골집합이면 <span class="math inline">\(K\)</span> 의 최소값과 최대값은 <span class="math inline">\(K\)</span> 에 포힘된다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#prp-MA_bounded_and_closed_subset_of_real_number_and_maximum_and_minimum" class="quarto-xref">명제&nbsp;<span>6.11</span></a> <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -927,12 +945,12 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 완전집합이라고 하자. 정의(<a href="#def-MA_topologycal_terms" class="quarto-xref">정의&nbsp;<span>6.9</span></a>) 에 의해 <span class="math inline">\(p\in P\)</span> 는 <span class="math inline">\(P\)</span> 극한점이며 <a href="#prp-MA_limit_points_1" class="quarto-xref">명제&nbsp;<span>6.5</span></a> 에 의해 <span class="math inline">\(P\)</span> 는 무한집합이다. <span class="math inline">\(P\)</span> 가 가산집합임을 가정하고 각각의 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(x_1,\,x_2,\ldots\)</span> 라고 하자. 그리고 근방의 수열 <span class="math inline">\(\{V_n\}\)</span> 을 다음과 같이 정의한다.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(r&gt;0\)</span> 에 대해 <span class="math inline">\(V_1 = N(x_1,\,r)\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\overline{V_1} = \overline{N}(x_1,\,r)\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(V_k\cap P \ne \varnothing\)</span> 이라고 하자. 모든 <span class="math inline">\(p\in P\)</span> 가 <span class="math inline">\(P\)</span> 에서의 극한점이므로 <span class="math inline">\((i)\)</span> <span class="math inline">\(\overline{V}_{k+1} \subset V_k\)</span> 이며, <span class="math inline">\((ii)\)</span> <span class="math inline">\(x_k\notin \overline{V}_{k+1}\)</span> 이고 <span class="math inline">\((iii)\)</span> <span class="math inline">\(V_{k+1}\cap P \ne \varnothing\)</span> 이 되도록 <span class="math inline">\(V_{k+1}\)</span> 을 정할 수 있다. 그리고 <span class="math inline">\(x_1\in V_1 \cap P\)</span> 이므로 <span class="math inline">\(V_1 \cap P \ne \varnothing\)</span> 이다. 따라서 이 세 조건을 만족하는 <span class="math inline">\(V_1,\,V_2,\ldots\)</span> 는 존재한다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F_k = \overline{V}_k \cap P\)</span> 라고 하자. <span class="math inline">\(\overline{V}_k\)</span> 가 닫힌 집합이며 유계이므로(따라서 옹골집합이므로) <span class="math inline">\(\overline{V}_k\)</span> 는 옹골집합이다. <span class="math inline">\(x_k\not\in F_{k+1}\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \cap P = \varnothing\)</span> 이며, <span class="math inline">\(F_k\subset P\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) = \varnothing\)</span> 이다. 그런데 조건 <span class="math inline">\((iii)\)</span> 로부터 <span class="math inline">\(F_k \ne \varnothing\)</span> 이며 <span class="math inline">\(F_k \supset F_{k+1}\)</span> 이므로 <a href="#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \ne \varnothing\)</span> 이어야 한다. 즉 가정이 틀렸으므로 <span class="math inline">\(P\)</span> 는 불가산집합이다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F_k = \overline{V}_k \cap P\)</span> 라고 하자. <span class="math inline">\(\overline{V}_k\)</span> 가 닫힌 집합이며 유계이므로(따라서 옹골집합이므로) <span class="math inline">\(\overline{V}_k\)</span> 는 옹골집합이다. <span class="math inline">\(x_k\not\in F_{k+1}\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \cap P = \varnothing\)</span> 이며, <span class="math inline">\(F_k\subset P\)</span> 이므로 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) = \varnothing\)</span> 이다. 그런데 조건 <span class="math inline">\((iii)\)</span> 로부터 <span class="math inline">\(F_k \ne \varnothing\)</span> 이며 <span class="math inline">\(F_k \supset F_{k+1}\)</span> 이므로 <a href="#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 <span class="math inline">\(\left(\cap_{k=1}^\infty F_k\right) \ne \varnothing\)</span> 이어야 한다. 즉 가정이 틀렸으므로 <span class="math inline">\(P\)</span> 는 불가산집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-MA_perpect_set" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 6.7</strong></span> 모든 닫힌 구간 <span class="math inline">\([a,\,b]\)</span> (<span class="math inline">\(a&lt;b\)</span>) 는 불가산집합이다. 따라서 <span class="math inline">\(\mathbb{R}\)</span> 은 불가산집합이다.</p>
+<p><span class="theorem-title"><strong>따름정리 6.8</strong></span> 모든 닫힌 구간 <span class="math inline">\([a,\,b]\)</span> (<span class="math inline">\(a&lt;b\)</span>) 는 불가산집합이다. 따라서 <span class="math inline">\(\mathbb{R}\)</span> 은 불가산집합이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -953,7 +971,7 @@ I^{(k+1)}_{2j} &amp;= \left[a^{(k)}_j+\dfrac{2(b^{(k)}_j - a^{(k)}_j)}{3},\, b^{
 E_{k+1} &amp;= \bigcup_{j=1}^{2^{k+1}} I_{j}^{(k+1)}
 \end{aligned}
 \]</span></p>
-<p>이라고 하자. <span class="math inline">\(P=\displaystyle \bigcap_{k=1}^\infty E_k\)</span> 를 <strong>칸토어 집합(Contor set)</strong> 이라고 한다. 각각의 <span class="math inline">\(E_k\)</span> 는 유계인 닫힌 집합이므로 옹골집합이고 따라서 <span class="math inline">\(P\)</span> 는 옹골집합이다 <span class="math inline">\(E_1 \supset E_2 \supset \cdots\)</span> 이며 각각의 <span class="math inline">\(E_k\)</span> 는 공집합이 아니므로 <a href="#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(P\)</span> 는 공집합이 아니다.</p>
+<p>이라고 하자. <span class="math inline">\(P=\displaystyle \bigcap_{k=1}^\infty E_k\)</span> 를 <strong>칸토어 집합(Contor set)</strong> 이라고 한다. 각각의 <span class="math inline">\(E_k\)</span> 는 유계인 닫힌 집합이므로 옹골집합이고 따라서 <span class="math inline">\(P\)</span> 는 옹골집합이다 <span class="math inline">\(E_1 \supset E_2 \supset \cdots\)</span> 이며 각각의 <span class="math inline">\(E_k\)</span> 는 공집합이 아니므로 <a href="#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 <span class="math inline">\(P\)</span> 는 공집합이 아니다.</p>
 <p><span class="math inline">\(E_k\)</span> 를 이루는 한 닫힌 구간의 길이를 <span class="math inline">\(l_k\)</span> 라고 하면 <span class="math inline">\(E_{k+1}\)</span> 을 이루는 한 닫힌 구간의 길이 <span class="math inline">\(l_{k+1}=l_{k}/3\)</span> 이 된다. 따라서 <span class="math inline">\(l_k=3^{k+1}\)</span> 이 되므로 어떤 열린 구간도 <span class="math inline">\(P\)</span> 에 포함되지 않는다.</p>
 <p>이제 <span class="math inline">\(P\)</span> 가 완전집합임을 보이자. 이를 위해서는 <span class="math inline">\(P\)</span> 가 고립점을 포함하지 않는다는 것을 보이면 된다. <span class="math inline">\(p\in P\)</span> 라고 하고 <span class="math inline">\(p\)</span> 를 포함하는 임의의 열린 구간 <span class="math inline">\(S\)</span> 를 생각하자. 충분이 큰 <span class="math inline">\(k\)</span> 에서 <span class="math inline">\(E_k\)</span> 의 <span class="math inline">\(p\)</span> 를 포함하는 <span class="math inline">\(E_k\)</span> 를 이루는 닫힌 구간 <span class="math inline">\(I^{(k)}_p\)</span> 은 <span class="math inline">\(S\)</span> 에 포함된다. <span class="math inline">\(I^{(k)}_p\)</span> 의 양 끝점 가운데 <span class="math inline">\(p\)</span> 가 아닌 점을 <span class="math inline">\(p_n\)</span> 이라고 하면 <span class="math inline">\(p_n\in P\)</span> 이다. 따라서 <span class="math inline">\(p\)</span> 는 극한점이며, 따라서 <span class="math inline">\(P\)</span> 는 완전 집합이다.</p>
 </div>
@@ -1046,7 +1064,7 @@ E_{k+1} &amp;= \bigcup_{j=1}^{2^{k+1}} I_{j}^{(k+1)}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_closed_set_and_boundary" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.17</strong></span> 거리공간 <span class="math inline">\(X\)</span> 와 그 부분집합 <span class="math inline">\(A\)</span> 에 대해 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 6.18</strong></span> 거리공간 <span class="math inline">\(X\)</span> 와 그 부분집합 <span class="math inline">\(A\)</span> 에 대해 다음이 성립한다.</p>
 <p><span class="math display">\[
 \overline{A} = \{x\in X : \forall \varepsilon&gt;0\; N(x,\, \varepsilon) \cap A \ne \varnothing\}
 \]</span></p>
@@ -1086,7 +1104,7 @@ N(x,\, \varepsilon) \cap A \ne \varnothing,\qquad N(x,\, \varepsilon) \cap (\mat
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">문제에 <span class="math inline">\(^\ast\)</span> 가 붙으면 원래는 없던 문제를 추가한 것이다.</span></div></div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#prp-MA_closed_set_and_boundary" class="quarto-xref">명제&nbsp;<span>6.17</span></a> 에 의해 <span class="math inline">\(\partial A = \overline{A} \cap \overline{\mathbb{R}^n\backslash A}\)</span> 이다. 닫힌 집합의 교집합으로 정의되므로 <span class="math inline">\(\partial A\)</span> 는 닫힌 집합이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#prp-MA_closed_set_and_boundary" class="quarto-xref">명제&nbsp;<span>6.18</span></a> 에 의해 <span class="math inline">\(\partial A = \overline{A} \cap \overline{\mathbb{R}^n\backslash A}\)</span> 이다. 닫힌 집합의 교집합으로 정의되므로 <span class="math inline">\(\partial A\)</span> 는 닫힌 집합이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 가 열린집합이고 <span class="math inline">\(x\in A\)</span> 이면 어떤 <span class="math inline">\(A\)</span> 의 근방이 <span class="math inline">\(A\)</span> 에 포함되며 그 근방과 <span class="math inline">\(\mathbb{R}^n\backslash A\)</span> 와의 교집합은 공집합이다. 따라서 <span class="math inline">\(A \cap \partial A = \varnothing\)</span> 이다.</p>
 <p>이제 그 역이 성립하는지 확인해보자.</p>
 <p><span class="math display">\[

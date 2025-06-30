@@ -629,6 +629,25 @@ $X\backslash E$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 :::
 
 
+다음은 유계이며 닫힌 실수의 부분집합의 성질로서 매우 중요하다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+::: {#prp-MA_bounded_and_closed_subset_of_real_number_and_maximum_and_minimum}
+
+#### 유계이며 닫힌 실수의 부분집합
+
+$A\subset \R$ 이 유계이고 닫힌 집합이면 $A$ 는 최소값과 최대값을 가진다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+$A$ 가 유계이므로 상한과 하한이 존재한다. $M =\max (A)$ 라고 하자. $M$ 이 $A$ 의 극한점이라면 $A$ 가 닫힌 집합이므로 $M\in A$ 이다. $M$ 이 극한점이 아니라고 하자. $M\not\in A$ 이면 어떤 $\delta >0$ 에 대해 $N_\R(M,\, \delta) \in \R \backslash A$ 이므로 $M$ 은 $A$ 의 상한이 아닌데 이는 가정에 모순된다. 따라서 $M\in A$ 이다. $m=\min (A)$ 에 대해서도 똑같이 보일 수 있다. 즉 $A$ 는 최소값과 최대값을 가진다. $\square$
+
+
+:::
+
 </br>
 
 ## 옹골 집합
@@ -858,6 +877,23 @@ $\mathbb{R}^n$ 의 부분집합 $E$ 에 대해 다음은 동치이다.
 ($3 \implies 1$) $E$ 가 유계가 아니라면 $k=1,\ldots$ 에 대해 $|a_k|>k,\, a_k\in E$ 인 집합 $\{a_k\}\subset E$ 를 생각 할 수 있으며 이는 가정에 위배된다. 따라서 $E$ 는 유계이다. $E$ 가 닫힌 집합이 아니라면 $E$ 의 부분집합의 극한점 가운데 $E$ 에 포함되지 않은 것이 존재한다. 이 점을 $x$ 라고 하자. 임의의 자연수 $n$ 에 대해 $d(x,\,x_n)<1/n$ 인 $x_n\in E$ 을 선택하여 $\{x_n\} \subset E$ 을 구성 할 수 있다. 이 $\{x_n\}$ 이 유한집합일 경우는 고려의 대상에서 제외되며, 무한집합 일 경우만 생각한다. 이 때 $x$ 는 $\{x_n\}$ 의 극한점이며 가정에 의해 $E$ 에 포함되어야 한다. 따라서 $E$ 는 닫힌 집합이다. $\square$
 
 :::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-MA_minimum_and_maximum_of_compact_sebset_in_R}
+
+#### 실수의 부분집합인 옹골집합의 최대값과 최소값
+
+$K\subset \R$ 이 옹골집합이면 $K$ 의 최소값과 최대값을 가진다.
+
+:::
+
+</div>
+
+::: {.proof}
+@prp-MA_bounded_and_closed_subset_of_real_number_and_maximum_and_minimum $\square$
+:::
+
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
