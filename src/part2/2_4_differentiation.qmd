@@ -10,6 +10,7 @@ crossref:
 
 ## 실함수의 미분
 
+
 ### 미분가능성과 도함수 {#sec-MA_differentiability}
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -18,23 +19,34 @@ crossref:
 
 #### 미분가능과 도함수
 
-$f:[a,\,b] \subset \R \to \R$ 과 $x\in [a,\,b]$ 에 대해 
+$f:(a,\,b) \subset \R \to \R$ 과 $x\in (a,\,b)$ 에 대해 
 
 $$
 \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}
 $$ {#eq-MA_differentiability}
 
-가 존재할 때 $f$ 가 $x$ 에서 **미분 가능하다(be differentiable)** 고 하며 @eq-MA_differentiability 의 극한값을 $f'(x)$ 라고 표기한다. $f$ 가 $[a,\,b]$ 의 모든 값에서 미분가능할 할 때 $f'$ 값을 $[a,\,b]$ 에서 정의된 함수로 생각 할 수 있으며 $f'(x)$ 를 $f(x)$ 의 **도함수 (derivative)** 라고 한다.
+가 존재할 때 $f$ 가 $x$ 에서 **미분 가능하다(be differentiable)** 고 하며 @eq-MA_differentiability 의 극한값을 $f'(x)$ 라고 표기한다. $f$ 가 $(a,\,b)$ 의 모든 값에서 미분가능할 할 때 $f'$ 값을 $(a,\,b)$ 에서 정의된 함수로 생각 할 수 있으며 $f'(x)$ 를 $f(x)$ 의 **도함수 (derivative)** 라고 한다.
 
 ::: 
 :::
 
 </br>
+
+::: {.callout-warning icon="false"}
+
+#### 닫힌 구간에서의 미분
+
+PMA(@Rudin1976) 의 경우는 $f:[a,\,b]\to \R$ 이 미분가능하다, 혹은 $f$ 가 $[a,\,b]$ 구간에서 미분가능하다는 표현을 사용한다. 그러나 실제로 미분값은 열린 구간에 대해 정의되므로 이 표현은 다소 어색한 표현이다. PMA 의 경우 좌극한, 우극한 처럼 좌미분 우미분을 이용하여 $[a,\,b]$ 구간에서의 미분가능성을 정의한다.
+
+:::
+
+</br>
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_continuity_and_differentiability}
 
-$f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하면 $f$ 는 $x$ 에서 연속이다.
+$f:I\to \R$ 이 $x\in I$ 에서 미분가능하면 $f$ 는 $x$ 에서 연속이다.
 
 :::
 
@@ -51,7 +63,7 @@ $\displaystyle \lim_{h \to 0} f(x+h)-f(x) \ne 0$ 이면 $x$ 에서 미분가능�
 
 ::: {#prp-MA_continuity_and_differentiability}
 
-$[a,\,b]$ 구간에서 정의된 함수 $f,\,g$ 가 $x \in [a,\,b]$ 에서 미분가능하면 $f+g,\, fg,\, f/g$ 가 $x$ 에서 미분가능하며, 
+$I$ 에서 정의된 함수 $f,\,g$ 가 $x \in I$ 에서 미분가능하면 $f+g,\, fg,\, f/g$ 가 $x$ 에서 미분가능하며, 
 
 &emsp;($1$) $(f+g)'(x) = f'(x)+g'(x)$, 
 
@@ -101,14 +113,14 @@ $$
 
 ::: {#prp-MA_other_form_of_differentiability}
 
-$f:(a,\,b) \to \R$ 과 $x\in (a,\,b)$ 에 대해 다음은 동치이다.
+$f:I \to \R$ 에 대해 다음은 동치이다.
 
-($1$) $f$ 는 미분 가능하다.
+($1$) $f$ 는 $x \in I$ 에서 미분 가능하다.
 
-($2$) 어떤 상수 $a$ 와 $0$ 으로의 극한이 $0$ 인 어떤 함수 $\eta:N(0,\,\delta)\backslash\{0\} \to \R$ 에 대해
+($2$) 어떤 상수 $c$ 와 $0$ 으로의 극한이 $0$ 인 어떤 함수 $\eta:N(0,\,\delta)\backslash\{0\} \to \R$ 에 대해
 
 $$
-f(x +h) -f(x) = ah + |h| \eta (h)
+f(x +h) -f(x) = c h + |h| \eta (h)
 $$ {#eq-MA_other_form_of_differentiability}
 
 이다. 
@@ -124,13 +136,13 @@ $$
 \eta(h) = \left\{\begin{array}{ll} \dfrac{f(x+h)-f(x)}{h} - f'(x), \qquad &h>0, \\ -\dfrac{f(x+h)-f(x)}{h} + f'(x), \qquad &h<0 \end{array}\right.
 $$
 
-그렇다면 $\displaystyle \lim_{h \to 0}\eta(h) = 0$ 이며 @eq-MA_other_form_of_differentiability 를 만족한다. 그리고 $a=f'(x)$ 이다. 
+그렇다면 $\displaystyle \lim_{h \to 0}\eta(h) = 0$ 이며 @eq-MA_other_form_of_differentiability 를 만족한다. 그리고 $c=f'(x)$ 이다. 
 
 
 ($2\implies 1$) 미분가능의 정의에 의해
 
 $$
-\lim_{h \to 0}\dfrac{f(x+h)-f(x)}{h} = \lim_{h \to 0} \left(a + \dfrac{|h|}{h}\eta (h)\right) = a
+\lim_{h \to 0}\dfrac{f(x+h)-f(x)}{h} = \lim_{h \to 0} \left(c + \dfrac{|h|}{h}\eta (h)\right) = c
 $$
 
 이다. $\square$
@@ -165,7 +177,7 @@ $$
 
 #### 연쇄 규칙
 
-$f:[a,\,b]\to \R$ 이 $x\in [a,\,b]$ 에서 미분가능하며 $f(x)$ 를 포함하는 구간 $I$ 에서 정의된 함수 $g$ 가 $f(x)$ 에서 미분가능하다고 하자. 이 때 $g\circ f$ 는 $x$ 에서 미분 가능하며 그 미분값은 다음과 같다.
+$f:I\to \R$ 이 $x\in I$ 에서 미분가능하며 $f(x)$ 를 포함하는 열린 구간 $I'$ 에서 정의된 함수 $g$ 가 $f(x)$ 에서 미분가능하다고 하자. 이 때 $g\circ f$ 는 $x$ 에서 미분 가능하며 그 미분값은 다음과 같다.
 
 $$
 (g\circ f)'(x) = g'(f(x))f'(x).
@@ -203,9 +215,9 @@ $$
 
 </br>
 
-### 도함수의 연속성과 계층 {#sec-continuity_of_derivatives}
+### 도함수의 연속성과 계층 {#sec-MA_continuity_of_derivatives}
 
-우리는 앞서 @prp-MA_continuity_and_differentiability 에서 $f:[a,\,b] \to \R$ 이 $x_0\in [a,\,b]$ 에서 미분가능하면 $x_0$ 에서 연속이라는 것을 보였다. $f$ 의 도함수 $f'(x)$ 의 경우는 연속함수가 아닐 수 있다.
+우리는 앞서 @prp-MA_continuity_and_differentiability 에서 $f:I \to \R$ 이 $x_0\in I$ 에서 미분가능하면 $x_0$ 에서 연속이라는 것을 보였다. $f$ 의 도함수 $f'(x)$ 의 경우는 연속함수가 아닐 수 있다.
 
 </br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -267,7 +279,7 @@ $$
 
 #### 도함수의 차수
 
-구간에서 정의된 함수 $f:I \to \mathbb{R}$ 의 도함수 $f'(x)$ 를 생각 할 수 있다. $f'(x)$ 가 $I$ 에서 미분가능하면 $f'(x)$ 의 도함수를 $f''(x)$ 혹은 $f^{(2)}(x)$ 라고 쓰고 이차 도함수라고 한다. 이것을 계속하면 $n$ 차 도함수 $f^{(n)}(x)$ 를 생각 할 수 있다. 
+함수 $f:I \to \mathbb{R}$ 의 도함수 $f'(x)$ 를 생각 할 수 있다. $f'(x)$ 가 $I$ 에서 미분가능하면 $f'(x)$ 의 도함수를 $f''(x)$ 혹은 $f^{(2)}(x)$ 라고 쓰고 이차 도함수라고 한다. 이것을 계속하면 $n$ 차 도함수 $f^{(n)}(x)$ 를 생각 할 수 있다. 
 
 ::: 
 :::
@@ -284,7 +296,7 @@ $$
 
 #### 도함수의 계층
 
-구간 $I$ 에서 정의된 함수 $f:I \to \mathbb{R}$ 이 $n$ 번 미분가능하며 $n$ 번째 도함수가 연속일 때 이 함수를 $C^k$-함수라고 한다. 연속인 함수는 $C^0$-함수이며 도함수가 연속이면 $C^1$-함수 라고 한다. 다항함수나 지수함수와 같이 무한번 미분 가능하며 연속인 함수는 $C^\infty$ 라고 표기한다.
+$f:I \to \mathbb{R}$ 이 $n$ 번 미분가능하며 $n$ 번째 도함수가 연속일 때 이 함수를 $C^k$-함수라고 한다. 연속인 함수는 $C^0$-함수이며 도함수가 연속이면 $C^1$-함수 라고 한다. 다항함수나 지수함수와 같이 무한번 미분 가능하며 연속인 함수는 $C^\infty$ 라고 표기한다.
 
 구간일 명확히 표기할 때 $C^{k}_{[a,\,b]}$ 와 같이 쓸 수 있다. $C^{0}_{(0,\,1)}$ 은 $(0,\,1)$ 에서 연속인 함수를 의미한다. 
 
@@ -313,7 +325,7 @@ $$
 
 ::: {#thm-MA_derivative_of_extreme_value}
 
-함수 $f:[a,\,b] \to \R$ 이 미분가능하며 $p\in (a,\,b)$ 가 극값일 경우 $f'(p)=0$ 이다.
+함수 $f:I \to \R$ 이 미분가능하며 $p\in I$ 가 극값일 경우 $f'(p)=0$ 이다.
 
 :::
 
@@ -331,7 +343,7 @@ $p$ 가 극대값이라고 하자. 어떤 $I_p=(p-\delta,\, p+\delta)$ 에서 $x
 
 ::: {#lem-MA_generalized_mean_value_theorem}
 
-$f:[a,\,b]\to \R$ 가 미분가능함수일 때 $f(a)=f(b)$ 이면 어떤 $c\in (a,\,b)$ 에서 $f'(c) = 0$ 이다.
+$f:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 연속이며 $(a,\,b)$ 에서 미분가능할 때 $f(a)=f(b)$ 이면 어떤 $c\in (a,\,b)$ 에서 $f'(c) = 0$ 이다.
 
 :::
 
@@ -351,7 +363,7 @@ $f$ 가 상수함수이면 자명하므로 $f$ 가 상수함수가 아니라고 
 
 #### 일반화된 평균값 정리
 
-$f,\,g:[a,\,b] \to \R$ 이 $(a,\,b)$ 에서 미분가능하면 다음을 만족하는 $c\in (a,\,b)$ 가 존재한다.
+$f,\,g:[a,\,b] \to \R$ 가 $[a,\,b]$ 에서 연속이고 $(a,\,b)$ 에서 미분가능하면 다음을 만족하는 $c\in (a,\,b)$ 가 존재한다.
 
 $$
 [f(b)-f(a)] g'(c) = [g(b)-g(a)] f'(c).
@@ -381,7 +393,7 @@ $h(a) = h(b)=f(b)g(a) - f(a)g(b)$ 이다. @lem-MA_generalized_mean_value_theorem
 
 #### 평균값 정리
 
-$f:[a,\,b] \to \R$ 이 $(a,\,b)$ 에서 미분가능하면 다음을 만족하는 $c\in (a,\,b)$ 가 존재한다.
+$f:[a,\,b] \to \R$ 이 $[a,\,b]$ 에서 연속이고 $(a,\,b)$ 에서 미분가능하면 다음을 만족하는 $c\in (a,\,b)$ 가 존재한다.
 
 $$
 f(b)-f(a) = (b-a)f'(c)
@@ -440,7 +452,7 @@ $$
 
 #### 도함수의 사잇값 특성 
 
-$f$ 가 $[a,\,b]$ 구간에서 미분가능한 실함수이고 $f'(a)< \lambda <f'(b)$ 일 때 어떤 $t\in (a,\,b)$ 에서 $f'(t) = \lambda$ 이다. $f'(a)>f'(b)$ 일 때에도 유사한 결과가 성립한다.
+$f$ 가 $[a,\,b]$ 를 포함하는 열린 구간에서 미분가능한 실함수이고 $f'(a)< \lambda <f'(b)$ 일 때 어떤 $t\in (a,\,b)$ 에서 $f'(t) = \lambda$ 이다. $f'(a)>f'(b)$ 일 때에도 유사한 결과가 성립한다.
 
 :::
 
@@ -457,7 +469,7 @@ $g(t) = f(t)-\lambda t$ 라고 하자. $g'(t) = f'(t)-\lambda$ 이므로 $g'(a)<
 
 ::: {#cor-MA_continuity_of_derivative}
 
-$f$ 가 $[a,\,b]$ 에서 미분가능하다면 $f'$ 은 $[a,\,b]$ 에서 단순 불연속점을 가질 수 없다.
+$f$ 가 $[a,\,b]$ 를 포함하는 열린 구간에서 미분가능하다면 $f'$ 은 $[a,\,b]$ 에서 단순 불연속점을 가질 수 없다.
 :::
 
 </div>
@@ -560,7 +572,7 @@ $$
 
 #### 테일러 정리
 
-$f:[a,\,b]\to \R$ 이 $C^{n-1}$ 급 함수이며 $(a,\,b)$ 구간에서 $n$ 번 미분 가능하다고 하자. $x,\,t\in (a,\,b)$ 에 대해 
+$f:[a,\,b]\to \R$ 이 $[a,\,b]$ 를 포함하는 열린 구간에서 $C^{n-1}$ 급 함수이며 $(a,\,b)$ 구간에서 $n$ 번 미분 가능하다고 하자. $x,\,t\in (a,\,b)$ 에 대해 
 $$
 f(x) = \sum_{k=0}^{n-1}\dfrac{f^{(k)}(t)}{k!}(x-t)^{k} + \dfrac{f^{(n)}(c)}{n!}(x-t)^n 
 $$ {#eq-MA_tayler_theorem}

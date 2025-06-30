@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -286,8 +286,9 @@ window.Quarto = {
   <li><a href="#적분의-정의와-존재" id="toc-적분의-정의와-존재" class="nav-link active" data-scroll-target="#적분의-정의와-존재"><span class="header-section-number">10.1</span> 적분의 정의와 존재</a>
   <ul class="collapse">
   <li><a href="#sec-MA_riemann_integral" id="toc-sec-MA_riemann_integral" class="nav-link" data-scroll-target="#sec-MA_riemann_integral"><span class="header-section-number">10.1.1</span> 리만 적분</a></li>
-  <li><a href="#sec-MA_stieltjes_integral" id="toc-sec-MA_stieltjes_integral" class="nav-link" data-scroll-target="#sec-MA_stieltjes_integral"><span class="header-section-number">10.1.2</span> 스틸체스 적분</a></li>
-  <li><a href="#sec-MA_stieltjes_integrability" id="toc-sec-MA_stieltjes_integrability" class="nav-link" data-scroll-target="#sec-MA_stieltjes_integrability"><span class="header-section-number">10.1.3</span> 스틸체스 적분 가능의 조건들</a></li>
+  <li><a href="#sec-MA_bounded_variation_function" id="toc-sec-MA_bounded_variation_function" class="nav-link" data-scroll-target="#sec-MA_bounded_variation_function"><span class="header-section-number">10.1.2</span> 유계변동함수</a></li>
+  <li><a href="#sec-MA_stieltjes_integral" id="toc-sec-MA_stieltjes_integral" class="nav-link" data-scroll-target="#sec-MA_stieltjes_integral"><span class="header-section-number">10.1.3</span> 스틸체스 적분</a></li>
+  <li><a href="#sec-MA_stieltjes_integrability" id="toc-sec-MA_stieltjes_integrability" class="nav-link" data-scroll-target="#sec-MA_stieltjes_integrability"><span class="header-section-number">10.1.4</span> 스틸체스 적분 가능의 조건들</a></li>
   </ul></li>
   <li><a href="#적분의-성질" id="toc-적분의-성질" class="nav-link" data-scroll-target="#적분의-성질"><span class="header-section-number">10.2</span> 적분의 성질</a></li>
   <li><a href="#미적분의-기본정리" id="toc-미적분의-기본정리" class="nav-link" data-scroll-target="#미적분의-기본정리"><span class="header-section-number">10.3</span> 미적분의 기본정리</a>
@@ -346,7 +347,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-MA_partition" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 10.1 (분할)</strong></span> 닫힌 구간 <span class="math inline">\([a,\,b]\)</span> 에서 어떤 유한개의 점 <span class="math inline">\(x_0,\ldots,\,x_n\)</span> 이</p>
+<p><span class="theorem-title"><strong>정의 10.1 (분할과 노름)</strong></span> 닫힌 구간 <span class="math inline">\([a,\,b]\)</span> 에서 어떤 유한개의 점 <span class="math inline">\(x_0,\ldots,\,x_n\)</span> 이</p>
 <p><span class="math display">\[
 a=x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_{n-1}&lt; x_n = b
 \]</span></p>
@@ -458,8 +459,43 @@ m(b-a) \le L(f,\, P) \le U(f,\,P) \le M(b-a)
 <p>가 성립하므로 <span class="math inline">\(L(f,\,P)\)</span> 와 <span class="math inline">\(U(f,\, P)\)</span> 는 유계이다.</p>
 <p><br></p>
 </section>
-<section id="sec-MA_stieltjes_integral" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="sec-MA_stieltjes_integral"><span class="header-section-number">10.1.2</span> 스틸체스 적분</h3>
+<section id="sec-MA_bounded_variation_function" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="sec-MA_bounded_variation_function"><span class="header-section-number">10.1.2</span> 유계변동함수</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-MA_bounded_variation_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 10.4 (유계변동함수)</strong></span> 함수 <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 과 <span class="math inline">\(P = \{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]\)</span> 에 대해 <span class="math inline">\(f\)</span> 의 변동(variation) <span class="math inline">\(V_a^b(f,\,P)\)</span> 를 다음과 같이 정의한다.</p>
+<p><span id="eq-MA_definition-of_variation"><span class="math display">\[
+V_a^b(f,\,P) = \sum_{i=1}^n |f(x_i) - f(x_{i-1})|.
+\tag{10.7}\]</span></span></p>
+<p>이 때 <span class="math inline">\(\{V_a^b(f,\,P) : P\in \mathcal{P}[a,\,b]\}\)</span> 가 위로 유계일 때 <span class="math inline">\(f\)</span> 를 <strong>유계변동함수 (bounded variation function)</strong> 이라고 하고 집합의 상한을 <strong>전변동 (total variation)</strong> 이라고 하고 <span class="math inline">\(V_a^b(f)\)</span> 라고 표기한다. 즉,</p>
+<p><span id="eq-MA_total_variation"><span class="math display">\[
+V_a^b (f) = \sup \left\{V_a^b (f,\,P) : P\in \mathcal{P}[a,\,b]\right\}
+\tag{10.8}\]</span></span></p>
+<p>이다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-MA_total_variation_1" class="theorem example">
+<p><span class="theorem-title"><strong>예제 10.1</strong></span> (<span class="math inline">\(1\)</span>) 임의의 단조함수 <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(V_a^b(f) = |f(b)-(a)|\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(f'\)</span> 이 유계라고 하자. <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]\)</span> 에 대해 <span class="math inline">\(f(x_{i})-f(x_{i-1}) = f'(z_i) \Delta x_i\)</span> 를 만족하는 <span class="math inline">\(z_i \in [x_{i-1},\, x_i]\)</span> 가 존재하며 <span class="math inline">\(|f'(z_i)|\le M\)</span> 인 <span class="math inline">\(M&gt;0\)</span> 이 존재하므로,</p>
+<p><span class="math display">\[
+V_a^b (f,\,P) = \sum_i |f(x_i) - f(x_{i-1})| \le M(b-a)
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(f\)</span> 는 유계변동함수이다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="sec-MA_stieltjes_integral" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="sec-MA_stieltjes_integral"><span class="header-section-number">10.1.3</span> 스틸체스 적분</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -467,7 +503,7 @@ m(b-a) \le L(f,\, P) \le U(f,\,P) \le M(b-a)
 </div>
 <div class="callout-body-container">
 <div id="def-MA_stieltjes_integral" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 10.4 (스틸체스 적분)</strong></span> <span class="math inline">\(\alpha :[a,\,b]\to \mathbb{R}\)</span> 이 단조증가함수일 때 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 10.5 (스틸체스 적분)</strong></span> <span class="math inline">\(\alpha :[a,\,b]\to \mathbb{R}\)</span> 이 단조증가함수일 때 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
 <p><span class="math display">\[
 \Delta \alpha_i := \alpha (x_i)- \alpha (x_{i-1})
 \]</span></p>
@@ -484,7 +520,7 @@ L(f,\, P,\, \alpha) &amp;:= \sum_{i=1}^n m_i \Delta \alpha_i
 \overline{\int_{a}^b} f\, d\alpha &amp;:= \inf \{ U(f,\, P,\, \alpha): P\in \mathcal{P}[a,\,b]\} \\[0.2em]
 \underline{\int_a^b} f\, d\alpha &amp;:= \sup \{ L(f,\, P,\, \alpha) : P \in \mathcal{P}[a,\,b]\}
 \end{aligned}
-\tag{10.7}\]</span></span></p>
+\tag{10.9}\]</span></span></p>
 <p>라고 하자. 두 값이 같을 때 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 구간에서 <span class="math inline">\(\alpha\)</span> 에 대해 <strong>스틸체스 적분 (Stieltjes integral)</strong> 이 가능하다고 하며 그 값을</p>
 <p><span class="math display">\[
 \int_a^b f\, d\alpha, \qquad \text{or} \qquad \int_a^b f(x)\, d\alpha(x)
@@ -498,7 +534,7 @@ L(f,\, P,\, \alpha) &amp;:= \sum_{i=1}^n m_i \Delta \alpha_i
 <p>아래의 명제는 아주 자명하지만 앞으로 많이 사용되므로 기억을 위해 남겨둔다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_sum_of_alpha" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 10.1</strong></span> <a href="#def-MA_stieltjes_integral" class="quarto-xref">정의&nbsp;<span>10.4</span></a> <span class="math inline">\(\alpha\)</span> 와 <span class="math inline">\(P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>명제 10.1</strong></span> <a href="#def-MA_stieltjes_integral" class="quarto-xref">정의&nbsp;<span>10.5</span></a> <span class="math inline">\(\alpha\)</span> 와 <span class="math inline">\(P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]\)</span> 에 대해</p>
 <p><span class="math display">\[
 \sum_{i=1}^n \Delta \alpha_i = \alpha (b)-\alpha(a)
 \]</span></p>
@@ -513,7 +549,7 @@ L(f,\, P,\, \alpha) &amp;:= \sum_{i=1}^n m_i \Delta \alpha_i
 <p><span class="theorem-title"><strong>정리 10.2</strong></span> <span class="math inline">\(P_1,\,P_2\in \mathcal{P}[a,\,b]\)</span> 이며 <span class="math inline">\(P_1 \subset P_2\)</span> 일 때 다음이 성립한다.</p>
 <p><span id="eq-MA_inequalitiy_of_stieltjes_sum_1"><span class="math display">\[
 L(f,\, P_1,\, \alpha) \le L(f,\,P_2,\,\alpha) \le U(f,\,P_2,\alpha) \le U(f,\,P_1,\, \alpha)
-\tag{10.8}\]</span></span></p>
+\tag{10.10}\]</span></span></p>
 </div>
 </div>
 <p><br></p>
@@ -522,7 +558,7 @@ L(f,\, P_1,\, \alpha) \le L(f,\,P_2,\,\alpha) \le U(f,\,P_2,\alpha) \le U(f,\,P_
 <p><span class="theorem-title"><strong>따름정리 10.2</strong></span> 임의의 <span class="math inline">\(P_1,\, P_2\in \mathcal{P}[a,\,b]\)</span> 에 대해 다음이 성립한다.</p>
 <p><span id="eq-MA_inequalitiy_of_stieltjes_sum_2"><span class="math display">\[
 L(f,\,P_1,\, \alpha) \le U(f,\, P_2,\, \alpha)
-\tag{10.9}\]</span></span></p>
+\tag{10.11}\]</span></span></p>
 </div>
 </div>
 <p><br></p>
@@ -541,11 +577,11 @@ L(f,\,P_1,\, \alpha) \le U(f,\, P_2,\, \alpha)
 <p> (<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 다음을 만족하는 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 가 존재한다.</p>
 <p><span id="eq-MA_condition_for_stieltjes_integrablity"><span class="math display">\[
 U(f,\, P,\, \alpha) - L(f,\, P,\, \alpha) &lt;\varepsilon.
-\tag{10.10}\]</span></span></p>
+\tag{10.12}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <a href="#eq-MA_upper_and_lower_stieltjes_sum" class="quarto-xref">식&nbsp;<span>10.7</span></a> 과 스틸체스 적분의 정의로부터 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <a href="#eq-MA_upper_and_lower_stieltjes_sum" class="quarto-xref">식&nbsp;<span>10.9</span></a> 과 스틸체스 적분의 정의로부터 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
 U(f,\, P_1,\, \alpha) - \int_a^b f\, d\alpha &lt; \dfrac{\varepsilon}{2}
 \]</span></p>
@@ -558,7 +594,7 @@ U(f,\, P_1,\, \alpha) - \int_a^b f\, d\alpha &lt; \dfrac{\varepsilon}{2}
 <p><span class="math display">\[
 L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} f\,d\alpha \le U(f,\, P,\,\alpha)
 \]</span></p>
-<p>이며 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.10</span></a> 가 성립한다면 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
+<p>이며 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.12</span></a> 가 성립한다면 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
 \overline{\int_a^b} f\,d\alpha -  \underline{\int_a^b}f\, d\alpha &lt;\varepsilon
 \]</span></p>
@@ -568,12 +604,12 @@ L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-MA_properties_of_stieltjes_integral_2" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 10.1</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 유계이며 <span class="math inline">\(\alpha:[a,\,b]\to \mathbb{R}\)</span> 이 단조증가함수일 때 다음을 보여라.</p>
-<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.10</span></a> 가 성립하면 <span class="math inline">\(P \subset Q\)</span> 인 <span class="math inline">\(Q\in \mathcal{P}[a,\,b]\)</span> 에 대해서도 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.10</span></a> 가 성립한다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}\)</span> 에 대해 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.10</span></a> 가 성립하면 임의의 <span class="math inline">\(s_i,\, t \in [x_{i-1},\,x_i]\)</span> 에 대해 다음이 성립한다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.12</span></a> 가 성립하면 <span class="math inline">\(P \subset Q\)</span> 인 <span class="math inline">\(Q\in \mathcal{P}[a,\,b]\)</span> 에 대해서도 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.12</span></a> 가 성립한다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}\)</span> 에 대해 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.12</span></a> 가 성립하면 임의의 <span class="math inline">\(s_i,\, t \in [x_{i-1},\,x_i]\)</span> 에 대해 다음이 성립한다.</p>
 <p><span class="math display">\[
 \sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i &lt;\varepsilon.
 \]</span></p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분가능하고 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.10</span></a> 가 성립하면 임의의 <span class="math inline">\(t_i \in [x_{i-1},\,x_i]\)</span> 에 대해 다음이 성립한다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\alpha\)</span> 에 대해 스틸체스 적분가능하고 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <a href="#eq-MA_condition_for_stieltjes_integrablity" class="quarto-xref">식&nbsp;<span>10.12</span></a> 가 성립하면 임의의 <span class="math inline">\(t_i \in [x_{i-1},\,x_i]\)</span> 에 대해 다음이 성립한다.</p>
 <p><span class="math display">\[
 \left| \sum_{i=1}^n f(t_i)\Delta \alpha_i - \int_a^b f\, d\alpha \right|&lt;\varepsilon.
 \]</span></p>
@@ -590,8 +626,8 @@ L(f,\, P,\, \alpha) \le \underline{\int_a^b}f\, d\alpha \le \overline{\int_a^b} 
 </div>
 <p><br></p>
 </section>
-<section id="sec-MA_stieltjes_integrability" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="sec-MA_stieltjes_integrability"><span class="header-section-number">10.1.3</span> 스틸체스 적분 가능의 조건들</h3>
+<section id="sec-MA_stieltjes_integrability" class="level3" data-number="10.1.4">
+<h3 data-number="10.1.4" class="anchored" data-anchor-id="sec-MA_stieltjes_integrability"><span class="header-section-number">10.1.4</span> 스틸체스 적분 가능의 조건들</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_continuity_and_integrability" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.4</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 연속이면 <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다.</p>
@@ -693,14 +729,14 @@ U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha) &lt; \left[2M + \alpha(b)-\alpha(a)\right]\v
 <p><span class="math inline">\(f\in \mathcal{R}(\alpha)\)</span> 이므로</p>
 <p><span id="eq-MA_thm-MA_stieltjes_integrability_of_composite_function_1"><span class="math display">\[
 U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)&lt;\delta^2
-\tag{10.11}\]</span></span></p>
+\tag{10.13}\]</span></span></p>
 <p>인 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\},\, P\in \mathcal{P}[a,\,b]\)</span> 가 존재한다. <span class="math inline">\(M_i=\sup f([a,\,b])\)</span>, <span class="math inline">\(m_i = \inf f[a,\,b]\)</span>, <span class="math inline">\(M^\ast_i = \sup h([a,\,b])\)</span>, <span class="math inline">\(m^\ast_i = \inf h([a,\,b])\)</span> 라고 하자.</p>
 <p>이제 <span class="math inline">\(i=1,\ldots,\,n\)</span> 을 두가지로 나누자. (<span class="math inline">\(i\)</span>) <span class="math inline">\(M_i-m_i &lt; \delta\)</span> 인 경우 <span class="math inline">\(i\in A\)</span> 이고 (<span class="math inline">\(ii\)</span>) <span class="math inline">\(M_i-m_i \ge \delta\)</span> 인 경우는 <span class="math inline">\(i\in B\)</span> 라고 하자.</p>
 <p><span class="math inline">\(i\in A\)</span> 인 경우 <span class="math inline">\(M^\ast_i - m^\ast_i &lt; \varepsilon\)</span> 이다.</p>
-<p><span class="math inline">\(i\in B\)</span> 인 경우 <span class="math inline">\(K=\sup \{|\phi(t)|: t\in [m,\, M]\}\)</span> 에 대해 <span class="math inline">\(M_i^\ast-m_i^\ast&lt;2K\)</span> 이다. <a href="#eq-MA_thm-MA_stieltjes_integrability_of_composite_function_1" class="quarto-xref">식&nbsp;<span>10.11</span></a> 의 조건에 의해</p>
+<p><span class="math inline">\(i\in B\)</span> 인 경우 <span class="math inline">\(K=\sup \{|\phi(t)|: t\in [m,\, M]\}\)</span> 에 대해 <span class="math inline">\(M_i^\ast-m_i^\ast&lt;2K\)</span> 이다. <a href="#eq-MA_thm-MA_stieltjes_integrability_of_composite_function_1" class="quarto-xref">식&nbsp;<span>10.13</span></a> 의 조건에 의해</p>
 <p><span id="eq-MA_thm-MA_stieltjes_integrability_of_composite_function_2"><span class="math display">\[
 \delta \sum_{i\in B} (\Delta \alpha_i) \le \sum_{i\in B} (M_i-m_i) \Delta \alpha_i &lt;\delta^2
-\tag{10.12}\]</span></span></p>
+\tag{10.14}\]</span></span></p>
 <p>이다. 따라서 <span class="math inline">\(\sum_{i\in B} \Delta \alpha_i &lt; \delta\)</span> 이며 이로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -713,7 +749,7 @@ U(h,\,P,\,\alpha) - L(h,\, P,\, \alpha) &amp;= \sum_{i\in A} (M_i^\ast - m_i^\as
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-MA_stieltjes_integrability_of_composite_function" class="theorem example">
-<p><span class="theorem-title"><strong>예제 10.1</strong></span> <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 라면 <a href="#thm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">정리&nbsp;<span>10.7</span></a> 로부터 다음을 알 수 있다.</p>
+<p><span class="theorem-title"><strong>예제 10.2</strong></span> <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 라면 <a href="#thm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">정리&nbsp;<span>10.7</span></a> 로부터 다음을 알 수 있다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(f^n \in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(0 \not\in f([a,\,b])\)</span> 면 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(f^{-n} \in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(|f|\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다.</p>
@@ -775,7 +811,7 @@ U(f,\,P,\,\alpha)&lt; \int_a^b f\,d\alpha+\dfrac{\varepsilon}{2},\qquad U(g,\,P,
 <p>이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로</p>
 <p><span id="eq-prp-MA_properties_of_integral_1_1"><span class="math display">\[
 \int_a^b h\,d\alpha \le \int_a^b f\,d\alpha + \int_a^b g\,d\alpha
-\tag{10.13}\]</span></span></p>
+\tag{10.15}\]</span></span></p>
 <p>임을 안다. 또한</p>
 <p><span class="math display">\[
 L(f,\,P,\, \alpha) &gt; \int_a^b f\,d\alpha - \dfrac{\varepsilon}{2},\qquad L(g,\,P,\, \alpha) &gt; \int_a^b g\,d\alpha - \dfrac{\varepsilon}{2}
@@ -787,8 +823,8 @@ L(f,\,P,\, \alpha) &gt; \int_a^b f\,d\alpha - \dfrac{\varepsilon}{2},\qquad L(g,
 <p>이다. 역시 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로</p>
 <p><span id="eq-prp-MA_properties_of_integral_1_2"><span class="math display">\[
 \int_a^b f\, d\alpha + \int_a^b g\,d\alpha \le \int_a^b h\,d\alpha
-\tag{10.14}\]</span></span></p>
-<p>이다. <a href="#eq-prp-MA_properties_of_integral_1_1" class="quarto-xref">식&nbsp;<span>10.13</span></a> 과 <a href="#eq-prp-MA_properties_of_integral_1_1" class="quarto-xref">식&nbsp;<span>10.13</span></a> 로 부터</p>
+\tag{10.16}\]</span></span></p>
+<p>이다. <a href="#eq-prp-MA_properties_of_integral_1_1" class="quarto-xref">식&nbsp;<span>10.15</span></a> 과 <a href="#eq-prp-MA_properties_of_integral_1_1" class="quarto-xref">식&nbsp;<span>10.15</span></a> 로 부터</p>
 <p><span class="math display">\[
 \int_a^b (f+g)\, d\alpha = \int_a^b f\,d\alpha + \int_a^b g\,d\alpha
 \]</span></p>
@@ -796,8 +832,8 @@ L(f,\,P,\, \alpha) &gt; \int_a^b f\,d\alpha - \dfrac{\varepsilon}{2},\qquad L(g,
 <p>이제 <span class="math inline">\(cf\)</span> 에 대해 생각하자. <span class="math inline">\(c=0\)</span> 이면 자명하므로 <span class="math inline">\(c\ne 0\)</span> 인 경우만 생각한다. 우선 <span class="math inline">\(c&gt;0\)</span> 인 경우 임의의 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <span class="math inline">\(U(cf,\, P,\, \alpha) = cU(f,\,P,\, \alpha)\)</span> 이며 <span class="math inline">\(L(cf,\,P,\, \alpha)= cL(f,\, P,\, \alpha)\)</span> 이다. 따라서</p>
 <p><span id="eq-thm-MA_properties_of_integral_1_3"><span class="math display">\[
 U(cf,\,P,\, \alpha)-L(cf,\, P,\, \alpha) = |c|\left[U(f,\, P,\, \alpha)- L(f,\, P,\, \alpha)\right]
-\tag{10.15}\]</span></span></p>
-<p>이므로 <span class="math inline">\(cf\in \mathcal{R}(\alpha)[a,\,b]\)</span> 임을 안다. <span class="math inline">\(c&lt;0\)</span> 인 경우 역시 임의의 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <span class="math inline">\(U(cf,\, P,\, \alpha)=cL(f,\,P,\,\alpha)\)</span> 이며 <span class="math inline">\(L(cf,\, P,\, \alpha) = cU(f,\, P,\, \alpha)\)</span> 이므로 역시 <a href="#eq-thm-MA_properties_of_integral_1_3" class="quarto-xref">식&nbsp;<span>10.15</span></a> 이 성립한다. 따라서 <span class="math inline">\(cf \in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다. 이제 <span class="math inline">\(U(f,\, P,\, \alpha)-L(f,\, P,\, \alpha)&lt;\frac{\varepsilon}{|c|}\)</span> 인 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 를 생각하자.</p>
+\tag{10.17}\]</span></span></p>
+<p>이므로 <span class="math inline">\(cf\in \mathcal{R}(\alpha)[a,\,b]\)</span> 임을 안다. <span class="math inline">\(c&lt;0\)</span> 인 경우 역시 임의의 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 에 대해 <span class="math inline">\(U(cf,\, P,\, \alpha)=cL(f,\,P,\,\alpha)\)</span> 이며 <span class="math inline">\(L(cf,\, P,\, \alpha) = cU(f,\, P,\, \alpha)\)</span> 이므로 역시 <a href="#eq-thm-MA_properties_of_integral_1_3" class="quarto-xref">식&nbsp;<span>10.17</span></a> 이 성립한다. 따라서 <span class="math inline">\(cf \in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다. 이제 <span class="math inline">\(U(f,\, P,\, \alpha)-L(f,\, P,\, \alpha)&lt;\frac{\varepsilon}{|c|}\)</span> 인 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 를 생각하자.</p>
 <p><span class="math inline">\(c&gt;0\)</span> 인 경우</p>
 <p><span class="math display">\[
 \int_a^b (cf)\,d\alpha &lt; U(cf,\, P,\,\alpha) = cU(f,\, P,\, \alpha) &lt; c\int_a^b f\, d\alpha+ \varepsilon
@@ -860,11 +896,11 @@ U(f,\,P,\, \alpha+\beta) - L(f,\, P,\, \alpha+\beta)&lt; \varepsilon
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f+g,\, f-g\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이며 <span class="math inline">\((f+g)^2,\, (f-g)^2\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다(<a href="#exm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">예제&nbsp;<span>10.1</span></a>). 따라서 다음이 성립한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f+g,\, f-g\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이며 <span class="math inline">\((f+g)^2,\, (f-g)^2\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이다(<a href="#exm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">예제&nbsp;<span>10.2</span></a>). 따라서 다음이 성립한다.</p>
 <p><span class="math display">\[
 fg=\dfrac{(f+g)^2 - (f-g)^2}{4} \in \mathcal{R}(\alpha)[a,\,b].
 \]</span></p>
-<p>(<span class="math inline">\(2\)</span>) <a href="#exm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">예제&nbsp;<span>10.1</span></a> 에서 <span class="math inline">\(|f|\in \mathcal{R}(\alpha)[a,\,b]\)</span> 임을 보였다. <span class="math inline">\(c\int^a_b f\,d\alpha\ge 0\)</span> 이 되도록 <span class="math inline">\(c=\pm 1\)</span> 중에 선택하자. <span class="math inline">\(cf\le |f|\)</span> 이므로 다음이 성립한다.</p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#exm-MA_stieltjes_integrability_of_composite_function" class="quarto-xref">예제&nbsp;<span>10.2</span></a> 에서 <span class="math inline">\(|f|\in \mathcal{R}(\alpha)[a,\,b]\)</span> 임을 보였다. <span class="math inline">\(c\int^a_b f\,d\alpha\ge 0\)</span> 이 되도록 <span class="math inline">\(c=\pm 1\)</span> 중에 선택하자. <span class="math inline">\(cf\le |f|\)</span> 이므로 다음이 성립한다.</p>
 <p><span class="math display">\[
 \left|\int_a^b f\,d\alpha\right| = c\int_a^b f\,d\alpha = \int_a^b cf\, d\alpha \le \int_a^b |f|\,d\alpha.
 \]</span> <span class="math inline">\(\square\)</span></p>
@@ -877,7 +913,7 @@ fg=\dfrac{(f+g)^2 - (f-g)^2}{4} \in \mathcal{R}(\alpha)[a,\,b].
 </div>
 <div class="callout-body-container">
 <div id="def-MA_unit_step_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 10.5 (단위 계단 함수)</strong></span> <strong>단위 계단 함수(unit step function)</strong> <span class="math inline">\(\theta(x):\mathbb{R}\to \{0,\,1\}\)</span> 은 다음과 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 10.6 (단위 계단 함수)</strong></span> <strong>단위 계단 함수(unit step function)</strong> <span class="math inline">\(\theta(x):\mathbb{R}\to \{0,\,1\}\)</span> 은 다음과 같이 정의된다.</p>
 <p><span class="math display">\[
 \theta (x) = \left\{\begin{array}{ll} 0, \qquad &amp; x\le 0, \\ 1,&amp;x&gt;0.\end{array}\right.
 \]</span></p>
@@ -907,15 +943,15 @@ x_0=a &lt; x_1=s &lt; x_2 &lt; x_3=b.
 <p><span class="theorem-title"><strong>명제 10.6</strong></span> 양의 수열 <span class="math inline">\(\langle c_k\rangle\)</span> 에서 <span class="math inline">\(\sum_k c_k\)</span> 가 수렴하며 <span class="math inline">\(\langle s_k \rangle\)</span> 은 <span class="math inline">\((a,\,b)\)</span> 구간에서 정의된 수열이고</p>
 <p><span id="eq-MA_properties_of_integral_5_1"><span class="math display">\[
 \alpha (x) = \sum_{k=1}^\infty c_k \theta(x-s_k)
-\tag{10.16}\]</span></span></p>
+\tag{10.18}\]</span></span></p>
 <p>라고 하자. <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 연속이라면 다음이 성립한다.</p>
 <p><span id="eq-MA_properties_of_integral_5_2"><span class="math display">\[
 \int_a^b f\,d\alpha = \sum_{k=1}^\infty c_k f(s_k).
-\tag{10.17}\]</span></span></p>
+\tag{10.19}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>임의의 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(|c_k \theta (x-s_k)| \le |c_k|\)</span> 이므로 <a href="#eq-MA_properties_of_integral_5_1" class="quarto-xref">식&nbsp;<span>10.16</span></a> 의 <span class="math inline">\(\sum\)</span> 부분은 수렴한다. 즉 <span class="math inline">\(\alpha(x)\)</span> 는 잘 정의된다. 또한 <span class="math inline">\(\alpha(x)\)</span> 는 단조증가함수임은 명백하며 <span class="math inline">\(\alpha(a)=0\)</span>, <span class="math inline">\(\alpha(b)= \sum_k c_k\)</span> 이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>임의의 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(|c_k \theta (x-s_k)| \le |c_k|\)</span> 이므로 <a href="#eq-MA_properties_of_integral_5_1" class="quarto-xref">식&nbsp;<span>10.18</span></a> 의 <span class="math inline">\(\sum\)</span> 부분은 수렴한다. 즉 <span class="math inline">\(\alpha(x)\)</span> 는 잘 정의된다. 또한 <span class="math inline">\(\alpha(x)\)</span> 는 단조증가함수임은 명백하며 <span class="math inline">\(\alpha(a)=0\)</span>, <span class="math inline">\(\alpha(b)= \sum_k c_k\)</span> 이다.</p>
 <p>고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\displaystyle \sum_{k=N+1}^\infty c_k &lt; \varepsilon\)</span> 이 되는 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 가 항상 존재한다. 이제</p>
 <p><span class="math display">\[
 \alpha_1 (x) = \sum_{k=1}^N c_k \theta(x-s_k),\qquad \alpha_2(x) = \sum_{k=N+1}^\infty c_k \theta (x-s_k)
@@ -923,16 +959,16 @@ x_0=a &lt; x_1=s &lt; x_2 &lt; x_3=b.
 <p>라고 하자. <a href="#prp-MA_properties_of_integral_2" class="quarto-xref">명제&nbsp;<span>10.3</span></a> 와 <a href="#prp-MA_properties_of_integral_4" class="quarto-xref">명제&nbsp;<span>10.5</span></a> 로부터</p>
 <p><span id="eq-MA_properties_of_integral_5_3"><span class="math display">\[
 \int_a^b f\, d\alpha_1 = \sum_{k=1} c_k f(s_k)
-\tag{10.18}\]</span></span></p>
+\tag{10.20}\]</span></span></p>
 <p>이다. <span class="math inline">\(\alpha_2(b)-\alpha_2(a)&lt;\varepsilon\)</span> 이므로 <span class="math inline">\(M=\sup \{|f(x)|: x\in [a,\,b]\}\)</span> 라고 하면</p>
 <p><span id="eq-MA_properties_of_integral_5_4"><span class="math display">\[
 \left|\int_a^b f\, d\alpha_2 \right| \le M\varepsilon
-\tag{10.19}\]</span></span></p>
-<p>이다. <span class="math inline">\(\alpha = \alpha_1 + \alpha_2\)</span> 이므로 <a href="#eq-MA_properties_of_integral_5_3" class="quarto-xref">식&nbsp;<span>10.18</span></a>, <a href="#eq-MA_properties_of_integral_5_4" class="quarto-xref">식&nbsp;<span>10.19</span></a> 로부터</p>
+\tag{10.21}\]</span></span></p>
+<p>이다. <span class="math inline">\(\alpha = \alpha_1 + \alpha_2\)</span> 이므로 <a href="#eq-MA_properties_of_integral_5_3" class="quarto-xref">식&nbsp;<span>10.20</span></a>, <a href="#eq-MA_properties_of_integral_5_4" class="quarto-xref">식&nbsp;<span>10.21</span></a> 로부터</p>
 <p><span id="eq-prp-MA_properties_of_integral_5_5"><span class="math display">\[
 \left| \int_a^b f\, d\alpha - \sum_{k=1}^N c_k f(s_k)\right| \le M\varepsilon
-\tag{10.20}\]</span></span></p>
-<p>이다. 이제 <span class="math inline">\(N \to \infty\)</span> 극한을 취하면 <a href="#eq-MA_properties_of_integral_5_2" class="quarto-xref">식&nbsp;<span>10.17</span></a> 를 얻는다. <span class="math inline">\(\square\)</span></p>
+\tag{10.22}\]</span></span></p>
+<p>이다. 이제 <span class="math inline">\(N \to \infty\)</span> 극한을 취하면 <a href="#eq-MA_properties_of_integral_5_2" class="quarto-xref">식&nbsp;<span>10.19</span></a> 를 얻는다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -940,11 +976,11 @@ x_0=a &lt; x_1=s &lt; x_2 &lt; x_3=b.
 <p><span class="theorem-title"><strong>정리 10.8</strong></span> <span class="math inline">\(\alpha\)</span> 가 단조증가이며 <span class="math inline">\(\alpha'\in \mathcal{R}[a,\,b]\)</span> 이라고 하자. <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 유계인 실함수라면</p>
 <p><span id="eq-MA_properties_of_integral_6_1"><span class="math display">\[
 f\in \mathcal{R}(\alpha)[a,\,b] \iff f\alpha' \in \mathcal{R}[a,\,b]
-\tag{10.21}\]</span></span></p>
+\tag{10.23}\]</span></span></p>
 <p>가 성립하며 이 경우</p>
 <p><span id="eq-MA_properties_of_integral_6_2"><span class="math display">\[
 \int_a^b f\,d\alpha = \int_a^b f(x)\, \alpha'(x)\, dx
-\tag{10.22}\]</span></span></p>
+\tag{10.24}\]</span></span></p>
 <p>이다.</p>
 </div>
 </div>
@@ -952,26 +988,26 @@ f\in \mathcal{R}(\alpha)[a,\,b] \iff f\alpha' \in \mathcal{R}[a,\,b]
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\alpha'\in \mathcal{R}[a,\,b]\)</span> 이므로 고정된 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span id="eq-MA_properties_of_integral_6_3"><span class="math display">\[
 U(\alpha',\, P)- L(\alpha',\, P)&lt;\varepsilon
-\tag{10.23}\]</span></span></p>
+\tag{10.25}\]</span></span></p>
 <p>인 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]\)</span> 가 존재한다. 평균값 정리에 따라 각각의 <span class="math inline">\([x_{i-1},\,x_i]\)</span> 구간에서</p>
 <p><span id="eq-MA_properties_of_integral_6_4"><span class="math display">\[
 \Delta \alpha_i = \alpha(x_{i})- \alpha(x_{i-1}) = \alpha'(t_i)\Delta x_i
-\tag{10.24}\]</span></span></p>
-<p>을 만족하는 <span class="math inline">\(t_i\in [x_{i-1},\,x_i]\)</span> 가 존재한다. <a href="#eq-MA_properties_of_integral_6_3" class="quarto-xref">식&nbsp;<span>10.23</span></a> 으로부터 <span class="math inline">\(i=1,\ldots,\, n\)</span> 에 대해 <span class="math inline">\(s_i \in [x_{i-1},\,x_i]\)</span> 라면</p>
+\tag{10.26}\]</span></span></p>
+<p>을 만족하는 <span class="math inline">\(t_i\in [x_{i-1},\,x_i]\)</span> 가 존재한다. <a href="#eq-MA_properties_of_integral_6_3" class="quarto-xref">식&nbsp;<span>10.25</span></a> 으로부터 <span class="math inline">\(i=1,\ldots,\, n\)</span> 에 대해 <span class="math inline">\(s_i \in [x_{i-1},\,x_i]\)</span> 라면</p>
 <p><span id="eq-MA_properties_of_integral_6_5"><span class="math display">\[
 \sum_{i=1}^n |\alpha'(s_i)-\alpha'(t_i)|\Delta x_i \le U(\alpha',\,P)-L(\alpha',\, P)&lt;\varepsilon
-\tag{10.25}\]</span></span></p>
+\tag{10.27}\]</span></span></p>
 <p>이다. 이제 <span class="math inline">\(M=\sup \{|f(x)|: x\in [a,\,b]\}\)</span> 라고 하자.</p>
 <p><span id="eq-MA_properties_of_integral_6_6"><span class="math display">\[
 \sum_{i=1}^n f(s_i)\Delta \alpha_i = \sum_{i=1}^n f(s_i) \alpha'(t_i)\Delta x_i
-\tag{10.26}\]</span></span></p>
-<p>이며, <a href="#eq-MA_properties_of_integral_6_6" class="quarto-xref">식&nbsp;<span>10.26</span></a>, 그리고 <a href="#eq-MA_properties_of_integral_6_5" class="quarto-xref">식&nbsp;<span>10.25</span></a> 를 이용하면</p>
+\tag{10.28}\]</span></span></p>
+<p>이며, <a href="#eq-MA_properties_of_integral_6_6" class="quarto-xref">식&nbsp;<span>10.28</span></a>, 그리고 <a href="#eq-MA_properties_of_integral_6_5" class="quarto-xref">식&nbsp;<span>10.27</span></a> 를 이용하면</p>
 <p><span id="eq-MA_properties_of_integral_6_7"><span class="math display">\[
 \begin{aligned}
 \left| \sum_{i=1}^n f(s_i) \Delta \alpha_i\right. &amp;- \left.\sum_{i=1}^n f(s_i)\alpha'(s_i)\Delta x_i \right| \\
 &amp;= \sum_{i=1}^n |f(s_i)| \left| \alpha'(t_i)\Delta x_i-\alpha'(s_i) \Delta x_i\right| &lt; M\varepsilon
 \end{aligned}
-\tag{10.27}\]</span></span></p>
+\tag{10.29}\]</span></span></p>
 <p>이다. 즉 <span class="math inline">\(s_i\)</span> 를 <span class="math inline">\([x_{i-1},\,x_i]\)</span> 가운데 어떤 값을 선택해도</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1009,11 +1045,11 @@ U(f\alpha',\, P) \le U(f,\,P,\,\alpha) + M\varepsilon
 <p><span class="theorem-title"><strong>정리 10.9 (변수 변환 적분)</strong></span> <span class="math inline">\(\varphi : [A,\,B] \to [a,\,b]\)</span> 가 연속인 순증가 함수이고 전사함수라고 하자. <span class="math inline">\(\alpha :[a,\,b] \to \mathbb{R}\)</span> 은 단조응가함수이며 <span class="math inline">\(f\in\mathcal{R}(\alpha)[a,\,b]\)</span> 라고 하자. 이 때 <span class="math inline">\([A,\,B]\)</span> 에서 정의된 <span class="math inline">\(\beta,\,g\)</span> 를 다음과 같이 정의한다.</p>
 <p><span id="eq-MA_change_of_varialble_1"><span class="math display">\[
 \beta(y) := \alpha (\varphi(y)), \qquad g(y) := f(\varphi (y)).
-\tag{10.28}\]</span></span></p>
+\tag{10.30}\]</span></span></p>
 <p>그렇다면 <span class="math inline">\(g\in \mathcal{R}(\beta)[A,\,B]\)</span> 이며</p>
 <p><span id="eq-MA_change_of_varialble_2"><span class="math display">\[
 \int_A^B g\,d\beta = \int_a^b f\,d\alpha
-\tag{10.29}\]</span></span></p>
+\tag{10.31}\]</span></span></p>
 <p>이다.</p>
 </div>
 </div>
@@ -1022,7 +1058,7 @@ U(f\alpha',\, P) \le U(f,\,P,\,\alpha) + M\varepsilon
 <p><span class="math display">\[
 U(g,\,Q,\,\beta) = U(f,\,P,\,\alpha),\qquad L(g,\,Q,\,\beta)= L(f,\, P,\,\alpha)
 \]</span></p>
-<p>임은 쉽게 알 수 있다. <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이므로 <span class="math inline">\(g\in \mathcal{R}(\beta)[A,\,B]\)</span> 이며 <a href="#eq-MA_change_of_varialble_2" class="quarto-xref">식&nbsp;<span>10.29</span></a> 가 성립한다. <span class="math inline">\(\square\)</span></p>
+<p>임은 쉽게 알 수 있다. <span class="math inline">\(f\in \mathcal{R}(\alpha)[a,\,b]\)</span> 이므로 <span class="math inline">\(g\in \mathcal{R}(\beta)[A,\,B]\)</span> 이며 <a href="#eq-MA_change_of_varialble_2" class="quarto-xref">식&nbsp;<span>10.31</span></a> 가 성립한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -1035,7 +1071,7 @@ U(g,\,Q,\,\beta) = U(f,\,P,\,\alpha),\qquad L(g,\,Q,\,\beta)= L(f,\, P,\,\alpha)
 <p><span class="theorem-title"><strong>보조정리 10.1</strong></span> <span class="math inline">\(f\in\mathcal{R}[a,\,b]\)</span> 일 때 <span class="math inline">\(x\in [a,\,b]\)</span> 에 대해 아래와 같이 정의된 <span class="math inline">\(F(x)\)</span> 는 <span class="math inline">\([a,\,b]\)</span> 에서 고른 연속이다.</p>
 <p><span id="eq-MA_first_fundamental_theorem_of_calculus"><span class="math display">\[
 F(x) := \int_a^x f(t)\,dt.
-\tag{10.30}\]</span></span></p>
+\tag{10.32}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -1073,7 +1109,7 @@ t\in [a,\,b],\, |t-x_0|&lt;\delta \implies |f(t)-f(x_0)|&lt;\varepsilon
 <p><span class="theorem-title"><strong>따름정리 10.4 (적분의 평균값 정리)</strong></span> 함수 <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 연속이면</p>
 <p><span id="eq-MA_mean_value_theorem_for_integration"><span class="math display">\[
 \dfrac{1}{b-a}\int_a^b f(t)\, dt = f(x_0)
-\tag{10.31}\]</span></span></p>
+\tag{10.33}\]</span></span></p>
 <p>를 만족하는 <span class="math inline">\(x_0\in (a,\,b)\)</span> 가 존재한다.</p>
 </div>
 </div>
@@ -1098,7 +1134,7 @@ F'(x_0) = \lim_{h \to 0} \dfrac{F(x_0+h)-F(x_0)}{h}= \lim_{h \to 0}\dfrac{1}{h}\
 <p><span class="theorem-title"><strong>정리 10.11 (미적분의 제2 기본정리)</strong></span> <span class="math inline">\(f\in \mathcal{R}[a,\,b]\)</span> 이고 <span class="math inline">\([a,\,b]\)</span> 에서 미분가능한 함수 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\(F' = f\)</span> 이면 다음이 성립한다.</p>
 <p><span id="eq-MA_second_fundamental_theorem_of_calculus"><span class="math display">\[
 \int_a^b f(x)\, dx = F(b)-F(a).
-\tag{10.32}\]</span></span></p>
+\tag{10.34}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -1114,14 +1150,14 @@ F(b)-F(a) = \sum_{i=1}^n F'(t_i)\Delta x_i = \sum_{i=1}^n f(t_i)\Delta x_i
 <p><span class="math display">\[
 \left| F(b)-F(a) - \int_a^b f(x)\,dx \right| &lt; \varepsilon
 \]</span></p>
-<p>이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로 <a href="#eq-MA_second_fundamental_theorem_of_calculus" class="quarto-xref">식&nbsp;<span>10.32</span></a> 가 성립한다. <span class="math inline">\(\square\)</span></p>
+<p>이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로 <a href="#eq-MA_second_fundamental_theorem_of_calculus" class="quarto-xref">식&nbsp;<span>10.34</span></a> 가 성립한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_integration_by_parts" class="theorem">
 <p><span class="theorem-title"><strong>정리 10.12 (부분적분)</strong></span> <span class="math inline">\(F,\,G\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 에서 미분가능한 함수이며 <span class="math inline">\(F'=f,\,G'=g\)</span> 라고 하자. <span class="math inline">\(f,\, g\in \mathcal{R}[a,\,b]\)</span> 일 때 다음이 성립한다. <span id="eq-MA_integration_by_parts"><span class="math display">\[
 \int_a^b F(x)\, g(x)\, dx = F(b)G(b)-F(a)G(a)-\int_a^b f(x)\, G(x)\,dx
-\tag{10.33}\]</span></span></p>
+\tag{10.35}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -1145,7 +1181,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 </div>
 <div class="callout-body-container">
 <div id="def-MA_integration_of_vector_valued_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 10.6</strong></span> <span class="math inline">\(f_1,\ldots,\,f_n :[a,\,b]\to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{f}:[a,\,b]\to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{f}(t) = (f_1(t),\ldots,\,f_n(t))\)</span> 라고 하자. <span class="math inline">\(\alpha:[a,\,b]\to \mathbb{R}\)</span> 이 단조증가 함수일 때 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(f_i\in\mathcal{R}[a,\,b]\)</span> 이면 <span class="math inline">\(\boldsymbol{f}\)</span> 도 <span class="math inline">\([a,\,b]\)</span> 구간에서의 리만적분 가능 함수라고 하며 역시 <span class="math inline">\(\boldsymbol{f}\in \mathcal{R}[a,\,b]\)</span> 로 표기한다. 이 때 <span class="math inline">\(\boldsymbol{f}\)</span> 의 적분은 다음과 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 10.7</strong></span> <span class="math inline">\(f_1,\ldots,\,f_n :[a,\,b]\to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{f}:[a,\,b]\to \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{f}(t) = (f_1(t),\ldots,\,f_n(t))\)</span> 라고 하자. <span class="math inline">\(\alpha:[a,\,b]\to \mathbb{R}\)</span> 이 단조증가 함수일 때 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(f_i\in\mathcal{R}[a,\,b]\)</span> 이면 <span class="math inline">\(\boldsymbol{f}\)</span> 도 <span class="math inline">\([a,\,b]\)</span> 구간에서의 리만적분 가능 함수라고 하며 역시 <span class="math inline">\(\boldsymbol{f}\in \mathcal{R}[a,\,b]\)</span> 로 표기한다. 이 때 <span class="math inline">\(\boldsymbol{f}\)</span> 의 적분은 다음과 같이 정의된다.</p>
 <p><span class="math display">\[
 \int_a^b \boldsymbol{f}\, d\alpha = \left(\int_a^b f_1\, d\alpha,\ldots,\, \int_a^b f_n \,d\alpha \right)
 \]</span></p>
@@ -1164,7 +1200,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 </div>
 <div class="callout-body-container">
 <div id="def-MA_curve" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 10.7 (곡선)</strong></span> <span class="math inline">\(\gamma : [a,\,b]\to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\gamma\)</span> 가 연속일 때 <span class="math inline">\(\gamma\)</span> 를 <span class="math inline">\([a,\,b]\)</span> 에서의 <strong>곡선 (curve)</strong> 이라고 한다. <span class="math inline">\(\gamma\)</span> 가 단사이면 <span class="math inline">\(\gamma\)</span> 를 <strong>호(arc)</strong> 라고 하며, <span class="math inline">\(\gamma(b)=\gamma(a)\)</span> 이면 <span class="math inline">\(\gamma\)</span> 를 <strong>닫힌 곡선 (closed curve)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 10.8 (곡선)</strong></span> <span class="math inline">\(\gamma : [a,\,b]\to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\gamma\)</span> 가 연속일 때 <span class="math inline">\(\gamma\)</span> 를 <span class="math inline">\([a,\,b]\)</span> 에서의 <strong>곡선 (curve)</strong> 이라고 한다. <span class="math inline">\(\gamma\)</span> 가 단사이면 <span class="math inline">\(\gamma\)</span> 를 <strong>호(arc)</strong> 라고 하며, <span class="math inline">\(\gamma(b)=\gamma(a)\)</span> 이면 <span class="math inline">\(\gamma\)</span> 를 <strong>닫힌 곡선 (closed curve)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>
@@ -1173,7 +1209,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 <p>즉 곡선은 유클리드공간상의 점의 집합이 아니라 함수이다. 이 때 <span class="math inline">\(P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]\)</span> 에 대해 다음의 값을 정의 할 수 있다.</p>
 <p><span id="eq-MA_polygonal_length_of_rectifiable_curve"><span class="math display">\[
 \Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|.
-\tag{10.34}\]</span></span></p>
+\tag{10.36}\]</span></span></p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -1182,10 +1218,10 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 </div>
 <div class="callout-body-container">
 <div id="def-MA_rectifiable_curve" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 10.8 (길이를 잴 수 있는)</strong></span> <span class="math inline">\(\gamma : [a,\,b]\to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\gamma\)</span> 가 곡선일 때</p>
+<p><span class="theorem-title"><strong>정의 10.9 (길이를 잴 수 있는)</strong></span> <span class="math inline">\(\gamma : [a,\,b]\to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\gamma\)</span> 가 곡선일 때</p>
 <p><span id="eq-MA_length_of__curve"><span class="math display">\[
 \Lambda (\gamma) = \sup \{\Lambda(\gamma,\, P) : P\in \mathcal{P}[a,\,b]\}
-\tag{10.35}\]</span></span></p>
+\tag{10.37}\]</span></span></p>
 <p>를 <span class="math inline">\(\gamma\)</span> 의 <strong>길이 (length)</strong> 라고 한다. <span class="math inline">\(\Lambda (\gamma)&lt;\infty\)</span> 일 때 <span class="math inline">\(\gamma\)</span> 를 <strong>길이를 잴 수 있는 곡선 (rectifiable curve)</strong> 이라고 한다.</p>
 </div>
 </div>
@@ -1197,7 +1233,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 <p><span class="theorem-title"><strong>정리 10.13</strong></span> 길이를 잴 수 있는 곡선 <span class="math inline">\(\gamma :[a,\,b]\to \mathbb{R}^n\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수일 때 그 길이는 다음과 같다.</p>
 <p><span id="eq-MA_length_of_C1_rectifiable_curve"><span class="math display">\[
 \Lambda (\gamma) = \int_a^b \|\gamma'(t)\|\, dt.
-\tag{10.36}\]</span></span></p>
+\tag{10.38}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -1208,7 +1244,7 @@ F(b)G(b)-F(a)G(a) = \int_{a}^{b}f(x)\,G(x) \,dx + \int_a^b F(x)\,g(x)\,dx
 <p>이므로 다음이 성립한다.</p>
 <p><span id="eq-MA_length_of_C1_rectifiable_curve_1"><span class="math display">\[
 \Lambda (\gamma,\, P) \le \int_a^b \|\gamma'(t)\|\, dt.
-\tag{10.37}\]</span></span></p>
+\tag{10.39}\]</span></span></p>
 <p>이제 위 식의 부등호가 <span class="math inline">\(\ge\)</span> 로 바뀐 것을 증명하자. <span class="math inline">\(\gamma'\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 구간에서 연속이므로 이 구간에서 고른 연속이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 아래를 만족하는 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다.</p>
 <p><span class="math display">\[
 s,\,t\in [a,\,b],\, |s-t|&lt;\delta \implies \|\gamma'(s)-\gamma'(t)\|&lt;\varepsilon.
@@ -1233,8 +1269,8 @@ s,\,t\in [a,\,b],\, |s-t|&lt;\delta \implies \|\gamma'(s)-\gamma'(t)\|&lt;\varep
 <p>이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로</p>
 <p><span id="eq-MA_length_of_C1_rectifiable_curve_2"><span class="math display">\[
 \int_a^b \|\gamma'(t)\|\, dt \le \Lambda (\gamma)
-\tag{10.38}\]</span></span></p>
-<p>이다. <a href="#eq-MA_length_of_C1_rectifiable_curve_1" class="quarto-xref">식&nbsp;<span>10.37</span></a>, <a href="#eq-MA_length_of_C1_rectifiable_curve_2" class="quarto-xref">식&nbsp;<span>10.38</span></a> 로부터 <a href="#eq-MA_length_of_C1_rectifiable_curve" class="quarto-xref">식&nbsp;<span>10.36</span></a> 가 성립함을 알 수 있다. <span class="math inline">\(\square\)</span></p>
+\tag{10.40}\]</span></span></p>
+<p>이다. <a href="#eq-MA_length_of_C1_rectifiable_curve_1" class="quarto-xref">식&nbsp;<span>10.39</span></a>, <a href="#eq-MA_length_of_C1_rectifiable_curve_2" class="quarto-xref">식&nbsp;<span>10.40</span></a> 로부터 <a href="#eq-MA_length_of_C1_rectifiable_curve" class="quarto-xref">식&nbsp;<span>10.38</span></a> 가 성립함을 알 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -1276,9 +1312,9 @@ U(f,\,P,\, \alpha)&lt; \varepsilon, \qquad L(f,\,P,\, \alpha)=0
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f\in \mathcal{R}(\beta_1)[-1,\,1]\)</span> 임을 가정하자. <span class="math inline">\(P=\{t_0=-1,\ldots,\,t_n=1\} \in \mathcal{P}[-0,\,1]\)</span> 에 대해 <span class="math inline">\(t_k=0\)</span> 이라고 하면 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
 <p><span id="eq-_rudin_6_3_1"><span class="math display">\[
 U(f,\,P,\,\beta_1)-L(f,\,P,\,\beta_2) = M_{k+1}-m_{k+1} &lt;\varepsilon
-\tag{10.39}\]</span></span></p>
+\tag{10.41}\]</span></span></p>
 <p>이므로 <span class="math inline">\(M_{k+1}-m_{k+1}=0\)</span> 이어야 한다. 여기서 <span class="math inline">\(M_{k+1}:=\sup f([t_{k}=0,\,t_{k+1}])\)</span>, <span class="math inline">\(m_{k+1}=\inf f([t_{k}=0,\,t_{k+1}])\)</span> 이다. 즉 <span class="math inline">\(f(0+)=f(0)\)</span> 이어야 한다.</p>
-<p>이제 <span class="math inline">\(f(0+)=f(0)\)</span> 임을 가정하면. <a href="#eq-_rudin_6_3_1" class="quarto-xref">식&nbsp;<span>10.39</span></a> 를 만족하는 <span class="math inline">\([-1,\,1]\)</span> 에서의 분할을 잡을 수 있으므로 <span class="math inline">\(f\in \mathcal{R}(\beta_1)[-1,\,1]\)</span> 이다.</p>
+<p>이제 <span class="math inline">\(f(0+)=f(0)\)</span> 임을 가정하면. <a href="#eq-_rudin_6_3_1" class="quarto-xref">식&nbsp;<span>10.41</span></a> 를 만족하는 <span class="math inline">\([-1,\,1]\)</span> 에서의 분할을 잡을 수 있으므로 <span class="math inline">\(f\in \mathcal{R}(\beta_1)[-1,\,1]\)</span> 이다.</p>
 <p><span class="math inline">\(f(0+)=f(0)\)</span> 일 경우 <span class="math inline">\(t_{k+1}\to 0\)</span> 일 때 <span class="math inline">\(U(f,\,P,\,\beta_1)= L(f,\, P,\, \beta_1)=f(0)\)</span> 이므로 <span class="math inline">\(\int f\,d\beta=f(0)\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) (<span class="math inline">\(1\)</span>) 의 경우와 같은 분할 <span class="math inline">\(P\)</span> 에서</p>
 <p><span class="math display">\[

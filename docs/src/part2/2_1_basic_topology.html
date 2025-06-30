@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -759,11 +759,11 @@ N_X(p,\, \varepsilon) &amp;:= \{x\in X : d_X(p,\,x) &lt;\varepsilon\}, \\
 다음은 유계이며 닫힌 실수의 부분집합의 성질로서 매우 중요하다.
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_bounded_and_closed_subset_of_real_number_and_maximum_and_minimum" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.11 (유계이며 닫힌 실수의 부분집합)</strong></span> <span class="math inline">\(A\subset \mathbb{R}\)</span> 이 유계이고 닫힌 집합이면 <span class="math inline">\(A\)</span> 는 그 상한과 하한을 포함한다.</p>
+<p><span class="theorem-title"><strong>명제 6.11 (유계이며 닫힌 실수의 부분집합)</strong></span> <span class="math inline">\(A\subset \mathbb{R}\)</span> 이 유계이고 닫힌 집합이면 <span class="math inline">\(A\)</span> 는 최소값과 최대값을 가진다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 가 유계이므로 최대값과 최소값이 항상 존재한다. <span class="math inline">\(M =\max (A)\)</span> 라고 하자. <span class="math inline">\(M\)</span> 이 <span class="math inline">\(A\)</span> 의 극한점이라면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 <span class="math inline">\(M\in A\)</span> 이다. <span class="math inline">\(M\)</span> 이 극한점이 아니라고 하자. <span class="math inline">\(M\not\in A\)</span> 이면 어떤 <span class="math inline">\(\delta &gt;0\)</span> 에 대해 <span class="math inline">\(N_\mathbb{R}(M,\, \delta) \in \mathbb{R}\backslash A\)</span> 이므로 <span class="math inline">\(M\)</span> 은 <span class="math inline">\(A\)</span> 의 상한이 아닌데 이는 가정에 모순된다. 따라서 <span class="math inline">\(M\in A\)</span> 이다. <span class="math inline">\(m=\min (A)\)</span> 에 대해서도 똑같이 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 가 유계이므로 상한과 하한이 존재한다. <span class="math inline">\(M =\max (A)\)</span> 라고 하자. <span class="math inline">\(M\)</span> 이 <span class="math inline">\(A\)</span> 의 극한점이라면 <span class="math inline">\(A\)</span> 가 닫힌 집합이므로 <span class="math inline">\(M\in A\)</span> 이다. <span class="math inline">\(M\)</span> 이 극한점이 아니라고 하자. <span class="math inline">\(M\not\in A\)</span> 이면 어떤 <span class="math inline">\(\delta &gt;0\)</span> 에 대해 <span class="math inline">\(N_\mathbb{R}(M,\, \delta) \in \mathbb{R}\backslash A\)</span> 이므로 <span class="math inline">\(M\)</span> 은 <span class="math inline">\(A\)</span> 의 상한이 아닌데 이는 가정에 모순된다. 따라서 <span class="math inline">\(M\in A\)</span> 이다. <span class="math inline">\(m=\min (A)\)</span> 에 대해서도 똑같이 보일 수 있다. 즉 <span class="math inline">\(A\)</span> 는 최소값과 최대값을 가진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -914,7 +914,7 @@ E \subset \bigcup_{\alpha}G_{\alpha}
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-MA_minimum_and_maximum_of_compact_sebset_in_R" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 6.7 (실수의 부분집합인 옹골집합의 최대값과 최소값)</strong></span> <span class="math inline">\(K\subset \mathbb{R}\)</span> 이 옹골집합이면 <span class="math inline">\(K\)</span> 의 최소값과 최대값은 <span class="math inline">\(K\)</span> 에 포힘된다.</p>
+<p><span class="theorem-title"><strong>따름정리 6.7 (실수의 부분집합인 옹골집합의 최대값과 최소값)</strong></span> <span class="math inline">\(K\subset \mathbb{R}\)</span> 이 옹골집합이면 <span class="math inline">\(K\)</span> 의 최소값과 최대값을 가진다.</p>
 </div>
 </div>
 <div class="proof">

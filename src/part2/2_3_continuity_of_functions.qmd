@@ -456,7 +456,7 @@ $f:X\to \R$ 가 연속함수이고 $K\subset X$ 가 옹골집합이라고 하자
 ::: {.proof}
 $f$ 를 $K$ 위에서만 생각하자. 즉 $f:K \to Y$ 만 생각해도 된다. @thm-MA_continuity_and_inverse_of_map 에 의해 열린집합 $U\subset K$ 에 대해 $f(U)$ 가 열린집합임을 보이면 된다. 
 
-우선 $K\backslash U$ 가 닫힌집합이므로 @prp-MA_closed_subset_of_compact_set_is_compact 에 의해 옹골집합이다. 그리고 @thm-MA_continuity_and_compactness 에 의해 $f(K\backslash U)$ 는 옹골집합이다. $f$ 가 $K$ 위에서 전단사이므로 $f(K\backslash U) = f(K)\backslash f(U)$ 이다. 따라서 $f(K)\backslash f(U)$ 가 옹골집합이므로 $f(U) = g^{-1}(U)$ 는 열린집합이다.@thm-MA_continuity_and_inverse_of_map 에 의해 $g=g^{-1}$ 도 $f(K)$ 위에서 열린 집합이다.  $\square$
+우선 $K\backslash U$ 가 닫힌집합이므로 @prp-MA_closed_subset_of_compact_set_is_compact 에 의해 옹골집합이다. 그리고 @thm-MA_continuity_and_compactness 에 의해 $f(K\backslash U)$ 는 옹골집합이다. $f$ 가 $K$ 위에서 전단사이므로 $f(K\backslash U) = f(K)\backslash f(U)$ 이다. 따라서 $f(K)\backslash f(U)$ 가 옹골집합이므로 $f(U) = g^{-1}(U)$ 는 열린집합이다. 따라서 $g^{-1}$ 도 연속함수이다.  $\square$
 
 :::
 
@@ -523,7 +523,10 @@ $E\subset X$ 에서 고른 연속인 함수 $f:X \to Y$ 는 $E$ 전체에서 연
 
 함수 $f:[0,\, +\infty) \to \mathbb{R},\, f(x) = x^2$ 는 고른 연속이 아니다. 그러나 정의역이 유계이면 고른 연속인데 이것을 보이자.
 
-구간 $I$ 에서 정의된 함수 $f$ 가 고른 연속이 아님을 보이기 위해서는 임의의 $\delta >0$ 에 대해 어떤 $\varepsilon>0$ 이 존재하여, $\exists \, x,\, y\in I,\, |x-y|< \delta,\, |f(x) - f(y)|>\varepsilon$ 임을 보이면 된다. $\varepsilon = 1$ 로 놓고, $x=1/\delta, y = 1/\delta + \delta/2$ 이라 하면
+구간 $I$ 에서 정의된 함수 $f$ 가 고른 연속이 아님을 보이기 위해서는 임의의 $\delta >0$ 에 대해 어떤 $\varepsilon>0,\, x,\, y\in I$ 이 존재하여 $|x-y|< \delta,\, |f(x) - f(y)|>\varepsilon$ 임을 보이면 된다. 
+
+
+$\varepsilon = 1$ 로 놓고, $x=1/\delta, y = 1/\delta + \delta/2$ 이라 하면
 
 $$
 |f(x)-f(y)| = |1 + \delta^2/4 | > 1
@@ -620,30 +623,30 @@ $$
 $\varepsilon>0$ 이 주어졌다고 하자. $f$ 가 연속이기 때문에 각 $p\in X$ 에 대해 
 
 $$
-\|p-q\|_X<\delta(p) \implies \|f(p)-f(q)\|_Y<\dfrac{\varepsilon}{2}
+\|p-q\|_X<\delta_p \implies \|f(p)-f(q)\|_Y<\dfrac{\varepsilon}{2}
 $$
 
-를 만족하는 $\delta(p)$ 를 잡을 수 있다. 
+를 만족하는 $\delta_p$ 를 잡을 수 있다. 
 
 $$
-\left\{N_X\left(p,\, \dfrac{\delta(p)}{2}\right) : p\in X\right\}
+\left\{N_X\left(p,\, \dfrac{\delta_p}{2}\right) : p\in X\right\}
 $$
 
-는 $X$ 에 대한 열린 덮개이며 $X$ 가 옹골집합이므로 유한개의 근방으로 $X$ 를 덮을 수있다. 유한개의 근방의 중심을 $p_1,\ldots,\, p_n$ 이라 하면 
+는 $X$ 에 대한 열린 덮개이며 $X$ 가 옹골집합이므로 유한개의 근방으로 $X$ 를 덮을 수있다. 유한개의 근방의 중심을 $p_1,\ldots,\, p_n$ 이라 하고 이 때의 $\delta_p$ 를 $\delta_1,\ldots,\,\delta_n$ 이라고 하면
 $$
-\left\{N_X\left(p_i,\, \dfrac{\delta(p_i)}{2}\right) : i=1,\ldots,\, n\right\}
+\left\{N_X\left(p_i,\, \dfrac{\delta_i}{2}\right) : i=1,\ldots,\, n\right\}
 $$
 
-는 $X$ 에 대한 열린 덮개이다. 이제 $\delta = \min \left\{ \dfrac{\delta(p_i)}{2} : i=1,\ldots,\, n \right\}$ 라 하자. 이제,
+는 $X$ 에 대한 열린 덮개이다. 이제 $\delta = \min \left\{ \dfrac{\delta_i}{2} : i=1,\ldots,\, n \right\}$ 라 하자. 이제,
 
 $$
 \|x-y\|_X < \delta \implies \|f(x)-f(y)\|_Y <\varepsilon
 $$
 
-임을 보이자. $x\in X$ 에 대해 $\|x-p_m\|_X < \dfrac{\delta(p_m)}{2}$ 인 $p_m$ 를 찾을 수 있다. $\|x-y\|_X<\delta$ 라면
+임을 보이자. $x\in X$ 에 대해 $\|x-p_m\|_X < \dfrac{\delta_m}{2}$ 인 $p_m$ 를 찾을 수 있다. $\|x-y\|_X<\delta$ 라면
 
 $$
-\|y-p_m\|_X \le \|y-x\|_X + \|x-p_m\|_X < \delta + \dfrac{\delta(p_m)}{2} \le \delta(p_m)
+\|y-p_m\|_X \le \|y-x\|_X + \|x-p_m\|_X < \delta + \dfrac{\delta_m}{2} < \delta_m
 $$
 
 이며 

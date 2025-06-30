@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -625,7 +625,7 @@ f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\)</span> 를 <span class="math inline">\(K\)</span> 위에서만 생각하자. 즉 <span class="math inline">\(f:K \to Y\)</span> 만 생각해도 된다. <a href="#thm-MA_continuity_and_inverse_of_map" class="quarto-xref">정리&nbsp;<span>8.1</span></a> 에 의해 열린집합 <span class="math inline">\(U\subset K\)</span> 에 대해 <span class="math inline">\(f(U)\)</span> 가 열린집합임을 보이면 된다.</p>
-<p>우선 <span class="math inline">\(K\backslash U\)</span> 가 닫힌집합이므로 <a href="2_1_basic_topology.html#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 옹골집합이다. 그리고 <a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K\backslash U)\)</span> 는 옹골집합이다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(K\)</span> 위에서 전단사이므로 <span class="math inline">\(f(K\backslash U) = f(K)\backslash f(U)\)</span> 이다. 따라서 <span class="math inline">\(f(K)\backslash f(U)\)</span> 가 옹골집합이므로 <span class="math inline">\(f(U) = g^{-1}(U)\)</span> 는 열린집합이다.@thm-MA_continuity_and_inverse_of_map 에 의해 <span class="math inline">\(g=g^{-1}\)</span> 도 <span class="math inline">\(f(K)\)</span> 위에서 열린 집합이다. <span class="math inline">\(\square\)</span></p>
+<p>우선 <span class="math inline">\(K\backslash U\)</span> 가 닫힌집합이므로 <a href="2_1_basic_topology.html#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 옹골집합이다. 그리고 <a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K\backslash U)\)</span> 는 옹골집합이다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(K\)</span> 위에서 전단사이므로 <span class="math inline">\(f(K\backslash U) = f(K)\backslash f(U)\)</span> 이다. 따라서 <span class="math inline">\(f(K)\backslash f(U)\)</span> 가 옹골집합이므로 <span class="math inline">\(f(U) = g^{-1}(U)\)</span> 는 열린집합이다. 따라서 <span class="math inline">\(g^{-1}\)</span> 도 연속함수이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -680,7 +680,8 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0,\\x-1,\qquad &amp; 1&lt;x\le 2\end{
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-MA_not_uniformly_continuous_function_1" class="theorem example">
 <p><span class="theorem-title"><strong>예제 8.2</strong></span> 함수 <span class="math inline">\(f:[0,\, +\infty) \to \mathbb{R},\, f(x) = x^2\)</span> 는 고른 연속이 아니다. 그러나 정의역이 유계이면 고른 연속인데 이것을 보이자.</p>
-<p>구간 <span class="math inline">\(I\)</span> 에서 정의된 함수 <span class="math inline">\(f\)</span> 가 고른 연속이 아님을 보이기 위해서는 임의의 <span class="math inline">\(\delta &gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\varepsilon&gt;0\)</span> 이 존재하여, <span class="math inline">\(\exists \, x,\, y\in I,\, |x-y|&lt; \delta,\, |f(x) - f(y)|&gt;\varepsilon\)</span> 임을 보이면 된다. <span class="math inline">\(\varepsilon = 1\)</span> 로 놓고, <span class="math inline">\(x=1/\delta, y = 1/\delta + \delta/2\)</span> 이라 하면</p>
+<p>구간 <span class="math inline">\(I\)</span> 에서 정의된 함수 <span class="math inline">\(f\)</span> 가 고른 연속이 아님을 보이기 위해서는 임의의 <span class="math inline">\(\delta &gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\varepsilon&gt;0,\, x,\, y\in I\)</span> 이 존재하여 <span class="math inline">\(|x-y|&lt; \delta,\, |f(x) - f(y)|&gt;\varepsilon\)</span> 임을 보이면 된다.</p>
+<p><span class="math inline">\(\varepsilon = 1\)</span> 로 놓고, <span class="math inline">\(x=1/\delta, y = 1/\delta + \delta/2\)</span> 이라 하면</p>
 <p><span class="math display">\[
 |f(x)-f(y)| = |1 + \delta^2/4 | &gt; 1
 \]</span></p>
@@ -737,22 +738,22 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0,\\x-1,\qquad &amp; 1&lt;x\le 2\end{
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varepsilon&gt;0\)</span> 이 주어졌다고 하자. <span class="math inline">\(f\)</span> 가 연속이기 때문에 각 <span class="math inline">\(p\in X\)</span> 에 대해</p>
 <p><span class="math display">\[
-\|p-q\|_X&lt;\delta(p) \implies \|f(p)-f(q)\|_Y&lt;\dfrac{\varepsilon}{2}
+\|p-q\|_X&lt;\delta_p \implies \|f(p)-f(q)\|_Y&lt;\dfrac{\varepsilon}{2}
 \]</span></p>
-<p>를 만족하는 <span class="math inline">\(\delta(p)\)</span> 를 잡을 수 있다.</p>
+<p>를 만족하는 <span class="math inline">\(\delta_p\)</span> 를 잡을 수 있다.</p>
 <p><span class="math display">\[
-\left\{N_X\left(p,\, \dfrac{\delta(p)}{2}\right) : p\in X\right\}
+\left\{N_X\left(p,\, \dfrac{\delta_p}{2}\right) : p\in X\right\}
 \]</span></p>
-<p>는 <span class="math inline">\(X\)</span> 에 대한 열린 덮개이며 <span class="math inline">\(X\)</span> 가 옹골집합이므로 유한개의 근방으로 <span class="math inline">\(X\)</span> 를 덮을 수있다. 유한개의 근방의 중심을 <span class="math inline">\(p_1,\ldots,\, p_n\)</span> 이라 하면 <span class="math display">\[
-\left\{N_X\left(p_i,\, \dfrac{\delta(p_i)}{2}\right) : i=1,\ldots,\, n\right\}
+<p>는 <span class="math inline">\(X\)</span> 에 대한 열린 덮개이며 <span class="math inline">\(X\)</span> 가 옹골집합이므로 유한개의 근방으로 <span class="math inline">\(X\)</span> 를 덮을 수있다. 유한개의 근방의 중심을 <span class="math inline">\(p_1,\ldots,\, p_n\)</span> 이라 하고 이 때의 <span class="math inline">\(\delta_p\)</span> 를 <span class="math inline">\(\delta_1,\ldots,\,\delta_n\)</span> 이라고 하면 <span class="math display">\[
+\left\{N_X\left(p_i,\, \dfrac{\delta_i}{2}\right) : i=1,\ldots,\, n\right\}
 \]</span></p>
-<p>는 <span class="math inline">\(X\)</span> 에 대한 열린 덮개이다. 이제 <span class="math inline">\(\delta = \min \left\{ \dfrac{\delta(p_i)}{2} : i=1,\ldots,\, n \right\}\)</span> 라 하자. 이제,</p>
+<p>는 <span class="math inline">\(X\)</span> 에 대한 열린 덮개이다. 이제 <span class="math inline">\(\delta = \min \left\{ \dfrac{\delta_i}{2} : i=1,\ldots,\, n \right\}\)</span> 라 하자. 이제,</p>
 <p><span class="math display">\[
 \|x-y\|_X &lt; \delta \implies \|f(x)-f(y)\|_Y &lt;\varepsilon
 \]</span></p>
-<p>임을 보이자. <span class="math inline">\(x\in X\)</span> 에 대해 <span class="math inline">\(\|x-p_m\|_X &lt; \dfrac{\delta(p_m)}{2}\)</span> 인 <span class="math inline">\(p_m\)</span> 를 찾을 수 있다. <span class="math inline">\(\|x-y\|_X&lt;\delta\)</span> 라면</p>
+<p>임을 보이자. <span class="math inline">\(x\in X\)</span> 에 대해 <span class="math inline">\(\|x-p_m\|_X &lt; \dfrac{\delta_m}{2}\)</span> 인 <span class="math inline">\(p_m\)</span> 를 찾을 수 있다. <span class="math inline">\(\|x-y\|_X&lt;\delta\)</span> 라면</p>
 <p><span class="math display">\[
-\|y-p_m\|_X \le \|y-x\|_X + \|x-p_m\|_X &lt; \delta + \dfrac{\delta(p_m)}{2} \le \delta(p_m)
+\|y-p_m\|_X \le \|y-x\|_X + \|x-p_m\|_X &lt; \delta + \dfrac{\delta_m}{2} &lt; \delta_m
 \]</span></p>
 <p>이며</p>
 <p><span class="math display">\[

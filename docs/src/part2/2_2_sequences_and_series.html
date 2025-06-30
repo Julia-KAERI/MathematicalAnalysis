@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -533,7 +533,7 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\langle a_n \rangle \subset K\)</span> 라고 하자. <span class="math inline">\(\langle a_n \rangle\)</span> 이 유한집합이면 최소한 하나의 <span class="math inline">\(a\in \langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(\{k: a_k = a\}\)</span> 가 무한집합이므로 이 인덱스의 집합으로 부분수열을 만들면 <span class="math inline">\(a\)</span> 로 수렴하는 부분수열이다.</p>
-<p>이제 <span class="math inline">\(\langle a_n \rangle\)</span> 이 무한집합일 경우에 대해 생각하기로 하자. <a href="2_1_basic_topology.html#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 의해 <span class="math inline">\(\langle a_n \rangle\)</span> 은 극한점을 가지며, 따라서 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(N(a,\, 1/k)\cap \langle a_n \rangle\)</span> 은 무한개의 원소를 갖는다. <span class="math inline">\(p_1=1\)</span> 로 하고 <span class="math inline">\(N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)\)</span> 가운데 <span class="math inline">\(a_m\)</span> 을 골라 <span class="math inline">\(p_{k+1}= m\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\langle a_{p_k}\rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하는 부분수열이다. <span class="math inline">\(\square\)</span></p>
+<p>이제 <span class="math inline">\(\langle a_n \rangle\)</span> 이 무한집합일 경우에 대해 생각하기로 하자. <a href="2_1_basic_topology.html#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.16</span></a> 의해 <span class="math inline">\(\langle a_n \rangle\)</span> 은 극한점을 가지며, 따라서 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(N(a,\, 1/k)\cap \langle a_n \rangle\)</span> 은 무한개의 원소를 갖는다. <span class="math inline">\(p_1=1\)</span> 로 하고 <span class="math inline">\(N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)\)</span> 가운데 <span class="math inline">\(a_m\)</span> 을 골라 <span class="math inline">\(p_{k+1}= m\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\langle a_{p_k}\rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하는 부분수열이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -685,7 +685,7 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 \text{diam}(E) \le \text{diam}(\overline{E}) \le 2\varepsilon + \text{diam}(E)
 \]</span></p>
 <p>이므로 <span class="math inline">\(\text{diam}(\overline{E}) = \text{diam}(E)\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(K = \bigcap K_n\)</span> 이라고 하자. <a href="2_1_basic_topology.html#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 <span class="math inline">\(K \ne \varnothing\)</span> 이다. <span class="math inline">\(K\)</span> 가 두개 이상의 원소로 이루어졌다면 <span class="math inline">\(\text{diam}(K) &gt;0\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \text{diam}(K_n) &gt;0\)</span> 이므로 가정에 위배된다. 따라서 <span class="math inline">\(K\)</span> 는 오직 하나의 원소로만 이루어진다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(K = \bigcap K_n\)</span> 이라고 하자. <a href="2_1_basic_topology.html#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 <span class="math inline">\(K \ne \varnothing\)</span> 이다. <span class="math inline">\(K\)</span> 가 두개 이상의 원소로 이루어졌다면 <span class="math inline">\(\text{diam}(K) &gt;0\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \text{diam}(K_n) &gt;0\)</span> 이므로 가정에 위배된다. 따라서 <span class="math inline">\(K\)</span> 는 오직 하나의 원소로만 이루어진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <p>수열의 수렴은 그 수열이 수렴하는 값을 알아야 수렴 여부를 알 수 있지만 코시 수열 여부는 수렴하는 값이 없어도 코시 수열인지 여부를 알 수 있다. 수열의 수렴과 코시 수열은 밀접한 관련이 있는데 이제 코시 수열에 대해 알아보기로 하자.</p>

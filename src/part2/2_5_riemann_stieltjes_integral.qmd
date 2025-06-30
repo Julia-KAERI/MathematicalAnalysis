@@ -18,7 +18,7 @@ crossref:
 
 ::: {#def-MA_partition}
 
-#### 분할
+#### 분할과 노름
 
 닫힌 구간 $[a,\,b]$ 에서 어떤 유한개의 점 $x_0,\ldots,\,x_n$ 이
 
@@ -157,6 +157,55 @@ m(b-a) \le L(f,\, P) \le U(f,\,P) \le M(b-a)
 $$
 
 가 성립하므로 $L(f,\,P)$ 와 $U(f,\, P)$ 는 유계이다. 
+
+
+</br>
+
+### 유계변동함수 {#sec-MA_bounded_variation_function}
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-MA_bounded_variation_function}
+
+#### 유계변동함수
+
+함수 $f:[a,\,b] \to \R$ 과 $P = \{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $f$ 의 변동(variation) $V_a^b(f,\,P)$ 를 다음과 같이 정의한다.
+
+$$
+V_a^b(f,\,P) = \sum_{i=1}^n |f(x_i) - f(x_{i-1})|.
+$$ {#eq-MA_definition-of_variation}
+
+이 때 $\{V_a^b(f,\,P) : P\in \mathcal{P}[a,\,b]\}$ 가 위로 유계일 때 $f$ 를 **유계변동함수 (bounded variation function)** 이라고 하고 집합의 상한을 **전변동 (total variation)** 이라고 하고 $V_a^b(f)$ 라고 표기한다. 즉,
+
+$$
+V_a^b (f) = \sup \left\{V_a^b (f,\,P) : P\in \mathcal{P}[a,\,b]\right\}
+$$ {#eq-MA_total_variation}
+
+이다.
+
+:::
+:::
+
+</br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-MA_total_variation_1}
+
+($1$) 임의의 단조함수 $f:[a,\,b] \to \R$ 에 대해 $V_a^b(f) = |f(b)-(a)|$ 이다.
+
+($2$) $f:[a,\,b] \to \R$ 이 미분가능하며 $f'$ 이 유계라고 하자. $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $f(x_{i})-f(x_{i-1}) = f'(z_i) \Delta x_i$ 를 만족하는 $z_i \in [x_{i-1},\, x_i]$ 가 존재하며 $|f'(z_i)|\le M$ 인 $M>0$ 이 존재하므로,
+
+$$
+V_a^b (f,\,P) = \sum_i |f(x_i) - f(x_{i-1})| \le M(b-a)
+$$
+
+이다. 즉 $f$ 는 유계변동함수이다. 
+
+:::
+
+</div>
+
 
 
 </br>
