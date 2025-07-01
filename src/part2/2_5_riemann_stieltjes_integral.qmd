@@ -194,7 +194,7 @@ $$ {#eq-MA_total_variation}
 
 ($1$) 임의의 단조함수 $f:[a,\,b] \to \R$ 에 대해 $V_a^b(f) = |f(b)-(a)|$ 이다.
 
-($2$) $f:[a,\,b] \to \R$ 이 미분가능하며 $f'$ 이 유계라고 하자. $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $f(x_{i})-f(x_{i-1}) = f'(z_i) \Delta x_i$ 를 만족하는 $z_i \in [x_{i-1},\, x_i]$ 가 존재하며 $|f'(z_i)|\le M$ 인 $M>0$ 이 존재하므로,
+($2$) $f:[a,\,b] \to \R$ 이 미분가능하며 $f'$ 이 유계이면 $f$ 는 유계변동함수이다. $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $f(x_{i})-f(x_{i-1}) = f'(z_i) \Delta x_i$ 를 만족하는 $z_i \in [x_{i-1},\, x_i]$ 가 존재하며 $|f'(z_i)|\le M$ 인 $M>0$ 이 존재하므로,
 
 $$
 V_a^b (f,\,P) = \sum_i |f(x_i) - f(x_{i-1})| \le M(b-a)
@@ -202,10 +202,217 @@ $$
 
 이다. 즉 $f$ 는 유계변동함수이다. 
 
+($3$) $f:[a,\,b]\to\R$ 이 유계변동이고 $(a,\,b)$ 에서 미분가능하다고 해도 $f'$ 이 유계가 아닐 수 있다. 예를들어 $f:[0,\,1]=\sqrt{x}$ 를 보라.
+
+:::
+
+</div></br>
+
+사소하지만 중요한 명제를 보이자.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-MA_bf_function_is_bounded}
+
+$f:[a,\,b] \to \R$ 가 유계변동이면 $f$ 는 유계이다.
+
+:::
+
+</div>
+::: {.proof}
+
+$P=\{a,\, x,\, b\}\in \mathcal{P}[a,\,b]$ 를 생각하자. 
+
+$$
+|f(x) | \le |f(x)-f(a)| + |f(a)| \le V_a^b(f, P)   + |f(a)|
+$$
+
+이므로 $f$ 는 유계이다. $\square$
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-MA_property_of_bv_1}
+
+$f,\,g:[a,\,b] \to \R$ 가 유계변동이면 다음이 성립한다.
+
+($1$) $f+g$,\, $fg$ 도 유계변동이며 $|f| \le M_f$, $|g| \le M_g$ 인 양수 $M_f,\,M_g$ 에 대해 다음이 성립한다.
+
+$$
+V_a^b(f+g) \le V_a^b(f)+V_a^b(g) ,\qquad V_a^b (fg) \le M_f V_a^b(g) + M_g V_a^b(f).
+$$ {#eq-MA_bv_for_sum_and_product}
+
+($2$) $c\in \R$ 에 대해 $cf$ 도 유계변동이며 다음이 성립한다.
+
+$$
+V_a^b (cf)= |c| V_a^b(f).
+$$ {#eq-MA_bv_for_scalar_product}
 :::
 
 </div>
 
+::: {.proof}
+
+($1$) $P=\{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+|f(x_i)+g(x_i) - f(x_{i-1}) - g(x_{i-1})| \le |f(x_i) - f(x_{i-1})| + |g(x_i)-g(x_{i-1})|
+$$
+
+이므로 $V_a^b (f+g,\,P)  \le V_a^b (f,\,P) + V_a^b(g,\,P)$ 이다. 따라서 $V_a^b(f+g) \le V_a^b(f)+V_a^b(g)$ 이다. 또한
+
+$$
+\begin{aligned}
+|f(x_i)g(x_i) &- f(x_{i-1})g(x_{i-1})| \\[0.3em] 
+& \le |f(x_i)g(x_i) - f(x_i)g(x_{i-1})| +  |f(x_i)g(x_{i-1}) - f(x_{i-1})g(x_{i-1})| \\[0.3em]
+& = |f(x_i)||g(x_i) - g(x_{i-1})| + |g(x_{i-1})|f(x_i) - f(x_{i-1})|\\[0.3em]
+& \le M_f |g(x_i) - g(x_{i-1})| + M_g|f(x_i) - f(x_{i-1})|
+\end{aligned}
+$$
+이다. 위 식의 양변에 $\sum_{i=1}^n$ 을 해 주면 $V_a^b(fg,\,P) \le M_fV_a^b(g) + M_g V_a^b(f)$ 임을 알 수 있으며 이로부터 @eq-MA_bv_for_sum_and_product 의 두번째 식을 보일 수 있다.
+
+($2$) $|cf(x_{i})-cf(x_{i-1})| = |c||f(x_{i})-f(x_{i-1})|$ 이므로 성립한다. $\square$
+
+:::
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-MA_property_of_bv_2}
+
+$f:[a,\,b] \to \R$ 가 유계변동이고 $a<c<b$ 일 때 $f$ 는 $[a,\,c]$, $[c,\,b]$ 각각에 대해 유계변동이며 
+
+$$
+V_a^b(f) = V_a^c(f) + V_c^b(f)
+$$ {#eq-MA_bv_for_devided_interval}
+
+이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+$P_1 \in \mathcal{P}[a,\,c],\,  P_2 \in\mathcal{P}[c,\,b]$ 에 대해 $V_a^c(f,\,P_1) + V_c^b(f,\,P_2) = V_a^b (f,\, P_1 \cup P_2)$ 임은 자명하다. $P_1\cup P_2 \in \mathcal{P}[a,\,b]$ 이므로 
+
+$$
+V_a^c(f,\,P_1) + V_c^b(f,\,P_2) = V_a^b (f,\, P_1 \cup P_2) \le V_a^b(f)
+$$
+
+이며 따라서 
+
+$$
+V_a^c(f) + V_c^b(f) = \sup \{V_a^b (f,\,P_1 \cup P_2) : P_1 \in \mathcal{P}[a,\,c],\, P_2 \in\mathcal{P}[c,\,b]\}\le V_a^b(f)
+$$
+
+이다. 즉 $f$ 는 $[a,\,c],\, [c,\,b]$ 각각에 대해 유계 변동이다. 
+
+이제 반대방향의 부등호를 보이자. $P \in \mathcal{P}[a,\,b]$ 에 대해 $c\in (a,\,b)$ 를 추가한것을 $P'$ 이라고 하자. 그리고 $P_1$, $P_2$ 를 $P'$ 에서 $c$ 보다 작거나 같은 부분과, 크거나 같은 부분을 각각 포함하는 분할이라고 하자. 
+
+그렇다면 
+
+$$
+V_a^b(f,\, P) \le V_a^b (f,\, P') = V_a^c(f,\, P_1) + V_c^b (f,\, P_2) \le V_a^c(f) + V_c^b(f)
+$$
+
+이므로 $V_a^b(f) \le V_a^c(f) + V_c^b(f)$ 이다. 따라서 @eq-MA_bv_for_devided_interval 가 성립한다.
+
+:::
+
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-MA_bv_and_monotonic_function}
+
+
+$f:[a,\,b] \to \R$ 에 대해 다음은 동치이다.
+
+($1$) $f$ 는 유계변동함수이다.
+
+($2$) 어떤 단조증가함수 $g,\,h:[a,\,b] \to \R$ 에 대해 $f=g-h$ 이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+($2 \implies 1$) 단조함수는 유계변동함수이며(@exm-MA_total_variation_1 ($1$)), 두 유계변동함수의 합은 유계변동함수이다(@prp-MA_property_of_bv_1). 
+
+($1\implies 2$) $f$ 가 유계변동함수이고 $g:=V_a^x (f)$, $h(x):=g(x)-f(x)$ 라고 정의한다. $f(x) = g(x)-h(x)$ 이다. $g$ 는 정의에 의해 단조함수이며, $a\le x < y \le b$ 에 대해
+
+$$
+\begin{aligned}
+h(y)-h(x) &= (V_a^y(f) - f(y)) - (V_a^x - f(x)) = V_a^y(f) - V_a^x (f) - (f(y) - f(x)) \\[0.3em]
+&= V_x^y(f) - (f(y)-f(x)) \ge 0
+\end{aligned}
+$$
+
+이므로 $h$ 는 단조증가함수이다. $\square$
+
+:::
+
+</br>
+
+유계변동함수를 벡터함수로 확장하면 곡선의 길이가 된다. 
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-MA_length_of_curve}
+
+#### 곡선의 길이
+
+곡선 $\bf{\alpha} : [a,\,b] \to \R^n$ 과 분할 $P=\{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+\begin{aligned}
+\Lambda (\bf{\alpha},\,P) &= \sum_{i=1}^n\| \bf{\alpha}(x_i) - \bf{\alpha}(x_{i-1})\|, \\[0.3em]
+\Lambda (\bf{\alpha}) &:= \sup \{ \Lambda (\bf{\alpha},\, P) : P\in \mathcal{P}[a,\,b]\}
+\end{aligned}
+$$
+
+라고 정의하자. $\Lambda (\bf{\alpha})$ 가 유한한 값일 때 $\bf{\alpha}$ 의 길이 라고 정의한다.
+
+::: 
+:::
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-MA_curve_length_and_bv}
+
+곡선 $\bf{\alpha}:[a,\,b] \to \R^m$ 이 $\bf{\alpha} = (\alpha_1,\ldots,\, \alpha_m)$ 일 때 다음은 동치이다.
+
+&emsp;($1$) $\bf{\alpha}$ 의 길이가 유한한 값이다.
+
+&emsp;($2$) 각각의 $\alpha_i$ 가 유계변동함수이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+우리는 $\bf{y} = (y_1,\ldots,\,y_m) \in \R^m$ 에 대해 
+
+$$
+y_k \le \|\bf{y}\| \le |y_1| + \cdots + |y_m|
+$$ {#eq-prp_MA_curve_length_and_bv}
+
+임을 안다. @eq-prp_MA_curve_length_and_bv 
+
+$$
+\sum_{i=1}^n \|\alpha_k (x_i)- \alpha_k (x_{i-1})| \le \Lambda (\bf{\alpha},\, P) \le \sum_{i=1}^n \sum_{k=1}^m |\alpha_k(x_i) - \alpha_k (x_{i-1})
+$$
+
+
+ 
+
+:::
 
 
 </br>

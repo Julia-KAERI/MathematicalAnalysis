@@ -22,7 +22,7 @@ crossref:
 
 $$
 0<\|x-x_0\|_X < \delta \implies \|f(x)- y_0\|_Y< \varepsilon
-$$
+$$ {#eq-MA_definition_of_limit}
 
 을 만족하는 $\delta>0$ 가 존재하면 함수 $f$ 의 $x_0$ 에서의 극한이 $y_0$ 라고 하며 
 

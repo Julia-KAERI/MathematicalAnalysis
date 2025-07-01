@@ -378,11 +378,12 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-닫힌 구간에서의 미분
+닫힌 구간에서의 미분과 구간 <span class="math inline">\(I\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>PMA(<span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span>) 의 경우는 <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 미분가능하다, 혹은 <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 미분가능하다는 표현을 사용한다. 그러나 실제로 미분값은 열린 구간에 대해 정의되므로 이 표현은 다소 어색한 표현이다. PMA 의 경우 좌극한, 우극한 처럼 좌미분 우미분을 이용하여 <span class="math inline">\([a,\,b]\)</span> 구간에서의 미분가능성을 정의한다.</p>
+<p>미분이 열린 구간에서 정의가 되므로 임의의 열린 구간이란 표현이 많이 등장하게 된다. 이제 <span class="math inline">\(I\)</span> 를 어떤 열린 구간으로 표기하도록 한다. 즉 <span class="math inline">\(f:I \to \mathbb{R}\)</span> 은 어떤 열린 구간 <span class="math inline">\(I\)</span> 에서 정의된 실함수 <span class="math inline">\(f\)</span> 라는 의미이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -622,10 +623,10 @@ f(b)-f(a) = (b-a)f'(c)
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-MA_mean_value_theorem" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 9.1</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 <span class="math inline">\(I=(a,\,b)\)</span> 에서 미분가능하면 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(x\in I \implies f'(x)\ge 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단조증가함수이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(x\in I \implies f'(x) = 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 상수함수이다.</p>
-<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(x\in I \implies f'(x) \le 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단조감소함수이다.</p>
+<p><span class="theorem-title"><strong>따름정리 9.1</strong></span> <span class="math inline">\(f:I\to \mathbb{R}\)</span> 이 미분가능하면 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\forall x\in I,\, f'(x)\ge 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단조증가함수이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\forall x\in I,\, f'(x) = 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 상수함수이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\forall x\in I,\, f'(x) \le 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단조감소함수이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -665,7 +666,7 @@ f(x_2)-f(x_1)= (x_2-x_1)f'(x)
 <p>로피탈 정리는 실제 극한값을 계산할 때 아주 유용한 정리이다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_Lhopital_theorem" class="theorem">
-<p><span class="theorem-title"><strong>정리 9.6 (로피탈 정리)</strong></span> <span class="math inline">\(x_0\)</span> 를 포함하는 어떤 열린 구간 <span class="math inline">\(I\)</span> 에서 미분가능한 함수 <span class="math inline">\(f,\,g :I \to \mathbb{R}\)</span> 를 생각하자. <span class="math inline">\(g'(x_0)\ne 0\)</span> 이라고 하자. 이 때</p>
+<p><span class="theorem-title"><strong>정리 9.6 (로피탈 정리)</strong></span> <span class="math inline">\(f,\,g :I \to \mathbb{R}\)</span> 가 <span class="math inline">\(x_0\in I\)</span> 에서 미분가능하며 <span class="math inline">\(g'(x_0)\ne 0\)</span> 이라고 하자. 이 때</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle \lim_{x\to x_0} f(x) = \lim_{x\to x_0} g(x) = 0\)</span> 이거나</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle \lim_{x\to x_0} g(x) = \pm \infty\)</span></p>
 <p>의 두가지 경우 가운데 하나이면서</p>
@@ -744,13 +745,13 @@ g(t) = g'(t) = \cdots = g^{(n-1)}(t) = 0
 </section>
 <section id="sec-MA_differentiation_of_complex_and_vector_valued_function" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="sec-MA_differentiation_of_complex_and_vector_valued_function"><span class="header-section-number">9.4</span> 복소함수와 벡터값 함수의 미분</h2>
-<p><span class="math inline">\(f:[a,\,b]\to \mathbb{C}\)</span> 가 실함수 <span class="math inline">\(f_R,\,f_I\)</span> 에 대해 <span class="math inline">\(f(x)= f_R(x)+ if_I(x)\)</span> 라고 하자. 이 때</p>
+<p><span class="math inline">\(f:I\to \mathbb{C}\)</span> 가 실함수 <span class="math inline">\(f_R,\,f_I\)</span> 에 대해 <span class="math inline">\(f(x)= f_R(x)+ if_I(x)\)</span> 라고 하자. 이 때</p>
 <p><span class="math display">\[
 \dfrac{f(x+h)-f(x)}{h} = \dfrac{f_R(x+h)-f_R(x)}{h}+ i \dfrac{f_I(x+h)-f_I(x)}{h}
 \]</span></p>
 <p>이므로 <span class="math inline">\(f_R,\,f_I\)</span> 가 <span class="math inline">\(t\)</span> 에서 미분가능하면 <span class="math inline">\(f'(x) = f'_R(x)+ if'_I(x)\)</span> 로 정의하는 것이 자연스럽다. 역으로 <span class="math inline">\(f\)</span> 가 미분가능하다면 <span class="math inline">\(f\)</span> 의 실수부와 허수부가 각각 미분가능하다고 할 수 있다.</p>
 <p><br></p>
-<p>이제 벡터값 함수 <span class="math inline">\(\boldsymbol{f}:[a,\,b]\to \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\boldsymbol{f}(x) = (f_1(x),\ldots,\,f_n(x))\)</span> 라고 하면</p>
+<p>이제 벡터값 함수 <span class="math inline">\(\boldsymbol{f}:I\to \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\boldsymbol{f}(x) = (f_1(x),\ldots,\,f_n(x))\)</span> 라고 하면</p>
 <p><span class="math display">\[
 \dfrac{\|\boldsymbol{f}(x+h)-\boldsymbol{f}(x)\|}{|h|} = \dfrac{\|f_1(x+h)-f_1(x),\ldots,\, f_n(x+h)-f_n(x)\|}{|h|}
 \]</span></p>
@@ -796,7 +797,7 @@ g'(x) = 1+ \left(2x - \dfrac{2i}{x}\right)e^{i/x^2}
 <p>벡터값 함수의 경우 평균값 정리가 그대로 성립하지 않지만 변형된 형태의 어떤 명제가 성립한다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_mean_value_theorem_for_vector_valued_function" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 9.4</strong></span> <span class="math inline">\(\boldsymbol{f}:[a,\,b]\to\mathbb{R}^n\)</span> 이 연속이며 <span class="math inline">\((a,\,b)\)</span> 구간에서 미분가능하다고 하자. 이 때</p>
+<p><span class="theorem-title"><strong>명제 9.4</strong></span> <span class="math inline">\(\boldsymbol{f}:I\to\mathbb{R}^n\)</span> 이 연속이며 <span class="math inline">\((a,\,b)\)</span> 구간에서 미분가능하다고 하자. 이 때</p>
 <p><span id="eq-MA_mean_value_theorem_for_vector_valued_function"><span class="math display">\[
 \|\boldsymbol{f}(b)-\boldsymbol{f}(a)\| \le (b-a)\|\boldsymbol{f}'(t) \|
 \tag{9.14}\]</span></span></p>
@@ -1041,7 +1042,7 @@ f'(x) = \left\{\begin{array}{ll} 3x^2, \qquad &amp;x\ge 0\\ -3x^2 &amp; x&lt;0\e
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 볼록함수 임을 가정한다. <a href="2_3_continuity_of_functions.html#exr-MA_rudin_4_23" class="quarto-xref">연습문제&nbsp;<span>8.28</span></a> 의 <a href="2_3_continuity_of_functions.html#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.4</span></a> 을 이용한다. <span class="math inline">\(a&lt;s&lt;t&lt;u&lt;b\)</span> 에 대해</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 볼록함수 임을 가정한다. <a href="2_3_continuity_of_functions.html#exr-MA_rudin_4_23" class="quarto-xref">연습문제&nbsp;<span>8.28</span></a> 의 <a href="2_3_continuity_of_functions.html#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.5</span></a> 을 이용한다. <span class="math inline">\(a&lt;s&lt;t&lt;u&lt;b\)</span> 에 대해</p>
 <p><span class="math display">\[
 \dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(t)}{u-t}
 \]</span></p>

@@ -349,9 +349,9 @@ window.Quarto = {
 <div class="callout-body-container">
 <div id="def-MA_limits_and_continuity_of_functions" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 8.1 (함수의 극한과 연속)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 와 함수 <span class="math inline">\(f:E \subset X \to Y\)</span> 를 생각한다. <span class="math inline">\(x_0\in E\)</span> 가 <span class="math inline">\(E\)</span> 에서의 극한점이며 <span class="math inline">\(y_0\in Y\)</span> 라고 하자. 각각의 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해</p>
-<p><span class="math display">\[
+<p><span id="eq-MA_definition_of_limit"><span class="math display">\[
 0&lt;\|x-x_0\|_X &lt; \delta \implies \|f(x)- y_0\|_Y&lt; \varepsilon
-\]</span></p>
+\tag{8.1}\]</span></span></p>
 <p>을 만족하는 <span class="math inline">\(\delta&gt;0\)</span> 가 존재하면 함수 <span class="math inline">\(f\)</span> 의 <span class="math inline">\(x_0\)</span> 에서의 극한이 <span class="math inline">\(y_0\)</span> 라고 하며</p>
 <p><span class="math display">\[
 \lim_{x \to x_0} f(x) = y_0
@@ -994,7 +994,7 @@ f(x^-) &lt; r(x) &lt;f(x^+)
 <p><span class="theorem-title"><strong>연습문제 8.4</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에 대해 <span class="math inline">\(A,\,B\subset X\)</span> 사이의 거리 <span class="math inline">\(\text{dist}(A,\,B)\)</span> 는 다음과 같이 정의된다.</p>
 <p><span id="eq-MA_distance_of_two_subsets"><span class="math display">\[
 \text{dist}(A,\,B) := \inf \{\|a-b\|,\, a\in A,\, b\in B\}.
-\tag{8.1}\]</span></span></p>
+\tag{8.2}\]</span></span></p>
 <p><span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 이고 <span class="math inline">\(A\)</span> 가 옹골집합, <span class="math inline">\(B\)</span> 가 닫힌집합이며 <span class="math inline">\(A\cap B= \varnothing\)</span> 일 때 다음을 보여라.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x\in A\)</span> 에 대해 <span class="math inline">\(f(x) := \text{dist}(\{x\},\,B)\)</span> 라고 정의하자. 그렇다면 <span class="math inline">\(x,\,y\in A\)</span> 에 대해 <span class="math inline">\(|f(x)-f(y)|\le \|x-y\|\)</span> 임을 보여라. <span class="math inline">\(f(x)\)</span> 가 연속함수임을 보여라.</p>
 <p>(<span class="math inline">\(2\)</span>) (<span class="math inline">\(1\)</span>) 에서 정의된 <span class="math inline">\(f(x)\)</span> 가 항상 양수임을 보여라.</p>
@@ -1277,7 +1277,7 @@ m,\,n \ge N \implies |f(x_m)-f(x_n)|&lt;\varepsilon
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\rho_E(x)\)</span> 가 <span class="math inline">\(X\)</span> 에서의 고른 연속임을 보여라. 모든 <span class="math inline">\(x,\, y\in X\)</span> 에 대해</p>
 <p><span id="eq-MA_rudin_4_20"><span class="math display">\[
 |\rho_E(x) - \rho_E(y)| \le \|x-y\|_X
-\tag{8.2}\]</span></span></p>
+\tag{8.3}\]</span></span></p>
 <p>임을 보이면 된다.</p>
 </div>
 </div>
@@ -1287,7 +1287,7 @@ m,\,n \ge N \implies |f(x_m)-f(x_n)|&lt;\varepsilon
 <p><span class="math display">\[
 \rho_E(x) \le \|x-y\|_X + \rho_E(y)
 \]</span></p>
-<p>이다. 마찬가지로 <span class="math inline">\(\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)\)</span> 이므로 <a href="#eq-MA_rudin_4_20" class="quarto-xref">식&nbsp;<span>8.2</span></a> 식이 성립한다. 따라서 <span class="math inline">\(\rho_E(x)\)</span> 는 고른 연속이다.</p>
+<p>이다. 마찬가지로 <span class="math inline">\(\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)\)</span> 이므로 <a href="#eq-MA_rudin_4_20" class="quarto-xref">식&nbsp;<span>8.3</span></a> 식이 성립한다. 따라서 <span class="math inline">\(\rho_E(x)\)</span> 는 고른 연속이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1342,12 +1342,12 @@ x,\, y \in X \implies \|f(x)-f(y)\| \le r \|x-y\|
 <p><span class="theorem-title"><strong>연습문제 8.28 (Rudin 4.23)</strong></span> <span class="math inline">\(f:(a,\,b) \to \mathbb{R}\)</span> 이 <span class="math inline">\(a &lt; x,\,y &lt; b\)</span>, <span class="math inline">\(0&lt;\lambda&lt;1\)</span> 에 대해</p>
 <p><span id="eq-MA_convex_function"><span class="math display">\[
 f(\lambda x + (1-\lambda) y) \le \lambda f(x) + (1-\lambda )f(y)
-\tag{8.3}\]</span></span></p>
+\tag{8.4}\]</span></span></p>
 <p>를 만족 할 때 <span class="math inline">\(f\)</span> 를 <strong>볼록함수 (convex function)</strong> 이라고 한다. 모든 볼록 함수가 연속임을 보여라. <span class="math inline">\(g\)</span> 가 단조증가인 볼록함수 이고 <span class="math inline">\(f\)</span> 가 볼록함수 일 때 <span class="math inline">\(g\circ f\)</span> 도 볼록함수 임을 보여라.</p>
 <p><span class="math inline">\(f\)</span> 가 <span class="math inline">\((a,\,b)\)</span> 에서 볼록 함수 이고 <span class="math inline">\(a&lt;s&lt;t&lt;u&lt;b\)</span> 이면</p>
 <p><span id="eq-MA_convex_function_2"><span class="math display">\[
 \dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(s)}{u-s} \le \dfrac{f(u)-f(t)}{u-t}
-\tag{8.4}\]</span></span></p>
+\tag{8.5}\]</span></span></p>
 <p>임을 보여라.</p>
 </div>
 </div>
@@ -1378,7 +1378,7 @@ f(x)-f(y) \le \lambda f(c) + (1-\lambda)f(y) - f(y) = \lambda (f(c)-f(y)) = \dfr
 <p>이다. <span class="math inline">\(0&lt;y-c&lt;d-c\)</span> 이므로 <span class="math inline">\(D=d-c\)</span> 라 하면</p>
 <p><span id="eq-MA_rudin_4_23_1"><span class="math display">\[
 f(x)-f(y) \le (y-x)\dfrac{f(c)-f(y)}{D} \le (y-x)\dfrac{2M}{D}
-\tag{8.5}\]</span></span></p>
+\tag{8.6}\]</span></span></p>
 <p>이다. <span class="math inline">\(x&lt;y&lt;d\)</span> 이므로 비슷한 방법으로 <span class="math inline">\(y = (1-\theta)x + \theta d\)</span> 라 놓으면 <span class="math inline">\(\theta = \dfrac{y-x}{d-x} \in (0,\,1)\)</span> 이며,</p>
 <p><span class="math display">\[
 f(y)-f(x)  \le (1-\theta) f(x) + \theta f(d) - f(x) = \dfrac{y-x}{d-x}(f(d)-f(x))
@@ -1386,8 +1386,8 @@ f(y)-f(x)  \le (1-\theta) f(x) + \theta f(d) - f(x) = \dfrac{y-x}{d-x}(f(d)-f(x)
 <p>이므로</p>
 <p><span id="eq-MA_rudin_4_23_2"><span class="math display">\[
 f(y)-f(x)  \le (y-x)\dfrac{2M}{D}
-\tag{8.6}\]</span></span></p>
-<p>임을 알 수 있다. <a href="#eq-MA_rudin_4_23_1" class="quarto-xref">식&nbsp;<span>8.5</span></a> 과 <a href="#eq-MA_rudin_4_23_2" class="quarto-xref">식&nbsp;<span>8.6</span></a> 로부터</p>
+\tag{8.7}\]</span></span></p>
+<p>임을 알 수 있다. <a href="#eq-MA_rudin_4_23_1" class="quarto-xref">식&nbsp;<span>8.6</span></a> 과 <a href="#eq-MA_rudin_4_23_2" class="quarto-xref">식&nbsp;<span>8.7</span></a> 로부터</p>
 <p><span class="math display">\[
 |f(x) - f(y) | \le \dfrac{2M}{D}|x-y|
 \]</span></p>
@@ -1404,8 +1404,8 @@ f(y)-f(x)  \le (y-x)\dfrac{2M}{D}
 \end{aligned}
 \]</span></p>
 <p>이다. 첫번째 부등식은 <span class="math inline">\(g\)</span> 가 단조증가 함수이므로 성립한다.</p>
-<p>(<span class="math inline">\(3\)</span>) <a href="#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.4</span></a> 가 성립함을 보이자. <span class="math inline">\(a&lt;c&lt;d&lt;b\)</span> 인 <span class="math inline">\(c,\,d\)</span> 를 잡자. 임의의 <span class="math inline">\(\eta &lt;\dfrac{d-c}{2}\)</span> 를 선택하고 <span class="math inline">\(c+\eta \le x &lt;y \le d-\eta\)</span> 가 되도록 <span class="math inline">\(x,\,y\)</span> 를 잡자.</p>
-<p><span class="math inline">\(f\)</span> 가 볼록함수이면 <a href="#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.4</span></a> 를 만족함을 보이자. <span class="math inline">\(a&lt;s&lt;t&lt;u&lt;b\)</span> 이면 <span class="math inline">\(t=\lambda_0 s + (1-\lambda_0) u\)</span> 인 <span class="math inline">\(\lambda_0 \in (0,\,1)\)</span> 이 존재한다. 즉 <span class="math inline">\(\lambda_0 = \dfrac{u-t}{u-s}\)</span> 이다. 또한</p>
+<p>(<span class="math inline">\(3\)</span>) <a href="#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.5</span></a> 가 성립함을 보이자. <span class="math inline">\(a&lt;c&lt;d&lt;b\)</span> 인 <span class="math inline">\(c,\,d\)</span> 를 잡자. 임의의 <span class="math inline">\(\eta &lt;\dfrac{d-c}{2}\)</span> 를 선택하고 <span class="math inline">\(c+\eta \le x &lt;y \le d-\eta\)</span> 가 되도록 <span class="math inline">\(x,\,y\)</span> 를 잡자.</p>
+<p><span class="math inline">\(f\)</span> 가 볼록함수이면 <a href="#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.5</span></a> 를 만족함을 보이자. <span class="math inline">\(a&lt;s&lt;t&lt;u&lt;b\)</span> 이면 <span class="math inline">\(t=\lambda_0 s + (1-\lambda_0) u\)</span> 인 <span class="math inline">\(\lambda_0 \in (0,\,1)\)</span> 이 존재한다. 즉 <span class="math inline">\(\lambda_0 = \dfrac{u-t}{u-s}\)</span> 이다. 또한</p>
 <p><span class="math display">\[
 f(t) = f(\lambda_0 s + (1-\lambda_0) u)  \le \lambda_0 f(s) + (1-\lambda_0) f(u)
 \]</span></p>
@@ -1416,7 +1416,7 @@ f(u)-f(t) \ge \lambda_0 (f(u) - f(s)) = \dfrac{u-t}{u-s}(f(u)-f(s))
 <p>이다. 따라서</p>
 <p><span id="eq-MA_rudin_4_23_4"><span class="math display">\[
 \dfrac{f(u)-f(s)}{u-s} \le \dfrac{f(u)-f(t)}{u-t}
-\tag{8.7}\]</span></span></p>
+\tag{8.8}\]</span></span></p>
 <p>이다. <span class="math inline">\(\lambda_1 = 1-\lambda_0\)</span> 로 놓으면 <span class="math inline">\(t=(1-\lambda_1)s + \lambda_1 u\)</span> 이며 <span class="math inline">\(\lambda_1 \in (0,\,1)\)</span> 이다. <span class="math inline">\(\lambda_1 = \dfrac{t-s}{u-s}\)</span> 이며</p>
 <p><span class="math display">\[
 f(t) = f((1-\lambda_1)s + \lambda_1 u) \le \lambda_1 f(u) + (1-\lambda_1) f(s)
@@ -1428,8 +1428,8 @@ f(t) - f(s) \le  \lambda_1 (f(u)-f(x)) = \dfrac{t-s}{u-s}  (f(u)-f(s))
 <p>이다. 따라서</p>
 <p><span id="eq-MA_rudin_4_23_5"><span class="math display">\[
 \dfrac{f(t)-f(s)}{t-s} \le \dfrac{f(u)-f(s)}{u-s}
-\tag{8.8}\]</span></span></p>
-<p>이다. <a href="#eq-MA_rudin_4_23_4" class="quarto-xref">식&nbsp;<span>8.7</span></a> 과 <a href="#eq-MA_rudin_4_23_5" class="quarto-xref">식&nbsp;<span>8.8</span></a> 로 부터 <a href="#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.4</span></a> 을 얻는다.</p>
+\tag{8.9}\]</span></span></p>
+<p>이다. <a href="#eq-MA_rudin_4_23_4" class="quarto-xref">식&nbsp;<span>8.8</span></a> 과 <a href="#eq-MA_rudin_4_23_5" class="quarto-xref">식&nbsp;<span>8.9</span></a> 로 부터 <a href="#eq-MA_convex_function_2" class="quarto-xref">식&nbsp;<span>8.5</span></a> 을 얻는다.</p>
 </div>
 <p><br></p>
 
