@@ -26,7 +26,7 @@ $$
 a=x_0 < x_1 < x_2 < \cdots < x_{n-1}< x_n = b
 $$
 
-일 때 $P=\{x_0,\ldots,\,x_n\}$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체의 집합을 $\mathcal{P}[a,\,b]$ 라고 표기한다. 분할 $P$ 에 대한 **노름(norm)** $\|P\|$ 는 다음과 같이 정의된다.
+일 때 $P = (x_0,\ldots,\,x_n )$ 를 $[a,\,b]$ 의 **분할 (partition)** 이라고 한다. 또한 $[a,\,b]$ 구간에서의 분할 전체의 집합을 $\mathcal{P}[a,\,b]$ 라고 표기한다. 분할 $P$ 에 대한 **노름(norm)** $\|P\|$ 는 다음과 같이 정의된다.
 
 $$
 \|P\| := \max \{|x_{i}-x_{i-1}|: i=1,\ldots,\,n\}.
@@ -39,9 +39,24 @@ $$ {#eq-MA_definition_of_the_norm_of_partition}
 
 ::: {.callout-caution}
 
-앞으로 $P=\{x_0,\ldots,\,x_n\}$ 이 구간 $[a,\,b]$ 의 분할이라고 하면 명시적으로 언급하지 않더라도 $a=x_0 < x_1 <\cdots < x_n=b$ 임을 가정한다.
+앞으로 $P = (x_0,\ldots,\,x_n)$ 이 구간 $[a,\,b]$ 의 분할이라고 하면 명시적으로 언급하지 않더라도 $a=x_0 < x_1 <\cdots < x_n=b$ 임을 가정한다.
 
 :::
+
+</br>
+
+닫힌 구간에서 임의의 노름을 가진 구간을 항상 잡을 수 있다는 것은 자명하다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-MA_partition_for_given_norm}
+
+닫힌 구간 $[a,\,b]$ 과 임의의 $\delta > 0$ 에 대해 $\|P\|<\delta$ 를 만족하는 $P\in \mathcal{P}[a,\,b]$ 이 존재한다.
+
+:::
+
+</div>
+
 
 </br>
 
@@ -51,7 +66,7 @@ $$ {#eq-MA_definition_of_the_norm_of_partition}
 
 #### 리만 상합, 리만 하합
 
-$f:[a,\,b]\to \R,\, P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+$f:[a,\,b]\to \R,\, P = (x_0,\ldots,\,x_n ) \in \mathcal{P}[a,\,b]$ 에 대해
 
 $$
 \begin{aligned}
@@ -140,7 +155,7 @@ $$ {#eq-MA_riemann_upper_lower_integral}
 를 각각 **리만 상적분 (Riemann upper integral)** 과 **리만 하적분 (Riemann lower integral)** 이라고 한다. 리만 상적분과 리만 하적분 값이 같을 때 $f$ 가 $[a,\,b]$ 구간에서 리만 적분 가능하다고 하며 그 값을 **리만적분 (Riemann integral)** 이라고 하고
 
 $$
-\int_{a}^b f\,dx \qquad\text{or}\qquad  \int_a^b f(x)\,dx
+\int_{a}^b f\,dx \qquad\text{or}\qquad  \int_a^b f(x)\,dx \qquad \text{or} \qquad \int_a^b f
 $$
 
 라고 쓴다. $[a,\,b]$ 구간에서 리만적분 가능한 함수의 집합을 $\mathcal{R}[a,\,b]$ 라고 쓴다.
@@ -158,10 +173,60 @@ $$
 
 가 성립하므로 $L(f,\,P)$ 와 $U(f,\, P)$ 는 유계이다. 
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-MA_rieman_integrability_of_continuous_function}
+
+#### 연속함수와 단조함수의 리만적분
+</br>
+
+&emsp;($1$) $f:[a,\,b] \to \R$ 가 연속이면 $f\in \mathcal{R}[a,\,b]$ 이다.
+
+&emsp;($2$) $f:[a,\,b] \to \R$ 이 단조함수이면 $f\in \mathcal{R}[a,\,b]$ 이다.
+:::
+</div>
+
+::: {.proof}
+
+($1$) @thm-MA_uniform_continuity_and_compact_set 에 따라 $f$ 는 $[a,\,b]$ 에서 고른연속이다. 주어진 $\varepsilon >0$ 에 대해
+
+$$
+|x-y|<\delta \implies |f(x)-f(y)|< \dfrac{\varepsilon}{b-a}
+$$
+
+인 $\delta >0$ 이 존재한다. 분할 $P= (x_0,\ldots,\,x_n) \in \mathcal{P}[a,\,b]$ 를 $\|P\|<\delta$ 가 되도록 잡으면
+
+$$
+U(f,\,P) - L(f,\,P) \le \sum_{i=1}^n \dfrac{\varepsilon}{b-a}\Delta x_i = \varepsilon
+$$
+
+이다. 따라서 $f\in \mathcal{R}[a,\,b]$ 이다.
+
+($2$) $f$ 가 단조증가라고 하자. 주어진 $\varepsilon > 0$ 에 대해
+
+$$
+\dfrac{b-a}{N}(f(b)-f(a)) < \varepsilon
+$$
+
+을 만족하는 $N$ 을 선택한다. 분할 $P=(x_0,\ldots,\,x_n)$ 을 $\Delta x_i = \Delta < (b-a)/N$ 인 상수가 되도록 선택하면
+
+$$
+\begin{aligned}
+U(f,\,P) - L(f,\,P) &= \sum_{i=1}^n (f(x_i)-f(x_{i-1}))\Delta x_i = \dfrac{f(b)-f(a)}\Delta <\varepsilon
+\end{aligned}
+$$
+
+이다. 따라서 $f \in \mathcal{R}[a,\,b]$ 이며, $f$ 가 단조감소일 때도 마찬가지로 리만적분 가능함을 보일 수 있다. $\square$
+
+:::
 
 </br>
 
-### 유계변동함수 {#sec-MA_bounded_variation_function}
+### 유계변동함수의 성질 {#sec-MA_bounded_variation_function}
+
+유계변동함수는 스틸체스 적분 뿐만 아니라 이후에도 매우 중요한 개념으로, 여기서는 유계변동함수와 유계변동함수의 가장 기본적인 예시인 곡선의 길이에 대해 알아보도록 한다.
+</br>
+
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -169,7 +234,7 @@ $$
 
 #### 유계변동함수
 
-함수 $f:[a,\,b] \to \R$ 과 $P = \{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $f$ 의 변동(variation) $V_a^b(f,\,P)$ 를 다음과 같이 정의한다.
+함수 $f:[a,\,b] \to \R$ 과 $P = (x_0,\ldots,\,x_n)\in \mathcal{P}[a,\,b]$ 에 대해 $f$ 의 변동(variation) $V_a^b(f,\,P)$ 를 다음과 같이 정의한다.
 
 $$
 V_a^b(f,\,P) = \sum_{i=1}^n |f(x_i) - f(x_{i-1})|.
@@ -194,7 +259,7 @@ $$ {#eq-MA_total_variation}
 
 ($1$) 임의의 단조함수 $f:[a,\,b] \to \R$ 에 대해 $V_a^b(f) = |f(b)-(a)|$ 이다.
 
-($2$) $f:[a,\,b] \to \R$ 이 미분가능하며 $f'$ 이 유계이면 $f$ 는 유계변동함수이다. $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $f(x_{i})-f(x_{i-1}) = f'(z_i) \Delta x_i$ 를 만족하는 $z_i \in [x_{i-1},\, x_i]$ 가 존재하며 $|f'(z_i)|\le M$ 인 $M>0$ 이 존재하므로,
+($2$) $f:[a,\,b] \to \R$ 이 미분가능하며 $f'$ 이 유계이면 $f$ 는 유계변동함수이다. $P= (x_0,\ldots,\,x_n )\in \mathcal{P}[a,\,b]$ 에 대해 $f(x_{i})-f(x_{i-1}) = f'(z_i) \Delta x_i$ 를 만족하는 $z_i \in [x_{i-1},\, x_i]$ 가 존재하며 $|f'(z_i)|\le M$ 인 $M>0$ 이 존재하므로,
 
 $$
 V_a^b (f,\,P) = \sum_i |f(x_i) - f(x_{i-1})| \le M(b-a)
@@ -221,7 +286,7 @@ $f:[a,\,b] \to \R$ 가 유계변동이면 $f$ 는 유계이다.
 </div>
 ::: {.proof}
 
-$P=\{a,\, x,\, b\}\in \mathcal{P}[a,\,b]$ 를 생각하자. 
+$P= (a,\, x,\, b)\in \mathcal{P}[a,\,b]$ 를 생각하자. 
 
 $$
 |f(x) | \le |f(x)-f(a)| + |f(a)| \le V_a^b(f, P)   + |f(a)|
@@ -256,7 +321,7 @@ $$ {#eq-MA_bv_for_scalar_product}
 
 ::: {.proof}
 
-($1$) $P=\{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+($1$) $P= (x_0,\ldots,\,x_n ) \in \mathcal{P}[a,\,b]$ 에 대해
 
 $$
 |f(x_i)+g(x_i) - f(x_{i-1}) - g(x_{i-1})| \le |f(x_i) - f(x_{i-1})| + |g(x_i)-g(x_{i-1})|
@@ -367,7 +432,7 @@ $$
 
 #### 곡선의 길이
 
-곡선 $\bf{\alpha} : [a,\,b] \to \R^n$ 과 분할 $P=\{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+곡선 $\bf{\alpha} : [a,\,b] \to \R^n$ 과 분할 $P=(x_0,\ldots,\,x_n) \in \mathcal{P}[a,\,b]$ 에 대해
 
 $$
 \begin{aligned}
@@ -403,14 +468,133 @@ $$
 y_k \le \|\bf{y}\| \le |y_1| + \cdots + |y_m|
 $$ {#eq-prp_MA_curve_length_and_bv}
 
-임을 안다. @eq-prp_MA_curve_length_and_bv 
+임을 안다. @eq-prp_MA_curve_length_and_bv 로부터
 
 $$
-\sum_{i=1}^n \|\alpha_k (x_i)- \alpha_k (x_{i-1})| \le \Lambda (\bf{\alpha},\, P) \le \sum_{i=1}^n \sum_{k=1}^m |\alpha_k(x_i) - \alpha_k (x_{i-1})
+\sum_{i=1}^n |\alpha_k (x_i)- \alpha_k (x_{i-1})| \le \Lambda (\bf{\alpha},\, P) \le \sum_{i=1}^n \sum_{k=1}^m |\alpha_k(x_i) - \alpha_k (x_{i-1})|
 $$
 
+이므로
 
- 
+$$
+V_A^b(\alpha_k,\,P) \le \Lambda (\bf{\alpha},\,P) \le V_a^b(\alpha_1,\,P) + \cdots V_a^b (\alpha_m,\, P)
+$$
+
+이다. 이로부터 명제가 증명된다. $\square$
+
+:::
+
+</br>
+
+벡터함수에 대해 자명하지마나 여기서는 일단 곡선에 대해 도함수를 정의하기로 하자.
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-MA_derivative_of_curve}
+
+#### 곡선의 미분
+
+곡선 $\bf{\alpha}:[a,\,b] \to \R^m$ 의 각 성분함수 $\alpha_k$ 가 모두 $C^1$-함수이면 이 $\bf{\alpha}$ 를 $C^1$-곡선 이라고 부르고 이 경우 $\bf{\alpha}' = (\alpha_1',\ldots,\, \alpha_m')$ 으로 정의한다.
+
+:::
+:::
+
+</br>
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-MA_distance_relation}
+$\bf{a},\, \bf{b}\in \R^m$ 일 때 다음이 성립함을 보이자.
+
+$$
+{\big |}\|\bf{a}\| -\|\bf{b}\| {\big |}\le \|\bf{a}-\bf{b}\| \le \sum_{k=1}^m |a_k-b_k|.
+$$ {#eq-MA_triangular_relation}
+
+$\|\bf{a}\| = \|\bf{a}-\bf{b} + \bf{b}\| \le \|\bf{a}-\bf{b}\| + \|\bf{b}\|$ 이므로 $\|\bf{a}-\bf{b}\| \ge \|\bf{a}\|-\|\bf{b}\|$ 이다. 같은 방법으로 $\|\bf{a}-\bf{b}\| \ge \|\bf{b}\|-\|\bf{a}\|$ 임을 보일 수 있다. 즉 
+
+$$
+{\big |}\|\bf{a}\| -\|\bf{b}\| {\big |}\le \|\bf{a}-\bf{b}\| 
+$$
+
+이다. @eq-prp_MA_curve_length_and_bv 로부터 두번째 부등식이 성립함을 안다.
+
+:::
+</div></br>
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-MA_c1_class_curve_has_definite_length}
+
+$C^1$-곡선 $\bf{\alpha}:[a,\,b] \to \R$ 은 유한한 길이를 가지며 그 길이는 아래와 같다.
+
+$$
+\Lambda(\bf{\alpha}) = \int_a^b \|\bf{\alpha}'(t)\|\, dt
+$$ {#eq-MA_length_of_C1_curve}
+
+:::
+
+</div>
+
+::: {.proof}
+
+분할 $P=(a_0,\ldots,\,a_n) \in \mathcal{P}[a,\,b]$ 에 대해
+
+$$
+\alpha_k (t_i) - \alpha_{k}(t_{i-1}) = \alpha_k'\left(s_i^k\right)(t_i-t_{i-1})
+$$
+
+을 만족하는 $s_i^k \in (x_{i-1},\, x_i)$ 가 존재하며, 따라서
+
+$$
+\Lambda (\bf{\alpha},\, P) = \sum_{i=1}^n \sqrt{\sum_{k=1}^m \left(\alpha'_k \left(t_i^k\right)\right)^2}(x_{i}-x_{i-1})
+$$
+
+이다. 각각의 $\alpha_k$ 는 $[a,\,b]$ 에서 고른 연속이므로 임의의 $\varepsilon>0$ 에 대해
+
+$$
+|x-y| <\delta_1 \implies |\alpha'_k(x) - \alpha'_k(y)| < \dfrac{\varepsilon}{m(b-a)}
+$$
+
+를 만족하는 $\delta_1$ 이 존재한다. $\|P\|<\delta_1$ 인 $P$ 를 잡을 수 있으며, 이 $P$ 와 임의의 $\overline{s}_i \in [x_{i-1},\, x_i]$ 에 대해 @eq-MA_triangular_relation 를 생각하면
+
+$$
+\left|\|\bf{\alpha}'(s_i^k) \| - \|\bf{\alpha}'(\overline{s}_i)\|\right| \le \sum_{k=1}^m \left|\alpha'_k(s_i^k) - \alpha'_k (\overline{s}_i)\right|
+$$
+
+이다. 위 식에 $\sum_{i=1}^n \cdots (x_i-x_{i-1})$ 을 취하는데 
+
+$$
+\overline{R}(\|\bf{\alpha}'\|,\, P) := \sum_{i=1}^n \|\bf{\alpha'}(\overline{s}_i)\|(x_i-x_{i-1})
+$$
+
+이라고 하면
+
+$$
+\begin{aligned}
+\left|\Lambda (\bf{\alpha},\,P) - \overline{R}(\|\bf{\alpha}'\|,\, P)\right| \le \sum_{i=1}^n \sum_{k=1}^m \left|\alpha'_k(s_i^k) - \alpha'_k (\overline{s}_i)\right|(x_i-x_{i-1}) \\[0.3em] 
+\le \sum_{i=1}^n m \dfrac{\varepsilon}{m(b-a)} (x_i-x_{i-1}) = \varepsilon
+\end{aligned}
+$$ {#eq-thm-MA_c1_class_curve_has_definite_length_1}
+
+이다. $\bf{\alpha}'(t)$ 가 연속이므로 $\|\bf{\alpha}'(t)\|$ 도 연속이며 @thm-MA_rieman_integrability_of_continuous_function 에 따라 리만적분 가능하다. 즉 $\varepsilon > 0$ 에 대해
+
+$$
+\|P\| <\delta_2 \implies \left| \overline{R}(\|\bf{\alpha}'\|,\, P) - \int_a^b \|\bf{\alpha}'\| \right| < \varepsilon
+$$ {#eq-thm-MA_c1_class_curve_has_definite_length_2}
+
+인 $\delta_2$ 가 존재한다. $\delta = \min \{\delta_1,\, \delta_2\}$ 라고 하면 @eq-thm-MA_c1_class_curve_has_definite_length_1 과 @eq-thm-MA_c1_class_curve_has_definite_length_2 로부터
+
+$$
+\|P\|<\delta \implies \int_a^b \|\bf{\alpha}'\|\, - 2\varepsilon < \Lambda (\bf{\alpha},\, P) < \int_a^b \|\bf{\alpha}'\| + 2\varepsilon
+$$
+
+이다. 임의의 $\varepsilon >0$ 에 대해 성립하므로
+
+$$
+\displaystyle \int_a^b\|\bf{\alpha}'\| = \Lambda (\bf{\alpha})
+$$
+
+이다. $\square$
 
 :::
 
@@ -471,7 +655,7 @@ $$
 
 ::: {#prp-MA_sum_of_alpha}
 
-@def-MA_stieltjes_integral $\alpha$ 와 $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
+@def-MA_stieltjes_integral 의 $\alpha$ 와 $P = (x_0,\ldots,\,x_n) \in \mathcal{P}[a,\,b]$ 에 대해
 
 $$
 \sum_{i=1}^n \Delta \alpha_i = \alpha (b)-\alpha(a)
@@ -595,7 +779,7 @@ $f:[a,\,b] \to \R$ 이 유계이며 $\alpha:[a,\,b]\to \R$ 이 단조증가함�
 
 ($1$) $P\in \mathcal{P}[a,\,b]$ 에 대해 @eq-MA_condition_for_stieltjes_integrablity 가 성립하면 $P \subset Q$ 인 $Q\in \mathcal{P}[a,\,b]$ 에 대해서도 @eq-MA_condition_for_stieltjes_integrablity 가 성립한다.
 
-($2$) $P\in \mathcal{P}[a,\,b],\, P=\{x_0,\ldots,\,x_n\}$ 에 대해 @eq-MA_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
+($2$) $P\in \mathcal{P}[a,\,b],\, P= (x_0,\ldots,\,x_n)$ 에 대해 @eq-MA_condition_for_stieltjes_integrablity 가 성립하면 임의의 $s_i,\, t \in [x_{i-1},\,x_i]$ 에 대해 다음이 성립한다.
 
 $$
 \sum_{i=1}^n |f(s_i)-f(t_i)| \Delta \alpha_i <\varepsilon.
@@ -623,7 +807,7 @@ $$
 
 이다.
 
-($3$) $L(f,\,P,\,\alpha) \le \sum_i f(t_i)\Delta \alpha_i \le U(f,\,P,\, \alpha)$ 이며 $L(f,\,P,\,\alpha) \le \int f\,d\alpha \le U(f,\,P,\, \alpha)$ 이므로 성립한다. $\square$
+($3$) $\displaystyle L(f,P,\alpha) \le \sum_i f(t_i)\Delta \alpha_i \le U(f,P, \alpha)$ 이며 $L(f,P,\alpha) \le \int f\,d\alpha \le U(f,P,\alpha)$ 이므로 성립한다. $\square$
 
 :::
 
@@ -731,7 +915,7 @@ $$
 
 라고 하면 $K$ 는 옹골집합이며, $f$ 는 $K$ 에서 연속이므로 고른 연속이다. 즉 $s,\,t\in K$ 에 대해 $|s-t|<\delta \implies |f(s)-f(t)|<\varepsilon$ 인 $\delta >0$ 이 존재한다.
 
-이제 $[a,\,b]$ 의 분할 $P$ 를 잡자. 우선 $P$ 가 모든 $u_j$ 와 $v_j$ 를 포함하도록 하자. 그리고 $[u_j,\,v_j]$ 에 포함되지 않는 부분은 $\delta$ 보다 작은 간격의 구간으로 나누고 이를 $P$ 에 포함시킨다. 이제 $P=\{x_0=a,\,x_1,\ldots,\,x_n=b\}$ 라고 하자. 
+이제 $[a,\,b]$ 의 분할 $P$ 를 잡자. 우선 $P$ 가 모든 $u_j$ 와 $v_j$ 를 포함하도록 하자. 그리고 $[u_j,\,v_j]$ 에 포함되지 않는 부분은 $\delta$ 보다 작은 간격의 구간으로 나누고 이를 $P$ 에 포함시킨다. 이제 $P= (x_0=a,\,x_1,\ldots,\,x_n=b)$ 라고 하자. 
 
 이제 $U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)$ 를 계산하자. $f$ 가 유계이므로 $[x_{i-1},\, x_i]$ 가 불연속점을 포함해도 $|f(x_i)-f(x_{i-1})|<2M$ 이다. 그렇다면 $[x_{i-1},\,x_i]=[u_j,\,v_j]$ 일 경우, 즉 $[x_{i-1},\,x_i]$ 가 불연속점을 포함하는 경우에 해당하는 $U-L$ 값은
 
@@ -790,7 +974,7 @@ $$
 U(f,\,P,\,\alpha)-L(f,\,P,\,\alpha)<\delta^2
 $$ {#eq-MA_thm-MA_stieltjes_integrability_of_composite_function_1}
 
-인 $P=\{x_0,\ldots,\,x_n\},\, P\in \mathcal{P}[a,\,b]$ 가 존재한다. $M_i=\sup f([a,\,b])$, $m_i = \inf f[a,\,b]$, $M^\ast_i = \sup h([a,\,b])$, $m^\ast_i = \inf h([a,\,b])$ 라고 하자. 
+인 $P= (x_0,\ldots,\,x_n) \in \mathcal{P}[a,\,b]$ 가 존재한다. $M_i=\sup f([a,\,b])$, $m_i = \inf f[a,\,b]$, $M^\ast_i = \sup h([a,\,b])$, $m^\ast_i = \inf h([a,\,b])$ 라고 하자. 
 
 이제 $i=1,\ldots,\,n$ 을 두가지로 나누자. ($i$) $M_i-m_i < \delta$ 인 경우 $i\in A$ 이고 ($ii$) $M_i-m_i \ge \delta$ 인 경우는 $i\in B$ 라고 하자.
 
@@ -995,7 +1179,7 @@ $$
 
 ::: {.proof}
 
-$\alpha,\,\beta$ 가 $[a,\,b]$ 구간에서 단조증가이므로 $\alpha + \beta$ 도 단조증가이다. $P=\{x_0,\,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 라 하자.
+$\alpha,\,\beta$ 가 $[a,\,b]$ 구간에서 단조증가이므로 $\alpha + \beta$ 도 단조증가이다. $P= (x_0,\,\ldots,\,x_n ) \in \mathcal{P}[a,\,b]$ 라 하자.
 
 $$
 \begin{aligned}
@@ -1087,7 +1271,7 @@ $$
 $f$ 가 $[a,\,b]$ 구간예서 유계이며 $s\in (a,\,b)$ 에서 연속이라고 하자. 또 $\alpha(x) = \theta(x-s)$ 라고 하자. 그렇다면 다음이 성립한다.
 
 $$
-\int_a^b f\, d\alpha = f(x).
+\int_a^b f\, d\alpha = f(s).
 $$
 
 :::
@@ -1096,7 +1280,7 @@ $$
 
 ::: {.proof}
 
-$P\in \mathcal{P}[a,\,b]$ 를 $\{x_0,\, x_1,\,x_2,\,x_3\}$ 로 잡고 아래의 성질을 가진다고 하자.
+$P = (x_0,\, x_1,\,x_2,\,x_3)\in \mathcal{P}[a,\,b]$ 가 아래의 성질을 가진다고 하자.
 
 $$
 x_0=a < x_1=s < x_2 < x_3=b.
@@ -1139,7 +1323,7 @@ $$
 라고 하자. @prp-MA_properties_of_integral_2 와 @prp-MA_properties_of_integral_4 로부터
 
 $$
-\int_a^b f\, d\alpha_1 = \sum_{k=1} c_k f(s_k)
+\int_a^b f\, d\alpha_1 = \sum_{k=1}^N  c_k f(s_k)
 $$ {#eq-MA_properties_of_integral_5_3}
 
 이다. $\alpha_2(b)-\alpha_2(a)<\varepsilon$ 이므로 $M=\sup \{|f(x)|: x\in [a,\,b]\}$ 라고 하면
@@ -1187,7 +1371,7 @@ $$
 U(\alpha',\, P)- L(\alpha',\, P)<\varepsilon
 $$ {#eq-MA_properties_of_integral_6_3}
 
-인 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 가 존재한다. 평균값 정리에 따라 각각의 $[x_{i-1},\,x_i]$ 구간에서
+인 $P=(x_0,\ldots,\,x_n)\in \mathcal{P}[a,\,b]$ 가 존재한다. 평균값 정리에 따라 각각의 $[x_{i-1},\,x_i]$ 구간에서
 
 $$
 \Delta \alpha_i = \alpha(x_{i})- \alpha(x_{i-1}) = \alpha'(t_i)\Delta x_i
@@ -1287,7 +1471,7 @@ $$ {#eq-MA_change_of_varialble_2}
 
 ::: {.proof}
 
-$\varphi$ 가 연속인 순증가 함수이고 전사함수이면 전단사이므로 $[a,\,b]$ 에서의 분할과 $[A,\,B]$ 에서의 분할이 일대일 대응한다. 즉 $Q = \{y_0,\ldots,\,y_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $P\in \mathcal{P}[a,\,b]$ 가 정해지며 $P=\{x_0,\ldots,\,x_n\}$ 에 대해 $Q=\{y_i : y_i = \varphi^{-1}(x_i)\}$ 가 정해진다. 이렇게 정해진 분할 $P,\,Q$ 에 대해
+$\varphi$ 가 연속인 순증가 함수이고 전사함수이면 전단사이므로 $[a,\,b]$ 에서의 분할과 $[A,\,B]$ 에서의 분할이 일대일 대응한다. 즉 $Q = \{y_0,\ldots,\,y_n\}\in \mathcal{P}[a,\,b]$ 에 대해 $P\in \mathcal{P}[a,\,b]$ 가 정해지며 $P= (x_0,\ldots,\,x_n)$ 에 대해 $Q=\{y_i : y_i = \varphi^{-1}(x_i)\}$ 가 정해진다. 이렇게 정해진 분할 $P,\,Q$ 에 대해
 
 $$
 U(g,\,Q,\,\beta) = U(f,\,P,\,\alpha),\qquad L(g,\,Q,\,\beta)= L(f,\, P,\,\alpha)
@@ -1430,7 +1614,7 @@ $$ {#eq-MA_second_fundamental_theorem_of_calculus}
 
 ::: {.proof}
 
-주어진 $\varepsilon>0$ 에 대해 $f\in\mathcal{R}[a,\,b]$ 이므로 $U(F,\,P)-L(F,\,P)<\varepsilon$ 인 $P = \{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 가 존재한다. 또한 $F$ 가 미분가능 함수이므로 
+주어진 $\varepsilon>0$ 에 대해 $f\in\mathcal{R}[a,\,b]$ 이므로 $U(F,\,P)-L(F,\,P)<\varepsilon$ 인 $P = ( x_0,\ldots,\,x_n) \in \mathcal{P}[a,\,b]$ 가 존재한다. 또한 $F$ 가 미분가능 함수이므로 
 
 $$
 F(x_{i})-F(x_{i-1}) = F'(t_i)\Delta x_i
@@ -1501,118 +1685,6 @@ $$
 ::: 
 :::
 
-
-</br>
-
-### 길이를 잴 수 있는 곡선  {#sec-MA_rectifiable_curve}
-
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-MA_curve}
-
-#### 곡선
-
-$\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 연속일 때 $\gamma$ 를 $[a,\,b]$ 에서의 **곡선 (curve)** 이라고 한다. $\gamma$ 가 단사이면 $\gamma$ 를 **호(arc)** 라고 하며, $\gamma(b)=\gamma(a)$ 이면 $\gamma$ 를 **닫힌 곡선 (closed curve)** 라고 한다.
-
-::: 
-:::
-
-</br>
-
-즉 곡선은 유클리드공간상의 점의 집합이 아니라 함수이다. 이 때 $P=\{x_0,\ldots,\,x_n\}\in \mathcal{P}[a,\,b]$ 에 대해 다음의 값을 정의 할 수 있다.
-
-$$
-\Lambda(\gamma,\, P) = \sum_{i=1}^n \left\| \gamma(x_i)-\gamma(x_{i-1})\right\|.
-$$ {#eq-MA_polygonal_length_of_rectifiable_curve}
-
-
-</br>
-
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-MA_rectifiable_curve}
-
-#### 길이를 잴 수 있는
-
-$\gamma : [a,\,b]\to \R^n$ 에서 $\gamma$ 가 곡선일 때
-
-$$
-\Lambda (\gamma) = \sup \{\Lambda(\gamma,\, P) : P\in \mathcal{P}[a,\,b]\}
-$$ {#eq-MA_length_of__curve}
-
-를 $\gamma$ 의 **길이 (length)** 라고 한다. $\Lambda (\gamma)<\infty$ 일 때 $\gamma$ 를 **길이를 잴 수 있는 곡선 (rectifiable curve)** 이라고 한다. 
-
-::: 
-:::
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-MA_length_of_C1_rectifiable_curve}
-
-길이를 잴 수 있는 곡선 $\gamma :[a,\,b]\to \R^n$ 이 $C^1$ 급 함수일 때 그 길이는 다음과 같다.
-
-$$
-\Lambda (\gamma) = \int_a^b \|\gamma'(t)\|\, dt.
-$$ {#eq-MA_length_of_C1_rectifiable_curve}
-
-:::
-
-</div>
-
-::: {.proof}
-
-$P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 에 대해
-
-$$
-\|\gamma(x_{i}) - \gamma(x_{i-1})\| = \left\|\int_{x_{i-1}}^{x_i} \gamma'(t)\, dt\right\| \le \int_{x_{i-1}}^{x_i} \|\gamma' (t)\| \, dt
-$$
-
-이므로 다음이 성립한다.
-
-$$
-\Lambda (\gamma,\, P) \le \int_a^b \|\gamma'(t)\|\, dt.
-$$ {#eq-MA_length_of_C1_rectifiable_curve_1}
-
-
-이제 위 식의 부등호가 $\ge$ 로 바뀐 것을 증명하자. $\gamma'$ 이 $[a,\,b]$ 구간에서 연속이므로 이 구간에서 고른 연속이다. 임의의 $\varepsilon>0$ 에 대해 아래를 만족하는 $\delta>0$ 이 존재한다.
-
-$$
-s,\,t\in [a,\,b],\, |s-t|<\delta \implies \|\gamma'(s)-\gamma'(t)\|<\varepsilon.
-$$
-
-$\|P\|<\delta$ 인 $P = \{x_0,\ldots,\,x_n\} \in \mathcal{P}[a,\,b]$ 를 생각하자. $t\in [x_{i-1},\,x_i]$ 이면
-
-$$
-\|\gamma'(t) \| \le \|\gamma'(x_i)\|+\varepsilon
-$$
-
-이므로
-
-$$
-\begin{aligned}
-\int_{x_{i-1}}^{x_i} \|\gamma'(t)\|\, dt &= \|\gamma'(x_i)\|\Delta x_i + \varepsilon \Delta x_i \\
-&= \left\|\int_{x_{i-1}}^{x_i} \left[\gamma'(t) + \gamma'(x_i) - \gamma'(t)\right] \, dt\right\| + \varepsilon \Delta x_i\\
-&\le \left\|\int_{x_{i-1}}^{x_i} \gamma'(t) \, dt\right\| + \left\|\int_{x_{i-1}}^{x_i} \left[ \gamma'(x_i) - \gamma'(t)\right] \, dt\right\| + \varepsilon \Delta x_i \\[0.2em]
-&\le \|\gamma (x_{i})-\gamma(x_{i-1})\| + 2\varepsilon \Delta x_i
-\end{aligned}
-$$
-
-이다. 전체 $[a,\,b]$ 구간을 생각하면
-
-$$
-\int_a^b \|\gamma'(t)\|\,dt \le \Lambda (\gamma,\, P) + 2\varepsilon(b-a) \le \Lambda (\gamma) + 2\varepsilon (b-a)
-$$
-
-이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 
-
-$$
-\int_a^b \|\gamma'(t)\|\, dt \le \Lambda (\gamma)
-$$ {#eq-MA_length_of_C1_rectifiable_curve_2}
-
-이다. @eq-MA_length_of_C1_rectifiable_curve_1, @eq-MA_length_of_C1_rectifiable_curve_2 로부터 @eq-MA_length_of_C1_rectifiable_curve 가 성립함을 알 수 있다. $\square$
-
-:::
-
 </br>
 
 ## 연습문제 {.unnumbered}
@@ -1623,7 +1695,7 @@ $$ {#eq-MA_length_of_C1_rectifiable_curve_2}
 
 #### Rudin 6.1
 
-$\alpha$ 가 $[a,\,b]$ 에서 증가함수이며 $x_0\in [a,\,b]$ 에서 연속이고 $f(x_\ast)=1$ 이며, $f(x\ne x_\ast)=0$ 이다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $\int f\,d\alpha = 0$ 임을 보여라
+$\alpha$ 가 $[a,\,b]$ 에서 증가함수이며 $x_0\in [a,\,b]$ 에서 연속이고 $f(x_0)=1$ 이며, $f(x\ne x_0)=0$ 이다. $f\in \mathcal{R}(\alpha)[a,\,b]$ 이며 $\int f\,d\alpha = 0$ 임을 보여라
 
 :::
 
@@ -1631,7 +1703,7 @@ $\alpha$ 가 $[a,\,b]$ 에서 증가함수이며 $x_0\in [a,\,b]$ 에서 연속�
 
 ::: {.solution}
 
-@thm-MA_discontinuity_and_integrability 에 따라 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 임의의 $\varepsilon>0$ 에 대해  $[a,\,b]$ 의 분할 $P = \{x_0,\ldots,\,x_n\}$ 를 $\|P\|<\varepsilon$ 이며 $x_\ast \not\in P$ 가 되도록 잡으면
+@thm-MA_discontinuity_and_integrability 에 따라 $f\in \mathcal{R}(\alpha)[a,\,b]$ 이다. 임의의 $\varepsilon>0$ 에 대해  $[a,\,b]$ 의 분할 $P = (x_0,\ldots,\,x_n )$ 를 $\|P\|<\varepsilon$ 이며 $x_\ast \not\in P$ 가 되도록 잡으면
 
 $$
 U(f,\,P,\, \alpha)< \varepsilon, \qquad L(f,\,P,\, \alpha)=0
@@ -1667,7 +1739,7 @@ $f\ge 0$ 이며 $[a,\,b]$ 에서 연속이고 $\displaystyle \int_a^b f(x)\,dx=0
 
 #### Rudin 6.3
 
-$\beta_1,\,\beta_2,\,\beta_3$ 가 모두 $x>0$ 일 때 $\beta_j(x)=1$, $x<0$ 일 때 $\beta_j(x)=0$, 이며 $\beta_1(0)=0$, $\beta_2(0)=1$, $\beta_3(0)=\frac{1}{2}$ 라고 하자. $f$ 는 $[a,\,b]$ 구간에서 유계라고 하자. 
+함수  $\beta_1,\,\beta_2,\,\beta_3$ 가 모두 $x>0$ 일 때 $\beta_j(x)=1$, $x<0$ 일 때 $\beta_j(x)=0$, 이며 $\beta_1(0)=0$, $\beta_2(0)=1$, $\beta_3(0)=\frac{1}{2}$ 라고 하자. $f$ 는 $[a,\,b]$ 구간에서 유계라고 하자. 
 
 ($1$) $f\in \mathcal{R}(\beta_1)[0,\,1]$ 일 필요충분조건은 $f(0+)=f(0)$ 이며, 이 경우 $\int f\,d\beta_1 = f(0)$ 임을 보여라.
 
@@ -1683,10 +1755,10 @@ $\beta_1,\,\beta_2,\,\beta_3$ 가 모두 $x>0$ 일 때 $\beta_j(x)=1$, $x<0$ 일
 
 ::: {.solution}
 
-($1$) $f\in \mathcal{R}(\beta_1)[-1,\,1]$ 임을 가정하자. $P=\{t_0=-1,\ldots,\,t_n=1\} \in \mathcal{P}[-0,\,1]$ 에 대해 $t_k=0$ 이라고 하면 임의의 $\varepsilon>0$ 에 대해
+($1$) $f\in \mathcal{R}(\beta_1)[-1,\,1]$ 임을 가정하자. $P=(t_0=-1,\ldots,\,t_n=1) \in \mathcal{P}[-1,\,1]$ 에 대해 $t_k=0$ 이라고 하면 임의의 $\varepsilon>0$ 에 대해
 
 $$
-U(f,\,P,\,\beta_1)-L(f,\,P,\,\beta_2) = M_{k+1}-m_{k+1} <\varepsilon
+U(f,\,P,\,\beta_1)-L(f,\,P,\,\beta_1) = M_{k+1}-m_{k+1} <\varepsilon
 $$ {#eq-_rudin_6_3_1}
 
 이므로 $M_{k+1}-m_{k+1}=0$ 이어야 한다. 여기서 $M_{k+1}:=\sup f([t_{k}=0,\,t_{k+1}])$, $m_{k+1}=\inf f([t_{k}=0,\,t_{k+1}])$ 이다. 즉 $f(0+)=f(0)$ 이어야 한다. 
@@ -1751,5 +1823,126 @@ $f(x) = \left\{\begin{array}{ll} -1,\quad & x\in \R\backslash\Q\\ 1,& x\in \Q.\e
 
 $f^3\in \mathcal{R}[a,\,b]$ 인 경우는 @thm-MA_stieltjes_integrability_of_composite_function 을 생각하자 $\phi (t) = \sqrt[3]{t}$ 는 $\R$ 에서 연속이므로 $f\in \mathcal{R}[a,\,b]$ 이다.
 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-MA_rudin_6_7}
+
+#### Rudin 6.7
+
+$f :(0,\,1] \to \R$ 이며 모든 $c>0$ 에 대해 $f\in \mathcal{R}[c,\,1]$ 이다. 이 때 아래의 극한이 존재하며 유한값일 때 적분을 아래와 같이 정의한다.
+
+$$
+\int_0^1 f(x)\,dx := \lim_{c \to 0} \int_c^1 f(x)\, dx.
+$$
+
+($a$) $f\in\mathcal{R}[0,\,1]$ 이라면 위의 정의는 리만적분의 정의와 동일하을 보여라.
+
+($b$) 위 식의 극한은 존재하지만 $f$ 가 아닌 $|f|$ 에 대한 극한은 존재하지 않는 함수 $f$ 를 구성하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $M=\sup \{|f(x)| : x\in [0,\,1]\}$ 이라고 하자. 
+
+$$
+\left|\int_0^1 f(x)\,dx - \int_c^1 f(x)\,dx \right| = \left| \int_0^c f(x)\,dx \right| \le \int_0^c |f(x)|\, dx \le Mc
+$$
+
+이므로 $c\to 0$ 극한에서 위의 정의는리만 적분의 정의와 같다.
+
+($2$) $x\in (0,\,1]$ 에 대해 $\frac{1}{n+1}< x \le \frac{1}{n}$ 인 자연수 $n$ 에 대해 $f(x) = (-1)^n (n+1)$ 이라고 하자. $\frac{1}{N+1}< c \le \frac{1}{N}$ 일 때
+
+$$
+\begin{aligned}
+\int_c^1 f\,dx &= \sum_{k=1}^N \dfrac{(-1)^k}{k} + (-1)^N (N+1)\left(\dfrac{1}{N}-c\right) 
+\end{aligned}
+$$
+
+이며
+
+$$
+(N+1)\left(\dfrac{1}{N}-c\right) \le (N+1)\left(\dfrac{1}{N}-\dfrac{1}{N+1}\right)= \dfrac{1}{N}  
+$$
+
+이다. $c\to 0$ 극한에서 $N \to \infty$ 이며 우리는 $\sum_{k=1}^N (-1)^k/k$ 와 $1/N$ 이 모두 수렴함을 안다. 그러나 
+
+$$
+\int_c^1 |f|\,dx = \sum_{k=1}^N \dfrac{1}{k} + (N+1)\left(\dfrac{1}{N}-c\right)
+$$
+
+에 대한 극한은 발산함을 안다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-MA_rudin_6_8}
+
+#### Rudin 6.8
+
+고정된 $a\in \R$ 과 임의의 $b>a$ 에 대해 $f\in \mathcal{R}[a,\,b]$ 라고 하고 아래의 우변의 극한이 존재할 때 적분을 아래와 같이 정의하자.
+
+$$
+\int_a^\infty f(x)\, dx = \lim_{b \to \infty} \int_a^b f(x)\,dx
+$$
+
+이 때 우리는 우변의 적분이 수렴한다고 한다. 또한 $f$ 를 $|f|$ 로 바꾸었을 때도 수렴하면 $f$ 에 대해 절대수렴한다고 한다. $f(x) \ge 0$ 이며 $[1,\,\infty]$ 구간에서 단조감소한다고 하자. 이 때 $\int_1^\infty f(x)\, dx$ 가 수렴할 필요충분조건은 $\sum_{i=1}^\infty f(n)$ 이 수렴하는 것임을 보여라. 이 방법을 이용하여 급수의 수렴을 판별 할 수 있으며 **적분 판정법 (integral test)** 라고 한다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+$n\in\Z_+$ 에 대해 $P_n = (1,\,2,\ldots,\,n) \in \mathcal{P}[1,\,n]$ 을 생각하자. $f$ 가 단조감소하므로 $U(f,\,P)=\sum_{k=1}^{n-1} f(k)$ 이며 $L(f,\,P) = \sum_{k=2}^n f(k)$ 이다. 그리고 $s_n = \sum_{k=1}^n f(k)$ 는 정의에 의해 단조증가수열이다. 
+
+$\int_1^\infty f(x)\,dx$ 가 수렴한다고 가정하자. $s_n-s_1 = \sum_{k=2}^n f(k) = L(f,\, P) < \int_1^\infty f(x)\,dx$ 이며 $s_n$ 은 유계인 단조증가수열이므로 수렴한다.
+
+$\langle s_n\rangle$ 이 $s$ 로 수렴한다고 가정하자. $F(y) = \int_a^y f(x)\,dx$ 로 정의된 $F(y)$ 는 유계엔 단조증가함수이므로 수렴한다. $\square$
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-MA_rudin_6_9}
+
+#### Rudin 6.9
+
+부분적분
+
+$$
+\int_0^\infty \dfrac{\cos x}{1+x}\,dx = \int_0^\infty \dfrac{\sin x}{(1+x)^2}\,dx
+$$
+
+:::
+
+</div>
+
+::: {.solution}
+
+$u'=\cos x,\, v=1/(x+1)$ 라고 하고 부분적분을 사용하면
+
+$$
+\begin{aligned}
+\int_0^\infty \dfrac{\cos x}{1+x}\, dx &= \left[\dfrac{\sin x}{1+x}\right]_0^\infty + \int_0^\infty \dfrac{\sin x}{(1+x)^2}\, dx = \int_0^\infty \dfrac{\sin x}{(1+x)^2}\, dx
+\end{aligned}
+$$
+
+이다. 그런데
+
+$$
+\int_0^\infty \left|\dfrac{\sin x}{(1+x)^2}\right|\,dx \le \int_0^\infty \dfrac{1}{(1+x)^2}\,dx = \left[- \dfrac{1}{1+x}\right]_0^\infty = 1
+$$
+
+로 오른쪽의 적분은 절대수렴한다. 그러나
+
+$$
+\int_0^\infty \left|\dfrac{\cos x}{1+x}\right|\,dx 
+$$
 
 :::
