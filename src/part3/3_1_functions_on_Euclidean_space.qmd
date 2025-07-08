@@ -18,7 +18,7 @@ crossref:
 
 - $F:\R^m \to \R^n$ 에서 $\bf{x} = \begin{bmatrix} x_1 & \cdots & x_m \end{bmatrix}$ 에 대해 $F(\bf{x})$ 를 $F(x_1,\ldots,\,x_m)$ 으로 표기하기도 한다.
   
-- 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\R^n$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $R^{m\times n}$ 으로 표기한다.
+- 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\R^n$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\R^{m\times n}$ 으로 표기한다.
 
 - $\R^n$ 의 표준기저, 즉 $i$ 번째 성분만 $1$ 이며 나머지 성분은 $0$ 인 벡터를 $\bf{e}_i$ 라고 쓰기로 한다. 
 
@@ -493,7 +493,7 @@ $A$ 가 닫힌 집합이며 $C\subset A$ 이면 $\overline{C}\subset A$ 이다. 
 
 ($a$) $A$ 가 닫힌 집합이고 $x\notin A$ 일 때 모든 $y\in A$ 에 대해 $\|y-x\| \ge d$ 인 $d>0$ 이 존재함을 보여라.
 
-($b$) $A$ 가 닫힌 집합이고 $B$ 가 옹골집합이며 $A \cap B=\varnothing$ 일 때 모든 $y\in A,\, x \in B$ 에 대해 $\|y-x\|\ge d$ 인 $d\ge 0$ 이 존재함을 보여라.
+($b$) $A$ 가 닫힌 집합이고 $B$ 가 옹골집합이며 $A \cap B=\varnothing$ 일 때 모든 $y\in A,\, x \in B$ 에 대해 $\|y-x\|\ge d$ 인 $d> 0$ 이 존재함을 보여라.
 
 ($c$) $A$, $B$ 가 닫힌 집합이지만 옹골집합은 아닐 때 $\R^2$ 에서 ($b$) 가 성립하지 않는 예를 들어라.
 
@@ -550,7 +550,7 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-CM_spiva
 
 #### 행렬의 norm
 
-선형사상 $L\in \mathcal{L}{\R^n,\, \R^m}$ 에 대해 행렬의 norm $\|L\|$ 은 아래와 같이 정의된다.
+선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 행렬의 norm $\|L\|$ 은 아래와 같이 정의된다.
 
 $$
 \|L\| := \sup \{\|L\bf{x}\| : \bf{x} \in \R^n,\, \|\bf{x}\|=1\}.
@@ -691,7 +691,7 @@ $f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 $\bf{a}\in A$ 에서 연속�
 $f$ 가 연속임을 가정하자. 임의의 $\varepsilon>0$ 에 대해 $\|\bf{x}-\bf{a}\|<\delta \implies |f(\bf{x})-f(\bf{a})| < \varepsilon$ 인 $\delta>0$ 이 존재한다. 따라서 $\|\bf{x}-\bf{a}\|<\delta$ 일 때
 
 $$
-||f(\bf{x})| - |f(\bf{a})||< |f(\bf{x}) - f(\bf{a})| < \varepsilon
+{\big |}|f(\bf{x})| - |f(\bf{a})| {\big |}< |f(\bf{x}) - f(\bf{a})| < \varepsilon
 $$
 
 이므로 
@@ -730,7 +730,7 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 �
 
 ($ii$) $\bf{x}\in A$ 이며 $o(f,\,\bf{x})<\varepsilon$ 인 경우. 즉 어떤 $\delta>0$ 에 대해 $M(f,\,\bf{x},\,\delta)-m(f,\,\bf{x},\,\delta)<\varepsilon$ 이다. $\bf{y}\in N(\bf{x},\,\delta)$ 라면 어떤 $N(\bf{y},\, \delta_1)\subset N(\bf{x},\, \delta)$ 인 $\delta_1>0$ 이 존재한다. 즉 $N(\bf{x},\,\delta)\subset \R^n-B$ 이다. 
 
-즉 $\R^n-B$ 는 열린 집합이므로 $B$ 는 닫힌 집합이다.
+즉 $\R^n-B$ 는 열린 집합이므로 $B$ 는 닫힌 집합이다. $\square$  
 
 :::
 
