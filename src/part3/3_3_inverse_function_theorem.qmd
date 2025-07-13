@@ -31,7 +31,7 @@ $$
 
 ::: {.proof}
 
-@thm-CM_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
+@thm-CM_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R^n \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
 
 $$
 H(\bf{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
@@ -57,14 +57,14 @@ $$
 
 #### 다변수 벡터함수의 미분과 편미분 2
 
-$F:\R^n \to \R^m$ 에 대해 $\bf{a}$ 를 포함하는 어떤 열린 공간에서 $D_jf_i(\bf{a})$ 가 존재하며 연속이면 $F$ 는 $\bf{a}$ 에서 미분가능하다.
+$F:\R^n \to \R^m$ 에 대해 $\bf{a}$ 를 포함하는 어떤 열린 근방에서 $D_jf_i(\bf{a})$ 가 존재하며 연속이면 $F$ 는 $\bf{a}$ 에서 미분가능하다.
 ::: 
 
 </div>
 
 ::: {.proof}
 
-$f_i = \pi_i\circ F$ 라고 하자. 또한 $\bf{a}$ 를 포함하는 위의 조건을 만족하는 열린 공간에서만 생각한다. 
+$f_i := \pi_i\circ F$ 라고 하자. 또한 $\bf{a}$ 를 포함하는 위의 조건을 만족하는 열린 근방에서만 생각한다. 
 
 $$
 \begin{aligned}
@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{aligned}
-f_i(a_1+h_1,\ldots,\,a_{j}+h_j,\,a_{j+1},\ldots,\,a_n) &- f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
+f_i(a_1+h_1,\ldots,\,a_{j}+&h_j,\,a_{j+1},\ldots,\,a_n) - f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
 &= h_j D_j f_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
 \end{aligned}
 $$
@@ -120,7 +120,7 @@ $$
 $G:\R^n \to \R^m$ 이 $C^1$ 급 함수이고 $F:\R^m \to \R^p$ 이 $G(\bf{a})$ 에서 미분가능 할 때 다음이 성립한다.
 
 $$
-D(F \circ G)(\bf{a}) = DF(G(\bf{a}))\cdot DG(\bf{a})
+(F \circ G)'(\bf{a}) = F'(G(\bf{a}))\cdot G'(\bf{a})
 $$
 
 ::: 
@@ -230,7 +230,10 @@ $$
 ($a$) 
 
 $$
-\lim_{t\to 0}\dfrac{f(\bf{a}+t\bf{e}_i)-f(\bf{a})}{t} =\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} = D_if(\bf{a})
+\begin{aligned}
+\lim_{t\to 0}\dfrac{f(\bf{a}+t\bf{e}_i)-f(\bf{a})}{t} &=\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} \\[0.3em]
+&= D_if(\bf{a})
+\end{aligned}
 $$
 
 ($b$)
@@ -242,7 +245,7 @@ $$
 ($c$) $Df(\bf{a})(\bf{x})= \sum_i x_iD_i f(\bf{a})=D_{\bf{x}}f(\bf{a})$ 이다. 이로부터
 
 $$
-D_{\bf{x}+\bf{y}}f(\bf(a)) = Df(\bf{a})(\bf{x}+\bf{y}) = Df(\bf{a})(\bf{x})+ Df(\bf{a})(\bf{y}) = D_\bf{x}f(\bf{a}) + D_\bf{y}f(\bf{a})$ 
+D_{\bf{x}+\bf{y}}f(\bf(a)) = Df(\bf{a})(\bf{x}+\bf{y}) = Df(\bf{a})(\bf{x})+ Df(\bf{a})(\bf{y}) = D_\bf{x}f(\bf{a}) + D_\bf{y}f(\bf{a}) 
 $$
 
 이다.
@@ -470,7 +473,7 @@ $F(\bf{x}) = \begin{bmatrix} f_1 (\bf{x}) & \cdots & f_n (\bf{x})\end{bmatrix}^T
 
 $$
 \begin{aligned}
-f_i(\bf{y})-F(\bf{x}) &= f_i(y_1,\,x_2,\ldots,\,x_n) - F(x_1,\ldots,\,x_n) \\[0.3em]
+f_i(\bf{y})-f_i(\bf{x}) &= f_i(y_1,\,x_2,\ldots,\,x_n) - f_i(x_1,\ldots,\,x_n) \\[0.3em]
 &\qquad + f_i(y_1,y_2,x_3,\ldots,x_n) - f_i(y_1,x_2,\ldots,x_n)\\[0.3em] 
 &\qquad + \qquad \vdots \\[0.3em]
 &\qquad + f_i(y_1,\ldots,\,y_n) - f_i(y_1,\ldots,\,y_{n-1},x_n).
@@ -483,7 +486,7 @@ $$
 f_i(\bf{y})-f_i(\bf{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldots,\,y_{j-1},\, z_{ij},\, x_{j+1},\ldots,\,x_n)
 $$
 
-을 만족하는 $z_{ij}$ 가 $x_i$ 와 $y_i$ 사이에 존재한다. 이로부터 다음을 보일 수 있다.
+을 만족하는 $z_{ij}$ 가 $x_j$ 와 $y_j$ 사이에 존재한다. 이로부터 다음을 보일 수 있다.
 
 $$
 \begin{aligned}
@@ -497,7 +500,7 @@ $$
 
 </br>
 
-즉 모든 어떤 열린 cube $A\subset \R^n$ 에서 정의된 $F:A \to \R^n$ 의 모든 편미분이 유계이면 $F$ 는 $A$ 에서(고른) 연속이다. 
+즉 모든 어떤 열린 큐브 $A\subset \R^n$ 에서 정의된 $F:A \to \R^n$ 의 모든 편미분이 유계이면 $F$ 는 $A$ 에서(고른) 연속이다. 
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -511,7 +514,7 @@ $L\in \mathcal{L}(\R^n)$ 이 가역이며 $U\in \R^n$ 이 열린 집합이고 $F
 
 ::: {.solution}
 
-선형사상 $L\in \mathcal{L}(\R^n)$ 은 $\R^n$ 전체 에서 연속이며 미분가능하다. 또한 $DL(\bf{x}) = L$ 이므로 $L\in C^1$ 이다. $D(L\circ F)(\bf{x}) = L(F(\bf{x})) DF(\bf{x})$ 이므로 $L \circ F$ 는 미분가능하며, @prp-MA_continuity_of_composited_function 에 의해 $F\in C^1$ 이면 $L \circ F\in C^1$ 이다. $F = L^{-1}\circ (L \circ F)$ 이므로 $L\circ F \in C^1$ 이면 $F\in C^1$ 이다.
+선형사상 $L\in \mathcal{L}(\R^n)$ 은 $\R^n$ 전체 에서 연속이며 미분가능하다. 또한 $L'(\bf{x}) = L$ 이므로 $L\in C^1$ 이다. $(L\circ F)'(\bf{x}) = L\cdot F'(\bf{x})$ 이므로 $L \circ F$ 는 미분가능하며, @prp-MA_continuity_of_composited_function 에 의해 $F\in C^1$ 이면 $L \circ F\in C^1$ 이다. $F = L^{-1}\circ (L \circ F)$ 이므로 $L\circ F \in C^1$ 이면 $F\in C^1$ 이다.
 
 :::
 
@@ -540,10 +543,10 @@ $L\in \mathcal{L}(\R^n)$ 이 가역이며 열린 집합 $U\in \R^n$ 에서 정�
 
 ::: {#lem-CM_inverse_function_theorem_2}
 
-열린 집합 $A\subset \R^n$ 에 대해 $F: A\to \R^n$ 이며 $F \in C^1$ 이라고 하자. $\bf{a}\in A$ 이며 $\det(F'(\bf{a}))\ne 0$ 일 때 $\bf{a}$ 를 포함하는 열린 cube $U\subset A$ 에 대해 아래의 부등식이 성립하는 $\alpha>0$ 가 존재한다.
+열린 집합 $A\subset \R^n$ 에 대해 $F: A\to \R^n$ 이며 $F \in C^1$ 이라고 하자. $\bf{a}\in A$ 이며 $\det(F'(\bf{a}))\ne 0$ 일 때 $\bf{a}$ 를 포함하는 열린 큐브 $U\subset A$ 에 대해 아래의 부등식이 성립하는 $\alpha>0$ 가 존재한다.
 
 $$
-\bf{x}_1,\, \bf{x}_2\in K \implies \|F(\bf{x}_1) - F(\bf{x}_2)\| \ge \alpha \|\bf{x}_1-\bf{x}_2\|.
+\bf{x}_1,\, \bf{x}_2\in U \implies \|F(\bf{x}_1) - F(\bf{x}_2)\| \ge \alpha \|\bf{x}_1-\bf{x}_2\|.
 $$
 
 :::
@@ -567,7 +570,7 @@ $$
 이다. 이제 $H(\bf{x}) := F(\bf{x})-L(\bf{x})$ 라고 하자. $H\in C^1$ 이며 $H'(\bf{x}) = F'(\bf{x})-L$, $H'(\bf{a})=\bf{0}$ 이다. $H'(\bf{x})$ 가 연속이므로 $\bf{a}$ 를 중심으로 하는 어떤 열린 cube $U$ 가 존재하여 
 
 $$
-\bf{x}\in K \implies \|H'(\bf{x})\|\le \dfrac{1}{2nM_2}
+\bf{x}\in U \implies \|H'(\bf{x})\|\le \dfrac{1}{2nM_2}
 $$ 
 
 이다. $H(\bf{x}) = \begin{bmatrix} h_1(\bf{x})  & \cdots & h_n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 를 이용하면 
@@ -576,10 +579,13 @@ $$
 |h_i(\bf{x}_1)-h_i(\bf{x}_2)| = |Dh_i(\bf{c}_i)\cdot (\bf{x}_1-\bf{x}_2)|  \le \dfrac{1}{2nM_2}\|\bf{x}_1-\bf{x}_2\|
 $$
 
-를 만족하는 $\bf{c}_i \in K$ 가 존재하며 
+를 만족하는 $\bf{c}_i \in U$ 가 존재하며 
 
 $$
-\|H(\bf{x}_1)-H(\bf{x}_2)\| \le \sum_{i=1}^n |h_i(\bf{x}_1)-h_i(\bf{x}_2)| \le n\cdot{1}{2nM_2} \|\bf{x}_1-\bf{x}_2\| = \dfrac{1}{2M_2}\|\bf{x}_1-\bf{x}_2\|
+\begin{aligned}
+\|H(\bf{x}_1)-H(\bf{x}_2)\| &\le \sum_{i=1}^n |h_i(\bf{x}_1)-h_i(\bf{x}_2)| \\[0.3em]
+&\le n\cdot \dfrac{1}{2nM_2} \|\bf{x}_1-\bf{x}_2\| = \dfrac{1}{2M_2}\|\bf{x}_1-\bf{x}_2\|
+\end{aligned}
 $$
 
 이다. 이로부터
@@ -588,7 +594,7 @@ $$
 \begin{aligned}
 \|\bf{x}_1-\bf{x}_2\| &\ge 2M_2 \|H(\bf{x}_1)-H(\bf{x}_2)\| \\[0.3em]
 &= 2M_2 \|F(\bf{x}_1)-F(\bf{x}_2) - L(\bf{x}_1-\bf{x}_2)\| \\[0.3em]
-&= 2M_2 \|L(\bf{x}_1-\bf{x}_2)\| - 2M_2\|F(\bf{x}_1)-F(\bf{x}_2)\| \\[0.3em]
+&\ge 2M_2 \|L(\bf{x}_1-\bf{x}_2)\| - 2M_2\|F(\bf{x}_1)-F(\bf{x}_2)\| \\[0.3em]
 & \ge 2\|\bf{x}_1-\bf{x}_2\| - 2M_2 \|F(\bf{x}_1)-F(\bf{x}_2)\|
 \end{aligned}
 $$

@@ -350,7 +350,7 @@ F'(\boldsymbol{a}) = \begin{bmatrix} D_1f_1(\boldsymbol{a}) &amp; \cdots &amp; D
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="3_2_differentiation_of_manifolds.html#thm-CM_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>13.3</span></a> 의 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}\)</span> 임을 보이면 된다. <span class="math inline">\(H:\mathbb{R}\to \mathbb{R}^n\)</span> 를 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 <span class="math inline">\(j\)</span> 번째 성분만 <span class="math inline">\(x\)</span> 인 함수라고 하자. 즉</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="3_2_differentiation_of_manifolds.html#thm-CM_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>13.3</span></a> 의 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}\)</span> 임을 보이면 된다. <span class="math inline">\(H:\mathbb{R}^n \to \mathbb{R}^n\)</span> 를 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 <span class="math inline">\(j\)</span> 번째 성분만 <span class="math inline">\(x\)</span> 인 함수라고 하자. 즉</p>
 <p><span class="math display">\[
 H(\boldsymbol{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
 \]</span></p>
@@ -365,11 +365,11 @@ f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_derivative_and_partial_derivative_2" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.2 (다변수 벡터함수의 미분과 편미분 2)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 공간에서 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며 연속이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
+<p><span class="theorem-title"><strong>정리 14.2 (다변수 벡터함수의 미분과 편미분 2)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 근방에서 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며 연속이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f_i = \pi_i\circ F\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 위의 조건을 만족하는 열린 공간에서만 생각한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f_i := \pi_i\circ F\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 위의 조건을 만족하는 열린 근방에서만 생각한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
@@ -381,7 +381,7 @@ f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\
 <p>이다. 평균값정리를 이용하면 <span class="math inline">\(j=1,\ldots,\,n\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
-f_i(a_1+h_1,\ldots,\,a_{j}+h_j,\,a_{j+1},\ldots,\,a_n) &amp;- f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
+f_i(a_1+h_1,\ldots,\,a_{j}+&amp;h_j,\,a_{j+1},\ldots,\,a_n) - f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
 &amp;= h_j D_j f_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
 \end{aligned}
 \]</span></p>
@@ -409,7 +409,7 @@ f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) = \sum_{j=1}^n h_jD_jf_i 
 <div id="thm-CM_chain_rule_for_multivariable_vector_valued_function" class="theorem">
 <p><span class="theorem-title"><strong>정리 14.3 (다변수 벡터함수의 연쇄 규칙)</strong></span> <span class="math inline">\(G:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이고 <span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^p\)</span> 이 <span class="math inline">\(G(\boldsymbol{a})\)</span> 에서 미분가능 할 때 다음이 성립한다.</p>
 <p><span class="math display">\[
-D(F \circ G)(\boldsymbol{a}) = DF(G(\boldsymbol{a}))\cdot DG(\boldsymbol{a})
+(F \circ G)'(\boldsymbol{a}) = F'(G(\boldsymbol{a}))\cdot G'(\boldsymbol{a})
 \]</span></p>
 </div>
 </div>
@@ -474,7 +474,10 @@ D_2F(x,\,y) &amp;= g(x)k'(y) D_1 f(p(x,\,y),\,q(x,\,y)) + h'(y) D_2 f(p(x,\,y),\
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>)</p>
 <p><span class="math display">\[
-\lim_{t\to 0}\dfrac{f(\boldsymbol{a}+t\boldsymbol{e}_i)-f(\boldsymbol{a})}{t} =\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} = D_if(\boldsymbol{a})
+\begin{aligned}
+\lim_{t\to 0}\dfrac{f(\boldsymbol{a}+t\boldsymbol{e}_i)-f(\boldsymbol{a})}{t} &amp;=\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} \\[0.3em]
+&amp;= D_if(\boldsymbol{a})
+\end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(b\)</span>)</p>
 <p><span class="math display">\[
@@ -482,7 +485,7 @@ D_{t\boldsymbol{x}}f(\boldsymbol{a})= \lim_{s \to 0}\dfrac{f(\boldsymbol{a}+st\b
 \]</span></p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(Df(\boldsymbol{a})(\boldsymbol{x})= \sum_i x_iD_i f(\boldsymbol{a})=D_{\boldsymbol{x}}f(\boldsymbol{a})\)</span> 이다. 이로부터</p>
 <p><span class="math display">\[
-D_{\boldsymbol{x}+\boldsymbol{y}}f(\boldsymbol{(}a)) = Df(\boldsymbol{a})(\boldsymbol{x}+\boldsymbol{y}) = Df(\boldsymbol{a})(\boldsymbol{x})+ Df(\boldsymbol{a})(\boldsymbol{y}) = D_\boldsymbol{x}f(\boldsymbol{a}) + D_\boldsymbol{y}f(\boldsymbol{a})$
+D_{\boldsymbol{x}+\boldsymbol{y}}f(\boldsymbol{(}a)) = Df(\boldsymbol{a})(\boldsymbol{x}+\boldsymbol{y}) = Df(\boldsymbol{a})(\boldsymbol{x})+ Df(\boldsymbol{a})(\boldsymbol{y}) = D_\boldsymbol{x}f(\boldsymbol{a}) + D_\boldsymbol{y}f(\boldsymbol{a})
 \]</span></p>
 <p>이다.</p>
 </div>
@@ -627,7 +630,7 @@ f(\boldsymbol{x}) = f(\boldsymbol{x})- f(\boldsymbol{0}) = \int_0^1 \dfrac{d h_{
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1 (\boldsymbol{x}) &amp; \cdots &amp; f_n (\boldsymbol{x})\end{bmatrix}^T\)</span> 일 때 다음이 성립한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-f_i(\boldsymbol{y})-F(\boldsymbol{x}) &amp;= f_i(y_1,\,x_2,\ldots,\,x_n) - F(x_1,\ldots,\,x_n) \\[0.3em]
+f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) &amp;= f_i(y_1,\,x_2,\ldots,\,x_n) - f_i(x_1,\ldots,\,x_n) \\[0.3em]
 &amp;\qquad + f_i(y_1,y_2,x_3,\ldots,x_n) - f_i(y_1,x_2,\ldots,x_n)\\[0.3em]
 &amp;\qquad + \qquad \vdots \\[0.3em]
 &amp;\qquad + f_i(y_1,\ldots,\,y_n) - f_i(y_1,\ldots,\,y_{n-1},x_n).
@@ -637,7 +640,7 @@ f_i(\boldsymbol{y})-F(\boldsymbol{x}) &amp;= f_i(y_1,\,x_2,\ldots,\,x_n) - F(x_1
 <p><span class="math display">\[
 f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldots,\,y_{j-1},\, z_{ij},\, x_{j+1},\ldots,\,x_n)
 \]</span></p>
-<p>을 만족하는 <span class="math inline">\(z_{ij}\)</span> 가 <span class="math inline">\(x_i\)</span> 와 <span class="math inline">\(y_i\)</span> 사이에 존재한다. 이로부터 다음을 보일 수 있다.</p>
+<p>을 만족하는 <span class="math inline">\(z_{ij}\)</span> 가 <span class="math inline">\(x_j\)</span> 와 <span class="math inline">\(y_j\)</span> 사이에 존재한다. 이로부터 다음을 보일 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \|F(\boldsymbol{y}) - F(\boldsymbol{x})\| &amp;\le \sum_{i=1}^n |f_i(\boldsymbol{y}) - f_i(\boldsymbol{x})| \\[0.3em]
@@ -647,7 +650,7 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 \]</span></p>
 </div>
 <p><br></p>
-<p>즉 모든 어떤 열린 cube <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(F:A \to \mathbb{R}^n\)</span> 의 모든 편미분이 유계이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(A\)</span> 에서(고른) 연속이다.</p>
+<p>즉 모든 어떤 열린 큐브 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(F:A \to \mathbb{R}^n\)</span> 의 모든 편미분이 유계이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(A\)</span> 에서(고른) 연속이다.</p>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_for_inverse_function_theorem_1" class="theorem exercise">
@@ -655,7 +658,7 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^n\)</span> 전체 에서 연속이며 미분가능하다. 또한 <span class="math inline">\(DL(\boldsymbol{x}) = L\)</span> 이므로 <span class="math inline">\(L\in C^1\)</span> 이다. <span class="math inline">\(D(L\circ F)(\boldsymbol{x}) = L(F(\boldsymbol{x})) DF(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(L \circ F\)</span> 는 미분가능하며, <a href="../part2/2_3_continuity_of_functions.html#prp-MA_continuity_of_composited_function" class="quarto-xref">명제&nbsp;<span>8.3</span></a> 에 의해 <span class="math inline">\(F\in C^1\)</span> 이면 <span class="math inline">\(L \circ F\in C^1\)</span> 이다. <span class="math inline">\(F = L^{-1}\circ (L \circ F)\)</span> 이므로 <span class="math inline">\(L\circ F \in C^1\)</span> 이면 <span class="math inline">\(F\in C^1\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^n\)</span> 전체 에서 연속이며 미분가능하다. 또한 <span class="math inline">\(L'(\boldsymbol{x}) = L\)</span> 이므로 <span class="math inline">\(L\in C^1\)</span> 이다. <span class="math inline">\((L\circ F)'(\boldsymbol{x}) = L\cdot F'(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(L \circ F\)</span> 는 미분가능하며, <a href="../part2/2_3_continuity_of_functions.html#prp-MA_continuity_of_composited_function" class="quarto-xref">명제&nbsp;<span>8.3</span></a> 에 의해 <span class="math inline">\(F\in C^1\)</span> 이면 <span class="math inline">\(L \circ F\in C^1\)</span> 이다. <span class="math inline">\(F = L^{-1}\circ (L \circ F)\)</span> 이므로 <span class="math inline">\(L\circ F \in C^1\)</span> 이면 <span class="math inline">\(F\in C^1\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -672,9 +675,9 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_inverse_function_theorem_2" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 14.2</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(F: A\to \mathbb{R}^n\)</span> 이며 <span class="math inline">\(F \in C^1\)</span> 이라고 하자. <span class="math inline">\(\boldsymbol{a}\in A\)</span> 이며 <span class="math inline">\(\det(F'(\boldsymbol{a}))\ne 0\)</span> 일 때 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 열린 cube <span class="math inline">\(U\subset A\)</span> 에 대해 아래의 부등식이 성립하는 <span class="math inline">\(\alpha&gt;0\)</span> 가 존재한다.</p>
+<p><span class="theorem-title"><strong>보조정리 14.2</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(F: A\to \mathbb{R}^n\)</span> 이며 <span class="math inline">\(F \in C^1\)</span> 이라고 하자. <span class="math inline">\(\boldsymbol{a}\in A\)</span> 이며 <span class="math inline">\(\det(F'(\boldsymbol{a}))\ne 0\)</span> 일 때 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 열린 큐브 <span class="math inline">\(U\subset A\)</span> 에 대해 아래의 부등식이 성립하는 <span class="math inline">\(\alpha&gt;0\)</span> 가 존재한다.</p>
 <p><span class="math display">\[
-\boldsymbol{x}_1,\, \boldsymbol{x}_2\in K \implies \|F(\boldsymbol{x}_1) - F(\boldsymbol{x}_2)\| \ge \alpha \|\boldsymbol{x}_1-\boldsymbol{x}_2\|.
+\boldsymbol{x}_1,\, \boldsymbol{x}_2\in U \implies \|F(\boldsymbol{x}_1) - F(\boldsymbol{x}_2)\| \ge \alpha \|\boldsymbol{x}_1-\boldsymbol{x}_2\|.
 \]</span></p>
 </div>
 </div>
@@ -689,22 +692,25 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 \]</span></p>
 <p>이다. 이제 <span class="math inline">\(H(\boldsymbol{x}) := F(\boldsymbol{x})-L(\boldsymbol{x})\)</span> 라고 하자. <span class="math inline">\(H\in C^1\)</span> 이며 <span class="math inline">\(H'(\boldsymbol{x}) = F'(\boldsymbol{x})-L\)</span>, <span class="math inline">\(H'(\boldsymbol{a})=\boldsymbol{0}\)</span> 이다. <span class="math inline">\(H'(\boldsymbol{x})\)</span> 가 연속이므로 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 하는 어떤 열린 cube <span class="math inline">\(U\)</span> 가 존재하여</p>
 <p><span class="math display">\[
-\boldsymbol{x}\in K \implies \|H'(\boldsymbol{x})\|\le \dfrac{1}{2nM_2}
+\boldsymbol{x}\in U \implies \|H'(\boldsymbol{x})\|\le \dfrac{1}{2nM_2}
 \]</span></p>
 <p>이다. <span class="math inline">\(H(\boldsymbol{x}) = \begin{bmatrix} h_1(\boldsymbol{x})  &amp; \cdots &amp; h_n(\boldsymbol{x}) \end{bmatrix}^T\)</span> 라고 할 때 중간값 정리(<a href="#thm-CM_mean_value_theorem_for_vector_function" class="quarto-xref">정리&nbsp;<span>14.4</span></a>) 를 이용하면</p>
 <p><span class="math display">\[
 |h_i(\boldsymbol{x}_1)-h_i(\boldsymbol{x}_2)| = |Dh_i(\boldsymbol{c}_i)\cdot (\boldsymbol{x}_1-\boldsymbol{x}_2)|  \le \dfrac{1}{2nM_2}\|\boldsymbol{x}_1-\boldsymbol{x}_2\|
 \]</span></p>
-<p>를 만족하는 <span class="math inline">\(\boldsymbol{c}_i \in K\)</span> 가 존재하며</p>
+<p>를 만족하는 <span class="math inline">\(\boldsymbol{c}_i \in U\)</span> 가 존재하며</p>
 <p><span class="math display">\[
-\|H(\boldsymbol{x}_1)-H(\boldsymbol{x}_2)\| \le \sum_{i=1}^n |h_i(\boldsymbol{x}_1)-h_i(\boldsymbol{x}_2)| \le n\cdot{1}{2nM_2} \|\boldsymbol{x}_1-\boldsymbol{x}_2\| = \dfrac{1}{2M_2}\|\boldsymbol{x}_1-\boldsymbol{x}_2\|
+\begin{aligned}
+\|H(\boldsymbol{x}_1)-H(\boldsymbol{x}_2)\| &amp;\le \sum_{i=1}^n |h_i(\boldsymbol{x}_1)-h_i(\boldsymbol{x}_2)| \\[0.3em]
+&amp;\le n\cdot \dfrac{1}{2nM_2} \|\boldsymbol{x}_1-\boldsymbol{x}_2\| = \dfrac{1}{2M_2}\|\boldsymbol{x}_1-\boldsymbol{x}_2\|
+\end{aligned}
 \]</span></p>
 <p>이다. 이로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
 \|\boldsymbol{x}_1-\boldsymbol{x}_2\| &amp;\ge 2M_2 \|H(\boldsymbol{x}_1)-H(\boldsymbol{x}_2)\| \\[0.3em]
 &amp;= 2M_2 \|F(\boldsymbol{x}_1)-F(\boldsymbol{x}_2) - L(\boldsymbol{x}_1-\boldsymbol{x}_2)\| \\[0.3em]
-&amp;= 2M_2 \|L(\boldsymbol{x}_1-\boldsymbol{x}_2)\| - 2M_2\|F(\boldsymbol{x}_1)-F(\boldsymbol{x}_2)\| \\[0.3em]
+&amp;\ge 2M_2 \|L(\boldsymbol{x}_1-\boldsymbol{x}_2)\| - 2M_2\|F(\boldsymbol{x}_1)-F(\boldsymbol{x}_2)\| \\[0.3em]
 &amp; \ge 2\|\boldsymbol{x}_1-\boldsymbol{x}_2\| - 2M_2 \|F(\boldsymbol{x}_1)-F(\boldsymbol{x}_2)\|
 \end{aligned}
 \]</span></p>

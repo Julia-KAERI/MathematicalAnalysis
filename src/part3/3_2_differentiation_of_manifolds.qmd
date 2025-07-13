@@ -44,13 +44,7 @@ $$ {#eq-CM_derivative_of_vector_function}
 ::: 
 :::
 
-</br>
-
-즉 $F'(\bf{a}) \in \R^{m \times n}$ 이다. 
-
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_uniqueness_of_derivative}
 
@@ -101,7 +95,7 @@ $F:\R^n\to\R^m$ 이 모든 $\bf{x}\in \R^n$ 에서 미분가능하면 마치 일
 
 #### 야코비 행렬
 
-$F:A \subset \R^n \to \R^m$ 에 대해 $DF(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 표준기저에 대해 표현한 행렬을 **야코비 행렬 (Jacobian matrix)** 이라고 하며 $J[F](\bf{a})$ 혹은 $J_F(\bf{a})$ 와 같이 표기한다. 모든 $A\subset \R^n$ 에서 미분가능할 때는 $A$ 에서 정의된 함수로서 $J_F(\bf{x})$ 라고 표기한다.
+$F:A \subset \R^n \to \R^m$ 에 대해 $F'(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 표준기저에 대해 표현한 행렬을 **야코비 행렬 (Jacobian matrix)** 이라고 하며 $J[F](\bf{a})$ 혹은 $J_F(\bf{a})$ 와 같이 표기한다. 모든 $A\subset \R^n$ 에서 미분가능할 때는 $A$ 에서 정의된 함수로서 $J_F(\bf{x})$ 라고 표기한다.
 
 ::: 
 :::
@@ -129,13 +123,13 @@ $$
 \|\bf{\pi}(\bf{x}+\bf{h})-\bf{\pi}(\bf{x})-I(\bf{h})\| = 0 
 $$
 
-이므로 $D\bf{\pi}'(\bf{x})=I_n$ 이다. 또한
+이므로 $\bf{\pi}'(\bf{x})=I_n$ 이다. 또한
 
 $$
 \|\pi_i (\bf{x}+\bf{h})-\pi_i (\bf{x})-\pi_i(\bf{h})\| = 0
 $$
 
-이므로 $D\pi_i(\bf{x})= \pi_i = \bf{e}_i^T$ 이다. 
+이므로 $\pi'_i(\bf{x})= \pi_i = \bf{e}_i^T$ 이다. 
 
 :::
 
@@ -311,10 +305,10 @@ $$ {#eq-CM_spivak_2_7}
 이어야 한다. 
 
 $$
-\dfrac{f(\bf{h})}{\|\bf{h}\|^2}\le \|\bf{h}\|
+\dfrac{|f(\bf{h})|}{\|\bf{h}\|}\le \|\bf{h}\|
 $$
 
-이므로 $a=b=0$ 에 대해 @eq-CM_spivak_2_7 를 만족한다. 따라서 $Df(\bf{0})= \begin{bmatrix}0 & 0\end{bmatrix}^T$ 이다.
+이므로 $a=b=0$ 에 대해 @eq-CM_spivak_2_7 를 만족한다. 따라서 $f'(\bf{0})= \begin{bmatrix}0 & 0\end{bmatrix}^T$ 이다.
 
 :::
 
@@ -548,9 +542,9 @@ $$
 
 이다. 따라서 $F'(\bf{a})\in \mathcal{M}_{m \times n}(\R)$ 이며 $i$ 번째 열은 $(f_i)'(\bf{a})$ 이다.
 
-($4$) $s:\R^2 \to \R$ 이 $s(x,\,y) = x+y$ 이면 $Ds(a,\,b)= s$ 이다.
+($4$) $s:\R^2 \to \R$ 이 $s(x,\,y) = x+y$ 이면 $s'(a,\,b)= s$ 이다.
 
-($5$) $p:\R^2 \to \R$ 이 $p(x,\,y) = x \cdot y$ 이면 $Dp(a,\,b) (x,\,y) = bx+ay$ 이다. 따라서 $p'(a,\,b)= (b,\,a)$ 이다. 
+($5$) $p:\R^2 \to \R$ 이 $p(x,\,y) = x \cdot y$ 이면 $p'(a,\,b) (x,\,y) = bx+ay$ 이다. 따라서 $p'(a,\,b)= (b,\,a)$ 이다. 
 
 
 :::
@@ -592,7 +586,7 @@ $$
 \lim_{(h,\,k) \to \bf{0}}\dfrac{|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)|}{\sqrt{|h|^2+|k|^2}} = \lim_{(h,\,k) \to \bf{0}}\dfrac{|hk|}{\sqrt{h^2+k^2}} 
 $$
 
-이다. 우리는 $|h|^2+|k|^2 \le 2|hk|$ 임을 안다. 따라서 위의 극한은 $0$ 이므로 $Dp(a,\,b)(x,\,y) = bx+ay$ 이다. 
+이다. 우리는 $|h|^2+|k|^2 \le 2|hk|$ 임을 안다. 따라서 위의 극한은 $0$ 이므로 $p'(a,\,b)(x,\,y) = bx+ay$ 이다. $\square$
 
 :::
 
@@ -612,7 +606,7 @@ $$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_1}
 또한 $g(\bf{a})\ne 0$ 이면 다음이 성립한다.
 
 $$
-(f/g)'(\bf{a}) = \dfrac{g(\bf{a})f'(\bf{a}) - f(\bf{a})'g(\bf{a})}{[g(\bf{a})]^2}
+(f/g)'(\bf{a}) = \dfrac{g(\bf{a})f'(\bf{a}) - f(\bf{a})'g(\bf{a})}{[g(\bf{a})]^2} 
 $$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2}
 
 :::
@@ -820,7 +814,7 @@ $$
 \lim_{(\bf{h},\,\bf{k}) \to \bf{0}} \dfrac{\|F(\bf{h},\,\bf{k})\|}{\|(\bf{h},\,\bf{k})\|} = 0.
 $$
 
-($b$) $DF(\bf{a},\,\bf{b})(\bf{x},\,\bf{y}) = F(\bf{a},\,\bf{y}) + F(\bf{x},\, \bf{b})$ 임을 보여라.
+($b$) $F'(\bf{a},\,\bf{b})(\bf{x},\,\bf{y}) = F(\bf{a},\,\bf{y}) + F(\bf{x},\, \bf{b})$ 임을 보여라.
 
 ($c$) @thm-CM_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $Dp(a,\,b)$ 는 ($b$) 의 특별한 형태임을 보여라.
 
@@ -836,9 +830,9 @@ $$
 
 ::: {#prp-CM_bilinear_1}
 
-$F:\R^n \times \R^m \to \R^p$ 가 쌍선형 형식일 대 다음이 성립한다.
+$F:\R^n \times \R^m \to \R^p$ 가 쌍선형 형식일 때 다음이 성립한다.
 
-&emsp;($1$) $F(\bf{0},\,\bf{0}) = \bf{0}$ 이다.
+&emsp;($1$) $F(\bf{0},\,\bf{y}) = F(\bf{x},\,\bf{0})=\bf{0}$ 이다.
 
 &emsp;($2$) 어떤 $M>0$ 이 존재하여 $\|F(\bf{x},\,\bf{y})\| \le M\|(\bf{x},\,\bf{y})\|^2$ 이다.
 :::
@@ -896,7 +890,7 @@ $$
 \lim_{(\bf{h},\bf{k})\to \bf{0}}\dfrac{\|F(\bf{x}+\bf{h},\bf{y}+\bf{k}) - F(\bf{x},\, \bf{y}) - F(\bf{x},\, \bf{k}) - F(\bf{h},\, \bf{y})\|}{\|(\bf{h},\, \bf{k})\|} = 0
 $$
 
-이다. 미분의 정의에 의해 $DF(\bf{x},\,\bf{y}) (\bf{h,\, \bf{k}})= F(\bf{x},\, \bf{k}) + F(\bf{h},\, \bf{y})$ 이다.
+이다. 미분의 정의에 의해 $F'(\bf{x},\,\bf{y}) (\bf{h,\, \bf{k}})= F(\bf{x},\, \bf{k}) + F(\bf{h},\, \bf{y})$ 이다.
 
 ($c$) $f(x,\,y) =xy$ 는 쌍선형 형식이다. ($b$) 를 적용하라.
 
@@ -966,7 +960,7 @@ $$
 
 $$
 \begin{aligned}
-DF(a_1,\ldots,\,a_k)&(x_1,\ldots,\,x_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
+F'(a_1,\ldots,\,a_k)&(x_1,\ldots,\,x_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
 \end{aligned}
 $$
 
@@ -1045,7 +1039,7 @@ $$
 
 이며 이것을 계속 반복하다보면 $F$ 의 인자로 주어지는 $k$ 개의 coordinate index 가운데 $\bf{h}$ 의 성분이 1개 있는 것부터 $k$ 개 있는 것까지의 합이 된다. 
 
-이제 주어진 $\displaystyle DF(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)$ 의 우변은 $F(a_1,\ldots,\,a_k)$ 의 $k$ 개의 인자 $a_1,\ldots,\,a_k$ 가운데 하나만 $\bf{h}$ 의 해당 성분으로 바꾼 것이다. 그렇다면
+이제 주어진 $\displaystyle F'(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)$ 의 우변은 $F(a_1,\ldots,\,a_k)$ 의 $k$ 개의 인자 $a_1,\ldots,\,a_k$ 가운데 하나만 $\bf{h}$ 의 해당 성분으로 바꾼 것이다. 그렇다면
 
 $$
 \lim_{\bf{h}\to \bf{0}}\dfrac{\displaystyle \left\|F(a_1+h_1,\ldots,\,a_k+h+k) - F(a_1,\ldots,\, a_k) - \sum_{i=1}^n F(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\bf{h}\|}

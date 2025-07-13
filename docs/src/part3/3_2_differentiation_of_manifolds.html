@@ -369,9 +369,7 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 </div>
 </div>
 </div>
-<p><br></p>
-<p>즉 <span class="math inline">\(F'(\boldsymbol{a}) \in \mathbb{R}^{m \times n}\)</span> 이다.</p>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_uniqueness_of_derivative" class="theorem">
 <p><span class="theorem-title"><strong>정리 13.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능하다면 <a href="#eq-CM_derivative_of_vector_function" class="quarto-xref">식&nbsp;<span>13.1</span></a> 를 만족하는 선형변환은 유일하다.</p>
@@ -408,7 +406,7 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 </div>
 <div class="callout-body-container">
 <div id="def-CM_jacobian" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 13.2 (야코비 행렬)</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(DF(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 표준기저에 대해 표현한 행렬을 <strong>야코비 행렬 (Jacobian matrix)</strong> 이라고 하며 <span class="math inline">\(J[F](\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(J_F(\boldsymbol{a})\)</span> 와 같이 표기한다. 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 미분가능할 때는 <span class="math inline">\(A\)</span> 에서 정의된 함수로서 <span class="math inline">\(J_F(\boldsymbol{x})\)</span> 라고 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 13.2 (야코비 행렬)</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 표준기저에 대해 표현한 행렬을 <strong>야코비 행렬 (Jacobian matrix)</strong> 이라고 하며 <span class="math inline">\(J[F](\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(J_F(\boldsymbol{a})\)</span> 와 같이 표기한다. 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 미분가능할 때는 <span class="math inline">\(A\)</span> 에서 정의된 함수로서 <span class="math inline">\(J_F(\boldsymbol{x})\)</span> 라고 표기한다.</p>
 </div>
 </div>
 </div>
@@ -426,11 +424,11 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(I_n :\mathbb{R}^n \to \mathbb{R}^n\)</span> 을 항등사상이라고 하자. <span class="math inline">\(\boldsymbol{\pi} = I_n\)</span> 이며 <span class="math inline">\(\pi_i = \boldsymbol{e}_i^T\)</span> 임을 안다. <span class="math display">\[
 \|\boldsymbol{\pi}(\boldsymbol{x}+\boldsymbol{h})-\boldsymbol{\pi}(\boldsymbol{x})-I(\boldsymbol{h})\| = 0
 \]</span></p>
-<p>이므로 <span class="math inline">\(D\boldsymbol{\pi}'(\boldsymbol{x})=I_n\)</span> 이다. 또한</p>
+<p>이므로 <span class="math inline">\(\boldsymbol{\pi}'(\boldsymbol{x})=I_n\)</span> 이다. 또한</p>
 <p><span class="math display">\[
 \|\pi_i (\boldsymbol{x}+\boldsymbol{h})-\pi_i (\boldsymbol{x})-\pi_i(\boldsymbol{h})\| = 0
 \]</span></p>
-<p>이므로 <span class="math inline">\(D\pi_i(\boldsymbol{x})= \pi_i = \boldsymbol{e}_i^T\)</span> 이다.</p>
+<p>이므로 <span class="math inline">\(\pi'_i(\boldsymbol{x})= \pi_i = \boldsymbol{e}_i^T\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -532,9 +530,9 @@ f(x,\,y) = \left\{ \begin{array}{ll} \dfrac{x|y|}{\sqrt{x^2+y^2}}, \qquad &amp; 
 \tag{13.3}\]</span></span></p>
 <p>이어야 한다.</p>
 <p><span class="math display">\[
-\dfrac{f(\boldsymbol{h})}{\|\boldsymbol{h}\|^2}\le \|\boldsymbol{h}\|
+\dfrac{|f(\boldsymbol{h})|}{\|\boldsymbol{h}\|}\le \|\boldsymbol{h}\|
 \]</span></p>
-<p>이므로 <span class="math inline">\(a=b=0\)</span> 에 대해 <a href="#eq-CM_spivak_2_7" class="quarto-xref">식&nbsp;<span>13.3</span></a> 를 만족한다. 따라서 <span class="math inline">\(Df(\boldsymbol{0})= \begin{bmatrix}0 &amp; 0\end{bmatrix}^T\)</span> 이다.</p>
+<p>이므로 <span class="math inline">\(a=b=0\)</span> 에 대해 <a href="#eq-CM_spivak_2_7" class="quarto-xref">식&nbsp;<span>13.3</span></a> 를 만족한다. 따라서 <span class="math inline">\(f'(\boldsymbol{0})= \begin{bmatrix}0 &amp; 0\end{bmatrix}^T\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -687,8 +685,8 @@ g(x) = \sum_{i=0}^n \dfrac{f^{(i)}(a)}{i!} (x-a)^i
 F'(\boldsymbol{a}) = \begin{bmatrix} f_1'(\boldsymbol{a}) &amp; \cdots &amp;f_m'(\boldsymbol{a})\end{bmatrix}^T
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(F'(\boldsymbol{a})\in \mathcal{M}_{m \times n}(\mathbb{R})\)</span> 이며 <span class="math inline">\(i\)</span> 번째 열은 <span class="math inline">\((f_i)'(\boldsymbol{a})\)</span> 이다.</p>
-<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(s:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(s(x,\,y) = x+y\)</span> 이면 <span class="math inline">\(Ds(a,\,b)= s\)</span> 이다.</p>
-<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(p:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(p(x,\,y) = x \cdot y\)</span> 이면 <span class="math inline">\(Dp(a,\,b) (x,\,y) = bx+ay\)</span> 이다. 따라서 <span class="math inline">\(p'(a,\,b)= (b,\,a)\)</span> 이다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(s:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(s(x,\,y) = x+y\)</span> 이면 <span class="math inline">\(s'(a,\,b)= s\)</span> 이다.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(p:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(p(x,\,y) = x \cdot y\)</span> 이면 <span class="math inline">\(p'(a,\,b) (x,\,y) = bx+ay\)</span> 이다. 따라서 <span class="math inline">\(p'(a,\,b)= (b,\,a)\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -712,7 +710,7 @@ F'(\boldsymbol{a}) = \begin{bmatrix} f_1'(\boldsymbol{a}) &amp; \cdots &amp;f_m'
 <p><span class="math display">\[
 \lim_{(h,\,k) \to \boldsymbol{0}}\dfrac{|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)|}{\sqrt{|h|^2+|k|^2}} = \lim_{(h,\,k) \to \boldsymbol{0}}\dfrac{|hk|}{\sqrt{h^2+k^2}}
 \]</span></p>
-<p>이다. 우리는 <span class="math inline">\(|h|^2+|k|^2 \le 2|hk|\)</span> 임을 안다. 따라서 위의 극한은 <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(Dp(a,\,b)(x,\,y) = bx+ay\)</span> 이다.</p>
+<p>이다. 우리는 <span class="math inline">\(|h|^2+|k|^2 \le 2|hk|\)</span> 임을 안다. 따라서 위의 극한은 <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(p'(a,\,b)(x,\,y) = bx+ay\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -860,7 +858,7 @@ F(\boldsymbol{x},\, \boldsymbol{y}_1+\boldsymbol{y}_2) &amp;= F(\boldsymbol{x},\
 <p><span class="math display">\[
 \lim_{(\boldsymbol{h},\,\boldsymbol{k}) \to \boldsymbol{0}} \dfrac{\|F(\boldsymbol{h},\,\boldsymbol{k})\|}{\|(\boldsymbol{h},\,\boldsymbol{k})\|} = 0.
 \]</span></p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(DF(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{x},\,\boldsymbol{y}) = F(\boldsymbol{a},\,\boldsymbol{y}) + F(\boldsymbol{x},\, \boldsymbol{b})\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F'(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{x},\,\boldsymbol{y}) = F(\boldsymbol{a},\,\boldsymbol{y}) + F(\boldsymbol{x},\, \boldsymbol{b})\)</span> 임을 보여라.</p>
 <p>(<span class="math inline">\(c\)</span>) <a href="#thm-CM_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>13.3</span></a> (<span class="math inline">\(5\)</span>) 의 <span class="math inline">\(Dp(a,\,b)\)</span> 는 (<span class="math inline">\(b\)</span>) 의 특별한 형태임을 보여라.</p>
 </div>
 </div>
@@ -868,8 +866,8 @@ F(\boldsymbol{x},\, \boldsymbol{y}_1+\boldsymbol{y}_2) &amp;= F(\boldsymbol{x},\
 <p><span class="proof-title"><em>(해답)</em>. </span>여기서는 쌍선형 형식에 대해 다음을 증명하자.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_bilinear_1" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 13.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p\)</span> 가 쌍선형 형식일 대 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(F(\boldsymbol{0},\,\boldsymbol{0}) = \boldsymbol{0}\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 13.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^p\)</span> 가 쌍선형 형식일 때 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(F(\boldsymbol{0},\,\boldsymbol{y}) = F(\boldsymbol{x},\,\boldsymbol{0})=\boldsymbol{0}\)</span> 이다.</p>
 <p> (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(M&gt;0\)</span> 이 존재하여 <span class="math inline">\(\|F(\boldsymbol{x},\,\boldsymbol{y})\| \le M\|(\boldsymbol{x},\,\boldsymbol{y})\|^2\)</span> 이다.</p>
 </div>
 </div>
@@ -906,7 +904,7 @@ F(\boldsymbol{x}+\boldsymbol{h},\boldsymbol{y}+\boldsymbol{k}) &amp;- F(\boldsym
 <p><span class="math display">\[
 \lim_{(\boldsymbol{h},\boldsymbol{k})\to \boldsymbol{0}}\dfrac{\|F(\boldsymbol{x}+\boldsymbol{h},\boldsymbol{y}+\boldsymbol{k}) - F(\boldsymbol{x},\, \boldsymbol{y}) - F(\boldsymbol{x},\, \boldsymbol{k}) - F(\boldsymbol{h},\, \boldsymbol{y})\|}{\|(\boldsymbol{h},\, \boldsymbol{k})\|} = 0
 \]</span></p>
-<p>이다. 미분의 정의에 의해 <span class="math inline">\(DF(\boldsymbol{x},\,\boldsymbol{y}) (\boldsymbol{h,\, \boldsymbol{k}})= F(\boldsymbol{x},\, \boldsymbol{k}) + F(\boldsymbol{h},\, \boldsymbol{y})\)</span> 이다.</p>
+<p>이다. 미분의 정의에 의해 <span class="math inline">\(F'(\boldsymbol{x},\,\boldsymbol{y}) (\boldsymbol{h,\, \boldsymbol{k}})= F(\boldsymbol{x},\, \boldsymbol{k}) + F(\boldsymbol{h},\, \boldsymbol{y})\)</span> 이다.</p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(f(x,\,y) =xy\)</span> 는 쌍선형 형식이다. (<span class="math inline">\(b\)</span>) 를 적용하라.</p>
 </div>
 <br>
@@ -947,7 +945,7 @@ G(x) = F(x_1,\ldots,\,x_{i-1},\,x,\, x_{i+1},\ldots,\,x_k)
 <p>(<span class="math inline">\(b\)</span>) 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
 \begin{aligned}
-DF(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
+F'(a_1,\ldots,\,a_k)&amp;(x_1,\ldots,\,x_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, x_i,\,a_{i+1},\ldots,\,a_k)
 \end{aligned}
 \]</span></p>
 </div>
@@ -997,7 +995,7 @@ G_{ij}(x,\,y) = F(x_1,\ldots,\,x_{i-1},\,x,\,x_{i+1},\ldots,\,x_{j-1},\,y,\, x_{
 \end{aligned}
 \]</span></p>
 <p>이며 이것을 계속 반복하다보면 <span class="math inline">\(F\)</span> 의 인자로 주어지는 <span class="math inline">\(k\)</span> 개의 coordinate index 가운데 <span class="math inline">\(\boldsymbol{h}\)</span> 의 성분이 1개 있는 것부터 <span class="math inline">\(k\)</span> 개 있는 것까지의 합이 된다.</p>
-<p>이제 주어진 <span class="math inline">\(\displaystyle DF(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)\)</span> 의 우변은 <span class="math inline">\(F(a_1,\ldots,\,a_k)\)</span> 의 <span class="math inline">\(k\)</span> 개의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 하나만 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것이다. 그렇다면</p>
+<p>이제 주어진 <span class="math inline">\(\displaystyle F'(a_1,\ldots,\,a_k)(h_1,\,\ldots,\,h_k) = \sum_{i=1}^k F(a_1,\ldots,\,a_{i-1},\, h_i,\,a_{i+1},\ldots,\,a_k)\)</span> 의 우변은 <span class="math inline">\(F(a_1,\ldots,\,a_k)\)</span> 의 <span class="math inline">\(k\)</span> 개의 인자 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 가운데 하나만 <span class="math inline">\(\boldsymbol{h}\)</span> 의 해당 성분으로 바꾼 것이다. 그렇다면</p>
 <p><span class="math display">\[
 \lim_{\boldsymbol{h}\to \boldsymbol{0}}\dfrac{\displaystyle \left\|F(a_1+h_1,\ldots,\,a_k+h+k) - F(a_1,\ldots,\, a_k) - \sum_{i=1}^n F(a_1,\ldots,\,a_{i-1},h_i,a_{i+1},\ldots,a_k)\right\|}{\|\boldsymbol{h}\|}
 \]</span></p>
