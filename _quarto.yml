@@ -34,6 +34,7 @@ book:
         - src/part2/2_3_continuity_of_functions.qmd
         - src/part2/2_4_differentiation.qmd
         - src/part2/2_5_riemann_stieltjes_integral.qmd
+        - src/part2/2_6_sequences_and_series_of_functions.qmd
     - part : src/part3/part3.qmd
       chapters :
         - src/part3/3_1_functions_on_Euclidean_space.qmd

@@ -10,9 +10,7 @@ crossref:
 
 ## 수열(Sequence) 과 급수 (Series)
 
-
-
-### 수열의 수렴
+### 수열의 수렴 {#sec-MA_convergence_of_sequence}
 
 수열은 @def-MA_sequence 에서 정의하였다. 수열 가운데 $\R$ 에서 정의된 수열으르 **실수열 (real sequence)**, $\C$ 에서 정의된 수열을 **복소 수열 (complex sequence)** 라고 한다. 급수(series) 는 다음과 같이 정의된다.
 
