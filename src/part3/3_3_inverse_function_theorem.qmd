@@ -543,7 +543,7 @@ $L\in \mathcal{L}(\R^n)$ 이 가역이며 열린 집합 $U\in \R^n$ 에서 정�
 
 ::: {#lem-CM_inverse_function_theorem_2}
 
-열린 집합 $A\subset \R^n$ 에 대해 $F: A\to \R^n$ 이며 $F \in C^1$ 이라고 하자. $\bf{a}\in A$ 이며 $\det(F'(\bf{a}))\ne 0$ 일 때 $\bf{a}$ 를 포함하는 열린 큐브 $U\subset A$ 에 대해 아래의 부등식이 성립하는 $\alpha>0$ 가 존재한다.
+열린 집합 $A\subset \R^n$ 에 대해 $F: A\to \R^n$ 가 $C^1$-함수 라고 하자. $\bf{a}\in A$ 이며 $\det(F'(\bf{a}))\ne 0$ 일 때 $\bf{a}$ 를 중심으로 하는 열린 큐브 $U\subset A$ 에 대해 아래의 부등식이 성립하는 $\alpha>0$ 가 존재한다.
 
 $$
 \bf{x}_1,\, \bf{x}_2\in U \implies \|F(\bf{x}_1) - F(\bf{x}_2)\| \ge \alpha \|\bf{x}_1-\bf{x}_2\|.
@@ -555,7 +555,7 @@ $$
 
 ::: {.proof}
 
-$L=F'(\bf{a})$ 이며 $\det (L)>0$ 이면 $L$ 은 가역이다. $L^{-1}$ 도 선형사상이며 따라서 $\|L^{-1}\|$ 이 존재한다. $M_2=\|L^{-1}\|$ 이라고 하면 
+$L:=F'(\bf{a})$ 이라고 하자. $\det (L)>0$ 이므로 $L$ 은 가역이다. $M_2=\|L^{-1}\|$ 이라고 하면 
 
 $$
 \|\bf{x}_1-\bf{x}_2\| = \left\|L^{-1}\cdot L(\bf{x}_1-\bf{x}_2)\right\| \le M_2 \|L(\bf{x}_1-\bf{x}_2)\|
@@ -567,19 +567,19 @@ $$
 \|L(\bf{x}_1-\bf{x}_2)\| \ge \dfrac{1}{M_2}\|\bf{x}_1-\bf{x}_2\|
 $$
 
-이다. 이제 $H(\bf{x}) := F(\bf{x})-L(\bf{x})$ 라고 하자. $H\in C^1$ 이며 $H'(\bf{x}) = F'(\bf{x})-L$, $H'(\bf{a})=\bf{0}$ 이다. $H'(\bf{x})$ 가 연속이므로 $\bf{a}$ 를 중심으로 하는 어떤 열린 cube $U$ 가 존재하여 
+이다. 이제 $H(\bf{x}) := F(\bf{x})-L(\bf{x})$ 라고 하자. $H\in C^1$ 이며 $H'(\bf{x}) = F'(\bf{x})-L$, $H'(\bf{a})=\bf{0}$ 이다. $H'(\bf{x})$ 가 연속이므로 $\bf{a}$ 를 중심으로 하는 어떤 열린 cube $U = C(\bf{a},\, \varepsilon)$ 가 존재하여 
 
 $$
 \bf{x}\in U \implies \|H'(\bf{x})\|\le \dfrac{1}{2nM_2}
 $$ 
 
-이다. $H(\bf{x}) = \begin{bmatrix} h_1(\bf{x})  & \cdots & h_n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 를 이용하면 
+이다. $H(\bf{x}) = \begin{bmatrix} h_1(\bf{x})  & \cdots & h_n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 를 이용하면 $\bf{x}_1,\, \bf{x}_2\in U$ 일 때 어떤 $\bf{c}_i\in U$ 에 대해 
 
 $$
 |h_i(\bf{x}_1)-h_i(\bf{x}_2)| = |Dh_i(\bf{c}_i)\cdot (\bf{x}_1-\bf{x}_2)|  \le \dfrac{1}{2nM_2}\|\bf{x}_1-\bf{x}_2\|
 $$
 
-를 만족하는 $\bf{c}_i \in U$ 가 존재하며 
+이며, 따라서
 
 $$
 \begin{aligned}
@@ -617,7 +617,7 @@ $$
 
 ::: {#lem-CM_inverse_function_theorem_3}
 
-열린 집합 $A\subset \R^n$ 에 대해 $F:A \to \R^n$ 이 $F \in C^1$ 이며 $\det(F'(\bf{a}))\ne 0$ 라고 하자. $\bf{a}$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a})$ 를 포함하는 열린 집합 $W$ 가 존재하여 $F:V\to W$ 에 대한 역함수 $F^{-1}: W \to V$ 가 존재한다.
+열린 집합 $A\subset \R^n$ 에 대해 $F:A \to \R^n$ 이 $C^1$-급 함수 이며 $\det(F'(\bf{a}))\ne 0$ 라고 하자. $\bf{a}$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a})$ 를 포함하는 열린 집합 $W$ 가 존재하여 $F:V\to W$ 에 대한 역함수 $F^{-1}: W \to V$ 가 존재한다.
 
 :::
 
@@ -647,10 +647,10 @@ $$
 이제 $\bf{a}$ 를 중심으로 하는 작은 cube $U$ 가 존재하여 $U \subset (U_1 \cap U_2 \cap U_3)$ 이다. $U$ 를 작게 잡아 $\partial U \cap \partial U_1 = \varnothing$ 이 되도록 잡을 수 있다. 이 때 $\partial U$ 는 $U$ 의 경계점(@exr-MA_KKK_2_7_6) 이다. $\partial U$ 는 유계인 닫힌 집합이므로 옹골집합이며 $\bf{a}$ 를 포함하지 않고 $\partial U \subset U_1$ 이므로, 그리고 $U_1$ 에서 $F$ 는 단사이므로 $F(\bf{a}) \notin F(\partial U)$ 이다. $F$ 가 연속이므로 $F(\partial U)$ 도 옹골집합이며 따라서 모든 $\bf{x}\in \partial U$ 에 대해 $\|F(\bf{x})-F(\bf{a})\| \ge d$ 인 $d>0$ 이 존재한다. 이제 집합 $W$ 를 다음과 같이 정의한다.
 
 $$
-W:= \{\bf{y} \in \R^n : \|\bf{y}-F(\bf{a})\|<d/2\}.
+W:= \{\bf{y} \in \R^n: \|\bf{y}-F(\bf{a})\|<d/2\}.
 $$
 
-그렇다면 $\bf{y}\in W,\, \bf{x}\in \partial U$ 일 때
+이 때 $W$ 는 열린집합이다(@exr-MA_rudin_4_3 의 풀이를 보라). 그렇다면 $\bf{y}\in W,\, \bf{x}\in \partial U$ 일 때
 
 $$
 \begin{aligned}
@@ -675,15 +675,15 @@ $$
 g(\bf{x}) := \|\bf{y}-F(\bf{x})\|^2
 $$
 
-이 함수는 연속이며 $\overline{U}$ 는 옹골집합이므로 최소값을 가진다. $\bf{x} \in \partial U$ 라면 ($C-4$) 에 의해 최소값이 될 수 없으므로 $g$ 를 최소로 하는 $\bf{x}$ 는 $\bf{x}\in U$ 이며 따라서 $Dg(\bf{x})=0$ 이므로
+이 함수는 연속이며 $\overline{U}$ 는 옹골집합이므로 최소값을 가진다. $\bf{x} \in \partial U$ 라면 ($C-4$) 에 의해 최소값이 될 수 없으므로 $g$ 를 최소로 하는 $\bf{x}$ 는 $\bf{x}\in U$ 이며 따라서 $g'(\bf{x})=0$ 이므로
 
 $$
-\bf{0}=Dg(\bf{x}) = 2 F'(\bf{x})\bf{\cdot} (\bf{y}-F(\bf{x}))
+\bf{0}=g'(\bf{x}) = 2 F'(\bf{x})\bf{\cdot} (\bf{y}-F(\bf{x}))
 $$
 
 이다. 그런데 $\det(F'(\bf{x})) \ne 0$ 이므로(($C-2$) 조건) $\bf{y}=F(\bf{x})$ 이어야 한다. 즉 $\bf{y}=F(\bf{x})$ 인 $\bf{x}\in U$ 가 존재한다. $U\subset U_0$ 이므로 ($C-1$) 에 의해 $U$ 에서 유일하다. 
 
-$V=U \cap F^{-1}(W)$ 는 열린 집합이며 $V\subset U_1$ 이므로 $F:V\to W$ 는 전단사이다. 즉 $F^{-1}:W \to V$ 가 존재한다. $\square$
+$V=U\cap F^{-1}(W)$ 는 열린 집합이며 $F:V\to W$ 는 전단사이다. 즉 $F^{-1}:W \to V$ 가 존재한다. $\square$
 
 :::
 
@@ -693,7 +693,7 @@ $V=U \cap F^{-1}(W)$ 는 열린 집합이며 $V\subset U_1$ 이므로 $F:V\to W$
 
 #### 역함수 정리
 
-열린 집합 $A\subset \R^n$ 에 대해 $F:A \to \R^n$ 이 $F \in C^1$ 이며 $\det(F'(\bf{a}))\ne 0$ 라고 하자.$\bf{a}$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a})$ 를 포함하는 열린 집합 $W$ 가 존재하여 $F:V\to W$ 에 대한 연속인 역함수 $F^{-1}:W \to V$ 가 존재하여 $F^{-1}$ 은 미분가능하며 모든 $\bf{y}\in W$ 에 대해
+@lem-CM_inverse_function_theorem_3 에서의 $F^{-1}$ 은 미분가능하며 모든 $\bf{y}\in W$ 에 대해
 
 $$
 (F^{-1})'(\bf{y}) = \left[F'(F^{-1}(\bf{y}))\right]^{-1}.
