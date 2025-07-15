@@ -1131,10 +1131,10 @@ $$
 \bf{x}\in U \implies \|F'(\bf{x})-A\|\le \lambda
 $$ {#eq-thm-CM_inverse_function_theorem_rudin_1}
 
-이제 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{y}:U \to \R^n$ 을 다음과 같이 정의하자.
+이제 임의의 $\bf{y}\in \R^n$ 에 대해 $\phi:U \to \R^n$ 을 다음과 같이 정의하자.
 
 $$
-\phi_\bf{y}(\bf{x}) := \bf{x} + A^{-1}(\bf{y}-F(\bf{x})).
+\phi(\bf{x}) := \bf{x} + A^{-1}(\bf{y}-F(\bf{x})).
 $$
 
 그렇다면 
@@ -1149,7 +1149,11 @@ $$
 \forall \bf{x}\in U,\,\left\|\varphi'_\bf{y}(\bf{x})\right\| \le \dfrac{1}{2}
 $$
 
-이다. @thm-CM_mean_value_theorem_for_vector_function 
+이다. @thm-CM_mean_value_theorem_for_vector_function 에 따라
+
+$$
+\bf{x}_1,\,\bf{x}_2 \in U \implies \|\phi_\bf{y}(\bf[])
+$$
 
 
 :::
