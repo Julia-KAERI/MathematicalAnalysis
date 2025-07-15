@@ -138,10 +138,10 @@ $$
 
 #### 다변수 함수의 중간값 정리
 
-열린 $U\subset\R^n$ 에서 정의된 $f:U \to \R$ 가 $U$ 에서 미분가능하다고 하자. $U$ 가 $\bf{a}$ 와 $\bf{a}+\bf{h}$ 를 잇는 선분을 포함한다면 이 선분상의 한 점 $\bf{c}$ 에서 다음을 만족한다.
+열린 $U\subset\R^n$ 에서 정의된 $F:U \to \R$ 가 $U$ 에서 미분가능하다고 하자. $U$ 가 $\bf{a}$ 와 $\bf{a}+\bf{h}$ 를 잇는 선분을 포함한다면 이 선분상의 한 점 $\bf{c}$ 에서 다음을 만족한다.
 
 $$
-f(\bf{a}+\bf{h}) - f(\bf{a}) = Df(\bf{x})\cdot \bf{h}.
+F(\bf{a}+\bf{h}) - F(\bf{a}) = F'(\bf{x})\cdot \bf{h}.
 $$ {#eq-thm_part3_mean_value_theorem_for_vector_function}
 
 :::
@@ -150,7 +150,7 @@ $$ {#eq-thm_part3_mean_value_theorem_for_vector_function}
 
 ::: {.proof}
 
-$\phi:[0,\,1]\to \R$ 을 $\phi(t) := f(\bf{a}+t\bf{h})$ 라고 정하자. $\phi$ 는 미분가능함수이며 $\phi'(t) = \bf{h} \cdot Df(\bf{a}+t\bf{h})$ 이다. 일변수 함수의 평균값 정리에 의해
+$\phi:[0,\,1]\to \R$ 을 $\phi(t) := F(\bf{a}+t\bf{h})$ 라고 정하자. $\phi$ 는 미분가능함수이며 $\phi'(t) = \bf{h} \cdot F'(\bf{a}+t\bf{h})$ 이다. 일변수 함수의 평균값 정리에 의해
 
 $$
 \phi(1)-\phi(0)= \phi'(t_0)(1-0)= \phi'(t_0)
@@ -882,9 +882,7 @@ $$
 
 ::: {#exm-CM_pts_of_inverse_function}
 
-$F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, H(\bf{x,\,y}))$ 꼴이며 역함수가 존재한다면 $F^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x}))$ 꼴임을 보이자. $F^{-1}=G=\begin{bmatrix} g_1 & \cdots & g_{n+m}\end{bmatrix}^T$ 라고 하자. 
-
-$i \le n$ 에 대해서만 보면 된다. $x_i = (G\circ F)_i = g_i (\bf{x},\, F_1(\bf{x},\, \bf{y}))$ 이므로 $g_i = x_i$ 이다. 
+$F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, H(\bf{x,\,y}))$ 꼴이며 역함수가 존재한다면 어떤 $K:\R^n \to \R^m$ 에 대해 $F^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x}))$ 꼴임을 보이자. $F^{-1}=G=\begin{bmatrix} g_1 & \cdots & g_{n+m}\end{bmatrix}^T$ 라고 하자. $i \le n$ 에 대해서만 보면 된다. $x_i = (G\circ F)_i = g_i (\bf{x},\, F_1(\bf{x},\, \bf{y}))$ 이므로 $g_i = x_i$ 이다. 
 
 :::
 
@@ -902,7 +900,7 @@ $F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 �
 
 ::: {.proof}
 
-$\widetilde{F}: \R^n \times \R^m \to \R^n \times \R^m$ 을 $\widetilde{F}(\bf{x},\,\bf{y}) := (\bf{x},\, F(\bf{x},\,\bf{y}))$ 로 정의하자. $\det (\widetilde{F}'(\bf{a},\, \bf{b}))$$= \det (M) \ne 0$ 이다. 역함수 정리 (@thm-CM_inverse_function_theorem) 에 따라 $(\bf{a},\,\bf{b})$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a},\, \bf{b})=(\bf{a},\, \bf{0})$ 을 포함하는 열린 집합 $W$ 에서 정의된 $\widetilde{F}$ 의 역함수이자 $C^1$ 급 함수인 $\widetilde{F}^{-1}:W \to V$ 가 존재한다.
+$\widetilde{F}: \R^n \times \R^m \to \R^n \times \R^m$ 을 $\widetilde{F}(\bf{x},\,\bf{y}) := (\bf{x},\, F(\bf{x},\,\bf{y}))$ 로 정의하자. $\det (\widetilde{F}'(\bf{a},\, \bf{b}))$$= \det (M) \ne 0$ 이므로 역함수 정리 (@thm-CM_inverse_function_theorem) 에 따라 $(\bf{a},\,\bf{b})$ 를 포함하는 열린 집합 $V$ 와 $F(\bf{a},\, \bf{b})=(\bf{a},\, \bf{0})$ 을 포함하는 열린 집합 $W$ 에서 정의된 $\widetilde{F}$ 의 미분가능한 역함수 $\widetilde{F}^{-1}:W \to V$ 가 존재한다.
 
 $V$ 를 $A\subset \R^n,\, B\subset \R^m$ 에 대해 $V=A \times B$ 가 되도록 할 수 있으며 그렇다면 $\widetilde{F}^{-1}: W \to A \times B$ 는 어떤 함수 미분가능한 함수 $K:W \to B$ 에 대해 $\widetilde{F}^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\, \bf{y}))$ 이다(@exm-CM_pts_of_inverse_function). 이제 $\Phi:\R^n \times \R^m \to \R^m$ 을 $\Phi (\bf{x},\, \bf{y}) := \bf{y}$ 로 정의하면 $\Phi \circ \widetilde{F} = F$ 이다. 따라서
 
@@ -950,7 +948,7 @@ $$
 (F \circ G)(\bf{x},\,K(\bf{x},\, \bf{y})) = \bf{y}
 $$
 
-인 $C^1$ 급 함수 $K:\R^n \times \R^m \to \R^m$ 이 존재하며 $H=G \circ (\bf{x},\, K(\bf{x},\, \bf{y}))$ 라고 놓으면 된다. $\square$
+인 미분가능한 함수 $K:\R^n \times \R^m \to \R^m$ 이 존재하며 $H=G \circ (\bf{x},\, K(\bf{x},\, \bf{y}))$ 라고 놓으면 된다. $\square$
 
 :::
 
@@ -1033,5 +1031,125 @@ $$
 ($b$) ($a$) 로부터 $D_{2,1}f(x,\,c{x}) = 0$ 이므로 $y=c(x)$ 에서 $D_{2,1}f(x,\,y)=0$ 이다. $c(x)$ 의 정의에 의해 $D_2f(x,\,y) = g'(x,\,c(x))=0$ 이다.
 
 ($c$) 
+
+:::
+
+</br>
+
+## 역함수 정리와 음함수 정리에 대한 다른 증명
+
+지금까지는 거의 @Spivak1965 의 방식을 따른 증명이었다. 이제 @Rudin1976 의 방식을 따라 증명해보자.
+
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-CM_contraction}
+
+#### Contraction
+
+거리공간 $X$ 에서 정의된 함수 $\varphi :X \to X$ 가 어떤 실수 $c<1$ 에 대해
+
+$$
+x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
+$$ {#eq-CM_def_of_contraction}
+
+일 때 $\phi$ 를 $X$ 에서의 **contraction** 이라고 한다.
+
+::: 
+:::
+
+</br>
+
+Contraction 의 정의에 의해 다음은 자명하다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_uniform_continuity_of_contraction}
+
+거리공간 $X$ 에서의 contraction 은 고른 연속 함수이다.
+::: 
+
+</div>
+
+Contraction 과 고정점의 관계를 알아보자.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_contraction_and_fixed_point}
+
+$\varphi$ 가 완비거리공간 $X$ 에서의 contraction 일 때 $\phi(x)=x$ 인 $x\in X$ 는 유일하게 존재한다.
+::: 
+
+</div>
+
+::: {.proof}
+
+즉 contraction 은 완비거리공간에서 유일한 고정점을 가진다는 의미이다. 임의의 $x_0\in X$ 를 선택하고 수열 $\langle x_n\rangle$ 을 $x_{n+1}=\varphi(x_n)$ 으로 정의하자. $n\ge 1$ 에 대해
+
+$$
+\|x_{n+1}-x_n\| = \|\varphi(x_n)-\varphi(x_{n-1})\| \le c\|x_n - x_{n-1}\| \le \cdots \le c^{n}\|x_1-x_0\|
+$$
+
+이다. 임의의 $n>m>1$ 에 대해 
+
+$$
+\begin{aligned}
+\|x_n - x_m \| &\le \|x_n-x_{n-1}\| + \cdots + \|x_{m+1} - x_m\|  \\[0.3em]
+&\le \left(c^{n-1} + c^{n-2} + \cdots + c^{m}\right)\|x_1-x_0\| \\[0.3em]
+&= \dfrac{c^m(1-c^{n-m})}{1-c}\|x_1-x_0\| \le \dfrac{c^m}{1-c}\|x_1-x_0\|
+\end{aligned}
+$$
+
+이므로 $\langle x_n \rangle$ 은 코시수열이며, $X$ 가 완비거리공간이므로 수렴한다.
+
+
+:::
+
+</br>
+
+이제 contraction 을 이용하여 역함수 정리를 증명한다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_inverse_function_theorem_rudin}
+
+$\R^n$ 에서의 열린 집합 $E$ 에서 정의된 $C^1$ 함수 $F:E \to \R^n$ 과 $\bf{a}\in U$ 에 대해 $F'(\bf{u})$ 가 가역이라고 하자.
+
+($1$) $\bf{a}$ 를 포함하는 어떤 열린 집합 $U$ 와 $F(\bf{a})$ 를 포함하는 어떤 열린 집합 $V$ 에 대해 $F:U\to V$ 는 전단사이며,
+
+($2$) $G$ 가 ($1$) 에서의 $F^{-1}$ 이라면 $G$ 는 $C^1$ 함수이다. 
+
+::: 
+
+</div>
+
+::: {.proof}
+
+$\bf{b}=F(\bf{a}),\, A=F'(\bf{a})$ 라고 하자. $2\lambda \left\|A^{-1}\right\|=1$ 이 되도록 $\lambda$ 를 정하자. $F'$ 이 연속이므로 어떤 $\bf{a}$ 열린 근방 $U$ 를 아래를 만족하도록 잡을 수 있다.
+
+$$
+\bf{x}\in U \implies \|F'(\bf{x})-A\|\le \lambda
+$$ {#eq-thm-CM_inverse_function_theorem_rudin_1}
+
+이제 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{y}:U \to \R^n$ 을 다음과 같이 정의하자.
+
+$$
+\phi_\bf{y}(\bf{x}) := \bf{x} + A^{-1}(\bf{y}-F(\bf{x})).
+$$
+
+그렇다면 
+
+$$
+\phi'_{\bf{y}}(\bf{x}) = I - A^{-1}F'(\bf{x}) = A^{-1}(A-F'(\bf{x}))
+$$ 
+
+이므로 @eq-thm-CM_inverse_function_theorem_rudin_1 과 $2\lambda \|A^{-1}\|=1$ 조건을 사용하면
+
+$$
+\forall \bf{x}\in U,\,\left\|\varphi'_\bf{y}(\bf{x})\right\| \le \dfrac{1}{2}
+$$
+
+이다. @thm-CM_mean_value_theorem_for_vector_function 
+
 
 :::

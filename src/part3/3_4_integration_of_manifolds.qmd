@@ -13,8 +13,6 @@ crossref:
 ### 정의와 기본적 성질
 
 
-
-
 ::: {.callout-tip appearance="minimal"}
 - $\R$ 에서의 분할은 @def-MA_partition 을 참고하라. 전체적으로 [리만-스틸체스 적분](../part2/2_5_riemann_stieltjes_integral.qmd) 를 참고하라.
 
@@ -33,8 +31,6 @@ $\R^n$ 에서 정의된 $n$-cell $Q=[a_1,b_1] \times \cdots \times [a_n,b_n]$ �
 $$
 \text{vol}(Q) := (b_1-a_1) (b_2-a_2)\cdots (b_n-a_n).
 $$
-
-
 
 ::: 
 :::
@@ -559,7 +555,7 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 ($1$) 양의 정수의 집합 $\Z_+$ 는 measure zero 이다. 임의의 작은 $\varepsilon>0$ 과 $i\in\Z_+$ 에 대해 $U_i = \left[i -\dfrac{\varepsilon}{2^{i+1}},\, i+\dfrac{\varepsilon}{2^{2+i}}\right]$ 라고 하면 $\sum_{U_i}\text{vol}(U_i) \le \varepsilon$ 이다.
 
 
-($2$) 유리수의 집합 $Q$ 가 measure zero 이다. 우리는 $\Q$ 와 $\Z_+$ 사이에 전단사 함수 $f:\Q \to \Z_+$ 가 존재함을 안다. 이 전단사 함수를 $f$ 라고 하면 ($1$) 에 의해 measure zero 이다.
+($2$) 유리수의 집합 $Q$ 가 measure zero 이다. 우리는 $\Q$ 와 $\Z_+$ 사이에 전단사 함수 $f:\Q \to \Z_+$ 가 존재함을 안다. ($1$) 에 의해 measure zero 이다.
 
 :::
 
@@ -636,7 +632,7 @@ $A\subset \R^n$ 이 content zero 일 때 다음이 성립한다.
 
 ::: {#exm-CM_content_zero}
 
-$a<b$ 에 대해 $[a,\,b]\subset \R$ 은 content zero 가 아니다. $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 이 $[a,\,b]$ 에 대한 닫힌 $1$-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 $U_i$ 의 끝점을 $a=t_0 < t_1< \cdots <t_k=b$ 가 되도록 놓을 수 있다. $\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}$ 이므로 $\sum_{i}\text{vol}{U_i}$ 를 임의로 작게 할 수 없다. $\square$
+$a<b$ 에 대해 $[a,\,b]\subset \R$ 은 content zero 가 아니다. $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 이 $[a,\,b]$ 에 대한 닫힌 $1$-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 $U_i$ 의 끝점을 $a=t_0 < t_1< \cdots <t_k=b$ 가 되도록 놓을 수 있다. $\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}$ 이므로 $\sum_{i}\text{vol} (U_i)$ 를 임의로 작게 할 수 없다. $\square$
 
 
 :::
@@ -665,7 +661,7 @@ $A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots
 
 ::: {#exm-CM_measure_zero_not_compact}
 
-@prp-CM_content_zero_and_compact 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 인 집합이 존재한다. $A$ 를 $[0,\,1]$ 사이의 유리수의 집합이라고 하자. $A\subset \Q$ 이며 $\Q$ 가 measure zero 이므로(@exm-CM_Q_is_measure_zero) $A$ 도 measure zero 이다. $A$ 가 content zero 라면 유한개의 $\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}$ 에 대해 $[0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]$ 이어야 한다. 즉 $\sum \text{vol} \ge 1$ 이므로 $A$ 는 content zero 가 아니다.
+@prp-CM_content_zero_and_compact 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 가 아닌 집합이 존재한다. $A$ 를 $[0,\,1]$ 사이의 유리수의 집합이라고 하자. $A\subset \Q$ 이며 $\Q$ 가 measure zero 이므로(@exm-CM_Q_is_measure_zero) $A$ 도 measure zero 이다. $A$ 가 content zero 라면 유한개의 $\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}$ 에 대해 $[0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]$ 이어야 한다. 즉 $\sum \text{vol} \ge 1$ 이므로 $A$ 는 content zero 가 아니다.
 :::
 
 </div></br>
