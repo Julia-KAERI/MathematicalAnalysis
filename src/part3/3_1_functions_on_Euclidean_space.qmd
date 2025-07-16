@@ -567,37 +567,121 @@ $$ {#eq-CM_definition_of_matrix_norm}
 
 행렬의 노름에 대해 다음이 성립한다. 
 
-&emsp;($1$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\bf{x}\|\le \|L\|\cdot \|\bf{x}\|$ 이다.
+&emsp;($1$) $\|L\bf{x}\|=0 \iff L=0$.
 
-&emsp;($2$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\|<\infty$ 이며 $A$ 는 고른 연속이다.
+&emsp;($2$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\bf{x}\|\le \|L\|\cdot \|\bf{x}\|$ 이다.
 
-&emsp;($3$) $L,\, T\in \mathcal{L}(\R^n,\, \R^m)$ 이며 $c\in \R$ 일 때 다음이 성립한다.
+&emsp;($3$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\|<\infty$ 이며 $A$ 는 고른 연속이다.
+
+&emsp;($4$) $L,\, T\in \mathcal{L}(\R^n,\, \R^m)$ 이며 $c\in \R$ 일 때 다음이 성립한다.
 
 $$
 \|L+T\| \le \|L\|+\|T\|,\qquad \|cL\| = |c|\cdot \|L\|.
 $$
 
-&emsp;($4$) $L\in \mathcal{L}(\R^n,\, \R^m),\, T\in \mathcal{L}(\R^m,\, \R^p)$ 일 때 다음이 성립한다. 
+&emsp;($5$) $L\in \mathcal{L}(\R^n,\, \R^m),\, T\in \mathcal{L}(\R^m,\, \R^p)$ 일 때 다음이 성립한다. 
 
 $$
 \|T\circ L\| \le \|T\|\cdot \|L\|
 $$
 
+&emsp;($6$) $L\in \mathcal{L}(R^n)$ 이 가역일 때 $\|L^{-1}\| \ge 1/\|L\|$ 이다.
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
-($1$) $\|\bf{u}\|=\dfrac{\bf{x}}{\|\bf{x}\|}$ 라고 하면 $\|L\| \ge \|L\bf{u}\| = \dfrac{\|L\bf{x}\|}{\|\bf{x}\|}$ 이다. 
+($1$) $L=0\implies \|L\|=0$ 은 자명하다. $\|L\|=0$ 이면 모든 $\bf{x}\in \R^n$ 에 대해 $L\bf{x}=0$ 이므로 $L=0$ 이다. 
 
-($2$) $\|L\|<\infty$ 는 @exr-CM_spivak_1_10 에서 보였다. ($1$) 로부터 $\|L(\bf{x}-\bf{y})\|\le \|L\|\cdot \|\bf{x}-\bf{y}\|$ 이므로 고른 연속이다.
+($2$) $\|\bf{u}\|=\dfrac{\bf{x}}{\|\bf{x}\|}$ 라고 하면 $\|L\| \ge \|L\bf{u}\| = \dfrac{\|L\bf{x}\|}{\|\bf{x}\|}$ 이다. 
 
-($3$) $\|(L+T)(\bf{x})\|=\|L\bf{x}+T\bf{x}\|\le \|L\bf{x}\|+\|T\bf{x}\|\le (\|L\|+\|T\|)\|\bf{x}\|$ 이다. 임의의 $\|x\|=1$ 에 대해 $\|L\|+\|T\| \ge \|(L+T)(\bf{x})\|$ 이므로 $\|L\|+\|T\| \ge \|L+T\|$ 이다. $\|cL\bf{x}\| = |c|\cdot \|L\bf{x}\|$ 이므로 $\|cL\| = |c|\cdot \|L\|$ 이다. 
+($3$) $\|L\|<\infty$ 는 @exr-CM_spivak_1_10 에서 보였다. ($1$) 로부터 $\|L(\bf{x}-\bf{y})\|\le \|L\|\cdot \|\bf{x}-\bf{y}\|$ 이므로 고른 연속이다.
 
-($4$) $\|T\circ L(\bf{x})\| \le \|T\| \cdot \|L\bf{x}\| \le \|T\|\cdot \|L\|\cdot \|\bf{x}\|$ 이다.  $\square$
+($4$) $\|(L+T)(\bf{x})\|=\|L\bf{x}+T\bf{x}\|\le \|L\bf{x}\|+\|T\bf{x}\|\le (\|L\|+\|T\|)\|\bf{x}\|$ 이다. 임의의 $\|x\|=1$ 에 대해 $\|L\|+\|T\| \ge \|(L+T)(\bf{x})\|$ 이므로 $\|L\|+\|T\| \ge \|L+T\|$ 이다. $\|cL\bf{x}\| = |c|\cdot \|L\bf{x}\|$ 이므로 $\|cL\| = |c|\cdot \|L\|$ 이다. 
+
+($5$) $\|T\circ L(\bf{x})\| \le \|T\| \cdot \|L\bf{x}\| \le \|T\|\cdot \|L\|\cdot \|\bf{x}\|$ 이다.  
+
+($6$) $L$ 이 가역이이면 $I_n = L\circ L^{-1}$ 이며 $\|I_n\|=1$ 이므로 ($4$) 로부터 $\|L^{-1}\| \ge 1/\|L\|$ 이다. $\square$
 
 :::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_properties_of_matrix_norm_2}
+
+$\mathcal{L}(\R^n,\,\R^m)$ 에 거리함수가 행렬의 노름으로 주어졌을 때 $\mathcal{L}(\R^n,\,\R^m)$ 은 거리공간이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+행렬의 노름이 @def-MA_metric_space 의 거리함수의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.
+
+:::
+
+</br>
+
+$\mathcal{L}(\R^n,\, \R^m)$ 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다.
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_properties_of_matrix_norm_3}
+
+$\Omega$ 가 $\R^n$ 에서의 모든 가역 선형 연자의 집합이라고 하자.
+
+&emsp;($1$) $A\in \Omega,\, B\in \mathcal{L}(\R^n)$ 이며 $\|B-A\|\cdot \|A^{-1}\| < 1$ 이면 $B \in \Omega$ 이다.
+
+&emsp;($2$) $\Omega$ 는 $\mathcal{L}(\R^n)$ 의 열린 집합이며 $\phi(A)=A^{-1}$ 은 연속이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+($1$) $\|A^{-1}\| = 1/\alpha,\, \|B-A\|=\beta$ 라고 하면 $\beta <\alpha$ 이다. $\bf{x}\in \R^n$ 일 때
+
+$$
+\begin{aligned}
+\alpha \|\bf{x}\| &= \alpha \|A^{-1}A\bf{x}\| \le \alpha \|A^{-1}\|\cdot \|A\bf{x}\| \\[0.3em]
+&= \|A\bf{x}\| \le \|(A-B)\bf{x}\| + \|B\bf{x}\| \le \beta\|\bf{x}\| +\|B\bf{x}\|
+\end{aligned}
+$$
+
+이므로 
+
+$$
+(\alpha - \beta)\|\bf{x}\| \le \|B\bf{x}\|
+$${#eq-prp-CM_properties_of_matrix_norm_3_1}
+
+이다. $\alpha-\beta > 0$ 이므로 $\bf{x}\ne 0 \implies B\bf{x}\ne \bf{0}$ 이다. 즉 $B$ 는 가역이다. 
+
+($b$) $A\in \omega$ 에 대해 $\|B-A\|\le 1/\|A^{-1}\|$ 을 만족하는 $B\in \mathcal{L}(\R^n)$ 은 모두 가역이므로 $\Omega$ 는 열린집합이다. @eq-prp-CM_properties_of_matrix_norm_3_1 에서 $\bf{x}=B\bf{y}$ 라고 하면
+
+$$
+(\alpha-\beta) \|B^{-1}\bf{y}\| \le \|BB^{-1}\bf{y}\| \le \|\bf{y}\|
+$$
+
+이므로 $\|B^{-1}\| \le 1/(\alpha-\beta)$ 이다. 행렬에 대해 아래의 항등식이 성립한다.
+
+$$
+B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
+$$
+
+이로부터
+
+$$
+\|B^{-1}-A^{-1}\| \le \|B^{-1}\| \cdot \|A-B\| \cdot \|A^{-1}\| \le \dfrac{\beta}{\alpha(\alpha - \beta)}
+$$
+
+이며 $B\to A$ 극한에서 $\beta\to 0$ 이므로 $\|\phi(B)-\phi(A)\| = \|B^{-1}-A^{-1}\| \to 0$ 이다. 즉 $\phi$ 는 연속함수이다. $\square$ 
+
+:::
+
 
 </br>
 

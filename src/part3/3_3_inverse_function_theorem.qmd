@@ -1041,6 +1041,7 @@ $$
 지금까지는 거의 @Spivak1965 의 방식을 따른 증명이었다. 이제 @Rudin1976 의 방식을 따라 증명해보자.
 
 
+### 역함수 정리 {#sec-CM_inverse_function_theorem_by_rudin}
 ::: {.callout-note appearance="simple" icon="false"}
 
 ::: {#def-CM_contraction}
@@ -1113,7 +1114,7 @@ $$
 
 ::: {#thm-CM_inverse_function_theorem_rudin}
 
-$\R^n$ 에서의 열린 집합 $E$ 에서 정의된 $C^1$ 함수 $F:E \to \R^n$ 과 $\bf{a}\in U$ 에 대해 $F'(\bf{u})$ 가 가역이라고 하자.
+$\R^n$ 에서의 열린 집합 $E$ 에서 정의된 $C^1$ 함수 $F:E \to \R^n$ 과 $\bf{a}\in U$ 에 대해 $F'(\bf{a})$ 가 가역이라고 하자.
 
 ($1$) $\bf{a}$ 를 포함하는 어떤 열린 집합 $U$ 와 $F(\bf{a})$ 를 포함하는 어떤 열린 집합 $V$ 에 대해 $F:U\to V$ 는 전단사이며,
 
@@ -1125,35 +1126,215 @@ $\R^n$ 에서의 열린 집합 $E$ 에서 정의된 $C^1$ 함수 $F:E \to \R^n$ 
 
 ::: {.proof}
 
-$\bf{b}=F(\bf{a}),\, A=F'(\bf{a})$ 라고 하자. $2\lambda \left\|A^{-1}\right\|=1$ 이 되도록 $\lambda$ 를 정하자. $F'$ 이 연속이므로 어떤 $\bf{a}$ 열린 근방 $U$ 를 아래를 만족하도록 잡을 수 있다.
+($1$) $\bf{b}=F(\bf{a}),\, A=F'(\bf{a})$ 라고 하자. 
+
+$$
+2\lambda \left\|A^{-1}\right\|=1
+$$ {#eq-thm-CM_inverse_function_theorem_rudin_0}
+
+이 되도록 $\lambda$ 를 정하자. $F'$ 이 연속이므로 어떤 $\bf{a}$ 열린 근방 $U$ 를 아래를 만족하도록 잡을 수 있다.
 
 $$
 \bf{x}\in U \implies \|F'(\bf{x})-A\|\le \lambda
 $$ {#eq-thm-CM_inverse_function_theorem_rudin_1}
 
-이제 임의의 $\bf{y}\in \R^n$ 에 대해 $\phi:U \to \R^n$ 을 다음과 같이 정의하자.
+이제 임의의 $\bf{y}\in \R^n$ 에 대해 $\varphi:U \to \R^n$ 을 다음과 같이 정의하자.
 
 $$
-\phi(\bf{x}) := \bf{x} + A^{-1}(\bf{y}-F(\bf{x})).
-$$
+\varphi(\bf{x}) := \bf{x} + A^{-1}(\bf{y}-F(\bf{x})).
+$$ {#eq-thm-CM_inverse_function_theorem_rudin_2}
 
 그렇다면 
 
 $$
-\phi'_{\bf{y}}(\bf{x}) = I - A^{-1}F'(\bf{x}) = A^{-1}(A-F'(\bf{x}))
-$$ 
+\varphi'(\bf{x}) = I - A^{-1}F'(\bf{x}) = A^{-1}(A-F'(\bf{x}))
+$$ {#eq-thm-CM_inverse_function_theorem_rudin_3}
 
 이므로 @eq-thm-CM_inverse_function_theorem_rudin_1 과 $2\lambda \|A^{-1}\|=1$ 조건을 사용하면
 
 $$
-\forall \bf{x}\in U,\,\left\|\varphi'_\bf{y}(\bf{x})\right\| \le \dfrac{1}{2}
+\forall \bf{x}\in U,\,\left\|\varphi'(\bf{x})\right\| \le \dfrac{1}{2}
+$${#eq-thm-CM_inverse_function_theorem_rudin_4}
+
+이다. 다변수 함수의 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 에 따라
+
+$$
+\bf{x}_1,\,\bf{x}_2 \in U \implies \|\varphi(\bf{x}_1) - \varphi (\bf{x}_2) \| \le \dfrac{1}{2}\|\bf{x}_1-\bf{x}_2\|
+$${#eq-thm-CM_inverse_function_theorem_rudin_5}
+
+이다. $\varphi$ 는 contraction 이며, 따라서 $F(\bf{x})=\bf{y}$ 를 만족하는 $\bf{x}\in U$ 는 많아야 하나 존재한다(@prp-CM_contraction_and_fixed_point). 즉 $F$ 는 단사이다.
+
+$V=F(U)$ 라고 하고 $\bf{y}_0\in V$ 를 선택하면 $F(\bf{x}_0)=\bf{y}_0$ 인 $\bf{x}_0\in U$ 가 유일하게 정해진다. $\bf{x}_0$ 를 중심으로 하는 열린 근방 $B = N(\bf{x}_0,\, r)$ 를 $\overline{B}\subset U$ 가 되도록 잡을 수 있다. $0<R<\lambda r$ 에 대해 $B'=N(\bf{y}_0,\,R)$ 을 생각하자. $\bf{y} \in B'$ 이라면 @eq-thm-CM_inverse_function_theorem_rudin_2 에 의해
+
+$$
+\|\varphi(\bf{x}_0)-\bf{x}_0\| = \|A^{-1}(\bf{y}-\bf{y}_0)\| \le \|A^{-1}\| \|\bf{y}-\bf{y}_0\| < \|A^{-1}\| R\le \dfrac{r}{2}
+$${#eq-thm-CM_inverse_function_theorem_rudin_6}
+
+이다. $\bf{x}\in \overline{B}$ 이라면 @eq-thm-CM_inverse_function_theorem_rudin_5 에 따라
+
+$$
+\|\varphi(\bf{x})-\bf{x}_0 \| \le \|\varphi(\bf{x})-\varphi(\bf{x}_0)\| + \|\varphi(\bf{x}_0)-\bf{x}_0\| < \dfrac{\|\bf{x}-\bf{x}_0\|}{2} + \dfrac{r}{2} \le r
+$${#eq-thm-CM_inverse_function_theorem_rudin_7}
+
+이므로 $\varphi(\bf{x})\in B$ 이다. @eq-thm-CM_inverse_function_theorem_rudin_5 는 $\bf{x}_1,\,\bf{x}_2\in \overline{B}$ 일 경우에도 성립한다는 것을 생각하면 $\varphi$ 는 $\overline{B} \to \overline{B}$ contraction 이다. $\overline{B}$ 는 완비거리공간 $\R^n$ 의 닫힌 부분집합이므로 $\varphi$ 는 유일한 고정점 $\bf{x}\in \overline{B}$ 를 가진다. 이 $\bf{x}$ 에 대해 $F(\bf{x})=\bf{y}$ 이며 따라서 $\bf{y}=F(\bf{x})\in F(U)=V$ 이다. 즉 $B'\subset V$ 이므로 $V$ 는 열린집합이다. 따라서 $F|_U : U \to V$ 는 열린집합 $U,\,V$ 에서의 전단사 함수이다. 
+
+
+($2$) $\bf{y},\, \bf{y}+\bf{k}\in V$ 이면 $\bf{x}=F^{-1}(\bf{y}),\, \bf{x+h}=F^{-1}(\bf{y}+\bf{k})$ 는 모두 $U$ 에 속한다. 따라서
+
+$$
+\varphi(\bf{x}+\bf{h})- \varphi(\bf{x}) = \bf{h} + A^{-1}(F(\bf{x})- F(\bf{x}+\bf{h})) = \bf{h}+A^{-1}\bf{k}
+$${#eq-thm-CM_inverse_function_theorem_rudin_8}
+
+이다. @eq-thm-CM_inverse_function_theorem_rudin_5 로 부터 $\|\bf{h}-A^{-1}\bf{k}| \le \dfrac{1}{2}\|\bf{h}\|$ 이므로 $\|A^{-1}\bf{k}\| \ge \dfrac{1}{2}\|\bf{h}\|$ 이며, 따라서
+
+$$
+\|\bf{h}\| \le 2\|\bf{A}^{-1}\| \|\bf{k}\| = \lambda^{-1}\|\bf{k}\|
+$${#eq-thm-CM_inverse_function_theorem_rudin_9}
+
+이다. @eq-thm-CM_inverse_function_theorem_rudin_0, @eq-thm-CM_inverse_function_theorem_rudin_1 과 @prp-CM_properties_of_matrix_norm_3
+로부터
+
+$$
+\|F'(\bf{x}) - A\| \cdot \|A^{-1}\| < \dfrac{1}{2} < 1
+$$ {#eq-thm-CM_inverse_function_theorem_rudin_10}
+
+이므로 $F'(\bf{x})$ 는 가역이다. 이제 $T=\left(F'(\bf{x})\right)^{-1}$ 라고 하자.
+
+$$
+G(\bf{y}+\bf{k}) - G(\bf{y})-T\bf{k} = \bf{h} - T\bf{k} = -T \left[F(\bf{x}+\bf{h}) - F(\bf{x}) - F'(\bf{x})\bf{h}\right]
+$${#eq-thm-CM_inverse_function_theorem_rudin_11}
+
+이며 @eq-thm-CM_inverse_function_theorem_rudin_6 를 이용하면 
+
+$$
+\begin{aligned}
+\dfrac{\|G(\bf{y}+\bf{k}) - G(\bf{y})-T\bf{k}\|}{\|\bf{k}\|} \le \dfrac{\|T\|}{\lambda} \dfrac{\|F(\bf{x}+\bf{h}) - F(\bf{x}) - F'(\bf{x})\bf{h}\|}{\|\bf{h}\|}
+\end{aligned}
 $$
 
-이다. @thm-CM_mean_value_theorem_for_vector_function 에 따라
+이다. $\|\bf{k}\| \to 0$ 극한에서 $\|\bf{k}\| \to 0$ 이며 우변이 $0$ 이므로 $G$ 는 $\bf{y}$ 에서 미분가능하고 $T=G'(\bf{y})$ 이다. 즉
 
 $$
-\bf{x}_1,\,\bf{x}_2 \in U \implies \|\phi_\bf{y}(\bf[])
+G'(\bf{y}) = (F'(G(\bf{y})))^{-1}
 $$
 
+이다. 이제 $G'$ 이 연속임을 보이자. $G$ 가 $V$ 에서 $U$ 로의 전단사 연속함수아고 $F'$ 역시 $U$ 에서 $\Omega$ 로의 연속함수이며, $(F')^{-1}$ 역시 $\Omega \mapsto \Omega$ 연속함수이므로 $G'$ 역시 $V$ 에서 $\Omega$ 로의 연속함수이다. 즉 $G$ 는 $V$ 에서 정의된 $C^1$-급 함수이다. $\square$
+
+:::
+
+</br>
+
+### 음함수 정리 {#sec-CM_implicit_function_theorem_by_rudin}
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-CM_for_implicit_function_theorem}
+
+$\bf{x}\in \R^m,\, \bf{y}\in \R^n$ 을 $(\bf{x},\, \bf{y}) = (x_1,\ldots,\,x_n,\, y_1,\ldots,\,x_n)\in \R^{m+n}$ 으로 흔히 표기한다. $A\in \mathcal{L}(\R^{m+n},\, \R^m)$ 일 때 $A$ 를 두 선형변환 $A_x,\,A_y$ 를 $A_x\bf{x}=A(\bf{x},\,\bf{0}),\, A_y \bf{y} = A(\bf{0},\, \bf{y})$ 로 분리할 수 있다. 그렇다면
+
+$$
+A(\bf{x},\,\bf{y}) = A_x\bf{x} + A_y\bf{y}
+$${#eq-CM_split_of_linear_operator}
+
+이다. 
+
+::: 
+:::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-CM_implicit_function_theorem_rudin}
+
+$A\in \mathcal{L}(\R^{m+n},\, \R^m)$ 에서 $A_x$ 가 가역행렬이라고 하자. 각각의 $\bf{k}\in \R^n$ 에 대해 $A(\bf{h},\,\bf{k})=\bf{0}$ 이 되도록 하는 $\bf{h}\in \R^m$ 이 유일하게 존재하며 그 $\bf{h}$ 는 다음과 같다.
+
+$$
+\bf{h} = -(A_x)^{-1} A_y\bf{k}.
+$$ {#eq-CM_split_of_linear_operator_2}
+
+
+::: 
+
+</div>
+
+::: {.proof}
+$A_x$ 가 가역행렬이므로 유일하다. $\square$
+
+:::
+
+</br>
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_implicit_function_theorem_rudin}
+
+#### 음함수 정리
+
+열린 $E\subset \R^{m+n}$ 에서 정의된 $F:E \to \R^m$ 이 $C^1$ 함수이고 어떤 $(\bf{a},\,\bf{b}) \in E$ 에서 $F(\bf{a},\bf{b})=\bf{0}$ 이라고 하자. $A=F'(\bf{a},\,\bf{b})$ 이고 $A_x$ 가 가역이면 어떤 $(\bf{a},\,\bf{b})$ 를 포함하는 열린집합 $U$ 와 $\bf{b}$ 를 포함하는 열린 집합 $W$ 가 존재하여
+
+($1$) 각각의 $\bf{y}\in W$ 에 대해 어떤 $\bf{x}\in \R^m$ 이 존재하여 $(\bf{x},\,\bf{y})\in U$ 이고 $F(\bf{x},\,\bf{y})=0$ 이고,
+
+($2$) ($1$) 에 의해 $\bf{y}=G(\bf{x})$ 라 놓을 수 있는데, $G$ 는 $C^1$ 급 함수이며 $G(\bf{b})=\bf{a}$ 이며,
+
+($3$) $G'(\bf{b}) = -(-A_x)^{-1}A_y$ 이다.
+
+::: 
+
+</div>
+
+::: {.proof}
+
+$H:E \to \R^{m+n}$ 을 아래와 같이 정의한다.
+
+$$
+H(\bf{x},\,\bf{y}) := (F(\bf{x},\,\bf{y}),\,\bf{y}).
+$$ {#eq-thm-CM_implicit_function_theorem_rudin_1}
+
+그렇다면 $H$ 는 $C^1$ 급 함수임은 자명하며
+
+$$
+H'(\bf{x},\,\bf{y}) = \begin{bmatrix} D_\bf{x} F(\bf{x},\,\bf{y}) & D_\bf{y} F(\bf{x},\,\bf{y}) \\ \bf{0} & I_n\end{bmatrix},\quad H'(\bf{a},\,\bf{b}) = \begin{bmatrix} A_x & A_y \\ \bf{0} & I_n\end{bmatrix}
+$${#eq-thm-CM_implicit_function_theorem_rudin_2}
+
+이다. $A_x$ 가 가역이므로 $\det (H'(\bf{a},\bf{b})) = \det (A_x) \ne 0$ 이고 따라서 $H'(\bf{a},\,\bf{b})$ 는 가역이다. 우선 $H'(\bf{a},\,\bf{b})$ 가 가역임을 보이자. $F(\bf{a},\,\bf{b})=\bf{0}$ 임을 고려하여
+
+$$
+F(\bf{a}+\bf{h},\,\bf{b}+\bf{k}) = A(\bf{h},\bf{k}) + R(\bf{h},\bf{k})
+$$
+
+가 되도록 $R$ 을 정한다. 그렇다면
+
+$$
+\begin{aligned}
+H(\bf{a}+\bf{h},\, \bf{b}+\bf{k}) - H(\bf{a},\,\bf{b}) &= \left(F(\bf{a}+\bf{h},\bf{b}+\bf{k}),\,\bf{k}\right) \\[0.3em]
+&=\left(A(\bf{h},\bf{k}),\,\bf{k}\right) + (R(\bf{h},\,\bf{k}),\,\bf{0})
+\end{aligned}
+$$
+
+이다. 이는 $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k}) = (A(\bf{h},\,\bf{k}),\,\bf{k})$ 임을 의미한다. $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k})=\bf{0}$ 이면 $\bf{k}=0$ 이며 $A(\bf{h},\,\bf{0}) =\bf{0}$ 이므로 @lem-CM_implicit_function_theorem_rudin 에 따라 $\bf{h}=\bf{0}$ 이다. 
+
+$H'(\bf{a},\,\bf{b})$ 가 가역이므로 역함수 정리에 의해 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $U$ 와 $(\bf{0},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $V$ 가 존재하여 $H:U\to V$ 는 전단사함수이고, 그 역함수 $G:U\to V$ 는 $C^1$ 급 함수이다. 
+
+
+$W:=\{\bf{y}\in \R^n: (\bf{0},\,\bf{y}) \in V\}$ 라고 하자. $\bf{b}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-for_implicit_theorem_rudin_1).
+
+:::
+
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-for_implicit_theorem_rudin_1}
+
+$V\subset \R^{m+n}$ 이 열린 집합일 때 $W=\{\bf{y}\in \R^n : (\bf{0},\,\bf{y}) \in V\}$ 역시 열린집합임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$V$ 가 열린집합이므로 $(\bf{0},\,\bf{y})\in V$ 일 때 $N((0,\,\bf{y}),\, \delta)\subset V$ 인 $\delta>0$ 이 존재한다. 그렇다면 $N(\bf{y},\,\delta)\subset W$ 이므로 $W$ 는 열린집합이다. 
 
 :::

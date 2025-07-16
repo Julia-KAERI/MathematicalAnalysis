@@ -679,24 +679,73 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_properties_of_matrix_norm_1" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 12.2</strong></span> 행렬의 노름에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\boldsymbol{x}\|\le \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\|&lt;\infty\)</span> 이며 <span class="math inline">\(A\)</span> 는 고른 연속이다.</p>
-<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(L,\, T\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이며 <span class="math inline">\(c\in \mathbb{R}\)</span> 일 때 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\|L\boldsymbol{x}\|=0 \iff L=0\)</span>.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\boldsymbol{x}\|\le \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\|&lt;\infty\)</span> 이며 <span class="math inline">\(A\)</span> 는 고른 연속이다.</p>
+<p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(L,\, T\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이며 <span class="math inline">\(c\in \mathbb{R}\)</span> 일 때 다음이 성립한다.</p>
 <p><span class="math display">\[
 \|L+T\| \le \|L\|+\|T\|,\qquad \|cL\| = |c|\cdot \|L\|.
 \]</span></p>
-<p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m),\, T\in \mathcal{L}(\mathbb{R}^m,\, \mathbb{R}^p)\)</span> 일 때 다음이 성립한다.</p>
+<p> (<span class="math inline">\(5\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m),\, T\in \mathcal{L}(\mathbb{R}^m,\, \mathbb{R}^p)\)</span> 일 때 다음이 성립한다.</p>
 <p><span class="math display">\[
 \|T\circ L\| \le \|T\|\cdot \|L\|
 \]</span></p>
+<p> (<span class="math inline">\(6\)</span>) <span class="math inline">\(L\in \mathcal{L}(R^n)\)</span> 이 가역일 때 <span class="math inline">\(\|L^{-1}\| \ge 1/\|L\|\)</span> 이다.</p>
 </div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(L=0\implies \|L\|=0\)</span> 은 자명하다. <span class="math inline">\(\|L\|=0\)</span> 이면 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(L\boldsymbol{x}=0\)</span> 이므로 <span class="math inline">\(L=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\|\boldsymbol{u}\|=\dfrac{\boldsymbol{x}}{\|\boldsymbol{x}\|}\)</span> 라고 하면 <span class="math inline">\(\|L\| \ge \|L\boldsymbol{u}\| = \dfrac{\|L\boldsymbol{x}\|}{\|\boldsymbol{x}\|}\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\|L\|&lt;\infty\)</span> 는 <a href="#exr-CM_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>12.7</span></a> 에서 보였다. (<span class="math inline">\(1\)</span>) 로부터 <span class="math inline">\(\|L(\boldsymbol{x}-\boldsymbol{y})\|\le \|L\|\cdot \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 이므로 고른 연속이다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\|(L+T)(\boldsymbol{x})\|=\|L\boldsymbol{x}+T\boldsymbol{x}\|\le \|L\boldsymbol{x}\|+\|T\boldsymbol{x}\|\le (\|L\|+\|T\|)\|\boldsymbol{x}\|\)</span> 이다. 임의의 <span class="math inline">\(\|x\|=1\)</span> 에 대해 <span class="math inline">\(\|L\|+\|T\| \ge \|(L+T)(\boldsymbol{x})\|\)</span> 이므로 <span class="math inline">\(\|L\|+\|T\| \ge \|L+T\|\)</span> 이다. <span class="math inline">\(\|cL\boldsymbol{x}\| = |c|\cdot \|L\boldsymbol{x}\|\)</span> 이므로 <span class="math inline">\(\|cL\| = |c|\cdot \|L\|\)</span> 이다.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(\|T\circ L(\boldsymbol{x})\| \le \|T\| \cdot \|L\boldsymbol{x}\| \le \|T\|\cdot \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(L\)</span> 이 가역이이면 <span class="math inline">\(I_n = L\circ L^{-1}\)</span> 이며 <span class="math inline">\(\|I_n\|=1\)</span> 이므로 (<span class="math inline">\(4\)</span>) 로부터 <span class="math inline">\(\|L^{-1}\| \ge 1/\|L\|\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_properties_of_matrix_norm_2" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 12.3</strong></span> <span class="math inline">\(\mathcal{L}(\mathbb{R}^n,\,\mathbb{R}^m)\)</span> 에 거리함수가 행렬의 노름으로 주어졌을 때 <span class="math inline">\(\mathcal{L}(\mathbb{R}^n,\,\mathbb{R}^m)\)</span> 은 거리공간이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>행렬의 노름이 <a href="../part2/2_1_basic_topology.html#def-MA_metric_space" class="quarto-xref">정의&nbsp;<span>6.3</span></a> 의 거리함수의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.</p>
 </div>
 <p><br></p>
+<p><span class="math inline">\(\mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_properties_of_matrix_norm_3" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 12.4</strong></span> <span class="math inline">\(\Omega\)</span> 가 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 모든 가역 선형 연자의 집합이라고 하자.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\in \Omega,\, B\in \mathcal{L}(\mathbb{R}^n)\)</span> 이며 <span class="math inline">\(\|B-A\|\cdot \|A^{-1}\| &lt; 1\)</span> 이면 <span class="math inline">\(B \in \Omega\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\Omega\)</span> 는 <span class="math inline">\(\mathcal{L}(\mathbb{R}^n)\)</span> 의 열린 집합이며 <span class="math inline">\(\phi(A)=A^{-1}\)</span> 은 연속이다.</p>
+</div>
+</div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\|\boldsymbol{u}\|=\dfrac{\boldsymbol{x}}{\|\boldsymbol{x}\|}\)</span> 라고 하면 <span class="math inline">\(\|L\| \ge \|L\boldsymbol{u}\| = \dfrac{\|L\boldsymbol{x}\|}{\|\boldsymbol{x}\|}\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\|L\|&lt;\infty\)</span> 는 <a href="#exr-CM_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>12.7</span></a> 에서 보였다. (<span class="math inline">\(1\)</span>) 로부터 <span class="math inline">\(\|L(\boldsymbol{x}-\boldsymbol{y})\|\le \|L\|\cdot \|\boldsymbol{x}-\boldsymbol{y}\|\)</span> 이므로 고른 연속이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\|(L+T)(\boldsymbol{x})\|=\|L\boldsymbol{x}+T\boldsymbol{x}\|\le \|L\boldsymbol{x}\|+\|T\boldsymbol{x}\|\le (\|L\|+\|T\|)\|\boldsymbol{x}\|\)</span> 이다. 임의의 <span class="math inline">\(\|x\|=1\)</span> 에 대해 <span class="math inline">\(\|L\|+\|T\| \ge \|(L+T)(\boldsymbol{x})\|\)</span> 이므로 <span class="math inline">\(\|L\|+\|T\| \ge \|L+T\|\)</span> 이다. <span class="math inline">\(\|cL\boldsymbol{x}\| = |c|\cdot \|L\boldsymbol{x}\|\)</span> 이므로 <span class="math inline">\(\|cL\| = |c|\cdot \|L\|\)</span> 이다.</p>
-<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\|T\circ L(\boldsymbol{x})\| \le \|T\| \cdot \|L\boldsymbol{x}\| \le \|T\|\cdot \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\|A^{-1}\| = 1/\alpha,\, \|B-A\|=\beta\)</span> 라고 하면 <span class="math inline">\(\beta &lt;\alpha\)</span> 이다. <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 일 때</p>
+<p><span class="math display">\[
+\begin{aligned}
+\alpha \|\boldsymbol{x}\| &amp;= \alpha \|A^{-1}A\boldsymbol{x}\| \le \alpha \|A^{-1}\|\cdot \|A\boldsymbol{x}\| \\[0.3em]
+&amp;= \|A\boldsymbol{x}\| \le \|(A-B)\boldsymbol{x}\| + \|B\boldsymbol{x}\| \le \beta\|\boldsymbol{x}\| +\|B\boldsymbol{x}\|
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span id="eq-prp-CM_properties_of_matrix_norm_3_1"><span class="math display">\[
+(\alpha - \beta)\|\boldsymbol{x}\| \le \|B\boldsymbol{x}\|
+\tag{12.3}\]</span></span></p>
+<p>이다. <span class="math inline">\(\alpha-\beta &gt; 0\)</span> 이므로 <span class="math inline">\(\boldsymbol{x}\ne 0 \implies B\boldsymbol{x}\ne \boldsymbol{0}\)</span> 이다. 즉 <span class="math inline">\(B\)</span> 는 가역이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A\in \omega\)</span> 에 대해 <span class="math inline">\(\|B-A\|\le 1/\|A^{-1}\|\)</span> 을 만족하는 <span class="math inline">\(B\in \mathcal{L}(\mathbb{R}^n)\)</span> 은 모두 가역이므로 <span class="math inline">\(\Omega\)</span> 는 열린집합이다. <a href="#eq-prp-CM_properties_of_matrix_norm_3_1" class="quarto-xref">식&nbsp;<span>12.3</span></a> 에서 <span class="math inline">\(\boldsymbol{x}=B\boldsymbol{y}\)</span> 라고 하면</p>
+<p><span class="math display">\[
+(\alpha-\beta) \|B^{-1}\boldsymbol{y}\| \le \|BB^{-1}\boldsymbol{y}\| \le \|\boldsymbol{y}\|
+\]</span></p>
+<p>이므로 <span class="math inline">\(\|B^{-1}\| \le 1/(\alpha-\beta)\)</span> 이다. 행렬에 대해 아래의 항등식이 성립한다.</p>
+<p><span class="math display">\[
+B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
+\]</span></p>
+<p>이로부터</p>
+<p><span class="math display">\[
+\|B^{-1}-A^{-1}\| \le \|B^{-1}\| \cdot \|A-B\| \cdot \|A^{-1}\| \le \dfrac{\beta}{\alpha(\alpha - \beta)}
+\]</span></p>
+<p>이며 <span class="math inline">\(B\to A\)</span> 극한에서 <span class="math inline">\(\beta\to 0\)</span> 이므로 <span class="math inline">\(\|\phi(B)-\phi(A)\| = \|B^{-1}-A^{-1}\| \to 0\)</span> 이다. 즉 <span class="math inline">\(\phi\)</span> 는 연속함수이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -762,7 +811,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_oscillation_and_continuity" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 12.3</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에서 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
+<p><span class="theorem-title"><strong>명제 12.5</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에서 연속인 것의 필요충분조건은 <span class="math inline">\(o(f,\,\boldsymbol{a}) = 0\)</span> 인 것이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -784,7 +833,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_oscillation_and_closed_set" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 12.4</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
+<p><span class="theorem-title"><strong>명제 12.6</strong></span> 닫힌 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x}) \ge \varepsilon\}\)</span> 은 닫힌 집합이다.</p>
 </div>
 </div>
 <div class="proof">
