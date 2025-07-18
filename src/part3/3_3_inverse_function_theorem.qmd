@@ -8,447 +8,6 @@ crossref:
 
 {{< include ../../latexmacros.qmd >}}
 
-## 다변수 벡터 함수의 미분
-
-### 다변수 벡터함수의 미분과 편미분 {#sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function}
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_derivative_and_partial_derivative_1}
-
-#### 다변수 벡터함수의 미분과 편미분 1
-
-$F:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 각각의 $1 \le i \le m,\, 1 \le j \le n$ 에 대해 $D_jf_i(\bf{a})$ 가 존재하며, $F'(\bf{a})$ 는 $m\times n$ 행렬로 $D_jf_i(\bf{a})$ 를 $i$ 행 $j$ 열 성분으로 가진다. 즉
-
-$$
-F'(\bf{a}) = \begin{bmatrix} D_1f_1(\bf{a}) & \cdots & D_nf_1(\bf{a})\\ \vdots & & \vdots \\ D_1 f_m(\bf{a}) & \cdots & D_n f_m(\bf{a}) \end{bmatrix}
-$$ 
-
-이다.
-::: 
-
-</div>
-
-::: {.proof}
-
-@thm-CM_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R^n \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
-
-$$
-H(\bf{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
-$$
-
-이다. 그렇다면 $D_j f_i(\bf{a}) = (f_i \circ H)'(a_j) = f_i'(\bf{a}) \cdot H'(a_j) =f'_i(\bf{a})\cdot \bf{e}_j= (f'_i(\bf{a}))_j$ 이다. 따라서 
-
-$$
-f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}
-$$
-
-이다. $\square$
-
-:::
-
-</br>
-
-즉 우리는 $F:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능할경우 $F'(\bf{a})$ 를 $D_jf_i(\bf{a})$ 로 표현 가능하다는 것을 알았다. 그러나 그 역은 성립하지 않는데 $\bf{a}$ 에 대해 $F$ 의 모든 편미분이 존재하더라도 $F$ 가 미분가능하지 않을 수 있다. 여기에는 하나의 조건이 더 필요하다.
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_derivative_and_partial_derivative_2}
-
-#### 다변수 벡터함수의 미분과 편미분 2
-
-$F:\R^n \to \R^m$ 에 대해 $\bf{a}$ 를 포함하는 어떤 열린 근방에서 $D_jf_i(\bf{a})$ 가 존재하며 연속이면 $F$ 는 $\bf{a}$ 에서 미분가능하다.
-::: 
-
-</div>
-
-::: {.proof}
-
-$f_i := \pi_i\circ F$ 라고 하자. 또한 $\bf{a}$ 를 포함하는 위의 조건을 만족하는 열린 근방에서만 생각한다. 
-
-$$
-\begin{aligned}
-f_i(\bf{a}+\bf{h})-f_i(\bf{a}) &= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
-&\quad + f_i(a_1+h_1, a_2+h_2,a_3,\ldots,\,a_n) - f_i(a_1+h_1,a_2,\ldots,\,a_n) \\[0.3em]
-&\quad + \qquad \qquad \vdots \\[0.3em]
-&\quad + f_i(a_1+h+1, \ldots,a_n+h_n) - f_i(a_1+h_1,\ldots,a_{n-1}+h_{n-1},a_n)
-\end{aligned}
-$$
-
-이다. 평균값정리를 이용하면 $j=1,\ldots,\,n$ 에 대해 
-
-$$
-\begin{aligned}
-f_i(a_1+h_1,\ldots,\,a_{j}+&h_j,\,a_{j+1},\ldots,\,a_n) - f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
-&= h_j D_j f_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
-\end{aligned}
-$$
-
-을 만족하는 $b_j$ 가 $a_j$ 와 $a_j+h_j$ 사이에 존재한다. 즉 이 $b_1,\ldots,\,b_n$ 에 대해 
-
-$$
-f_i(\bf{a}+\bf{h})-f_i(\bf{a}) = \sum_{j=1}^n h_jD_jf_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
-$$
-
-이다. 이제 $\bf{c}_j =(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)$ 라고 하자. 
-
-$$
-\begin{aligned}
-&\left\|F(\bf{a}+\bf{h})-F(\bf{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\bf{a}) \cdot h_j\right\| \\[0.3em] 
-&\qquad \qquad \qquad\le\sum_{i=1}^m \left| f_i(\bf{a}+\bf{h})-f_i(\bf{a}) - \sum_{j=1}^n D_j f_i(\bf{a}) h_j\right| \\[0.3em]
-&\qquad \qquad \qquad=\sum_{i=1}^m \left| \sum_{j=1}^n D_j f_i(\bf{c}_j) h_j- D_j f_i (\bf{a})h_j \right| \\[0.3em]
-&\qquad \qquad \qquad\le \sum_{i=1}^m \sum_{j=1}^n \left|D_j f_i(\bf{c}_j) - D_j f_i (\bf{a})\right||h_j|
-\end{aligned}
-$$
-
-이다. $|h_j|\le \|\bf{h}\|$ 임을 이용하면
-
-$$
-\lim_{\bf{h}\to \bf{0}} \dfrac{\displaystyle \left\|F(\bf{a}+\bf{h})-F(\bf{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\bf{a}) \cdot h_j\right\| }{\|\bf{h}\|} \le \lim_{\bf{h}\to \bf{0}}\sum_{i=1}^m \sum_{j=1}^n\left|D_j f_i(\bf{c}_j) - D_j f_i (\bf{a})\right| = 0
-$$
-
-이며 $\bf{h}\to \bf{0}$ 이면 $\bf{c}_j \to \bf{a}$ 이며 $\bf{a}$ 에서 연속이므로 위의 극한이 $0$ 임을 알 수 있다. $\square$
-
-:::
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_chain_rule_for_multivariable_vector_valued_function}
-
-#### 다변수 벡터함수의 연쇄 규칙
-
-$G:\R^n \to \R^m$ 이 $C^1$ 급 함수이고 $F:\R^m \to \R^p$ 이 $G(\bf{a})$ 에서 미분가능 할 때 다음이 성립한다.
-
-$$
-(F \circ G)'(\bf{a}) = F'(G(\bf{a}))\cdot G'(\bf{a})
-$$
-
-::: 
-
-</div>
-
-::: {.proof}
-
-*trivial*
-:::
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_mean_value_theorem_for_vector_function}
-
-#### 다변수 함수의 중간값 정리
-
-열린 $U\subset\R^n$ 에서 정의된 $F:U \to \R$ 가 $U$ 에서 미분가능하다고 하자. $U$ 가 $\bf{a}$ 와 $\bf{a}+\bf{h}$ 를 잇는 선분을 포함한다면 이 선분상의 한 점 $\bf{c}$ 에서 다음을 만족한다.
-
-$$
-F(\bf{a}+\bf{h}) - F(\bf{a}) = F'(\bf{x})\cdot \bf{h}.
-$$ {#eq-thm_part3_mean_value_theorem_for_vector_function}
-
-:::
-
-</div>
-
-::: {.proof}
-
-$\phi:[0,\,1]\to \R$ 을 $\phi(t) := F(\bf{a}+t\bf{h})$ 라고 정하자. $\phi$ 는 미분가능함수이며 $\phi'(t) = \bf{h} \cdot F'(\bf{a}+t\bf{h})$ 이다. 일변수 함수의 평균값 정리에 의해
-
-$$
-\phi(1)-\phi(0)= \phi'(t_0)(1-0)= \phi'(t_0)
-$$
-
-인 $t_0\in (0,\,1)$ 이 존재하며 이는 @eq-thm_part3_mean_value_theorem_for_vector_function 를 의미한다. $\square$
-
-:::
-
-</br>
-
-### 연습문제 {.unnumbered}
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_28}
-#### Spivak 2_28
-
-다음 함수의 편미분을 구하라.
-
-&emsp;($a$) $F(x,\,y) = f(g(x)k(y),\, g(x)+h(y))$.
-
-&emsp;($b$) $F(x,\,y,\,z) = f(g(x+y),\, h(y+z))$.
-
-&emsp;($c$) $F(x,\,y,\,z) = f(x^y,\, y^z,\,z^x)$.
-
-&emsp;($d$) $F(x,\,y,\,z) = f(x,\,g(x),\, h(x,\,y))$.
-
-:::
-
-</div>
-
-::: {.solution}
-
-($a$) $p(x,\,y) = g(x)k(y),\,q(x,\,y) = g(x)+h(y)$ 라고 놓으면
-
-$$
-\begin{aligned}
-D_1F (x,\,y) &= g'(x) k(y) D_1 f(p(x,\,y),\,q(x,\,y)) + g'(x)D_2 f(p(x,\,y),\,q(x,\,y)), \\[0.3em]
-D_2F(x,\,y) &= g(x)k'(y) D_1 f(p(x,\,y),\,q(x,\,y)) + h'(y) D_2 f(p(x,\,y),\,q(x,\,y)).
-\end{aligned}
-$$
-
-($b$) $D_1F(x,\,y)= g'(x+y) D_1 f(g(x+y),\, h(y+z))$, $D_2F(x,\,y) = g'(x+y)D_1f(g(x,\,y),\,h(y,\,z)) + h'(y+z)D_2f(g(x,\,y),\,h(y+z))$, $D_3F(x,\,y,\,z) = h'(y+z)D_2f(g(x+y),\, h(y+z))$.
-
-($c$) $D_1F(x,\,y,\,z) = x^{y-1}D_1 f(x^y,\, y^z,\,z^x) + (\ln z) z^x D_3 f(x^y,\, y^z,\,z^x)$ 이며 나머지도 같은 방법으로 ...
-
-($d$) $D_1F(x,\,y,\,z) = D_1f(x,\,g(x),\,h(x,\,y)) + g'(x)D_2f(x,\,g(x),\,h(x,\,y)) + D_1h(x,\,y) D_3f(x,\,g(x),\,h(x,\,y))$, $D_2F(x,\,y,\,z) = D_2h(x,\,y)D_3f(x,\,g(x),\,h(x,\,y))$
-
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_29}
-#### Spivak 2_29
-
-$f:\R^n \to \R$ 과 $\bf{x}\in \R^n$ 에 대해 
-
-$$
-\lim_{t \to 0} \dfrac{f(\bf{a}+t\bf{x}) - f(\bf{a})}{t}
-$$
-
-가 존재할 때 $D_\bf{x}f(\bf{a})$ 라 쓰고 $f$ 의 $\bf{a}$ 에서의 $\bf{x}$ 방향의 방향미분이라고 한다. 
-
-&emsp;($a$) $D_{\bf{e}_i} f(\bf{a}) = D_i f(\bf{a})$ 임을 보여라.
-
-&emsp;($b$) $D_{t\bf{x}} f(\bf{a}) = tD_\bf{x}f(\bf{a})$ 임을 보여라.
-
-&emsp;($c$) $f$ 가 $\bf{a}$ 에서 미분가능하면 $D_\bf{x}f(\bf{a}) = Df(\bf{a})(\bf{x})$ 이며, 따라서 $D_{\bf{x}+\bf{y}}f(\bf{a}) = D_\bf{x}f(\bf{a})+ D_{\bf{y}}f(\bf{a})$ 임을 보여라.
-
-:::
-
-</div>
-
-::: {.solution}
-
-($a$) 
-
-$$
-\begin{aligned}
-\lim_{t\to 0}\dfrac{f(\bf{a}+t\bf{e}_i)-f(\bf{a})}{t} &=\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} \\[0.3em]
-&= D_if(\bf{a})
-\end{aligned}
-$$
-
-($b$)
-
-$$
-D_{t\bf{x}}f(\bf{a})= \lim_{s \to 0}\dfrac{f(\bf{a}+st\bf{x})-f(\bf{a})}{s} = \lim_{s \to 0}t\dfrac{f(\bf{a}+st\bf{x})-f(\bf{a})}{ts}=tD_\bf{x}f(\bf{a})
-$$
-
-($c$) $Df(\bf{a})(\bf{x})= \sum_i x_iD_i f(\bf{a})=D_{\bf{x}}f(\bf{a})$ 이다. 이로부터
-
-$$
-D_{\bf{x}+\bf{y}}f(\bf(a)) = Df(\bf{a})(\bf{x}+\bf{y}) = Df(\bf{a})(\bf{x})+ Df(\bf{a})(\bf{y}) = D_\bf{x}f(\bf{a}) + D_\bf{y}f(\bf{a}) 
-$$
-
-이다.
-
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_30}
-#### Spivak 2_30
-
-$f$ 가 @exr-CM_spivak_2_4 의 그것과 같다. $D_\bf{x}f(0,\,0)$ 이 모든 $\bf{x}$ 에서 정의됨을 보여라. 그러나 $g\ne 0$ 이면 $D_{\bf{x}+\bf{y}}f(0,\,0) = D_\bf{x}f(0,\,0) + D_\bf{y}f(0,\,0)$ 은 모든 $\bf{x},\, \bf{y}$ 에서 성립하는 것은 아님을 보여라.
-
-:::
-
-</div>
-
-::: {.solution}
-
-$$
-D_{\bf{x}}f(0,0) = \lim_{t \to 0}\dfrac{f(t\bf{x})}{t} = \lim_{t \to 0} \dfrac{1}{t}\|t\bf{x}\|g\left(\dfrac{t\bf{x}}{\|t\bf{x}\|}\right) 
-$$
-
-이며 $g(-\bf{x})=-g(\bf{x})$ 이므로 $t\to 0^+$ 이든 $t \to 0^-$ 이든 $D_{\bf{x}}f(0,\,0) = f(\bf{x})$ 이다. 
-
-$g \ne 0$ 이면 $g(a,\,b)\ne 0$ 인 $(a,\,b)$ 가 존재한다. 그런데 $D_{(a,0)}f(0,\,0) = aD_{\bf{e}_1}f(0,\,0)=0$, $D_{(0,\,b)}f(0,\,0)=bD_{\bf{e}_2}f(0,\,0)=0$ 이지만 $D_{(a,\,b)}f(0,\,0) = f(a,\,b) \ne 0$ 이다.
-
-
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_31}
-#### Spivak 2_31
-
-$f:\R^2 \to \R$ 이 @exr-CM_spivak_1_26 과 같이 정의되었다. $f$ 가 $(0,\,0)$ 에서 연속이 아니지만 모든 $\bf{x}\in \R^2$ 에서 $D_{\bf{x}} f(0,\,0)$ 이 존재함을 보여라.
-
-:::
-
-</div>
-
-::: {.solution}
-
-$f$ 가 $(0,\,0)$ 에서 연속이 아님은  @exr-CM_spivak_1_26 에서 보였다. $D_{\bf{x}}(0,\,0) = \lim_{t \to 0}\dfrac{f(t\bf{x})}{t}=0$ 이다.
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_32}
-#### Spivak 2_32
-
-($a$) $f:\R\to\R$ 이 다음과 같이 정의되었다.
-
-$$
-f(x) = \left\{\begin{array}{ll} x^2 \sin \dfrac{1}{x},\qquad & x\ne 0 \\ 0,& x=0.\end{array}\right.
-$$
-
-$f$ 가 $0$ 에서 미분가능하지만 $f'$ 은 $0$ 에서 연속이 아님을 보여라.
-
-($b$) $f:\R^2 \to \R$ 이 다음과 같이 정의되었다.
-
-$$
-f(x,\,y) = \left\{\begin{array}{ll} (x^2+y^2) \sin \dfrac{1}{\sqrt{x^2+y^2}},\qquad & (x,\,y) \ne \bf{0} \\ 0,& (x,\,0) = \bf{0}.\end{array}\right.
-$$
-
-$f$ 는 $(0,\,0)$ 에서 미분가능이지만 $D_if$ 는 $(0,\,0)$ 에서 연속이 아님을 보여라.
-
-:::
-
-</div>
-
-::: {.solution}
-
-($a$) $\left|t \sin \left(\dfrac{1}{t}\right)\right| \le |t|$ 이므로 
-
-$$
-f'(0) = \lim_{t \to 0}\dfrac{t^2 \sin (1/t)}{t} = \lim_{t \to 0}t \sin \left(\dfrac{1}{t}\right) = 0
-$$
-
-이다. $x\ne 0$ 에 대해
-
-$$
-f'(x) = x\sin \dfrac{1}{x} - \cos \dfrac{1}{x}
-$$
-
-이며 $x \to 0$ 에 대해 수렴하지 않으므로 $f'$ 은 $0$ 에서 연속이 아니다.
-
-($b$) ($a$) 와 같은 이유로 $f$ 는 $(0,\,0)$ 에서 미분가능이다.
-
-$$
-D_1f(0,\,0) = \lim_{h \to 0} h^2\sin \dfrac{1}{|h|} = 0 = D_2f(0,\,0)
-$$
-
-이다. 그러나
-
-$$
-\begin{aligned}
-D_1 f(x,\,y) &= 2x \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{x}{\sqrt{x^2+y^2}} \cos \dfrac{1}{\sqrt{x^2+y^2}}, \\[0.3em]
-D_2 f(x,\,y) &= 2y \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{y}{\sqrt{x^2+y^2}} \cos \dfrac{1}{\sqrt{x^2+y^2}}.
-\end{aligned}
-$$
-
-이며 둘 다 $(0,\,0)$ 으로의 극한이 존재하지 않는다.
-
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_33}
-#### Spivak 2_33
-
-@thm-CM_derivative_and_partial_derivative_2 에서 $D_1f_i(\bf{a})$ 가 연속인 조건을 제거해도 된다는 것을 보여라. ($D_2f_j$ 부터는 연속이어야 한다.)
-
-:::
-
-</div>
-
-::: {.solution}
-@thm-CM_derivative_and_partial_derivative_2 의 증명에서 $D_1f_i$ 
-
-$$
-\begin{aligned}
-f_i(\bf{a}+\bf{h})-f_i(\bf{a}) &= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
-&\quad + f_i(a_1+h_1, a_2+h_2,a_3,\ldots,\,a_n) - f_i(a_1+h_1,a_2,\ldots,\,a_n) \\[0.3em]
-&\quad + \qquad \qquad \vdots \\[0.3em]
-&\quad + f_i(a_1+h+1, \ldots,a_n+h_n) - f_i(a_1+h_1,\ldots,a_{n-1}+h_{n-1},a_n) \\[0.3em]
-&=f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n)  \\[0.3em]
-&+ \sum_{j=2}^n h_j D_jf_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
-\end{aligned}
-$$
-
-이므로
-
-$$
-\begin{aligned}
-&\left\|F(\bf{a}+\bf{h})-F(\bf{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\bf{a}) \cdot h_j\right\| \\[0.3em] 
-& \qquad\le\sum_{i=1}^m \left| f_i(\bf{a}+\bf{h})-f_i(\bf{a}) - \sum_{j=1}^n D_j f_i(\bf{a}) h_j\right| \\[0.3em]
-& \qquad=\sum_{i=1}^m \left| f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) + \sum_{j=2}^n D_j f_i(\bf{c}_j) h_j- \sum_{j=1}^nD_j f_i (\bf{a})h_j \right| \\[0.3em]
-&\qquad \le \sum_{i=1}^m \left| f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) - D_1 f_i (\bf{a})h_1 \right| \\[0.3em] 
-&\qquad \qquad \qquad + \sum_{i=1}^m \sum_{j=2}^n \left| D_jf_i(\bf{c}_j)h_j - D_jf_i(\bf{a})h_j\right|
-\end{aligned}
-$$
-
-이다. 마지막 의 첫번째 항은 편미분의 정의에 의해 $0$ 으로 수렴하며 두번째 항부터는 $D_jf_i$ 의 연속성에 의해 $0$ 으로 수렴한다. 즉 $D_1f_i$ 는 연속이 아니더라도 미분가능성에는 문제가 없다.
-
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_34}
-#### Spivak 2_34
-
-$f:\R^n \to \R$ 이 자연수 $m$ 에 대해 $f(t\bf{x})=t^mf(\bf{x})$ 라면 **homogeneous of degree $m$** 라고 한다. $f$ 가 미분가능하다면 다음이 성립함을 보여라.
-
-$$
-\sum_{i=1}^n x_i D_i f(\bf{x}) = mf(\bf{x}).
-$$
-
-:::
-
-</div>
-
-::: {.solution}
-
-정해진 $\bf{x}$ 에 대해 $g(t) = f(t\bf{x})$ 라고 하면 $\dfrac{dg(t)}{dt} = mt^{m-1}f(\bf{x})$ 이다. 
-
-$$
-\dfrac{df(t\bf{x})}{dt} = \bf{x}\cdot Df(t\bf{x}) = \sum_{i=1}^n x_i D_i f(t\bf{x})
-$$
-
-이므로 $t=1$ 을 넣으면 $\sum_{i=1}^n x_i D_i f(\bf{x})= mf(\bf{x})$ 이다.
-
-:::
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_spivak_2_35}
-#### Spivak 2_35
-
-$f:\R^n \to \R$ 이 미분가능하며 $f(\bf{0})=0$ 일 때 다음을 만족하는 $g:\R^n \to \R$ 이 존재함을 보여라.
-
-$$
-f(x) = \sum_{i=1}^n x_i g_i(x).
-$$
-
-:::
-
-</div>
-
-::: {.solution}
-
-$h_\bf{x}(t) = f(t\bf{x})$ 라고 하자.  $\displaystyle \dfrac{dh_\bf{x}(t)}{dt} = \sum_{i=1}^n x_i D_i f (t\bf{x})$ 이며
-
-$$
-f(\bf{x}) = f(\bf{x})- f(\bf{0}) = \int_0^1 \dfrac{d h_{\bf{x}}(t)}{dt}\, dt = \sum_{i=1}^n \int_0^1 x_i D_if(t\bf{x})\, dt
-$$
-
-이므로 $g_i(x) = \int_0^1 D_i f(t\bf{x})\, dt$ 이다.
-
-:::
-
-</br>
-
 ## 역함수 정리 {#sec-CM_inverse_function_theorem}
 
 $C^1$ 급 함수 $f:\R\to \R$ 이 $f'(a)\ne 0$ 일 때 $(f^{-1})'(a) = 1/f'(a)$ 임을 안다. $f'(a)>0$ 일 경우 $a$ 의 어떤 근방에서 $f$ 는 전단사 함수이며 국소적으로 역함수가 존재하고 그 도함수도 구할 수 있다는 의미이다. 다변수 함수에서도 똑같은 일을 할 수 있다. 그 전에 미리 알아야 할 것이 있다.
@@ -1270,11 +829,11 @@ $A_x$ 가 가역행렬이므로 유일하다. $\square$
 
 열린 $E\subset \R^{m+n}$ 에서 정의된 $F:E \to \R^m$ 이 $C^1$ 함수이고 어떤 $(\bf{a},\,\bf{b}) \in E$ 에서 $F(\bf{a},\bf{b})=\bf{0}$ 이라고 하자. $A=F'(\bf{a},\,\bf{b})$ 이고 $A_x$ 가 가역이면 어떤 $(\bf{a},\,\bf{b})$ 를 포함하는 열린집합 $U$ 와 $\bf{b}$ 를 포함하는 열린 집합 $W$ 가 존재하여
 
-($1$) 각각의 $\bf{y}\in W$ 에 대해 어떤 $\bf{x}\in \R^m$ 이 존재하여 $(\bf{x},\,\bf{y})\in U$ 이고 $F(\bf{x},\,\bf{y})=0$ 이고,
+&emsp;($a$) 각각의 $\bf{y}\in W$ 에 대해 유일한 $\bf{x}\in \R^m$ 이 존재하여 $(\bf{x},\,\bf{y})\in U$ 이고 $F(\bf{x},\,\bf{y})=0$ 이고,
 
-($2$) ($1$) 에 의해 $\bf{y}=G(\bf{x})$ 라 놓을 수 있는데, $G$ 는 $C^1$ 급 함수이며 $G(\bf{b})=\bf{a}$ 이며,
+&emsp;($b$) ($1$) 에 의해 $\bf{x}=G(\bf{y})$ 라 놓을 수 있는데, $G$ 는 $C^1$ 급 함수이며 $G(\bf{b})=\bf{a}$ 이며,
 
-($3$) $G'(\bf{b}) = -(-A_x)^{-1}A_y$ 이다.
+&emsp;($c$) $G'(\bf{b}) = -(-A_x)^{-1}A_y$ 이다.
 
 ::: 
 
@@ -1282,7 +841,7 @@ $A_x$ 가 가역행렬이므로 유일하다. $\square$
 
 ::: {.proof}
 
-$H:E \to \R^{m+n}$ 을 아래와 같이 정의한다.
+($a$) $H:E \to \R^{m+n}$ 을 아래와 같이 정의한다.
 
 $$
 H(\bf{x},\,\bf{y}) := (F(\bf{x},\,\bf{y}),\,\bf{y}).
@@ -1294,7 +853,9 @@ $$
 H'(\bf{x},\,\bf{y}) = \begin{bmatrix} D_\bf{x} F(\bf{x},\,\bf{y}) & D_\bf{y} F(\bf{x},\,\bf{y}) \\ \bf{0} & I_n\end{bmatrix},\quad H'(\bf{a},\,\bf{b}) = \begin{bmatrix} A_x & A_y \\ \bf{0} & I_n\end{bmatrix}
 $${#eq-thm-CM_implicit_function_theorem_rudin_2}
 
-이다. $A_x$ 가 가역이므로 $\det (H'(\bf{a},\bf{b})) = \det (A_x) \ne 0$ 이고 따라서 $H'(\bf{a},\,\bf{b})$ 는 가역이다. 우선 $H'(\bf{a},\,\bf{b})$ 가 가역임을 보이자. $F(\bf{a},\,\bf{b})=\bf{0}$ 임을 고려하여
+이다. $A_x$ 가 가역이므로 $\det (H'(\bf{a},\bf{b})) = \det (A_x) \ne 0$ 이고 따라서 $H'(\bf{a},\,\bf{b})$ 는 가역이다. 
+
+<!-- 우선 $H'(\bf{a},\,\bf{b})$ 가 가역임을 보이자. $F(\bf{a},\,\bf{b})=\bf{0}$ 임을 고려하여
 
 $$
 F(\bf{a}+\bf{h},\,\bf{b}+\bf{k}) = A(\bf{h},\bf{k}) + R(\bf{h},\bf{k})
@@ -1309,12 +870,27 @@ H(\bf{a}+\bf{h},\, \bf{b}+\bf{k}) - H(\bf{a},\,\bf{b}) &= \left(F(\bf{a}+\bf{h},
 \end{aligned}
 $$
 
-이다. 이는 $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k}) = (A(\bf{h},\,\bf{k}),\,\bf{k})$ 임을 의미한다. $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k})=\bf{0}$ 이면 $\bf{k}=0$ 이며 $A(\bf{h},\,\bf{0}) =\bf{0}$ 이므로 @lem-CM_implicit_function_theorem_rudin 에 따라 $\bf{h}=\bf{0}$ 이다. 
+이다. 이는 $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k}) = (A(\bf{h},\,\bf{k}),\,\bf{k})$ 임을 의미한다. $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k})=\bf{0}$ 이면 $\bf{k}=0$ 이며 $A(\bf{h},\,\bf{0}) =\bf{0}$ 이므로 @lem-CM_implicit_function_theorem_rudin 에 따라 $\bf{h}=\bf{0}$ 이다.  -->
 
 $H'(\bf{a},\,\bf{b})$ 가 가역이므로 역함수 정리에 의해 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $U$ 와 $(\bf{0},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $V$ 가 존재하여 $H:U\to V$ 는 전단사함수이고, 그 역함수 $G:U\to V$ 는 $C^1$ 급 함수이다. 
 
 
-$W:=\{\bf{y}\in \R^n: (\bf{0},\,\bf{y}) \in V\}$ 라고 하자. $\bf{b}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-for_implicit_theorem_rudin_1).
+$W:=\{\bf{y}\in \R^n: (\bf{0},\,\bf{y}) \in V\}$ 라고 하자. $\bf{b}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-for_implicit_theorem_rudin_1). $\bf{y}\in W$ 이면 $H(\bf{x},\bf{y})=(\bf{0},\bf{y})$ 인 $(\bf{x},\,\bf{y})\in U$ 가 존재하며 @eq-thm-CM_implicit_function_theorem_rudin_1 에 따라 $F(\bf{x},\bf{y})=\bf{0}$ 이다. $\overline{\bf{x}} \ne \bf{x}$ 에 대해 $(\overline{\bf{x}},\bf{y})\in U$ 이고 $F(\overline{\bf{x}},\bf{y})=\bf{0}$ 이라면
+
+$$
+H(\overline{\bf{x}},\bf{y}) = H(\bf{x},\bf{y})
+$$
+
+이다. $H$ 는 $U$ 에서 전단사 이므로 $\overline{\bf{x}}=\bf{x}$ 이다. 
+
+($b$) 각각의 $\bf{y}\in W$ 에 대해 $H(\bf{x},\,\bf{y}) = \bf{0}$ 인 $\bf{x}$ 가 유일해게 정해지므로 이를 함수 $G(\bf{y})=\bf{x}$ 로 놓자. 즉 $\bf{y}\in W$ 에 대해 $H(G(\bf{y}),\bf{y})=(\bf{0},\,\bf{y})$ 이며 
+
+$$
+(G(\bf{y}),\,\bf{y}) = H^{-1}(\bf{0},\, \bf{y})
+$$
+
+이다. 역함수 정리에 의해 $H^{-1}:V \to U$ 는 $C^1$ 급 함수이며, 
+
 
 :::
 

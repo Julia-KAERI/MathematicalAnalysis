@@ -309,24 +309,19 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#다변수-벡터-함수의-미분" id="toc-다변수-벡터-함수의-미분" class="nav-link active" data-scroll-target="#다변수-벡터-함수의-미분"><span class="header-section-number">14.1</span> 다변수 벡터 함수의 미분</a>
+  <li><a href="#sec-CM_inverse_function_theorem" id="toc-sec-CM_inverse_function_theorem" class="nav-link active" data-scroll-target="#sec-CM_inverse_function_theorem"><span class="header-section-number">14.1</span> 역함수 정리</a>
   <ul class="collapse">
-  <li><a href="#sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function" id="toc-sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function" class="nav-link" data-scroll-target="#sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function"><span class="header-section-number">14.1.1</span> 다변수 벡터함수의 미분과 편미분</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#sec-CM_inverse_function_theorem" id="toc-sec-CM_inverse_function_theorem" class="nav-link" data-scroll-target="#sec-CM_inverse_function_theorem"><span class="header-section-number">14.2</span> 역함수 정리</a>
+  <li><a href="#sec-CM_implicit_function_theorem" id="toc-sec-CM_implicit_function_theorem" class="nav-link" data-scroll-target="#sec-CM_implicit_function_theorem"><span class="header-section-number">14.2</span> 음함수 정리</a>
   <ul class="collapse">
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
-  <li><a href="#sec-CM_implicit_function_theorem" id="toc-sec-CM_implicit_function_theorem" class="nav-link" data-scroll-target="#sec-CM_implicit_function_theorem"><span class="header-section-number">14.3</span> 음함수 정리</a>
+  <li><a href="#역함수-정리와-음함수-정리에-대한-다른-증명" id="toc-역함수-정리와-음함수-정리에-대한-다른-증명" class="nav-link" data-scroll-target="#역함수-정리와-음함수-정리에-대한-다른-증명"><span class="header-section-number">14.3</span> 역함수 정리와 음함수 정리에 대한 다른 증명</a>
   <ul class="collapse">
+  <li><a href="#sec-CM_inverse_function_theorem_by_rudin" id="toc-sec-CM_inverse_function_theorem_by_rudin" class="nav-link" data-scroll-target="#sec-CM_inverse_function_theorem_by_rudin"><span class="header-section-number">14.3.1</span> 역함수 정리</a></li>
+  <li><a href="#sec-CM_implicit_function_theorem_by_rudin" id="toc-sec-CM_implicit_function_theorem_by_rudin" class="nav-link" data-scroll-target="#sec-CM_implicit_function_theorem_by_rudin"><span class="header-section-number">14.3.2</span> 음함수 정리</a></li>
   <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
-  </ul></li>
-  <li><a href="#역함수-정리와-음함수-정리에-대한-다른-증명" id="toc-역함수-정리와-음함수-정리에-대한-다른-증명" class="nav-link" data-scroll-target="#역함수-정리와-음함수-정리에-대한-다른-증명"><span class="header-section-number">14.4</span> 역함수 정리와 음함수 정리에 대한 다른 증명</a>
-  <ul class="collapse">
-  <li><a href="#sec-CM_inverse_function_theorem_by_rudin" id="toc-sec-CM_inverse_function_theorem_by_rudin" class="nav-link" data-scroll-target="#sec-CM_inverse_function_theorem_by_rudin"><span class="header-section-number">14.4.1</span> 역함수 정리</a></li>
-  <li><a href="#sec-CM_implicit_function_theorem_by_rudin" id="toc-sec-CM_implicit_function_theorem_by_rudin" class="nav-link" data-scroll-target="#sec-CM_implicit_function_theorem_by_rudin"><span class="header-section-number">14.4.2</span> 음함수 정리</a></li>
-  <li><a href="#연습문제-3" id="toc-연습문제-3" class="nav-link" data-scroll-target="#연습문제-3">연습문제</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -361,286 +356,8 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
-<section id="다변수-벡터-함수의-미분" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="다변수-벡터-함수의-미분"><span class="header-section-number">14.1</span> 다변수 벡터 함수의 미분</h2>
-<section id="sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function" class="level3" data-number="14.1.1">
-<h3 data-number="14.1.1" class="anchored" data-anchor-id="sec-CM_derivative_and_partial_derivatives_of_multivariable_vector_valued_function"><span class="header-section-number">14.1.1</span> 다변수 벡터함수의 미분과 편미분</h3>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_derivative_and_partial_derivative_1" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.1 (다변수 벡터함수의 미분과 편미분 1)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에서 미분가능하다면 각각의 <span class="math inline">\(1 \le i \le m,\, 1 \le j \le n\)</span> 에 대해 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며, <span class="math inline">\(F'(\boldsymbol{a})\)</span> 는 <span class="math inline">\(m\times n\)</span> 행렬로 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 를 <span class="math inline">\(i\)</span> 행 <span class="math inline">\(j\)</span> 열 성분으로 가진다. 즉</p>
-<p><span class="math display">\[
-F'(\boldsymbol{a}) = \begin{bmatrix} D_1f_1(\boldsymbol{a}) &amp; \cdots &amp; D_nf_1(\boldsymbol{a})\\ \vdots &amp; &amp; \vdots \\ D_1 f_m(\boldsymbol{a}) &amp; \cdots &amp; D_n f_m(\boldsymbol{a}) \end{bmatrix}
-\]</span></p>
-<p>이다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="3_2_differentiation_of_manifolds.html#thm-CM_basic_properties_of_derivative_of_multivariable_functions" class="quarto-xref">정리&nbsp;<span>13.3</span></a> 의 (<span class="math inline">\(3\)</span>) 에 의해 <span class="math inline">\(f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}\)</span> 임을 보이면 된다. <span class="math inline">\(H:\mathbb{R}^n \to \mathbb{R}^n\)</span> 를 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 <span class="math inline">\(j\)</span> 번째 성분만 <span class="math inline">\(x\)</span> 인 함수라고 하자. 즉</p>
-<p><span class="math display">\[
-H(\boldsymbol{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
-\]</span></p>
-<p>이다. 그렇다면 <span class="math inline">\(D_j f_i(\boldsymbol{a}) = (f_i \circ H)'(a_j) = f_i'(\boldsymbol{a}) \cdot H'(a_j) =f'_i(\boldsymbol{a})\cdot \boldsymbol{e}_j= (f'_i(\boldsymbol{a}))_j\)</span> 이다. 따라서</p>
-<p><span class="math display">\[
-f_i'(\boldsymbol{a}) = \begin{bmatrix} D_1 f_i(\boldsymbol{a}) &amp; \cdots D_n f_i(\boldsymbol{a})\end{bmatrix}
-\]</span></p>
-<p>이다. <span class="math inline">\(\square\)</span></p>
-</div>
-<p><br></p>
-<p>즉 우리는 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능할경우 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 를 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 로 표현 가능하다는 것을 알았다. 그러나 그 역은 성립하지 않는데 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 <span class="math inline">\(F\)</span> 의 모든 편미분이 존재하더라도 <span class="math inline">\(F\)</span> 가 미분가능하지 않을 수 있다. 여기에는 하나의 조건이 더 필요하다.</p>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_derivative_and_partial_derivative_2" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.2 (다변수 벡터함수의 미분과 편미분 2)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 근방에서 <span class="math inline">\(D_jf_i(\boldsymbol{a})\)</span> 가 존재하며 연속이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f_i := \pi_i\circ F\)</span> 라고 하자. 또한 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 위의 조건을 만족하는 열린 근방에서만 생각한다.</p>
-<p><span class="math display">\[
-\begin{aligned}
-f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
-&amp;\quad + f_i(a_1+h_1, a_2+h_2,a_3,\ldots,\,a_n) - f_i(a_1+h_1,a_2,\ldots,\,a_n) \\[0.3em]
-&amp;\quad + \qquad \qquad \vdots \\[0.3em]
-&amp;\quad + f_i(a_1+h+1, \ldots,a_n+h_n) - f_i(a_1+h_1,\ldots,a_{n-1}+h_{n-1},a_n)
-\end{aligned}
-\]</span></p>
-<p>이다. 평균값정리를 이용하면 <span class="math inline">\(j=1,\ldots,\,n\)</span> 에 대해</p>
-<p><span class="math display">\[
-\begin{aligned}
-f_i(a_1+h_1,\ldots,\,a_{j}+&amp;h_j,\,a_{j+1},\ldots,\,a_n) - f_i(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,a_j,\ldots,\,a_n) \\[0.3em]
-&amp;= h_j D_j f_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
-\end{aligned}
-\]</span></p>
-<p>을 만족하는 <span class="math inline">\(b_j\)</span> 가 <span class="math inline">\(a_j\)</span> 와 <span class="math inline">\(a_j+h_j\)</span> 사이에 존재한다. 즉 이 <span class="math inline">\(b_1,\ldots,\,b_n\)</span> 에 대해</p>
-<p><span class="math display">\[
-f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) = \sum_{j=1}^n h_jD_jf_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
-\]</span></p>
-<p>이다. 이제 <span class="math inline">\(\boldsymbol{c}_j =(a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)\)</span> 라고 하자.</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\left\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| \\[0.3em]
-&amp;\qquad \qquad \qquad\le\sum_{i=1}^m \left| f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) - \sum_{j=1}^n D_j f_i(\boldsymbol{a}) h_j\right| \\[0.3em]
-&amp;\qquad \qquad \qquad=\sum_{i=1}^m \left| \sum_{j=1}^n D_j f_i(\boldsymbol{c}_j) h_j- D_j f_i (\boldsymbol{a})h_j \right| \\[0.3em]
-&amp;\qquad \qquad \qquad\le \sum_{i=1}^m \sum_{j=1}^n \left|D_j f_i(\boldsymbol{c}_j) - D_j f_i (\boldsymbol{a})\right||h_j|
-\end{aligned}
-\]</span></p>
-<p>이다. <span class="math inline">\(|h_j|\le \|\boldsymbol{h}\|\)</span> 임을 이용하면</p>
-<p><span class="math display">\[
-\lim_{\boldsymbol{h}\to \boldsymbol{0}} \dfrac{\displaystyle \left\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| }{\|\boldsymbol{h}\|} \le \lim_{\boldsymbol{h}\to \boldsymbol{0}}\sum_{i=1}^m \sum_{j=1}^n\left|D_j f_i(\boldsymbol{c}_j) - D_j f_i (\boldsymbol{a})\right| = 0
-\]</span></p>
-<p>이며 <span class="math inline">\(\boldsymbol{h}\to \boldsymbol{0}\)</span> 이면 <span class="math inline">\(\boldsymbol{c}_j \to \boldsymbol{a}\)</span> 이며 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 연속이므로 위의 극한이 <span class="math inline">\(0\)</span> 임을 알 수 있다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_chain_rule_for_multivariable_vector_valued_function" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.3 (다변수 벡터함수의 연쇄 규칙)</strong></span> <span class="math inline">\(G:\mathbb{R}^n \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이고 <span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^p\)</span> 이 <span class="math inline">\(G(\boldsymbol{a})\)</span> 에서 미분가능 할 때 다음이 성립한다.</p>
-<p><span class="math display">\[
-(F \circ G)'(\boldsymbol{a}) = F'(G(\boldsymbol{a}))\cdot G'(\boldsymbol{a})
-\]</span></p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><em>trivial</em></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_mean_value_theorem_for_vector_function" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.4 (다변수 함수의 중간값 정리)</strong></span> 열린 <span class="math inline">\(U\subset\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(F:U \to \mathbb{R}\)</span> 가 <span class="math inline">\(U\)</span> 에서 미분가능하다고 하자. <span class="math inline">\(U\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 와 <span class="math inline">\(\boldsymbol{a}+\boldsymbol{h}\)</span> 를 잇는 선분을 포함한다면 이 선분상의 한 점 <span class="math inline">\(\boldsymbol{c}\)</span> 에서 다음을 만족한다.</p>
-<p><span id="eq-thm_part3_mean_value_theorem_for_vector_function"><span class="math display">\[
-F(\boldsymbol{a}+\boldsymbol{h}) - F(\boldsymbol{a}) = F'(\boldsymbol{x})\cdot \boldsymbol{h}.
-\tag{14.1}\]</span></span></p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\phi:[0,\,1]\to \mathbb{R}\)</span> 을 <span class="math inline">\(\phi(t) := F(\boldsymbol{a}+t\boldsymbol{h})\)</span> 라고 정하자. <span class="math inline">\(\phi\)</span> 는 미분가능함수이며 <span class="math inline">\(\phi'(t) = \boldsymbol{h} \cdot F'(\boldsymbol{a}+t\boldsymbol{h})\)</span> 이다. 일변수 함수의 평균값 정리에 의해</p>
-<p><span class="math display">\[
-\phi(1)-\phi(0)= \phi'(t_0)(1-0)= \phi'(t_0)
-\]</span></p>
-<p>인 <span class="math inline">\(t_0\in (0,\,1)\)</span> 이 존재하며 이는 <a href="#eq-thm_part3_mean_value_theorem_for_vector_function" class="quarto-xref">식&nbsp;<span>14.1</span></a> 를 의미한다. <span class="math inline">\(\square\)</span></p>
-</div>
-<p><br></p>
-</section>
-<section id="연습문제" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_28" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.1 (Spivak 2_28)</strong></span> 다음 함수의 편미분을 구하라.</p>
-<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(F(x,\,y) = f(g(x)k(y),\, g(x)+h(y))\)</span>.</p>
-<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(F(x,\,y,\,z) = f(g(x+y),\, h(y+z))\)</span>.</p>
-<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(F(x,\,y,\,z) = f(x^y,\, y^z,\,z^x)\)</span>.</p>
-<p> (<span class="math inline">\(d\)</span>) <span class="math inline">\(F(x,\,y,\,z) = f(x,\,g(x),\, h(x,\,y))\)</span>.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(p(x,\,y) = g(x)k(y),\,q(x,\,y) = g(x)+h(y)\)</span> 라고 놓으면</p>
-<p><span class="math display">\[
-\begin{aligned}
-D_1F (x,\,y) &amp;= g'(x) k(y) D_1 f(p(x,\,y),\,q(x,\,y)) + g'(x)D_2 f(p(x,\,y),\,q(x,\,y)), \\[0.3em]
-D_2F(x,\,y) &amp;= g(x)k'(y) D_1 f(p(x,\,y),\,q(x,\,y)) + h'(y) D_2 f(p(x,\,y),\,q(x,\,y)).
-\end{aligned}
-\]</span></p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(D_1F(x,\,y)= g'(x+y) D_1 f(g(x+y),\, h(y+z))\)</span>, <span class="math inline">\(D_2F(x,\,y) = g'(x+y)D_1f(g(x,\,y),\,h(y,\,z)) + h'(y+z)D_2f(g(x,\,y),\,h(y+z))\)</span>, <span class="math inline">\(D_3F(x,\,y,\,z) = h'(y+z)D_2f(g(x+y),\, h(y+z))\)</span>.</p>
-<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(D_1F(x,\,y,\,z) = x^{y-1}D_1 f(x^y,\, y^z,\,z^x) + (\ln z) z^x D_3 f(x^y,\, y^z,\,z^x)\)</span> 이며 나머지도 같은 방법으로 …</p>
-<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(D_1F(x,\,y,\,z) = D_1f(x,\,g(x),\,h(x,\,y)) + g'(x)D_2f(x,\,g(x),\,h(x,\,y)) + D_1h(x,\,y) D_3f(x,\,g(x),\,h(x,\,y))\)</span>, <span class="math inline">\(D_2F(x,\,y,\,z) = D_2h(x,\,y)D_3f(x,\,g(x),\,h(x,\,y))\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_29" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.2 (Spivak 2_29)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 과 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해</p>
-<p><span class="math display">\[
-\lim_{t \to 0} \dfrac{f(\boldsymbol{a}+t\boldsymbol{x}) - f(\boldsymbol{a})}{t}
-\]</span></p>
-<p>가 존재할 때 <span class="math inline">\(D_\boldsymbol{x}f(\boldsymbol{a})\)</span> 라 쓰고 <span class="math inline">\(f\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에서의 <span class="math inline">\(\boldsymbol{x}\)</span> 방향의 방향미분이라고 한다.</p>
-<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(D_{\boldsymbol{e}_i} f(\boldsymbol{a}) = D_i f(\boldsymbol{a})\)</span> 임을 보여라.</p>
-<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(D_{t\boldsymbol{x}} f(\boldsymbol{a}) = tD_\boldsymbol{x}f(\boldsymbol{a})\)</span> 임을 보여라.</p>
-<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하면 <span class="math inline">\(D_\boldsymbol{x}f(\boldsymbol{a}) = Df(\boldsymbol{a})(\boldsymbol{x})\)</span> 이며, 따라서 <span class="math inline">\(D_{\boldsymbol{x}+\boldsymbol{y}}f(\boldsymbol{a}) = D_\boldsymbol{x}f(\boldsymbol{a})+ D_{\boldsymbol{y}}f(\boldsymbol{a})\)</span> 임을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>)</p>
-<p><span class="math display">\[
-\begin{aligned}
-\lim_{t\to 0}\dfrac{f(\boldsymbol{a}+t\boldsymbol{e}_i)-f(\boldsymbol{a})}{t} &amp;=\lim_{t\to 0} \dfrac{f(a_1,\ldots,a_{i-1},a_{i}-t,a_{i+1}\ldots,\,a_n)-f(a_1,\ldots,\,a_n)}{t} \\[0.3em]
-&amp;= D_if(\boldsymbol{a})
-\end{aligned}
-\]</span></p>
-<p>(<span class="math inline">\(b\)</span>)</p>
-<p><span class="math display">\[
-D_{t\boldsymbol{x}}f(\boldsymbol{a})= \lim_{s \to 0}\dfrac{f(\boldsymbol{a}+st\boldsymbol{x})-f(\boldsymbol{a})}{s} = \lim_{s \to 0}t\dfrac{f(\boldsymbol{a}+st\boldsymbol{x})-f(\boldsymbol{a})}{ts}=tD_\boldsymbol{x}f(\boldsymbol{a})
-\]</span></p>
-<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(Df(\boldsymbol{a})(\boldsymbol{x})= \sum_i x_iD_i f(\boldsymbol{a})=D_{\boldsymbol{x}}f(\boldsymbol{a})\)</span> 이다. 이로부터</p>
-<p><span class="math display">\[
-D_{\boldsymbol{x}+\boldsymbol{y}}f(\boldsymbol{(}a)) = Df(\boldsymbol{a})(\boldsymbol{x}+\boldsymbol{y}) = Df(\boldsymbol{a})(\boldsymbol{x})+ Df(\boldsymbol{a})(\boldsymbol{y}) = D_\boldsymbol{x}f(\boldsymbol{a}) + D_\boldsymbol{y}f(\boldsymbol{a})
-\]</span></p>
-<p>이다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_30" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.3 (Spivak 2_30)</strong></span> <span class="math inline">\(f\)</span> 가 <a href="3_2_differentiation_of_manifolds.html#exr-CM_spivak_2_4" class="quarto-xref">연습문제&nbsp;<span>13.4</span></a> 의 그것과 같다. <span class="math inline">\(D_\boldsymbol{x}f(0,\,0)\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\)</span> 에서 정의됨을 보여라. 그러나 <span class="math inline">\(g\ne 0\)</span> 이면 <span class="math inline">\(D_{\boldsymbol{x}+\boldsymbol{y}}f(0,\,0) = D_\boldsymbol{x}f(0,\,0) + D_\boldsymbol{y}f(0,\,0)\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x},\, \boldsymbol{y}\)</span> 에서 성립하는 것은 아님을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
-D_{\boldsymbol{x}}f(0,0) = \lim_{t \to 0}\dfrac{f(t\boldsymbol{x})}{t} = \lim_{t \to 0} \dfrac{1}{t}\|t\boldsymbol{x}\|g\left(\dfrac{t\boldsymbol{x}}{\|t\boldsymbol{x}\|}\right)
-\]</span></p>
-<p>이며 <span class="math inline">\(g(-\boldsymbol{x})=-g(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(t\to 0^+\)</span> 이든 <span class="math inline">\(t \to 0^-\)</span> 이든 <span class="math inline">\(D_{\boldsymbol{x}}f(0,\,0) = f(\boldsymbol{x})\)</span> 이다.</p>
-<p><span class="math inline">\(g \ne 0\)</span> 이면 <span class="math inline">\(g(a,\,b)\ne 0\)</span> 인 <span class="math inline">\((a,\,b)\)</span> 가 존재한다. 그런데 <span class="math inline">\(D_{(a,0)}f(0,\,0) = aD_{\boldsymbol{e}_1}f(0,\,0)=0\)</span>, <span class="math inline">\(D_{(0,\,b)}f(0,\,0)=bD_{\boldsymbol{e}_2}f(0,\,0)=0\)</span> 이지만 <span class="math inline">\(D_{(a,\,b)}f(0,\,0) = f(a,\,b) \ne 0\)</span> 이다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_31" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.4 (Spivak 2_31)</strong></span> <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_26" class="quarto-xref">연습문제&nbsp;<span>12.19</span></a> 과 같이 정의되었다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아니지만 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^2\)</span> 에서 <span class="math inline">\(D_{\boldsymbol{x}} f(0,\,0)\)</span> 이 존재함을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아님은 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_26" class="quarto-xref">연습문제&nbsp;<span>12.19</span></a> 에서 보였다. <span class="math inline">\(D_{\boldsymbol{x}}(0,\,0) = \lim_{t \to 0}\dfrac{f(t\boldsymbol{x})}{t}=0\)</span> 이다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_32" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.5 (Spivak 2_32)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
-<p><span class="math display">\[
-f(x) = \left\{\begin{array}{ll} x^2 \sin \dfrac{1}{x},\qquad &amp; x\ne 0 \\ 0,&amp; x=0.\end{array}\right.
-\]</span></p>
-<p><span class="math inline">\(f\)</span> 가 <span class="math inline">\(0\)</span> 에서 미분가능하지만 <span class="math inline">\(f'\)</span> 은 <span class="math inline">\(0\)</span> 에서 연속이 아님을 보여라.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
-<p><span class="math display">\[
-f(x,\,y) = \left\{\begin{array}{ll} (x^2+y^2) \sin \dfrac{1}{\sqrt{x^2+y^2}},\qquad &amp; (x,\,y) \ne \boldsymbol{0} \\ 0,&amp; (x,\,0) = \boldsymbol{0}.\end{array}\right.
-\]</span></p>
-<p><span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 미분가능이지만 <span class="math inline">\(D_if\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아님을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\left|t \sin \left(\dfrac{1}{t}\right)\right| \le |t|\)</span> 이므로</p>
-<p><span class="math display">\[
-f'(0) = \lim_{t \to 0}\dfrac{t^2 \sin (1/t)}{t} = \lim_{t \to 0}t \sin \left(\dfrac{1}{t}\right) = 0
-\]</span></p>
-<p>이다. <span class="math inline">\(x\ne 0\)</span> 에 대해</p>
-<p><span class="math display">\[
-f'(x) = x\sin \dfrac{1}{x} - \cos \dfrac{1}{x}
-\]</span></p>
-<p>이며 <span class="math inline">\(x \to 0\)</span> 에 대해 수렴하지 않으므로 <span class="math inline">\(f'\)</span> 은 <span class="math inline">\(0\)</span> 에서 연속이 아니다.</p>
-<p>(<span class="math inline">\(b\)</span>) (<span class="math inline">\(a\)</span>) 와 같은 이유로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\((0,\,0)\)</span> 에서 미분가능이다.</p>
-<p><span class="math display">\[
-D_1f(0,\,0) = \lim_{h \to 0} h^2\sin \dfrac{1}{|h|} = 0 = D_2f(0,\,0)
-\]</span></p>
-<p>이다. 그러나</p>
-<p><span class="math display">\[
-\begin{aligned}
-D_1 f(x,\,y) &amp;= 2x \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{x}{\sqrt{x^2+y^2}} \cos \dfrac{1}{\sqrt{x^2+y^2}}, \\[0.3em]
-D_2 f(x,\,y) &amp;= 2y \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{y}{\sqrt{x^2+y^2}} \cos \dfrac{1}{\sqrt{x^2+y^2}}.
-\end{aligned}
-\]</span></p>
-<p>이며 둘 다 <span class="math inline">\((0,\,0)\)</span> 으로의 극한이 존재하지 않는다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_33" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.6 (Spivak 2_33)</strong></span> <a href="#thm-CM_derivative_and_partial_derivative_2" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 에서 <span class="math inline">\(D_1f_i(\boldsymbol{a})\)</span> 가 연속인 조건을 제거해도 된다는 것을 보여라. (<span class="math inline">\(D_2f_j\)</span> 부터는 연속이어야 한다.)</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#thm-CM_derivative_and_partial_derivative_2" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 의 증명에서 <span class="math inline">\(D_1f_i\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) \\[0.3em]
-&amp;\quad + f_i(a_1+h_1, a_2+h_2,a_3,\ldots,\,a_n) - f_i(a_1+h_1,a_2,\ldots,\,a_n) \\[0.3em]
-&amp;\quad + \qquad \qquad \vdots \\[0.3em]
-&amp;\quad + f_i(a_1+h+1, \ldots,a_n+h_n) - f_i(a_1+h_1,\ldots,a_{n-1}+h_{n-1},a_n) \\[0.3em]
-&amp;=f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n)  \\[0.3em]
-&amp;+ \sum_{j=2}^n h_j D_jf_i (a_1+h_1,\ldots,\,a_{j-1}+h_{j-1},\,b_j,\,a_{j+1},\ldots,a_n)
-\end{aligned}
-\]</span></p>
-<p>이므로</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\left\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a}) - \sum_{i=1}^m \sum_{j=1}^n D_j f_i(\boldsymbol{a}) \cdot h_j\right\| \\[0.3em]
-&amp; \qquad\le\sum_{i=1}^m \left| f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) - \sum_{j=1}^n D_j f_i(\boldsymbol{a}) h_j\right| \\[0.3em]
-&amp; \qquad=\sum_{i=1}^m \left| f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) + \sum_{j=2}^n D_j f_i(\boldsymbol{c}_j) h_j- \sum_{j=1}^nD_j f_i (\boldsymbol{a})h_j \right| \\[0.3em]
-&amp;\qquad \le \sum_{i=1}^m \left| f_i(a_1+h_1, a_2,\ldots,\, a_n) - f_i(a_1,\ldots,\,a_n) - D_1 f_i (\boldsymbol{a})h_1 \right| \\[0.3em]
-&amp;\qquad \qquad \qquad + \sum_{i=1}^m \sum_{j=2}^n \left| D_jf_i(\boldsymbol{c}_j)h_j - D_jf_i(\boldsymbol{a})h_j\right|
-\end{aligned}
-\]</span></p>
-<p>이다. 마지막 의 첫번째 항은 편미분의 정의에 의해 <span class="math inline">\(0\)</span> 으로 수렴하며 두번째 항부터는 <span class="math inline">\(D_jf_i\)</span> 의 연속성에 의해 <span class="math inline">\(0\)</span> 으로 수렴한다. 즉 <span class="math inline">\(D_1f_i\)</span> 는 연속이 아니더라도 미분가능성에는 문제가 없다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_34" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.7 (Spivak 2_34)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 자연수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(f(t\boldsymbol{x})=t^mf(\boldsymbol{x})\)</span> 라면 <strong>homogeneous of degree <span class="math inline">\(m\)</span></strong> 라고 한다. <span class="math inline">\(f\)</span> 가 미분가능하다면 다음이 성립함을 보여라.</p>
-<p><span class="math display">\[
-\sum_{i=1}^n x_i D_i f(\boldsymbol{x}) = mf(\boldsymbol{x}).
-\]</span></p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>정해진 <span class="math inline">\(\boldsymbol{x}\)</span> 에 대해 <span class="math inline">\(g(t) = f(t\boldsymbol{x})\)</span> 라고 하면 <span class="math inline">\(\dfrac{dg(t)}{dt} = mt^{m-1}f(\boldsymbol{x})\)</span> 이다.</p>
-<p><span class="math display">\[
-\dfrac{df(t\boldsymbol{x})}{dt} = \boldsymbol{x}\cdot Df(t\boldsymbol{x}) = \sum_{i=1}^n x_i D_i f(t\boldsymbol{x})
-\]</span></p>
-<p>이므로 <span class="math inline">\(t=1\)</span> 을 넣으면 <span class="math inline">\(\sum_{i=1}^n x_i D_i f(\boldsymbol{x})= mf(\boldsymbol{x})\)</span> 이다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-CM_spivak_2_35" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.8 (Spivak 2_35)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(f(\boldsymbol{0})=0\)</span> 일 때 다음을 만족하는 <span class="math inline">\(g:\mathbb{R}^n \to \mathbb{R}\)</span> 이 존재함을 보여라.</p>
-<p><span class="math display">\[
-f(x) = \sum_{i=1}^n x_i g_i(x).
-\]</span></p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(h_\boldsymbol{x}(t) = f(t\boldsymbol{x})\)</span> 라고 하자. <span class="math inline">\(\displaystyle \dfrac{dh_\boldsymbol{x}(t)}{dt} = \sum_{i=1}^n x_i D_i f (t\boldsymbol{x})\)</span> 이며</p>
-<p><span class="math display">\[
-f(\boldsymbol{x}) = f(\boldsymbol{x})- f(\boldsymbol{0}) = \int_0^1 \dfrac{d h_{\boldsymbol{x}}(t)}{dt}\, dt = \sum_{i=1}^n \int_0^1 x_i D_if(t\boldsymbol{x})\, dt
-\]</span></p>
-<p>이므로 <span class="math inline">\(g_i(x) = \int_0^1 D_i f(t\boldsymbol{x})\, dt\)</span> 이다.</p>
-</div>
-<p><br></p>
-</section>
-</section>
-<section id="sec-CM_inverse_function_theorem" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="sec-CM_inverse_function_theorem"><span class="header-section-number">14.2</span> 역함수 정리</h2>
+<section id="sec-CM_inverse_function_theorem" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="sec-CM_inverse_function_theorem"><span class="header-section-number">14.1</span> 역함수 정리</h2>
 <p><span class="math inline">\(C^1\)</span> 급 함수 <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 <span class="math inline">\(f'(a)\ne 0\)</span> 일 때 <span class="math inline">\((f^{-1})'(a) = 1/f'(a)\)</span> 임을 안다. <span class="math inline">\(f'(a)&gt;0\)</span> 일 경우 <span class="math inline">\(a\)</span> 의 어떤 근방에서 <span class="math inline">\(f\)</span> 는 전단사 함수이며 국소적으로 역함수가 존재하고 그 도함수도 구할 수 있다는 의미이다. 다변수 함수에서도 똑같은 일을 할 수 있다. 그 전에 미리 알아야 할 것이 있다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -679,7 +396,7 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_for_inverse_function_theorem_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.9</strong></span> <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 가역이며 <span class="math inline">\(U\in \mathbb{R}^n\)</span> 이 열린 집합이고 <span class="math inline">\(F:U \to \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(F\in C^1\)</span> 일 필요충분조건은 <span class="math inline">\(L\circ F\in C^1\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>연습문제 14.1</strong></span> <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 가역이며 <span class="math inline">\(U\in \mathbb{R}^n\)</span> 이 열린 집합이고 <span class="math inline">\(F:U \to \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(F\in C^1\)</span> 일 필요충분조건은 <span class="math inline">\(L\circ F\in C^1\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -688,7 +405,7 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_for_inverse_function_theorem_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.10</strong></span> <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 가역이며 열린 집합 <span class="math inline">\(U\in \mathbb{R}^n\)</span> 에서 정의된 미분가능한 함수 <span class="math inline">\(F:U \to \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(W=F(U),\, G=L\circ F\)</span> 라고 하자. 이 때 다음은 동치이다.</p>
+<p><span class="theorem-title"><strong>연습문제 14.2</strong></span> <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 이 가역이며 열린 집합 <span class="math inline">\(U\in \mathbb{R}^n\)</span> 에서 정의된 미분가능한 함수 <span class="math inline">\(F:U \to \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(W=F(U),\, G=L\circ F\)</span> 라고 하자. 이 때 다음은 동치이다.</p>
 <p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(F:U\to \mathbb{R}^n\)</span> 에 대해 미분가능한 역함수 <span class="math inline">\(F^{-1}: F(U) \to U\)</span> 가 존재한다.</p>
 <p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(G:U\to \mathbb{R}^n\)</span> 에 대해 미분가능한 역함수 <span class="math inline">\(G^{-1}: G(U) \to U\)</span> 가 존재한다.</p>
 </div>
@@ -719,7 +436,7 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 <p><span class="math display">\[
 \boldsymbol{x}\in U \implies \|H'(\boldsymbol{x})\|\le \dfrac{1}{2nM_2}
 \]</span></p>
-<p>이다. <span class="math inline">\(H(\boldsymbol{x}) = \begin{bmatrix} h_1(\boldsymbol{x})  &amp; \cdots &amp; h_n(\boldsymbol{x}) \end{bmatrix}^T\)</span> 라고 할 때 중간값 정리(<a href="#thm-CM_mean_value_theorem_for_vector_function" class="quarto-xref">정리&nbsp;<span>14.4</span></a>) 를 이용하면 <span class="math inline">\(\boldsymbol{x}_1,\, \boldsymbol{x}_2\in U\)</span> 일 때 어떤 <span class="math inline">\(\boldsymbol{c}_i\in U\)</span> 에 대해</p>
+<p>이다. <span class="math inline">\(H(\boldsymbol{x}) = \begin{bmatrix} h_1(\boldsymbol{x})  &amp; \cdots &amp; h_n(\boldsymbol{x}) \end{bmatrix}^T\)</span> 라고 할 때 중간값 정리(<a href="3_2_differentiation_of_manifolds.html#thm-CM_mean_value_theorem_for_vector_function" class="quarto-xref">정리&nbsp;<span>13.9</span></a>) 를 이용하면 <span class="math inline">\(\boldsymbol{x}_1,\, \boldsymbol{x}_2\in U\)</span> 일 때 어떤 <span class="math inline">\(\boldsymbol{c}_i\in U\)</span> 에 대해</p>
 <p><span class="math display">\[
 |h_i(\boldsymbol{x}_1)-h_i(\boldsymbol{x}_2)| = |Dh_i(\boldsymbol{c}_i)\cdot (\boldsymbol{x}_1-\boldsymbol{x}_2)|  \le \dfrac{1}{2nM_2}\|\boldsymbol{x}_1-\boldsymbol{x}_2\|
 \]</span></p>
@@ -797,10 +514,10 @@ g(\boldsymbol{x}) := \|\boldsymbol{y}-F(\boldsymbol{x})\|^2
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_inverse_function_theorem" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.5 (역함수 정리)</strong></span> <a href="#lem-CM_inverse_function_theorem_3" class="quarto-xref">보조정리&nbsp;<span>14.3</span></a> 에서의 <span class="math inline">\(F^{-1}\)</span> 은 미분가능하며 모든 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정리 14.1 (역함수 정리)</strong></span> <a href="#lem-CM_inverse_function_theorem_3" class="quarto-xref">보조정리&nbsp;<span>14.3</span></a> 에서의 <span class="math inline">\(F^{-1}\)</span> 은 미분가능하며 모든 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_1"><span class="math display">\[
 (F^{-1})'(\boldsymbol{y}) = \left[F'(F^{-1}(\boldsymbol{y}))\right]^{-1}.
-\tag{14.2}\]</span></span></p>
+\tag{14.1}\]</span></span></p>
 <p>이다.</p>
 </div>
 </div>
@@ -808,7 +525,7 @@ g(\boldsymbol{x}) := \|\boldsymbol{y}-F(\boldsymbol{x})\|^2
 <p><span class="proof-title"><em>(증명)</em>. </span>우리는 <a href="#lem-CM_inverse_function_theorem_3" class="quarto-xref">보조정리&nbsp;<span>14.3</span></a> 까지 오면서 <span class="math inline">\(F:V \to W\)</span> 를 전단사가 되게 하는 열린 집합 <span class="math inline">\(V,\,W\)</span> 가 존재함을 보였다. 이제 <span class="math inline">\(F^{-1}\)</span> 이 연속임을 보이자. <span class="math inline">\(V,\,W\)</span> 는 <a href="#lem-CM_inverse_function_theorem_3" class="quarto-xref">보조정리&nbsp;<span>14.3</span></a> 의 증명에서의 그것과 같다. <span class="math inline">\(\boldsymbol{y}_1,\,\boldsymbol{y}_2 \in W\)</span> 일 때 <a href="#lem-CM_inverse_function_theorem_3" class="quarto-xref">보조정리&nbsp;<span>14.3</span></a> 증명의 (<span class="math inline">\(C-1\)</span>) 조건으로부터</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_2"><span class="math display">\[
 \|F^{-1}(\boldsymbol{y}_1)-F^{-1}(\boldsymbol{y}_2)\|  \le  \dfrac{1}{\alpha} \|\boldsymbol{y}_1-\boldsymbol{y}_2\|
-\tag{14.3}\]</span></span></p>
+\tag{14.2}\]</span></span></p>
 <p>이다. 따라서 <span class="math inline">\(F^{-1}\)</span> 은 <span class="math inline">\(W\)</span> 에서 연속이다.</p>
 <p><span class="math inline">\(L= F'(\boldsymbol{x})\)</span> 라고 하자. <a href="3_2_differentiation_of_manifolds.html#thm-CM_chain_rule" class="quarto-xref">정리&nbsp;<span>13.2</span></a> 의 증명에서 나온 <span class="math inline">\(\boldsymbol{\varphi}\)</span> 를 이용하자. <span class="math inline">\(\boldsymbol{x}'\in V\)</span> 에 대해</p>
 <p><span class="math display">\[
@@ -817,7 +534,7 @@ F(\boldsymbol{x}_1) = F(\boldsymbol{x}) + L(\boldsymbol{x}'-\boldsymbol{x}) + \b
 <p>라고 하면</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_3"><span class="math display">\[
 \lim_{\boldsymbol{x}'\to \boldsymbol{x}} \dfrac{\|\boldsymbol{\varphi}(\boldsymbol{x}'-\boldsymbol{x})\|}{\|\boldsymbol{x}'-\boldsymbol{x}\|} = 0
-\tag{14.4}\]</span></span></p>
+\tag{14.3}\]</span></span></p>
 <p>이다. 따라서</p>
 <p><span class="math display">\[
 L^{-1}(F(\boldsymbol{x}')-F(\boldsymbol{x})) = \boldsymbol{x}' - \boldsymbol{x} + L^{-1}(\boldsymbol{\varphi}(\boldsymbol{x}'-\boldsymbol{x}))
@@ -833,12 +550,12 @@ F^{-1}(\boldsymbol{y}') = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}'-\bolds
 <p>임을 보이면 된다. <span class="math inline">\(L^{-1}\)</span> 이 선형변환이므로 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>12.7</span></a> 에 따라</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_4"><span class="math display">\[
 \lim_{\boldsymbol{y}'\to \boldsymbol{y}} \dfrac{\left\| \boldsymbol{\varphi}(F^{-1}(\boldsymbol{y}') - F^{-1}(\boldsymbol{y}))\right\|}{\|\boldsymbol{y}'-\boldsymbol{y}\|} = 0
-\tag{14.5}\]</span></span></p>
+\tag{14.4}\]</span></span></p>
 <p>만 보이면 된다.</p>
 <p><span class="math display">\[
 \dfrac{\left\| \boldsymbol{\varphi}(F^{-1}(\boldsymbol{y}') - F^{-1}(\boldsymbol{y}))\right\|}{\|\boldsymbol{y}'-\boldsymbol{y}\|} = \dfrac{\left\| \boldsymbol{\varphi}(F^{-1}(\boldsymbol{y}') - F^{-1}(\boldsymbol{y}))\right\|}{\|F^{-1}(\boldsymbol{y}')-F^{-1}(\boldsymbol{y})\|}  \dfrac{{\|F^{-1}(\boldsymbol{y}')-F^{-1}(\boldsymbol{y})\|}}{\|\boldsymbol{y}'-\boldsymbol{y}\|}
 \]</span></p>
-<p>인데. <span class="math inline">\(F^{-1}\)</span> 이 연속이므로 <a href="#eq-thm-CM_inverse_function_theorem_3" class="quarto-xref">식&nbsp;<span>14.4</span></a> 에 따라 첫번째 항의 <span class="math inline">\(\boldsymbol{y}'\to \boldsymbol{y}\)</span> 극한은 <span class="math inline">\(0\)</span> 이다. 또한 <a href="#eq-thm-CM_inverse_function_theorem_2" class="quarto-xref">식&nbsp;<span>14.3</span></a> 에 따라 두번째 항은 <span class="math inline">\(1/\alpha\)</span> 보다 작으므로 <a href="#eq-thm-CM_inverse_function_theorem_4" class="quarto-xref">식&nbsp;<span>14.5</span></a> 가 성립한다.</p>
+<p>인데. <span class="math inline">\(F^{-1}\)</span> 이 연속이므로 <a href="#eq-thm-CM_inverse_function_theorem_3" class="quarto-xref">식&nbsp;<span>14.3</span></a> 에 따라 첫번째 항의 <span class="math inline">\(\boldsymbol{y}'\to \boldsymbol{y}\)</span> 극한은 <span class="math inline">\(0\)</span> 이다. 또한 <a href="#eq-thm-CM_inverse_function_theorem_2" class="quarto-xref">식&nbsp;<span>14.2</span></a> 에 따라 두번째 항은 <span class="math inline">\(1/\alpha\)</span> 보다 작으므로 <a href="#eq-thm-CM_inverse_function_theorem_4" class="quarto-xref">식&nbsp;<span>14.4</span></a> 가 성립한다.</p>
 <p>즉 <span class="math inline">\(\boldsymbol{y}=F(\boldsymbol{x})\)</span> 일 때</p>
 <p><span class="math display">\[
 (F^{-1})'(\boldsymbol{y}) = (F'(\boldsymbol{x}))^{-1} = [F'(F^{-1}(\boldsymbol{y}))]^{-1}
@@ -846,12 +563,12 @@ F^{-1}(\boldsymbol{y}') = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}'-\bolds
 <p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<section id="연습문제-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
+<section id="연습문제" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_36" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.11 (Spivak 2.36)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 열린 집합이며 <span class="math inline">\(F:A \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이고 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\det (F'(\boldsymbol{x}))\ne 0\)</span> 이다. <span class="math inline">\(F(A)\)</span> 는 열린 집합이며 <span class="math inline">\(F^{-1}:F(A)\to A\)</span> 는 미분가능함을 보여라. <span class="math inline">\(B\subset A\)</span> 가 열린 집합이면 <span class="math inline">\(F(B)\)</span> 도 열린 집합임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 14.3 (Spivak 2.36)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 열린 집합이며 <span class="math inline">\(F:A \to \mathbb{R}^n\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이고 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\det (F'(\boldsymbol{x}))\ne 0\)</span> 이다. <span class="math inline">\(F(A)\)</span> 는 열린 집합이며 <span class="math inline">\(F^{-1}:F(A)\to A\)</span> 는 미분가능함을 보여라. <span class="math inline">\(B\subset A\)</span> 가 열린 집합이면 <span class="math inline">\(F(B)\)</span> 도 열린 집합임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -861,7 +578,7 @@ F^{-1}(\boldsymbol{y}') = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}'-\bolds
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_37" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.12 (Spivak 2.37)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이다. <span class="math inline">\(f\)</span> 가 단사함수가 될 수 없음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 14.4 (Spivak 2.37)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 급 함수이다. <span class="math inline">\(f\)</span> 가 단사함수가 될 수 없음을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) (<span class="math inline">\(a\)</span>) 의 결과를 <span class="math inline">\(m&lt;n\)</span> 일 때의 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 으로 일반화하라.</p>
 </div>
 </div>
@@ -870,7 +587,7 @@ F^{-1}(\boldsymbol{y}') = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}'-\bolds
 <p><span class="math display">\[
 \det (G'(a_1,\,a_2)) = \det \left(\begin{bmatrix} D_1f(a_1,\,a_2) &amp; D_2f(a_1,\,a_2) \\ 0 &amp; 1 \end{bmatrix}\right) = D_1f(a_1,\,a_2) \ne 0
 \]</span></p>
-<p>이며 <a href="#exr-CM_spivak_2_36" class="quarto-xref">연습문제&nbsp;<span>14.11</span></a> 에 의해 <span class="math inline">\(G(A)\)</span> 는 열린집합이다. <span class="math inline">\((a_1,\,a_2) \in A\)</span> 이면 <span class="math inline">\(G(a_1,\,a_2)=\)</span><span class="math inline">\((f(a_1,\,a_2),\, a_2)\)</span><span class="math inline">\(\in G(A)\)</span> 이므로 어떤 <span class="math inline">\(\widetilde{a}_2 \ne a_2\)</span> 에 대해 <span class="math inline">\((f(a_1,\,a_2),\,\widetilde{a}_2) \in G(A)\)</span> 이다. 그런데 <span class="math inline">\(f\)</span> 가 단사이므로 <span class="math inline">\(f(a_1,\,\widetilde{a}_2) \ne f(a_1,\,a_2)\)</span> 이다. 따라서 <span class="math inline">\((f(a_1,\,a_2),\,\widetilde{a}_2) \notin G(A)\)</span> 이어야 하므로 모순. 따라서 <span class="math inline">\(f\)</span> 는 단사 일 수 없다.</p>
+<p>이며 <a href="#exr-CM_spivak_2_36" class="quarto-xref">연습문제&nbsp;<span>14.3</span></a> 에 의해 <span class="math inline">\(G(A)\)</span> 는 열린집합이다. <span class="math inline">\((a_1,\,a_2) \in A\)</span> 이면 <span class="math inline">\(G(a_1,\,a_2)=\)</span><span class="math inline">\((f(a_1,\,a_2),\, a_2)\)</span><span class="math inline">\(\in G(A)\)</span> 이므로 어떤 <span class="math inline">\(\widetilde{a}_2 \ne a_2\)</span> 에 대해 <span class="math inline">\((f(a_1,\,a_2),\,\widetilde{a}_2) \in G(A)\)</span> 이다. 그런데 <span class="math inline">\(f\)</span> 가 단사이므로 <span class="math inline">\(f(a_1,\,\widetilde{a}_2) \ne f(a_1,\,a_2)\)</span> 이다. 따라서 <span class="math inline">\((f(a_1,\,a_2),\,\widetilde{a}_2) \notin G(A)\)</span> 이어야 하므로 모순. 따라서 <span class="math inline">\(f\)</span> 는 단사 일 수 없다.</p>
 <p>어떤 <span class="math inline">\((x_1,\,y_1)\in A\)</span> 에 대해 <span class="math inline">\(D_1f(x_1,\,y_1)= 0\)</span> 이라고 하자. <span class="math inline">\(D_2f(x_1,\,y_1) \ne 0\)</span> 일 때는 앞의 경우와 마찬가지로 <span class="math inline">\(f\)</span> 가 단사가 될 수 없음을 보일 수 있다.</p>
 <p>이제 <span class="math inline">\(D_1f(x_1,\,y_1)=D_2f(x_1,\,y_1)=0\)</span></p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F(x_1,\ldots,\,x_n)\)</span> 이 단사라고 하자. <span class="math inline">\(G=(F(x_1,\ldots,\,x_n),\, )\)</span></p>
@@ -878,7 +595,7 @@ F^{-1}(\boldsymbol{y}') = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}'-\bolds
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_38" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.13 (Spivak 2.38)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 모든 <span class="math inline">\(x\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(f'(x) \ne 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단사임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 14.5 (Spivak 2.38)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 모든 <span class="math inline">\(x\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(f'(x) \ne 0\)</span> 이면 <span class="math inline">\(f\)</span> 는 단사임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F:\mathbb{R}^2 \to \mathbb{R}^2\)</span> 가 <span class="math inline">\(F(x,\,y) := \begin{bmatrix} e^x \cos y &amp; e^x \sin y\end{bmatrix}^T\)</span> 이다. <span class="math inline">\(F'(x,\,y) \ne 0\)</span> 이지만 <span class="math inline">\(F\)</span> 는 단사가 아님을 보여라.</p>
 </div>
 </div>
@@ -889,7 +606,7 @@ F^{-1}(\boldsymbol{y}') = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}'-\bolds
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_39" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.14 (Spivak 2.39)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
+<p><span class="theorem-title"><strong>연습문제 14.6 (Spivak 2.39)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
 <p><span class="math display">\[
 f(x) = \left\{\begin{array}{ll} \dfrac{x}{2} + x^2 \sin \dfrac{1}{x}, \qquad &amp; x\ne 0,\\ 0 &amp; x = 0\end{array}\right.
 \]</span></p>
@@ -909,8 +626,8 @@ f'(0) = \lim_{t \to 0}\left(\dfrac{1}{2} + t \sin \dfrac{1}{t}\right) = \dfrac{1
 <p><br></p>
 </section>
 </section>
-<section id="sec-CM_implicit_function_theorem" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="sec-CM_implicit_function_theorem"><span class="header-section-number">14.3</span> 음함수 정리</h2>
+<section id="sec-CM_implicit_function_theorem" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="sec-CM_implicit_function_theorem"><span class="header-section-number">14.2</span> 음함수 정리</h2>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_pts_of_inverse_function" class="theorem example">
@@ -920,11 +637,11 @@ f'(0) = \lim_{t \to 0}\left(\dfrac{1}{2} + t \sin \dfrac{1}{t}\right) = \dfrac{1
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_implicit_function_theorem_1" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.6</strong></span> <span class="math inline">\(F: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 이 <span class="math inline">\((\boldsymbol{a}, \boldsymbol{b})\)</span> 를 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수이며 <span class="math inline">\(F(\boldsymbol{a}, \boldsymbol{b})=0\)</span> 이라고 하자. <span class="math inline">\(m \times m\)</span> 행렬 <span class="math inline">\(M\)</span> 에 대해 <span class="math inline">\(M_{ij} = D_{n+j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 이고 <span class="math inline">\(\det (M) \ne 0\)</span> 이면 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(\boldsymbol{b}\)</span> 를 포함하는 어떤 열린집합 <span class="math inline">\(B\subset \mathbb{R}^m\)</span> 에서 정의된 미분가능한 단사 함수 <span class="math inline">\(G:A \to B\)</span> 가 존재하여 <span class="math inline">\(F(\boldsymbol{x},\, G(\boldsymbol{x})) = 0\)</span> 이 되도록 한다.</p>
+<p><span class="theorem-title"><strong>정리 14.2</strong></span> <span class="math inline">\(F: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 이 <span class="math inline">\((\boldsymbol{a}, \boldsymbol{b})\)</span> 를 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수이며 <span class="math inline">\(F(\boldsymbol{a}, \boldsymbol{b})=0\)</span> 이라고 하자. <span class="math inline">\(m \times m\)</span> 행렬 <span class="math inline">\(M\)</span> 에 대해 <span class="math inline">\(M_{ij} = D_{n+j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 이고 <span class="math inline">\(\det (M) \ne 0\)</span> 이면 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(\boldsymbol{b}\)</span> 를 포함하는 어떤 열린집합 <span class="math inline">\(B\subset \mathbb{R}^m\)</span> 에서 정의된 미분가능한 단사 함수 <span class="math inline">\(G:A \to B\)</span> 가 존재하여 <span class="math inline">\(F(\boldsymbol{x},\, G(\boldsymbol{x})) = 0\)</span> 이 되도록 한다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\widetilde{F}: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 <span class="math inline">\(\widetilde{F}(\boldsymbol{x},\,\boldsymbol{y}) := (\boldsymbol{x},\, F(\boldsymbol{x},\,\boldsymbol{y}))\)</span> 로 정의하자. <span class="math inline">\(\det (\widetilde{F}'(\boldsymbol{a},\, \boldsymbol{b}))\)</span><span class="math inline">\(= \det (M) \ne 0\)</span> 이므로 역함수 정리 (<a href="#thm-CM_inverse_function_theorem" class="quarto-xref">정리&nbsp;<span>14.5</span></a>) 에 따라 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V\)</span> 와 <span class="math inline">\(F(\boldsymbol{a},\, \boldsymbol{b})=(\boldsymbol{a},\, \boldsymbol{0})\)</span> 을 포함하는 열린 집합 <span class="math inline">\(W\)</span> 에서 정의된 <span class="math inline">\(\widetilde{F}\)</span> 의 미분가능한 역함수 <span class="math inline">\(\widetilde{F}^{-1}:W \to V\)</span> 가 존재한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\widetilde{F}: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 <span class="math inline">\(\widetilde{F}(\boldsymbol{x},\,\boldsymbol{y}) := (\boldsymbol{x},\, F(\boldsymbol{x},\,\boldsymbol{y}))\)</span> 로 정의하자. <span class="math inline">\(\det (\widetilde{F}'(\boldsymbol{a},\, \boldsymbol{b}))\)</span><span class="math inline">\(= \det (M) \ne 0\)</span> 이므로 역함수 정리 (<a href="#thm-CM_inverse_function_theorem" class="quarto-xref">정리&nbsp;<span>14.1</span></a>) 에 따라 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V\)</span> 와 <span class="math inline">\(F(\boldsymbol{a},\, \boldsymbol{b})=(\boldsymbol{a},\, \boldsymbol{0})\)</span> 을 포함하는 열린 집합 <span class="math inline">\(W\)</span> 에서 정의된 <span class="math inline">\(\widetilde{F}\)</span> 의 미분가능한 역함수 <span class="math inline">\(\widetilde{F}^{-1}:W \to V\)</span> 가 존재한다.</p>
 <p><span class="math inline">\(V\)</span> 를 <span class="math inline">\(A\subset \mathbb{R}^n,\, B\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(V=A \times B\)</span> 가 되도록 할 수 있으며 그렇다면 <span class="math inline">\(\widetilde{F}^{-1}: W \to A \times B\)</span> 는 어떤 함수 미분가능한 함수 <span class="math inline">\(K:W \to B\)</span> 에 대해 <span class="math inline">\(\widetilde{F}^{-1}(\boldsymbol{x},\,\boldsymbol{y}) = (\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y}))\)</span> 이다(<a href="#exm-CM_pts_of_inverse_function" class="quarto-xref">예제&nbsp;<span>14.1</span></a>). 이제 <span class="math inline">\(\Phi:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 을 <span class="math inline">\(\Phi (\boldsymbol{x},\, \boldsymbol{y}) := \boldsymbol{y}\)</span> 로 정의하면 <span class="math inline">\(\Phi \circ \widetilde{F} = F\)</span> 이다. 따라서</p>
 <p><span class="math display">\[
 F(\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y})) = (F \circ \widetilde{F}^{-1})(\boldsymbol{x},\, \boldsymbol{y}) = (\Phi \circ \widetilde{F} \circ \widetilde{F}^{-1})(\boldsymbol{x},\, \boldsymbol{y}) = \boldsymbol{y}
@@ -940,26 +657,26 @@ F(\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y})) = (F \circ \widetilde{F
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_implicit_function_theorem_2" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.7</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m  \to \mathbb{R}^m\)</span> 가 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\in \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수라고 하자. <span class="math inline">\(F(\boldsymbol{a},\,\boldsymbol{b})=\boldsymbol{0}\)</span> 이며 <span class="math inline">\(m\times (n+m)\)</span> 행렬 <span class="math inline">\(M_{ij} = D_{j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 에 대해 <span class="math inline">\(\text{rank}(M)=m\)</span> 라면 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^{n+m}\)</span> 에서 정의된, 아래의 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 를 만족하는 <span class="math inline">\(H: A\to \mathbb{R}^n \times \mathbb{R}^m\)</span> 이 존재한다.</p>
+<p><span class="theorem-title"><strong>정리 14.3</strong></span> <span class="math inline">\(F:\mathbb{R}^n \times \mathbb{R}^m  \to \mathbb{R}^m\)</span> 가 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\in \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 포함하는 열린 집합에서 <span class="math inline">\(C^1\)</span> 급 함수라고 하자. <span class="math inline">\(F(\boldsymbol{a},\,\boldsymbol{b})=\boldsymbol{0}\)</span> 이며 <span class="math inline">\(m\times (n+m)\)</span> 행렬 <span class="math inline">\(M_{ij} = D_{j}f_i(\boldsymbol{a},\,\boldsymbol{b})\)</span> 에 대해 <span class="math inline">\(\text{rank}(M)=m\)</span> 라면 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^{n+m}\)</span> 에서 정의된, 아래의 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 를 만족하는 <span class="math inline">\(H: A\to \mathbb{R}^n \times \mathbb{R}^m\)</span> 이 존재한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(H^{-1}\)</span> 이 존재하고 미분가능하며,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\((F\circ H)(\boldsymbol{x},\,\boldsymbol{y}) = \boldsymbol{y}\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>우선 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.6</span></a> 와의 차이를 보자. <span class="math inline">\(F'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 는 <span class="math inline">\(m \times (n +m )\)</span> 행렬이며 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.6</span></a> 은 정체 행과 마지막 <span class="math inline">\(m\)</span> 개의 열로 이루어진 행렬의 행렬식이 <span class="math inline">\(0\)</span> 이 아난 경우이며, 즉 마지막 <span class="math inline">\(m\)</span> 개의 열이 선형독립인 경우이며, 여기는 전체 <span class="math inline">\(m+n\)</span> 개의 열 가운데 위치에 무관하게 <span class="math inline">\(m\)</span> 개의 열이 선형독립인 경우이다.</p>
-<p>이제 <span class="math inline">\(m\)</span> 개의 선형독립인 열의 인덱스를 <span class="math inline">\(j_1,\ldots,\,j_m\)</span> 이라고 하고 열에 대한 permutation <span class="math inline">\(G: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 <span class="math inline">\(G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})\)</span> 이라고 하면 <span class="math inline">\(F\circ G\)</span> 는 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.6</span></a> 의 <span class="math inline">\(F\)</span> 와 똑같은 경우이다. 물론 <span class="math inline">\(G\)</span> 는 선형변환이며 따라서 전체 <span class="math inline">\(\mathbb{R}^n \times \mathbb{R}^m\)</span> 에서 <span class="math inline">\(C^\infty\)</span> 급 함수이다.</p>
-<p><a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.6</span></a> 에 따라 <span class="math inline">\(F \circ G\)</span> 에 대해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 와의 차이를 보자. <span class="math inline">\(F'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 는 <span class="math inline">\(m \times (n +m )\)</span> 행렬이며 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 은 정체 행과 마지막 <span class="math inline">\(m\)</span> 개의 열로 이루어진 행렬의 행렬식이 <span class="math inline">\(0\)</span> 이 아난 경우이며, 즉 마지막 <span class="math inline">\(m\)</span> 개의 열이 선형독립인 경우이며, 여기는 전체 <span class="math inline">\(m+n\)</span> 개의 열 가운데 위치에 무관하게 <span class="math inline">\(m\)</span> 개의 열이 선형독립인 경우이다.</p>
+<p>이제 <span class="math inline">\(m\)</span> 개의 선형독립인 열의 인덱스를 <span class="math inline">\(j_1,\ldots,\,j_m\)</span> 이라고 하고 열에 대한 permutation <span class="math inline">\(G: \mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^n \times \mathbb{R}^m\)</span> 을 <span class="math inline">\(G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})\)</span> 이라고 하면 <span class="math inline">\(F\circ G\)</span> 는 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 의 <span class="math inline">\(F\)</span> 와 똑같은 경우이다. 물론 <span class="math inline">\(G\)</span> 는 선형변환이며 따라서 전체 <span class="math inline">\(\mathbb{R}^n \times \mathbb{R}^m\)</span> 에서 <span class="math inline">\(C^\infty\)</span> 급 함수이다.</p>
+<p><a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 에 따라 <span class="math inline">\(F \circ G\)</span> 에 대해</p>
 <p><span class="math display">\[
 (F \circ G)(\boldsymbol{x},\,K(\boldsymbol{x},\, \boldsymbol{y})) = \boldsymbol{y}
 \]</span></p>
 <p>인 미분가능한 함수 <span class="math inline">\(K:\mathbb{R}^n \times \mathbb{R}^m \to \mathbb{R}^m\)</span> 이 존재하며 <span class="math inline">\(H=G \circ (\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y}))\)</span> 라고 놓으면 된다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<section id="연습문제-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
+<section id="연습문제-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_40" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.15 (Spivak 2.40)</strong></span> 음함수 정리를 이용하여 <a href="3_2_differentiation_of_manifolds.html#exr-CM_spivak_2_15" class="quarto-xref">연습문제&nbsp;<span>13.15</span></a> (<span class="math inline">\(c\)</span>) 를 다시 풀어라.</p>
+<p><span class="theorem-title"><strong>연습문제 14.7 (Spivak 2.40)</strong></span> 음함수 정리를 이용하여 <a href="3_2_differentiation_of_manifolds.html#exr-CM_spivak_2_15" class="quarto-xref">연습문제&nbsp;<span>13.15</span></a> (<span class="math inline">\(c\)</span>) 를 다시 풀어라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -967,12 +684,12 @@ F(\boldsymbol{x},\, K(\boldsymbol{x},\, \boldsymbol{y})) = (F \circ \widetilde{F
 <p><span class="math display">\[
 f_i (t,\,\boldsymbol{x}) = \sum_{j=1}^n a_{ij}(t)x_j - b_i(t)
 \]</span></p>
-<p>로 정의한다. <span class="math inline">\(\det ([a_{ij}]) \ne 0\)</span> 이므로 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.6</span></a> 에 의해 <span class="math inline">\(F(t,\, X(t)) = 0\)</span> 이 되도록 하는 미분가능한 <span class="math inline">\(X(t) = \begin{bmatrix} x_1(t) &amp; \cdots &amp; x_n(t)\end{bmatrix}^T\)</span> 가 존재한다.</p>
+<p>로 정의한다. <span class="math inline">\(\det ([a_{ij}]) \ne 0\)</span> 이므로 <a href="#thm-CM_implicit_function_theorem_1" class="quarto-xref">정리&nbsp;<span>14.2</span></a> 에 의해 <span class="math inline">\(F(t,\, X(t)) = 0\)</span> 이 되도록 하는 미분가능한 <span class="math inline">\(X(t) = \begin{bmatrix} x_1(t) &amp; \cdots &amp; x_n(t)\end{bmatrix}^T\)</span> 가 존재한다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_41" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.16 (Spivak 2.41)</strong></span> <span class="math inline">\(f:\mathbb{R}\times \mathbb{R}\to \mathbb{R}\)</span> 이 미분가능하다. 각각의 <span class="math inline">\(x\in\mathbb{R}\)</span> 에 대해 <span class="math inline">\(g_x:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g_x(y)= f(x,\,y)\)</span> 로 정의하자. 각각의 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(g_x'(y) = 0\)</span> 이 되도록 하는 <span class="math inline">\(y\)</span> 가 유일하게 존재한다고 가정하고 이 <span class="math inline">\(y\)</span> 를 <span class="math inline">\(c(x)\)</span> 라고 하자.</p>
+<p><span class="theorem-title"><strong>연습문제 14.8 (Spivak 2.41)</strong></span> <span class="math inline">\(f:\mathbb{R}\times \mathbb{R}\to \mathbb{R}\)</span> 이 미분가능하다. 각각의 <span class="math inline">\(x\in\mathbb{R}\)</span> 에 대해 <span class="math inline">\(g_x:\mathbb{R}\to \mathbb{R}\)</span> 을 <span class="math inline">\(g_x(y)= f(x,\,y)\)</span> 로 정의하자. 각각의 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(g_x'(y) = 0\)</span> 이 되도록 하는 <span class="math inline">\(y\)</span> 가 유일하게 존재한다고 가정하고 이 <span class="math inline">\(y\)</span> 를 <span class="math inline">\(c(x)\)</span> 라고 하자.</p>
 <p>(<span class="math inline">\(a\)</span>) 모든 <span class="math inline">\((x,\,y)\)</span> 에 대해 <span class="math inline">\(D_{2,2} f(x,\,y) \ne 0\)</span> 이면 <span class="math inline">\(c\)</span> 는 미분가능하며</p>
 <p><span class="math display">\[
 c'(x) = - \dfrac{D_{2,1}f(x,\,c(x))}{D_{2,\,2}f(x,\,c(x))}
@@ -1005,11 +722,11 @@ c'(x) = -\dfrac{D_1h(x,\,c(x))}{D_2 h(x,\,c(x))} = - \dfrac{D_{2, 1}h(x,\,c(x))}
 <p><br></p>
 </section>
 </section>
-<section id="역함수-정리와-음함수-정리에-대한-다른-증명" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="역함수-정리와-음함수-정리에-대한-다른-증명"><span class="header-section-number">14.4</span> 역함수 정리와 음함수 정리에 대한 다른 증명</h2>
+<section id="역함수-정리와-음함수-정리에-대한-다른-증명" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="역함수-정리와-음함수-정리에-대한-다른-증명"><span class="header-section-number">14.3</span> 역함수 정리와 음함수 정리에 대한 다른 증명</h2>
 <p>지금까지는 거의 <span class="citation" data-cites="Spivak1965">Spivak (<a href="../../references.html#ref-Spivak1965" role="doc-biblioref">1965</a>)</span> 의 방식을 따른 증명이었다. 이제 <span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span> 의 방식을 따라 증명해보자.</p>
-<section id="sec-CM_inverse_function_theorem_by_rudin" class="level3" data-number="14.4.1">
-<h3 data-number="14.4.1" class="anchored" data-anchor-id="sec-CM_inverse_function_theorem_by_rudin"><span class="header-section-number">14.4.1</span> 역함수 정리</h3>
+<section id="sec-CM_inverse_function_theorem_by_rudin" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="sec-CM_inverse_function_theorem_by_rudin"><span class="header-section-number">14.3.1</span> 역함수 정리</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1020,7 +737,7 @@ c'(x) = -\dfrac{D_1h(x,\,c(x))}{D_2 h(x,\,c(x))} = - \dfrac{D_{2, 1}h(x,\,c(x))}
 <p><span class="theorem-title"><strong>정의 14.1 (Contraction)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 함수 <span class="math inline">\(\varphi :X \to X\)</span> 가 어떤 실수 <span class="math inline">\(c&lt;1\)</span> 에 대해</p>
 <p><span id="eq-CM_def_of_contraction"><span class="math display">\[
 x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
-\tag{14.6}\]</span></span></p>
+\tag{14.5}\]</span></span></p>
 <p>일 때 <span class="math inline">\(\phi\)</span> 를 <span class="math inline">\(X\)</span> 에서의 <strong>contraction</strong> 이라고 한다.</p>
 </div>
 </div>
@@ -1059,7 +776,7 @@ x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
 <p>이제 contraction 을 이용하여 역함수 정리를 증명한다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_inverse_function_theorem_rudin" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.8</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 열린 집합 <span class="math inline">\(E\)</span> 에서 정의된 <span class="math inline">\(C^1\)</span> 함수 <span class="math inline">\(F:E \to \mathbb{R}^n\)</span> 과 <span class="math inline">\(\boldsymbol{a}\in U\)</span> 에 대해 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 가 가역이라고 하자.</p>
+<p><span class="theorem-title"><strong>정리 14.4</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 열린 집합 <span class="math inline">\(E\)</span> 에서 정의된 <span class="math inline">\(C^1\)</span> 함수 <span class="math inline">\(F:E \to \mathbb{R}^n\)</span> 과 <span class="math inline">\(\boldsymbol{a}\in U\)</span> 에 대해 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 가 가역이라고 하자.</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(U\)</span> 와 <span class="math inline">\(F(\boldsymbol{a})\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(F:U\to V\)</span> 는 전단사이며,</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(G\)</span> 가 (<span class="math inline">\(1\)</span>) 에서의 <span class="math inline">\(F^{-1}\)</span> 이라면 <span class="math inline">\(G\)</span> 는 <span class="math inline">\(C^1\)</span> 함수이다.</p>
 </div>
@@ -1068,54 +785,54 @@ x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{b}=F(\boldsymbol{a}),\, A=F'(\boldsymbol{a})\)</span> 라고 하자.</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_0"><span class="math display">\[
 2\lambda \left\|A^{-1}\right\|=1
-\tag{14.7}\]</span></span></p>
+\tag{14.6}\]</span></span></p>
 <p>이 되도록 <span class="math inline">\(\lambda\)</span> 를 정하자. <span class="math inline">\(F'\)</span> 이 연속이므로 어떤 <span class="math inline">\(\boldsymbol{a}\)</span> 열린 근방 <span class="math inline">\(U\)</span> 를 아래를 만족하도록 잡을 수 있다.</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_1"><span class="math display">\[
 \boldsymbol{x}\in U \implies \|F'(\boldsymbol{x})-A\|\le \lambda
-\tag{14.8}\]</span></span></p>
+\tag{14.7}\]</span></span></p>
 <p>이제 임의의 <span class="math inline">\(\boldsymbol{y}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\varphi:U \to \mathbb{R}^n\)</span> 을 다음과 같이 정의하자.</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_2"><span class="math display">\[
 \varphi(\boldsymbol{x}) := \boldsymbol{x} + A^{-1}(\boldsymbol{y}-F(\boldsymbol{x})).
-\tag{14.9}\]</span></span></p>
+\tag{14.8}\]</span></span></p>
 <p>그렇다면</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_3"><span class="math display">\[
 \varphi'(\boldsymbol{x}) = I - A^{-1}F'(\boldsymbol{x}) = A^{-1}(A-F'(\boldsymbol{x}))
-\tag{14.10}\]</span></span></p>
-<p>이므로 <a href="#eq-thm-CM_inverse_function_theorem_rudin_1" class="quarto-xref">식&nbsp;<span>14.8</span></a> 과 <span class="math inline">\(2\lambda \|A^{-1}\|=1\)</span> 조건을 사용하면</p>
+\tag{14.9}\]</span></span></p>
+<p>이므로 <a href="#eq-thm-CM_inverse_function_theorem_rudin_1" class="quarto-xref">식&nbsp;<span>14.7</span></a> 과 <span class="math inline">\(2\lambda \|A^{-1}\|=1\)</span> 조건을 사용하면</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_4"><span class="math display">\[
 \forall \boldsymbol{x}\in U,\,\left\|\varphi'(\boldsymbol{x})\right\| \le \dfrac{1}{2}
-\tag{14.11}\]</span></span></p>
-<p>이다. 다변수 함수의 중간값 정리(<a href="#thm-CM_mean_value_theorem_for_vector_function" class="quarto-xref">정리&nbsp;<span>14.4</span></a>) 에 따라</p>
+\tag{14.10}\]</span></span></p>
+<p>이다. 다변수 함수의 중간값 정리(<a href="3_2_differentiation_of_manifolds.html#thm-CM_mean_value_theorem_for_vector_function" class="quarto-xref">정리&nbsp;<span>13.9</span></a>) 에 따라</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_5"><span class="math display">\[
 \boldsymbol{x}_1,\,\boldsymbol{x}_2 \in U \implies \|\varphi(\boldsymbol{x}_1) - \varphi (\boldsymbol{x}_2) \| \le \dfrac{1}{2}\|\boldsymbol{x}_1-\boldsymbol{x}_2\|
-\tag{14.12}\]</span></span></p>
+\tag{14.11}\]</span></span></p>
 <p>이다. <span class="math inline">\(\varphi\)</span> 는 contraction 이며, 따라서 <span class="math inline">\(F(\boldsymbol{x})=\boldsymbol{y}\)</span> 를 만족하는 <span class="math inline">\(\boldsymbol{x}\in U\)</span> 는 많아야 하나 존재한다(<a href="#prp-CM_contraction_and_fixed_point" class="quarto-xref">명제&nbsp;<span>14.2</span></a>). 즉 <span class="math inline">\(F\)</span> 는 단사이다.</p>
-<p><span class="math inline">\(V=F(U)\)</span> 라고 하고 <span class="math inline">\(\boldsymbol{y}_0\in V\)</span> 를 선택하면 <span class="math inline">\(F(\boldsymbol{x}_0)=\boldsymbol{y}_0\)</span> 인 <span class="math inline">\(\boldsymbol{x}_0\in U\)</span> 가 유일하게 정해진다. <span class="math inline">\(\boldsymbol{x}_0\)</span> 를 중심으로 하는 열린 근방 <span class="math inline">\(B = N(\boldsymbol{x}_0,\, r)\)</span> 를 <span class="math inline">\(\overline{B}\subset U\)</span> 가 되도록 잡을 수 있다. <span class="math inline">\(0&lt;R&lt;\lambda r\)</span> 에 대해 <span class="math inline">\(B'=N(\boldsymbol{y}_0,\,R)\)</span> 을 생각하자. <span class="math inline">\(\boldsymbol{y} \in B'\)</span> 이라면 <a href="#eq-thm-CM_inverse_function_theorem_rudin_2" class="quarto-xref">식&nbsp;<span>14.9</span></a> 에 의해</p>
+<p><span class="math inline">\(V=F(U)\)</span> 라고 하고 <span class="math inline">\(\boldsymbol{y}_0\in V\)</span> 를 선택하면 <span class="math inline">\(F(\boldsymbol{x}_0)=\boldsymbol{y}_0\)</span> 인 <span class="math inline">\(\boldsymbol{x}_0\in U\)</span> 가 유일하게 정해진다. <span class="math inline">\(\boldsymbol{x}_0\)</span> 를 중심으로 하는 열린 근방 <span class="math inline">\(B = N(\boldsymbol{x}_0,\, r)\)</span> 를 <span class="math inline">\(\overline{B}\subset U\)</span> 가 되도록 잡을 수 있다. <span class="math inline">\(0&lt;R&lt;\lambda r\)</span> 에 대해 <span class="math inline">\(B'=N(\boldsymbol{y}_0,\,R)\)</span> 을 생각하자. <span class="math inline">\(\boldsymbol{y} \in B'\)</span> 이라면 <a href="#eq-thm-CM_inverse_function_theorem_rudin_2" class="quarto-xref">식&nbsp;<span>14.8</span></a> 에 의해</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_6"><span class="math display">\[
 \|\varphi(\boldsymbol{x}_0)-\boldsymbol{x}_0\| = \|A^{-1}(\boldsymbol{y}-\boldsymbol{y}_0)\| \le \|A^{-1}\| \|\boldsymbol{y}-\boldsymbol{y}_0\| &lt; \|A^{-1}\| R\le \dfrac{r}{2}
-\tag{14.13}\]</span></span></p>
-<p>이다. <span class="math inline">\(\boldsymbol{x}\in \overline{B}\)</span> 이라면 <a href="#eq-thm-CM_inverse_function_theorem_rudin_5" class="quarto-xref">식&nbsp;<span>14.12</span></a> 에 따라</p>
+\tag{14.12}\]</span></span></p>
+<p>이다. <span class="math inline">\(\boldsymbol{x}\in \overline{B}\)</span> 이라면 <a href="#eq-thm-CM_inverse_function_theorem_rudin_5" class="quarto-xref">식&nbsp;<span>14.11</span></a> 에 따라</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_7"><span class="math display">\[
 \|\varphi(\boldsymbol{x})-\boldsymbol{x}_0 \| \le \|\varphi(\boldsymbol{x})-\varphi(\boldsymbol{x}_0)\| + \|\varphi(\boldsymbol{x}_0)-\boldsymbol{x}_0\| &lt; \dfrac{\|\boldsymbol{x}-\boldsymbol{x}_0\|}{2} + \dfrac{r}{2} \le r
-\tag{14.14}\]</span></span></p>
-<p>이므로 <span class="math inline">\(\varphi(\boldsymbol{x})\in B\)</span> 이다. <a href="#eq-thm-CM_inverse_function_theorem_rudin_5" class="quarto-xref">식&nbsp;<span>14.12</span></a> 는 <span class="math inline">\(\boldsymbol{x}_1,\,\boldsymbol{x}_2\in \overline{B}\)</span> 일 경우에도 성립한다는 것을 생각하면 <span class="math inline">\(\varphi\)</span> 는 <span class="math inline">\(\overline{B} \to \overline{B}\)</span> contraction 이다. <span class="math inline">\(\overline{B}\)</span> 는 완비거리공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 닫힌 부분집합이므로 <span class="math inline">\(\varphi\)</span> 는 유일한 고정점 <span class="math inline">\(\boldsymbol{x}\in \overline{B}\)</span> 를 가진다. 이 <span class="math inline">\(\boldsymbol{x}\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x})=\boldsymbol{y}\)</span> 이며 따라서 <span class="math inline">\(\boldsymbol{y}=F(\boldsymbol{x})\in F(U)=V\)</span> 이다. 즉 <span class="math inline">\(B'\subset V\)</span> 이므로 <span class="math inline">\(V\)</span> 는 열린집합이다. 따라서 <span class="math inline">\(F|_U : U \to V\)</span> 는 열린집합 <span class="math inline">\(U,\,V\)</span> 에서의 전단사 함수이다.</p>
+\tag{14.13}\]</span></span></p>
+<p>이므로 <span class="math inline">\(\varphi(\boldsymbol{x})\in B\)</span> 이다. <a href="#eq-thm-CM_inverse_function_theorem_rudin_5" class="quarto-xref">식&nbsp;<span>14.11</span></a> 는 <span class="math inline">\(\boldsymbol{x}_1,\,\boldsymbol{x}_2\in \overline{B}\)</span> 일 경우에도 성립한다는 것을 생각하면 <span class="math inline">\(\varphi\)</span> 는 <span class="math inline">\(\overline{B} \to \overline{B}\)</span> contraction 이다. <span class="math inline">\(\overline{B}\)</span> 는 완비거리공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 닫힌 부분집합이므로 <span class="math inline">\(\varphi\)</span> 는 유일한 고정점 <span class="math inline">\(\boldsymbol{x}\in \overline{B}\)</span> 를 가진다. 이 <span class="math inline">\(\boldsymbol{x}\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x})=\boldsymbol{y}\)</span> 이며 따라서 <span class="math inline">\(\boldsymbol{y}=F(\boldsymbol{x})\in F(U)=V\)</span> 이다. 즉 <span class="math inline">\(B'\subset V\)</span> 이므로 <span class="math inline">\(V\)</span> 는 열린집합이다. 따라서 <span class="math inline">\(F|_U : U \to V\)</span> 는 열린집합 <span class="math inline">\(U,\,V\)</span> 에서의 전단사 함수이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\boldsymbol{y},\, \boldsymbol{y}+\boldsymbol{k}\in V\)</span> 이면 <span class="math inline">\(\boldsymbol{x}=F^{-1}(\boldsymbol{y}),\, \boldsymbol{x+h}=F^{-1}(\boldsymbol{y}+\boldsymbol{k})\)</span> 는 모두 <span class="math inline">\(U\)</span> 에 속한다. 따라서</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_8"><span class="math display">\[
 \varphi(\boldsymbol{x}+\boldsymbol{h})- \varphi(\boldsymbol{x}) = \boldsymbol{h} + A^{-1}(F(\boldsymbol{x})- F(\boldsymbol{x}+\boldsymbol{h})) = \boldsymbol{h}+A^{-1}\boldsymbol{k}
-\tag{14.15}\]</span></span></p>
-<p>이다. <a href="#eq-thm-CM_inverse_function_theorem_rudin_5" class="quarto-xref">식&nbsp;<span>14.12</span></a> 로 부터 <span class="math inline">\(\|\boldsymbol{h}-A^{-1}\boldsymbol{k}| \le \dfrac{1}{2}\|\boldsymbol{h}\|\)</span> 이므로 <span class="math inline">\(\|A^{-1}\boldsymbol{k}\| \ge \dfrac{1}{2}\|\boldsymbol{h}\|\)</span> 이며, 따라서</p>
+\tag{14.14}\]</span></span></p>
+<p>이다. <a href="#eq-thm-CM_inverse_function_theorem_rudin_5" class="quarto-xref">식&nbsp;<span>14.11</span></a> 로 부터 <span class="math inline">\(\|\boldsymbol{h}-A^{-1}\boldsymbol{k}| \le \dfrac{1}{2}\|\boldsymbol{h}\|\)</span> 이므로 <span class="math inline">\(\|A^{-1}\boldsymbol{k}\| \ge \dfrac{1}{2}\|\boldsymbol{h}\|\)</span> 이며, 따라서</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_9"><span class="math display">\[
 \|\boldsymbol{h}\| \le 2\|\boldsymbol{A}^{-1}\| \|\boldsymbol{k}\| = \lambda^{-1}\|\boldsymbol{k}\|
-\tag{14.16}\]</span></span></p>
-<p>이다. <a href="#eq-thm-CM_inverse_function_theorem_rudin_0" class="quarto-xref">식&nbsp;<span>14.7</span></a>, <a href="#eq-thm-CM_inverse_function_theorem_rudin_1" class="quarto-xref">식&nbsp;<span>14.8</span></a> 과 <a href="3_1_functions_on_Euclidean_space.html#prp-CM_properties_of_matrix_norm_3" class="quarto-xref">명제&nbsp;<span>12.4</span></a> 로부터</p>
+\tag{14.15}\]</span></span></p>
+<p>이다. <a href="#eq-thm-CM_inverse_function_theorem_rudin_0" class="quarto-xref">식&nbsp;<span>14.6</span></a>, <a href="#eq-thm-CM_inverse_function_theorem_rudin_1" class="quarto-xref">식&nbsp;<span>14.7</span></a> 과 <a href="3_1_functions_on_Euclidean_space.html#prp-CM_properties_of_matrix_norm_3" class="quarto-xref">명제&nbsp;<span>12.4</span></a> 로부터</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_10"><span class="math display">\[
 \|F'(\boldsymbol{x}) - A\| \cdot \|A^{-1}\| &lt; \dfrac{1}{2} &lt; 1
-\tag{14.17}\]</span></span></p>
+\tag{14.16}\]</span></span></p>
 <p>이므로 <span class="math inline">\(F'(\boldsymbol{x})\)</span> 는 가역이다. 이제 <span class="math inline">\(T=\left(F'(\boldsymbol{x})\right)^{-1}\)</span> 라고 하자.</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_11"><span class="math display">\[
 G(\boldsymbol{y}+\boldsymbol{k}) - G(\boldsymbol{y})-T\boldsymbol{k} = \boldsymbol{h} - T\boldsymbol{k} = -T \left[F(\boldsymbol{x}+\boldsymbol{h}) - F(\boldsymbol{x}) - F'(\boldsymbol{x})\boldsymbol{h}\right]
-\tag{14.18}\]</span></span></p>
-<p>이며 <a href="#eq-thm-CM_inverse_function_theorem_rudin_6" class="quarto-xref">식&nbsp;<span>14.13</span></a> 를 이용하면</p>
+\tag{14.17}\]</span></span></p>
+<p>이며 <a href="#eq-thm-CM_inverse_function_theorem_rudin_6" class="quarto-xref">식&nbsp;<span>14.12</span></a> 를 이용하면</p>
 <p><span class="math display">\[
 \begin{aligned}
 \dfrac{\|G(\boldsymbol{y}+\boldsymbol{k}) - G(\boldsymbol{y})-T\boldsymbol{k}\|}{\|\boldsymbol{k}\|} \le \dfrac{\|T\|}{\lambda} \dfrac{\|F(\boldsymbol{x}+\boldsymbol{h}) - F(\boldsymbol{x}) - F'(\boldsymbol{x})\boldsymbol{h}\|}{\|\boldsymbol{h}\|}
@@ -1129,8 +846,8 @@ G'(\boldsymbol{y}) = (F'(G(\boldsymbol{y})))^{-1}
 </div>
 <p><br></p>
 </section>
-<section id="sec-CM_implicit_function_theorem_by_rudin" class="level3" data-number="14.4.2">
-<h3 data-number="14.4.2" class="anchored" data-anchor-id="sec-CM_implicit_function_theorem_by_rudin"><span class="header-section-number">14.4.2</span> 음함수 정리</h3>
+<section id="sec-CM_implicit_function_theorem_by_rudin" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="sec-CM_implicit_function_theorem_by_rudin"><span class="header-section-number">14.3.2</span> 음함수 정리</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1141,7 +858,7 @@ G'(\boldsymbol{y}) = (F'(G(\boldsymbol{y})))^{-1}
 <p><span class="theorem-title"><strong>정의 14.2</strong></span> <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m,\, \boldsymbol{y}\in \mathbb{R}^n\)</span> 을 <span class="math inline">\((\boldsymbol{x},\, \boldsymbol{y}) = (x_1,\ldots,\,x_n,\, y_1,\ldots,\,x_n)\in \mathbb{R}^{m+n}\)</span> 으로 흔히 표기한다. <span class="math inline">\(A\in \mathcal{L}(\mathbb{R}^{m+n},\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(A\)</span> 를 두 선형변환 <span class="math inline">\(A_x,\,A_y\)</span> 를 <span class="math inline">\(A_x\boldsymbol{x}=A(\boldsymbol{x},\,\boldsymbol{0}),\, A_y \boldsymbol{y} = A(\boldsymbol{0},\, \boldsymbol{y})\)</span> 로 분리할 수 있다. 그렇다면</p>
 <p><span id="eq-CM_split_of_linear_operator"><span class="math display">\[
 A(\boldsymbol{x},\,\boldsymbol{y}) = A_x\boldsymbol{x} + A_y\boldsymbol{y}
-\tag{14.19}\]</span></span></p>
+\tag{14.18}\]</span></span></p>
 <p>이다.</p>
 </div>
 </div>
@@ -1153,7 +870,7 @@ A(\boldsymbol{x},\,\boldsymbol{y}) = A_x\boldsymbol{x} + A_y\boldsymbol{y}
 <p><span class="theorem-title"><strong>보조정리 14.4</strong></span> <span class="math inline">\(A\in \mathcal{L}(\mathbb{R}^{m+n},\, \mathbb{R}^m)\)</span> 에서 <span class="math inline">\(A_x\)</span> 가 가역행렬이라고 하자. 각각의 <span class="math inline">\(\boldsymbol{k}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A(\boldsymbol{h},\,\boldsymbol{k})=\boldsymbol{0}\)</span> 이 되도록 하는 <span class="math inline">\(\boldsymbol{h}\in \mathbb{R}^m\)</span> 이 유일하게 존재하며 그 <span class="math inline">\(\boldsymbol{h}\)</span> 는 다음과 같다.</p>
 <p><span id="eq-CM_split_of_linear_operator_2"><span class="math display">\[
 \boldsymbol{h} = -(A_x)^{-1} A_y\boldsymbol{k}.
-\tag{14.20}\]</span></span></p>
+\tag{14.19}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -1162,44 +879,58 @@ A(\boldsymbol{x},\,\boldsymbol{y}) = A_x\boldsymbol{x} + A_y\boldsymbol{y}
 <br> <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_implicit_function_theorem_rudin" class="theorem">
-<p><span class="theorem-title"><strong>정리 14.9 (음함수 정리)</strong></span> 열린 <span class="math inline">\(E\subset \mathbb{R}^{m+n}\)</span> 에서 정의된 <span class="math inline">\(F:E \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이고 어떤 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b}) \in E\)</span> 에서 <span class="math inline">\(F(\boldsymbol{a},\boldsymbol{b})=\boldsymbol{0}\)</span> 이라고 하자. <span class="math inline">\(A=F'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 이고 <span class="math inline">\(A_x\)</span> 가 가역이면 어떤 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 열린집합 <span class="math inline">\(U\)</span> 와 <span class="math inline">\(\boldsymbol{b}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(W\)</span> 가 존재하여</p>
-<p>(<span class="math inline">\(1\)</span>) 각각의 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해 어떤 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m\)</span> 이 존재하여 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\in U\)</span> 이고 <span class="math inline">\(F(\boldsymbol{x},\,\boldsymbol{y})=0\)</span> 이고,</p>
-<p>(<span class="math inline">\(2\)</span>) (<span class="math inline">\(1\)</span>) 에 의해 <span class="math inline">\(\boldsymbol{y}=G(\boldsymbol{x})\)</span> 라 놓을 수 있는데, <span class="math inline">\(G\)</span> 는 <span class="math inline">\(C^1\)</span> 급 함수이며 <span class="math inline">\(G(\boldsymbol{b})=\boldsymbol{a}\)</span> 이며,</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(G'(\boldsymbol{b}) = -(-A_x)^{-1}A_y\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>정리 14.5 (음함수 정리)</strong></span> 열린 <span class="math inline">\(E\subset \mathbb{R}^{m+n}\)</span> 에서 정의된 <span class="math inline">\(F:E \to \mathbb{R}^m\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이고 어떤 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b}) \in E\)</span> 에서 <span class="math inline">\(F(\boldsymbol{a},\boldsymbol{b})=\boldsymbol{0}\)</span> 이라고 하자. <span class="math inline">\(A=F'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 이고 <span class="math inline">\(A_x\)</span> 가 가역이면 어떤 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 열린집합 <span class="math inline">\(U\)</span> 와 <span class="math inline">\(\boldsymbol{b}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(W\)</span> 가 존재하여</p>
+<p> (<span class="math inline">\(a\)</span>) 각각의 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해 유일한 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^m\)</span> 이 존재하여 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\in U\)</span> 이고 <span class="math inline">\(F(\boldsymbol{x},\,\boldsymbol{y})=0\)</span> 이고,</p>
+<p> (<span class="math inline">\(b\)</span>) (<span class="math inline">\(1\)</span>) 에 의해 <span class="math inline">\(\boldsymbol{x}=G(\boldsymbol{y})\)</span> 라 놓을 수 있는데, <span class="math inline">\(G\)</span> 는 <span class="math inline">\(C^1\)</span> 급 함수이며 <span class="math inline">\(G(\boldsymbol{b})=\boldsymbol{a}\)</span> 이며,</p>
+<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(G'(\boldsymbol{b}) = -(-A_x)^{-1}A_y\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(H:E \to \mathbb{R}^{m+n}\)</span> 을 아래와 같이 정의한다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(H:E \to \mathbb{R}^{m+n}\)</span> 을 아래와 같이 정의한다.</p>
 <p><span id="eq-thm-CM_implicit_function_theorem_rudin_1"><span class="math display">\[
 H(\boldsymbol{x},\,\boldsymbol{y}) := (F(\boldsymbol{x},\,\boldsymbol{y}),\,\boldsymbol{y}).
-\tag{14.21}\]</span></span></p>
+\tag{14.20}\]</span></span></p>
 <p>그렇다면 <span class="math inline">\(H\)</span> 는 <span class="math inline">\(C^1\)</span> 급 함수임은 자명하며</p>
 <p><span id="eq-thm-CM_implicit_function_theorem_rudin_2"><span class="math display">\[
 H'(\boldsymbol{x},\,\boldsymbol{y}) = \begin{bmatrix} D_\boldsymbol{x} F(\boldsymbol{x},\,\boldsymbol{y}) &amp; D_\boldsymbol{y} F(\boldsymbol{x},\,\boldsymbol{y}) \\ \boldsymbol{0} &amp; I_n\end{bmatrix},\quad H'(\boldsymbol{a},\,\boldsymbol{b}) = \begin{bmatrix} A_x &amp; A_y \\ \boldsymbol{0} &amp; I_n\end{bmatrix}
-\tag{14.22}\]</span></span></p>
-<p>이다. <span class="math inline">\(A_x\)</span> 가 가역이므로 <span class="math inline">\(\det (H'(\boldsymbol{a},\boldsymbol{b})) = \det (A_x) \ne 0\)</span> 이고 따라서 <span class="math inline">\(H'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 는 가역이다. 우선 <span class="math inline">\(H'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 가 가역임을 보이자. <span class="math inline">\(F(\boldsymbol{a},\,\boldsymbol{b})=\boldsymbol{0}\)</span> 임을 고려하여</p>
-<p><span class="math display">\[
-F(\boldsymbol{a}+\boldsymbol{h},\,\boldsymbol{b}+\boldsymbol{k}) = A(\boldsymbol{h},\boldsymbol{k}) + R(\boldsymbol{h},\boldsymbol{k})
-\]</span></p>
-<p>가 되도록 <span class="math inline">\(R\)</span> 을 정한다. 그렇다면</p>
-<p><span class="math display">\[
+\tag{14.21}\]</span></span></p>
+<p>이다. <span class="math inline">\(A_x\)</span> 가 가역이므로 <span class="math inline">\(\det (H'(\boldsymbol{a},\boldsymbol{b})) = \det (A_x) \ne 0\)</span> 이고 따라서 <span class="math inline">\(H'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 는 가역이다.</p>
+<!-- 우선 $H'(\bf{a},\,\bf{b})$ 가 가역임을 보이자. $F(\bf{a},\,\bf{b})=\bf{0}$ 임을 고려하여
+
+$$
+F(\bf{a}+\bf{h},\,\bf{b}+\bf{k}) = A(\bf{h},\bf{k}) + R(\bf{h},\bf{k})
+$$
+
+가 되도록 $R$ 을 정한다. 그렇다면
+
+$$
 \begin{aligned}
-H(\boldsymbol{a}+\boldsymbol{h},\, \boldsymbol{b}+\boldsymbol{k}) - H(\boldsymbol{a},\,\boldsymbol{b}) &amp;= \left(F(\boldsymbol{a}+\boldsymbol{h},\boldsymbol{b}+\boldsymbol{k}),\,\boldsymbol{k}\right) \\[0.3em]
-&amp;=\left(A(\boldsymbol{h},\boldsymbol{k}),\,\boldsymbol{k}\right) + (R(\boldsymbol{h},\,\boldsymbol{k}),\,\boldsymbol{0})
+H(\bf{a}+\bf{h},\, \bf{b}+\bf{k}) - H(\bf{a},\,\bf{b}) &= \left(F(\bf{a}+\bf{h},\bf{b}+\bf{k}),\,\bf{k}\right) \\[0.3em]
+&=\left(A(\bf{h},\bf{k}),\,\bf{k}\right) + (R(\bf{h},\,\bf{k}),\,\bf{0})
 \end{aligned}
-\]</span></p>
-<p>이다. 이는 <span class="math inline">\(H'(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{h},\,\boldsymbol{k}) = (A(\boldsymbol{h},\,\boldsymbol{k}),\,\boldsymbol{k})\)</span> 임을 의미한다. <span class="math inline">\(H'(\boldsymbol{a},\,\boldsymbol{b})(\boldsymbol{h},\,\boldsymbol{k})=\boldsymbol{0}\)</span> 이면 <span class="math inline">\(\boldsymbol{k}=0\)</span> 이며 <span class="math inline">\(A(\boldsymbol{h},\,\boldsymbol{0}) =\boldsymbol{0}\)</span> 이므로 <a href="#lem-CM_implicit_function_theorem_rudin" class="quarto-xref">보조정리&nbsp;<span>14.4</span></a> 에 따라 <span class="math inline">\(\boldsymbol{h}=\boldsymbol{0}\)</span> 이다.</p>
+$$
+
+이다. 이는 $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k}) = (A(\bf{h},\,\bf{k}),\,\bf{k})$ 임을 의미한다. $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k})=\bf{0}$ 이면 $\bf{k}=0$ 이며 $A(\bf{h},\,\bf{0}) =\bf{0}$ 이므로 @lem-CM_implicit_function_theorem_rudin 에 따라 $\bf{h}=\bf{0}$ 이다.  -->
 <p><span class="math inline">\(H'(\boldsymbol{a},\,\boldsymbol{b})\)</span> 가 가역이므로 역함수 정리에 의해 <span class="math inline">\((\boldsymbol{a},\,\boldsymbol{b})\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(U\)</span> 와 <span class="math inline">\((\boldsymbol{0},\,\boldsymbol{b})\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(V\)</span> 가 존재하여 <span class="math inline">\(H:U\to V\)</span> 는 전단사함수이고, 그 역함수 <span class="math inline">\(G:U\to V\)</span> 는 <span class="math inline">\(C^1\)</span> 급 함수이다.</p>
-<p><span class="math inline">\(W:=\{\boldsymbol{y}\in \mathbb{R}^n: (\boldsymbol{0},\,\boldsymbol{y}) \in V\}\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{b}\in W\)</span> 이며 <span class="math inline">\(V\)</span> 가 열린 집합이므로 <span class="math inline">\(W\)</span> 도 열린 집합이다(<a href="#exr-for_implicit_theorem_rudin_1" class="quarto-xref">연습문제&nbsp;<span>14.17</span></a>).</p>
+<p><span class="math inline">\(W:=\{\boldsymbol{y}\in \mathbb{R}^n: (\boldsymbol{0},\,\boldsymbol{y}) \in V\}\)</span> 라고 하자. <span class="math inline">\(\boldsymbol{b}\in W\)</span> 이며 <span class="math inline">\(V\)</span> 가 열린 집합이므로 <span class="math inline">\(W\)</span> 도 열린 집합이다(<a href="#exr-for_implicit_theorem_rudin_1" class="quarto-xref">연습문제&nbsp;<span>14.9</span></a>). <span class="math inline">\(\boldsymbol{y}\in W\)</span> 이면 <span class="math inline">\(H(\boldsymbol{x},\boldsymbol{y})=(\boldsymbol{0},\boldsymbol{y})\)</span> 인 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\in U\)</span> 가 존재하며 <a href="#eq-thm-CM_implicit_function_theorem_rudin_1" class="quarto-xref">식&nbsp;<span>14.20</span></a> 에 따라 <span class="math inline">\(F(\boldsymbol{x},\boldsymbol{y})=\boldsymbol{0}\)</span> 이다. <span class="math inline">\(\overline{\boldsymbol{x}} \ne \boldsymbol{x}\)</span> 에 대해 <span class="math inline">\((\overline{\boldsymbol{x}},\boldsymbol{y})\in U\)</span> 이고 <span class="math inline">\(F(\overline{\boldsymbol{x}},\boldsymbol{y})=\boldsymbol{0}\)</span> 이라면</p>
+<p><span class="math display">\[
+H(\overline{\boldsymbol{x}},\boldsymbol{y}) = H(\boldsymbol{x},\boldsymbol{y})
+\]</span></p>
+<p>이다. <span class="math inline">\(H\)</span> 는 <span class="math inline">\(U\)</span> 에서 전단사 이므로 <span class="math inline">\(\overline{\boldsymbol{x}}=\boldsymbol{x}\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) 각각의 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해 <span class="math inline">\(H(\boldsymbol{x},\,\boldsymbol{y}) = \boldsymbol{0}\)</span> 인 <span class="math inline">\(\boldsymbol{x}\)</span> 가 유일해게 정해지므로 이를 함수 <span class="math inline">\(G(\boldsymbol{y})=\boldsymbol{x}\)</span> 로 놓자. 즉 <span class="math inline">\(\boldsymbol{y}\in W\)</span> 에 대해 <span class="math inline">\(H(G(\boldsymbol{y}),\boldsymbol{y})=(\boldsymbol{0},\,\boldsymbol{y})\)</span> 이며</p>
+<p><span class="math display">\[
+(G(\boldsymbol{y}),\,\boldsymbol{y}) = H^{-1}(\boldsymbol{0},\, \boldsymbol{y})
+\]</span></p>
+<p>이다. 역함수 정리에 의해 <span class="math inline">\(H^{-1}:V \to U\)</span> 는 <span class="math inline">\(C^1\)</span> 급 함수이며,</p>
 </div>
 <p><br></p>
 </section>
-<section id="연습문제-3" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제-3">연습문제</h3>
+<section id="연습문제-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-for_implicit_theorem_rudin_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 14.17</strong></span> <span class="math inline">\(V\subset \mathbb{R}^{m+n}\)</span> 이 열린 집합일 때 <span class="math inline">\(W=\{\boldsymbol{y}\in \mathbb{R}^n : (\boldsymbol{0},\,\boldsymbol{y}) \in V\}\)</span> 역시 열린집합임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 14.9</strong></span> <span class="math inline">\(V\subset \mathbb{R}^{m+n}\)</span> 이 열린 집합일 때 <span class="math inline">\(W=\{\boldsymbol{y}\in \mathbb{R}^n : (\boldsymbol{0},\,\boldsymbol{y}) \in V\}\)</span> 역시 열린집합임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
