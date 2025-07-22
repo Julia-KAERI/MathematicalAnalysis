@@ -10,8 +10,7 @@ crossref:
 
 ## 다변수 함수의 적분
 
-### 정의와 기본적 성질
-
+### 정의와 기본적 성질 {#sec-CA_definition_of_integration_and_basic_properties}
 
 ::: {.callout-tip appearance="minimal"}
 - $\R$ 에서의 분할은 @def-MA_partition 을 참고하라. 전체적으로 [리만-스틸체스 적분](../part2/2_5_riemann_stieltjes_integral.qmd) 를 참고하라.
@@ -21,7 +20,6 @@ crossref:
 
 
 ::: {.callout-note appearance="simple" icon="false"}
-
 ::: {#def-CM_volume_of_n_cell}
 
 #### $n$-cell 의 부피
@@ -112,7 +110,7 @@ $n$-cell $Q$ 에서 정의된 유계인 함수 $f : Q \to \R$ 와 $P,\,P_1,\,P_2
 &emsp;($3$) $L(f,\, P_1) \le U(f,\,P_2)$
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -181,7 +179,7 @@ $n$-cell $Q$ 에서 정의된 유계함수 $f:Q \to \R$ 에 대해 다음은 동
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -218,7 +216,7 @@ $f$ 가 적분가능하며 $\int_{[0,\,1]\times [0,\,1]} f = \frac{1}{2}$ 임을
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -255,7 +253,7 @@ $f:A \to \R$ 이 적분가능하며 $g$ 는 유한개의 점을 제외하고는 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -327,7 +325,7 @@ $$ {#eq-CM_spivak_3_3_2}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -347,7 +345,6 @@ $$
 
 이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 $\displaystyle \int_A (f+g) = \int_A f + \int_A g$ 이다.
 
-
 ($c$) trivial.
 
 :::
@@ -364,7 +361,7 @@ $f:A \to \R$ 과 $P\in \mathcal{P}[A]$ 를 생각하자. $f\in \mathcal{R}[A]$ �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -404,7 +401,7 @@ $f,\,g: A \to \R$ 가 적분가능하고 $f\le g$ 라면 $\int_A f \le \int_A g$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -418,10 +415,7 @@ $$
 
 :::
 
-
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_3_6}
 
@@ -431,7 +425,7 @@ $f:A \to \R$ 이 적분가능하다면 $|f|$ 역시 적분가능하며 $\left|\i
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -455,9 +449,7 @@ $$
 
 :::
 
-</br>
-
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_3_7}
 
@@ -473,7 +465,7 @@ $f$ 가 적분가능하며 $\int_{[0,\,1]\times [0,\,1]} f = 0$ 임을 보여라
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -547,7 +539,6 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 
 </div></br>
 
-
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-CM_Q_is_measure_zero}
@@ -561,7 +552,6 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 
 </div></br>
 
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_meazure_zero}
@@ -570,7 +560,7 @@ $A=A_1 \cup A_2 \cup \cdots$ 이며 각각의 $A_i$ 가 measure zero 이면 $A$ 
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -647,7 +637,7 @@ $A\subset \R^n$ 이 measure zero 이고 옹골 집합이면 $A$ 는 content zero
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -678,7 +668,7 @@ $A$ 가 measure zero 이고 열린 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -699,7 +689,7 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -722,7 +712,7 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -742,7 +732,7 @@ $A$ 가 @exr-CM_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_i)<
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -761,7 +751,7 @@ $f:[a,\,b] \to \R$ 이 증가함수이다. $\{x: f\text{ is discontinuous at }x\
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -790,7 +780,7 @@ $$
 ($b$) 집합 $A\subset \R^n$ 과 그 열린 덮개인 집합족 $\mathcal{O}$ 를 생각하자. $A$ 를 덮는 $\mathcal{O}$ 의 부분집합인 수열 $U_1,\,U_2,\ldots$ 가 존재함을 보여라.
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -813,11 +803,10 @@ $$
 
 :::
 
-</div></br>
-
+</div>
 ::: {.proof}
 
-$\bf{x}\in A$ 이면 $x$ 를 포함하는 어떤 $n$-cell $U_x$ 에서 $M_{U_x}(f) - m_{U_x}(f) <\varepsilon$ 이다. 
+$\bf{x}\in A$ 이면 $\bf{x}$ 를 포함하는 어떤 $n$-cell $U_x$ 에서 $M_{U_x}(f) - m_{U_x}(f) <\varepsilon$ 이다. 
 $A$ 가 옹골집합이므로 유한개의 $U_{x_1},\ldots,\,U_{x_n}$ 이 존재하여 $A$ 를 덮는다. $A$ 의 분할 $P$ 를 $P$ 의 각각의 subcell 이 어떤 $U_{x_i}$ 에 포함되도록 잡을 수 있다. $S$ 가 그런 subcell 이라면 $M_S(f)-m_S(f)<\varepsilon$ 이며, 따라서
 
 $$
@@ -836,7 +825,7 @@ $$
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 

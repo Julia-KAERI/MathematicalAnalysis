@@ -1181,7 +1181,7 @@ $f(E)\subset \overline{f(E)}$ 이다. $x\in E'\backslash E$ 라 하자. $\lim_n 
 
 #### Rudin 4.3
 
-거리공간 $X$ 에 대해 $f:X \to \mathbb{R}$ 이 연속함수이다. $Z(f) = \{x\in X: f(x) = 0\}$ 일 때 $Z(f)$ 는 닫힌 집합임을 보이시오. 
+거리공간 $X$ 에 대해 $f:X \to \mathbb{R}$ 이 연속함수이다. $P=\{x \in X: f(x) > 0\}$ 일 때 $Q$ 는 열린집합임을 보여라. $Z(f) = \{x\in X: f(x) = 0\}$ 일 때 $Z(f)$ 는 닫힌 집합임을 보여라.
 
 :::
 
@@ -1189,7 +1189,7 @@ $f(E)\subset \overline{f(E)}$ 이다. $x\in E'\backslash E$ 라 하자. $\lim_n 
 
 ::: {.solution}
 
-$p \in X\backslash Z(f)$ 라 하자. $f(p)=y>0$ 이면 $f$ 가 연속이므로 $\varepsilon=\dfrac{y}{2}$ 에 대해 어떤 $\delta>0$ 이 존재하여 $\|x-p\|_X<\delta$ 이면 $\|f(x)-f(p)\|<\dfrac{y}{2}$ 이다. 즉 $x\in N_X(p,\, \delta)$ 이면 $f(x)> \dfrac{y}{2}>0$ 이므로 $N_X(p,\, \delta)\subset X\backslash Z(f)$ 이다. $f(p)<0$ 일 때도 같은 방식으로 증명 할 수 있다. 따라서 $X\backslash Z(f)$ 는 열린집합이므로 $Z(f)$ 는 닫힌 집합이다. 
+$p\in P$ 라고 하자. $f$ 가 연속이므로 어떤 $\delta>0$ 에서 $f(N(p,\,\delta)) \subset N(f(p),\, f(p)/2)$ 이다. 즉 $P$ 는 열린집합이다. $P'=\{x\in X: f(x) <0\}$ 역시 열린집합이며, $Z(f) = \R\backslash(P\cup P')$ 이므로 닫힌 집합이다.
 
 :::
 

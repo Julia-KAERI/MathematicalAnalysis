@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,15 +32,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <link href="../../references.html" rel="next">
 <link href="../../src/part3/3_3_inverse_function_theorem.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -102,7 +103,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../custom.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -291,7 +292,7 @@ window.Quarto = {
   <ul>
   <li><a href="#다변수-함수의-적분" id="toc-다변수-함수의-적분" class="nav-link active" data-scroll-target="#다변수-함수의-적분"><span class="header-section-number">15.1</span> 다변수 함수의 적분</a>
   <ul class="collapse">
-  <li><a href="#정의와-기본적-성질" id="toc-정의와-기본적-성질" class="nav-link" data-scroll-target="#정의와-기본적-성질"><span class="header-section-number">15.1.1</span> 정의와 기본적 성질</a></li>
+  <li><a href="#sec-CA_definition_of_integration_and_basic_properties" id="toc-sec-CA_definition_of_integration_and_basic_properties" class="nav-link" data-scroll-target="#sec-CA_definition_of_integration_and_basic_properties"><span class="header-section-number">15.1.1</span> 정의와 기본적 성질</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
   <li><a href="#sec-CM_measure_zero_and_content_zero" id="toc-sec-CM_measure_zero_and_content_zero" class="nav-link" data-scroll-target="#sec-CM_measure_zero_and_content_zero"><span class="header-section-number">15.2</span> Measure zero 와 Content zero</a>
@@ -334,8 +335,8 @@ window.Quarto = {
 </div>
 <section id="다변수-함수의-적분" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="다변수-함수의-적분"><span class="header-section-number">15.1</span> 다변수 함수의 적분</h2>
-<section id="정의와-기본적-성질" class="level3" data-number="15.1.1">
-<h3 data-number="15.1.1" class="anchored" data-anchor-id="정의와-기본적-성질"><span class="header-section-number">15.1.1</span> 정의와 기본적 성질</h3>
+<section id="sec-CA_definition_of_integration_and_basic_properties" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="sec-CA_definition_of_integration_and_basic_properties"><span class="header-section-number">15.1.1</span> 정의와 기본적 성질</h3>
 <div class="callout callout-style-simple callout-tip no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -427,7 +428,6 @@ L(f,\,P) := \sum_{S} M_S \cdot \text{vol}(S).
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(L(f,\, P_1) \le U(f,\,P_2)\)</span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 각각의 subcell <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(m_S \le M_S\)</span> 이므로 자명하다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(S\)</span> 가 <span class="math inline">\(P_1\)</span> 에 의한 subcell 일 때 하나 이상의 <span class="math inline">\(P_2\)</span> 의 subcell <span class="math inline">\(S_1,\ldots,\,S_m\)</span> 의 합집합이다. 이 때 각각의 <span class="math inline">\(i=1,\ldots,\,m\)</span> 에 대해 <span class="math inline">\(m_S \le m_{S_i}\)</span> 이며 <span class="math inline">\(M_S \ge M_{S_i}\)</span> 이고 <span class="math inline">\(\text{vol}(S) = \sum_{i=1}^m \text{vol}(S_i)\)</span> 이므로 (<span class="math inline">\(2\)</span>) 가 성립한다.</p>
@@ -473,7 +473,6 @@ L(f,\,P_1) \le L(f,\, P_3) \le U(f,\, P_3) \le L(f,\,P_2)
 <p> (<span class="math inline">\(2\)</span>) 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(U(f,\,P)-L(f,\,P)&lt;\varepsilon\)</span> 인 <span class="math inline">\(P\in \mathcal{P}[Q]\)</span> 가 존재한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\implies 2\)</span>) <span class="math inline">\(\sup \{L(f,\, P)\} = \int_Q f\)</span> 이므로 <span class="math inline">\(\int_Q f - L(f,\,P_1)&lt;\varepsilon/2\)</span> 를 민족하는 <span class="math inline">\(P_1\in \mathcal{P}[Q]\)</span> 가 존재한다. 마찬가지로 <span class="math inline">\(U(f,\,P_2) - \int_Q f &lt; \varepsilon/2\)</span> 를 만족하는 <span class="math inline">\(P_2\in \mathcal{P}[Q]\)</span> 가 존재한다. <span class="math inline">\(P_1,\,P_2\)</span> 의 공통 refinement <span class="math inline">\(P\)</span> 에 대해서도 두 부등식이 성립하며 두 부등식을 더하면 <span class="math inline">\(U(f,\,P) - L(f,\,P) \le \varepsilon\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\implies 1\)</span>) <span class="math inline">\(\displaystyle L(f,\,P) \le \underline{\int_Q}f \le \overline{\int_Q} f \le U(f,\,P)\)</span> 이므로 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해</p>
@@ -495,7 +494,6 @@ f(x,\,y) = \left\{ \begin{array}{ll} 0, \qquad &amp; \text{if } 0 \le x &lt; \fr
 <p><span class="math inline">\(f\)</span> 가 적분가능하며 <span class="math inline">\(\int_{[0,\,1]\times [0,\,1]} f = \frac{1}{2}\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(0&lt;\varepsilon &lt;1\)</span> 에 대해 <span class="math inline">\([0,1]\times [0,\,1]\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 를 다음과 같이 잡는다.</p>
 <p><span class="math display">\[
@@ -517,7 +515,6 @@ U(f,\,P)-L(f,\,P) = \dfrac{\varepsilon}{2} &lt; \varepsilon
 <p><span class="theorem-title"><strong>연습문제 15.2 (Spivak 3.2)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 적분가능하며 <span class="math inline">\(g\)</span> 는 유한개의 점을 제외하고는 <span class="math inline">\(f\)</span> 와 같다. <span class="math inline">\(g\)</span> 가 적분가능하며 <span class="math inline">\(\int_A f = \int_A g\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f\ne g\)</span> 인 점을 <span class="math inline">\(x_1,\ldots,\,x_m\)</span> 이라고 하자. 그리고 <span class="math inline">\(M=\max \{|f(x_i)-g(x_i)|\}\)</span> 이라고 하자.</p>
 <p><span class="math inline">\(n\)</span> 차원 유클리드 공간에서 한 점이 포함될 수 있는 <span class="math inline">\(n\)</span>-cell 의 갯수를 <span class="math inline">\(N_c\)</span> 라고 하자. <span class="math inline">\(\mathbb{R}\)</span> 에서 <span class="math inline">\(N_c=1\)</span> 이며 <span class="math inline">\(\mathbb{R}^2\)</span> 에서는 <span class="math inline">\(N_c=4\)</span> 이고 유한차원 유클리드 공간에서 <span class="math inline">\(N_c\)</span> 는 정해져 있다. <span class="math inline">\(\varepsilon &gt;0\)</span> 을 고정시킨다. 어떤 분할 <span class="math inline">\(P_1\in \mathcal{P}[A]\)</span> 에서 <span class="math inline">\(U(f,\,P_1)-L(f,\,P_1)&lt;\frac{\varepsilon}{2}\)</span> 이라고 하자. <span class="math inline">\(P_1\)</span> 에 의한 subcell 이 <span class="math inline">\(\{x_1,\ldots,\,x_m\}\)</span> 가운데 두개 이상을 포함한다면 이것을 하나만 포함하도록 하는 <span class="math inline">\(P_1\)</span> 에 대한 refinement <span class="math inline">\(P_2\)</span> 가 존재하며 <span class="math inline">\(U(f,\,P_2)-L(f,\,P_2)&lt;\varepsilon\)</span> 이다.</p>
@@ -561,7 +558,6 @@ L(f,\,P) + L(g,\,P) \le L(f+g,\,P) \le U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
 <p>(<span class="math inline">\(c\)</span>) 어떤 상수 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\int_A(cf)= c\int_Af\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) trivial</p>
 <p>(<span class="math inline">\(b\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(U(f,\,P_1)-L(f,\,P_1)&lt;\frac{\varepsilon}{2}\)</span> 인 <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P_1\)</span> 과 <span class="math inline">\(U(g,\,P_2)-L(g,\,P_2)&lt;\frac{\varepsilon}{2}\)</span> 인 <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P_2\)</span> 가 존재한다. <span class="math inline">\(P_1\)</span> 과 <span class="math inline">\(P_2\)</span> 의 공통 refinement 인 <span class="math inline">\(P\)</span> 에 대해서도 위의 부등식이 성립하며,</p>
@@ -581,7 +577,6 @@ U(f+g,\,P)-L(f+g,\,P) \le U(f,\,P)-L(f,\,P) + U(g,\,P)-L(g,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>연습문제 15.4 (Spivak 3.4)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 과 <span class="math inline">\(P\in \mathcal{P}[A]\)</span> 를 생각하자. <span class="math inline">\(f\in \mathcal{R}[A]\)</span> 일 필요충분조건은 각각의 <span class="math inline">\(P\)</span> 의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(f|_S \in \mathcal{R}[S]\)</span> 인 것임을 보여라. 그리고 이 경우 <span class="math inline">\(\int_A f = \sum_S \int_S f|_S\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 에 의해 정해진 <span class="math inline">\(n\)</span>-cell 의 집합을 <span class="math inline">\(\mathcal{S}[P]\)</span> 라고 하자. 이 때 다음은 자명하다.</p>
 <p><span id="eq-CM_spivak_3_4_1"><span class="math display">\[
@@ -604,7 +599,6 @@ U(f,\,P')-L(f,\,P') \le \varepsilon
 <p><span class="theorem-title"><strong>연습문제 15.5 (Spivak 3.5)</strong></span> <span class="math inline">\(f,\,g: A \to \mathbb{R}\)</span> 가 적분가능하고 <span class="math inline">\(f\le g\)</span> 라면 <span class="math inline">\(\int_A f \le \int_A g\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(h=g-f\)</span> 이면 <span class="math inline">\(h\ge 0\)</span> 이다. 임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(U(f,\,P) \ge L(f,\,P) \ge 0\)</span> 이므로 <span class="math inline">\(\int_A h \ge 0\)</span> 이다. <a href="#exr-CM_spivak_3_3" class="quarto-xref">연습문제&nbsp;<span>15.3</span></a> 에 의해</p>
 <p><span class="math display">\[
@@ -612,13 +606,12 @@ U(f,\,P')-L(f,\,P') \le \varepsilon
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_6" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 15.6 (Spivak 3.6)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 적분가능하다면 <span class="math inline">\(|f|\)</span> 역시 적분가능하며 <span class="math inline">\(\left|\int_A f\right| \le \int_A|f|\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f^+(x) := \max (f(x),\,0),\, f^-(x) = \min (f(x),\,0)\)</span> 이라고 하자. <span class="math inline">\(f = f^+ + f^-\)</span> 이며 <span class="math inline">\(|f|=f^+ - f^-\)</span> 이다. <span class="math inline">\(A\)</span> 에 포함되는 임의의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(S\)</span> 에 대해</p>
 <p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(M_s(f)\ge 0,\, m_s(f) \ge 0\)</span> 이면 <span class="math inline">\(M_S(f^+) = M_S(f)\)</span>, <span class="math inline">\(m_s(f^+) = m_S(f)\)</span>, <span class="math inline">\(M_S(f^-)=M_S(f^-)=0\)</span></p>
@@ -631,7 +624,7 @@ U(f,\,P')-L(f,\,P') \le \varepsilon
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_7" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 15.7 (Spivak 3.7)</strong></span> <span class="math inline">\(f:[0,\,1]\times [0,\,1]\to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
@@ -641,7 +634,6 @@ f(x,\,y) = \left\{\begin{array}{ll} 0, \qquad &amp; x\in \mathbb{R}\backslash \m
 <p><span class="math inline">\(f\)</span> 가 적분가능하며 <span class="math inline">\(\int_{[0,\,1]\times [0,\,1]} f = 0\)</span> 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>임의의 partition <span class="math inline">\(P\in \mathcal{P}{[0,1]\times [0,\,1]}\)</span> 에 대해 <span class="math inline">\(L(f,\,P)=0\)</span> 임은 자명하다.</p>
 <p><span class="math inline">\(f(x,\,y)=1\)</span> 인 값은 <span class="math inline">\(y=1\)</span> 인 경우밖에 없다. <span class="math inline">\(f(x,\,y)=1/2\)</span> 인 것은 <span class="math inline">\(y=2\)</span> 인 경우, <span class="math inline">\(f(x,\,y)=1/3\)</span> 인 것은 <span class="math inline">\(y=1/3,\, 2/3\)</span> 인 경우이다. 즉 <span class="math inline">\(f(x,\,y)=1/q\)</span> 인 <span class="math inline">\(y\)</span> 값은 <span class="math inline">\(q=1\)</span> 인 경우를 제외하면 최대 <span class="math inline">\(q-1\)</span> 개이다.</p>
@@ -705,7 +697,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>정리 15.2</strong></span> <span class="math inline">\(A=A_1 \cup A_2 \cup \cdots\)</span> 이며 각각의 <span class="math inline">\(A_i\)</span> 가 measure zero 이면 <span class="math inline">\(A\)</span> 도 measure zero 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(A_i\)</span> 가 가산무한개의 집합족 <span class="math inline">\(\mathcal{U}_i\)</span> 로 덮일 수 있으며 <span class="math inline">\(A\)</span> 가 가산무한개의 집합의 합집합이므로 가산무한개의 집합족으로 덮인다. 각각의 <span class="math inline">\(A_i\)</span> 에 대해 닫힌 <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}_i = \{U^{i}_1,\, U^{i}_2,\ldots\}\)</span> 이 존재하여 <span class="math inline">\(\sum_{j}\text{vol}\left(U^{i}_j\right) &lt; \dfrac{\varepsilon}{2^{j}}\)</span> 이 될 수 있다. 그렇다면</p>
 <p><span class="math display">\[
@@ -755,7 +746,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>명제 15.4</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 measure zero 이고 옹골 집합이면 <span class="math inline">\(A\)</span> 는 content zero 이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 가 measure zero 이고 열린 <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots\}\)</span> 가 <span class="math inline">\(A\)</span> 의 열린 덮개이며 <span class="math inline">\(\sum_{U_i \in \mathcal{U}} \text{vol}(U_i)&lt;\varepsilon\)</span> 이라고 하자. <span class="math inline">\(A\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(\{U_1,\ldots,\,U_m\}\)</span> 으로 덮어지며 따라서 그 부피의 합도 <span class="math inline">\(\varepsilon\)</span> 보다 작다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -773,7 +763,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>연습문제 15.8 (Spivak 3.8)</strong></span> 각각의 <span class="math inline">\(i\in \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 라면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 는 content zero 가 될 수 없음을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdots \times (b_n-a_n)&gt;0\)</span></p>
 </div>
@@ -784,7 +773,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p>(<span class="math inline">\(b\)</span>) measure zero 이지만 content zero 가 아닌 닫힌 집합의 예를 들어라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(A\subset\mathbb{R}^n\)</span> 가 content zero 라고 하자. <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\(A\)</span> 의 덮개라고 하면 <span class="math inline">\(d_M=\max \{\|\boldsymbol{x}\| : \boldsymbol{x}\in \bigcup_{i=1}^n U_i \}\)</span> 가 존재하며 모든 <span class="math inline">\(\boldsymbol{y}\in A\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{y}\|\le d_M\)</span> 이어야 하는데 이는 <span class="math inline">\(A\)</span> 가 유계임을 의미한다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\mathbb{Z}\)</span></p>
@@ -796,7 +784,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p>(<span class="math inline">\(b\)</span>) Measure zero 이며, 유계이지만 <span class="math inline">\(C\)</span> 의 경계가 measure zero 가 아닌 집합의 예를 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 가 <span class="math inline">\(C\)</span> 의 덮개이고 <span class="math inline">\(U=\text{vol}\left(\bigcup_{i=1}^n U_i\right)\)</span> 라고 하자. <span class="math inline">\(C\subset U\)</span> 이며 <span class="math inline">\(C\)</span> 는 닫힌 집합이므로 <span class="math inline">\(\text{Bd}(C)\subset U\)</span> 이다. 따라서 <span class="math inline">\(C\)</span> 의 경계도 content zero 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A=\mathbb{Q}\cap [0,\,1]\)</span>. <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로 <span class="math inline">\(A\)</span> 도 measure zero 이며 유계이다. 그러나 <span class="math inline">\(\text{Bd}(A)=[0,\,1]\)</span> 이므로 measure zero 가 아니다.</p>
@@ -807,7 +794,6 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>연습문제 15.11 (Spivak 3.11)</strong></span> <span class="math inline">\(A\)</span> 가 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>12.12</span></a> 의 <span class="math inline">\(A\)</span> 라고 하자. <span class="math inline">\(\sum_{i=1}^\infty (b_i-a_i)&lt;1\)</span> 이면 <span class="math inline">\(A\)</span> 의 경계는 measure zero 가 아님을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A=\bigcup_{i=1}^\infty (a_i,\,b_i)\)</span> 이다. <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>12.12</span></a> <span class="math inline">\(\partial A=[0,\,1]-A\)</span> 이다.</p>
 </div>
@@ -817,9 +803,8 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><span class="theorem-title"><strong>연습문제 15.12 (Spivak 3.12)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(\{x: f\text{ is discontinuous at }x\}\)</span> 는 measure zero 임을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>정해진 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(X_n = \{x:o(f,\,x)&gt; \frac{1}{n}\}\)</span> 라고 하자. <a href="3_1_functions_on_Euclidean_space.html#prp-CM_oscillation_and_continuity" class="quarto-xref">명제&nbsp;<span>12.3</span></a> 로부터 <span class="math inline">\(X_n \subset X\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>정해진 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(X_n = \{x:o(f,\,x)&gt; \frac{1}{n}\}\)</span> 라고 하자. <a href="3_1_functions_on_Euclidean_space.html#prp-CM_oscillation_and_continuity" class="quarto-xref">명제&nbsp;<span>12.5</span></a> 로부터 <span class="math inline">\(X_n \subset X\)</span> 이다.</p>
 <p><span class="math inline">\(X_n = \{x_1,\,x_2,\ldots\}\)</span> 이고 <span class="math inline">\(x_1&lt;x_2&lt;\cdots\)</span> 라고 하면 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_30" class="quarto-xref">연습문제&nbsp;<span>12.22</span></a> 에 따라</p>
 <p><span class="math display">\[
 f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n}
@@ -833,7 +818,6 @@ f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n
 <p>(<span class="math inline">\(b\)</span>) 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 그 열린 덮개인 집합족 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. <span class="math inline">\(A\)</span> 를 덮는 <span class="math inline">\(\mathcal{O}\)</span> 의 부분집합인 수열 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 가 존재함을 보여라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\mathbb{Q}^{2n}\)</span> 은 가산집합이다.</p>
 <p>(<span class="math inline">\(b\)</span>) 각각의 <span class="math inline">\(x\in A\)</span> 에 대해 <span class="math inline">\(x\)</span> 를 포함하는 <span class="math inline">\(U_x\in \mathcal{O}\)</span> 가 존재하며 <span class="math inline">\(x\in B_x \subset U_x\)</span> 인 경계가 유리수인((<span class="math inline">\(a\)</span>) 에서 말한 그것) <span class="math inline">\(n\)</span>-cell <span class="math inline">\(B_x\)</span> 가 존재한다. 이런 <span class="math inline">\(B_x\)</span> 에 대해 <span class="math inline">\(U_x\)</span> 를 하나씩 모으면 <span class="math inline">\(B_x\)</span> 의 집합은 countable 이므로 이런 <span class="math inline">\(U_x\)</span> 의 집합도 countable 이다.</p>
@@ -849,9 +833,8 @@ f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n
 <p><span class="theorem-title"><strong>보조정리 15.1</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계이며 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에서 <span class="math inline">\(o(f,\,\boldsymbol{x}) &lt;\varepsilon\)</span> 이면 어떤 <span class="math inline">\(P\in \mathcal{P}[A]\)</span> 가 존재하여 <span class="math inline">\(U(f,\,P) - L(f,\,P)&lt;\varepsilon \cdot \text{vol}(A)\)</span> 를 만족한다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{x}\in A\)</span> 이면 <span class="math inline">\(x\)</span> 를 포함하는 어떤 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_x\)</span> 에서 <span class="math inline">\(M_{U_x}(f) - m_{U_x}(f) &lt;\varepsilon\)</span> 이다. <span class="math inline">\(A\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(U_{x_1},\ldots,\,U_{x_n}\)</span> 이 존재하여 <span class="math inline">\(A\)</span> 를 덮는다. <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 의 각각의 subcell 이 어떤 <span class="math inline">\(U_{x_i}\)</span> 에 포함되도록 잡을 수 있다. <span class="math inline">\(S\)</span> 가 그런 subcell 이라면 <span class="math inline">\(M_S(f)-m_S(f)&lt;\varepsilon\)</span> 이며, 따라서</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{x}\in A\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 어떤 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_x\)</span> 에서 <span class="math inline">\(M_{U_x}(f) - m_{U_x}(f) &lt;\varepsilon\)</span> 이다. <span class="math inline">\(A\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(U_{x_1},\ldots,\,U_{x_n}\)</span> 이 존재하여 <span class="math inline">\(A\)</span> 를 덮는다. <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 의 각각의 subcell 이 어떤 <span class="math inline">\(U_{x_i}\)</span> 에 포함되도록 잡을 수 있다. <span class="math inline">\(S\)</span> 가 그런 subcell 이라면 <span class="math inline">\(M_S(f)-m_S(f)&lt;\varepsilon\)</span> 이며, 따라서</p>
 <p><span class="math display">\[
 U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt; \varepsilon \cdot \text{vol}(A)
 \]</span></p>
@@ -863,10 +846,9 @@ U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt;
 <p><span class="theorem-title"><strong>정리 15.3</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 유계인 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(B=\{\boldsymbol{x}\in A:f\text{ is not continuous at }f\}\)</span> 일 때 <span class="math inline">\(f\)</span> 가 적분가능한 것의 필요충분조건은 <span class="math inline">\(B\)</span> 가 measure zero 인 것이다.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B_\varepsilon := \{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x})\ge \varepsilon\}\)</span> 라고 하자.</p>
-<p>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(B\)</span> 가 measure zero 임을 가정하자 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(B_\varepsilon \subset B\)</span> 이므로 <span class="math inline">\(B_\varepsilon\)</span> 은 measure zero 이다. <a href="3_1_functions_on_Euclidean_space.html#prp-CM_oscillation_and_closed_set" class="quarto-xref">명제&nbsp;<span>12.4</span></a> 에 의해 <span class="math inline">\(B_\varepsilon\)</span> 은 닫힌집합이며 <span class="math inline">\(B_\varepsilon \subset A\)</span> 이므로 유계이다. 따라서 <span class="math inline">\(B_\varepsilon\)</span> 은 옹골집합이므로 content zero 이다(<a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>15.4</span></a>). 따라서 유한개의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_1,\ldots,\,U_n\)</span> 로 <span class="math inline">\(\sum_{i=1}^n \text{vol}(U_i)&lt;\varepsilon\)</span> 이며 <span class="math inline">\(B_\varepsilon\)</span> 을 덮을 수 있다. 이제 <span class="math inline">\(A\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 에 따라 정해지는 subcell 이 아래의 <span class="math inline">\(\mathcal{S}_1\)</span> 이나 <span class="math inline">\(\mathcal{S}_2\)</span> 중의 하나에 속하도록 잡자.(<a href="#fig-CM_integrability_1" class="quarto-xref">그림&nbsp;<span>15.1</span></a>)</p>
+<p>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(B\)</span> 가 measure zero 임을 가정하자 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(B_\varepsilon \subset B\)</span> 이므로 <span class="math inline">\(B_\varepsilon\)</span> 은 measure zero 이다. <a href="3_1_functions_on_Euclidean_space.html#prp-CM_oscillation_and_closed_set" class="quarto-xref">명제&nbsp;<span>12.6</span></a> 에 의해 <span class="math inline">\(B_\varepsilon\)</span> 은 닫힌집합이며 <span class="math inline">\(B_\varepsilon \subset A\)</span> 이므로 유계이다. 따라서 <span class="math inline">\(B_\varepsilon\)</span> 은 옹골집합이므로 content zero 이다(<a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>15.4</span></a>). 따라서 유한개의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_1,\ldots,\,U_n\)</span> 로 <span class="math inline">\(\sum_{i=1}^n \text{vol}(U_i)&lt;\varepsilon\)</span> 이며 <span class="math inline">\(B_\varepsilon\)</span> 을 덮을 수 있다. 이제 <span class="math inline">\(A\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 에 따라 정해지는 subcell 이 아래의 <span class="math inline">\(\mathcal{S}_1\)</span> 이나 <span class="math inline">\(\mathcal{S}_2\)</span> 중의 하나에 속하도록 잡자.(<a href="#fig-CM_integrability_1" class="quarto-xref">그림&nbsp;<span>15.1</span></a>)</p>
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\mathcal{S}_1\)</span> : 어떤 <span class="math inline">\(U_i\)</span> 에 대해 <span class="math inline">\(S \subset U_i\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_1\)</span> 에 포힘된다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{S}_2\)</span> : <span class="math inline">\(S\cap B_\varepsilon = \varnothing\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_2\)</span> 에 포함된다.</p>
 <div id="fig-CM_integrability_1" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -913,236 +895,242 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "복사완료!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "복사완료!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "복사완료!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "복사완료!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1150,185 +1138,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/part3/3_3_inverse_function_theorem.html" class="pagination-link" aria-label="역함수 정리와 음함수 정리">

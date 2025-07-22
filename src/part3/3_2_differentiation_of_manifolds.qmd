@@ -427,90 +427,91 @@ $$ {#eq-CM_chain_rule}
 
 ::: {.proof}
 
-$\bf{b}=F(\bf{a})$, $L=F'(\bf{a}),\, T = (G\circ F)'(\bf{a}))$ 라고 하자. 그리고 다음과 같이 정의한다.
+
+$\bf{b}=F(\bf{a})$, $L=F'(\bf{a}),\, T = (G\circ F)'(\bf{a})$ 라고 하자. 그리고 다음과 같이 정의한다.
 
 $$
 \begin{aligned}
-\bf{\varphi} (\bf{x}) &:= F(\bf{x}) - F(\bf{a}) - L(\bf{x}-\bf{a}),\\[0.3em]
-\bf{\psi} (\bf{y}) &:= G(\bf{y})- G(\bf{b})-T(\bf{y}-\bf{b}), \\[0.3em]
-\bf{\rho}(\bf{x}) &: = G\circ F(\bf{x})- G \circ F(\bf{a}) - (T\circ L) (\bf{x}-\bf{a}).
+P(\bf{x}) &:= F(\bf{x}) - F(\bf{a}) - L(\bf{x}-\bf{a}),\\[0.3em]
+Q (\bf{y}) &:= G(\bf{y})- G(\bf{b})-T(\bf{y}-\bf{b}), \\[0.3em]
+R(\bf{x}) &: = G\circ F(\bf{x})- G \circ F(\bf{a}) - (T\circ L) (\bf{x}-\bf{a}).
 \end{aligned}
 $$ {#eq-thm_part3_chainrule_1}
 
 미분가능성의 정의로부터
 
 $$
-\lim_{\bf{x}\to\bf{a}}\dfrac{\|\bf{\varphi}(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0, \qquad \lim_{\bf{y}\to\bf{b}}\dfrac{\|\bf{\psi}(\bf{y})\|}{\|\bf{y}-\bf{b}\|} = 0
+\lim_{\bf{x}\to\bf{a}}\dfrac{\|P(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0, \qquad \lim_{\bf{y}\to\bf{b}}\dfrac{\|Q(\bf{y})\|}{\|\bf{y}-\bf{b}\|} = 0
 $$ {#eq-thm_part3_chainrule_2}
 
 
 이다. 우리는 이제 다음을 보이면 된다.
 
 $$
-\lim_{\bf{x}\to\bf{a}}\dfrac{\|\bf{\rho}(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0.
+\lim_{\bf{x}\to\bf{a}}\dfrac{\|R(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0.
 $$ {#eq-thm_part3_chainrule_3}
 
 그렇다면
 
 $$
 \begin{aligned}
-\bf{\rho}(\bf{x}) &= G(F(\bf{x})) -  G(\bf{b}) - (T \circ L)(\bf{x}-\bf{a})\\[0.3em]
-& = G(F(\bf{x})) - G(\bf{b}) - T(F(\bf{x}) - F(\bf{a})- \bf{\varphi}(\bf{x})) \\[0.3em]
-&= \left[G(F(\bf{x})) - G(\bf{b}) -T(F(\bf{x})-F(\bf{a}))\right] + T(\bf{\varphi}(\bf{x})) \\[0.3em]
-&=\bf{\psi}(F(\bf{x})) + T(\bf{\varphi}(\bf{x}))
+R(\bf{x}) &= G(F(\bf{x})) -  G(\bf{b}) - (T \circ L)(\bf{x}-\bf{a})\\[0.3em]
+& = G(F(\bf{x})) - G(\bf{b}) - T(F(\bf{x}) - F(\bf{a})- P(\bf{x})) \\[0.3em]
+&= \left[G(F(\bf{x})) - G(\bf{b}) -T(F(\bf{x})-F(\bf{a}))\right] + T(P(\bf{x})) \\[0.3em]
+&=Q(F(\bf{x})) + T(P(\bf{x}))
 \end{aligned}
 $$ {#eq-thm_part3_chainrule_4}
 
-이다. 우선 $\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0$ 임을 보이자. @exr-CM_spivak_1_10 으로부터 어떤 $M_T>0$ 에 대해
+이다. 우선 $\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(P(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0$ 임을 보이자. @exr-CM_spivak_1_10 으로부터 어떤 $M_T>0$ 에 대해
 
 $$
-\dfrac{\|T(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}\le \dfrac{M_T\|\bf{\varphi}(\bf{x})\|}{\|\bf{x}-\bf{a}\|}
+\dfrac{\|T(P(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}\le \dfrac{M_T\|P(\bf{x})\|}{\|\bf{x}-\bf{a}\|}
 $$ {#eq-thm_part3_chainrule_5}
 
 이며 @eq-thm_part3_chainrule_2 의 첫번째 극한으로부터 다음을 알 수 있다.
 
 $$
-\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(\bf{\varphi}(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0
+\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(P(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0
 $$ {#eq-thm_part3_chainrule_6}
 
 또한 @eq-thm_part3_chainrule_2 의 두번째 극한으로부터 임의의 $\varepsilon>0$ 에 대해 다음을 만족하는 $\delta>0$ 이 존재한다는 것을 안다.
 
 $$
-\|F(\bf{x})-\bf{b}\|<\delta \implies \|\bf{\psi}(F(\bf{x}))\| < \varepsilon \|F(\bf{x})-\bf{b}\|
+\|F(\bf{x})-\bf{b}\|<\delta \implies \|Q(F(\bf{x}))\| < \varepsilon \|F(\bf{x})-\bf{b}\|
 $$
 
 그렇다면 @eq-thm_part3_chainrule_1 로부터
 
 $$
 \begin{aligned}
-\varepsilon \|F(\bf{x})-\bf{b}\| &= \varepsilon \| \bf{\varphi}(\bf{x}) + L(\bf{x}-\bf{a})\| \\[0.3em]
-& \le \varepsilon \|\bf{\varphi}(\bf{x})\| + \varepsilon\|L(\bf{x}-\bf{a})\|
+\varepsilon \|F(\bf{x})-\bf{b}\| &= \varepsilon \| P(\bf{x}) + L(\bf{x}-\bf{a})\| \\[0.3em]
+& \le \varepsilon \|P(\bf{x})\| + \varepsilon\|L(\bf{x}-\bf{a})\|
 \end{aligned}
 $$
 
 이며 역시  @exr-CM_spivak_1_10 로부터 어떤 $M_L>0$ 가 존재하여 $\|L(\bf{x}-\bf{a})\| \le M_L \|\bf{x}-\bf{a}\|$ 임을 안다. 이 결과와 @eq-thm_part3_chainrule_2 의 첫번째 식을 이용하면 어떤 $\eta>0$ 에 대해
 
 $$
-\|\bf{x}-\bf{a}\|<\eta \implies \|\bf{\varphi}(\bf{x})\| <\|\bf{x}-\bf{a}\|
+\|\bf{x}-\bf{a}\|<\eta \implies \|P(\bf{x})\| <\|\bf{x}-\bf{a}\|
 $$
 
 이므로 임의의 $\varepsilon>0$ 에 대해 어떤 $\eta>0$ 이 존재하여 
 
 $$
-\|\bf{x}-\bf{a}\|<\eta \implies \|\bf{\psi}(F(\bf{x}))\| \le \varepsilon(M_L+1) \|\bf{x}-\bf{a}\|
+\|\bf{x}-\bf{a}\|<\eta \implies \|Q(F(\bf{x}))\| \le \varepsilon(M_L+1) \|\bf{x}-\bf{a}\|
 $$
 
 이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 
 
 $$
-\lim_{\bf{x}\to \bf{a}}\dfrac{\|\bf{\psi}(F(\bf{x}))\|}{\|\bf{x}-\bf{a}\|} = 0
+\lim_{\bf{x}\to \bf{a}}\dfrac{\|Q(F(\bf{x}))\|}{\|\bf{x}-\bf{a}\|} = 0
 $${#eq-thm_part3_chainrule_7}
 
 
 이다. 따라서 @eq-thm_part3_chainrule_4 로 부터
 
 $$
-\lim_{\bf{x}\to \bf{a}} \dfrac{\|\bf{\rho}(\bf{x})\|}{\|\bf{x}-\bf{a}\|} =0
+\lim_{\bf{x}\to \bf{a}} \dfrac{\|R(\bf{x})\|}{\|\bf{x}-\bf{a}\|} =0
 $$
 
 이므로 $(G\circ F)'(\bf{a}) = T\circ L= (G\circ F)'(\bf{a}) \cdot F'(\bf{a})$ 이다. $\square$
@@ -521,33 +522,20 @@ $$
 ### 다변수 함수 미분의 기본 성질 {#sec-CM_basic_properties_of_derivative_of_multivariable_functions}
 
 </br>
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-CM_basic_properties_of_derivative_of_multivariable_functions}
+::: {#prp-CM_basic_properties_of_derivative_of_multivariable_functions}
 
-$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix}f_1(\bf{x}) &\cdots & f_m(\bf{x})\end{bmatrix}^T$ 이라고 하자.
+$F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
 ($1$) $F$ 가 상수함수이면 모든 $\bf{x}\in \R^n$ 에 대해 $F'(\bf{x}) = \bf{0}$ 이다.
 
 ($2$) $F$ 가 선형사상이면 $F'(\bf{a})= F$ 이다. 
 
-($3$) $F$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능한 것이며 
-
-$$
-F'(\bf{a}) = \begin{bmatrix} f_1'(\bf{a}) & \cdots &f_m'(\bf{a})\end{bmatrix}^T
-$$
-
-이다. 따라서 $F'(\bf{a})\in \mathcal{M}_{m \times n}(\R)$ 이며 $i$ 번째 열은 $(f_i)'(\bf{a})$ 이다.
-
-($4$) $s:\R^2 \to \R$ 이 $s(x,\,y) = x+y$ 이면 $s'(a,\,b)= s$ 이다.
-
-($5$) $p:\R^2 \to \R$ 이 $p(x,\,y) = x \cdot y$ 이면 $p'(a,\,b) (x,\,y) = bx+ay$ 이다. 따라서 $p'(a,\,b)= (b,\,a)$ 이다. 
-
-
 :::
 
 </div>
+
 
 ::: {.proof}
 
@@ -555,7 +543,26 @@ $$
 
 ($2$) $F$ 가 선형사상이면 $\|F(\bf{x}+\bf{h})- F(\bf{x})- F(\bf{h})\| = 0$ 이다. 
 
-($3$) 우선 $f_i'(\bf{a})$ 는 $1 \times n$ 행렬, 즉 열행렬임을 안다. $1 \times n$ 열행렬 $\bf{a}_1,\ldots,\, \bf{a}_m$ 에 대해 
+:::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_basic_properties_of_derivative_of_multivariable_functions}
+
+$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix}f_1(\bf{x}) &\cdots & f_m(\bf{x})\end{bmatrix}^T$ 이라고 일 때 $F$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능한 것이며 
+
+$$
+F'(\bf{a}) = \begin{bmatrix} f_1'(\bf{a}) & \cdots &f_m'(\bf{a})\end{bmatrix}^T
+$$
+
+이다. 
+
+::: 
+
+</div>
+
+::: {.proof}
+우선 $f_i'(\bf{a})$ 는 $1 \times n$ 행렬, 즉 열행렬임을 안다. $1 \times n$ 열행렬 $\bf{a}_1,\ldots,\, \bf{a}_m$ 에 대해 
 
 $$
 \begin{bmatrix} \bf{a}_1 \\ \vdots \\ \bf{a}_m \end{bmatrix} = \begin{bmatrix} (\bf{a}_1)_1 & \cdots & (\bf{a}_1)_n \\ \vdots & & \vdots \\ (\bf{a}_m)_1 & \cdots & (\bf{a}_m)_n\end{bmatrix}
@@ -574,19 +581,28 @@ $$
 
 이며 $\bf{h}\to \bf{0}$ 극한에서 우변이 $0$ 이므로 좌변도 $0$ 이다. 즉 $F'(\bf{a}) = T$ 이다. 
 
-이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-CM_projection_function) $\pi_i$ 에 대해 @exr-CM_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-CM_chain_rule 에 의해 $\pi_i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. 
+이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-CM_projection_function) $\pi_i$ 에 대해 @exr-CM_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-CM_chain_rule 에 의해 $\pi_i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. $\square$
+:::
 
-($4$) $s$ 가 선형사상이므로 ($2$) 에 의해 성립한다.
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
-($5$) $T(x,\,y) = bx+ay$ 라고 하자. $|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)| = hk$ 이므로 
+::: {#exm-CM_simplle_derivative_examples}
+
+($1$) $s:\R^2 \to \R$ 이 $s(x,\,y) = x+y$ 이면 $s'(x,\,y) = s$ 임은 @prp-CM_basic_properties_of_derivative_of_multivariable_functions 의 ($2$) 에 의해 자명하다.
+
+($2$) $p:\R^2 \to \R$ 이 $p(x,\,y) = xy$ 일 때 $p'(x,\,y) = \begin{bmatrix} b \\ a\end{bmatrix}$ 임을 보이자. $L =  \begin{bmatrix} b \\ a\end{bmatrix}$ 에 대해
 
 $$
-\lim_{(h,\,k) \to \bf{0}}\dfrac{|p(a+h,\,b+k) - p(a,\,b) - T(h,\,k)|}{\sqrt{|h|^2+|k|^2}} = \lim_{(h,\,k) \to \bf{0}}\dfrac{|hk|}{\sqrt{h^2+k^2}} 
+\begin{aligned}
+\lim_{(h,\,k) \to \bf{0}} \dfrac{|p(a+h,\,b+k) - p(a,\,b) - L(h,\,k)|}{\sqrt{h^2+k^2}} &= \lim_{(h,\,k) \to \bf{0}}\dfrac{|hk|}{\sqrt{h^2+k^2}} \\[0.3em]
+&\le \lim_{(h,k)\to \bf{0}}\dfrac{h^2+k^2}{2\sqrt{h^2+k^2}} =0
+\end{aligned}
 $$
 
-이다. 우리는 $|h|^2+|k|^2 \le 2|hk|$ 임을 안다. 따라서 위의 극한은 $0$ 이므로 $p'(a,\,b)(x,\,y) = bx+ay$ 이다. $\square$
+이다. 
 
 :::
+</div>
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -613,7 +629,7 @@ $$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2}
 
 ::: {.proof}
 
-@thm-CM_basic_properties_of_derivative_of_multivariable_functions ($4$) 의 $s(x,\,y)=x+y$ 를 이용한다. $f+g = s\circ (f,\,g)$ 이므로
+@exm-CM_simplle_derivative_examples ($1$) 의 $s(x,\,y)=x+y$ 를 이용한다. $f+g = s\circ (f,\,g)$ 이므로
 
 $$
 \begin{aligned}
@@ -624,7 +640,7 @@ $$
 
 이다. 
 
-@thm-CM_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $p(x,\,y) = x\cdot y$ 를 이용한다. $f\cdot g = p\circ(f,\,g)$ 이므로
+@exm-CM_simplle_derivative_examples ($2$) 의 $p(x,\,y) = x\cdot y$ 를 이용한다. $f\cdot g = p\circ(f,\,g)$ 이므로
 
 $$
 \begin{aligned}
@@ -814,7 +830,7 @@ $$
 
 ($b$) $F'(\bf{a},\,\bf{b})(\bf{x},\,\bf{y}) = F(\bf{a},\,\bf{y}) + F(\bf{x},\, \bf{b})$ 임을 보여라.
 
-($c$) @thm-CM_basic_properties_of_derivative_of_multivariable_functions ($5$) 의 $Dp(a,\,b)$ 는 ($b$) 의 특별한 형태임을 보여라.
+($c$) @exm-CM_simplle_derivative_examples ($2$) 의 $Dp(a,\,b)$ 는 ($b$) 의 특별한 형태임을 보여라.
 
 :::
 
@@ -1483,7 +1499,7 @@ $$
 
 ::: {.proof}
 
-@thm-CM_basic_properties_of_derivative_of_multivariable_functions 의 ($3$) 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R^n \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
+@thm-CM_basic_properties_of_derivative_of_multivariable_functions 에 의해 $f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}$ 임을 보이면 된다. $H:\R^n \to \R^n$ 를 $\bf{a}$ 에서 $j$ 번째 성분만 $x$ 인 함수라고 하자. 즉
 
 $$
 H(\bf{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)

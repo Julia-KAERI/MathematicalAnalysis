@@ -682,12 +682,9 @@ $$
 
 :::
 
-
 </br>
 
-
 ### 함수의 연속성 {#sec-CM_functions_and_continuity}
-
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -759,6 +756,10 @@ $$
 
 :::
 :::
+
+</br>
+
+$f$ 가 유계이므로 $M(f,\bf{a},\delta)$ 와 $m(f,\bf{a},\delta)$ 는 존재한다. $M(f,\bf{a},\delta)-m(f,\bf{a},\delta)$ 는 $\delta$ 에 대해 단조 감소 함수이므로 $o(f,\bf{a})$ 는 항상 존재한다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
