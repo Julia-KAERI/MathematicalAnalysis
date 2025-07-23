@@ -12,7 +12,7 @@ crossref:
 
 ## 기본 개념과 표기법
 
-여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-MA_Euclidean_space 와 @prp-MA_norm_of_Euclidean_space 를 보라.
+여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-MA_Euclidean_space 와 @prp-MA_norm_of_Euclidean_space 를 보라. 
 
 - 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x_1,\ldots,\,x_n)$ 식 표기법과 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
@@ -403,6 +403,29 @@ $$
 :::
 
 :::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+
+::: {#def-CM_interior_and_exterior}
+
+#### 내부와 외부
+
+$A\in \R^n,\, x\in \R^n$ 에 대해 
+
+&emsp;($1$) $x\in U\subset A$ 인 열린 $n$-cell $U$ 가 존재하면 $x$ 가 $A$ 의 내부에 있다고 한다. 
+
+&emsp;($2$) $x$ 가 $\R^n\backslash A$ 의 내부에 있을 때 $x$ 가 $A$ 의 외부에 있다고 한다.
+
+&emsp;($3$) $x$ 가 $A$ 의 내부와 외부에 있지 않을 때 $x$ 가 $A$ 의 경계에 있다고 한다.
+
+$A$ 의 내부에 있는 점들의 집합을 $\text{int}(A)$ 라 표기하고 $A$ 의 경계에 있는 점들의 집합을 $\partial A$ 라고 표기한다.
+
+:::
+
+:::
+
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 

@@ -299,7 +299,16 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
-  <li><a href="#sec-CM_integrable_functions" id="toc-sec-CM_integrable_functions" class="nav-link" data-scroll-target="#sec-CM_integrable_functions"><span class="header-section-number">15.3</span> 적분가능한 함수</a></li>
+  <li><a href="#적분가능한-함수" id="toc-적분가능한-함수" class="nav-link" data-scroll-target="#적분가능한-함수"><span class="header-section-number">15.3</span> 적분가능한 함수</a>
+  <ul class="collapse">
+  <li><a href="#sec-CM_integrable_functions" id="toc-sec-CM_integrable_functions" class="nav-link" data-scroll-target="#sec-CM_integrable_functions"><span class="header-section-number">15.3.1</span> 적분가능한 함수</a></li>
+  <li><a href="#sec-CM_character_function_and_integrability" id="toc-sec-CM_character_function_and_integrability" class="nav-link" data-scroll-target="#sec-CM_character_function_and_integrability"><span class="header-section-number">15.3.2</span> 특성함수와 적분 가능성</a></li>
+  <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
+  </ul></li>
+  <li><a href="#푸비니의-정리" id="toc-푸비니의-정리" class="nav-link" data-scroll-target="#푸비니의-정리"><span class="header-section-number">15.4</span> 푸비니의 정리</a>
+  <ul class="collapse">
+  <li><a href="#직사각형-영역에서-정의된-함수의-적분" id="toc-직사각형-영역에서-정의된-함수의-적분" class="nav-link" data-scroll-target="#직사각형-영역에서-정의된-함수의-적분"><span class="header-section-number">15.4.1</span> 직사각형 영역에서 정의된 함수의 적분</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -404,8 +413,8 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>정의 15.4 (리만 상합, 리만 하합)</strong></span> <span class="math inline">\(Q\subset \mathbb{R}^n\)</span> 이 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(Q\)</span> 에 대해 정의된 함수 <span class="math inline">\(f:Q \to \mathbb{R}\)</span> 이 유계라고 하자. <span class="math inline">\(P\)</span> 가 <span class="math inline">\(Q\)</span> 의 분할이며 <span class="math inline">\(S\)</span> 가 <span class="math inline">\(P\)</span> 의 subcell 일 때</p>
 <p><span class="math display">\[
 \begin{aligned}
-M_S(F) &amp;:= \sup \{f(\boldsymbol{x}) : \boldsymbol{x}\in S\}, \\[0.3em]
-m_S(F) &amp;:= \inf \{f(\boldsymbol{f}): \boldsymbol{x}\in S\}
+M_S(f) &amp;:= \sup \{f(\boldsymbol{x}) : \boldsymbol{x}\in S\}, \\[0.3em]
+m_S(f) &amp;:= \inf \{f(\boldsymbol{f}): \boldsymbol{x}\in S\}
 \end{aligned}
 \]</span></p>
 <p>라고 하자. <span class="math inline">\(\text{vol}(S)\)</span> 를 cubcell <span class="math inline">\(S\)</span> 의 부피라고 할 때 분할 <span class="math inline">\(P\)</span> 에 대한 <span class="math inline">\(f\)</span> 의 리만 상합 <span class="math inline">\(U(f,\, P)\)</span> 와 리만 하합 <span class="math inline">\(L(f,\,P)\)</span> 는 다음과 같이 정의된다.</p>
@@ -825,8 +834,10 @@ f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n
 <p><br></p>
 </section>
 </section>
-<section id="sec-CM_integrable_functions" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="sec-CM_integrable_functions"><span class="header-section-number">15.3</span> 적분가능한 함수</h2>
+<section id="적분가능한-함수" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="적분가능한-함수"><span class="header-section-number">15.3</span> 적분가능한 함수</h2>
+<section id="sec-CM_integrable_functions" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="sec-CM_integrable_functions"><span class="header-section-number">15.3.1</span> 적분가능한 함수</h3>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_integrability" class="theorem lemma">
@@ -842,7 +853,7 @@ U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt;
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_integrability" class="theorem">
+<div id="thm-CM_integrability_and_measure_of_uncontinous_points" class="theorem">
 <p><span class="theorem-title"><strong>정리 15.3</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 유계인 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(B=\{\boldsymbol{x}\in A:f\text{ is not continuous at }f\}\)</span> 일 때 <span class="math inline">\(f\)</span> 가 적분가능한 것의 필요충분조건은 <span class="math inline">\(B\)</span> 가 measure zero 인 것이다.</p>
 </div>
 </div>
@@ -889,8 +900,133 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 \]</span></p>
 <p>이므로 결론적으로 <span class="math inline">\(\sum_{S\in \mathcal{S}} \text{vol}(S)&lt; \varepsilon\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
+<p><br></p>
+</section>
+<section id="sec-CM_character_function_and_integrability" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="sec-CM_character_function_and_integrability"><span class="header-section-number">15.3.2</span> 특성함수와 적분 가능성</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_characteristic_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 15.8 (특성함수와 집합의 적분)</strong></span> <strong>특성 함수 (characteristic fucntion)</strong> <span class="math inline">\(\chi_A:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 은 다음과 같이 정의된다.</p>
+<p><span id="eq-CM_definition_of_characteristic_fucntion"><span class="math display">\[
+\chi_A (x) = \left\{\begin{array}{ll} 0, \qquad &amp; x\in X,\\ 1 &amp; x\in C\end{array}\right. .
+\tag{15.5}\]</span></span></p>
+<p>어떤 닫힌 직육면체 <span class="math inline">\(C\)</span> 에 대해 <span class="math inline">\(A\subset C\)</span> 이고 <span class="math inline">\(f:C\to \mathbb{R}\)</span> 이 유계함수 일 때 <span class="math inline">\(x\cdot \chi_A\)</span> 가 적분 가능하다면 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(f\)</span> 의 적분은 아래와 같이 정의된다.</p>
+<p><span id="eq-CM_definition_of_integration_within_rectengle"><span class="math display">\[
+\int_A f := \int_C f \cdot \chi_A
+\tag{15.6}\]</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_integrability_of_characteristic_function" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 15.5</strong></span> <span class="math inline">\(A\)</span> 에서 정의된 특성함수 <span class="math inline">\(\chi_A\)</span> 가 적분 가능할 필요충분조건은 <span class="math inline">\(\partial A\)</span> 가 measure <span class="math inline">\(0\)</span> 인 것이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(x\in \text{int}(A)\)</span> 이거타 <span class="math inline">\(x\)</span> 가 <span class="math inline">\(A\)</span> 의 외부라면 <span class="math inline">\(\chi_A\)</span> 가 <span class="math inline">\(x\)</span> 에서 연속임은 자명하다. <span class="math inline">\(x\in \partial A\)</span> 라면 <span class="math inline">\(\chi_A\)</span> 는 <span class="math inline">\(x\)</span> 에서 연속이지 않으며 <a href="#thm-CM_integrability_and_measure_of_uncontinous_points" class="quarto-xref">정리&nbsp;<span>15.3</span></a> 에 따라 명제가 증명된다. <span class="math inline">\(\square\)</span></p>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_jordan_measureable_and_volume" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 15.9 (요르당 적분가능)</strong></span> 유계인 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(\partial A\)</span> 가 measure <span class="math inline">\(0\)</span> 일 때 <span class="math inline">\(A\)</span> 를 <strong>요르당-적분가능(Jordan-measureable)</strong> 하다고 한다. <span class="math inline">\(\int_A 1\)</span> 을 <span class="math inline">\(A\)</span> 의 <strong>content</strong> 혹은 <strong><span class="math inline">\(n\)</span>-차원 부피(volumn)</strong> 라고 한다. 단 <span class="math inline">\(1\)</span> 차원일 경우는 <strong>길이(length)</strong>, 2차원일 경우는 <strong>넓이(area)</strong> 라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="연습문제-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
+<p><br></p>
+</section>
+</section>
+<section id="푸비니의-정리" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="푸비니의-정리"><span class="header-section-number">15.4</span> 푸비니의 정리</h2>
+<section id="직사각형-영역에서-정의된-함수의-적분" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="직사각형-영역에서-정의된-함수의-적분"><span class="header-section-number">15.4.1</span> 직사각형 영역에서 정의된 함수의 적분</h3>
+<p>직사각형 <span class="math inline">\([a,\,b] \times [c,\,d]\)</span> 위에서 정의된 실함수 <span class="math inline">\(f:[a,\,b] \times [c,\,d] \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\((t_0,\ldots,\,t_n)\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 의 분할이라고 할 때 <span class="math inline">\(\{t_i\} \times [c,\,d]\)</span> 는 <span class="math inline">\([a,\,b]\times [c,\,d]\)</span> 를 <span class="math inline">\(n\)</span> 개의 긴 직사각형 조각으로 나눈다. 정해진 <span class="math inline">\(x\in [a,\,b]\)</span> 에 대해 <span class="math inline">\(g_x(y)=f(x,\,y)\)</span> 라고 하자. <span class="math inline">\([x] \times [c,\,d]\)</span> 위에서 <span class="math inline">\(f\)</span> 그래프까지의 면적은 아래와 같다.</p>
+<p><span class="math display">\[
+\int_c^d g_x = \int_c^d f(x,\,y)\, dy
+\]</span></p>
+<div id="fig-CM_Fubini_theorem" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CM_Fubini_theorem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig_CM_fubini.png" class="img-fluid figure-img" width="500">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CM_Fubini_theorem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;15.2: <span class="math inline">\([a,\,b]\times [c,\,d]\)</span> 영역에서 정의된 <span class="math inline">\(f\)</span>
+</figcaption>
+</figure>
+</div>
+<p>또한 <span class="math inline">\([t_{i-1},\,t_i]\times [c,\,d]\)</span> 영역 위에서 <span class="math inline">\(f\)</span> 아래 영역의 부피는 <span class="math inline">\(x\in [t_{i-1},\,t_i]\)</span> 에 대해 대략</p>
+<p><span class="math display">\[
+(t_{i-1}-t_i) \cdot \int_c^d f(x,\,y) \,dy
+\]</span></p>
+<p>이며, 따라서</p>
+<p><span class="math display">\[
+\int_{[a,b]\times [c,d]} f = \sum_{i=1}^n \int_{[t_{i-1},t_i]\times [c,,d]} f \approx \sum_{i=1}^n (t_{i-1},t_i) \cdot \int_c^d f(x,\,y)\, dy
+\]</span></p>
+<p>임을 안다. 다른 한편 위의 식의 <span class="math inline">\(\sum_i\)</span> 관련 부분은 <span class="math inline">\(\int_a^b \left(\int_c^d f(x,\,y)\,dy\right)\,dx\)</span> 의 정의에서 나타나는 그것과 유사하다. 따라서 <span class="math inline">\(h(x) := \int_c^d g_x = \int_c^d f(x,\,y)\,dy\)</span> 라고 정의하면 <span class="math inline">\(h \in \mathcal{R}[a,\,b]\)</span> 이고</p>
+<p><span class="math display">\[
+\int_{[a,b]\times [c,d]} = \int_a^b h = \int_a^b \left(\int_c^d f(x,\,y)\, dy\right)\,dx
+\]</span></p>
+<p>임을 기대할 수 있다. 우리가 앞으로 할 일은 <span class="math inline">\(f\)</span> 가 연속일 경우 이것이 사실임을 보이는 것인데, 일반적인 경우에서는 그렇지 않을 수 있다. <span class="math inline">\(f:[a,\,b] \times [c,\,d] \to \mathbb{R}\)</span> 이 불연속인 점이 <span class="math inline">\([x]\times [c,\,d]\)</span> 라고 하자. 그랗다면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\times [c,\,d]\)</span> 에서는 적분 가능하지만 <span class="math inline">\(h(x_0) = \int_c^d f(x_0,\,y)\,dy\)</span> 는 정의 자체가 안될 수도 있다. 앞으로 보겠지만 푸비지의 정리 자체는 이것을 생각하면 약간 의아할 수 있고, 여러 특별한 경우에 대한 주의사항이 붙게 된다.</p>
+<p>푸비니의 정리를 진행하기에 앞서 리만 상합과 리만 하합(<a href="#def-CM_riemann_upper_sum_and_lower_sum" class="quarto-xref">정의&nbsp;<span>15.4</span></a>) 을 다시 한번 상기하자. <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\)</span> 에</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CM_fubini_theorem" class="theorem">
+<p><span class="theorem-title"><strong>정리 15.4 (푸비니 정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 이 닫힌 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(f:A \times B \to \mathbb{R}\)</span> 가 적분가능하다고 하자. <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(g_\boldsymbol{x}:B \to \mathbb{R}\)</span> 을 <span class="math inline">\(g_\boldsymbol{x}:=f(\boldsymbol{x},\boldsymbol{y})\)</span> 로 정의하자. 그리고</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathcal{L}(\boldsymbol{x}) &amp;= L(g_\boldsymbol{x},\,B),\\[0.3em]
+\mathcal{U}(\boldsymbol{x}) &amp; = U(g_\boldsymbol{x},\,B)
+\end{aligned}
+\]</span></p>
+<p>라고 하면 <span class="math inline">\(\mathcal{L}\)</span> 과 <span class="math inline">\(\mathcal{U}\)</span> 는 <span class="math inline">\(A\)</span> 에서 적분가능하며</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{A\times B} f = \int_A \mathcal{L}(\boldsymbol{x}) \,d\boldsymbol{x} = \int_A L(g_\boldsymbol{x},\,B)\, d\boldsymbol{x} \\[0.3em]
+\int_{A\times B} f = \int_A \mathcal{U}(\boldsymbol{x}) \,d\boldsymbol{x} = \int_A U(g_\boldsymbol{x},\,B)\, d\boldsymbol{x} \\[0.3em]
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)\)</span> 라고 하자. <span class="math inline">\(P_A\times P_B \in \mathcal{P}(A \times B)\)</span> 이다. 따라서</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(f,\,P) &amp;= \sum_S m_S(f)\cdot \text{vol}(S) = \sum_{S_A,S_B} (f) \cdot \text{vol}(S_A \times S_B) \\[0.3em]
+&amp;= \sum_{S_A}\left( \sum_{S_B} m_{S_A \times S_B}(f) \cdot \text{vol}(S_B)\right) \cdot \text{vol}(S_A)
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(x\in S_A\)</span> 이면 <span class="math inline">\(m_{S_A\times S_B}(f) \le m_{S_B}(g_\boldsymbol{x})\)</span> 이므로</p>
+<p><span class="math display">\[
+\sum_{S_B} m_{S_A\times S_B}(f)\cdot \text{vol}(S_B) \le \sum_{S_B} m_{S_B}(g_X)\cdot \text{vol}(S_B) \le L(g_\boldsymbol{x},B) = \mathcal{L}(\boldsymbol{x})
+\]</span></p>
+<p>이다. 즉</p>
+<p><span class="math display">\[
+\sum_{S_A}\left(\sum_{S_B} m_{S_A\times S_B}(f)\cdot \text{vol}(S_B)\right) \cdot \text{vol}(S_A) \le L(\mathcal{L},\, P_A)
+\]</span></p>
+<p>같은 방법으로 <span class="math inline">\(U(\mathcal{U},\,P_A)\)</span> 에 대해 구하면 다음을 얻는다.</p>
+<p><span class="math display">\[
+L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \le U(f,\,P)
+\]</span></p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

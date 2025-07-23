@@ -78,8 +78,8 @@ $Q\subset \R^n$ 이 $n$-cell 이고 $Q$ 에 대해 정의된 함수 $f:Q \to \R$
 
 $$
 \begin{aligned}
-M_S(F) &:= \sup \{f(\bf{x}) : \bf{x}\in S\}, \\[0.3em]
-m_S(F) &:= \inf \{f(\bf{f}): \bf{x}\in S\}
+M_S(f) &:= \sup \{f(\bf{x}) : \bf{x}\in S\}, \\[0.3em]
+m_S(f) &:= \inf \{f(\bf{f}): \bf{x}\in S\}
 \end{aligned}
 $$
 
@@ -792,8 +792,9 @@ $$
 
 </br>
 
-## 적분가능한 함수 {#sec-CM_integrable_functions}
+## 적분가능한 함수 
 
+### 적분가능한 함수 {#sec-CM_integrable_functions}
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -819,7 +820,7 @@ $$
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-CM_integrability}
+::: {#thm-CM_integrability_and_measure_of_uncontinous_points}
 
 닫힌 $n$-cell $A\subset \R^n$ 에서 정의된 유계인 함수 $f:A \to \R$ 을 생각하자. $B=\{\bf{x}\in A:f\text{ is not continuous at }f\}$ 일 때 $f$ 가 적분가능한 것의 필요충분조건은 $B$ 가 measure zero 인 것이다. 
 
@@ -877,5 +878,159 @@ $$
 $$
 
 이므로 결론적으로 $\sum_{S\in \mathcal{S}} \text{vol}(S)< \varepsilon$ 이다. $\square$
+
+:::
+
+</br>
+
+### 특성함수와 적분 가능성{#sec-CM_character_function_and_integrability}
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_characteristic_function}
+
+#### 특성함수와 집합의 적분
+
+**특성 함수 (characteristic fucntion)** $\chi_A:A\subset \R^n \to \R$ 은 다음과 같이 정의된다.
+
+$$
+\chi_A (x) = \left\{\begin{array}{ll} 0, \qquad & x\in X,\\ 1 & x\in C\end{array}\right. .
+$$ {#eq-CM_definition_of_characteristic_fucntion}
+
+어떤 닫힌 직육면체 $C$ 에 대해 $A\subset C$ 이고 $f:C\to \R$ 이 유계함수 일 때 $x\cdot \chi_A$ 가 적분 가능하다면 $A$ 에서의 $f$ 의 적분은 아래와 같이 정의된다.
+
+$$
+\int_A f := \int_C f \cdot \chi_A
+$$ {#eq-CM_definition_of_integration_within_rectengle}
+
+::: 
+:::
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_integrability_of_characteristic_function}
+
+$A$ 에서 정의된 특성함수 $\chi_A$ 가 적분 가능할 필요충분조건은 $\partial A$ 가 measure $0$ 인 것이다.
+
+:::
+</div>
+
+::: {.proof}
+
+$x\in \text{int}(A)$ 이거타 $x$ 가 $A$ 의 외부라면 $\chi_A$ 가 $x$ 에서 연속임은 자명하다. $x\in \partial A$ 라면 $\chi_A$ 는 $x$ 에서 연속이지 않으며 @thm-CM_integrability_and_measure_of_uncontinous_points 에 따라 명제가 증명된다. $\square$
+
+:::
+
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_jordan_measureable_and_volume}
+
+#### 요르당 적분가능
+
+유계인 집합 $A$ 에 대해 $\partial A$ 가 measure $0$ 일 때 $A$ 를 **요르당-적분가능(Jordan-measureable)** 하다고 한다. $\int_A 1$ 을 $A$ 의 **content** 혹은 **$n$-차원 부피(volumn)** 라고 한다. 단 $1$ 차원일 경우는 **길이(length)**, 2차원일 경우는 **넓이(area)** 라고 한다.
+
+::: 
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+
+</br>
+
+
+## 푸비니의 정리
+
+### 직사각형 영역에서 정의된 함수의 적분 
+
+직사각형 $[a,\,b] \times [c,\,d]$ 위에서 정의된 실함수 $f:[a,\,b] \times [c,\,d] \to \R$ 을 생각하자. $(t_0,\ldots,\,t_n)$ 이 $[a,\,b]$ 의 분할이라고 할 때 $\{t_i\} \times [c,\,d]$ 는 $[a,\,b]\times [c,\,d]$ 를 $n$ 개의 긴 직사각형 조각으로 나눈다. 정해진 $x\in [a,\,b]$ 에 대해 $g_x(y)=f(x,\,y)$ 라고 하자. $[x] \times [c,\,d]$ 위에서 $f$ 그래프까지의 면적은 아래와 같다.
+
+$$
+\int_c^d g_x = \int_c^d f(x,\,y)\, dy
+$$
+
+![$[a,\,b]\times [c,\,d]$ 영역에서 정의된 $f$](fig_CM_fubini.png){#fig-CM_Fubini_theorem width=500}
+
+또한 $[t_{i-1},\,t_i]\times [c,\,d]$ 영역 위에서 $f$ 아래 영역의 부피는 $x\in [t_{i-1},\,t_i]$ 에 대해 대략  
+
+$$
+(t_{i-1}-t_i) \cdot \int_c^d f(x,\,y) \,dy
+$$
+
+이며, 따라서
+
+$$
+\int_{[a,b]\times [c,d]} f = \sum_{i=1}^n \int_{[t_{i-1},t_i]\times [c,,d]} f \approx \sum_{i=1}^n (t_{i-1},t_i) \cdot \int_c^d f(x,\,y)\, dy
+$$
+
+임을 안다. 다른 한편 위의 식의 $\sum_i$ 관련 부분은 $\int_a^b \left(\int_c^d f(x,\,y)\,dy\right)\,dx$ 의 정의에서 나타나는 그것과 유사하다. 따라서 $h(x) := \int_c^d g_x = \int_c^d f(x,\,y)\,dy$ 라고 정의하면 $h \in \mathcal{R}[a,\,b]$ 이고
+
+$$
+\int_{[a,b]\times [c,d]} = \int_a^b h = \int_a^b \left(\int_c^d f(x,\,y)\, dy\right)\,dx
+$$
+
+임을 기대할 수 있다. 우리가 앞으로 할 일은 $f$ 가 연속일 경우 이것이 사실임을 보이는 것인데, 일반적인 경우에서는 그렇지 않을 수 있다. $f:[a,\,b] \times [c,\,d] \to \R$ 이 불연속인 점이 $[x]\times [c,\,d]$ 라고 하자. 그랗다면 $f$ 는 $[a,\,b]\times [c,\,d]$ 에서는 적분 가능하지만 $h(x_0) = \int_c^d f(x_0,\,y)\,dy$ 는 정의 자체가 안될 수도 있다. 앞으로 보겠지만 푸비지의 정리 자체는 이것을 생각하면 약간 의아할 수 있고, 여러 특별한 경우에 대한 주의사항이 붙게 된다.
+
+푸비니의 정리를 진행하기에 앞서 리만 상합과 리만 하합(@def-CM_riemann_upper_sum_and_lower_sum) 을 다시 한번 상기하자. $f:A \to \R$ 이 유계일 때 $f$ 에 
+
+</br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_fubini_theorem}
+
+#### 푸비니 정리
+
+$A\subset \R^m,\,B\subset \R^n$ 이 닫힌 $n$-cell 이고 $f:A \times B \to \R$ 가 적분가능하다고 하자. $\bf{x}\in A$ 에 대해 $g_\bf{x}:B \to \R$ 을 $g_\bf{x}:=f(\bf{x},\bf{y})$ 로 정의하자. 그리고
+
+$$
+\begin{aligned}
+\mathcal{L}(\bf{x}) &= L(g_\bf{x},\,B),\\[0.3em]
+\mathcal{U}(\bf{x}) & = U(g_\bf{x},\,B)
+\end{aligned}
+$$
+
+라고 하면 $\mathcal{L}$ 과 $\mathcal{U}$ 는 $A$ 에서 적분가능하며
+
+$$
+\begin{aligned}
+\int_{A\times B} f = \int_A \mathcal{L}(\bf{x}) \,d\bf{x} = \int_A L(g_\bf{x},\,B)\, d\bf{x} \\[0.3em]
+\int_{A\times B} f = \int_A \mathcal{U}(\bf{x}) \,d\bf{x} = \int_A U(g_\bf{x},\,B)\, d\bf{x} \\[0.3em]
+\end{aligned}
+$$
+
+이다. 
+
+:::
+</div>
+
+::: {.proof}
+
+$P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)$ 라고 하자. $P_A\times P_B \in \mathcal{P}(A \times B)$ 이다. 따라서
+
+$$
+\begin{aligned}
+L(f,\,P) &= \sum_S m_S(f)\cdot \text{vol}(S) = \sum_{S_A,S_B} (f) \cdot \text{vol}(S_A \times S_B) \\[0.3em]
+&= \sum_{S_A}\left( \sum_{S_B} m_{S_A \times S_B}(f) \cdot \text{vol}(S_B)\right) \cdot \text{vol}(S_A)
+\end{aligned}
+$$
+
+이다. $x\in S_A$ 이면 $m_{S_A\times S_B}(f) \le m_{S_B}(g_\bf{x})$ 이므로
+
+$$
+\sum_{S_B} m_{S_A\times S_B}(f)\cdot \text{vol}(S_B) \le \sum_{S_B} m_{S_B}(g_X)\cdot \text{vol}(S_B) \le L(g_\bf{x},B) = \mathcal{L}(\bf{x})
+$$
+
+이다. 즉
+
+$$
+\sum_{S_A}\left(\sum_{S_B} m_{S_A\times S_B}(f)\cdot \text{vol}(S_B)\right) \cdot \text{vol}(S_A) \le L(\mathcal{L},\, P_A) 
+$$
+
+같은 방법으로 $U(\mathcal{U},\,P_A)$ 에 대해 구하면 다음을 얻는다.
+
+$$
+L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \le U(f,\,P)
+$$
 
 :::
