@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>일변수 함수의 해석학 – Mathematical Analysis</title>
+<title>16&nbsp; 단위 분할과 변수 변경 – Mathematical Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/part2/2_1_basic_topology.html" rel="next">
-<link href="../../src/part1/1_5_finite_sets.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../src/part3/3_4_integration_of_manifolds_1.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../custom.css">
 </head>
@@ -83,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part2/part2.html">일변수 함수의 해석학</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_5_integration_of_manifolds_2.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,13 +194,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">일변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part2/2_1_basic_topology.html" class="sidebar-item-text sidebar-link">
@@ -214,11 +243,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">다변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
@@ -245,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_5_integration_of_manifolds_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../src/part3/3_5_integration_of_manifolds_2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></span></a>
   </div>
 </li>
@@ -262,15 +291,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#단위-분할" id="toc-단위-분할" class="nav-link active" data-scroll-target="#단위-분할"><span class="header-section-number">16.1</span> 단위 분할</a>
+  <ul class="collapse">
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_5_integration_of_manifolds_2.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">일변수 함수의 해석학</h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></h1>
 </div>
 
 
@@ -287,8 +325,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
+<section id="단위-분할" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="단위-분할"><span class="header-section-number">16.1</span> 단위 분할</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_partition_of_unity" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 16.1 (단위분할)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A\)</span> 를 포함하는 열린 집합에서 정의된 <span class="math inline">\(C^\infty\)</span> 함수들의 집합 <span class="math inline">\(\Phi\)</span> 가 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>), (<span class="math inline">\(3\)</span>) 을 만족할 때 이 <span class="math inline">\(\Phi\)</span> 를 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(C^\infty\)</span> <strong>단위 분할 (partition of unity)</strong>이라고 한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\forall x\in A,\, \forall \varphi \in \Phi,\, 0 \le \varphi(x) \le 1\)</span>,</p>
+<p> (<span class="math inline">\(2\)</span>) 각각의 <span class="math inline">\(x\in A\)</span> 에 대해 어떤 열린 집합 <span class="math inline">\(V\)</span> 가 존재하여 유한개를 제외한 <span class="math inline">\(\Phi\)</span> 에 속한 함수는 <span class="math inline">\(V\)</span> 에서 <span class="math inline">\(0\)</span> 함수이며,</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \forall x\in A,\, \sum_{\varphi \in \Phi} \varphi(x) = 1\)</span> 이다.</p>
+<p><span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(C^\infty\)</span> 단위 분할 이며 <span class="math inline">\(\mathcal{O}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개라고 하자. 이 때 각각의 <span class="math inline">\(\varphi \in \Phi\)</span> 에 대해 어떤 열린 집합 <span class="math inline">\(U\in \mathcal{O}\)</span> 가 존재하여 어떤 <span class="math inline">\(U\)</span> 에 포함되는 닫힌 집합의 외부에서 <span class="math inline">\(\varphi = 0\)</span> 일 때 <span class="math inline">\(\Phi\)</span> 를 <strong>덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위 분할 (partition of unity subordinate to the cover <span class="math inline">\(\mathcal{O}\)</span>)</strong>이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="lem-CM_existance_of_partation_of_unity_for_compact_set" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 16.1</strong></span> 옹골 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할이 존재한다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\{U_1,\ldots,\,U_n\} \subset \mathcal{O}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 유한 열린 덮개라고 하자. 이제 이를 이용하여 옹골집합 <span class="math inline">\(D_i\)</span> 를 재귀적으로 정하자. 정해진 <span class="math inline">\(D_1,\ldots,\,D_k\)</span> 에 대해</p>
+<p><span class="math display">\[
+A\subset \text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+1} \cup \cdots \cup U_n
+\]</span></p>
+<p>일 때</p>
+<p><span class="math display">\[
+C_{k+1} = A-(\text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+2} \cup \cdots \cup U_n )
+\]</span></p>
+<p>라고 하자. 그렇다면 <span class="math inline">\(C_{k+1}\)</span> 은 옹골집합과 닫힌 집합의 교집합이므로 옹골집합이고 <span class="math inline">\(C_{k+1}\subset U_{k+1}\)</span> 이다. <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_22" class="quarto-xref">연습문제&nbsp;<span>12.15</span></a> 에 의해 <span class="math inline">\(C_{k+1} \subset \text{int}(D_{k+1})\)</span> 이며 <span class="math inline">\(D_{k+1}\subset U_{k+1}\)</span> 을 만족하는 옹골집합 <span class="math inline">\(D_{k+1}\)</span> 이 존재한다. <span class="math inline">\(C_1 = A - \bigcup_{i=2}^n U_i\)</span> 을 통해 정할 수 있으며 따라서 모든 <span class="math inline">\(D_i\)</span> 를 정할 수 있다.</p>
+<p>이제 정해진 <span class="math inline">\(D_1,\ldots,\,D_n\)</span> 에 대해 <span class="math inline">\(\psi_i\)</span> 를 <span class="math inline">\(D_i\)</span> 에서 양수이고 <span class="math inline">\(U_i\)</span> 를 포함하는 어떤 닫힌 집합 밖에서는 <span class="math inline">\(0\)</span> 인 <span class="math inline">\(C^\infty\)</span> 함수라고 하자. (이런 함수가 존재한다는 것은 <a href="3_2_differentiation_of_manifolds.html#exr-CM_spivak_2_26" class="quarto-xref">연습문제&nbsp;<span>13.26</span></a> 에서 보였다.) <span class="math inline">\(\{D_1,\ldots,\,D_n\}\)</span> 이 <span class="math inline">\(A\)</span> 를 덮으므로 <span class="math inline">\(x\)</span> 가 <span class="math inline">\(A\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(U\)</span> 에 속했을 때 <span class="math inline">\(\psi_1(x)+ \cdots + \psi_n(x) &gt; 0\)</span> 이다. <span class="math inline">\(\varphi_i:U \to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+\varphi_i (x) := \dfrac{\psi_i(x)}{\psi_1(x) + \cdots + \psi_n(x)}
+\]</span></p>
+<p><span class="math inline">\(f:U \to [0,\,1]\)</span> 이 <span class="math inline">\(C^\infty\)</span> 함수이며 <span class="math inline">\(A\)</span> 에서는 <span class="math inline">\(1\)</span>, <span class="math inline">\(U\)</span> 에 포함되는 어떤 닫힌 집합의 밖에서 <span class="math inline">\(0\)</span> 이라면 <span class="math inline">\(\Phi = \{f\cdot \varphi_1,\ldots,\, f\cdot \varphi_n\}\)</span> 이 우리가 원하는 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="lem-CM_existance_of_partation_of_unity_2" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 16.2</strong></span> 옹골 집합 <span class="math inline">\(A_1,\,A_2,\ldots \subset \mathbb{R}^n\)</span> 가 <span class="math inline">\(A_i \subset \text{int}(A_{i+1})\)</span> 일 때 <span class="math inline">\(A=\bigcup A_i\)</span> 와 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 A$ 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(i\)</span> 에 대해 집합족 <span class="math inline">\(\mathcal{O}_i\)</span> 를 아래와 같이 정하자. <span class="math display">\[
+\mathcal{O}_i = \{U \cap (\text{int}(A_{i+1}) - A_{i-2}): U \in\mathcal{O}\}.
+\]</span></p>
+<p>그렇다면 <span class="math inline">\(\mathcal{O}_i\)</span> 는 옹골 집합 <span class="math inline">\(B_i = A_i - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개이다(<a href="#exr-thm-CM_existance_of_partation_of_unity_1" class="quarto-xref">연습문제&nbsp;<span>16.1</span></a>). <span class="math inline">\(I\)</span> 에서 보았듯이 각각의 <span class="math inline">\(B_i\)</span> 에 <span class="math inline">\(\mathcal{O}_i\)</span> 에 종속된 단위 분할 <span class="math inline">\(\Phi_i\)</span> 가 존재한다. 각각의 <span class="math inline">\(x\in A\)</span> 에 대해</p>
+<p><span class="math display">\[
+\sigma(x) := \sum_{\varphi\in \Phi_i,\, \text{all } i } \varphi(x)
+\]</span></p>
+</div>
+<p><br></p>
+<section id="연습문제" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-thm-CM_existance_of_partation_of_unity_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 16.1</strong></span> 옹골집합 <span class="math inline">\(A_1,\,A_2,\ldots\)</span> 가 <span class="math inline">\(A_i \subset \text{int}(A_{i+1})\)</span> 이고 <span class="math inline">\(A=\bigcup A_i\)</span> 라고 하자. 그리고 <span class="math inline">\(\mathcal{O}=\{U_1,\,U_2,\ldots\}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개라고 하자. 각각의 <span class="math inline">\(i\)</span> 에 대해 집합족 <span class="math inline">\(\mathcal{O}_i\)</span> 를 아래와 같이 정하자. <span class="math display">\[
+\mathcal{O}_i = \{U \cap (\text{int}(A_{i+1}) - A_{i-2}): U \in\mathcal{O}\}.
+\]</span></p>
+<p>그렇다면 <span class="math inline">\(\mathcal{O}_i\)</span> 는 옹골 집합 <span class="math inline">\(B_i = A_i - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(B_i\)</span> 가 옹골집합임은 자명하다. <span class="math inline">\(x\in B_i\)</span> 라고 하자. <span class="math inline">\(x\in A_i \subset \text{int}(A_{i+1})\)</span> 이며 <span class="math inline">\(x\in (\text{int}(A_{i-1}))^C \subset (A_{i-1})^C\)</span> 이므로 <span class="math inline">\(x\in \text{int}(A_{i+1})- A_{i-2}\)</span> 이다. <span class="math inline">\(\mathcal{O}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개이고 <span class="math inline">\(x\in B_i \subset A_i \subset A\)</span> 이므로 <span class="math inline">\(\mathcal{O}\)</span> 에 포함되는 어떤 열린 집합에 <span class="math inline">\(x\)</span> 는 포함된다. 따라서 <span class="math inline">\(\mathcal{O}_i\)</span> 는 <span class="math inline">\(B_i\)</span> 에 대한 열린 덮개이다.</p>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -692,13 +809,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/part1/1_5_finite_sets.html" class="pagination-link" aria-label="유한집합">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></span>
+      <a href="../../src/part3/3_4_integration_of_manifolds_1.html" class="pagination-link" aria-label="다변수 함수의 적분">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/part2/2_1_basic_topology.html" class="pagination-link" aria-label="기본적인 위상수학">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">기본적인 위상수학</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

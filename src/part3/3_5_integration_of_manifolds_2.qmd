@@ -1,0 +1,123 @@
+---
+title: "단위 분할과 변수 변경"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+## 단위 분할
+
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_partition_of_unity}
+
+#### 단위분할
+
+$A\subset \R^n$ 에 대해 $A$ 를 포함하는 열린 집합에서 정의된 $C^\infty$ 함수들의 집합 $\Phi$ 가 ($1$), ($2$), ($3$) 을 만족할 때 이 $\Phi$ 를 $A$ 에 대한 $C^\infty$ **단위 분할 (partition of unity)**이라고 한다.
+
+&emsp;($1$) $\forall x\in A,\, \forall \varphi \in \Phi,\, 0 \le \varphi(x) \le 1$,
+
+&emsp;($2$) 각각의 $x\in A$ 에 대해 어떤 열린 집합 $V$ 가 존재하여 유한개를 제외한 $\Phi$ 에 속한 함수는 $V$ 에서 $0$ 함수이며,
+
+&emsp;($3$) $\displaystyle \forall x\in A,\, \sum_{\varphi \in \Phi} \varphi(x) = 1$ 이다.
+
+$\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개라고 하자. 이 때 각각의 $\varphi \in \Phi$ 에 대해 어떤 열린 집합 $U\in \mathcal{O}$ 가 존재하여 어떤 $U$ 에 포함되는 닫힌 집합의 외부에서 $\varphi = 0$ 일 때 $\Phi$ 를 **덮개 $\mathcal{O}$ 에 종속된 단위 분할 (partition of unity subordinate to the cover $\mathcal{O}$)**이라고 한다.
+
+
+::: 
+:::
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-CM_existance_of_partation_of_unity_for_compact_set}
+
+옹골 집합 $A\subset \R^n$ 과 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 의 $\mathcal{O}$ 에 종속된 단위분할이 존재한다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+$\{U_1,\ldots,\,U_n\} \subset \mathcal{O}$ 가 $A$ 에 대한 유한 열린 덮개라고 하자. 이제 이를 이용하여 옹골집합 $D_i$ 를 재귀적으로 정하자. 정해진 $D_1,\ldots,\,D_k$ 에 대해 
+
+$$
+A\subset \text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+1} \cup \cdots \cup U_n 
+$$
+
+일 때 
+
+$$
+C_{k+1} = A-(\text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+2} \cup \cdots \cup U_n )
+$$
+
+라고 하자. 그렇다면 $C_{k+1}$ 은 옹골집합과 닫힌 집합의 교집합이므로 옹골집합이고 $C_{k+1}\subset U_{k+1}$ 이다. @exr-CM_spivak_1_22 에 의해 $C_{k+1} \subset \text{int}(D_{k+1})$ 이며  $D_{k+1}\subset U_{k+1}$ 을 만족하는 옹골집합 $D_{k+1}$ 이 존재한다. $C_1 = A - \bigcup_{i=2}^n U_i$ 을 통해 정할 수 있으며 따라서 모든 $D_i$ 를 정할 수 있다.
+
+이제 정해진 $D_1,\ldots,\,D_n$ 에 대해 $\psi_i$ 를 $D_i$ 에서 양수이고 $U_i$ 를 포함하는 어떤 닫힌 집합 밖에서는 $0$ 인 $C^\infty$ 함수라고 하자. (이런 함수가 존재한다는 것은 @exr-CM_spivak_2_26 에서 보였다.) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $x$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(x)+ \cdots + \psi_n(x) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
+
+$$
+\varphi_i (x) := \dfrac{\psi_i(x)}{\psi_1(x) + \cdots + \psi_n(x)}
+$$
+
+$f:U \to [0,\,1]$ 이 $C^\infty$ 함수이며 $A$ 에서는 $1$, $U$ 에 포함되는 어떤 닫힌 집합의 밖에서 $0$ 이라면 $\Phi = \{f\cdot \varphi_1,\ldots,\, f\cdot \varphi_n\}$ 이 우리가 원하는 $\mathcal{O}$ 에 종속된 단위분할이다. $\square$
+
+:::
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-CM_existance_of_partation_of_unity_2}
+
+옹골 집합 $A_1,\,A_2,\ldots \subset \R^n$ 가 $A_i \subset \text{int}(A_{i+1})$ 일 때 $A=\bigcup A_i$ 와 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 A$ 의 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+각각의 $i$ 에 대해 집합족 $\mathcal{O}_i$ 를 아래와 같이 정하자.
+$$
+\mathcal{O}_i = \{U \cap (\text{int}(A_{i+1}) - A_{i-2}): U \in\mathcal{O}\}.
+$$
+
+그렇다면 $\mathcal{O}_i$ 는 옹골 집합 $B_i = A_i - \text{int}(A_{i-1})$ 에 대한 열린 덮개이다(@exr-thm-CM_existance_of_partation_of_unity_1). $I$ 에서 보았듯이 각각의 $B_i$ 에 $\mathcal{O}_i$ 에 종속된 단위 분할 $\Phi_i$ 가 존재한다. 각각의 $x\in A$ 에 대해
+
+$$
+\sigma(x) := \sum_{\varphi\in \Phi_i,\, \text{all } i } \varphi(x)
+$$
+
+
+
+
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-thm-CM_existance_of_partation_of_unity_1}
+
+옹골집합 $A_1,\,A_2,\ldots$ 가 $A_i \subset \text{int}(A_{i+1})$ 이고 $A=\bigcup A_i$ 라고 하자. 그리고 $\mathcal{O}=\{U_1,\,U_2,\ldots\}$ 가 $A$ 에 대한 열린 덮개라고 하자. 각각의 $i$ 에 대해 집합족 $\mathcal{O}_i$ 를 아래와 같이 정하자.
+$$
+\mathcal{O}_i = \{U \cap (\text{int}(A_{i+1}) - A_{i-2}): U \in\mathcal{O}\}.
+$$
+
+그렇다면 $\mathcal{O}_i$ 는 옹골 집합 $B_i = A_i - \text{int}(A_{i-1})$ 에 대한 열린 덮개임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$B_i$ 가 옹골집합임은 자명하다. $x\in B_i$ 라고 하자. $x\in A_i \subset \text{int}(A_{i+1})$ 이며 $x\in (\text{int}(A_{i-1}))^C \subset (A_{i-1})^C$ 이므로 $x\in \text{int}(A_{i+1})- A_{i-2}$ 이다. $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개이고 $x\in B_i \subset A_i \subset A$ 이므로 $\mathcal{O}$ 에 포함되는 어떤 열린 집합에 $x$ 는 포함된다. 따라서 $\mathcal{O}_i$ 는 $B_i$ 에 대한 열린 덮개이다.
+
+:::

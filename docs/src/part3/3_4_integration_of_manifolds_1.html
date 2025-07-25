@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../references.html" rel="next">
+<link href="../../src/part3/3_5_integration_of_manifolds_2.html" rel="next">
 <link href="../../src/part3/3_3_inverse_function_theorem.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -112,7 +112,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_4_integration_of_manifolds.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_4_integration_of_manifolds_1.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -268,8 +268,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../src/part3/3_4_integration_of_manifolds_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_5_integration_of_manifolds_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></span></a>
   </div>
 </li>
       </ul>
@@ -308,6 +314,7 @@ window.Quarto = {
   <li><a href="#푸비니의-정리" id="toc-푸비니의-정리" class="nav-link" data-scroll-target="#푸비니의-정리"><span class="header-section-number">15.4</span> 푸비니의 정리</a>
   <ul class="collapse">
   <li><a href="#직사각형-영역에서-정의된-함수의-적분" id="toc-직사각형-영역에서-정의된-함수의-적분" class="nav-link" data-scroll-target="#직사각형-영역에서-정의된-함수의-적분"><span class="header-section-number">15.4.1</span> 직사각형 영역에서 정의된 함수의 적분</a></li>
+  <li><a href="#연습문제-3" id="toc-연습문제-3" class="nav-link" data-scroll-target="#연습문제-3">연습문제</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -315,7 +322,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_4_integration_of_manifolds.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_4_integration_of_manifolds_1.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></h1>
 </div>
@@ -986,7 +993,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_fubini_theorem" class="theorem">
-<p><span class="theorem-title"><strong>정리 15.4 (푸비니 정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 이 닫힌 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(f:A \times B \to \mathbb{R}\)</span> 가 적분가능하다고 하자. <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(g_\boldsymbol{x}:B \to \mathbb{R}\)</span> 을 <span class="math inline">\(g_\boldsymbol{x}:=f(\boldsymbol{x},\boldsymbol{y})\)</span> 로 정의하자. 그리고</p>
+<p><span class="theorem-title"><strong>정리 15.4 (푸비니 정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 이 닫힌 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(f:A \times B \to \mathbb{R}\)</span> 가 적분가능하다고 하자. <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(g_\boldsymbol{x}:B \to \mathbb{R}\)</span> 을 <span class="math inline">\(g_\boldsymbol{x}(\boldsymbol{y}):=f(\boldsymbol{x},\boldsymbol{y})\)</span> 로 정의하자. 그리고</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathcal{L}(\boldsymbol{x}) &amp;= L(g_\boldsymbol{x},\,B),\\[0.3em]
@@ -1004,7 +1011,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)\)</span> 라고 하자. <span class="math inline">\(P_A\times P_B \in \mathcal{P}(A \times B)\)</span> 이다. 따라서</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)\)</span> 라고 하자. <span class="math inline">\(P_A\times P_B \in \mathcal{P}(A \times B)\)</span> 이다. <span class="math inline">\(S_A,\, S_B\)</span> 를 각각 <span class="math inline">\(P_A\)</span>, <span class="math inline">\(P_B\)</span> 의 subcell 이라고 하면 <span class="math inline">\(P_A \times P_B\)</span> 에 속하는 subcell <span class="math inline">\(S\)</span> 는 <span class="math inline">\(S_A\times S_B\)</span> 꼴이다. 따라서</p>
 <p><span class="math display">\[
 \begin{aligned}
 L(f,\,P) &amp;= \sum_S m_S(f)\cdot \text{vol}(S) = \sum_{S_A,S_B} (f) \cdot \text{vol}(S_A \times S_B) \\[0.3em]
@@ -1021,9 +1028,74 @@ L(f,\,P) &amp;= \sum_S m_S(f)\cdot \text{vol}(S) = \sum_{S_A,S_B} (f) \cdot \tex
 \]</span></p>
 <p>같은 방법으로 <span class="math inline">\(U(\mathcal{U},\,P_A)\)</span> 에 대해 구하면 다음을 얻는다.</p>
 <p><span class="math display">\[
-L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \le U(f,\,P)
+L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \le U(f,\,P).
 \]</span></p>
+<p><span class="math inline">\(f\)</span> 가 적분가능하므로 <span class="math inline">\(\sup L(f,\,P) = \inf U(f,\,P) = \int_{A\times B}f\)</span> 이며, 따라서</p>
+<p><span class="math display">\[
+\sup L(\mathcal{L},\,P_A) = \inf U(\mathcal{L},\, P_A)
+\]</span></p>
+<p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
+<p><br></p>
+<p>아래 따름 정리는 푸비니 정리로부터 쉽게 보일 수 있다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-CM_fubini_theorem" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 15.1</strong></span> 푸비니 정리에서 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(y\)</span> 변수 사이에 구별이 없다. 즉 <span class="math inline">\(h_\boldsymbol{y}(\boldsymbol{x}) := f(\boldsymbol{x},\boldsymbol{y})\)</span> 라고 할 때</p>
+<p><span id="eq-CM_exchange_of_integral_order"><span class="math display">\[
+\int_{A\times B} f = \int_A L(g_\boldsymbol{x},\,B)\,d\boldsymbol{x} = \int_{A}U(\boldsymbol{g}_\boldsymbol{x},\,B)\,\boldsymbol{x} = \int_B L(h_\boldsymbol{y},\,A)\,d\boldsymbol{y} = \int_B U(h_\boldsymbol{y},\,A)\,d\boldsymbol{y}
+\tag{15.7}\]</span></span></p>
+<p>가 성립함을 안다. 즉 <span class="math inline">\(f\)</span> 가 적분가능 함수라면 적분의 순서를 바꿀 수 있다.</p>
+</div>
+</div>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="rem-CM_total_variation_1" class="proof remark">
+<p><span class="proof-title"><em>주석 15.1</em> (푸비니 정리에 대하여). </span><br> (<span class="math inline">\(1\)</span>) 각각의 <span class="math inline">\(g_\boldsymbol{x}\)</span> 가 적분가능하다면</p>
+<p><span class="math display">\[
+\int_{A\times B} f = \int_A \left(\int_B f(\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\right)\,d\boldsymbol{x}
+\]</span></p>
+<p>이다. <span class="math inline">\(f\)</span> 가 연속일경우는 당연히 <span class="math inline">\(g_\boldsymbol{x}\)</span> 는 적분가능하다.</p>
+<p>(<span class="math inline">\(2\)</span>) 최악의 경우는 유한개의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(g_\boldsymbol{x}\)</span> 가 적분가능하지 않은 경우이다. 이 경우 <span class="math inline">\(\mathcal{L}(\boldsymbol{x})=\int_B f(\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span> 는 유한개의 <span class="math inline">\(\boldsymbol{x}\)</span> 이외에서 존재한다. 이 <span class="math inline">\(\boldsymbol{x}\)</span> 에 대해 <span class="math inline">\(\mathcal{L}(\boldsymbol{x})=0\)</span> 이라고 재정의 하면 <span class="math inline">\(\int_A \mathcal{L}\)</span> 은 변화가 없기 때문이 <span class="math inline">\(\int_{A\times B}f = \int_A \left(\int_B f(\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\right)\,d\boldsymbol{x}\)</span> 라고 쓸 수 있다.</p>
+<p>(<span class="math inline">\(3\)</span>) 푸비니 정리(<a href="#thm-CM_fubini_theorem" class="quarto-xref">정리&nbsp;<span>15.4</span></a>) 가 작동하지 않는 경우를 살펴보자. 우선 <span class="math inline">\(f:[0,\,1]\times [0,\,1] \to \mathbb{R}\)</span> 이 아래와 같이 정의되었다고 하자.</p>
+<p><span class="math display">\[
+f(x,\,y)  = \left\{\begin{array}{ll} 1, &amp;x\in \mathbb{R}\backslash\mathbb{Q}\\
+1, &amp; x\in \mathbb{Q},\, y \in \mathbb{R}\backslash \mathbb{Q}\\ 1-\dfrac{1}{q},\qquad &amp;y\in \mathbb{Q},\, x=\dfrac{p}{q}\end{array}\right.
+\]</span></p>
+<p>여기서 마지막의 <span class="math inline">\(x=p/q\)</span> 는 기약 상태일 때이다. 만약 <span class="math inline">\(f\)</span> 가 적분가능하다면 <span class="math inline">\(\int_{[0,\,1]\times [0,1]}f=1\)</span> 이다. <span class="math inline">\(x \in \mathbb{R}/\backslash Q\)</span> 라면 <span class="math inline">\(\int_0^1 f(x,\,y)dy = 1\)</span> 이며 <span class="math inline">\(x\in \mathbb{Q}\)</span> 이면 <span class="math inline">\(\int_0^1 f(x,\,y)dy = 0\)</span> 이다. <span class="math inline">\(h(x) :=\int_0^1 f(x,\,y)\,dy\)</span> 에 대해 이 적분이 존재하지 않을 때 <span class="math inline">\(h(x)=0\)</span> 으로 놓는다면 <span class="math inline">\(h\)</span> 는 적분가능하지 않다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(A=[a_1,b_1] \times \cdots \times [a_n,b_n]\)</span> 에 대해 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 이 충분히 좋다면 푸비니의 정리를 반복적으로 사용하여 다음을 얻는다.</p>
+<p><span id="eq-CM_multiple_integration"><span class="math display">\[
+\int_A f = \int_{a_n}^{b_n} \left(\cdots \left(\int_{a_1}^{b_1} f(x_1,\ldots,\,x_n)\, dx_1\right)\cdots\right)\,dx_n.
+\tag{15.8}\]</span></span></p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(C \subset A \times B\)</span> 일 때 <span class="math inline">\(\int_C f = \int_A f \cdot \chi_C\)</span> 이므로 푸미니의 정리를 이용하여 <span class="math inline">\(\int_C f\)</span> 를 계산 할 수 있다. 예를 들어</p>
+<p><span class="math display">\[
+\begin{aligned}
+A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
+\end{aligned}
+\]</span></p>
+<p>라면</p>
+<p><span class="math display">\[
+\int_C f = \int_{-1}^1 \left(\int_{-1}^1 f(x,\,y) \cdot \chi_C(x,\,y) \,dy\right)\,dx
+\]</span></p>
+<p>이다. 이 때</p>
+<p><span class="math display">\[
+\chi_C (x,\,y) = \left\{\begin{array}{ll} 1,\qquad&amp; \text{if } y &gt; \sqrt{1-x^2} \text{ or } y&lt;-\sqrt{1-x^2}, \\ 0, &amp; \text{otherwise}\end{array} \right.
+\]</span></p>
+<p>라고 놓을 수 있으며, 따라서</p>
+<p><span class="math display">\[
+\int_{-1}^1 f(x,\,y)\cdot \chi_C(x,\,y)\, dy = \int_{-1}^{-\sqrt{1-x^2}} f(x,\,y)\,dy + \int_{\sqrt{1-x^2}}^1 f(x,\,y)\, dy
+\]</span></p>
+<p>이다. 일반적으로 <span class="math inline">\(C\subset A \times B\)</span> 에 대해 <span class="math inline">\(\int_C f\)</span> 를 계산하는데의 어려운 점은 <span class="math inline">\(x\in A\)</span> 에 대해 <span class="math inline">\(C\cap (\{x\}\times B)\)</span> 를 결정하는 것이다. 만약 <span class="math inline">\(y\in B\)</span> 에 대해 <span class="math inline">\(C \cap (A\times \{y\})\)</span> 의 경우가 더 쉽다면</p>
+<p><span class="math display">\[
+\int_C f = \int_B \left(\int_A f(x,\,y) \cdot \chi_C (x,\,y)\,dx\right)\,dy
+\]</span></p>
+<p>를 사용하는 것이 좋다.</p>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="연습문제-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-3">연습문제</h3>
+<p><br></p>
 
 
 </section>
@@ -1436,8 +1508,8 @@ L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../src/part3/3_5_integration_of_manifolds_2.html" class="pagination-link" aria-label="단위 분할과 변수 변경">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -553,9 +553,9 @@ $U$ 는 열린집합이며 $C\subset U$ 는 옹골집합이라면 $C \subset \te
 
 ::: {.solution}
 
-$U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-CM_spivak_1_21 ($b$) 에서 보였듯이 모든 $y\in A,\, x\in B$ 에 대해 $\|y-x\|\ge d$ 인 $d>0$ 이 존재한다. 
+$U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-CM_spivak_1_21 ($b$) 에서 보였듯이 모든 $y\in U^C,\, x\in C$ 에 대해 $\|y-x\|\ge d$ 인 $d>0$ 이 존재한다. 
 
-이제 $\Gamma = \{N(x,\, d/2) : x\in C\}$ 는 $C$ 의 열린 덮개이며 $C$ 가 옹골집합이므로 $C$ 의 유한 열린 덮개 $\{B_1,\ldots,\,B_m\}\subset \Gamma$ 가 존재한다. $D = \bigcup \overline{B_i}$ 라고 하면 각각의 $\overline{B_i}$ 는 옹골집합이며 따라서 $D$ 도 옹골집합이다. $\text{int} (D) = \bigcup B_i$ 이므로 $C\subset \text{int}(D)$ 이며 $D\subset U$ 이다. 
+이제 $\Gamma = \{N(x,\, d/2) : x\in C\}$ 는 $C$ 의 열린 덮개이며 $C$ 가 옹골집합이므로 $C$ 에 대한 유한 열린 덮개 $\{B_1,\ldots,\,B_m\}\subset \Gamma$ 가 존재한다. $D = \bigcup \overline{B_i}$ 라고 하면 각각의 $\overline{B_i}$ 는 옹골집합이며 따라서 $D$ 도 옹골집합이다. $\text{int} (D) = \bigcup B_i$ 이므로 $C\subset \text{int}(D)$ 이며 $D\subset U$ 이다. 
 
 :::
 

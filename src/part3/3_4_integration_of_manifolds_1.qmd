@@ -981,7 +981,7 @@ $$
 
 #### 푸비니 정리
 
-$A\subset \R^m,\,B\subset \R^n$ 이 닫힌 $n$-cell 이고 $f:A \times B \to \R$ 가 적분가능하다고 하자. $\bf{x}\in A$ 에 대해 $g_\bf{x}:B \to \R$ 을 $g_\bf{x}:=f(\bf{x},\bf{y})$ 로 정의하자. 그리고
+$A\subset \R^m,\,B\subset \R^n$ 이 닫힌 $n$-cell 이고 $f:A \times B \to \R$ 가 적분가능하다고 하자. $\bf{x}\in A$ 에 대해 $g_\bf{x}:B \to \R$ 을 $g_\bf{x}(\bf{y}):=f(\bf{x},\bf{y})$ 로 정의하자. 그리고
 
 $$
 \begin{aligned}
@@ -1006,7 +1006,7 @@ $$
 
 ::: {.proof}
 
-$P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)$ 라고 하자. $P_A\times P_B \in \mathcal{P}(A \times B)$ 이다. 따라서
+$P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)$ 라고 하자. $P_A\times P_B \in \mathcal{P}(A \times B)$ 이다. $S_A,\, S_B$ 를 각각 $P_A$, $P_B$ 의 subcell 이라고 하면 $P_A \times P_B$ 에 속하는 subcell $S$ 는 $S_A\times S_B$ 꼴이다. 따라서
 
 $$
 \begin{aligned}
@@ -1030,7 +1030,109 @@ $$
 같은 방법으로 $U(\mathcal{U},\,P_A)$ 에 대해 구하면 다음을 얻는다.
 
 $$
-L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \le U(f,\,P)
+L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \le U(f,\,P).
 $$
 
+
+$f$ 가 적분가능하므로 $\sup L(f,\,P) = \inf U(f,\,P) = \int_{A\times B}f$ 이며, 따라서
+
+$$
+\sup L(\mathcal{L},\,P_A) = \inf U(\mathcal{L},\, P_A)
+$$
+
+이다. $\square$
+
 :::
+
+</br>
+
+아래 따름 정리는 푸비니 정리로부터 쉽게 보일 수 있다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-CM_fubini_theorem}
+푸비니 정리에서 $x$ 와 $y$ 변수 사이에 구별이 없다. 즉 $h_\bf{y}(\bf{x}) := f(\bf{x},\bf{y})$ 라고 할 때
+
+$$
+\int_{A\times B} f = \int_A L(g_\bf{x},\,B)\,d\bf{x} = \int_{A}U(\bf{g}_\bf{x},\,B)\,\bf{x} = \int_B L(h_\bf{y},\,A)\,d\bf{y} = \int_B U(h_\bf{y},\,A)\,d\bf{y}
+$$ {#eq-CM_exchange_of_integral_order}
+
+가 성립함을 안다. 즉 $f$ 가 적분가능 함수라면 적분의 순서를 바꿀 수 있다.
+
+:::
+
+</div>
+
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#rem-CM_total_variation_1}
+
+#### 푸비니 정리에 대하여
+</br>
+($1$) 각각의 $g_\bf{x}$ 가 적분가능하다면
+
+$$
+\int_{A\times B} f = \int_A \left(\int_B f(\bf{x},\bf{y})\,d\bf{y}\right)\,d\bf{x}
+$$
+
+이다. $f$ 가 연속일경우는 당연히 $g_\bf{x}$ 는 적분가능하다.
+
+($2$) 최악의 경우는 유한개의 $\bf{x}\in A$ 에 대해 $g_\bf{x}$ 가 적분가능하지 않은 경우이다. 이 경우 $\mathcal{L}(\bf{x})=\int_B f(\bf{x},\bf{y})\,d\bf{y}$ 는 유한개의 $\bf{x}$ 이외에서 존재한다. 이 $\bf{x}$ 에 대해 $\mathcal{L}(\bf{x})=0$ 이라고 재정의 하면 $\int_A \mathcal{L}$ 은 변화가 없기 때문이 $\int_{A\times B}f = \int_A \left(\int_B f(\bf{x},\bf{y})\,d\bf{y}\right)\,d\bf{x}$ 라고 쓸 수 있다.
+
+($3$) 푸비니 정리(@thm-CM_fubini_theorem) 가 작동하지 않는 경우를 살펴보자. 우선 $f:[0,\,1]\times [0,\,1] \to \R$ 이 아래와 같이 정의되었다고 하자.
+
+$$
+f(x,\,y)  = \left\{\begin{array}{ll} 1, &x\in \R\backslash\Q \\
+1, & x\in \Q,\, y \in \R\backslash \Q \\ 1-\dfrac{1}{q},\qquad &y\in \Q,\, x=\dfrac{p}{q}\end{array}\right.
+$$
+
+여기서 마지막의 $x=p/q$ 는 기약 상태일 때이다. 만약 $f$ 가 적분가능하다면 $\int_{[0,\,1]\times [0,1]}f=1$ 이다. $x \in \R/\backslash Q$ 라면 $\int_0^1 f(x,\,y)dy = 1$ 이며 $x\in \Q$ 이면 $\int_0^1 f(x,\,y)dy = 0$ 이다. $h(x) :=\int_0^1 f(x,\,y)\,dy$ 에 대해 이 적분이 존재하지 않을 때 $h(x)=0$ 으로 놓는다면 $h$ 는 적분가능하지 않다.
+
+($4$) $A=[a_1,b_1] \times \cdots \times [a_n,b_n]$ 에 대해 $f:A\to \R$ 이 충분히 좋다면 푸비니의 정리를 반복적으로 사용하여 다음을 얻는다.
+
+$$
+\int_A f = \int_{a_n}^{b_n} \left(\cdots \left(\int_{a_1}^{b_1} f(x_1,\ldots,\,x_n)\, dx_1\right)\cdots\right)\,dx_n.
+$$ {#eq-CM_multiple_integration}
+
+($5$) $C \subset A \times B$ 일 때 $\int_C f = \int_A f \cdot \chi_C$ 이므로 푸미니의 정리를 이용하여 $\int_C f$ 를 계산 할 수 있다. 예를 들어 
+
+$$
+\begin{aligned}
+A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|<1\}
+\end{aligned}
+$$
+
+라면
+
+$$
+\int_C f = \int_{-1}^1 \left(\int_{-1}^1 f(x,\,y) \cdot \chi_C(x,\,y) \,dy\right)\,dx
+$$
+
+이다. 이 때
+
+$$
+\chi_C (x,\,y) = \left\{\begin{array}{ll} 1,\qquad& \text{if } y > \sqrt{1-x^2} \text{ or } y<-\sqrt{1-x^2}, \\ 0, & \text{otherwise}\end{array} \right.
+$$
+
+라고 놓을 수 있으며, 따라서
+
+$$
+\int_{-1}^1 f(x,\,y)\cdot \chi_C(x,\,y)\, dy = \int_{-1}^{-\sqrt{1-x^2}} f(x,\,y)\,dy + \int_{\sqrt{1-x^2}}^1 f(x,\,y)\, dy
+$$
+
+이다. 일반적으로 $C\subset A \times B$ 에 대해 $\int_C f$ 를 계산하는데의 어려운 점은 $x\in A$ 에 대해 $C\cap (\{x\}\times B)$ 를 결정하는 것이다. 만약 $y\in B$ 에 대해 $C \cap (A\times \{y\})$ 의 경우가 더 쉽다면
+
+$$
+\int_C f = \int_B \left(\int_A f(x,\,y) \cdot \chi_C (x,\,y)\,dx\right)\,dy
+$$
+
+를 사용하는 것이 좋다.
+
+:::
+
+</div></br>
+
+### 연습문제 {.unnumbered}
+
+</br>

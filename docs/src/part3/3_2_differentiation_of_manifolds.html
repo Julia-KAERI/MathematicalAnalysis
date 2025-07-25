@@ -268,8 +268,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_4_integration_of_manifolds.html" class="sidebar-item-text sidebar-link">
+  <a href="../../src/part3/3_4_integration_of_manifolds_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_5_integration_of_manifolds_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">단위 분할과 변수 변경</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,7 +427,7 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_differentiability_of_identity_function" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.1</strong></span> <a href="3_1_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>12.6</span></a> 에서 정의된 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라. 사영함수 <span class="math inline">\(\pi_i:\mathbb{R}^n \to \mathbb{R}\)</span> 도 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.1</strong></span> <a href="3_1_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>12.7</span></a> 에서 정의된 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라. 사영함수 <span class="math inline">\(\pi_i:\mathbb{R}^n \to \mathbb{R}\)</span> 도 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -713,7 +719,7 @@ F'(\boldsymbol{a}) = \begin{bmatrix} f_1'(\boldsymbol{a}) &amp; \cdots &amp;f_m'
 \end{aligned}
 \]</span></p>
 <p>이며 <span class="math inline">\(\boldsymbol{h}\to \boldsymbol{0}\)</span> 극한에서 우변이 <span class="math inline">\(0\)</span> 이므로 좌변도 <span class="math inline">\(0\)</span> 이다. 즉 <span class="math inline">\(F'(\boldsymbol{a}) = T\)</span> 이다.</p>
-<p>이제 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다고 하자. 사영함수(<a href="3_1_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>12.6</span></a>) <span class="math inline">\(\pi_i\)</span> 에 대해 <a href="#exr-CM_differentiability_of_identity_function" class="quarto-xref">연습문제&nbsp;<span>13.1</span></a> 에서 미분가능함을 보였다. <a href="#thm-CM_chain_rule" class="quarto-xref">정리&nbsp;<span>13.2</span></a> 에 의해 <span class="math inline">\(\pi_i \circ F\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다. <span class="math inline">\(\square\)</span></p>
+<p>이제 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다고 하자. 사영함수(<a href="3_1_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>12.7</span></a>) <span class="math inline">\(\pi_i\)</span> 에 대해 <a href="#exr-CM_differentiability_of_identity_function" class="quarto-xref">연습문제&nbsp;<span>13.1</span></a> 에서 미분가능함을 보였다. <a href="#thm-CM_chain_rule" class="quarto-xref">정리&nbsp;<span>13.2</span></a> 에 의해 <span class="math inline">\(\pi_i \circ F\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -1266,6 +1272,46 @@ f(x) = \left\{\begin{array}{ll} e^{-x^{-2}},\qquad &amp; x\ne 0, \\ 0 &amp; x = 
 \]</span></p>
 <p>이이다. 따라서 <span class="math inline">\(f^{(i)}(0)=0\)</span> 이다. <span class="math inline">\(f\in C^\infty\)</span> 인 것은 자연스럽게 알 수 있다.</p>
 </div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_2_26" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 13.26 (Spivak 2.26)</strong></span> <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+f(x) := \left\{\begin{array}{ll}e^{-(x-1)^{-2}} \cdot e^{-(x+1)^{-2}} , \qquad &amp; x\in (-1,\,1) \\ 0, &amp; x\notin (-1,\,1).\end{array}\right.
+\]</span></p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(f\)</span> 가 <span class="math inline">\(C^\infty\)</span> 급 함수이며 <span class="math inline">\((-1,\,1)\)</span> 에서 양수이고 다른 곳에선 <span class="math inline">\(0\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(x\le 0\)</span> 일 때는 <span class="math inline">\(0\)</span> 이며 <span class="math inline">\(x\ge \varepsilon\)</span> 일 때는 <span class="math inline">\(1\)</span> 인 <span class="math inline">\(C^\infty\)</span> 함수 <span class="math inline">\(g:\mathbb{R}\to [0,\,1]\)</span> 가 존재함을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(g:\mathbb{R}^n \to \mathbb{R}\)</span> 이 아래와 같이 정의되었다.</p>
+<p><span class="math display">\[
+g(\boldsymbol{x}) := f\left(\dfrac{x_1-a_1}{\varepsilon}\right) \cdots f\left(\dfrac{x_n-a_n}{\varepsilon}\right).
+\]</span></p>
+<p><span class="math inline">\(g\)</span> 는 <span class="math inline">\((a_1-\varepsilon,\,a_1+\varepsilon) \times \cdots \times (a_n-\varepsilon,\, a_n+\varepsilon)\)</span> 에서 양의 값을, 그 외는 <span class="math inline">\(0\)</span> 을 반환하는 함수임을 보여라.</p>
+<p>(<span class="math inline">\(d\)</span>) 열린 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 옹골집합인 <span class="math inline">\(C\subset A\)</span> 에 대해 어떤 non-negative <span class="math inline">\(C^\infty\)</span> 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 가 존재하여 <span class="math inline">\(x\in C\)</span> 에서는 <span class="math inline">\(f(x)&gt;0\)</span> 이고 <span class="math inline">\(A\)</span> 에 포함된 닫힌 집합 밖에서는 <span class="math inline">\(0\)</span> 일 수 있음을 보여라.</p>
+<p>(<span class="math inline">\(e\)</span>) <span class="math inline">\(f:A\to [0,\,1]\)</span> 을 <span class="math inline">\(x\in C\)</span> 에서 <span class="math inline">\(f(x)=1\)</span> 이 되도록 할 수 있음을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 우선 <span class="math inline">\(k \in \mathbb{Z}_+\)</span> 에 대해 로피탈의 정리(<a href="../part2/2_4_differentiation.html#thm-MA_Lhopital_theorem" class="quarto-xref">정리&nbsp;<span>9.6</span></a>) 를 사용하여 다음을 보일 수 있다.</p>
+<p><span class="math display">\[
+\lim_{t \to 0} \dfrac{e^{-1/t^2}}{t^k} = \lim_{s \to +\infty} \dfrac{s^k}{e^{s^2}} = 0
+\]</span></p>
+<p>이다. <span class="math inline">\(f\)</span> 에 대한 도함수는 <span class="math display">\[
+f'(x) =  \dfrac{2}{(x-1)^3} f(x) + \dfrac{2}{(x+1)^3}f(x)
+\]</span></p>
+<p>이며 따라서 <span class="math inline">\(\lim_{x \to \pm 1} f^{(n)}(x) = 0\)</span> 이다. <span class="math inline">\(x\ne \pm 1\)</span> 에서는 <span class="math inline">\(f^{(n)}\)</span> 이 모두 정해지므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(C^\infty\)</span> 급 함수이다. <span class="math inline">\(x\in (-1,\,1)\)</span> 에서는 양수이며 다른곳에서는 <span class="math inline">\(0\)</span> 임은 정의에 의해 자명하다.</p>
+<p>(<span class="math inline">\(b\)</span>) 정해진 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\overline{g}_\varepsilon:\mathbb{R}\to \mathbb{R}\)</span> 을</p>
+<p><span class="math display">\[
+\overline{g}_\varepsilon(x) := \left\{\begin{array}{ll} e^{-(x-\varepsilon)^{-2}} \cdot e^{-x^{-2}} , \qquad &amp; x\in (0,\,\varepsilon) \\ 0, &amp; x\notin (0,\,\varepsilon).\end{array}\right.
+\]</span></p>
+<p>으로 정의하고 <span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 을</p>
+<p><span class="math display">\[
+g(x) := \left(\int_0^x \overline{g}_\varepsilon\right) / \left(\int_0^\varepsilon \overline{g}_\varepsilon\right)
+\]</span></p>
+<p>으로 정의하자. <span class="math inline">\(\overline{g}_\varepsilon\)</span> 이 <span class="math inline">\(C^\infty\)</span> 함수이다. 또한 단조증가 함수이므로 <span class="math inline">\(g\)</span> 역시 <span class="math inline">\(C^\infty\)</span> 급 함수이며 주어진 조건을 만족한다.</p>
+<p>(<span class="math inline">\(c\)</span>) (<span class="math inline">\(a\)</span>) 에 의해 자명하다.</p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(\Gamma\)</span> 를 <span class="math inline">\(C\)</span> 의 각 점에 대해 <span class="math inline">\(A\)</span> 에 포함되는 열린 큐브의 집합이라고 하자. <span class="math inline">\(\Gamma\)</span> 는 <span class="math inline">\(C\)</span> 에 대한 열린 덮개이므로 유한개의 열린 큐브로 <span class="math inline">\(C\)</span> 를 덮을 수 있다. 이를 <span class="math inline">\(\{U_1,\ldots,\,U_m\}\)</span> 이라고 하자. <span class="math inline">\(U_i\)</span> 에 대해 (<span class="math inline">\(c\)</span>) 의 <span class="math inline">\(g\)</span> 함수를 적용한 것을 <span class="math inline">\(g_i\)</span> 라고 하고 <span class="math inline">\(f = g_1+ \cdots + g_n\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(x\in C\)</span> 에 대해 <span class="math inline">\(f(x)&gt;0\)</span> 임은 자명하다. 이제 <span class="math inline">\(U_i\)</span> 에 대해 <span class="math inline">\(\overline{U_i}\subset A\)</span> 이며 <span class="math inline">\(X=\bigcup_{i=1}^m \overline{U_i} \subset A\)</span> 는 닫힌집합이며 <span class="math inline">\(\boldsymbol{x}\in X\)</span> 일 때 <span class="math inline">\(f(\boldsymbol{x})=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(e\)</span>) <span class="math inline">\(h:A \to \mathbb{R}\)</span> 을 (<span class="math inline">\(d\)</span>) 의 <span class="math inline">\(f\)</span> 로 놓고 <span class="math inline">\(\boldsymbol{x}\in C\)</span> 일 때 <span class="math inline">\(h(\boldsymbol{x})\ge \varepsilon\)</span> 이 되도록 놓을 수 있다. 이제 (<span class="math inline">\(b\)</span>) 의 <span class="math inline">\(g\)</span> 에 대해 <span class="math inline">\(f=g\circ h\)</span> 로 놓으면 된다.</p>
+</div>
 <p><br></p>
 </section>
 </section>
@@ -1376,7 +1422,7 @@ F(\boldsymbol{a}+\boldsymbol{h}) - F(\boldsymbol{a}) = F'(\boldsymbol{x})\cdot \
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_28" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.26 (Spivak 2_28)</strong></span> 다음 함수의 편미분을 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.27 (Spivak 2_28)</strong></span> 다음 함수의 편미분을 구하라.</p>
 <p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(F(x,\,y) = f(g(x)k(y),\, g(x)+h(y))\)</span>.</p>
 <p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(F(x,\,y,\,z) = f(g(x+y),\, h(y+z))\)</span>.</p>
 <p> (<span class="math inline">\(c\)</span>) <span class="math inline">\(F(x,\,y,\,z) = f(x^y,\, y^z,\,z^x)\)</span>.</p>
@@ -1398,7 +1444,7 @@ D_2F(x,\,y) &amp;= g(x)k'(y) D_1 f(p(x,\,y),\,q(x,\,y)) + h'(y) D_2 f(p(x,\,y),\
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_29" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.27 (Spivak 2_29)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 과 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>연습문제 13.28 (Spivak 2_29)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 과 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해</p>
 <p><span class="math display">\[
 \lim_{t \to 0} \dfrac{f(\boldsymbol{a}+t\boldsymbol{x}) - f(\boldsymbol{a})}{t}
 \]</span></p>
@@ -1429,7 +1475,7 @@ D_{\boldsymbol{x}+\boldsymbol{y}}f(\boldsymbol{(}a)) = Df(\boldsymbol{a})(\bolds
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_30" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.28 (Spivak 2_30)</strong></span> <span class="math inline">\(f\)</span> 가 <a href="#exr-CM_spivak_2_4" class="quarto-xref">연습문제&nbsp;<span>13.4</span></a> 의 그것과 같다. <span class="math inline">\(D_\boldsymbol{x}f(0,\,0)\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\)</span> 에서 정의됨을 보여라. 그러나 <span class="math inline">\(g\ne 0\)</span> 이면 <span class="math inline">\(D_{\boldsymbol{x}+\boldsymbol{y}}f(0,\,0) = D_\boldsymbol{x}f(0,\,0) + D_\boldsymbol{y}f(0,\,0)\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x},\, \boldsymbol{y}\)</span> 에서 성립하는 것은 아님을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.29 (Spivak 2_30)</strong></span> <span class="math inline">\(f\)</span> 가 <a href="#exr-CM_spivak_2_4" class="quarto-xref">연습문제&nbsp;<span>13.4</span></a> 의 그것과 같다. <span class="math inline">\(D_\boldsymbol{x}f(0,\,0)\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\)</span> 에서 정의됨을 보여라. 그러나 <span class="math inline">\(g\ne 0\)</span> 이면 <span class="math inline">\(D_{\boldsymbol{x}+\boldsymbol{y}}f(0,\,0) = D_\boldsymbol{x}f(0,\,0) + D_\boldsymbol{y}f(0,\,0)\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x},\, \boldsymbol{y}\)</span> 에서 성립하는 것은 아님을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1442,7 +1488,7 @@ D_{\boldsymbol{x}}f(0,0) = \lim_{t \to 0}\dfrac{f(t\boldsymbol{x})}{t} = \lim_{t
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_31" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.29 (Spivak 2_31)</strong></span> <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_26" class="quarto-xref">연습문제&nbsp;<span>12.19</span></a> 과 같이 정의되었다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아니지만 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^2\)</span> 에서 <span class="math inline">\(D_{\boldsymbol{x}} f(0,\,0)\)</span> 이 존재함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.30 (Spivak 2_31)</strong></span> <span class="math inline">\(f:\mathbb{R}^2 \to \mathbb{R}\)</span> 이 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_26" class="quarto-xref">연습문제&nbsp;<span>12.19</span></a> 과 같이 정의되었다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((0,\,0)\)</span> 에서 연속이 아니지만 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^2\)</span> 에서 <span class="math inline">\(D_{\boldsymbol{x}} f(0,\,0)\)</span> 이 존재함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1451,7 +1497,7 @@ D_{\boldsymbol{x}}f(0,0) = \lim_{t \to 0}\dfrac{f(t\boldsymbol{x})}{t} = \lim_{t
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_32" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.30 (Spivak 2_32)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
+<p><span class="theorem-title"><strong>연습문제 13.31 (Spivak 2_32)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
 <p><span class="math display">\[
 f(x) = \left\{\begin{array}{ll} x^2 \sin \dfrac{1}{x},\qquad &amp; x\ne 0 \\ 0,&amp; x=0.\end{array}\right.
 \]</span></p>
@@ -1489,7 +1535,7 @@ D_2 f(x,\,y) &amp;= 2y \sin \dfrac{1}{\sqrt{x^2+y^2}} - \dfrac{y}{\sqrt{x^2+y^2}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_33" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.31 (Spivak 2_33)</strong></span> <a href="#thm-CM_derivative_and_partial_derivative_2" class="quarto-xref">정리&nbsp;<span>13.7</span></a> 에서 <span class="math inline">\(D_1f_i(\boldsymbol{a})\)</span> 가 연속인 조건을 제거해도 된다는 것을 보여라. (<span class="math inline">\(D_2f_j\)</span> 부터는 연속이어야 한다.)</p>
+<p><span class="theorem-title"><strong>연습문제 13.32 (Spivak 2_33)</strong></span> <a href="#thm-CM_derivative_and_partial_derivative_2" class="quarto-xref">정리&nbsp;<span>13.7</span></a> 에서 <span class="math inline">\(D_1f_i(\boldsymbol{a})\)</span> 가 연속인 조건을 제거해도 된다는 것을 보여라. (<span class="math inline">\(D_2f_j\)</span> 부터는 연속이어야 한다.)</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1519,7 +1565,7 @@ f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_34" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.32 (Spivak 2_34)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 자연수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(f(t\boldsymbol{x})=t^mf(\boldsymbol{x})\)</span> 라면 <strong>homogeneous of degree <span class="math inline">\(m\)</span></strong> 라고 한다. <span class="math inline">\(f\)</span> 가 미분가능하다면 다음이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.33 (Spivak 2_34)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 자연수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(f(t\boldsymbol{x})=t^mf(\boldsymbol{x})\)</span> 라면 <strong>homogeneous of degree <span class="math inline">\(m\)</span></strong> 라고 한다. <span class="math inline">\(f\)</span> 가 미분가능하다면 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
 \sum_{i=1}^n x_i D_i f(\boldsymbol{x}) = mf(\boldsymbol{x}).
 \]</span></p>
@@ -1535,7 +1581,7 @@ f_i(\boldsymbol{a}+\boldsymbol{h})-f_i(\boldsymbol{a}) &amp;= f_i(a_1+h_1, a_2,\
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_35" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 13.33 (Spivak 2_35)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(f(\boldsymbol{0})=0\)</span> 일 때 다음을 만족하는 <span class="math inline">\(g:\mathbb{R}^n \to \mathbb{R}\)</span> 이 존재함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 13.34 (Spivak 2_35)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 미분가능하며 <span class="math inline">\(f(\boldsymbol{0})=0\)</span> 일 때 다음을 만족하는 <span class="math inline">\(g:\mathbb{R}^n \to \mathbb{R}\)</span> 이 존재함을 보여라.</p>
 <p><span class="math display">\[
 f(x) = \sum_{i=1}^n x_i g_i(x).
 \]</span></p>
