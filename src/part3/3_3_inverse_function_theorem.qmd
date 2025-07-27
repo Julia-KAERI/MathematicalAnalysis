@@ -170,7 +170,7 @@ $$
 
 </br>
 
-@lem-CM_inverse_function_theorem_2 은 $\det(F'(\bf{a}))\ne 0$ 이면 $\bf{a}$ 를 중심으로 하는 어떤 열린 cube 에서 $F$ 가 단사가 됨을 의미한다. $\bf{x}_1\ne \bf{x}_2$ 이면 $\|F(\bf{x}_1)-F(\bf{x}_2)\|>0$ 이 기 때문이다. 이제 위의 보조정리에서 계속 진행해보자.
+@lem-CM_inverse_function_theorem_2 은 $\det(F'(\bf{a}))\ne 0$ 이면 $\bf{a}$ 를 중심으로 하는 어떤 열린 입방체 에서 $F$ 가 단사가 됨을 의미한다. $\bf{x}_1\ne \bf{x}_2$ 이면 $\|F(\bf{x}_1)-F(\bf{x}_2)\|>0$ 이 기 때문이다. 이제 위의 보조정리에서 계속 진행해보자.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 

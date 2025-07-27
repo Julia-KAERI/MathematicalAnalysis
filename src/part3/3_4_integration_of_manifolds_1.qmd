@@ -36,7 +36,7 @@ $$
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-CM_partition_of_cube}
+::: {#def-CM_partition_of_n_cell}
 
 #### $n$-cell 의 분할과 subcell
 
@@ -257,38 +257,30 @@ $f:A \to \R$ 이 적분가능하며 $g$ 는 유한개의 점을 제외하고는 
 
 ::: {.solution}
 
-$f\ne g$ 인 점을 $x_1,\ldots,\,x_m$ 이라고 하자. 그리고 $M=\max \{|f(x_i)-g(x_i)|\}$ 이라고 하자.
+$B=\{\bf{x}\in A : f(\bf{x})\ne g(\bf{x})\}$ 라고 하고 $M=\max \{|f(\bf{x})-g(\bf{x})| : \bf{x}\in B\}$ 이라고 하자. $N_B=|B|$, 즉 $B$ 의 개수 라고 하자. 
 
-$n$ 차원 유클리드 공간에서 한 점이 포함될 수 있는 $n$-cell 의 갯수를 $N_c$ 라고 하자. $\R$ 에서 $N_c=1$ 이며 $\R^2$ 에서는 $N_c=4$ 이고 유한차원 유클리드 공간에서 $N_c$ 는 정해져 있다. $\varepsilon >0$ 을 고정시킨다. 어떤 분할 $P_1\in \mathcal{P}[A]$ 에서 $U(f,\,P_1)-L(f,\,P_1)<\frac{\varepsilon}{2}$ 이라고 하자. $P_1$ 에 의한 subcell 이 $\{x_1,\ldots,\,x_m\}$ 가운데 두개 이상을 포함한다면 이것을 하나만 포함하도록 하는 $P_1$ 에 대한 refinement $P_2$ 가 존재하며 $U(f,\,P_2)-L(f,\,P_2)<\varepsilon$ 이다.
-
-이 $P_2$ 에서 ${x_i}$ 를 포함하는 subcell 에 대해 각각의 subcell 의 부피가 $V_0$ 보다 작도록 $P_2$ 를 refine 할 수 있다. 이 분할을 $P_3$ 라고 하자. 그렇다면
+$P\in \mathcal{P}[A]$ 를 ($i$) $\bf{x}\in B$ 가 각각 $P$ 의 서로 다른 subcell 내부에 위치하며, ($ii$) $P$ 의 각각의 subcell 의 부피가 $V_0=\varepsilon/4N_BM$ 보다 작고 ($iii$) $U(f,\,P)- L(f,\,P)<\varepsilon/2$ 가 되도록 잡을 수 있다. 그렇다면
 
 $$
 \begin{aligned}
-U(f,\,P_3) - N_cV_0M &\le U(g,\,P_3) \le U(f,\,P_3) + N_cV_0M,\\[0.3em]
-L(f,\,P_3) - N_cV_0M &\le L(g,\,P_3) \le L(f,\,P_3) + N_c V_0 M
+U(f,\,P) - N_BV_0M &\le U(g,\,P) \le U(f,\,P) + N_BV_0M \\[0.3em]
+L(f,\,P) - N_BV_0M & \le L(g,\,P) \le L(f,\,P) + N_BV_0M
 \end{aligned}
-$${#eq-CM_spivka_3_2_1}
+$$ {#eq-exr-CM_spivak_3_2}
 
-이며
-
-$$
-U(g,\,P_3)-L(g,\,P_3) \le U(f,\,P_3)-L(f,\,P_3) + 2N_cV_0M \le \dfrac{\varepsilon}{2} + 2N_CV_0M
-$$
-
-이다. 여기서 우리가 $V_0 < \dfrac{\varepsilon}{4N_cM}$ 으로 잡는다면 임의의 $\varepsilon>0$ 에 대해
+이므로 
 
 $$
-U(g,\,P_3)-L(g,\,P_3) \le \varepsilon
+U(g,\,P) - L(g,\,P) \le U(f,\,P)-L(f,\,P) + 2N_BV_0M < \varepsilon
 $$
 
-이므로 $g$ 가 적분가능함을 안다. 또한 @eq-CM_spivka_3_2_1 로 부터 임의의 $\varepsilon>0$ 에 대해
+이므로 $g\in \mathcal{R}[A]$ 이다. @eq-exr-CM_spivak_3_2 로부터
 
 $$
-L(f,\,P)-\dfrac{\varepsilon}{4} \le L(g,\,P) \le U(g,\, P) \le U(f,\,P)+ \dfrac{\varepsilon}{4}
+L(f,\,P) - \dfrac{\varepsilon}{2} \le \int_A g \le U(f,\,P) + \dfrac{\varepsilon}{2} < L(f,\,P) + \varepsilon
 $$
 
-를 만족하는 분할 $P$ 가 존재하며 $f,\,g$ 가 적분가능하므로 $\int_A f = \int_A g$ 임을 알 수 있다. 
+이다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 $\int_A g = \int_A f$ 임을 알 수 있다.
 
 :::
 
@@ -497,7 +489,9 @@ $$
 
 </br>
 
-## Measure zero 와 Content zero {#sec-CM_measure_zero_and_content_zero}
+## Measure zero 와 Content zero 
+
+### Measure zero {#sec-CM_measure_zero}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -581,6 +575,8 @@ $$
 :::
 
 </br>
+
+### Content zero {#sec-CM_content_zero}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -716,9 +712,9 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 
 ::: {.solution}
 
-($a$) $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 가 $C$ 의 덮개이고 $U=\text{vol}\left(\bigcup_{i=1}^n U_i\right)$ 라고 하자. $C\subset U$ 이며 $C$ 는 닫힌 집합이므로 $\text{Bd}(C)\subset U$ 이다. 따라서 $C$ 의 경계도 content zero 이다.
+($a$) $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 가 $C$ 의 덮개이고 $U=\bigcup_{i=1}^n U_i$ 는 닫힌 집합이다. $C\subset U$ 이며 $\overline{C}=C\cup \partial C\subset U$ (@prp-MA_closure) 이므로 $\partial C\subset U$ 이다. 따라서 $C$ 의 경계도 content zero 이다.
 
-($b$) $A=\Q \cap [0,\,1]$. $\Q$ 가 measure zero 이므로 $A$ 도 measure zero 이며 유계이다. 그러나 $\text{Bd}(A)=[0,\,1]$ 이므로 measure zero 가 아니다. 
+($b$) $A=\Q \cap [0,\,1]$. $\Q$ 가 measure zero 이므로 $A$ 도 measure zero 이며 유계이다. 그러나 $\partial A=[0,\,1]$ 이므로 measure zero 가 아니다. 
 :::
 
 </br>
@@ -736,7 +732,7 @@ $A$ 가 @exr-CM_spivak_1_18 의 $A$ 라고 하자. $\sum_{i=1}^\infty (b_i-a_i)<
 
 ::: {.solution}
 
-$A=\bigcup_{i=1}^\infty (a_i,\,b_i)$ 이다.  @exr-CM_spivak_1_18 $\partial A=[0,\,1]-A$ 이다. 
+$A=\bigcup_{i=1}^\infty (a_i,\,b_i)$ 이다.  @exr-CM_spivak_1_18 에 의해 $\partial A=[0,\,1]-A$ 이며 $\text{vol}(A) <1$ 이므로 $\text{vol}(\partial A) >0$ 이다. 따라서 $\partial A$ 는 measure $0$ 이 아니다.
 
 :::
 
@@ -807,7 +803,7 @@ $$
 </div>
 ::: {.proof}
 
-$\bf{x}\in A$ 이면 $\bf{x}$ 를 포함하는 어떤 $n$-cell $U_x$ 에서 $M_{U_x}(f) - m_{U_x}(f) <\varepsilon$ 이다. 
+$\bf{x}\in A$ 이면 $\bf{x}$ 를 내부에 포함하는 어떤 닫힌 $n$-cell $U_x$ 에서 $M_{U_x}(f) - m_{U_x}(f) <\varepsilon$ 이다. 
 $A$ 가 옹골집합이므로 유한개의 $U_{x_1},\ldots,\,U_{x_n}$ 이 존재하여 $A$ 를 덮는다. $A$ 의 분할 $P$ 를 $P$ 의 각각의 subcell 이 어떤 $U_{x_i}$ 에 포함되도록 잡을 수 있다. $S$ 가 그런 subcell 이라면 $M_S(f)-m_S(f)<\varepsilon$ 이며, 따라서
 
 $$
@@ -917,32 +913,218 @@ $A$ 에서 정의된 특성함수 $\chi_A$ 가 적분 가능할 필요충분조�
 
 ::: {.proof}
 
-$x\in \text{int}(A)$ 이거타 $x$ 가 $A$ 의 외부라면 $\chi_A$ 가 $x$ 에서 연속임은 자명하다. $x\in \partial A$ 라면 $\chi_A$ 는 $x$ 에서 연속이지 않으며 @thm-CM_integrability_and_measure_of_uncontinous_points 에 따라 명제가 증명된다. $\square$
+$x\in \text{int}(A)$ 이거나 $x$ 가 $A$ 의 외부라면 $\chi_A$ 가 $x$ 에서 연속임은 자명하다. $x\in \partial A$ 라면 $\chi_A$ 는 $x$ 에서 연속이지 않으며 @thm-CM_integrability_and_measure_of_uncontinous_points 에 따라 명제가 증명된다. $\square$
 
 :::
 
+</br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_jordan_measureable_and_volume}
 
-#### 요르당 적분가능
+#### 조르당 가측
 
-유계인 집합 $A$ 에 대해 $\partial A$ 가 measure $0$ 일 때 $A$ 를 **요르당-적분가능(Jordan-measureable)** 하다고 한다. $\int_A 1$ 을 $A$ 의 **content** 혹은 **$n$-차원 부피(volumn)** 라고 한다. 단 $1$ 차원일 경우는 **길이(length)**, 2차원일 경우는 **넓이(area)** 라고 한다.
+유계인 집합 $A$ 에 대해 $\partial A$ 가 measure $0$ 일 때 $A$ 를 **조르당 가측(Jordan-measureable)** 이라고 한다. $\int_A 1$ 을 $A$ 의 **content** 혹은 **$n$-차원 부피(volumn)** 라고 한다. $1$ 차원일 경우는 **길이(length)**, 2차원일 경우는 **넓이(area)** 라고 한다.
 
 ::: 
 :::
 
 </br>
 
+
 ### 연습문제 {.unnumbered}
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_14}
+
+#### Spivak 3.14
+
+$f,\,g\in A\to \R$ 이 적분가능하면 $f\cdot g$ 도 적분가능함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$B_f,\, B_g$ 를 각각 $f,\,g$ 가 불연속인 $\bf{x}\in A$ 의 집합이라고 하자. $f\cdot g$ 가 불연속인 $\bf{x}\in A$ 의 집합 $B$ 는 $B \subset B_f \cup B_g$ 이며 @thm-CM_meazure_zero, @prp-CM_meazure_zero, @thm-CM_integrability_and_measure_of_uncontinous_points 에 의해 $B$ 도 measure zero 이므로 $f\cdot g$ 도 적분가능하다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_15}
+
+#### Spivak 3.15
+
+$C$ 가 content $0$ 이면 어떤 닫힌 $n$-cell $A$ 에 대해 $C \subset A$ 이고 $C$ 는 조르당 가측이며 $\int_A \chi_C=0$ 임을 보여라. 
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CM_spivak_3_9 ($a$) 에 따라 $C$ 는 유계이므로 어떤 닫힌 $n$-cell $A$ 가 $C$ 를 포함한다. @exr-CM_spivak_3_10 에 따라 $\partial C$ 도 content $0$ 이며 따라서 조르당 가측이다. $C$ 가 content $0$ 이므로 $\int_A \chi_C = 0$ 이다.,
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_16}
+
+#### Spivak 3.16
+
+유계이며 measure zero 이고 $\int_A \chi_C=0$ 가 존재하지 않는 집합 $C$ 의 예를 들어라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$A=[0,\,1]$ 에 대해 $C=\Q \cap A$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_17}
+
+#### Spivak 3.17
+
+$C$ 가 유계이며 measure $0$ 이고 $\int_A \chi_C$ 가 존재한다면 $\int_A \chi_C=0$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\int_A\chi_C = \int_C 1 = 0$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_18}
+
+#### Spivak 3.18
+
+$f:A \to \R$ 이 음이 아닌 함수이고 $\int_A f=0$ 이면 $\{\bf{x}:f(\bf{x}) \ne 0\}$ 이 measure $0$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$B=\{\bf{x}\in A:f(\bf{x}) \ne 0\}$ 라고 하고 $n\in \Z_+$ 에 대해 $B_n=\{\bf{x}\in A:f(\bf{x})>1/n\}$ 라고 정의 하자. $B=\bigcup_{n=1}^\infty B_n$ 이다. $B_n$ 이 measure $0$ 라면 @thm-CM_meazure_zero $B$ 에 따라 $B$ 는 measure $0$ 이다. 여기서 $B_n$ 이 content $0$ 임을 보이자. 
+
+$\int_A f=0$ 이므로 임의의 $\varepsilon>0,\, n\in \Z_+$ 에 대해 $U(f,\,P_n)-L(f,\,P_n) < \dfrac{\varepsilon}{n}$ 을 만족하는 $P_n \in \mathcal{P}[A]$ 가 존재한다. $D_n =\{S\in P_n : S \cap B_n \ne \varnothing\}$ 이라고 하면 $D_n$ 은 $B_n$ 의 덮개이다. 그리고 $S\in D_n$ 이면 $M_S(f)-m_S(f) > 1/n$ 이다. 
+
+$$
+\dfrac{1}{n} \sum_{S\in D_n} \text{vol}(S) < \sum_{S\in D_n} [M_S(f)-m_S(f)]\text{vol}(S) \le \sum_{S\in P_n} [M_S(f)-m_S(f)]\text{vol}(S) < \dfrac{\varepsilon}{n}
+$$
+
+이므로 $\sum_{S\in D_n}\text{vol}(S) < \varepsilon$ 이다. 즉 $B_n$ 은 content $0$ 이며 따라서 $B$ 역시 content $0$ 이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_19}
+
+#### Spivak 3.19
+
+$U$ 가 @exr-CM_spivak_3_11 의 열린 집합이라고하자. $f$ 가 measure $0$ 인 어떤 집합 위를 제외하고 $f=\chi_U$ 라면 $f$ 는 $[0,\,1]$ 에서 적분 가능하지 않음을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+
+$\partial U = [0,\,1]-U$ 가 meausre $0$ 이 아니므로 적분가능하지 않다(@prp-CM_integrability_of_characteristic_function).
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_20}
+
+#### Spivak 3.20
+
+단조증가함수 $f:[a,\,b]\to \R$ 은 $[a,\,b]$ 에서 적분가능함을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+@prp-MA_monitonic_and_countable_number_of_discontinuity, @prp-CM_meazure_zero, @thm-CM_meazure_zero
+
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_jordan_measureable_set_and_boundary}
+
+$A\subset \R^n$ 이 조르당 가측이면 $\partial A$ 는 content $0$ 임을 보여라.
+
+:::
+</div>
+
+::: {.solution}
+
+조르당 가측의 정의에 의해 $A$ 는 유계이며, $\partial A$ 역시 유계이다. @exr-MA_KKK_2_7_6  에 의해 $\partial A$ 는 닫힌 집합며 따라서 하이네 보렐 정리(@thm-MA_heine_borrel) 에 따라 $\partial A$ 는 옹골집합이다. @prp-CM_content_zero_and_compact 에 따라 $\partial A$ 는 content $0$ 이다. 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_21}
+
+#### Spivak 3.21
+
+
+$A$ 가 닫힌 $n$-cell 이고 $C\subset A$ 라고 하자. 이 때 아래 두 명제는 동치임을 보여라.
+
+($a$) $C$ 는 조르당 가측이다.
+
+($b$) $P$ 가 $A$ 의 분할 일 때 $\mathcal{S}_1$ 은 $C$ 와 교집합이 있는 $P$ 의 subcell 의 집합이고 $\mathcal{S}_2$ 는 $C$ 에 포함되는 subcell 의 집합이라고 하자. 각각의 $\varepsilon >0$ 에 대해 $\sum_{S\in \mathcal{S}_1}\text{vol}(S) - \sum_{S\in \mathcal{S}_2} \text{vol}(S) < \varepsilon$ 을 만족하는 분할이 존재한다.
+
+:::
+
+</div>
+
+::: {.solution}
+@exr-CM_jordan_measureable_set_and_boundary 에 의해 $\partial C$ 는 content $0$ 이다. $\sum_{S\in \mathcal{S}_1}\text{vol}(S) - \sum_{S\in \mathcal{S}_2} \text{vol}(S) < \varepsilon$ 는 $P$ 의 subcell 가운데 $\partial C$ 와 교집합이 존재하는 subcell 의 부피의 합이다. 조르당 가측의 정의에 의해 두 명제는 동치이다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_22}
+
+#### Spivak 3.22
+
+$A$ 가 조르당 가측이고 $\varepsilon >0$ 이면 어떤 조르당 가측이며 $A$ 의 부분집합인 집합 $C$ 가 존재하여 $\int_{A-C} 1 < \varepsilon$ 임을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CM_spivak_3_21 의 $\mathcal{S}_2$ 를 생각하자. 단 @exr-CM_spivak_3_21 의 $C$ 가 여기서의 $A$ 이다.
+:::
 
 </br>
 
-
 ## 푸비니의 정리
 
-### 직사각형 영역에서 정의된 함수의 적분 
+### 직사각형 영역에서 정의된 함수의 적분 {#sec-CM_integration_defined_on_rectangle}
 
 직사각형 $[a,\,b] \times [c,\,d]$ 위에서 정의된 실함수 $f:[a,\,b] \times [c,\,d] \to \R$ 을 생각하자. $(t_0,\ldots,\,t_n)$ 이 $[a,\,b]$ 의 분할이라고 할 때 $\{t_i\} \times [c,\,d]$ 는 $[a,\,b]\times [c,\,d]$ 를 $n$ 개의 긴 직사각형 조각으로 나눈다. 정해진 $x\in [a,\,b]$ 에 대해 $g_x(y)=f(x,\,y)$ 라고 하자. $[x] \times [c,\,d]$ 위에서 $f$ 그래프까지의 면적은 아래와 같다.
 
@@ -955,7 +1137,7 @@ $$
 또한 $[t_{i-1},\,t_i]\times [c,\,d]$ 영역 위에서 $f$ 아래 영역의 부피는 $x\in [t_{i-1},\,t_i]$ 에 대해 대략  
 
 $$
-(t_{i-1}-t_i) \cdot \int_c^d f(x,\,y) \,dy
+(t_{i}-t_{i-1}) \cdot \int_c^d f(x,\,y) \,dy
 $$
 
 이며, 따라서
@@ -967,12 +1149,12 @@ $$
 임을 안다. 다른 한편 위의 식의 $\sum_i$ 관련 부분은 $\int_a^b \left(\int_c^d f(x,\,y)\,dy\right)\,dx$ 의 정의에서 나타나는 그것과 유사하다. 따라서 $h(x) := \int_c^d g_x = \int_c^d f(x,\,y)\,dy$ 라고 정의하면 $h \in \mathcal{R}[a,\,b]$ 이고
 
 $$
-\int_{[a,b]\times [c,d]} = \int_a^b h = \int_a^b \left(\int_c^d f(x,\,y)\, dy\right)\,dx
+\int_{[a,b]\times [c,d]} f= \int_a^b h = \int_a^b \left(\int_c^d f(x,\,y)\, dy\right)\,dx
 $$
 
-임을 기대할 수 있다. 우리가 앞으로 할 일은 $f$ 가 연속일 경우 이것이 사실임을 보이는 것인데, 일반적인 경우에서는 그렇지 않을 수 있다. $f:[a,\,b] \times [c,\,d] \to \R$ 이 불연속인 점이 $[x]\times [c,\,d]$ 라고 하자. 그랗다면 $f$ 는 $[a,\,b]\times [c,\,d]$ 에서는 적분 가능하지만 $h(x_0) = \int_c^d f(x_0,\,y)\,dy$ 는 정의 자체가 안될 수도 있다. 앞으로 보겠지만 푸비지의 정리 자체는 이것을 생각하면 약간 의아할 수 있고, 여러 특별한 경우에 대한 주의사항이 붙게 된다.
+임을 기대할 수 있다. 우리가 앞으로 할 일은 $f$ 가 연속일 경우 이것이 사실임을 보이는 것인데, 일반적인 경우에서는 그렇지 않을 수 있다. $f:[a,\,b] \times [c,\,d] \to \R$ 이 불연속인 점이 $[x]\times [c,\,d]$ 라고 하자. 그랗다면 $f$ 는 $[a,\,b]\times [c,\,d]$ 에서는 적분 가능하지만 $h(x_0) = \int_c^d f(x_0,\,y)\,dy$ 는 정의 자체가 안될 수도 있다. 앞으로 보겠지만 푸비니의 정리 자체는 이것을 생각하면 약간 의아할 수 있고, 여러 특별한 경우에 대한 주의사항이 붙게 된다.
 
-푸비니의 정리를 진행하기에 앞서 리만 상합과 리만 하합(@def-CM_riemann_upper_sum_and_lower_sum) 을 다시 한번 상기하자. $f:A \to \R$ 이 유계일 때 $f$ 에 
+푸비니의 정리를 진행하기에 앞서 리만 상합과 리만 하합(@def-CM_riemann_upper_sum_and_lower_sum) 을 다시 한번 
 
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -985,8 +1167,8 @@ $A\subset \R^m,\,B\subset \R^n$ 이 닫힌 $n$-cell 이고 $f:A \times B \to \R$
 
 $$
 \begin{aligned}
-\mathcal{L}(\bf{x}) &= L(g_\bf{x},\,B),\\[0.3em]
-\mathcal{U}(\bf{x}) & = U(g_\bf{x},\,B)
+\mathcal{L}(\bf{x}) &= \underline{\int_B}g_\bf{x},\\[0.3em]
+\mathcal{U}(\bf{x}) & = \overline{\int_B}g_\bf{x}
 \end{aligned}
 $$
 
@@ -994,8 +1176,7 @@ $$
 
 $$
 \begin{aligned}
-\int_{A\times B} f = \int_A \mathcal{L}(\bf{x}) \,d\bf{x} = \int_A L(g_\bf{x},\,B)\, d\bf{x} \\[0.3em]
-\int_{A\times B} f = \int_A \mathcal{U}(\bf{x}) \,d\bf{x} = \int_A U(g_\bf{x},\,B)\, d\bf{x} \\[0.3em]
+\int_{A\times B} f = \int_A \mathcal{L}(\bf{x}) \,d\bf{x} = \int_A \mathcal{U}(\bf{x}) \,d\bf{x} 
 \end{aligned}
 $$
 
@@ -1010,15 +1191,15 @@ $P_A \in \mathcal{P}(A),\, P_B \in \mathcal{P}(B)$ 라고 하자. $P_A\times P_B
 
 $$
 \begin{aligned}
-L(f,\,P) &= \sum_S m_S(f)\cdot \text{vol}(S) = \sum_{S_A,S_B} (f) \cdot \text{vol}(S_A \times S_B) \\[0.3em]
+L(f,\,P) &= \sum_S m_S(f)\cdot \text{vol}(S) = \sum_{S_A,S_B} m_{S_A\times S_B}(f) \cdot \text{vol}(S_A \times S_B) \\[0.3em]
 &= \sum_{S_A}\left( \sum_{S_B} m_{S_A \times S_B}(f) \cdot \text{vol}(S_B)\right) \cdot \text{vol}(S_A)
 \end{aligned}
 $$
 
-이다. $x\in S_A$ 이면 $m_{S_A\times S_B}(f) \le m_{S_B}(g_\bf{x})$ 이므로
+이다. $\bf{x}\in S_A$ 이면 $m_{S_A\times S_B}(f) \le m_{S_B}(g_\bf{x})$ 이므로
 
 $$
-\sum_{S_B} m_{S_A\times S_B}(f)\cdot \text{vol}(S_B) \le \sum_{S_B} m_{S_B}(g_X)\cdot \text{vol}(S_B) \le L(g_\bf{x},B) = \mathcal{L}(\bf{x})
+\sum_{S_B} m_{S_A\times S_B}(f)\cdot \text{vol}(S_B) \le \sum_{S_B} m_{S_B}(g_\bf{x})\cdot \text{vol}(S_B) \le \mathcal{L}(\bf{x})
 $$
 
 이다. 즉
@@ -1054,7 +1235,10 @@ $$
 푸비니 정리에서 $x$ 와 $y$ 변수 사이에 구별이 없다. 즉 $h_\bf{y}(\bf{x}) := f(\bf{x},\bf{y})$ 라고 할 때
 
 $$
-\int_{A\times B} f = \int_A L(g_\bf{x},\,B)\,d\bf{x} = \int_{A}U(\bf{g}_\bf{x},\,B)\,\bf{x} = \int_B L(h_\bf{y},\,A)\,d\bf{y} = \int_B U(h_\bf{y},\,A)\,d\bf{y}
+\begin{aligned}
+\int_{A\times B} f &= \int_A L(g_\bf{x},\,B)\,d\bf{x} = \int_{A}U(g_\bf{x},\,B)\,\bf{x}\\[0.3em] 
+&= \int_B L(h_\bf{y},\,A)\,d\bf{y} = \int_B U(h_\bf{y},\,A)\,d\bf{y}
+\end{aligned}
 $$ {#eq-CM_exchange_of_integral_order}
 
 가 성립함을 안다. 즉 $f$ 가 적분가능 함수라면 적분의 순서를 바꿀 수 있다.
@@ -1135,4 +1319,23 @@ $$
 
 ### 연습문제 {.unnumbered}
 
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_23}
+
+#### Spivak 3.23
+
+$C\subset A\times B$ 가 content $0$ 이다. $A'\subset A$ 는 $\{\bf{y}\in B: (\bf{x},\bf{y})\in C\}$ 가 content $0$ 이 아닌 모든 $\bf{x}\in A$ 의 집합이다. $A'$ 은 measure $0$ 집합임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CM_spivak_3_10 에 따라 $\partial C$ 가 content $0$ 이므로 $\int_C 1 =\int_{A\times B}\chi_C= 0$ 이다. $\bf{x}\in A'$ 일 때 
+
+:::
+
 </br>
+

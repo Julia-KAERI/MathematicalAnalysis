@@ -557,8 +557,8 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-CM_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 12.2 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="../part2/2_1_basic_topology.html#def-MA_countable" class="quarto-xref">정의&nbsp;<span>6.1</span></a> 에서 <span class="math inline">\(n\)</span>-cell 을 정의하였다. 이와 비슷하게</p>
+<div id="def-CM_n_cell" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 12.2 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="../part2/2_1_basic_topology.html#def-MA_n_cell" class="quarto-xref">정의&nbsp;<span>6.6</span></a> 에서 <span class="math inline">\(n\)</span>-cell 을 정의하였다. 이와 비슷하게</p>
 <p><span class="math display">\[
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \mathbb{R}^n
 \]</span></p>
@@ -567,7 +567,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 </div>
 </div>
-<p>앞서 일변수 해석학에서는 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 주위의 열린 집합을 잡을 때 <span class="math inline">\(N(\boldsymbol{a},\,\delta)\)</span> 을 생각했지만 여기서는 자주 <span class="math inline">\(\boldsymbol{a}\)</span> 주위의 열린 <span class="math inline">\(n\)</span>-cell 을 잡게 된다.</p>
+<p>앞서 일변수 해석학에서는 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 주위의 열린 집합을 잡을 때 <span class="math inline">\(N(\boldsymbol{a},\,\delta)\)</span> 을 생각했지만 여기서는 자주 <span class="math inline">\(\boldsymbol{a}\)</span> 주위의 열린 <span class="math inline">\(n\)</span>-cell, 혹은 아래의 입방체 를 생각한다.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -575,7 +575,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 <div class="callout-body-container">
 <div id="def-CM_neighboring_cube" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 12.3 (열린/닫힌 cube)</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
+<p><span class="theorem-title"><strong>정의 12.3 (열린/닫힌 입방체)</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 C(\boldsymbol{a},\,\delta) &amp;:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
@@ -638,7 +638,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\in A\)</span> 이면 <span class="math inline">\(x\)</span> 는 어떤 열린 구간 <span class="math inline">\((a_i,\,b_i)\)</span> 에 포함되므로 <span class="math inline">\(N(x,\,\delta) \subset (a_i,\,b_i)\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 따라서 <span class="math inline">\(x\notin \partial A\)</span> 이다. 즉 <span class="math inline">\(\partial A \subset [0,\,1]-A\)</span> 이다.</p>
-<p><span class="math inline">\(x\notin A\)</span> 라고 하자. 유리수의 조밀성에 의해 모든 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(N(x,\,\delta) \cap A \ne \varnothing\)</span> 이다. 그런데 <span class="math inline">\(x\notin A\)</span> 이므로 <span class="math inline">\(x\in \partial A\)</span> 이다. 즉 <span class="math inline">\([0,\,1]-A \subset \partial A\)</span> 이다. 따라서 <span class="math inline">\(\partial A [0,\,1]-A\)</span> 이다.</p>
+<p><span class="math inline">\(x\notin A\)</span> 라고 하자. 유리수의 조밀성에 의해 모든 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(N(x,\,\delta) \cap A \ne \varnothing\)</span> 이다. 그런데 <span class="math inline">\(x\notin A\)</span> 이므로 <span class="math inline">\(x\in \partial A\)</span> 이다. 즉 <span class="math inline">\([0,\,1]-A \subset \partial A\)</span> 이다. 따라서 <span class="math inline">\(\partial A=  [0,\,1]-A\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
