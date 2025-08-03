@@ -1009,7 +1009,7 @@ $$
 
 ## 연습문제 {.unnumbered}
 
-
+<!-- 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-MA_KKK_p85}
@@ -1032,15 +1032,11 @@ $A,\,B\subset \R^n$ 이고 $A$ 가 옹골집합, $B$ 가 닫힌집합이며 $A\c
 
 ::: {.solution}
 
-($1$) 임의의 $b\in B$ 에 대해
-
-$$
-|f(x)-f(y)| = |f(x)-b - (f(y)-b)| 
-$$
+($1$) 임의의 $b\in B$ 에 대해 $\|x-b\| \le \|x-y\| + \|y-b\|$
 
 ($2$) @cor-MA_positive_continuous_function_on_compact_set
 
-:::
+::: -->
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -1566,7 +1562,7 @@ $$
 \rho_E(x) \le \|x-y\|_X + \rho_E(y)
 $$
 
-이다. 마찬가지로 $\|\rho_E(y) \le \|x-y\|_X + \rho_E(x)$ 이므로 @eq-MA_rudin_4_20 식이 성립한다. 따라서 $\rho_E(x)$ 는 고른 연속이다.
+이다. 마찬가지로 $\rho_E(y) \le \|x-y\|_X + \rho_E(x)$ 이므로 @eq-MA_rudin_4_20 식이 성립한다. 따라서 $\rho_E(x)$ 는 고른 연속이다.
 
 :::
 

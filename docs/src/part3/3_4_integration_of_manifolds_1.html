@@ -687,10 +687,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 </div>
 </div>
 <p><br></p>
-<p>즉 <span class="math inline">\(A\)</span> 가 가산 무한(countably infinite) 개의 집합족 <span class="math inline">\(\mathcal{U}\)</span> 로 덮일 수 있으며 집합족의 부피의 합이 임의로 작아질 수 있다면 <span class="math inline">\(A\)</span> 는 measure zero 이다.</p>
-<p><br></p>
-<p>다음은 쉽게 보일 수 있다.</p>
-<br>
+<p>즉 <span class="math inline">\(A\)</span> 가 가산 무한(countably infinite) 개의 집합족 <span class="math inline">\(\mathcal{U}\)</span> 로 덮일 수 있으며 집합족의 부피의 합이 임의로 작아질 수 있다면 <span class="math inline">\(A\)</span> 는 measure zero 이다. Measure <span class="math inline">\(0\)</span> 인 집합에 대해 아래 명제들은 쉽게 보일 수 있다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_meazure_zero" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 15.2</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 measure zero 일 때 다음이 성립한다.</p>
@@ -914,6 +911,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 </section>
 <section id="sec-CM_character_function_and_integrability" class="level3" data-number="15.3.2">
 <h3 data-number="15.3.2" class="anchored" data-anchor-id="sec-CM_character_function_and_integrability"><span class="header-section-number">15.3.2</span> 특성함수와 적분 가능성</h3>
+<p>지금까지는 <span class="math inline">\(n\)</span>-cell 위에서의 적분만을 생각했다. 이제 <span class="math inline">\(n\)</span>-cell 에서의 적분을 확장하여 임의의 집합에 대한 적분에 대해 알아보자.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -921,11 +919,11 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 </div>
 <div class="callout-body-container">
 <div id="def-CM_characteristic_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 15.8 (특성함수와 집합의 적분)</strong></span> <strong>특성 함수 (characteristic fucntion)</strong> <span class="math inline">\(\chi_A:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 은 다음과 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 15.8 (특성함수와 집합의 적분)</strong></span> 아래와 같이 정의된 함수 <span class="math inline">\(\chi_A:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 를 <span class="math inline">\(A\)</span> 에서의 <strong>특성 함수 (characteristic fucntion)</strong> 라고 한다.</p>
 <p><span id="eq-CM_definition_of_characteristic_fucntion"><span class="math display">\[
-\chi_A (x) = \left\{\begin{array}{ll} 0, \qquad &amp; x\in X,\\ 1 &amp; x\in C\end{array}\right. .
+\chi_A (x) := \left\{\begin{array}{ll} 0, \qquad &amp; x\in X,\\ 1 &amp; x\in C\end{array}\right. .
 \tag{15.5}\]</span></span></p>
-<p>어떤 닫힌 직육면체 <span class="math inline">\(C\)</span> 에 대해 <span class="math inline">\(A\subset C\)</span> 이고 <span class="math inline">\(f:C\to \mathbb{R}\)</span> 이 유계함수 일 때 <span class="math inline">\(x\cdot \chi_A\)</span> 가 적분 가능하다면 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(f\)</span> 의 적분은 아래와 같이 정의된다.</p>
+<p>어떤 닫힌 직육면체 <span class="math inline">\(C\)</span> 에 대해 <span class="math inline">\(A\subset C\)</span> 이고 <span class="math inline">\(f:C\to \mathbb{R}\)</span> 이 유계일 때 <span class="math inline">\(f\cdot \chi_A\)</span> 가 적분 가능하다면 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(f\)</span> 의 적분은 아래와 같이 정의된다.</p>
 <p><span id="eq-CM_definition_of_integration_within_rectengle"><span class="math display">\[
 \int_A f := \int_C f \cdot \chi_A
 \tag{15.6}\]</span></span></p>
@@ -979,7 +977,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_16" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 15.16 (Spivak 3.16)</strong></span> 유계이며 measure zero 이고 <span class="math inline">\(\int_A \chi_C=0\)</span> 가 존재하지 않는 집합 <span class="math inline">\(C\)</span> 의 예를 들어라.</p>
+<p><span class="theorem-title"><strong>연습문제 15.16 (Spivak 3.16)</strong></span> 유계이며 measure zero 이고 <span class="math inline">\(\int_A \chi_C\)</span> 가 존재하지 않는 집합 <span class="math inline">\(C\)</span> 의 예를 들어라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1049,11 +1047,11 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_22" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 15.23 (Spivak 3.22)</strong></span> <span class="math inline">\(A\)</span> 가 조르당 가측이고 <span class="math inline">\(\varepsilon &gt;0\)</span> 이면 어떤 조르당 가측이며 <span class="math inline">\(A\)</span> 의 부분집합인 집합 <span class="math inline">\(C\)</span> 가 존재하여 <span class="math inline">\(\int_{A-C} 1 &lt; \varepsilon\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 15.23 (Spivak 3.22)</strong></span> <span class="math inline">\(A\)</span> 가 조르당 가측이고 <span class="math inline">\(\varepsilon &gt;0\)</span> 이면 어떤 조르당 가측이며 <span class="math inline">\(A\)</span> 의 부분집합인 옹골집합 <span class="math inline">\(C\)</span> 가 존재하여 <span class="math inline">\(\int_{A-C} 1 &lt; \varepsilon\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>15.22</span></a> 의 <span class="math inline">\(\mathcal{S}_2\)</span> 를 생각하자. 단 <a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>15.22</span></a> 의 <span class="math inline">\(C\)</span> 가 여기서의 <span class="math inline">\(A\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>15.22</span></a> 의 <span class="math inline">\(\mathcal{S}_2\)</span> 를 생각하자. 단 <a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>15.22</span></a> 의 <span class="math inline">\(C\)</span> 가 여기서의 <span class="math inline">\(A\)</span> 이며 닫힌 <span class="math inline">\(n\)</span>-cell 의 유한합집합이므로 옹골집합이다.</p>
 </div>
 <p><br></p>
 </section>
@@ -1203,9 +1201,233 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_10" class="quarto-xref">연습문제&nbsp;<span>15.10</span></a> 에 따라 <span class="math inline">\(\partial C\)</span> 가 content <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_C 1 =\int_{A\times B}\chi_C= 0\)</span> 이다. <span class="math inline">\(\boldsymbol{x}\in A'\)</span> 일 때</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_10" class="quarto-xref">연습문제&nbsp;<span>15.10</span></a> 에 따라 <span class="math inline">\(\partial C\)</span> 가 content <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_C 1 =\int_{A\times B}\chi_C= 0\)</span> 이므로 적분가능하다. <span class="math inline">\(\mathcal{L}(\boldsymbol{x}) = \underline{\int_B} \chi_C(\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span>, <span class="math inline">\(\mathcal{U}(\boldsymbol{x})=\overline{\int_B}\chi_C (\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span> 라고 하자. 푸비니의 정리에 따라</p>
+<p><span class="math display">\[
+0  = \int_{A\times B}\chi_C = \int_{A} \mathcal{L} = \int_A \mathcal{U}
+\]</span></p>
+<p>이다. <span class="math inline">\(\mathcal{L}\)</span> 이든 <span class="math inline">\(\mathcal{U}\)</span> 든 함수값이 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(\boldsymbol{x}\)</span> 는 <span class="math inline">\(A'\)</span> 에 포함되어야 한데 <span class="math inline">\(\int_A(\mathcal{U}-\mathcal{L})=0\)</span> 이다. 따라서 <span class="math inline">\(A'\)</span> 은 measure <span class="math inline">\(0\)</span> 이다.</p>
 </div>
-<p><br></p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_24" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.25 (Spivak 3.24)</strong></span> <span class="math inline">\(C\subset [0,\,1]\times [0,\,1]\)</span> 는 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 사이의 기약분수 <span class="math inline">\(p/q\)</span> 에 대해 <span class="math inline">\([p/q]\times [0,\,1/q]\)</span> 의 합집합이다. <a href="#exr-CM_spivak_3_23" class="quarto-xref">연습문제&nbsp;<span>15.24</span></a> 에서 <span class="math inline">\(A'\)</span> 이 content <span class="math inline">\(0\)</span> 가 아닐 수 있음을 보여랴.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A_q = [p/q]\times [0,\,1/q]\)</span> 라고 하자. 충분히 작은 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(q&gt;2/\varepsilon\)</span> 인 자연수 <span class="math inline">\(q_0\)</span> 를 정한다. <span class="math inline">\(C_\varepsilon := [0,\,1]\times [0,\, \varepsilon/2]\)</span> 영역에는 <span class="math inline">\(q_0\)</span> 보다 큰 <span class="math inline">\(q\)</span> 에대한 모든 원소가 포함되며 <span class="math inline">\(C_\varepsilon\)</span> 의 넓이는 <span class="math inline">\(\varepsilon/2\)</span> 이다. <span class="math inline">\(C_\varepsilon\)</span> 에 포함되지 않는 선분은 유한개이므로 이것을 덮고 그 총 면적이 <span class="math inline">\(\varepsilon/2\)</span> 보다 작은 <span class="math inline">\(n\)</span>-cell 을 항상 구할 수 있다. 즉 <span class="math inline">\(C\)</span> 는 content <span class="math inline">\(0\)</span> 이다. 각각의 <span class="math inline">\(A_q\)</span> 에 대해 <span class="math inline">\(\{\boldsymbol{y} : (\boldsymbol{x},\boldsymbol{y})\in A_q\}\)</span> 는 measure <span class="math inline">\(0\)</span> 이 아니며 따라서 content <span class="math inline">\(0\)</span> 도 아니다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_25" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.26 (Spivak 3.25)</strong></span> 수학적 귀납법을 사용하여 각각의 <span class="math inline">\(i=1,\,2,\ldots,\,n\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 이면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 이 measure <span class="math inline">\(0\)</span> 이 아님을 보여라.</p>
+</div>
+</div>
+<div class="{solution}">
+<p>trivial</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_26" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.27 (Spivak 3.26)</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 적분가능하며 <span class="math inline">\(f \ge 0\)</span> 이다. <span class="math inline">\(A_f:=\{(x,\,y) : a\le x \le b,\, 0 \le y \le f(x)\}\)</span> 가 요르당 가측이며 면적이 <span class="math inline">\(\int_a^b f\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A_f\)</span> 가 요르당 가측임을 보이려면 <span class="math inline">\(\partial A\)</span> 가 meausre <span class="math inline">\(0\)</span> 이면 되고 <span class="math inline">\([a]\times [0,\,f(a)]\)</span>, <span class="math inline">\([b]\times [0,\, f(b)]\)</span>, <span class="math inline">\([a,\,b]\times [0]\)</span> 이 모두 meausure <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(B_f=\{(x,\,f(x)): x\in [a,\,b]\}\)</span> 만 measure <span class="math inline">\(0\)</span> 이면 된다.</p>
+<p><span class="math inline">\(f \in\mathcal{R}[a,\,b]\)</span> 이므로 정해진 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 어떤 <span class="math inline">\(P\in \mathcal{P}[a,\,b]\)</span> 가 존재하여 <span class="math inline">\(U(f,\,P) - L(f,\,P)&lt;\varepsilon\)</span> 이다. 이 <span class="math inline">\(P = \{t_0,\ldots,\,t_n\}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\{[t_{i-1},t_i]\times [m_{[t_{i-1},t_i]}(f), M_{[t_{i-1},t_i]}(f)] : i=1,\ldots,\,n\}
+\]</span></p>
+<p>은 <span class="math inline">\(B_f\)</span> 의 덮개이며 그 부피는 <span class="math inline">\(U(f,\,P)-L(f,\,P)&lt;\varepsilon\)</span> 이다. 즉 <span class="math inline">\(A_f\)</span> 는 요르당 가측이다. 푸비니의 정리를 이용하면 <span class="math inline">\(A_f\)</span> 포함하는 <span class="math inline">\(2\)</span>-cell <span class="math inline">\(X\)</span> 와 특성함수 <span class="math inline">\(\chi_{A_f}\)</span> 를 생각하자.</p>
+<p><span class="math display">\[
+\int_{A_f} 1 = \int_X \chi_{A_f} = \int_a^b f
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_27" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.28 (Spivak 3.27)</strong></span> <span class="math inline">\(f:[a,\,b] \times [a,\,b] \to \mathbb{R}\)</span> 이 연속일 때 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\int_a^b \int_a^y f(x,\,y)\,dx\,dy = \int_a^b \int_x^b f(x,\,y)\, dy\,dx.
+\]</span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A= \{(x,\,y) : a\le x \le y \le b\}\)</span> 이라 하자. 위의 두 적분 모두 <span class="math inline">\(\int_A f\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_28" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.29 (Spivak 3.28)</strong></span> 푸비니의 정리를 사용하여 <span class="math inline">\(D_{1,\,2}f\)</span> 와 <span class="math inline">\(D_{2,\,1}f\)</span> 연속 일 때 같다는 것을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(D_{1,\,2}f(\boldsymbol{a}) - D_{2,\,1}f(\boldsymbol{a}) &gt;0\)</span> 임을 가정하자. 그렇다면 어떤 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\)</span> 에서 <span class="math inline">\(\boldsymbol{x} \in A \implies D_{1,\,2}f(\boldsymbol{x}) - D_{2,\,1}f(\boldsymbol{x})&gt;0\)</span> 이다.</p>
+<p><span class="math inline">\(A=[a_1,\,a_2]\times [b_1\times b_2] \times K\)</span> 라고 하자. 푸비니의 정리에 의해</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 &amp;&lt; \int_{a_1}^{a_2}\int_{b_1}^{b_2} D_{1,2}f(x,\,y,\,\boldsymbol{r})-D_{2,\,1} f(x,\,y,\,\boldsymbol{r})\, dy dx \\[0.3em]
+&amp; = \int_{b_1}^{b_2} \int_{a_1}^{a_2} D_{1,2}f(x,\,y,\,\boldsymbol{r})dx dy - \int_{a_1}^{a_2}\int_{b_1}^{b_2} D_{2,\,1} f(x,\,y,\,\boldsymbol{r})\, dy dx \\[0.3em]
+&amp;= \int_{b_1}^{b_2} \left\{D_2 f(a_2,\,y,\,\boldsymbol{r}) - D_2 f(a_1,\,y,\,\boldsymbol{r})\right\}dy \\[0.3em]
+&amp;\qquad \qquad - \int_{a_1}^{a_2} \left\{D_1 f(x,\, b_2,\,\boldsymbol{r}) - f(x,\,b_1,\,\boldsymbol{r})\right\} dx \\[0.3em]
+&amp;= f(a_2,\,b_2,\,\boldsymbol{r})- f(a_2,\,b_1,\boldsymbol{r}) - f(a_1,b_2,\boldsymbol{r})+ f(a_1,b_1,\boldsymbol{r}) \\[0.3em]
+&amp;\qquad \qquad  - f(a_2,b_2,\boldsymbol{r}) + f(a_2,b_1,\boldsymbol{r}) + f(a_2,b_1,\boldsymbol{r})-f(a_1,b_1,\boldsymbol{r}) =0
+\end{aligned}
+\]</span></p>
+<p>이므로 모순이다. 즉 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) \le 0\)</span> 이다. 같은 방법으로 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) ge 0\)</span> 임을 보일 수 있다. 즉 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) = 0\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_29" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.30 (Spivak 3.29)</strong></span> <span class="math inline">\(yz\)</span> 평면에서의 조르당 가측 집합을 <span class="math inline">\(z\)</span> 축을 중심으로 회전하였을 때 생기는 회전체의 <span class="math inline">\(\mathbb{R}^3\)</span> 에서의 부피에 대한 표현식을 푸비니의 정리를 이용하여 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_30" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.31 (Spivak 3.30)</strong></span> <span class="math inline">\(C\)</span> 가 <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_17" class="quarto-xref">연습문제&nbsp;<span>12.11</span></a> 에서의 집합일 때 <span class="math display">\[
+\int_{[0,1]} \left(\int_{[0,1]} \chi_C (x,\,y)\,dx\right)dy = \int_{[0,1]}\left(\int_{[0,1]} \chi_C(y,x)\,dy \right)dx = 0
+\]</span></p>
+<p>이지만 <span class="math inline">\(\int_{[0,1]\times [0,1]} \chi_C\)</span> 는 존재하지 않음을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\partial C\)</span> 가 measure <span class="math inline">\(0\)</span> 가 아니므로 <a href="#prp-CM_integrability_of_characteristic_function" class="quarto-xref">명제&nbsp;<span>15.5</span></a> 에 의해 적분가능하지 않다. 그러나 식의 두 적분이 존재하며 적분값이 <span class="math inline">\(0\)</span> 집합의 정의에 의해 쉽게 보일 수 있다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_31" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.32 (Spivak 3.31)</strong></span> <span class="math inline">\(A=[a_1,b_1] \times \cdots \times [a_n,b_n]\)</span> 이고 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(\tilde{f}:A \to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+\tilde{f}(\boldsymbol{x}) = \int_{[a_1,x_1] \times \cdots \times [a_n,x_n]} f.
+\]</span></p>
+<p><span class="math inline">\(A\)</span> 의 내부에서 <span class="math inline">\(D_i \tilde{f}(\boldsymbol{x})\)</span> 는 무엇인가?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(\tilde{g}(x) := \int_a^x g\)</span> 라고 하자. 그렇다면 미적분의 제 1 기본정리(<a href="../part2/2_5_riemann_stieltjes_integral.html#thm-MA_first_fundamental_theorem_of_calculus" class="quarto-xref">정리&nbsp;<span>10.13</span></a>) 에 의해</p>
+<p><span class="math display">\[
+\lim_{h \to 0}\dfrac{\tilde{g}(x+h)-\tilde{g}(x)}{h} = \tilde{g}'(x) = g(x)
+\]</span></p>
+<p>이다. 이로부터 <span class="math display">\[
+D_i \tilde{f}(\boldsymbol{x})= \int_{[a_1,x_1] \times \cdots \times [a_{i-1},x_{i-1}] \times [x_{i}, x_{i}+h] \times [a_{i+1},x_{i+1}]\times \cdots \times [a_n,x_n]}f \, dx_1 \cdots dx_{i-1}dx_{i+1} \cdots dx_n
+\]</span></p>
+<p>임을 안다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_32" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.33 (Spivak 3.32)</strong></span> <span class="math inline">\(f:[a,\,b]\times [c,\,d] \to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(D_2 f\)</span> 역시 연속이라고 하자. <span class="math inline">\(\tilde {f} (y) =\int_a^b f(x,\,t)\,dx\)</span> 라고하자. 아래의 식 (Leibnitz’s rule) 이 성립함을 보여라.</p>
+<p><span id="eq-CM_leibnitz_rule"><span class="math display">\[
+\dfrac{d}{dy}\left(\int_a^b f(x,\,y) \,dx \right)= \int_a^b D_2 f(x,\,y)\, dx.
+\tag{15.9}\]</span></span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>아래 식이 성립함을 안다. <span class="math display">\[
+f(x,\,y) = \int_{c}^y D_2 f(x,\,y)\, dy + f(x,\,c)
+\]</span></p>
+<p>이로부터</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dfrac{d}{dy}\left(\int_a^b f(x,\,y) \,dx \right) &amp;= \dfrac{d}{dy}\int_a^b \int_c^y D_2 f(x,\,y)\, dy\,dx + \dfrac{d}{dy}\int_a^b f(x,\,c)\, dx
+\end{aligned}
+\]</span></p>
+<p>이며 우변의 두번째 항은 <span class="math inline">\(0\)</span> 이고 푸비니의 정리를 이용하면 우변의 첫번째 항은</p>
+<p><span class="math display">\[
+\dfrac{d}{dy}\int_c^y \int_a^b D_2 f(x,\,y)\,dxdy = \int_a^b D_2 f(x,\,y)\,dx
+\]</span></p>
+<p>이다. 실제로는 <span class="math inline">\(D_2f\)</span> 가 연속일 필요까지는 없고 적분가능하면 된다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_33" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.34 (Spivak 3.33)</strong></span> <span class="math inline">\(f:[a,\,b]\times [c,\,d] \to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(D_2 f\)</span> 역시 연속일 때 <span class="math inline">\(\tilde{f}(x,\,y) := \int_a^x f(t,\,y)\,dt\)</span> 라고 하자.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(D_1 \tilde{f}\)</span> 와 <span class="math inline">\(D_2 \tilde{f}\)</span> 를 구하라.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\tilde{g}(x) = \int_a^{g(x)} f(t,\,x)\, dt\)</span> 일 때 <span class="math inline">\(\tilde{g}'(x)\)</span> 를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+D_1\tilde{f}(x,\,y) &amp;= \lim_{h\to 0}\dfrac{\int_a^{x+h} f(t,\,y)\,dt - \int_a^x f(t,\,y)\,dt}{h} = f(x,\,y) \\[0.3em]
+D_2 \tilde{f}(x,\,y) &amp;= \lim_{h\to 0}\dfrac{\int_a^{x} \left[f(t,\,y+h)\,dt - f(t,\,y)\right]\,dt}{h} = \int_a^x D_2f(t,\,y)\, dt
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(2\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+\tilde{g}'(x) &amp; = \lim_{h \to 0} \dfrac{\int_a^{g(x+h)} f(t,x+h) \,dt - \int_a^{g(x)} f(t,\,x)\, dt}{h} \\[0.3em]
+&amp;= \lim_{h \to 0} \dfrac{\left[\int_{g(x)}^{g(x+h)} f(t,x+h)\,dt \right] + \int_a^{g(x)} \left[f(t,x+h) - f(t,x)\right]dt}{h} \\[0.3em]
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(h(s,\,x) =  \int^{s} f(t,x+h)\,dt\)</span> 라고 하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{h \to 0} \dfrac{\int_{g(x)}^{g(x+h)} f(t,x+h)\,dt}{h} &amp;= \lim_{h \to 0} \dfrac{h(g(x+h), x+h) - h(g(x), x+h)}{h} \\[0.3em]
+&amp;= g'(x) D_1h(g(x),\,x) = g'(x) f(g(x), x)
+\end{aligned}
+\]</span></p>
+<p>이다. 따라서</p>
+<p><span class="math display">\[
+\tilde{g}'(x) = g'(x) f(g(x),x) + \int_a^{g(x)}D_2 f(t,\,x)\,dx
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_34" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.35 (Spivak 3.34)</strong></span> <span class="math inline">\(g_1,\,g_2 : \mathbb{R}^2 \to\mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이며 <span class="math inline">\(D_1g_2 = D_2g_1\)</span> 이라고 하자. <a href="3_2_differentiation_of_manifolds.html#exr-CM_spivak_2_21" class="quarto-xref">연습문제&nbsp;<span>13.21</span></a> 에서와 같이</p>
+<p><span class="math display">\[
+f(x,\,y) = \int_0^x g_1(t,0)\,dt + \int_0^y g_2(x,t)\,dt
+\]</span></p>
+<p>일 때 <span class="math inline">\(D_1f(x,\,y) = g_1(x,\,y)\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+D_1 f(x,\,y) &amp;= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0^y D_2g_1(x,\,t)\,dt  \\[0.3em]
+&amp;= g_1(t,0) + g_1(x, y) - g_1(x, 0) = g_1(x,\,y)
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_35" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.36 (Spivak 3.35)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(G:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 아래와 같은 세 타입가운데 하나라고 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left\{ \begin{array}{ll}G(\boldsymbol{e}_i) = \boldsymbol{e}_i ,\qquad &amp; i\ne j \\ G(\boldsymbol{e}_j) = a\boldsymbol{e}_j.\end{array}\right. \\[0.5em]
+&amp;\left\{ \begin{array}{ll}G(\boldsymbol{e}_i) = \boldsymbol{e}_i ,\qquad &amp; i\ne j \\ G(\boldsymbol{e}_j) = \boldsymbol{e}_j + \boldsymbol{e}_k.\end{array}\right. \\[0.5em]
+&amp;\left\{ \begin{array}{ll}G(\boldsymbol{e}_k) = \boldsymbol{e}_k ,\qquad &amp; k\ne i,\,j \\ G(\boldsymbol{e}_i) = \boldsymbol{e}_j \\ G(\boldsymbol{e}_j) = \boldsymbol{e}_i\end{array}\right.
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(U\)</span> 가 <span class="math inline">\(n\)</span>-cell 일 때 <span class="math inline">\(G(U)\)</span> 의 부피는 <span class="math inline">\(|\det (G)| \cdot \text{vol}(U)\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(G\in \mathcal{L}(\mathbb{R}^n,\mathbb{R}^n)\)</span> 에 대해 <span class="math inline">\(\text{vol}(G(U)) = |\det (G)| \cdot \text{vol}(U)\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 첫번째 경우 <span class="math inline">\(\det(G) = a\)</span> 이고 <span class="math inline">\(\text{vol}(G(U))=|a|\cdot \text{vol}(U) = |\det (G)| \cdot \text{vol}(U)\)</span> 이다. 두번째의 경우 <span class="math inline">\(\det(G)=1\)</span> 이며 <span class="math inline">\(G(U)\)</span> 는 <span class="math inline">\(n\)</span>-cell 에서 한쪽 방향만을 기울인, 2차원에서는 직사각형을 기울여 평행사변형을 만든 형태이며 <span class="math inline">\(n\)</span> 차원원에서의 부피 <span class="math inline">\(\text{vol}(G(U))= \text{vol}(U)\)</span> 이므로 주어진 식이 성립한다. 세번째의 경우도 성립한다는 것은 자명하다.</p>
+<p>(<span class="math inline">\(b\)</span>) 선형대수학을 참고하라.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_3_36" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 15.37 (Spivak 3.36 -Cavalieri 정리)</strong></span> <span class="math inline">\(A,\,B\subset \mathbb{R}^3\)</span> 는 조르당 가측이다. <span class="math inline">\(A_c:=\{(x,\,y) | (x,\,y,\,c)\in A\}\)</span>, <span class="math inline">\(B_C =\{(x,\,y) | (x,\,y,\,c)\in B\}\)</span> 라고 하자. 각각의 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(A_c\)</span> 와 <span class="math inline">\(B_c\)</span> 가 조르당 가측이며 같은 면적을 가진다면 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 는 같은 부피를 가짐을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+\text{vol}(B) &amp;= \int B_c dz = \int A_c dz = \text{vol}(A)
+\end{aligned}
+\]</span></p>
+</div>
 
 
 </section>

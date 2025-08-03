@@ -510,13 +510,9 @@ $A\subset \R^n$ 을 생각하자. 만약 각각의 $\varepsilon>0$ 에 대해 �
 
 </br>
 
-즉 $A$ 가 가산 무한(countably infinite) 개의 집합족 $\mathcal{U}$ 로 덮일 수 있으며 집합족의 부피의 합이 임의로 작아질 수 있다면 $A$ 는 measure zero 이다.
+즉 $A$ 가 가산 무한(countably infinite) 개의 집합족 $\mathcal{U}$ 로 덮일 수 있으며 집합족의 부피의 합이 임의로 작아질 수 있다면 $A$ 는 measure zero 이다. Measure $0$ 인 집합에 대해 아래 명제들은 쉽게 보일 수 있다.
 
-<br>
 
-다음은 쉽게 보일 수 있다.
-
-</br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_meazure_zero}
@@ -881,18 +877,21 @@ $$
 
 ### 특성함수와 적분 가능성{#sec-CM_character_function_and_integrability}
 
+지금까지는 $n$-cell 위에서의 적분만을 생각했다. 이제 $n$-cell 에서의 적분을 확장하여 임의의 집합에 대한 적분에 대해 알아보자.
+
+
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_characteristic_function}
 
 #### 특성함수와 집합의 적분
 
-**특성 함수 (characteristic fucntion)** $\chi_A:A\subset \R^n \to \R$ 은 다음과 같이 정의된다.
+아래와 같이 정의된 함수 $\chi_A:A\subset \R^n \to \R$ 를 $A$ 에서의 **특성 함수 (characteristic fucntion)** 라고 한다.
 
 $$
-\chi_A (x) = \left\{\begin{array}{ll} 0, \qquad & x\in X,\\ 1 & x\in C\end{array}\right. .
+\chi_A (x) := \left\{\begin{array}{ll} 0, \qquad & x\in X,\\ 1 & x\in C\end{array}\right. .
 $$ {#eq-CM_definition_of_characteristic_fucntion}
 
-어떤 닫힌 직육면체 $C$ 에 대해 $A\subset C$ 이고 $f:C\to \R$ 이 유계함수 일 때 $x\cdot \chi_A$ 가 적분 가능하다면 $A$ 에서의 $f$ 의 적분은 아래와 같이 정의된다.
+어떤 닫힌 직육면체 $C$ 에 대해 $A\subset C$ 이고 $f:C\to \R$ 이 유계일 때 $f\cdot \chi_A$ 가 적분 가능하다면 $A$ 에서의 $f$ 의 적분은 아래와 같이 정의된다.
 
 $$
 \int_A f := \int_C f \cdot \chi_A
@@ -976,7 +975,7 @@ $C$ 가 content $0$ 이면 어떤 닫힌 $n$-cell $A$ 에 대해 $C \subset A$ �
 
 #### Spivak 3.16
 
-유계이며 measure zero 이고 $\int_A \chi_C=0$ 가 존재하지 않는 집합 $C$ 의 예를 들어라.
+유계이며 measure zero 이고 $\int_A \chi_C$ 가 존재하지 않는 집합 $C$ 의 예를 들어라.
 
 :::
 
@@ -1110,14 +1109,14 @@ $A$ 가 닫힌 $n$-cell 이고 $C\subset A$ 라고 하자. 이 때 아래 두 �
 
 #### Spivak 3.22
 
-$A$ 가 조르당 가측이고 $\varepsilon >0$ 이면 어떤 조르당 가측이며 $A$ 의 부분집합인 집합 $C$ 가 존재하여 $\int_{A-C} 1 < \varepsilon$ 임을 보여라.
+$A$ 가 조르당 가측이고 $\varepsilon >0$ 이면 어떤 조르당 가측이며 $A$ 의 부분집합인 옹골집합 $C$ 가 존재하여 $\int_{A-C} 1 < \varepsilon$ 임을 보여라.
 :::
 
 </div>
 
 ::: {.solution}
 
-@exr-CM_spivak_3_21 의 $\mathcal{S}_2$ 를 생각하자. 단 @exr-CM_spivak_3_21 의 $C$ 가 여기서의 $A$ 이다.
+@exr-CM_spivak_3_21 의 $\mathcal{S}_2$ 를 생각하자. 단 @exr-CM_spivak_3_21 의 $C$ 가 여기서의 $A$ 이며 닫힌 $n$-cell 의 유한합집합이므로 옹골집합이다.
 :::
 
 </br>
@@ -1333,9 +1332,392 @@ $C\subset A\times B$ 가 content $0$ 이다. $A'\subset A$ 는 $\{\bf{y}\in B: (
 
 ::: {.solution}
 
-@exr-CM_spivak_3_10 에 따라 $\partial C$ 가 content $0$ 이므로 $\int_C 1 =\int_{A\times B}\chi_C= 0$ 이다. $\bf{x}\in A'$ 일 때 
+@exr-CM_spivak_3_10 에 따라 $\partial C$ 가 content $0$ 이므로 $\int_C 1 =\int_{A\times B}\chi_C= 0$ 이므로 적분가능하다. $\mathcal{L}(\bf{x}) = \underline{\int_B} \chi_C(\bf{x},\bf{y})\,d\bf{y}$, $\mathcal{U}(\bf{x})=\overline{\int_B}\chi_C (\bf{x},\bf{y})\,d\bf{y}$ 라고 하자. 푸비니의 정리에 따라
+
+$$
+0  = \int_{A\times B}\chi_C = \int_{A} \mathcal{L} = \int_A \mathcal{U}
+$$
+
+이다. $\mathcal{L}$ 이든 $\mathcal{U}$ 든 함수값이 $0$ 이 아닌 $\bf{x}$ 는 $A'$ 에 포함되어야 한데 $\int_A(\mathcal{U}-\mathcal{L})=0$ 이다. 따라서 $A'$ 은 measure $0$ 이다.
+
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CM_spivak_3_24}
+
+#### Spivak 3.24
+
+$C\subset [0,\,1]\times [0,\,1]$ 는 $0$ 과 $1$ 사이의 기약분수 $p/q$ 에 대해 $[p/q]\times [0,\,1/q]$ 의 합집합이다. @exr-CM_spivak_3_23 에서 $A'$ 이 content $0$ 가 아닐 수 있음을 보여랴.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$A_q = [p/q]\times [0,\,1/q]$ 라고 하자. 충분히 작은 $\varepsilon>0$ 에 대해 $q>2/\varepsilon$ 인 자연수 $q_0$ 를 정한다.  $C_\varepsilon := [0,\,1]\times [0,\, \varepsilon/2]$ 영역에는 $q_0$ 보다 큰 $q$ 에대한 모든 원소가 포함되며 $C_\varepsilon$ 의 넓이는 $\varepsilon/2$ 이다. $C_\varepsilon$ 에 포함되지 않는 선분은 유한개이므로 이것을 덮고 그 총 면적이 $\varepsilon/2$ 보다 작은 $n$-cell 을 항상 구할 수 있다. 즉 $C$ 는 content $0$ 이다. 각각의 $A_q$ 에 대해 $\{\bf{y} : (\bf{x},\bf{y})\in A_q\}$ 는 measure $0$ 이 아니며 따라서 content $0$ 도 아니다. 
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_25}
+
+#### Spivak 3.25
+
+수학적 귀납법을 사용하여 각각의 $i=1,\,2,\ldots,\,n$ 에 대해 $a_i<b_i$ 이면 $[a_1,\,b_1]\times \cdots \times [a_n,\,b_n]$ 이 measure $0$ 이 아님을 보여라.
+
+:::
+
+</div>
+
+::: {solution}
+
+trivial
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_26}
+
+#### Spivak 3.26
+
+$f:[a,\,b]\to \R$ 이 적분가능하며 $f \ge 0$ 이다. $A_f:=\{(x,\,y) : a\le x \le b,\, 0 \le y \le f(x)\}$ 가 요르당 가측이며 면적이 $\int_a^b f$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$A_f$ 가 요르당 가측임을 보이려면 $\partial A$ 가 meausre $0$ 이면 되고 $[a]\times [0,\,f(a)]$, $[b]\times [0,\, f(b)]$, $[a,\,b]\times [0]$ 이 모두 meausure $0$ 이므로 $B_f=\{(x,\,f(x)): x\in [a,\,b]\}$ 만 measure $0$ 이면 된다.
+
+$f \in\mathcal{R}[a,\,b]$ 이므로 정해진 $\varepsilon >0$ 에 대해 어떤 $P\in \mathcal{P}[a,\,b]$ 가 존재하여 $U(f,\,P) - L(f,\,P)<\varepsilon$ 이다. 이 $P = \{t_0,\ldots,\,t_n\}$ 에 대해
+
+$$
+\{[t_{i-1},t_i]\times [m_{[t_{i-1},t_i]}(f), M_{[t_{i-1},t_i]}(f)] : i=1,\ldots,\,n\}
+$$
+
+은 $B_f$ 의 덮개이며 그 부피는 $U(f,\,P)-L(f,\,P)<\varepsilon$ 이다. 즉 $A_f$ 는 요르당 가측이다. 푸비니의 정리를 이용하면 $A_f$ 포함하는 $2$-cell $X$ 와 특성함수 $\chi_{A_f}$ 를 생각하자.
+
+$$
+\int_{A_f} 1 = \int_X \chi_{A_f} = \int_a^b f
+$$
+
+이다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_27}
+
+#### Spivak 3.27
+
+$f:[a,\,b] \times [a,\,b] \to \R$ 이 연속일 때 다음이 성립함을 보여라.
+
+$$
+\int_a^b \int_a^y f(x,\,y)\,dx\,dy = \int_a^b \int_x^b f(x,\,y)\, dy\,dx.
+$$
+
+:::
+
+</div>
+
+::: {.solution}
+
+$A= \{(x,\,y) : a\le x \le y \le b\}$ 이라 하자. 위의 두 적분 모두 $\int_A f$ 이다. 
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_28}
+
+#### Spivak 3.28
+
+푸비니의 정리를 사용하여 $D_{1,\,2}f$ 와 $D_{2,\,1}f$ 연속 일 때 같다는 것을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$D_{1,\,2}f(\bf{a}) - D_{2,\,1}f(\bf{a}) >0$ 임을 가정하자. 그렇다면 어떤 $\bf{a}$ 를 포함하는 $n$-cell $A$ 에서 $\bf{x} \in A \implies D_{1,\,2}f(\bf{x}) - D_{2,\,1}f(\bf{x})>0$ 이다. 
+
+$A=[a_1,\,a_2]\times [b_1\times b_2] \times K$ 라고 하자. 푸비니의 정리에 의해 
+
+$$
+\begin{aligned}
+0 &< \int_{a_1}^{a_2}\int_{b_1}^{b_2} D_{1,2}f(x,\,y,\,\bf{r})-D_{2,\,1} f(x,\,y,\,\bf{r})\, dy dx \\[0.3em]
+& = \int_{b_1}^{b_2} \int_{a_1}^{a_2} D_{1,2}f(x,\,y,\,\bf{r})dx dy - \int_{a_1}^{a_2}\int_{b_1}^{b_2} D_{2,\,1} f(x,\,y,\,\bf{r})\, dy dx \\[0.3em]
+&= \int_{b_1}^{b_2} \left\{D_2 f(a_2,\,y,\,\bf{r}) - D_2 f(a_1,\,y,\,\bf{r})\right\}dy \\[0.3em]
+&\qquad \qquad - \int_{a_1}^{a_2} \left\{D_1 f(x,\, b_2,\,\bf{r}) - f(x,\,b_1,\,\bf{r})\right\} dx \\[0.3em]
+&= f(a_2,\,b_2,\,\bf{r})- f(a_2,\,b_1,\bf{r}) - f(a_1,b_2,\bf{r})+ f(a_1,b_1,\bf{r}) \\[0.3em]
+&\qquad \qquad  - f(a_2,b_2,\bf{r}) + f(a_2,b_1,\bf{r}) + f(a_2,b_1,\bf{r})-f(a_1,b_1,\bf{r}) =0
+\end{aligned}
+$$
+
+이므로 모순이다. 즉 $D_{1,\,2}f(\bf{a})- D_{2,\,1}f(\bf{a}) \le 0$ 이다. 같은 방법으로 $D_{1,\,2}f(\bf{a})- D_{2,\,1}f(\bf{a}) ge 0$ 임을 보일 수 있다. 즉 $D_{1,\,2}f(\bf{a})- D_{2,\,1}f(\bf{a}) = 0$  이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_29}
+
+#### Spivak 3.29
+
+$yz$ 평면에서의 조르당 가측 집합을 $z$ 축을 중심으로 회전하였을 때 생기는 회전체의 $\R^3$ 에서의 부피에 대한 표현식을 푸비니의 정리를 이용하여 구하라.
+
+
+:::
+
+</div>
+
+::: {.solution}
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_30}
+
+#### Spivak 3.30
+
+$C$ 가 @exr-CM_spivak_1_17 에서의 집합일 때 
+$$
+\int_{[0,1]} \left(\int_{[0,1]} \chi_C (x,\,y)\,dx\right)dy = \int_{[0,1]}\left(\int_{[0,1]} \chi_C(y,x)\,dy \right)dx = 0
+$$
+
+이지만 $\int_{[0,1]\times [0,1]} \chi_C$ 는 존재하지 않음을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\partial C$ 가 measure $0$ 가 아니므로 @prp-CM_integrability_of_characteristic_function 에 의해 적분가능하지 않다. 그러나 식의 두 적분이 존재하며 적분값이 $0$ 집합의 정의에 의해 쉽게 보일 수 있다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_31}
+
+#### Spivak 3.31
+
+$A=[a_1,b_1] \times \cdots \times [a_n,b_n]$ 이고 $f:A \to \R$ 이 연속일 때 $\tilde{f}:A \to \R$ 을 다음과 같이 정의한다.
+
+$$
+\tilde{f}(\bf{x}) = \int_{[a_1,x_1] \times \cdots \times [a_n,x_n]} f.
+$$
+
+$A$ 의 내부에서 $D_i \tilde{f}(\bf{x})$ 는 무엇인가?
+
+:::
+
+</div>
+
+::: {.solution}
+
+$g:\R \to \R$ 이 연속일 때 $\tilde{g}(x) := \int_a^x g$ 라고 하자. 그렇다면 미적분의 제 1 기본정리(@thm-MA_first_fundamental_theorem_of_calculus) 에 의해 
+
+$$
+\lim_{h \to 0}\dfrac{\tilde{g}(x+h)-\tilde{g}(x)}{h} = \tilde{g}'(x) = g(x)
+$$
+
+이다. 이로부터
+$$
+D_i \tilde{f}(\bf{x})= \int_{[a_1,x_1] \times \cdots \times [a_{i-1},x_{i-1}] \times [x_{i}, x_{i}+h] \times [a_{i+1},x_{i+1}]\times \cdots \times [a_n,x_n]}f \, dx_1 \cdots dx_{i-1}dx_{i+1} \cdots dx_n
+$$
+
+임을 안다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_32}
+
+#### Spivak 3.32
+
+$f:[a,\,b]\times [c,\,d] \to \R$ 이 연속이며 $D_2 f$ 역시 연속이라고 하자. $\tilde {f} (y) =\int_a^b f(x,\,t)\,dx$ 라고하자. 아래의 식 (Leibnitz's rule) 이 성립함을 보여라.
+
+$$
+\dfrac{d}{dy}\left(\int_a^b f(x,\,y) \,dx \right)= \int_a^b D_2 f(x,\,y)\, dx.
+$$ {#eq-CM_leibnitz_rule}
+
+:::
+
+</div>
+
+::: {.solution}
+
+아래 식이 성립함을 안다. 
+$$
+f(x,\,y) = \int_{c}^y D_2 f(x,\,y)\, dy + f(x,\,c)
+$$
+
+이로부터
+
+$$
+\begin{aligned}
+\dfrac{d}{dy}\left(\int_a^b f(x,\,y) \,dx \right) &= \dfrac{d}{dy}\int_a^b \int_c^y D_2 f(x,\,y)\, dy\,dx + \dfrac{d}{dy}\int_a^b f(x,\,c)\, dx
+\end{aligned}
+$$
+
+이며 우변의 두번째 항은 $0$ 이고 푸비니의 정리를 이용하면 우변의 첫번째 항은
+
+$$
+\dfrac{d}{dy}\int_c^y \int_a^b D_2 f(x,\,y)\,dxdy = \int_a^b D_2 f(x,\,y)\,dx
+$$
+
+이다. 실제로는 $D_2f$ 가 연속일 필요까지는 없고 적분가능하면 된다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_33}
+
+#### Spivak 3.33
+
+$f:[a,\,b]\times [c,\,d] \to \R$ 이 연속이며 $D_2 f$ 역시 연속일 때 $\tilde{f}(x,\,y) := \int_a^x f(t,\,y)\,dt$ 라고 하자.
+
+&emsp;($1$) $D_1 \tilde{f}$ 와 $D_2 \tilde{f}$ 를 구하라.
+
+&emsp;($2$) $\tilde{g}(x) = \int_a^{g(x)} f(t,\,x)\, dt$ 일 때 $\tilde{g}'(x)$ 를 구하라.
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) 
+
+$$
+\begin{aligned}
+D_1\tilde{f}(x,\,y) &= \lim_{h\to 0}\dfrac{\int_a^{x+h} f(t,\,y)\,dt - \int_a^x f(t,\,y)\,dt}{h} = f(x,\,y) \\[0.3em]
+D_2 \tilde{f}(x,\,y) &= \lim_{h\to 0}\dfrac{\int_a^{x} \left[f(t,\,y+h)\,dt - f(t,\,y)\right]\,dt}{h} = \int_a^x D_2f(t,\,y)\, dt
+\end{aligned}
+$$
+
+($2$)
+
+$$
+\begin{aligned}
+\tilde{g}'(x) & = \lim_{h \to 0} \dfrac{\int_a^{g(x+h)} f(t,x+h) \,dt - \int_a^{g(x)} f(t,\,x)\, dt}{h} \\[0.3em]
+&= \lim_{h \to 0} \dfrac{\left[\int_{g(x)}^{g(x+h)} f(t,x+h)\,dt \right] + \int_a^{g(x)} \left[f(t,x+h) - f(t,x)\right]dt}{h} \\[0.3em]
+\end{aligned}
+$$
+
+이다. $h(s,\,x) =  \int^{s} f(t,x+h)\,dt$ 라고 하면
+
+$$
+\begin{aligned}
+\lim_{h \to 0} \dfrac{\int_{g(x)}^{g(x+h)} f(t,x+h)\,dt}{h} &= \lim_{h \to 0} \dfrac{h(g(x+h), x+h) - h(g(x), x+h)}{h} \\[0.3em]
+&= g'(x) D_1h(g(x),\,x) = g'(x) f(g(x), x)
+\end{aligned}
+$$
+
+이다. 따라서
+
+$$
+\tilde{g}'(x) = g'(x) f(g(x),x) + \int_a^{g(x)}D_2 f(t,\,x)\,dx
+$$
+
+이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_34}
+
+#### Spivak 3.34
+
+$g_1,\,g_2 : \R^2 \to\R$ 이 $C^1$ 함수이며 $D_1g_2 = D_2g_1$ 이라고 하자. @exr-CM_spivak_2_21 에서와 같이
+
+$$
+f(x,\,y) = \int_0^x g_1(t,0)\,dt + \int_0^y g_2(x,t)\,dt
+$$
+
+일 때 $D_1f(x,\,y) = g_1(x,\,y)$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+\begin{aligned}
+D_1 f(x,\,y) &= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0^y D_2g_1(x,\,t)\,dt  \\[0.3em]
+&= g_1(t,0) + g_1(x, y) - g_1(x, 0) = g_1(x,\,y)
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_35}
+
+#### Spivak 3.35
+
+($a$) $G:\R^n \to \R^n$ 이 아래와 같은 세 타입가운데 하나라고 하자.
+
+$$
+\begin{aligned}
+&\left\{ \begin{array}{ll}G(\bf{e}_i) = \bf{e}_i ,\qquad & i\ne j \\ G(\bf{e}_j) = a\bf{e}_j.\end{array}\right. \\[0.5em]
+&\left\{ \begin{array}{ll}G(\bf{e}_i) = \bf{e}_i ,\qquad & i\ne j \\ G(\bf{e}_j) = \bf{e}_j + \bf{e}_k.\end{array}\right. \\[0.5em]
+&\left\{ \begin{array}{ll}G(\bf{e}_k) = \bf{e}_k ,\qquad & k\ne i,\,j \\ G(\bf{e}_i) = \bf{e}_j \\ G(\bf{e}_j) = \bf{e}_i\end{array}\right.
+\end{aligned}
+$$
+
+$U$ 가 $n$-cell 일 때 $G(U)$ 의 부피는 $|\det (G)| \cdot \text{vol}(U)$ 임을 보여라.
+
+($b$) $G\in \mathcal{L}(\R^n,\R^n)$ 에 대해 $\text{vol}(G(U)) = |\det (G)| \cdot \text{vol}(U)$ 임을 보여라. 
+
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) 첫번째 경우 $\det(G) = a$ 이고 $\text{vol}(G(U))=|a|\cdot \text{vol}(U) = |\det (G)| \cdot \text{vol}(U)$ 이다. 두번째의 경우 $\det(G)=1$ 이며 $G(U)$ 는 $n$-cell 에서 한쪽 방향만을 기울인, 2차원에서는 직사각형을 기울여 평행사변형을 만든 형태이며 $n$ 차원원에서의 부피 $\text{vol}(G(U))= \text{vol}(U)$ 이므로 주어진 식이 성립한다. 세번째의 경우도 성립한다는 것은 자명하다.
+
+($b$) 선형대수학을 참고하라.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_36}
+
+#### Spivak 3.36 -Cavalieri 정리
+
+$A,\,B\subset \R^3$ 는 조르당 가측이다. $A_c:=\{(x,\,y) | (x,\,y,\,c)\in A\}$, $B_C =\{(x,\,y) | (x,\,y,\,c)\in B\}$ 라고 하자. 각각의 $c$ 에 대해 $A_c$ 와 $B_c$ 가 조르당 가측이며 같은 면적을 가진다면 $A$ 와 $B$ 는 같은 부피를 가짐을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\text{vol}(B) &= \int B_c dz = \int A_c dz = \text{vol}(A)
+\end{aligned}
+$$
+:::

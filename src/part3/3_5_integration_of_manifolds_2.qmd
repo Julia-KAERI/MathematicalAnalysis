@@ -8,24 +8,48 @@ crossref:
 
 {{< include ../../latexmacros.qmd >}}
 
+일변수 실함수 $g:[a,\,b] \to \R$ 이 $C^1$ 함수이고 $f:\R \to \R$ 이 연속이라면
+
+$$
+\int_{g(a)}^{g(b)} f = \int_a^b (f \circ g) \cdot g'
+$$
+
+임을 보일 수 있다. 증명은 쉬운데 $F'=f$ 인 함수 $F$ 에 대해 $(F\circ g)' = (f\circ g)\cdot g'$ 이며, 이를 이용하면 좌변과 우변 모두 $F(g(b))-F(g(a))$ 가 된다. $g$ 가 단사라고 하자. $g$ 가 증가함수일 경우 $g'\ge 0$ 이며 
+
+$$
+\int_{g(a)}^{g(b)} f = \int_{g(a,\,b)}f = \int_a^b (f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
+$$
+
+이며, $g$ 가 감소함수일 경우 $g'\le 0$ 이므로
+
+$$
+\int_{g(a)}^{g(b)} f = -\int_{g(a,b)}f = - \int_a^b(f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
+$$
+
+이다. 즉
+
+$$
+\int_{g(a,b)}f = \int_a^b (f \circ g)\cdot |g'|
+$$
+
+이다. 다변수의 경우 열린 집합 $A\subset \R^n$ 에서 정의된 단사함수 $G:A \subset \R^n \to \R$ 에 대해 각각의 $\bf{x}\in A$ 에 대해 $\det (G'(\bf{x}))\ne 0$ 일 때
+
+$$
+\int_G(U) g = \int_U (f \circ g) \cdot |\det (G')|
+$$
+
+이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는  @thm-CM_change_of_variable 을 보이는 것이다.
+
+</br>
+
 ## 단위 분할
 
-
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_partition_of_unity}
+::: {#def-CM_support_of_function}
 
-#### 단위분할
+#### 지지집합
 
-$A\subset \R^n$ 에 대해 $A$ 를 포함하는 열린 집합에서 정의된 $C^\infty$ 함수들의 집합 $\Phi$ 가 ($1$), ($2$), ($3$) 을 만족할 때 이 $\Phi$ 를 $A$ 에 대한 $C^\infty$ **단위 분할 (partition of unity)**이라고 한다.
-
-&emsp;($1$) $\forall x\in A,\, \forall \varphi \in \Phi,\, 0 \le \varphi(x) \le 1$,
-
-&emsp;($2$) 각각의 $x\in A$ 에 대해 어떤 열린 집합 $V$ 가 존재하여 유한개를 제외한 $\Phi$ 에 속한 함수는 $V$ 에서 $0$ 함수이며,
-
-&emsp;($3$) $\displaystyle \forall x\in A,\, \sum_{\varphi \in \Phi} \varphi(x) = 1$ 이다.
-
-$\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개라고 하자. 이 때 각각의 $\varphi \in \Phi$ 에 대해 어떤 열린 집합 $U\in \mathcal{O}$ 가 존재하여 어떤 $U$ 에 포함되는 닫힌 집합의 외부에서 $\varphi = 0$ 일 때 $\Phi$ 를 **덮개 $\mathcal{O}$ 에 종속된 단위 분할 (partition of unity subordinate to the cover $\mathcal{O}$)**이라고 한다.
-
+$\phi : \R^n \to \R$ 과 $D_\phi=\{\bf{x}\in \R^n : \phi(\bf{x})\ne 0\}$ 에 대해 $\overline{D_\phi}$ 를 $\phi$ 의 **지지집합 (support)** 이라고 한다.
 
 ::: 
 :::
@@ -33,9 +57,49 @@ $\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
+::: {#prp-CM_open_properties_of_non_support_element}
+
+$\phi:\R^n \to \R$ 의 지지집합 $S_\phi$ 에 대해 $\bf{x}\not\in S_\phi$ 이면 $\bf{x}$ 의 어떤 열린 근방 $N_x$ 에서 $f(N_x)=\{0\}$ 이다. 
+
+:::
+
+</div>
+
+::: {.proof}
+
+$\R^n\backslash S_\phi$ 는 열린 집합이다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_partition_of_unity}
+
+#### 단위분할
+
+$A\subset \R^n$ 에 대해 $A$ 를 포함하는 열린 집합에서 정의된 $C^\infty$ 함수들의 집합 $\Phi=\{\varphi_i\}$ 가 ($1$), ($2$), ($3$) 을 만족할 때 이 $\Phi$ 를 $A$ 에 대한 $C^\infty$ **단위 분할 (partition of unity)**이라고 한다.
+
+&emsp;($1$) $\forall \bf{x}\in A$, $\varphi_i \in \Phi,\, 0 \le \varphi_i(\bf{x}) \le 1$,
+
+&emsp;($2$) 각각의 $\bf{x}\in A$ 에 대해 어떤 $\bf{x}$ 를 포함하는 열린 집합 $V_x$ 가 존재하여 유한개를 제외한 $\Phi$ 에 속한 함수는 $V_x$ 에서 $0$ 이며,
+
+&emsp;($3$) $\displaystyle \forall \bf{x}\in A,\, \sum_{\varphi_i \in \Phi} \varphi_i(\bf{x}) = 1$ 이다.
+
+$\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개라고 하자. 이 때 각각의 $\varphi_i \in \Phi$ 에 대해 어떤 열린 집합 $U\in \mathcal{O}$ 가 존재하여 어떤 $U$ 에 포함되는 닫힌 집합의 외부에서 $\varphi_i = 0$ 일 때 $\Phi$ 를 **덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 ($C^\infty$ partition of unity subordinate to the cover $\mathcal{O}$)**이라고 한다.
+
+
+::: 
+:::
+
+이 단위분할은 적분에 있어 변수 변환에 사용된다. 우리는 곧 모든 $A\subset \R^n$ 와 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 에 대한 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 $\Phi$ 가 존재함을 보일것이다. 일단 이것을 인정하고 그 의미를 생각하보자. $K\subset A$ 가 옹골집합이라고 하자. $\bf{x}\in K$ 에 대해 정의의 성질 ($2$) 를 만족하는 열린 집합 $V_\bf{x}$ 가 존재하며 유한개의 $V_\bf{x}$ 가 $K$ 를 덮는다. 따라서 $\Phi$ 가운데 유한개만 $K$ 에서 $0$ 이 아니다.  
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
 ::: {#lem-CM_existance_of_partation_of_unity_for_compact_set}
 
-옹골 집합 $A\subset \R^n$ 과 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 의 $\mathcal{O}$ 에 종속된 단위분할이 존재한다.
+옹골 집합 $A\subset \R^n$ 과 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 의 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다.
 
 :::
 
@@ -52,18 +116,18 @@ $$
 일 때 
 
 $$
-C_{k+1} = A-(\text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+2} \cup \cdots \cup U_n )
+K_{k+1} = A-(\text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+2} \cup \cdots \cup U_n )
 $$
 
-라고 하자. 그렇다면 $C_{k+1}$ 은 옹골집합과 닫힌 집합의 교집합이므로 옹골집합이고 $C_{k+1}\subset U_{k+1}$ 이다. @exr-CM_spivak_1_22 에 의해 $C_{k+1} \subset \text{int}(D_{k+1})$ 이며  $D_{k+1}\subset U_{k+1}$ 을 만족하는 옹골집합 $D_{k+1}$ 이 존재한다. $C_1 = A - \bigcup_{i=2}^n U_i$ 을 통해 정할 수 있으며 따라서 모든 $D_i$ 를 정할 수 있다.
+라고 하자. 그렇다면 $K_{k+1}$ 은 옹골집합과 닫힌 집합의 교집합이므로 옹골집합이고 $K_{k+1}\subset U_{k+1}$ 이다. @exr-CM_spivak_1_22 에 의해 $K_{k+1} \subset \text{int}(D_{k+1})$ 이며  $D_{k+1}\subset U_{k+1}$ 을 만족하는 옹골집합 $D_{k+1}$ 이 존재한다. $K_1 = A - \bigcup_{i=2}^n U_i$ 을 통해 정할 수 있으며 따라서 모든 $D_i$ 를 정할 수 있다. 여기서 $A \subset \bigcup_{i=1}^n \text{int}(D_i)$ 이다. 
 
-이제 정해진 $D_1,\ldots,\,D_n$ 에 대해 $\psi_i$ 를 $D_i$ 에서 양수이고 $U_i$ 를 포함하는 어떤 닫힌 집합 밖에서는 $0$ 인 $C^\infty$ 함수라고 하자. (이런 함수가 존재한다는 것은 @exr-CM_spivak_2_26 에서 보였다.) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $x$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(x)+ \cdots + \psi_n(x) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
+이제 정해진 $D_1,\ldots,\,D_n$ 에 대해 $\psi_i$ 를 $D_i$ 에서 양수이고 $U_i$ 를 포함하는 어떤 닫힌 집합 밖에서는 $0$ 인 $C^\infty$ 함수라고 하자. (이런 함수가 존재한다는 것은 @exr-CM_spivak_2_26 ($d$) 에서 보였다.) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $\bf{x}$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(\bf{x})+ \cdots + \psi_n(\bf{x}) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
 
 $$
-\varphi_i (x) := \dfrac{\psi_i(x)}{\psi_1(x) + \cdots + \psi_n(x)}
+\varphi_i (\bf{x}) := \dfrac{\psi_i(\bf{x})}{\psi_1(\bf{x}) + \cdots + \psi_n(\bf{x})}
 $$
 
-$f:U \to [0,\,1]$ 이 $C^\infty$ 함수이며 $A$ 에서는 $1$, $U$ 에 포함되는 어떤 닫힌 집합의 밖에서 $0$ 이라면 $\Phi = \{f\cdot \varphi_1,\ldots,\, f\cdot \varphi_n\}$ 이 우리가 원하는 $\mathcal{O}$ 에 종속된 단위분할이다. $\square$
+$f:U \to [0,\,1]$ 이 $C^\infty$ 함수이며 $A$ 에서는 $1$, $U$ 에 포함되는 어떤 닫힌 집합의 밖에서 $0$ 이라면( @exr-CM_spivak_2_26 ($e$)) $\Phi = \{f\cdot \varphi_1,\ldots,\, f\cdot \varphi_n\}$ 이 우리가 원하는 $\mathcal{O}$ 에 종속된 단위분할이다. $\square$
 
 :::
 
@@ -72,7 +136,7 @@ $f:U \to [0,\,1]$ 이 $C^\infty$ 함수이며 $A$ 에서는 $1$, $U$ 에 포함�
 
 ::: {#lem-CM_existance_of_partation_of_unity_2}
 
-옹골 집합 $A_1,\,A_2,\ldots \subset \R^n$ 가 $A_i \subset \text{int}(A_{i+1})$ 일 때 $A=\bigcup A_i$ 와 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 A$ 의 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다.
+옹골 집합 $A_1,\,A_2,\ldots \subset \R^n$ 가 $A_i \subset \text{int}(A_{k+1})$ 일 때 $A=\bigcup A_k$ 와 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 의 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다.
 
 :::
 
@@ -80,21 +144,139 @@ $f:U \to [0,\,1]$ 이 $C^\infty$ 함수이며 $A$ 에서는 $1$, $U$ 에 포함�
 
 ::: {.proof}
 
-각각의 $i$ 에 대해 집합족 $\mathcal{O}_i$ 를 아래와 같이 정하자.
+각각의 $k$ 에 대해 집합족 $\mathcal{O}_k$ 를 아래와 같이 정하자.
 $$
-\mathcal{O}_i = \{U \cap (\text{int}(A_{i+1}) - A_{i-2}): U \in\mathcal{O}\}.
-$$
-
-그렇다면 $\mathcal{O}_i$ 는 옹골 집합 $B_i = A_i - \text{int}(A_{i-1})$ 에 대한 열린 덮개이다(@exr-thm-CM_existance_of_partation_of_unity_1). $I$ 에서 보았듯이 각각의 $B_i$ 에 $\mathcal{O}_i$ 에 종속된 단위 분할 $\Phi_i$ 가 존재한다. 각각의 $x\in A$ 에 대해
-
-$$
-\sigma(x) := \sum_{\varphi\in \Phi_i,\, \text{all } i } \varphi(x)
+\mathcal{O}_i = \{U \cap (\text{int}(A_{k+1}) - A_{k-2}): U \in\mathcal{O}\}.
 $$
 
+그렇다면 $\mathcal{O}_k$ 는 옹골 집합 $B_k = A_k - \text{int}(A_{i-1})$ 에 대한 열린 덮개이다(@exr-thm-CM_existance_of_partation_of_unity_1). @lem-CM_existance_of_partation_of_unity_for_compact_set 에서 보았듯이 각각의 $B_k$ 에 대해 $\mathcal{O}_k$ 에 종속된 단위 분할 $\Phi_k$ 가 존재한다. $\sigma:A \to \R$ 을 아래와 같이 정의하자.
 
+$$
+\sigma(\bf{x}) := \sum_{\varphi_i^{(k)}\in \Phi_k,\, \text{all } k } \varphi_{i}^{(k)}(\bf{x}).
+$$
 
+($i$) $\bf{x}\in A_k$ 이면 $\bf{x}\in \text{int}(A_{k+1})$ 이며 $j\ge k+2$ 에 대해 $\bf{x}\not\in B_{j}$ 이다.
+
+($ii$) $\bf{x}\in A_k$ 이면 단위 분할의 정의의 ($2$) 번째 성질에 의해 $\sigma(\bf{x})$ 는 $\bf{x}$ 를 포함하는 열린 집합 에서의 유한합이다. 
+ 
+이제 아래와 같이 $\overline{\Phi}$ 를 정의하자. 
+$$
+\overline{\Phi} = \bigcup_k \left\{\dfrac{\varphi_i^{(k)}(\bf{x})}{\sigma(\bf{x})} : \varphi_i^{(k)} \in \Phi_k\right\}.
+$$
+
+$\overline{\Phi}$ 가 단위분할임은 쉽게 알 수 있다. $O_k$ 에 포함된 각각의 열린 집합은 정의상 $\mathcal{O}$ 에 포함된 어떤 열린 집합의 부분집합이므로 $\overline{\Phi}$ 는 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이다. $\square$
 
 :::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_existance_of_partation_of_unity}
+
+$A\subset \R^n$ 이고 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개일 때 $A$ 에 대한 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할은 존재한다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+우리는 @lem-CM_existance_of_partation_of_unity_for_compact_set, @lem-CM_existance_of_partation_of_unity_2 를 통해 일부를 보였다. 
+
+$A$ 가 열린 집합일 경우 @exr-CM_open_set_and_union_of_compact_set 의 $\langle A_i \rangle$ 에 @lem-CM_existance_of_partation_of_unity_2 의 경우를 적용 할 수 있다.
+
+이제 임의의 $A\subset \R^n$ 에 대해 생각하자. $B=\bigcup_{U\in \mathcal{O}}U$ 라고 하면 $A\subset B$ 이며 $B$ 가 열린 집합이므로 $B$ 에 대해 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다. 그리고 이 단위분할은 $A$ 에 대한 단위분할이다. $\square$
+
+:::
+
+</br>
+
+열린 집합 $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 를 생각하자. 각각의 $U\in \mathcal{O}$ 에 대해 $U\subset A$ 일 때 $\mathcal{O}$ 를 $A$ 에 **포함되는 열린 덮개(admissible open cover)** 라고 한다. $\Phi$ 가 $\mathcal{O}$ 에 종속된 $A$ 에 대한 단위분할이고, 각각의 $\bf{x}\in A$ 에 대해 어떤 열린 집합 $U_\bf{x}$ 이 존재하여  $f|_{U_\bf{x}}$ 가 유계이며 $f$ 가 불연속인 $A$ 의 집합이 measure $0$ 이면 각각의 $\varphi_i \in \Phi$ 에 대해 $\int_A \varphi_i \cdot |f|$ 가 존재한다. 이 때 
+
+$$
+\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|
+$$
+
+가 수렴하면 $f$ 가 적분가능하다고 정의할 수 있다. 
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_partation_of_unity_and_integration}
+
+$A\subset \R^n$ 이고 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개일 때 $A$ 에 대한 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할 $\Phi$ 를 생각하자. $f$ 는 $A$ 에서 적분 가능하다.
+
+($1$) $\Psi$ 가 $A$ 에 포함되는 열린 덮개 $\mathcal{O}'$ 에 종속된 열린 덮개일 때 $\sum_{\psi_j\in \Psi} \int_A \psi_j \cdot |f|$ 는 수렴하며 다음이 성립한다.
+
+$$
+\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \int_A \psi_j \cdot f.
+$$
+
+($2$) $A$ 와 $f$ 가 유계이면 $\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|$ 는 존재한다.
+
+($3$) $A$ 가 조르당 가측이고 $f$ 가 유계이면 $\sum_{\varphi_in \Phi} \varphi \cdot f = \int_A f$ 이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+($1$) 어떤 옹골 집합 $K\subset A$ 에서 $\varphi_i \cdot f = 0$ 이며 이 $K$ 에서 유한개의 $\psi_j$ 만 $0$ 이 아니다. 따라서
+
+$$
+\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \int_A \sum_{\psi_j\in \Psi} \psi_j \cdot \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f
+$$
+
+이 결과는 $|f|$ 에 대해서도 성립하며 $\varphi_j \ge 0,\,m \psi_i \ge 0$ 이므로
+
+$$
+\left|\sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f\right|
+$$
+
+도 수렴한다. $\sum_{\varphi_i\in \Phi} \varphi_i = 1$ 이므로 
+
+$$
+\sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f = \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot f
+$$
+
+이며, 따라서 아래 식이 성립한다.
+
+$$
+\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot f
+$$
+
+($2$) $A$ 를 포함하는 닫힌 $n$-cell $B$ 를 생각하자. $f$ 가 유계이므로 $|f|\le M$ 인 $M>0$ 을 생각할 수 있다. 이제 $\Gamma$ 가 $\Phi$ 의 유한 부분집합이라고 하자.
+
+$$
+\sum_{\varphi_i \in \Gamma} \int_A \varphi_i \cdot |f| \le \sum_{\varphi_i \in \Gamma} M \int_A \varphi_i \le M\int_A \left(\sum_{\varphi_i \in \Gamma}\varphi_i\right) \le M\cdot  \text{vol}(B)
+$$
+
+이다. 따라서 $\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|$ 가 존재한다.
+
+($3$) @exr-CM_spivak_3_22 에서 보였듯이 $\varepsilon > 0$ 이면 조르당 가측이며 옹골집합인 어떤 $K\subset A$ 에 대해 $\int_{A-K} 1 < \varepsilon$ 이다. 또한 옹골집합 $K$ 에서 $0$ 이 아닌 $\Gamma \subset \Phi$ 는 유한 부분집합이다. 따라서
+
+$$
+\begin{aligned}
+\left|\int_A f - \sum_{\varphi_i \in \Gamma} \int_A \varphi_i \cdot f\right| &\le \int_A \left|f- \sum_{\varphi_i \in \Gamma} \varphi_i \cdot f\right| \\[0.3em]
+&\le M\int_A \left(1-\sum_{\varphi_i \in \Gamma}\varphi_i\right) \\[0.3em]
+&= M \int_A \sum_{\varphi_i \in \Phi\backslash\Gamma} \le M\int_{A-C} 1 \le M\varepsilon
+\end{aligned}
+$$
+
+이다. $\square$
+
+:::
+
+
+위의 정리 ($3$) 으로 부터 $A$ 가 조르당 가측이고 $f$ 가 유계일 때 
+
+$$
+\int_A f = \sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f
+$$
+
+임을 안다. 즉 우리는 기존의 리만 합의 극한으로서의 적분 뿐만 아니라 단위분할을 이용한 적분 역시 사용 할 수 있다.
+
+
 
 </br>
 
@@ -119,5 +301,433 @@ $$
 ::: {.solution}
 
 $B_i$ 가 옹골집합임은 자명하다. $x\in B_i$ 라고 하자. $x\in A_i \subset \text{int}(A_{i+1})$ 이며 $x\in (\text{int}(A_{i-1}))^C \subset (A_{i-1})^C$ 이므로 $x\in \text{int}(A_{i+1})- A_{i-2}$ 이다. $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개이고 $x\in B_i \subset A_i \subset A$ 이므로 $\mathcal{O}$ 에 포함되는 어떤 열린 집합에 $x$ 는 포함된다. 따라서 $\mathcal{O}_i$ 는 $B_i$ 에 대한 열린 덮개이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_open_set_and_union_of_compact_set}
+
+$A\subset \R^n$ 가 열린집합일 때 아래를 만족하는 어떤 옹골집합의 수열 $\langle A_i\rangle$ 이 존재함을 보여라.
+
+&emsp;($1$) $A_i \subset A_{i+1}$ 이고
+
+&emsp;($2$) $\displaystyle A = \bigcup_i A_i$ 이며
+
+&emsp;($3$) $\displaystyle \int_{A_i} 1$ 이 존재한다.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$D_i\subset A$ 를 다음과 같이 정의하자.
+
+$$
+D_i =\{\bf{x}\in A: \|\bf{x}\| \le i,\, \text{dist}(\{\bf{x}\},\,\partial A) \ge 1/i\}
+$$
+
+이 수열 $\langle D_i \rangle$ ($1$), ($2$) 를 만족한다. $\text{dist}(\{\bf{x}\},\,\partial A)$ 는 연속함수 이므로 (@exr-MA_rudin_4_20) $D_i$ 는 닫힌 집합이고 각각의 $D_i$ 가 유계이므로 $D_i$ 는 옹골집합이다. 그러나 $\int_{D_i}1$ 의 존재성은 알 수 없다. 이제 각각의 $\bf{x}\in D_i$ 에 대해 $\bf{x}$ 를 중심으로 하며 $\text{int}(D_{i+1})$ 에 포함되는 $n$-입방체의 합집합을 생각하자. $D_i$ 가 옹골집합이므로 유한개의 원소만으로 $D_i$ 를 덮을 수 있으며 이 유한개의 원소의 합집합을 $A_i$ 라고 하면 $D_i \subset A_i \text{int}(D_{i+1})$ 이며 $A_i$ 는 옹골집합이다. 각각의 $A_i$ 는 유한개의 $n$-입방체의 합집합이므로 적분가능하고 ($1$), ($2$) 를 만족한다.
+
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spviak_3_37}
+
+#### Spivak 3.37
+
+($a$) $f:(0,\,1)\to \R$ 이 음이 아닌 연속함수라고 하자. $\int_{(0,1)}f$ 가 존재할 필요충분 조건은 $\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f$ 가 존재하는 것임을 보여라.
+
+($b$) $A_n = [1-1/2^n,\, 1-1/2^{n+1}]$ 이라고 하고 $f:(0,\,1) \to \R$ 이 $\int_{A_n} f=(-1)^n/n$ 이며 $x\notin \sum_n A_n$ 일 때 $f(x)=0$ 을 만족한다고 하자. $\int_{(0,1)}f$ 는 존재하지 않지만 $\lim_{\varepsilon \to 0} \int_{(\varepsilon,1-\varepsilon)}f = \log 2$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spviak_3_38}
+
+#### Spivak 3.38
+
+$A_n$ 은 $(n,\,n+1)$ 에 포함되는 닫힌 집합이라고 하자. $f:\R\to \R$ 이 $\int_{A_n}f = (-1)^n/n$ 이며 $x\not\in \cup_n A_n$ 일 때 $f(x) = 0$ 이라고 하자. $\sum_{\varphi_i \in \Phi} \int_\R \varphi \cdot f$ 와 $\sum_{\psi_j \in \Psi}\int_\R \psi_jh \cdot f$ 값이 서로 다른 두 단위 분할 $\Phi$ 와 $\Psi$ 를 찾아라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+:::
+
+</br>
+
+
+## 미분 동형 사상 {#sec-CM_diffeomorphism}
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_diffeomorphism}
+
+#### 미분동형사상
+
+$U,\,V\subset \R^n$ 일 때 $G:U \to V$ 가 전단사 이며 $G,\,G^{-1}$ 이 모두 $C^r$ 급 함수 일 때 $G$ 를 $C^r$ 급 **미분동형사상(diffeomorphism)** 이라고 한다.
+
+::: 
+:::
+
+우리는 이미 역함수 정리(@thm-CM_inverse_function_theorem) 에서 미분동형 사상을 다루었다. $F:V\to W$ 가 전단사이며 역함수가 존재하고 $F^{-1}$ 역시 미분가능하므로 이 때의 $F$ 는 $C^1$ 급 미분동형사상이다. 
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_diffeomorphism_and_determinant_of_derivative}
+
+열린 집합 $U\subset \R^n$ 에서 정의된 미분동형사상 $G:U \to V$ 은 각각의 $\bf{x}\in U$ 에 대해 $\det (G'(\bf{x})) \ne 0$ 이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+$(G^{-1}\circ G)(\bf{x})=\bf{x}$ 이며 연쇄 규칙에 의해 $(G^{-1})'(G(\bf{x}))G'(\bf{x})= I_n$ 이다. 따라서 $\det (G'(\bf{x})) \ne 0$ 이다. $\square$
+
+:::
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_diffeomorphism_on_measure_zero_set}
+
+열린 집합 $A\subset \R^n$ 에서 $C^1$ 함수 $G:A \to \R^n$ 를 생각하자. $E\subset A$ 가 measure $0$ 이면 $G(E)$ 역시 meausre $0$ 이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+$G(\bf{x}) = (g_1(\bf{x}),\ldots,\,g_n(\bf{x}))$ 라고 하자. 임의의 닫힌 $n$-cell $U_i\subset A$ 를 생각하자. $U_i=[a_1,b_1]\times \cdots \times [a_n,b_n]$ 일 때 $w_i=\max \{b_i-a_i:i=1,\ldots,\,n\}$ 라고 하자. $M_i = \max \{\|G'(\bf{x})\|: \bf{x}\in U_i\}$ 라고 할 때 $G(U_i)$ 는 각 방면으로의 폭이 $nM_iw_i$ 인 $n$-입방체 안에 포함된다는 것을 보이자.
+
+$U_i$ 의 중심점을 $\bf{a}$ 라고 하자. $U_i$ 에서의 평균값 정리에 의해 
+
+$$
+g_j(\bf{x})- g_j (\bf{a}) = g_j'(\bf{c}^{(i)}_j) \bf{\cdot} (\bf{x}-\bf{a})
+$$
+
+를 만족하는 $\bf{c}^{(i)}_j \in K$ 가 존재한다. 따라서 $|g_j'(\bf{c}^{(i)}_j)| \le |M_K$ 임을 이용하면
+
+$$
+|g_j(\bf{x})-g_j(\bf{a})| \le |g'_j(\bf{c}^{(i)}_j)|\dfrac{w_i}{2} \le\dfrac{ nM_iw_i}{2}
+$$
+
+이다. 즉 $G(U_i)$ 는 $G(\bf{a})$ 를 중심으로 각 차원에 대한 폭이 $nM_iw_i$ 인 $n$-cube 안에 포함된다. 
+
+이제 $\langle C_i \rangle$ 을 그 합집합이 $A$ 인 옹골집합의 수열이라고 하자. 
+
+
+
+$E$ 를 덮는, 총 부피가 $\varepsilon$ 보다 작은 닫힌 $n$-cell 의 집합 $U_1,\,U_2,\ldots$ 를 생각하자. 그렇다면 $G(U_1),\ldots$ 는 $G(E)$ 를 덮는다. $w=\max \{w_1,\ldots,\}$, $M=\max \{M_1,\ldots\}$ 라고 하면 전체 $\{G(U_i)\}$ 의 부피의 합은 $n^2Mw\varepsilon$ 보다 작으므로 $G(E)$ 역시 measure $0$ 이다. $\square$
+
+:::
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_diffeomorphism_and_integrability}
+
+열린 $A,\,B\subset \R^n$ 에서 정의된 $G:A\to B$ 가 $C^r$ 급 미분동형사상이라고 하자. $K\subset A$ 가 옹골집합이고 $E=G(K)$ 일 때 다음이 성립한다.
+
+&emsp;($a$) $G(\text{int}(K)) = \text{int}(E)$ 이고 $G(\partial K)= \partial E$ 이다.
+
+&emsp;($b$) $\int_K 1$ 이 존재하면 $\int_E 1$ 도 존재한다. 
+
+:::
+
+</div>
+
+::: {.proof}
+
+($a$) $G$ 와 $G^{-1}$ 이 연속이므로 $E$ 는 옹골집합이고(@thm-MA_continuity_and_compactness), $G(\text{int}(K)) \subset E$ 이며 열린 집합이다(@thm-MA_continuity_and_inverse_of_map). 따라서 $\text{int}(E)$ 는 $E$ 에 포함되는 가장 큰 열린집합이므로(@exr-MA_rudin_2_9) 
+
+$$
+G(\text{int}(K))\subset \text{int}(E)\tag{1}
+$$ 
+
+이다. 또한 $K$ 가 옹골집합이므로 $A\backslash K$ 는 열린 집합이고, $E$ 가 옹골집합이므로 $B\backslash E$ 도 열린 집합이며  
+
+$$
+G(A\backslash K)\subset B\backslash E\tag{2}
+$$ 
+
+이다. $\bf{y}\in \partial E$ 이면 $E$ 는 닫힌 집합이므로 $\bf{y}\in E$ 이다. 이 $\bf{y}$ 에 대해 $\bf{y}=G(\bf{x})$ 인 $\bf{x}$ 가 유일하게 존재한다. $\bf{x}\not\in A\backslash K$ 이며 $\bf{y}\not\in E$ 이므로 $\bf{x}\notin \text{int}(K)$ 이다. 즉 $\bf{x}\in \partial K$ 이다. 따라서
+
+$$
+\partial E \subset G(\partial K) \tag{3}
+$$
+
+이 성립한다. 또한 이것은 $G^{-1}:B \to A$ 에도 성립한다. 
+
+$$
+G^{-1}(\text{int}(E)) \subset \text{int}(K). \tag{4}
+$$
+
+$$
+\partial K \subset G^{-1}(\partial E). \tag{5}
+$$
+
+$G$ 가 전단사이므로 ($1$), ($4$) 로부터
+
+$$
+\text{int}(E) = (G\circ G^{-1})(\text{int}(E)) \subset G(\text{int}(K)) \subset \text{int}(E)
+$$
+
+이며, 따라서 $G(\text{int}(K)) = \text{int}(E)$ 이다. 또한 ($3$), ($5$) 로 부터
+
+$$
+\partial E = (G\circ G^{-1})(\partial E) \supset G(\partial K) \supset \partial E
+$$
+
+이며, 따라서 $\partial E = G(\partial K)$ 이다.
+
+($b$) $\int_K 1$ 이 존재하므로 $\partial K$ 는 measure $0$ 이며, $G(\partial K)= \partial E$ 이고 @thm-CM_diffeomorphism_on_measure_zero_set 에 따라 $\partial E$ 도 measure $0$ 이므로 $\int_E 1$ 도 존재한다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_primitive_diffeomorphism}
+
+#### 원시 미분동형사상
+
+2 차원 이상의 $\R^n$ 의 열린 부분집합에서 정의된 미분동형사상 $H:A\subset\R^n \to B$ 가
+
+$$
+H(\bf{x}) = (h_1(\bf{x}),\ldots,\,h_n(\bf{x}))
+$$
+
+라고 하자. 이 가운데 최소한 하나의 $h_i(\bf{x})= x_i$ 일 때 이 미분동형사상을 **원시 미분동형사상(primitive diffeomorphism)** 이라고 한다.
+
+::: 
+:::
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_primitive_diffeomorphism}
+
+$\R^n,\, (n \ge 2)$ 에서의 열린집합 $A,\,B$ 에서 정의된 미분동형사상 $G:A\to B$ 을 생각하자. $\bf{a}\in A$ 에 대해 $\bf{a}_0 \in U_0 \subset A$ 인 열린 집합 $U_0$ 와 원시 미분동형사상의 수열 $H_1,\ldots,\,H_k$ 가 존재하여 아래를 만족한다.
+
+$$
+H_k \circ \cdots \circ H_1 = G|_{U_0}.
+$$
+
+:::
+
+</div>
+
+::: {.proof}
+
+$G(\bf{x}) = (g_1(\bf{x}),\ldots,\,g_n(\bf{x}))$ 라고 하자. 
+
+$\underline{Step-1}$ : $G$ 가 가역 선형사상일 경우.
+
+$G$ 가 가역인 선형사상이면 세가지 기본 행 연산(($1$) $i$ 번째 열에 상수 곱하기, ($2$) $i$ 행과 $j$ 행을 바꾸기, ($3$) $i$ 행 을 $i$ 행과 $j$ 행의 합으로 바꾸기) 행렬의 곱으로 표현 할 수 있다. $n>2$ 일 때는 세가지 모두 원시 미분동형사상이며 $n=2$ 일 때는 ($2$) 를 제외하면 원시 미분동형사상임은 자명하다. 그런데 ($2$) 은 ($1$) 와 ($3$) 의 곱으로 표현 할 수 있다는 것을 보일 수 있다. 따라서 $G$ 가 선형사상일 경우는 주어진 정리가 성립한다.
+
+$\underline{Step-2}$ : $G$ 가 어떤 $\bf{c}\in \R^n$ 에 대해 $G(\bf{x})=\bf{x}+\bf{c}$ 일 때.
+
+$$
+H_i(\bf{x}) = \bf{x} + c_i \bf{e}_i.
+$$
+
+$\underline{Step-3}$ : $\bf{a}=\bf{0}$ 이고 $G(\bf{0})=\bf{0}$ 이며 $G'(\bf{0})=I_n$ 일 때.
+
+$H:A\to \R^n$ 을 $H(\bf{x}):= (g_1(\bf{x}),\ldots,\,g_{n-1}(\bf{x}),\,x_n)$ 으로 정의하자. 
+
+$$
+H'(\bf{x})= \begin{bmatrix} \dfrac{\partial g_1}{\partial x_1} & \cdots &\dfrac{\partial g_1}{\partial x_{n-1}} & \dfrac{\partial g_1}{\partial x_n} \\ \vdots & \ddots & \vdots &\vdots \\ 0 & \cdots & 0 & 1\end{bmatrix}
+$$
+
+이며 $H(\bf{0})=\bf{0},\, H'(\bf{0})=I_n$ 이다. 역함수 정리에 의해 $\bf{a}=\bf{0}$ 을 포함하는 어떤 열린 집합 $U_0$ 와 $G(\bf{0})$ 을 포함하는 어떤 열린 집합 $V_0$ 에 대해 $H:U_0 \to V_0$ 는 미분동형사상이다. 이제 $K:V_0 \to \R^n$ 을 
+
+$$
+K(\bf{y}) = (y_1,\ldots,\,y_{n-1},\, g_n(H^{-1}(\bf{y})))
+$$
+
+라고 하자. $K(\bf{0})= \bf{0}$ 이며
+
+$$
+K'(\bf{y}) = \begin{bmatrix} \begin{array}{cc} I_{n-1} &\bf{0}\end{array} \\ (g_n \circ H^{-1})'(\bf{y}) \end{bmatrix}
+$$
+
+이다. 여기서 $G'(\bf{0})=I_n$ 이므로 $g'_n(\bf{0})= \bf{e}_n^T = \begin{bmatrix} 0 & \cdots & 0 & 1\end{bmatrix}$ 임을 이용하면
+
+$$
+\begin{aligned}
+(g_n \circ H^{-1})'(\bf{0}) &= g'_n(H^{-1}(\bf{0}))\cdot \left((H^{-1})'(\bf{0})\right) \\[0.3em]
+&=g_n'(\bf{0}) \cdot I_n = \bf{e}_n^T
+\end{aligned}
+$$
+
+이며 따라서 $K'(\bf{0})=I_n$ 이다. 즉 $K$ 는 $\bf{0}$ 주위의 $W_1$ 과 $\R^n$ 에서의 어떤 열린 집합 $W_2$ 사이에서 미분동형사상이다. 이 때 $W_1$ 을 $V_0$ 에 포함되는 열린 집합으로 잡을 수 있다.
+
+이제 $W_0 = H^{-1}(W_1)$ 이라고 하자. $W_0 \subset U_0$ 이며 $H|_{W_0}$ 와 $K|_{W_1}$ 는 미분동형사상이며
+
+$$
+W_0 \xrightarrow[]{\quad H|_{W_0}\quad } W_1 \xrightarrow[]{\quad K|_{W_1} \quad} W_2
+$$
+
+이고 $\bf{x}\in W_0$ 에 대해
+
+$$
+\begin{aligned}
+(K|_{W_1}\circ H|_{W_0})(\bf{x}) &= K(g_1(\bf{x}),\ldots,\, g_{n-1}(\bf{x}),\,x_n) \\[0.3em]
+&= (g_1(\bf{x}),\ldots,\,g_{n-1}(\bf{x}),\,g_n(\bf{x})) = G(\bf{x})
+\end{aligned}
+$$
+
+이므로 $(K|_{W_1}\circ H|_{W_0})=G|_{W_0}$ 이다. 
+
+$\underline{Step-4}$ : 일반적인 미분동형사상 $G:A\to B$ 에 대해.
+
+$\bf{a}\in A$ 에 대해 $L=G'(\bf{a})$ 라고 하고 미분동형사상 $T_1,\,T_2,\,T :\R^n \to \R^n$ 를 아래와 같이 정의한다.
+
+$$
+T_1(\bf{x})=\bf{x}+\bf{a},\qquad T_2(\bf{x})= \bf{x}-G(\bf{a}),\qquad T(\bf{x})=L^{-1}\bf{\cdot x}.
+$$
+
+그리고 $\overline{G}:T_1^{-1}(A) \to \R^n$ 을 $\overline{G}:=T\circ T_2 \circ G \circ T_1$ 이라고 하자. 그렇다면
+
+$$
+\overline{G}(\bf{x}) = L^{-1}\bf{\cdot} \left(G(\bf{x}+\bf{a}) - G(\bf{a})\right)
+$$
+
+이다. $\overline{G}(\bf{0})= \bf{0}$ 이며 $\overline{G}'(\bf{a})= I_n$ 이다. $Step-3$ 에 따라 $\overline{G}$ 는 $\bf{0}\in T_1^{-1}(A)$ 를 포함하는 열린 집합 $W_0$ 에서 정의된 미분동형사상이다. $G= T_2^{-1}\circ T^{-1} \circ \overline{G}\circ T_1^{-1}$ 이며 $T_1,\,T_2$ 는 $Case-2$, $T_1$ 은 $Case-1$ 에 포함되는 미분동형사상이므로 $G$ 는 어떤 열린 집합에서 원시 미분동형사상의 합성으로 표현된다. $\square$
+
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-thm-CM_munkres_18_3}
+
+#### Munkres 18.3
+
+$\R^m$ 에서의 열린 집합 $A$ 에서 정의된 $G:A \to \R^n$ 을 생각하자. 그리고 $\lambda :\R^n \times \R^n \to R$ 이 아래와 같다.
+
+$$
+\lambda (\bf{x},\,\bf{y}) = \dfrac{\|G(\bf{x})-G(\bf{y})\|}{\|\bf{x}-\bf{y}\|}
+$$
+
+이 때 어떤 $S\subset A$ 에 대해  $\forall \bf{x},\,\bf{y}\in S,\, \bf{x}\ne \bf{y}$ 일 때 $\lambda(\bf{x},\bf{y})$ 가 유계일 때 $G$ 가 $S$ 에서 **립시츠 조건 (Lipschitz condition)** 을 만족한다고 한다. 또한 각각의 $\bf{z}\in A$ 에 대해 립시츠 조건을 만족하는 $\bf{z}$ 의 근방이 존재 할 때 $G$ 는 $A$ 에서 국소적으로 립시츠 조건을 만족한다고 한다.
+
+($a$) $G$ 가 $C^1$ 함수일 때 $G$ 는 국소적으로 립시츠 조건을 만족함을 보여라.
+
+($b$) $G$ 가 국소적으로 립시츠 조건을 만족하면 $G$ 는 연속임을 보여라.
+
+($c$) ($a$) 와 ($b$) 의 역이 성립하지 않는 예를 들어라.
+
+($d$) $G$ 가 국소적으로 립시츠 조건을 만족한다고 가정하자. $K\subset A$ 가 옹골집합일 때 $G$ 가 $C$ 에서 립시츠 조건을 만족함을 보여라.
+
+
+:::
+
+</div>
+
+::: {.solution}
+($a$) $A$ 가 열린 집합이므로 $\bf{x}\in A$ 일 때 $\bf{x}$ 주위에 어떤 열린 $n$-cell $U$ 가 존재하여 $U\subset A$ 이며 $U$ 내부에 두 점은 직선으로 연결 할 수 있으므로 $G(\bf{x})-G(\bf{y})=G'(\bf{c})\bf{\cdot}(\bf{x}-\bf{y})$ 를 만족하는 $\bf{c}\in U$ 가 존재한다. $G'$ 이 연속이므로 $U$ 에서 유계이다. 따라서 $\lambda$ 역시 국소적으로 유계이다.
+
+($b$) $\bf{x}\in S$ 의 어떤 근방 $U$ 에서 $|\lambda(\bf{x},\,\bf{y})|<M$ 이면 $\|G(\bf{x})-G(\bf{y})\|< M\|\bf{x}-\bf{y}\|$ 이므로 $G$ 는 $S$ 에서 연속이다.
+
+($c$) $f:\R \to \R$ 을 $f(x) := |x|$ 를 생각하자. $0$ 을 포함하는 열린 집합에서
+
+$$
+\lambda (x,\,y) = \dfrac{{\big|}|x|-|y|{\big |}}{|x-y|} \le 1
+$$
+
+이므로 국소적으로 립시츠 조건을 만족하지만 $f$ 는 $x=0$ 에서 미분가능하지 않다.
+
+$g(x) = \sqrt{|x|}$ 를 생각하자. $g$ 는 $\R$ 에서 연속이지만
+
+$$
+\lambda (x,y) = \dfrac{\left|\sqrt{|x|}-\sqrt{|y|}\right|}{{\big |}|x|-|y| {\big |}}= \dfrac{1}{\sqrt{|x|}+\sqrt{|y|}}
+$$
+
+이므로 $0$ 을 포함하는 열린 집합에서 유계가 아니다. 즉 연속이지만 국소적으로 립시츠 조건을 만족하지 않는 함수가 존재한다.
+
+
+
+($d$) 각각의 $\bf{x}\in K$ 에 대해 국소적 립시츠 조건을 만족하는 $\bf{x}$ 의 근방 $N_\bf{x}$ 가 존재하며 옹골집합이므로 유한개의 $N_{\bf{x}}$ 만으로 $K$ 를 덮을 수 있다. 이를 $N_1,\ldots,\,N_k$ 라고 하고 $N_j$ 에서의 $\lambda$ 함수의 최대값을 $l_j$ 라고 하면 $K$ 전체에서 $\lambda$ 함수의 최대값은 $\max \{l_1,\ldots,l_j\}$ 이므로 $G$ 가 $C$ 립시츠 조건을 만족한다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-thm-CM_munkres_18_4}
+
+#### Munkres 18.4
+
+열린 집합 $A \subset \R^n$ 에서 정의된 $G:A \to \R^n$ 이 국소적으로 립시츠 조건을 만족한다. $E\subset A$ 가 measure $0$ 이면 $G(E)$ 역시 measure $0$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-thm-CM_munkres_18_3 ($b$) 에 의해 $G$ 는 $A$ 에서 연속이다. 총 부피가 $\varepsilon > 0$ 보다 작은 $E$ 의 닫힌 $n$-cell 로 이루어진 덮개 $\Gamma$ 를 생각하자. $U \in\Gamma$ 는 옹골집합이므로 $G(U)$ 도 옹골집합이며 따라서 유계인 닫힌 집합이다.
+
+립시츠 조건에서 $\lambda(\bf{x},\,\bf{y})$ 가 유
+
+
+:::
+
+</br>
+
+
+## 변수 변경
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_change_of_variable}
+
+열린 집합 $A\subset \R^n$ 과 단사인 $C^1$ 함수 $G:A \to \R^n$ 이 모든 $\bf{x}\in A$ 에서 $\det G'(\bf{x}) \ne 0$ 이라고 하자. 또한 $f:G(A)\to \R$ 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.
+
+$$
+\int_{G(A)} f = \int_A (f \circ G) \cdot | \det (G')|.
+$$ {#eq-CM_change_of_variable}
+
+
+:::
+
+</div>
+
+::: {.proof}
+
+$I$. 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하여 임의의 적분 가능한 $f$ 에 대해
+
+$$
+\int_{G(U)} f = \int_U (f\circ G)\cdot |\det (G')|
+$$ {#eq-thm-CM_change_of_variable_1}
+
+일 경우 정리가 성립함을 보자.
+
+@exr-CM_spivak_2_36 에 의해 $\mathcal{O}'=\{G(U):U\in \mathcal{O}\}$ 는 $G(A)$ 에 포함되는 열린 덮개이다. $\Phi$ 가 $\mathcal{O}'$ 에 종속된 단위 분할이라고 하자. $\bf{x}\not\in G(U)$ 일 때 $\varphi_i(\bf{x})=0$ 이라면 $G$ 는 단사이므로 $(\varphi_i \cdot f)\circ G(\bf{x})=0$ 이다. @eq-thm-CM_change_of_variable_1 을 사용하면
+
+$$
+\int_{G(U)} \varphi_i \cdot f = \int_U (\varphi_i \cdot f)\circ G \cdot |\det (G')|
+$$
+
 
 :::
