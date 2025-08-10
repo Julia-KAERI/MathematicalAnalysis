@@ -398,7 +398,7 @@ C(\bf{a},\,\delta) &:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \d
 \end{aligned}
 $$
 
-이 때 $C(\bf{a},\,\delta)$ 를 열린 입방체라고 하며 $\overline{C}(\bf{a},\,\delta)$ 를 닫힌 입방체라고 한다.
+이 때 $C(\bf{a},\,\delta)$ 를 열린 입방체, 혹은 열린 $n$-입방체 라고 하며 $\overline{C}(\bf{a},\,\delta)$ 를 닫힌 입방체, 혹은 닫힌 $n$-입방체 라고 한다.
 
 :::
 

@@ -923,7 +923,7 @@ $x\in \text{int}(A)$ 이거나 $x$ 가 $A$ 의 외부라면 $\chi_A$ 가 $x$ 에
 
 #### 조르당 가측
 
-유계인 집합 $A$ 에 대해 $\partial A$ 가 measure $0$ 일 때 $A$ 를 **조르당 가측(Jordan-measureable)** 이라고 한다. $\int_A 1$ 을 $A$ 의 **content** 혹은 **$n$-차원 부피(volumn)** 라고 한다. $1$ 차원일 경우는 **길이(length)**, 2차원일 경우는 **넓이(area)** 라고 한다.
+집합 $A$ 가 유계이고 $\partial A$ 가 measure $0$ 일 때 $A$ 를 **조르당 가측(Jordan-measureable)** 이라고 한다. $\int_A 1$ 을 $A$ 의 **content** 혹은 **$n$-차원 부피(volumn)** 라고 한다. $1$ 차원일 경우는 **길이(length)**, 2차원일 경우는 **넓이(area)** 라고 한다.
 
 ::: 
 :::

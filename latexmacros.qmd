@@ -13,6 +13,7 @@ format: html
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\supp}{\operatorname{supp}}
 
 \def\Xint#1{\mathchoice
    {\XXint\displaystyle\textstyle{#1}}%

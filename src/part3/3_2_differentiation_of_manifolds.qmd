@@ -1534,7 +1534,7 @@ $$
 
 ($c$) ($a$) 에 의해 자명하다.
 
-($d$) $\Gamma$ 를 $C$ 의 각 점에 대해 $A$ 에 포함되는 열린 큐브의 집합이라고 하자. $\Gamma$ 는 $C$ 에 대한 열린 덮개이므로 유한개의 열린 큐브로 $C$ 를 덮을 수 있다. 이를 $\{U_1,\ldots,\,U_m\}$ 이라고 하자. $U_i$ 에 대해 ($c$) 의 $g$ 함수를 적용한 것을 $g_i$ 라고 하고 $f = g_1+ \cdots + g_n$ 이라고 하자. 그렇다면 $x\in C$ 에 대해 $f(x)>0$ 임은 자명하다. 이제 $U_i$ 에 대해 $\overline{U_i}\subset A$ 이며 $X=\bigcup_{i=1}^m \overline{U_i} \subset A$ 는 닫힌집합이며 $\bf{x}\in X$ 일 때 $f(\bf{x})=0$ 이다.
+($d$) $\Gamma$ 를 $C$ 의 각 점에 대해 $A$ 에 포함되는 열린 $n$-입방체 의 집합이라고 하자. $\Gamma$ 는 $C$ 에 대한 열린 덮개이므로 유한개의 열린 입방체로 $C$ 를 덮을 수 있다. 이를 $\{U_1,\ldots,\,U_m\}$ 이라고 하자. $U_i$ 에 대해 ($c$) 의 $g$ 함수를 적용한 것을 $g_i$ 라고 하고 $f = g_1+ \cdots + g_n$ 이라고 하자. 그렇다면 $x\in C$ 에 대해 $f(x)>0$ 임은 자명하다. 이제 $U_i$ 에 대해 $\overline{U_i}\subset A$ 이며 $X=\bigcup_{i=1}^m \overline{U_i} \subset A$ 는 닫힌집합이며 $\bf{x}\in X$ 일 때 $f(\bf{x})=0$ 이다.
 
 ($e$) $h:A \to \R$ 을 ($d$) 의 $f$ 로 놓고 $\bf{x}\in C$ 일 때 $h(\bf{x})\ge \varepsilon$ 이 되도록 놓을 수 있다. 이제 ($b$) 의 $g$ 에 대해 $f=g\circ h$ 로 놓으면 된다.
 
