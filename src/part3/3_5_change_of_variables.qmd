@@ -75,7 +75,6 @@ $E$ 를 덮는, 총 부피가 $\varepsilon$ 보다 작은 닫힌 $n$-cell 의 �
 
 :::
 
-
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_diffeomorphism_and_integrability}
@@ -400,7 +399,12 @@ $\R^n\backslash S_\phi$ 는 열린 집합이다. $\square$
 
 ::: {#prp-CM_support_in_open_set}
 
-열린 집합 $A \subset \R^n$ 에 대해 어떤 $C^\infty$ 함수 $\phi: A \to \R$ 이 존재하여 $\phi$ 의 지지집합이 $A$ 에 포함된다.
+열린 집합 $A \subset \R^n$ 에 대해 $A$ 에 포함되는 옹골집합 $K$ 에 대해 아래를 만족하는 $C^\infty$ 급 함수 $\psi:A \to \R$ 이 존재한다. 
+
+&emsp;($1$) $\bf{x}\in K \implies \psi(\bf{x}) > 0$, 
+
+&emsp;($2$) $K \subset \supp \psi \subset A$,
+
 
 :::
 
@@ -463,9 +467,12 @@ $$
 K_{k+1} = A-(\text{int}(D_1)\cup \cdots \cup \text{int}(D_k) \cup U_{k+2} \cup \cdots \cup U_n )
 $$
 
-라고 하자. 그렇다면 $K_{k+1}$ 은 옹골집합과 닫힌 집합의 교집합이므로 옹골집합이고 $K_{k+1}\subset U_{k+1}$ 이다. @exr-CM_spivak_1_22 에서 보였듯이 $K_{k+1} \subset \text{int}(D_{k+1})$ 이며  $D_{k+1}\subset U_{k+1}$ 을 만족하는 옹골집합 $D_{k+1}$ 이 존재한다. $K_1 = A - \bigcup_{i=2}^n U_i$ 을 통해 정할 수 있으며 따라서 모든 $D_i$ 를 정할 수 있다. 여기서 $A \subset \bigcup_{i=1}^n \text{int}(D_i)$ 이다. 
+라고 하자. 그렇다면 $K_{k+1}$ 은 옹골집합과 닫힌 집합의 교집합이므로 옹골집합이고 $K_{k+1}\subset U_{k+1}$ 이다. @exr-CM_spivak_1_22 에서 보였듯이 $K_{k+1} \subset \text{int}(D_{k+1})$ 이며  $D_{k+1}\subset U_{k+1}$ 을 만족하는 옹골집합 $D_{k+1}$ 이 존재한다. $K_1 = A - \bigcup_{i=2}^n U_i$ 을 통해 정할 수 있다. $\bf{x}\in A$ 가 $\{U_1,\ldots,\,U_n\}$ 가운데 $U_m$ 에서 처음 나타난 다고 하자. 그렇다면 $\bf{x}\in K_{m+1}\subset \text{int}(D_{m+1})$ 이므로 
+$$
+A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset \bigcup_{i=1}^n U_i
+$$ 이다. 
 
-이제 $i=1,\ldots,\,n$ 에 대해 $D_i$ 를 지지집합으로 갖는 $C^\infty$ 함수 $\varphi_i$ 가 존재한다(@prp-CM_support_in_open_set) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $\bf{x}$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(\bf{x})+ \cdots + \psi_n(\bf{x}) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
+이제 $i=1,\ldots,\,n$ 에 대해 $D_i$ 를 포함하며 $U_i$ 에 포함되는 콤팩트 지지집합을 갖는 $C^\infty$ 함수 $\psi_i$ 가 존재한다(@prp-CM_support_in_open_set) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $\bf{x}$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(\bf{x})+ \cdots + \psi_n(\bf{x}) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
 
 $$
 \varphi_i (\bf{x}) := \dfrac{\psi_i(\bf{x})}{\psi_1(\bf{x}) + \cdots + \psi_n(\bf{x})}
@@ -538,20 +545,18 @@ $A$ 가 열린 집합일 경우 @exr-CM_open_set_and_union_of_compact_set 의 $\
 
 열린 집합 $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 를 생각하자. 각각의 $U\in \mathcal{O}$ 에 대해 $U\subset A$ 일 때 $\mathcal{O}$ 를 $A$ 에 **포함되는 열린 덮개(admissible open cover)** 라고 한다. $\Phi$ 가 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $A$ 에 대한 단위분할이고, 각각의 $\bf{x}\in A$ 에 대해 $\bf{x}$ 를 포함하는 열린집합에서 유계이며, $f$ 가 불연속인 $A$ 의 집합이 measure $0$ 이면 각각의 $\varphi_i \in \Phi$ 에 대해 $\int_A \varphi_i \cdot |f|$ 가 존재한다. (@thm-CM_integrability_and_measure_of_uncontinous_points, @exr-CM_spivak_3_6, @exr-CM_spivak_3_14)
 
-이 때 
-
-$$
-\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|
-$$
-
-가 수렴하면 $f$ 가 적분가능하다고 정의할 수 있다. 
-
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#lem-CM_partation_of_unity_and_integration_1}
 
-열린 집합 $A\subset \R^n$ 를 생각하자. $\Phi=\langle \varphi_i\rangle$ 이 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 이며 $f$ 는 $A$ 에서 적분 가능하다고 하자. $\Psi = \langle \psi_j\rangle$ 역시 $A$ 에 포함되는 열린 덮개 $\mathcal{O}'$ 에 종속된 단위 분할일 때 $\sum_{\psi_j\in \Psi} \int_A \psi_j \cdot |f|$ 는 수렴하며 다음이 성립한다.
+열린 집합 $A\subset \R^n$ 를 생각하자. $\Phi=\langle \varphi_i\rangle$ 이 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 이며 $f:A\to \R$ 에 대해 
+
+$$
+\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|
+$$
+
+가 수렴한다고 하자. $\Psi = \langle \psi_j\rangle$ 역시 $A$ 에 포함되는 열린 덮개 $\mathcal{O}'$ 에 종속된 단위 분할일 때 $\sum_{\psi_j\in \Psi} \int_A \psi_j \cdot |f|$ 는 수렴하며 다음이 성립한다.
 
 $$
 \sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \psi_j \cdot f.
@@ -562,13 +567,13 @@ $$
 
 ::: {.proof}
 
-($1$) 어떤 옹골 집합 $K\subset A$ 을 제외하면 $\varphi_i \cdot f = 0$ 이며 이 $K$ 에서 유한개의 $\psi_j$ 만 $0$ 이 아니다. 따라서
+정해진 $i$ 에 대한 $\supp \varphi_i$ 에서 $\Psi = \{\psi_j\}$ 가운데 유한개만 $0$ 이 아니다. 따라서
 
 $$
 \sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \int_A \sum_{\psi_j\in \Psi} \psi_j \cdot \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f
 $$
 
-이 결과는 $|f|$ 에 대해서도 성립하며 $\varphi_j \ge 0,\,m \psi_i \ge 0$ 이므로
+이다. 이 결과는 $|f|$ 에 대해서도 성립하며 $\varphi_j \ge 0,\, \psi_i \ge 0$ 이므로
 
 $$
 \left|\sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f\right|
@@ -588,44 +593,18 @@ $$
 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-$$
-\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \int_A \psi_j \cdot f.
-$$
+::: {#lem-CM_partation_of_unity_and_integration_1}
 
-($2$) $A$ 와 $f$ 가 유계이면 $\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|$ 는 존재한다.
+$A\subset \R^n$ 과 $f:A\to \R$ 이 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 $\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|$ 는 존재한다.
 
-($3$) $A$ 가 조르당 가측이고 $f$ 가 유계이면 $\sum_{\varphi_in \Phi} \int_A\varphi \cdot f = \int_A f$ 이다.
-
-
+:::
+</div>
 
 ::: {.proof}
 
-($1$) 어떤 옹골 집합 $K\subset A$ 에서 $\varphi_i \cdot f = 0$ 이며 이 $K$ 에서 유한개의 $\psi_j$ 만 $0$ 이 아니다. 따라서
-
-$$
-\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \int_A \sum_{\psi_j\in \Psi} \psi_j \cdot \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f
-$$
-
-이 결과는 $|f|$ 에 대해서도 성립하며 $\varphi_j \ge 0,\,m \psi_i \ge 0$ 이므로
-
-$$
-\left|\sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f\right|
-$$
-
-도 수렴한다. $\sum_{\varphi_i\in \Phi} \varphi_i = 1$ 이므로 
-
-$$
-\sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f = \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot f
-$$
-
-이며, 따라서 아래 식이 성립한다.
-
-$$
-\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot f
-$$
-
-($2$) $A$ 를 포함하는 닫힌 $n$-cell $B$ 를 생각하자. $f$ 가 유계이므로 $|f|\le M$ 인 $M>0$ 을 생각할 수 있다. 이제 $\Gamma$ 가 $\Phi$ 의 유한 부분집합이라고 하자.
+$A$ 를 포함하는 닫힌 $n$-cell $B$ 를 생각하자. $f$ 가 유계이므로 $|f|\le M$ 인 $M>0$ 을 생각할 수 있다. 이제 $\Gamma$ 가 $\Phi$ 의 유한 부분집합이라고 하자.
 
 $$
 \sum_{\varphi_i \in \Gamma} \int_A \varphi_i \cdot |f| \le \sum_{\varphi_i \in \Gamma} M \int_A \varphi_i \le M\int_A \left(\sum_{\varphi_i \in \Gamma}\varphi_i\right) \le M\cdot  \text{vol}(B)
@@ -633,7 +612,27 @@ $$
 
 이다. 따라서 $\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|$ 가 존재한다.
 
-($3$) @exr-CM_spivak_3_22 에서 보였듯이 $\varepsilon > 0$ 이면 조르당 가측이며 옹골집합인 어떤 $K\subset A$ 에 대해 $\int_{A-K} 1 < \varepsilon$ 이다. 또한 옹골집합 $K$ 에서 $0$ 이 아닌 $\Gamma \subset \Phi$ 는 유한 부분집합이다. 따라서
+
+:::
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_partation_of_unity_and_integration_1}
+
+$A$ 가 조르당 가측이고 $f$ 가 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 다음이 성립한다.
+
+$$
+\int_A f = \sum_{\varphi_i \in \Phi} \int_A\varphi \cdot f.
+$$
+
+:::
+</div>
+
+
+::: {.proof}
+
+@exr-CM_spivak_3_22 에서 보였듯이 $\varepsilon > 0$ 이면 조르당 가측이며 옹골집합인 어떤 $K\subset A$ 에 대해 $\int_{A-K} 1 < \varepsilon$ 이다. 또한 옹골집합 $K$ 에서 $0$ 이 아닌 $\Gamma \subset \Phi$ 는 유한 부분집합이다. 따라서
 
 $$
 \begin{aligned}
@@ -647,14 +646,6 @@ $$
 
 :::
 
-
-위의 정리 ($3$) 으로 부터 $A$ 가 조르당 가측이고 $f$ 가 유계일 때 
-
-$$
-\int_A f = \sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f
-$$
-
-임을 안다. 즉 우리는 기존의 리만 합의 극한으로서의 적분 뿐만 아니라 단위분할을 이용한 적분 역시 사용 할 수 있다.
 
 
 
@@ -680,7 +671,7 @@ $$
 
 ::: {.solution}
 
-$B_i$ 가 옹골집합임은 자명하다. $x\in B_i$ 라고 하자. $x\in A_i \subset \text{int}(A_{i+1})$ 이며 $x\in (\text{int}(A_{i-1}))^C \subset (A_{i-1})^C$ 이므로 $x\in \text{int}(A_{i+1})- A_{i-2}$ 이다. $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개이고 $x\in B_i \subset A_i \subset A$ 이므로 $\mathcal{O}$ 에 포함되는 어떤 열린 집합에 $x$ 는 포함된다. 따라서 $\mathcal{O}_i$ 는 $B_i$ 에 대한 열린 덮개이다.
+$B_i$ 가 옹골집합임은 자명하다. $x\in B_i$ 라고 하자. $x\in A_i \subset \text{int}(A_{i+1})$ 이며 $x\in (\text{int}(A_{i-1}))^C \subset (A_{i-2})^C$ 이므로 $x\in \text{int}(A_{i+1})- A_{i-2}$ 이다. $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개이고 $x\in B_i \subset A_i \subset A$ 이므로 $\mathcal{O}$ 에 포함되는 어떤 열린 집합에 $x$ 는 포함된다. 따라서 $\mathcal{O}_i$ 는 $B_i$ 에 대한 열린 덮개이다.
 
 :::
 
@@ -755,11 +746,13 @@ $A_n$ 은 $(n,\,n+1)$ 에 포함되는 닫힌 집합이라고 하자. $f:\R\to \
 ## 변수 변경
 
 
+
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_change_of_variable}
 
-열린 집합 $A\subset \R^n$ 과 단사인 $C^1$ 함수 $G:A \to \R^n$ 이 모든 $\bf{x}\in A$ 에서 $\det G'(\bf{x}) \ne 0$ 이라고 하자. 또한 $f:G(A)\to \R$ 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.
+열린 집합 $A\subset \R^n$ 과 단사인 $C^1$ 함수 $G:A \to \R^n$ 이 모든 $\bf{x}\in A$ 에서 $\det \left(G'(\bf{x})\right) \ne 0$ 이라고 하자. 또한 $f:G(A)\to \R$ 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.
 
 $$
 \int_{G(A)} f = \int_A (f \circ G) \cdot | \det (G')|.
@@ -772,13 +765,15 @@ $$ {#eq-CM_change_of_variable}
 
 ::: {.proof}
 
-$I$. 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하여 임의의 적분 가능한 $f$ 에 대해
+다소 긴 과정을 통해 증명한다.
+
+$\bf{I}$. 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하며 각각의 $U\in \mathcal{O}$ 와 적분가능한 함수 $f$ 에 대해
 
 $$
 \int_{G(U)} f = \int_U (f\circ G)\cdot |\det (G')|
 $$ {#eq-thm-CM_change_of_variable_1}
 
-일 경우 정리가 성립함을 보자.
+라면 정리가 성립함을 보이자.
 
 @exr-CM_spivak_2_36 에 의해 $\mathcal{O}'=\{G(U):U\in \mathcal{O}\}$ 는 $G(A)$ 에 포함되는 열린 덮개이다. $\Phi$ 가 $\mathcal{O}'$ 에 종속된 단위 분할이라고 하자. $\bf{x}\not\in G(U)$ 일 때 $\varphi_i(\bf{x})=0$ 이라면 $G$ 는 단사이므로 $(\varphi_i \cdot f)\circ G(\bf{x})=0$ 이다. @eq-thm-CM_change_of_variable_1 을 사용하면
 

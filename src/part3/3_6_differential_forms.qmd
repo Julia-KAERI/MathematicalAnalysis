@@ -1,0 +1,221 @@
+---
+title: "미분 형식"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+{{< include ../../latexmacros.qmd >}}
+
+## 다중 선형 대수
+
+### 텐서와 텐서곱 {#sec-CM_tensor_and_tensor_product}
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_k_tensor}
+
+#### $k$-텐서
+
+벡터공간 $V$ 에 대해 $V^k \mapsto \R$ 인 다중선형 함수의 집합을 **$k$-텐서 ($k$-tensor)** 라고 하며 $k$-텐서 의 집합을 $\mathfrak{J}^k(V)$ 라고 쓴다. 즉 $c\in \R$ 에 대해
+
+$$
+\begin{aligned}
+T(\bf{v}_1,\ldots,&\bf{v}_i+c\bf{v}'_i,\ldots,\bf{v}_k) = T(\bf{v}_1,\ldots,\bf{v}_i,\ldots,\bf{v}_k) + cT(\bf{v}_1,\ldots,c\bf{v}'_i,\,\bf{v}_k)
+\end{aligned}
+$$ {#eq-CM_multilinear_property}
+
+이면 $T\in\mathfrak{J}^K(V)$ 이다. 
+
+여기서 $\mathfrak{J}^k(V)$ 의 합과 스칼라곱을 아래와 같이 정의한다.
+
+$$
+\begin{aligned}
+(S+T)(\bf{v}_1,\ldots,\,\bf{v}_k) &= S(\bf{v}_1,\ldots,\,\bf{v}_k) + T(\bf{v}_1,\ldots,\,\bf{v}_k) , \\[0.3em]
+(cT)(\bf{v}_1,\ldots,\,\bf{v}_k) &= c{\big (}T(\bf{v}_1,\ldots,\,\bf{v}_k){\big )} .
+\end{aligned}
+$$ {#eq-CM_def_addition_and_scala_product_in_k_tensor}
+
+
+::: 
+:::
+
+
+우리는 $\mathcal{J}^1(V)$ 가 $V$ 의 쌍대공간 $V^\ast$ 이라는 것을 쉽게 알 수 있다. 그리고 아래는 쉽게 보일 수 있다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_k_tensor_is_vector_space}
+
+$\mathfrak{J}^k(V)$ 는 벡터공간이다.
+:::
+
+</div></br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_tensor_product}
+
+#### 텐서곱
+
+$S\in\mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)$ 일 때 텐서곱 $S\otimes T \in \mathfrak{J}^{k+l}(V)$ 를 다음과 같이 정의한다.
+
+$$
+(S\otimes T)(\bf{v}_1,\ldots,\bf{v}_k,\bf{v}_{k+1},\ldots,\bf{v}_{k+l})=S(\bf{v}_1,\ldots,\bf{v}_k) \cdot T(\bf{v}_{k+1},\ldots,\bf{v}_{k+l})
+$$ {#eq-CM_tensor_product}
+::: 
+:::
+
+</br>
+
+@eq-CM_tensor_product 로 정의된 $S\otimes T$ 는 실제 $k+l$-텐서임은 쉽게 보일 수 있다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_basic_properties_of_tensor_product}
+텐서곱에 대해 다음이 성립한다. 
+
+$$
+\begin{aligned}
+(S_1+S_2)\otimes T &= S_1 \otimes T + S_2 \otimes T, \\[0.3em]
+S\otimes (T_1+T_2) &= S\otimes T_1 + S \otimes T_2, \\[0.3em]
+(cS)\otimes T = c(S \otimes T) &= S \otimes (cT), \\[0.3em]
+(S \otimes T) \otimes R &= S \otimes (T \otimes R).
+\end{aligned}
+$$ {#eq-CM_basic_properites_of_tensor_product}
+:::
+
+</div></br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_basis_of_tensor_product}
+
+$V$ 가 $n$ 차원 벡터공간이고 $\bf{e}_1,\ldots,\,\bf{e}_n$ 이 $V$ 의 기저일 때 이 기저에 대한 쌍대기저 $\{\varphi_j\}$ 에 대해 
+
+$$
+\{\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k} : 1 \le i_1,\ldots,\,i_k \le n\}
+$$
+
+는 $\mathfrak{J}^k$ 의 기저이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+쌍대기저의 성질에 의해 $\varphi_j(\bf{v}_i)= \delta_{ij}$ 이다. 그리고
+
+$$
+\left(\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k}\right)(\bf{e}_{j_1},\ldots,\,\bf{e}_{j_k}) = \delta_{i_1j_1}\cdots \delta_{i_kj_k}
+$$
+
+임을 안다. $\bf{v}_1,\ldots,\bf{v}_k\in V$ 이며 $\bf{v}_i = \sum_{j=1}^n a_{ij}\bf{e}_j$ 이고 $T\in \mathfrak{J}^k(V)$ 일 때
+
+$$
+\begin{aligned}
+T(\bf{v}_1,\ldots,\bf{v}_k) &= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T(\bf{e}_{j_1},\ldots,\bf{e}_{j_k}) \\[0.3em]
+&= \sum_{i_1,\ldots,i_k=1}^n T(\bf{e}_{i_1},\ldots,\bf{e}_{i_k}) \cdot {\big(} \varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k} {\big )}(\bf{v}_1,\ldots,\,\bf{v}_k)
+\end{aligned}
+$$
+
+이다. 즉 $\{\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k}\}$ 가 $\mathfrak{J}^k(V)$ 를 span 한다. 이제 선형독립임을 보이자.
+
+$$
+\sum_{i_1,\ldots,i_k=1}^n a_{i_1,\ldots,i_k}\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k} = 0
+$$
+
+일 때 모든 $a_{i_1,\ldots,i_k}=0$ 이라는 것을 보이면 된다. 이 함수를 $(\bf{e}_{j_1},\ldots,\bf{e}_{j_k})$ 에 적용시며보면 이를 확인 할 수 있다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_dual_transform}
+
+#### 쌍대 변환
+
+$f\in \mathcal{L}(V,\,W)$ 에 대해 아래와 같이 정의되는 $f^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 를 쌍대 변환 이라고 한다.
+
+$$
+\left(f^\ast (T)\right)(\bf{v}_1,\ldots,\bf{v}_k) = T(f(\bf{v}_1),\ldots,\,f(\bf{v}_k))
+$$ {#eq-CM_definition_of_dual_transform}
+
+::: 
+:::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_basic_properties_of_dual_transform}
+
+선형 변환 $f\in \mathcal{L}(V,W)$ 에 대한 쌍대변환 $f^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 에 대해 다음이 성립한다.
+
+&emsp;($1$) $f^\ast$ 는 선형변환이다.
+
+&emsp;($2$) $f^\ast( S\otimes T) = f^\ast (S) \otimes f^\ast (T)$ 이다.
+
+&emsp;($3$) $g \in \mathcal{L}(W,\,X)$ 이면 $(g \circ f)^\ast (T) = f^\ast (g^\ast (T))$ 이다.
+
+:::
+
+</div>
+
+::: {.proof} 
+
+($1$) 은 정의에 의해 자명하다.
+
+($2$) $S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)$ 일 때,
+
+$$
+\begin{aligned}
+f^\ast( S\otimes T) & (\bf{v}_1,\ldots,\bf{v}_k,\,\bf{v}_{k+1},\ldots,\bf{v}_{k+l}) \\[0.3em]
+&=(S\otimes T)(f(\bf{v}_1),\ldots,\,f(\bf{v}_{k+l})) \\[0.3em]
+&=S(f(\bf{v}_1),\ldots,f(\bf{v}_k))\cdot T(f(\bf{v}_{k+1}),\ldots,f(\bf{v}_{k+l})) \\[0.3em]
+&= (f^\ast (S) \otimes f^\ast (T)) (\bf{v}_1,\ldots,\bf{v}_k,\,\bf{v}_{k+1},\ldots,\bf{v}_{k+l})
+\end{aligned}
+$$
+
+($3$) 
+
+$$
+\begin{aligned}
+\left((g\circ f)^\ast (T)\right)(\bf{v}_1,\ldots,\,\bf{v}_k) &= T( (g\circ f)(\bf{v}_1),\ldots,(g\circ f)(\bf{v}_k)) \\[0.3em]
+&= \left(g^\ast (T)\right)(f(\bf{v}_1),\ldots,\,f(\bf{v}_k)) \\[0.3em]
+&= f^\ast (g^\ast (T)) (\bf{v}_1,\ldots,\,\bf{v}_k). \square
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+### 교대 텐서 {#sec-CM_alternating_tensor}
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_alternating_k_tensor}
+
+#### 교대 텐서
+
+$\omega \in \mathcal{J}^k(V)$ 가 아래와 같은 성질을 가질 때 $\omega$ 를 **교대 $k$-텐서 (alternaging $k$-tensor)** 라고 한다.
+
+$$
+\omega (\bf{v}_1,\ldots,\bf{v}_i,\ldots,\bf{v}_j,\ldots,\bf{v}_n) = -\omega (\bf{v}_1,\ldots,\bf{v}_j,\ldots,\bf{v}_i,\ldots,\bf{v}_n) .
+$$ {#eq-CM_alternating_property_of_k_tensor}
+
+그리고 교대 $k$-텐서의 집합을 $\Lambda^k(V)$ 로 표기한다.
+
+::: 
+:::
+
+</br>
+
+아래는 쉽게 보일 수 있다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_k_alternating_tensor_is_vector_space}
+
+$\Lambda^k(V)$ 는 벡터공간이며 $\mathfrak{J}^k(V)$ 의 부분공간이다.
+:::
+
+</div></br>

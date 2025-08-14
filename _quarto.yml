@@ -40,8 +40,9 @@ book:
         - src/part3/3_1_functions_on_Euclidean_space.qmd
         - src/part3/3_2_differentiation_of_manifolds.qmd
         - src/part3/3_3_inverse_function_theorem.qmd
-        - src/part3/3_4_integration_of_manifolds_1.qmd
-        - src/part3/3_5_integration_of_manifolds_2.qmd
+        - src/part3/3_4_integration.qmd
+        - src/part3/3_5_change_of_variables.qmd
+        - src/part3/3_6_differential_forms.qmd
     # - part : src/figures/figures.qmd
     #   chapters :
     #     - src/figures/figure01.qmd
