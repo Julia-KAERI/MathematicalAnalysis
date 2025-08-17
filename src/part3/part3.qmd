@@ -4,4 +4,21 @@ number-sections: true
 number-depth : 2
 crossref:
   chapters: true
+
 ---
+
+
+
+## 참고자료
+
+### 교과서
+
+- @Spivak1965 : Calculus on Manifolds
+- @Munkres1991analysis : Analysis on Manifolds
+- @Rudin1976 : Principles of Mathematical Analysis
+
+</br>
+
+### 기타
+
+- [All axolotls enjoy mathematics. But this one also loves physics](http://www.petraaxolotl.com/mathematics/calculus-on-manifolds/)

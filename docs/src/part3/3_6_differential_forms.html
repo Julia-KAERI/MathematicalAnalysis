@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,15 +32,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <link href="../../references.html" rel="next">
 <link href="../../src/part3/3_5_change_of_variables.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-86ebaf3f78f9cca2fa1bea7881dc81ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -102,7 +103,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../custom.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -306,8 +307,10 @@ window.Quarto = {
   <li><a href="#sec-CM_tensor_and_tensor_product" id="toc-sec-CM_tensor_and_tensor_product" class="nav-link" data-scroll-target="#sec-CM_tensor_and_tensor_product"><span class="header-section-number">17.1.1</span> 텐서와 텐서곱</a></li>
   <li><a href="#sec-CM_alternating_tensor" id="toc-sec-CM_alternating_tensor" class="nav-link" data-scroll-target="#sec-CM_alternating_tensor"><span class="header-section-number">17.1.2</span> 교대 텐서</a></li>
   <li><a href="#쐐기곱" id="toc-쐐기곱" class="nav-link" data-scroll-target="#쐐기곱"><span class="header-section-number">17.1.3</span> 쐐기곱</a></li>
+  <li><a href="#sec-CM_volume_element_and_cross_product" id="toc-sec-CM_volume_element_and_cross_product" class="nav-link" data-scroll-target="#sec-CM_volume_element_and_cross_product"><span class="header-section-number">17.1.4</span> 부피 요소와 벡터곱</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
+  <li><a href="#장과-형식" id="toc-장과-형식" class="nav-link" data-scroll-target="#장과-형식"><span class="header-section-number">17.2</span> 장과 형식</a></li>
   </ul>
 </nav>
     </div>
@@ -352,29 +355,29 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-CM_k_tensor" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.1 (<span class="math inline">\(k\)</span>-텐서)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V^k \mapsto \mathbb{R}\)</span> 인 다중선형 함수의 집합을 <strong><span class="math inline">\(k\)</span>-텐서 (<span class="math inline">\(k\)</span>-tensor)</strong> 라고 하며 <span class="math inline">\(k\)</span>-텐서 의 집합을 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 라고 쓴다. 즉 <span class="math inline">\(c\in \mathbb{R}\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 17.1 (<span class="math inline">\(k\)</span>-텐서)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V^k \mapsto \mathbb{R}\)</span> 인 다중선형 함수의 집합을 <strong><span class="math inline">\(k\)</span>-텐서 (<span class="math inline">\(k\)</span>-tensor)</strong> 라고 하며 <span class="math inline">\(k\)</span>-텐서 의 집합을 <span class="math inline">\(\mathcal{T}^k(V)\)</span> 라고 쓴다. 즉 <span class="math inline">\(c\in \mathbb{R}\)</span> 에 대해</p>
 <p><span id="eq-CM_multilinear_property"><span class="math display">\[
 \begin{aligned}
-T(\boldsymbol{v}_1,\ldots,&amp;\boldsymbol{v}_i+c\boldsymbol{v}'_i,\ldots,\boldsymbol{v}_k) = T(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_i,\ldots,\boldsymbol{v}_k) + cT(\boldsymbol{v}_1,\ldots,c\boldsymbol{v}'_i,\,\boldsymbol{v}_k)
+T(v_1,\ldots,v_i+cv'_i,\ldots,v_k) = T(v_1,\ldots,v_i,\ldots,v_k) + cT(v_1,\ldots,cv'_i,\,v_k)
 \end{aligned}
 \tag{17.1}\]</span></span></p>
-<p>이면 <span class="math inline">\(T\in\mathfrak{J}^K(V)\)</span> 이다.</p>
-<p>여기서 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 의 합과 스칼라곱을 아래와 같이 정의한다.</p>
+<p>이면 <span class="math inline">\(T\in\mathcal{T}^K(V)\)</span> 이다.</p>
+<p>여기서 <span class="math inline">\(\mathcal{T}^k(V)\)</span> 의 합과 스칼라곱을 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_def_addition_and_scala_product_in_k_tensor"><span class="math display">\[
 \begin{aligned}
-(S+T)(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k) &amp;= S(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k) + T(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k) , \\[0.3em]
-(cT)(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k) &amp;= c{\big (}T(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k){\big )} .
+(S+T)(v_1,\ldots,\,v_k) &amp;= S(v_1,\ldots,\,v_k) + T(v_1,\ldots,\,v_k) , \\[0.3em]
+(cT)(v_1,\ldots,\,v_k) &amp;= c{\big (}T(v_1,\ldots,\,v_k){\big )} .
 \end{aligned}
 \tag{17.2}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
-<p>우리는 <span class="math inline">\(\mathcal{J}^1(V)\)</span> 가 <span class="math inline">\(V\)</span> 의 쌍대공간 <span class="math inline">\(V^\ast\)</span> 이라는 것을 쉽게 알 수 있다. 그리고 아래는 쉽게 보일 수 있다.</p>
+<p>우리는 <span class="math inline">\(\mathcal{T}^1(V)\)</span> 가 <span class="math inline">\(V\)</span> 의 쌍대공간 <span class="math inline">\(V^\ast\)</span> 이라는 것을 쉽게 알 수 있다. 그리고 아래는 쉽게 보일 수 있다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_k_tensor_is_vector_space" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.1</strong></span> <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 는 벡터공간이다.</p>
+<p><span class="theorem-title"><strong>명제 17.1</strong></span> <span class="math inline">\(\mathcal{T}^k(V)\)</span> 는 벡터공간이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -385,9 +388,9 @@ T(\boldsymbol{v}_1,\ldots,&amp;\boldsymbol{v}_i+c\boldsymbol{v}'_i,\ldots,\bolds
 </div>
 <div class="callout-body-container">
 <div id="def-CM_tensor_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.2 (텐서곱)</strong></span> <span class="math inline">\(S\in\mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)\)</span> 일 때 텐서곱 <span class="math inline">\(S\otimes T \in \mathfrak{J}^{k+l}(V)\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 17.2 (텐서곱)</strong></span> <span class="math inline">\(S\in\mathcal{T}^k(V),\, T\in \mathcal{T}^l(V)\)</span> 일 때 텐서곱 <span class="math inline">\(S\otimes T \in \mathcal{T}^{k+l}(V)\)</span> 를 다음과 같이 정의한다.</p>
 <p><span id="eq-CM_tensor_product"><span class="math display">\[
-(S\otimes T)(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\boldsymbol{v}_{k+1},\ldots,\boldsymbol{v}_{k+l})=S(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \cdot T(\boldsymbol{v}_{k+1},\ldots,\boldsymbol{v}_{k+l})
+(S\otimes T)(v_1,\ldots,v_k,v_{k+1},\ldots,v_{k+l})=S(v_1,\ldots,v_k) \cdot T(v_{k+1},\ldots,v_{k+l})
 \tag{17.3}\]</span></span></p>
 </div>
 </div>
@@ -412,30 +415,30 @@ S\otimes (T_1+T_2) &amp;= S\otimes T_1 + S \otimes T_2, \\[0.3em]
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_basis_of_tensor_product" class="theorem">
-<p><span class="theorem-title"><strong>정리 17.1</strong></span> <span class="math inline">\(V\)</span> 가 <span class="math inline">\(n\)</span> 차원 벡터공간이고 <span class="math inline">\(\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n\)</span> 이 <span class="math inline">\(V\)</span> 의 기저일 때 이 기저에 대한 쌍대기저 <span class="math inline">\(\{\varphi_j\}\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정리 17.1</strong></span> <span class="math inline">\(V\)</span> 가 <span class="math inline">\(n\)</span> 차원 벡터공간이고 <span class="math inline">\(e_1,\ldots,\,e_n\)</span> 이 <span class="math inline">\(V\)</span> 의 기저일 때 이 기저에 대한 쌍대기저 <span class="math inline">\(\{\varphi_j\}\)</span> 에 대해</p>
 <p><span class="math display">\[
 \{\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k} : 1 \le i_1,\ldots,\,i_k \le n\}
 \]</span></p>
-<p>는 <span class="math inline">\(\mathfrak{J}^k\)</span> 의 기저이다.</p>
+<p>는 <span class="math inline">\(\mathcal{T}^k(V)\)</span> 의 기저이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>쌍대기저의 성질에 의해 <span class="math inline">\(\varphi_j(\boldsymbol{v}_i)= \delta_{ij}\)</span> 이다. 그리고</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>쌍대기저의 성질에 의해 <span class="math inline">\(\varphi_j(v_i)= \delta_{ij}\)</span> 이다. 그리고</p>
 <p><span class="math display">\[
-\left(\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k}\right)(\boldsymbol{e}_{j_1},\ldots,\,\boldsymbol{e}_{j_k}) = \delta_{i_1j_1}\cdots \delta_{i_kj_k}
+\left(\varphi_{i_1} \otimes \cdots \otimes \varphi_{i_k}\right)(e_{j_1},\ldots,\,e_{j_k}) = \delta_{i_1j_1}\cdots \delta_{i_kj_k}
 \]</span></p>
-<p>임을 안다. <span class="math inline">\(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k\in V\)</span> 이며 <span class="math inline">\(\boldsymbol{v}_i = \sum_{j=1}^n a_{ij}\boldsymbol{e}_j\)</span> 이고 <span class="math inline">\(T\in \mathfrak{J}^k(V)\)</span> 일 때</p>
+<p>임을 안다. <span class="math inline">\(v_1,\ldots,v_k\in V\)</span> 이며 <span class="math inline">\(v_i = \sum_{j=1}^n a_{ij}e_j\)</span> 이고 <span class="math inline">\(T\in \mathcal{T}^k(V)\)</span> 일 때</p>
 <p><span class="math display">\[
 \begin{aligned}
-T(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T(\boldsymbol{e}_{j_1},\ldots,\boldsymbol{e}_{j_k}) \\[0.3em]
-&amp;= \sum_{i_1,\ldots,i_k=1}^n T(\boldsymbol{e}_{i_1},\ldots,\boldsymbol{e}_{i_k}) \cdot {\big(} \varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k} {\big )}(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k)
+T(v_1,\ldots,v_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T(e_{j_1},\ldots,e_{j_k}) \\[0.3em]
+&amp;= \sum_{i_1,\ldots,i_k=1}^n T(e_{i_1},\ldots,e_{i_k}) \cdot {\big(} \varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k} {\big )}(v_1,\ldots,\,v_k)
 \end{aligned}
 \]</span></p>
-<p>이다. 즉 <span class="math inline">\(\{\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k}\}\)</span> 가 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 를 span 한다. 이제 선형독립임을 보이자.</p>
+<p>이다. 즉 <span class="math inline">\(\{\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k}\}\)</span> 가 <span class="math inline">\(\mathcal{T}^k(V)\)</span> 를 span 한다. 이제 선형독립임을 보이자.</p>
 <p><span class="math display">\[
 \sum_{i_1,\ldots,i_k=1}^n a_{i_1,\ldots,i_k}\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k} = 0
 \]</span></p>
-<p>일 때 모든 <span class="math inline">\(a_{i_1,\ldots,i_k}=0\)</span> 이라는 것을 보이면 된다. 이 함수를 <span class="math inline">\((\boldsymbol{e}_{j_1},\ldots,\boldsymbol{e}_{j_k})\)</span> 에 적용시며보면 이를 확인 할 수 있다. <span class="math inline">\(\square\)</span></p>
+<p>일 때 모든 <span class="math inline">\(a_{i_1,\ldots,i_k}=0\)</span> 이라는 것을 보이면 된다. 이 함수를 <span class="math inline">\((e_{j_1},\ldots,e_{j_k})\)</span> 에 적용시며보면 이를 확인 할 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -445,9 +448,9 @@ T(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a
 </div>
 <div class="callout-body-container">
 <div id="def-CM_dual_transform" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.3 (쌍대 변환)</strong></span> <span class="math inline">\(f\in \mathcal{L}(V,\,W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(f^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 를 쌍대 변환 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 17.3 (pullback)</strong></span> <span class="math inline">\(f\in \mathcal{L}(V,\,W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(f^\ast : \mathcal{T}^k(W) \to \mathcal{T}^k(V)\)</span> 를 <span class="math inline">\(f\)</span> 에 의한 <span class="math inline">\(T\)</span> 의 <strong>pullback</strong> 이라고 한다.</p>
 <p><span id="eq-CM_definition_of_dual_transform"><span class="math display">\[
-\left(f^\ast (T)\right)(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) = T(f(\boldsymbol{v}_1),\ldots,\,f(\boldsymbol{v}_k))
+\left(f^\ast (T)\right)(v_1,\ldots,v_k) = T(f(v_1),\ldots,\,f(v_k))
 \tag{17.5}\]</span></span></p>
 </div>
 </div>
@@ -456,7 +459,7 @@ T(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_dual_transform" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.3</strong></span> 선형 변환 <span class="math inline">\(f\in \mathcal{L}(V,W)\)</span> 에 대한 쌍대변환 <span class="math inline">\(f^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 에 대해 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 17.3</strong></span> 선형 변환 <span class="math inline">\(f\in \mathcal{L}(V,W)\)</span> 에 대한 쌍대변환 <span class="math inline">\(f^\ast : \mathcal{T}^k(W) \to \mathcal{T}^k(V)\)</span> 에 대해 다음이 성립한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(f^\ast\)</span> 는 선형변환이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(f^\ast( S\otimes T) = f^\ast (S) \otimes f^\ast (T)\)</span> 이다.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(g \in \mathcal{L}(W,\,X)\)</span> 이면 <span class="math inline">\((g \circ f)^\ast (T) = f^\ast (g^\ast (T))\)</span> 이다.</p>
@@ -464,21 +467,21 @@ T(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 은 정의에 의해 자명하다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)\)</span> 일 때,</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(S\in \mathcal{T}^k(V),\, T\in \mathcal{T}^l(V)\)</span> 일 때,</p>
 <p><span class="math display">\[
 \begin{aligned}
-f^\ast( S\otimes T) &amp; (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\,\boldsymbol{v}_{k+1},\ldots,\boldsymbol{v}_{k+l}) \\[0.3em]
-&amp;=(S\otimes T)(f(\boldsymbol{v}_1),\ldots,\,f(\boldsymbol{v}_{k+l})) \\[0.3em]
-&amp;=S(f(\boldsymbol{v}_1),\ldots,f(\boldsymbol{v}_k))\cdot T(f(\boldsymbol{v}_{k+1}),\ldots,f(\boldsymbol{v}_{k+l})) \\[0.3em]
-&amp;= (f^\ast (S) \otimes f^\ast (T)) (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\,\boldsymbol{v}_{k+1},\ldots,\boldsymbol{v}_{k+l})
+f^\ast( S\otimes T) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
+&amp;=(S\otimes T)(f(v_1),\ldots,\,f(v_{k+l})) \\[0.3em]
+&amp;=S(f(v_1),\ldots,f(v_k))\cdot T(f(v_{k+1}),\ldots,f(v_{k+l})) \\[0.3em]
+&amp;= (f^\ast (S) \otimes f^\ast (T)) (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l})
 \end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(3\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
-\left((g\circ f)^\ast (T)\right)(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k) &amp;= T( (g\circ f)(\boldsymbol{v}_1),\ldots,(g\circ f)(\boldsymbol{v}_k)) \\[0.3em]
-&amp;= \left(g^\ast (T)\right)(f(\boldsymbol{v}_1),\ldots,\,f(\boldsymbol{v}_k)) \\[0.3em]
-&amp;= f^\ast (g^\ast (T)) (\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_k). \square
+\left((g\circ f)^\ast (T)\right)(v_1,\ldots,\,v_k) &amp;= T( (g\circ f)(v_1),\ldots,(g\circ f)(v_k)) \\[0.3em]
+&amp;= \left(g^\ast (T)\right)(f(v_1),\ldots,\,f(v_k)) \\[0.3em]
+&amp;= f^\ast (g^\ast (T)) (v_1,\ldots,\,v_k). \square
 \end{aligned}
 \]</span></p>
 </div>
@@ -493,11 +496,11 @@ f^\ast( S\otimes T) &amp; (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\,\boldsymbo
 </div>
 <div class="callout-body-container">
 <div id="def-CM_alternating_k_tensor" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.4 (교대 텐서)</strong></span> <span class="math inline">\(\omega \in \mathcal{J}^k(V)\)</span> 가 아래와 같은 성질을 가질 때 <span class="math inline">\(\omega\)</span> 를 <strong>교대 <span class="math inline">\(k\)</span>-텐서 (alternaging <span class="math inline">\(k\)</span>-tensor)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 17.4 (교대 텐서)</strong></span> <span class="math inline">\(\omega \in \mathcal{T}^k(V)\)</span> 가 아래와 같은 성질을 가질 때 <span class="math inline">\(\omega\)</span> 를 <strong>교대 <span class="math inline">\(k\)</span>-텐서 (alternaging <span class="math inline">\(k\)</span>-tensor)</strong> 라고 한다.</p>
 <p><span id="eq-CM_alternating_property_of_k_tensor"><span class="math display">\[
-\omega (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_i,\ldots,\boldsymbol{v}_j,\ldots,\boldsymbol{v}_n) = -\omega (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_j,\ldots,\boldsymbol{v}_i,\ldots,\boldsymbol{v}_n) .
+\omega (v_1,\ldots,v_i,\ldots,v_j,\ldots,v_n) = -\omega (v_1,\ldots,v_j,\ldots,v_i,\ldots,v_n) .
 \tag{17.6}\]</span></span></p>
-<p>그리고 교대 <span class="math inline">\(k\)</span>-텐서의 집합을 <span class="math inline">\(\Lambda^k(V)\)</span> 로 표기한다.</p>
+<p>그리고 교대 <span class="math inline">\(k\)</span>-텐서의 집합을 <span class="math inline">\(\mathcal{A}^k(V)\)</span> 로 표기한다.</p>
 </div>
 </div>
 </div>
@@ -506,48 +509,48 @@ f^\ast( S\otimes T) &amp; (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\,\boldsymbo
 <p>아래는 쉽게 보일 수 있다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_k_alternating_tensor_is_vector_space" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.4</strong></span> <span class="math inline">\(\Lambda^k(V)\)</span> 는 벡터공간이며 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 의 부분공간이다.</p>
+<p><span class="theorem-title"><strong>명제 17.4</strong></span> <span class="math inline">\(\mathcal{A}^k(V)\)</span> 는 벡터공간이며 <span class="math inline">\(\mathcal{T}^k(V)\)</span> 의 부분공간이다.</p>
 </div>
 </div>
 <p><br></p>
-<p>교대 텐서를 좀 더 편하게 다루기 위해 <span class="math inline">\(\text{Alt} \in \mathfrak{J}^k(V)\)</span> 를 아래와 같이 정의한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
+<p>교대 텐서를 좀 더 편하게 다루기 위해 <span class="math inline">\(\text{Alt} \in \mathcal{T}^k(V)\)</span> 를 아래와 같이 정의한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
 <p><span id="eq-CM_definition_of_alt_function"><span class="math display">\[
-\text{Alt}(T)(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot T\left(\boldsymbol{v}_{\sigma(1)},\ldots,\boldsymbol{v}_{\sigma(k)}\right)
+\text{Alt}(T)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot T\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right)
 \tag{17.7}\]</span></span></p>
 <p>이 <span class="math inline">\(\text{Alt}\)</span> 함수에 대해 다음을 알아보자.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_alt_function" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.5</strong></span> <br></p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(T\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(T)\in \Lambda^k(V)\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega\in \Lambda^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\omega) = \omega\)</span> 이다.</p>
-<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(T\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\text{Alt}(T)) = \text{Alt}(T)\)</span> 이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(T\in \mathcal{T}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(T)\in \mathcal{A}^k(V)\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega\in \mathcal{A}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\omega) = \omega\)</span> 이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(T\in \mathcal{T}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\text{Alt}(T)) = \text{Alt}(T)\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sigma,\,\tau \in S_k\)</span> 일 때 <span class="math inline">\(\text{sgn}(\sigma \circ \tau)= \text{sgn}(\sigma)\cdot \text{sgn}(\tau)\)</span> 임을 안다. 호환 (transportation) <span class="math inline">\(\tau = (i,j)\)</span> 라고 하면 <span class="math inline">\(\text{sgn}(\tau)=-1\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{Alt}(T)(\cdots ,\boldsymbol{v}_j,\ldots,\,\boldsymbol{v}_i,\ldots) &amp;= \text{Alt}(T) (\boldsymbol{v}_{\tau(1)},\ldots,\boldsymbol{v}_{\tau(k)})  \\[0.3em]
-&amp;=\dfrac{1}{k!} \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot T(\boldsymbol{v}_{\sigma \circ \tau (1)},\ldots,\boldsymbol{v}_{\sigma\circ \tau (k)}) \\[0.3em]
-&amp;= -\dfrac{1}{k!} \sum_{\theta \in S_k} \text{sgn}(\theta) \cdot T(\boldsymbol{v}_{\theta (1)},\ldots,\boldsymbol{v}_{\theta (k)}) \\[0.3em]
-&amp;= - \text{Alt}(T)(\ldots,\boldsymbol{v}_i,\ldots,\boldsymbol{v}_j,\ldots)
+\text{Alt}(T)(\cdots ,v_j,\ldots,\,v_i,\ldots) &amp;= \text{Alt}(T) (v_{\tau(1)},\ldots,v_{\tau(k)})  \\[0.3em]
+&amp;=\dfrac{1}{k!} \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot T(v_{\sigma \circ \tau (1)},\ldots,v_{\sigma\circ \tau (k)}) \\[0.3em]
+&amp;= -\dfrac{1}{k!} \sum_{\theta \in S_k} \text{sgn}(\theta) \cdot T(v_{\theta (1)},\ldots,v_{\theta (k)}) \\[0.3em]
+&amp;= - \text{Alt}(T)(\ldots,v_i,\ldots,v_j,\ldots)
 \end{aligned}
 \]</span></p>
-<p>이다. 따라서 <span class="math inline">\(\text{Alt}(T)\in \Lambda^k(V)\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <a href="#eq-CM_alternating_property_of_k_tensor" class="quarto-xref">식&nbsp;<span>17.6</span></a> 로 부터 <span class="math inline">\(\omega (\boldsymbol{v}_{\sigma (1)},\ldots,\boldsymbol{v}_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k)\)</span> 임을 보일 수 있다. 따라서</p>
+<p>이다. 따라서 <span class="math inline">\(\text{Alt}(T)\in \mathcal{A}^k(V)\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#eq-CM_alternating_property_of_k_tensor" class="quarto-xref">식&nbsp;<span>17.6</span></a> 로 부터 <span class="math inline">\(\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)\)</span> 임을 보일 수 있다. 따라서</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{Alt}(\omega)(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k)  &amp;= \dfrac{1}{k!}\sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot \omega(\boldsymbol{v}_{\sigma (1)},\ldots,\boldsymbol{v}_{\sigma(k)}) \\[0.3em]
-&amp;= \dfrac{1}{k!} \sum_{\sigma \in S_k} \text{sgn}(\sigma)\cdot \text{sgn}(\sigma) \cdot \omega (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
-&amp;= \omega(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k).
+\text{Alt}(\omega)(v_1,\ldots,v_k)  &amp;= \dfrac{1}{k!}\sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot \omega(v_{\sigma (1)},\ldots,v_{\sigma(k)}) \\[0.3em]
+&amp;= \dfrac{1}{k!} \sum_{\sigma \in S_k} \text{sgn}(\sigma)\cdot \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k) \\[0.3em]
+&amp;= \omega(v_1,\ldots,v_k).
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
 <p>(<span class="math inline">\(3\)</span>) (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 에 의해 자명하다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>우리는 이전에 <span class="math inline">\(T\in \mathfrak{J}^k(V),\,S\in \mathfrak{J}^l(V)\)</span> 일 때 <span class="math inline">\(T \otimes S \in \mathfrak{J}^{k+l}(V)\)</span> 임을 보였다. 그러나 <span class="math inline">\(\omega \in \Lambda^k(V),\, \eta \in \Lambda^l(V)\)</span> 일 때 <span class="math inline">\(\omega \otimes \eta\)</span> 는 일반적으로 <span class="math inline">\(\Lambda^{k+l}(V)\)</span> 에 포함되지 않는다.</p>
+<p>우리는 이전에 <span class="math inline">\(T\in \mathcal{T}^k(V),\,S\in \mathcal{T}^l(V)\)</span> 일 때 <span class="math inline">\(T \otimes S \in \mathcal{T}^{k+l}(V)\)</span> 임을 보였다. 그러나 <span class="math inline">\(\omega \in \mathcal{A}^k(V),\, \eta \in \mathcal{A}^l(V)\)</span> 일 때 <span class="math inline">\(\omega \otimes \eta\)</span> 는 일반적으로 <span class="math inline">\(\mathcal{A}^{k+l}(V)\)</span> 에 포함되지 않는다.</p>
 <p><br></p>
 </section>
 <section id="쐐기곱" class="level3" data-number="17.1.3">
@@ -559,7 +562,7 @@ f^\ast( S\otimes T) &amp; (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\,\boldsymbo
 </div>
 <div class="callout-body-container">
 <div id="def-CM_wedge_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.5 (쐐기곱)</strong></span> <span class="math inline">\(\omega \in \Lambda^k(V),\, \eta \in \Lambda^l(V)\)</span> 에 대해 <span class="math inline">\(\omega\)</span> 와 <span class="math inline">\(\eta\)</span> 의 <strong>쐐기곱 (wedge product)</strong> 혹은 <strong>외적 (exterior product)</strong> <span class="math inline">\(\omega \wedge \eta : V^{k+l} \to \mathbb{R}\)</span> 은 아래와 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 17.5 (쐐기곱)</strong></span> <span class="math inline">\(\omega \in \mathcal{A}^k(V),\, \eta \in \mathcal{A}^l(V)\)</span> 에 대해 <span class="math inline">\(\omega\)</span> 와 <span class="math inline">\(\eta\)</span> 의 <strong>쐐기곱 (wedge product)</strong> 혹은 <strong>외적 (exterior product)</strong> <span class="math inline">\(\omega \wedge \eta : V^{k+l} \to \mathbb{R}\)</span> 은 아래와 같이 정의된다.</p>
 <p><span class="math display">\[
 \omega \wedge \eta = \dfrac{(k+l)!}{k!\,l!} \text{Alt}(\omega \otimes \eta)
 \]</span></p>
@@ -570,14 +573,14 @@ f^\ast( S\otimes T) &amp; (\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k,\,\boldsymbo
 <p>아래는 쉽게 보일 수 있다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_wedge_product_is_an_alternating_tensor" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.6</strong></span> <span class="math inline">\(\omega \wedge \eta \in \Lambda^{k+l}(V)\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 17.6</strong></span> <span class="math inline">\(\omega \wedge \eta \in \mathcal{A}^{k+l}(V)\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
 <p>이제 쐐기곱의 중요한 성질을 알아보자.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_wedge_product_1" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.7</strong></span> <span class="math inline">\(\omega,\,\omega_1,\,\omega_2\in \Lambda^k(V),\, \eta,\,\eta_1,\,\eta_2\in \Lambda^l(V),\, a\in \mathbb{R}\)</span> 일 때 다음이 성립한다. <span id="eq-CM_basic_properties_of_wedge_product"><span class="math display">\[
+<p><span class="theorem-title"><strong>명제 17.7</strong></span> <span class="math inline">\(\omega,\,\omega_1,\,\omega_2\in \mathcal{A}^k(V),\, \eta,\,\eta_1,\,\eta_2\in \mathcal{A}^l(V),\, a\in \mathbb{R}\)</span> 일 때 다음이 성립한다. <span id="eq-CM_basic_properties_of_wedge_product"><span class="math display">\[
 \begin{aligned}
 (\omega_1 + \omega_2) \wedge \eta &amp;= \omega_1 \wedge \eta + \omega_2 \wedge \eta, \\[0.3em]
 \omega \wedge (\eta_1+\eta_2) &amp;= \omega \wedge \eta_1 + \omega \wedge \eta_2, \\[0.3em]
@@ -591,15 +594,15 @@ a (\omega \wedge \eta) &amp;= (a\omega) \wedge \eta = \omega \wedge (a\eta), \\[
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>우선 첫번째 식을 보자. <span class="math display">\[
 \begin{aligned}
-{\big (}(\omega_1 + \omega_2)\wedge \eta {\big )} &amp;(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_{k+l}) =\dfrac{(k+l)!}{k!\,l!} \text{Alt}((\omega_1+\omega_2) \otimes \eta)(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_{k+l}) \\[0.3em]
-&amp;= \dfrac{1}{k! \, l!} \sum_{\sigma\in S_{k+l}} \text{sgn}(\sigma) \cdot (\omega_1+\omega_2) \left(\boldsymbol{v}_{\sigma (1)},\ldots,\boldsymbol{v}_{\sigma (k)}\right) \cdot \eta \left(\boldsymbol{v}_{\sigma (k+1)},\ldots,\boldsymbol{v}_{\sigma (k+l)}\right) \\[0.3em]
-&amp;= (\omega_1 \wedge \eta_1 + \omega_2 \wedge \eta_2) (\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_{k+l})
+{\big (}(\omega_1 + \omega_2)\wedge \eta {\big )} &amp;(v_1,\ldots,\,v_{k+l}) =\dfrac{(k+l)!}{k!\,l!} \text{Alt}((\omega_1+\omega_2) \otimes \eta)(v_1,\ldots,v_{k+l}) \\[0.3em]
+&amp;= \dfrac{1}{k! \, l!} \sum_{\sigma\in S_{k+l}} \text{sgn}(\sigma) \cdot (\omega_1+\omega_2) \left(v_{\sigma (1)},\ldots,v_{\sigma (k)}\right) \cdot \eta \left(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}\right) \\[0.3em]
+&amp;= (\omega_1 \wedge \eta_1 + \omega_2 \wedge \eta_2) (v_1,\ldots,\,v_{k+l})
 \end{aligned}
 \]</span></p>
 <p>임을 알 수 있다. 같은 방법으로 두번째 식도 보일 수 있다. 세번째 식은 자명하다.이제 마지막 식을 보자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-(\omega \wedge \eta)(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_{k+l}) &amp;= \dfrac{1}{k!\,l!} \sum_{\sigma\in S_{k+l}}\text{sgn}(\sigma) \cdot \omega\left(\boldsymbol{v}_{\sigma (1)},\ldots,\boldsymbol{v}_{\sigma (k)}\right) \cdot \eta \left(\boldsymbol{v}_{\sigma (k+1)},\ldots,\boldsymbol{v}_{\sigma (k+l)}\right) \\[0.3em]
+(\omega \wedge \eta)(v_1,\ldots,\,v_{k+l}) &amp;= \dfrac{1}{k!\,l!} \sum_{\sigma\in S_{k+l}}\text{sgn}(\sigma) \cdot \omega\left(v_{\sigma (1)},\ldots,v_{\sigma (k)}\right) \cdot \eta \left(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}\right) \\[0.3em]
 \end{aligned}
 \]</span></p>
 <p>여기서 <span class="math inline">\(\tau\in S_{k+l}\)</span> 을 <span class="math inline">\(A=(1,\,2,\ldots,\,k+l)\)</span> 을 <span class="math inline">\(B=(k+1,\ldots,\,k+l,\,1,\ldots,\,k)\)</span> 로 바꿔주는 순열이라고 하자. <span class="math inline">\(A\)</span> 의 <span class="math inline">\(k+1\)</span> 을 첫번째로 보내는 데 <span class="math inline">\(k\)</span> 번의 호환이 필요하며 이것을 <span class="math inline">\(l\)</span> 번 해줘야 하므로 <span class="math inline">\(\text{sgn}(\tau) = (-1)^{kl}\)</span> 이다. <span class="math inline">\(\theta = \sigma \circ \tau\)</span> 라고 하면</p>
@@ -608,16 +611,16 @@ a (\omega \wedge \eta) &amp;= (a\omega) \wedge \eta = \omega \wedge (a\eta), \\[
 \]</span></p>
 <p>이므로 <span class="math display">\[
 \begin{aligned}
-(\omega \wedge \eta)(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_{k+l}) &amp;=\dfrac{1}{k!\,l!} \sum_{\sigma\in S_{k+l}}\text{sgn}(\sigma) \cdot \eta \left(\boldsymbol{v}_{\sigma (k+1)},\ldots,\boldsymbol{v}_{\sigma (k+l)}\right) \cdot \omega\left(\boldsymbol{v}_{\sigma (1)},\ldots,\boldsymbol{v}_{\sigma (k)}\right)  \\[0.3em]
-&amp;= \dfrac{ (-1)^{kl} }{k! l!} \sum_{\theta \in S_{k+l}} \text{sgn}(\theta) \cdot \eta \left(\boldsymbol{v}_{\theta (1)}, \ldots, \boldsymbol{v}_{\theta (l)}\right) \cdot \omega \left(\boldsymbol{v}_{\theta (l+1)} ,\ldots, \boldsymbol{v}_{\theta (k+l)}\right) \\[0.3em]
-&amp;= (-1)^{kl} \eta \cdot \omega (\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_{k+l})
+(\omega \wedge \eta)(v_1,\ldots,\,v_{k+l}) &amp;=\dfrac{1}{k!\,l!} \sum_{\sigma\in S_{k+l}}\text{sgn}(\sigma) \cdot \eta \left(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}\right) \cdot \omega\left(v_{\sigma (1)},\ldots,v_{\sigma (k)}\right)  \\[0.3em]
+&amp;= \dfrac{ (-1)^{kl} }{k! l!} \sum_{\theta \in S_{k+l}} \text{sgn}(\theta) \cdot \eta \left(v_{\theta (1)}, \ldots, v_{\theta (l)}\right) \cdot \omega \left(v_{\theta (l+1)} ,\ldots, v_{\theta (k+l)}\right) \\[0.3em]
+&amp;= (-1)^{kl} \eta \cdot \omega (v_1,\ldots,\,v_{k+l})
 \end{aligned}
 \]</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_wedge_product_2" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.8</strong></span> <span class="math inline">\(\omega\in \Lambda^k(V),\, \eta\in \Lambda^l(V),\, f\in \mathcal{L}(V, W)\)</span> 일 때 다음이 성립한다. <span id="eq-CM_basic_properties_of_wedge_product_2"><span class="math display">\[
+<p><span class="theorem-title"><strong>명제 17.8</strong></span> <span class="math inline">\(\omega\in \mathcal{A}^k(V),\, \eta\in \mathcal{A}^l(V),\, f\in \mathcal{L}(V, W)\)</span> 일 때 다음이 성립한다. <span id="eq-CM_basic_properties_of_wedge_product_2"><span class="math display">\[
 f^\ast (\omega \wedge \eta) = f^\ast (\omega) \wedge f^\ast (\eta)
 \tag{17.9}\]</span></span></p>
 </div>
@@ -626,291 +629,682 @@ f^\ast (\omega \wedge \eta) = f^\ast (\omega) \wedge f^\ast (\eta)
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \begin{aligned}
-{\big(}f^\ast (\omega \wedge \eta){\big )}&amp;(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_{k+l}) = (\omega \wedge \eta)(f(\boldsymbol{v}_1),\ldots,f(\boldsymbol{v}_{k+l})) \\[0.3em]
-&amp;= \dfrac{1}{k!\,l!} \sum_{\sigma\in S_{k+l}} \text{sgn}(\sigma) \cdot \omega (f(\boldsymbol{v}_{\sigma (1)}), \ldots, f(\boldsymbol{v}_{\sigma (k)}))\cdot \eta (f(\boldsymbol{v}_{\sigma (k+1)}), \ldots, f(\boldsymbol{v}_{\sigma (k+l)})) \\[0.3em]
-&amp;= \dfrac{1}{k!\,l!}\sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma) {\big (}f^\ast (\omega) \otimes f^\ast (\eta) {\big )} (\boldsymbol{v}_{\sigma (1)},\ldots, \boldsymbol{v}_{\sigma (k+l)}) \\[0.3em]
-&amp;= {\big (}f^\ast (\omega)\wedge f^\ast (\eta){\big )}(\boldsymbol{v}_{\sigma (1)},\ldots, \boldsymbol{v}_{\sigma (k+l)}). \qquad \square
+{\big(}f^\ast (\omega \wedge \eta){\big )}&amp;(v_1,\ldots,v_{k+l}) = (\omega \wedge \eta)(f(v_1),\ldots,f(v_{k+l})) \\[0.3em]
+&amp;= \dfrac{1}{k!\,l!} \sum_{\sigma\in S_{k+l}} \text{sgn}(\sigma) \cdot \omega (f(v_{\sigma (1)}), \ldots, f(v_{\sigma (k)}))\cdot \eta (f(v_{\sigma (k+1)}), \ldots, f(v_{\sigma (k+l)})) \\[0.3em]
+&amp;= \dfrac{1}{k!\,l!}\sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma) {\big (}f^\ast (\omega) \otimes f^\ast (\eta) {\big )} (v_{\sigma (1)},\ldots, v_{\sigma (k+l)}) \\[0.3em]
+&amp;= {\big (}f^\ast (\omega)\wedge f^\ast (\eta){\big )}(v_{\sigma (1)},\ldots, v_{\sigma (k+l)}). \qquad \square
 \end{aligned}
 \]</span></p>
 </div>
-<br> <br>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_wedge_product_3" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.9</strong></span> <br></p>
-<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)\)</span> 이고 <span class="math inline">\(\text{Alt}(S) = 0\)</span> 이면 <span class="math inline">\(\text{Alt}(S \otimes T) = \text(Alt)(T \otimes S)=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(S\in \mathcal{T}^k(V),\, T\in \mathcal{T}^l(V)\)</span> 이고 <span class="math inline">\(\text{Alt}(S) = 0\)</span> 이면 <span class="math inline">\(\text{Alt}(S \otimes T) = \text{Alt}(T \otimes S)=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\text{Alt}\left(\text{Alt}(\omega \otimes \eta) \otimes \zeta\right) = \text{Alt}(\omega \otimes \eta \otimes \theta) = \text{Alt}(\omega \otimes \text{Alt}(\eta \otimes \zeta))\)</span></p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega\in \Lambda^k(V),\, \eta\in \Lambda^l(V),\, \zeta \in \Lambda^m(V)\)</span> 일 때 다음이 성립한다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega\in \mathcal{A}^k(V),\, \eta\in \mathcal{A}^l(V),\, \zeta \in \mathcal{A}^m(V)\)</span> 일 때 다음이 성립한다.</p>
 <p><span id="eq-CM_basic_properties_of_wedge_product_3"><span class="math display">\[
 (\omega \wedge \eta ) \wedge \zeta = \omega \wedge (\eta \wedge \zeta) = \dfrac{(k+l+m)!}{k!\,l!\, m!} \text{Alt}(\omega \otimes \eta \otimes \zeta)
 \tag{17.10}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>)</p>
-<p><span class="math display">\[
+<p><span id="eq-prp_CM_basic_properties_of_wedge_product_3_1"><span class="math display">\[
 \begin{aligned}
-(k+l)! &amp;\text{Alt}(S\otimes T)(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_{k+l}) \\[0.3em]
-&amp;= \sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma)\cdot S(\boldsymbol{v}_{\sigma(1)},\ldots,\boldsymbol{v}_{\sigma(k)})\cdot T(\boldsymbol{v}_{\sigma (k+1)},\ldots,\boldsymbol{v}_{\sigma (k+l)})
+(k+l)! &amp;\text{Alt}(S\otimes T)(v_1,\ldots,\,v_{k+l}) \\[0.3em]
+&amp;= \sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma)\cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)})
 \end{aligned}
-\]</span></p>
+\tag{17.11}\]</span></span></p>
 <p>여기서 <span class="math inline">\(A\subset S_{k+l}\)</span> 을 <span class="math inline">\(k+1\)</span> 부터 <span class="math inline">\(k+l\)</span> 까지는 변하지 않는 <span class="math inline">\(S_{k+l}\)</span> 의 성분의 집합이라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sum_{\sigma\in A} \text{sgn}(\sigma) &amp;\cdot S(\boldsymbol{v}_{\sigma(1)},\ldots,\boldsymbol{v}_{\sigma(k)})\cdot T(\boldsymbol{v}_{\sigma (k+1)},\ldots,\boldsymbol{v}_{\sigma (k+l)}) \\[0.3em]
-&amp;=\left[\sum_{\tau\in S_k} \text{sgn}(\tau) \cdot S(\boldsymbol{v}_{\tau (1)},\ldots,\boldsymbol{v}_{\tau(k)})\right] \cdot T(\boldsymbol{v}_{k+1},\ldots,\boldsymbol{v}_{k+l}) \\[0.3em]
-&amp;= k! \text{Alt}(S) \cdot T(\boldsymbol{v}_{k+1},\ldots,\boldsymbol{v}_{k+l}) = 0
+\sum_{\sigma\in A} \text{sgn}(\sigma) &amp;\cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
+&amp;=\left[\sum_{\tau\in S_k} \text{sgn}(\tau) \cdot S(v_{\tau (1)},\ldots,v_{\tau(k)})\right] \cdot T(v_{k+1},\ldots,v_{k+l}) \\[0.3em]
+&amp;= k! \text{Alt}(S) \cdot T(v_{k+1},\ldots,v_{k+l}) = 0
 \end{aligned}
 \]</span></p>
-<p>이다. <span class="math inline">\(\sigma_0 \in S_{k+1}-A\)</span> 에 대해 <span class="math inline">\(A \sigma_0 =\{\sigma' \cdot \sigma_0 : \sigma' \in A\}\)</span> 라고 하자. 그렇다면</p>
+<p>이다. <span class="math inline">\(\sigma_0 \in S_{k+l}-A\)</span> 에 대해 <span class="math inline">\(A \sigma_0 =\{\sigma' \cdot \sigma_0 : \sigma' \in A\}\)</span> 라고 하자. 그리고 <span class="math inline">\(i=1,\ldots,k+l\)</span> 에 대해 <span class="math inline">\(u_{i}=v_{\sigma_0(i)}\)</span> 라고 하자. 이로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sum_{\sigma \in A\sigma_0} \text{sgn}(\sigma) &amp; S(\boldsymbol{v}_{\sigma(1)},\ldots,\boldsymbol{v}_{\sigma(k)})\cdot T(\boldsymbol{v}_{\sigma (k+1)},\ldots,\boldsymbol{v}_{\sigma (k+l)}) \\[0.3em]
-&amp;= \left[\text{sgn}(\sigma_0) \cdot \sum_{\sigma' \in A}\right]
+\sum_{\sigma \in A\sigma_0} \text{sgn}(\sigma) &amp; \cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
+&amp;= \left[\text{sgn}(\sigma_0) \cdot \sum_{\sigma' \in A} \text{sgn}(\sigma') \cdot S\left(u_{\sigma'(1)}),\ldots,\,u_{\sigma'(k)}\right)\right]\cdot T(u_{k+1},\ldots,u
+_{k+l}) \\[0.3em]
+&amp;=\text{sgn}(\sigma_0) \cdot \text{Alt}(S)\cdot T(u_{k+1},\ldots,\boldsymbol{y}_{k+l}) = 0
 \end{aligned}
 \]</span></p>
+<p>이다. <span class="math inline">\(S_{k+l}\)</span> 은 군이며 <span class="math inline">\(A\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 의 부분군이다. 따라서 <span class="math inline">\(S_{k+l}\)</span> 은 서로소인 <span class="math inline">\(A\)</span> 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. <span class="math inline">\(\sigma_0\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 에 속하지만 <span class="math inline">\(A\)</span> 에 속하지 않는 임의의 원소이므로 <a href="#eq-prp_CM_basic_properties_of_wedge_product_3_1" class="quarto-xref">식&nbsp;<span>17.11</span></a> 은 <span class="math inline">\(0\)</span> 임을 알 수 있다.</p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#prp-CM_basic_properties_of_alt_function" class="quarto-xref">명제&nbsp;<span>17.5</span></a> (<span class="math inline">\(3\)</span>) 으로부터</p>
+<p><span class="math display">\[
+\text{Alt}\left(\text{Alt}(\eta \otimes \zeta) - \eta \otimes \zeta\right) =0
+\]</span></p>
+<p>임을 안다. (<span class="math inline">\(1\)</span>) 로부터</p>
+<p><span class="math display">\[
+\begin{aligned}
+0 &amp;= \text{Alt}\left(\omega \otimes \left[ \text{Alt}(\eta \otimes \zeta) - \eta \otimes \zeta\right]\right) \\[0.3em]
+&amp;= \text{Alt} (\omega \otimes \text{Alt}(\eta \otimes \zeta)) - \text{Alt}(\omega \otimes \eta \otimes \zeta)
+\end{aligned}
+\]</span></p>
+<p>임을 안다. 즉 <span class="math inline">\(\text{Alt} (\omega \otimes \text{Alt}(\eta \otimes \zeta)) = \text{Alt}(\omega \otimes \eta \otimes \zeta)\)</span> 임을 안다. 다른 등호도 같은 방법으로 보일 수 있다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\((\omega \wedge \eta)\wedge \zeta\)</span> 에 대해서는 아래와 같이 보일 수 있다. 나머지는 비슷한 방법으로 보일 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(\omega \wedge \eta)\wedge \zeta &amp;= \dfrac{(k+l+m)!}{(k+l)!\, m!} \text{Alt}((\omega \wedge \eta) \otimes \zeta) \\[0.3em]
+&amp;= \dfrac{(k+l+m)!}{(k+l)!\, m!} \dfrac{(k+l)!}{k!\,l!} \text{Alt}((\omega \otimes \eta) \otimes \zeta) \qquad \square
+\end{aligned}
+\]</span></p>
+</div>
+<p><br></p>
+<p>위의 명제 (<span class="math inline">\(3\)</span>) 으로부터 <span class="math inline">\((\omega \wedge \eta) \wedge zeta\)</span> 와 <span class="math inline">\(\omega \wedge (\eta \wedge \zeta)\)</span> 가 같기 때문에 <span class="math inline">\(\omega \wedge \eta \wedge \zeta\)</span> 와 같이 쓸 수 있다는 것을 알 수 있다. 또한 <span class="math inline">\(\omega_1 \wedge \omega_2 \wedge\cdots \wedge \omega_n\)</span> 도 이와 같이 정의 할 수 있다는 것을 안다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CM_basis_of_alternating_tensor_space" class="theorem">
+<p><span class="theorem-title"><strong>정리 17.2</strong></span> <span class="math inline">\((e_1,\ldots,e_n)\)</span> 이 벡터공간 <span class="math inline">\(V\)</span> 의 기저이고 이 기저에 대한 쌍대기저를 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 이라고 하자. 이 때 아래 집합이 <span class="math inline">\(\mathcal{A}^k(V)\)</span> 의 기저이다.</p>
+<p><span class="math display">\[
+\{ \varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} : 1 \le i_1 &lt;i_2 &lt; \cdots &lt; i_k \le n\}.
+\]</span></p>
+<p>또한</p>
+<p><span class="math display">\[
+\dim \left(\mathcal{A}^k(V)\right) = \begin{pmatrix} n \\k \end{pmatrix} = \dfrac{n!}{k!\, (n-k)!}
+\]</span></p>
+<p>이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\omega \in \mathcal{A}^k(V) \subset \mathcal{T}^k(V)\)</span> 에 대해</p>
+<p><span class="math display">\[
+\omega = \sum_{i_1,\ldots,\,i_k} a_{i_1,\ldots,i_k} \varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k}
+\]</span></p>
+<p>로 쓸 수 있다. <span class="math inline">\(\omega = \text{Alt}(\omega)\)</span> 이므로</p>
+<p><span class="math display">\[
+\omega = \text{Alt}(\omega) = \sum_{i_1,\ldots,i_k} a_{i_1,\ldots,i_k} \text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})
+\]</span></p>
+<p>이다. <span class="math inline">\(\text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})\)</span> 는 <span class="math inline">\(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}\)</span> 의 상수배이다. 따라서 <span class="math inline">\(\{\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}\}\)</span> 는 <span class="math inline">\(\mathcal{A}^k(V)\)</span> 를 span 한다. 이제 이 집합이 선형 독립임을 보이자.</p>
+<p><span class="math display">\[
+\sum_{i_1,\ldots,i_k =1}^n a_{i_1,\ldots,i_k}(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k})=0
+\]</span></p>
+<p>라고 하자. <span class="math inline">\((e_{j_1},\ldots,e_{j_k})\)</span> 에 적용시켜보면 모든 <span class="math inline">\(a_{\ldots}=0\)</span> 이다(<a href="#exr-spivak_4_1" class="quarto-xref">연습문제&nbsp;<span>17.1</span></a> (<span class="math inline">\(a\)</span>)). 따라서 선형 독립이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p>우리는 이로부터 중요한 결 론을 얻는다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-CM_alternating_tensor_and_determinant" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 17.1</strong></span> <span class="math inline">\(n\)</span> 차원 벡터공간에 대해 <span class="math inline">\(\mathcal{A}^n(V)\)</span> 에 속하는 텐서는 행렬식의 상수배이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\dim (V)=n\)</span> 이라면 <span class="math inline">\(\mathcal{A}^n(V)\)</span> 는 1차원이며 따라서 모든 교대 <span class="math inline">\(n\)</span>-텐서는 어떤 상수에 대한 곱이다. 우리는 행렬식이 여기에 포함된 다는 것을 안다. 즉 <span class="math inline">\(n\)</span> 차원 벡터공간에 대한 교대 <span class="math inline">\(n\)</span>-텐서는 행렬식의 상수배이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CM_alternating_tensor_and_determinant" class="theorem">
+<p><span class="theorem-title"><strong>정리 17.3</strong></span> <span class="math inline">\(v_1,\ldots,v_n\)</span> 이 <span class="math inline">\(V\)</span> 의 기저이고 <span class="math inline">\(\omega \in \mathcal{A}^n(V)\)</span> 라고 하자. <span class="math inline">\(i=1,\ldots,\,n\)</span> 에 대해 <span class="math inline">\(\displaystyle u_i = \sum_{j=1}^n a_{ij}v_j\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="math display">\[
+\omega (u_1,\ldots,u_n) = \det (a_{ij})\cdot \omega (v_1,\ldots,v_n)
+\]</span></p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\eta \in \mathcal{T}^n(\mathbb{R}^n)\)</span> 을 아래와 같이 정의하자.</p>
+<p><span class="math display">\[
+\eta ( (a_{11},\ldots,a_{1n}),\ldots,(a_{n1},\ldots,a_{nn})) := \omega \left(\sum_{j=1}^n a_{1j}v_j,\ldots,\sum_{j=1} ^na_{nj}v_j\right).
+\]</span></p>
+<p><span class="math inline">\(\eta\in \mathcal{A}^n(\mathbb{R}^n)\)</span> 이므로 <a href="#cor-CM_alternating_tensor_and_determinant" class="quarto-xref">따름정리&nbsp;<span>17.1</span></a> 에 따라 <span class="math inline">\(\eta = \lambda \cdot \det\)</span> 이다. <span class="math inline">\(\eta(e_1,\ldots,e_n) = \lambda \cdot \det (I_n)= \lambda\)</span> 이며 <span class="math inline">\(\eta(e_1,\ldots,e_n) = \omega (v_1,\ldots,v_n)\)</span> 이므로 주어진 식이 성립한다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-CM_volume_element_and_cross_product" class="level3" data-number="17.1.4">
+<h3 data-number="17.1.4" class="anchored" data-anchor-id="sec-CM_volume_element_and_cross_product"><span class="header-section-number">17.1.4</span> 부피 요소와 벡터곱</h3>
+<p><a href="#thm-CM_alternating_tensor_and_determinant" class="quarto-xref">정리&nbsp;<span>17.3</span></a> 에 따라 <span class="math inline">\(\omega \in \mathcal{A}^n(V)\)</span> 는 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((v_1,\ldots,\,v_n)\)</span> 를 <span class="math inline">\(\omega\)</span> 함수값이 양수인 것과 음수인 두 집합으로 분할한다. <span class="math inline">\(V\)</span> 의 두 기저 <span class="math inline">\((u_i)\)</span> 와 <span class="math inline">\((v_j)\)</span> 사이에 <span class="math inline">\(u_i = \sum_j a_{ij}v_j\)</span> 의 관계가 있을 때 <span class="math inline">\(\det(a_{ij})&gt;0\)</span> 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 <span class="math inline">\(V\)</span> 의 <strong>방향 (orientation)</strong> 이라고 한다. 기저 <span class="math inline">\((v_1,\ldots,v_n)\)</span> 이 속한 방향을 <span class="math inline">\([v_1,\ldots,v_n]\)</span> 으로 표기하며 반대 방향을 <span class="math inline">\(-[v_1,\ldots,v_n]\)</span> 으로 표기한다. <span class="math inline">\(\mathbb{R}^n\)</span> 에서는 표준기저에 대한 <span class="math inline">\([e_1,\ldots,e_n]\)</span> 방향을 <strong>정방향(usual orientation)</strong> 이라고 한다. 그러나 일반적인 벡터공간 <span class="math inline">\(V\)</span> 에서는 이렇게 특정 방향을 정할 수 없다.</p>
+<p>벡터공간에 어떤 내적 <span class="math inline">\(T:V\times V \to \mathbb{R}\)</span> 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 <span class="math inline">\((u_i)\)</span> 와 <span class="math inline">\((v_j)\)</span> 사이에는 어떤 직교 행렬 (orthogonal matrix) <span class="math inline">\(O\)</span> 에 대해 <span class="math inline">\(u_i = O v_i\)</span> 의 관계가 있다는 것을 안다. 정규직교 행렬은 <span class="math inline">\(OO^T=I\)</span> 이므로 <span class="math inline">\(\det(O)= \pm 1\)</span> 이다. 만약 <span class="math inline">\(V\)</span> 의 방향 <span class="math inline">\(\mu\)</span> 가 정해졌다면 정규직교기저 <span class="math inline">\(v_1,\ldots,v_n\)</span> 에 대해 <span class="math inline">\(\omega (v_1,\ldots,v_n)=1\)</span> 이 되도록 <span class="math inline">\(\omega\in \mathcal{A}^n(V)\)</span> 를 유일하게 정할 수 있다. 이 유일한 <span class="math inline">\(\omega\)</span> 를 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 <strong>부피 요소 (volume element)</strong> 라고 한다. <span class="math inline">\(\mathbb{R}^n\)</span> 에서 <span class="math inline">\(\det\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 <span class="math inline">\(|\det (v_1,\ldots,v_n)|\)</span> 은 원점과 <span class="math inline">\(v_1,\ldots,\,v_n\)</span> 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.</p>
+<p>이제 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터곱(cross product)</strong> 에 대해 알아보자. 정해진 <span class="math inline">\(v_1,\ldots,v_{n-1} \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\phi(u) := \det(v_1,\ldots,\,v_{n-1},u)\)</span> 라고 하면 <span class="math inline">\(\phi \in \mathcal{A}^1(\mathbb{R}^n)\)</span> 이다. <span class="math inline">\(\det\)</span> 의 성질에 의해 <span class="math inline">\(\phi (u)\)</span> 는 <span class="math inline">\(V\)</span> 에서 정해진 선형 범함수(linear functinal) 이며, 따라서 소위 리스의 표현정리 (Riesz representation theorem) 에 의해 <span class="math inline">\(\phi (u)=\langle u,\,w \rangle\)</span> 을 만족하는 <span class="math inline">\(w\in V\)</span> 가 유일하게 존재한다. 이 <span class="math inline">\(w\)</span> 를 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\)</span> 로 표기하고 <span class="math inline">\(v_1,\ldots,v_{n-1}\)</span> 의 <strong>벡터곱</strong> 이라고 한다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_basic_properties_of_cross_product" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 17.10</strong></span> 벡터곱에 대해 다음이 성립한다.</p>
+<p><span id="eq-CM_basic_properties_of_cross_product"><span class="math display">\[
+\begin{aligned}
+v_{\sigma(1)}\times \cdots \times v_{\sigma(n-1)} &amp;= \text{sgn}(\sigma)\cdot (v_1\times \cdots \times v_{n-1}), \\[0.3em]
+v_1\times \cdots \times (av_i)\times \cdots \times v_{n-1} &amp;= a\cdot (v_1\times \cdots \times v_{n-1}), \\[0.3em]
+v_1 \times \cdots \times (v_i + v'_i) \times \cdots \times v_{n-1} &amp;=v_1 \times \cdots \times v_i \times \cdots \times v_{n-1} \\[0.3em]
+&amp;\, + v_1 \times \cdots \times v'_i \times \cdots \times v_{n-1}
+\end{aligned}
+\tag{17.12}\]</span></span></p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>행렬식의 성질에 의해 쉽게 보일 수 있다.</p>
 </div>
 <p><br></p>
 </section>
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
-
-
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.1 (Spivak 4.1)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 와 이 기저에 대한 쌍대기저 <span class="math inline">\((\varphi_1,\ldots,\,\varphi_n)\)</span> 을 생각한다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} (e_{i_1},\cdots,e_{i_k})=1\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} (v_1,\ldots,\,v_k)\)</span> 는 행렬 <span class="math inline">\(\begin{bmatrix} v_1 \\ \vdots \\ v_k\end{bmatrix}\)</span> 에서 <span class="math inline">\(i_1,\ldots,\,i_k\)</span> 행을 취한 <span class="math inline">\(k\times k\)</span> 행렬의 행렬식임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} &amp;(e_{i_1},\cdots,e_{i_k}) = k!\text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{i_1},\cdots,e_{i_k}) \\[0.3em]
+&amp;= \dfrac{k!}{k!} \sum_{\sigma \in S_k} \text{sgn}(\sigma)\cdot (\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{\sigma(i_1)},\cdots,e_{\sigma(i_k)}) \\[0.3em]
+&amp;= \sum_{\sigma\in S_k} \text{sgn}(\sigma) \delta_{i_1,\sigma(i_1)} \cdots \delta_{i_k,\sigma(i_k)} = 1
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(v_j\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 <span class="math inline">\(v_{ji}\)</span> 라고 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}\right) &amp; (v_1,\ldots,\,v_k) = \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot (\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(v_1,\ldots,\,v_k) \\[0.3em]
+&amp;=\sum_{\sigma\in S_k} \text{sgn}(\sigma) v_{1\sigma(i_1)}\cdots v_{k\sigma(i_k)}
+\end{aligned}
+\]</span></p>
+<p>이므로 행렬식의 정의에 의해 문제에서 제시한 행렬의 행렬식임을 알 수 있다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.2 (Spivak 4.2)</strong></span> <span class="math inline">\(f \in \mathcal{L}(V)\)</span> 이고 <span class="math inline">\(\dim(V)=n\)</span> 일 때 <span class="math inline">\(f^\ast :\mathcal{A}^n (V) \to \mathcal{A}^n (V)\)</span> 는 어떤 상수 <span class="math inline">\(c\)</span> 에 대한 곱임을 보여라. 그리고 <span class="math inline">\(c=\det (f)\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(1\)</span> 차원 벡터공간에서의 선형사상은 어떤 상수에 대한 곱이다. <span class="math inline">\(\omega \in \mathcal{A}^n (V)\)</span> 에 대해</p>
+<p><span class="math display">\[
+(f^\ast(\omega))= c\omega
+\]</span></p>
+<p>라고 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(f^\ast(\omega))(v_1,\ldots,\,v_n) &amp;= \omega (f(v_1),\ldots, f(v_n)) \\[0.3em]
+&amp;= \det (f) \cdot \omega(v_1,\ldots,v_n)
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(c=\det(f)\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.3 (Spivak 4.3)</strong></span> <span class="math inline">\(\omega \in \mathcal{A}^n (V)\)</span> 가 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 부피 요소이고 <span class="math inline">\(u_1,\ldots,u_n\in V\)</span> 일 때 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\left|\omega (u_1,\ldots,\,u_n)\right| = \sqrt{\det (g_{ij})},\qquad \text{where }g_{ij}=T(u_i,u_j).
+\]</span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(v_1,\ldots,\,v_n\)</span> 이 <span class="math inline">\(T\)</span> 에 대한 정규직교기저이고 <span class="math inline">\(u_i =\sum_j A_{ij}v_j\)</span> 라 하자. <span class="math inline">\(T(u_i,u_j)=(AA^T)_{ij}\)</span> 이며 <span class="math inline">\(\det(A)=\det(A^T)\)</span> 이므로</p>
+<p><span class="math display">\[
+|\omega(u_1,\ldots,u_n)|= |\det(g_{ij})| \cdot \underbrace{|\det(v_1,\ldots,v_n)|}_{=1} = \sqrt{\det(g_{ij})}
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.4 (Spivak 4.4)</strong></span> <span class="math inline">\(\omega\)</span> 가 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 부피 요소이고 <span class="math inline">\(f :\mathbb{R}^n \to V\)</span> 가 동형사상이며 <span class="math inline">\(f^\ast (T) = \langle\,,\,\rangle\)</span> 이고 <span class="math inline">\([f(e_1),\ldots, f(e_n)]=\mu\)</span> 일 때 <span class="math inline">\(f^\ast \omega = \det\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+\left(f^\ast (\omega)\right)(v_1,\ldots,v_n) &amp;=\omega (f(v_1),\ldots,f(v_n)) \\[0.3em]
+&amp;= \underbrace{\det (f)}_{=1} \cdot \det (v_1,\ldots,v_n)
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(f^\ast \omega = \det\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.5 (Spivak 4.5)</strong></span> <span class="math inline">\(P:[0,\,1] \to (\mathbb{R}^n)^n\)</span> 이 연속이며 각각의 <span class="math inline">\((\boldsymbol{p}_1(t),\ldots,\,\boldsymbol{p}_n(t))\)</span> 가 <span class="math inline">\(\mathbb{R}^n\)</span> 의 기저 일 때 <span class="math inline">\([\boldsymbol{p}_1(0),\ldots,\boldsymbol{p}_n(0)] = [\boldsymbol{p}_1(1),\ldots,\,\boldsymbol{p}_n(1) ]\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\det\)</span> 도 연속이고 <span class="math inline">\(P\)</span> 도 연속함수이므로 <span class="math inline">\(\det (P(t))\)</span> 도 연속함수이다. <span class="math inline">\((\boldsymbol{p}_1,\ldots,\,\boldsymbol{p}(t))\)</span> 가 <span class="math inline">\(\mathbb{R}^n\)</span> 의 기저이므로 선형 독립이고 따라서 <span class="math inline">\(\det(P(t))\ne 0\)</span> 이다. 즉 <span class="math inline">\(t\in [0,\,1]\)</span> 에 대해 <span class="math inline">\(\det(P(t))&gt;0\)</span> 이거나 <span class="math inline">\(\det(P(t))&lt;1\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.6 (Spivak 4.6)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(v\in \mathbb{R}^2\)</span> 일 때 <span class="math inline">\(v\times\)</span> 는 무엇인가?</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(v_1,\ldots,v_{n-1}\in \mathbb{R}^n\)</span> 이 선형 독립이라면 <span class="math inline">\([v_1,\ldots,v_{n-1},v_1 \times \cdots \times v_{n-1}]\)</span> 은 정방향 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(v = (v_1,\,v_2)\)</span>, <span class="math inline">\(\boldsymbol{z}=(z_1,\,z_2)\)</span>, <span class="math inline">\(\boldsymbol{w}=(w_1,\,w_2)\)</span> 라고 하자. 정의에 의해</p>
+<p><span class="math display">\[
+z_1w_1+z_2w_2 = v_1w_2 - v_2w_1
+\]</span></p>
+<p>이어야 하므로 <span class="math inline">\(z_1=v_1,\, z_2 = -v_2\)</span> 이다. 즉 <span class="math inline">\(\boldsymbol{w} = (v_1,\,-v_2)\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\phi(u) = \det (v_1,\ldots,\,v_{n-1},\,u) = \langle u, w\rangle\)</span> 가 <span class="math inline">\(u\in \mathbb{R}^n\)</span> 에 대해 성립한다. <span class="math inline">\(v_1,\ldots,\,v_{n-1}\)</span> 이 선형 독립이면 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\ne 0\)</span> 이며 <span class="math inline">\(u=z=v_1 \times \cdots \times v_{n-1}\)</span> 로 놓으면</p>
+<p><span class="math display">\[
+0 &lt; \langle z,\,z\rangle = \det (v_1,\ldots,\,v_{n-1},\, v_1\times \cdots \times v_{n-1})
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.7 (Spivak 4.7)</strong></span> <span class="math inline">\(0\)</span> 이 아닌 모든 <span class="math inline">\(\omega \in \mathcal{A}^n(V)\)</span> 는 어떤 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 정해지는 부피 요소 일 수 있음을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>선형 독립인 <span class="math inline">\(v_1,\ldots,\,v_n\)</span> 과 그 쌍대함수 <span class="math inline">\(\varphi_1,\ldots,\varphi_n\)</span> 에 의해 <span class="math inline">\(\omega = \varphi_1 \wedge \cdots \wedge \varphi_n \in \mathcal{A}^n(V)\)</span> 가 정해진다. <span class="math inline">\(u\, w\in V\)</span> 에 대해 <span class="math inline">\(u=\sum_i a_i v_i,\, w=\sum_j b_jv_j\)</span> 일 때 내적 <span class="math inline">\(T(u,\,v) = \langle u,\,w\rangle = \sum_{i}a_ib_i\)</span> 로 정의 할 수 있으며 <span class="math inline">\(\omega (v_1,\ldots,\,v_n)=1\)</span> 이므로 방향성도 정해진다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.8 (Spivak 4.8)</strong></span> <span class="math inline">\(\omega\in \mathcal{A}^n(V)\)</span> 가 부피 요소일 때 벡터곱 <span class="math inline">\(v_1\times \cdots \times v_{n-1}\)</span> 을 <span class="math inline">\(\omega\)</span> 를 이용해 표현하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 이 <span class="math inline">\(V\)</span> 의 기저라고 하자. <span class="math inline">\(u = v_1\times \cdots \times v_{n-1}= \sum_i a_i e_i\)</span> 라고 하면 <span class="math display">\[
+\begin{aligned}
+\omega (v_1,\ldots,\,v_{n-1},\,v_1\times \cdots \times v_{n-1}) &amp;= \sum_{i=1}^n a_i \cdot \omega (v_1,\ldots,\,v_{n-1},\,e_i)
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+v_1\times \cdots \times v_{n-1} = \sum_i \omega (v_1,\ldots,\,v_{n-1},\,e_i) e_i
+\]</span></p>
+<p>로 정할 수 있다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.9 (Spivak 4.9)</strong></span> <span class="math inline">\(\mathbb{R}^3\)</span> 에서의 벡터곱이 아래의 성질을 가짐을 보여라.</p>
+<p>(<span class="math inline">\(a\)</span>) Levi-civita 기호 <span class="math inline">\(\varepsilon_{ijk}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{e}_i \times \boldsymbol{e}_j = \varepsilon_{ijk} \boldsymbol{e}_k\)</span>,</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\boldsymbol{v}\times \boldsymbol{w} = (v_2w_3 - v_3w_2) \boldsymbol{e}_1 + (v_3w_1 - v_1w_3)\boldsymbol{e}_3 + (v_1w_2 - v_2w_1)\boldsymbol{e}_3\)</span>,</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(\theta = \angle (\boldsymbol{v},\boldsymbol{w})\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{v} \times \boldsymbol{w}\| = \|\boldsymbol{v}\| \cdot \|\boldsymbol{w}\| \cdot |\sin \theta|\)</span> 이며 <span class="math inline">\(\langle \boldsymbol{v} \times \boldsymbol{w},\boldsymbol{v}\rangle = 0\)</span>,</p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(\begin{gather} \langle \boldsymbol{v},\,\boldsymbol{w}\times \boldsymbol{z}\rangle = \langle \boldsymbol{w},\,\boldsymbol{z}\times \boldsymbol{v}\rangle = \langle \boldsymbol{z},\, \boldsymbol{v}\times \boldsymbol{w}\rangle, \\[0.3em]
+\boldsymbol{v}\times (\boldsymbol{w}\times \boldsymbol{z}) = \langle \boldsymbol{v},\,\boldsymbol{z}\langle \boldsymbol{w} - \langle \boldsymbol{v},\,\boldsymbol{w}\rangle \boldsymbol{z}\\[0.3em]
+(\boldsymbol{v}\times \boldsymbol{w}) \times \boldsymbol{z} = \langle \boldsymbol{v},\,\boldsymbol{z}\rangle \boldsymbol{w} - \langle \boldsymbol{w},\,\boldsymbol{z}\rangle \boldsymbol{v}.
+\end{gather}\)</span></p>
+<p>(<span class="math inline">\(e\)</span>) <span class="math inline">\(\|\boldsymbol{v}\times \boldsymbol{w}\| = \sqrt{\langle \boldsymbol{v}\,\boldsymbol{v}\rangle \langle \boldsymbol{w},\,\boldsymbol{w}\rangle - \langle \boldsymbol{v},\,\boldsymbol{w}\rangle^2}\)</span>.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>trivial</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.10 (Spivak 4.10)</strong></span> <span class="math inline">\(\boldsymbol{u}_1,\ldots,\boldsymbol{u}_{n-1}\in \mathbb{R}^n\)</span> 이며 <span class="math inline">\(g_{ij}= \langle \boldsymbol{u}_i,\boldsymbol{u}_j\rangle\)</span> 일 때 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\|\boldsymbol{u}_1 \times \cdots \times \boldsymbol{u}_{n-1}\| = \sqrt{\det (g_{ij})}.
+\]</span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(X=\text{span}(\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_{n-1})\)</span> 은 <span class="math inline">\(n-1\)</span> 차원 벡터공간이며 <span class="math inline">\(\mathbb{R}^n\)</span> 의 부분공간이다. <a href="#exr-spivak_4_3" class="quarto-xref">연습문제&nbsp;<span>17.3</span></a></p>
+<p><span class="math display">\[
+\begin{aligned}
+\|\boldsymbol{u}_1 \times \cdots \times \boldsymbol{u}_{n-1}\| &amp;= \sqrt{\sum_{i=1}^n \left|\omega (v_1,\ldots,\,v_{n-1},\,e_i)\right|^2} \\[0.3em]
+&amp;=
+\end{aligned}
+\]</span></p>
+</div>
+<p><br></p>
 </section>
+</section>
+<section id="장과-형식" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="장과-형식"><span class="header-section-number">17.2</span> 장과 형식</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_tangent_space" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 17.6 (탄젠트 공간)</strong></span> 정해진 <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{p}\)</span> 에서의 <strong>탄젠트 공간 (tangent space)</strong> <span class="math inline">\({\mathbb{R}^n}_\boldsymbol{p}\)</span> 는</p>
+<p><span class="math display">\[
+{\mathbb{R}^n}_\boldsymbol{p} = \{(\boldsymbol{p},\,\boldsymbol{x}) : \boldsymbol{x}\in \mathbb{R}^n\}
+\]</span></p>
+<p>에 대해 아래의 연산이 정의된 구조이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(\boldsymbol{p},\,\boldsymbol{x}) + (\boldsymbol{p},\,\boldsymbol{y}) &amp;= (\boldsymbol{p}, \boldsymbol{x}+\boldsymbol{y}),\\[0.3em]
+a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x}).
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\({\mathbb{R}^n}_\boldsymbol{p}\)</span> 의 벡터 <span class="math inline">\((\boldsymbol{p},\boldsymbol{v})\)</span> 를 흔히 <span class="math inline">\(\boldsymbol{v}_\boldsymbol{p}\)</span> 혹은 <span class="math inline">\((\boldsymbol{v})_\boldsymbol{p}\)</span> 와 같이 표기한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p>다음은 쉽게 보일 수 있다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_tangent_space_as_a_vector_space" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 17.11</strong></span> <span class="math inline">\({\mathbb{R}^n}_\boldsymbol{p}\)</span> 는 <span class="math inline">\((\boldsymbol{p},\,\boldsymbol{0})\)</span> 을 영벡터로 하는 벡터공간이다.</p>
+</div>
+</div>
+<p><br></p>
+<p>일반적인 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터는 원점으로부터의 화살표로 표현되는 경우가 많다. 이와 유사하게 <span class="math inline">\({\mathbb{R}^n}_\boldsymbol{p}\)</span> 의 벡터 <span class="math inline">\((\boldsymbol{p},\boldsymbol{v})\)</span> 는 <span class="math inline">\(\boldsymbol{p}\)</span> 를 시작으로 <span class="math inline">\(\boldsymbol{(}p)+\boldsymbol{v}\)</span> 를 향하는 화살표로 표현된다. 또한 내적과 방향의 경우 <span class="math inline">\(\mathbb{R}^n\)</span> 과 같이 정의 할 수 있으며 이를 통상 내적, 통상 방향이라고 한다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_usual_inner_product_and_orientation" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 17.7 (통상 내적, 통상 방향)</strong></span> <span class="math inline">\({\mathbb{R}^n}_\boldsymbol{p}\)</span> 에서의 내적을</p>
+<p><span class="math display">\[
+\langle (\boldsymbol{p},\boldsymbol{u}), (\boldsymbol{p},\boldsymbol{v})\rangle_\boldsymbol{p}= \langle \boldsymbol{u},\boldsymbol{v}\rangle
+\]</span></p>
+<p>와 같이 정의할 때 이 내적을 <strong>통상 내적 (usual inner product)</strong> 라고 하며 방향을</p>
+<p><span class="math display">\[
+[(\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_n)_\boldsymbol{}] = [\boldsymbol{v}_1,\ldots,\boldsymbol{v}_n]
+\]</span></p>
+<p>으로 정의 할 때 이 방향을 <strong>통상 뱡향 (usual orientation)</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_vector_field" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 17.8 (벡터장)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to {\mathbb{R}^n}_\boldsymbol{p}\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터장 (vector field)</strong> 라고 한다. <span class="math inline">\(F(\boldsymbol{p})\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 <span class="math inline">\(f_i(\boldsymbol{p})\)</span> 로 표기한다.</p>
+<p><span class="math inline">\(F,\,G\)</span> 가 벡터장이고 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 함수일 때 연산을 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(F+G)(\boldsymbol{p}) &amp;:= F(\boldsymbol{p}) + F(\boldsymbol{p}), \\[0.3em]
+\langle F,\, G\rangle (\boldsymbol{p}) &amp;: = \langle F(\boldsymbol{p}),\, G(\boldsymbol{p})\rangle, \\[0.3em]
+(f\cdot F)(\boldsymbol{p}) &amp;:= f(\boldsymbol{p})F(\boldsymbol{p}), \\[0.3em]
+(F \times \cdots \times G) (\boldsymbol{p}) &amp;:= F(\boldsymbol{p})\times \cdots \times G(\boldsymbol{p}).
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_divergence_and_curl" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 17.9 (Divergence 와 Curl)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i F_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다.</p>
+<p><span class="math inline">\(\mathbb{R}^3\)</span> 에서의 <span class="math inline">\(\text{curl}\,F\)</span> 는 아래와 같이 정의된다.</p>
+<p><span class="math display">\[
+\text{curl}\, F(\boldsymbol{p}) := (D_2f_3 - D_3f_2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f_1 - D_1f_3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f_2-D_2f_1)(\boldsymbol{e}_3)_\boldsymbol{p}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> 에서 nabla 연산자 <span class="math inline">\(\nabla\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+\nabla := \sum_{i=1}^n \boldsymbol{e}_i \boldsymbol{\cdot}D_i.
+\]</span></p>
+<p>Nabla 연산자를 이용하여 <span class="math inline">\(\text{div}\,F\)</span> 를 <span class="math inline">\(\nabla \boldsymbol{\cdot}F\)</span> 로 <span class="math inline">\(\text{curl}\, F\)</span> 를 <span class="math inline">\(\nabla \times F\)</span> 로 표기하기도 한다.</p>
+<p><br></p>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\((\mathbb{R}^n)_\boldsymbol{p}\)</span>, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 <span class="math inline">\(k\)</span>-form 을 정의 할 수 있다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_differential_form" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 17.10 (미분 형식)</strong></span> <span class="math inline">\(\omega (p)\in \mathcal{A}^k({\mathbb{R}^n}_\boldsymbol{p})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(diffential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 $(</p>
+<p><span class="math display">\[
+\omega(\boldsymbol{p}) = \sum_{i_1&lt;\cdots &lt;i_k} a_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right]
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "복사완료!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "복사완료!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "복사완료!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "복사완료!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -918,185 +1312,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../src/part3/3_5_change_of_variables.html" class="pagination-link" aria-label="미분동형사상과 변수 변경">
