@@ -603,7 +603,27 @@ $\eta\in \mathcal{A}^n(\R^n)$ 이므로 @cor-CM_alternating_tensor_and_determina
 
 #### **벡터곱**
 
-이제 $\R^n$ 에서의 **벡터곱(cross product)** 에 대해 알아보자. 정해진 $v_1,\ldots,v_{n-1} \in \R^n$ 에 대해 $\phi(u) := \det(v_1,\ldots,\,v_{n-1},u)$ 라고 하면 $\phi \in \mathcal{A}^1(\R^n)$ 이다. $\det$ 의 성질에 의해 $\phi (u)$ 는 $V$ 에서 정해진 선형 범함수(linear functinal) 이며, 따라서 소위 리스의 표현정리 (Riesz representation theorem) 에 의해 $\phi (u)=\langle u,\,w \rangle$ 을 만족하는 $w\in V$ 가 유일하게 존재한다. 이 $w$ 를 $v_1 \times \cdots \times v_{n-1}$ 로 표기하고 $v_1,\ldots,v_{n-1}$ 의 **벡터곱** 이라고 한다. 
+이제 $\R^n$ 에서의 **벡터곱(cross product)** 에 대해 알아보자. 정해진 $v_1,\ldots,\,v_{n-1} \in \R^n$ 에 대해 $\phi(u) := \det(v_1,\ldots,\,v_{n-1},u)$ 라고 하면 $\phi \in \mathcal{A}^1(\R^n)$ 이다. $\det$ 의 성질에 의해 $\phi (u)$ 는 $V$ 에서 정해진 선형 범함수(linear functinal) 이며, 따라서 소위 리스의 표현정리 (Riesz representation theorem) 에 의해 $\phi (u)=\langle u,\,w \rangle$ 을 만족하는 $w\in V$ 가 유일하게 존재한다. 이 $w$ 를 $v_1 \times \cdots \times v_{n-1}$ 로 표기하고 $v_1,\ldots,v_{n-1}$ 의 **벡터곱** 이라고 한다. 즉 모든 $u \in \R^n$ 에서
+
+$$
+\phi(u) = \langle u,\,  w \rangle = \det \left( v_1,\ldots,\,v_{n-1},\, u\right)
+$$ {#eq-CM_inner_product_and_cross_product}
+
+를 만족하는 $w$ 를 $v_1 \times \cdots \times v_{n-1}$ 로 표기한다.
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_magnitude_of_cross_product}
+
+#### 벡터곱의 기본 성질
+</br>
+
+($1$) $\det$ 의 성질로부터 $w = v_1\times \cdots \times v_{n-1}$ 일 때 $\langle v_i,\, w\rangle = 0$ 이다.
+ 
+($2$) $\R^n$ 에서의 표준직교기저 $(e_1,\ldots,\,e_n)$ 에 대해 $e_1 \times \cdots \times e_{n-1}=e_n$ 이다.
+:::
+
+</div>
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -653,7 +673,7 @@ $\R^n$ 의 표준기저 $(e_1,\ldots,\,e_n)$ 와 이 기저에 대한 쌍대기�
 
 $$
 \begin{aligned}
-\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} &(e_{i_1},\cdots,e_{i_k}) = k!\text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{i_1},\cdots,e_{i_k}) \\[0.3em]
+\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} &(e_{i_1},\cdots,e_{i_k}) = k! \cdot \text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{i_1},\cdots,e_{i_k}) \\[0.3em]
 &= \dfrac{k!}{k!} \sum_{\sigma \in S_k} \text{sgn}(\sigma)\cdot (\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{\sigma(i_1)},\cdots,e_{\sigma(i_k)}) \\[0.3em]
 &= \sum_{\sigma\in S_k} \text{sgn}(\sigma) \delta_{i_1,\sigma(i_1)} \cdots \delta_{i_k,\sigma(i_k)} = 1
 \end{aligned}
@@ -678,7 +698,7 @@ $$
 
 #### Spivak 4.2
 
-$f \in \mathcal{L}(V)$ 이고 $\dim(V)=n$ 일 때 $f^\ast :\mathcal{A}^n (V) \to \mathcal{A}^n (V)$ 는 어떤 상수 $c$ 에 대한 곱임을 보여라. 그리고 $c=\det (f)$ 임을 보여라.
+$F \in \mathcal{L}(V)$ 이고 $\dim(V)=n$ 일 때 $F^\ast :\mathcal{A}^n (V) \to \mathcal{A}^n (V)$ 는 어떤 상수 $c$ 에 대한 곱임을 보여라. 그리고 $c=\det (F)$ 임을 보여라.
 
 :::
 
@@ -686,22 +706,9 @@ $f \in \mathcal{L}(V)$ 이고 $\dim(V)=n$ 일 때 $f^\ast :\mathcal{A}^n (V) \to
 
 ::: {.solution}
 
-$1$ 차원 벡터공간에서의 선형사상은 어떤 상수에 대한 곱이다. $\omega \in \mathcal{A}^n (V)$ 에 대해 
+$\mathcal{A}^n(V)$ 는 1차원 벡터공간이며, 1차원 벡터공간 사이의 선형사상은 어떤 성분의 상수배이다. 즉 $F^\ast(\omega) = c \omega$ 이다. 그리고 $\det \in A^n(V)$ 이므로 $c=\det F$ 로 놓을 수 있다.
 
-$$
-(f^\ast(\omega))= c\omega
-$$
 
-라고 하자. 
-
-$$
-\begin{aligned}
-(f^\ast(\omega))(v_1,\ldots,\,v_n) &= \omega (f(v_1),\ldots, f(v_n)) \\[0.3em]
-&= \det (f) \cdot \omega(v_1,\ldots,v_n)
-\end{aligned}
-$$
-
-이므로 $c=\det(f)$ 이다. 
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -722,13 +729,19 @@ $$
 
 ::: {.solution}
 
-$v_1,\ldots,\,v_n$ 이 $T$ 에 대한 정규직교기저이고 $u_i =\sum_j A_{ij}v_j$ 라 하자. $T(u_i,u_j)=(AA^T)_{ij}$ 이며 $\det(A)=\det(A^T)$ 이므로 
+$v_1,\ldots,\,v_n$ 이 $T$ 에 대한 정규직교기저이고 $u_i =\sum_j A_{ij}v_j$ 라 하자. 
 
 $$
-|\omega(u_1,\ldots,u_n)|= |\det(g_{ij})| \cdot \underbrace{|\det(v_1,\ldots,v_n)|}_{=1} = \sqrt{\det(g_{ij})}
-$$
+\begin{aligned}
+g_{ij}=T(u_i,u_j)&=\sum_{k, l} A_{ik}A_{jl}T(v_k, v_l)= \sum_k A_{ik}A_{jk}= \left(AA^T\right)_{ij} 
+\end{aligned}
+$$ 
 
-이다. 
+이며 $\det(A)=\det(A^T)$ 이므로 $\det (g_{ij}) = (\det(A))^2$ 이다. 따라서 다음이 성립한다.
+
+$$
+|\omega(u_1,\ldots,u_n)|= |\det(A)| \cdot \underbrace{|\det(v_1,\ldots,v_n)|}_{=1} = \sqrt{\det(g_{ij})}.
+$$
 
 :::
 
@@ -738,7 +751,7 @@ $$
 
 #### Spivak 4.4
 
-$\omega$ 가 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 부피 요소이고 $f :\R^n \to V$ 가 동형사상이며 $f^\ast (T) = \langle\,,\,\rangle$ 이고 $[f(e_1),\ldots, f(e_n)]=\mu$ 일 때 $f^\ast \omega = \det$ 임을 보여라.
+$\omega$ 가 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 부피 요소이고 $F :\R^n \to V$ 가 동형사상이며 $F^\ast (T) = \langle\,,\,\rangle$ 이고 $[F(e_1),\ldots, F(e_n)]=\mu$ 일 때 $F^\ast \omega = \det$ 임을 보여라.
 
 :::
 
@@ -746,10 +759,14 @@ $\omega$ 가 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 부피 요소�
 
 ::: {.solution}
 
+$(e_1,\ldots,\,e_n)$ 이 $\R^n$ 의 표준기저이며 $v_i = F(e_i)$ 라고 하자. $F^\ast (T) = \langle \,,\,\rangle$ 로부터 $F^\ast T (e_i,\,e_j) = \langle e_i,e_j\rangle = \delta_{ij}$ 이며 $F^\ast T(e_i,e_j)= T(F(e_i),F(e_j))=T(v_i,v_j)$ 이므로 $T$ 는 내적을 보존하는 isometry 임을 안다. 따라서 $\det (F)=\pm 1$ 이며 방향을 보존하므로 $\det (F) = 1$ 이다. 
+
+
+$\omega$ 가 $V$ 의 정규직교기저 $u_1,\ldots,\,u_n$ 에 대해 $T,\, \mu$ 에 의해 결정되는 부피요소라고 하자. 이 때
 $$
 \begin{aligned}
-\left(f^\ast (\omega)\right)(v_1,\ldots,v_n) &=\omega (f(v_1),\ldots,f(v_n)) \\[0.3em]
-&= \underbrace{\det (f)}_{=1} \cdot \det (v_1,\ldots,v_n)
+\left(F^\ast (\omega)\right)(v_1,\ldots,v_n) &=\omega (F(v_1),\ldots,F(v_n)) \\[0.3em]
+&= \underbrace{\det (F)}_{=1} \cdot \det (v_1,\ldots,v_n) = \det (v_1,\ldots,v_n)
 \end{aligned}
 $$
 
@@ -822,7 +839,7 @@ $0$ 이 아닌 모든 $\omega \in \mathcal{A}^n(V)$ 는 어떤 내적 $T$ 와 �
 
 ::: {.solution}
 
-선형 독립인 $v_1,\ldots,\,v_n$ 과 그 쌍대함수 $\varphi_1,\ldots,\varphi_n$ 에 의해 $\omega = \varphi_1 \wedge \cdots \wedge \varphi_n \in \mathcal{A}^n(V)$ 가 정해진다. $u\, w\in V$ 에 대해 $u=\sum_i a_i v_i,\, w=\sum_j b_jv_j$ 일 때 내적 $T(u,\,v) = \langle u,\,w\rangle = \sum_{i}a_ib_i$ 로 정의 할 수 있으며 $\omega (v_1,\ldots,\,v_n)=1$ 이므로 방향성도 정해진다.
+선형 독립인 $v_1,\ldots,\,v_n$ 과 그 쌍대함수 $\varphi_1,\ldots,\varphi_n$ 에 의해 $\omega = \varphi_1 \wedge \cdots \wedge \varphi_n \in \mathcal{A}^n(V)$ 가 정해진다. $u,\, w\in V$ 에 대해 $u=\sum_i a_i v_i,\, w=\sum_j b_jv_j$ 일 때 내적 $T(u,\,v) = \langle u,\,w\rangle = \sum_{i}a_ib_i$ 로 정의 할 수 있으며 $\omega (v_1,\ldots,\,v_n)=1$ 이므로 방향성도 정해진다.
 
 :::
 
@@ -888,7 +905,6 @@ $\R^3$ 에서의 벡터곱이 아래의 성질을 가짐을 보여라.
 trivial
 :::
 
-
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-spivak_4_10}
@@ -901,24 +917,92 @@ $$
 \|\bf{u}_1 \times \cdots \times \bf{u}_{n-1}\| = \sqrt{\det (g_{ij})}.
 $$
 
-
 :::
 
 </div>
 
 ::: {.solution}
 
-$X=\text{span}(\bf{u}_1,\ldots,\,\bf{u}_{n-1})$ 은 $n-1$ 차원 벡터공간이며 $\R^n$ 의 부분공간이다. @exr-spivak_4_3 
+$\bf{u}_1,\ldots,\,\bf{u}_{n-1}$ 이 선형 종속일 경우는 $\bf{u}_1 \times \cdots \times \bf{u}_{n-1}=\bf{0}$ 이며 $\deg (g_{ij})=0$ 이므로 성립한다. 이제 $\bf{u}_1,\ldots,\bf{u}_{n-1}$ 이 선형 독립일 경우만 생각한다. $\bf{u}_n = \bf{u}_1 \times \cdots \times \bf{u}_{n-1}$ 이라고 하자. $(\bf{u}_i)$ 로부터 그람-슈미트 과정을 통해 정규직교 기저 $(\bf{e}_i)$ 를 구성할 수 있으며 이 경우 $\text{span}(\bf{u}_1,\ldots,\,\bf{u}_k) = \text{span}(\bf{e}_1,\ldots,\bf{e}_k)$ 이다.
+
+$\bf{u}_i = \sum_j A_{ij} \bf{e}_j$ 라고 하자. $\langle \bf{u}_i,\bf{u}_n\rangle = \langle \bf{u}_n,\bf{u}_i\rangle = \|\bf{u}_n\|^2\delta_{in}$ 이므로 $\tilde{g}_{ij}=\langle \bf{u}_i,\,\bf{u}_j\rangle = (AA^T)_{ij}$ 라고 하면 $1\le i,\,j \le n-1$ 에서는 $\tilde{g}_{ij}=g_{ij}$ 이며 $\tilde{g}_{ni}= \tilde{g}_{in}= \delta_{in}|\bf{u}_n\|^2$ 이다.
+
+
+$\det (g_{ij})= \left(\det(A)\right)^2$ 이다. 이 때 $[\bf{u},\ldots,\,\bf{u}_{n-1}] = [\bf{e}_1,\ldots,\,\bf{e}_{n-1}]$ 이 되도록 잡을 수 있다. 이 내적과 방향석을 이용하여 $\bf{e}_1,\ldots,\bf{e}_{n}$ 에 대해 $\omega (\bf{e}_1,\ldots,\bf{e}_n) =1$ 이 되도록 $\omega$ 를 정한다면 
+
+$$
+\|\bf{u}_1\times \cdots \times \bf{u}_n\| = |\omega (\bf{u}_1,\ldots,\,\bf{u}_{n})| = \sqrt{\det(\tilde{g}_{ij})} = \sqrt{\det (g_{ij})} \|\bf{u}_n\|
+$$
+
+또한
+
+$$
+|\omega (\bf{u}_1,\ldots,\,\bf{u}_n) = \det (\bf{u}_1,\ldots,\bf{u}_n) = \|\bf{u}_n\|^2
+$$
+
+이므로 $\|\bf{u}_n\| = \|\bf{u}_1\times \cdots \times \bf{u}_{n-1}\| = \sqrt{\det (g_{ij})}$ 이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-spivak_4_11}
+
+#### Spivak 4.11
+
+내적벡터공간 $V$ 에서 $L\in \mathcal{L}(V)$ 에 대해 모든 $x,\,y\in V$ 에서 $\langle x,\,L(y)\rangle = \langle L(x),\,y\rangle$ 일 때 이 $L$ 을 에르미트 연산자라고 한다. $v_1,\ldots,\,v_n$ 이 정규직교기저이고 $A=(a_{ij})$ 가 이 기저에 대한 $L$ 의 행렬 이라면 $a_{ij} = a_{ji}$ 임을 보여라.
+
+:::
+</div>
+
+::: {.solution}
+
+모든 $x,\,y\in V$ 에 대해 성립하므로 $v_i,\,v_j$ 에 대해서도 성립해야 한다.
+$$
+\begin{aligned}
+\langle v_i,\, L(v_j)\rangle &= \left\langle v_i, \sum_k a_{jk}v_k\right\rangle = \sum_{k} a_{jk} \langle v_i,\,v_k\rangle = a_{ji}, \\[0.3em]
+\langle L(v_i),\,v_j\rangle &= \left\langle \sum_k a_{ik}v_k,\, v_j\right\rangle = \sum_k a_{ik} \langle v_k,\,v_j\rangle = a_{ij}
+\end{aligned}
+$$ 
+
+이므로 $a_{ji}=a_{ij}$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-spivak_4_12}
+
+#### Spivak 4.12
+
+$F_1,\ldots,\,F_{n-1} : \R^m \to \R^n$ 에 대해 $F_1 \times \cdots \times F_n : \R^m \to \R^n$ 을 아래와 같이 정의한다.
+
+$$
+(F_1 \times \cdots \times F_n)(p) = F_1(p)\times \cdots \times F_n(p).
+$$
+
+$F_1,\ldots,\,F_{n-1}$ 이 미분가능 할 때 @exr-CM_spivak_2_14 를 이용하여 $D(F_1 \times \cdots \times F_{n-1})$ 을 구하라.
+
+:::
+</div>
+
+::: {.solution}
+
+$F :(\R^m)^{n-1} \to \R^n$ 을 아래와 같이 정의하면 다중선형함수이다.
+
+$$
+F(\bf{x}_1,\ldots,\bf{x}_{n-1}) = \bf{x}_1\times \cdots \times \bf{x}_{n-1}.
+$$
 
 $$
 \begin{aligned}
-\|\bf{u}_1 \times \cdots \times \bf{u}_{n-1}\| &= \sqrt{\sum_{i=1}^n \left|\omega (v_1,\ldots,\,v_{n-1},\,e_i)\right|^2} \\[0.3em]
-&= 
+(F_1 \times \cdots \times F_{n-1})'(\bf{p})(\bf{x}) &= (F\circ (F_1,\ldots,\,F_{n-1}))'(\bf{p})(\bf{x}) \\[0.3em]
+&= F'(F_1(\bf{p}),\ldots,\,F_{n-1}(\bf{p})) \circ (F'_1(\bf{p}),\ldots,\,F'_{n-1}(\bf{p})) (\bf{x}) \\[0.3em]
+&= \sum_{i=1}^{n-1} \left[F_1(\bf{p}) \times \cdots \times F_{i-1}(\bf{p}) \times F'_{i}(\bf{p}) \times F_{i+1}(\bf{p})\times \cdots \times F_{n-1}(\bf{p})\right] (\bf{x})
 \end{aligned}
 $$
 
 :::
-
 
 </br>
 
@@ -985,7 +1069,6 @@ $$
 
 으로 정의 할 때 이 방향을 **통상 뱡향 (usual orientation)** 이라고 한다.
 
-
 ::: 
 :::
 
@@ -1002,15 +1085,16 @@ $F,\,G$ 가 벡터장이고 $f:\R^n \to \R$ 함수일 때 연산을 아래와 �
 
 $$
 \begin{aligned}
-(F+G)(\bf{p}) &:= F(\bf{p}) + F(\bf{p}), \\[0.3em]
-\langle F,\, G\rangle (\bf{p}) &: = \langle F(\bf{p}),\, G(\bf{p})\rangle, \\[0.3em]
-(f\cdot F)(\bf{p}) &:= f(\bf{p})F(\bf{p}), \\[0.3em]
+(F+G)(\bf{p}) &:= F(\bf{p}) + F(\bf{p}), \\[0.4em]
+\langle F,\, G\rangle (\bf{p}) &: = \langle F(\bf{p}),\, G(\bf{p})\rangle, \\[0.4em]
+(f\cdot F)(\bf{p}) &:= f(\bf{p})F(\bf{p}), \\[0.4em]
 (F \times \cdots \times G) (\bf{p}) &:= F(\bf{p})\times \cdots \times G(\bf{p}).
 \end{aligned}
 $$
 
 ::: 
 :::
+
 
 </br>
 
@@ -1021,11 +1105,7 @@ $$
 
 $\R^n$ 에서의 벡터장 $F$ 에 대해 $\sum_{i=1}^n D_i F_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. 
 
-$\R^3$ 에서의 $\text{curl}\,F$ 는 아래와 같이 정의된다.
 
-$$
-\text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}
-$$
 
 ::: 
 :::
@@ -1040,6 +1120,23 @@ Nabla 연산자를 이용하여 $\text{div}\,F$ 를 $\nabla \bf{\cdot}F$ 로 $\t
 
 </br>
 
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_curl}
+$\R^3$ 에서의 $\text{curl}\,F$ 는 아래와 같이 정의된다.
+
+$$
+\text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}
+$$
+
+:::
+
+</div>
+
+</br>
+
+
+
 $\R^n$ 과 $(\R^n)_\bf{p}$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-form 을 정의 할 수 있다.
 
 
@@ -1048,7 +1145,7 @@ $\R^n$ 과 $(\R^n)_\bf{p}$, 벡터함수와 벡터장과 같이 탄젠트 공간
 
 #### 미분 형식
 
-$\omega (p)\in \mathcal{A}^k({\R^n}_\bf{p})$ 를 $\R^n$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega(\bf{p})$ 은 아래의 형태이다.
+$\omega (\bf{p})\in \mathcal{A}^k({\R^n}_\bf{p})$ 를 $\R^n$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega(\bf{p})$ 은 아래의 형태이다.
 
 $$
 \omega(\bf{p}) = \sum_{i_1<\cdots <i_k} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right]
@@ -1097,7 +1194,7 @@ $$
 ### 형식과 미분 {#sec-CM_form_and_differentiation}
 
 
-미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. $Df(\bf{p})\in \mathcal{A}^1(\R^n)$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
+미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. 이런 함수를 **스칼라장 (scalar field)** 라고 한다. $Df(\bf{p})\in \mathcal{A}^1({\R^n}_{\bf{p}})$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_1_form}
@@ -1116,10 +1213,10 @@ $$ {#eq-CM_differential_1-form}
 </br>
 
 
-$x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $\R^n$ 의 표준기저벡터 $\bf{e}_j$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 (\bf{p})은 다음과 같이 쓸 수 있다.
+$x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $\R^n$ 의 표준기저벡터 $\bf{e}_j$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
 
 $$
-\omega (\bf{p}) = \sum_{i_1< \cdots <k_k} \omega_{i_1,\ldots,i_k}(\bf{p})\cdot \left[ dx_{i_1}(\bf{p})\wedge \cdots \wedge dx_{i_k}(\bf{p})\right].
+\omega (\bf{p}) = \sum_{i_1< \cdots <i_k} \omega_{i_1,\ldots,i_k}(\bf{p})\cdot \left[ dx_{i_1}(\bf{p})\wedge \cdots \wedge dx_{i_k}(\bf{p})\right].
 $$
 
 탄젠트 공간을 지정하는 $(\bf{p})$ 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.
@@ -1143,7 +1240,7 @@ $$
 
 ::: {.proof}
 
-$df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})\cdot v_i = \sum_{i=1}^n D_i f(\bf{p})\cdot \left(dx_i(\bf{p})\cdot \bf{v}_p\right). \qquad \square$
+$df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})\cdot v_i = \sum_{i=1}^n D_i f(\bf{p})\cdot \left(dx_i(\bf{p})(\bf{v}_p)\right). \qquad \square$
 :::
 
 
@@ -1156,14 +1253,16 @@ F_\ast (\bf{v}_p) := \left(F'(\bf{p})(\bf{v})\right)_{F(\bf{p})}
 $$
 
 
-이로부터 선형 변환 $F^\ast \in \mathcal{L}\left(\mathcal{A}^k\left({\R^m}_{F(\bf{p})}\right),\, \mathcal{A}^k\left({\R^n}_{\bf{p}}\right)\right)$ 를 아래와 같이 정의한다.
+이로부터 선형 변환 $F^\ast \in \mathcal{L}\left(\mathcal{A}^k\left({\R^m}_{F(\bf{p})}\right),\, \mathcal{A}^k\left({\R^n}_{\bf{p}}\right)\right)$ 를 $(F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p}))$ 로 정의한다. 그렇다면 
 $$
 \begin{aligned}
-F^\ast \omega(\bf{p})(\bf{v}_1,\ldots,\bf{v}_k) &:= (F_\ast)^\ast(\omega(F(\bf{p})))(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
+\left(F^\ast \omega\right)(\bf{p})(\bf{v}_1,\ldots,\bf{v}_k) &= (F_\ast)^\ast(\omega(F(\bf{p})))(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
 &= \omega (F(\bf{p})) (F_\ast (\bf{v}_1),\ldots,\, F_\ast(\bf{v}_k)) \\[0.3em]
 &= \omega (F(\bf{p})) (F'(\bf{p})(\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})})
 \end{aligned}
 $$
+
+이다. 여기서 정의상 $\bf{v}_1,\ldots,\bf{v}_k\in \R^n_\bf{p}$ 이어야 한다. 그리고 $\bf{p}$ 나 $F(\bf{p})$ 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 

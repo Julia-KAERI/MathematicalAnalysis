@@ -777,7 +777,19 @@ _{k+l}) \\[0.3em]
 </section>
 <section id="벡터곱" class="level4">
 <h4 class="anchored" data-anchor-id="벡터곱"><strong>벡터곱</strong></h4>
-<p>이제 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터곱(cross product)</strong> 에 대해 알아보자. 정해진 <span class="math inline">\(v_1,\ldots,v_{n-1} \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\phi(u) := \det(v_1,\ldots,\,v_{n-1},u)\)</span> 라고 하면 <span class="math inline">\(\phi \in \mathcal{A}^1(\mathbb{R}^n)\)</span> 이다. <span class="math inline">\(\det\)</span> 의 성질에 의해 <span class="math inline">\(\phi (u)\)</span> 는 <span class="math inline">\(V\)</span> 에서 정해진 선형 범함수(linear functinal) 이며, 따라서 소위 리스의 표현정리 (Riesz representation theorem) 에 의해 <span class="math inline">\(\phi (u)=\langle u,\,w \rangle\)</span> 을 만족하는 <span class="math inline">\(w\in V\)</span> 가 유일하게 존재한다. 이 <span class="math inline">\(w\)</span> 를 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\)</span> 로 표기하고 <span class="math inline">\(v_1,\ldots,v_{n-1}\)</span> 의 <strong>벡터곱</strong> 이라고 한다.</p>
+<p>이제 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터곱(cross product)</strong> 에 대해 알아보자. 정해진 <span class="math inline">\(v_1,\ldots,\,v_{n-1} \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\phi(u) := \det(v_1,\ldots,\,v_{n-1},u)\)</span> 라고 하면 <span class="math inline">\(\phi \in \mathcal{A}^1(\mathbb{R}^n)\)</span> 이다. <span class="math inline">\(\det\)</span> 의 성질에 의해 <span class="math inline">\(\phi (u)\)</span> 는 <span class="math inline">\(V\)</span> 에서 정해진 선형 범함수(linear functinal) 이며, 따라서 소위 리스의 표현정리 (Riesz representation theorem) 에 의해 <span class="math inline">\(\phi (u)=\langle u,\,w \rangle\)</span> 을 만족하는 <span class="math inline">\(w\in V\)</span> 가 유일하게 존재한다. 이 <span class="math inline">\(w\)</span> 를 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\)</span> 로 표기하고 <span class="math inline">\(v_1,\ldots,v_{n-1}\)</span> 의 <strong>벡터곱</strong> 이라고 한다. 즉 모든 <span class="math inline">\(u \in \mathbb{R}^n\)</span> 에서</p>
+<p><span id="eq-CM_inner_product_and_cross_product"><span class="math display">\[
+\phi(u) = \langle u,\,  w \rangle = \det \left( v_1,\ldots,\,v_{n-1},\, u\right)
+\tag{17.14}\]</span></span></p>
+<p>를 만족하는 <span class="math inline">\(w\)</span> 를 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\)</span> 로 표기한다.</p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CM_magnitude_of_cross_product" class="theorem example">
+<p><span class="theorem-title"><strong>예제 17.1 (벡터곱의 기본 성질)</strong></span> <br></p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\det\)</span> 의 성질로부터 <span class="math inline">\(w = v_1\times \cdots \times v_{n-1}\)</span> 일 때 <span class="math inline">\(\langle v_i,\, w\rangle = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 표준직교기저 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 에 대해 <span class="math inline">\(e_1 \times \cdots \times e_{n-1}=e_n\)</span> 이다.</p>
+</div>
+</div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_cross_product" class="theorem proposition">
@@ -789,7 +801,7 @@ v_1\times \cdots \times (av_i)\times \cdots \times v_{n-1} &amp;= a\cdot (v_1\ti
 v_1 \times \cdots \times (v_i + v'_i) \times \cdots \times v_{n-1} &amp;=v_1 \times \cdots \times v_i \times \cdots \times v_{n-1} \\[0.3em]
 &amp;\, + v_1 \times \cdots \times v'_i \times \cdots \times v_{n-1}
 \end{aligned}
-\tag{17.14}\]</span></span></p>
+\tag{17.15}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -811,7 +823,7 @@ v_1 \times \cdots \times (v_i + v'_i) \times \cdots \times v_{n-1} &amp;=v_1 \ti
 <p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
-\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} &amp;(e_{i_1},\cdots,e_{i_k}) = k!\text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{i_1},\cdots,e_{i_k}) \\[0.3em]
+\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} &amp;(e_{i_1},\cdots,e_{i_k}) = k! \cdot \text{Alt}(\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{i_1},\cdots,e_{i_k}) \\[0.3em]
 &amp;= \dfrac{k!}{k!} \sum_{\sigma \in S_k} \text{sgn}(\sigma)\cdot (\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k})(e_{\sigma(i_1)},\cdots,e_{\sigma(i_k)}) \\[0.3em]
 &amp;= \sum_{\sigma\in S_k} \text{sgn}(\sigma) \delta_{i_1,\sigma(i_1)} \cdots \delta_{i_k,\sigma(i_k)} = 1
 \end{aligned}
@@ -828,22 +840,11 @@ v_1 \times \cdots \times (v_i + v'_i) \times \cdots \times v_{n-1} &amp;=v_1 \ti
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-spivak_4_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.2 (Spivak 4.2)</strong></span> <span class="math inline">\(f \in \mathcal{L}(V)\)</span> 이고 <span class="math inline">\(\dim(V)=n\)</span> 일 때 <span class="math inline">\(f^\ast :\mathcal{A}^n (V) \to \mathcal{A}^n (V)\)</span> 는 어떤 상수 <span class="math inline">\(c\)</span> 에 대한 곱임을 보여라. 그리고 <span class="math inline">\(c=\det (f)\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 17.2 (Spivak 4.2)</strong></span> <span class="math inline">\(F \in \mathcal{L}(V)\)</span> 이고 <span class="math inline">\(\dim(V)=n\)</span> 일 때 <span class="math inline">\(F^\ast :\mathcal{A}^n (V) \to \mathcal{A}^n (V)\)</span> 는 어떤 상수 <span class="math inline">\(c\)</span> 에 대한 곱임을 보여라. 그리고 <span class="math inline">\(c=\det (F)\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(1\)</span> 차원 벡터공간에서의 선형사상은 어떤 상수에 대한 곱이다. <span class="math inline">\(\omega \in \mathcal{A}^n (V)\)</span> 에 대해</p>
-<p><span class="math display">\[
-(f^\ast(\omega))= c\omega
-\]</span></p>
-<p>라고 하자.</p>
-<p><span class="math display">\[
-\begin{aligned}
-(f^\ast(\omega))(v_1,\ldots,\,v_n) &amp;= \omega (f(v_1),\ldots, f(v_n)) \\[0.3em]
-&amp;= \det (f) \cdot \omega(v_1,\ldots,v_n)
-\end{aligned}
-\]</span></p>
-<p>이므로 <span class="math inline">\(c=\det(f)\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\mathcal{A}^n(V)\)</span> 는 1차원 벡터공간이며, 1차원 벡터공간 사이의 선형사상은 어떤 성분의 상수배이다. 즉 <span class="math inline">\(F^\ast(\omega) = c \omega\)</span> 이다. 그리고 <span class="math inline">\(\det \in A^n(V)\)</span> 이므로 <span class="math inline">\(c=\det F\)</span> 로 놓을 수 있다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -855,23 +856,29 @@ v_1 \times \cdots \times (v_i + v'_i) \times \cdots \times v_{n-1} &amp;=v_1 \ti
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(v_1,\ldots,\,v_n\)</span> 이 <span class="math inline">\(T\)</span> 에 대한 정규직교기저이고 <span class="math inline">\(u_i =\sum_j A_{ij}v_j\)</span> 라 하자. <span class="math inline">\(T(u_i,u_j)=(AA^T)_{ij}\)</span> 이며 <span class="math inline">\(\det(A)=\det(A^T)\)</span> 이므로</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(v_1,\ldots,\,v_n\)</span> 이 <span class="math inline">\(T\)</span> 에 대한 정규직교기저이고 <span class="math inline">\(u_i =\sum_j A_{ij}v_j\)</span> 라 하자.</p>
 <p><span class="math display">\[
-|\omega(u_1,\ldots,u_n)|= |\det(g_{ij})| \cdot \underbrace{|\det(v_1,\ldots,v_n)|}_{=1} = \sqrt{\det(g_{ij})}
+\begin{aligned}
+g_{ij}=T(u_i,u_j)&amp;=\sum_{k, l} A_{ik}A_{jl}T(v_k, v_l)= \sum_k A_{ik}A_{jk}= \left(AA^T\right)_{ij}
+\end{aligned}
 \]</span></p>
-<p>이다.</p>
+<p>이며 <span class="math inline">\(\det(A)=\det(A^T)\)</span> 이므로 <span class="math inline">\(\det (g_{ij}) = (\det(A))^2\)</span> 이다. 따라서 다음이 성립한다.</p>
+<p><span class="math display">\[
+|\omega(u_1,\ldots,u_n)|= |\det(A)| \cdot \underbrace{|\det(v_1,\ldots,v_n)|}_{=1} = \sqrt{\det(g_{ij})}.
+\]</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-spivak_4_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.4 (Spivak 4.4)</strong></span> <span class="math inline">\(\omega\)</span> 가 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 부피 요소이고 <span class="math inline">\(f :\mathbb{R}^n \to V\)</span> 가 동형사상이며 <span class="math inline">\(f^\ast (T) = \langle\,,\,\rangle\)</span> 이고 <span class="math inline">\([f(e_1),\ldots, f(e_n)]=\mu\)</span> 일 때 <span class="math inline">\(f^\ast \omega = \det\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 17.4 (Spivak 4.4)</strong></span> <span class="math inline">\(\omega\)</span> 가 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 부피 요소이고 <span class="math inline">\(F :\mathbb{R}^n \to V\)</span> 가 동형사상이며 <span class="math inline">\(F^\ast (T) = \langle\,,\,\rangle\)</span> 이고 <span class="math inline">\([F(e_1),\ldots, F(e_n)]=\mu\)</span> 일 때 <span class="math inline">\(F^\ast \omega = \det\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 이 <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저이며 <span class="math inline">\(v_i = F(e_i)\)</span> 라고 하자. <span class="math inline">\(F^\ast (T) = \langle \,,\,\rangle\)</span> 로부터 <span class="math inline">\(F^\ast T (e_i,\,e_j) = \langle e_i,e_j\rangle = \delta_{ij}\)</span> 이며 <span class="math inline">\(F^\ast T(e_i,e_j)= T(F(e_i),F(e_j))=T(v_i,v_j)\)</span> 이므로 <span class="math inline">\(T\)</span> 는 내적을 보존하는 isometry 임을 안다. 따라서 <span class="math inline">\(\det (F)=\pm 1\)</span> 이며 방향을 보존하므로 <span class="math inline">\(\det (F) = 1\)</span> 이다.</p>
+<p><span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(V\)</span> 의 정규직교기저 <span class="math inline">\(u_1,\ldots,\,u_n\)</span> 에 대해 <span class="math inline">\(T,\, \mu\)</span> 에 의해 결정되는 부피요소라고 하자. 이 때 <span class="math display">\[
 \begin{aligned}
-\left(f^\ast (\omega)\right)(v_1,\ldots,v_n) &amp;=\omega (f(v_1),\ldots,f(v_n)) \\[0.3em]
-&amp;= \underbrace{\det (f)}_{=1} \cdot \det (v_1,\ldots,v_n)
+\left(F^\ast (\omega)\right)(v_1,\ldots,v_n) &amp;=\omega (F(v_1),\ldots,F(v_n)) \\[0.3em]
+&amp;= \underbrace{\det (F)}_{=1} \cdot \det (v_1,\ldots,v_n) = \det (v_1,\ldots,v_n)
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(f^\ast \omega = \det\)</span> 이다.</p>
@@ -911,7 +918,7 @@ z_1w_1+z_2w_2 = v_1w_2 - v_2w_1
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>선형 독립인 <span class="math inline">\(v_1,\ldots,\,v_n\)</span> 과 그 쌍대함수 <span class="math inline">\(\varphi_1,\ldots,\varphi_n\)</span> 에 의해 <span class="math inline">\(\omega = \varphi_1 \wedge \cdots \wedge \varphi_n \in \mathcal{A}^n(V)\)</span> 가 정해진다. <span class="math inline">\(u\, w\in V\)</span> 에 대해 <span class="math inline">\(u=\sum_i a_i v_i,\, w=\sum_j b_jv_j\)</span> 일 때 내적 <span class="math inline">\(T(u,\,v) = \langle u,\,w\rangle = \sum_{i}a_ib_i\)</span> 로 정의 할 수 있으며 <span class="math inline">\(\omega (v_1,\ldots,\,v_n)=1\)</span> 이므로 방향성도 정해진다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>선형 독립인 <span class="math inline">\(v_1,\ldots,\,v_n\)</span> 과 그 쌍대함수 <span class="math inline">\(\varphi_1,\ldots,\varphi_n\)</span> 에 의해 <span class="math inline">\(\omega = \varphi_1 \wedge \cdots \wedge \varphi_n \in \mathcal{A}^n(V)\)</span> 가 정해진다. <span class="math inline">\(u,\, w\in V\)</span> 에 대해 <span class="math inline">\(u=\sum_i a_i v_i,\, w=\sum_j b_jv_j\)</span> 일 때 내적 <span class="math inline">\(T(u,\,v) = \langle u,\,w\rangle = \sum_{i}a_ib_i\)</span> 로 정의 할 수 있으며 <span class="math inline">\(\omega (v_1,\ldots,\,v_n)=1\)</span> 이므로 방향성도 정해진다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -958,11 +965,53 @@ v_1\times \cdots \times v_{n-1} = \sum_i \omega (v_1,\ldots,\,v_{n-1},\,e_i) e_i
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(X=\text{span}(\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_{n-1})\)</span> 은 <span class="math inline">\(n-1\)</span> 차원 벡터공간이며 <span class="math inline">\(\mathbb{R}^n\)</span> 의 부분공간이다. <a href="#exr-spivak_4_3" class="quarto-xref">연습문제&nbsp;<span>17.3</span></a></p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_{n-1}\)</span> 이 선형 종속일 경우는 <span class="math inline">\(\boldsymbol{u}_1 \times \cdots \times \boldsymbol{u}_{n-1}=\boldsymbol{0}\)</span> 이며 <span class="math inline">\(\deg (g_{ij})=0\)</span> 이므로 성립한다. 이제 <span class="math inline">\(\boldsymbol{u}_1,\ldots,\boldsymbol{u}_{n-1}\)</span> 이 선형 독립일 경우만 생각한다. <span class="math inline">\(\boldsymbol{u}_n = \boldsymbol{u}_1 \times \cdots \times \boldsymbol{u}_{n-1}\)</span> 이라고 하자. <span class="math inline">\((\boldsymbol{u}_i)\)</span> 로부터 그람-슈미트 과정을 통해 정규직교 기저 <span class="math inline">\((\boldsymbol{e}_i)\)</span> 를 구성할 수 있으며 이 경우 <span class="math inline">\(\text{span}(\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_k) = \text{span}(\boldsymbol{e}_1,\ldots,\boldsymbol{e}_k)\)</span> 이다.</p>
+<p><span class="math inline">\(\boldsymbol{u}_i = \sum_j A_{ij} \boldsymbol{e}_j\)</span> 라고 하자. <span class="math inline">\(\langle \boldsymbol{u}_i,\boldsymbol{u}_n\rangle = \langle \boldsymbol{u}_n,\boldsymbol{u}_i\rangle = \|\boldsymbol{u}_n\|^2\delta_{in}\)</span> 이므로 <span class="math inline">\(\tilde{g}_{ij}=\langle \boldsymbol{u}_i,\,\boldsymbol{u}_j\rangle = (AA^T)_{ij}\)</span> 라고 하면 <span class="math inline">\(1\le i,\,j \le n-1\)</span> 에서는 <span class="math inline">\(\tilde{g}_{ij}=g_{ij}\)</span> 이며 <span class="math inline">\(\tilde{g}_{ni}= \tilde{g}_{in}= \delta_{in}|\boldsymbol{u}_n\|^2\)</span> 이다.</p>
+<p><span class="math inline">\(\det (g_{ij})= \left(\det(A)\right)^2\)</span> 이다. 이 때 <span class="math inline">\([\boldsymbol{u},\ldots,\,\boldsymbol{u}_{n-1}] = [\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_{n-1}]\)</span> 이 되도록 잡을 수 있다. 이 내적과 방향석을 이용하여 <span class="math inline">\(\boldsymbol{e}_1,\ldots,\boldsymbol{e}_{n}\)</span> 에 대해 <span class="math inline">\(\omega (\boldsymbol{e}_1,\ldots,\boldsymbol{e}_n) =1\)</span> 이 되도록 <span class="math inline">\(\omega\)</span> 를 정한다면</p>
+<p><span class="math display">\[
+\|\boldsymbol{u}_1\times \cdots \times \boldsymbol{u}_n\| = |\omega (\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_{n})| = \sqrt{\det(\tilde{g}_{ij})} = \sqrt{\det (g_{ij})} \|\boldsymbol{u}_n\|
+\]</span></p>
+<p>또한</p>
+<p><span class="math display">\[
+|\omega (\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_n) = \det (\boldsymbol{u}_1,\ldots,\boldsymbol{u}_n) = \|\boldsymbol{u}_n\|^2
+\]</span></p>
+<p>이므로 <span class="math inline">\(\|\boldsymbol{u}_n\| = \|\boldsymbol{u}_1\times \cdots \times \boldsymbol{u}_{n-1}\| = \sqrt{\det (g_{ij})}\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.11 (Spivak 4.11)</strong></span> 내적벡터공간 <span class="math inline">\(V\)</span> 에서 <span class="math inline">\(L\in \mathcal{L}(V)\)</span> 에 대해 모든 <span class="math inline">\(x,\,y\in V\)</span> 에서 <span class="math inline">\(\langle x,\,L(y)\rangle = \langle L(x),\,y\rangle\)</span> 일 때 이 <span class="math inline">\(L\)</span> 을 에르미트 연산자라고 한다. <span class="math inline">\(v_1,\ldots,\,v_n\)</span> 이 정규직교기저이고 <span class="math inline">\(A=(a_{ij})\)</span> 가 이 기저에 대한 <span class="math inline">\(L\)</span> 의 행렬 이라면 <span class="math inline">\(a_{ij} = a_{ji}\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>모든 <span class="math inline">\(x,\,y\in V\)</span> 에 대해 성립하므로 <span class="math inline">\(v_i,\,v_j\)</span> 에 대해서도 성립해야 한다. <span class="math display">\[
+\begin{aligned}
+\langle v_i,\, L(v_j)\rangle &amp;= \left\langle v_i, \sum_k a_{jk}v_k\right\rangle = \sum_{k} a_{jk} \langle v_i,\,v_k\rangle = a_{ji}, \\[0.3em]
+\langle L(v_i),\,v_j\rangle &amp;= \left\langle \sum_k a_{ik}v_k,\, v_j\right\rangle = \sum_k a_{ik} \langle v_k,\,v_j\rangle = a_{ij}
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(a_{ji}=a_{ij}\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-spivak_4_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.12 (Spivak 4.12)</strong></span> <span class="math inline">\(F_1,\ldots,\,F_{n-1} : \mathbb{R}^m \to \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(F_1 \times \cdots \times F_n : \mathbb{R}^m \to \mathbb{R}^n\)</span> 을 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+(F_1 \times \cdots \times F_n)(p) = F_1(p)\times \cdots \times F_n(p).
+\]</span></p>
+<p><span class="math inline">\(F_1,\ldots,\,F_{n-1}\)</span> 이 미분가능 할 때 <a href="3_2_differentiation_of_manifolds.html#exr-CM_spivak_2_14" class="quarto-xref">연습문제&nbsp;<span>13.14</span></a> 를 이용하여 <span class="math inline">\(D(F_1 \times \cdots \times F_{n-1})\)</span> 을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(F :(\mathbb{R}^m)^{n-1} \to \mathbb{R}^n\)</span> 을 아래와 같이 정의하면 다중선형함수이다.</p>
+<p><span class="math display">\[
+F(\boldsymbol{x}_1,\ldots,\boldsymbol{x}_{n-1}) = \boldsymbol{x}_1\times \cdots \times \boldsymbol{x}_{n-1}.
+\]</span></p>
 <p><span class="math display">\[
 \begin{aligned}
-\|\boldsymbol{u}_1 \times \cdots \times \boldsymbol{u}_{n-1}\| &amp;= \sqrt{\sum_{i=1}^n \left|\omega (v_1,\ldots,\,v_{n-1},\,e_i)\right|^2} \\[0.3em]
-&amp;=
+(F_1 \times \cdots \times F_{n-1})'(\boldsymbol{p})(\boldsymbol{x}) &amp;= (F\circ (F_1,\ldots,\,F_{n-1}))'(\boldsymbol{p})(\boldsymbol{x}) \\[0.3em]
+&amp;= F'(F_1(\boldsymbol{p}),\ldots,\,F_{n-1}(\boldsymbol{p})) \circ (F'_1(\boldsymbol{p}),\ldots,\,F'_{n-1}(\boldsymbol{p})) (\boldsymbol{x}) \\[0.3em]
+&amp;= \sum_{i=1}^{n-1} \left[F_1(\boldsymbol{p}) \times \cdots \times F_{i-1}(\boldsymbol{p}) \times F'_{i}(\boldsymbol{p}) \times F_{i+1}(\boldsymbol{p})\times \cdots \times F_{n-1}(\boldsymbol{p})\right] (\boldsymbol{x})
 \end{aligned}
 \]</span></p>
 </div>
@@ -1036,9 +1085,9 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <p><span class="math inline">\(F,\,G\)</span> 가 벡터장이고 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 함수일 때 연산을 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-(F+G)(\boldsymbol{p}) &amp;:= F(\boldsymbol{p}) + F(\boldsymbol{p}), \\[0.3em]
-\langle F,\, G\rangle (\boldsymbol{p}) &amp;: = \langle F(\boldsymbol{p}),\, G(\boldsymbol{p})\rangle, \\[0.3em]
-(f\cdot F)(\boldsymbol{p}) &amp;:= f(\boldsymbol{p})F(\boldsymbol{p}), \\[0.3em]
+(F+G)(\boldsymbol{p}) &amp;:= F(\boldsymbol{p}) + F(\boldsymbol{p}), \\[0.4em]
+\langle F,\, G\rangle (\boldsymbol{p}) &amp;: = \langle F(\boldsymbol{p}),\, G(\boldsymbol{p})\rangle, \\[0.4em]
+(f\cdot F)(\boldsymbol{p}) &amp;:= f(\boldsymbol{p})F(\boldsymbol{p}), \\[0.4em]
 (F \times \cdots \times G) (\boldsymbol{p}) &amp;:= F(\boldsymbol{p})\times \cdots \times G(\boldsymbol{p}).
 \end{aligned}
 \]</span></p>
@@ -1055,10 +1104,6 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <div class="callout-body-container">
 <div id="def-CM_divergence_and_curl" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 17.9 (Divergence 와 Curl)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i F_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다.</p>
-<p><span class="math inline">\(\mathbb{R}^3\)</span> 에서의 <span class="math inline">\(\text{curl}\,F\)</span> 는 아래와 같이 정의된다.</p>
-<p><span class="math display">\[
-\text{curl}\, F(\boldsymbol{p}) := (D_2f_3 - D_3f_2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f_1 - D_1f_3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f_2-D_2f_1)(\boldsymbol{e}_3)_\boldsymbol{p}
-\]</span></p>
 </div>
 </div>
 </div>
@@ -1069,6 +1114,16 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 \]</span></p>
 <p>Nabla 연산자를 이용하여 <span class="math inline">\(\text{div}\,F\)</span> 를 <span class="math inline">\(\nabla \boldsymbol{\cdot}F\)</span> 로 <span class="math inline">\(\text{curl}\, F\)</span> 를 <span class="math inline">\(\nabla \times F\)</span> 로 표기하기도 한다.</p>
 <p><br></p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CM_curl" class="theorem example">
+<p><span class="theorem-title"><strong>예제 17.2</strong></span> <span class="math inline">\(\mathbb{R}^3\)</span> 에서의 <span class="math inline">\(\text{curl}\,F\)</span> 는 아래와 같이 정의된다.</p>
+<p><span class="math display">\[
+\text{curl}\, F(\boldsymbol{p}) := (D_2f_3 - D_3f_2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f_1 - D_1f_3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f_2-D_2f_1)(\boldsymbol{e}_3)_\boldsymbol{p}
+\]</span></p>
+</div>
+</div>
+<p><br></p>
 <p><span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\((\mathbb{R}^n)_\boldsymbol{p}\)</span>, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 <span class="math inline">\(k\)</span>-form 을 정의 할 수 있다.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -1077,7 +1132,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container">
 <div id="def-CM_differential_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.10 (미분 형식)</strong></span> <span class="math inline">\(\omega (p)\in \mathcal{A}^k({\mathbb{R}^n}_\boldsymbol{p})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 은 아래의 형태이다.</p>
+<p><span class="theorem-title"><strong>정의 17.10 (미분 형식)</strong></span> <span class="math inline">\(\omega (\boldsymbol{p})\in \mathcal{A}^k({\mathbb{R}^n}_\boldsymbol{p})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 은 아래의 형태이다.</p>
 <p><span class="math display">\[
 \omega(\boldsymbol{p}) = \sum_{i_1&lt;\cdots &lt;i_k} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right]
 \]</span></p>
@@ -1089,7 +1144,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_0_form_and_1_form" class="theorem example">
-<p><span class="theorem-title"><strong>예제 17.1 (<span class="math inline">\(0\)</span>-형식 과 <span class="math inline">\(1\)</span>-형식)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 은 <span class="math inline">\(0\)</span>-형식 이다. <span class="math inline">\(1\)</span>-형식은 선형 변환이다.</p>
+<p><span class="theorem-title"><strong>예제 17.3 (<span class="math inline">\(0\)</span>-형식 과 <span class="math inline">\(1\)</span>-형식)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 은 <span class="math inline">\(0\)</span>-형식 이다. <span class="math inline">\(1\)</span>-형식은 선형 변환이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -1116,7 +1171,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </section>
 <section id="sec-CM_form_and_differentiation" class="level3" data-number="17.2.2">
 <h3 data-number="17.2.2" class="anchored" data-anchor-id="sec-CM_form_and_differentiation"><span class="header-section-number">17.2.2</span> 형식과 미분</h3>
-<p>미분 가능한 함수 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(Df(\boldsymbol{p})\in \mathcal{A}^1(\mathbb{R}^n)\)</span> 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.</p>
+<p>미분 가능한 함수 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 을 생각하자. 이런 함수를 <strong>스칼라장 (scalar field)</strong> 라고 한다. <span class="math inline">\(Df(\boldsymbol{p})\in \mathcal{A}^1({\mathbb{R}^n}_{\boldsymbol{p}})\)</span> 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1127,15 +1182,15 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <p><span class="theorem-title"><strong>정의 17.12 (함수의 미분과 1차 형식)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_differential_1-form"><span class="math display">\[
 df(\boldsymbol{p}) (\boldsymbol{v}_\boldsymbol{p}) := Df(\boldsymbol{p})(\boldsymbol{v}) = Df(\boldsymbol{p})\cdot \boldsymbol{v}.
-\tag{17.15}\]</span></span></p>
+\tag{17.16}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p><span class="math inline">\(x_i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x_i\)</span> 의 1차 형식 <span class="math inline">\(dx_i(\boldsymbol{p})\)</span> 를 생각 할 수 있다. <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저벡터 <span class="math inline">\(\boldsymbol{e}_j\)</span> 에 대해 <span class="math inline">\(dx_i(\boldsymbol{p})\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx_i (\boldsymbol{p})\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 (</p>
+<p><span class="math inline">\(x_i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x_i\)</span> 의 1차 형식 <span class="math inline">\(dx_i(\boldsymbol{p})\)</span> 를 생각 할 수 있다. <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저벡터 <span class="math inline">\(\boldsymbol{e}_j\)</span> 에 대해 <span class="math inline">\(dx_i(\boldsymbol{p})\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx_i (\boldsymbol{p})\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 는 다음과 같이 쓸 수 있다.</p>
 <p><span class="math display">\[
-\omega (\boldsymbol{p}) = \sum_{i_1&lt; \cdots &lt;k_k} \omega_{i_1,\ldots,i_k}(\boldsymbol{p})\cdot \left[ dx_{i_1}(\boldsymbol{p})\wedge \cdots \wedge dx_{i_k}(\boldsymbol{p})\right].
+\omega (\boldsymbol{p}) = \sum_{i_1&lt; \cdots &lt;i_k} \omega_{i_1,\ldots,i_k}(\boldsymbol{p})\cdot \left[ dx_{i_1}(\boldsymbol{p})\wedge \cdots \wedge dx_{i_k}(\boldsymbol{p})\right].
 \]</span></p>
 <p>탄젠트 공간을 지정하는 <span class="math inline">\((\boldsymbol{p})\)</span> 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.</p>
 <p><span class="math display">\[
@@ -1151,20 +1206,21 @@ df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(df(\boldsymbol{p})(\boldsymbol{v}_p) = Df(\boldsymbol{p}) \boldsymbol{\cdot}\boldsymbol{v} = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot v_i = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot \left(dx_i(\boldsymbol{p})\cdot \boldsymbol{v}_p\right). \qquad \square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(df(\boldsymbol{p})(\boldsymbol{v}_p) = Df(\boldsymbol{p}) \boldsymbol{\cdot}\boldsymbol{v} = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot v_i = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot \left(dx_i(\boldsymbol{p})(\boldsymbol{v}_p)\right). \qquad \square\)</span></p>
 </div>
 <p><br></p>
 <p>미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 이것을 조금 바꿔 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}({\mathbb{R}^n}_\boldsymbol{p},\, {\mathbb{R}^m}_{F(\boldsymbol{p})})\)</span> 을 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
 F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(\boldsymbol{p})}
 \]</span></p>
-<p>이로부터 선형 변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\mathcal{A}^k\left({\mathbb{R}^m}_{F(\boldsymbol{p})}\right),\, \mathcal{A}^k\left({\mathbb{R}^n}_{\boldsymbol{p}}\right)\right)\)</span> 를 아래와 같이 정의한다. <span class="math display">\[
+<p>이로부터 선형 변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\mathcal{A}^k\left({\mathbb{R}^m}_{F(\boldsymbol{p})}\right),\, \mathcal{A}^k\left({\mathbb{R}^n}_{\boldsymbol{p}}\right)\right)\)</span> 를 <span class="math inline">\((F^\ast \omega) (\boldsymbol{p}) := (F_\ast)^\ast (\omega (F(\boldsymbol{p}))\)</span> 로 정의한다. 그렇다면 <span class="math display">\[
 \begin{aligned}
-F^\ast \omega(\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;:= (F_\ast)^\ast(\omega(F(\boldsymbol{p})))(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
+\left(F^\ast \omega\right)(\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= (F_\ast)^\ast(\omega(F(\boldsymbol{p})))(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
 &amp;= \omega (F(\boldsymbol{p})) (F_\ast (\boldsymbol{v}_1),\ldots,\, F_\ast(\boldsymbol{v}_k)) \\[0.3em]
 &amp;= \omega (F(\boldsymbol{p})) (F'(\boldsymbol{p})(\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})})
 \end{aligned}
 \]</span></p>
+<p>이다. 여기서 정의상 <span class="math inline">\(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k\in \mathbb{R}^n_\boldsymbol{p}\)</span> 이어야 한다. 그리고 <span class="math inline">\(\boldsymbol{p}\)</span> 나 <span class="math inline">\(F(\boldsymbol{p})\)</span> 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_properties_of_full_back" class="theorem">
