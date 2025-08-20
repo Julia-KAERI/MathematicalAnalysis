@@ -1212,7 +1212,6 @@ $$ {#eq-CM_differential_1-form}
 
 </br>
 
-
 $x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $\R^n$ 의 표준기저벡터 $\bf{e}_j$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
 
 $$
@@ -1243,17 +1242,22 @@ $$
 $df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})\cdot v_i = \sum_{i=1}^n D_i f(\bf{p})\cdot \left(dx_i(\bf{p})(\bf{v}_p)\right). \qquad \square$
 :::
 
-
 </br>
 
-미분가능한 함수 $F:\R^n \to \R^m$ 과 선형변환인 $F'(\bf{p}) \in \mathcal{L}(\R^n, \R^m)$ 을 생각하자. 이것을 조금 바꿔 선형변환 $F_\ast  \in \mathcal{L}({\R^n}_\bf{p},\, {\R^m}_{F(\bf{p})})$ 을 아래와 같이 정의한다.
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_push_forward_and_pull_back}
+
+#### Pull-back 과 Push-forward
+
+미분가능한 함수 $F:\R^n \to \R^m$ 과 선형변환인 $F'(\bf{p}) \in \mathcal{L}(\R^n, \R^m)$ 을 생각하자. 아래와 같이 정의되는 선형변환 $F_\ast  \in \mathcal{L}({\R^n}_\bf{p},\, {\R^m}_{F(\bf{p})})$ 을 $F$ 에 대한 **push-forward** 라고 한다.
 
 $$
 F_\ast (\bf{v}_p) := \left(F'(\bf{p})(\bf{v})\right)_{F(\bf{p})}
 $$
 
 
-이로부터 선형 변환 $F^\ast \in \mathcal{L}\left(\mathcal{A}^k\left({\R^m}_{F(\bf{p})}\right),\, \mathcal{A}^k\left({\R^n}_{\bf{p}}\right)\right)$ 를 $(F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p}))$ 로 정의한다. 그렇다면 
+이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\mathcal{A}^k\left({\R^m}_{F(\bf{p})}\right),\, \mathcal{A}^k\left({\R^n}_{\bf{p}}\right)\right)$ 를 $(F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p})))$ 로 정의하며 이를 **pull-back** 이라고 한다. 그렇다면 
 $$
 \begin{aligned}
 \left(F^\ast \omega\right)(\bf{p})(\bf{v}_1,\ldots,\bf{v}_k) &= (F_\ast)^\ast(\omega(F(\bf{p})))(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
@@ -1262,7 +1266,12 @@ $$
 \end{aligned}
 $$
 
-이다. 여기서 정의상 $\bf{v}_1,\ldots,\bf{v}_k\in \R^n_\bf{p}$ 이어야 한다. 그리고 $\bf{p}$ 나 $F(\bf{p})$ 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.
+이다. 
+
+:::
+:::
+
+여기서 정의상 $\bf{v}_1,\ldots,\bf{v}_k\in \R^n_\bf{p}$ 이어야 한다. 그리고 $\bf{p}$ 나 $F(\bf{p})$ 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -1287,8 +1296,8 @@ $F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots f_m (\bf{x}
 
 $$
 \begin{aligned}
-F^\ast (dx_i) (\bf{p})(\bf{v}_p) &= dx_i(F(\bf{p}))(F'(\bf{p})(\bf{v}))_{F(\bf{p})} \\[0.3em]
-&= dx_i(F(\bf{p}))\left(\sum_{j=1}^n v_j D_jf_1(\bf{p}),\ldots,\,\sum_{j=1}^n v_jD_j f_m (\bf{p})\right)_{F(\bf{p})} \\[0.3em]
+F^\ast (dx_i) (\bf{p})(\bf{v}_p) &= dx_i(F(\bf{p})) \left(F'(\bf{p})(\bf{v})_{F(\bf{p})}\right) \\[0.3em]
+&= dx_i(F(\bf{p}))\left(\sum_{j=1}^n v_j D_jf_1(\bf{p})_{F(\bf{p})},\ldots,\,\sum_{j=1}^n v_jD_j f_m (\bf{p})_{F(\bf{p})}\right) \\[0.3em]
 &= \sum_{j=1}^n v_j D_jf_i (\bf{p}) = \sum_{j=1} D_j f_i (\bf{p}) \cdot dx_j(\bf{p})(\bf{v}_\bf{p}).
 \end{aligned}
 $$
@@ -1314,6 +1323,336 @@ F^\ast (g \cdot \omega)&(\bf{p})\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}
 \end{aligned}
 $$
 
-($4$) @prp-CM_basic_properties_of_wedge_product_2 와 같은 방법으로 증명 할 수 있다. $\square$
+($4$) @prp-CM_basic_properties_of_wedge_product_2 와 같은 방법으로 증명 할 수 있다. 
+
+$$
+\begin{aligned}
+F^\ast (\omega \wedge \eta)&(\bf{p})((\bf{v}_1)_\bf{p},\ldots, (\bf{v}_{k+l})_\bf{p}) \\[0.3em]
+&= (\omega \wedge \eta)(F(\bf{p})) \left((\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}\right) \\[0.3em]
+&= (F^\ast \omega \wedge F^\ast \eta)(\bf{p}) ((\bf{v}_1)_\bf{p},\ldots, (\bf{v}_{k+l})_\bf{p}) . \qquad \square
+\end{aligned}
+$$
 
 :::
+
+</br>
+
+이 정리를 이용하면 다음을 알 수 있다.
+
+$$
+\begin{aligned}
+F^\ast &(P \,dx_1 \wedge dx_2 + Q\,dx_2 \wedge dx_3) =  (P \circ F) \cdot F^\ast (dx_1 \wedge dx_2) + (Q\circ F)\cdot F^\ast (dx_2 \wedge dx_3) \\[0.3em]
+&\qquad = (P\circ F)\cdot (F^\ast dx_1 \wedge F^\ast dx_2) + (Q\circ F)\cdot (F^\ast dx_2 \wedge F^\ast dx_3)
+\end{aligned}
+$$
+
+이것은 다소 복잡한 계산이며 이런 류의 계산을 줄이기 위한 정리가 있다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_full_back_simplification}
+
+$F:\R^n \to \R^n$ 이 미분가능 할 때 다음이 성립한다.
+
+$$
+F^\ast (H\, dx_1 \wedge \cdots \wedge dx_n) = (H \circ F)\cdot \det (F')\cdot (dx_1 \wedge \cdots \wedge dx_n).
+$$
+
+:::
+</div>
+
+::: {.proof}
+
+아래를 보자.
+
+$$
+F^\ast (H\, dx_1 \wedge \cdots \wedge dx_n) = (H\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
+$$
+
+여기서 $\R^n$ 의 표준 기저 $\bf{e}_1,\ldots,\,\bf{e}_n$ 을 생각하자. 그리고 $F'(\bf{p})=A$ 는 $n \times n$ 행렬이다. 
+
+$$
+\begin{aligned}
+ (F^\ast (dx_1 \wedge \cdots \wedge dx_n))& (\bf{e}_1,\ldots,\,\bf{e}_n) \\[0.3em]
+ &= (dx_1 \wedge \cdots \wedge dx_n) (F_\ast (\bf{e}_1),\ldots,\,F_\ast (\bf{e}_n)) \\[0.3em]
+ &=(dx_1 \wedge \cdots \wedge dx_n) (F'(\bf{p})(\bf{e}_1),\ldots,\, F'(\bf{p})(\bf{e}_n)) \\[0.3em]
+ &=(dx_1 \wedge \cdots \wedge dx_n) \left(\sum_{i=1}^n A_{i1}\bf{e}_i,\ldots \sum_{i=1}^n A_{in}\bf{e}_i\right) \\[0.3em]
+\end{aligned}
+$$
+
+@thm-CM_alternating_tensor_and_determinant 에 따라 다음이 성립한다.
+
+$$
+(F^\ast (dx_1 \wedge \cdots \wedge dx_n)) (\bf{e}_1,\ldots,\,\bf{e}_n) = \det(A)\cdot (dx_1 \wedge \cdots \wedge dx_n)\cdot (\bf{e}_1,\ldots,\,\bf{e}_n).\square
+$$
+
+:::
+
+</br>
+
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_differential_of_forms}
+
+#### 형식의 미분
+
+$k$-형식 
+
+$$
+\omega = \sum_{i_1<\cdots<i_k} \omega_{i_1,\ldots,i_k}dx_{i_1}\wedge \cdots \wedge dx_{i_k}
+$$
+
+에 대해 $\omega$ 의 미분 $d\omega$ 를 아래와 같이 정의한다.
+
+$$
+\begin{aligned}
+d\omega :=& \sum_{i_1<\cdots <i_k} \left(d\omega_{i_1,\ldots,i_k}\right) \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k} \\[0.3em]
+=& \sum_{i_1<\cdots<i_k} \sum_{\alpha=1}^n D_\alpha (\omega_{i_1,\ldots,i_k}) \,dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}.
+\end{aligned}
+$$ {#eq-CM_def_of_differential_of_form}
+
+::: 
+:::
+
+$k$-형힉 $\omega$ 에 대해 $d\omega$ 는 $k+1$ 형식이 된다는 것은 쉽게 알 수 있다.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_basic_properties_of_differential_of_form}
+
+$k$-형식 $\omega,\, \eta$, $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
+
+&emsp;($1$) $d(dx_{i_1}\wedge \cdots \wedge dx_{i_k}) = 0$, 
+
+&emsp;($2$) $d(\omega + \eta) = d\omega + d\eta$, 
+
+&emsp;($3$) $d(\omega \wedge \zeta) = d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta$, 
+
+&emsp;($4$) $d(d\omega)=0$,
+
+&emsp;($5$) $\omega$ 가 $\R^m$ 에서의 $k$-형식일 때 $F^\ast (d\omega) = d(F^\ast \omega)$.
+
+:::
+</div>
+
+::: {.proof}
+($1$) @eq-CM_def_of_differential_of_form 에서 $D_\alpha (\omega_{i_1,\ldots,i_k})=0$ 이다.
+
+($2$) $D_\alpha (\omega_\cdots + \eta_\cdots )\,dx_\alpha = D_\alpha \omega_\cdots dx_\alpha + D_\alpha \eta_\cdots dx_\alpha$ 이다.
+
+($3$) $\omega = \omega_0 dx_{i_1}\wedge \cdots \wedge dx_{i_k}$, $\zeta = \zeta_0 dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}$ 이라고 하자. 
+$$
+\begin{aligned}
+d(\omega \wedge \zeta) &= \sum_{\alpha=1}^n D_\alpha (\omega_0 \zeta_0)dx_{\alpha} dx_{i_1} \wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
+&= \sum_{\alpha} D_\alpha (\omega_0)\,dx_{\alpha} \wedge dx_{i_1} \wedge \cdots \wedge dx_{i_k} \wedge \zeta \\[0.3em]
+&\qquad + \sum_{\alpha} \omega \wedge (-1)^k D_\alpha (\eta_0) dx_{\alpha} dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
+&=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta.
+\end{aligned}
+$$
+
+
+
+
+($4$) $\displaystyle d(d \omega) = \sum_{i_1<\cdots <i_k} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}$ 이다. 여기서 $\displaystyle \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha = 0$ 이므로 $d(d\omega)=0$ 이다.
+
+($5$) $k$ 에 대한 induction 으로 증명한다. $k=0$ 이면 $d\omega = \sum_{i=1}^nD_i\omega dx_i$ 이며
+
+$$
+\begin{aligned}
+F^\ast (d\omega)(\bf{p})(\bf{v}) &= \sum_{i=1}^n (D_i\omega) (F'(\bf{p})(\bf{v})), \\[0.3em]
+d(F^\ast \omega)(\bf{p})(\bf{v}) &= d(\omega(F(\bf{p})) (F'(\bf{p}))(\bf{v}))=\sum_{i=1}^n (D_i \omega)(F'(\bf{p})(\bf{v}))
+\end{aligned}
+$$
+
+이다. 이제 $k$ 보다 작은 자연수에 대해 성립함을 가정하고 $k+1$ 형식인 $d(\omega \wedge dx_i)$ 에서 성립함을 보이자.
+
+$$
+\begin{aligned}
+F^\ast (d(\omega \wedge dx_i)) &=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i)) \\[0.3em]
+&= F^\ast (d\omega \wedge dx_i) = F^\ast (d\omega )\wedge F^\ast (dx_i) \\[0.3em]
+\end{aligned}
+$$ {#eq-prp-CM_basic_properties_of_differential_of_form}
+
+이다. 여기서
+
+$$
+d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-1)^k (F^\ast \omega)\wedge d(F^\ast dx_i)
+$$
+
+이며 induction 의 가정에 의해 $d(F^\ast dx_i) = F^\ast (d(dx_i))=0$ 이므로 
+
+$$
+d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) = F^\ast d\omega \wedge F^\ast dx_i
+$$
+
+이다. @eq-prp-CM_basic_properties_of_differential_of_form 에 대입하면
+
+$$
+F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\omega \wedge dx_i)
+$$
+
+임을 안다. $\square$
+
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_closed_and_exact_form}
+
+#### 닫힌 형식과 완전 형식
+
+형식 $\omega$ 가 $d\omega=0$ 일 때 **닫힌 형식 (closed form)** 이라고 한다. $\omega$ 가 다른 형식 $\eta$ 에 대해 $\omega = d\eta$ 일 때 $\omega$ 를 **완전 형식 (exact form)** 이라고 한다. 
+
+::: 
+:::
+
+정의로 부터 아래는 자명하다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_closed_form_and_exact_form}
+
+모든 완전 형식은 닫힌 형식이다.
+
+:::
+</div>
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_condition_of_closed_form}
+
+#### 
+
+$\omega = Pdx+Qdy$ 가 $\R^2$ 에서 정의된 $1$-형식 이라고 하자. 
+
+$$
+d\omega = (D_1Q - D_2P)\, (dx \wedge dy)
+$$
+
+이므로 $d\omega = 0$ 이라면 $D_1Q=D_2P$ 이다. @exr-CM_spivak_2_21, @exr-CM_spivak_3_34 는 $\omega = df = D_1f\,dx + D_2fd_y$ 인 $0$-형식 $f$ 가 존재함을 보여준다. 그러나 $\omega$ 가 $\R^n$ 전체가 아닌 부분집합에서만 정의되었다면 이런 함수가 존재하지 않을 수 있다. 고전적인 예는 $\R^2-\{\bf{0}\}$ 에서 정의된 
+
+$$
+\omega = \dfrac{-y}{x^2+y^2}dx + \dfrac{x}{x^2+y^2}dy
+$$
+
+이다. @exr-CM_spivak_3_41 에서의 $\theta$ 에 대해 $\omega = d\theta$ 이다(@exr-CM_spivak_4_21). 그러나 $\theta$ 는 모든 $\R^2 -\{\bf{0}\}$ 에서 연속으로 정의 될 수 없다. 만약 어떤 함수 $f:\R^2-\{\bf{0}\} \to \R$ 에 대해 $\omega = df$ fkaus $D_1f = D_1\theta,\, D_2f = D_2\theta$ 이며 따라서 $f=\theta + \text{constant}$ 이어야 하지만 이런 함수는 존재할 수 없다.
+
+:::
+
+</div>
+
+</br>
+
+$\omega = \sum_{i=1}^n \omega_i dx_i$ 가 $\R^n$ 에서 정의된 1-형식이며 어떤 $f$ 에 대해 $\omega = df = \sum_{i=1}^n D_if\cdot dx_i$ 라고 하자. $f(\bf{0}) = 0$ 이라고 가정 할 수 있다. 우리는 @exr-CM_spivak_2_35 에서 보였듯이 다음이 성립함을 안다.
+
+$$
+f(\bf{x}) = \int_0^1 \dfrac{d}{dt}f(t\bf{x})\,dt = \int_0^1 \sum_{i=1}^n D_i f(t\bf{x})\cdot x_i\, dt = \int_0^1 \sum_{i=1}^n \omega (t\bf{x})\cdot x_i \,dt.
+$$
+
+즉 주어진 $\omega$ 에 대해 $\omega = df$ 를 만족하는 $f$ 를 찾기 위해 아래의 함수를 정의할 필요가 있다.
+
+$$
+I\omega (\bf{x}) = \int_0^1 \sum_{i=1}^n \omega_i (t\bf{x})\cdot x_i \,dt.
+$$
+
+$I\omega$ 가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 $\omega$ 가 정의되는 열린 집합 $A\subset \R^n$ 이 $\bf{x}\in A$ 일 때 $0$ 부터 $\bf{x}$ 까지의 선분이 $A$ 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 $\bf{0}$ 주위의 **별모양 집합 (star shaped set)** 이라고 한다. 
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_poincare_lemma}
+
+#### 푸앙카레 정리
+
+$A\subset \R^n$ $\bf{0}$ 주위의 열린 별모양 집합일 때 $A$ 에서 정의된 모든 닫힌 형식은 완전 형식이다.
+
+:::
+</div>
+
+::: {.proof}
+
+$l$ 형식 $\omega$ 를 아래와 같이 정하자.
+$$
+\omega = \sum_{i_1<\cdots <i_l} \omega_{i_1,\ldots,i_l} dx_{i_1}\wedge \cdots \wedge dx_{i_l}
+$$
+
+$A$ 가 별모양의 열린 집합이므로 우리는 아래와 같이 $I\omega(\bf{x})$ 를 정의 할 수 있다.
+
+$$
+I\omega (\bf{x}) = \sum_{i_1<\cdots <i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\bf{x})\, dt\right) x_{i\alpha} \, dx_1 \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+$$
+
+여기서 $\widehat{dx_{i_\alpha}}$ 는 $dx_1 \wedge \cdots dx_{i_l}$ 에서 $dx_{i_\alpha}$ 만 빠졌음을 의미한다. 우리는 이제 $\omega = I(d\omega)+ d(I\omega)$ 임을 보일 것이다. 그렇다면 $\omega = d(I\omega)$ 이므로 $d\omega = d^2(I\omega)=0$ 이다. 그런데 $\omega = I(d\omega)+ d(I\omega)$ 를 보이는 것인 많이 지루하다.
+
+
+
+
+
+:::
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_13}
+
+#### Spivak 4.13
+
+$F:\R^n \to \R^m$ 이고 $G:\R^m \to \R^n$ 일 때 $(G\circ F)_\ast = G_\ast \circ F_\ast$ 이고 $(G\circ F)^\ast = F^\ast \circ G^\ast$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@def-CM_push_forward_and_pull_back 을 보자.
+$$
+\begin{aligned}
+(G\circ F)_\ast (v_p) &= ((G\circ F)'(p)(v_p)) = (G'(F(p))\circ F'(p))(v_p) \\[0.3em]
+&= G_\ast (F'(p)) (v_p) = G_\ast \circ F_\ast (v_p).\\[0.3em]
+(G\circ F)^\ast \omega (v_1,\ldots,v_k) &=((G \circ F)_\ast)^\ast (\omega)(v_1,\ldots,\,v_k) \\[0.3em]
+&=\omega((G\circ F)_\ast (v_1),\ldots, (G\circ F)_\ast (v_k))\\[0.3em]
+&=\omega ((G_\ast \circ F_\ast)(v_1),\ldots,\, (G_\ast \circ F_\ast)(v_k)) \\[0.3em]
+&= (G^\ast \omega) (F_\ast (v_1),\ldots, F_\ast (v_k)) \\[0.3em]
+&= (F^\ast \circ G^\ast)(\omega) (v_1,\ldots,\,v_k).
+\end{aligned}
+$$
+
+:::
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_14}
+
+#### Spivak 4.14
+
+$P:[0,\,1]\to \R^n$ 이 미분가능하다. 즉 $P$ 는 미분가능한 곡선이다. $t\in [0,\,1]$ 에서의 $P$ 의 접백터 $v$ 는 $P_\ast((e_1)_t) = (p_1'(t),\ldots,\,p_n'(t))_{P(t)}$ 로 정의된다. $F:\R^n \to \R^m$ 에서 $F\circ P$ 의 $t$ 에서의 접벡터는 $F_\ast (v)$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CM_spivak_4_13 의 $(G\circ F)_\ast = G_\ast \circ F_\ast$ 문제이다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_21}
+
+#### Spivak 4.21
+
+$\theta$ 가 정의된 집합에서 $d\theta$ 가 다음과 같음을 보여라.
+
+$$
+d\theta = \dfrac{-y}{x^2+y^2}dx + \dfrac{x}{x^2+y^2}dy
+$$
+
+
+
+:::
+
+</div>
+

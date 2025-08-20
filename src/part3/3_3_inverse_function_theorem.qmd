@@ -911,7 +911,7 @@ $$
 $H'(\bf{a},\,\bf{b})$ 가 가역이므로 역함수 정리에 의해 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $U$ 와 $(\bf{0},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $V$ 가 존재하여 $H:U\to V$ 는 전단사함수이고, 그 역함수 $G:U\to V$ 는 $C^1$ 급 함수이다. 
 
 
-$W:=\{\bf{y}\in \R^n: (\bf{0},\,\bf{y}) \in V\}$ 라고 하자. $\bf{b}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-for_implicit_theorem_rudin_1). $\bf{y}\in W$ 이면 $H(\bf{x},\bf{y})=(\bf{0},\bf{y})$ 인 $(\bf{x},\,\bf{y})\in U$ 가 존재하며 @eq-thm-CM_implicit_function_theorem_rudin_1 에 따라 $F(\bf{x},\bf{y})=\bf{0}$ 이다. $\overline{\bf{x}} \ne \bf{x}$ 에 대해 $(\overline{\bf{x}},\bf{y})\in U$ 이고 $F(\overline{\bf{x}},\bf{y})=\bf{0}$ 이라면
+$W:=\{\bf{y}\in \R^n: (\bf{0},\,\bf{y}) \in V\}$ 라고 하자. $\bf{b}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-CM_for_implicit_theorem_rudin_1). $\bf{y}\in W$ 이면 $H(\bf{x},\bf{y})=(\bf{0},\bf{y})$ 인 $(\bf{x},\,\bf{y})\in U$ 가 존재하며 @eq-thm-CM_implicit_function_theorem_rudin_1 에 따라 $F(\bf{x},\bf{y})=\bf{0}$ 이다. $\overline{\bf{x}} \ne \bf{x}$ 에 대해 $(\overline{\bf{x}},\bf{y})\in U$ 이고 $F(\overline{\bf{x}},\bf{y})=\bf{0}$ 이라면
 
 $$
 H(\overline{\bf{x}},\bf{y}) = H(\bf{x},\bf{y})
@@ -937,7 +937,7 @@ $$
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-for_implicit_theorem_rudin_1}
+::: {#exr-CM_for_implicit_theorem_rudin_1}
 
 $V\subset \R^{m+n}$ 이 열린 집합일 때 $W=\{\bf{y}\in \R^n : (\bf{0},\,\bf{y}) \in V\}$ 역시 열린집합임을 보여라.
 

@@ -745,9 +745,6 @@ $A_n$ 은 $(n,\,n+1)$ 에 포함되는 닫힌 집합이라고 하자. $f:\R\to \
 
 ## 변수 변경
 
-
-
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_change_of_variable}
@@ -781,5 +778,23 @@ $$
 \int_{G(U)} \varphi_i \cdot f = \int_U (\varphi_i \cdot f)\circ G \cdot |\det (G')|
 $$
 
+:::
+
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_3_41}
+
+#### Spivak 3.41
+
+$F:\{r:r>0\} \times (0,\, 2\pi) \to \R$ 을 $F(r,\,\theta) := (r \cos \theta,\, r \sin \theta)$ 로 정의한다.
+
+
 
 :::
+
+</div>
