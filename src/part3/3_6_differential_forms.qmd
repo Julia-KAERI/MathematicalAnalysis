@@ -35,7 +35,6 @@ $$
 \end{aligned}
 $$ {#eq-CM_def_addition_and_scala_product_in_k_tensor}
 
-
 ::: 
 :::
 
@@ -142,7 +141,7 @@ $$
 
 $$
 \left(F^\ast (T)\right)(v_1,\ldots,v_k) := T(F(v_1),\ldots,\,F(v_k))
-$$ {#eq-CM_definition_of_dual_transform}
+$$ {#eq-CM_def_pull_back_for_k_tensor}
 
 ::: 
 :::
@@ -941,38 +940,24 @@ $$
 \|u_n\|^2 = \|u_1\times \cdots \times u_{n-1}\|^2 = \det (u_1,\ldots,\,u_{n-1},\,u_n)
 $$
 
-이다. $u_1,\ldots,\,u_{n-1}$ 이 선형 종속일 경우는 $u_1 \times \cdots \times u_{n-1}=0$ 이며 $\det (g_{ij})=0$ 이므로 성립하므로 이제 $u_1,\ldots,u_{n-1}$ 이 선형 독립일 경우만 생각한다. 주어진 식의 $g_{ij}$ 는 $1\le i,\,j \le n-1$ 이지만 이를 $u_1,\ldots,\,u_n$ 까지 확장하여 $\tilde{g}_{ij} = \langle u_i,\,u_j\rangle$ 이라고 하자. $\langle u_i,\,u_n\rangle = \delta_{ij}\|u_n\|^2$ 이며 @exr-CM_spivak_4_3 
-
-
-
-
-$u_n = u_1 \times \cdots \times u_{n-1}$ 이라고 하자. $(u_i)$ 로부터 그람-슈미트 과정을 통해 정규직교 기저 $(e_i)$ 를 구성할 수 있으며 이 경우 $\text{span}(u_1,\ldots,\,u_k) = \text{span}(e_1,\ldots,e_k)$ 이다.
-
-$u_i = \sum_j A_{ji}e_j$ 라고 하면
+이다. $u_1,\ldots,\,u_{n-1}$ 이 선형 종속일 경우는 $u_1 \times \cdots \times u_{n-1}=0$ 이며 $\det (g_{ij})=0$ 이므로 성립하므로 이제 $u_1,\ldots,u_{n-1}$ 이 선형 독립일 경우만 생각한다. 주어진 식의 $g_{ij}$ 는 $1\le i,\,j \le n-1$ 이지만 이를 $u_1,\ldots,\,u_n$ 까지 확장하여 $\tilde{g}_{ij} = \langle u_i,\,u_j\rangle$ 이라고 하자. $\langle u_i,\,u_n\rangle = \delta_{in}\|u_n\|^2$ 이므로
 
 $$
-g_{ij}=\langle u_i,\,u_j\rangle = \sum_{k,l} A_{ki}A_{lj}\langle e_k,\,e_l\rangle = (A^TA)_{ij}
-$$ 
-
-이며 따라서 $\det(g_{ij}) = \left(\det(A)\right)^2$ 이다. 
-
-
-<!-- $u_i = \sum_j A_{ij} u_j$ 라고 하자. $\langle u_i,u_n\rangle = \langle u_n,u_i\rangle = \|u_n\|^2\delta_{in}$ 이므로 $\tilde{g}_{ij}=\langle u_i,\,u_j\rangle = (AA^T)_{ij}$ 라고 하면 $1\le i,\,j \le n-1$ 에서는 $\tilde{g}_{ij}=g_{ij}$ 이며 $\tilde{g}_{ni}= \tilde{g}_{in}= \delta_{in}|u_n\|^2$ 이다.
-
-
-$\det (g_{ij})= \left(\det(A)\right)^2$ 이다. 이 때 $[\bf{u},\ldots,\,\bf{u}_{n-1}] = [\bf{e}_1,\ldots,\,\bf{e}_{n-1}]$ 이 되도록 잡을 수 있다. 이 내적과 방향석을 이용하여 $\bf{e}_1,\ldots,\bf{e}_{n}$ 에 대해 $\omega (\bf{e}_1,\ldots,\bf{e}_n) =1$ 이 되도록 $\omega$ 를 정한다면 
-
-$$
-\|\bf{u}_1\times \cdots \times \bf{u}_n\| = |\omega (\bf{u}_1,\ldots,\,\bf{u}_{n})| = \sqrt{\det(\tilde{g}_{ij})} = \sqrt{\det (g_{ij})} \|\bf{u}_n\|
+\tilde{g}_{ij} = \begin{bmatrix} [g_{ij}] & \bf{0} \\ \bf{0} & \|u_n\|^2\end{bmatrix}
 $$
 
-또한
+이다. 따라서 $\det(\tilde{g}_{ij}) = \|u_n\|^2 \det (g_{ij})$ 이다. @exr-CM_spivak_4_3 로부터
 
 $$
-|\omega (\bf{u}_1,\ldots,\,\bf{u}_n) = \det (\bf{u}_1,\ldots,\bf{u}_n) = \|\bf{u}_n\|^2
+\omega (u_1,\ldots,u_n) = \|u_n\|^2 = \sqrt{\det (\tilde{g}_{ij})} = \|u_n\|\sqrt{\det (g_{ij})}
 $$
 
-이므로 $\|\bf{u}_n\| = \|\bf{u}_1\times \cdots \times \bf{u}_{n-1}\| = \sqrt{\det (g_{ij})}$ 이다.  -->
+이므로
+
+$$
+\|u_n\| = \|u_1 \times \cdots \times u_{n-1}\| = \sqrt{\det (g_{ij})}.
+$$
+
 
 :::
 
@@ -1023,14 +1008,15 @@ $F_1,\ldots,\,F_{n-1}$ 이 미분가능 할 때 @exr-CM_spivak_2_14 를 이용�
 $F :(\R^m)^{n-1} \to \R^n$ 을 아래와 같이 정의하면 다중선형함수이다.
 
 $$
-F(\bf{x}_1,\ldots,\bf{x}_{n-1}) = \bf{x}_1\times \cdots \times \bf{x}_{n-1}.
+F(x_1,\ldots,x_{n-1}) = x_1\times \cdots \times x_{n-1}.
 $$
 
 $$
 \begin{aligned}
-(F_1 \times \cdots \times F_{n-1})'(\bf{p})(\bf{x}) &= (F\circ (F_1,\ldots,\,F_{n-1}))'(\bf{p})(\bf{x}) \\[0.3em]
-&= F'(F_1(\bf{p}),\ldots,\,F_{n-1}(\bf{p})) \circ (F'_1(\bf{p}),\ldots,\,F'_{n-1}(\bf{p})) (\bf{x}) \\[0.3em]
-&= \sum_{i=1}^{n-1} \left[F_1(\bf{p}) \times \cdots \times F_{i-1}(\bf{p}) \times F'_{i}(\bf{p}) \times F_{i+1}(\bf{p})\times \cdots \times F_{n-1}(\bf{p})\right] (\bf{x})
+(F_1 \times \cdots &\times F_{n-1})'(p)(x) \\[0.3em]
+&= (F\circ (F_1,\ldots,\,F_{n-1}))'(p)(x) \\[0.3em]
+&= F'(F_1(p),\ldots,\,F_{n-1}(p)) \circ (F'_1(p),\ldots,\,F'_{n-1}(p)) (x) \\[0.3em]
+&= \sum_{i=1}^{n-1} \left[F_1(p) \times \cdots \times F_{i-1}(p) \times F'_{i}(p) \times F_{i+1}(p)\times \cdots \times F_{n-1}(p)\right] (x)
 \end{aligned}
 $$
 
@@ -1040,17 +1026,17 @@ $$
 
 ## 장과 형식 
 
-### 벡터장과 형식 {#sec-CM_vector_field_and_form}
+### 탄젠트 공간과 벡터장 {#sec-CM_tangent_space_and_vector_field}
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_tangent_space}
 
 #### 탄젠트 공간
 
-정해진 $\bf{p}\in \R^n$ 에 대해 $\bf{p}$ 에서의 **탄젠트 공간 (tangent space)** ${\R^n}_\bf{p}$ 는 
+정해진 $\bf{p}\in \R^n$ 에 대해 $\bf{p}$ 에서의 **탄젠트 공간 (tangent space)** $T_\bf{p}(\R^n)$ 는 
 
 $$
-{\R^n}_\bf{p} = \{(\bf{p},\,\bf{x}) : \bf{x}\in \R^n\}
+T_\bf{p}({\R^n}) = \{(\bf{p},\,\bf{x}) : \bf{x}\in \R^n\}
 $$
 
 에 대해 아래의 연산이 정의된 구조이다.
@@ -1062,7 +1048,7 @@ a\cdot (\bf{p},\,\bf{x}) &= (\bf{p},\,a\bf{x}).
 \end{aligned}
 $$
 
-${\R^n}_\bf{p}$ 의 벡터 $(\bf{p},\bf{v})$ 를 흔히 $\bf{v}_\bf{p}$ 혹은 $(\bf{v})_\bf{p}$ 와 같이 표기한다.
+$T_\bf{p}(\R^n)$ 의 벡터 $(\bf{p},\bf{v})$ 는 흔히 $\bf{v}_\bf{p}$ 혹은 $(\bf{v})_\bf{p}$ 와 같이 표기하기도 한다.
 ::: 
 :::
 
@@ -1073,13 +1059,13 @@ ${\R^n}_\bf{p}$ 의 벡터 $(\bf{p},\bf{v})$ 를 흔히 $\bf{v}_\bf{p}$ 혹은 $
 
 ::: {#prp-CM_tangent_space_as_a_vector_space}
 
-${\R^n}_\bf{p}$ 는 $(\bf{p},\,\bf{0})$ 을 영벡터로 하는 벡터공간이다.
+$T_\bf{p}(\R^n)$ 는 $(\bf{p},\,\bf{0})$ 을 영벡터로 하는 벡터공간이다.
 :::
 </div>
 
 </br>
 
-일반적인 $\R^n$ 의 벡터는 원점으로부터의 화살표로 표현되는 경우가 많다. 이와 유사하게 ${\R^n}_\bf{p}$ 의 벡터 $(\bf{p},\bf{v})$ 는 $\bf{p}$ 를 시작으로 $\bf{p}+\bf{v}$ 를 향하는 화살표로 표현된다. 또한 내적과 방향의 경우 $\R^n$ 과 같이 정의 할 수 있으며 이를 통상 내적, 통상 방향이라고 한다.
+일반적인 $\R^n$ 의 벡터는 원점으로부터의 화살표로 표현되는 경우가 많다. 이와 유사하게 $T_\bf{p}(\R^n)$ 의 벡터 $(\bf{p},\bf{v})$ 는 $\bf{p}$ 를 시작으로 $\bf{p}+\bf{v}$ 를 향하는 화살표로 표현된다. 또한 내적과 방향의 경우 $\R^n$ 과 같이 정의 할 수 있으며 이를 통상 내적, 통상 방향이라고 한다.
 
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -1087,7 +1073,7 @@ ${\R^n}_\bf{p}$ 는 $(\bf{p},\,\bf{0})$ 을 영벡터로 하는 벡터공간이�
 
 #### 통상 내적, 통상 방향
 
-${\R^n}_\bf{p}$ 에서의 내적을 
+$T_\bf{p}(\R^n)$ 에서의 내적을 
 
 $$
 \langle (\bf{p},\bf{u}), (\bf{p},\bf{v})\rangle_\bf{p}= \langle \bf{u},\bf{v}\rangle
@@ -1111,7 +1097,7 @@ $$
 
 #### 벡터장
 
-$F:\R^n \to {\R^n}_\bf{p}$ 를 $\R^n$ 에서의 **벡터장 (vector field)** 라고 한다. $F(\bf{p})$ 의 $i$ 번째 성분을 $f_i(\bf{p})$ 로 표기한다.
+$F:\R^n \to T_\bf{p}(\R^n)$ 를 $\R^n$ 에서의 **벡터장 (vector field)** 라고 한다. $F(\bf{p})$ 의 $i$ 번째 성분을 $f_i(\bf{p})$ 로 표기한다.
 
 $F,\,G$ 가 벡터장이고 $f:\R^n \to \R$ 함수일 때 연산을 아래와 같이 정의한다.
 
@@ -1127,6 +1113,21 @@ $$
 ::: 
 :::
 
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_nabla_operator}
+
+#### Nabla_operator
+
+$\R^n$ 에서 nabla 연산자 $\nabla$ 를 아래와 같이 정의한다.
+
+$$
+\nabla := \sum_{i=1}^n \bf{e}_i \bf{\cdot}D_i.
+$$ {#eq-CM_nabla_operator}
+
+::: 
+:::
 
 </br>
 
@@ -1135,41 +1136,22 @@ $$
 
 #### Divergence 와 Curl
 
-$\R^n$ 에서의 벡터장 $F$ 에 대해 $\sum_{i=1}^n D_i F_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. 
+$\R^n$ 에서의 벡터장 $F$ 에 대해 $\sum_{i=1}^n D_i F_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. $n=3$ 인 경우 아래와 같이 정의된 $\text{curl}\,F(\bf{p})$ 를 $F$ 에 대한 **curl** 이라고 하며 $\nabla \times F$ 로도 표기한다.
 
+$$
+\text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}.
+$$
 
 
 ::: 
 :::
 
-$\R^n$ 에서 nabla 연산자 $\nabla$ 를 아래와 같이 정의한다.
-
-$$
-\nabla := \sum_{i=1}^n \bf{e}_i \bf{\cdot}D_i.
-$$
-
-Nabla 연산자를 이용하여 $\text{div}\,F$ 를 $\nabla \bf{\cdot}F$ 로 $\text{curl}\, F$ 를 $\nabla \times F$ 로 표기하기도 한다.
 
 </br>
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+### 미분 형식 {#sec-CM_differential_form}
 
-::: {#exm-CM_curl}
-$\R^3$ 에서의 $\text{curl}\,F$ 는 아래와 같이 정의된다.
-
-$$
-\text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}
-$$
-
-:::
-
-</div>
-
-</br>
-
-
-
-$\R^n$ 과 $(\R^n)_\bf{p}$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-form 을 정의 할 수 있다.
+$\R^n$ 과 $T_\bf{p}(\R^n)$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-form 을 정의 할 수 있다.
 
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -1177,7 +1159,7 @@ $\R^n$ 과 $(\R^n)_\bf{p}$, 벡터함수와 벡터장과 같이 탄젠트 공간
 
 #### 미분 형식
 
-$\omega (\bf{p})\in \Omega^k({\R^n}_\bf{p})$ 를 $\R^n$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega(\bf{p})$ 은 아래의 형태이다.
+$\omega (\bf{p})\in \Omega^k(T_\bf{p}(\R^n))$ 를 $\R^n_\bf{p}$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega(\bf{p})$ 은 아래의 형태이다.
 
 $$
 \omega(\bf{p}) = \sum_{i_1<\cdots <i_k} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right]
@@ -1186,8 +1168,9 @@ $$
 ::: 
 :::
 
+</br>
 
-각각의 $\omega_{i_1,\ldots,\,i_k}(\bf{p})$ 가 연속이거나 미분가능 할 때 $\omega (\bf{p})$ 이에 따라 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 $k$-형식이 미분가능하다고 할 때 $C^\infty$ 를 의미한다. 
+각각의 $\omega_{i_1,\ldots,\,i_k}(\bf{p})$ 가 연속이거나 미분가능 할 때 $\omega (\bf{p})$ 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 $k$-형식이 미분가능하다고 할 때 $C^\infty$ 를 의미한다. 
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
@@ -1195,7 +1178,7 @@ $$
 
 #### $0$-형식 과 $1$-형식
 
-$f:\R^n \to \R$ 은 $0$-형식 이다. $1$-형식은 선형 변환이다. 
+$f:\R^n \to \R$ 은 $0$-형식이다. $1$-형식은 선형 변환이다. 
 
 :::
 </div>
@@ -1208,12 +1191,12 @@ $f:\R^n \to \R$ 은 $0$-형식 이다. $1$-형식은 선형 변환이다.
 
 #### 미분 형식의 연산
 
-$k$-형식 $\omega,\, \zeta$, $m$-형식 $\eta$, 함수 $f$ 에 대해 연산이 아래와 같이 정의된다.
+$k$-형식 $\omega,\, \zeta$, $m$-형식 $\eta$, 스칼라장 $f$ 에 대해 연산이 아래와 같이 정의된다.
 
 $$
 \begin{aligned}
 \omega (\bf{p}) + \zeta (\bf{p}) &:= \sum_{i_1<\cdots <i_k} \left(\omega_{i_1,\ldots,\,i_k}(\bf{p}) + \zeta_{i_1,\ldots,\,i_k}(\bf{p})\right) \cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right], \\[0.3em]
-(f \cdot \omega)(\bf{p})  &:=  \sum_{i_1<\cdots <i_k} \left(f(\bf{p}) \cdot \omega_{i_1,\ldots,\,i_k}(\bf{p}) \right)\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right] \\[0.3em]
+(f \cdot \omega)(\bf{p})  &:=  \sum_{i_1<\cdots <i_k} \left(f(\bf{p}) \cdot \omega_{i_1,\ldots,\,i_k}(\bf{p}) \right)\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right], \\[0.3em]
 \omega (\bf{p})\wedge \eta (\bf{p}) &:= \sum_{i_1<\cdots <i_{k}} \sum_{j_1<\cdots <j_m} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \eta_{j_1,\ldots,j_m}(\bf{p}) \cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p}) \wedge \varphi_{j_1}(\bf{p}) \cdots \wedge \varphi_{j_m}(\bf{p})\right] 
 \end{aligned}
 $$
@@ -1226,7 +1209,7 @@ $$
 ### 형식과 미분 {#sec-CM_form_and_differentiation}
 
 
-미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. 이런 함수를 **스칼라장 (scalar field)** 라고 한다. $Df(\bf{p})\in \Omega^1({\R^n}_{\bf{p}})$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
+미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. 이런 함수를 **스칼라장 (scalar field)** 라고 한다. $Df(\bf{p})\in \Omega^1(T_\bf{p}(\R^n))$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_1_form}
@@ -1242,7 +1225,6 @@ $$ {#eq-CM_differential_1-form}
 ::: 
 :::
 
-</br>
 
 $x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $\R^n$ 의 표준기저벡터 $\bf{e}_j$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
 
@@ -1271,7 +1253,7 @@ $$
 
 ::: {.proof}
 
-$df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})\cdot v_i = \sum_{i=1}^n D_i f(\bf{p})\cdot \left(dx_i(\bf{p})(\bf{v}_p)\right). \qquad \square$
+$\displaystyle df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})\cdot v_i = \sum_{i=1}^n D_i f(\bf{p})\cdot \left(dx_i(\bf{p})(\bf{v}_p)\right). \square$
 :::
 
 </br>
@@ -1282,14 +1264,20 @@ $df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})
 
 #### Pull-back 과 Push-forward
 
-미분가능한 함수 $F:\R^n \to \R^m$ 과 선형변환인 $F'(\bf{p}) \in \mathcal{L}(\R^n, \R^m)$ 을 생각하자. 아래와 같이 정의되는 선형변환 $F_\ast  \in \mathcal{L}({\R^n}_\bf{p},\, {\R^m}_{F(\bf{p})})$ 을 $F$ 에 대한 **push-forward** 라고 한다.
+미분가능한 함수 $F:\R^n \to \R^m$ 과 선형변환인 $F'(\bf{p}) \in \mathcal{L}(\R^n, \R^m)$ 을 생각하자. 아래와 같이 정의되는 선형변환 $F_\ast  \in \mathcal{L}(T_\bf{p}(\R^n),\, T_{F(\bf{p})}(\R^m)$ 을 $F$ 에 대한 **push-forward** 라고 한다.
 
 $$
 F_\ast (\bf{v}_p) := \left(F'(\bf{p})(\bf{v})\right)_{F(\bf{p})}
+$$ {#eq-def_CM_push_forward}
+
+
+이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\bf{p})}(\R^m)\right),\, \Omega^k\left(T_\bf{p}(\R^n)\right)\right)$ 아래와 같이 정의하고 이를 **pull-back** 이라고 한다. 
+
 $$
+(F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p})))
+$$ {#eq-def_CM_pull_back}
 
-
-이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\Omega^k\left({\R^m}_{F(\bf{p})}\right),\, \Omega^k\left({\R^n}_{\bf{p}}\right)\right)$ 를 $(F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p})))$ 로 정의하며 이를 **pull-back** 이라고 한다. 그렇다면 
+그렇다면 
 $$
 \begin{aligned}
 \left(F^\ast \omega\right)(\bf{p})(\bf{v}_1,\ldots,\bf{v}_k) &= (F_\ast)^\ast(\omega(F(\bf{p})))(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
@@ -1303,7 +1291,7 @@ $$
 :::
 :::
 
-여기서 정의상 $\bf{v}_1,\ldots,\bf{v}_k\in \R^n_\bf{p}$ 이어야 한다. 그리고 $\bf{p}$ 나 $F(\bf{p})$ 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.
+여기서 정의상 $\bf{v}_1,\ldots,\bf{v}_k\in T_\bf{p}(\R^n)$ 이어야 한다. 그리고 $\bf{p}$ 나 $F(\bf{p})$ 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -1369,7 +1357,7 @@ $$
 
 </br>
 
-이 정리를 이용하면 다음을 알 수 있다.
+여기서 ($4$) 는 매끄러운 사상 $F:\R^n \to \R^m$ 에 대해 $T_{F(\bf{p})(\R^m)}$ 의 미분 형식의 구조가 $T_\bf{p}(\R^n)$ 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.
 
 $$
 \begin{aligned}
@@ -1387,7 +1375,7 @@ $$
 $F:\R^n \to \R^n$ 이 미분가능 할 때 다음이 성립한다.
 
 $$
-F^\ast (H\, dx_1 \wedge \cdots \wedge dx_n) = (H \circ F)\cdot \det (F')\cdot (dx_1 \wedge \cdots \wedge dx_n).
+F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h \circ F)\cdot \det (F')\cdot (dx_1 \wedge \cdots \wedge dx_n).
 $$
 
 :::
@@ -1398,7 +1386,7 @@ $$
 아래를 보자.
 
 $$
-F^\ast (H\, dx_1 \wedge \cdots \wedge dx_n) = (H\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
+F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
 $$
 
 여기서 $\R^n$ 의 표준 기저 $\bf{e}_1,\ldots,\,\bf{e}_n$ 을 생각하자. 그리고 $F'(\bf{p})=A$ 는 $n \times n$ 행렬이다. 
@@ -1422,6 +1410,7 @@ $$
 
 </br>
 
+### 미분형식의 미분 {#sec-CM_derivative_of_differantial_form}
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_differential_of_forms}
@@ -1446,7 +1435,7 @@ $$ {#eq-CM_def_of_differential_of_form}
 ::: 
 :::
 
-$k$-형힉 $\omega$ 에 대해 $d\omega$ 는 $k+1$ 형식이 된다는 것은 쉽게 알 수 있다.
+$k$-형식 $\omega$ 에 대해 $d\omega$ 는 $k+1$ 형식이 된다는 것은 쉽게 알 수 있다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -1477,13 +1466,10 @@ $$
 \begin{aligned}
 d(\omega \wedge \zeta) &= \sum_{\alpha=1}^n D_\alpha (\omega_0 \zeta_0)dx_{\alpha} dx_{i_1} \wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
 &= \sum_{\alpha} D_\alpha (\omega_0)\,dx_{\alpha} \wedge dx_{i_1} \wedge \cdots \wedge dx_{i_k} \wedge \zeta \\[0.3em]
-&\qquad + \sum_{\alpha} \omega \wedge (-1)^k D_\alpha (\eta_0) dx_{\alpha} dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
+&\qquad + \sum_{\alpha} \omega \wedge (-1)^k D_\alpha (\zeta_0) dx_{\alpha} dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
 &=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta.
 \end{aligned}
 $$
-
-
-
 
 ($4$) $\displaystyle d(d \omega) = \sum_{i_1<\cdots <i_k} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}$ 이다. 여기서 $\displaystyle \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha = 0$ 이므로 $d(d\omega)=0$ 이다.
 
@@ -1492,7 +1478,7 @@ $$
 $$
 \begin{aligned}
 F^\ast (d\omega)(\bf{p})(\bf{v}) &= \sum_{i=1}^n (D_i\omega) (F'(\bf{p})(\bf{v})), \\[0.3em]
-d(F^\ast \omega)(\bf{p})(\bf{v}) &= d(\omega(F(\bf{p})) (F'(\bf{p}))(\bf{v}))=\sum_{i=1}^n (D_i \omega)(F'(\bf{p})(\bf{v}))
+d(F^\ast \omega)(\bf{p})(\bf{v}) &= d{\big (}\omega(F(\bf{p})) (F'(\bf{p})(\bf{v})){\big )}=\sum_{i=1}^n (D_i \omega)(F'(\bf{p})(\bf{v}))
 \end{aligned}
 $$
 
@@ -1567,7 +1553,7 @@ $$
 \omega = \dfrac{-y}{x^2+y^2}dx + \dfrac{x}{x^2+y^2}dy
 $$
 
-이다. @exr-CM_spivak_3_41 에서의 $\theta$ 에 대해 $\omega = d\theta$ 이다(@exr-CM_spivak_4_21). 그러나 $\theta$ 는 모든 $\R^2 -\{\bf{0}\}$ 에서 연속으로 정의 될 수 없다. 만약 어떤 함수 $f:\R^2-\{\bf{0}\} \to \R$ 에 대해 $\omega = df$ fkaus $D_1f = D_1\theta,\, D_2f = D_2\theta$ 이며 따라서 $f=\theta + \text{constant}$ 이어야 하지만 이런 함수는 존재할 수 없다.
+이다. @exr-CM_spivak_3_41 에서의 $\theta$ 에 대해 $\omega = d\theta$ 이다(@exr-CM_spivak_4_21). 그러나 $\theta$ 는 모든 $\R^2 -\{\bf{0}\}$ 에서 연속으로 정의 될 수 없다. 만약 어떤 함수 $f:\R^2-\{\bf{0}\} \to \R$ 에 대해 $\omega = df$ 라면 $D_1f = D_1\theta,\, D_2f = D_2\theta$ 이며 따라서 $f=\theta + \text{constant}$ 이어야 하지만 이런 함수는 존재할 수 없다.
 
 :::
 
@@ -1668,6 +1654,211 @@ $P:[0,\,1]\to \R^n$ 이 미분가능하다. 즉 $P$ 는 미분가능한 곡선�
 ::: {.solution}
 
 @exr-CM_spivak_4_13 의 $(G\circ F)_\ast = G_\ast \circ F_\ast$ 문제이다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_15}
+
+#### Spivak 4.15
+
+$f: \R \to \R$ 이며 $P:\R \to \R^2$ 가 $P(t) = (t,\, f(t))$ 라고 하자. $P$ 의 $t$ 에서의 탄젠트벡터의 끝점은 lies on the tangent line to the graph of f at $(t,\,f(t))$.
+
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CM_spivak_4_14 로부터 $v=P_\ast((e_1)t) = (1,\, f'(t))$ 임을 안다. 따라서 그 끝점은 $(t+1,\, f(t)+f'(t))$ 이다. 
+
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_16}
+
+#### Spivak 4.16
+$P[0,\,1]: \to \R^n$ 이 모든 $t$ 에서 $\|P(t)\|=1$ 이다. $P(t)_{P(t)}$ 와 $t$ 에서의 접선 벡터는 서로 직교함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$1=\|P(t)\|^2=\langle P(t),\, P(t)\rangle$ 이므로 $0=\langle P(t),\, P'(t)\rangle$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_17}
+
+#### Spivak 4.17
+
+$F:\R^n \to \R^n$ 이 벡터장 $\bf{F}(\bf{p}) = F(\bf{p})_\bf{p}\in T_\bf{p}(\R^n)$ 을 정의한다.
+
+($a$) $\R^n$ 에서의 모든 벡터장 $\overline{F}$ 는 어떤 $F$ 에 대해 $\bf{F}$ 형태임을 보여라.
+
+($b$) $\text{div} \bf{F}= \text{tr}(F')$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) $\bf{F}(\bf{p})=F(\bf{p})$ 에 대해 $\overline{F}(\bf{p})=F(\bf{p})$ 로 정의한다.
+
+($b$) $\text{div} \bf{F} = \text{div} F = \sum_{i=1}^n D_i f_i = \text{tr}(F')$.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_18}
+
+#### Spivak 4.18
+
+$f:\R^n \to \R$ 에 대해 벡터장 $f$ 의 $\bf{p}\in \R^n$ 에서의 **gradient** $(\nabla f)$ 혹은 $\text{grad}\,f$ 를 아래와 같이 정의한다.
+
+$$
+(\nabla f)(\bf{p}) = D_1 f(\bf{p})\cdot (\bf{e}_1)_\bf{p} + \cdots D_n f(\bf{p})\cdot (\bf{e}_n)_\bf{p} 
+$$
+
+$\nabla f(\bf{p}) = \bf{w}_\bf{p}$ 이면 $D_\bf{v}f(\bf{p}) = \langle \bf{v},\,\bf{w}\rangle$ 임을 보이고 $\nabla f(\bf{p})$ 가 $f$ 가 $\bf{p}$ 에서 가장 빠르게 증가하는 방향임을 보여라.
+
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CM_spivak_2_29 의 방향 미분의 정의에 의해 
+
+$$
+D_\bf{v}f(\bf{p}) = \sum_i D_i f(\bf{p}) (\bf{v}) = \sum_i v_i D_i f(\bf{p}) = \langle \bf{v},\,\bf{w}\rangle
+$$
+
+이다. $\|\bf{v}\|$ 의 크기를 일정하게 놓으면 $D_\bf{v}f(\bf{p})$ 가 가장 큰 값은 $\bf{v}$ 와 $\bf{w}$ 가 같은 방향일 때 이므로 $\nabla f(\bf{p})$ 늘 $f(\bf{p})$ 가 가장 빠르게 증가하는 방향이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_19}
+
+#### Spivak 4.19
+
+$F$ 가 $\R^3$ 에서의 벡터장일 때 아래와 같이 형식을 정의한다.
+
+$$
+\begin{aligned}
+\omega_F &= f_1 dx + f_2 dy + f_3 dz,\\[0.3em]
+\zeta_F &= f_1 dy \wedge dz + f_2 dz \wedge dx + f_3 dx \wedge dy.
+\end{aligned}
+$$
+
+($a$) 아래를 증명하라.
+
+$$
+\begin{aligned}
+df &= \omega_{\text{grad} f}, \\[0.3em]
+d(\omega_F) &= \zeta_{\text{curl}\,F}, \\[0.3em]
+d(\zeta_F) &= (\text{div} F) \,dx \wedge dy \wedge dz.
+\end{aligned}
+$$
+
+
+($b$) ($a$) 를 이용하여 다음을 증명하라.
+
+$$
+\begin{aligned}
+\text{curl}\, \text{grad} f &= 0, \\[0.3em]
+\text{div}\, \text{curl} F &= 0.
+\end{aligned}
+$$
+
+($c$) $F$ 가 열린 별모양 집합 $A$ 에서 정의된 벡터장 이고 $\text{curl}F=0$ 일 때 $F$ 는 어떤 $f:A \to \R$ 에 대해 $F=\nabla f$ 임을 보여라. 또한 $\text{div} F=0$ 일 때 어떤 $A$ 에서의 벡터장 $G$ 에 대해 $F=\text{curl}\,G$ 임을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) $\omega_{\nabla\text{f}} = D_1f dx + D_2f d_y + D_3 f d_z = df$ 이다
+
+$$
+\begin{aligned}
+\zeta_{\text{curl} F} &= (D_2 f_3-D_3f_2) dy \wedge dz + (D_3f_1 - D_1f_3) dz \wedge dx \\[0.3em]
+&\qquad + (D_1f_2-D_2f_1) dx \wedge dy \\[0.3em]
+d(\omega_F) &= D_2f_1dy \wedge dx + D_3f_1 dz \wedge dx + D_1f_2 dx \wedge dy \\[0.3em]
+&\qquad + D_3f_2 dz \wedge dy + D_1 f_3 dx \wedge dz + D_2 f_3 dy \wedge dz \\[0.3em]
+&= \zeta_{\text{curl}\,F}.
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+d(\zeta_F) &= D_1f_1 dx \wedge dy \wedge dz + D_2f_2 dy \wedge dz \wedge dx + D_3f_3 dz \wedge dx \wedge dy \\[0.3em]
+&=(D_1f_1 + D_2f_2 + D_3f_3)\,dx \wedge dy \wedge dz = (\text{div}\,F)dx \wedge dy \wedge dz
+\end{aligned}
+$$
+
+($b$) $\omega F=0 \iff f_1=f_2=f_3=0 \iff F=0 \iff \zeta_F=0$ 이다.
+
+$$
+\begin{aligned}
+0&=d(df) = d(\omega_{\text{grad}\,f}) = \zeta_{\text{curl}\,\text{grad}\,f},\\[0.3em]
+0&=d(d\omega_F) = d(\zeta_{\text{curl}\, F}) = ({\text{div}\, \text{curl}\,F}) \,dx \wedge dy \wedge dz.
+\end{aligned}
+$$
+
+($c$) $\text{curl}\,F=0$ 이면 $\zeta_{\text{curl}\, F}=0$ 이므로 $d(\omega_F)=0$ 이며 따라서 $\omega_F=df$ 인 $f:A \to \R$ 이 존재한다. ($a$) 에 의해 $df=\omega_{\text{grad}\,f} = \omega_F$ 이므로 $F=\text{grad}\,f= \nabla f$ 이다. 
+
+$\text{div}\,F=0$ 이면 $d(\zeta_F)=0$ 이므로 푸앙카레 보조정리에 의해 $\zeta_F = d \omega_X$ 인 $1$-형식 $\omega_X$ 가 존재한다. $d\omega_X = \zeta_{\text{curl}\, G}$ 이므로 $F=\text{curl}\,G$ 이다.
+
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_20}
+
+#### Spivak 4.20
+미분가능한 $F:U\to \R^n$ 에 대한 미분가능한 역함수 $F^{-1}:F(U) \to \R^n$ 이 존재한다. 모든 $U$ 에서의 닫힌 형식이 완전하다면 $f(U)$ 에서도 그러함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\omega$ 가 $f(U)$ 위에서의 형식이라고 하자. @prp-CM_basic_properties_of_differential_of_form 의 ($5$) 에 의해 $F^\ast (d\omega)=d(F^\ast \omega)$ 이다. 여기서 $(F^\ast \omega)$ 는 $U$ 에서의 형식이며 $d(F^\ast \omega)=0$ 이면 $F^\ast \omega = d\zeta$ 인 $U$ 에서의 형식 $\zeta$ 가 존재한다. $(F^{-1})^\ast \zeta$ 는 $F(U)$ 위에서의 형식이며 
+
+$$
+d((F^{-1})^\ast \zeta)= (F^{-1})^\ast(d\zeta) = (F^{-1})^\ast(F^\ast \omega)
+$$
+
+이다. 이 때 $G=F^{-1}$ 이라 하면, $F'\circ G'($ @def-CM_push_forward_and_pull_back 
+
+$$
+\begin{aligned}
+G^\ast &(F^\ast \omega) (\bf{p})(\bf{v}_1,\ldots,\bf{v}_k)\\[0.3em]
+&=(F^\ast \omega)(G(\bf{p}))(G'(\bf{p})(\bf{v}_1),\ldots,\, G'(\bf{p})(\bf{v}_k))\\[0.3em]
+&=\omega(F\circ G (\bf{p})) (F'(G(\bf{p})) \cdot G'(\bf{p})(\bf{v}_1),\ldots,\, F'(G(\bf{p})\circ G'(\bf{p})(\bf{v}_k)) \\[0.3em]
+&= \omega(\bf{p}) (\bf{v}_1,\ldots,\,\bf{v}_k) = d(G^\ast \zeta)(\bf{v}_1,\ldots,\,\bf{v}_k)
+\end{aligned}
+$$
+
+이며 따라서 $\omega$ 도 완전하다.
+
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">

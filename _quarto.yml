@@ -43,6 +43,8 @@ book:
         - src/part3/3_4_integration.qmd
         - src/part3/3_5_change_of_variables.qmd
         - src/part3/3_6_differential_forms.qmd
+        - src/part3/3_7_stokes_theorem.qmd
+
     # - part : src/figures/figures.qmd
     #   chapters :
     #     - src/figures/figure01.qmd

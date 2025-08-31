@@ -1,0 +1,83 @@
+---
+title: "미적분학의 기본정리와 스토크스 정리"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+{{< include ../../latexmacros.qmd >}}
+
+## 사전 지식
+
+### 특이곡면과 경계 {#sec-CM_singular_cube_and_boundary}
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_singular_n_cube}
+
+#### $n$-특이곡면, $n$-chain
+
+$A\subset \R^n$ 에서의 $n$-**특이곡면 (singular $n$-cube)** 은 $[0,\,1]^n$ 에서 $A$ 로의 연속함수이다. 이때 $0$ -특이곡면 은 $\{0\}\to A\subset \R$ 함수로 정한다. $1$-특이곡면은 **곡선 (curve)** 라고도 한다. 표준 $n$-특이곡면은 항등함수를 의미하며 $I^n$ 으로 표기한다. 
+
+$n$-특이곡면의 정수 계수 유한 선형결합을 $n$-**chain** 이라고 한다. 즉 $n$-특이곡면 $c_1,\,c_2,\,c_3$ 에 대해 $2c_1 + 3c_2 -4c_3$ 는 $n$-chain 이다.
+
+::: 
+:::
+
+</br>
+
+각각의 $n$-특이곡면에 대해 우리는 **경계 (boundary)** 라고 불리는 $(n-1)$-chain 을 정의 할 수 있으며 $n$-특이곡면 $c$ 에 대해 경계를 $\partial c$ 라고 표기한다. 예를 들어 $I^2$ 의 경계는 아래 @fig-boundary_of_I2 ($a$) 에서와 같이 $[0,\,1]^2$ 의 경계를 따라 반시계방항을 향하는 4개의 $1$-특이곡면으로 정의 될 수 있다. 그러나 실제로는 ($b$) 와 같이 정해진 계수에 대한 4개의 $1$-특이곡면의 합으로 $\partial I^2$ 를 정의하는 것이 더 편리하다.
+
+
+![$I^2$ 의 경계](figures/boundary_of_I2.png){#fig-boundary_of_I2 width=350}
+
+$\partial I^n$ 의 정확한 정의를 위해서는 먼저 정의해야 할 개념들이 있다. $1\le i \le n$ 인 $i$ 에 대해 두개의 $n-1$-특이곡면 $I^n_{(i,\,0)}$ 과 $I^n_{(i,\,1)}$ 을 다음과 같이 정의한다. $\bf{x}\in [0,\,1]^{n-1}$ 에 대해
+
+$$
+\begin{aligned}
+I^n_{(i,\,0)}(\bf{x}) &= I^n(x_1,\ldots,x_{i-1},0,\,x_{i},\ldots,x_{n-1}) \\[0.3em]
+&=(x_1,\ldots,x_{i-1},0,\,x_{i},\ldots,x_{n-1}), \\[0.3em]
+I^n_{(i,\,1)}(\bf{x}) &= I^n(x_1,\ldots,x_{i-1},1,\,x_{i},\ldots,x_{n-1}) \\[0.3em]
+&=(x_1,\ldots,x_{i-1},1,\,x_{i},\ldots,x_{n-1}). \\[0.3em]
+\end{aligned}
+$$
+
+$I^n_{(i,\,0)}$ 을 $(i,0)$-면 이라고 하고 $I^n_{(i,1)}$ 을 $(i,1)$-면 이라고 하자. 그리고 $\partial I^n$ 을 아래와 같이 정의한다.
+
+$$
+\partial I^n := \sum_{i=1}^n \sum_{\alpha = 0,\,1} (-1)^{i+\alpha} I^n_{(i,\,\alpha)}.
+$$ {#eq-CM_definition_of_boundary_of_In}
+
+일반적인 $n$-특이곡면 $c:[0,\,1]^n \to A$ 에 대해 $c$ 의 $(i,\alpha)$-면 $c_{(i,\alpha)}$ 는 아래와 같이 정의된다.
+
+$$
+c_{(i,\alpha)} := c\circ I^n_{(i,\alpha)}.
+$$ {#eq-CM_definition_of_face_of_singular_cube}
+
+그리고 $\partial c$ 는 아래와 같이 정의된다.
+
+$$
+\partial c := \sum_{i=1}^n \sum_{\alpha=0,\,1} (-1)^{i+\alpha} c_{(i,\alpha)}.
+$$ {#eq-CM-definition_of_boundary_of_singular_cube}
+
+마지막으로 $n$-chain $\sum a_i c_i$ 의 경계는 다음과 같이 정의된다.
+
+$$
+\partial\left(\sum a_i c_i\right) = \sum a_i \partial (c_i).
+$$ {#eq-CM_definition_of_boundary_of_chain}
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM-boundary_of_boundary}
+
+$c$ 가 $A$ 에서의 $n$-특이곡면 일 때 $\partial (\partial c)=0$ 이다. 짧게 $\partial^2 = 0$ 이다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+
+
+:::

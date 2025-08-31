@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; 유한집합 – Mathematical Analysis</title>
+<title>18&nbsp; 미적분학의 기본정리와 스토크스 정리 – Mathematical Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../src/part2/part2.html" rel="next">
-<link href="../../src/part1/1_4_cartesian_products.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../src/part3/3_6_differential_forms.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -112,7 +112,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_5_finite_sets.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_7_stokes_theorem.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,11 +155,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">해석학의 기반</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
@@ -186,7 +186,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></span></a>
   </div>
 </li>
@@ -243,11 +243,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">다변수 함수의 해석학</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
@@ -286,7 +286,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../src/part3/3_7_stokes_theorem.html" class="sidebar-item-text sidebar-link">
+  <a href="../../src/part3/3_7_stokes_theorem.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></span></a>
   </div>
 </li>
@@ -308,18 +308,19 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#유한집합의-정의" id="toc-유한집합의-정의" class="nav-link active" data-scroll-target="#유한집합의-정의"><span class="header-section-number">5.1</span> 유한집합의 정의</a></li>
-  <li><a href="#유한집합의-기본-성질" id="toc-유한집합의-기본-성질" class="nav-link" data-scroll-target="#유한집합의-기본-성질"><span class="header-section-number">5.2</span> 유한집합의 기본 성질</a></li>
-  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
+  <li><a href="#사전-지식" id="toc-사전-지식" class="nav-link active" data-scroll-target="#사전-지식"><span class="header-section-number">18.1</span> 사전 지식</a>
+  <ul class="collapse">
+  <li><a href="#sec-CM_singular_cube_and_boundary" id="toc-sec-CM_singular_cube_and_boundary" class="nav-link" data-scroll-target="#sec-CM_singular_cube_and_boundary"><span class="header-section-number">18.1.1</span> 특이곡면과 경계</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_5_finite_sets.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_7_stokes_theorem.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">유한집합</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></h1>
 </div>
 
 
@@ -344,166 +345,72 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
-<section id="유한집합의-정의" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="유한집합의-정의"><span class="header-section-number">5.1</span> 유한집합의 정의</h2>
+<section id="사전-지식" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="사전-지식"><span class="header-section-number">18.1</span> 사전 지식</h2>
+<section id="sec-CM_singular_cube_and_boundary" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="sec-CM_singular_cube_and_boundary"><span class="header-section-number">18.1.1</span> 특이곡면과 경계</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-FA_finte_set" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 5.1 (유한 집합)</strong></span> 집합 <span class="math inline">\(A\)</span> 가 공집합이거나 <span class="math inline">\(A\)</span> 에서 section(<a href="1_3_numbers.html#def-FA_section" class="quarto-xref">정의&nbsp;<span>3.8</span></a>) 로 가는 전단사 함수가 존재할 때 이 <span class="math inline">\(A\)</span> 를 <strong>유한집합</strong>이라 한다. <span class="math inline">\(A\)</span> 가 공집합일 경우 <strong>cardinality 0</strong> 라 하며, <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 과 전단사 관계가 존재할경우 <strong>cardinality n</strong> 이라 한다.</p>
+<div id="def-CM_singular_n_cube" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 18.1 (<span class="math inline">\(n\)</span>-특이곡면, <span class="math inline">\(n\)</span>-chain)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서의 <span class="math inline">\(n\)</span>-<strong>특이곡면 (singular <span class="math inline">\(n\)</span>-cube)</strong> 은 <span class="math inline">\([0,\,1]^n\)</span> 에서 <span class="math inline">\(A\)</span> 로의 연속함수이다. 이때 <span class="math inline">\(0\)</span> -특이곡면 은 <span class="math inline">\(\{0\}\to A\subset \mathbb{R}\)</span> 함수로 정한다. <span class="math inline">\(1\)</span>-특이곡면은 <strong>곡선 (curve)</strong> 라고도 한다. 표준 <span class="math inline">\(n\)</span>-특이곡면은 항등함수를 의미하며 <span class="math inline">\(I^n\)</span> 으로 표기한다.</p>
+<p><span class="math inline">\(n\)</span>-특이곡면의 정수 계수 유한 선형결합을 <span class="math inline">\(n\)</span>-<strong>chain</strong> 이라고 한다. 즉 <span class="math inline">\(n\)</span>-특이곡면 <span class="math inline">\(c_1,\,c_2,\,c_3\)</span> 에 대해 <span class="math inline">\(2c_1 + 3c_2 -4c_3\)</span> 는 <span class="math inline">\(n\)</span>-chain 이다.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
+<p>각각의 <span class="math inline">\(n\)</span>-특이곡면에 대해 우리는 <strong>경계 (boundary)</strong> 라고 불리는 <span class="math inline">\((n-1)\)</span>-chain 을 정의 할 수 있으며 <span class="math inline">\(n\)</span>-특이곡면 <span class="math inline">\(c\)</span> 에 대해 경계를 <span class="math inline">\(\partial c\)</span> 라고 표기한다. 예를 들어 <span class="math inline">\(I^2\)</span> 의 경계는 아래 <a href="#fig-boundary_of_I2" class="quarto-xref">그림&nbsp;<span>18.1</span></a> (<span class="math inline">\(a\)</span>) 에서와 같이 <span class="math inline">\([0,\,1]^2\)</span> 의 경계를 따라 반시계방항을 향하는 4개의 <span class="math inline">\(1\)</span>-특이곡면으로 정의 될 수 있다. 그러나 실제로는 (<span class="math inline">\(b\)</span>) 와 같이 정해진 계수에 대한 4개의 <span class="math inline">\(1\)</span>-특이곡면의 합으로 <span class="math inline">\(\partial I^2\)</span> 를 정의하는 것이 더 편리하다.</p>
+<div id="fig-boundary_of_I2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boundary_of_I2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/boundary_of_I2.png" class="img-fluid figure-img" width="350">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boundary_of_I2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;18.1: <span class="math inline">\(I^2\)</span> 의 경계
+</figcaption>
+</figure>
+</div>
+<p><span class="math inline">\(\partial I^n\)</span> 의 정확한 정의를 위해서는 먼저 정의해야 할 개념들이 있다. <span class="math inline">\(1\le i \le n\)</span> 인 <span class="math inline">\(i\)</span> 에 대해 두개의 <span class="math inline">\(n-1\)</span>-특이곡면 <span class="math inline">\(I^n_{(i,\,0)}\)</span> 과 <span class="math inline">\(I^n_{(i,\,1)}\)</span> 을 다음과 같이 정의한다. <span class="math inline">\(\boldsymbol{x}\in [0,\,1]^{n-1}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+I^n_{(i,\,0)}(\boldsymbol{x}) &amp;= I^n(x_1,\ldots,x_{i-1},0,\,x_{i},\ldots,x_{n-1}) \\[0.3em]
+&amp;=(x_1,\ldots,x_{i-1},0,\,x_{i},\ldots,x_{n-1}), \\[0.3em]
+I^n_{(i,\,1)}(\boldsymbol{x}) &amp;= I^n(x_1,\ldots,x_{i-1},1,\,x_{i},\ldots,x_{n-1}) \\[0.3em]
+&amp;=(x_1,\ldots,x_{i-1},1,\,x_{i},\ldots,x_{n-1}). \\[0.3em]
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(I^n_{(i,\,0)}\)</span> 을 <span class="math inline">\((i,0)\)</span>-면 이라고 하고 <span class="math inline">\(I^n_{(i,1)}\)</span> 을 <span class="math inline">\((i,1)\)</span>-면 이라고 하자. 그리고 <span class="math inline">\(\partial I^n\)</span> 을 아래와 같이 정의한다.</p>
+<p><span id="eq-CM_definition_of_boundary_of_In"><span class="math display">\[
+\partial I^n := \sum_{i=1}^n \sum_{\alpha = 0,\,1} (-1)^{i+\alpha} I^n_{(i,\,\alpha)}.
+\tag{18.1}\]</span></span></p>
+<p>일반적인 <span class="math inline">\(n\)</span>-특이곡면 <span class="math inline">\(c:[0,\,1]^n \to A\)</span> 에 대해 <span class="math inline">\(c\)</span> 의 <span class="math inline">\((i,\alpha)\)</span>-면 <span class="math inline">\(c_{(i,\alpha)}\)</span> 는 아래와 같이 정의된다.</p>
+<p><span id="eq-CM_definition_of_face_of_singular_cube"><span class="math display">\[
+c_{(i,\alpha)} := c\circ I^n_{(i,\alpha)}.
+\tag{18.2}\]</span></span></p>
+<p>그리고 <span class="math inline">\(\partial c\)</span> 는 아래와 같이 정의된다.</p>
+<p><span id="eq-CM-definition_of_boundary_of_singular_cube"><span class="math display">\[
+\partial c := \sum_{i=1}^n \sum_{\alpha=0,\,1} (-1)^{i+\alpha} c_{(i,\alpha)}.
+\tag{18.3}\]</span></span></p>
+<p>마지막으로 <span class="math inline">\(n\)</span>-chain <span class="math inline">\(\sum a_i c_i\)</span> 의 경계는 다음과 같이 정의된다.</p>
+<p><span id="eq-CM_definition_of_boundary_of_chain"><span class="math display">\[
+\partial\left(\sum a_i c_i\right) = \sum a_i \partial (c_i).
+\tag{18.4}\]</span></span></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="lem-FA_finite_set1" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 5.1</strong></span> <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 일 때 집합 <span class="math inline">\(A\)</span> 에 대해 다음은 동치이다.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n+1\}\)</span> 사이에 전단사 함수가 존재한다.</p>
-<p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(a\in A\)</span> 일 때 <span class="math inline">\(A\backslash\{a\}\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 사이에 전단사 함수가 존재한다.</p>
+<div id="prp-CM-boundary_of_boundary" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 18.1</strong></span> <span class="math inline">\(c\)</span> 가 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(n\)</span>-특이곡면 일 때 <span class="math inline">\(\partial (\partial c)=0\)</span> 이다. 짧게 <span class="math inline">\(\partial^2 = 0\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(f:A \to \{1,\ldots,\,n+1\}\)</span> 이 전단사 함수이며 <span class="math inline">\(f(a)=k\)</span> 라 하자. <span class="math inline">\(f(b) = n+1\)</span> 인 <span class="math inline">\(b\in A\)</span> 가 유일하게 존재한다. 이 때 <span class="math inline">\(h:A\backslash\{a\}\to \{1,\ldots,n\}\)</span> 을 다음과 같이 정의하자.</p>
-<p><span class="math display">\[
-h(x) = \left\{\begin{array}{ll}f(x), \quad &amp; \text{if } x\ne b \\ k, &amp;\text{if } x= b\end{array}\right.
-\]</span></p>
-<p><span class="math inline">\(h(x)\)</span> 가 전단사 함수임은 쉽게 보일 수 있다.</p>
-<p>(<span class="math inline">\(2 \implies 1\)</span>) <span class="math inline">\(g:A\backslash\{a\} \to \{1,\ldots,\,n\}\)</span> 이 전단사 함수라 하자. <span class="math inline">\(k:A \to \{1,\ldots,n+1\}\)</span> 을 다음과 같이 정의하자.</p>
-<p><span class="math display">\[
-k(x) = \left\{\begin{array}{ll} g(x),\quad&amp;\text{if }x\ne a\\ n+1, &amp;\text{if }x=a  \end{array} \right.
-\]</span></p>
-<p><span class="math inline">\(k(x)\)</span> 는 전단사 함수이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span></p>
 </div>
-<p><br></p>
+
+
 </section>
-<section id="유한집합의-기본-성질" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="유한집합의-기본-성질"><span class="header-section-number">5.2</span> 유한집합의 기본 성질</h2>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-FA_finite_set2" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.1</strong></span> 집합 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(f:A \to \{1,\ldots,\,n\}\)</span> 인 전단사 함수 <span class="math inline">\(f\)</span> 가 존재한다고 하자. <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 의 진부분 집합이라면 <span class="math inline">\(B \mapsto \{1,\ldots,\,n\}\)</span> 인 전단사 함수는 존재하지 않으며, <span class="math inline">\(B\ne \varnothing\)</span> 일 경우 어떤 <span class="math inline">\(m&lt;n\)</span> 에 대해 <span class="math inline">\(B \mapsto \{1,\ldots,m\}\)</span> 인 전단사 함수가 존재한다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B=\varnothing\)</span> 일 경우 <span class="math inline">\(B \to \{1,\ldots,n\}\)</span> 인 전단사 함수가 존재하지 않음은 자명하다. 이제 <span class="math inline">\(B\ne \varnothing\)</span> 일 경우 induction 으로 증명한다. 정리가 만족하는 양의 정수의 의 집합을 <span class="math inline">\(C\)</span> 라 하자. <span class="math inline">\(n=1\)</span> 일 경우는 성립한다는 것을 쉽게 알 수 있다.</p>
-<p><span class="math inline">\(n\in C\)</span> 임을 가정한다. <span class="math inline">\(f:A \to \{1,\ldots,n+1\}\)</span> 이 전단사 함수라고 하자. <span class="math inline">\(A\)</span> 의 진부분집합 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(a_0\in B\)</span> 와 <span class="math inline">\(a_1\in A\backslash B\)</span> 를 선택한다. <a href="#lem-FA_finite_set1" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에 의해 전단사 함수 <span class="math inline">\(g:A\backslash \{a_0\} \to \{1,\ldots,n\}\)</span> 가 존재한다. 이로부터 가정에 의해 아래의 결론을 내릴 수 있다.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(B\backslash\{a_0\} \mapsto \{1,\ldots,n\}\)</span> 인 전단사 함수는 존재하지 않으며,</p>
-<p>  (<span class="math inline">\(2\)</span>) 어떤 <span class="math inline">\(m&lt;n\)</span> 에 대해 전단사 함수 <span class="math inline">\(h:B\backslash\{a_0\} \to \{1,\ldots,\,m\}\)</span> 이 존재한다.</p>
-<p><a href="#lem-FA_finite_set1" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(B \mapsto \{1,\ldots,n+1\}\)</span> 인 전단사 함수는 존재하지 않는다. 또한 <span class="math inline">\(B\backslash \{a_0\} \ne \varnothing\)</span> 일 경우 <span class="math inline">\(B\mapsto \{1,\ldots,\,m+1\}\)</span> 인 전단사 함수가 존재한다. 즉 <span class="math inline">\(C=\mathbb{Z}_+\)</span> 이다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-FA_finite_set2" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 5.1</strong></span> <span class="math inline">\(A\)</span> 가 유한집합이고 <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 의 진부분집합이라면 <span class="math inline">\(A \mapsto B\)</span> 인 전단사함수는 존재하지 않는다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f:A \to B\)</span> 가 전단사 함수라 하자. <span class="math inline">\(g:A \to \{1,\ldots,\,n\}\)</span> 이 전단사함수라면 <span class="math inline">\(g\circ f^{-1}\)</span> 는 <span class="math inline">\(B \mapsto \{1,\ldots,n\}\)</span> 전단사 함수인데 이는 <a href="#thm-FA_finite_set2" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 위배된다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-FA_Z_plus_is_not_finite" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 5.2</strong></span> <span class="math inline">\(\mathbb{Z}_+\)</span> 는 유한집합이 아니다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f: \mathbb{Z}_+ \to \mathbb{Z}_+ \backslash \{1\}\)</span> 을 <span class="math inline">\(f(n) =n+1\)</span> 로 정의하면 전단사 함수이다. 그런데 <span class="math inline">\(\mathbb{Z}_+\backslash \{1\} \subsetneq \mathbb{Z}_+\)</span> 이므로 <a href="#cor-FA_finite_set2" class="quarto-xref">따름정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 유한집합이 아니다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-FA_cardinality_of_finit_set" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 5.3</strong></span> 유한집합의 cardinality 는 유일하게 정해진다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,\,n\}\)</span> 사이의 전단사 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\{1,\ldots,m\}\)</span> 사이의 전단사 함수 <span class="math inline">\(g\)</span> 가 존재한다고 하자. <span class="math inline">\(g \circ f^{-1}\)</span> 은 <span class="math inline">\(\{1,\ldots, n\}\)</span> 에서 <span class="math inline">\(\{1,\ldots,\,m\}\)</span> 으로의 전단사 함수이어야 하는데, <span class="math inline">\(m\ne n\)</span> 이라면 둘중 하나는 나머지의 진부분집합이므로 <a href="#cor-FA_finite_set2" class="quarto-xref">따름정리&nbsp;<span>5.1</span></a> 에 의해 전단사 함수가 존재하지 않는다. 즉 <span class="math inline">\(m=n\)</span> 이므로 유한집합의 cardinaility 는 유일하게 정해진다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-FA_cardinality_of_subset" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 5.4</strong></span> <span class="math inline">\(A\)</span> 가 유한집합이고 <span class="math inline">\(B \subset A\)</span> 이면 <span class="math inline">\(B\)</span> 는 유한집합이다. <span class="math inline">\(B\)</span> 가 <span class="math inline">\(A\)</span> 의 진부분집합이라면 <span class="math inline">\(B\)</span> 의 cardinality 는 <span class="math inline">\(A\)</span> 보다 적다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 의 cardinality 가 <span class="math inline">\(n\)</span> 이라면 <a href="#thm-FA_finite_set2" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 의해 <span class="math inline">\(B\)</span> 의 cardinality 는 <span class="math inline">\(n\)</span> 보다 작다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-FA_properties_of_finite_set" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 5.5</strong></span> <span class="math inline">\(A\)</span> 가 공집합이 아닐 때 아래의 세 명제는 동치이다.</p>
-<p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 는 유한집합이다.</p>
-<p>  (<span class="math inline">\(2\)</span>) 어떤 양의 정수의 section 에서 <span class="math inline">\(A\)</span> 로의 전사함수가 존재한다.</p>
-<p>  (<span class="math inline">\(3\)</span>) <span class="math inline">\(A\)</span> 에서 어떤 양의 정수에 대한 section 으로의 단사함수가 존재한다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1 \implies 2\)</span>) <span class="math inline">\(A\)</span> 가 유한집합이므로 정의에 의해 section 으로의 전단사 함수가 존재한다.</p>
-<p>(<span class="math inline">\(2 \implies 3\)</span>) <span class="math inline">\(f:\{1,\ldots,\,n\} \to A\)</span> 가 전사함수라 하자. <span class="math inline">\(g: A \to \{1,\ldots,\,n\}\)</span>, <span class="math inline">\(g(a)=\min \{f^{-1}(\{a\})\}\)</span> 는 단사함수이다.</p>
-<p>(<span class="math inline">\(3 \implies 1\)</span>) <span class="math inline">\(h:A \to \{1,\ldots,\,n\}\)</span> 이 단사함수라 하자.</p>
-<p><span class="math display">\[
-B = \{i \in \{1,\ldots,\,n\}: f^{-1}(\{i\})\ne\varnothing\}
-\]</span></p>
-<p>이라 하면 <span class="math inline">\(B \subset A\)</span> 이므로 <span class="math inline">\(B\)</span> 에서 어떤 <span class="math inline">\(m \le n\)</span> 에 대해 <span class="math inline">\(\{1,\ldots,\,m\}\)</span> 로의 전단사 함수 <span class="math inline">\(k\)</span> 가 존재한다. 이 때 <span class="math inline">\(k \circ h\)</span> 는 <span class="math inline">\(A\)</span> 에서 <span class="math inline">\(\{1,\ldots,\,m\}\)</span> 으로의 전단사 함수이므로 <span class="math inline">\(A\)</span> 는 유한집합이다. <span class="math inline">\(\square\)</span></p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-FA_finite_cartesian_product_of_finite_sets" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 5.1</strong></span> 유한집합의 유한 합집합은 유한집합이다. 유한집합의 유한 데카르트곱도 유한집합이다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>집합 <span class="math inline">\(A,\,B\)</span> 가 공집합일경우 합집합과 데카르트곱은 공집합이므로 유한집합이다. 둘중의 하나만 공집합일 경우는 자명하다. <span class="math inline">\(f:A \to \{1,\ldots,\,m\}\)</span> 과 <span class="math inline">\(g:B \to \{1,\ldots,\,n\}\)</span> 이 전단사 함수 일 때, <span class="math inline">\(h:A \cup B \to \{1,\ldots,m+n\}\)</span> 을 다음과 같이 정의하자.</p>
-<p><span class="math display">\[
-h(x) = \left\{\begin{array}{ll} f(x) \quad &amp; ;\text{if }x\in A \\ m+g(x) &amp;;\text{if }x\in B \backslash A \end{array}\right. .
-\]</span></p>
-<p>이 때 <span class="math inline">\(h\)</span> 는 단사함수이므로 <span class="math inline">\(A \cup B\)</span> 는 유한집합이다. Induction 을 이용하면 임의의 유한 합집합에 대해 성립한다는 것을 보일 수 있다.</p>
-<p>이제 데카르트 곱에 대해 보이자. <span class="math inline">\(k:A \times B \to \{1,\ldots,m\times n\}\)</span> 을</p>
-<p><span class="math display">\[
-k(a,\,b) = n \times (f(a)-1) + g(b)
-\]</span></p>
-<p>라 하면 <span class="math inline">\(k\)</span> 는 단사함수이므로 <span class="math inline">\(A \times B\)</span> 는 유한집합이다. Induction 을 이용하면 임의의 유한 데카르트 곱에 대해 성립함을 보일 수 있다. <span class="math inline">\(\square\)</span></p>
-</div>
-<p><br></p>
-</section>
-<section id="연습문제" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-FA_muknres_1_6_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.1 (Munkres 1.6.2)</strong></span> <span class="math inline">\(B\)</span> 가 유한집합이 아니고 <span class="math inline">\(B \subset A\)</span> 이면 <span class="math inline">\(A\)</span> 는 유한집합이 아님을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A\)</span> 가 유한집합이라면 어떤 양의 정수 <span class="math inline">\(n\)</span> 에 대해 전단사 함수 <span class="math inline">\(f: A \to \{1,\ldots,\,n\}\)</span> 가 존재한다. <span class="math inline">\(B \subset A\)</span> 이면 <a href="#cor-FA_cardinality_of_subset" class="quarto-xref">따름정리&nbsp;<span>5.4</span></a> 에 의해 <span class="math inline">\(B\)</span> 는 유한집합이어야 하므로 가정에 위배된다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-FA_munkres_1_6_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.2 (Munkres 1.6.3)</strong></span> <span class="math inline">\(X=\{0,\,1\}\)</span> 일 때 <span class="math inline">\(X^\omega\)</span> 애서 <span class="math inline">\(X^\omega\)</span> 의 진부분집합으로의 전단사 함수가 존재함을 보여라.</p>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x\in X^\omega\)</span> 에 대해 <span class="math inline">\(x_i\)</span> 는 <span class="math inline">\(x\)</span> 의 <span class="math inline">\(i\)</span> 번째 좌표라 하자.</p>
-<p><span class="math display">\[
-P = \{(0,\,a_1,\,a_2,\ldots): a_i \in \{0,\,1\},\, i=1,\,2,\ldots\}
-\]</span></p>
-<p>는 <span class="math inline">\(X^\omega\)</span> 의 진부분 집합이다. <span class="math inline">\(f(x_1,x_2,\ldots) =  (0,x_1,x_2,\ldots)\)</span> 는 <span class="math inline">\(X^\omega \mapsto P\)</span> 로의 전단사 함수이다.</p>
-</div>
-<br>
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-<div id="exr-FA_munkres_1_6_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 5.3 (Munkres 1.6.4)</strong></span> <span class="math inline">\(A\)</span> 는 공집합이 아닌 유한 전순서 집합(<a href="1_2_functions_and_relations.html#def-FA_order_relation" class="quarto-xref">정의&nbsp;<span>2.12</span></a>) 이라 하자.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 에 최대값이 존재함을 보이시오.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 는 어떤 section 과 같은 순서형(<a href="1_1_basic_of_naive_set_theory.html#def-FA_ordered_pair" class="quarto-xref">정의&nbsp;<span>1.8</span></a>) 을 가짐을 보이시오.</p>
-</div>
-</div>
-<div class="soluion">
-
-</div>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -908,13 +815,13 @@ P = \{(0,\,a_1,\,a_2,\ldots): a_i \in \{0,\,1\},\, i=1,\,2,\ldots\}
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/part1/1_4_cartesian_products.html" class="pagination-link" aria-label="데카르트 곱">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span>
+      <a href="../../src/part3/3_6_differential_forms.html" class="pagination-link" aria-label="미분 형식">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">미분 형식</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../src/part2/part2.html" class="pagination-link" aria-label="일변수 함수의 해석학">
-        <span class="nav-page-text">일변수 함수의 해석학</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
