@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>18&nbsp; 미적분학의 기본정리와 스토크스 정리 – Mathematical Analysis</title>
+<title>18&nbsp; 스토크스 정리 – Mathematical Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_7_stokes_theorem.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_7_stokes_theorem.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">스토크스 정리</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -287,7 +287,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/part3/3_7_stokes_theorem.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">스토크스 정리</span></span></a>
   </div>
 </li>
       </ul>
@@ -311,6 +311,13 @@ window.Quarto = {
   <li><a href="#사전-지식" id="toc-사전-지식" class="nav-link active" data-scroll-target="#사전-지식"><span class="header-section-number">18.1</span> 사전 지식</a>
   <ul class="collapse">
   <li><a href="#sec-CM_singular_cube_and_boundary" id="toc-sec-CM_singular_cube_and_boundary" class="nav-link" data-scroll-target="#sec-CM_singular_cube_and_boundary"><span class="header-section-number">18.1.1</span> 특이곡면과 경계</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
+  </ul></li>
+  <li><a href="#스토크스-정리" id="toc-스토크스-정리" class="nav-link" data-scroll-target="#스토크스-정리"><span class="header-section-number">18.2</span> 스토크스 정리</a>
+  <ul class="collapse">
+  <li><a href="#sec-CM-integration_of_form" id="toc-sec-CM-integration_of_form" class="nav-link" data-scroll-target="#sec-CM-integration_of_form"><span class="header-section-number">18.2.1</span> 형식의 적분</a></li>
+  <li><a href="#sec-CM_stokes_theorem" id="toc-sec-CM_stokes_theorem" class="nav-link" data-scroll-target="#sec-CM_stokes_theorem"><span class="header-section-number">18.2.2</span> 스토크스 정리</a></li>
+  <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -318,9 +325,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_7_stokes_theorem.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part3/part3.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/part3/3_7_stokes_theorem.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">스토크스 정리</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">미적분학의 기본정리와 스토크스 정리</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">스토크스 정리</span></h1>
 </div>
 
 
@@ -345,6 +352,7 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
+<p><br></p>
 <section id="사전-지식" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="사전-지식"><span class="header-section-number">18.1</span> 사전 지식</h2>
 <section id="sec-CM_singular_cube_and_boundary" class="level3" data-number="18.1.1">
@@ -363,7 +371,7 @@ window.Quarto = {
 </div>
 </div>
 <p><br></p>
-<p>각각의 <span class="math inline">\(n\)</span>-특이곡면에 대해 우리는 <strong>경계 (boundary)</strong> 라고 불리는 <span class="math inline">\((n-1)\)</span>-chain 을 정의 할 수 있으며 <span class="math inline">\(n\)</span>-특이곡면 <span class="math inline">\(c\)</span> 에 대해 경계를 <span class="math inline">\(\partial c\)</span> 라고 표기한다. 예를 들어 <span class="math inline">\(I^2\)</span> 의 경계는 아래 <a href="#fig-boundary_of_I2" class="quarto-xref">그림&nbsp;<span>18.1</span></a> (<span class="math inline">\(a\)</span>) 에서와 같이 <span class="math inline">\([0,\,1]^2\)</span> 의 경계를 따라 반시계방항을 향하는 4개의 <span class="math inline">\(1\)</span>-특이곡면으로 정의 될 수 있다. 그러나 실제로는 (<span class="math inline">\(b\)</span>) 와 같이 정해진 계수에 대한 4개의 <span class="math inline">\(1\)</span>-특이곡면의 합으로 <span class="math inline">\(\partial I^2\)</span> 를 정의하는 것이 더 편리하다.</p>
+<p>각각의 <span class="math inline">\(n\)</span>-특이곡면에 대해 우리는 <strong>경계 (boundary)</strong> 라고 불리는 <span class="math inline">\((n-1)\)</span>-chain 을 정의 할 수 있으며 <span class="math inline">\(n\)</span>-특이곡면 <span class="math inline">\(c\)</span> 에 대해 경계를 <span class="math inline">\(\partial c\)</span> 라고 표기한다. 예를 들어 <span class="math inline">\(I^2\)</span> 의 경계는 아래 <a href="#fig-boundary_of_I2" class="quarto-xref">그림&nbsp;<span>18.1</span></a> (<span class="math inline">\(a\)</span>) 에서와 같이 <span class="math inline">\([0,\,1]^2\)</span> 의 경계를 따라 반시계방항으로 배치된 4개의 <span class="math inline">\(1\)</span>-특이곡면으로 정의 될 수 있다. 그러나 실제로는 (<span class="math inline">\(b\)</span>) 와 같이 정해진 계수에 대한 4개의 <span class="math inline">\(1\)</span>-특이곡면의 합으로 <span class="math inline">\(\partial I^2\)</span> 를 정의하는 것이 더 편리하다.</p>
 <div id="fig-boundary_of_I2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boundary_of_I2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -401,12 +409,234 @@ c_{(i,\alpha)} := c\circ I^n_{(i,\alpha)}.
 \tag{18.4}\]</span></span></p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CM-boundary_of_boundary" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 18.1</strong></span> <span class="math inline">\(c\)</span> 가 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(n\)</span>-특이곡면 일 때 <span class="math inline">\(\partial (\partial c)=0\)</span> 이다. 짧게 <span class="math inline">\(\partial^2 = 0\)</span> 이다.</p>
+<div id="thm-CM-boundary_of_boundary" class="theorem">
+<p><span class="theorem-title"><strong>정리 18.1</strong></span> <span class="math inline">\(n\)</span>-특이곡면 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\partial (\partial c)=0\)</span> 이다. 짧게 <span class="math inline">\(\partial^2 = 0\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(i\le j\)</span> 에 대해 <span class="math inline">\((I^{n}_{i,\alpha})_{j,\beta}\)</span> 를 생각하자. <span class="math inline">\(\boldsymbol{x}\in [0,\,1]^{n-2}\)</span> 일 때</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(I^n_{i,\alpha}\right)_{(j,\beta)} (\boldsymbol{x}) &amp;= \left(I^n_{j,\beta}\right)_{(i,\alpha)} (\boldsymbol{x})
+\end{aligned}
+\]</span></p>
+<p>임을 안다. 따라서</p>
+<p><span class="math display">\[
+\left(c_{(i,\alpha)}\right)_{(j,\beta)} = c\circ (I_{(i,\alpha)})_{(j,\beta)} = c\circ (I_{(j,\beta)})_{(i,\alpha)} = \left(c_{(j,\beta)}\right)_{(i,\alpha)}
+\]</span></p>
+<p>이다. 이로부터</p>
+<p><span class="math display">\[
+\begin{aligned}
+\partial (\partial c) &amp;= \partial \left(\sum_{i=1}^n \sum_{\alpha=0,\,1} (-1)^{i+\alpha} c_{(i,\alpha)}\right) \\
+&amp;= \sum_{i=1}^n \sum_{\alpha = 0,\,1} \sum_{j=1}^{n-1} \sum_{\beta=0,1} (-1)^{i+j+\alpha+\beta} \left(c_{(i,\,\alpha)}\right)_{(j,\beta)}
+\end{aligned}
+\]</span></p>
+<p>이다. 여기서 <span class="math inline">\(\left(c_{(i,\alpha)}\right)_{j,\beta} = \left(c_{(j+1,\beta)}\right)_{i,\alpha}\)</span> 이며 앞의 <span class="math inline">\((-1)^{\cdots}\)</span> 로 인해 서로 상쇄된다. 예를 들어 <span class="math inline">\(\left(c_{(2,\alpha)}\right)_{(4,\beta)} = \left(c_{(5,\beta)}\right)_{(2,\alpha)}\)</span> 이다. 모든 항이 상쇄되므로 <span class="math inline">\(\partial (\partial c)=0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><br></p>
+<p>이로부터 아래는 자명하다.</p>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-CM-boundary_of_boundary_for_chain" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 18.1</strong></span> <span class="math inline">\(n\)</span>-chain <span class="math inline">\(c\)</span> 에 대해서도 <span class="math inline">\(\partial (\partial c)=0\)</span> 이다.</p>
+</div>
+</div>
+<p><br></p>
+<p>그렇다면 <a href="#thm-CM-boundary_of_boundary" class="quarto-xref">정리&nbsp;<span>18.1</span></a> 에 대한 역도 성립할까? 즉 <span class="math inline">\(\partial c=0\)</span> 일 때 <span class="math inline">\(c=\partial d\)</span> 인 <span class="math inline">\(n\)</span>-chain <span class="math inline">\(d\)</span> 가 존재할까? 답은 일반적으로 그렇지 않다 이다. 예를 들어 <span class="math inline">\(0\)</span> 이 아닌 정수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(c:[0,\,1]\to \mathbb{R}^2-\{0\}\)</span> 이 <span class="math inline">\(c(t) = (\sin 2\pi n t,\cos 2 \pi n t)\)</span> 라고 하자. <span class="math inline">\(c(1) = c(0)\)</span> 이므로 <span class="math inline">\(\partial c=0\)</span> 이지만 <span class="math inline">\(\partial c'=c\)</span> 인 <span class="math inline">\(2\)</span>-chain <span class="math inline">\(c'\)</span> 은 존재하지 않는다.</p>
+<p><br></p>
+</section>
+<section id="연습문제" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_4_22" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 18.1 (Spivak 4.22)</strong></span> <span class="math inline">\(S\)</span> 가 모든 <span class="math inline">\(n\)</span>-특이곡면의 집합이라고 하자. <span class="math inline">\(n\)</span>-chain 은 <span class="math inline">\(f:S\to \mathbb{Z}\)</span> 함수로서 유한개의 <span class="math inline">\(c\)</span> 를 제외하고는 <span class="math inline">\(f(c)=0\)</span> 인 함수라고 간주 할 수 있다. <span class="math inline">\(f+g\)</span> 와 <span class="math inline">\(nf\)</span> 를 <span class="math inline">\((f+g)(c) = f(c)+g(c)\)</span>, <span class="math inline">\((nf)(c) = n\cdot f(c)\)</span> 로 정의한다. <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 가 <span class="math inline">\(n\)</span>-chian 이면 <span class="math inline">\(f+g\)</span> 와 <span class="math inline">\(nf\)</span> 도 <span class="math inline">\(n\)</span>-chain 임을 보여라. <span class="math inline">\(c\in S\)</span> 이면 <span class="math inline">\(c\)</span> 는 <span class="math inline">\(f(c)=1\)</span> 이며 <span class="math inline">\(c'\ne c\)</span> 에 대해 <span class="math inline">\(f(c') =0\)</span> 인 <span class="math inline">\(n\)</span>-chain 을 의미한다고 하자. 모든 <span class="math inline">\(n\)</span>-chain 은 어떤 특이곡면 <span class="math inline">\(c_1,\ldots,\,c_k\)</span> 와 어떤 정수 <span class="math inline">\(a_1,\ldots,\,a_k\)</span> 에 대해 <span class="math inline">\(a_1c_1+\cdots a_kc_k\)</span> 로 표현 될 수 있음을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>trivial</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_4_23" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 18.2 (Spivak 4.23)</strong></span> <span class="math inline">\(R&gt;0,\, n\in \mathbb{Z}\)</span> 에 대해 <span class="math inline">\(1\)</span>-특이곡면 <span class="math inline">\(c_{R,n}:[0,\,1]\to \mathbb{R}^2-\{\boldsymbol{0}\}\)</span> 이 <span class="math inline">\(c_{R,n}(t) = (R\cos 2\pi n t,\, R\sin 2\pi n t)\)</span> 로 정의되었다. 어떤 <span class="math inline">\(2\)</span>-특이곡면 <span class="math inline">\(\boldsymbol{c}:[0,\,1]^2 \to \mathbb{R}^2-\{\boldsymbol{0}\}\)</span> 에 대해 <span class="math inline">\(c_{R_1,n}-c_{R_2,n}=\partial \boldsymbol{c}\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{c}(x,\,y) := (R_2(1-x) + R_1x)(\cos 2\pi n y,\, \sin 2\pi n y)\)</span> 라고 정의하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{c}_{(1, 0)} &amp;= (R_2 \cos 2\pi n t,\, R_2\sin 2\pi n t), \\[0.3em]
+\boldsymbol{c}_{(1, 1)} &amp; = (R_1 \cos 2\pi n t,\, R_1\sin 2\pi n t), \\[0.3em]
+\boldsymbol{c}_{(2, 0)} &amp;= (R_2(1-t)-R_1,\, 0), \\[0.3em]
+\boldsymbol{c}_{(2, 1)} &amp;= (R_2(1-t)-R_1,\, 0) = \boldsymbol{c}_{(2, 0)}.
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\partial \boldsymbol{c} = -\boldsymbol{c}_{(1,0)} + \boldsymbol{c}_{(1, 1)} + \boldsymbol{c}_{(2, 0)} - \boldsymbol{c}_{(2, 1)} =  c_{R_1,n} - c_{R_2,n}
+\]</span></p>
+<p>이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_4_24" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 18.3 (Spivak 4.24)</strong></span> <span class="math inline">\(1\)</span>-특이곡면 <span class="math inline">\(c:[0,\,1]\to \mathbb{R}^2-\{\boldsymbol{0}\}\)</span> 이 <span class="math inline">\(c(0)=c(1)\)</span> 이라면 어떤 정수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(c-c_{1, n} = \partial d\)</span> 를 만족하는 <span class="math inline">\(2\)</span>-chain <span class="math inline">\(d\)</span> 가 존재함을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="스토크스-정리" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="스토크스-정리"><span class="header-section-number">18.2</span> 스토크스 정리</h2>
+<section id="sec-CM-integration_of_form" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="sec-CM-integration_of_form"><span class="header-section-number">18.2.1</span> 형식의 적분</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_integration_of_k_form_on_k_unit_cube" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 18.2 (<span class="math inline">\(k\)</span>-단위입방체에서의 <span class="math inline">\(k\)</span>-형식의 적분)</strong></span> <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\([0,\,1]^k\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-형식이라면 어떤 함수 <span class="math inline">\(f:\mathbb{R}^k \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\omega = f\,dx_1 \wedge \cdots \wedge dx_k\)</span> 이다. 이 때 우리는 <span class="math inline">\(\omega\)</span> 에 대한 적분을 아래와 같이 정의한다.</p>
+<p><span id="eq-def_CM_integration_of_k_form_on_k_unit_cube"><span class="math display">\[
+\int_{[0,\,1]^k} \omega := \int_{[0,\,1]^k} f = \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k)\,dx_1 \cdots dx_k.
+\tag{18.5}\]</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_integration_of_k_form_on_singuar_k_cube" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 18.3 (<span class="math inline">\(k\)</span>-특이곡면에서의 <span class="math inline">\(k\)</span> 형식의 적분)</strong></span> <span class="math inline">\(k\)</span>-특이곡면 <span class="math inline">\(c\)</span> 에서의 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega\)</span> 의 적분은 다음과 같이 정의된다.</p>
+<p><span id="eq-def_CM_integration_of_k_form_on_singuar_k_cube"><span class="math display">\[
+\int_c \omega = \int_{[0,\,1]^k} c^\ast \omega.
+\tag{18.6}\]</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{I^k} f\, dx_1 \wedge \cdots \wedge dx_k &amp;= \int (I^k)^\ast (f \, dx_1 \wedge \cdots \wedge dx_k) \\[0.3em]
+&amp;= \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k) \,dx_1 \cdots dx_k
+\end{aligned}
+\]</span></p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CM_integration_of_singular_0_cube" class="theorem example">
+<p><span class="theorem-title"><strong>예제 18.1 (<span class="math inline">\(0\)</span>-형식의 <span class="math inline">\(0\)</span>-특이곡면의 적분)</strong></span> <span class="math inline">\(0\)</span>-형식은 스칼라 함수이다. <span class="math inline">\(0\)</span>-특이곡면은 <span class="math inline">\(0\)</span> 에서만 정의된 함수로 정의된다. 이 때 적분은</p>
+<p><span class="math display">\[
+\int_c \omega = \omega (c(0))
+\]</span></p>
+<p>으로 정의된다.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_integration_of_k_form_on_k_chain" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 18.4 (<span class="math inline">\(k\)</span>-chain 에서의 <span class="math inline">\(k\)</span> 형식의 적분)</strong></span> <span class="math inline">\(k\)</span>-chain <span class="math inline">\(c = \sum_i a_i c_i\)</span> 에서의 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega\)</span> 의 적분은 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+\int_c \omega = \sum_i a_i \int_{c_i} \omega.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_line_integra_and_surface_integral" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 18.5 (선적분과 면적분)</strong></span> <span class="math inline">\(1\)</span>-chain 에서의 <span class="math inline">\(1\)</span>-형식의 적분을 <strong>선적분 (line integral)</strong> 이라고 한다. <span class="math inline">\(2\)</span>-chain 에서의 <span class="math inline">\(2\)</span> 형식의 적분을 <strong>면적분 (surface integral)</strong> 이라고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<p>우선 선적분을 보자. <span class="math inline">\(\omega = Pdx + Qdy\)</span> 가 <span class="math inline">\(\mathbb{R}^2\)</span> 에서의 <span class="math inline">\(1\)</span>-형식 이고 <span class="math inline">\(c:[0,\,1]\to \mathbb{R}^2\)</span> 가 <span class="math inline">\(1\)</span>-특이곡면 이고 <span class="math inline">\(P_n = (t_0,\ldots,\,t_n)\)</span> 이 <span class="math inline">\([0,\,1]\)</span> 을 <span class="math inline">\(n\)</span>-분할 일 때</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_c \omega &amp;= \int_c Pdx + Qdy \\[0.3em]
+&amp;=\lim_{n \to \infty} \sum_{i=1}^n [c_1(t_i)-c_1(t_{i-1})] P(c(t_i)) + [c_2(t_i)-c_2(t_{i-1})] Q(c(t_i))
+\end{aligned}
+\]</span></p>
+<p>이다. 그러나 실제로 적분을 이렇게 구하는 것은 실용적이지 못하며, 이 적분과 실제로 같은 <span class="math inline">\(\int_{[0,\,1]}c^\ast (Pdx+Qdy)\)</span> 를 구하게 된다. 이것은 면적분에서도 마찬가지 이다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CM-stokes_theorem" class="theorem">
+<p><span class="theorem-title"><strong>정리 18.2 (스토크스 정리)</strong></span> <span class="math inline">\(\omega\)</span> 가 열린 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의 된 <span class="math inline">\((k-1)\)</span>-형식이며 <span class="math inline">\(c\)</span> 가 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(k\)</span>-chain 일 때 다음이 성립한다.</p>
+<p><span id="eq-CM_stokes_theorem"><span class="math display">\[
+\int_c d\omega = \int_{\partial c} \omega.
+\tag{18.7}\]</span></span></p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(c=I^k\)</span> 이고 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\([0,\,1]^k\)</span> 에서 정의된 <span class="math inline">\((k-1)\)</span> 형식 이라고 하자. <span class="math inline">\(\omega\)</span> 는 아래 형태의 <span class="math inline">\((k-1)\)</span>-형식의 선형결합이다.</p>
+<p><span class="math display">\[
+f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
+\]</span></p>
+<p>따라서 이런 형태 각각에 대해 성립함을 보이면 된다. 우선</p>
+<p><span class="math display">\[
+\int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)
+\]</span></p>
+<p>를 생각해보자. 우변에서 <span class="math inline">\(i\ne j\)</span> 일 경우 <span class="math inline">\(x_j\)</span> 값이 <span class="math inline">\(\alpha\)</span> 로 고정되므로 위의 적분은 <span class="math inline">\(0\)</span> 이 된다. 따라서 위의 적분은 <span class="math inline">\(i=j\)</span> 일 때만 의미있으며 따러서</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast &amp; (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)  \\[0.3em]
+&amp;= \delta_{ij} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_{i-1},\alpha,\, x_{i+1},\ldots,\,x_k)\,dx_1 \cdots dx_k
+\end{aligned}
+\]</span></p>
+<p>이다. 따라서</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{\partial I^k} &amp; f dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\[0.3em]
+&amp;=\sum_{j=1}^{k} \sum_{\alpha =0,\,1} (-1)^{j+\alpha} \int_{[0,\,1]^{k-1}} \left(I^k_{(j,\,\alpha)}\right)^\ast (f dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k ) \\[0.3em]
+&amp;=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
+&amp;\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,0,\ldots,\,x_k) \, dx_1 \cdots dx_k
+\end{aligned}
+\]</span></p>
+<p>이다. 다른 한편</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{I^k} &amp; d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k) =     \int_{[0,\,1]^k} D_i f dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
+\end{aligned}
+\]</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="sec-CM_stokes_theorem" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="sec-CM_stokes_theorem"><span class="header-section-number">18.2.2</span> 스토크스 정리</h3>
+<p><br></p>
+</section>
+<section id="연습문제-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_4_25" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 18.4 (Spivak 4.25)</strong></span> &nbsp;</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_spivak_4_26" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 18.5 (Spivak 4.26)</strong></span> &nbsp;</p>
+</div>
 </div>
 
 

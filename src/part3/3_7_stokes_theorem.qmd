@@ -1,11 +1,13 @@
 ---
-title: "미적분학의 기본정리와 스토크스 정리"
+title: "스토크스 정리"
 number-sections: true
 number-depth : 3
 crossref:
   chapters: true
 ---
 {{< include ../../latexmacros.qmd >}}
+
+</br>
 
 ## 사전 지식
 
@@ -25,7 +27,7 @@ $n$-특이곡면의 정수 계수 유한 선형결합을 $n$-**chain** 이라고
 
 </br>
 
-각각의 $n$-특이곡면에 대해 우리는 **경계 (boundary)** 라고 불리는 $(n-1)$-chain 을 정의 할 수 있으며 $n$-특이곡면 $c$ 에 대해 경계를 $\partial c$ 라고 표기한다. 예를 들어 $I^2$ 의 경계는 아래 @fig-boundary_of_I2 ($a$) 에서와 같이 $[0,\,1]^2$ 의 경계를 따라 반시계방항을 향하는 4개의 $1$-특이곡면으로 정의 될 수 있다. 그러나 실제로는 ($b$) 와 같이 정해진 계수에 대한 4개의 $1$-특이곡면의 합으로 $\partial I^2$ 를 정의하는 것이 더 편리하다.
+각각의 $n$-특이곡면에 대해 우리는 **경계 (boundary)** 라고 불리는 $(n-1)$-chain 을 정의 할 수 있으며 $n$-특이곡면 $c$ 에 대해 경계를 $\partial c$ 라고 표기한다. 예를 들어 $I^2$ 의 경계는 아래 @fig-boundary_of_I2 ($a$) 에서와 같이 $[0,\,1]^2$ 의 경계를 따라 반시계방항으로 배치된 4개의 $1$-특이곡면으로 정의 될 수 있다. 그러나 실제로는 ($b$) 와 같이 정해진 계수에 대한 4개의 $1$-특이곡면의 합으로 $\partial I^2$ 를 정의하는 것이 더 편리하다.
 
 
 ![$I^2$ 의 경계](figures/boundary_of_I2.png){#fig-boundary_of_I2 width=350}
@@ -68,9 +70,9 @@ $$ {#eq-CM_definition_of_boundary_of_chain}
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-CM-boundary_of_boundary}
+::: {#thm-CM-boundary_of_boundary}
 
-$c$ 가 $A$ 에서의 $n$-특이곡면 일 때 $\partial (\partial c)=0$ 이다. 짧게 $\partial^2 = 0$ 이다.
+$n$-특이곡면 $c$ 에 대해 $\partial (\partial c)=0$ 이다. 짧게 $\partial^2 = 0$ 이다.
 
 :::
 
@@ -78,6 +80,321 @@ $c$ 가 $A$ 에서의 $n$-특이곡면 일 때 $\partial (\partial c)=0$ 이다.
 
 ::: {.proof}
 
+$i\le j$ 에 대해 $(I^{n}_{i,\alpha})_{j,\beta}$ 를 생각하자. $\bf{x}\in [0,\,1]^{n-2}$ 일 때 
+
+$$
+\begin{aligned}
+\left(I^n_{i,\alpha}\right)_{(j,\beta)} (\bf{x}) &= \left(I^n_{j,\beta}\right)_{(i,\alpha)} (\bf{x})
+\end{aligned}
+$$
+
+임을 안다. 따라서
+
+$$
+\left(c_{(i,\alpha)}\right)_{(j,\beta)} = c\circ (I_{(i,\alpha)})_{(j,\beta)} = c\circ (I_{(j,\beta)})_{(i,\alpha)} = \left(c_{(j,\beta)}\right)_{(i,\alpha)} 
+$$
+
+이다. 이로부터
+
+$$
+\begin{aligned}
+\partial (\partial c) &= \partial \left(\sum_{i=1}^n \sum_{\alpha=0,\,1} (-1)^{i+\alpha} c_{(i,\alpha)}\right) \\
+&= \sum_{i=1}^n \sum_{\alpha = 0,\,1} \sum_{j=1}^{n-1} \sum_{\beta=0,1} (-1)^{i+j+\alpha+\beta} \left(c_{(i,\,\alpha)}\right)_{(j,\beta)}
+\end{aligned}
+$$
+
+이다. 여기서 $\left(c_{(i,\alpha)}\right)_{j,\beta} = \left(c_{(j+1,\beta)}\right)_{i,\alpha}$ 이며 앞의 $(-1)^{\cdots}$ 로 인해 서로 상쇄된다. 예를 들어 $\left(c_{(2,\alpha)}\right)_{(4,\beta)} = \left(c_{(5,\beta)}\right)_{(2,\alpha)}$ 이다. 모든 항이 상쇄되므로 $\partial (\partial c)=0$ 이다. $\square$
+
+:::
+
+</br>
+
+이로부터 아래는 자명하다.
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-CM-boundary_of_boundary_for_chain}
+
+$n$-chain $c$ 에 대해서도 $\partial (\partial c)=0$ 이다.
+
+:::
+
+</div>
+
+</br>
+
+그렇다면 @thm-CM-boundary_of_boundary 에 대한 역도 성립할까? 즉 $\partial c=0$ 일 때 $c=\partial d$ 인 $n$-chain $d$ 가 존재할까? 답은 일반적으로 그렇지 않다 이다. 예를 들어 $0$ 이 아닌 정수 $n$ 에 대해 $c:[0,\,1]\to \R^2-\{0\}$ 이 $c(t) = (\sin 2\pi n t,\cos 2 \pi n t)$ 라고 하자. $c(1) = c(0)$ 이므로 $\partial c=0$ 이지만 $\partial c'=c$ 인 $2$-chain $c'$ 은 존재하지 않는다.
+
+</br>
+
+### 연습문제 {.unnumbered}
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_22}
+
+#### Spivak 4.22
+
+$S$ 가 모든 $n$-특이곡면의 집합이라고 하자. $n$-chain 은 $f:S\to \Z$ 함수로서 유한개의 $c$ 를 제외하고는 $f(c)=0$ 인 함수라고 간주 할 수 있다. $f+g$ 와 $nf$ 를 $(f+g)(c) = f(c)+g(c)$, $(nf)(c) = n\cdot f(c)$ 로 정의한다. $f$ 와 $g$ 가 $n$-chian 이면 $f+g$ 와 $nf$ 도 $n$-chain 임을 보여라. $c\in S$ 이면 $c$ 는 $f(c)=1$ 이며 $c'\ne c$ 에 대해 $f(c') =0$ 인 $n$-chain 을 의미한다고 하자. 모든 $n$-chain 은 어떤 특이곡면 $c_1,\ldots,\,c_k$ 와 어떤 정수 $a_1,\ldots,\,a_k$ 에 대해 $a_1c_1+\cdots a_kc_k$ 로 표현 될 수 있음을 보여라.
+
+:::
+</div>
+
+::: {.solution}
+
+trivial
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_23}
+
+#### Spivak 4.23
+
+$R>0,\, n\in \Z$ 에 대해 $1$-특이곡면 $c_{R,n}:[0,\,1]\to \R^2-\{\bf{0}\}$ 이 $c_{R,n}(t) = (R\cos 2\pi n t,\, R\sin 2\pi n t)$ 로 정의되었다. 어떤 $2$-특이곡면 $\bf{c}:[0,\,1]^2 \to \R^2-\{\bf{0}\}$ 에 대해 $c_{R_1,n}-c_{R_2,n}=\partial \bf{c}$ 임을 보여라.
+
+:::
+</div>
+
+::: {.solution}
+
+$\bf{c}(x,\,y) := (R_2(1-x) + R_1x)(\cos 2\pi n y,\, \sin 2\pi n y)$ 라고 정의하면,
+
+$$
+\begin{aligned}
+\bf{c}_{(1, 0)} &= (R_2 \cos 2\pi n t,\, R_2\sin 2\pi n t), \\[0.3em]
+\bf{c}_{(1, 1)} & = (R_1 \cos 2\pi n t,\, R_1\sin 2\pi n t), \\[0.3em]
+\bf{c}_{(2, 0)} &= (R_2(1-t)-R_1,\, 0), \\[0.3em]
+\bf{c}_{(2, 1)} &= (R_2(1-t)-R_1,\, 0) = \bf{c}_{(2, 0)}.
+\end{aligned}
+$$
+
+이므로
+
+$$
+\partial \bf{c} = -\bf{c}_{(1,0)} + \bf{c}_{(1, 1)} + \bf{c}_{(2, 0)} - \bf{c}_{(2, 1)} =  c_{R_1,n} - c_{R_2,n}
+$$
+
+이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_24}
+
+#### Spivak 4.24
+
+$1$-특이곡면 $c:[0,\,1]\to \R^2-\{\bf{0}\}$ 이 $c(0)=c(1)$ 이라면 어떤 정수 $n$ 에 대해 $c-c_{1, n} = \partial d$ 를 만족하는 $2$-chain $d$ 가 존재함을 보여라. 
+
+:::
+</div>
+
+::: {.solution}
+
 
 
 :::
+
+</br>
+
+## 스토크스 정리
+
+### 형식의 적분 {#sec-CM-integration_of_form}
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_integration_of_k_form_on_k_unit_cube}
+
+#### $k$-단위입방체에서의 $k$-형식의 적분
+
+$\omega$ 가 $[0,\,1]^k$ 에서 정의된 $k$-형식이라면 어떤 함수 $f:\R^k \to \R$ 에 대해 $\omega = f\,dx_1 \wedge \cdots \wedge dx_k$ 이다. 이 때 우리는 $\omega$ 에 대한 적분을 아래와 같이 정의한다.
+
+$$
+\int_{[0,\,1]^k} \omega := \int_{[0,\,1]^k} f = \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k)\,dx_1 \cdots dx_k.
+$$ {#eq-def_CM_integration_of_k_form_on_k_unit_cube}
+
+:::
+:::
+
+</br>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_integration_of_k_form_on_singuar_k_cube}
+
+#### $k$-특이곡면에서의 $k$ 형식의 적분
+
+$k$-특이곡면 $c$ 에서의 $k$-형식 $\omega$ 의 적분은 다음과 같이 정의된다.
+
+$$
+\int_c \omega = \int_{[0,\,1]^k} c^\ast \omega.
+$$ {#eq-def_CM_integration_of_k_form_on_singuar_k_cube}
+
+
+:::
+:::
+
+</br>
+
+
+$$
+\begin{aligned}
+\int_{I^k} f\, dx_1 \wedge \cdots \wedge dx_k &= \int (I^k)^\ast (f \, dx_1 \wedge \cdots \wedge dx_k) \\[0.3em]
+&= \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k) \,dx_1 \cdots dx_k
+\end{aligned}
+$$
+
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_integration_of_singular_0_cube}
+
+#### $0$-형식의 $0$-특이곡면의 적분
+
+$0$-형식은 스칼라 함수이다. $0$-특이곡면은 $0$ 에서만 정의된 함수로 정의된다. 이 때 적분은
+
+$$
+\int_c \omega = \omega (c(0))
+$$
+
+으로 정의된다.
+
+:::
+
+</div>
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_integration_of_k_form_on_k_chain}
+
+#### $k$-chain 에서의 $k$ 형식의 적분
+
+$k$-chain $c = \sum_i a_i c_i$ 에서의 $k$-형식 $\omega$ 의 적분은 다음과 같이 정의된다.
+
+$$
+\int_c \omega = \sum_i a_i \int_{c_i} \omega.
+$$
+
+:::
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_line_integra_and_surface_integral}
+
+#### 선적분과 면적분
+
+$1$-chain 에서의 $1$-형식의 적분을 **선적분 (line integral)** 이라고 한다. $2$-chain 에서의 $2$ 형식의 적분을 **면적분 (surface integral)** 이라고 한다.
+
+:::
+:::
+
+
+우선 선적분을 보자. $\omega = Pdx + Qdy$ 가 $\R^2$ 에서의 $1$-형식 이고 $c:[0,\,1]\to \R^2$ 가 $1$-특이곡면 이고 $P_n = (t_0,\ldots,\,t_n)$ 이 $[0,\,1]$ 을 $n$-분할 일 때
+
+$$
+\begin{aligned}
+\int_c \omega &= \int_c Pdx + Qdy \\[0.3em]
+&=\lim_{n \to \infty} \sum_{i=1}^n [c_1(t_i)-c_1(t_{i-1})] P(c(t_i)) + [c_2(t_i)-c_2(t_{i-1})] Q(c(t_i))
+\end{aligned}
+$$
+
+이다. 그러나 실제로 적분을 이렇게 구하는 것은 실용적이지 못하며, 이 적분과 실제로 같은 $\int_{[0,\,1]}c^\ast (Pdx+Qdy)$ 를 구하게 된다. 이것은 면적분에서도 마찬가지 이다.
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM-stokes_theorem}
+
+#### 스토크스 정리
+
+$\omega$ 가 열린 $A\subset \R^n$ 에서 정의 된 $(k-1)$-형식이며 $c$ 가 $A$ 에서의 $k$-chain 일 때 다음이 성립한다.
+
+$$
+\int_c d\omega = \int_{\partial c} \omega.
+$$ {#eq-CM_stokes_theorem}
+
+:::
+
+</div>
+
+::: {.proof}
+
+우선 $c=I^k$ 이고 $\omega$ 가 $[0,\,1]^k$ 에서 정의된 $(k-1)$ 형식 이라고 하자. $\omega$ 는 아래 형태의 $(k-1)$-형식의 선형결합이다.
+
+$$
+f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
+$$
+
+따라서 이런 형태 각각에 대해 성립함을 보이면 된다. 우선
+
+$$
+\int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k) 
+$$
+
+를 생각해보자. 우변에서 $i\ne j$ 일 경우 $x_j$ 값이 $\alpha$ 로 고정되므로 위의 적분은 $0$ 이 된다. 따라서 위의 적분은 $i=j$ 일 때만 의미있으며 따러서 
+
+$$
+\begin{aligned}
+\int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast & (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)  \\[0.3em]
+&= \delta_{ij} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_{i-1},\alpha,\, x_{i+1},\ldots,\,x_k)\,dx_1 \cdots dx_k
+\end{aligned}
+$$
+
+이다. 따라서
+
+$$
+\begin{aligned}
+\int_{\partial I^k} & f dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\[0.3em]
+&=\sum_{j=1}^{k} \sum_{\alpha =0,\,1} (-1)^{j+\alpha} \int_{[0,\,1]^{k-1}} \left(I^k_{(j,\,\alpha)}\right)^\ast (f dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k ) \\[0.3em]
+&=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
+&\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,0,\ldots,\,x_k) \, dx_1 \cdots dx_k 
+\end{aligned}
+$$
+
+이다. 다른 한편
+
+$$
+\begin{aligned}
+\int_{I^k} & d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k) =     \int_{[0,\,1]^k} D_i f dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k 
+\end{aligned}
+$$
+
+
+:::
+
+
+
+
+
+</br>
+
+### 스토크스 정리 {#sec-CM_stokes_theorem}
+
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_25}
+
+#### Spivak 4.25
+
+
+
+:::
+</div>
+
+::: {.solution}
+
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_spivak_4_26}
+
+#### Spivak 4.26
+
+
+:::
+</div>
