@@ -229,19 +229,26 @@ $$
 \int_c \omega = \int_{[0,\,1]^k} c^\ast \omega.
 $$ {#eq-def_CM_integration_of_k_form_on_singuar_k_cube}
 
-
 :::
 :::
 
 </br>
 
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+::: {#exm-CM_integration_over_standard_k_cube}
 
+#### 단위 $k$ cube 에 대한 적분
+
+@def-CM_integration_of_k_form_on_singuar_k_cube 의 정의가 일관적이라는 것을 보이자. $c=I^k$ 일 때 @def-CM_integration_of_k_form_on_k_unit_cube 와 같아야 한다.
 $$
 \begin{aligned}
 \int_{I^k} f\, dx_1 \wedge \cdots \wedge dx_k &= \int (I^k)^\ast (f \, dx_1 \wedge \cdots \wedge dx_k) \\[0.3em]
-&= \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k) \,dx_1 \cdots dx_k
+&= \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k) \,dx_1 \cdots dx_k.
 \end{aligned}
 $$
+
+:::
+</div>
 
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -260,10 +267,10 @@ $$
 
 :::
 
-</div>
+</div></br>
 
 ::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_integration_of_k_form_on_k_chain}
+::: {#def-CM_integration_of_k_form_over_k_chain}
 
 #### $k$-chain 에서의 $k$ 형식의 적분
 
@@ -271,10 +278,12 @@ $k$-chain $c = \sum_i a_i c_i$ 에서의 $k$-형식 $\omega$ 의 적분은 다�
 
 $$
 \int_c \omega = \sum_i a_i \int_{c_i} \omega.
-$$
+$$ {#eq-def_CM_integration_over_k_chain}
 
 :::
 :::
+
+</br>
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_line_integra_and_surface_integral}
@@ -286,8 +295,9 @@ $1$-chain 에서의 $1$-형식의 적분을 **선적분 (line integral)** 이라
 :::
 :::
 
+</br>
 
-우선 선적분을 보자. $\omega = Pdx + Qdy$ 가 $\R^2$ 에서의 $1$-형식 이고 $c:[0,\,1]\to \R^2$ 가 $1$-특이곡면 이고 $P_n = (t_0,\ldots,\,t_n)$ 이 $[0,\,1]$ 을 $n$-분할 일 때
+우선 선적분을 보자. $\omega = Pdx + Qdy$ 가 $\R^2$ 에서의 $1$-형식 이고 $c:[0,\,1]\to \R^2$ 가 $1$-특이곡면 이고 $P_n = (t_0,\ldots,\,t_n)$ 이 $[0,\,1]$ 의 분할 일 때
 
 $$
 \begin{aligned}
@@ -296,8 +306,11 @@ $$
 \end{aligned}
 $$
 
-이다. 그러나 실제로 적분을 이렇게 구하는 것은 실용적이지 못하며, 이 적분과 실제로 같은 $\int_{[0,\,1]}c^\ast (Pdx+Qdy)$ 를 구하게 된다. 이것은 면적분에서도 마찬가지 이다.
+이다. 그러나 실제로 적분을 이렇게 구하는 것은 실용적이지 못하며, 이 적분과 같은 $\int_{[0,\,1]}c^\ast (Pdx+Qdy)$ 를 구하게 된다. 이것은 면적분에서도 마찬가지 이다.
 
+</br>
+
+### 스토크스 정리 {#sec-CM_stokes_theorem}
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -317,35 +330,58 @@ $$ {#eq-CM_stokes_theorem}
 
 ::: {.proof}
 
-우선 $c=I^k$ 이고 $\omega$ 가 $[0,\,1]^k$ 에서 정의된 $(k-1)$ 형식 이라고 하자. $\omega$ 는 아래 형태의 $(k-1)$-형식의 선형결합이다.
+우선 $c=I^k$ 이고 $\omega$ 가 $[0,\,1]^k$ 에서 정의된 $(k-1)$-형식일 경우를 생각한다. $\omega$ 는 아래 형태의 $(k-1)$-형식의 선형결합이다.
 
 $$
 f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
 $$
 
-따라서 이런 형태 각각에 대해 성립함을 보이면 된다. 우선
-
+따라서 이런 형태 각각에 대해 성립함을 보이면 된다. 
 $$
 \int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k) 
 $$
 
-를 생각해보자. 우변에서 $i\ne j$ 일 경우 $x_j$ 값이 $\alpha$ 로 고정되므로 위의 적분은 $0$ 이 된다. 따라서 위의 적분은 $i=j$ 일 때만 의미있으며 따러서 
+를 생각해보자. @def-CM_push_forward_and_pull_back 와 @thm-CM_properties_of_full_back 로부터 
 
 $$
 \begin{aligned}
-\int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast & (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)  \\[0.3em]
+&\left(I^k_{(j,\alpha)}\right)^\ast  f\, dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\[0.3em]
+&= f\left(I^k_{(j,\alpha)}\right) \cdot \left(I^k_{(j,\alpha)}\right)^\ast (dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k) \\[0.3em]
+&=f\left(I^k_{(j,\alpha)}\right) \cdot \left[\left(I^k_{(j,\alpha)}\right)^\ast dx_1  \wedge \cdots \wedge \widehat{\left(I^k_{(j,\alpha)}\right)^\ast dx_i} \wedge \cdots \wedge \left(I^k_{(j,\alpha)}\right)^\ast dx_k \right]
+\end{aligned}
+$$
+
+이다. 여기서 @thm-CM_properties_of_full_back ($1$) 로부터
+
+$$
+\left(I^k_{(j,\alpha)}\right)^\ast dx_l = \left\{ \begin{array}{ll}  0,\qquad & l = j \\dx_l, & l\ne j\end{array} \right.
+$$
+
+이므로
+
+$$
+\left(I^k_{(j,\alpha)}\right)^\ast f\, dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k = \delta_{ij} f\left(I^k_{(j,\alpha)}\right) \cdot \left[ dx_1  \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge  dx_k \right]
+$$
+
+이다. $x_i$ 를 dummy variable 로 주면
+
+
+$$
+\begin{aligned}
+\int_{[0,\,1]^{k-1}} &\left(I^{k}_{(j,\alpha)}\right)^\ast (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)  \\[0.3em]
+&= \delta_{ij} \int_{[0,\,1]^{k-1}} f(x_1,\ldots,\,x_{i-1},\alpha,\, x_{i+1},\ldots,\,x_k)\,dx_1 \cdots dx_{i-1}\,dx_{i+1}\cdots  dx_k \\[0.3em]
 &= \delta_{ij} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_{i-1},\alpha,\, x_{i+1},\ldots,\,x_k)\,dx_1 \cdots dx_k
 \end{aligned}
 $$
 
-이다. 따라서
+이다. @def-CM_integration_of_k_form_over_k_chain 의 $k$-chain 에서의 적분을 생각하면
 
 $$
 \begin{aligned}
 \int_{\partial I^k} & f dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\[0.3em]
 &=\sum_{j=1}^{k} \sum_{\alpha =0,\,1} (-1)^{j+\alpha} \int_{[0,\,1]^{k-1}} \left(I^k_{(j,\,\alpha)}\right)^\ast (f dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k ) \\[0.3em]
-&=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
-&\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,0,\ldots,\,x_k) \, dx_1 \cdots dx_k 
+&=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
+&\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=0,\ldots,\,x_k) \, dx_1 \cdots dx_k 
 \end{aligned}
 $$
 
@@ -353,20 +389,58 @@ $$
 
 $$
 \begin{aligned}
-\int_{I^k} & d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k) =     \int_{[0,\,1]^k} D_i f dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k 
+\int_{I^k} & d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k)\\[0.3em]
+&= \int_{[0,\,1]^k} D_i f dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k  = (-1)^{i-1} \int_{[0,1]}^k D_i f
 \end{aligned}
 $$
 
+이다. 푸비니의 정리에 의해 적분변수의 순서를 바꿔도 상관 없으며, 1변수에서의 미적분학의 기본정리에 의해
 
+$$
+\int_0^1 D_i f\, dx_i = f(x_1,\ldots,\,x_{i}=1,\ldots,\,x_k) - f(x_1,\ldots,x_i=0,\ldots,\,x_k)
+$$
+
+이므로,
+$$
+\begin{aligned}
+\int_{I^k} & d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k)\\[0.3em]
+&=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
+&\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=0,\ldots,\,x_k) \, dx_1 \cdots dx_k 
+\end{aligned}
+$$
+
+이다. 즉 우리는 다음을 얻었다.
+
+$$
+\int_{I^k} d\omega = \int_{\partial I^k} \omega.
+$$ {#eq-CM_stokes_theorem_in_unit_cube}
+
+이제 $k$-특이곡면 에서의 적분을 생각하자. @def-CM_integration_of_k_form_on_singuar_k_cube 를 생각하자. $\omega$ 는 $k-1$ 형식이며 $\partial I^k$ 는 $(k-1)$-chain 이므로  
+
+$$
+\int_{\partial c} \omega = \int_{\partial I^k} c^\ast \omega
+$$ {#eq-CM_supp_stokes}
+
+이다. 이로부터
+
+$$
+\int_c d\omega = \int_{I^k} c^\ast (d\omega) = \int_{I^k} d(c^\ast \omega) = \int_{\partial I^k} c^\ast \omega = \int_\partial \omega
+$$
+
+를 얻는다. 첫번째 등식은 @def-CM_integration_of_k_form_on_singuar_k_cube, 두번째 등식은 @prp-CM_basic_properties_of_differential_of_form, 세번째 등식은 @eq-CM_stokes_theorem_in_unit_cube, 마지막 등식은 @eq-CM_supp_stokes 로 부터 성립한다. 
+
+마지막으로, $c$ 가 $k$-chain 으로 $c=\sum_i a_i c_i$ 일 때
+
+$$
+\int_c d\omega = \sum_{a_i} \int_{c_i} d\omega = \sum_i a_i \int_\partial c_i \omega = \int_{\partial c} \omega
+$$
+
+이다. $\square$
 :::
 
 
 
 
-
-</br>
-
-### 스토크스 정리 {#sec-CM_stokes_theorem}
 
 
 </br>
@@ -379,6 +453,11 @@ $$
 
 #### Spivak 4.25
 
+$c$ 가 $k$-특이곡면이고 $P:[0,\,1]^k \to [0,\,1]^k$ 가 전단사 함수이며 $\det(P'(x)) \ge 0$ 라고 하자. $\omega$ 가 $k$-형식 일 때 다음이 성립함을 보여라.
+
+$$
+\int_c \omega = \int_{c\circ P} \omega.
+$$
 
 
 :::

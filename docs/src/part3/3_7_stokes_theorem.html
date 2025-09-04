@@ -524,37 +524,43 @@ c_{(i,\alpha)} := c\circ I^n_{(i,\alpha)}.
 </div>
 </div>
 <p><br></p>
-<p><span class="math display">\[
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CM_integration_over_standard_k_cube" class="theorem example">
+<p><span class="theorem-title"><strong>예제 18.1 (단위 <span class="math inline">\(k\)</span> cube 에 대한 적분)</strong></span> <a href="#def-CM_integration_of_k_form_on_singuar_k_cube" class="quarto-xref">정의&nbsp;<span>18.3</span></a> 의 정의가 일관적이라는 것을 보이자. <span class="math inline">\(c=I^k\)</span> 일 때 <a href="#def-CM_integration_of_k_form_on_k_unit_cube" class="quarto-xref">정의&nbsp;<span>18.2</span></a> 와 같아야 한다. <span class="math display">\[
 \begin{aligned}
 \int_{I^k} f\, dx_1 \wedge \cdots \wedge dx_k &amp;= \int (I^k)^\ast (f \, dx_1 \wedge \cdots \wedge dx_k) \\[0.3em]
-&amp;= \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k) \,dx_1 \cdots dx_k
+&amp;= \int_{[0,\,1]^k} f(x_1,\ldots,\,x_k) \,dx_1 \cdots dx_k.
 \end{aligned}
 \]</span></p>
+</div>
+</div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_integration_of_singular_0_cube" class="theorem example">
-<p><span class="theorem-title"><strong>예제 18.1 (<span class="math inline">\(0\)</span>-형식의 <span class="math inline">\(0\)</span>-특이곡면의 적분)</strong></span> <span class="math inline">\(0\)</span>-형식은 스칼라 함수이다. <span class="math inline">\(0\)</span>-특이곡면은 <span class="math inline">\(0\)</span> 에서만 정의된 함수로 정의된다. 이 때 적분은</p>
+<p><span class="theorem-title"><strong>예제 18.2 (<span class="math inline">\(0\)</span>-형식의 <span class="math inline">\(0\)</span>-특이곡면의 적분)</strong></span> <span class="math inline">\(0\)</span>-형식은 스칼라 함수이다. <span class="math inline">\(0\)</span>-특이곡면은 <span class="math inline">\(0\)</span> 에서만 정의된 함수로 정의된다. 이 때 적분은</p>
 <p><span class="math display">\[
 \int_c \omega = \omega (c(0))
 \]</span></p>
 <p>으로 정의된다.</p>
 </div>
 </div>
+<p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div id="def-CM_integration_of_k_form_on_k_chain" class="theorem definition">
+<div id="def-CM_integration_of_k_form_over_k_chain" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 18.4 (<span class="math inline">\(k\)</span>-chain 에서의 <span class="math inline">\(k\)</span> 형식의 적분)</strong></span> <span class="math inline">\(k\)</span>-chain <span class="math inline">\(c = \sum_i a_i c_i\)</span> 에서의 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega\)</span> 의 적분은 다음과 같이 정의된다.</p>
-<p><span class="math display">\[
+<p><span id="eq-def_CM_integration_over_k_chain"><span class="math display">\[
 \int_c \omega = \sum_i a_i \int_{c_i} \omega.
-\]</span></p>
+\tag{18.7}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
+<p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -567,66 +573,116 @@ c_{(i,\alpha)} := c\circ I^n_{(i,\alpha)}.
 </div>
 </div>
 </div>
-<p>우선 선적분을 보자. <span class="math inline">\(\omega = Pdx + Qdy\)</span> 가 <span class="math inline">\(\mathbb{R}^2\)</span> 에서의 <span class="math inline">\(1\)</span>-형식 이고 <span class="math inline">\(c:[0,\,1]\to \mathbb{R}^2\)</span> 가 <span class="math inline">\(1\)</span>-특이곡면 이고 <span class="math inline">\(P_n = (t_0,\ldots,\,t_n)\)</span> 이 <span class="math inline">\([0,\,1]\)</span> 을 <span class="math inline">\(n\)</span>-분할 일 때</p>
+<p><br></p>
+<p>우선 선적분을 보자. <span class="math inline">\(\omega = Pdx + Qdy\)</span> 가 <span class="math inline">\(\mathbb{R}^2\)</span> 에서의 <span class="math inline">\(1\)</span>-형식 이고 <span class="math inline">\(c:[0,\,1]\to \mathbb{R}^2\)</span> 가 <span class="math inline">\(1\)</span>-특이곡면 이고 <span class="math inline">\(P_n = (t_0,\ldots,\,t_n)\)</span> 이 <span class="math inline">\([0,\,1]\)</span> 의 분할 일 때</p>
 <p><span class="math display">\[
 \begin{aligned}
 \int_c \omega &amp;= \int_c Pdx + Qdy \\[0.3em]
 &amp;=\lim_{n \to \infty} \sum_{i=1}^n [c_1(t_i)-c_1(t_{i-1})] P(c(t_i)) + [c_2(t_i)-c_2(t_{i-1})] Q(c(t_i))
 \end{aligned}
 \]</span></p>
-<p>이다. 그러나 실제로 적분을 이렇게 구하는 것은 실용적이지 못하며, 이 적분과 실제로 같은 <span class="math inline">\(\int_{[0,\,1]}c^\ast (Pdx+Qdy)\)</span> 를 구하게 된다. 이것은 면적분에서도 마찬가지 이다.</p>
+<p>이다. 그러나 실제로 적분을 이렇게 구하는 것은 실용적이지 못하며, 이 적분과 같은 <span class="math inline">\(\int_{[0,\,1]}c^\ast (Pdx+Qdy)\)</span> 를 구하게 된다. 이것은 면적분에서도 마찬가지 이다.</p>
+<p><br></p>
+</section>
+<section id="sec-CM_stokes_theorem" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="sec-CM_stokes_theorem"><span class="header-section-number">18.2.2</span> 스토크스 정리</h3>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM-stokes_theorem" class="theorem">
 <p><span class="theorem-title"><strong>정리 18.2 (스토크스 정리)</strong></span> <span class="math inline">\(\omega\)</span> 가 열린 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의 된 <span class="math inline">\((k-1)\)</span>-형식이며 <span class="math inline">\(c\)</span> 가 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(k\)</span>-chain 일 때 다음이 성립한다.</p>
 <p><span id="eq-CM_stokes_theorem"><span class="math display">\[
 \int_c d\omega = \int_{\partial c} \omega.
-\tag{18.7}\]</span></span></p>
+\tag{18.8}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(c=I^k\)</span> 이고 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\([0,\,1]^k\)</span> 에서 정의된 <span class="math inline">\((k-1)\)</span> 형식 이라고 하자. <span class="math inline">\(\omega\)</span> 는 아래 형태의 <span class="math inline">\((k-1)\)</span>-형식의 선형결합이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(c=I^k\)</span> 이고 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\([0,\,1]^k\)</span> 에서 정의된 <span class="math inline">\((k-1)\)</span>-형식일 경우를 생각한다. <span class="math inline">\(\omega\)</span> 는 아래 형태의 <span class="math inline">\((k-1)\)</span>-형식의 선형결합이다.</p>
 <p><span class="math display">\[
 f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
 \]</span></p>
-<p>따라서 이런 형태 각각에 대해 성립함을 보이면 된다. 우선</p>
-<p><span class="math display">\[
+<p>따라서 이런 형태 각각에 대해 성립함을 보이면 된다. <span class="math display">\[
 \int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)
 \]</span></p>
-<p>를 생각해보자. 우변에서 <span class="math inline">\(i\ne j\)</span> 일 경우 <span class="math inline">\(x_j\)</span> 값이 <span class="math inline">\(\alpha\)</span> 로 고정되므로 위의 적분은 <span class="math inline">\(0\)</span> 이 된다. 따라서 위의 적분은 <span class="math inline">\(i=j\)</span> 일 때만 의미있으며 따러서</p>
+<p>를 생각해보자. <a href="3_6_differential_forms.html#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>17.15</span></a> 와 <a href="3_6_differential_forms.html#thm-CM_properties_of_full_back" class="quarto-xref">정리&nbsp;<span>17.5</span></a> 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
-\int_{[0,\,1]^{k-1}} \left(I^{k}_{(j,\alpha)}\right)^\ast &amp; (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)  \\[0.3em]
+&amp;\left(I^k_{(j,\alpha)}\right)^\ast  f\, dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\[0.3em]
+&amp;= f\left(I^k_{(j,\alpha)}\right) \cdot \left(I^k_{(j,\alpha)}\right)^\ast (dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k) \\[0.3em]
+&amp;=f\left(I^k_{(j,\alpha)}\right) \cdot \left[\left(I^k_{(j,\alpha)}\right)^\ast dx_1  \wedge \cdots \wedge \widehat{\left(I^k_{(j,\alpha)}\right)^\ast dx_i} \wedge \cdots \wedge \left(I^k_{(j,\alpha)}\right)^\ast dx_k \right]
+\end{aligned}
+\]</span></p>
+<p>이다. 여기서 <a href="3_6_differential_forms.html#thm-CM_properties_of_full_back" class="quarto-xref">정리&nbsp;<span>17.5</span></a> (<span class="math inline">\(1\)</span>) 로부터</p>
+<p><span class="math display">\[
+\left(I^k_{(j,\alpha)}\right)^\ast dx_l = \left\{ \begin{array}{ll}  0,\qquad &amp; l = j \\dx_l, &amp; l\ne j\end{array} \right.
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\left(I^k_{(j,\alpha)}\right)^\ast f\, dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k = \delta_{ij} f\left(I^k_{(j,\alpha)}\right) \cdot \left[ dx_1  \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge  dx_k \right]
+\]</span></p>
+<p>이다. <span class="math inline">\(x_i\)</span> 를 dummy variable 로 주면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{[0,\,1]^{k-1}} &amp;\left(I^{k}_{(j,\alpha)}\right)^\ast (f\,dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k)  \\[0.3em]
+&amp;= \delta_{ij} \int_{[0,\,1]^{k-1}} f(x_1,\ldots,\,x_{i-1},\alpha,\, x_{i+1},\ldots,\,x_k)\,dx_1 \cdots dx_{i-1}\,dx_{i+1}\cdots  dx_k \\[0.3em]
 &amp;= \delta_{ij} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_{i-1},\alpha,\, x_{i+1},\ldots,\,x_k)\,dx_1 \cdots dx_k
 \end{aligned}
 \]</span></p>
-<p>이다. 따라서</p>
+<p>이다. <a href="#def-CM_integration_of_k_form_over_k_chain" class="quarto-xref">정의&nbsp;<span>18.4</span></a> 의 <span class="math inline">\(k\)</span>-chain 에서의 적분을 생각하면</p>
 <p><span class="math display">\[
 \begin{aligned}
 \int_{\partial I^k} &amp; f dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\[0.3em]
 &amp;=\sum_{j=1}^{k} \sum_{\alpha =0,\,1} (-1)^{j+\alpha} \int_{[0,\,1]^{k-1}} \left(I^k_{(j,\,\alpha)}\right)^\ast (f dx_1\wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k ) \\[0.3em]
-&amp;=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
-&amp;\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,0,\ldots,\,x_k) \, dx_1 \cdots dx_k
+&amp;=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
+&amp;\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=0,\ldots,\,x_k) \, dx_1 \cdots dx_k
 \end{aligned}
 \]</span></p>
 <p>이다. 다른 한편</p>
 <p><span class="math display">\[
 \begin{aligned}
-\int_{I^k} &amp; d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k) =     \int_{[0,\,1]^k} D_i f dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
+\int_{I^k} &amp; d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k)\\[0.3em]
+&amp;= \int_{[0,\,1]^k} D_i f dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k  = (-1)^{i-1} \int_{[0,1]}^k D_i f
 \end{aligned}
 \]</span></p>
+<p>이다. 푸비니의 정리에 의해 적분변수의 순서를 바꿔도 상관 없으며, 1변수에서의 미적분학의 기본정리에 의해</p>
+<p><span class="math display">\[
+\int_0^1 D_i f\, dx_i = f(x_1,\ldots,\,x_{i}=1,\ldots,\,x_k) - f(x_1,\ldots,x_i=0,\ldots,\,x_k)
+\]</span></p>
+<p>이므로, <span class="math display">\[
+\begin{aligned}
+\int_{I^k} &amp; d(fdx_1 \wedge \cdots \wedge \widehat {dx_i} \wedge \cdots \wedge dx_k)\\[0.3em]
+&amp;=(-1)^{i+1} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=1,\ldots,\,x_k) \, dx_1 \cdots dx_k \\[0.3em]
+&amp;\qquad \qquad + (-1)^{i} \int_{[0,\,1]^k} f(x_1,\ldots,\,x_i=0,\ldots,\,x_k) \, dx_1 \cdots dx_k
+\end{aligned}
+\]</span></p>
+<p>이다. 즉 우리는 다음을 얻었다.</p>
+<p><span id="eq-CM_stokes_theorem_in_unit_cube"><span class="math display">\[
+\int_{I^k} d\omega = \int_{\partial I^k} \omega.
+\tag{18.9}\]</span></span></p>
+<p>이제 <span class="math inline">\(k\)</span>-특이곡면 에서의 적분을 생각하자. <a href="#def-CM_integration_of_k_form_on_singuar_k_cube" class="quarto-xref">정의&nbsp;<span>18.3</span></a> 를 생각하자. <span class="math inline">\(\omega\)</span> 는 <span class="math inline">\(k-1\)</span> 형식이며 <span class="math inline">\(\partial I^k\)</span> 는 <span class="math inline">\((k-1)\)</span>-chain 이므로</p>
+<p><span id="eq-CM_supp_stokes"><span class="math display">\[
+\int_{\partial c} \omega = \int_{\partial I^k} c^\ast \omega
+\tag{18.10}\]</span></span></p>
+<p>이다. 이로부터</p>
+<p><span class="math display">\[
+\int_c d\omega = \int_{I^k} c^\ast (d\omega) = \int_{I^k} d(c^\ast \omega) = \int_{\partial I^k} c^\ast \omega = \int_\partial \omega
+\]</span></p>
+<p>를 얻는다. 첫번째 등식은 <a href="#def-CM_integration_of_k_form_on_singuar_k_cube" class="quarto-xref">정의&nbsp;<span>18.3</span></a>, 두번째 등식은 <a href="3_6_differential_forms.html#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>17.13</span></a>, 세번째 등식은 <a href="#eq-CM_stokes_theorem_in_unit_cube" class="quarto-xref">식&nbsp;<span>18.9</span></a>, 마지막 등식은 <a href="#eq-CM_supp_stokes" class="quarto-xref">식&nbsp;<span>18.10</span></a> 로 부터 성립한다.</p>
+<p>마지막으로, <span class="math inline">\(c\)</span> 가 <span class="math inline">\(k\)</span>-chain 으로 <span class="math inline">\(c=\sum_i a_i c_i\)</span> 일 때</p>
+<p><span class="math display">\[
+\int_c d\omega = \sum_{a_i} \int_{c_i} d\omega = \sum_i a_i \int_\partial c_i \omega = \int_{\partial c} \omega
+\]</span></p>
+<p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
-</section>
-<section id="sec-CM_stokes_theorem" class="level3" data-number="18.2.2">
-<h3 data-number="18.2.2" class="anchored" data-anchor-id="sec-CM_stokes_theorem"><span class="header-section-number">18.2.2</span> 스토크스 정리</h3>
 <p><br></p>
 </section>
 <section id="연습문제-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_4_25" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 18.4 (Spivak 4.25)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>연습문제 18.4 (Spivak 4.25)</strong></span> <span class="math inline">\(c\)</span> 가 <span class="math inline">\(k\)</span>-특이곡면이고 <span class="math inline">\(P:[0,\,1]^k \to [0,\,1]^k\)</span> 가 전단사 함수이며 <span class="math inline">\(\det(P'(x)) \ge 0\)</span> 라고 하자. <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(k\)</span>-형식 일 때 다음이 성립함을 보여라.</p>
+<p><span class="math display">\[
+\int_c \omega = \int_{c\circ P} \omega.
+\]</span></p>
 </div>
 </div>
 <div class="proof solution">

@@ -16,22 +16,22 @@ crossref:
 
 #### $k$-텐서
 
-벡터공간 $V$ 에 대해 $V^k \mapsto \R$ 인 다중선형 함수의 집합을 **$k$-텐서 ($k$-tensor)** 라고 하며 $k$-텐서 의 집합을 $\mathfrak{J}^k(V)$ 라고 쓴다. 즉 $c\in \R$ 에 대해
+벡터공간 $V$ 에 대해 $V^k \mapsto \R$ 인 다중선형 함수의 집합을 **$k$-텐서 ($k$-tensor)** 라고 하며 $k$-텐서 의 집합을 $\mathfrak{J}^k(V)$ 라고 쓴다. 즉 $a\in \R$ 와 각각의 $i=1,\ldots,\,n$ 에 대해
 
 $$
 \begin{aligned}
-T(v_1,\ldots,v_i+cv'_i,\ldots,v_k) = T(v_1,\ldots,v_i,\ldots,v_k) + cT(v_1,\ldots,cv'_i,\,v_k)
+\phi(v_1,\ldots,v_i+av'_i,\ldots,v_k) = \phi(v_1,\ldots,v_i,\ldots,v_k) + a\phi(v_1,\ldots,cv'_i,\,v_k)
 \end{aligned}
 $$ {#eq-CM_multilinear_property}
 
-이면 $T\in\mathfrak{J}^K(V)$ 이다. 
+이면 $\phi\in\mathfrak{J}^K(V)$ 이다. 
 
 여기서 $\mathfrak{J}^k(V)$ 의 합과 스칼라곱을 아래와 같이 정의한다.
 
 $$
 \begin{aligned}
-(S+T)(v_1,\ldots,\,v_k) &= S(v_1,\ldots,\,v_k) + T(v_1,\ldots,\,v_k) , \\[0.3em]
-(cT)(v_1,\ldots,\,v_k) &= c{\big (}T(v_1,\ldots,\,v_k){\big )} .
+(\phi+\psi)(v_1,\ldots,\,v_k) &= \phi(v_1,\ldots,\,v_k) + \psi(v_1,\ldots,\,v_k) , \\[0.3em]
+(c\phi)(v_1,\ldots,\,v_k) &= c \cdot {\big (}\phi(v_1,\ldots,\,v_k){\big )} .
 \end{aligned}
 $$ {#eq-CM_def_addition_and_scala_product_in_k_tensor}
 
@@ -56,17 +56,17 @@ $\mathfrak{J}^k(V)$ 는 벡터공간이다.
 
 #### 텐서곱
 
-$S\in\mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)$ 일 때 텐서곱 $S\otimes T \in \mathfrak{J}^{k+l}(V)$ 를 다음과 같이 정의한다.
+$\phi\in\mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)$ 일 때 텐서곱 $\phi\otimes \psi \in \mathfrak{J}^{k+l}(V)$ 를 다음과 같이 정의한다.
 
 $$
-(S\otimes T)(v_1,\ldots,v_k,v_{k+1},\ldots,v_{k+l})=S(v_1,\ldots,v_k) \cdot T(v_{k+1},\ldots,v_{k+l})
+(\phi\otimes \psi)(v_1,\ldots,v_k,v_{k+1},\ldots,v_{k+l})=\phi(v_1,\ldots,v_k) \cdot \psi(v_{k+1},\ldots,v_{k+l})
 $$ {#eq-CM_tensor_product}
 ::: 
 :::
 
 </br>
 
-@eq-CM_tensor_product 로 정의된 $S\otimes T$ 는 실제 $(k+l)$-텐서임은 쉽게 보일 수 있다.
+@eq-CM_tensor_product 로 정의된 $\phi\otimes \psi$ 는 실제 $(k+l)$-텐서임은 쉽게 보일 수 있다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -75,10 +75,10 @@ $$ {#eq-CM_tensor_product}
 
 $$
 \begin{aligned}
-(S_1+S_2)\otimes T &= S_1 \otimes T + S_2 \otimes T, \\[0.3em]
-S\otimes (T_1+T_2) &= S\otimes T_1 + S \otimes T_2, \\[0.3em]
-(cS)\otimes T &= c(S \otimes T) = S \otimes (cT), \\[0.3em]
-(S \otimes T) \otimes R &= S \otimes (T \otimes R).
+(\phi_1+\phi_2)\otimes \psi &= \phi_1 \otimes \psi + \phi_2 \otimes \psi, \\[0.3em]
+\phi \otimes (\psi_1+\psi_2) &= \phi\otimes \psi_1 + \phi \otimes \psi_2, \\[0.3em]
+(c\phi)\otimes \psi &= c(\phi \otimes \psi) = \phi \otimes (c\psi), \\[0.3em]
+(\phi \otimes \psi) \otimes \chi &= \phi \otimes (\psi \otimes \chi).
 \end{aligned}
 $$ {#eq-CM_basic_properites_of_tensor_product}
 :::
@@ -137,10 +137,10 @@ $$
 
 #### Pull-back
 
-미분가능한 함수 $F:V \to W$ 와 $T\in \mathfrak{J}^k(W)$ 에 대해 아래와 같이 정의되는 $F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 를 $F$ 에 의한 $T$ 의 **pull-back** 이라고 한다.
+미분가능한 함수 $F:V \to W$ 와 $\phi\in \mathfrak{J}^k(W)$ 에 대해 아래와 같이 정의되는 $F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 를 $F$ 에 의한 $\phi$ 의 **pull-back** 이라고 한다.
 
 $$
-\left(F^\ast (T)\right)(v_1,\ldots,v_k) := T(F(v_1),\ldots,\,F(v_k))
+\left(F^\ast (\phi)\right)(v_1,\ldots,v_k) := \phi(F(v_1),\ldots,\,F(v_k))
 $$ {#eq-CM_def_pull_back_for_k_tensor}
 
 ::: 
@@ -152,11 +152,11 @@ $$ {#eq-CM_def_pull_back_for_k_tensor}
 
 미분가능한 $F\in \mathcal{L}(V,W)$ 에 대한 pull-back $F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 에 대해 다음이 성립한다.
 
-&emsp;($1$) $F^\ast$ 는 선형변환이다.
+&emsp;($1$) $F$ 가 선형변환이면 $F^\ast$ 는 선형변환이다.
 
-&emsp;($2$) $F^\ast( S\otimes T) = F^\ast (S) \otimes F^\ast (T)$ 이다.
+&emsp;($2$) $F^\ast( \phi \otimes  \psi) = F^\ast (\phi) \otimes F^\ast (\psi)$ 이다.
 
-&emsp;($3$) $G \in \mathcal{L}(W,\,X)$ 이면 $(G \circ F)^\ast (T) = F^\ast (G^\ast (T))$ 이다.
+&emsp;($3$) $G \in \mathcal{L}(W,\,X)$ 이면 $(G \circ F)^\ast (\phi) = F^\ast (G^\ast (\phi))$ 이다.
 
 :::
 
@@ -166,14 +166,14 @@ $$ {#eq-CM_def_pull_back_for_k_tensor}
 
 ($1$) 은 정의에 의해 자명하다.
 
-($2$) $S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)$ 일 때,
+($2$) $\phi\in \mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)$ 일 때,
 
 $$
 \begin{aligned}
-F^\ast( S\otimes T) & (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
-&=(S\otimes T)(F(v_1),\ldots,\,F(v_{k+l})) \\[0.3em]
-&=S(F(v_1),\ldots,F(v_k))\cdot T(F(v_{k+1}),\ldots,F(v_{k+l})) \\[0.3em]
-&= (F^\ast (S) \otimes F^\ast (T)) (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l})
+F^\ast( \phi\otimes \psi) & (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
+&=(\phi\otimes \psi)(F(v_1),\ldots,\,F(v_{k+l})) \\[0.3em]
+&=\phi (F(v_1),\ldots,F(v_k))\cdot \psi(F(v_{k+1}),\ldots,F(v_{k+l})) \\[0.3em]
+&= (F^\ast (\phi)) \otimes (F^\ast (\psi)) (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l})
 \end{aligned}
 $$
 
@@ -181,9 +181,9 @@ $$
 
 $$
 \begin{aligned}
-\left((G\circ F)^\ast (T)\right)(v_1,\ldots,\,v_k) &= T( (G\circ F)(v_1),\ldots,(G\circ F)(v_k)) \\[0.3em]
-&= \left(G^\ast (T)\right)(F(v_1),\ldots,\,F(v_k)) \\[0.3em]
-&= F^\ast (G^\ast (T)) (v_1,\ldots,\,v_k). \square
+\left((G\circ F)^\ast (\phi)\right)(v_1,\ldots,\,v_k) &= \phi( (G\circ F)(v_1),\ldots,(G\circ F)(v_k)) \\[0.3em]
+&= \left(G^\ast (\phi)\right)(F(v_1),\ldots,\,F(v_k)) \\[0.3em]
+&= F^\ast (G^\ast (\phi)) (v_1,\ldots,\,v_k). \square
 \end{aligned}
 $$
 
@@ -230,7 +230,7 @@ $\Omega^k(V)$ 는 벡터공간이며 $\mathfrak{J}^k(V)$ 의 부분공간이다.
 아래에 정의된 $\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)$ 는 $k$-텐서의 선형결합으로 교대 $k$-텐서를 반환한다. 이를 **교대화(Alternatization)** 라고 한다. 여기서 $\sigma$ 는 대칭군 $S_k$ 에 속하는 순열이며 $\text{sgn}(\sigma)$ 는 순열에 대한 부호함수이다.
 
 $$
-\text{Alt}(T)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot T\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
+\text{Alt}(\phi)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot \phi\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
 $$ {#eq-CM_definition_of_alt_function}
 
 :::
@@ -245,11 +245,11 @@ $$ {#eq-CM_definition_of_alt_function}
 #### 교대화의 기본 성질
 </br>
 
-&emsp;($1$) $T\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(T)\in \Omega^k(V)$ 이다.
+&emsp;($1$) $\phi\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\phi)\in \Omega^k(V)$ 이다.
 
 &emsp;($2$) $\omega\in \Omega^k(V)$ 이면 $\text{Alt}(\omega) = \omega$ 이다.
 
-&emsp;($3$) $T\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\text{Alt}(T)) = \text{Alt}(T)$ 이다.
+&emsp;($3$) $\phi\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\text{Alt}(\phi)) = \text{Alt}(\phi)$ 이다.
 :::
 
 </div>
@@ -260,14 +260,14 @@ $$ {#eq-CM_definition_of_alt_function}
 
 $$
 \begin{aligned}
-\text{Alt}(T)(\cdots ,v_j,\ldots,\,v_i,\ldots) &= \text{Alt}(T) (v_{\tau(1)},\ldots,v_{\tau(k)})  \\[0.3em]
-&=\dfrac{1}{k!} \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot T(v_{\sigma \circ \tau (1)},\ldots,v_{\sigma\circ \tau (k)}) \\[0.3em]
-&= -\dfrac{1}{k!} \sum_{\theta \in S_k} \text{sgn}(\theta) \cdot T(v_{\theta (1)},\ldots,v_{\theta (k)}) \\[0.3em]
-&= - \text{Alt}(T)(\ldots,v_i,\ldots,v_j,\ldots)
+\text{Alt}(\phi)(\cdots ,v_j,\ldots,\,v_i,\ldots) &= \text{Alt}(\phi) (v_{\tau(1)},\ldots,v_{\tau(k)})  \\[0.3em]
+&=\dfrac{1}{k!} \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot \phi(v_{\sigma \circ \tau (1)},\ldots,v_{\sigma\circ \tau (k)}) \\[0.3em]
+&= -\dfrac{1}{k!} \sum_{\theta \in S_k} \text{sgn}(\theta) \cdot \phi(v_{\theta (1)},\ldots,v_{\theta (k)}) \\[0.3em]
+&= - \text{Alt}(\phi)(\ldots,v_i,\ldots,v_j,\ldots)
 \end{aligned}
 $$
 
-이다. 따라서 $\text{Alt}(T)\in \Omega^k(V)$ 이다.
+이다. 따라서 $\text{Alt}(\phi)\in \Omega^k(V)$ 이다.
 
 ($2$) @eq-CM_alternating_property_of_k_tensor 로 부터 $\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)$ 임을 보일 수 있다. 따라서 
 
@@ -285,7 +285,7 @@ $$
 
 </br>
 
-우리는 이전에 $T\in \mathfrak{J}^k(V),\,S\in \mathfrak{J}^l(V)$ 일 때 $T \otimes S \in \mathfrak{J}^{k+l}(V)$ 임을 보였다. 그러나 $\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)$ 일 때 $\omega \otimes \eta$ 는 일반적으로 $\Omega^{k+l}(V)$ 에 포함되지 않는다. 
+우리는 이전에 $\phi\in \mathfrak{J}^k(V),\,\psi\in \mathfrak{J}^l(V)$ 일 때 $\phi \otimes \psi \in \mathfrak{J}^{k+l}(V)$ 임을 보였다. 그러나 $\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)$ 일 때 $\omega \otimes \eta$ 는 일반적으로 $\Omega^{k+l}(V)$ 에 포함되지 않는다. 
 
 </br>
 
@@ -395,7 +395,7 @@ F^\ast (\omega \wedge \eta) = F^\ast (\omega) \wedge F^\ast (\eta)
 $$ {#eq-CM_basic_properties_of_wedge_product_2}
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 
@@ -418,7 +418,7 @@ $$
 
 </br>
 
-($1$) $S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)$ 이고 $\text{Alt}(S) = 0$ 이면 $\text{Alt}(S \otimes T) = \text{Alt}(T \otimes S)=0$ 이다.
+($1$) $\phi\in \mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)$ 이고 $\text{Alt}(\phi) = 0$ 이면 $\text{Alt}(\phi \otimes \psi) = \text{Alt}(\psi \otimes \phi)=0$ 이다.
 
 ($2$) $\text{Alt}\left(\text{Alt}(\omega \otimes \eta) \otimes \zeta\right) = \text{Alt}(\omega \otimes \eta \otimes \theta) = \text{Alt}(\omega \otimes \text{Alt}(\eta \otimes \zeta))$
 
@@ -436,8 +436,8 @@ $${#eq-CM_basic_properties_of_wedge_product_3}
 
 $$
 \begin{aligned}
-(k+l)! &\text{Alt}(S\otimes T)(v_1,\ldots,\,v_{k+l}) \\[0.3em] 
-&= \sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma)\cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)})
+(k+l)! &\text{Alt}(\phi\otimes \psi)(v_1,\ldots,\,v_{k+l}) \\[0.3em] 
+&= \sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma)\cdot \phi(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot \psi(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)})
 \end{aligned}
 $$ {#eq-prp_CM_basic_properties_of_wedge_product_3_1}
 
@@ -445,24 +445,24 @@ $$ {#eq-prp_CM_basic_properties_of_wedge_product_3_1}
 
 $$
 \begin{aligned}
-\sum_{\sigma\in G} \text{sgn}(\sigma) &\cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
-&=\left[\sum_{\tau\in S_k} \text{sgn}(\tau) \cdot S(v_{\tau (1)},\ldots,v_{\tau(k)})\right] \cdot T(v_{k+1},\ldots,v_{k+l}) \\[0.3em]
-&= k! \text{Alt}(S) \cdot T(v_{k+1},\ldots,v_{k+l}) = 0
+\sum_{\sigma\in G} \text{sgn}(\sigma) &\cdot \phi(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot \psi(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
+&=\left[\sum_{\tau\in S_k} \text{sgn}(\tau) \cdot \phi(v_{\tau (1)},\ldots,v_{\tau(k)})\right] \cdot \psi(v_{k+1},\ldots,v_{k+l}) \\[0.3em]
+&= k! \text{Alt}(\phi) \cdot \psi(v_{k+1},\ldots,v_{k+l}) = 0
 \end{aligned}
 $$
 
-이다. $\sigma_0 \in S_{k+l}-S(k)$ 에 대해 $G\sigma_0 =\{\sigma' \cdot \sigma_0 : \sigma' \in G\}$ 라고 하자. 그리고 $i=1,\ldots,k+l$ 에 대해 $u_{i}=v_{\sigma_0(i)}$ 라고 하자. 이로부터
+이다. $\sigma_0 \in S_{k+l}-G$ 에 대해 $G\sigma_0 =\{\sigma' \cdot \sigma_0 : \sigma' \in G\}$ 라고 하자. 그리고 $i=1,\ldots,k+l$ 에 대해 $u_{i}=v_{\sigma_0(i)}$ 라고 하자. 이로부터
 
 $$
 \begin{aligned}
-\sum_{\sigma \in G\sigma_0} \text{sgn}(\sigma) & \cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
-&= \left[\text{sgn}(\sigma_0) \cdot \sum_{\sigma' \in S(k)} \text{sgn}(\sigma') \cdot S\left(u_{\sigma'(1)},\ldots,\,u_{\sigma'(k)}\right)\right]\cdot T(u_{k+1},\ldots,u
+\sum_{\sigma \in G\sigma_0} \text{sgn}(\sigma) & \cdot \phi(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot \psi(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
+&= \left[\text{sgn}(\sigma_0) \cdot \sum_{\sigma' \in S(k)} \text{sgn}(\sigma') \cdot \phi\left(u_{\sigma'(1)},\ldots,\,u_{\sigma'(k)}\right)\right]\cdot \psi(u_{k+1},\ldots,u
 _{k+l}) \\[0.3em]
-&=\text{sgn}(\sigma_0) \cdot \text{Alt}(S)\cdot T(u_{k+1},\ldots,u_{k+l}) = 0
+&=\text{sgn}(\sigma_0) \cdot \text{Alt}(\phi)\cdot \psi(u_{k+1},\ldots,u_{k+l}) = 0
 \end{aligned}
 $$
 
-이다. $S_{k+l}$ 은 군이며 $S(k)$ 는 $S_{k+l}$ 의 부분군이다. 따라서 $S_{k+l}$ 은 서로소인 $S(k)$ 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. $\sigma_0$ 는 $S_{k+l}$ 에 속하지만 $S(k)$ 에 속하지 않는 임의의 원소이므로 @eq-prp_CM_basic_properties_of_wedge_product_3_1 은 $0$ 임을 알 수 있다.
+이다. $S_{k+l}$ 은 군이며 $G$ 는 $S_{k+l}$ 의 부분군이다. 따라서 $S_{k+l}$ 은 서로소인 $G$ 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. $\sigma_0$ 는 $S_{k+l}$ 에 속하지만 $G$ 에 속하지 않는 임의의 원소이므로 @eq-prp_CM_basic_properties_of_wedge_product_3_1 은 $0$ 임을 알 수 있다.
 
 ($2$) @prp-CM_basic_properties_of_alt_function ($3$) 으로부터 
 
@@ -501,7 +501,7 @@ $$
 
 ::: {#thm-CM_basis_of_alternating_tensor_space}
 
-$(e_1,\ldots,e_n)$ 이 벡터공간 $V$ 의 기저이고 이 기저에 대한 쌍대기저를 $\varphi_1,\ldots,\,\varphi_n$ 이라고 하자. 이 때 아래 집합이 $\Omega^k(V)$ 의 기저이다.
+벡터공간 $V$ 의 기저 $(e_1,\ldots,e_n)$ 와 이 기저에 대한 쌍대기저 $\varphi_1,\ldots,\,\varphi_n$ 에 대해 아래 집합이 $\Omega^k(V)$ 의 기저이다.
 
 $$
 \{ \varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} : 1 \le i_1 <i_2 < \cdots < i_k \le n\}.
@@ -511,7 +511,7 @@ $$
 
 $$
 \dim \left(\Omega^k(V)\right) = \begin{pmatrix} n \\k \end{pmatrix} = \dfrac{n!}{k!\, (n-k)!}
-$$
+$$ {#eq-CM_dimension_of_alternating_k_tensor_space}
 
 이다. 
 
@@ -540,7 +540,9 @@ $$
 \sum_{i_1,\ldots,i_k =1}^n a_{i_1,\ldots,i_k}(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k})=0
 $$
 
-라고 하자. $(e_{j_1},\ldots,e_{j_k})$ 에 적용시켜보면 모든 $a_{\ldots}=0$ 이다(@exr-CM_spivak_4_1 ($a$)). 따라서 선형 독립이다. $\square$
+라고 하자. $(e_{j_1},\ldots,e_{j_k})$ 에 적용시켜보면 모든 $a_{\ldots}=0$ 이다(@exr-CM_spivak_4_1 ($a$)). 따라서 선형 독립이다. 
+
+$\dim \left(\Omega^k(V)\right)$ 는 가능한 $\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}$ 의 개수이며 $1 \le i_1 < \cdots < i_k \le n$ 이므로 차원에 대해 @eq-CM_dimension_of_alternating_k_tensor_space 이 성립한다. $\square$
 
 :::
 
@@ -595,8 +597,8 @@ $\eta\in \Omega^n(\R^n)$ 이므로 @cor-CM_alternating_tensor_and_determinant �
 
 ### 부피 요소와 벡터곱 {#sec-CM_volume_element_and_cross_product}
 
-#### **벡터공간과 방향**
-@thm-CM_alternating_tensor_and_determinant 에 따라 $0$ 이 아닌 $\omega \in \Omega^n(V)$ 는 $V$ 의 기저 $(v_1,\ldots,\,v_n)$ 를 $\omega$ 함수값이 양수인 것과 음수인 두 집합으로 분할한다. $V$ 의 두 기저 $(u_i)$ 와 $(v_j)$ 사이에 $u_i = \sum_j a_{ij}v_j$ 의 관계가 있을 때 $\det(a_{ij})>0$ 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 $V$ 의 **방향 (orientation)** 으로 정할 수 있다. 기저 $(v_1,\ldots,v_n)$ 이 속한 방향을 $[v_1,\ldots,v_n]$ 으로 표기하며 반대 방향을 $-[v_1,\ldots,v_n]$ 으로 표기한다. 특별히 $\R^n$ 에서는 표준기저에 대한 방향, 즉 $[e_1,\ldots,e_n]$ 을 **정방향(usual orientation)** 이라고 한다. 그러나 일반적인 벡터공간 $V$ 에서는 이렇게 특정 방향을 정할 수 없다. 
+#### **방향과 부피요소**
+@thm-CM_alternating_tensor_and_determinant 에 따라 $0$ 이 아닌 $\omega \in \Omega^n(V)$ 는 $V$ 의 기저 $(v_1,\ldots,\,v_n)$ 를 $\omega$ 함수값이 양수인 것과 음수인 두 집합으로 분할한다. $V$ 의 두 기저 $(u_i)$ 와 $(v_j)$ 사이에 $u_i = \sum_j a_{ij}v_j$ 의 관계가 있을 때 $\det(a_{ij})>0$ 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 $V$ 의 **방향 (orientation)** 으로 정할 수 있다. 기저 $(v_1,\ldots,v_n)$ 이 속한 방향을 $[v_1,\ldots,v_n]$ 으로 표기하며 반대 방향을 $-[v_1,\ldots,v_n]$ 으로 표기한다. 특별히 $\R^n$ 에서는 표준기저에 대한 방향, 즉 $[e_1,\ldots,e_n]$ 을 **정방향(usual orientation)** 이라고 한다. 
 
 벡터공간에 어떤 내적 $T:V\times V \to \R$ 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 $(e_i)$ 와 $(f_j)$ 
 사이에는 어떤 직교행렬 (orthogonal matrix) $U$ 에 대해 $e_i = U f_i$ 의 관계가 있다는 것을 안다. 직교행렬은 $UU^T=I$ 이므로 $\det(U)= \pm 1$ 이다. 만약 $V$ 의 방향 $\mu$ 가 정해졌다면 정규직교기저 $(e_1,\ldots,e_n)$ 에 대해 $\omega (e_1,\ldots,e_n)=1$ 이 되도록 $\omega\in \Omega^n(V)$ 를 유일하게 정할 수 있다. 이 유일한 $\omega$ 를 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 **부피 요소 (volume element)** 라고 한다. $\R^n$ 에서 $\det$ 는 $\R^n$ 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 $|\det (e_1,\ldots,e_n)|$ 은 원점과 $e_1,\ldots,\,e_n$ 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.
@@ -620,7 +622,7 @@ $$ {#eq-CM_inner_product_and_cross_product}
 #### 벡터곱의 기본 성질
 </br>
 
-($1$) $\det$ 의 성질로부터 $w = v_1\times \cdots \times v_{n-1}$ 일 때 $\langle v_i,\, w\rangle = 0$ 이다.
+($1$) 행렬식의 성질로부터 $w = v_1\times \cdots \times v_{n-1}$ 일 때 $\langle v_i,\, w\rangle = 0$ 임을 알 수 있다.
  
 ($2$) $\R^n$ 에서의 표준기저 $(e_1,\ldots,\,e_n)$ 에 대해 $e_1 \times \cdots \times e_{n-1}=e_n$ 이다.
 
@@ -761,7 +763,7 @@ $$
 
 #### Spivak 4.4
 
-$\omega$ 가 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 부피 요소이고 $F :\R^n \to V$ 가 동형사상이며 $F^\ast (T) = \langle\,,\,\rangle$ 이고 $[F(e_1),\ldots, F(e_n)]=\mu$ 일 때 $F^\ast \omega = \det$ 임을 보여라.
+벡터공간 $V$ 에서 $\omega$ 가 내적 $T$ 와 방향 $\mu$ 에 의해 결정되 는 부피 요소이고 $F :\R^n \to V$ 가 동형사상이며 $F^\ast (T) = \langle\,,\,\rangle$ 이고 $[F(e_1),\ldots, F(e_n)]=\mu$ 일 때 $F^\ast \omega = \det$ 임을 보여라.
 
 :::
 
@@ -769,7 +771,7 @@ $\omega$ 가 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 부피 요소�
 
 ::: {.solution}
 
-$(e_1,\ldots,\,e_n)$ 이 $\R^n$ 의 표준기저이며 $v_i = F(e_i)$ 라고 하자. $F^\ast (T) = \langle \,,\,\rangle$ 로부터 $F^\ast T (e_i,\,e_j) = \langle e_i,e_j\rangle = \delta_{ij}$ 이며 $F^\ast T(e_i,e_j)= T(F(e_i),F(e_j))=T(v_i,v_j)$ 이므로 $T$ 는 내적을 보존하는 isometry 임을 안다. 따라서 $\det (F)=\pm 1$ 이며 방향을 보존하므로 $\det (F) = 1$ 이다. 
+$(e_1,\ldots,\,e_n)$ 이 $\R^n$ 의 표준기저이며 $v_i = F(e_i)$ 라고 하자. $F^\ast (T) = \langle \,,\,\rangle$ 로부터 $F^\ast T (e_i,\,e_j) = \langle e_i,e_j\rangle = \delta_{ij}$ 이며 $F^\ast T(e_i,e_j)= T(F(e_i),F(e_j))=T(v_i,v_j)$ 이므로 $F$ 는 내적을 보존하는 isometry 임을 안다. 따라서 $\det (F)=\pm 1$ 이며 방향을 보존하므로 $\det (F) = 1$ 이다. 
 
 
 $\omega$ 가 $V$ 의 정규직교기저 $u_1,\ldots,\,u_n$ 에 대해 $T,\, \mu$ 에 의해 결정되는 부피요소라고 하자. 이 때
@@ -1073,7 +1075,7 @@ $T_\bf{p}(\R^n)$ 는 $(\bf{p},\,\bf{0})$ 을 영벡터로 하는 벡터공간이
 
 #### 통상 내적, 통상 방향
 
-$T_\bf{p}(\R^n)$ 에서의 내적을 
+$T_\bf{p}(\R^n)$ 에서의 내적 $\langle\,,\,\rangle_\bf{p}$ 을 
 
 $$
 \langle (\bf{p},\bf{u}), (\bf{p},\bf{v})\rangle_\bf{p}= \langle \bf{u},\bf{v}\rangle
@@ -1118,7 +1120,7 @@ $$
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_nabla_operator}
 
-#### Nabla_operator
+#### Nabla 연산자
 
 $\R^n$ 에서 nabla 연산자 $\nabla$ 를 아래와 같이 정의한다.
 
@@ -1142,17 +1144,14 @@ $$
 \text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}.
 $$
 
-
 ::: 
 :::
-
 
 </br>
 
 ### 미분 형식 {#sec-CM_differential_form}
 
 $\R^n$ 과 $T_\bf{p}(\R^n)$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-form 을 정의 할 수 있다.
-
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_differential_form}
@@ -1197,7 +1196,8 @@ $$
 \begin{aligned}
 \omega (\bf{p}) + \zeta (\bf{p}) &:= \sum_{i_1<\cdots <i_k} \left(\omega_{i_1,\ldots,\,i_k}(\bf{p}) + \zeta_{i_1,\ldots,\,i_k}(\bf{p})\right) \cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right], \\[0.3em]
 (f \cdot \omega)(\bf{p})  &:=  \sum_{i_1<\cdots <i_k} \left(f(\bf{p}) \cdot \omega_{i_1,\ldots,\,i_k}(\bf{p}) \right)\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right], \\[0.3em]
-\omega (\bf{p})\wedge \eta (\bf{p}) &:= \sum_{i_1<\cdots <i_{k}} \sum_{j_1<\cdots <j_m} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \eta_{j_1,\ldots,j_m}(\bf{p}) \cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p}) \wedge \varphi_{j_1}(\bf{p}) \cdots \wedge \varphi_{j_m}(\bf{p})\right] 
+\omega (\bf{p})\wedge \eta (\bf{p}) &:= \sum_{i_1<\cdots <i_{k}} \sum_{j_1<\cdots <j_m} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \eta_{j_1,\ldots,j_m}(\bf{p}) \\[0.3em]
+&\qquad\qquad  \qquad \qquad\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p}) \wedge \varphi_{j_1}(\bf{p}) \cdots \wedge \varphi_{j_m}(\bf{p})\right] 
 \end{aligned}
 $$
 
@@ -1226,7 +1226,7 @@ $$ {#eq-CM_differential_1-form}
 :::
 
 
-$x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $\R^n$ 의 표준기저벡터 $\bf{e}_j$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
+$x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $T_{\bf{p}}(\R^n)$ 의 표준기저벡터 $(\bf{e}_j)_\bf{p}$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
 
 $$
 \omega (\bf{p}) = \sum_{i_1< \cdots <i_k} \omega_{i_1,\ldots,i_k}(\bf{p})\cdot \left[ dx_{i_1}(\bf{p})\wedge \cdots \wedge dx_{i_k}(\bf{p})\right].
@@ -1271,18 +1271,18 @@ F_\ast (\bf{v}_p) := \left(F'(\bf{p})(\bf{v})\right)_{F(\bf{p})}
 $$ {#eq-def_CM_push_forward}
 
 
-이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\bf{p})}(\R^m)\right),\, \Omega^k\left(T_\bf{p}(\R^n)\right)\right)$ 아래와 같이 정의하고 이를 **pull-back** 이라고 한다. 
+이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\bf{p})}(\R^m)\right),\, \Omega^k\left(T_\bf{p}(\R^n)\right)\right)$ 아래와 같이 정의하고 이를 **pull-back** 이라고 한다. $\omega \in \Omega^k \left( T_{F(\bf{p})}(\R^m) \right)$ 에 대해
 
 $$
 (F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p})))
 $$ {#eq-def_CM_pull_back}
 
-그렇다면 
+이다. 그렇다면 
 $$
 \begin{aligned}
 \left(F^\ast \omega\right)(\bf{p})(\bf{v}_1,\ldots,\bf{v}_k) &= (F_\ast)^\ast(\omega(F(\bf{p})))(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
 &= \omega (F(\bf{p})) (F_\ast (\bf{v}_1),\ldots,\, F_\ast(\bf{v}_k)) \\[0.3em]
-&= \omega (F(\bf{p})) (F'(\bf{p})(\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})})
+&= \omega (F(\bf{p})) \left( \left(F'(\bf{p})(\bf{v}_1)\right)_{F(\bf{p})},\ldots,\,\left(F'(\bf{p})(\bf{v}_k)\right)_{F(\bf{p})} \right)
 \end{aligned}
 $$
 
@@ -1291,7 +1291,7 @@ $$
 :::
 :::
 
-여기서 정의상 $\bf{v}_1,\ldots,\bf{v}_k\in T_\bf{p}(\R^n)$ 이어야 한다. 그리고 $\bf{p}$ 나 $F(\bf{p})$ 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.
+
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -1316,8 +1316,8 @@ $F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots f_m (\bf{x}
 
 $$
 \begin{aligned}
-F^\ast (dx_i) (\bf{p})(\bf{v}_p) &= dx_i(F(\bf{p})) \left(F'(\bf{p})(\bf{v})_{F(\bf{p})}\right) \\[0.3em]
-&= dx_i(F(\bf{p}))\left(\sum_{j=1}^n v_j D_jf_1(\bf{p})_{F(\bf{p})},\ldots,\,\sum_{j=1}^n v_jD_j f_m (\bf{p})_{F(\bf{p})}\right) \\[0.3em]
+F^\ast (dx_i) (\bf{p})(\bf{v}_p) &= dx_i(F(\bf{p})) \left(\left(F'(\bf{p})(\bf{v}_\bf{p})\right)_{F(\bf{p})}\right) \\[0.3em]
+&= dx_i(F(\bf{p}))\left(\sum_{j=1}^n v_j D_jf_1(\bf{p}),\ldots,\,\sum_{j=1}^n v_jD_j f_m (\bf{p})\right)_{F(\bf{p})} \\[0.3em]
 &= \sum_{j=1}^n v_j D_jf_i (\bf{p}) = \sum_{j=1} D_j f_i (\bf{p}) \cdot dx_j(\bf{p})(\bf{v}_\bf{p}).
 \end{aligned}
 $$
@@ -1358,7 +1358,7 @@ $$
 </br>
 
 여기서 ($4$) 는 매끄러운 사상 $F:\R^n \to \R^m$ 에 대해 $T_{F(\bf{p})(\R^m)}$ 의 미분 형식의 구조가 $T_\bf{p}(\R^n)$ 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.
-
+ 
 $$
 \begin{aligned}
 F^\ast &(P \,dx_1 \wedge dx_2 + Q\,dx_2 \wedge dx_3) =  (P \circ F) \cdot F^\ast (dx_1 \wedge dx_2) + (Q\circ F)\cdot F^\ast (dx_2 \wedge dx_3) \\[0.3em]

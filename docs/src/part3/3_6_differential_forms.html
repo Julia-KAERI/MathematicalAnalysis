@@ -368,18 +368,18 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-CM_k_tensor" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.1 (<span class="math inline">\(k\)</span>-텐서)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V^k \mapsto \mathbb{R}\)</span> 인 다중선형 함수의 집합을 <strong><span class="math inline">\(k\)</span>-텐서 (<span class="math inline">\(k\)</span>-tensor)</strong> 라고 하며 <span class="math inline">\(k\)</span>-텐서 의 집합을 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 라고 쓴다. 즉 <span class="math inline">\(c\in \mathbb{R}\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 17.1 (<span class="math inline">\(k\)</span>-텐서)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V^k \mapsto \mathbb{R}\)</span> 인 다중선형 함수의 집합을 <strong><span class="math inline">\(k\)</span>-텐서 (<span class="math inline">\(k\)</span>-tensor)</strong> 라고 하며 <span class="math inline">\(k\)</span>-텐서 의 집합을 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 라고 쓴다. 즉 <span class="math inline">\(a\in \mathbb{R}\)</span> 와 각각의 <span class="math inline">\(i=1,\ldots,\,n\)</span> 에 대해</p>
 <p><span id="eq-CM_multilinear_property"><span class="math display">\[
 \begin{aligned}
-T(v_1,\ldots,v_i+cv'_i,\ldots,v_k) = T(v_1,\ldots,v_i,\ldots,v_k) + cT(v_1,\ldots,cv'_i,\,v_k)
+\phi(v_1,\ldots,v_i+av'_i,\ldots,v_k) = \phi(v_1,\ldots,v_i,\ldots,v_k) + a\phi(v_1,\ldots,cv'_i,\,v_k)
 \end{aligned}
 \tag{17.1}\]</span></span></p>
-<p>이면 <span class="math inline">\(T\in\mathfrak{J}^K(V)\)</span> 이다.</p>
+<p>이면 <span class="math inline">\(\phi\in\mathfrak{J}^K(V)\)</span> 이다.</p>
 <p>여기서 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 의 합과 스칼라곱을 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_def_addition_and_scala_product_in_k_tensor"><span class="math display">\[
 \begin{aligned}
-(S+T)(v_1,\ldots,\,v_k) &amp;= S(v_1,\ldots,\,v_k) + T(v_1,\ldots,\,v_k) , \\[0.3em]
-(cT)(v_1,\ldots,\,v_k) &amp;= c{\big (}T(v_1,\ldots,\,v_k){\big )} .
+(\phi+\psi)(v_1,\ldots,\,v_k) &amp;= \phi(v_1,\ldots,\,v_k) + \psi(v_1,\ldots,\,v_k) , \\[0.3em]
+(c\phi)(v_1,\ldots,\,v_k) &amp;= c \cdot {\big (}\phi(v_1,\ldots,\,v_k){\big )} .
 \end{aligned}
 \tag{17.2}\]</span></span></p>
 </div>
@@ -401,26 +401,26 @@ T(v_1,\ldots,v_i+cv'_i,\ldots,v_k) = T(v_1,\ldots,v_i,\ldots,v_k) + cT(v_1,\ldot
 </div>
 <div class="callout-body-container">
 <div id="def-CM_tensor_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.2 (텐서곱)</strong></span> <span class="math inline">\(S\in\mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)\)</span> 일 때 텐서곱 <span class="math inline">\(S\otimes T \in \mathfrak{J}^{k+l}(V)\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 17.2 (텐서곱)</strong></span> <span class="math inline">\(\phi\in\mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)\)</span> 일 때 텐서곱 <span class="math inline">\(\phi\otimes \psi \in \mathfrak{J}^{k+l}(V)\)</span> 를 다음과 같이 정의한다.</p>
 <p><span id="eq-CM_tensor_product"><span class="math display">\[
-(S\otimes T)(v_1,\ldots,v_k,v_{k+1},\ldots,v_{k+l})=S(v_1,\ldots,v_k) \cdot T(v_{k+1},\ldots,v_{k+l})
+(\phi\otimes \psi)(v_1,\ldots,v_k,v_{k+1},\ldots,v_{k+l})=\phi(v_1,\ldots,v_k) \cdot \psi(v_{k+1},\ldots,v_{k+l})
 \tag{17.3}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p><a href="#eq-CM_tensor_product" class="quarto-xref">식&nbsp;<span>17.3</span></a> 로 정의된 <span class="math inline">\(S\otimes T\)</span> 는 실제 <span class="math inline">\((k+l)\)</span>-텐서임은 쉽게 보일 수 있다.</p>
+<p><a href="#eq-CM_tensor_product" class="quarto-xref">식&nbsp;<span>17.3</span></a> 로 정의된 <span class="math inline">\(\phi\otimes \psi\)</span> 는 실제 <span class="math inline">\((k+l)\)</span>-텐서임은 쉽게 보일 수 있다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_tensor_product" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.2</strong></span> 텐서곱에 대해 다음이 성립한다.</p>
 <p><span id="eq-CM_basic_properites_of_tensor_product"><span class="math display">\[
 \begin{aligned}
-(S_1+S_2)\otimes T &amp;= S_1 \otimes T + S_2 \otimes T, \\[0.3em]
-S\otimes (T_1+T_2) &amp;= S\otimes T_1 + S \otimes T_2, \\[0.3em]
-(cS)\otimes T &amp;= c(S \otimes T) = S \otimes (cT), \\[0.3em]
-(S \otimes T) \otimes R &amp;= S \otimes (T \otimes R).
+(\phi_1+\phi_2)\otimes \psi &amp;= \phi_1 \otimes \psi + \phi_2 \otimes \psi, \\[0.3em]
+\phi \otimes (\psi_1+\psi_2) &amp;= \phi\otimes \psi_1 + \phi \otimes \psi_2, \\[0.3em]
+(c\phi)\otimes \psi &amp;= c(\phi \otimes \psi) = \phi \otimes (c\psi), \\[0.3em]
+(\phi \otimes \psi) \otimes \chi &amp;= \phi \otimes (\psi \otimes \chi).
 \end{aligned}
 \tag{17.4}\]</span></span></p>
 </div>
@@ -461,9 +461,9 @@ T(v_1,\ldots,v_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T
 </div>
 <div class="callout-body-container">
 <div id="def-CM_pullback" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.3 (Pull-back)</strong></span> 미분가능한 함수 <span class="math inline">\(F:V \to W\)</span> 와 <span class="math inline">\(T\in \mathfrak{J}^k(W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 를 <span class="math inline">\(F\)</span> 에 의한 <span class="math inline">\(T\)</span> 의 <strong>pull-back</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 17.3 (Pull-back)</strong></span> 미분가능한 함수 <span class="math inline">\(F:V \to W\)</span> 와 <span class="math inline">\(\phi\in \mathfrak{J}^k(W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 를 <span class="math inline">\(F\)</span> 에 의한 <span class="math inline">\(\phi\)</span> 의 <strong>pull-back</strong> 이라고 한다.</p>
 <p><span id="eq-CM_def_pull_back_for_k_tensor"><span class="math display">\[
-\left(F^\ast (T)\right)(v_1,\ldots,v_k) := T(F(v_1),\ldots,\,F(v_k))
+\left(F^\ast (\phi)\right)(v_1,\ldots,v_k) := \phi(F(v_1),\ldots,\,F(v_k))
 \tag{17.5}\]</span></span></p>
 </div>
 </div>
@@ -473,28 +473,28 @@ T(v_1,\ldots,v_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_dual_transform" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.3</strong></span> 미분가능한 <span class="math inline">\(F\in \mathcal{L}(V,W)\)</span> 에 대한 pull-back <span class="math inline">\(F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(F^\ast\)</span> 는 선형변환이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(F^\ast( S\otimes T) = F^\ast (S) \otimes F^\ast (T)\)</span> 이다.</p>
-<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(G \in \mathcal{L}(W,\,X)\)</span> 이면 <span class="math inline">\((G \circ F)^\ast (T) = F^\ast (G^\ast (T))\)</span> 이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(F\)</span> 가 선형변환이면 <span class="math inline">\(F^\ast\)</span> 는 선형변환이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(F^\ast( \phi \otimes  \psi) = F^\ast (\phi) \otimes F^\ast (\psi)\)</span> 이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(G \in \mathcal{L}(W,\,X)\)</span> 이면 <span class="math inline">\((G \circ F)^\ast (\phi) = F^\ast (G^\ast (\phi))\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) 은 정의에 의해 자명하다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)\)</span> 일 때,</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)\)</span> 일 때,</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast( S\otimes T) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
-&amp;=(S\otimes T)(F(v_1),\ldots,\,F(v_{k+l})) \\[0.3em]
-&amp;=S(F(v_1),\ldots,F(v_k))\cdot T(F(v_{k+1}),\ldots,F(v_{k+l})) \\[0.3em]
-&amp;= (F^\ast (S) \otimes F^\ast (T)) (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l})
+F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
+&amp;=(\phi\otimes \psi)(F(v_1),\ldots,\,F(v_{k+l})) \\[0.3em]
+&amp;=\phi (F(v_1),\ldots,F(v_k))\cdot \psi(F(v_{k+1}),\ldots,F(v_{k+l})) \\[0.3em]
+&amp;= (F^\ast (\phi)) \otimes (F^\ast (\psi)) (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l})
 \end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(3\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
-\left((G\circ F)^\ast (T)\right)(v_1,\ldots,\,v_k) &amp;= T( (G\circ F)(v_1),\ldots,(G\circ F)(v_k)) \\[0.3em]
-&amp;= \left(G^\ast (T)\right)(F(v_1),\ldots,\,F(v_k)) \\[0.3em]
-&amp;= F^\ast (G^\ast (T)) (v_1,\ldots,\,v_k). \square
+\left((G\circ F)^\ast (\phi)\right)(v_1,\ldots,\,v_k) &amp;= \phi( (G\circ F)(v_1),\ldots,(G\circ F)(v_k)) \\[0.3em]
+&amp;= \left(G^\ast (\phi)\right)(F(v_1),\ldots,\,F(v_k)) \\[0.3em]
+&amp;= F^\ast (G^\ast (\phi)) (v_1,\ldots,\,v_k). \square
 \end{aligned}
 \]</span></p>
 </div>
@@ -535,7 +535,7 @@ F^\ast( S\otimes T) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
 <div id="def-CM_alternatization" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 17.5 (교대화)</strong></span> 아래에 정의된 <span class="math inline">\(\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)\)</span> 는 <span class="math inline">\(k\)</span>-텐서의 선형결합으로 교대 <span class="math inline">\(k\)</span>-텐서를 반환한다. 이를 <strong>교대화(Alternatization)</strong> 라고 한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
 <p><span id="eq-CM_definition_of_alt_function"><span class="math display">\[
-\text{Alt}(T)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot T\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
+\text{Alt}(\phi)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot \phi\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
 \tag{17.7}\]</span></span></p>
 </div>
 </div>
@@ -545,22 +545,22 @@ F^\ast( S\otimes T) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_alt_function" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.5 (교대화의 기본 성질)</strong></span> <br></p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(T\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(T)\in \Omega^k(V)\)</span> 이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\phi)\in \Omega^k(V)\)</span> 이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega\in \Omega^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\omega) = \omega\)</span> 이다.</p>
-<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(T\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\text{Alt}(T)) = \text{Alt}(T)\)</span> 이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\text{Alt}(\phi)) = \text{Alt}(\phi)\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sigma,\,\tau \in S_k\)</span> 일 때 <span class="math inline">\(\text{sgn}(\sigma \circ \tau)= \text{sgn}(\sigma)\cdot \text{sgn}(\tau)\)</span> 임을 안다. 호환 (transportation) <span class="math inline">\(\tau = (i,j)\)</span> 를 생각하면 <span class="math inline">\(\text{sgn}(\tau)=-1\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{Alt}(T)(\cdots ,v_j,\ldots,\,v_i,\ldots) &amp;= \text{Alt}(T) (v_{\tau(1)},\ldots,v_{\tau(k)})  \\[0.3em]
-&amp;=\dfrac{1}{k!} \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot T(v_{\sigma \circ \tau (1)},\ldots,v_{\sigma\circ \tau (k)}) \\[0.3em]
-&amp;= -\dfrac{1}{k!} \sum_{\theta \in S_k} \text{sgn}(\theta) \cdot T(v_{\theta (1)},\ldots,v_{\theta (k)}) \\[0.3em]
-&amp;= - \text{Alt}(T)(\ldots,v_i,\ldots,v_j,\ldots)
+\text{Alt}(\phi)(\cdots ,v_j,\ldots,\,v_i,\ldots) &amp;= \text{Alt}(\phi) (v_{\tau(1)},\ldots,v_{\tau(k)})  \\[0.3em]
+&amp;=\dfrac{1}{k!} \sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot \phi(v_{\sigma \circ \tau (1)},\ldots,v_{\sigma\circ \tau (k)}) \\[0.3em]
+&amp;= -\dfrac{1}{k!} \sum_{\theta \in S_k} \text{sgn}(\theta) \cdot \phi(v_{\theta (1)},\ldots,v_{\theta (k)}) \\[0.3em]
+&amp;= - \text{Alt}(\phi)(\ldots,v_i,\ldots,v_j,\ldots)
 \end{aligned}
 \]</span></p>
-<p>이다. 따라서 <span class="math inline">\(\text{Alt}(T)\in \Omega^k(V)\)</span> 이다.</p>
+<p>이다. 따라서 <span class="math inline">\(\text{Alt}(\phi)\in \Omega^k(V)\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <a href="#eq-CM_alternating_property_of_k_tensor" class="quarto-xref">식&nbsp;<span>17.6</span></a> 로 부터 <span class="math inline">\(\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)\)</span> 임을 보일 수 있다. 따라서</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -572,7 +572,7 @@ F^\ast( S\otimes T) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3em]
 <p>(<span class="math inline">\(3\)</span>) (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 에 의해 자명하다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>우리는 이전에 <span class="math inline">\(T\in \mathfrak{J}^k(V),\,S\in \mathfrak{J}^l(V)\)</span> 일 때 <span class="math inline">\(T \otimes S \in \mathfrak{J}^{k+l}(V)\)</span> 임을 보였다. 그러나 <span class="math inline">\(\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)\)</span> 일 때 <span class="math inline">\(\omega \otimes \eta\)</span> 는 일반적으로 <span class="math inline">\(\Omega^{k+l}(V)\)</span> 에 포함되지 않는다.</p>
+<p>우리는 이전에 <span class="math inline">\(\phi\in \mathfrak{J}^k(V),\,\psi\in \mathfrak{J}^l(V)\)</span> 일 때 <span class="math inline">\(\phi \otimes \psi \in \mathfrak{J}^{k+l}(V)\)</span> 임을 보였다. 그러나 <span class="math inline">\(\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)\)</span> 일 때 <span class="math inline">\(\omega \otimes \eta\)</span> 는 일반적으로 <span class="math inline">\(\Omega^{k+l}(V)\)</span> 에 포함되지 않는다.</p>
 <p><br></p>
 </section>
 <section id="쐐기곱" class="level3" data-number="17.1.3">
@@ -655,7 +655,6 @@ F^\ast (\omega \wedge \eta) = F^\ast (\omega) \wedge F^\ast (\eta)
 \tag{17.11}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -670,7 +669,7 @@ F^\ast (\omega \wedge \eta) = F^\ast (\omega) \wedge F^\ast (\eta)
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_wedge_product_3" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.9</strong></span> <br></p>
-<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(S\in \mathfrak{J}^k(V),\, T\in \mathfrak{J}^l(V)\)</span> 이고 <span class="math inline">\(\text{Alt}(S) = 0\)</span> 이면 <span class="math inline">\(\text{Alt}(S \otimes T) = \text{Alt}(T \otimes S)=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)\)</span> 이고 <span class="math inline">\(\text{Alt}(\phi) = 0\)</span> 이면 <span class="math inline">\(\text{Alt}(\phi \otimes \psi) = \text{Alt}(\psi \otimes \phi)=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\text{Alt}\left(\text{Alt}(\omega \otimes \eta) \otimes \zeta\right) = \text{Alt}(\omega \otimes \eta \otimes \theta) = \text{Alt}(\omega \otimes \text{Alt}(\eta \otimes \zeta))\)</span></p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega\in \Omega^k(V),\, \eta\in \Omega^l(V),\, \zeta \in \Omega^m(V)\)</span> 일 때 다음이 성립한다.</p>
 <p><span id="eq-CM_basic_properties_of_wedge_product_3"><span class="math display">\[
@@ -682,28 +681,28 @@ F^\ast (\omega \wedge \eta) = F^\ast (\omega) \wedge F^\ast (\eta)
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>)</p>
 <p><span id="eq-prp_CM_basic_properties_of_wedge_product_3_1"><span class="math display">\[
 \begin{aligned}
-(k+l)! &amp;\text{Alt}(S\otimes T)(v_1,\ldots,\,v_{k+l}) \\[0.3em]
-&amp;= \sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma)\cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)})
+(k+l)! &amp;\text{Alt}(\phi\otimes \psi)(v_1,\ldots,\,v_{k+l}) \\[0.3em]
+&amp;= \sum_{\sigma \in S_{k+l}} \text{sgn}(\sigma)\cdot \phi(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot \psi(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)})
 \end{aligned}
 \tag{17.13}\]</span></span></p>
 <p>여기서 <span class="math inline">\(G = \{\sigma \in S_{k+l} : \sigma(k+i)= k+i,\, i=1,\ldots, l\}\)</span> 이라고 하자. 즉 <span class="math inline">\(\sigma \in G\)</span> 이면 <span class="math inline">\(\sigma(k+i) = k+i\)</span> 이다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sum_{\sigma\in G} \text{sgn}(\sigma) &amp;\cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
-&amp;=\left[\sum_{\tau\in S_k} \text{sgn}(\tau) \cdot S(v_{\tau (1)},\ldots,v_{\tau(k)})\right] \cdot T(v_{k+1},\ldots,v_{k+l}) \\[0.3em]
-&amp;= k! \text{Alt}(S) \cdot T(v_{k+1},\ldots,v_{k+l}) = 0
+\sum_{\sigma\in G} \text{sgn}(\sigma) &amp;\cdot \phi(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot \psi(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
+&amp;=\left[\sum_{\tau\in S_k} \text{sgn}(\tau) \cdot \phi(v_{\tau (1)},\ldots,v_{\tau(k)})\right] \cdot \psi(v_{k+1},\ldots,v_{k+l}) \\[0.3em]
+&amp;= k! \text{Alt}(\phi) \cdot \psi(v_{k+1},\ldots,v_{k+l}) = 0
 \end{aligned}
 \]</span></p>
-<p>이다. <span class="math inline">\(\sigma_0 \in S_{k+l}-S(k)\)</span> 에 대해 <span class="math inline">\(G\sigma_0 =\{\sigma' \cdot \sigma_0 : \sigma' \in G\}\)</span> 라고 하자. 그리고 <span class="math inline">\(i=1,\ldots,k+l\)</span> 에 대해 <span class="math inline">\(u_{i}=v_{\sigma_0(i)}\)</span> 라고 하자. 이로부터</p>
+<p>이다. <span class="math inline">\(\sigma_0 \in S_{k+l}-G\)</span> 에 대해 <span class="math inline">\(G\sigma_0 =\{\sigma' \cdot \sigma_0 : \sigma' \in G\}\)</span> 라고 하자. 그리고 <span class="math inline">\(i=1,\ldots,k+l\)</span> 에 대해 <span class="math inline">\(u_{i}=v_{\sigma_0(i)}\)</span> 라고 하자. 이로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sum_{\sigma \in G\sigma_0} \text{sgn}(\sigma) &amp; \cdot S(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot T(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
-&amp;= \left[\text{sgn}(\sigma_0) \cdot \sum_{\sigma' \in S(k)} \text{sgn}(\sigma') \cdot S\left(u_{\sigma'(1)},\ldots,\,u_{\sigma'(k)}\right)\right]\cdot T(u_{k+1},\ldots,u
+\sum_{\sigma \in G\sigma_0} \text{sgn}(\sigma) &amp; \cdot \phi(v_{\sigma(1)},\ldots,v_{\sigma(k)})\cdot \psi(v_{\sigma (k+1)},\ldots,v_{\sigma (k+l)}) \\[0.3em]
+&amp;= \left[\text{sgn}(\sigma_0) \cdot \sum_{\sigma' \in S(k)} \text{sgn}(\sigma') \cdot \phi\left(u_{\sigma'(1)},\ldots,\,u_{\sigma'(k)}\right)\right]\cdot \psi(u_{k+1},\ldots,u
 _{k+l}) \\[0.3em]
-&amp;=\text{sgn}(\sigma_0) \cdot \text{Alt}(S)\cdot T(u_{k+1},\ldots,u_{k+l}) = 0
+&amp;=\text{sgn}(\sigma_0) \cdot \text{Alt}(\phi)\cdot \psi(u_{k+1},\ldots,u_{k+l}) = 0
 \end{aligned}
 \]</span></p>
-<p>이다. <span class="math inline">\(S_{k+l}\)</span> 은 군이며 <span class="math inline">\(S(k)\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 의 부분군이다. 따라서 <span class="math inline">\(S_{k+l}\)</span> 은 서로소인 <span class="math inline">\(S(k)\)</span> 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. <span class="math inline">\(\sigma_0\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 에 속하지만 <span class="math inline">\(S(k)\)</span> 에 속하지 않는 임의의 원소이므로 <a href="#eq-prp_CM_basic_properties_of_wedge_product_3_1" class="quarto-xref">식&nbsp;<span>17.13</span></a> 은 <span class="math inline">\(0\)</span> 임을 알 수 있다.</p>
+<p>이다. <span class="math inline">\(S_{k+l}\)</span> 은 군이며 <span class="math inline">\(G\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 의 부분군이다. 따라서 <span class="math inline">\(S_{k+l}\)</span> 은 서로소인 <span class="math inline">\(G\)</span> 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. <span class="math inline">\(\sigma_0\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 에 속하지만 <span class="math inline">\(G\)</span> 에 속하지 않는 임의의 원소이므로 <a href="#eq-prp_CM_basic_properties_of_wedge_product_3_1" class="quarto-xref">식&nbsp;<span>17.13</span></a> 은 <span class="math inline">\(0\)</span> 임을 알 수 있다.</p>
 <p>(<span class="math inline">\(2\)</span>) <a href="#prp-CM_basic_properties_of_alt_function" class="quarto-xref">명제&nbsp;<span>17.5</span></a> (<span class="math inline">\(3\)</span>) 으로부터</p>
 <p><span class="math display">\[
 \text{Alt}\left(\text{Alt}(\eta \otimes \zeta) - \eta \otimes \zeta\right) =0
@@ -729,14 +728,14 @@ _{k+l}) \\[0.3em]
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_basis_of_alternating_tensor_space" class="theorem">
-<p><span class="theorem-title"><strong>정리 17.2</strong></span> <span class="math inline">\((e_1,\ldots,e_n)\)</span> 이 벡터공간 <span class="math inline">\(V\)</span> 의 기저이고 이 기저에 대한 쌍대기저를 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 이라고 하자. 이 때 아래 집합이 <span class="math inline">\(\Omega^k(V)\)</span> 의 기저이다.</p>
+<p><span class="theorem-title"><strong>정리 17.2</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((e_1,\ldots,e_n)\)</span> 와 이 기저에 대한 쌍대기저 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 에 대해 아래 집합이 <span class="math inline">\(\Omega^k(V)\)</span> 의 기저이다.</p>
 <p><span class="math display">\[
 \{ \varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} : 1 \le i_1 &lt;i_2 &lt; \cdots &lt; i_k \le n\}.
 \]</span></p>
 <p>또한</p>
-<p><span class="math display">\[
+<p><span id="eq-CM_dimension_of_alternating_k_tensor_space"><span class="math display">\[
 \dim \left(\Omega^k(V)\right) = \begin{pmatrix} n \\k \end{pmatrix} = \dfrac{n!}{k!\, (n-k)!}
-\]</span></p>
+\tag{17.14}\]</span></span></p>
 <p>이다.</p>
 </div>
 </div>
@@ -753,7 +752,8 @@ _{k+l}) \\[0.3em]
 <p><span class="math display">\[
 \sum_{i_1,\ldots,i_k =1}^n a_{i_1,\ldots,i_k}(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k})=0
 \]</span></p>
-<p>라고 하자. <span class="math inline">\((e_{j_1},\ldots,e_{j_k})\)</span> 에 적용시켜보면 모든 <span class="math inline">\(a_{\ldots}=0\)</span> 이다(<a href="#exr-CM_spivak_4_1" class="quarto-xref">연습문제&nbsp;<span>17.1</span></a> (<span class="math inline">\(a\)</span>)). 따라서 선형 독립이다. <span class="math inline">\(\square\)</span></p>
+<p>라고 하자. <span class="math inline">\((e_{j_1},\ldots,e_{j_k})\)</span> 에 적용시켜보면 모든 <span class="math inline">\(a_{\ldots}=0\)</span> 이다(<a href="#exr-CM_spivak_4_1" class="quarto-xref">연습문제&nbsp;<span>17.1</span></a> (<span class="math inline">\(a\)</span>)). 따라서 선형 독립이다.</p>
+<p><span class="math inline">\(\dim \left(\Omega^k(V)\right)\)</span> 는 가능한 <span class="math inline">\(\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}\)</span> 의 개수이며 <span class="math inline">\(1 \le i_1 &lt; \cdots &lt; i_k \le n\)</span> 이므로 차원에 대해 <a href="#eq-CM_dimension_of_alternating_k_tensor_space" class="quarto-xref">식&nbsp;<span>17.14</span></a> 이 성립한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -788,9 +788,9 @@ _{k+l}) \\[0.3em]
 </section>
 <section id="sec-CM_volume_element_and_cross_product" class="level3" data-number="17.1.4">
 <h3 data-number="17.1.4" class="anchored" data-anchor-id="sec-CM_volume_element_and_cross_product"><span class="header-section-number">17.1.4</span> 부피 요소와 벡터곱</h3>
-<section id="벡터공간과-방향" class="level4">
-<h4 class="anchored" data-anchor-id="벡터공간과-방향"><strong>벡터공간과 방향</strong></h4>
-<p><a href="#thm-CM_alternating_tensor_and_determinant" class="quarto-xref">정리&nbsp;<span>17.3</span></a> 에 따라 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(\omega \in \Omega^n(V)\)</span> 는 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((v_1,\ldots,\,v_n)\)</span> 를 <span class="math inline">\(\omega\)</span> 함수값이 양수인 것과 음수인 두 집합으로 분할한다. <span class="math inline">\(V\)</span> 의 두 기저 <span class="math inline">\((u_i)\)</span> 와 <span class="math inline">\((v_j)\)</span> 사이에 <span class="math inline">\(u_i = \sum_j a_{ij}v_j\)</span> 의 관계가 있을 때 <span class="math inline">\(\det(a_{ij})&gt;0\)</span> 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 <span class="math inline">\(V\)</span> 의 <strong>방향 (orientation)</strong> 으로 정할 수 있다. 기저 <span class="math inline">\((v_1,\ldots,v_n)\)</span> 이 속한 방향을 <span class="math inline">\([v_1,\ldots,v_n]\)</span> 으로 표기하며 반대 방향을 <span class="math inline">\(-[v_1,\ldots,v_n]\)</span> 으로 표기한다. 특별히 <span class="math inline">\(\mathbb{R}^n\)</span> 에서는 표준기저에 대한 방향, 즉 <span class="math inline">\([e_1,\ldots,e_n]\)</span> 을 <strong>정방향(usual orientation)</strong> 이라고 한다. 그러나 일반적인 벡터공간 <span class="math inline">\(V\)</span> 에서는 이렇게 특정 방향을 정할 수 없다.</p>
+<section id="방향과-부피요소" class="level4">
+<h4 class="anchored" data-anchor-id="방향과-부피요소"><strong>방향과 부피요소</strong></h4>
+<p><a href="#thm-CM_alternating_tensor_and_determinant" class="quarto-xref">정리&nbsp;<span>17.3</span></a> 에 따라 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(\omega \in \Omega^n(V)\)</span> 는 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((v_1,\ldots,\,v_n)\)</span> 를 <span class="math inline">\(\omega\)</span> 함수값이 양수인 것과 음수인 두 집합으로 분할한다. <span class="math inline">\(V\)</span> 의 두 기저 <span class="math inline">\((u_i)\)</span> 와 <span class="math inline">\((v_j)\)</span> 사이에 <span class="math inline">\(u_i = \sum_j a_{ij}v_j\)</span> 의 관계가 있을 때 <span class="math inline">\(\det(a_{ij})&gt;0\)</span> 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 <span class="math inline">\(V\)</span> 의 <strong>방향 (orientation)</strong> 으로 정할 수 있다. 기저 <span class="math inline">\((v_1,\ldots,v_n)\)</span> 이 속한 방향을 <span class="math inline">\([v_1,\ldots,v_n]\)</span> 으로 표기하며 반대 방향을 <span class="math inline">\(-[v_1,\ldots,v_n]\)</span> 으로 표기한다. 특별히 <span class="math inline">\(\mathbb{R}^n\)</span> 에서는 표준기저에 대한 방향, 즉 <span class="math inline">\([e_1,\ldots,e_n]\)</span> 을 <strong>정방향(usual orientation)</strong> 이라고 한다.</p>
 <p>벡터공간에 어떤 내적 <span class="math inline">\(T:V\times V \to \mathbb{R}\)</span> 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 <span class="math inline">\((e_i)\)</span> 와 <span class="math inline">\((f_j)\)</span> 사이에는 어떤 직교행렬 (orthogonal matrix) <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(e_i = U f_i\)</span> 의 관계가 있다는 것을 안다. 직교행렬은 <span class="math inline">\(UU^T=I\)</span> 이므로 <span class="math inline">\(\det(U)= \pm 1\)</span> 이다. 만약 <span class="math inline">\(V\)</span> 의 방향 <span class="math inline">\(\mu\)</span> 가 정해졌다면 정규직교기저 <span class="math inline">\((e_1,\ldots,e_n)\)</span> 에 대해 <span class="math inline">\(\omega (e_1,\ldots,e_n)=1\)</span> 이 되도록 <span class="math inline">\(\omega\in \Omega^n(V)\)</span> 를 유일하게 정할 수 있다. 이 유일한 <span class="math inline">\(\omega\)</span> 를 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 <strong>부피 요소 (volume element)</strong> 라고 한다. <span class="math inline">\(\mathbb{R}^n\)</span> 에서 <span class="math inline">\(\det\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 <span class="math inline">\(|\det (e_1,\ldots,e_n)|\)</span> 은 원점과 <span class="math inline">\(e_1,\ldots,\,e_n\)</span> 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.</p>
 <p><br></p>
 </section>
@@ -799,18 +799,18 @@ _{k+l}) \\[0.3em]
 <p>이제 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터곱(cross product)</strong> 에 대해 알아보자. 정해진 <span class="math inline">\(v_1,\ldots,\,v_{n-1} \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\phi(u) := \det(v_1,\ldots,\,v_{n-1},u)\)</span> 라고 하면 <span class="math inline">\(\phi \in \Omega^1(\mathbb{R}^n)\)</span> 이다. <span class="math inline">\(\det\)</span> 의 성질에 의해 <span class="math inline">\(\phi (u)\)</span> 는 <span class="math inline">\(V\)</span> 에서 정해진 선형 범함수(linear functinal) 이며, 따라서 소위 리스의 표현정리 (Riesz representation theorem) 에 의해 <span class="math inline">\(\phi (u)=\langle u,\,w \rangle\)</span> 을 만족하는 <span class="math inline">\(w\in V\)</span> 가 유일하게 존재한다. 이 <span class="math inline">\(w\)</span> 를 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\)</span> 로 표기하고 <span class="math inline">\(v_1,\ldots,v_{n-1}\)</span> 의 <strong>벡터곱</strong> 이라고 한다. 즉 모든 <span class="math inline">\(u \in \mathbb{R}^n\)</span> 에서</p>
 <p><span id="eq-CM_inner_product_and_cross_product"><span class="math display">\[
 \phi(u) = \langle u,\,  w \rangle = \det \left( v_1,\ldots,\,v_{n-1},\, u\right)
-\tag{17.14}\]</span></span></p>
+\tag{17.15}\]</span></span></p>
 <p>를 만족하는 <span class="math inline">\(w\)</span> 를 <span class="math inline">\(v_1 \times \cdots \times v_{n-1}\)</span> 로 표기한다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_magnitude_of_cross_product" class="theorem example">
 <p><span class="theorem-title"><strong>예제 17.1 (벡터곱의 기본 성질)</strong></span> <br></p>
-<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\det\)</span> 의 성질로부터 <span class="math inline">\(w = v_1\times \cdots \times v_{n-1}\)</span> 일 때 <span class="math inline">\(\langle v_i,\, w\rangle = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(1\)</span>) 행렬식의 성질로부터 <span class="math inline">\(w = v_1\times \cdots \times v_{n-1}\)</span> 일 때 <span class="math inline">\(\langle v_i,\, w\rangle = 0\)</span> 임을 알 수 있다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 표준기저 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 에 대해 <span class="math inline">\(e_1 \times \cdots \times e_{n-1}=e_n\)</span> 이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <a href="#eq-CM_inner_product_and_cross_product" class="quarto-xref">식&nbsp;<span>17.14</span></a> 에서 <span class="math inline">\(u=v_1\times \cdots \times v_{n-1}\)</span> 을 넣으면 다음을 얻는다.</p>
+<p>(<span class="math inline">\(3\)</span>) <a href="#eq-CM_inner_product_and_cross_product" class="quarto-xref">식&nbsp;<span>17.15</span></a> 에서 <span class="math inline">\(u=v_1\times \cdots \times v_{n-1}\)</span> 을 넣으면 다음을 얻는다.</p>
 <p><span id="eq-CM_norm_of_cross_product"><span class="math display">\[
 \|v_1 \times \cdots \times v_{n-1}\|^2 = \det (v_1,\ldots,\,v_{n-1},\, v_1\times \cdots \times v_{n-1})
-\tag{17.15}\]</span></span></p>
+\tag{17.16}\]</span></span></p>
 </div>
 </div>
 <br>
@@ -824,7 +824,7 @@ v_1\times \cdots \times (av_i)\times \cdots \times v_{n-1} &amp;= a\cdot (v_1\ti
 v_1 \times \cdots \times (v_i + v'_i) \times \cdots \times v_{n-1} &amp;=v_1 \times \cdots \times v_i \times \cdots \times v_{n-1} \\[0.3em]
 &amp;\, + v_1 \times \cdots \times v'_i \times \cdots \times v_{n-1}
 \end{aligned}
-\tag{17.16}\]</span></span></p>
+\tag{17.17}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
@@ -893,11 +893,11 @@ g_{ij}=T(u_i,u_j)&amp;=\sum_{k, l} A_{ik}A_{jl}T(e_k, e_l)= \sum_k A_{ik}A_{jk}=
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_4_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.4 (Spivak 4.4)</strong></span> <span class="math inline">\(\omega\)</span> 가 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 부피 요소이고 <span class="math inline">\(F :\mathbb{R}^n \to V\)</span> 가 동형사상이며 <span class="math inline">\(F^\ast (T) = \langle\,,\,\rangle\)</span> 이고 <span class="math inline">\([F(e_1),\ldots, F(e_n)]=\mu\)</span> 일 때 <span class="math inline">\(F^\ast \omega = \det\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 17.4 (Spivak 4.4)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에서 <span class="math inline">\(\omega\)</span> 가 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되 는 부피 요소이고 <span class="math inline">\(F :\mathbb{R}^n \to V\)</span> 가 동형사상이며 <span class="math inline">\(F^\ast (T) = \langle\,,\,\rangle\)</span> 이고 <span class="math inline">\([F(e_1),\ldots, F(e_n)]=\mu\)</span> 일 때 <span class="math inline">\(F^\ast \omega = \det\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 이 <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저이며 <span class="math inline">\(v_i = F(e_i)\)</span> 라고 하자. <span class="math inline">\(F^\ast (T) = \langle \,,\,\rangle\)</span> 로부터 <span class="math inline">\(F^\ast T (e_i,\,e_j) = \langle e_i,e_j\rangle = \delta_{ij}\)</span> 이며 <span class="math inline">\(F^\ast T(e_i,e_j)= T(F(e_i),F(e_j))=T(v_i,v_j)\)</span> 이므로 <span class="math inline">\(T\)</span> 는 내적을 보존하는 isometry 임을 안다. 따라서 <span class="math inline">\(\det (F)=\pm 1\)</span> 이며 방향을 보존하므로 <span class="math inline">\(\det (F) = 1\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 이 <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저이며 <span class="math inline">\(v_i = F(e_i)\)</span> 라고 하자. <span class="math inline">\(F^\ast (T) = \langle \,,\,\rangle\)</span> 로부터 <span class="math inline">\(F^\ast T (e_i,\,e_j) = \langle e_i,e_j\rangle = \delta_{ij}\)</span> 이며 <span class="math inline">\(F^\ast T(e_i,e_j)= T(F(e_i),F(e_j))=T(v_i,v_j)\)</span> 이므로 <span class="math inline">\(F\)</span> 는 내적을 보존하는 isometry 임을 안다. 따라서 <span class="math inline">\(\det (F)=\pm 1\)</span> 이며 방향을 보존하므로 <span class="math inline">\(\det (F) = 1\)</span> 이다.</p>
 <p><span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(V\)</span> 의 정규직교기저 <span class="math inline">\(u_1,\ldots,\,u_n\)</span> 에 대해 <span class="math inline">\(T,\, \mu\)</span> 에 의해 결정되는 부피요소라고 하자. 이 때 <span class="math display">\[
 \begin{aligned}
 \left(F^\ast (\omega)\right)(v_1,\ldots,v_n) &amp;=\omega (F(v_1),\ldots,F(v_n)) \\[0.3em]
@@ -988,7 +988,7 @@ v_1\times \cdots \times v_{n-1} = \sum_i \omega (v_1,\ldots,\,v_{n-1},\,e_i) e_i
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(u_n = u_1 \times \cdots \times u_{n-1}\)</span> 이라고 하면 <a href="#eq-CM_norm_of_cross_product" class="quarto-xref">식&nbsp;<span>17.15</span></a> 에 따라</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(u_n = u_1 \times \cdots \times u_{n-1}\)</span> 이라고 하면 <a href="#eq-CM_norm_of_cross_product" class="quarto-xref">식&nbsp;<span>17.16</span></a> 에 따라</p>
 <p><span class="math display">\[
 \|u_n\|^2 = \|u_1\times \cdots \times u_{n-1}\|^2 = \det (u_1,\ldots,\,u_{n-1},\,u_n)
 \]</span></p>
@@ -1089,7 +1089,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container">
 <div id="def-CM_usual_inner_product_and_orientation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.8 (통상 내적, 통상 방향)</strong></span> <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서의 내적을</p>
+<p><span class="theorem-title"><strong>정의 17.8 (통상 내적, 통상 방향)</strong></span> <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서의 내적 <span class="math inline">\(\langle\,,\,\rangle_\boldsymbol{p}\)</span> 을</p>
 <p><span class="math display">\[
 \langle (\boldsymbol{p},\boldsymbol{u}), (\boldsymbol{p},\boldsymbol{v})\rangle_\boldsymbol{p}= \langle \boldsymbol{u},\boldsymbol{v}\rangle
 \]</span></p>
@@ -1132,10 +1132,10 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container">
 <div id="def-CM_nabla_operator" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.10 (Nabla_operator)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 nabla 연산자 <span class="math inline">\(\nabla\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 17.10 (Nabla 연산자)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 nabla 연산자 <span class="math inline">\(\nabla\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_nabla_operator"><span class="math display">\[
 \nabla := \sum_{i=1}^n \boldsymbol{e}_i \boldsymbol{\cdot}D_i.
-\tag{17.17}\]</span></span></p>
+\tag{17.18}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -1197,7 +1197,8 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 \begin{aligned}
 \omega (\boldsymbol{p}) + \zeta (\boldsymbol{p}) &amp;:= \sum_{i_1&lt;\cdots &lt;i_k} \left(\omega_{i_1,\ldots,\,i_k}(\boldsymbol{p}) + \zeta_{i_1,\ldots,\,i_k}(\boldsymbol{p})\right) \cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right], \\[0.3em]
 (f \cdot \omega)(\boldsymbol{p})  &amp;:=  \sum_{i_1&lt;\cdots &lt;i_k} \left(f(\boldsymbol{p}) \cdot \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p}) \right)\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right], \\[0.3em]
-\omega (\boldsymbol{p})\wedge \eta (\boldsymbol{p}) &amp;:= \sum_{i_1&lt;\cdots &lt;i_{k}} \sum_{j_1&lt;\cdots &lt;j_m} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \eta_{j_1,\ldots,j_m}(\boldsymbol{p}) \cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p}) \wedge \varphi_{j_1}(\boldsymbol{p}) \cdots \wedge \varphi_{j_m}(\boldsymbol{p})\right]
+\omega (\boldsymbol{p})\wedge \eta (\boldsymbol{p}) &amp;:= \sum_{i_1&lt;\cdots &lt;i_{k}} \sum_{j_1&lt;\cdots &lt;j_m} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \eta_{j_1,\ldots,j_m}(\boldsymbol{p}) \\[0.3em]
+&amp;\qquad\qquad  \qquad \qquad\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p}) \wedge \varphi_{j_1}(\boldsymbol{p}) \cdots \wedge \varphi_{j_m}(\boldsymbol{p})\right]
 \end{aligned}
 \]</span></p>
 </div>
@@ -1219,12 +1220,12 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <p><span class="theorem-title"><strong>정의 17.14 (함수의 미분과 1차 형식)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_differential_1-form"><span class="math display">\[
 df(\boldsymbol{p}) (\boldsymbol{v}_\boldsymbol{p}) := Df(\boldsymbol{p})(\boldsymbol{v}) = Df(\boldsymbol{p})\cdot \boldsymbol{v}.
-\tag{17.18}\]</span></span></p>
+\tag{17.19}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
-<p><span class="math inline">\(x_i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x_i\)</span> 의 1차 형식 <span class="math inline">\(dx_i(\boldsymbol{p})\)</span> 를 생각 할 수 있다. <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저벡터 <span class="math inline">\(\boldsymbol{e}_j\)</span> 에 대해 <span class="math inline">\(dx_i(\boldsymbol{p})\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx_i (\boldsymbol{p})\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 는 다음과 같이 쓸 수 있다.</p>
+<p><span class="math inline">\(x_i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x_i\)</span> 의 1차 형식 <span class="math inline">\(dx_i(\boldsymbol{p})\)</span> 를 생각 할 수 있다. <span class="math inline">\(T_{\boldsymbol{p}}(\mathbb{R}^n)\)</span> 의 표준기저벡터 <span class="math inline">\((\boldsymbol{e}_j)_\boldsymbol{p}\)</span> 에 대해 <span class="math inline">\(dx_i(\boldsymbol{p})\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx_i (\boldsymbol{p})\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 는 다음과 같이 쓸 수 있다.</p>
 <p><span class="math display">\[
 \omega (\boldsymbol{p}) = \sum_{i_1&lt; \cdots &lt;i_k} \omega_{i_1,\ldots,i_k}(\boldsymbol{p})\cdot \left[ dx_{i_1}(\boldsymbol{p})\wedge \cdots \wedge dx_{i_k}(\boldsymbol{p})\right].
 \]</span></p>
@@ -1255,16 +1256,16 @@ df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
 <p><span class="theorem-title"><strong>정의 17.15 (Pull-back 과 Push-forward)</strong></span> 미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 아래와 같이 정의되는 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}(T_\boldsymbol{p}(\mathbb{R}^n),\, T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 을 <span class="math inline">\(F\)</span> 에 대한 <strong>push-forward</strong> 라고 한다.</p>
 <p><span id="eq-def_CM_push_forward"><span class="math display">\[
 F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(\boldsymbol{p})}
-\tag{17.19}\]</span></span></p>
-<p>이로부터 유도되는 선형변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\right),\, \Omega^k\left(T_\boldsymbol{p}(\mathbb{R}^n)\right)\right)\)</span> 아래와 같이 정의하고 이를 <strong>pull-back</strong> 이라고 한다.</p>
+\tag{17.20}\]</span></span></p>
+<p>이로부터 유도되는 선형변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\right),\, \Omega^k\left(T_\boldsymbol{p}(\mathbb{R}^n)\right)\right)\)</span> 아래와 같이 정의하고 이를 <strong>pull-back</strong> 이라고 한다. <span class="math inline">\(\omega \in \Omega^k \left( T_{F(\boldsymbol{p})}(\mathbb{R}^m) \right)\)</span> 에 대해</p>
 <p><span id="eq-def_CM_pull_back"><span class="math display">\[
 (F^\ast \omega) (\boldsymbol{p}) := (F_\ast)^\ast (\omega (F(\boldsymbol{p})))
-\tag{17.20}\]</span></span></p>
-<p>그렇다면 <span class="math display">\[
+\tag{17.21}\]</span></span></p>
+<p>이다. 그렇다면 <span class="math display">\[
 \begin{aligned}
 \left(F^\ast \omega\right)(\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= (F_\ast)^\ast(\omega(F(\boldsymbol{p})))(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
 &amp;= \omega (F(\boldsymbol{p})) (F_\ast (\boldsymbol{v}_1),\ldots,\, F_\ast(\boldsymbol{v}_k)) \\[0.3em]
-&amp;= \omega (F(\boldsymbol{p})) (F'(\boldsymbol{p})(\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})})
+&amp;= \omega (F(\boldsymbol{p})) \left( \left(F'(\boldsymbol{p})(\boldsymbol{v}_1)\right)_{F(\boldsymbol{p})},\ldots,\,\left(F'(\boldsymbol{p})(\boldsymbol{v}_k)\right)_{F(\boldsymbol{p})} \right)
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
@@ -1272,7 +1273,6 @@ F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(
 </div>
 </div>
 </div>
-<p>여기서 정의상 <span class="math inline">\(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k\in T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 이어야 한다. 그리고 <span class="math inline">\(\boldsymbol{p}\)</span> 나 <span class="math inline">\(F(\boldsymbol{p})\)</span> 는 각각 탄젠트 공간을 지정한다는 것에 유의하라.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_properties_of_full_back" class="theorem">
@@ -1287,8 +1287,8 @@ F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(
 <p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(dx_i\)</span> 는 1-형식 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast (dx_i) (\boldsymbol{p})(\boldsymbol{v}_p) &amp;= dx_i(F(\boldsymbol{p})) \left(F'(\boldsymbol{p})(\boldsymbol{v})_{F(\boldsymbol{p})}\right) \\[0.3em]
-&amp;= dx_i(F(\boldsymbol{p}))\left(\sum_{j=1}^n v_j D_jf_1(\boldsymbol{p})_{F(\boldsymbol{p})},\ldots,\,\sum_{j=1}^n v_jD_j f_m (\boldsymbol{p})_{F(\boldsymbol{p})}\right) \\[0.3em]
+F^\ast (dx_i) (\boldsymbol{p})(\boldsymbol{v}_p) &amp;= dx_i(F(\boldsymbol{p})) \left(\left(F'(\boldsymbol{p})(\boldsymbol{v}_\boldsymbol{p})\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
+&amp;= dx_i(F(\boldsymbol{p}))\left(\sum_{j=1}^n v_j D_jf_1(\boldsymbol{p}),\ldots,\,\sum_{j=1}^n v_jD_j f_m (\boldsymbol{p})\right)_{F(\boldsymbol{p})} \\[0.3em]
 &amp;= \sum_{j=1}^n v_j D_jf_i (\boldsymbol{p}) = \sum_{j=1} D_j f_i (\boldsymbol{p}) \cdot dx_j(\boldsymbol{p})(\boldsymbol{v}_\boldsymbol{p}).
 \end{aligned}
 \]</span></p>
@@ -1376,7 +1376,7 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\right) \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k} \\[0.3em]
 =&amp; \sum_{i_1&lt;\cdots&lt;i_k} \sum_{\alpha=1}^n D_\alpha (\omega_{i_1,\ldots,i_k}) \,dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}.
 \end{aligned}
-\tag{17.21}\]</span></span></p>
+\tag{17.22}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -1394,7 +1394,7 @@ d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\righ
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-CM_def_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.21</span></a> 에서 <span class="math inline">\(D_\alpha (\omega_{i_1,\ldots,i_k})=0\)</span> 이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-CM_def_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.22</span></a> 에서 <span class="math inline">\(D_\alpha (\omega_{i_1,\ldots,i_k})=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(D_\alpha (\omega_\cdots + \eta_\cdots )\,dx_\alpha = D_\alpha \omega_\cdots dx_\alpha + D_\alpha \eta_\cdots dx_\alpha\)</span> 이다.</p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega = \omega_0 dx_{i_1}\wedge \cdots \wedge dx_{i_k}\)</span>, <span class="math inline">\(\zeta = \zeta_0 dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\)</span> 이라고 하자. <span class="math display">\[
 \begin{aligned}
@@ -1418,7 +1418,7 @@ d(F^\ast \omega)(\boldsymbol{p})(\boldsymbol{v}) &amp;= d{\big (}\omega(F(\bolds
 F^\ast (d(\omega \wedge dx_i)) &amp;=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i)) \\[0.3em]
 &amp;= F^\ast (d\omega \wedge dx_i) = F^\ast (d\omega )\wedge F^\ast (dx_i) \\[0.3em]
 \end{aligned}
-\tag{17.22}\]</span></span></p>
+\tag{17.23}\]</span></span></p>
 <p>이다. 여기서</p>
 <p><span class="math display">\[
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-1)^k (F^\ast \omega)\wedge d(F^\ast dx_i)
@@ -1427,7 +1427,7 @@ d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-
 <p><span class="math display">\[
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) = F^\ast d\omega \wedge F^\ast dx_i
 \]</span></p>
-<p>이다. <a href="#eq-prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.22</span></a> 에 대입하면</p>
+<p>이다. <a href="#eq-prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.23</span></a> 에 대입하면</p>
 <p><span class="math display">\[
 F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\omega \wedge dx_i)
 \]</span></p>
