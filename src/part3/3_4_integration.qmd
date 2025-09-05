@@ -1550,7 +1550,7 @@ $$
 
 #### Spivak 3.32
 
-$f:[a,\,b]\times [c,\,d] \to \R$ 이 연속이며 $D_2 f$ 역시 연속이라고 하자. $\tilde {f} (y) =\int_a^b f(x,\,t)\,dx$ 라고하자. 아래의 식 (Leibnitz's rule) 이 성립함을 보여라.
+$f:[a,\,b]\times [c,\,d] \to \R$ 이 연속이며 $D_2 f$ 역시 연속이라고 하자. 아래의 식 (Leibnitz's rule) 이 성립함을 보여라.
 
 $$
 \dfrac{d}{dy}\left(\int_a^b f(x,\,y) \,dx \right)= \int_a^b D_2 f(x,\,y)\, dx.
