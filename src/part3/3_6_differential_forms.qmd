@@ -50,7 +50,6 @@ $\mathfrak{J}^k(V)$ 는 벡터공간이다.
 
 </div></br>
 
-
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_tensor_product}
 
@@ -85,9 +84,7 @@ $$ {#eq-CM_basic_properites_of_tensor_product}
 
 </div>
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_basis_of_tensor_product}
 
@@ -1292,7 +1289,6 @@ $$
 :::
 
 
-
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_properties_of_full_back}
@@ -1322,12 +1318,12 @@ F^\ast (dx_i) (\bf{p})(\bf{v}_p) &= dx_i(F(\bf{p})) \left(\left(F'(\bf{p})(\bf{v
 \end{aligned}
 $$
 
-($2$) 
+($2$) $\omega_1,\,\omega_2 \in \Omega^k\left(T_{F(\bf{p})} (\R^m)\right)$ 라고 하자.
 
 $$
 \begin{aligned}
 F^\ast (\omega_1 +\omega_2)&(\bf{p})\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right) \\[0.3em]
-&=(\omega_1+\omega_2)(F(\bf{p}))(F'(\bf{p})\left(\bf{v}_1)_{F(\bf{p})},\ldots,\, F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}\right) \\[0.3em]
+&=(\omega_1+\omega_2)(F(\bf{p}))\left(\left(F'(\bf{p})(\bf{v}_1)\right)_{F(\bf{p})},\ldots,\, \left(F'(\bf{p})(\bf{v}_k)\right)_{F(\bf{p})}\right) \\[0.3em]
 &=\left[F^\ast(\omega_1)(\bf{p}) + F^\ast (\omega_2)(\bf{p})\right] \left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right).
 \end{aligned}
 $$
@@ -1338,7 +1334,7 @@ $$
 \begin{aligned}
 F^\ast (g \cdot \omega)&(\bf{p})\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right)  \\[0.3em]
 &= (g\cdot \omega)(F(\bf{p}))(F'(\bf{p})(\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}) \\[0.3em]
-&= g(F(\bf{p})) \omega (F(\bf{p})) (F'(\bf{p})(\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}) \\[0.3em]
+&= g(F(\bf{p})) \omega (F(\bf{p})) \left(\left(F'(\bf{p})(\bf{v}_1)\right)_{F(\bf{p})},\ldots,\,\left(F'(\bf{p})(\bf{v}_k)\right)_{F(\bf{p})}\right) \\[0.3em]
 &= (g\circ F) \cdot (F^\ast \omega)(\bf{p}) \left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right).
 \end{aligned}
 $$
@@ -1357,7 +1353,7 @@ $$
 
 </br>
 
-여기서 ($4$) 는 매끄러운 사상 $F:\R^n \to \R^m$ 에 대해 $T_{F(\bf{p})(\R^m)}$ 의 미분 형식의 구조가 $T_\bf{p}(\R^n)$ 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.
+여기서 ($4$) 는 매끄러운 사상 $F:\R^n \to \R^m$ 에 대해 $T_{F(\bf{p})}(\R^m)$ 의 미분 형식의 구조가 $T_\bf{p}(\R^n)$ 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.
  
 $$
 \begin{aligned}
@@ -1383,7 +1379,7 @@ $$
 
 ::: {.proof}
 
-아래를 보자.
+@thm-CM_properties_of_full_back 에 의해 
 
 $$
 F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
@@ -1410,12 +1406,12 @@ $$
 
 </br>
 
-### 미분형식의 미분 {#sec-CM_derivative_of_differantial_form}
+### 외미분 {#sec-CM_external_derivative_of_differantial_form}
 
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_differential_of_forms}
 
-#### 형식의 미분
+#### 외미분
 
 $k$-형식 
 
@@ -1423,7 +1419,7 @@ $$
 \omega = \sum_{i_1<\cdots<i_k} \omega_{i_1,\ldots,i_k}dx_{i_1}\wedge \cdots \wedge dx_{i_k}
 $$
 
-에 대해 $\omega$ 의 미분 $d\omega$ 를 아래와 같이 정의한다.
+에 대한 $\omega$ 의 **외미분 (external derivative)** $d\omega$ 를 아래와 같이 정의한다.
 
 $$
 \begin{aligned}
@@ -1441,7 +1437,7 @@ $k$-형식 $\omega$ 에 대해 $d\omega$ 는 $k+1$ 형식이 된다는 것은 �
 
 ::: {#prp-CM_basic_properties_of_differential_of_form}
 
-$k$-형식 $\omega,\, \eta$, $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
+$k$-형식 $\omega,\, \eta$ 과 $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
 &emsp;($1$) $d(dx_{i_1}\wedge \cdots \wedge dx_{i_k}) = 0$, 
 
@@ -1473,7 +1469,7 @@ $$
 
 ($4$) $\displaystyle d(d \omega) = \sum_{i_1<\cdots <i_k} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}$ 이다. 여기서 $\displaystyle \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha = 0$ 이므로 $d(d\omega)=0$ 이다.
 
-($5$) $k$ 에 대한 induction 으로 증명한다. $k=0$ 이면 $d\omega = \sum_{i=1}^nD_i\omega dx_i$ 이며
+($5$) $k$ 에 대한 induction 으로 증명한다. $k=0$ 이면 $d\omega = \sum_{i=1}^n(D_i\omega) dx_i$ 이며
 
 $$
 \begin{aligned}
@@ -1596,10 +1592,20 @@ $$
 $A$ 가 별모양의 열린 집합이므로 우리는 아래와 같이 $I\omega(\bf{x})$ 를 정의 할 수 있다.
 
 $$
-I\omega (\bf{x}) = \sum_{i_1<\cdots <i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\bf{x})\, dt\right) x_{i\alpha} \, dx_1 \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+I\omega (\bf{x}) = \sum_{i_1<\cdots <i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\bf{x})\, dt\right) x_{i\alpha} \, dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
 $$
 
-여기서 $\widehat{dx_{i_\alpha}}$ 는 $dx_1 \wedge \cdots dx_{i_l}$ 에서 $dx_{i_\alpha}$ 만 빠졌음을 의미한다. 우리는 이제 $\omega = I(d\omega)+ d(I\omega)$ 임을 보일 것이다. 그렇다면 $\omega = d(I\omega)$ 이므로 $d\omega = d^2(I\omega)=0$ 이다. 그런데 $\omega = I(d\omega)+ d(I\omega)$ 를 보이는 것인 많이 지루하다.
+여기서 $\widehat{dx_{i_\alpha}}$ 는 $dx_1 \wedge \cdots dx_{i_l}$ 에서 $dx_{i_\alpha}$ 만 빠졌음을 의미한다. 우리는 이제 $\omega = I(d\omega)+ d(I\omega)$ 임을 보일 것이다. 그렇다면 $\omega = d(I\omega)$ 이므로 $d\omega = d^2(I\omega)=0$ 이다. @exr-CM_spivak_3_32 를 사용하여 다음을 보일 수 있다.
+
+$$
+\begin{aligned}
+d(I\omega) &= l \cdot \sum_{i_1<\cdots <i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&= \sum_{i_1<\cdots <i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l}) (t\bf{x}) \,dt\right) \\[0.3em]
+&\qquad \qquad \qquad \qquad x_{i\alpha} dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+$$
+
+
 
 
 

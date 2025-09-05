@@ -321,7 +321,7 @@ window.Quarto = {
   <li><a href="#sec-CM_tangent_space_and_vector_field" id="toc-sec-CM_tangent_space_and_vector_field" class="nav-link" data-scroll-target="#sec-CM_tangent_space_and_vector_field"><span class="header-section-number">17.2.1</span> 탄젠트 공간과 벡터장</a></li>
   <li><a href="#sec-CM_differential_form" id="toc-sec-CM_differential_form" class="nav-link" data-scroll-target="#sec-CM_differential_form"><span class="header-section-number">17.2.2</span> 미분 형식</a></li>
   <li><a href="#sec-CM_form_and_differentiation" id="toc-sec-CM_form_and_differentiation" class="nav-link" data-scroll-target="#sec-CM_form_and_differentiation"><span class="header-section-number">17.2.3</span> 형식과 미분</a></li>
-  <li><a href="#sec-CM_derivative_of_differantial_form" id="toc-sec-CM_derivative_of_differantial_form" class="nav-link" data-scroll-target="#sec-CM_derivative_of_differantial_form"><span class="header-section-number">17.2.4</span> 미분형식의 미분</a></li>
+  <li><a href="#sec-CM_external_derivative_of_differantial_form" id="toc-sec-CM_external_derivative_of_differantial_form" class="nav-link" data-scroll-target="#sec-CM_external_derivative_of_differantial_form"><span class="header-section-number">17.2.4</span> 외미분</a></li>
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
   </ul>
@@ -425,7 +425,7 @@ window.Quarto = {
 \tag{17.4}\]</span></span></p>
 </div>
 </div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_basis_of_tensor_product" class="theorem">
 <p><span class="theorem-title"><strong>정리 17.1</strong></span> <span class="math inline">\(n\)</span> 차원 벡터공간 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\(e_1,\ldots,\,e_n\)</span> 에 대한 쌍대기저 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 에 대해</p>
@@ -1292,11 +1292,11 @@ F^\ast (dx_i) (\boldsymbol{p})(\boldsymbol{v}_p) &amp;= dx_i(F(\boldsymbol{p})) 
 &amp;= \sum_{j=1}^n v_j D_jf_i (\boldsymbol{p}) = \sum_{j=1} D_j f_i (\boldsymbol{p}) \cdot dx_j(\boldsymbol{p})(\boldsymbol{v}_\boldsymbol{p}).
 \end{aligned}
 \]</span></p>
-<p>(<span class="math inline">\(2\)</span>)</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega_1,\,\omega_2 \in \Omega^k\left(T_{F(\boldsymbol{p})} (\mathbb{R}^m)\right)\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 F^\ast (\omega_1 +\omega_2)&amp;(\boldsymbol{p})\left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right) \\[0.3em]
-&amp;=(\omega_1+\omega_2)(F(\boldsymbol{p}))(F'(\boldsymbol{p})\left(\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\, F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})}\right) \\[0.3em]
+&amp;=(\omega_1+\omega_2)(F(\boldsymbol{p}))\left(\left(F'(\boldsymbol{p})(\boldsymbol{v}_1)\right)_{F(\boldsymbol{p})},\ldots,\, \left(F'(\boldsymbol{p})(\boldsymbol{v}_k)\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
 &amp;=\left[F^\ast(\omega_1)(\boldsymbol{p}) + F^\ast (\omega_2)(\boldsymbol{p})\right] \left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right).
 \end{aligned}
 \]</span></p>
@@ -1305,7 +1305,7 @@ F^\ast (\omega_1 +\omega_2)&amp;(\boldsymbol{p})\left((\boldsymbol{v}_1)_\boldsy
 \begin{aligned}
 F^\ast (g \cdot \omega)&amp;(\boldsymbol{p})\left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right)  \\[0.3em]
 &amp;= (g\cdot \omega)(F(\boldsymbol{p}))(F'(\boldsymbol{p})(\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})}) \\[0.3em]
-&amp;= g(F(\boldsymbol{p})) \omega (F(\boldsymbol{p})) (F'(\boldsymbol{p})(\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})}) \\[0.3em]
+&amp;= g(F(\boldsymbol{p})) \omega (F(\boldsymbol{p})) \left(\left(F'(\boldsymbol{p})(\boldsymbol{v}_1)\right)_{F(\boldsymbol{p})},\ldots,\,\left(F'(\boldsymbol{p})(\boldsymbol{v}_k)\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
 &amp;= (g\circ F) \cdot (F^\ast \omega)(\boldsymbol{p}) \left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right).
 \end{aligned}
 \]</span></p>
@@ -1319,7 +1319,7 @@ F^\ast (\omega \wedge \eta)&amp;(\boldsymbol{p})((\boldsymbol{v}_1)_\boldsymbol{
 \]</span></p>
 </div>
 <p><br></p>
-<p>여기서 (<span class="math inline">\(4\)</span>) 는 매끄러운 사상 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(T_{F(\boldsymbol{p})(\mathbb{R}^m)}\)</span> 의 미분 형식의 구조가 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.</p>
+<p>여기서 (<span class="math inline">\(4\)</span>) 는 매끄러운 사상 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 의 미분 형식의 구조가 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 F^\ast &amp;(P \,dx_1 \wedge dx_2 + Q\,dx_2 \wedge dx_3) =  (P \circ F) \cdot F^\ast (dx_1 \wedge dx_2) + (Q\circ F)\cdot F^\ast (dx_2 \wedge dx_3) \\[0.3em]
@@ -1337,7 +1337,7 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h \circ F)\cdot \det (F')\cdot (d
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>아래를 보자.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-CM_properties_of_full_back" class="quarto-xref">정리&nbsp;<span>17.5</span></a> 에 의해</p>
 <p><span class="math display">\[
 F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
 \]</span></p>
@@ -1357,8 +1357,8 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 </div>
 <p><br></p>
 </section>
-<section id="sec-CM_derivative_of_differantial_form" class="level3" data-number="17.2.4">
-<h3 data-number="17.2.4" class="anchored" data-anchor-id="sec-CM_derivative_of_differantial_form"><span class="header-section-number">17.2.4</span> 미분형식의 미분</h3>
+<section id="sec-CM_external_derivative_of_differantial_form" class="level3" data-number="17.2.4">
+<h3 data-number="17.2.4" class="anchored" data-anchor-id="sec-CM_external_derivative_of_differantial_form"><span class="header-section-number">17.2.4</span> 외미분</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1366,11 +1366,11 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 </div>
 <div class="callout-body-container">
 <div id="def-CM_differential_of_forms" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.16 (형식의 미분)</strong></span> <span class="math inline">\(k\)</span>-형식</p>
+<p><span class="theorem-title"><strong>정의 17.16 (외미분)</strong></span> <span class="math inline">\(k\)</span>-형식</p>
 <p><span class="math display">\[
 \omega = \sum_{i_1&lt;\cdots&lt;i_k} \omega_{i_1,\ldots,i_k}dx_{i_1}\wedge \cdots \wedge dx_{i_k}
 \]</span></p>
-<p>에 대해 <span class="math inline">\(\omega\)</span> 의 미분 <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
+<p>에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_def_of_differential_of_form"><span class="math display">\[
 \begin{aligned}
 d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\right) \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k} \\[0.3em]
@@ -1385,7 +1385,7 @@ d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\righ
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_differential_of_form" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 17.13</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \eta\)</span>, <span class="math inline">\(l\)</span>-형식 <span class="math inline">\(\zeta\)</span>, 미분가능한 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 17.13</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \eta\)</span> 과 <span class="math inline">\(l\)</span>-형식 <span class="math inline">\(\zeta\)</span>, 미분가능한 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 다음이 성립한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(d(dx_{i_1}\wedge \cdots \wedge dx_{i_k}) = 0\)</span>,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(d(\omega + \eta) = d\omega + d\eta\)</span>,</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(d(\omega \wedge \zeta) = d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta\)</span>,</p>
@@ -1405,7 +1405,7 @@ d(\omega \wedge \zeta) &amp;= \sum_{\alpha=1}^n D_\alpha (\omega_0 \zeta_0)dx_{\
 \end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle d(d \omega) = \sum_{i_1&lt;\cdots &lt;i_k} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}\)</span> 이다. 여기서 <span class="math inline">\(\displaystyle \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha = 0\)</span> 이므로 <span class="math inline">\(d(d\omega)=0\)</span> 이다.</p>
-<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(k\)</span> 에 대한 induction 으로 증명한다. <span class="math inline">\(k=0\)</span> 이면 <span class="math inline">\(d\omega = \sum_{i=1}^nD_i\omega dx_i\)</span> 이며</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(k\)</span> 에 대한 induction 으로 증명한다. <span class="math inline">\(k=0\)</span> 이면 <span class="math inline">\(d\omega = \sum_{i=1}^n(D_i\omega) dx_i\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
 F^\ast (d\omega)(\boldsymbol{p})(\boldsymbol{v}) &amp;= \sum_{i=1}^n (D_i\omega) (F'(\boldsymbol{p})(\boldsymbol{v})), \\[0.3em]
@@ -1487,9 +1487,16 @@ I\omega (\boldsymbol{x}) = \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdot
 \]</span></p>
 <p><span class="math inline">\(A\)</span> 가 별모양의 열린 집합이므로 우리는 아래와 같이 <span class="math inline">\(I\omega(\boldsymbol{x})\)</span> 를 정의 할 수 있다.</p>
 <p><span class="math display">\[
-I\omega (\boldsymbol{x}) = \sum_{i_1&lt;\cdots &lt;i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\boldsymbol{x})\, dt\right) x_{i\alpha} \, dx_1 \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+I\omega (\boldsymbol{x}) = \sum_{i_1&lt;\cdots &lt;i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\boldsymbol{x})\, dt\right) x_{i\alpha} \, dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
 \]</span></p>
-<p>여기서 <span class="math inline">\(\widehat{dx_{i_\alpha}}\)</span> 는 <span class="math inline">\(dx_1 \wedge \cdots dx_{i_l}\)</span> 에서 <span class="math inline">\(dx_{i_\alpha}\)</span> 만 빠졌음을 의미한다. 우리는 이제 <span class="math inline">\(\omega = I(d\omega)+ d(I\omega)\)</span> 임을 보일 것이다. 그렇다면 <span class="math inline">\(\omega = d(I\omega)\)</span> 이므로 <span class="math inline">\(d\omega = d^2(I\omega)=0\)</span> 이다. 그런데 <span class="math inline">\(\omega = I(d\omega)+ d(I\omega)\)</span> 를 보이는 것인 많이 지루하다.</p>
+<p>여기서 <span class="math inline">\(\widehat{dx_{i_\alpha}}\)</span> 는 <span class="math inline">\(dx_1 \wedge \cdots dx_{i_l}\)</span> 에서 <span class="math inline">\(dx_{i_\alpha}\)</span> 만 빠졌음을 의미한다. 우리는 이제 <span class="math inline">\(\omega = I(d\omega)+ d(I\omega)\)</span> 임을 보일 것이다. 그렇다면 <span class="math inline">\(\omega = d(I\omega)\)</span> 이므로 <span class="math inline">\(d\omega = d^2(I\omega)=0\)</span> 이다. <a href="3_4_integration.html#exr-CM_spivak_3_32" class="quarto-xref">연습문제&nbsp;<span>15.33</span></a> 를 사용하여 다음을 보일 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+d(I\omega) &amp;= l \cdot \sum_{i_1&lt;\cdots &lt;i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&amp;= \sum_{i_1&lt;\cdots &lt;i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l}) (t\boldsymbol{x}) \,dt\right) \\[0.3em]
+&amp;\qquad \qquad \qquad \qquad x_{i\alpha} dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+\]</span></p>
 </div>
 <p><br></p>
 </section>
