@@ -1587,25 +1587,42 @@ $A\subset \R^n$ $\bf{0}$ 주위의 열린 별모양 집합일 때 $A$ 에서 정
 $l$ 형식 $\omega$ 를 아래와 같이 정하자.
 $$
 \omega = \sum_{i_1<\cdots <i_l} \omega_{i_1,\ldots,i_l} dx_{i_1}\wedge \cdots \wedge dx_{i_l}
-$$
+$$ {#eq-thm_CM_poincare_lemma_1}
 
 $A$ 가 별모양의 열린 집합이므로 우리는 아래와 같이 $I\omega(\bf{x})$ 를 정의 할 수 있다.
 
 $$
-I\omega (\bf{x}) = \sum_{i_1<\cdots <i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\bf{x})\, dt\right) x_{i\alpha} \, dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
-$$
+\begin{aligned}
+I\omega (\bf{x}) &= \sum_{i_1<\cdots <i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\bf{x})\, dt\right) x_{i\alpha} \\
+& \qquad dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+$${#eq-thm_CM_poincare_lemma_2}
 
 여기서 $\widehat{dx_{i_\alpha}}$ 는 $dx_1 \wedge \cdots dx_{i_l}$ 에서 $dx_{i_\alpha}$ 만 빠졌음을 의미한다. 우리는 이제 $\omega = I(d\omega)+ d(I\omega)$ 임을 보일 것이다. 그렇다면 $\omega = d(I\omega)$ 이므로 $d\omega = d^2(I\omega)=0$ 이다. @exr-CM_spivak_3_32 를 사용하여 다음을 보일 수 있다.
 
 $$
 \begin{aligned}
 d(I\omega) &= l \cdot \sum_{i_1<\cdots <i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em]
-&= \sum_{i_1<\cdots <i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l}) (t\bf{x}) \,dt\right) \\[0.3em]
-&\qquad \qquad \qquad \qquad x_{i\alpha} dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+&+ \sum_{i_1<\cdots <i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l})  (t\bf{x}) \,dt\right) \,x_{i\alpha} \\[0.3em]
+&\qquad \qquad \qquad \qquad dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+$${#eq-thm_CM_poincare_lemma_3}
+
+
+이다. 우리는 또한 @eq-thm_CM_poincare_lemma_1 로부터
+
+$$
+d\omega = \sum_{i_1< \cdots < i_l} \sum_{j=1}^n D_j \omega_{i_1,\ldots,i_l} \cdot dx_j \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_l}
+$${#eq-thm_CM_poincare_lemma_4}
+
+
+임을 안다. @eq-thm_CM_poincare_lemma_4 를 @eq-thm_CM_poincare_lemma_2 에 대입하면
+
+$$
+\begin{aligned}
+I(d\omega) = \sum_{i_1<\cdots<i_l} \sum_{\alpha=1}^l(-1)^{\alpha-1} \left(\int_0^1 \right)
 \end{aligned}
 $$
-
-
 
 
 

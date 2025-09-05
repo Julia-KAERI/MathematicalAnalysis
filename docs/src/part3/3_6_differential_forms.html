@@ -1482,19 +1482,32 @@ I\omega (\boldsymbol{x}) = \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdot
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(l\)</span> 형식 <span class="math inline">\(\omega\)</span> 를 아래와 같이 정하자. <span class="math display">\[
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(l\)</span> 형식 <span class="math inline">\(\omega\)</span> 를 아래와 같이 정하자. <span id="eq-thm_CM_poincare_lemma_1"><span class="math display">\[
 \omega = \sum_{i_1&lt;\cdots &lt;i_l} \omega_{i_1,\ldots,i_l} dx_{i_1}\wedge \cdots \wedge dx_{i_l}
-\]</span></p>
+\tag{17.24}\]</span></span></p>
 <p><span class="math inline">\(A\)</span> 가 별모양의 열린 집합이므로 우리는 아래와 같이 <span class="math inline">\(I\omega(\boldsymbol{x})\)</span> 를 정의 할 수 있다.</p>
-<p><span class="math display">\[
-I\omega (\boldsymbol{x}) = \sum_{i_1&lt;\cdots &lt;i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\boldsymbol{x})\, dt\right) x_{i\alpha} \, dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
-\]</span></p>
+<p><span id="eq-thm_CM_poincare_lemma_2"><span class="math display">\[
+\begin{aligned}
+I\omega (\boldsymbol{x}) &amp;= \sum_{i_1&lt;\cdots &lt;i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\boldsymbol{x})\, dt\right) x_{i\alpha} \\
+&amp; \qquad dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+\tag{17.25}\]</span></span></p>
 <p>여기서 <span class="math inline">\(\widehat{dx_{i_\alpha}}\)</span> 는 <span class="math inline">\(dx_1 \wedge \cdots dx_{i_l}\)</span> 에서 <span class="math inline">\(dx_{i_\alpha}\)</span> 만 빠졌음을 의미한다. 우리는 이제 <span class="math inline">\(\omega = I(d\omega)+ d(I\omega)\)</span> 임을 보일 것이다. 그렇다면 <span class="math inline">\(\omega = d(I\omega)\)</span> 이므로 <span class="math inline">\(d\omega = d^2(I\omega)=0\)</span> 이다. <a href="3_4_integration.html#exr-CM_spivak_3_32" class="quarto-xref">연습문제&nbsp;<span>15.33</span></a> 를 사용하여 다음을 보일 수 있다.</p>
-<p><span class="math display">\[
+<p><span id="eq-thm_CM_poincare_lemma_3"><span class="math display">\[
 \begin{aligned}
 d(I\omega) &amp;= l \cdot \sum_{i_1&lt;\cdots &lt;i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em]
-&amp;= \sum_{i_1&lt;\cdots &lt;i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l}) (t\boldsymbol{x}) \,dt\right) \\[0.3em]
-&amp;\qquad \qquad \qquad \qquad x_{i\alpha} dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+&amp;+ \sum_{i_1&lt;\cdots &lt;i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l})  (t\boldsymbol{x}) \,dt\right) \,x_{i\alpha} \\[0.3em]
+&amp;\qquad \qquad \qquad \qquad dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+\tag{17.26}\]</span></span></p>
+<p>이다. 우리는 또한 <a href="#eq-thm_CM_poincare_lemma_1" class="quarto-xref">식&nbsp;<span>17.24</span></a> 로부터</p>
+<p><span id="eq-thm_CM_poincare_lemma_4"><span class="math display">\[
+d\omega = \sum_{i_1&lt; \cdots &lt; i_l} \sum_{j=1}^n D_j \omega_{i_1,\ldots,i_l} \cdot dx_j \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_l}
+\tag{17.27}\]</span></span></p>
+<p>임을 안다. <a href="#eq-thm_CM_poincare_lemma_4" class="quarto-xref">식&nbsp;<span>17.27</span></a> 를 <a href="#eq-thm_CM_poincare_lemma_2" class="quarto-xref">식&nbsp;<span>17.25</span></a> 에 대입하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+I(d\omega) = \sum_{i_1&lt;\cdots&lt;i_l} \sum_{\alpha=1}^l(-1)^{\alpha-1} \left(\int_0^1 \right)
 \end{aligned}
 \]</span></p>
 </div>
