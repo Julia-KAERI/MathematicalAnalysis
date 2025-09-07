@@ -1159,29 +1159,14 @@ $\omega (\bf{p})\in \Omega^k(T_\bf{p}(\R^n))$ 를 $\R^n_\bf{p}$ 에서의 $k$-�
 
 $$
 \omega(\bf{p}) = \sum_{i_1<\cdots <i_k} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right]
-$$ {#eq-CM_form_of_differential_form}
+$$
 
 ::: 
 :::
 
 </br>
 
-이제부터 $\omega_{i_1,\ldots,i_k}\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}$ 와 같은 표현을 많이 사용할텐다 이것을 항상 이렇게 사용하기는 불편하기 때문에 좀 더 간략한 표현을 사용하고자 한다.
-
-$n$ 차원 벡터공간을 다룰 때 $I = (i_1,\ldots,i_k)$ 가 $1\le i_1<\cdots <i_k\le n$ 인 $k$-tuple 이라고 하자.tuple 은 유한 순서집합을 말한다. 그리고 $[I]$ 는 $n$ 차원 집합에서 $1\le i_1<\cdots <i_k\le n$ 인 모든 $k$-tuple 의 집합이며 그 인덱스를 $I$ 로 표기한다는 것을 의미한다. 이런 의미에서 @eq-CM_form_of_differential_form 는 아래와 같이 표기할 수 있다.
-
-$$
-\boxed{
-\quad\omega(\bf{p}) = \sum_{[I]} \omega_I(\bf{p}) d\varphi_I(\bf{p}) \qquad \text{or} \qquad \omega = \sum_{[I]} \omega_I d\varphi_I \quad
-}
-$$
-
-여기서 $\omega_I(\bf{p}) = \omega_{i_1,\ldots,i_k}(\bf{p})$ 이고 $d\varphi_I(\bf{p}) = d\varphi_{i_1}(\bf{p})\wedge \cdots \wedge d\varphi_{i_k}(\bf{p})$ 이다.
-
-
-
-
-각각의 $\omega_{I}(\bf{p})$ 가 연속이거나 미분가능 할 때 $\omega (\bf{p})$ 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 $k$-형식이 미분가능하다고 할 때 $C^\infty$ 를 의미한다. 
+각각의 $\omega_{i_1,\ldots,\,i_k}(\bf{p})$ 가 연속이거나 미분가능 할 때 $\omega (\bf{p})$ 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 $k$-형식이 미분가능하다고 할 때 $C^\infty$ 를 의미한다. 
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
@@ -1206,9 +1191,10 @@ $k$-형식 $\omega,\, \zeta$, $m$-형식 $\eta$, 스칼라장 $f$ 에 대해 연
 
 $$
 \begin{aligned}
-\omega (\bf{p}) + \zeta (\bf{p}) &:= \sum_{[I]} \left(\omega_I(\bf{p}) + \zeta_I(\bf{p})\right) \cdot d\varphi_I(\bf{p}), \\[0.3em]
-(f \cdot \omega)(\bf{p})  &:=  \sum_{[I]} \left(f(\bf{p}) \cdot \omega_I(\bf{p}) \right)\cdot d\varphi_I(\bf{p}), \\[0.3em]
-\omega (\bf{p})\wedge \eta (\bf{p}) &:= \sum_{[I]} \sum_{[J]} \omega_{I}(\bf{p})\cdot \eta_{J}(\bf{p})  \left[d\varphi_I(\bf{p}) \wedge d\varphi_{J}(\bf{p}) \right] 
+\omega (\bf{p}) + \zeta (\bf{p}) &:= \sum_{i_1<\cdots <i_k} \left(\omega_{i_1,\ldots,\,i_k}(\bf{p}) + \zeta_{i_1,\ldots,\,i_k}(\bf{p})\right) \cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right], \\[0.3em]
+(f \cdot \omega)(\bf{p})  &:=  \sum_{i_1<\cdots <i_k} \left(f(\bf{p}) \cdot \omega_{i_1,\ldots,\,i_k}(\bf{p}) \right)\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right], \\[0.3em]
+\omega (\bf{p})\wedge \eta (\bf{p}) &:= \sum_{i_1<\cdots <i_{k}} \sum_{j_1<\cdots <j_m} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \eta_{j_1,\ldots,j_m}(\bf{p}) \\[0.3em]
+&\qquad\qquad  \qquad \qquad\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p}) \wedge \varphi_{j_1}(\bf{p}) \cdots \wedge \varphi_{j_m}(\bf{p})\right] 
 \end{aligned}
 $$
 
@@ -1240,13 +1226,13 @@ $$ {#eq-CM_differential_1-form}
 $x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $T_{\bf{p}}(\R^n)$ 의 표준기저벡터 $(\bf{e}_j)_\bf{p}$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
 
 $$
-\omega (\bf{p}) = \sum_{[I]} \omega_{I}(\bf{p}) dx_I(\bf{p}).
+\omega (\bf{p}) = \sum_{i_1< \cdots <i_k} \omega_{i_1,\ldots,i_k}(\bf{p})\cdot \left[ dx_{i_1}(\bf{p})\wedge \cdots \wedge dx_{i_k}(\bf{p})\right].
 $$
 
 탄젠트 공간을 지정하는 $(\bf{p})$ 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.
 
 $$
-\omega = \sum_{[I]} \omega_{I}\cdot dx_{I}.
+\omega = \sum_{i_1< \cdots <k_k} \omega_{i_1,\ldots,i_k}\cdot \left[ dx_{i_1} \wedge \cdots \wedge dx_{i_k} \right].
 $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -1427,11 +1413,18 @@ $$
 
 #### 외미분
 
-$\R^n$ 에서 정의된 $k$-형식 $\omega = \sum_{[I]} \omega_{I}dx_{I}$ 에 대한 $\omega$ 의 **외미분 (external derivative)** $d\omega$ 를 아래와 같이 정의한다.
+$k$-형식 
+
+$$
+\omega = \sum_{i_1<\cdots<i_k} \omega_{i_1,\ldots,i_k}dx_{i_1}\wedge \cdots \wedge dx_{i_k}
+$$
+
+에 대한 $\omega$ 의 **외미분 (external derivative)** $d\omega$ 를 아래와 같이 정의한다.
 
 $$
 \begin{aligned}
-d\omega :=& \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx_\alpha \wedge dx_{I}.
+d\omega :=& \sum_{i_1<\cdots <i_k} \left(d\omega_{i_1,\ldots,i_k}\right) \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k} \\[0.3em]
+=& \sum_{i_1<\cdots<i_k} \sum_{\alpha=1}^n D_\alpha (\omega_{i_1,\ldots,i_k}) \,dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}.
 \end{aligned}
 $$ {#eq-CM_def_of_differential_of_form}
 
@@ -1446,7 +1439,7 @@ $k$-형식 $\omega$ 에 대해 $d\omega$ 는 $k+1$ 형식이 된다는 것은 �
 
 $k$-형식 $\omega,\, \eta$ 과 $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
-&emsp;($1$) $d(dx_{I}) = 0$, 
+&emsp;($1$) $d(dx_{i_1}\wedge \cdots \wedge dx_{i_k}) = 0$, 
 
 &emsp;($2$) $d(\omega + \eta) = d\omega + d\eta$, 
 
@@ -1464,24 +1457,17 @@ $k$-형식 $\omega,\, \eta$ 과 $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to 
 
 ($2$) $D_\alpha (\omega_\cdots + \eta_\cdots )\,dx_\alpha = D_\alpha \omega_\cdots dx_\alpha + D_\alpha \eta_\cdots dx_\alpha$ 이다.
 
-($3$) $\omega = \omega_I dx_{I}$, $\zeta = \zeta_0 dx_{J}$ 이라고 하자. 
+($3$) $\omega = \omega_0 dx_{i_1}\wedge \cdots \wedge dx_{i_k}$, $\zeta = \zeta_0 dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}$ 이라고 하자. 
 $$
 \begin{aligned}
-d(\omega \wedge \zeta) &= \sum_{\alpha=1}^n D_\alpha (\omega_I \zeta_J)dx_{\alpha} dx_{I}\wedge dx_{J}\\[0.3em]
-&= \sum_{\alpha} D_\alpha (\omega_I)\,dx_{\alpha} \wedge dx_{I} \wedge \zeta + \omega \wedge (-1)^k D_\alpha (\zeta_J) dx_{\alpha} dx_{J}\\[0.3em]
-&=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta
+d(\omega \wedge \zeta) &= \sum_{\alpha=1}^n D_\alpha (\omega_0 \zeta_0)dx_{\alpha} dx_{i_1} \wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
+&= \sum_{\alpha} D_\alpha (\omega_0)\,dx_{\alpha} \wedge dx_{i_1} \wedge \cdots \wedge dx_{i_k} \wedge \zeta \\[0.3em]
+&\qquad + \sum_{\alpha} \omega \wedge (-1)^k D_\alpha (\zeta_0) dx_{\alpha} dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
+&=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta.
 \end{aligned}
 $$
 
-이다. $\sum_{[I]}\sum_{[J]}$ 를 고려해도 형태가 유지된다는 것은 쉽게 알 수 있다.
-
-($4$) $\displaystyle d(d \omega) = \sum_{[I]} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha \wedge dx_{I}$ 이다. 여기서 
-
-$$
-\sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha = 0
-$$ 
-
-이므로 $d(d\omega)=0$ 이다.
+($4$) $\displaystyle d(d \omega) = \sum_{i_1<\cdots <i_k} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}$ 이다. 여기서 $\displaystyle \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha = 0$ 이므로 $d(d\omega)=0$ 이다.
 
 ($5$) $k$ 에 대한 induction 으로 증명한다. $k=0$ 이면 $d\omega = \sum_{i=1}^n(D_i\omega) dx_i$ 이며
 
@@ -1585,192 +1571,11 @@ $$ {#eq-CM_Iomega_transform}
 
 $I\omega$ 의 정의가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 $\omega$ 가 정의되는 열린 집합 $A\subset \R^n$ 이 $\bf{x}\in A$ 일 때 $0$ 부터 $\bf{x}$ 까지의 선분이 $A$ 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 $\bf{0}$ 주위의 **별모양 집합 (star shaped set)** 이라고 한다. 
 
-
-
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_differentiable_homotopy}
-
-#### 미분가능한 호모토피
-
-$A\subset \R^n,\,B\subset \R^m$ 이 열린 집합이고 $G,\,H \to A\to B$ 가 $C^\infty$ 사상이라고 하자. 이 때 어떤 $C^\infty$ 사상 $K:A\times [0,\,1] \to B$ 가 존재하여
-
-$$
-K(\bf{x},\,0) = G(\bf{x}),\qquad K(\bf{x},\,1) = H(\bf{x})
-$$
-
-일 때 $K$ 를 $G,\,H$ 사이의 **미분가능한 호모토피(differentiable homotopy)** 라고 하고 $G$ 와 $H$ 는 differentiably homotopic 하다고 한다.
-
-::: 
-:::
-
-</br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#lem-CM_for_poincare_lemma}
-
-$A\subset \R^n,\, B\subset \R^m$ 이 열린 집합이며 $G,\,H:A\to B$ 가 differentiably homotopic 한 $C^\infty$-급 함수 라면 어떤 선형변환 $\mathcal{P}\in \mathcal{L}(\Omega^{k+1}(B),\, \Omega^{k}(A))$ 가 존재하여 $k>0$-형식 $\omega$ 에 대해서는
-
-$$
-d\mathcal{P}\omega +\mathcal{P}d\omega = H^\ast \omega - G^\ast \omega
-$$
-
-이며, $0$-형식 $f :\R^m \to \R$ 에 대해서는
-
-$$
-\mathcal{P}df = H^\ast f - G^\ast f
-$$
-
-이다.
-
-:::
-</div>
-
-::: {.proof}
-
-**[Step 1].** 아주 기본적인 경우를 생각하자. $\R^n$ 에서의 열린 집합 $A$ 에 대해 $A\times [0,\,1]$ 을 포함하는 열린 집합 $U$ 를 생각하자. $\alpha,\,\beta : A\to U$ 가 다음과 같이 주어졌다고 하자.
-
-$$
-\alpha (\bf{x}) = (\bf{x},\,0),\qquad \beta(\bf{x}) = (\bf{x},\,1).
-$$
-
-그렇다면 $\alpha$ 와 $\beta$ 는 differentiably homotopic 하다. 이제 $U$ 에서 정의된 임의의 $k+1$ 형식 $\eta$ 에 대해 $P\eta$ 는 $A$ 에서의 $k$-형식이며 아래 두 조건을 만족하는 $P\in \mathcal{L}(\Omega^{k+1}(U),\, \Omega^{k}(A))$ 를 구성해보자.
-
-$$
-\begin{aligned}
-dP\omega + Pd\omega = \beta^\ast \omega - \alpha^\ast \omega  & & \text{if order }\omega > 0, \\[0.3em]
-Pdf = \beta^\ast f - a\ast f & & \text{if order }f = 0.
-\end{aligned}
-$$ {#eq-thm-CM_for_poincare_lemma_1_1}
-
-$\omega \in \Omega^{k+1}(A \times I)$ 에 대해 $\alpha^\ast,\, \beta ^\ast : \Omega^{k+1}(A \times I) \to \Omega^{k+1}(A)$ 는 $\bf{x}\in A$ 에 대해 
-
-$$
-\begin{aligned}
-(\alpha^\ast \omega) (\bf{x}) &= \omega (\beta (\bf{x})) (\beta(\bf{x})) = \left(\omega (\bf{x},\,0)\right) (\bf{x},\,0) \\[0.3em]
-(\beta^\ast \omega) (\bf{x}) &=\left(\omega (\bf{x},\,1)\right) (\bf{x},\,1) 
-\end{aligned}
-$$ {#eq-thm-CM_for_poincare_lemma_1_1_1}
-
-이다. 
-
-$g$ 가 $A\times I$ 에서 정의된 연속인 스칼라 함수일 때 $\mathcal{I}g$ 를 다음과 같이 정의한다.
-
-$$
-\mathcal{I}(g) (\bf{x}) := \int_0^1 g(\bf{x},\,t)\, dt.
-$$
-
-$\R^n$ 에서의 $(i_1,\ldots,\,i_k,\, i_{k+1})$, $1\le i_1<\cdots <i_{k+1}<n$ 를 $I$ 라고 하고 $k$ 까지만 있는 것을 $J$ 라고 인덱스를 붙이자. $A\times [0,\,1]$ 는 $R^{n+1}$ 이며 $\Omega^{k+1}(A\times [0,\,1])$ 는 $A$ 에서의 $dx_I$ 나 $A$ 에서 $k$ 개 $[0,\,1]$ 에서 한개의 변수를 취하는 (이 변수를 $t$ 라고 하자) $dx_J\wedge dt$ 의 선형결합이므로 $\omega \in \Omega^{k+1}(A\times [0,\,1])$ 일 때
-
-$$
-\omega = \sum_{[I]} f_I dx_I + \sum_{[J]} g_J dx_J \wedge dt
-$$
-
-라고 쓸 수 있다. 이 때 $P\omega$ 를 다음과 같이 정의한다.
-
-$$
-P\omega := P\left(\sum_{[I]} f_I dx_I + \sum_{[J]} g_J dx_J \wedge dt\right) = (-1)^k (\mathcal{I}g_J)dx_J
-$$ {#eq-thm-CM_for_poincare_lemma_1_2}
-
-이에 대해 다음 두 사실은 쉽게 보일 수 있다.
-
-&emsp;($1$) $P$ 는 선형변환이다. 
-
-&emsp;($2$) $g_J$ 와 $\mathcal{I}g_J$ 도 $C^\infty$-급이므로 $P\omega$ 도 $C^\infty$-급이다.
-
-$\eta$ 가 $1$-형식이라면 $\eta = \sum_i f_i dx_i + gdt$ 이며 $P\omega = \mathcal{I}g$ 이다.
-
-**[Step 2].** $I$ 와 $J$ 가 각각 $1,\ldots,\,n$ 에서 증가하는 $k+1$ 개와 $k$ 개의 정수로 이루어진 tuple 이 아닌 임의의 $k+1$, $k$ tuple 일 때도 @eq-thm-CM_for_poincare_lemma_1_2 이 성립한다. 즉 $I, J$ 가 임의의 $k+1$, $k$ tuple 일 때
-
-$$
-P(f\,dx_I) =0,\qquad P(g\, dx_J\wedge dt) = (-1)^k (\mathcal{I}g)\,dx_J
-$$
-
-이다. 
-
-**[Step 3].** 우선 $k=0$ 인 경우 @eq-thm-CM_for_poincare_lemma_1_1 가 성립함을 보이자.
-
-$$
-\begin{aligned}
-P(df) &= P\left(\sum_{j=1}^n D_j f dx_j\right) + P\left(D_t f\, dt\right) = \mathcal{I}D_tf \\[0.3em]
-&=f\circ \beta - f \circ \alpha = \beta^\ast f - \alpha ^\ast f
-\end{aligned}
-$$
-
-이제 $k>0$ 인 경우에도 @eq-thm-CM_for_poincare_lemma_1_1 가 성립함을 보이자. @eq-thm-CM_for_poincare_lemma_1_1_1 로 부터
-
-$$
-\alpha^\ast (dx_i) = \beta^\ast (dx_i) = dx_i, \qquad \alpha^\ast (dt) = \beta^\ast (dt) = 0
-$$ {#eq-thm-CM_for_poincare_lemma_1_3}
-
-이다. $d,\, P,\, \alpha,\, \beta$ 모두 선형함수 이므로 $\omega = \sum_{[I]}f_I dx_I + \sum_{[J]}g_J dx_J\wedge dt$ 에서 $\omega = f_Idx_I + g_J dx_J \wedge dt$ 인 경우만 생각해도 된다. $P(f_Idx_J)=0$ 이므로
-
-$$
-\begin{aligned}
-\underbrace{dP(f_Idx_I)}_{=0} + Pd(f_Idx_I) &= \sum_{j=1}^n \underbrace{P\left(D_j f_I dx_j \wedge dx_I\right)}_{=0} + P\left(D_t f_I dt \wedge dx_I\right) \\[0.3em]
-&=(-1)^{k+1} P\left(D_t f_I dx_I \wedge dt \right) = \mathcal{I}(D_t f_I) x_I \\[0.3em]
-&= [f_I \circ \beta - f_I \circ \alpha]\, dx_I
-\end{aligned}
-$$
-
-이며
-
-$$
-\begin{aligned}
-\beta^\ast (f_Idx_I) - \alpha^\ast (f_I dx_I) = [f_I\circ \beta - f_I\circ \alpha]\,dx_I
-\end{aligned}
-$$
-
-이다. 이제 $g_J dx_J \wedge dt$ 에 적용했을 때를 알아보자.
-$$
-\begin{aligned}
-dP(g_J dx_J \wedge dt) &+ Pd(g_J dx_J \wedge dt) \\[0.3em]
-&= d\left[(-1)^k \mathcal{I}g_J dx_J\right] + P\left(\sum_{j=1}^n D_j g_J dx_j \wedge dx_J \wedge dt\right) \\[0.3em]
-&= (-1)^k \sum_{j=1}^n D_j (\mathcal{I}g_J)\, dx_j \wedge dx_i + (-1)^{k+1} \mathcal{I}(D_j g_J) dx_j \wedge dx_J \\[0.3em]
-&= 0
-\end{aligned}
-$$
-
-이다. 또한 @eq-thm-CM_for_poincare_lemma_1_3 으로부터 
-
-$$
-\beta^\ast (g_J dx_J \wedge dt) - \alpha^\ast (gdx_J \wedge dt) = 0
-$$
-
-이다. 결론적으로 우리는 임의의 $k$ 형식 $\eta$ 에 대해 @eq-thm-CM_for_poincare_lemma_1_1 이 성립함을 보였다.
-
-**[Step 4].** 이제 일반적인 경우에 성립한다는 것을 보이자. 명제의 가정에 의해 $G,\, H: A \to B$ 사이에 미분가능한 호모토피 $K : A\times I \to B$ 가 존재한다. $\alpha,\,\beta$ 그리고 $P$ 는 Step 1 에서 정의된 그것이라고 하자. 그리고 선형변환 $\mathcal{P} \in \mathcal{L}(\Omega^{k+1}(B),\Omega^k(A))$ 를 아래와 같이 정의하자.
-
-$$
-\mathcal{P}\omega := P(K^\ast \omega).
-$$
-
-$K\circ \alpha = G$, $K \circ \beta = H$ 이다. 
-
-$$
-\begin{aligned}
-d\mathcal{P}\omega  + \mathcal{P}d\omega &=dP(K^\ast \omega) + P(K^\ast d\omega) &;(1)\\[0.3em]
-&= dP(K^\ast \omega) + P(d(K^\ast \omega)) &;(2)\\[0.3em]
-&= \beta^\ast (K^\ast \omega) - \alpha^\ast (K^\ast \omega) \\[0.3em]
-&= H^\ast \omega - G^\ast \omega
-\end{aligned}
-$$
-
-::: {.callout-tip appearance="minimal"}
-&emsp; ($1$) @prp-CM_basic_properties_of_differential_of_form 에 의해 $K^\ast d\omega = d(K^\ast \omega)$ 이다. 
-
-&emsp; ($2$) @eq-thm-CM_for_poincare_lemma_1_1
-:::
-
-$k=0$ 일 때도 같은 방법으로 보일 수 있다. $\square$
-
-:::
-
-</br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_poincare_lemma}
 
-#### 푸앙카레 보조정리
+#### 푸앙카레 정리
 
 $A\subset \R^n$ $\bf{0}$ 주위의 열린 별모양 집합일 때 $A$ 에서 정의된 모든 닫힌 형식은 완전 형식이다.
 
@@ -1779,31 +1584,79 @@ $A\subset \R^n$ $\bf{0}$ 주위의 열린 별모양 집합일 때 $A$ 에서 정
 
 ::: {.proof}
 
-@lem-CM_for_poincare_lemma 를 사용한다. $H:A \to A$ 는 항등사상이며 $G:A\to A$ 는 어떤 $\bf{p}\in A$ 에 대해 $G(\bf{x})=\bf{p}$ 인 상수함수라고 하자. 아래의 $K$ 는 $H$ 와 $G$ 사이의 미분가능한 호모토피이다.
+$l$ 형식 $\omega$ 는 아래와 같은 형태이다.
+$$
+\omega = \sum_{i_1<\cdots <i_l} \omega_{i_1,\ldots,i_l} dx_{i_1}\wedge \cdots \wedge dx_{i_l}
+$$ {#eq-thm_CM_poincare_lemma_1}
+
+
+우리가 어떤 함수 $I : \Omega^l(\R^n) \to \Omega^{l-1}(\R^n)$ 가 어떤 $\omega\in\Omega^l(\R^n)$ 에 대해서도 ($i$) $I(0)=0$ 이며 ($ii$) $\omega = I(d\omega) + d(I\omega)$ 를 만족하도록 정의 하였다고 하자. $d\omega = 0$ 이면 $\omega = d(I\omega)$ 이므로 우리는 푸앙카레 정리를 증명한 것이 된다.  
+
+$A$ 가 별모양의 열린 집합이므로 우리는 아래와 같이 $I\omega(\bf{x})$ 를 정의 할 수 있다.
 
 $$
-K(\bf{x},\,t) = tH(\bf{x}) + (1-t)G(\bf{x}).
-$$
+\begin{aligned}
+I\omega (\bf{x}) &:= \sum_{i_1<\cdots <i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\bf{x})\, dt\right) x_{i\alpha} \\
+& \qquad dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+$${#eq-thm_CM_poincare_lemma_2}
 
-@lem-CM_for_poincare_lemma 의 $\mathcal{P}$ 를 사용한다. $f$ 가 $A$ 에서의 $0$-형식 이라면
-
-$$
-\mathcal{P}(df) = H^\ast f - G^\ast f = f\circ h - f \circ g
-$$
-
-이다. 그런데 $df=0$ 이므로 $f(\bf{x}) = f(\bf{p})$ 이므로 $f$ 는 $A$ 에서의 상수함수이다. 
-
-$k$-형식 $\omega$ 에 대해 생각하면
+여기서 $\widehat{dx_{i_\alpha}}$ 는 $dx_1 \wedge \cdots dx_{i_l}$ 에서 $dx_{i_\alpha}$ 만 빠졌음을 의미한다. 우리는 이제 $\omega = I(d\omega)+ d(I\omega)$ 임을 보일 것이다. 그렇다면 $\omega = d(I\omega)$ 이므로 $d\omega = d^2(I\omega)=0$ 이다. @exr-CM_spivak_3_32 를 사용하여 다음을 보일 수 있다.
 
 $$
-d\mathcal{P}\omega + \mathcal{P}d\omega = H^\ast \omega - G^\ast \omega = \omega 
+\begin{aligned}
+d(I\omega) &= l \cdot \sum_{i_1<\cdots <i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&+ \sum_{i_1<\cdots <i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l})  (t\bf{x}) \,dt\right) \,x_{i\alpha} \\[0.3em]
+&\qquad \qquad \qquad \qquad dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+\end{aligned}
+$${#eq-thm_CM_poincare_lemma_3}
+
+
+이다. 우리는 또한 @eq-thm_CM_poincare_lemma_1 로부터
+
+$$
+d\omega = \sum_{i_1< \cdots < i_l} \sum_{j=1}^n D_j \omega_{i_1,\ldots,i_l} \cdot dx_j \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_l}
+$${#eq-thm_CM_poincare_lemma_4}
+
+
+임을 안다. @eq-thm_CM_poincare_lemma_4 를 @eq-thm_CM_poincare_lemma_2 에 대입아여 계산하면 된다. 우선 $\sum_{i_1<\cdots<i_l}$ 과 $\sum_\alpha$ 를 제외하고 정해진 $i_1,\ldots,i_l,\,\alpha$ 에 대해 생각해보면
+
+$$
+\begin{aligned}
+\sum_{j=1}^n&(-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \underbrace{\left(D_j[\omega_{i_1,\ldots,i_l}(tx)]\right)}_{=tD_j(\omega_{i_1,\ldots,i_l})(tx)}\,dt\right) x_{i\alpha}\, dx_j \wedge dx_{i_1}\wedge \cdots \wedge \widehat{x_{i_\alpha}}\wedge \cdots \wedge dx_l \\[0.3em]
+&=\sum_{j=1}^n (-1)^{\alpha-1} \left(\int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l}) (tx)\, dt\right) x_{i\alpha}\, dx_j \wedge dx_{i_1}\wedge \cdots \wedge \widehat{x_{i_\alpha}}\wedge \cdots \wedge dx_l
+\end{aligned}
 $$
 
-이다. 따라서 $d\omega =0$ 이라면 $d(\mathcal{P}\omega ) = \omega$ 이다. $\square$
+이다. $j=i_\alpha$ 일 경우 에는 
 
+$$
+\begin{aligned}
+\delta_{j,i_\alpha} & x_{i\alpha}\, dx_j \wedge dx_{i_1}\wedge \cdots \wedge \widehat{x_{i_\alpha}}\wedge \cdots \wedge dx_l =(-1)^{\alpha-1} x_j dx_{i_1}\wedge \cdots \wedge x_{i_l}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+I(d\omega) &= \sum_{i_1<\cdots<i_l} \sum_{\alpha=1}^l \left(\int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l})(tx)\,dt \right) x_j \,dx_{i_1}\wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&-\sum_{i_1<\cdots<i_l} \sum_{j=1}^n\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l})(tx)\,dt\right)x_{i_\alpha}  \\[0.3em]
+&\qquad \qquad \qquad dx_j \wedge dx_{i-1}\wedge \cdots \wedge \widehat {dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}.
+\end{aligned}
+$${#eq-thm_CM_poincare_lemma_5}
+
+@eq-thm_CM_poincare_lemma_3 과 @eq-thm_CM_poincare_lemma_5 를 더하면 $\sum$ 이 세게 붙은 항은 서로 상쇄되므로
+
+$$
+\begin{aligned}
+d(I\omega) + I(d\omega) &= l \cdot \sum_{i_1<\cdots <i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em] 
+&+ \sum_{i_1<\cdots<i_l} \sum_{\alpha=1}^l(-1)^{\alpha-1} \left(\int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l}(tx)\,dt \right) x_j \,dx_{i_1}\wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&= \sum_{i_1<\cdots<i_l} \left(\int_0^1 \dfrac{d}{dt} \left[t^l x_j D_j (\omega_{i_1,\ldots,i_l}) (tx)\right]\,dt\right)\,dx_{i_1}\wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&=\sum_{i_1<\cdots<i_l} \omega_{i_1,\ldots,i_l} dx_{i_1}\wedge \cdots \wedge dx_{i_l} \\[0.3em]
+&= \omega. \square
+\end{aligned}
+$$
 
 :::
-
 
 </br>
 

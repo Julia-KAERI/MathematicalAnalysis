@@ -1169,15 +1169,23 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <div class="callout-body-container">
 <div id="def-CM_differential_form" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 17.12 (미분 형식)</strong></span> <span class="math inline">\(\omega (\boldsymbol{p})\in \Omega^k(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 를 <span class="math inline">\(\mathbb{R}^n_\boldsymbol{p}\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 은 아래의 형태이다.</p>
-<p><span class="math display">\[
+<p><span id="eq-CM_form_of_differential_form"><span class="math display">\[
 \omega(\boldsymbol{p}) = \sum_{i_1&lt;\cdots &lt;i_k} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right]
-\]</span></p>
+\tag{17.19}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>각각의 <span class="math inline">\(\omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\)</span> 가 연속이거나 미분가능 할 때 <span class="math inline">\(\omega (\boldsymbol{p})\)</span> 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 <span class="math inline">\(k\)</span>-형식이 미분가능하다고 할 때 <span class="math inline">\(C^\infty\)</span> 를 의미한다.</p>
+<p>이제부터 <span class="math inline">\(\omega_{i_1,\ldots,i_k}\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}\)</span> 와 같은 표현을 많이 사용할텐다 이것을 항상 이렇게 사용하기는 불편하기 때문에 좀 더 간략한 표현을 사용하고자 한다.</p>
+<p><span class="math inline">\(n\)</span> 차원 벡터공간을 다룰 때 <span class="math inline">\(I = (i_1,\ldots,i_k)\)</span> 가 <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_k\le n\)</span> 인 <span class="math inline">\(k\)</span>-tuple 이라고 하자.tuple 은 유한 순서집합을 말한다. 그리고 <span class="math inline">\([I]\)</span> 는 <span class="math inline">\(n\)</span> 차원 집합에서 <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_k\le n\)</span> 인 모든 <span class="math inline">\(k\)</span>-tuple 의 집합이며 그 인덱스를 <span class="math inline">\(I\)</span> 로 표기한다는 것을 의미한다. 이런 의미에서 <a href="#eq-CM_form_of_differential_form" class="quarto-xref">식&nbsp;<span>17.19</span></a> 는 아래와 같이 표기할 수 있다.</p>
+<p><span class="math display">\[
+\boxed{
+\quad\omega(\boldsymbol{p}) = \sum_{[I]} \omega_I(\boldsymbol{p}) d\varphi_I(\boldsymbol{p}) \qquad \text{or} \qquad \omega = \sum_{[I]} \omega_I d\varphi_I \quad
+}
+\]</span></p>
+<p>여기서 <span class="math inline">\(\omega_I(\boldsymbol{p}) = \omega_{i_1,\ldots,i_k}(\boldsymbol{p})\)</span> 이고 <span class="math inline">\(d\varphi_I(\boldsymbol{p}) = d\varphi_{i_1}(\boldsymbol{p})\wedge \cdots \wedge d\varphi_{i_k}(\boldsymbol{p})\)</span> 이다.</p>
+<p>각각의 <span class="math inline">\(\omega_{I}(\boldsymbol{p})\)</span> 가 연속이거나 미분가능 할 때 <span class="math inline">\(\omega (\boldsymbol{p})\)</span> 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 <span class="math inline">\(k\)</span>-형식이 미분가능하다고 할 때 <span class="math inline">\(C^\infty\)</span> 를 의미한다.</p>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_0_form_and_1_form" class="theorem example">
@@ -1195,10 +1203,9 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <p><span class="theorem-title"><strong>정의 17.13 (미분 형식의 연산)</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \zeta\)</span>, <span class="math inline">\(m\)</span>-형식 <span class="math inline">\(\eta\)</span>, 스칼라장 <span class="math inline">\(f\)</span> 에 대해 연산이 아래와 같이 정의된다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\omega (\boldsymbol{p}) + \zeta (\boldsymbol{p}) &amp;:= \sum_{i_1&lt;\cdots &lt;i_k} \left(\omega_{i_1,\ldots,\,i_k}(\boldsymbol{p}) + \zeta_{i_1,\ldots,\,i_k}(\boldsymbol{p})\right) \cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right], \\[0.3em]
-(f \cdot \omega)(\boldsymbol{p})  &amp;:=  \sum_{i_1&lt;\cdots &lt;i_k} \left(f(\boldsymbol{p}) \cdot \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p}) \right)\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right], \\[0.3em]
-\omega (\boldsymbol{p})\wedge \eta (\boldsymbol{p}) &amp;:= \sum_{i_1&lt;\cdots &lt;i_{k}} \sum_{j_1&lt;\cdots &lt;j_m} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \eta_{j_1,\ldots,j_m}(\boldsymbol{p}) \\[0.3em]
-&amp;\qquad\qquad  \qquad \qquad\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p}) \wedge \varphi_{j_1}(\boldsymbol{p}) \cdots \wedge \varphi_{j_m}(\boldsymbol{p})\right]
+\omega (\boldsymbol{p}) + \zeta (\boldsymbol{p}) &amp;:= \sum_{[I]} \left(\omega_I(\boldsymbol{p}) + \zeta_I(\boldsymbol{p})\right) \cdot d\varphi_I(\boldsymbol{p}), \\[0.3em]
+(f \cdot \omega)(\boldsymbol{p})  &amp;:=  \sum_{[I]} \left(f(\boldsymbol{p}) \cdot \omega_I(\boldsymbol{p}) \right)\cdot d\varphi_I(\boldsymbol{p}), \\[0.3em]
+\omega (\boldsymbol{p})\wedge \eta (\boldsymbol{p}) &amp;:= \sum_{[I]} \sum_{[J]} \omega_{I}(\boldsymbol{p})\cdot \eta_{J}(\boldsymbol{p})  \left[d\varphi_I(\boldsymbol{p}) \wedge d\varphi_{J}(\boldsymbol{p}) \right]
 \end{aligned}
 \]</span></p>
 </div>
@@ -1220,18 +1227,18 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <p><span class="theorem-title"><strong>정의 17.14 (함수의 미분과 1차 형식)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_differential_1-form"><span class="math display">\[
 df(\boldsymbol{p}) (\boldsymbol{v}_\boldsymbol{p}) := Df(\boldsymbol{p})(\boldsymbol{v}) = Df(\boldsymbol{p})\cdot \boldsymbol{v}.
-\tag{17.19}\]</span></span></p>
+\tag{17.20}\]</span></span></p>
 </div>
 </div>
 </div>
 </div>
 <p><span class="math inline">\(x_i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x_i\)</span> 의 1차 형식 <span class="math inline">\(dx_i(\boldsymbol{p})\)</span> 를 생각 할 수 있다. <span class="math inline">\(T_{\boldsymbol{p}}(\mathbb{R}^n)\)</span> 의 표준기저벡터 <span class="math inline">\((\boldsymbol{e}_j)_\boldsymbol{p}\)</span> 에 대해 <span class="math inline">\(dx_i(\boldsymbol{p})\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx_i (\boldsymbol{p})\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 는 다음과 같이 쓸 수 있다.</p>
 <p><span class="math display">\[
-\omega (\boldsymbol{p}) = \sum_{i_1&lt; \cdots &lt;i_k} \omega_{i_1,\ldots,i_k}(\boldsymbol{p})\cdot \left[ dx_{i_1}(\boldsymbol{p})\wedge \cdots \wedge dx_{i_k}(\boldsymbol{p})\right].
+\omega (\boldsymbol{p}) = \sum_{[I]} \omega_{I}(\boldsymbol{p}) dx_I(\boldsymbol{p}).
 \]</span></p>
 <p>탄젠트 공간을 지정하는 <span class="math inline">\((\boldsymbol{p})\)</span> 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.</p>
 <p><span class="math display">\[
-\omega = \sum_{i_1&lt; \cdots &lt;k_k} \omega_{i_1,\ldots,i_k}\cdot \left[ dx_{i_1} \wedge \cdots \wedge dx_{i_k} \right].
+\omega = \sum_{[I]} \omega_{I}\cdot dx_{I}.
 \]</span></p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -1256,11 +1263,11 @@ df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
 <p><span class="theorem-title"><strong>정의 17.15 (Pull-back 과 Push-forward)</strong></span> 미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 아래와 같이 정의되는 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}(T_\boldsymbol{p}(\mathbb{R}^n),\, T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 을 <span class="math inline">\(F\)</span> 에 대한 <strong>push-forward</strong> 라고 한다.</p>
 <p><span id="eq-def_CM_push_forward"><span class="math display">\[
 F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(\boldsymbol{p})}
-\tag{17.20}\]</span></span></p>
+\tag{17.21}\]</span></span></p>
 <p>이로부터 유도되는 선형변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\right),\, \Omega^k\left(T_\boldsymbol{p}(\mathbb{R}^n)\right)\right)\)</span> 아래와 같이 정의하고 이를 <strong>pull-back</strong> 이라고 한다. <span class="math inline">\(\omega \in \Omega^k \left( T_{F(\boldsymbol{p})}(\mathbb{R}^m) \right)\)</span> 에 대해</p>
 <p><span id="eq-def_CM_pull_back"><span class="math display">\[
 (F^\ast \omega) (\boldsymbol{p}) := (F_\ast)^\ast (\omega (F(\boldsymbol{p})))
-\tag{17.21}\]</span></span></p>
+\tag{17.22}\]</span></span></p>
 <p>이다. 그렇다면 <span class="math display">\[
 \begin{aligned}
 \left(F^\ast \omega\right)(\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= (F_\ast)^\ast(\omega(F(\boldsymbol{p})))(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
@@ -1366,17 +1373,12 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 </div>
 <div class="callout-body-container">
 <div id="def-CM_differential_of_forms" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.16 (외미분)</strong></span> <span class="math inline">\(k\)</span>-형식</p>
-<p><span class="math display">\[
-\omega = \sum_{i_1&lt;\cdots&lt;i_k} \omega_{i_1,\ldots,i_k}dx_{i_1}\wedge \cdots \wedge dx_{i_k}
-\]</span></p>
-<p>에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 17.16 (외미분)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega = \sum_{[I]} \omega_{I}dx_{I}\)</span> 에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_def_of_differential_of_form"><span class="math display">\[
 \begin{aligned}
-d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\right) \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k} \\[0.3em]
-=&amp; \sum_{i_1&lt;\cdots&lt;i_k} \sum_{\alpha=1}^n D_\alpha (\omega_{i_1,\ldots,i_k}) \,dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}.
+d\omega :=&amp; \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx_\alpha \wedge dx_{I}.
 \end{aligned}
-\tag{17.22}\]</span></span></p>
+\tag{17.23}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -1386,7 +1388,7 @@ d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\righ
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_differential_of_form" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 17.13</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \eta\)</span> 과 <span class="math inline">\(l\)</span>-형식 <span class="math inline">\(\zeta\)</span>, 미분가능한 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(d(dx_{i_1}\wedge \cdots \wedge dx_{i_k}) = 0\)</span>,</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(d(dx_{I}) = 0\)</span>,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(d(\omega + \eta) = d\omega + d\eta\)</span>,</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(d(\omega \wedge \zeta) = d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta\)</span>,</p>
 <p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(d(d\omega)=0\)</span>,</p>
@@ -1394,17 +1396,21 @@ d\omega :=&amp; \sum_{i_1&lt;\cdots &lt;i_k} \left(d\omega_{i_1,\ldots,i_k}\righ
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-CM_def_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.22</span></a> 에서 <span class="math inline">\(D_\alpha (\omega_{i_1,\ldots,i_k})=0\)</span> 이다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-CM_def_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.23</span></a> 에서 <span class="math inline">\(D_\alpha (\omega_{i_1,\ldots,i_k})=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(D_\alpha (\omega_\cdots + \eta_\cdots )\,dx_\alpha = D_\alpha \omega_\cdots dx_\alpha + D_\alpha \eta_\cdots dx_\alpha\)</span> 이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega = \omega_0 dx_{i_1}\wedge \cdots \wedge dx_{i_k}\)</span>, <span class="math inline">\(\zeta = \zeta_0 dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\)</span> 이라고 하자. <span class="math display">\[
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega = \omega_I dx_{I}\)</span>, <span class="math inline">\(\zeta = \zeta_0 dx_{J}\)</span> 이라고 하자. <span class="math display">\[
 \begin{aligned}
-d(\omega \wedge \zeta) &amp;= \sum_{\alpha=1}^n D_\alpha (\omega_0 \zeta_0)dx_{\alpha} dx_{i_1} \wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
-&amp;= \sum_{\alpha} D_\alpha (\omega_0)\,dx_{\alpha} \wedge dx_{i_1} \wedge \cdots \wedge dx_{i_k} \wedge \zeta \\[0.3em]
-&amp;\qquad + \sum_{\alpha} \omega \wedge (-1)^k D_\alpha (\zeta_0) dx_{\alpha} dx_{i_{k+1}}\wedge \cdots \wedge dx_{i_{k+l}}\\[0.3em]
-&amp;=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta.
+d(\omega \wedge \zeta) &amp;= \sum_{\alpha=1}^n D_\alpha (\omega_I \zeta_J)dx_{\alpha} dx_{I}\wedge dx_{J}\\[0.3em]
+&amp;= \sum_{\alpha} D_\alpha (\omega_I)\,dx_{\alpha} \wedge dx_{I} \wedge \zeta + \omega \wedge (-1)^k D_\alpha (\zeta_J) dx_{\alpha} dx_{J}\\[0.3em]
+&amp;=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta
 \end{aligned}
 \]</span></p>
-<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle d(d \omega) = \sum_{i_1&lt;\cdots &lt;i_k} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_k}\)</span> 이다. 여기서 <span class="math inline">\(\displaystyle \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{i_1,\cdots,i_k})\, dx_\beta \wedge dx_\alpha = 0\)</span> 이므로 <span class="math inline">\(d(d\omega)=0\)</span> 이다.</p>
+<p>이다. <span class="math inline">\(\sum_{[I]}\sum_{[J]}\)</span> 를 고려해도 형태가 유지된다는 것은 쉽게 알 수 있다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle d(d \omega) = \sum_{[I]} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha \wedge dx_{I}\)</span> 이다. 여기서</p>
+<p><span class="math display">\[
+\sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha = 0
+\]</span></p>
+<p>이므로 <span class="math inline">\(d(d\omega)=0\)</span> 이다.</p>
 <p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(k\)</span> 에 대한 induction 으로 증명한다. <span class="math inline">\(k=0\)</span> 이면 <span class="math inline">\(d\omega = \sum_{i=1}^n(D_i\omega) dx_i\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1418,7 +1424,7 @@ d(F^\ast \omega)(\boldsymbol{p})(\boldsymbol{v}) &amp;= d{\big (}\omega(F(\bolds
 F^\ast (d(\omega \wedge dx_i)) &amp;=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i)) \\[0.3em]
 &amp;= F^\ast (d\omega \wedge dx_i) = F^\ast (d\omega )\wedge F^\ast (dx_i) \\[0.3em]
 \end{aligned}
-\tag{17.23}\]</span></span></p>
+\tag{17.24}\]</span></span></p>
 <p>이다. 여기서</p>
 <p><span class="math display">\[
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-1)^k (F^\ast \omega)\wedge d(F^\ast dx_i)
@@ -1427,7 +1433,7 @@ d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-
 <p><span class="math display">\[
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) = F^\ast d\omega \wedge F^\ast dx_i
 \]</span></p>
-<p>이다. <a href="#eq-prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.23</span></a> 에 대입하면</p>
+<p>이다. <a href="#eq-prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">식&nbsp;<span>17.24</span></a> 에 대입하면</p>
 <p><span class="math display">\[
 F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\omega \wedge dx_i)
 \]</span></p>
@@ -1472,44 +1478,166 @@ d\omega = (D_1Q - D_2P)\, (dx \wedge dy)
 f(\boldsymbol{x}) = \int_0^1 \dfrac{d}{dt}f(t\boldsymbol{x})\,dt = \int_0^1 \sum_{i=1}^n D_i f(t\boldsymbol{x})\cdot x_i\, dt = \int_0^1 \sum_{i=1}^n \omega (t\boldsymbol{x})\cdot x_i \,dt.
 \]</span></p>
 <p>즉 주어진 <span class="math inline">\(\omega\)</span> 에 대해 <span class="math inline">\(\omega = df\)</span> 를 만족하는 <span class="math inline">\(f\)</span> 를 찾기 위해 아래의 함수를 정의할 필요가 있다.</p>
+<p><span id="eq-CM_Iomega_transform"><span class="math display">\[
+I\omega (\boldsymbol{x}) := \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdot x_i \,dt.
+\tag{17.25}\]</span></span></p>
+<p><span class="math inline">\(I\omega\)</span> 의 정의가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 <span class="math inline">\(\omega\)</span> 가 정의되는 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 일 때 <span class="math inline">\(0\)</span> 부터 <span class="math inline">\(\boldsymbol{x}\)</span> 까지의 선분이 <span class="math inline">\(A\)</span> 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 <strong>별모양 집합 (star shaped set)</strong> 이라고 한다.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-CM_differentiable_homotopy" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 17.18 (미분가능한 호모토피)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n,\,B\subset \mathbb{R}^m\)</span> 이 열린 집합이고 <span class="math inline">\(G,\,H \to A\to B\)</span> 가 <span class="math inline">\(C^\infty\)</span> 사상이라고 하자. 이 때 어떤 <span class="math inline">\(C^\infty\)</span> 사상 <span class="math inline">\(K:A\times [0,\,1] \to B\)</span> 가 존재하여</p>
 <p><span class="math display">\[
-I\omega (\boldsymbol{x}) = \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdot x_i \,dt.
+K(\boldsymbol{x},\,0) = G(\boldsymbol{x}),\qquad K(\boldsymbol{x},\,1) = H(\boldsymbol{x})
 \]</span></p>
-<p><span class="math inline">\(I\omega\)</span> 가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 <span class="math inline">\(\omega\)</span> 가 정의되는 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 일 때 <span class="math inline">\(0\)</span> 부터 <span class="math inline">\(\boldsymbol{x}\)</span> 까지의 선분이 <span class="math inline">\(A\)</span> 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 <strong>별모양 집합 (star shaped set)</strong> 이라고 한다.</p>
+<p>일 때 <span class="math inline">\(K\)</span> 를 <span class="math inline">\(G,\,H\)</span> 사이의 <strong>미분가능한 호모토피(differentiable homotopy)</strong> 라고 하고 <span class="math inline">\(G\)</span> 와 <span class="math inline">\(H\)</span> 는 differentiably homotopic 하다고 한다.</p>
+</div>
+</div>
+</div>
+</div>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_poincare_lemma" class="theorem">
-<p><span class="theorem-title"><strong>정리 17.6 (푸앙카레 정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 열린 별모양 집합일 때 <span class="math inline">\(A\)</span> 에서 정의된 모든 닫힌 형식은 완전 형식이다.</p>
+<div id="lem-CM_for_poincare_lemma" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 17.1</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n,\, B\subset \mathbb{R}^m\)</span> 이 열린 집합이며 <span class="math inline">\(G,\,H:A\to B\)</span> 가 differentiably homotopic 한 <span class="math inline">\(C^\infty\)</span>-급 함수 라면 어떤 선형변환 <span class="math inline">\(\mathcal{P}\in \mathcal{L}(\Omega^{k+1}(B),\, \Omega^{k}(A))\)</span> 가 존재하여 <span class="math inline">\(k&gt;0\)</span>-형식 <span class="math inline">\(\omega\)</span> 에 대해서는</p>
+<p><span class="math display">\[
+d\mathcal{P}\omega +\mathcal{P}d\omega = H^\ast \omega - G^\ast \omega
+\]</span></p>
+<p>이며, <span class="math inline">\(0\)</span>-형식 <span class="math inline">\(f :\mathbb{R}^m \to \mathbb{R}\)</span> 에 대해서는</p>
+<p><span class="math display">\[
+\mathcal{P}df = H^\ast f - G^\ast f
+\]</span></p>
+<p>이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(l\)</span> 형식 <span class="math inline">\(\omega\)</span> 를 아래와 같이 정하자. <span id="eq-thm_CM_poincare_lemma_1"><span class="math display">\[
-\omega = \sum_{i_1&lt;\cdots &lt;i_l} \omega_{i_1,\ldots,i_l} dx_{i_1}\wedge \cdots \wedge dx_{i_l}
-\tag{17.24}\]</span></span></p>
-<p><span class="math inline">\(A\)</span> 가 별모양의 열린 집합이므로 우리는 아래와 같이 <span class="math inline">\(I\omega(\boldsymbol{x})\)</span> 를 정의 할 수 있다.</p>
-<p><span id="eq-thm_CM_poincare_lemma_2"><span class="math display">\[
+<p><span class="proof-title"><em>(증명)</em>. </span><strong>[Step 1].</strong> 아주 기본적인 경우를 생각하자. <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 열린 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(A\times [0,\,1]\)</span> 을 포함하는 열린 집합 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(\alpha,\,\beta : A\to U\)</span> 가 다음과 같이 주어졌다고 하자.</p>
+<p><span class="math display">\[
+\alpha (\boldsymbol{x}) = (\boldsymbol{x},\,0),\qquad \beta(\boldsymbol{x}) = (\boldsymbol{x},\,1).
+\]</span></p>
+<p>그렇다면 <span class="math inline">\(\alpha\)</span> 와 <span class="math inline">\(\beta\)</span> 는 differentiably homotopic 하다. 이제 <span class="math inline">\(U\)</span> 에서 정의된 임의의 <span class="math inline">\(k+1\)</span> 형식 <span class="math inline">\(\eta\)</span> 에 대해 <span class="math inline">\(P\eta\)</span> 는 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(k\)</span>-형식이며 아래 두 조건을 만족하는 <span class="math inline">\(P\in \mathcal{L}(\Omega^{k+1}(U),\, \Omega^{k}(A))\)</span> 를 구성해보자.</p>
+<p><span id="eq-thm-CM_for_poincare_lemma_1_1"><span class="math display">\[
 \begin{aligned}
-I\omega (\boldsymbol{x}) &amp;= \sum_{i_1&lt;\cdots &lt;i_l}\sum_{\alpha=1}^l (-1)^{\alpha-1} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} (t\boldsymbol{x})\, dt\right) x_{i\alpha} \\
-&amp; \qquad dx_{i_1} \wedge \cdots \wedge\widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
-\end{aligned}
-\tag{17.25}\]</span></span></p>
-<p>여기서 <span class="math inline">\(\widehat{dx_{i_\alpha}}\)</span> 는 <span class="math inline">\(dx_1 \wedge \cdots dx_{i_l}\)</span> 에서 <span class="math inline">\(dx_{i_\alpha}\)</span> 만 빠졌음을 의미한다. 우리는 이제 <span class="math inline">\(\omega = I(d\omega)+ d(I\omega)\)</span> 임을 보일 것이다. 그렇다면 <span class="math inline">\(\omega = d(I\omega)\)</span> 이므로 <span class="math inline">\(d\omega = d^2(I\omega)=0\)</span> 이다. <a href="3_4_integration.html#exr-CM_spivak_3_32" class="quarto-xref">연습문제&nbsp;<span>15.33</span></a> 를 사용하여 다음을 보일 수 있다.</p>
-<p><span id="eq-thm_CM_poincare_lemma_3"><span class="math display">\[
-\begin{aligned}
-d(I\omega) &amp;= l \cdot \sum_{i_1&lt;\cdots &lt;i_l} \left(\int_0^1 t^{l-1} \omega_{i_1,\ldots,i_l} \,dt \right) dx_{i_1} \wedge \cdots \wedge dx_{i_l} \\[0.3em]
-&amp;+ \sum_{i_1&lt;\cdots &lt;i_l}  \sum_{\alpha=1}^l \sum_{j=1}^n (-1)^{\alpha-1} \left( \int_0^1 t^l D_j (\omega_{i_1,\ldots,i_l})  (t\boldsymbol{x}) \,dt\right) \,x_{i\alpha} \\[0.3em]
-&amp;\qquad \qquad \qquad \qquad dx_j \wedge dx_{i_1} \wedge \cdots \wedge \widehat{dx_{i_\alpha}} \wedge \cdots \wedge dx_{i_l}
+dP\omega + Pd\omega = \beta^\ast \omega - \alpha^\ast \omega  &amp; &amp; \text{if order }\omega &gt; 0, \\[0.3em]
+Pdf = \beta^\ast f - a\ast f &amp; &amp; \text{if order }f = 0.
 \end{aligned}
 \tag{17.26}\]</span></span></p>
-<p>이다. 우리는 또한 <a href="#eq-thm_CM_poincare_lemma_1" class="quarto-xref">식&nbsp;<span>17.24</span></a> 로부터</p>
-<p><span id="eq-thm_CM_poincare_lemma_4"><span class="math display">\[
-d\omega = \sum_{i_1&lt; \cdots &lt; i_l} \sum_{j=1}^n D_j \omega_{i_1,\ldots,i_l} \cdot dx_j \wedge dx_{i_1}\wedge \cdots \wedge dx_{i_l}
+<p><span class="math inline">\(\omega \in \Omega^{k+1}(A \times I)\)</span> 에 대해 <span class="math inline">\(\alpha^\ast,\, \beta ^\ast : \Omega^{k+1}(A \times I) \to \Omega^{k+1}(A)\)</span> 는 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해</p>
+<p><span id="eq-thm-CM_for_poincare_lemma_1_1_1"><span class="math display">\[
+\begin{aligned}
+(\alpha^\ast \omega) (\boldsymbol{x}) &amp;= \omega (\beta (\boldsymbol{x})) (\beta(\boldsymbol{x})) = \left(\omega (\boldsymbol{x},\,0)\right) (\boldsymbol{x},\,0) \\[0.3em]
+(\beta^\ast \omega) (\boldsymbol{x}) &amp;=\left(\omega (\boldsymbol{x},\,1)\right) (\boldsymbol{x},\,1)
+\end{aligned}
 \tag{17.27}\]</span></span></p>
-<p>임을 안다. <a href="#eq-thm_CM_poincare_lemma_4" class="quarto-xref">식&nbsp;<span>17.27</span></a> 를 <a href="#eq-thm_CM_poincare_lemma_2" class="quarto-xref">식&nbsp;<span>17.25</span></a> 에 대입하면</p>
+<p>이다.</p>
+<p><span class="math inline">\(g\)</span> 가 <span class="math inline">\(A\times I\)</span> 에서 정의된 연속인 스칼라 함수일 때 <span class="math inline">\(\mathcal{I}g\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="math display">\[
+\mathcal{I}(g) (\boldsymbol{x}) := \int_0^1 g(\boldsymbol{x},\,t)\, dt.
+\]</span></p>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <span class="math inline">\((i_1,\ldots,\,i_k,\, i_{k+1})\)</span>, <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_{k+1}&lt;n\)</span> 를 <span class="math inline">\(I\)</span> 라고 하고 <span class="math inline">\(k\)</span> 까지만 있는 것을 <span class="math inline">\(J\)</span> 라고 인덱스를 붙이자. <span class="math inline">\(A\times [0,\,1]\)</span> 는 <span class="math inline">\(R^{n+1}\)</span> 이며 <span class="math inline">\(\Omega^{k+1}(A\times [0,\,1])\)</span> 는 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(dx_I\)</span> 나 <span class="math inline">\(A\)</span> 에서 <span class="math inline">\(k\)</span> 개 <span class="math inline">\([0,\,1]\)</span> 에서 한개의 변수를 취하는 (이 변수를 <span class="math inline">\(t\)</span> 라고 하자) <span class="math inline">\(dx_J\wedge dt\)</span> 의 선형결합이므로 <span class="math inline">\(\omega \in \Omega^{k+1}(A\times [0,\,1])\)</span> 일 때</p>
+<p><span class="math display">\[
+\omega = \sum_{[I]} f_I dx_I + \sum_{[J]} g_J dx_J \wedge dt
+\]</span></p>
+<p>라고 쓸 수 있다. 이 때 <span class="math inline">\(P\omega\)</span> 를 다음과 같이 정의한다.</p>
+<p><span id="eq-thm-CM_for_poincare_lemma_1_2"><span class="math display">\[
+P\omega := P\left(\sum_{[I]} f_I dx_I + \sum_{[J]} g_J dx_J \wedge dt\right) = (-1)^k (\mathcal{I}g_J)dx_J
+\tag{17.28}\]</span></span></p>
+<p>이에 대해 다음 두 사실은 쉽게 보일 수 있다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(P\)</span> 는 선형변환이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(g_J\)</span> 와 <span class="math inline">\(\mathcal{I}g_J\)</span> 도 <span class="math inline">\(C^\infty\)</span>-급이므로 <span class="math inline">\(P\omega\)</span> 도 <span class="math inline">\(C^\infty\)</span>-급이다.</p>
+<p><span class="math inline">\(\eta\)</span> 가 <span class="math inline">\(1\)</span>-형식이라면 <span class="math inline">\(\eta = \sum_i f_i dx_i + gdt\)</span> 이며 <span class="math inline">\(P\omega = \mathcal{I}g\)</span> 이다.</p>
+<p><strong>[Step 2].</strong> <span class="math inline">\(I\)</span> 와 <span class="math inline">\(J\)</span> 가 각각 <span class="math inline">\(1,\ldots,\,n\)</span> 에서 증가하는 <span class="math inline">\(k+1\)</span> 개와 <span class="math inline">\(k\)</span> 개의 정수로 이루어진 tuple 이 아닌 임의의 <span class="math inline">\(k+1\)</span>, <span class="math inline">\(k\)</span> tuple 일 때도 <a href="#eq-thm-CM_for_poincare_lemma_1_2" class="quarto-xref">식&nbsp;<span>17.28</span></a> 이 성립한다. 즉 <span class="math inline">\(I, J\)</span> 가 임의의 <span class="math inline">\(k+1\)</span>, <span class="math inline">\(k\)</span> tuple 일 때</p>
+<p><span class="math display">\[
+P(f\,dx_I) =0,\qquad P(g\, dx_J\wedge dt) = (-1)^k (\mathcal{I}g)\,dx_J
+\]</span></p>
+<p>이다.</p>
+<p><strong>[Step 3].</strong> 우선 <span class="math inline">\(k=0\)</span> 인 경우 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>17.26</span></a> 가 성립함을 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-I(d\omega) = \sum_{i_1&lt;\cdots&lt;i_l} \sum_{\alpha=1}^l(-1)^{\alpha-1} \left(\int_0^1 \right)
+P(df) &amp;= P\left(\sum_{j=1}^n D_j f dx_j\right) + P\left(D_t f\, dt\right) = \mathcal{I}D_tf \\[0.3em]
+&amp;=f\circ \beta - f \circ \alpha = \beta^\ast f - \alpha ^\ast f
 \end{aligned}
 \]</span></p>
+<p>이제 <span class="math inline">\(k&gt;0\)</span> 인 경우에도 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>17.26</span></a> 가 성립함을 보이자. <a href="#eq-thm-CM_for_poincare_lemma_1_1_1" class="quarto-xref">식&nbsp;<span>17.27</span></a> 로 부터</p>
+<p><span id="eq-thm-CM_for_poincare_lemma_1_3"><span class="math display">\[
+\alpha^\ast (dx_i) = \beta^\ast (dx_i) = dx_i, \qquad \alpha^\ast (dt) = \beta^\ast (dt) = 0
+\tag{17.29}\]</span></span></p>
+<p>이다. <span class="math inline">\(d,\, P,\, \alpha,\, \beta\)</span> 모두 선형함수 이므로 <span class="math inline">\(\omega = \sum_{[I]}f_I dx_I + \sum_{[J]}g_J dx_J\wedge dt\)</span> 에서 <span class="math inline">\(\omega = f_Idx_I + g_J dx_J \wedge dt\)</span> 인 경우만 생각해도 된다. <span class="math inline">\(P(f_Idx_J)=0\)</span> 이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+\underbrace{dP(f_Idx_I)}_{=0} + Pd(f_Idx_I) &amp;= \sum_{j=1}^n \underbrace{P\left(D_j f_I dx_j \wedge dx_I\right)}_{=0} + P\left(D_t f_I dt \wedge dx_I\right) \\[0.3em]
+&amp;=(-1)^{k+1} P\left(D_t f_I dx_I \wedge dt \right) = \mathcal{I}(D_t f_I) x_I \\[0.3em]
+&amp;= [f_I \circ \beta - f_I \circ \alpha]\, dx_I
+\end{aligned}
+\]</span></p>
+<p>이며</p>
+<p><span class="math display">\[
+\begin{aligned}
+\beta^\ast (f_Idx_I) - \alpha^\ast (f_I dx_I) = [f_I\circ \beta - f_I\circ \alpha]\,dx_I
+\end{aligned}
+\]</span></p>
+<p>이다. 이제 <span class="math inline">\(g_J dx_J \wedge dt\)</span> 에 적용했을 때를 알아보자. <span class="math display">\[
+\begin{aligned}
+dP(g_J dx_J \wedge dt) &amp;+ Pd(g_J dx_J \wedge dt) \\[0.3em]
+&amp;= d\left[(-1)^k \mathcal{I}g_J dx_J\right] + P\left(\sum_{j=1}^n D_j g_J dx_j \wedge dx_J \wedge dt\right) \\[0.3em]
+&amp;= (-1)^k \sum_{j=1}^n D_j (\mathcal{I}g_J)\, dx_j \wedge dx_i + (-1)^{k+1} \mathcal{I}(D_j g_J) dx_j \wedge dx_J \\[0.3em]
+&amp;= 0
+\end{aligned}
+\]</span></p>
+<p>이다. 또한 <a href="#eq-thm-CM_for_poincare_lemma_1_3" class="quarto-xref">식&nbsp;<span>17.29</span></a> 으로부터</p>
+<p><span class="math display">\[
+\beta^\ast (g_J dx_J \wedge dt) - \alpha^\ast (gdx_J \wedge dt) = 0
+\]</span></p>
+<p>이다. 결론적으로 우리는 임의의 <span class="math inline">\(k\)</span> 형식 <span class="math inline">\(\eta\)</span> 에 대해 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>17.26</span></a> 이 성립함을 보였다.</p>
+<p><strong>[Step 4].</strong> 이제 일반적인 경우에 성립한다는 것을 보이자. 명제의 가정에 의해 <span class="math inline">\(G,\, H: A \to B\)</span> 사이에 미분가능한 호모토피 <span class="math inline">\(K : A\times I \to B\)</span> 가 존재한다. <span class="math inline">\(\alpha,\,\beta\)</span> 그리고 <span class="math inline">\(P\)</span> 는 Step 1 에서 정의된 그것이라고 하자. 그리고 선형변환 <span class="math inline">\(\mathcal{P} \in \mathcal{L}(\Omega^{k+1}(B),\Omega^k(A))\)</span> 를 아래와 같이 정의하자.</p>
+<p><span class="math display">\[
+\mathcal{P}\omega := P(K^\ast \omega).
+\]</span></p>
+<p><span class="math inline">\(K\circ \alpha = G\)</span>, <span class="math inline">\(K \circ \beta = H\)</span> 이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+d\mathcal{P}\omega  + \mathcal{P}d\omega &amp;=dP(K^\ast \omega) + P(K^\ast d\omega) &amp;;(1)\\[0.3em]
+&amp;= dP(K^\ast \omega) + P(d(K^\ast \omega)) &amp;;(2)\\[0.3em]
+&amp;= \beta^\ast (K^\ast \omega) - \alpha^\ast (K^\ast \omega) \\[0.3em]
+&amp;= H^\ast \omega - G^\ast \omega
+\end{aligned}
+\]</span></p>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>  (<span class="math inline">\(1\)</span>) <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>17.13</span></a> 에 의해 <span class="math inline">\(K^\ast d\omega = d(K^\ast \omega)\)</span> 이다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>17.26</span></a></p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(k=0\)</span> 일 때도 같은 방법으로 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="thm-CM_poincare_lemma" class="theorem">
+<p><span class="theorem-title"><strong>정리 17.6 (푸앙카레 보조정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 열린 별모양 집합일 때 <span class="math inline">\(A\)</span> 에서 정의된 모든 닫힌 형식은 완전 형식이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#lem-CM_for_poincare_lemma" class="quarto-xref">보조정리&nbsp;<span>17.1</span></a> 를 사용한다. <span class="math inline">\(H:A \to A\)</span> 는 항등사상이며 <span class="math inline">\(G:A\to A\)</span> 는 어떤 <span class="math inline">\(\boldsymbol{p}\in A\)</span> 에 대해 <span class="math inline">\(G(\boldsymbol{x})=\boldsymbol{p}\)</span> 인 상수함수라고 하자. 아래의 <span class="math inline">\(K\)</span> 는 <span class="math inline">\(H\)</span> 와 <span class="math inline">\(G\)</span> 사이의 미분가능한 호모토피이다.</p>
+<p><span class="math display">\[
+K(\boldsymbol{x},\,t) = tH(\boldsymbol{x}) + (1-t)G(\boldsymbol{x}).
+\]</span></p>
+<p><a href="#lem-CM_for_poincare_lemma" class="quarto-xref">보조정리&nbsp;<span>17.1</span></a> 의 <span class="math inline">\(\mathcal{P}\)</span> 를 사용한다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(0\)</span>-형식 이라면</p>
+<p><span class="math display">\[
+\mathcal{P}(df) = H^\ast f - G^\ast f = f\circ h - f \circ g
+\]</span></p>
+<p>이다. 그런데 <span class="math inline">\(df=0\)</span> 이므로 <span class="math inline">\(f(\boldsymbol{x}) = f(\boldsymbol{p})\)</span> 이므로 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(A\)</span> 에서의 상수함수이다.</p>
+<p><span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega\)</span> 에 대해 생각하면</p>
+<p><span class="math display">\[
+d\mathcal{P}\omega + \mathcal{P}d\omega = H^\ast \omega - G^\ast \omega = \omega
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(d\omega =0\)</span> 이라면 <span class="math inline">\(d(\mathcal{P}\omega ) = \omega\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
