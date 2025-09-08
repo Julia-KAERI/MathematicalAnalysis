@@ -1135,7 +1135,7 @@ $$ {#eq-CM_nabla_operator}
 
 #### Divergence 와 Curl
 
-$\R^n$ 에서의 벡터장 $F$ 에 대해 $\sum_{i=1}^n D_i F_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. $n=3$ 인 경우 아래와 같이 정의된 $\text{curl}\,F(\bf{p})$ 를 $F$ 에 대한 **curl** 이라고 하며 $\nabla \times F$ 로도 표기한다.
+$\R^n$ 에서의 벡터장 $F(\bf{p}) = (f_1(\bf{p}),\ldots,f_n(\bf{p}))$ 에 대해 $\sum_{i=1}^n D_i f_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. $n=3$ 인 경우 아래와 같이 정의된 $\text{curl}\,F(\bf{p})$ 를 $F$ 에 대한 **curl** 이라고 하며 $\nabla \times F$ 로도 표기한다.
 
 $$
 \text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}.
@@ -1804,6 +1804,20 @@ $$
 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-CM_poincare_lemma}
+
+$A\subset \R^n$ 이 별모앙 집합이고 $\omega$ 가 $A$ 에서의 닫힌 $k$-형식이라고 하자. $k>1$ 인 경우 $\eta,\,\zeta$ 가 $d\eta = d\zeta = \omega$ 를 만족하는 두 $k-1$-형식 일 때 $\eta = \zeta + d\theta$ 를 만족하는 $k-2$ 형식 $\theta$ 가 존재한다. $k=1$ 일 때 $f,\,g$ 가 $df=dg=\omega$ 를 만족하는 두 $0$-형식일 때 $f=g+c$ 를 만족하는 상수 $c$ 가 존재한다.
+
+:::
+</div>
+
+::: {.proof}
+
+$d(\eta-\zeta)=0$ 이므로 $\eta-\zeta = d\theta$ 를 만족하는 $k-2$ 형식이 존재한다. $k=1$ 일 경우도 마찬가지. $\square$
+
+:::
 
 </br>
 
@@ -1823,21 +1837,39 @@ $F:\R^n \to \R^m$ 이고 $G:\R^m \to \R^n$ 일 때 $(G\circ F)_\ast = G_\ast \ci
 
 ::: {.solution}
 
-@def-CM_push_forward_and_pull_back 을 보자.
+@def-CM_push_forward_and_pull_back 을 보자. 접벡터를 $\underline{(p,\,v)}$ 형태로 밑줄과 함께 표현하면 
+
 $$
 \begin{aligned}
-(G\circ F)_\ast (v_p) &= ((G\circ F)'(p)(v_p)) = (G'(F(p))\circ F'(p))(v_p) \\[0.3em]
-&= G_\ast (F'(p)) (v_p) = G_\ast \circ F_\ast (v_p).\\[0.3em]
-(G\circ F)^\ast \omega (v_1,\ldots,v_k) &=((G \circ F)_\ast)^\ast (\omega)(v_1,\ldots,\,v_k) \\[0.3em]
-&=\omega((G\circ F)_\ast (v_1),\ldots, (G\circ F)_\ast (v_k))\\[0.3em]
-&=\omega ((G_\ast \circ F_\ast)(v_1),\ldots,\, (G_\ast \circ F_\ast)(v_k)) \\[0.3em]
-&= (G^\ast \omega) (F_\ast (v_1),\ldots, F_\ast (v_k)) \\[0.3em]
-&= (F^\ast \circ G^\ast)(\omega) (v_1,\ldots,\,v_k).
+F_\ast \underline{(p,\,v)} &= \underline{(F(p),\, F'(p)v)}, \\[0.3em]
+F^\ast \omega (\underline{(p,\,v_1)},\ldots,\, \underline{(p,\,v_k)})&= \omega (F(p)) \left(\underline{(F(p), F'(p) v_1)},\ldots, \underline{(F(p),\, F'(p),\,v_k)} \right)
 \end{aligned}
 $$
 
+이다. 이렇게 쓰는 것이 함수의 인수로서의 $(\;)$ 와 접벡터를 표시하는 $(\,)$ 를 구분하기 용이하다.
+
+$$
+\begin{aligned}
+(G\circ F)_\ast \underline{(p,\,v)}&=\underline{((G\circ F)(p),\, (G\circ F)'(p)(v))} \\[0.3em]
+&= \underline{((G\circ F)(p),\, G'(F(p))\cdot F'(p) v)} \\[0.3em]
+&= G_\ast \underline{(F(p),\, F'(p)v)} = (G_\ast \circ F_\ast) \underline{(p,\,v)}
+\end{aligned}
+$$
+
+이므로 $(G\circ F)_\ast = G_\ast \circ F_\ast$ 이며,
+
+$$
+\begin{aligned}
+(G\circ F)^\ast \omega (\underline{(p,v_1)},\ldots,\underline{(p,v_k)}) &= \omega \left(G(F(p))\right) ( (G_\ast \circ F_\ast) \underline{(p,\,v_1)},\ldots, (G_\ast \circ F_\ast) \underline{(p,\,v_k)})\\[0.3em]
+&=G^\ast \omega (F(p))(F_\ast \underline{(p, v_1)},\ldots, F^\ast\underline{(p,\,v_k)} ) \\[0.3em]
+&= (F^\ast \circ G^\ast )\omega  (\underline{(p,v_1)},\ldots,\underline{(p,v_k)})
+\end{aligned}
+$$
+
+이므로 $(G\circ F)^\ast = F^\ast \circ G^\ast$ 이다.
 :::
-<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_4_14}
 
@@ -1899,7 +1931,7 @@ $1=\|P(t)\|^2=\langle P(t),\, P(t)\rangle$ 이므로 $0=\langle P(t),\, P'(t)\ra
 
 #### Spivak 4.17
 
-$F:\R^n \to \R^n$ 이 벡터장 $\bf{F}(\bf{p}) = F(\bf{p})_\bf{p}\in T_\bf{p}(\R^n)$ 을 정의한다.
+$F:\R^n \to \R^n$ 에 의해 정의되는 벡터장 $\bf{F}(\bf{p}) = F(\bf{p})_\bf{p}\in T_\bf{p}(\R^n)$ 을 생각하자.
 
 ($a$) $\R^n$ 에서의 모든 벡터장 $\overline{F}$ 는 어떤 $F$ 에 대해 $\bf{F}$ 형태임을 보여라.
 
@@ -1911,9 +1943,9 @@ $F:\R^n \to \R^n$ 이 벡터장 $\bf{F}(\bf{p}) = F(\bf{p})_\bf{p}\in T_\bf{p}(\
 
 ::: {.solution}
 
-($a$) $\bf{F}(\bf{p})=F(\bf{p})$ 에 대해 $\overline{F}(\bf{p})=F(\bf{p})$ 로 정의한다.
+($a$) $\bf{F}(\bf{p})=F(\bf{p})_\bf{p} = (\bf{p}, F(\bf{p}))$ 에 대해 $\overline{F}(\bf{p})=F(\bf{p})$ 로 정의한다.
 
-($b$) $\text{div} \bf{F} = \text{div} F = \sum_{i=1}^n D_i f_i = \text{tr}(F')$.
+($b$) $(F'(\bf{p}))_{ij} = D_i f_j (\bf{p})$ 이다. $\text{div} \bf{F} = \sum_{i=1} D_i f_i (\bf{p})= \text{tr}(F')$. 
 
 :::
 
@@ -1923,7 +1955,7 @@ $F:\R^n \to \R^n$ 이 벡터장 $\bf{F}(\bf{p}) = F(\bf{p})_\bf{p}\in T_\bf{p}(\
 
 #### Spivak 4.18
 
-$f:\R^n \to \R$ 에 대해 벡터장 $f$ 의 $\bf{p}\in \R^n$ 에서의 **gradient** $(\nabla f)$ 혹은 $\text{grad}\,f$ 를 아래와 같이 정의한다.
+$f:\R^n \to \R$ 에 대해 $f$ 의 $\bf{p}\in \R^n$ 에서의 벡터장 **gradient** $(\nabla f)$ 혹은 $\text{grad}\,f$ 를 아래와 같이 정의한다.
 
 $$
 (\nabla f)(\bf{p}) = D_1 f(\bf{p})\cdot (\bf{e}_1)_\bf{p} + \cdots D_n f(\bf{p})\cdot (\bf{e}_n)_\bf{p} 
@@ -1990,10 +2022,11 @@ $$
 
 ::: {.solution}
 
-($a$) $\omega_{\nabla\text{f}} = D_1f dx + D_2f d_y + D_3 f d_z = df$ 이다
+($a$) 
 
 $$
 \begin{aligned}
+\omega_{\text{grad}\,\text{f}} &= D_1f dx + D_2f d_y + D_3 f d_z = df, \\[0.3em]
 \zeta_{\text{curl} F} &= (D_2 f_3-D_3f_2) dy \wedge dz + (D_3f_1 - D_1f_3) dz \wedge dx \\[0.3em]
 &\qquad + (D_1f_2-D_2f_1) dx \wedge dy \\[0.3em]
 d(\omega_F) &= D_2f_1dy \wedge dx + D_3f_1 dz \wedge dx + D_1f_2 dx \wedge dy \\[0.3em]
@@ -2009,7 +2042,7 @@ d(\zeta_F) &= D_1f_1 dx \wedge dy \wedge dz + D_2f_2 dy \wedge dz \wedge dx + D_
 \end{aligned}
 $$
 
-($b$) $\omega F=0 \iff f_1=f_2=f_3=0 \iff F=0 \iff \zeta_F=0$ 이다.
+($b$) $\omega_F=0 \iff f_1=f_2=f_3=0 \iff F=0 \iff \zeta_F=0$ 이다.
 
 $$
 \begin{aligned}
@@ -2030,7 +2063,7 @@ $\text{div}\,F=0$ 이면 $d(\zeta_F)=0$ 이므로 푸앙카레 보조정리에 �
 ::: {#exr-CM_spivak_4_20}
 
 #### Spivak 4.20
-미분가능한 $F:U\to \R^n$ 에 대한 미분가능한 역함수 $F^{-1}:F(U) \to \R^n$ 이 존재한다. 모든 $U$ 에서의 닫힌 형식이 완전하다면 $f(U)$ 에서도 그러함을 보여라.
+미분가능한 $F:U\to \R^n$ 에 대한 미분가능한 역함수 $F^{-1}:F(U) \to \R^n$ 이 존재한다. 모든 $U$ 에서의 닫힌 형식이 완전하다면 $F(U)$ 에서도 그러함을 보여라.
 
 :::
 
@@ -2038,13 +2071,13 @@ $\text{div}\,F=0$ 이면 $d(\zeta_F)=0$ 이므로 푸앙카레 보조정리에 �
 
 ::: {.solution}
 
-$\omega$ 가 $f(U)$ 위에서의 형식이라고 하자. @prp-CM_basic_properties_of_differential_of_form 의 ($5$) 에 의해 $F^\ast (d\omega)=d(F^\ast \omega)$ 이다. 여기서 $(F^\ast \omega)$ 는 $U$ 에서의 형식이며 $d(F^\ast \omega)=0$ 이면 $F^\ast \omega = d\zeta$ 인 $U$ 에서의 형식 $\zeta$ 가 존재한다. $(F^{-1})^\ast \zeta$ 는 $F(U)$ 위에서의 형식이며 
+$\omega$ 가 $F(U)$ 위에서의 닫힌 형식이라고 하자. @prp-CM_basic_properties_of_differential_of_form 의 ($5$) 에 의해 $F^\ast (d\omega)=d(F^\ast \omega)$ 이다. 여기서 $(F^\ast \omega)$ 는 $U$ 에서의 형식이며 $d(F^\ast \omega)=0$ 이면 $F^\ast \omega = d\zeta$ 인 $U$ 에서의 형식 $\zeta$ 가 존재한다. $(F^{-1})^\ast \zeta$ 는 $F(U)$ 위에서의 형식이며 
 
 $$
 d((F^{-1})^\ast \zeta)= (F^{-1})^\ast(d\zeta) = (F^{-1})^\ast(F^\ast \omega)
 $$
 
-이다. 이 때 $G=F^{-1}$ 이라 하면, $F'\circ G'($ @def-CM_push_forward_and_pull_back 
+이다. 이 때 $G=F^{-1}$ 이라 하면, $F'(G(\bf{p})) \cdot G'(\bf{p}) = I_n$ 이다. @def-CM_push_forward_and_pull_back 에 따라
 
 $$
 \begin{aligned}

@@ -1148,7 +1148,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container">
 <div id="def-CM_divergence_and_curl" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 17.11 (Divergence 와 Curl)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i F_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다. <span class="math inline">\(n=3\)</span> 인 경우 아래와 같이 정의된 <span class="math inline">\(\text{curl}\,F(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>curl</strong> 이라고 하며 <span class="math inline">\(\nabla \times F\)</span> 로도 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 17.11 (Divergence 와 Curl)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F(\boldsymbol{p}) = (f_1(\boldsymbol{p}),\ldots,f_n(\boldsymbol{p}))\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i f_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다. <span class="math inline">\(n=3\)</span> 인 경우 아래와 같이 정의된 <span class="math inline">\(\text{curl}\,F(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>curl</strong> 이라고 하며 <span class="math inline">\(\nabla \times F\)</span> 로도 표기한다.</p>
 <p><span class="math display">\[
 \text{curl}\, F(\boldsymbol{p}) := (D_2f_3 - D_3f_2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f_1 - D_1f_3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f_2-D_2f_1)(\boldsymbol{e}_3)_\boldsymbol{p}.
 \]</span></p>
@@ -1639,6 +1639,15 @@ d\mathcal{P}\omega + \mathcal{P}d\omega = H^\ast \omega - G^\ast \omega = \omega
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(d\omega =0\)</span> 이라면 <span class="math inline">\(d(\mathcal{P}\omega ) = \omega\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-CM_poincare_lemma" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 17.2</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 별모앙 집합이고 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(A\)</span> 에서의 닫힌 <span class="math inline">\(k\)</span>-형식이라고 하자. <span class="math inline">\(k&gt;1\)</span> 인 경우 <span class="math inline">\(\eta,\,\zeta\)</span> 가 <span class="math inline">\(d\eta = d\zeta = \omega\)</span> 를 만족하는 두 <span class="math inline">\(k-1\)</span>-형식 일 때 <span class="math inline">\(\eta = \zeta + d\theta\)</span> 를 만족하는 <span class="math inline">\(k-2\)</span> 형식 <span class="math inline">\(\theta\)</span> 가 존재한다. <span class="math inline">\(k=1\)</span> 일 때 <span class="math inline">\(f,\,g\)</span> 가 <span class="math inline">\(df=dg=\omega\)</span> 를 만족하는 두 <span class="math inline">\(0\)</span>-형식일 때 <span class="math inline">\(f=g+c\)</span> 를 만족하는 상수 <span class="math inline">\(c\)</span> 가 존재한다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(d(\eta-\zeta)=0\)</span> 이므로 <span class="math inline">\(\eta-\zeta = d\theta\)</span> 를 만족하는 <span class="math inline">\(k-2\)</span> 형식이 존재한다. <span class="math inline">\(k=1\)</span> 일 경우도 마찬가지. <span class="math inline">\(\square\)</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-1" class="level3 unnumbered">
@@ -1649,18 +1658,32 @@ d\mathcal{P}\omega + \mathcal{P}d\omega = H^\ast \omega - G^\ast \omega = \omega
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>17.15</span></a> 을 보자. <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>17.15</span></a> 을 보자. 접벡터를 <span class="math inline">\(\underline{(p,\,v)}\)</span> 형태로 밑줄과 함께 표현하면</p>
+<p><span class="math display">\[
 \begin{aligned}
-(G\circ F)_\ast (v_p) &amp;= ((G\circ F)'(p)(v_p)) = (G'(F(p))\circ F'(p))(v_p) \\[0.3em]
-&amp;= G_\ast (F'(p)) (v_p) = G_\ast \circ F_\ast (v_p).\\[0.3em]
-(G\circ F)^\ast \omega (v_1,\ldots,v_k) &amp;=((G \circ F)_\ast)^\ast (\omega)(v_1,\ldots,\,v_k) \\[0.3em]
-&amp;=\omega((G\circ F)_\ast (v_1),\ldots, (G\circ F)_\ast (v_k))\\[0.3em]
-&amp;=\omega ((G_\ast \circ F_\ast)(v_1),\ldots,\, (G_\ast \circ F_\ast)(v_k)) \\[0.3em]
-&amp;= (G^\ast \omega) (F_\ast (v_1),\ldots, F_\ast (v_k)) \\[0.3em]
-&amp;= (F^\ast \circ G^\ast)(\omega) (v_1,\ldots,\,v_k).
+F_\ast \underline{(p,\,v)} &amp;= \underline{(F(p),\, F'(p)v)}, \\[0.3em]
+F^\ast \omega (\underline{(p,\,v_1)},\ldots,\, \underline{(p,\,v_k)})&amp;= \omega (F(p)) \left(\underline{(F(p), F'(p) v_1)},\ldots, \underline{(F(p),\, F'(p),\,v_k)} \right)
 \end{aligned}
 \]</span></p>
+<p>이다. 이렇게 쓰는 것이 함수의 인수로서의 <span class="math inline">\((\;)\)</span> 와 접벡터를 표시하는 <span class="math inline">\((\,)\)</span> 를 구분하기 용이하다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(G\circ F)_\ast \underline{(p,\,v)}&amp;=\underline{((G\circ F)(p),\, (G\circ F)'(p)(v))} \\[0.3em]
+&amp;= \underline{((G\circ F)(p),\, G'(F(p))\cdot F'(p) v)} \\[0.3em]
+&amp;= G_\ast \underline{(F(p),\, F'(p)v)} = (G_\ast \circ F_\ast) \underline{(p,\,v)}
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\((G\circ F)_\ast = G_\ast \circ F_\ast\)</span> 이며,</p>
+<p><span class="math display">\[
+\begin{aligned}
+(G\circ F)^\ast \omega (\underline{(p,v_1)},\ldots,\underline{(p,v_k)}) &amp;= \omega \left(G(F(p))\right) ( (G_\ast \circ F_\ast) \underline{(p,\,v_1)},\ldots, (G_\ast \circ F_\ast) \underline{(p,\,v_k)})\\[0.3em]
+&amp;=G^\ast \omega (F(p))(F_\ast \underline{(p, v_1)},\ldots, F^\ast\underline{(p,\,v_k)} ) \\[0.3em]
+&amp;= (F^\ast \circ G^\ast )\omega  (\underline{(p,v_1)},\ldots,\underline{(p,v_k)})
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\((G\circ F)^\ast = F^\ast \circ G^\ast\)</span> 이다.</p>
 </div>
+<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_4_14" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 17.14 (Spivak 4.14)</strong></span> <span class="math inline">\(P:[0,\,1]\to \mathbb{R}^n\)</span> 이 미분가능하다. 즉 <span class="math inline">\(P\)</span> 는 미분가능한 곡선이다. <span class="math inline">\(t\in [0,\,1]\)</span> 에서의 <span class="math inline">\(P\)</span> 의 접백터 <span class="math inline">\(v\)</span> 는 <span class="math inline">\(P_\ast((e_1)_t) = (p_1'(t),\ldots,\,p_n'(t))_{P(t)}\)</span> 로 정의된다. <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에서 <span class="math inline">\(F\circ P\)</span> 의 <span class="math inline">\(t\)</span> 에서의 접벡터는 <span class="math inline">\(F_\ast (v)\)</span> 임을 보여라.</p>
@@ -1690,19 +1713,19 @@ d\mathcal{P}\omega + \mathcal{P}d\omega = H^\ast \omega - G^\ast \omega = \omega
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_4_17" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.17 (Spivak 4.17)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 벡터장 <span class="math inline">\(\boldsymbol{F}(\boldsymbol{p}) = F(\boldsymbol{p})_\boldsymbol{p}\in T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 을 정의한다.</p>
+<p><span class="theorem-title"><strong>연습문제 17.17 (Spivak 4.17)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^n\)</span> 에 의해 정의되는 벡터장 <span class="math inline">\(\boldsymbol{F}(\boldsymbol{p}) = F(\boldsymbol{p})_\boldsymbol{p}\in T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 을 생각하자.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 모든 벡터장 <span class="math inline">\(\overline{F}\)</span> 는 어떤 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\(\boldsymbol{F}\)</span> 형태임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\text{div} \boldsymbol{F}= \text{tr}(F')\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\boldsymbol{F}(\boldsymbol{p})=F(\boldsymbol{p})\)</span> 에 대해 <span class="math inline">\(\overline{F}(\boldsymbol{p})=F(\boldsymbol{p})\)</span> 로 정의한다.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\text{div} \boldsymbol{F} = \text{div} F = \sum_{i=1}^n D_i f_i = \text{tr}(F')\)</span>.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\boldsymbol{F}(\boldsymbol{p})=F(\boldsymbol{p})_\boldsymbol{p} = (\boldsymbol{p}, F(\boldsymbol{p}))\)</span> 에 대해 <span class="math inline">\(\overline{F}(\boldsymbol{p})=F(\boldsymbol{p})\)</span> 로 정의한다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\((F'(\boldsymbol{p}))_{ij} = D_i f_j (\boldsymbol{p})\)</span> 이다. <span class="math inline">\(\text{div} \boldsymbol{F} = \sum_{i=1} D_i f_i (\boldsymbol{p})= \text{tr}(F')\)</span>.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_4_18" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.18 (Spivak 4.18)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 벡터장 <span class="math inline">\(f\)</span> 의 <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 에서의 <strong>gradient</strong> <span class="math inline">\((\nabla f)\)</span> 혹은 <span class="math inline">\(\text{grad}\,f\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>연습문제 17.18 (Spivak 4.18)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(f\)</span> 의 <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 에서의 벡터장 <strong>gradient</strong> <span class="math inline">\((\nabla f)\)</span> 혹은 <span class="math inline">\(\text{grad}\,f\)</span> 를 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
 (\nabla f)(\boldsymbol{p}) = D_1 f(\boldsymbol{p})\cdot (\boldsymbol{e}_1)_\boldsymbol{p} + \cdots D_n f(\boldsymbol{p})\cdot (\boldsymbol{e}_n)_\boldsymbol{p}
 \]</span></p>
@@ -1745,9 +1768,10 @@ d(\zeta_F) &amp;= (\text{div} F) \,dx \wedge dy \wedge dz.
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\omega_{\nabla\text{f}} = D_1f dx + D_2f d_y + D_3 f d_z = df\)</span> 이다</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
+\omega_{\text{grad}\,\text{f}} &amp;= D_1f dx + D_2f d_y + D_3 f d_z = df, \\[0.3em]
 \zeta_{\text{curl} F} &amp;= (D_2 f_3-D_3f_2) dy \wedge dz + (D_3f_1 - D_1f_3) dz \wedge dx \\[0.3em]
 &amp;\qquad + (D_1f_2-D_2f_1) dx \wedge dy \\[0.3em]
 d(\omega_F) &amp;= D_2f_1dy \wedge dx + D_3f_1 dz \wedge dx + D_1f_2 dx \wedge dy \\[0.3em]
@@ -1761,7 +1785,7 @@ d(\zeta_F) &amp;= D_1f_1 dx \wedge dy \wedge dz + D_2f_2 dy \wedge dz \wedge dx 
 &amp;=(D_1f_1 + D_2f_2 + D_3f_3)\,dx \wedge dy \wedge dz = (\text{div}\,F)dx \wedge dy \wedge dz
 \end{aligned}
 \]</span></p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\omega F=0 \iff f_1=f_2=f_3=0 \iff F=0 \iff \zeta_F=0\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\omega_F=0 \iff f_1=f_2=f_3=0 \iff F=0 \iff \zeta_F=0\)</span> 이다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 0&amp;=d(df) = d(\omega_{\text{grad}\,f}) = \zeta_{\text{curl}\,\text{grad}\,f},\\[0.3em]
@@ -1774,15 +1798,15 @@ d(\zeta_F) &amp;= D_1f_1 dx \wedge dy \wedge dz + D_2f_2 dy \wedge dz \wedge dx 
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_4_20" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.20 (Spivak 4.20)</strong></span> 미분가능한 <span class="math inline">\(F:U\to \mathbb{R}^n\)</span> 에 대한 미분가능한 역함수 <span class="math inline">\(F^{-1}:F(U) \to \mathbb{R}^n\)</span> 이 존재한다. 모든 <span class="math inline">\(U\)</span> 에서의 닫힌 형식이 완전하다면 <span class="math inline">\(f(U)\)</span> 에서도 그러함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 17.20 (Spivak 4.20)</strong></span> 미분가능한 <span class="math inline">\(F:U\to \mathbb{R}^n\)</span> 에 대한 미분가능한 역함수 <span class="math inline">\(F^{-1}:F(U) \to \mathbb{R}^n\)</span> 이 존재한다. 모든 <span class="math inline">\(U\)</span> 에서의 닫힌 형식이 완전하다면 <span class="math inline">\(F(U)\)</span> 에서도 그러함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(f(U)\)</span> 위에서의 형식이라고 하자. <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>17.13</span></a> 의 (<span class="math inline">\(5\)</span>) 에 의해 <span class="math inline">\(F^\ast (d\omega)=d(F^\ast \omega)\)</span> 이다. 여기서 <span class="math inline">\((F^\ast \omega)\)</span> 는 <span class="math inline">\(U\)</span> 에서의 형식이며 <span class="math inline">\(d(F^\ast \omega)=0\)</span> 이면 <span class="math inline">\(F^\ast \omega = d\zeta\)</span> 인 <span class="math inline">\(U\)</span> 에서의 형식 <span class="math inline">\(\zeta\)</span> 가 존재한다. <span class="math inline">\((F^{-1})^\ast \zeta\)</span> 는 <span class="math inline">\(F(U)\)</span> 위에서의 형식이며</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(F(U)\)</span> 위에서의 닫힌 형식이라고 하자. <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>17.13</span></a> 의 (<span class="math inline">\(5\)</span>) 에 의해 <span class="math inline">\(F^\ast (d\omega)=d(F^\ast \omega)\)</span> 이다. 여기서 <span class="math inline">\((F^\ast \omega)\)</span> 는 <span class="math inline">\(U\)</span> 에서의 형식이며 <span class="math inline">\(d(F^\ast \omega)=0\)</span> 이면 <span class="math inline">\(F^\ast \omega = d\zeta\)</span> 인 <span class="math inline">\(U\)</span> 에서의 형식 <span class="math inline">\(\zeta\)</span> 가 존재한다. <span class="math inline">\((F^{-1})^\ast \zeta\)</span> 는 <span class="math inline">\(F(U)\)</span> 위에서의 형식이며</p>
 <p><span class="math display">\[
 d((F^{-1})^\ast \zeta)= (F^{-1})^\ast(d\zeta) = (F^{-1})^\ast(F^\ast \omega)
 \]</span></p>
-<p>이다. 이 때 <span class="math inline">\(G=F^{-1}\)</span> 이라 하면, <span class="math inline">\(F'\circ G'(\)</span> <a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>17.15</span></a></p>
+<p>이다. 이 때 <span class="math inline">\(G=F^{-1}\)</span> 이라 하면, <span class="math inline">\(F'(G(\boldsymbol{p})) \cdot G'(\boldsymbol{p}) = I_n\)</span> 이다. <a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>17.15</span></a> 에 따라</p>
 <p><span class="math display">\[
 \begin{aligned}
 G^\ast &amp;(F^\ast \omega) (\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k)\\[0.3em]
