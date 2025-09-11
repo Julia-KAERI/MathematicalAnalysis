@@ -2110,3 +2110,113 @@ $$
 
 </div>
 
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_6}
+
+#### Do Carmo 1.6
+
+$F:U \subset \R^m \to \R^n$ 이 미분가능하다고 하자. $m<n$ 이며 $k>m$ 에 대해 $\omega \in \Omega^k(\R^n)$ 일 때 $F^\ast \omega=0$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$F^\ast \omega$ 는 $\R^m$ 에서의 $k$-형식이며 $k>m$ 이므로 $F^\ast \omega = 0$ 이다.
+
+:::
+
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_10}
+
+#### Do Carmo 1.10, Hodge 별 연산자
+
+**Hodge 별 연산자 (Hodge star operator)** $\ast:\Omega^k(\R^n) \to \Omega^{n-k}(\R^n)$ 은 다음과 같이 정의된다.
+
+$$
+*(dx_1\wedge \cdots \wedge dx_{i_k}) = (-1)^\sigma (dx_{j_1}\wedge \cdots \wedge dx_{j_{n-l}}).
+$$
+
+이 때 $(i_1,\ldots,i_k,\,j_1,\ldots,\,j_{n-k})\in S_n$ 이며 $(-1)^\sigma$ 는 이 호환의 $\text{sgn}$ 함수값이다.
+
+($a$) $\omega = a_{12}dx_1 \wedge dx_2 + a_{13} dx_1 \wedge dx_3 + a_{23} dx_2 \wedge dx_3 \in \Omega^2(\R^3)$ 에 대해 $\ast \omega$ 를 구하라. 
+
+($b$) $\omega = a_1dx_1 + a_2dx_2\in \Omega^1 (\R^2)$ 일 때 $\ast \omega$ 를 구하라.
+
+($c$) $**\omega = (-1)^{k(n-k)}\omega$ 임을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+($a$) $\ast \omega = a_{12} dx_3 - a_{13}dx_2 +a_{23}dx_3$.
+
+($b$) $\ast \omega = a_1 dx_2 -a_2 dx_1$.
+
+($c$) 이것은 Hodge 별 연산자에 대한 아래 명제를 통해 증명하겠다.
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_properties_of_hodge_star_operator}
+
+#### Hodge 별 산자의 기본 성질 
+$\omega \in \Omega^k(\R^n)$ 에 대해 다음이 성립한다.
+$$
+\omega \wedge (\ast \omega) = (\ast \omega) \wedge (\ast \ast \omega)  = dx_1 \wedge \cdots \wedge dx_n.
+$$ 
+
+:::
+</div>
+
+::: {.proof}
+우선 $\omega \wedge (\ast \omega) = dx_1 \wedge \cdots \wedge dx_n$ 임을 보이자. $\sigma$ 의 정의로부터,
+
+$$
+\begin{aligned}
+\omega \wedge (\ast \omega)&= (-1)^\sigma dx_{i_1}\wedge \cdots \wedge dx_{i_k}\wedge dx_{j_1}\wedge \cdots \wedge dx_{n-k} \\[0.3em]
+&=(-1)^{2\sigma} dx_1 \wedge \cdots \wedge  dx_n = dx_1 \wedge \cdots \wedge  dx_n 
+\end{aligned}
+$$
+
+이다. 또한 $*\omega \in \Omega^{n-k}(\R^n)$ 이므로 같은 논리로 $(\ast \omega) \wedge (\ast \ast \omega)  = dx_1 \wedge \cdots \wedge dx_n$ 이다. $\square$
+:::
+
+@prp-CM_basic_properties_of_wedge_product_1 로부터 $(*\omega) \wedge (**\omega) = (-1)^{k(n-k)} (** \omega)^\wedge (*\omega) = \omega \wedge (*\omega)$ 이므로 $**\omega = (-1)^{k(n-k)}\omega$ 이다.
+
+
+:::
+
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_11}
+
+#### Do Carmo 1.11
+
+$\omega \in \Omega^1(\R^n)$ 이면 리스의 표현 정리에 따라 $\omega(u) = \langle v,\,u\rangle$ 인 $v\in \R^n$ 이 존재한다. 
+
+:::
+
+</div>
+
+::: {.solution}
+
+선택된 $v_1\in \R^n$ 에 대해 $\omega (u)= \langle u,\,v_1\rangle$ 인 $\omega\in \Omega^1(\R^n)$ 이 존재한다. $v_1$ 으로부터 기저 $(v_1,\ldots,v_n)$ 를 구성하였다면 $\omega = fdx_1$ 이며 따라서
+
+$$
+*\omega = fdx_2 \wedge \cdots \wedge dx_n
+$$
+
+이고
+
+$$
+d(*\omega) = \dfrac{\partial f}{\partial x_1} dx_1 \wedge \cdots \wedge dx_n
+$$
+
+
+
+
+:::

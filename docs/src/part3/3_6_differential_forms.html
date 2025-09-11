@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -1825,6 +1825,68 @@ G^\ast &amp;(F^\ast \omega) (\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol
 d\theta = \dfrac{-y}{x^2+y^2}dx + \dfrac{x}{x^2+y^2}dy
 \]</span></p>
 </div>
+</div>
+<br><br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_docarmo_1_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.22 (Do Carmo 1.6)</strong></span> <span class="math inline">\(F:U \subset \mathbb{R}^m \to \mathbb{R}^n\)</span> 이 미분가능하다고 하자. <span class="math inline">\(m&lt;n\)</span> 이며 <span class="math inline">\(k&gt;m\)</span> 에 대해 <span class="math inline">\(\omega \in \Omega^k(\mathbb{R}^n)\)</span> 일 때 <span class="math inline">\(F^\ast \omega=0\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(F^\ast \omega\)</span> 는 <span class="math inline">\(\mathbb{R}^m\)</span> 에서의 <span class="math inline">\(k\)</span>-형식이며 <span class="math inline">\(k&gt;m\)</span> 이므로 <span class="math inline">\(F^\ast \omega = 0\)</span> 이다.</p>
+</div>
+<br><br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_docarmo_1_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.23 (Do Carmo 1.10, Hodge 별 연산자)</strong></span> <strong>Hodge 별 연산자 (Hodge star operator)</strong> <span class="math inline">\(\ast:\Omega^k(\mathbb{R}^n) \to \Omega^{n-k}(\mathbb{R}^n)\)</span> 은 다음과 같이 정의된다.</p>
+<p><span class="math display">\[
+*(dx_1\wedge \cdots \wedge dx_{i_k}) = (-1)^\sigma (dx_{j_1}\wedge \cdots \wedge dx_{j_{n-l}}).
+\]</span></p>
+<p>이 때 <span class="math inline">\((i_1,\ldots,i_k,\,j_1,\ldots,\,j_{n-k})\in S_n\)</span> 이며 <span class="math inline">\((-1)^\sigma\)</span> 는 이 호환의 <span class="math inline">\(\text{sgn}\)</span> 함수값이다.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\omega = a_{12}dx_1 \wedge dx_2 + a_{13} dx_1 \wedge dx_3 + a_{23} dx_2 \wedge dx_3 \in \Omega^2(\mathbb{R}^3)\)</span> 에 대해 <span class="math inline">\(\ast \omega\)</span> 를 구하라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\omega = a_1dx_1 + a_2dx_2\in \Omega^1 (\mathbb{R}^2)\)</span> 일 때 <span class="math inline">\(\ast \omega\)</span> 를 구하라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(**\omega = (-1)^{k(n-k)}\omega\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\ast \omega = a_{12} dx_3 - a_{13}dx_2 +a_{23}dx_3\)</span>.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\ast \omega = a_1 dx_2 -a_2 dx_1\)</span>.</p>
+<p>(<span class="math inline">\(c\)</span>) 이것은 Hodge 별 연산자에 대한 아래 명제를 통해 증명하겠다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_properties_of_hodge_star_operator" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 17.15 (Hodge 별 산자의 기본 성질)</strong></span> <span class="math inline">\(\omega \in \Omega^k(\mathbb{R}^n)\)</span> 에 대해 다음이 성립한다. <span class="math display">\[
+\omega \wedge (\ast \omega) = (\ast \omega) \wedge (\ast \ast \omega)  = dx_1 \wedge \cdots \wedge dx_n.
+\]</span></p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(\omega \wedge (\ast \omega) = dx_1 \wedge \cdots \wedge dx_n\)</span> 임을 보이자. <span class="math inline">\(\sigma\)</span> 의 정의로부터,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\omega \wedge (\ast \omega)&amp;= (-1)^\sigma dx_{i_1}\wedge \cdots \wedge dx_{i_k}\wedge dx_{j_1}\wedge \cdots \wedge dx_{n-k} \\[0.3em]
+&amp;=(-1)^{2\sigma} dx_1 \wedge \cdots \wedge  dx_n = dx_1 \wedge \cdots \wedge  dx_n
+\end{aligned}
+\]</span></p>
+<p>이다. 또한 <span class="math inline">\(*\omega \in \Omega^{n-k}(\mathbb{R}^n)\)</span> 이므로 같은 논리로 <span class="math inline">\((\ast \omega) \wedge (\ast \ast \omega)  = dx_1 \wedge \cdots \wedge dx_n\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<p><a href="#prp-CM_basic_properties_of_wedge_product_1" class="quarto-xref">명제&nbsp;<span>17.7</span></a> 로부터 <span class="math inline">\((*\omega) \wedge (**\omega) = (-1)^{k(n-k)} (** \omega)^\wedge (*\omega) = \omega \wedge (*\omega)\)</span> 이므로 <span class="math inline">\(**\omega = (-1)^{k(n-k)}\omega\)</span> 이다.</p>
+</div>
+<br><br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_docarmo_1_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.24 (Do Carmo 1.11)</strong></span> <span class="math inline">\(\omega \in \Omega^1(\mathbb{R}^n)\)</span> 이면 리스의 표현 정리에 따라 <span class="math inline">\(\omega(u) = \langle v,\,u\rangle\)</span> 인 <span class="math inline">\(v\in \mathbb{R}^n\)</span> 이 존재한다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>선택된 <span class="math inline">\(v_1\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\omega (u)= \langle u,\,v_1\rangle\)</span> 인 <span class="math inline">\(\omega\in \Omega^1(\mathbb{R}^n)\)</span> 이 존재한다. <span class="math inline">\(v_1\)</span> 으로부터 기저 <span class="math inline">\((v_1,\ldots,v_n)\)</span> 를 구성하였다면 <span class="math inline">\(\omega = fdx_1\)</span> 이며 따라서</p>
+<p><span class="math display">\[
+*\omega = fdx_2 \wedge \cdots \wedge dx_n
+\]</span></p>
+<p>이고</p>
+<p><span class="math display">\[
+d(*\omega) = \dfrac{\partial f}{\partial x_1} dx_1 \wedge \cdots \wedge dx_n
+\]</span></p>
 </div>
 
 
