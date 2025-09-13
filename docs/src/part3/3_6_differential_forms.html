@@ -1875,18 +1875,118 @@ d\theta = \dfrac{-y}{x^2+y^2}dx + \dfrac{x}{x^2+y^2}dy
 <br><br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_docarmo_1_11" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 17.24 (Do Carmo 1.11)</strong></span> <span class="math inline">\(\omega \in \Omega^1(\mathbb{R}^n)\)</span> 이면 리스의 표현 정리에 따라 <span class="math inline">\(\omega(u) = \langle v,\,u\rangle\)</span> 인 <span class="math inline">\(v\in \mathbb{R}^n\)</span> 이 존재한다.</p>
+<p><span class="theorem-title"><strong>연습문제 17.24 (Do Carmo 1.11)</strong></span> <span class="math inline">\(\omega \in \Omega^1(\mathbb{R}^n)\)</span> 이면 리스의 표현 정리에 따라 <span class="math inline">\(\omega(u) = \langle v,\,u\rangle\)</span> 인 <span class="math inline">\(v\in \mathbb{R}^n\)</span> 이 존재한다. <span class="math inline">\(\nu\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 부피 요소라고 하자. <span class="math inline">\(\text{div}\,v\)</span> 가 아래 순서를 통해 얻을 수 있음을 보여라.</p>
+<p><span class="math display">\[
+v \longrightarrow \omega \longrightarrow \ast \omega \longrightarrow d(*\omega) = (\operatorname{div}v ) \nu.
+\]</span></p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>선택된 <span class="math inline">\(v_1\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\omega (u)= \langle u,\,v_1\rangle\)</span> 인 <span class="math inline">\(\omega\in \Omega^1(\mathbb{R}^n)\)</span> 이 존재한다. <span class="math inline">\(v_1\)</span> 으로부터 기저 <span class="math inline">\((v_1,\ldots,v_n)\)</span> 를 구성하였다면 <span class="math inline">\(\omega = fdx_1\)</span> 이며 따라서</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>선택된 <span class="math inline">\(v\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\omega (u)= \langle u,\,v\rangle\)</span> 인 <span class="math inline">\(\omega\in \Omega^1(\mathbb{R}^n)\)</span> 이 존재한다. <span class="math inline">\(v=\sum v_i e_i\)</span> 라고 하자. 그렇다면 <span class="math inline">\(\omega = \sum_i v_i dx_i\)</span> 이다. <span class="math inline">\(dx_{[n/i]}:=\bigwedge_{j=1,\, j\ne i}^n dx_j\)</span> 라고 하자.</p>
 <p><span class="math display">\[
-*\omega = fdx_2 \wedge \cdots \wedge dx_n
+\begin{aligned}
+*\omega &amp;= \sum_i (-1)^{\sigma_i} v_i dx_{[n/i]}, \\[0.3em]
+d(*\omega) &amp;= \sum_i (-1)^{\sigma_i} \dfrac{\partial v_i}{\partial x_i} dx_i \wedge dx_{[n/i]} = \sum_i \dfrac{\partial v_i}{\partial x_i} \bigwedge_{j=1}^n dx_j = (\text{div} \,v) \nu
+\end{aligned}
 \]</span></p>
-<p>이고</p>
+</div>
+<br><br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_docarmo_1_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.25 (Do Carmo 1.12)</strong></span> 주어진 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\text{grad}\,f(p) \ne 0\)</span> 일 때 <span class="math inline">\(\text{grad}\, f(p)\)</span> 는 등위면(level surface) <span class="math inline">\(\{q\in \mathbb{R}^n : f(q) = f(p)\}\)</span> 에 수직함을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(p\)</span> 를 중심으로 한 단위 구 에서의 <span class="math inline">\(x\in \mathbb{R}^n\)</span> 에 대해 선형 사상 <span class="math inline">\(df_p\)</span> 는 <span class="math inline">\(v=\text{grad}\,f(p)/|\text{grad}\,f(p)|\)</span> 에서 최대값을 가짐을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 등위면 상의 임의의 경로 <span class="math inline">\(\gamma:t \to \mathbb{R}^3\)</span> 를 생각하자. <span class="math inline">\(f(\gamma(t))\)</span> 는 상수이며 따라서 <span class="math inline">\(d(f \circ \gamma) (t)= \text{grad}\,f (\gamma(t))\cdot \gamma(t) = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <a href="#exr-CM_spivak_4_18" class="quarto-xref">연습문제&nbsp;<span>17.18</span></a>.</p>
+</div>
+<br><br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_docarmo_1_13" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.26 (Do Carmo 1.13)</strong></span> 미분가능한 함수 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 라플라시안 (Laplacian) <span class="math inline">\(\Delta f:\mathbb{R}^n \to \mathbb{R}\)</span> 은 아래와 같이 정의된다.</p>
 <p><span class="math display">\[
-d(*\omega) = \dfrac{\partial f}{\partial x_1} dx_1 \wedge \cdots \wedge dx_n
+\Delta f := \operatorname{div}(\operatorname{grad} f).
 \]</span></p>
+<p>다음이 성립함을 보여라.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\Delta f = \sum \dfrac{\partial^2 f}{\partial {x_i}^2}\)</span>,</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\Delta (fg)= f\Delta g + g \Delta f + 2\langle \operatorname{grad}f,\, \operatorname{grad}g \rangle\)</span>,</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(d(*(df)) = (\Delta f)\,\nu\)</span>. 여기서 <span class="math inline">\(\nu\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 부피요소이다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\Delta f = \operatorname{div}\left(\sum_{i=1}D_i f e_i\right) = \sum_i \dfrac{\partial^2 f}{\partial x_i^2}\)</span></p>
+<p>(<span class="math inline">\(b\)</span>) from (<span class="math inline">\(a\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta (fg)= \sum_{i}\partial_i^2 (fg)= \sum_i \partial_i (g\partial_i f + f\partial_i g) = f\Delta g + g \Delta f + 2\langle \operatorname{grad}f,\, \operatorname{grad}g \rangle
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(c\)</span>) <a href="#exr-CM_docarmo_1_11" class="quarto-xref">연습문제&nbsp;<span>17.24</span></a> 의 표기법을 사용한다. <span class="math inline">\(\displaystyle df = \sum_i \partial_i f_i e_i\)</span> 이며 <span class="math inline">\(\displaystyle *(df) = \sum_i (-1)^{\sigma_i} \partial_i f_i dx_{[n/i]}\)</span> 이므로</p>
+<p><span class="math display">\[
+d(*(df)) = \sum_i (-1)^{\sigma_i} \partial_i^2 f_i dx_i \wedge dx_{[n/i]}= \left(\sum_i \Delta f \right) \nu.
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_docarmo_1_15" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 17.27 (Do Carmo 1.15, 별 연산자의 기하학적 정의)</strong></span> <span class="math inline">\(\varphi \in \Omega^k (T_p(\mathbb{R}^n))\)</span> 가 서로 독립적인 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n)\)</span> 에 대해 <span class="math inline">\(\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k\)</span> 일 때 <span class="math inline">\(\varphi\)</span> 를 <strong>분해가능(decomposible)</strong> 하다고 한다. <span class="math inline">\(\varphi_i\in \Omega^1(\mathbb{R}^n)\)</span> 일 때 <span class="math inline">\(\varphi_i\)</span> 는 어떤 벡터 <span class="math inline">\(v_i\)</span> 에 대해 <span class="math inline">\(\varphi_i (u) = \langle u,\,v_i\rangle\)</span> 이며 (Riesz 의 표현정리) 이 때 <span class="math inline">\(v_i  \leftrightarrow \varphi_i\)</span> 혹은 <span class="math inline">\(\varphi_i  \leftrightarrow v_i\)</span> 라고 표현한다. 다음을 증명하라.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\det (a_{ij})=1\)</span>, <span class="math inline">\(\beta_1,\ldots,\beta_k \in \Omega^1(T_p(\mathbb{R}_n))\)</span> 에 대해 <span class="math inline">\(\varphi_i = \sum_{j} a_{ij}\beta_j\)</span> 일 때 <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span> 임을 보여라. 즉 분해 가능한 텐서는 여러개의 표현을 가질 수 있다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k = \varphi\)</span> 가 <span class="math inline">\(\varphi\)</span> 의 두 표현이면 <span class="math inline">\(\det(a_{ij}) = 1\)</span> 에 대해 <span class="math inline">\(\varphi_i = \sum_j a_{ij}\beta_j\)</span> 임을 보여라.</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k\)</span> 가 분해가능이면 <span class="math inline">\(v_i \leftrightarrow \varphi_i\)</span> 인 <span class="math inline">\(v_1,\ldots,\,v_k \in T_p(\mathbb{R}^n)\)</span> 가 선형독립이며 이 벡터들에 의해 생성되는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 부분공간은 <span class="math inline">\(\varphi\)</span> 의 표현에 독립적임을 보여라. 이 부분공간이 <span class="math inline">\(\varphi\)</span> 에 의한 부분공간이라고 부른다.</p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k\)</span> 가 분해가능이면 (<span class="math inline">\(c\)</span>) 에서 생성된 <span class="math inline">\(\mathbb{R}^n\)</span> 의 부분공간에서의 부피는 <span class="math inline">\(\varphi\)</span> 의 표현에 대해 독립적임을 보여라. 이를 <span class="math inline">\(\varphi\)</span> 의 부피라고 한다.</p>
+<p>(<span class="math inline">\(e\)</span>) <span class="math inline">\(\varphi=\varphi_1 \wedge \cdots \wedge \varphi_k\)</span> 가 분해가능일 때 <span class="math inline">\(*\varphi\)</span> 는 아래의 성질을 갖는 <span class="math inline">\(\Omega^{n-k}(T_p (\mathbb{R}^n))\)</span> 의 원소라고 하자. 이 때 <span class="math inline">\(\ast\varphi\)</span> 가 잘 정의됨을 보여라.</p>
+<p> (<span class="math inline">\(i\)</span>) <span class="math inline">\(\ast \varphi\)</span> 에 의한 부분공간은 <span class="math inline">\(\varphi\)</span> 에 의한 부분공간과 직교한다.</p>
+<p> (<span class="math inline">\(ii\)</span>) <span class="math inline">\(\ast \varphi\)</span> 의 부피는 <span class="math inline">\(\varphi\)</span> 의 부피와 같다.</p>
+<p> (<span class="math inline">\(iii\)</span>) <span class="math inline">\(\varphi \wedge * \varphi\)</span> 는 <span class="math inline">\(T_p(\mathbb{R}^n)\)</span> 의 정방향 기저에 대해 양수이다.</p>
+<p>(<span class="math inline">\(f\)</span>) <span class="math inline">\(v_1,\,v_2\in\mathbb{R}^3\)</span> 에 대해 <span class="math inline">\(\varphi_1,\,\varphi_2\)</span> 를 각각의 쌍대 벡</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>우선 다음 명제를 보이자.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_determinant_and_k_form" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 17.16</strong></span> <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n) = (\mathbb{R}^n)^\ast\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="math display">\[
+(\varphi_1 \wedge \cdots \wedge \varphi_k)(v_1,\ldots,\,v_k) = \det(\varphi_i(v_j)).
+\]</span></p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#eq-CM_definition_of_wedge_product" class="quarto-xref">식&nbsp;<span>17.8</span></a> 와 <a href="#eq-CM_definition_of_alt_function" class="quarto-xref">식&nbsp;<span>17.7</span></a> 로부터 다음을 얻는다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(\varphi_1 \wedge \cdots \wedge \varphi_k)(v_1,\ldots,\,v_k) &amp;=\sum_{\sigma\in S_k} \text{sgn}(\sigma)\cdot \varphi_1 \left(v_{\sigma(1)}\right)\cdots \varphi_k \left(v_{\sigma(k)}\right) = \det (\varphi_i (v_j))
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_independent_1_forms" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 17.17</strong></span> <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n)\)</span> 가 서로 독립이며 <span class="math inline">\(v_i \leftrightarrow \varphi_i\)</span> 이면 서로 다른 <span class="math inline">\(i\ne j\)</span> 에 대해 <span class="math inline">\(\langle v_i,\,v_j\rangle = 0\)</span> 이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(c_1 \varphi_1 + \cdots + c_k \varphi_k = 0\)</span> 이라고 하자.</p>
+</div>
+<p><br></p>
+<p>(<span class="math inline">\(a\)</span>) <a href="#prp-CM_determinant_and_k_form" class="quarto-xref">명제&nbsp;<span>17.16</span></a> 로부터 <span class="math inline">\((\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,v_k) = \det(\beta_i(v_j))\)</span> 이다. 행렬 <span class="math inline">\(B\)</span> 를 <span class="math inline">\(B_{ij} = \beta_i(v_j)\)</span>, 행렬 <span class="math inline">\(\Phi\)</span> 를 <span class="math inline">\(\Phi_{ij} = \varphi_i(v_j)\)</span> 로 정의하자. 또한 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(A_{ij}=a_{ij}\)</span> 로 정의하면 <span class="math inline">\(\Phi = AB\)</span> 이므로 <span class="math inline">\(\det (\Phi) = \det (A)\det (B) = \det (B)\)</span> 이므로 <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) trivial</p>
+<p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(c_1v_1 + \cdots + c_k v_k = 0\)</span> 에 각각 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k\)</span> 를 작용시키면 <span class="math inline">\(c_1=\cdots =c_k=0\)</span> 임을 안다. 즉 <span class="math inline">\(v_1,\ldots,\,v_k\)</span> 는 선형독립이다. 이를 확장하여 <span class="math inline">\(T_p(\mathbb{R}^n)\)</span> 의 기저 <span class="math inline">\(v_1,\ldots,\,v_n\)</span> 을 찾을 수 있다. <span class="math inline">\(\{\beta_j\}\)</span> 에 대해서도 <span class="math inline">\(\beta_i(u_j)=\delta_{ij}\)</span> 인 <span class="math inline">\(u_1,\ldots,\,u_k\)</span> 를 얻을 수 있으며 역시 이를 확장하여 <span class="math inline">\(T_p(\mathbb{R}^n)\)</span> 의 기저 <span class="math inline">\(u_1,\ldots,\,u_n\)</span> 을 얻을 수 있다. 이 대 <span class="math inline">\(u_i = \sum_j b_{ij}v_j\)</span> 라고 하자.</p>
+<p>우선 <span class="math inline">\(i &gt; k\)</span> 일 때 <span class="math inline">\(\beta_{1}(u_i)=\cdots = \beta_k (u_i)=0\)</span> 을 이용하면</p>
+<p><span class="math display">\[
+\begin{aligned}
+(\varphi_1 \wedge \cdots \wedge \varphi_k) (v_1,\ldots,\,v_{k-1},\,u_i) &amp;= b_{ik}, \\[0.3em]
+(\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,\,v_{k-1},\,u_i) &amp; = 0
+\end{aligned}
+\]</span></p>
+<p>이며 두 값은 같아야 한다. 따라서 <span class="math inline">\(i&gt;k\)</span> 에 대해 <span class="math inline">\(b_{ik}=0\)</span> 이다. 즉 <span class="math inline">\(\text{span}\, (v_1,\ldots,\,v_k) = \text{span}\, (u_1,\ldots,\,u_k)\)</span> 이다.</p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span>.</p>
+<p>(<span class="math inline">\(e\)</span>) <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k\)</span> 에 상응하는 <span class="math inline">\(T_p(\mathbb{R}^n)\)</span> 의 기저 <span class="math inline">\(v_1,\ldots,\,v_k\)</span> 에 의한 부분공간에 직교하는 부분공간의 정규기저 <span class="math inline">\(v_{k+1},\ldots,\,v_{n}\)</span> 을 찾을 수 있다. 즉 <span class="math inline">\(1\le i \le k\)</span>, <span class="math inline">\(k+1 \le j \le n\)</span> 에 대해 <span class="math inline">\(\langle v_i,\,v_j\rangle = 0\)</span> 이며 <span class="math inline">\(\|v_j\|=1\)</span> 이다. <span class="math inline">\([v_1,\ldots,\,v_n] = -[e_1,\ldots,\,e_n]\)</span> 이라면 <span class="math inline">\(v_{n}\)</span> 을 <span class="math inline">\(-v_n\)</span> 으로 교체하면 <span class="math inline">\([v_1,\ldots,\,v_n]\)</span> 이 정방향이다.</p>
+<p><span class="math inline">\(v_1,\ldots,\,v_k,\,u_{k+1},\ldots,\,u_n\)</span> 은 <span class="math inline">\(T_p(\mathbb{R}^n)\)</span> 의 기저이며 이에 대한 쌍대기저 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 은 <span class="math inline">\((T_p(\mathbb{R}^n))^\ast\)</span> 의 기저이다. <span class="math inline">\(\varphi\)</span> 의 부피 <span class="math inline">\(h\)</span> 와 <span class="math inline">\(\varphi =\varphi_1 \wedge \cdots \wedge \varphi_k\)</span> 에 대해 <span class="math inline">\(*\varphi := h (\varphi_{k+1}\wedge \cdots \wedge \varphi_n)\)</span> 으로 정의한다. <span class="math inline">\(*\varphi \in \Omega^{n-k}(T_p(\mathbb{R}^n))\)</span> 임은 자명하다. 형식에 의한 부분공간의 정의 (<span class="math inline">\(c\)</span>) 에 의해 두 부분공간은 직교한다. 그리고 <span class="math inline">\(*\varphi\)</span> 의 부피는 <span class="math inline">\(\varphi\)</span> 의 부피와 같고 <span class="math inline">\(\varphi \wedge *\varphi\)</span> 역시 양수이다.</p>
 </div>
 
 

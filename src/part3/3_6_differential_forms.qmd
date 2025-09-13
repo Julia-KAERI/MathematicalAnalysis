@@ -312,8 +312,6 @@ $$
 \end{aligned}
 $$ {#eq-CM_equation_of_wedge_product}
 
-
-
 아래는 정의와 @prp-CM_basic_properties_of_alt_function 의 ($1$) 로 부터 자명하다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -2196,7 +2194,11 @@ $$
 
 #### Do Carmo 1.11
 
-$\omega \in \Omega^1(\R^n)$ 이면 리스의 표현 정리에 따라 $\omega(u) = \langle v,\,u\rangle$ 인 $v\in \R^n$ 이 존재한다. 
+$\omega \in \Omega^1(\R^n)$ 이면 리스의 표현 정리에 따라 $\omega(u) = \langle v,\,u\rangle$ 인 $v\in \R^n$ 이 존재한다. $\nu$ 를 $\R^n$ 에서의 부피 요소라고 하자. $\text{div}\,v$ 가 아래 순서를 통해 얻을 수 있음을 보여라.
+
+$$
+v \longrightarrow \omega \longrightarrow \ast \omega \longrightarrow d(*\omega) = (\operatorname{div}v ) \nu.
+$$
 
 :::
 
@@ -2204,17 +2206,186 @@ $\omega \in \Omega^1(\R^n)$ 이면 리스의 표현 정리에 따라 $\omega(u) 
 
 ::: {.solution}
 
-선택된 $v_1\in \R^n$ 에 대해 $\omega (u)= \langle u,\,v_1\rangle$ 인 $\omega\in \Omega^1(\R^n)$ 이 존재한다. $v_1$ 으로부터 기저 $(v_1,\ldots,v_n)$ 를 구성하였다면 $\omega = fdx_1$ 이며 따라서
+선택된 $v\in \R^n$ 에 대해 $\omega (u)= \langle u,\,v\rangle$ 인 $\omega\in \Omega^1(\R^n)$ 이 존재한다. $v=\sum v_i e_i$ 라고 하자. 그렇다면 $\omega = \sum_i v_i dx_i$ 이다. $dx_{[n/i]}:=\bigwedge_{j=1,\, j\ne i}^n dx_j$ 라고 하자. 
 
 $$
-*\omega = fdx_2 \wedge \cdots \wedge dx_n
+\begin{aligned}
+*\omega &= \sum_i (-1)^{\sigma_i} v_i dx_{[n/i]}, \\[0.3em]
+d(*\omega) &= \sum_i (-1)^{\sigma_i} \dfrac{\partial v_i}{\partial x_i} dx_i \wedge dx_{[n/i]} = \sum_i \dfrac{\partial v_i}{\partial x_i} \bigwedge_{j=1}^n dx_j = (\text{div} \,v) \nu
+\end{aligned}
 $$
 
-이고
+:::
+
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_12}
+
+#### Do Carmo 1.12 
+
+주어진 $f:\R^n \to \R$ 에 대해
+
+($a$) $\text{grad}\,f(p) \ne 0$ 일 때 $\text{grad}\, f(p)$ 는 등위면(level surface) $\{q\in \R^n : f(q) = f(p)\}$ 에 수직함을 보여라. 
+
+($b$) $p$ 를 중심으로 한 단위 구 에서의 $x\in \R^n$ 에 대해 선형 사상 $df_p$ 는 $v=\text{grad}\,f(p)/|\text{grad}\,f(p)|$ 에서 최대값을 가짐을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) 등위면 상의 임의의 경로 $\gamma:t \to \R^3$ 를 생각하자. $f(\gamma(t))$ 는 상수이며 따라서 $d(f \circ \gamma) (t)= \text{grad}\,f (\gamma(t))\cdot \gamma(t) = 0$ 이다. 
+
+($b$) @exr-CM_spivak_4_18.
+
+:::
+
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_13}
+
+#### Do Carmo 1.13 
+
+미분가능한 함수 $f:\R^n \to \R$ 에 대해 라플라시안 (Laplacian) $\Delta f:\R^n \to \R$ 은 아래와 같이 정의된다.
 
 $$
-d(*\omega) = \dfrac{\partial f}{\partial x_1} dx_1 \wedge \cdots \wedge dx_n
+\Delta f := \operatorname{div}(\operatorname{grad} f).
 $$
+
+다음이 성립함을 보여라.
+
+($a$) $\Delta f = \sum \dfrac{\partial^2 f}{\partial {x_i}^2}$,
+
+($b$) $\Delta (fg)= f\Delta g + g \Delta f + 2\langle \operatorname{grad}f,\, \operatorname{grad}g \rangle$,
+
+($c$) $d(*(df)) = (\Delta f)\,\nu$. 여기서 $\nu$ 는 $\R^n$ 의 부피요소이다.
+
+
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) $\Delta f = \operatorname{div}\left(\sum_{i=1}D_i f e_i\right) = \sum_i \dfrac{\partial^2 f}{\partial x_i^2}$
+
+($b$) from  ($a$)
+
+$$
+\begin{aligned}
+\Delta (fg)= \sum_{i}\partial_i^2 (fg)= \sum_i \partial_i (g\partial_i f + f\partial_i g) = f\Delta g + g \Delta f + 2\langle \operatorname{grad}f,\, \operatorname{grad}g \rangle
+\end{aligned}
+$$
+
+($c$) @exr-CM_docarmo_1_11 의 표기법을 사용한다. $\displaystyle df = \sum_i \partial_i f_i e_i$ 이며 $\displaystyle *(df) = \sum_i (-1)^{\sigma_i} \partial_i f_i dx_{[n/i]}$ 이므로
+
+$$
+d(*(df)) = \sum_i (-1)^{\sigma_i} \partial_i^2 f_i dx_i \wedge dx_{[n/i]}= \left(\sum_i \Delta f \right) \nu.
+$$
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_15}
+
+#### Do Carmo 1.15, 별 연산자의 기하학적 정의
+
+$\varphi \in \Omega^k (T_p(\R^n))$ 가 서로 독립적인 $\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 에 대해 $\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k$ 일 때 $\varphi$ 를 **분해가능(decomposible)** 하다고 한다. $\varphi_i\in \Omega^1(\R^n)$ 일 때 $\varphi_i$ 는 어떤 벡터 $v_i$ 에 대해 $\varphi_i (u) = \langle u,\,v_i\rangle$ 이며 (Riesz 의 표현정리) 이 때 $v_i  \leftrightarrow \varphi_i$ 혹은 $\varphi_i  \leftrightarrow v_i$ 라고 표현한다. 다음을 증명하라.
+
+($a$) $\det (a_{ij})=1$, $\beta_1,\ldots,\beta_k \in \Omega^1(T_p(\R_n))$ 에 대해 $\varphi_i = \sum_{j} a_{ij}\beta_j$ 일 때 $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k$ 임을 보여라. 즉 분해 가능한 텐서는 여러개의 표현을 가질 수 있다.
+
+($b$) $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k = \varphi$ 가 $\varphi$ 의 두 표현이면 $\det(a_{ij}) = 1$ 에 대해 $\varphi_i = \sum_j a_{ij}\beta_j$ 임을 보여라.
+
+($c$) $\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k$ 가 분해가능이면 $v_i \leftrightarrow \varphi_i$ 인 $v_1,\ldots,\,v_k \in T_p(\R^n)$ 가 선형독립이며 이 벡터들에 의해 생성되는 $\R^n$ 의 부분공간은 $\varphi$ 의 표현에 독립적임을 보여라. 이 부분공간이 $\varphi$ 에 의한 부분공간이라고 부른다.
+
+($d$) $\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k$ 가 분해가능이면 ($c$) 에서 생성된 $\R^n$ 의 부분공간에서의 부피는 $\varphi$ 의 표현에 대해 독립적임을 보여라. 이를 $\varphi$ 의 부피라고 한다.
+
+($e$) $\varphi=\varphi_1 \wedge \cdots \wedge \varphi_k$ 가 분해가능일 때 $*\varphi$ 는 아래의 성질을 갖는 $\Omega^{n-k}(T_p (\R^n))$ 의 원소라고 하자. 이 때 $\ast\varphi$ 가 잘 정의됨을 보여라.
+
+&emsp;($i$) $\ast \varphi$ 에 의한 부분공간은 $\varphi$ 에 의한 부분공간과 직교한다.
+
+&emsp;($ii$) $\ast \varphi$ 의 부피는 $\varphi$ 의 부피와 같다.
+
+&emsp;($iii$) $\varphi \wedge * \varphi$ 는 $T_p(\R^n)$ 의 정방향 기저에 대해 양수이다. 
+
+($f$) $v_1,\,v_2\in\R^3$ 에 대해 $\varphi_1,\,\varphi_2$ 를 각각의 쌍대 벡
+
+:::
+
+</div>
+
+::: {.solution}
+
+우선 다음 명제를 보이자.
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_determinant_and_k_form}
+
+$\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n) = (\R^n)^\ast$ 일 때 다음이 성립한다.
+
+$$
+(\varphi_1 \wedge \cdots \wedge \varphi_k)(v_1,\ldots,\,v_k) = \det(\varphi_i(v_j)).
+$$
+ 
+:::
+</div>
+
+::: {.proof}
+
+@eq-CM_definition_of_wedge_product 와 @eq-CM_definition_of_alt_function 로부터 다음을 얻는다.
+
+$$
+\begin{aligned}
+(\varphi_1 \wedge \cdots \wedge \varphi_k)(v_1,\ldots,\,v_k) &=\sum_{\sigma\in S_k} \text{sgn}(\sigma)\cdot \varphi_1 \left(v_{\sigma(1)}\right)\cdots \varphi_k \left(v_{\sigma(k)}\right) = \det (\varphi_i (v_j))
+\end{aligned}
+$$
+
+$\square$
+:::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_independent_1_forms}
+
+$\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 가 서로 독립이며 $v_i \leftrightarrow \varphi_i$ 이면 서로 다른 $i\ne j$ 에 대해 $\langle v_i,\,v_j\rangle = 0$ 이다.
+
+ 
+:::
+</div>
+
+::: {.proof}
+
+$c_1 \varphi_1 + \cdots + c_k \varphi_k = 0$ 이라고 하자. 
+
+
+:::
+
+</br>
+
+($a$) @prp-CM_determinant_and_k_form 로부터 $(\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,v_k) = \det(\beta_i(v_j))$ 이다. 행렬 $B$ 를 $B_{ij} = \beta_i(v_j)$, 행렬 $\Phi$ 를 $\Phi_{ij} = \varphi_i(v_j)$ 로 정의하자. 또한 $A$ 를 $A_{ij}=a_{ij}$ 로 정의하면 $\Phi = AB$ 이므로 $\det (\Phi) = \det (A)\det (B) = \det (B)$ 이므로 $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k$ 이다.
+
+($b$) trivial
+
+($c$) $c_1v_1 + \cdots + c_k v_k = 0$ 에 각각 $\varphi_1,\ldots,\,\varphi_k$ 를 작용시키면 $c_1=\cdots =c_k=0$ 임을 안다. 즉 $v_1,\ldots,\,v_k$ 는 선형독립이다. 이를 확장하여 $T_p(\R^n)$ 의 기저 $v_1,\ldots,\,v_n$ 을 찾을 수 있다. $\{\beta_j\}$ 에 대해서도 $\beta_i(u_j)=\delta_{ij}$ 인 $u_1,\ldots,\,u_k$ 를 얻을 수 있으며 역시 이를 확장하여 $T_p(\R^n)$ 의 기저 $u_1,\ldots,\,u_n$ 을 얻을 수 있다. 이 대 $u_i = \sum_j b_{ij}v_j$ 라고 하자. 
+
+우선 $i > k$ 일 때 $\beta_{1}(u_i)=\cdots = \beta_k (u_i)=0$ 을 이용하면
+
+$$
+\begin{aligned}
+(\varphi_1 \wedge \cdots \wedge \varphi_k) (v_1,\ldots,\,v_{k-1},\,u_i) &= b_{ik}, \\[0.3em]
+(\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,\,v_{k-1},\,u_i) & = 0
+\end{aligned}
+$$
+
+이며 두 값은 같아야 한다. 따라서 $i>k$ 에 대해 $b_{ik}=0$ 이다. 즉 $\text{span}\, (v_1,\ldots,\,v_k) = \text{span}\, (u_1,\ldots,\,u_k)$ 이다.
+
+
+($d$) $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k$.
+
+($e$) $\varphi_1,\ldots,\,\varphi_k$ 에 상응하는 $T_p(\R^n)$ 의 기저 $v_1,\ldots,\,v_k$ 에 의한 부분공간에 직교하는 부분공간의 정규기저 $v_{k+1},\ldots,\,v_{n}$ 을 찾을 수 있다. 즉 $1\le i \le k$, $k+1 \le j \le n$ 에 대해 $\langle v_i,\,v_j\rangle = 0$ 이며 $\|v_j\|=1$ 이다. $[v_1,\ldots,\,v_n] = -[e_1,\ldots,\,e_n]$ 이라면 $v_{n}$ 을 $-v_n$ 으로 교체하면 $[v_1,\ldots,\,v_n]$ 이 정방향이다. 
+
+$v_1,\ldots,\,v_k,\,u_{k+1},\ldots,\,u_n$ 은 $T_p(\R^n)$ 의 기저이며 이에 대한 쌍대기저 $\varphi_1,\ldots,\,\varphi_n$ 은 $(T_p(\R^n))^\ast$ 의 기저이다. $\varphi$ 의 부피 $h$ 와 $\varphi =\varphi_1 \wedge \cdots \wedge \varphi_k$ 에 대해 $*\varphi := h (\varphi_{k+1}\wedge \cdots \wedge \varphi_n)$ 으로 정의한다. $*\varphi \in \Omega^{n-k}(T_p(\R^n))$ 임은 자명하다. 형식에 의한 부분공간의 정의 ($c$) 에 의해 두 부분공간은 직교한다. 그리고 $*\varphi$ 의 부피는 $\varphi$ 의 부피와 같고 $\varphi \wedge *\varphi$ 역시 양수이다.
 
 
 
