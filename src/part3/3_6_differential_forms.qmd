@@ -2290,7 +2290,7 @@ $$
 
 #### Do Carmo 1.15, 별 연산자의 기하학적 정의
 
-$\varphi \in \Omega^k (T_p(\R^n))$ 가 서로 독립적인 $\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 에 대해 $\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k$ 일 때 $\varphi$ 를 **분해가능(decomposible)** 하다고 한다. $\varphi_i\in \Omega^1(\R^n)$ 일 때 $\varphi_i$ 는 어떤 벡터 $v_i$ 에 대해 $\varphi_i (u) = \langle u,\,v_i\rangle$ 이며 (Riesz 의 표현정리) 이 때 $v_i  \leftrightarrow \varphi_i$ 혹은 $\varphi_i  \leftrightarrow v_i$ 라고 표현한다. 다음을 증명하라.
+$\varphi \in \Omega^k (T_p(\R^n))$ 가 서로 독립적인 $\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 에 대해 $\varphi = \varphi_1 \wedge \cdots \wedge \varphi_k$ 일 때 $\varphi$ 를 **분해가능(decomposible)** 하다고 한다. $\varphi_i\in \Omega^1(\R^n)$ 일 때 $\varphi_i$ 는 어떤 벡터 $v_i$ 에 대해 $\varphi_i (u) = \langle u,\,v_i\rangle$ 이며 (Riesz 의 표현정리) 이 경우 $v_i$ 와 $\varphi_i$ 는 **상응한다(be correnspondent)** 라고 하고 $v_i  \leftrightarrow \varphi_i$ 혹은 $\varphi_i  \leftrightarrow v_i$ 라고 표기한다. 다음을 증명하라.
 
 ($a$) $\det (a_{ij})=1$, $\beta_1,\ldots,\beta_k \in \Omega^1(T_p(\R_n))$ 에 대해 $\varphi_i = \sum_{j} a_{ij}\beta_j$ 일 때 $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k$ 임을 보여라. 즉 분해 가능한 텐서는 여러개의 표현을 가질 수 있다.
 
@@ -2308,7 +2308,9 @@ $\varphi \in \Omega^k (T_p(\R^n))$ 가 서로 독립적인 $\varphi_1,\ldots,\,\
 
 &emsp;($iii$) $\varphi \wedge * \varphi$ 는 $T_p(\R^n)$ 의 정방향 기저에 대해 양수이다. 
 
-($f$) $v_1,\,v_2\in\R^3$ 에 대해 $\varphi_1,\,\varphi_2$ 를 각각의 쌍대 벡
+($f$) $v_1,\,v_2\in\R^3$ 에 상응하는 $\varphi_1,\,\varphi_2$ 를 생각하자. 이 때 $\ast (\varphi_1 \wedge \varphi_2)$ 에 상응하는 벡터는 $v_1 \times v_2$ 임을 보여라.
+
+($g$) $\omega \in \Omega^k(\R^n)$ 이 모든 $p\in \R^n$ 에 대해 $\omega (p)$ 가 분해가능할 때 $\omega$ 는 분해가능하다고 한다. 모든 $\R^n$ 에서의 $k$-형식은 분해가능한 $dx_{i_1}\wedge \cdots \wedge dx_{i_k}$ 의 선형결합이다. 이 정의를 이용하여 $*(dx_{i_1}\wedge \cdots \wedge dx_{i_k})$ 가 @exr-CM_docarmo_1_10 의 식을 유도하라.
 
 :::
 
@@ -2348,7 +2350,7 @@ $\square$
 
 ::: {#prp-CM_independent_1_forms}
 
-$\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 가 서로 독립이며 $v_i \leftrightarrow \varphi_i$ 이면 서로 다른 $i\ne j$ 에 대해 $\langle v_i,\,v_j\rangle = 0$ 이다.
+$\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 가 서로 독립이며 $v_i \leftrightarrow \varphi_i$ 이면 $v_1,\ldots,\,v_k$ 는 선형독립이다.
 
  
 :::
@@ -2356,7 +2358,13 @@ $\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\R^n)$ 가 서로 독립이며 $v_i \
 
 ::: {.proof}
 
-$c_1 \varphi_1 + \cdots + c_k \varphi_k = 0$ 이라고 하자. 
+$c_1v_1+ \cdots + c_k v_k=0$ 이라고 하자. 임의의 $u\in \R^n$ 에 대해 
+
+$$
+0=\langle u,\,c_1v_1 + \cdots + c_k v_k \rangle = c_1 \varphi_1(u) + \cdots + c_k \varphi_k (u) 
+$$
+
+이므로 $c_1 = \cdots  = c_k = 0$ 이다. 즉 $v_1,\ldots,\,v_k$ 는 선형독립이다. $\square$
 
 
 :::
@@ -2367,27 +2375,169 @@ $c_1 \varphi_1 + \cdots + c_k \varphi_k = 0$ 이라고 하자.
 
 ($b$) trivial
 
-($c$) $c_1v_1 + \cdots + c_k v_k = 0$ 에 각각 $\varphi_1,\ldots,\,\varphi_k$ 를 작용시키면 $c_1=\cdots =c_k=0$ 임을 안다. 즉 $v_1,\ldots,\,v_k$ 는 선형독립이다. 이를 확장하여 $T_p(\R^n)$ 의 기저 $v_1,\ldots,\,v_n$ 을 찾을 수 있다. $\{\beta_j\}$ 에 대해서도 $\beta_i(u_j)=\delta_{ij}$ 인 $u_1,\ldots,\,u_k$ 를 얻을 수 있으며 역시 이를 확장하여 $T_p(\R^n)$ 의 기저 $u_1,\ldots,\,u_n$ 을 얻을 수 있다. 이 대 $u_i = \sum_j b_{ij}v_j$ 라고 하자. 
-
-우선 $i > k$ 일 때 $\beta_{1}(u_i)=\cdots = \beta_k (u_i)=0$ 을 이용하면
-
-$$
-\begin{aligned}
-(\varphi_1 \wedge \cdots \wedge \varphi_k) (v_1,\ldots,\,v_{k-1},\,u_i) &= b_{ik}, \\[0.3em]
-(\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,\,v_{k-1},\,u_i) & = 0
-\end{aligned}
-$$
-
-이며 두 값은 같아야 한다. 따라서 $i>k$ 에 대해 $b_{ik}=0$ 이다. 즉 $\text{span}\, (v_1,\ldots,\,v_k) = \text{span}\, (u_1,\ldots,\,u_k)$ 이다.
+($c$) $\beta_1,\ldots,\,\beta_k$ 를 확장하여 $(\R^n)^\ast$ 의 기저 $\beta_1,\ldots,\,\beta_n$ 을 구성 할 수 있다. 따라서 $\varphi_i$ 는 $(\beta_i)$ 의 선형결합으로 표현 할 수 있으므로 $\varphi_i = \sum_{l=1}^k a_{il}\beta_l + \sum_{m=k+1}^n b_{im}\beta_m$ 이라고 하자. $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k$ 이므로 $\beta_1\wedge \cdots \wedge \beta_k \wedge \varphi_i = 0$ 이며 이로부터 $m=k+1,\ldots,n$ 에 대해 $\beta_{im}=0$ 이다. 즉 $\text{span}\,(\varphi_1,\ldots,\,\varphi_k) = \text{span}\,(\beta_1,\ldots,\,\beta_k)$ 이다.
 
 
 ($d$) $\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k$.
 
-($e$) $\varphi_1,\ldots,\,\varphi_k$ 에 상응하는 $T_p(\R^n)$ 의 기저 $v_1,\ldots,\,v_k$ 에 의한 부분공간에 직교하는 부분공간의 정규기저 $v_{k+1},\ldots,\,v_{n}$ 을 찾을 수 있다. 즉 $1\le i \le k$, $k+1 \le j \le n$ 에 대해 $\langle v_i,\,v_j\rangle = 0$ 이며 $\|v_j\|=1$ 이다. $[v_1,\ldots,\,v_n] = -[e_1,\ldots,\,e_n]$ 이라면 $v_{n}$ 을 $-v_n$ 으로 교체하면 $[v_1,\ldots,\,v_n]$ 이 정방향이다. 
+($e$) $\varphi_1,\ldots,\,\varphi_k$ 에 상응하는 선형독립인 벡터 $v_1,\ldots,\,v_k$ 에 의해 생성되는 $T_p(\R^n)$ 의 부분공간 $U$ 가 존재한다. 또한 $U$ 에 직교하는 부분공간 $U^\perp$ 의 정규직교기저 $v_{k+1},\ldots,\,v_{n}$ 을 찾을 수 있다. 즉 $1\le i \le k$, $k+1 \le j \le n$ 에 대해 $\langle v_i,\,v_j\rangle = 0$ 이며 $\|v_j\|=1$ 이다. $[v_1,\ldots,\,v_n] = -[e_1,\ldots,\,e_n]$ 이라면 $v_{n}$ 을 $-v_n$ 으로 교체하면 $[v_1,\ldots,\,v_n]$ 이 정방향이다. 
 
-$v_1,\ldots,\,v_k,\,u_{k+1},\ldots,\,u_n$ 은 $T_p(\R^n)$ 의 기저이며 이에 대한 쌍대기저 $\varphi_1,\ldots,\,\varphi_n$ 은 $(T_p(\R^n))^\ast$ 의 기저이다. $\varphi$ 의 부피 $h$ 와 $\varphi =\varphi_1 \wedge \cdots \wedge \varphi_k$ 에 대해 $*\varphi := h (\varphi_{k+1}\wedge \cdots \wedge \varphi_n)$ 으로 정의한다. $*\varphi \in \Omega^{n-k}(T_p(\R^n))$ 임은 자명하다. 형식에 의한 부분공간의 정의 ($c$) 에 의해 두 부분공간은 직교한다. 그리고 $*\varphi$ 의 부피는 $\varphi$ 의 부피와 같고 $\varphi \wedge *\varphi$ 역시 양수이다.
+$v_1,\ldots,\,v_k,\,v_{k+1},\ldots,\,v_n$ 은 $T_p(\R^n)$ 의 기저이며 이에 상응하는 $\varphi_1,\ldots,\,\varphi_n$ 은 $(T_p(\R^n))^\ast$ 의 기저이다. $\varphi$ 의 부피 $h$ 와 $\varphi =\varphi_1 \wedge \cdots \wedge \varphi_k$ 에 대해 $*\varphi := h (\varphi_{k+1}\wedge \cdots \wedge \varphi_n)$ 으로 정의한다. $*\varphi \in \Omega^{n-k}(T_p(\R^n))$ 임은 자명하다. 형식에 의한 부분공간의 정의 ($c$) 에 의해 두 부분공간은 직교한다. 그리고 $*\varphi$ 의 부피는 $\varphi$ 의 부피와 같고 $\varphi \wedge *\varphi$ 역시 양수이다.
+
+($f$) trivial 
+
+($g$) trivial
+:::
 
 
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CM_docarmo_1_16}
+
+#### Do Carmo 1.16 1-형식에 대한 푸랑카레 보조정리
+
+$$
+\omega = a(x,\,y,\,z)dx + b(x,\,y,\,z)dy + c(x,\,y,\,z)dz
+$$
+
+는 $\R^3$ 에서의 미분가능한 1-형식 이며 $d\omega = 0$ 이다. $f:\R^3 \to \R$ 을 아래와 같이 정의한다.
+
+$$
+f(x,\,y,\,z) = \int_0^1 \left( a(tx,\,ty,\,tz)x + b(tx,\,ty,\,tz)y + c(tx,\,ty,\,tz)z \right)\,dt.
+$$
+
+$df=\omega$ 임을 보여라. 
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+d\omega = (D_1 b - D_2 a ) dx\wedge dy + (D_2 c - D_3 b) dy \wedge dz +  (D_3 a - D_1 c) dz \wedge dx = 0$$
+
+으로부터 $D_1b - D_2 a = D_2c - D_3 b = D_3a - D_1 c = 0$ 을 얻는다.  
+
+또한
+
+$$
+\begin{aligned}
+a(x,\,y,\,z) &= \int_0^1 \dfrac{d}{dt}(a(tx,\,ty,\,tz)t)\, dt \\[0.3em]
+&= \int_0^1 a(tx,\,ty,\,tz)\, dt + \int_0^1 t (xD_1a + yD_2a + zD_3a)\,dt
+\end{aligned}
+$$
+
+임을 안다.
+
+$$
+\begin{aligned}
+df =& \left(\int_0^1 t xD_1 a(tx,\,ty,\,tz)\,dt\right) dx +  \left(\int_0^1 ty D_2 a(tx,\,ty,\,tz)\,dt\right) dy \\
+&+ \left(\int_0^1 t D_3 za(tx,\,ty,\,tz)\,dt\right) dz  + \left(\int_0^1 a(tx,\,ty,\,tz)\, dt\right) dx \\
+&+\left(\int_0^1 t xD_1 b(tx,\,ty,\,tz)\,dt\right) dx +  \left(\int_0^1 ty D_2yb(tx,\,ty,\,tz)\,dt\right) dy \\
+&+ \left(\int_0^1 t zD_3 b(tx,\,ty,\,tz)\,dt\right) dz  + \left(\int_0^1 b(tx,\,ty,\,tz)\, dt\right) dy\\
+&+\left(\int_0^1 t xD_1 c(tx,\,ty,\,tz)\,dt\right) dx +  \left(\int_0^1 ty D_2 b(tx,\,ty,\,tz)\,dt\right) dy \\
+&+ \left(\int_0^1 tz D_3 c(tx,\,ty,\,tz)\,dt\right) dz  + \left(\int_0^1 c(tx,\,ty,\,tz)\, dt\right) dz \\
+=& \left(\int_0^1 (t xD_1 a + tyD2_a + tz D_3 a)\,dt\right) dx +\left(\int_0^1 a(tx,\,ty,\,tz)\, dt\right) dx \\
+&+ ....(dy)  + ... (dz) = \omega \qquad \square
+\end{aligned}
+$$
+
+:::
+
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_17}
+
+#### Do Carmo 1.17
+
+열린 $U\subset \R^n$ 정의된 벡터장 $F$ 를 생각하자. 각각의 $p\in U$ 에 대해 어떤 $N(p)\subset U$ 에서 정의된 $g:N(p)\to \R$ 이 존재하여 $F = \text{grad}\,g$ 일 때 $V$ 는 포텐셜 $g$ 에 의 해 국소적으로 유도된다고 한다.  
+
+($a$) $\omega$ 가 $F$ 에 상응하는 $1$-형식 이라고 하자. 즉 $\omega (u) = \langle u,\,F\rangle$ 이다. $F$ 가 포텐셜에 의해 국소적으로 유도될 필요충분조건은 $d\omega = 0$ 임을 보여라.
+
+($b$) $F$ 가 국소적으로 유도될 필요충분조건은 $\text{curl}\, F=0$ 임을 보여라.
+
+($c$) $F$ 가 아래와 같이 정의된 벡터장이다.
+
+$$
+F(p) = -\dfrac{(x,\,y,\,z)}{(x^2+y^2+z^2)^{3/2}},\qquad p\in \R^3 - \{(0,\,0,\,0)\}.
+$$
+
+$F$ 는 아래의 포텐셜 $g$ 로부터 국소적으로 유도됨을 보이고 $\Delta g=0$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) $\omega (u) = \langle u,\,F\rangle$ 이면 $\omega = \sum_{i=1}^n F_i dx_i$ 이다. $p$ 의 근방 $N(p)$ 에서 $F=\text{grad}\,g$ 이면 $dg = \sum_{i=1}^n D_i g\,dx_i = \omega$ 이다. 따라서 $d\omega = d(dg)=0$ 이다.
+
+역으로 $d\omega = 0$ 이라면 @exr-CM_docarmo_1_16 에 의해 $\omega = dg$ 인 $g$ 가 국소적으로 존재한다.
+
+($b$) $d\omega =0 \iff \text{curl}\,F=0$ 임을 보이면 된다. 
+
+$$
+d\omega = \sum_{i,j} D_j F_i dx_j \wedge dx_i  = \sum_{i<j} (D_j F_i - D_i F_j) dx_j \wedge dx_i
+$$
+
+이다. 
+
+($c$) trivial
+
+:::
+
+
+</br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_docarmo_1_18}
+
+#### Do Carmo 1.18
+
+$g:\R^3 \to \R$ 이 자연수 $k$ 에 대해 $g(tx,\,ty,\,tz) = t^k g(x,\,y,\,z)$ 일 때 $g$ 는 homogeneous with $k$-degree 라고 한다. 다음으르 증명하라
+
+($a$) $g$ 가 homogeneous with $k$-degree 일 때 $xD_xg + yD_yg + zD_zg = kg$ 이다.
+
+($b$) 미분형식 $\omega = adx + bdy+ cdz$ 에서 $a,\,b,\,c$ 가 homogeneous with $k$-degree 이며 $d\omega = 0$ 이면 $\omega = \dfrac{1}{k+1} d(ax + by + cz)$ 이다.
+
+($c$) $\sigma = ady \wedge dz + b dz \wedge dx + c dx \wedge dy$ 이다. $a,\,b,\,c$ 가 homogeneous with $k$-degree 이며 $d\sigma = 0$ 일 때
+
+$$
+\sigma = \dfrac{1}{k+2} d( (bz-cy)dx + (cx -az)dy + (ay-bx)dz)
+$$
+
+이다.
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) $\bf{r}=(x,\,y,\,tz)$ 라고 하면 $\dfrac{d g(t\bf{r})}{dt} = x D_x g(t\bf{r}) + y D_y g(t\bf{r}) + z D_z g(t\bf{r})$, $\dfrac{d}{dt}t^k g(x,\,y,\,z) = kt^{k-1}g(x,\,y,\,z)$ 이다. $t=1$ 을 넣으면 확인할 수 있다.
+
+($b$) $d\omega = 0$ 으로부터 $D_ya=D_xb,\, D_za = D_x c,\, D_zb = D_yc$ 임을 안다. 
+
+$$
+\begin{aligned}
+d(ax + by + dz) &= xD_x a dx + xD_ya dy + xD_z a dz + adx \\[0.3em]
+&\quad + yD_xb dx + y D_yb dy + y D_z b dz + bdy \\[0.3em]
+&\quad + zD_xc dx + zD_y c dy + z D_z c dz + cdz \\[0.3em]
+&= (k+1) (a\,dx + b\,dy + c\,dz).
+\end{aligned}
+$$
+
+($c$) $d\sigma = 0$ 으로부터 $D_xa = D_y b = D_z c= 0$ 임을 안다. 
+
+$$
+\begin{aligned}
+d( (bz-cy)dx &+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
+&= zD_z b dz \wedge dx + b dz \wedge dx + y D_y c dx \wedge dy + c dx \wedge dy  \\[0.3em]
+&\quad  + x D_xc dx\wedge dy + c dx \wedge dy + z D_z a dy \wedge dz + a dy \wedge dz \\[0.3em]
+&\quad  yD_y a dy \wedge dz + a dy \wedge dz + x D_x b dz \wedge dx + bdz \wedge dx \\[0.3em]
+&= (xD_x+zD_z +2 ) b dz \wedge dx + (x D_x + y D_y +2)c dx \wedge dy \\[0.3em]
+&\qquad + (yD_y + z D_z +2)c \, dy \wedge dz \\[0.3em]
+&= (k+1) \left[a dx \wedge dz + b dz \wedge dx + c dx \wedge dy\right]
+\end{aligned}
+$$
 
 :::
