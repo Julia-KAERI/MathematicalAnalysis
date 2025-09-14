@@ -2102,11 +2102,20 @@ $$
 d\theta = \dfrac{-y}{x^2+y^2}dx + \dfrac{x}{x^2+y^2}dy
 $$
 
-
-
 :::
 
 </div>
+
+::: {.solution}
+
+$\theta = \arctan (y/x)$ 이며 $\arctan'(t)= 1/(1+t^2)$ 이므로
+
+$$
+d\theta = -\dfrac{y}{x^2}\dfrac{1}{1+y^2/x^2}\,dx + \dfrac{1}{x} \dfrac{1}{1+y^2/x^2}\,dy= -\dfrac{y\,dx}{x^2+y^2} + \dfrac{x\,dy}{x^2+y^2}.
+$$
+
+
+:::
 
 </br></br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
