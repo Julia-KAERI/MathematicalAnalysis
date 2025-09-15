@@ -59,19 +59,15 @@ $$
 g_j(\bf{x})- g_j (\bf{a}) = g_j'(\bf{c}^{(i)}_j) \bf{\cdot} (\bf{x}-\bf{a})
 $$
 
-를 만족하는 $\bf{c}^{(i)}_j \in K$ 가 존재한다. 따라서 $|g_j'(\bf{c}^{(i)}_j)| \le |M_K$ 임을 이용하면
+를 만족하는 $\bf{c}^{(i)}_j \in K$ 가 존재한다. 따라서 $\left|g_j'(\bf{c}^{(i)}_j)\right| \le M_i$ 임을 이용하면
 
 $$
-|g_j(\bf{x})-g_j(\bf{a})| \le |g'_j(\bf{c}^{(i)}_j)|\dfrac{w_i}{2} \le\dfrac{ nM_iw_i}{2}
+|g_j(\bf{x})-g_j(\bf{a})| \le \left|g'_j(\bf{c}^{(i)}_j)\right|\dfrac{w_i}{2} \le\dfrac{ nM_iw_i}{2}
 $$
 
 이다. 즉 $G(U_i)$ 는 $G(\bf{a})$ 를 중심으로 각 차원에 대한 폭이 $nM_iw_i$ 인 $n$-cube 안에 포함된다. 
 
-이제 $\langle C_i \rangle$ 을 그 합집합이 $A$ 인 옹골집합의 수열이라고 하자. 
-
-
-
-$E$ 를 덮는, 총 부피가 $\varepsilon$ 보다 작은 닫힌 $n$-cell 의 집합 $U_1,\,U_2,\ldots$ 를 생각하자. 그렇다면 $G(U_1),\ldots$ 는 $G(E)$ 를 덮는다. $w=\max \{w_1,\ldots,\}$, $M=\max \{M_1,\ldots\}$ 라고 하면 전체 $\{G(U_i)\}$ 의 부피의 합은 $n^2Mw\varepsilon$ 보다 작으므로 $G(E)$ 역시 measure $0$ 이다. $\square$
+이제 $E$ 를 덮는, 총 부피가 $\varepsilon$ 보다 작은 닫힌 $n$-cell 의 집합 $U_1,\,U_2,\ldots$ 를 생각하자. 그렇다면 $G(U_1),\ldots$ 는 $G(E)$ 를 덮는다. $w=\max \{w_1,\ldots,\}$, $M=\max \{M_1,\ldots\}$ 라고 하면 전체 $\{G(U_i)\}$ 의 부피의 합은 $n^2Mw\varepsilon$ 보다 작으므로 $G(E)$ 역시 measure $0$ 이다. $\square$
 
 :::
 
@@ -103,13 +99,13 @@ $$
 G(A\backslash K)\subset B\backslash E\tag{2}
 $$ 
 
-이다. $\bf{y}\in \partial E$ 이면 $E$ 는 닫힌 집합이므로 $\bf{y}\in E$ 이다. 이 $\bf{y}$ 에 대해 $\bf{y}=G(\bf{x})$ 인 $\bf{x}$ 가 유일하게 존재한다. $\bf{x}\not\in A\backslash K$ 이며 $\bf{y}\not\in E$ 이므로 $\bf{x}\notin \text{int}(K)$ 이다. 즉 $\bf{x}\in \partial K$ 이다. 따라서
+이다. $\bf{y}\in \partial E$ 이면 $E$ 는 닫힌 집합이므로 $\bf{y}\in E$ 이다. 이 $\bf{y}$ 에 대해 $\bf{y}=G(\bf{x})$ 인 $\bf{x}$ 가 유일하게 존재한다. $\bf{x}\not\in A\backslash K$ 이며 $\bf{y}\not\in \text{int}(E)$ 이므로 $\bf{x}\notin \text{int}(K)$ 이다. 즉 $\bf{x}\in \partial K$ 이다. 따라서
 
 $$
 \partial E \subset G(\partial K) \tag{3}
 $$
 
-이 성립한다. 또한 이것은 $G^{-1}:B \to A$ 에도 성립한다. 
+이 성립한다. 여기서 ($1$) 과 ($3$) 은 $G^{-1}:B \to A$ 에도 성립하여 아래와 같다.
 
 $$
 G^{-1}(\text{int}(E)) \subset \text{int}(K). \tag{4}
@@ -133,7 +129,7 @@ $$
 
 이며, 따라서 $\partial E = G(\partial K)$ 이다.
 
-($b$) $\int_K 1$ 이 존재하므로 $\partial K$ 는 measure $0$ 이며, $G(\partial K)= \partial E$ 이고 @thm-CM_diffeomorphism_on_measure_zero_set 에 따라 $\partial E$ 도 measure $0$ 이므로 $\int_E 1$ 도 존재한다. $\square$
+($b$) $\int_K 1$ 이 존재하면 $\partial K$ 는 measure $0$ 이며, $G(\partial K)= \partial E$ 이고 @thm-CM_diffeomorphism_on_measure_zero_set 에 따라 $\partial E$ 도 measure $0$ 이므로 $\int_E 1$ 도 존재한다. $\square$
 
 :::
 
@@ -539,11 +535,29 @@ $A$ 가 열린 집합일 경우 @exr-CM_open_set_and_union_of_compact_set 의 $\
 
 :::
 
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-CM_finitely_many_partion_of_unity_zero_on_compact_set}
+
+$A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 단위분할 $\Phi$ 와 옹골집합 $K\subset A$ 에 대해 유한개의 $\Phi$ 의 성분만이 $K$ 에서 $0$ 이 아니다.
+
+:::
+
+</div>
+
+::: {.proof}
+
+각각의 $\bf{x}\in K$ 에 대해 유한개의 $\Phi$ 의 성분만이 $0$ 이 아닌 $\bf{x}$ 를 포함하는 열린 집합 $V_\bf{x}$ 를 모으면 $K$ 에 대한 열린 덮개이며, $K$ 가 옹골집합이므로 유한개의 $\{V_\bf{x}\}$ 만으로 $K$ 를 덮을 수 있다. 따라서 $K$ 에서는 유한개의 $\Phi$ 의 성분만이 $0$ 이 아니다. $\square$
+
+
+
+:::
+
 </br>
 
 ### 단위 분할과 적분 {#sec-CM_partition_of_unity_and_integration}
 
-열린 집합 $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 를 생각하자. 각각의 $U\in \mathcal{O}$ 에 대해 $U\subset A$ 일 때 $\mathcal{O}$ 를 $A$ 에 **포함되는 열린 덮개(admissible open cover)** 라고 한다. $\Phi$ 가 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $A$ 에 대한 단위분할이고, 각각의 $\bf{x}\in A$ 에 대해 $\bf{x}$ 를 포함하는 열린집합에서 유계이며, $f$ 가 불연속인 $A$ 의 집합이 measure $0$ 이면 각각의 $\varphi_i \in \Phi$ 에 대해 $\int_A \varphi_i \cdot |f|$ 가 존재한다. (@thm-CM_integrability_and_measure_of_uncontinous_points, @exr-CM_spivak_3_6, @exr-CM_spivak_3_14)
+열린 집합 $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 를 생각하자. 각각의 $U\in \mathcal{O}$ 에 대해 $U\subset A$ 일 때 $\mathcal{O}$ 를 $A$ 에 **포함되는 열린 덮개(admissible open cover)** 라고 한다. $\Phi$ 가 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $A$ 에 대한 단위분할이고, $f:A \to \R$ 이 각각의 $\bf{x}\in A$ 에 대해 $\bf{x}$ 를 포함하는 열린집합에서 유계이며, $f$ 가 불연속인 $A$ 의 집합이 measure $0$ 이면 각각의 $\varphi_i \in \Phi$ 에 대해 $\int_A \varphi_i \cdot |f|$ 가 존재한다. (@thm-CM_integrability_and_measure_of_uncontinous_points, @exr-CM_spivak_3_6, @exr-CM_spivak_3_14)
 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">

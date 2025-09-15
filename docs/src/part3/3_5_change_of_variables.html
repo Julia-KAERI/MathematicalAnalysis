@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -391,13 +391,12 @@ window.Quarto = {
 <p><span class="math display">\[
 g_j(\boldsymbol{x})- g_j (\boldsymbol{a}) = g_j'(\boldsymbol{c}^{(i)}_j) \boldsymbol{\cdot} (\boldsymbol{x}-\boldsymbol{a})
 \]</span></p>
-<p>를 만족하는 <span class="math inline">\(\boldsymbol{c}^{(i)}_j \in K\)</span> 가 존재한다. 따라서 <span class="math inline">\(|g_j'(\boldsymbol{c}^{(i)}_j)| \le |M_K\)</span> 임을 이용하면</p>
+<p>를 만족하는 <span class="math inline">\(\boldsymbol{c}^{(i)}_j \in K\)</span> 가 존재한다. 따라서 <span class="math inline">\(\left|g_j'(\boldsymbol{c}^{(i)}_j)\right| \le M_i\)</span> 임을 이용하면</p>
 <p><span class="math display">\[
-|g_j(\boldsymbol{x})-g_j(\boldsymbol{a})| \le |g'_j(\boldsymbol{c}^{(i)}_j)|\dfrac{w_i}{2} \le\dfrac{ nM_iw_i}{2}
+|g_j(\boldsymbol{x})-g_j(\boldsymbol{a})| \le \left|g'_j(\boldsymbol{c}^{(i)}_j)\right|\dfrac{w_i}{2} \le\dfrac{ nM_iw_i}{2}
 \]</span></p>
 <p>이다. 즉 <span class="math inline">\(G(U_i)\)</span> 는 <span class="math inline">\(G(\boldsymbol{a})\)</span> 를 중심으로 각 차원에 대한 폭이 <span class="math inline">\(nM_iw_i\)</span> 인 <span class="math inline">\(n\)</span>-cube 안에 포함된다.</p>
-<p>이제 <span class="math inline">\(\langle C_i \rangle\)</span> 을 그 합집합이 <span class="math inline">\(A\)</span> 인 옹골집합의 수열이라고 하자.</p>
-<p><span class="math inline">\(E\)</span> 를 덮는, 총 부피가 <span class="math inline">\(\varepsilon\)</span> 보다 작은 닫힌 <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 를 생각하자. 그렇다면 <span class="math inline">\(G(U_1),\ldots\)</span> 는 <span class="math inline">\(G(E)\)</span> 를 덮는다. <span class="math inline">\(w=\max \{w_1,\ldots,\}\)</span>, <span class="math inline">\(M=\max \{M_1,\ldots\}\)</span> 라고 하면 전체 <span class="math inline">\(\{G(U_i)\}\)</span> 의 부피의 합은 <span class="math inline">\(n^2Mw\varepsilon\)</span> 보다 작으므로 <span class="math inline">\(G(E)\)</span> 역시 measure <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p>이제 <span class="math inline">\(E\)</span> 를 덮는, 총 부피가 <span class="math inline">\(\varepsilon\)</span> 보다 작은 닫힌 <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 를 생각하자. 그렇다면 <span class="math inline">\(G(U_1),\ldots\)</span> 는 <span class="math inline">\(G(E)\)</span> 를 덮는다. <span class="math inline">\(w=\max \{w_1,\ldots,\}\)</span>, <span class="math inline">\(M=\max \{M_1,\ldots\}\)</span> 라고 하면 전체 <span class="math inline">\(\{G(U_i)\}\)</span> 의 부피의 합은 <span class="math inline">\(n^2Mw\varepsilon\)</span> 보다 작으므로 <span class="math inline">\(G(E)\)</span> 역시 measure <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -416,11 +415,11 @@ G(\text{int}(K))\subset \text{int}(E)\tag{1}
 <p><span class="math display">\[
 G(A\backslash K)\subset B\backslash E\tag{2}
 \]</span></p>
-<p>이다. <span class="math inline">\(\boldsymbol{y}\in \partial E\)</span> 이면 <span class="math inline">\(E\)</span> 는 닫힌 집합이므로 <span class="math inline">\(\boldsymbol{y}\in E\)</span> 이다. 이 <span class="math inline">\(\boldsymbol{y}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{y}=G(\boldsymbol{x})\)</span> 인 <span class="math inline">\(\boldsymbol{x}\)</span> 가 유일하게 존재한다. <span class="math inline">\(\boldsymbol{x}\not\in A\backslash K\)</span> 이며 <span class="math inline">\(\boldsymbol{y}\not\in E\)</span> 이므로 <span class="math inline">\(\boldsymbol{x}\notin \text{int}(K)\)</span> 이다. 즉 <span class="math inline">\(\boldsymbol{x}\in \partial K\)</span> 이다. 따라서</p>
+<p>이다. <span class="math inline">\(\boldsymbol{y}\in \partial E\)</span> 이면 <span class="math inline">\(E\)</span> 는 닫힌 집합이므로 <span class="math inline">\(\boldsymbol{y}\in E\)</span> 이다. 이 <span class="math inline">\(\boldsymbol{y}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{y}=G(\boldsymbol{x})\)</span> 인 <span class="math inline">\(\boldsymbol{x}\)</span> 가 유일하게 존재한다. <span class="math inline">\(\boldsymbol{x}\not\in A\backslash K\)</span> 이며 <span class="math inline">\(\boldsymbol{y}\not\in \text{int}(E)\)</span> 이므로 <span class="math inline">\(\boldsymbol{x}\notin \text{int}(K)\)</span> 이다. 즉 <span class="math inline">\(\boldsymbol{x}\in \partial K\)</span> 이다. 따라서</p>
 <p><span class="math display">\[
 \partial E \subset G(\partial K) \tag{3}
 \]</span></p>
-<p>이 성립한다. 또한 이것은 <span class="math inline">\(G^{-1}:B \to A\)</span> 에도 성립한다.</p>
+<p>이 성립한다. 여기서 (<span class="math inline">\(1\)</span>) 과 (<span class="math inline">\(3\)</span>) 은 <span class="math inline">\(G^{-1}:B \to A\)</span> 에도 성립하여 아래와 같다.</p>
 <p><span class="math display">\[
 G^{-1}(\text{int}(E)) \subset \text{int}(K). \tag{4}
 \]</span></p>
@@ -436,7 +435,7 @@ G^{-1}(\text{int}(E)) \subset \text{int}(K). \tag{4}
 \partial E = (G\circ G^{-1})(\partial E) \supset G(\partial K) \supset \partial E
 \]</span></p>
 <p>이며, 따라서 <span class="math inline">\(\partial E = G(\partial K)\)</span> 이다.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\int_K 1\)</span> 이 존재하므로 <span class="math inline">\(\partial K\)</span> 는 measure <span class="math inline">\(0\)</span> 이며, <span class="math inline">\(G(\partial K)= \partial E\)</span> 이고 <a href="#thm-CM_diffeomorphism_on_measure_zero_set" class="quarto-xref">정리&nbsp;<span>16.1</span></a> 에 따라 <span class="math inline">\(\partial E\)</span> 도 measure <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_E 1\)</span> 도 존재한다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\int_K 1\)</span> 이 존재하면 <span class="math inline">\(\partial K\)</span> 는 measure <span class="math inline">\(0\)</span> 이며, <span class="math inline">\(G(\partial K)= \partial E\)</span> 이고 <a href="#thm-CM_diffeomorphism_on_measure_zero_set" class="quarto-xref">정리&nbsp;<span>16.1</span></a> 에 따라 <span class="math inline">\(\partial E\)</span> 도 measure <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_E 1\)</span> 도 존재한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -692,11 +691,20 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <p><span class="math inline">\(A\)</span> 가 열린 집합일 경우 <a href="#exr-CM_open_set_and_union_of_compact_set" class="quarto-xref">연습문제&nbsp;<span>16.4</span></a> 의 <span class="math inline">\(\langle A_i \rangle\)</span> 에 <a href="#lem-CM_existance_of_partation_of_unity_2" class="quarto-xref">보조정리&nbsp;<span>16.2</span></a> 의 경우를 적용 할 수 있다.</p>
 <p>이제 임의의 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 생각하자. <span class="math inline">\(B=\bigcup_{U\in \mathcal{O}}U\)</span> 라고 하면 <span class="math inline">\(A\subset B\)</span> 이며 <span class="math inline">\(B\)</span> 가 열린 집합이므로 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다. 그리고 이 단위분할은 <span class="math inline">\(A\)</span> 에 대한 단위분할이다. <span class="math inline">\(\square\)</span></p>
 </div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_finitely_many_partion_of_unity_zero_on_compact_set" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 16.4</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할 <span class="math inline">\(\Phi\)</span> 와 옹골집합 <span class="math inline">\(K\subset A\)</span> 에 대해 유한개의 <span class="math inline">\(\Phi\)</span> 의 성분만이 <span class="math inline">\(K\)</span> 에서 <span class="math inline">\(0\)</span> 이 아니다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(\boldsymbol{x}\in K\)</span> 에 대해 유한개의 <span class="math inline">\(\Phi\)</span> 의 성분만이 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V_\boldsymbol{x}\)</span> 를 모으면 <span class="math inline">\(K\)</span> 에 대한 열린 덮개이며, <span class="math inline">\(K\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(\{V_\boldsymbol{x}\}\)</span> 만으로 <span class="math inline">\(K\)</span> 를 덮을 수 있다. 따라서 <span class="math inline">\(K\)</span> 에서는 유한개의 <span class="math inline">\(\Phi\)</span> 의 성분만이 <span class="math inline">\(0\)</span> 이 아니다. <span class="math inline">\(\square\)</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="sec-CM_partition_of_unity_and_integration" class="level3" data-number="16.2.2">
 <h3 data-number="16.2.2" class="anchored" data-anchor-id="sec-CM_partition_of_unity_and_integration"><span class="header-section-number">16.2.2</span> 단위 분할과 적분</h3>
-<p>열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. 각각의 <span class="math inline">\(U\in \mathcal{O}\)</span> 에 대해 <span class="math inline">\(U\subset A\)</span> 일 때 <span class="math inline">\(\mathcal{O}\)</span> 를 <span class="math inline">\(A\)</span> 에 <strong>포함되는 열린 덮개(admissible open cover)</strong> 라고 한다. <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(A\)</span> 에 대한 단위분할이고, 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린집합에서 유계이며, <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\(A\)</span> 의 집합이 measure <span class="math inline">\(0\)</span> 이면 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 <span class="math inline">\(\int_A \varphi_i \cdot |f|\)</span> 가 존재한다. (<a href="3_4_integration.html#thm-CM_integrability_and_measure_of_uncontinous_points" class="quarto-xref">정리&nbsp;<span>15.3</span></a>, <a href="3_4_integration.html#exr-CM_spivak_3_6" class="quarto-xref">연습문제&nbsp;<span>15.6</span></a>, <a href="3_4_integration.html#exr-CM_spivak_3_14" class="quarto-xref">연습문제&nbsp;<span>15.14</span></a>)</p>
+<p>열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. 각각의 <span class="math inline">\(U\in \mathcal{O}\)</span> 에 대해 <span class="math inline">\(U\subset A\)</span> 일 때 <span class="math inline">\(\mathcal{O}\)</span> 를 <span class="math inline">\(A\)</span> 에 <strong>포함되는 열린 덮개(admissible open cover)</strong> 라고 한다. <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(A\)</span> 에 대한 단위분할이고, <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린집합에서 유계이며, <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\(A\)</span> 의 집합이 measure <span class="math inline">\(0\)</span> 이면 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 <span class="math inline">\(\int_A \varphi_i \cdot |f|\)</span> 가 존재한다. (<a href="3_4_integration.html#thm-CM_integrability_and_measure_of_uncontinous_points" class="quarto-xref">정리&nbsp;<span>15.3</span></a>, <a href="3_4_integration.html#exr-CM_spivak_3_6" class="quarto-xref">연습문제&nbsp;<span>15.6</span></a>, <a href="3_4_integration.html#exr-CM_spivak_3_14" class="quarto-xref">연습문제&nbsp;<span>15.14</span></a>)</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_partation_of_unity_and_integration_1" class="theorem lemma">
