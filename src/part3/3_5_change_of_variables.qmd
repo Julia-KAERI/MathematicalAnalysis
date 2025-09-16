@@ -146,7 +146,7 @@ $$
 H(\bf{x}) = (h_1(\bf{x}),\ldots,\,h_n(\bf{x}))
 $$
 
-라고 하자. 이 가운데 최소한 하나의 $h_i(\bf{x})= x_i$ 일 때 이 미분동형사상을 **원시 미분동형사상(primitive diffeomorphism)** 이라고 한다.
+라고 하자. 이 가운데 하나 이상의 $i$ 에 대해 $h_i(\bf{x})= x_i$ 일 때 이 미분동형사상을 **원시 미분동형사상(primitive diffeomorphism)** 이라고 한다.
 
 ::: 
 :::
@@ -170,19 +170,20 @@ $$
 
 $G(\bf{x}) = (g_1(\bf{x}),\ldots,\,g_n(\bf{x}))$ 라고 하자. 
 
-$\underline{Step-1}$ : $G$ 가 가역 선형사상일 경우.
+<u><i>Case-1</i></u> : $G$ 가 가역 선형사상일 경우 위의 정리가 성립한다.
 
-$G$ 가 가역인 선형사상이면 세가지 기본 행 연산(($1$) $i$ 번째 열에 상수 곱하기, ($2$) $i$ 행과 $j$ 행을 바꾸기, ($3$) $i$ 행 을 $i$ 행과 $j$ 행의 합으로 바꾸기) 행렬의 곱으로 표현 할 수 있다. $n>2$ 일 때는 세가지 모두 원시 미분동형사상이며 $n=2$ 일 때는 ($2$) 를 제외하면 원시 미분동형사상임은 자명하다. 그런데 ($2$) 은 ($1$) 와 ($3$) 의 곱으로 표현 할 수 있다는 것을 보일 수 있다. 따라서 $G$ 가 선형사상일 경우는 주어진 정리가 성립한다.
+(*Case-1 의 증명*) $G$ 가 가역인 선형사상이면 세가지 기본 행 연산(($1$) $i$ 번째 열에 상수 곱하기, ($2$) $i$ 행과 $j$ 행을 바꾸기, ($3$) $i$ 행 을 $i$ 행과 $j$ 행의 합으로 바꾸기) 행렬의 곱으로 표현 할 수 있다. $n>2$ 일 때는 세가지 모두 원시 미분동형사상이며 $n=2$ 일 때는 ($2$) 를 제외하면 원시 미분동형사상임은 자명하다. 그런데 ($2$) 은 ($1$) 와 ($3$) 의 곱으로 표현 할 수 있다는 것을 보일 수 있다. 따라서 $G$ 가 선형사상일 경우는 주어진 정리가 성립한다.
 
-$\underline{Step-2}$ : $G$ 가 어떤 $\bf{c}\in \R^n$ 에 대해 $G(\bf{x})=\bf{x}+\bf{c}$ 일 때.
+<u><i>Case-2</i></u> : $G$ 가 어떤 $\bf{c}\in \R^n$ 에 대해 $G(\bf{x})=\bf{x}+\bf{c}$ 일 때 위의 정리가 성립한다.
 
+(*Case-2 의 증명*) $i=1,\ldots,\,n$ 에 대해 아래와 같이 놓으면 된다.
 $$
 H_i(\bf{x}) = \bf{x} + c_i \bf{e}_i.
 $$
 
-$\underline{Step-3}$ : $\bf{a}=\bf{0}$ 이고 $G(\bf{0})=\bf{0}$ 이며 $G'(\bf{0})=I_n$ 일 때.
+<u><i>Case-3</i></u>  : $\bf{a}=\bf{0}$ 이고 $G(\bf{0})=\bf{0}$ 이며 $G'(\bf{0})=I_n$ 일 때 위의 정리가 성립한다.
 
-$H:A\to \R^n$ 을 $H(\bf{x}):= (g_1(\bf{x}),\ldots,\,g_{n-1}(\bf{x}),\,x_n)$ 으로 정의하자. 
+(*Case-3 의 증명*) $H:A\to \R^n$ 을 $H(\bf{x}):= (g_1(\bf{x}),\ldots,\,g_{n-1}(\bf{x}),\,x_n)$ 으로 정의하자. 
 
 $$
 H'(\bf{x})= \begin{bmatrix} \dfrac{\partial g_1}{\partial x_1} & \cdots &\dfrac{\partial g_1}{\partial x_{n-1}} & \dfrac{\partial g_1}{\partial x_n} \\ \vdots & \ddots & \vdots &\vdots \\ 0 & \cdots & 0 & 1\end{bmatrix}
@@ -228,9 +229,9 @@ $$
 
 이므로 $(K|_{W_1}\circ H|_{W_0})=G|_{W_0}$ 이다. 
 
-$\underline{Step-4}$ : 일반적인 미분동형사상 $G:A\to B$ 에 대해.
+<u><i>Case-4</i></u>  일반적인 미분동형사상 $G:A\to B$ 에 대해 위의 정리가 성립한다.
 
-$\bf{a}\in A$ 에 대해 $L=G'(\bf{a})$ 라고 하고 미분동형사상 $T_1,\,T_2,\,T :\R^n \to \R^n$ 를 아래와 같이 정의한다.
+(*Case-3 의 증명*) $\bf{a}\in A$ 에 대해 $L=G'(\bf{a})$ 라고 하고 미분동형사상 $T_1,\,T_2,\,T :\R^n \to \R^n$ 를 아래와 같이 정의한다.
 
 $$
 T_1(\bf{x})=\bf{x}+\bf{a},\qquad T_2(\bf{x})= \bf{x}-G(\bf{a}),\qquad T(\bf{x})=L^{-1}\bf{\cdot x}.
@@ -242,7 +243,7 @@ $$
 \overline{G}(\bf{x}) = L^{-1}\bf{\cdot} \left(G(\bf{x}+\bf{a}) - G(\bf{a})\right)
 $$
 
-이다. $\overline{G}(\bf{0})= \bf{0}$ 이며 $\overline{G}'(\bf{a})= I_n$ 이다. $Step-3$ 에 따라 $\overline{G}$ 는 $\bf{0}\in T_1^{-1}(A)$ 를 포함하는 열린 집합 $W_0$ 에서 정의된 미분동형사상이다. $G= T_2^{-1}\circ T^{-1} \circ \overline{G}\circ T_1^{-1}$ 이며 $T_1,\,T_2$ 는 $Case-2$, $T_1$ 은 $Case-1$ 에 포함되는 미분동형사상이므로 $G$ 는 어떤 열린 집합에서 원시 미분동형사상의 합성으로 표현된다. $\square$
+이다. $\overline{G}(\bf{0})= \bf{0}$ 이며 $\overline{G}'(\bf{a})= I_n$ 이다. *Case-3* 에 따라 $\overline{G}$ 는 $\bf{0}\in T_1^{-1}(A)$ 를 포함하는 열린 집합 $W_0$ 에서 정의된 미분동형사상이다. $G= T_2^{-1}\circ T^{-1} \circ \overline{G}\circ T_1^{-1}$ 이며 $T_1,\,T_2$ 는 <i>Case-2</i>, $T_1$ 은 <i>Case-1</i> 에 포함되는 미분동형사상이므로 $G$ 는 어떤 열린 집합에서 원시 미분동형사상의 합성으로 표현된다. $\square$
 
 :::
 
@@ -319,8 +320,39 @@ $$
 
 @exr-thm-CM_munkres_18_3 ($b$) 에 의해 $G$ 는 $A$ 에서 연속이다. 총 부피가 $\varepsilon > 0$ 보다 작은 $E$ 의 닫힌 $n$-cell 로 이루어진 덮개 $\Gamma$ 를 생각하자. $U \in\Gamma$ 는 옹골집합이므로 $G(U)$ 도 옹골집합이며 따라서 유계인 닫힌 집합이다.
 
-립시츠 조건에서 $\lambda(\bf{x},\,\bf{y})$ 가 유
+$E$ 가 옹골집합이므로 $E$ 를 덮는 유한개의 닫힌 $n$-cell 을 그 부피의 합이 $\varepsilon>0$ 보다 작게 잡을 수 있다. 립시츠 조건에 의해 $\lambda (\bf{x},\,\bf{y})\le M$ 인 $M>0$ 이 존재하며
 
+$$
+|g_j(\bf{x})-g_j(\bf{a})| \le \|G(\bf{x}) - G(\bf{a})\| \le M \|\bf{x}-\bf{a}\| 
+$$
+
+이다. @thm-CM_diffeomorphism_on_measure_zero_set 에서와 같은 방법으로 $G(E)$ 역시 measure $0$ 임을 보일 수 있다. $\square$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-thm-CM_munkres_18_5}
+
+#### Munkres 18.5
+
+$A,\,B \subset \R^n$ 이 열린 집합이며 $G:A\to B$ 는 전단사이다.
+
+($a$) $G$ 와 $G^{-1}$ 이 연속이면 @thm-CM_diffeomorphism_and_integrability 의 ($a$) 가 성립함을 보여라.
+
+($b$) $G$ 가 국소적으로 립시츠 조건을 만족하며 $G^{-1}$ 이 연속이면 @thm-CM_diffeomorphism_and_integrability 의 ($b$) 가 성립함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+
+
+($a$) @thm-CM_diffeomorphism_and_integrability 의 ($a$) 증명에서 $G$ 가 미분동형사상인 조건에서 사용한것은 $G$ 가 전단사이며 $G,\,G^{-1}$ 이 연속인 조건이다. 여기서 모두 충족된다. 
+
+($b$) @exr-thm-CM_munkres_18_4 $G^{-1}$ 이 연속이라는 조건으로부터 $\partial E \subset G(\partial K)$ 를 얻으며 $\partial K$ 가 measure $0$ 이면 $\partial E$ 도 measure $0$ 이다.
 
 :::
 
