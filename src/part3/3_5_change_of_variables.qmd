@@ -393,7 +393,7 @@ $\R^n\backslash S_\phi$ 는 열린 집합이다. $\square$
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-CM_support_in_open_set}
+::: {#prp-CM_existance_of_support_fuction_on_compact_set_in_open_set}
 
 열린 집합 $A \subset \R^n$ 에 대해 $A$ 에 포함되는 옹골집합 $K$ 에 대해 아래를 만족하는 $C^\infty$ 급 함수 $\psi:A \to \R$ 이 존재한다. 
 
@@ -432,7 +432,6 @@ $A\subset \R^n$ 에 대해 $A$ 를 포함하는 열린 집합에서 정의된 $C
 
 $\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개라고 하자. 이 때 각각의 $\varphi_i \in \Phi$ 에 대해 $\supp \varphi_i \subset U$ 인 $U\in \mathcal{O}$ 가 존재한다면 $\Phi$ 를 **덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 ($C^\infty$ partition of unity subordinate to the cover $\mathcal{O}$)**이라고 한다.
 
-
 ::: 
 :::
 
@@ -441,7 +440,7 @@ $\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-CM_existance_of_partation_of_unity_for_compact_set}
+::: {#lem-CM_existance_of_partition_of_unity_for_compact_set}
 
 옹골 집합 $A\subset \R^n$ 과 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 의 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다.
 
@@ -468,7 +467,7 @@ $$
 A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset \bigcup_{i=1}^n U_i
 $$ 이다. 
 
-이제 $i=1,\ldots,\,n$ 에 대해 $D_i$ 를 포함하며 $U_i$ 에 포함되는 콤팩트 지지집합을 갖는 $C^\infty$ 함수 $\psi_i$ 가 존재한다(@prp-CM_support_in_open_set) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $\bf{x}$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(\bf{x})+ \cdots + \psi_n(\bf{x}) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
+이제 $i=1,\ldots,\,n$ 에 대해 $D_i$ 를 포함하며 $U_i$ 에 포함되는 콤팩트 지지집합을 갖는 $C^\infty$ 함수 $\psi_i$ 가 존재한다(@prp-CM_existance_of_support_fuction_on_compact_set_in_open_set) $\{D_1,\ldots,\,D_n\}$ 이 $A$ 를 덮으므로 $\bf{x}$ 가 $A$ 를 포함하는 어떤 열린 집합 $U$ 에 속했을 때 $\psi_1(\bf{x})+ \cdots + \psi_n(\bf{x}) > 0$ 이다. $\varphi_i:U \to \R$ 을 다음과 같이 정의한다.
 
 $$
 \varphi_i (\bf{x}) := \dfrac{\psi_i(\bf{x})}{\psi_1(\bf{x}) + \cdots + \psi_n(\bf{x})}
@@ -481,7 +480,7 @@ $f:U \to [0,\,1]$ 이 $C^\infty$ 함수이며 $A$ 에서는 $1$, $U$ 에 포함�
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-CM_existance_of_partation_of_unity_2}
+::: {#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set}
 
 옹골 집합 $A_1,\,A_2,\ldots \subset \R^n$ 가 $A_k \subset \text{int}(A_{k+1})$ 일 때 $A=\bigcup A_k$ 와 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 의 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다.
 
@@ -496,7 +495,7 @@ $$
 \mathcal{O}_k = \{U \cap (\text{int}(A_{k+1}) - A_{k-2}): U \in\mathcal{O}\}.
 $$
 
-그렇다면 $\mathcal{O}_k$ 는 옹골 집합 $B_k = A_k - \text{int}(A_{i-1})$ 에 대한 열린 덮개이다(@exr-thm-CM_existance_of_partation_of_unity_1). @lem-CM_existance_of_partation_of_unity_for_compact_set 에서 보았듯이 각각의 $B_k$ 에 대해 $\mathcal{O}_k$ 에 종속된 단위 분할 $\Phi_k$ 가 존재한다. $\sigma:A \to \R$ 을 아래와 같이 정의하자.
+그렇다면 $\mathcal{O}_k$ 는 옹골 집합 $B_k = A_k - \text{int}(A_{i-1})$ 에 대한 열린 덮개이다(@exr-thm-CM_existance_of_partition_of_unity_1). @lem-CM_existance_of_partition_of_unity_for_compact_set 에서 보았듯이 각각의 $B_k$ 에 대해 $\mathcal{O}_k$ 에 종속된 단위 분할 $\Phi_k$ 가 존재한다. $\sigma:A \to \R$ 을 아래와 같이 정의하자.
 
 $$
 \sigma(\bf{x}) := \sum_{\varphi_i^{(k)}\in \Phi_k,\, \text{all } k } \varphi_{i}^{(k)}(\bf{x}).
@@ -517,7 +516,7 @@ $\overline{\Phi}$ 가 단위분할임은 쉽게 알 수 있다. $O_k$ 에 포함
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-CM_existance_of_partation_of_unity}
+::: {#thm-CM_existance_of_partition_of_unity}
 
 $A\subset \R^n$ 이고 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개일 때 $A$ 에 대한 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할은 존재한다.
 
@@ -527,9 +526,9 @@ $A\subset \R^n$ 이고 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개일 때 $A$
 
 ::: {.proof}
 
-우리는 @lem-CM_existance_of_partation_of_unity_for_compact_set, @lem-CM_existance_of_partation_of_unity_2 를 통해 일부를 보였다. 
+우리는 @lem-CM_existance_of_partition_of_unity_for_compact_set, @lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set 를 통해 일부를 보였다. 
 
-$A$ 가 열린 집합일 경우 @exr-CM_open_set_and_union_of_compact_set 의 $\langle A_i \rangle$ 에 @lem-CM_existance_of_partation_of_unity_2 의 경우를 적용 할 수 있다.
+$A$ 가 열린 집합일 경우 @exr-CM_open_set_and_union_of_compact_set 의 $\langle A_i \rangle$ 에 @lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set 의 경우를 적용 할 수 있다.
 
 이제 임의의 $A\subset \R^n$ 에 대해 생각하자. $B=\bigcup_{U\in \mathcal{O}}U$ 라고 하면 $A\subset B$ 이며 $B$ 가 열린 집합이므로 $B$ 에 대해 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위분할이 존재한다. 그리고 이 단위분할은 $A$ 에 대한 단위분할이다. $\square$
 
@@ -560,7 +559,7 @@ $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 단위분�
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-CM_partation_of_unity_and_integration_1}
+::: {#lem-CM_indepedence_of_partition_of_unity_for_integration}
 
 열린 집합 $A\subset \R^n$ 를 생각하자. $\Phi=\langle \varphi_i\rangle$ 이 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 이며 $f:A\to \R$ 에 대해 
 
@@ -579,7 +578,7 @@ $$
 
 ::: {.proof}
 
-정해진 $i$ 에 대한 $\supp \varphi_i$ 에서 $\Psi = \{\psi_j\}$ 가운데 유한개만 $0$ 이 아니다. 따라서
+정해진 $i$ 에 대한 $\supp \varphi_i$ 는 옹골집합이므로  @prp-CM_finitely_many_partion_of_unity_zero_on_compact_set 에 따라 $\Psi = \{\psi_j\}$ 가운데 유한개만 $0$ 이 아니다. 따라서
 
 $$
 \sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \int_A \sum_{\psi_j\in \Psi} \psi_j \cdot \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f
@@ -600,16 +599,16 @@ $$
 이며, 따라서 아래 식이 성립한다.
 
 $$
-\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot f
+\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot f. \qquad \square
 $$
 
 :::
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#lem-CM_partation_of_unity_and_integration_1}
+::: {#lem-CM_existance_of_integration_using_partition_of_unity}
 
-$A\subset \R^n$ 과 $f:A\to \R$ 이 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 $\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|$ 는 존재한다.
+$A\subset \R^n$ 와 $f:A\to \R$ 가 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 $\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|$ 는 존재한다.
 
 :::
 </div>
@@ -622,7 +621,7 @@ $$
 \sum_{\varphi_i \in \Gamma} \int_A \varphi_i \cdot |f| \le \sum_{\varphi_i \in \Gamma} M \int_A \varphi_i \le M\int_A \left(\sum_{\varphi_i \in \Gamma}\varphi_i\right) \le M\cdot  \text{vol}(B)
 $$
 
-이다. 따라서 $\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|$ 가 존재한다.
+이다. 따라서 $\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|$ 가 존재한다. $\square$
 
 
 :::
@@ -630,7 +629,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#thm-CM_partation_of_unity_and_integration_1}
+::: {#thm-CM_partition_of_unity_and_integration}
 
 $A$ 가 조르당 가측이고 $f$ 가 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 다음이 성립한다.
 
@@ -658,6 +657,22 @@ $$
 
 :::
 
+@thm-CM_partition_of_unity_and_integration 으로부터 단위분할을 이용한 적분을 정의 할 수 있다.
+
+
+::: {.callout-note appearance="simple" icon="false"}
+::: {#def-CM_redefinition_of_integrability}
+
+#### 단위분할을 이용한 적분
+
+열린 집합 $A\subset \R^n$ 와 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 단위분할 $\Phi=\langle \varphi_i\rangle$ 에 대해 $\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|$ 가 수렴하면 $f$ 는 적분가능하다고 하고 그 적분값은 다음과 같다.
+
+$$
+\int_A f := \sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f
+$$
+
+::: 
+:::
 
 
 
@@ -668,7 +683,7 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-::: {#exr-thm-CM_existance_of_partation_of_unity_1}
+::: {#exr-thm-CM_existance_of_partition_of_unity_1}
 
 옹골집합 $A_1,\,A_2,\ldots$ 가 $A_i \subset \text{int}(A_{i+1})$ 이고 $A=\bigcup A_i$ 라고 하자. 그리고 $\mathcal{O}=\{U_1,\,U_2,\ldots\}$ 가 $A$ 에 대한 열린 덮개라고 하자. 각각의 $i$ 에 대해 집합족 $\mathcal{O}_i$ 를 아래와 같이 정하자.
 $$
@@ -733,6 +748,18 @@ $$
 
 ::: {.solution}
 
+($a$) $U_0 =\left(\dfrac{1}{3},\, \dfrac{2}{3}\right)$ 이라고 하고 $n \in \Z_+$ 에 대해 $U_n =\left(\dfrac{1}{n+2},\,\dfrac{1}{n}\right) \cup \left(1-\dfrac{1}{n},\, 1-\dfrac{1}{n+2}\right)$ 라고 하자.  $\mathcal{O}=\{U_0,\,U_1,\ldots\}$ 이면 $\bigcup_{i=1}^\infty U_i = A$ 이므로 $A$ 에 포함되는 열린덮개 $\mathcal{O}$ 에 종속된 단위분할 $\Phi$ 를 생각할 수 있다. 
+
+$\int_{(0,\,1)}$ 이 수렴할 필요충분조건은 정의에 의해 $\sum_i f_{(0,\,1)} \phi_i \cdot f$ 가 수렴하는 것이다. 임의의 자연수 $i$ 에 대해 $\psi_i = \sum \{\phi\in \Phi : \text{supp}\, \phi \in U_i \}$ 라고 하자. $\psi_i$ 는 유한개의 $\Phi$ 의 원소의 합이므로 잘 정의된다. 이 때 다음이 성립한다.
+
+$$
+\int_{1/M}^{1-1/M} f \le \sum_{i=0}^M \int_{(0,\,1)} \psi_i \cdot f \le \int_{1/(M+2)}^{1-1/(M+2)} f
+$$
+
+따라서 $\int_{(0,\,1)}f$ 가 수렴할 필요충분조건은 $\lim_{\varepsilon \to 0} \int_{\varepsilon}^{1-\varepsilon} f = 0$ 이다.
+
+($b$)
+
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -776,19 +803,85 @@ $$ {#eq-CM_change_of_variable}
 
 다소 긴 과정을 통해 증명한다.
 
-$\bf{I}$. 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하며 각각의 $U\in \mathcal{O}$ 와 적분가능한 함수 $f$ 에 대해
+<u><i>주장-1 : </i></u> 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하며 각각의 $U\in \mathcal{O}$ 와 적분가능한 함수 $f$ 에 대해
 
 $$
 \int_{G(U)} f = \int_U (f\circ G)\cdot |\det (G')|
 $$ {#eq-thm-CM_change_of_variable_1}
 
-라면 정리가 성립함을 보이자.
+라면 정리가 성립한다.
 
-@exr-CM_spivak_2_36 에 의해 $\mathcal{O}'=\{G(U):U\in \mathcal{O}\}$ 는 $G(A)$ 에 포함되는 열린 덮개이다. $\Phi$ 가 $\mathcal{O}'$ 에 종속된 단위 분할이라고 하자. $\bf{x}\not\in G(U)$ 일 때 $\varphi_i(\bf{x})=0$ 이라면 $G$ 는 단사이므로 $(\varphi_i \cdot f)\circ G(\bf{x})=0$ 이다. @eq-thm-CM_change_of_variable_1 을 사용하면
+(주장 1 증명) @exr-CM_spivak_2_36 에 의해 $\mathcal{O}'=\{G(U):U\in \mathcal{O}\}$ 는 $G(A)$ 에 포함되는 열린 덮개이다. $\Phi$ 가 $\mathcal{O}'$ 에 종속된 단위 분할이라고 하자. $\bf{x}\not\in G(U)$ 일 때 $\varphi_i(\bf{x})=0$ 이라면 $G$ 는 단사이므로 $(\varphi_i \cdot f)\circ G(\bf{x})=0$ 이다. @eq-thm-CM_change_of_variable_1 을 사용하면
 
 $$
 \int_{G(U)} \varphi_i \cdot f = \int_U (\varphi_i \cdot f)\circ G \cdot |\det (G')|
 $$
+
+이며, 따라서
+
+$$
+\int_{G(A)} \varphi_i \cdot f = \int_A (\varphi_i \cdot f)\circ G \cdot |\det (G')|
+$$
+
+이므로
+
+$$
+\begin{aligned}
+\int_{G(A)} f = \sum_{\varphi_i \in \Phi} \int_{G(A)} \varphi_i \cdot f &= \sum_{\varphi_i \in \Phi} \int_A \left[(\varphi_i \cdot f)\circ G\right] |\det (G')| \\[0.3em]
+&=\sum_{\varphi_i \in \Phi} \int_A (\varphi_i \circ G)(f \circ G) | \det (G')| \\[0.3em]
+&= \int_A (f \circ G) | \det (G')|.
+\end{aligned}
+$$
+
+
+<u><i>주장-2 : </i></u>  $\;f=1$ 일 때 정리가 성립한다.
+
+(주장-2 중명) $f=1$ 일 때 성립하면 모든 상수함수에 대해 성립한다. $V$ 가 $G(A)$ 에 포함되는 $n$-cell 이고 $P\in \mathcal{P}(V)$ 라고 하자. $S\in P$ 에 대해 $f_S=m_S= \inf \{f(\bf{x}): \bf{x}\in S\}$  라고 하자. 그렇다면
+
+$$
+\begin{aligned}
+L(f,\,P) &= \sum_{S\in P} m_S  \cdot \text{vol}(S) = \sum_{S\in P} \int_{\text{int}(S)} f_S \\[0.3em]
+&=\sum_{S\in P} \int_{G^{-1}(\text{int}(S))} (f_S \circ g) | \det (G')| \le \sum_{S\in P} \int_{G^{-1}(\text{int}(S))} (f\circ G) |\det (G')|\\[0.3em]
+&\le \int_{G^{-1}(V)} (f\circ G)|\det (G')|.
+\end{aligned}
+$$
+
+같은 방법으로 다음을 보일 수 있다.
+
+$$
+U(f,\,P) \ge \int_{G^{-1}(V)} (f\circ G) | \det (G')|.
+$$
+
+이로부터
+
+$$
+\int_{G^{-1}(V)} (f\circ G)|\det (G')| \le \int_V f \le \int_{G^{-1}(V)} (f\circ G)|\det (G')|
+$$
+
+이다. 
+
+<u><i>주장-3 </i></u> :  $G : A \to \R^n$, $H:B\to \R^n$, $G(A)\subset A$ 일 때 정리가 성립하면 $H\circ G:A \to \R^n$ 에 대해서도 성립한다.
+
+(주장-3 증명)
+
+$$
+\begin{aligned}
+\int_{H\circ G (A)} f &= \int_{G(A)} (f\circ H) | \det (H')| \\[0.3em] 
+&= \int_A (f \circ H \circ G) \cdot \left(|\det (H')| \circ G\right) \cdot |\det (G')| \\[0.3em]
+&= \int_A (f \circ H \circ G) | \det ((H \circ G)')|.
+\end{aligned}
+$$
+
+<u><i>주장-4</i></u> :  $G: A\to \R^n$ 이 선형사상이면 정리가 성립한다.
+
+(주장-4 증명) @exr-CM_spivak_3_35 에 의해 
+
+$$
+\int_{G(U)} 1 = \text{vol}(G(U)) = \int_U |\det (G')|
+$$
+
+이다. 
+
 
 :::
 
