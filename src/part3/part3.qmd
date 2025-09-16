@@ -11,14 +11,11 @@ crossref:
 
 ## 참고자료
 
-### 교과서
+### 참고 도서
 
 - @Spivak1965 : Calculus on Manifolds
 - @Munkres1991analysis : Analysis on Manifolds
 - @Rudin1976 : Principles of Mathematical Analysis
-
-### 참고 도서
-
 - @DoCarmo1998differential : Differential Forms and Applications
   
 </br>
@@ -26,3 +23,4 @@ crossref:
 ### 기타
 
 - [All axolotls enjoy mathematics. But this one also loves physics](http://www.petraaxolotl.com/mathematics/calculus-on-manifolds/) : Spivak errata and solution
+- [MA-570 Summer 1999](https://www.ms.uky.edu/~ken/ma570/) Lecture course. Solution to Spivak's *Calculus on Manifolds* are presented.
