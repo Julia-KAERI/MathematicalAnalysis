@@ -308,17 +308,18 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#sec-CM_diffeomorphism" id="toc-sec-CM_diffeomorphism" class="nav-link active" data-scroll-target="#sec-CM_diffeomorphism"><span class="header-section-number">16.1</span> 미분 동형 사상</a>
+  <li><a href="#일변수-함수의-변수-변경" id="toc-일변수-함수의-변수-변경" class="nav-link active" data-scroll-target="#일변수-함수의-변수-변경"><span class="header-section-number">16.1</span> 일변수 함수의 변수 변경</a></li>
+  <li><a href="#sec-CM_diffeomorphism" id="toc-sec-CM_diffeomorphism" class="nav-link" data-scroll-target="#sec-CM_diffeomorphism"><span class="header-section-number">16.2</span> 미분 동형 사상</a>
   <ul class="collapse">
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
-  <li><a href="#단위-분할" id="toc-단위-분할" class="nav-link" data-scroll-target="#단위-분할"><span class="header-section-number">16.2</span> 단위 분할</a>
+  <li><a href="#단위-분할" id="toc-단위-분할" class="nav-link" data-scroll-target="#단위-분할"><span class="header-section-number">16.3</span> 단위 분할</a>
   <ul class="collapse">
-  <li><a href="#sec-CM_partition_of_unity" id="toc-sec-CM_partition_of_unity" class="nav-link" data-scroll-target="#sec-CM_partition_of_unity"><span class="header-section-number">16.2.1</span> 단위 분할</a></li>
-  <li><a href="#sec-CM_partition_of_unity_and_integration" id="toc-sec-CM_partition_of_unity_and_integration" class="nav-link" data-scroll-target="#sec-CM_partition_of_unity_and_integration"><span class="header-section-number">16.2.2</span> 단위 분할과 적분</a></li>
+  <li><a href="#sec-CM_partition_of_unity" id="toc-sec-CM_partition_of_unity" class="nav-link" data-scroll-target="#sec-CM_partition_of_unity"><span class="header-section-number">16.3.1</span> 단위 분할</a></li>
+  <li><a href="#sec-CM_partition_of_unity_and_integration" id="toc-sec-CM_partition_of_unity_and_integration" class="nav-link" data-scroll-target="#sec-CM_partition_of_unity_and_integration"><span class="header-section-number">16.3.2</span> 단위 분할과 적분</a></li>
   <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
   </ul></li>
-  <li><a href="#변수-변경" id="toc-변수-변경" class="nav-link" data-scroll-target="#변수-변경"><span class="header-section-number">16.3</span> 변수 변경</a>
+  <li><a href="#변수-변경" id="toc-변수-변경" class="nav-link" data-scroll-target="#변수-변경"><span class="header-section-number">16.4</span> 변수 변경</a>
   <ul class="collapse">
   <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
   </ul></li>
@@ -355,8 +356,34 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
-<section id="sec-CM_diffeomorphism" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="sec-CM_diffeomorphism"><span class="header-section-number">16.1</span> 미분 동형 사상</h2>
+<p><br></p>
+<section id="일변수-함수의-변수-변경" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="일변수-함수의-변수-변경"><span class="header-section-number">16.1</span> 일변수 함수의 변수 변경</h2>
+<p>일변수 실함수 <span class="math inline">\(g:[a,\,b] \to \mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이고 <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 연속이라면</p>
+<p><span class="math display">\[
+\int_{g(a)}^{g(b)} f = \int_a^b (f \circ g) \cdot g'
+\]</span></p>
+<p>임을 보일 수 있다. 증명은 쉬운데 <span class="math inline">\(F'=f\)</span> 인 함수 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\((F\circ g)' = (f\circ g)\cdot g'\)</span> 이며, 이를 이용하면 좌변과 우변 모두 <span class="math inline">\(F(g(b))-F(g(a))\)</span> 가 된다. <span class="math inline">\(g\)</span> 가 단사라고 하자. <span class="math inline">\(g\)</span> 가 증가함수일 경우 <span class="math inline">\(g'\ge 0\)</span> 이며</p>
+<p><span class="math display">\[
+\int_{g(a)}^{g(b)} f = \int_{g(a,\,b)}f = \int_a^b (f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
+\]</span></p>
+<p>이며, <span class="math inline">\(g\)</span> 가 감소함수일 경우 <span class="math inline">\(g'\le 0\)</span> 이므로</p>
+<p><span class="math display">\[
+\int_{g(a)}^{g(b)} f = -\int_{g(a,b)}f = - \int_a^b(f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
+\]</span></p>
+<p>이다. 즉</p>
+<p><span class="math display">\[
+\int_{g(a,b)}f = \int_a^b (f \circ g)\cdot |g'|
+\]</span></p>
+<p>이다. 다변수의 경우 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 단사함수 <span class="math inline">\(G:A \subset \mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\det (G'(\boldsymbol{x}))\ne 0\)</span> 일 때</p>
+<p><span class="math display">\[
+\int_G(U) g = \int_U (f \circ g) \cdot |\det (G')|
+\]</span></p>
+<p>이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는 <a href="#thm-CM_change_of_variable" class="quarto-xref">정리&nbsp;<span>16.6</span></a> 을 보이는 것이다.</p>
+<p><br></p>
+</section>
+<section id="sec-CM_diffeomorphism" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="sec-CM_diffeomorphism"><span class="header-section-number">16.2</span> 미분 동형 사상</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -575,31 +602,10 @@ T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \b
 <p><br></p>
 </section>
 </section>
-<section id="단위-분할" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="단위-분할"><span class="header-section-number">16.2</span> 단위 분할</h2>
-<section id="sec-CM_partition_of_unity" class="level3" data-number="16.2.1">
-<h3 data-number="16.2.1" class="anchored" data-anchor-id="sec-CM_partition_of_unity"><span class="header-section-number">16.2.1</span> 단위 분할</h3>
-<p>일변수 실함수 <span class="math inline">\(g:[a,\,b] \to \mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이고 <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 연속이라면</p>
-<p><span class="math display">\[
-\int_{g(a)}^{g(b)} f = \int_a^b (f \circ g) \cdot g'
-\]</span></p>
-<p>임을 보일 수 있다. 증명은 쉬운데 <span class="math inline">\(F'=f\)</span> 인 함수 <span class="math inline">\(F\)</span> 에 대해 <span class="math inline">\((F\circ g)' = (f\circ g)\cdot g'\)</span> 이며, 이를 이용하면 좌변과 우변 모두 <span class="math inline">\(F(g(b))-F(g(a))\)</span> 가 된다. <span class="math inline">\(g\)</span> 가 단사라고 하자. <span class="math inline">\(g\)</span> 가 증가함수일 경우 <span class="math inline">\(g'\ge 0\)</span> 이며</p>
-<p><span class="math display">\[
-\int_{g(a)}^{g(b)} f = \int_{g(a,\,b)}f = \int_a^b (f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
-\]</span></p>
-<p>이며, <span class="math inline">\(g\)</span> 가 감소함수일 경우 <span class="math inline">\(g'\le 0\)</span> 이므로</p>
-<p><span class="math display">\[
-\int_{g(a)}^{g(b)} f = -\int_{g(a,b)}f = - \int_a^b(f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
-\]</span></p>
-<p>이다. 즉</p>
-<p><span class="math display">\[
-\int_{g(a,b)}f = \int_a^b (f \circ g)\cdot |g'|
-\]</span></p>
-<p>이다. 다변수의 경우 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 단사함수 <span class="math inline">\(G:A \subset \mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\det (G'(\boldsymbol{x}))\ne 0\)</span> 일 때</p>
-<p><span class="math display">\[
-\int_G(U) g = \int_U (f \circ g) \cdot |\det (G')|
-\]</span></p>
-<p>이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는 <a href="#thm-CM_change_of_variable" class="quarto-xref">정리&nbsp;<span>16.6</span></a> 을 보이는 것이다.</p>
+<section id="단위-분할" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="단위-분할"><span class="header-section-number">16.3</span> 단위 분할</h2>
+<section id="sec-CM_partition_of_unity" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="sec-CM_partition_of_unity"><span class="header-section-number">16.3.1</span> 단위 분할</h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -615,11 +621,11 @@ T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \b
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_open_properties_of_non_support_element" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 16.2</strong></span> <span class="math inline">\(\phi:\mathbb{R}^n \to \mathbb{R}\)</span> 의 지지집합 <span class="math inline">\(S_\phi\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\not\in S_\phi\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 의 어떤 열린 근방 <span class="math inline">\(N_x\)</span> 에서 <span class="math inline">\(f(N_x)=\{0\}\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>명제 16.2</strong></span> <span class="math inline">\(\phi:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\not\in \text{supp}\,\phi\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 의 어떤 열린 근방 <span class="math inline">\(N_x\)</span> 에서 <span class="math inline">\(f(N_x)=\{0\}\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\mathbb{R}^n\backslash S_\phi\)</span> 는 열린 집합이다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\mathbb{R}^n\backslash (\text{supp}\,\phi)\)</span> 는 열린 집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -651,6 +657,16 @@ T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \b
 </div>
 </div>
 <p>이 단위분할은 적분에 있어 변수 변환에 사용된다. 우리는 곧 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 <span class="math inline">\(\Phi\)</span> 가 존재함을 보일것이다. 일단 이것을 인정하고 그 의미를 생각하보자. <span class="math inline">\(K\subset A\)</span> 가 옹골집합이라고 하자. <span class="math inline">\(\boldsymbol{x}\in K\)</span> 에 대해 정의의 성질 (<span class="math inline">\(2\)</span>) 를 만족하는 열린 집합 <span class="math inline">\(V_\boldsymbol{x}\)</span> 가 존재하며 유한개의 <span class="math inline">\(V_\boldsymbol{x}\)</span> 가 <span class="math inline">\(K\)</span> 를 덮는다. 따라서 <span class="math inline">\(\Phi\)</span> 가운데 유한개만 <span class="math inline">\(K\)</span> 에서 <span class="math inline">\(0\)</span> 이 아니다.</p>
+<br>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CM_partition_of_unity" class="theorem example">
+<p><span class="theorem-title"><strong>예제 16.1 (1차원 단위분할)</strong></span> 아래와 같이 정의된 <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span> 을 생각하자.</p>
+<p><span class="math display">\[
+f(x) = \left\{\begin{array}{ll} \dfrac{1+\cos x}{2},\qquad &amp;; -\pi \le x \le \pi, \\ 0 &amp;; \text{otherwise}. \end{array}\right.
+\]</span></p>
+<p><span class="math inline">\(f\)</span> 는 <span class="math inline">\(C^\infty\)</span> 급 함수이다. 여기에 음이 아닌 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(\varphi_{2m+1}(x) = f(x-m\pi)\)</span>, <span class="math inline">\(\varphi_{2m}(x) = f(x+m\pi)\)</span> 라고 하자. 그렇다면 <span class="math inline">\(\{\varphi_i: i=1,\,2,\ldots\}\)</span> 는 <span class="math inline">\(\mathbb{R}\)</span> 에서의 단위분할임을 보이자.</p>
+</div>
+</div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_existance_of_partition_of_unity_for_compact_set" class="theorem lemma">
@@ -718,19 +734,28 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 </div>
 <p><br></p>
 </section>
-<section id="sec-CM_partition_of_unity_and_integration" class="level3" data-number="16.2.2">
-<h3 data-number="16.2.2" class="anchored" data-anchor-id="sec-CM_partition_of_unity_and_integration"><span class="header-section-number">16.2.2</span> 단위 분할과 적분</h3>
-<p>열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. 각각의 <span class="math inline">\(U\in \mathcal{O}\)</span> 에 대해 <span class="math inline">\(U\subset A\)</span> 일 때 <span class="math inline">\(\mathcal{O}\)</span> 를 <span class="math inline">\(A\)</span> 에 <strong>포함되는 열린 덮개(admissible open cover)</strong> 라고 한다. <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(A\)</span> 에 대한 단위분할이고, <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린집합에서 유계이며, <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\(A\)</span> 의 집합이 measure <span class="math inline">\(0\)</span> 이면 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 <span class="math inline">\(\int_A \varphi_i \cdot |f|\)</span> 가 존재한다. (<a href="3_4_integration.html#thm-CM_integrability_and_measure_of_uncontinous_points" class="quarto-xref">정리&nbsp;<span>15.3</span></a>, <a href="3_4_integration.html#exr-CM_spivak_3_6" class="quarto-xref">연습문제&nbsp;<span>15.6</span></a>, <a href="3_4_integration.html#exr-CM_spivak_3_14" class="quarto-xref">연습문제&nbsp;<span>15.14</span></a>)</p>
+<section id="sec-CM_partition_of_unity_and_integration" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="sec-CM_partition_of_unity_and_integration"><span class="header-section-number">16.3.2</span> 단위 분할과 적분</h3>
+<p>열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. 각각의 <span class="math inline">\(U\in \mathcal{O}\)</span> 에 대해 <span class="math inline">\(U\subset A\)</span> 일 때 <span class="math inline">\(\mathcal{O}\)</span> 를 <span class="math inline">\(A\)</span> 에 <strong>포함되는 열린 덮개(admissible open cover)</strong> 라고 한다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="lem-CM_integration_over_product_of_function_and_partition_of_unity" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 16.3</strong></span> <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(A\)</span> 에 대한 단위분할이고, <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린집합에서 유계이며, <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\(A\)</span> 의 집합이 measure <span class="math inline">\(0\)</span> 이면 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 <span class="math inline">\(\int_A \varphi_i \cdot |f|\)</span> 가 존재한다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\varphi_i\)</span> 는 <span class="math inline">\(C^\infty\)</span> 급이므로 적분가능하다. <a href="3_4_integration.html#thm-CM_integrability_and_measure_of_uncontinous_points" class="quarto-xref">정리&nbsp;<span>15.3</span></a> 에 의해 <span class="math inline">\(f\)</span> 는 적분가능하다. <a href="3_4_integration.html#exr-CM_spivak_3_6" class="quarto-xref">연습문제&nbsp;<span>15.6</span></a> 에 의해 <span class="math inline">\(|f|\)</span> 도 적분가능하며 <a href="3_4_integration.html#exr-CM_spivak_3_14" class="quarto-xref">연습문제&nbsp;<span>15.14</span></a> 에 의해 <span class="math inline">\(\varphi_i \cdot |f|\)</span> 도 <span class="math inline">\(A\)</span> 에서 적분가능하다. <span class="math inline">\(\square\)</span></p>
+</div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_indepedence_of_partition_of_unity_for_integration" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 16.3</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\Phi=\langle \varphi_i\rangle\)</span> 이 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 이며 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>보조정리 16.4</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\Phi=\langle \varphi_i\rangle\)</span> 이 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 이며 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 에 대해</p>
 <p><span class="math display">\[
 \sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|
 \]</span></p>
 <p>가 수렴한다고 하자. <span class="math inline">\(\Psi = \langle \psi_j\rangle\)</span> 역시 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}'\)</span> 에 종속된 단위 분할일 때 <span class="math inline">\(\sum_{\psi_j\in \Psi} \int_A \psi_j \cdot |f|\)</span> 는 수렴하며 다음이 성립한다.</p>
 <p><span class="math display">\[
-\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \psi_j \cdot f.
+\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \int_A\psi_j \cdot f.
 \]</span></p>
 </div>
 </div>
@@ -755,7 +780,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_existance_of_integration_using_partition_of_unity" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 16.4</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 가 유계라고 하자. <span class="math inline">\(\Psi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 일 때 <span class="math inline">\(\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|\)</span> 는 존재한다.</p>
+<p><span class="theorem-title"><strong>보조정리 16.5</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 가 유계라고 하자. <span class="math inline">\(\Psi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 일 때 <span class="math inline">\(\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot |f|\)</span> 는 존재한다.</p>
 </div>
 </div>
 <div class="proof">
@@ -835,18 +860,24 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spviak_3_37" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 16.6 (Spivak 3.37)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:(0,\,1)\to \mathbb{R}\)</span> 이 음이 아닌 연속함수라고 하자. <span class="math inline">\(\int_{(0,1)}f\)</span> 가 존재할 필요충분 조건은 <span class="math inline">\(\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f\)</span> 가 존재하는 것임을 보여라.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A_n = [1-1/2^n,\, 1-1/2^{n+1}]\)</span> 이라고 하고 <span class="math inline">\(f:(0,\,1) \to \mathbb{R}\)</span> 이 <span class="math inline">\(\int_{A_n} f=(-1)^n/n\)</span> 이며 <span class="math inline">\(x\notin \sum_n A_n\)</span> 일 때 <span class="math inline">\(f(x)=0\)</span> 을 만족한다고 하자. <span class="math inline">\(\int_{(0,1)}f\)</span> 는 존재하지 않지만 <span class="math inline">\(\lim_{\varepsilon \to 0} \int_{(\varepsilon,1-\varepsilon)}f = \log 2\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 16.6 (Spivak 3.37)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:(0,\,1)\to \mathbb{R}\)</span> 이 음이 아닌 연속함수라고 하자. <span class="math inline">\(\displaystyle \int_{(0,1)}f\)</span> 가 존재할 필요충분 조건은 <span class="math inline">\(\displaystyle\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f\)</span> 가 존재하는 것임을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A_n = \left[1-\dfrac{1}{2^n},\, 1- \dfrac{1}{2^{n+1}}\right]\)</span> 이라고 하고 <span class="math inline">\(f:(0,\,1) \to \mathbb{R}\)</span> 이 <span class="math inline">\(\displaystyle\int_{A_n} f=\frac{(-1)^n}{n}\)</span> 이며 <span class="math inline">\(\displaystyle x\notin \bigcup_n A_n\)</span> 일 때 <span class="math inline">\(f(x)=0\)</span> 이다. <span class="math inline">\(\displaystyle\int_{(0,1)}f\)</span> 는 존재하지 않지만 <span class="math inline">\(\displaystyle \lim_{\varepsilon \to 0} \int_{(\varepsilon,1-\varepsilon)}f = \log 2\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(U_0 =\left(\dfrac{1}{3},\, \dfrac{2}{3}\right)\)</span> 이라고 하고 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(U_n =\left(\dfrac{1}{n+2},\,\dfrac{1}{n}\right) \cup \left(1-\dfrac{1}{n},\, 1-\dfrac{1}{n+2}\right)\)</span> 라고 하자. <span class="math inline">\(\mathcal{O}=\{U_0,\,U_1,\ldots\}\)</span> 이면 <span class="math inline">\(\bigcup_{i=1}^\infty U_i = A\)</span> 이므로 <span class="math inline">\(A\)</span> 에 포함되는 열린덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할 <span class="math inline">\(\Phi\)</span> 를 생각할 수 있다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>참고 : <a href="https://math.stackexchange.com/questions/2676391/improper-integrals-through-partitions-of-unity-problem-3-37-from-spivak">StackExchange</a></p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(U_0 =\left(\dfrac{1}{3},\, \dfrac{2}{3}\right)\)</span> 이라고 하고 <span class="math inline">\(n \in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(U_n =\left(\dfrac{1}{n+2},\,\dfrac{1}{n}\right) \cup \left(1-\dfrac{1}{n},\, 1-\dfrac{1}{n+2}\right)\)</span> 라고 하자. <span class="math inline">\(\mathcal{O}=\{U_0,\,U_1,\ldots\}\)</span> 이면 <span class="math inline">\(\bigcup_{i=1}^\infty U_i = A\)</span> 이므로 <span class="math inline">\(A\)</span> 에 포함되는 열린덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할 <span class="math inline">\(\Phi\)</span> 를 생각할 수 있다.</p>
 <p><span class="math inline">\(\int_{(0,\,1)}\)</span> 이 수렴할 필요충분조건은 정의에 의해 <span class="math inline">\(\sum_i f_{(0,\,1)} \phi_i \cdot f\)</span> 가 수렴하는 것이다. 임의의 자연수 <span class="math inline">\(i\)</span> 에 대해 <span class="math inline">\(\psi_i = \sum \{\phi\in \Phi : \text{supp}\, \phi \in U_i \}\)</span> 라고 하자. <span class="math inline">\(\psi_i\)</span> 는 유한개의 <span class="math inline">\(\Phi\)</span> 의 원소의 합이므로 잘 정의된다. 이 때 다음이 성립한다.</p>
 <p><span class="math display">\[
 \int_{1/M}^{1-1/M} f \le \sum_{i=0}^M \int_{(0,\,1)} \psi_i \cdot f \le \int_{1/(M+2)}^{1-1/(M+2)} f
 \]</span></p>
-<p>따라서 <span class="math inline">\(\int_{(0,\,1)}f\)</span> 가 수렴할 필요충분조건은 <span class="math inline">\(\lim_{\varepsilon \to 0} \int_{\varepsilon}^{1-\varepsilon} f = 0\)</span> 이다.</p>
-<p>(<span class="math inline">\(b\)</span>)</p>
+<p>따라서 <span class="math inline">\(\displaystyle \int_{(0,\,1)}f\)</span> 가 수렴할 필요충분조건은 <span class="math inline">\(\displaystyle \lim_{\varepsilon \to 0} \int_{\varepsilon}^{1-\varepsilon} f = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\mathcal{O} = \left\{ U_k=\left(1-\dfrac{1}{2^k-1},\, 1 - \dfrac{1}{2^{k+1}+1}\right) : k\in \mathbb{Z}_+ \right\}\)</span> 에 종속된 단위분할 <span class="math inline">\(\Phi\)</span> 를 생각하자. (<span class="math inline">\(a\)</span>) 에서와 같이 <span class="math inline">\(\psi_i = \sum \{\phi\in \Phi : \text{supp}\, \phi \in U_i \}\)</span> 라고 하자.</p>
+<p><span class="math inline">\(\displaystyle \sum_n \int_{(0,\,1)} \psi_n \cdot |f|\)</span> 의 수렴을 생각하자. <span class="math inline">\(b_k = \int_{A_k} |f| \ge |\int_{A_k} f| = 1/k\)</span> 이며</p>
+<p><span class="math display">\[
+\sum_{k=1}^{n-1} \int_{A_k} |f| \le \sum_{k=1}^n \int_{(0,\,1)}\psi_k \cdot |f| = \int_{(0,\,1)} |f|
+\]</span></p>
+<p>이다. 그런데 <span class="math inline">\(\sum_{k=1}^{n} \int_{A_k} |f| \ge \dfrac{1}{k}\)</span> 이므로 좌변이 발산하며, 따라서 우변도 발산한다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -860,8 +891,8 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 <p><br></p>
 </section>
 </section>
-<section id="변수-변경" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="변수-변경"><span class="header-section-number">16.3</span> 변수 변경</h2>
+<section id="변수-변경" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="변수-변경"><span class="header-section-number">16.4</span> 변수 변경</h2>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_change_of_variable" class="theorem">
 <p><span class="theorem-title"><strong>정리 16.6</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 단사인 <span class="math inline">\(C^1\)</span> 함수 <span class="math inline">\(G:A \to \mathbb{R}^n\)</span> 이 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에서 <span class="math inline">\(\det \left(G'(\boldsymbol{x})\right) \ne 0\)</span> 이라고 하자. 또한 <span class="math inline">\(f:G(A)\to \mathbb{R}\)</span> 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.</p>

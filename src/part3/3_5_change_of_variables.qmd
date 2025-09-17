@@ -8,6 +8,44 @@ crossref:
 
 {{< include ../../latexmacros.qmd >}}
 
+</br>
+
+## 일변수 함수의 변수 변경
+
+일변수 실함수 $g:[a,\,b] \to \R$ 이 $C^1$ 함수이고 $f:\R \to \R$ 이 연속이라면
+
+$$
+\int_{g(a)}^{g(b)} f = \int_a^b (f \circ g) \cdot g'
+$$
+
+임을 보일 수 있다. 증명은 쉬운데 $F'=f$ 인 함수 $F$ 에 대해 $(F\circ g)' = (f\circ g)\cdot g'$ 이며, 이를 이용하면 좌변과 우변 모두 $F(g(b))-F(g(a))$ 가 된다. $g$ 가 단사라고 하자. $g$ 가 증가함수일 경우 $g'\ge 0$ 이며 
+
+$$
+\int_{g(a)}^{g(b)} f = \int_{g(a,\,b)}f = \int_a^b (f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
+$$
+
+이며, $g$ 가 감소함수일 경우 $g'\le 0$ 이므로
+
+$$
+\int_{g(a)}^{g(b)} f = -\int_{g(a,b)}f = - \int_a^b(f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
+$$
+
+이다. 즉
+
+$$
+\int_{g(a,b)}f = \int_a^b (f \circ g)\cdot |g'|
+$$
+
+이다. 다변수의 경우 열린 집합 $A\subset \R^n$ 에서 정의된 단사함수 $G:A \subset \R^n \to \R$ 에 대해 각각의 $\bf{x}\in A$ 에 대해 $\det (G'(\bf{x}))\ne 0$ 일 때
+
+$$
+\int_G(U) g = \int_U (f \circ g) \cdot |\det (G')|
+$$
+
+이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는  @thm-CM_change_of_variable 을 보이는 것이다.
+
+</br>
+
 ## 미분 동형 사상 {#sec-CM_diffeomorphism}
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -362,38 +400,6 @@ $A,\,B \subset \R^n$ 이 열린 집합이며 $G:A\to B$ 는 전단사이다.
 
 ### 단위 분할 {#sec-CM_partition_of_unity}
 
-일변수 실함수 $g:[a,\,b] \to \R$ 이 $C^1$ 함수이고 $f:\R \to \R$ 이 연속이라면
-
-$$
-\int_{g(a)}^{g(b)} f = \int_a^b (f \circ g) \cdot g'
-$$
-
-임을 보일 수 있다. 증명은 쉬운데 $F'=f$ 인 함수 $F$ 에 대해 $(F\circ g)' = (f\circ g)\cdot g'$ 이며, 이를 이용하면 좌변과 우변 모두 $F(g(b))-F(g(a))$ 가 된다. $g$ 가 단사라고 하자. $g$ 가 증가함수일 경우 $g'\ge 0$ 이며 
-
-$$
-\int_{g(a)}^{g(b)} f = \int_{g(a,\,b)}f = \int_a^b (f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
-$$
-
-이며, $g$ 가 감소함수일 경우 $g'\le 0$ 이므로
-
-$$
-\int_{g(a)}^{g(b)} f = -\int_{g(a,b)}f = - \int_a^b(f\circ g)\cdot g' = \int_a^b (f\circ g)\cdot |g'|
-$$
-
-이다. 즉
-
-$$
-\int_{g(a,b)}f = \int_a^b (f \circ g)\cdot |g'|
-$$
-
-이다. 다변수의 경우 열린 집합 $A\subset \R^n$ 에서 정의된 단사함수 $G:A \subset \R^n \to \R$ 에 대해 각각의 $\bf{x}\in A$ 에 대해 $\det (G'(\bf{x}))\ne 0$ 일 때
-
-$$
-\int_G(U) g = \int_U (f \circ g) \cdot |\det (G')|
-$$
-
-이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는  @thm-CM_change_of_variable 을 보이는 것이다.
-
 ::: {.callout-note appearance="simple" icon="false"}
 ::: {#def-CM_support_of_function}
 
@@ -409,7 +415,7 @@ $\phi : \R^n \to \R$ 과 $D_\phi=\{\bf{x}\in \R^n : \phi(\bf{x})\ne 0\}$ 에 대
 
 ::: {#prp-CM_open_properties_of_non_support_element}
 
-$\phi:\R^n \to \R$ 의 지지집합 $S_\phi$ 에 대해 $\bf{x}\not\in S_\phi$ 이면 $\bf{x}$ 의 어떤 열린 근방 $N_x$ 에서 $f(N_x)=\{0\}$ 이다. 
+$\phi:\R^n \to \R$ 에 대해 $\bf{x}\not\in \text{supp}\,\phi$ 이면 $\bf{x}$ 의 어떤 열린 근방 $N_x$ 에서 $f(N_x)=\{0\}$ 이다. 
 
 :::
 
@@ -417,7 +423,7 @@ $\phi:\R^n \to \R$ 의 지지집합 $S_\phi$ 에 대해 $\bf{x}\not\in S_\phi$ �
 
 ::: {.proof}
 
-$\R^n\backslash S_\phi$ 는 열린 집합이다. $\square$
+$\R^n\backslash (\text{supp}\,\phi)$ 는 열린 집합이다. $\square$
 
 :::
 
@@ -432,7 +438,6 @@ $\R^n\backslash S_\phi$ 는 열린 집합이다. $\square$
 &emsp;($1$) $\bf{x}\in K \implies \psi(\bf{x}) > 0$, 
 
 &emsp;($2$) $K \subset \supp \psi \subset A$,
-
 
 :::
 
@@ -469,6 +474,23 @@ $\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 
 
 이 단위분할은 적분에 있어 변수 변환에 사용된다. 우리는 곧 모든 $A\subset \R^n$ 와 $A$ 의 열린 덮개 $\mathcal{O}$ 에 대해 $A$ 에 대한 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 $\Phi$ 가 존재함을 보일것이다. 일단 이것을 인정하고 그 의미를 생각하보자. $K\subset A$ 가 옹골집합이라고 하자. $\bf{x}\in K$ 에 대해 정의의 성질 ($2$) 를 만족하는 열린 집합 $V_\bf{x}$ 가 존재하며 유한개의 $V_\bf{x}$ 가 $K$ 를 덮는다. 따라서 $\Phi$ 가운데 유한개만 $K$ 에서 $0$ 이 아니다.  
 
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_partition_of_unity}
+
+#### 1차원 단위분할
+
+아래와 같이 정의된 $f:\R\to\R$ 을 생각하자.
+
+$$
+f(x) = \left\{\begin{array}{ll} \dfrac{1+\cos x}{2},\qquad &; -\pi \le x \le \pi, \\ 0 &; \text{otherwise}. \end{array}\right.
+$$
+
+$f$ 는 $C^\infty$ 급 함수이다. 여기에 음이 아닌 정수 $m$ 에 대해 $\varphi_{2m+1}(x) = f(x-m\pi)$, $\varphi_{2m}(x) = f(x+m\pi)$ 라고 하자. 그렇다면 $\{\varphi_i: i=1,\,2,\ldots\}$ 는 $\R$ 에서의 단위분할임을 보이자. 
+:::
+
+</div>
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -586,7 +608,23 @@ $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 단위분�
 
 ### 단위 분할과 적분 {#sec-CM_partition_of_unity_and_integration}
 
-열린 집합 $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 를 생각하자. 각각의 $U\in \mathcal{O}$ 에 대해 $U\subset A$ 일 때 $\mathcal{O}$ 를 $A$ 에 **포함되는 열린 덮개(admissible open cover)** 라고 한다. $\Phi$ 가 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $A$ 에 대한 단위분할이고, $f:A \to \R$ 이 각각의 $\bf{x}\in A$ 에 대해 $\bf{x}$ 를 포함하는 열린집합에서 유계이며, $f$ 가 불연속인 $A$ 의 집합이 measure $0$ 이면 각각의 $\varphi_i \in \Phi$ 에 대해 $\int_A \varphi_i \cdot |f|$ 가 존재한다. (@thm-CM_integrability_and_measure_of_uncontinous_points, @exr-CM_spivak_3_6, @exr-CM_spivak_3_14)
+열린 집합 $A\subset \R^n$ 에 대한 열린 덮개 $\mathcal{O}$ 를 생각하자. 각각의 $U\in \mathcal{O}$ 에 대해 $U\subset A$ 일 때 $\mathcal{O}$ 를 $A$ 에 **포함되는 열린 덮개(admissible open cover)** 라고 한다.
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-CM_integration_over_product_of_function_and_partition_of_unity}
+
+$\Phi$ 가 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 에 종속된 $A$ 에 대한 단위분할이고, $f:A \to \R$ 이 각각의 $\bf{x}\in A$ 에 대해 $\bf{x}$ 를 포함하는 열린집합에서 유계이며, $f$ 가 불연속인 $A$ 의 집합이 measure $0$ 이면 각각의 $\varphi_i \in \Phi$ 에 대해 $\int_A \varphi_i \cdot |f|$ 가 존재한다.
+:::
+
+</div>
+
+::: {.proof}
+
+$\varphi_i$ 는 $C^\infty$ 급이므로 적분가능하다. @thm-CM_integrability_and_measure_of_uncontinous_points 에 의해 $f$ 는 적분가능하다. @exr-CM_spivak_3_6 에 의해 $|f|$ 도 적분가능하며 @exr-CM_spivak_3_14 에 의해 $\varphi_i \cdot |f|$ 도 $A$ 에서 적분가능하다. $\square$
+
+:::
 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -602,7 +640,7 @@ $$
 가 수렴한다고 하자. $\Psi = \langle \psi_j\rangle$ 역시 $A$ 에 포함되는 열린 덮개 $\mathcal{O}'$ 에 종속된 단위 분할일 때 $\sum_{\psi_j\in \Psi} \int_A \psi_j \cdot |f|$ 는 수렴하며 다음이 성립한다.
 
 $$
-\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \psi_j \cdot f.
+\sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot f = \sum_{\psi_j \in \Psi} \int_A\psi_j \cdot f.
 $$
 :::
 
@@ -640,7 +678,7 @@ $$
 
 ::: {#lem-CM_existance_of_integration_using_partition_of_unity}
 
-$A\subset \R^n$ 와 $f:A\to \R$ 가 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 $\sum_{\varphi\in \Phi} \int_A \varphi \cdot |f|$ 는 존재한다.
+$A\subset \R^n$ 와 $f:A\to \R$ 가 유계라고 하자. $\Psi$ 가 $A$ 에 대한 열린 덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 일 때 $\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot |f|$ 는 존재한다.
 
 :::
 </div>
@@ -706,12 +744,9 @@ $$
 ::: 
 :::
 
-
-
 </br>
 
 ### 연습문제 {.unnumbered}
-
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
@@ -760,7 +795,6 @@ $$
 
 이 수열 $\langle D_i \rangle$ ($1$), ($2$) 를 만족한다. $\text{dist}(\{\bf{x}\},\,\partial A)$ 는 연속함수 이므로 (@exr-MA_rudin_4_20) $D_i$ 는 닫힌 집합이고 각각의 $D_i$ 가 유계이므로 $D_i$ 는 옹골집합이다. 그러나 $\int_{D_i}1$ 의 존재성은 알 수 없다. 이제 각각의 $\bf{x}\in D_i$ 에 대해 $\bf{x}$ 를 중심으로 하며 $\text{int}(D_{i+1})$ 에 포함되는 $n$-입방체의 합집합을 생각하자. $D_i$ 가 옹골집합이므로 유한개의 원소만으로 $D_i$ 를 덮을 수 있으며 이 유한개의 원소의 합집합을 $A_i$ 라고 하면 $D_i \subset A_i \text{int}(D_{i+1})$ 이며 $A_i$ 는 옹골집합이다. 각각의 $A_i$ 는 유한개의 $n$-입방체의 합집합이므로 적분가능하고 ($1$), ($2$) 를 만족한다.
 
-
 :::
 
 
@@ -770,15 +804,17 @@ $$
 
 #### Spivak 3.37
 
-($a$) $f:(0,\,1)\to \R$ 이 음이 아닌 연속함수라고 하자. $\int_{(0,1)}f$ 가 존재할 필요충분 조건은 $\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f$ 가 존재하는 것임을 보여라.
+($a$) $f:(0,\,1)\to \R$ 이 음이 아닌 연속함수라고 하자. $\displaystyle \int_{(0,1)}f$ 가 존재할 필요충분 조건은 $\displaystyle\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f$ 가 존재하는 것임을 보여라.
 
-($b$) $A_n = [1-1/2^n,\, 1-1/2^{n+1}]$ 이라고 하고 $f:(0,\,1) \to \R$ 이 $\int_{A_n} f=(-1)^n/n$ 이며 $x\notin \sum_n A_n$ 일 때 $f(x)=0$ 을 만족한다고 하자. $\int_{(0,1)}f$ 는 존재하지 않지만 $\lim_{\varepsilon \to 0} \int_{(\varepsilon,1-\varepsilon)}f = \log 2$ 임을 보여라.
+($b$) $A_n = \left[1-\dfrac{1}{2^n},\, 1- \dfrac{1}{2^{n+1}}\right]$ 이라고 하고 $f:(0,\,1) \to \R$ 이 $\displaystyle\int_{A_n} f=\frac{(-1)^n}{n}$ 이며 $\displaystyle x\notin \bigcup_n A_n$ 일 때 $f(x)=0$ 이다. $\displaystyle\int_{(0,1)}f$ 는 존재하지 않지만 $\displaystyle \lim_{\varepsilon \to 0} \int_{(\varepsilon,1-\varepsilon)}f = \log 2$ 임을 보여라.
 
 :::
 
 </div>
 
 ::: {.solution}
+
+참고 : [StackExchange](https://math.stackexchange.com/questions/2676391/improper-integrals-through-partitions-of-unity-problem-3-37-from-spivak)
 
 ($a$) $U_0 =\left(\dfrac{1}{3},\, \dfrac{2}{3}\right)$ 이라고 하고 $n \in \Z_+$ 에 대해 $U_n =\left(\dfrac{1}{n+2},\,\dfrac{1}{n}\right) \cup \left(1-\dfrac{1}{n},\, 1-\dfrac{1}{n+2}\right)$ 라고 하자.  $\mathcal{O}=\{U_0,\,U_1,\ldots\}$ 이면 $\bigcup_{i=1}^\infty U_i = A$ 이므로 $A$ 에 포함되는 열린덮개 $\mathcal{O}$ 에 종속된 단위분할 $\Phi$ 를 생각할 수 있다. 
 
@@ -788,9 +824,18 @@ $$
 \int_{1/M}^{1-1/M} f \le \sum_{i=0}^M \int_{(0,\,1)} \psi_i \cdot f \le \int_{1/(M+2)}^{1-1/(M+2)} f
 $$
 
-따라서 $\int_{(0,\,1)}f$ 가 수렴할 필요충분조건은 $\lim_{\varepsilon \to 0} \int_{\varepsilon}^{1-\varepsilon} f = 0$ 이다.
+따라서 $\displaystyle \int_{(0,\,1)}f$ 가 수렴할 필요충분조건은 $\displaystyle \lim_{\varepsilon \to 0} \int_{\varepsilon}^{1-\varepsilon} f = 0$ 이다.
 
-($b$)
+($b$) $\mathcal{O} = \left\{ U_k=\left(1-\dfrac{1}{2^k-1},\, 1 - \dfrac{1}{2^{k+1}+1}\right) : k\in \Z_+ \right\}$ 에 종속된 단위분할 $\Phi$ 를 생각하자. ($a$) 에서와 같이 $\psi_i = \sum \{\phi\in \Phi : \text{supp}\, \phi \in U_i \}$ 라고 하자. 
+
+$\displaystyle \sum_n \int_{(0,\,1)} \psi_n \cdot |f|$ 의 수렴을 생각하자. $b_k = \int_{A_k} |f| \ge |\int_{A_k} f| = 1/k$ 이며 
+
+$$
+\sum_{k=1}^{n-1} \int_{A_k} |f| \le \sum_{k=1}^n \int_{(0,\,1)}\psi_k \cdot |f| = \int_{(0,\,1)} |f|
+$$
+
+이다. 그런데 $\sum_{k=1}^{n} \int_{A_k} |f| \ge \dfrac{1}{k}$ 이므로 좌변이 발산하며, 따라서 우변도 발산한다. 
+
 
 :::
 
@@ -815,6 +860,7 @@ $A_n$ 은 $(n,\,n+1)$ 에 포함되는 닫힌 집합이라고 하자. $f:\R\to \
 
 
 ## 변수 변경
+
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
