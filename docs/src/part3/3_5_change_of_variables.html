@@ -664,10 +664,30 @@ T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \b
 <p><span class="math display">\[
 f(x) = \left\{\begin{array}{ll} \dfrac{1+\cos x}{2},\qquad &amp;; -\pi \le x \le \pi, \\ 0 &amp;; \text{otherwise}. \end{array}\right.
 \]</span></p>
-<p><span class="math inline">\(f\)</span> 는 <span class="math inline">\(C^\infty\)</span> 급 함수이다. 여기에 음이 아닌 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(\varphi_{2m+1}(x) = f(x-m\pi)\)</span>, <span class="math inline">\(\varphi_{2m}(x) = f(x+m\pi)\)</span> 라고 하자. 그렇다면 <span class="math inline">\(\{\varphi_i: i=1,\,2,\ldots\}\)</span> 는 <span class="math inline">\(\mathbb{R}\)</span> 에서의 단위분할임을 보이자.</p>
+<p><span class="math inline">\(f\)</span> 는 <span class="math inline">\(C^\infty\)</span> 급 함수이다. 여기에 음이 아닌 정수 <span class="math inline">\(m\)</span> 에 대해 <span class="math inline">\(\varphi_{2m+1}(x) = f(x-m\pi)\)</span>, <span class="math inline">\(\varphi_{2m}(x) = f(x+m\pi)\)</span> 라고 하자. <span class="math inline">\(\mathbb{R}\)</span> 에서의 열린 구간 <span class="math inline">\(U_{m}\)</span> 을 <span class="math inline">\(m&gt;0\)</span> 에 대해 아래와 같이 정하고 <span class="math inline">\(\mathcal{O}=\{U_1,\,U_2,\ldots\}\)</span> 라고 하면 <span class="math inline">\(\mathcal{O}\)</span> 는 <span class="math inline">\(\mathbb{R}\)</span> 에 대한 열린 덮개이다. <span class="math display">\[
+\begin{aligned}
+U_{2m+1} &amp;= (-1+ (m-1)\pi,\, 1+ (m+1)\pi), \\[0.3em]
+U_{2m} &amp;= (-1+(-m-1)\pi ,\, 1 + (-m+1)\pi).
+\end{aligned}
+\]</span></p>
+<div id="fig-CM_partition_of_unity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CM_partition_of_unity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/partition_of_unity.png" class="img-fluid figure-img" width="550">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CM_partition_of_unity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;16.1: 단위분할
+</figcaption>
+</figure>
+</div>
+<p>이제 <span class="math inline">\(\Phi = \{\varphi_i\}\)</span> 라고 하면 <span class="math inline">\(\Phi\)</span> 는 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(\mathbb{R}\)</span> 에 대한 단위분할임을 보이자.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x\in\mathbb{R}\)</span> 에서 <span class="math inline">\(0\le \varphi_i (x)\le 1\)</span> 임은 자명하다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x\in \mathbb{R}\)</span> 에 대해 <span class="math inline">\(\varphi_i (x)\ne 0\)</span> 인 <span class="math inline">\(\varphi_i\)</span> 는 많아야 2개이며 <span class="math inline">\((x-1,\,x+1)\)</span> 구간에서 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(\Phi=\{\varphi_i\}\)</span> 의 원소의 개수는 많아야 3개이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\([0,\,\pi]\)</span> 구간에서 <span class="math inline">\(\sum_{\varphi_i\in \Phi} \varphi_i (x) = \frac{1}{2}(1+\cos x + 1 + \cos (x-\pi)) =1\)</span> 이다. 다른 구간도 동일한 결과를 얻는다.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\text{supp}\, \varphi_i \in U_i\)</span> 이다.</p>
 </div>
 </div>
-<br>
+<p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_existance_of_partition_of_unity_for_compact_set" class="theorem lemma">
 <p><span class="theorem-title"><strong>보조정리 16.1</strong></span> 옹골 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다.</p>
@@ -701,7 +721,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(k\)</span> 에 대해 집합족 <span class="math inline">\(\mathcal{O}_k\)</span> 를 아래와 같이 정하자. <span class="math display">\[
 \mathcal{O}_k = \{U \cap (\text{int}(A_{k+1}) - A_{k-2}): U \in\mathcal{O}\}.
 \]</span></p>
-<p>그렇다면 <span class="math inline">\(\mathcal{O}_k\)</span> 는 옹골 집합 <span class="math inline">\(B_k = A_k - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개이다(<a href="#exr-thm-CM_existance_of_partition_of_unity_1" class="quarto-xref">연습문제&nbsp;<span>16.4</span></a>). <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>16.1</span></a> 에서 보았듯이 각각의 <span class="math inline">\(B_k\)</span> 에 대해 <span class="math inline">\(\mathcal{O}_k\)</span> 에 종속된 단위 분할 <span class="math inline">\(\Phi_k\)</span> 가 존재한다. <span class="math inline">\(\sigma:A \to \mathbb{R}\)</span> 을 아래와 같이 정의하자.</p>
+<p>그렇다면 <span class="math inline">\(\mathcal{O}_k\)</span> 는 옹골 집합 <span class="math inline">\(B_k = A_k - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개이다(<a href="#exr-thm-CM_existance_of_partition_of_unity_1" class="quarto-xref">연습문제&nbsp;<span>16.5</span></a>). <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>16.1</span></a> 에서 보았듯이 각각의 <span class="math inline">\(B_k\)</span> 에 대해 <span class="math inline">\(\mathcal{O}_k\)</span> 에 종속된 단위 분할 <span class="math inline">\(\Phi_k\)</span> 가 존재한다. <span class="math inline">\(\sigma:A \to \mathbb{R}\)</span> 을 아래와 같이 정의하자.</p>
 <p><span class="math display">\[
 \sigma(\boldsymbol{x}) := \sum_{\varphi_i^{(k)}\in \Phi_k,\, \text{all } k } \varphi_{i}^{(k)}(\boldsymbol{x}).
 \]</span></p>
@@ -720,7 +740,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>우리는 <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>16.1</span></a>, <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>16.2</span></a> 를 통해 일부를 보였다.</p>
-<p><span class="math inline">\(A\)</span> 가 열린 집합일 경우 <a href="#exr-CM_open_set_and_union_of_compact_set" class="quarto-xref">연습문제&nbsp;<span>16.5</span></a> 의 <span class="math inline">\(\langle A_i \rangle\)</span> 에 <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>16.2</span></a> 의 경우를 적용 할 수 있다.</p>
+<p><span class="math inline">\(A\)</span> 가 열린 집합일 경우 <a href="#exr-CM_open_set_and_union_of_compact_set" class="quarto-xref">연습문제&nbsp;<span>16.6</span></a> 의 <span class="math inline">\(\langle A_i \rangle\)</span> 에 <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>16.2</span></a> 의 경우를 적용 할 수 있다.</p>
 <p>이제 임의의 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 생각하자. <span class="math inline">\(B=\bigcup_{U\in \mathcal{O}}U\)</span> 라고 하면 <span class="math inline">\(A\subset B\)</span> 이며 <span class="math inline">\(B\)</span> 가 열린 집합이므로 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다. 그리고 이 단위분할은 <span class="math inline">\(A\)</span> 에 대한 단위분할이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
@@ -831,8 +851,22 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <section id="연습문제-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-thm-CM_munkres_16_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 16.4 (Munkres 16.3)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(S \subset \mathbb{R}^n\)</span> 이고 <span class="math inline">\(f:S\to\mathbb{R}\)</span> 이라고 하자. <span class="math inline">\(\boldsymbol{x}_0\in S\)</span> 일 때 <span class="math inline">\(\boldsymbol{x}_0\)</span> 의 어떤 열린 근방 <span class="math inline">\(U\)</span> 에서 정의된 <span class="math inline">\(g:U\to \mathbb{R}\)</span> 이 존재하여 <span class="math inline">\(C^r\)</span>-급 함수이고 <span class="math inline">\(U\cap S\)</span> 에서 <span class="math inline">\(f=g\)</span> 이면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\boldsymbol{x}_0\)</span> 에서 <span class="math inline">\(C^r\)</span>-급 함수라고 한다. 만약 <span class="math inline">\(\phi :\mathbb{R}^n \to \mathbb{R}\)</span> 이 <span class="math inline">\(C^r\)</span>-급 함수이고 <span class="math inline">\(\text{supp}\, \phi \subset U\)</span> 이면 아래와 같이 정의된 <span class="math inline">\(h:\mathbb{R}^n \to \mathbb{R}\)</span> 은 잘 정의된 함수이며 <span class="math inline">\(\mathbb{R}^n\)</span> 에서 <span class="math inline">\(C^r\)</span>-급 함수임을 보여라.</p>
+<p><span class="math display">\[
+h(\boldsymbol{x}) = \left\{\begin{array}{ll} \phi(\boldsymbol{x})\,g(\boldsymbol{x}),\qquad &amp;\boldsymbol{x}\in U, \\0, &amp;\boldsymbol{x}\notin \text{supp}\, \phi. \end{array}\right.
+\]</span></p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(f:S\to\mathbb{R}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{x}\in S\)</span> 에서 <span class="math inline">\(C^r\)</span> 급이라면 <span class="math inline">\(S\)</span> 를 포함하는 열린 집합 <span class="math inline">\(A\)</span> 에서의 <span class="math inline">\(C^r\)</span> 급 함수 <span class="math inline">\(h:A \to \mathbb{R}\)</span> 로 확장 될 수 있음을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\boldsymbol{x}\in U\backslash (\text{supp}\, \phi)\)</span> 일 때 <span class="math inline">\(\phi(\boldsymbol{x})=0\)</span> 이므로 <span class="math inline">\(h(\boldsymbol{x})\)</span> 는 잘 정의된다. <span class="math inline">\(\text{supp}\,\phi\)</span> 는 닫힌 집합이므로 <span class="math inline">\(\boldsymbol{x}\not\in \text{supp}\,\phi\)</span> 일 때 <span class="math inline">\(\boldsymbol{x}\)</span> 를 중심으로 하는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(Q\)</span> 에서 <span class="math inline">\(\phi(Q)=0\)</span> 이다. <span class="math inline">\(Q\)</span> 는 볼록집합이므로 <a href="3_2_differentiation_of_manifolds.html#cor-CM_mean_value_theorem_for_convex" class="quarto-xref">따름정리&nbsp;<span>13.2</span></a> 에 따라 모든 <span class="math inline">\(\boldsymbol{x}\in Q\)</span> 에서 <span class="math inline">\(D_i \phi (\boldsymbol{x})=0\)</span> 이며, 이를 반복하면 <span class="math inline">\(\boldsymbol{x}\notin\text{supp}\,\phi\)</span> 에서 <span class="math inline">\(C^r\)</span> 급 함수임을 알 수 있다. <span class="math inline">\(\boldsymbol{x}\in U\)</span> 에서는 <span class="math inline">\(\phi,\, g\)</span> 가 모두 <span class="math inline">\(C^r\)</span> 급 함수이므로 <span class="math inline">\(h\)</span> 도 <span class="math inline">\(C^r\)</span> 급 함수이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <a href="3_1_functions_on_Euclidean_space.html#exr-CM_spivak_1_22" class="quarto-xref">연습문제&nbsp;<span>12.15</span></a></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-thm-CM_existance_of_partition_of_unity_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 16.4</strong></span> 옹골집합 <span class="math inline">\(A_1,\,A_2,\ldots\)</span> 가 <span class="math inline">\(A_i \subset \text{int}(A_{i+1})\)</span> 이고 <span class="math inline">\(A=\bigcup A_i\)</span> 라고 하자. 그리고 <span class="math inline">\(\mathcal{O}=\{U_1,\,U_2,\ldots\}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개라고 하자. 각각의 <span class="math inline">\(i\)</span> 에 대해 집합족 <span class="math inline">\(\mathcal{O}_i\)</span> 를 아래와 같이 정하자. <span class="math display">\[
+<p><span class="theorem-title"><strong>연습문제 16.5</strong></span> 옹골집합 <span class="math inline">\(A_1,\,A_2,\ldots\)</span> 가 <span class="math inline">\(A_i \subset \text{int}(A_{i+1})\)</span> 이고 <span class="math inline">\(A=\bigcup A_i\)</span> 라고 하자. 그리고 <span class="math inline">\(\mathcal{O}=\{U_1,\,U_2,\ldots\}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개라고 하자. 각각의 <span class="math inline">\(i\)</span> 에 대해 집합족 <span class="math inline">\(\mathcal{O}_i\)</span> 를 아래와 같이 정하자. <span class="math display">\[
 \mathcal{O}_i = \{U \cap (\text{int}(A_{i+1}) - A_{i-2}): U \in\mathcal{O}\}.
 \]</span></p>
 <p>그렇다면 <span class="math inline">\(\mathcal{O}_i\)</span> 는 옹골 집합 <span class="math inline">\(B_i = A_i - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개임을 보여라.</p>
@@ -844,7 +878,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_open_set_and_union_of_compact_set" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 16.5</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 가 열린집합일 때 아래를 만족하는 어떤 옹골집합의 수열 <span class="math inline">\(\langle A_i\rangle\)</span> 이 존재함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 16.6</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 가 열린집합일 때 아래를 만족하는 어떤 옹골집합의 수열 <span class="math inline">\(\langle A_i\rangle\)</span> 이 존재함을 보여라.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A_i \subset A_{i+1}\)</span> 이고</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle A = \bigcup_i A_i\)</span> 이며</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \int_{A_i} 1\)</span> 이 존재한다.</p>
@@ -860,7 +894,7 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spviak_3_37" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 16.6 (Spivak 3.37)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:(0,\,1)\to \mathbb{R}\)</span> 이 음이 아닌 연속함수라고 하자. <span class="math inline">\(\displaystyle \int_{(0,1)}f\)</span> 가 존재할 필요충분 조건은 <span class="math inline">\(\displaystyle\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f\)</span> 가 존재하는 것임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 16.7 (Spivak 3.37)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(f:(0,\,1)\to \mathbb{R}\)</span> 이 음이 아닌 연속함수라고 하자. <span class="math inline">\(\displaystyle \int_{(0,1)}f\)</span> 가 존재할 필요충분 조건은 <span class="math inline">\(\displaystyle\lim_{\varepsilon \to 0} \int_\varepsilon^{1-\varepsilon} f\)</span> 가 존재하는 것임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A_n = \left[1-\dfrac{1}{2^n},\, 1- \dfrac{1}{2^{n+1}}\right]\)</span> 이라고 하고 <span class="math inline">\(f:(0,\,1) \to \mathbb{R}\)</span> 이 <span class="math inline">\(\displaystyle\int_{A_n} f=\frac{(-1)^n}{n}\)</span> 이며 <span class="math inline">\(\displaystyle x\notin \bigcup_n A_n\)</span> 일 때 <span class="math inline">\(f(x)=0\)</span> 이다. <span class="math inline">\(\displaystyle\int_{(0,1)}f\)</span> 는 존재하지 않지만 <span class="math inline">\(\displaystyle \lim_{\varepsilon \to 0} \int_{(\varepsilon,1-\varepsilon)}f = \log 2\)</span> 임을 보여라.</p>
 </div>
 </div>
@@ -882,7 +916,7 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spviak_3_38" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 16.7 (Spivak 3.38)</strong></span> <span class="math inline">\(A_n\)</span> 은 <span class="math inline">\((n,\,n+1)\)</span> 에 포함되는 닫힌 집합이라고 하자. <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 <span class="math inline">\(\int_{A_n}f = (-1)^n/n\)</span> 이며 <span class="math inline">\(x\not\in \cup_n A_n\)</span> 일 때 <span class="math inline">\(f(x) = 0\)</span> 이라고 하자. <span class="math inline">\(\sum_{\varphi_i \in \Phi} \int_\mathbb{R}\varphi \cdot f\)</span> 와 <span class="math inline">\(\sum_{\psi_j \in \Psi}\int_\mathbb{R}\psi_jh \cdot f\)</span> 값이 서로 다른 두 단위 분할 <span class="math inline">\(\Phi\)</span> 와 <span class="math inline">\(\Psi\)</span> 를 찾아라.</p>
+<p><span class="theorem-title"><strong>연습문제 16.8 (Spivak 3.38)</strong></span> <span class="math inline">\(A_n\)</span> 은 <span class="math inline">\((n,\,n+1)\)</span> 에 포함되는 닫힌 집합이라고 하자. <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 <span class="math inline">\(\int_{A_n}f = (-1)^n/n\)</span> 이며 <span class="math inline">\(x\not\in \cup_n A_n\)</span> 일 때 <span class="math inline">\(f(x) = 0\)</span> 이라고 하자. <span class="math inline">\(\sum_{\varphi_i \in \Phi} \int_\mathbb{R}\varphi \cdot f\)</span> 와 <span class="math inline">\(\sum_{\psi_j \in \Psi}\int_\mathbb{R}\psi_jh \cdot f\)</span> 값이 서로 다른 두 단위 분할 <span class="math inline">\(\Phi\)</span> 와 <span class="math inline">\(\Psi\)</span> 를 찾아라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -964,7 +998,7 @@ U(f,\,P) \ge \int_{G^{-1}(V)} (f\circ G) | \det (G')|.
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_41" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 16.8 (Spivak 3.41)</strong></span> <span class="math inline">\(F:\{r:r&gt;0\} \times (0,\, 2\pi) \to \mathbb{R}\)</span> 을 <span class="math inline">\(F(r,\,\theta) := (r \cos \theta,\, r \sin \theta)\)</span> 로 정의한다.</p>
+<p><span class="theorem-title"><strong>연습문제 16.9 (Spivak 3.41)</strong></span> <span class="math inline">\(F:\{r:r&gt;0\} \times (0,\, 2\pi) \to \mathbb{R}\)</span> 을 <span class="math inline">\(F(r,\,\theta) := (r \cos \theta,\, r \sin \theta)\)</span> 로 정의한다.</p>
 </div>
 </div>
 

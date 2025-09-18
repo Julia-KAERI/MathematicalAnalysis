@@ -436,20 +436,20 @@ P(\bf{x}) &:= F(\bf{x}) - F(\bf{a}) - L(\bf{x}-\bf{a}),\\[0.3em]
 Q (\bf{y}) &:= G(\bf{y})- G(\bf{b})-T(\bf{y}-\bf{b}), \\[0.3em]
 R(\bf{x}) &: = G\circ F(\bf{x})- G \circ F(\bf{a}) - (T\circ L) (\bf{x}-\bf{a}).
 \end{aligned}
-$$ {#eq-thm_part3_chainrule_1}
+$$ {#eq-thm_CM_chainrule_1}
 
 미분가능성의 정의로부터
 
 $$
 \lim_{\bf{x}\to\bf{a}}\dfrac{\|P(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0, \qquad \lim_{\bf{y}\to\bf{b}}\dfrac{\|Q(\bf{y})\|}{\|\bf{y}-\bf{b}\|} = 0
-$$ {#eq-thm_part3_chainrule_2}
+$$ {#eq-thm_CM_chainrule_2}
 
 
 이다. 우리는 이제 다음을 보이면 된다.
 
 $$
 \lim_{\bf{x}\to\bf{a}}\dfrac{\|R(\bf{x})\|}{\|\bf{x}-\bf{a}\|} = 0.
-$$ {#eq-thm_part3_chainrule_3}
+$$ {#eq-thm_CM_chainrule_3}
 
 그렇다면
 
@@ -460,27 +460,27 @@ R(\bf{x}) &= G(F(\bf{x})) -  G(\bf{b}) - (T \circ L)(\bf{x}-\bf{a})\\[0.3em]
 &= \left[G(F(\bf{x})) - G(\bf{b}) -T(F(\bf{x})-F(\bf{a}))\right] + T(P(\bf{x})) \\[0.3em]
 &=Q(F(\bf{x})) + T(P(\bf{x}))
 \end{aligned}
-$$ {#eq-thm_part3_chainrule_4}
+$$ {#eq-thm_CM_chainrule_4}
 
 이다. 우선 $\displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(P(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0$ 임을 보이자. @exr-CM_spivak_1_10 으로부터 어떤 $M_T>0$ 에 대해
 
 $$
 \dfrac{\|T(P(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}\le \dfrac{M_T\|P(\bf{x})\|}{\|\bf{x}-\bf{a}\|}
-$$ {#eq-thm_part3_chainrule_5}
+$$ {#eq-thm_CM_chainrule_5}
 
-이며 @eq-thm_part3_chainrule_2 의 첫번째 극한으로부터 다음을 알 수 있다.
+이며 @eq-thm_CM_chainrule_2 의 첫번째 극한으로부터 다음을 알 수 있다.
 
 $$
 \displaystyle \lim_{\bf{x}\to \bf{a}} \dfrac{\|T(P(\bf{x}))\|}{\|\bf{x}-\bf{a}\|}=0
-$$ {#eq-thm_part3_chainrule_6}
+$$ {#eq-thm_CM_chainrule_6}
 
-또한 @eq-thm_part3_chainrule_2 의 두번째 극한으로부터 임의의 $\varepsilon>0$ 에 대해 다음을 만족하는 $\delta>0$ 이 존재한다는 것을 안다.
+또한 @eq-thm_CM_chainrule_2 의 두번째 극한으로부터 임의의 $\varepsilon>0$ 에 대해 다음을 만족하는 $\delta>0$ 이 존재한다는 것을 안다.
 
 $$
 \|F(\bf{x})-\bf{b}\|<\delta \implies \|Q(F(\bf{x}))\| < \varepsilon \|F(\bf{x})-\bf{b}\|
 $$
 
-그렇다면 @eq-thm_part3_chainrule_1 로부터
+그렇다면 @eq-thm_CM_chainrule_1 로부터
 
 $$
 \begin{aligned}
@@ -489,7 +489,7 @@ $$
 \end{aligned}
 $$
 
-이며 역시  @exr-CM_spivak_1_10 로부터 어떤 $M_L>0$ 가 존재하여 $\|L(\bf{x}-\bf{a})\| \le M_L \|\bf{x}-\bf{a}\|$ 임을 안다. 이 결과와 @eq-thm_part3_chainrule_2 의 첫번째 식을 이용하면 어떤 $\eta>0$ 에 대해
+이며 역시  @exr-CM_spivak_1_10 로부터 어떤 $M_L>0$ 가 존재하여 $\|L(\bf{x}-\bf{a})\| \le M_L \|\bf{x}-\bf{a}\|$ 임을 안다. 이 결과와 @eq-thm_CM_chainrule_2 의 첫번째 식을 이용하면 어떤 $\eta>0$ 에 대해
 
 $$
 \|\bf{x}-\bf{a}\|<\eta \implies \|P(\bf{x})\| <\|\bf{x}-\bf{a}\|
@@ -505,10 +505,10 @@ $$
 
 $$
 \lim_{\bf{x}\to \bf{a}}\dfrac{\|Q(F(\bf{x}))\|}{\|\bf{x}-\bf{a}\|} = 0
-$${#eq-thm_part3_chainrule_7}
+$${#eq-thm_CM_chainrule_7}
 
 
-이다. 따라서 @eq-thm_part3_chainrule_4 로 부터
+이다. 따라서 @eq-thm_CM_chainrule_4 로 부터
 
 $$
 \lim_{\bf{x}\to \bf{a}} \dfrac{\|R(\bf{x})\|}{\|\bf{x}-\bf{a}\|} =0
@@ -615,13 +615,13 @@ $$
 (f+g)'(\bf{a})  &= f'(\bf{a}) + g'(\bf{a}), \\[0.3em]
 (f\cdot g)'(\bf{a}) &= g(\bf{a}) f'(\bf{a}) + f(\bf{a}) g'(\bf{a}).
 \end{aligned}
-$$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_1}
+$$ {#eq-cor_CM_basic_properties_of_derivative_of_multivariable_functions_1}
 
 또한 $g(\bf{a})\ne 0$ 이면 다음이 성립한다.
 
 $$
 (f/g)'(\bf{a}) = \dfrac{g(\bf{a})f'(\bf{a}) - f(\bf{a})'g(\bf{a})}{[g(\bf{a})]^2} 
-$$ {#eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2}
+$$ {#eq-cor_CM_basic_properties_of_derivative_of_multivariable_functions_2}
 
 :::
 
@@ -651,7 +651,7 @@ $$
 
 이다. 
 
-이제 @eq-cor_part3_basic_properties_of_derivative_of_multivariable_functions_2 를 보이기 위해 $g(\bf{a})\ne 0$ 이며 $\bf{a}$ 에서 미분가능할 때 $(1/g)'(\bf{a})$ 를 구해보자. $h(x) = 1/g(x)$ 라고 하면 $g\cdot h = 1$ 이며 $(1)'(\bf{x})=0$ 이므로
+이제 @eq-cor_CM_basic_properties_of_derivative_of_multivariable_functions_2 를 보이기 위해 $g(\bf{a})\ne 0$ 이며 $\bf{a}$ 에서 미분가능할 때 $(1/g)'(\bf{a})$ 를 구해보자. $h(x) = 1/g(x)$ 라고 하면 $g\cdot h = 1$ 이며 $(1)'(\bf{x})=0$ 이므로
 
 $$
 0 = g(\bf{a})h'(\bf{a}) + h(\bf{a})g'(\bf{a})
@@ -1686,7 +1686,7 @@ $$
 
 $$
 F(\bf{a}+\bf{h}) - F(\bf{a}) = F'(\bf{x})\cdot \bf{h}.
-$$ {#eq-thm_part3_mean_value_theorem_for_vector_function}
+$$ {#eq-thm_CM_mean_value_theorem_for_vector_function}
 
 :::
 
@@ -1700,11 +1700,31 @@ $$
 \phi(1)-\phi(0)= \phi'(t_0)(1-0)= \phi'(t_0)
 $$
 
-인 $t_0\in (0,\,1)$ 이 존재하며 이는 @eq-thm_part3_mean_value_theorem_for_vector_function 를 의미한다. $\square$
+인 $t_0\in (0,\,1)$ 이 존재하며 이는 @eq-thm_CM_mean_value_theorem_for_vector_function 를 의미한다. $\square$
 
 :::
 
 </br>
+
+집합 $E\subset \R^n$ 가 각각의 $\bf{x},\,\bf{y}\in E$ 에 대해 $\bf{x},\,\bf{y}$ 를 잇는 선분의 모든 점이 $E$ 에 포함될 때 $E$ 를 볼록 집합(@def-MA_convex) 이라고 한다.
+
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#cor-CM_mean_value_theorem_for_convex}
+
+#### 볼록집합에서의 중간값 정리
+
+열린 볼록집합 $U\subset\R^n$ 에서 정의된 $F:U \to \R$ 가 $U$ 에서 미분가능하면 $\bf{x},\,\bf{y}\in U$ 일 때 다음을 만족하는 $\bf{c}\in U$ 가 존재한다.
+
+$$
+F(\bf{x})-F(\bf{y})= F'(\bf{c})\cdot (\bf{x}-\bf{y}).
+$${#eq-cor_CM_mean_value_theorem_for_convex}
+
+:::
+
+</div>
+
 
 ### 연습문제 {.unnumbered}
 

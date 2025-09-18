@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1758086474 "/Users/jiyong/Documents/Projects/MathetmaticalAnalysis/src/part3/figures/partition_of_unity.tex" "partition_of_unity.pdf" "partition_of_unity" 1758086475 0
-  "/Users/jiyong/Documents/Projects/MathetmaticalAnalysis/src/part3/figures/partition_of_unity.tex" 1758086474 602 e1e3f5b1fab8b04ea87f2d42e7219f3c ""
-  "/dev/null" 1758086467 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1758155887 "/Users/jiyong/Documents/Projects/MathetmaticalAnalysis/src/part3/figures/partition_of_unity.tex" "partition_of_unity.pdf" "partition_of_unity" 1758155888 0
+  "/Users/jiyong/Documents/Projects/MathetmaticalAnalysis/src/part3/figures/partition_of_unity.tex" 1758155886 2245 d2d337201141dee705ccc3a4415ec017 ""
+  "/dev/null" 1758155888 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -12,6 +12,7 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifluatex.sty" 1572645307 492 1994775aa15b0d1289725a0b1bbc2d4c ""
@@ -34,6 +35,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex" 1601326656 35249 abd4adf948f960299a4b3d27c5dddf46 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex" 1673816307 22012 81b34a0aa8fa1a6158cc6220b00e4f10 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1601326656 8893 e851de2175338fdf7c17f3e091d94618 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex" 1601326656 15929 463535aa2c4268fead6674a75c0e8266 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex" 1673816307 5628 dc0ee4ba7f3e40acae5600067ce833de ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex" 1601326656 321 cdd11262840e01e25374a2d458f15e99 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex" 1601326656 1319 0b2de5126c6cbc295f0eb77f7344b34d ""
@@ -163,8 +165,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1674016646 4623355 58034c3eb7ddf7eacc726a83d01e26d2 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1672789015 7874810 bfa33868b1ee0a17ddb982f07460daa5 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "partition_of_unity.aux" 1758086475 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "partition_of_unity.tex" 1758086474 602 e1e3f5b1fab8b04ea87f2d42e7219f3c ""
+  "partition_of_unity.aux" 1758155888 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "partition_of_unity.tex" 1758155886 2245 d2d337201141dee705ccc3a4415ec017 ""
   (generated)
   "partition_of_unity.aux"
   "partition_of_unity.log"

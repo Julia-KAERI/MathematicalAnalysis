@@ -487,12 +487,37 @@ $$
 f(x) = \left\{\begin{array}{ll} \dfrac{1+\cos x}{2},\qquad &; -\pi \le x \le \pi, \\ 0 &; \text{otherwise}. \end{array}\right.
 $$
 
-$f$ 는 $C^\infty$ 급 함수이다. 여기에 음이 아닌 정수 $m$ 에 대해 $\varphi_{2m+1}(x) = f(x-m\pi)$, $\varphi_{2m}(x) = f(x+m\pi)$ 라고 하자. 그렇다면 $\{\varphi_i: i=1,\,2,\ldots\}$ 는 $\R$ 에서의 단위분할임을 보이자. 
+$f$ 는 $C^\infty$ 급 함수이다. 여기에 음이 아닌 정수 $m$ 에 대해 $\varphi_{2m+1}(x) = f(x-m\pi)$, $\varphi_{2m}(x) = f(x+m\pi)$ 라고 하자. $\R$ 에서의 열린 구간 $U_{m}$ 을 $m>0$ 에 대해 아래와 같이 정하고 $\mathcal{O}=\{U_1,\,U_2,\ldots\}$ 라고 하면 $\mathcal{O}$ 는 $\R$ 에 대한 열린 덮개이다. 
+$$
+\begin{aligned}
+U_{2m+1} &= (-1+ (m-1)\pi,\, 1+ (m+1)\pi), \\[0.3em]
+U_{2m} &= (-1+(-m-1)\pi ,\, 1 + (-m+1)\pi).
+\end{aligned}
+$$
+
+
+![단위분할](figures/partition_of_unity.png){#fig-CM_partition_of_unity width=550}
+
+
+이제 $\Phi = \{\varphi_i\}$ 라고 하면 $\Phi$ 는 $\mathcal{O}$ 에 종속된 $\R$ 에 대한 단위분할임을 보이자. 
+
+
+($1$) $x\in\R$ 에서 $0\le \varphi_i (x)\le 1$ 임은 자명하다.
+
+($2$) $x\in \R$ 에 대해 $\varphi_i (x)\ne 0$ 인 $\varphi_i$ 는 많아야 2개이며 $(x-1,\,x+1)$ 구간에서 $0$ 이 아닌 $\Phi=\{\varphi_i\}$ 의 원소의 개수는 많아야 3개이다.
+
+($3$) $[0,\,\pi]$ 구간에서 $\sum_{\varphi_i\in \Phi} \varphi_i (x) = \frac{1}{2}(1+\cos x + 1 + \cos (x-\pi)) =1$ 이다. 다른 구간도 동일한 결과를 얻는다.
+
+($4$) $\text{supp}\, \varphi_i \in U_i$ 이다. 
+
+
 :::
 
 </div>
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br>
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#lem-CM_existance_of_partition_of_unity_for_compact_set}
 
@@ -749,6 +774,33 @@ $$
 ### 연습문제 {.unnumbered}
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-thm-CM_munkres_16_3}
+
+#### Munkres 16.3
+
+($a$) $S \subset \R^n$ 이고 $f:S\to\R$ 이라고 하자. $\bf{x}_0\in S$ 일 때 $\bf{x}_0$ 의 어떤 열린 근방 $U$ 에서 정의된 $g:U\to \R$ 이 존재하여 $C^r$-급 함수이고 $U\cap S$ 에서 $f=g$ 이면 $f$ 는 $\bf{x}_0$ 에서 $C^r$-급 함수라고 한다. 만약 $\phi :\R^n \to \R$ 이 $C^r$-급 함수이고 $\text{supp}\, \phi \subset U$ 이면 아래와 같이 정의된 $h:\R^n \to \R$ 은 잘 정의된 함수이며 $\R^n$ 에서 $C^r$-급 함수임을 보여라.
+
+$$
+h(\bf{x}) = \left\{\begin{array}{ll} \phi(\bf{x})\,g(\bf{x}),\qquad &\bf{x}\in U, \\0, &\bf{x}\notin \text{supp}\, \phi. \end{array}\right.
+$$
+
+($b$) $f:S\to\R$ 이 각각의 $\bf{x}\in S$ 에서 $C^r$ 급이라면 $S$ 를 포함하는 열린 집합 $A$ 에서의 $C^r$ 급 함수 $h:A \to \R$ 로 확장 될 수 있음을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+
+($a$) $\bf{x}\in U\backslash (\text{supp}\, \phi)$ 일 때 $\phi(\bf{x})=0$ 이므로 $h(\bf{x})$ 는 잘 정의된다. $\text{supp}\,\phi$ 는 닫힌 집합이므로 $\bf{x}\not\in \text{supp}\,\phi$ 일 때 $\bf{x}$ 를 중심으로 하는 열린 $n$-입방체 $Q$ 에서 $\phi(Q)=0$ 이다. $Q$ 는 볼록집합이므로 @cor-CM_mean_value_theorem_for_convex 에 따라 모든 $\bf{x}\in Q$ 에서 $D_i \phi (\bf{x})=0$ 이며, 이를 반복하면 $\bf{x}\notin\text{supp}\,\phi$ 에서 $C^r$ 급 함수임을 알 수 있다. $\bf{x}\in U$ 에서는 $\phi,\, g$ 가 모두 $C^r$ 급 함수이므로 $h$ 도 $C^r$ 급 함수이다. 
+
+($b$) 
+@exr-CM_spivak_1_22
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-thm-CM_existance_of_partition_of_unity_1}
 
