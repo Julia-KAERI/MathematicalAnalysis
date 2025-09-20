@@ -83,7 +83,7 @@ m_S(f) &:= \inf \{f(\bf{f}): \bf{x}\in S\}
 \end{aligned}
 $$
 
-라고 하자. $\text{vol}(S)$ 를 cubcell $S$ 의 부피라고 할 때 분할 $P$ 에 대한 $f$ 의 리만 상합 $U(f,\, P)$ 와 리만 하합 $L(f,\,P)$ 는 다음과 같이 정의된다.
+라고 하자. $\text{vol}(S)$ 를 subcell $S$ 의 부피라고 할 때 분할 $P$ 에 대한 $f$ 의 리만 상합 $U(f,\, P)$ 와 리만 하합 $L(f,\,P)$ 는 다음과 같이 정의된다.
 
 $$
 \begin{aligned}
@@ -1109,7 +1109,7 @@ $A$ 가 닫힌 $n$-cell 이고 $C\subset A$ 라고 하자. 이 때 아래 두 �
 
 #### Spivak 3.22
 
-$A$ 가 조르당 가측이고 $\varepsilon >0$ 이면 어떤 조르당 가측이며 $A$ 의 부분집합인 옹골집합 $C$ 가 존재하여 $\int_{A-C} 1 < \varepsilon$ 임을 보여라.
+$A$ 가 조르당 가측이면 $\varepsilon >0$ 에 대해 어떤 조르당 가측이며 $A$ 의 부분집합인 옹골집합 $C$ 가 존재하여 $\int_{A-C} 1 < \varepsilon$ 임을 보여라.
 :::
 
 </div>

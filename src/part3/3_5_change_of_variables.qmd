@@ -467,7 +467,7 @@ $A\subset \R^n$ 에 대해 $A$ 를 포함하는 열린 집합에서 정의된 $C
 
 &emsp;($3$) $\displaystyle \forall \bf{x}\in A,\, \sum_{\varphi_i \in \Phi} \varphi_i(\bf{x}) = 1$ 이다.
 
-$\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개라고 하자. 이 때 각각의 $\varphi_i \in \Phi$ 에 대해 $\supp \varphi_i \subset U$ 인 $U\in \mathcal{O}$ 가 존재한다면 $\Phi$ 를 **덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 ($C^\infty$ partition of unity subordinate to the cover $\mathcal{O}$)**이라고 한다.
+$\Phi$ 가 $A$ 에 대한 $C^\infty$ 단위 분할 이며 $\mathcal{O}$ 가 $A$ 에 대한 열린 덮개라고 하자. 이 때 각각의 $\varphi_i \in \Phi$ 에 대해 컴팩트 지지집합$^\ast$ $\supp \varphi_i \subset U$ 인 $U\in \mathcal{O}$ 가 존재한다면 $\Phi$ 를 **덮개 $\mathcal{O}$ 에 종속된 $C^\infty$ 단위 분할 ($C^\infty$ partition of unity subordinate to the cover $\mathcal{O}$)**이라고 한다.[$^\ast$ @Spivak1965 에는 $\supp \varphi_i$ 에 대한 컴팩트 조건이 빠져있지만 이 조건은 꼭 필요하다.]{.aside}
 
 ::: 
 :::
@@ -679,7 +679,7 @@ $$
 \sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \int_A \sum_{\psi_j\in \Psi} \psi_j \cdot \varphi_i \cdot f = \sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f
 $$
 
-이다. 이 결과는 $|f|$ 에 대해서도 성립하며 $\varphi_j \ge 0,\, \psi_i \ge 0$ 이므로
+이다. 이 결과는 $|f|$ 에 대해서도 성립하며 $0\le \varphi_j, \, \psi_i \le 1$ 이므로
 
 $$
 \left|\sum_{\varphi_i \in \Phi} \sum_{\psi_j\in \Psi} \int_A \psi_j \cdot \varphi_i \cdot f\right|
@@ -738,13 +738,12 @@ $$
 
 ::: {.proof}
 
-@exr-CM_spivak_3_22 에서 보였듯이 $\varepsilon > 0$ 이면 조르당 가측이며 옹골집합인 어떤 $K\subset A$ 에 대해 $\int_{A-K} 1 < \varepsilon$ 이다. 또한 옹골집합 $K$ 에서 $0$ 이 아닌 $\Gamma \subset \Phi$ 는 유한 부분집합이다. 따라서
-
+@exr-CM_spivak_3_22 에서 보였듯이 $\varepsilon > 0$ 에 대해 조르당 가측이며 옹골집합인 어떤 $K\subset A$ 가 존재하여 $\int_{A-K} 1 < \varepsilon$ 이다. 또한 $\Gamma = \{\varphi_i\in \Phi : \varphi_i \text{ not }0 \text{ in }K\}$ 는 $\Phi$ 의 유한 부분집합이다. $|f| \le M$ 이라고 하면 
 $$
 \begin{aligned}
 \left|\int_A f - \sum_{\varphi_i \in \Gamma} \int_A \varphi_i \cdot f\right| &\le \int_A \left|f- \sum_{\varphi_i \in \Gamma} \varphi_i \cdot f\right| \\[0.3em]
 &\le M\int_A \left(1-\sum_{\varphi_i \in \Gamma}\varphi_i\right) \\[0.3em]
-&= M \int_A \sum_{\varphi_i \in \Phi\backslash\Gamma} \le M\int_{A-C} 1 \le M\varepsilon
+&= M \int_A \sum_{\varphi_i \in \Phi\backslash\Gamma} \le M\int_{A-K} 1 \le M\varepsilon
 \end{aligned}
 $$
 
@@ -779,13 +778,13 @@ $$
 
 #### Munkres 16.3
 
-($a$) $S \subset \R^n$ 이고 $f:S\to\R$ 이라고 하자. $\bf{x}_0\in S$ 일 때 $\bf{x}_0$ 의 어떤 열린 근방 $U$ 에서 정의된 $g:U\to \R$ 이 존재하여 $C^r$-급 함수이고 $U\cap S$ 에서 $f=g$ 이면 $f$ 는 $\bf{x}_0$ 에서 $C^r$-급 함수라고 한다. 만약 $\phi :\R^n \to \R$ 이 $C^r$-급 함수이고 $\text{supp}\, \phi \subset U$ 이면 아래와 같이 정의된 $h:\R^n \to \R$ 은 잘 정의된 함수이며 $\R^n$ 에서 $C^r$-급 함수임을 보여라.
+($a$) $A \subset \R^n$ 이고 $f:A\to\R$ 이라고 하자. $\bf{x}_0\in A$ 일 때 $\bf{x}_0$ 의 어떤 열린 근방 $U$ 에서 정의된 $g:U\to \R$ 이 존재하여 $C^r$-급 함수이고 $U\cap S$ 에서 $f=g$ 이면 $f$ 는 $\bf{x}_0$ 에서 $C^r$-급 함수라고 한다. 만약 $\phi :\R^n \to \R$ 이 $C^r$-급 함수이고 $\text{supp}\, \phi \subset U$ 이면 아래와 같이 정의된 $h:\R^n \to \R$ 은 잘 정의된 함수이며 $\R^n$ 에서 $C^r$-급 함수임을 보여라.
 
 $$
 h(\bf{x}) = \left\{\begin{array}{ll} \phi(\bf{x})\,g(\bf{x}),\qquad &\bf{x}\in U, \\0, &\bf{x}\notin \text{supp}\, \phi. \end{array}\right.
 $$
 
-($b$) $f:S\to\R$ 이 각각의 $\bf{x}\in S$ 에서 $C^r$ 급이라면 $S$ 를 포함하는 열린 집합 $A$ 에서의 $C^r$ 급 함수 $h:A \to \R$ 로 확장 될 수 있음을 보여라.
+($b$) $f:A\to\R$ 이 각각의 $\bf{x}\in A$ 에서 $C^r$ 급이라면 $A$ 를 포함하는 열린 집합 $U$ 에서의 $C^r$ 급 함수 $h:U \to \R$ 로 확장 될 수 있음을 보여라.
 :::
 
 </div>
@@ -794,8 +793,11 @@ $$
 
 ($a$) $\bf{x}\in U\backslash (\text{supp}\, \phi)$ 일 때 $\phi(\bf{x})=0$ 이므로 $h(\bf{x})$ 는 잘 정의된다. $\text{supp}\,\phi$ 는 닫힌 집합이므로 $\bf{x}\not\in \text{supp}\,\phi$ 일 때 $\bf{x}$ 를 중심으로 하는 열린 $n$-입방체 $Q$ 에서 $\phi(Q)=0$ 이다. $Q$ 는 볼록집합이므로 @cor-CM_mean_value_theorem_for_convex 에 따라 모든 $\bf{x}\in Q$ 에서 $D_i \phi (\bf{x})=0$ 이며, 이를 반복하면 $\bf{x}\notin\text{supp}\,\phi$ 에서 $C^r$ 급 함수임을 알 수 있다. $\bf{x}\in U$ 에서는 $\phi,\, g$ 가 모두 $C^r$ 급 함수이므로 $h$ 도 $C^r$ 급 함수이다. 
 
-($b$) 
-@exr-CM_spivak_1_22
+($b$) $A$ 포함하는 열린 덮개 $\mathcal{O}$ 를 $\bigcup_{U_i \in \mathcal{O}}U_i = U$ 에 종속된 단위분할 $\Phi=\{\varphi_i\}$ 를 생각하자. 그리고 $h(\bf{x})$ 를 다음과 같이 정의하자.
+
+$$
+h(\bf{x}) := \left\{\begin{array}{ll}\displaystyle \sum_{\varphi_i \in \Phi} \varphi_i (\bf{x})\cdot f(\bf{x}),\qquad & \bf{x}\in A,\\ 0, &\text{otherwise}.\end{array}\right.
+$$
 
 :::
 
@@ -918,12 +920,11 @@ $A_n$ 은 $(n,\,n+1)$ 에 포함되는 닫힌 집합이라고 하자. $f:\R\to \
 
 ::: {#thm-CM_change_of_variable}
 
-열린 집합 $A\subset \R^n$ 과 단사인 $C^1$ 함수 $G:A \to \R^n$ 이 모든 $\bf{x}\in A$ 에서 $\det \left(G'(\bf{x})\right) \ne 0$ 이라고 하자. 또한 $f:G(A)\to \R$ 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.
+열린 집합 $A,\,B\subset \R^n$ 에서 정의된 미분동형사상 $G:A \to B$ 에 대해 $f:G(A)\to \R$ 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.
 
 $$
 \int_{G(A)} f = \int_A (f \circ G) \cdot | \det (G')|.
 $$ {#eq-CM_change_of_variable}
-
 
 :::
 
@@ -933,7 +934,7 @@ $$ {#eq-CM_change_of_variable}
 
 다소 긴 과정을 통해 증명한다.
 
-<u><i>주장-1 : </i></u> 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하며 각각의 $U\in \mathcal{O}$ 와 적분가능한 함수 $f$ 에 대해
+<u><i>Case-1 </i></u> : 우선 $A$ 에 포함되는 열린 덮개 $\mathcal{O}$ 가 존재하며 각각의 $U\in \mathcal{O}$ 와 적분가능한 함수 $f$ 에 대해
 
 $$
 \int_{G(U)} f = \int_U (f\circ G)\cdot |\det (G')|
@@ -941,7 +942,7 @@ $$ {#eq-thm-CM_change_of_variable_1}
 
 라면 정리가 성립한다.
 
-(주장 1 증명) @exr-CM_spivak_2_36 에 의해 $\mathcal{O}'=\{G(U):U\in \mathcal{O}\}$ 는 $G(A)$ 에 포함되는 열린 덮개이다. $\Phi$ 가 $\mathcal{O}'$ 에 종속된 단위 분할이라고 하자. $\bf{x}\not\in G(U)$ 일 때 $\varphi_i(\bf{x})=0$ 이라면 $G$ 는 단사이므로 $(\varphi_i \cdot f)\circ G(\bf{x})=0$ 이다. @eq-thm-CM_change_of_variable_1 을 사용하면
+(Case-1 증명) @exr-CM_spivak_2_36 에 의해 $\mathcal{O}'=\{G(U):U\in \mathcal{O}\}$ 는 $G(A)$ 에 포함되는 열린 덮개이다. $\Phi$ 가 $\mathcal{O}'$ 에 종속된 단위 분할이라고 하자. $\bf{x}\not\in G(U)$ 일 때 $\varphi_i(\bf{x})=0$ 이라면 $G$ 는 단사이므로 $(\varphi_i \cdot f)\circ G(\bf{x})=0$ 이다. @eq-thm-CM_change_of_variable_1 을 사용하면
 
 $$
 \int_{G(U)} \varphi_i \cdot f = \int_U (\varphi_i \cdot f)\circ G \cdot |\det (G')|
@@ -953,7 +954,7 @@ $$
 \int_{G(A)} \varphi_i \cdot f = \int_A (\varphi_i \cdot f)\circ G \cdot |\det (G')|
 $$
 
-이므로
+이다. $\sum_{\varphi_i \in \Phi}$ 를 적용하고 적분의 새로운 정의를 생각하면,
 
 $$
 \begin{aligned}
@@ -966,12 +967,12 @@ $$
 
 <u><i>주장-2 : </i></u>  $\;f=1$ 일 때 정리가 성립한다.
 
-(주장-2 중명) $f=1$ 일 때 성립하면 모든 상수함수에 대해 성립한다. $V$ 가 $G(A)$ 에 포함되는 $n$-cell 이고 $P\in \mathcal{P}(V)$ 라고 하자. $S\in P$ 에 대해 $f_S=m_S= \inf \{f(\bf{x}): \bf{x}\in S\}$  라고 하자. 그렇다면
+(주장-2 중명) $f=1$ 일 때 성립하면 모든 상수함수에 대해 성립한다. $V$ 가 $G(A)$ 에 포함되는 $n$-cell 이고 $P\in \mathcal{P}[V]$ 라고 하자. $S\in P$ 에 대해 $f_S=m_S= \inf \{f(\bf{x}): \bf{x}\in S\}$  라고 하자. 그렇다면
 
 $$
 \begin{aligned}
 L(f,\,P) &= \sum_{S\in P} m_S  \cdot \text{vol}(S) = \sum_{S\in P} \int_{\text{int}(S)} f_S \\[0.3em]
-&=\sum_{S\in P} \int_{G^{-1}(\text{int}(S))} (f_S \circ g) | \det (G')| \le \sum_{S\in P} \int_{G^{-1}(\text{int}(S))} (f\circ G) |\det (G')|\\[0.3em]
+&=\sum_{S\in P} \int_{G^{-1}(\text{int}(S))} (f_S \circ G) | \det (G')| \le \sum_{S\in P} \int_{G^{-1}(\text{int}(S))} (f\circ G) |\det (G')|\\[0.3em]
 &\le \int_{G^{-1}(V)} (f\circ G)|\det (G')|.
 \end{aligned}
 $$

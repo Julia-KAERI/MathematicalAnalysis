@@ -24,3 +24,4 @@ crossref:
 
 - [All axolotls enjoy mathematics. But this one also loves physics](http://www.petraaxolotl.com/mathematics/calculus-on-manifolds/) : Spivak errata and solution
 - [MA-570 Summer 1999](https://www.ms.uky.edu/~ken/ma570/) Lecture course. Solution to Spivak's *Calculus on Manifolds* are presented.
+- [Spivak - Calculus on Manifolds, Comments and Errata @ www.jirka.org](https://www.jirka.org/spivak-errata.html) : Spivak errata
