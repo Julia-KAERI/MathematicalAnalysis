@@ -328,8 +328,8 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#일변수-함수의-변수-변경" id="toc-일변수-함수의-변수-변경" class="nav-link active" data-scroll-target="#일변수-함수의-변수-변경"><span class="header-section-number">16.1</span> 일변수 함수의 변수 변경</a></li>
-  <li><a href="#sec-CM_diffeomorphism" id="toc-sec-CM_diffeomorphism" class="nav-link" data-scroll-target="#sec-CM_diffeomorphism"><span class="header-section-number">16.2</span> 미분 동형 사상</a>
+  <li><a href="#sec-CM_change_of_variables_for_1d" id="toc-sec-CM_change_of_variables_for_1d" class="nav-link active" data-scroll-target="#sec-CM_change_of_variables_for_1d"><span class="header-section-number">16.1</span> 일변수 함수의 변수 변경</a></li>
+  <li><a href="#sec-CM_diffeomorphism" id="toc-sec-CM_diffeomorphism" class="nav-link" data-scroll-target="#sec-CM_diffeomorphism"><span class="header-section-number">16.2</span> 미분동형사상</a>
   <ul class="collapse">
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
@@ -377,8 +377,8 @@ window.Quarto = {
 \]</span></p>
 </div>
 <p><br></p>
-<section id="일변수-함수의-변수-변경" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="일변수-함수의-변수-변경"><span class="header-section-number">16.1</span> 일변수 함수의 변수 변경</h2>
+<section id="sec-CM_change_of_variables_for_1d" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="sec-CM_change_of_variables_for_1d"><span class="header-section-number">16.1</span> 일변수 함수의 변수 변경</h2>
 <p>일변수 실함수 <span class="math inline">\(g:[a,\,b] \to \mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이고 <span class="math inline">\(f:\mathbb{R}\to \mathbb{R}\)</span> 이 연속이라면</p>
 <p><span class="math display">\[
 \int_{g(a)}^{g(b)} f = \int_a^b (f \circ g) \cdot g'
@@ -403,7 +403,7 @@ window.Quarto = {
 <p><br></p>
 </section>
 <section id="sec-CM_diffeomorphism" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="sec-CM_diffeomorphism"><span class="header-section-number">16.2</span> 미분 동형 사상</h2>
+<h2 data-number="16.2" class="anchored" data-anchor-id="sec-CM_diffeomorphism"><span class="header-section-number">16.2</span> 미분동형사상</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -411,7 +411,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <div id="def-CM_diffeomorphism" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 16.1 (미분동형사상)</strong></span> <span class="math inline">\(U,\,V\subset \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(G:U \to V\)</span> 가 전단사 이며 <span class="math inline">\(G,\,G^{-1}\)</span> 이 모두 <span class="math inline">\(C^r\)</span> 급 함수 일 때 <span class="math inline">\(G\)</span> 를 <span class="math inline">\(C^r\)</span> 급 <strong>미분동형사상(diffeomorphism)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 16.1 (미분동형사상)</strong></span> <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(G:A \to B\)</span> 가 전단사 이며 <span class="math inline">\(G,\,G^{-1}\)</span> 이 모두 <span class="math inline">\(C^r\)</span> 급 함수 일 때 <span class="math inline">\(G\)</span> 를 <span class="math inline">\(C^r\)</span> 급 <strong>미분동형사상(diffeomorphism)</strong> 이라고 한다. <span class="math inline">\(G\)</span> 가 <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 를 포함하는 열린 집합 <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(G|_U : U\to G(U)\)</span> 가 미분동형사상일 때 <span class="math inline">\(G\)</span> 를 <span class="math inline">\(U\)</span> 위에서의 미분동형사상이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -669,7 +669,7 @@ T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \b
 <div id="def-CM_partition_of_unity" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 16.4 (단위분할)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A\)</span> 를 포함하는 열린 집합에서 정의된 <span class="math inline">\(C^\infty\)</span> 함수열 <span class="math inline">\(\Phi=\langle \varphi_i \rangle\)</span> 가 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>), (<span class="math inline">\(3\)</span>) 을 만족할 때 이 <span class="math inline">\(\Phi\)</span> 를 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(C^\infty\)</span> <strong>단위 분할 (partition of unity)</strong>이라고 한다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\forall \boldsymbol{x}\in A\)</span>, <span class="math inline">\(\varphi_i \in \Phi,\, 0 \le \varphi_i(\boldsymbol{x}) \le 1\)</span>,</p>
-<p> (<span class="math inline">\(2\)</span>) 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V_x\)</span> 가 존재하여 유한개를 제외한 <span class="math inline">\(\Phi\)</span> 에 속한 함수는 <span class="math inline">\(V_x\)</span> 에서 <span class="math inline">\(0\)</span> 이며,</p>
+<p> (<span class="math inline">\(2\)</span>) 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(V_x\)</span> 가 존재하여 유한개를 제외한 <span class="math inline">\(\Phi\)</span> 에 속한 함수는 <span class="math inline">\(V_x\)</span> 에서 <span class="math inline">\(0\)</span> 이며,</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\displaystyle \forall \boldsymbol{x}\in A,\, \sum_{\varphi_i \in \Phi} \varphi_i(\boldsymbol{x}) = 1\)</span> 이다.</p>
 <p><span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(C^\infty\)</span> 단위 분할 이며 <span class="math inline">\(\mathcal{O}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개라고 하자. 이 때 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 컴팩트 지지집합<span class="math inline">\(^\ast\)</span> <span class="math inline">\(\operatorname{supp}\varphi_i \subset U\)</span> 인 <span class="math inline">\(U\in \mathcal{O}\)</span> 가 존재한다면 <span class="math inline">\(\Phi\)</span> 를 <strong>덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 (<span class="math inline">\(C^\infty\)</span> partition of unity subordinate to the cover <span class="math inline">\(\mathcal{O}\)</span>)</strong>이라고 한다.</p>
 </div>
@@ -947,8 +947,23 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 <p><br></p>
 </section>
 </section>
-<section id="변수-변경" class="level2" data-number="16.4">
+<section id="변수-변경" class="level2 page-columns page-full" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="변수-변경"><span class="header-section-number">16.4</span> 변수 변경</h2>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CM_partition_of_unity_and_differmorphism" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 16.5</strong></span> 열린 집합 <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 에서 정의된 미분동형사상 <span class="math inline">\(G:A \to B\)</span> 을 생각하자. <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할 <span class="math inline">\(\Phi\)</span> 에 대해</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\mathcal{O}' = \{G(U): U\in \mathcal{O}\}\)</span> 는 <span class="math inline">\(B\)</span> 에 포함되는 열린 덮개이며,</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\Phi' = \{\varphi_i \circ G : \varphi_i \in\Phi \}\)</span> 은 <span class="math inline">\(B\)</span> 에 포함되는 <span class="math inline">\(\mathcal{O}'\)</span> 에 종속된 단위분할이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#def-CM_partition_of_unity" class="quarto-xref">정의&nbsp;<span>16.4</span></a> 참고한다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(G^{-1}\)</span> 이 연속이므로 <span class="math inline">\(U\in \mathcal{O}\)</span> 에 대해 <span class="math inline">\(G^{-1}(U)\)</span> 는 열린 집합이며 <span class="math inline">\(\bigcup_{U\in \mathcal{O}}U = A\)</span> 이고 <span class="math inline">\(G\)</span> 가 전단사 이므로 <span class="math inline">\(\mathcal{O}\)</span> 는 <span class="math inline">\(B\)</span> 에 포함되는 열린 덮개이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 우선 <span class="math inline">\(\boldsymbol{x} \in A\)</span> 에 대해 <span class="math inline">\(0\le (\varphi_i \circ G)(\boldsymbol{x}) \le 1\)</span> 임은 자명하다. 또한 <span class="math inline">\(\sum_i (\varphi_i \circ G)(\boldsymbol{x})=1\)</span> 임도 자명하다.</p>
+<p><span class="math inline">\(G^{-1}\)</span> 이 연속이므로 <span class="math inline">\(G^{-1}(\operatorname{supp}\varphi_i)\)</span> 는 옹골집합이며 <span class="math inline">\(\boldsymbol{x}\not\in G^{-1}(\operatorname{supp}\varphi_i)\)</span> 에 대해 <span class="math inline">\(\varphi_i (G(\boldsymbol{x})) = 0\)</span> 이다. 즉 <span class="math inline">\(\left(G^{-1}(\operatorname{supp}\varphi_i)\right)^C \subset (\operatorname{supp}\varphi\circ G)^C\)</span> 이며 따라서 <span class="math inline">\(\operatorname{supp}\varphi \circ G \subset G^{-1}(\operatorname{supp}\varphi_i)\)</span> 이다.</p>
+<p><span class="math inline">\(\boldsymbol{x}\not \in G^{-1}(\operatorname{supp}\varphi_i)\)</span> 이면 <span class="math inline">\(G(\boldsymbol{x}) \in (\operatorname{supp}\varphi_i)^C\)</span> 이다. <span class="math inline">\(\operatorname{supp}\varphi_i\)</span> 가 옹골집합이므로 <span class="math inline">\((\operatorname{supp}\varphi_i)^C\)</span> 는 열린집합이고 <span class="math inline">\(G(\boldsymbol{x})\)</span> 를 포함하는 어떤 열린 <span class="math inline">\(V_{Gx}\)</span> 가 존재하여 <span class="math inline">\(V_{Gx}\subset (\operatorname{supp}\varphi_i)^C\)</span> 이다.</p>
+</div>
+<p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_change_of_variable" class="theorem">
 <p><span class="theorem-title"><strong>정리 16.6</strong></span> 열린 집합 <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 에서 정의된 미분동형사상 <span class="math inline">\(G:A \to B\)</span> 에 대해 <span class="math inline">\(f:G(A)\to \mathbb{R}\)</span> 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.</p>
@@ -957,14 +972,15 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 \tag{16.1}\]</span></span></p>
 </div>
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>다소 긴 과정을 통해 증명한다.</p>
+<div class="proof page-columns page-full">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(G\)</span> 가 미분동형사상이므로 각각의 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에 대해 <span class="math inline">\(\det (G'(\boldsymbol{a})) \ne 0\)</span> 이다(<a href="#prp-CM_diffeomorphism_and_determinant_of_derivative" class="quarto-xref">명제&nbsp;<span>16.1</span></a>). 다소 긴 과정을 통해 증명한다.</p>
 <p><u><i>Case-1 </i></u> : 우선 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 가 존재하며 각각의 <span class="math inline">\(U\in \mathcal{O}\)</span> 와 적분가능한 함수 <span class="math inline">\(f\)</span> 에 대해</p>
 <p><span id="eq-thm-CM_change_of_variable_1"><span class="math display">\[
 \int_{G(U)} f = \int_U (f\circ G)\cdot |\det (G')|
 \tag{16.2}\]</span></span></p>
 <p>라면 정리가 성립한다.</p>
-<p>(Case-1 증명) <a href="3_3_inverse_function_theorem.html#exr-CM_spivak_2_36" class="quarto-xref">연습문제&nbsp;<span>14.3</span></a> 에 의해 <span class="math inline">\(\mathcal{O}'=\{G(U):U\in \mathcal{O}\}\)</span> 는 <span class="math inline">\(G(A)\)</span> 에 포함되는 열린 덮개이다. <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(\mathcal{O}'\)</span> 에 종속된 단위 분할이라고 하자. <span class="math inline">\(\boldsymbol{x}\not\in G(U)\)</span> 일 때 <span class="math inline">\(\varphi_i(\boldsymbol{x})=0\)</span> 이라면 <span class="math inline">\(G\)</span> 는 단사이므로 <span class="math inline">\((\varphi_i \cdot f)\circ G(\boldsymbol{x})=0\)</span> 이다. <a href="#eq-thm-CM_change_of_variable_1" class="quarto-xref">식&nbsp;<span>16.2</span></a> 을 사용하면</p>
+<div class="page-columns page-full"><p>(Case-1 증명) <a href="3_3_inverse_function_theorem.html#exr-CM_spivak_2_36" class="quarto-xref">연습문제&nbsp;<span>14.3</span></a> 에 의해 <span class="math inline">\(\mathcal{O}'=\{G(U):U\in \mathcal{O}\}\)</span> 는 <span class="math inline">\(G(A)\)</span> 에 포함되는 열린 덮개이고 <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 단위분할일 때 <span class="math inline">\(\Phi' = \{\varphi_i \circ G : \varphi_i \in\Phi \}\)</span> 가 <span class="math inline">\(\mathcal{O}'\)</span> 에 종속된 단위분할임을 보일 수 있다<span class="math inline">\(^{1}\)</span>. ()</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\({}^1\)</span> <span class="citation" data-cites="Spivak1965">Spivak (<a href="../../references.html#ref-Spivak1965" role="doc-biblioref">1965</a>)</span> 에는 명시적으로 나오지 않지만 <span class="citation" data-cites="MunkresAnalysis">Munkres (<a href="../../references.html#ref-MunkresAnalysis" role="doc-biblioref">2019</a>)</span> 의 p 161-162 에는 자세히 나온다.</span></div></div>
+<p><span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(\mathcal{O}'\)</span> 에 종속된 단위 분할이라고 하자. <span class="math inline">\(\boldsymbol{x}\not\in G(U)\)</span> 일 때 <span class="math inline">\(\varphi_i(\boldsymbol{x})=0\)</span> 이라면 <span class="math inline">\(G\)</span> 는 단사이므로 <span class="math inline">\((\varphi_i \cdot f)\circ G(\boldsymbol{x})=0\)</span> 이다. <a href="#eq-thm-CM_change_of_variable_1" class="quarto-xref">식&nbsp;<span>16.2</span></a> 을 사용하면</p>
 <p><span class="math display">\[
 \int_{G(U)} \varphi_i \cdot f = \int_U (\varphi_i \cdot f)\circ G \cdot |\det (G')|
 \]</span></p>
@@ -980,8 +996,8 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 &amp;= \int_A (f \circ G) | \det (G')|.
 \end{aligned}
 \]</span></p>
-<p><u><i>주장-2 : </i></u> <span class="math inline">\(\;f=1\)</span> 일 때 정리가 성립한다.</p>
-<p>(주장-2 중명) <span class="math inline">\(f=1\)</span> 일 때 성립하면 모든 상수함수에 대해 성립한다. <span class="math inline">\(V\)</span> 가 <span class="math inline">\(G(A)\)</span> 에 포함되는 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(P\in \mathcal{P}[V]\)</span> 라고 하자. <span class="math inline">\(S\in P\)</span> 에 대해 <span class="math inline">\(f_S=m_S= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\in S\}\)</span> 라고 하자. 그렇다면</p>
+<p><u><i>Case-2 </i></u> <span class="math inline">\(\;f=1\)</span> 일 때 정리가 성립한다.</p>
+<p>(Case-2 중명) <span class="math inline">\(f=1\)</span> 일 때 성립하면 모든 상수함수에 대해 성립한다. <span class="math inline">\(V\)</span> 가 <span class="math inline">\(G(A)\)</span> 에 포함되는 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(P\in \mathcal{P}[V]\)</span> 라고 하자. <span class="math inline">\(S\in P\)</span> 에 대해 <span class="math inline">\(f_S=m_S= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\in S\}\)</span> 라고 하자. 그렇다면</p>
 <p><span class="math display">\[
 \begin{aligned}
 L(f,\,P) &amp;= \sum_{S\in P} m_S  \cdot \text{vol}(S) = \sum_{S\in P} \int_{\text{int}(S)} f_S \\[0.3em]
@@ -998,8 +1014,8 @@ U(f,\,P) \ge \int_{G^{-1}(V)} (f\circ G) | \det (G')|.
 \int_{G^{-1}(V)} (f\circ G)|\det (G')| \le \int_V f \le \int_{G^{-1}(V)} (f\circ G)|\det (G')|
 \]</span></p>
 <p>이다.</p>
-<p><u><i>주장-3 </i></u> : <span class="math inline">\(G : A \to \mathbb{R}^n\)</span>, <span class="math inline">\(H:B\to \mathbb{R}^n\)</span>, <span class="math inline">\(G(A)\subset A\)</span> 일 때 정리가 성립하면 <span class="math inline">\(H\circ G:A \to \mathbb{R}^n\)</span> 에 대해서도 성립한다.</p>
-<p>(주장-3 증명)</p>
+<p><u><i>Case-3 </i></u> : <span class="math inline">\(G : A \to \mathbb{R}^n\)</span>, <span class="math inline">\(H:B\to \mathbb{R}^n\)</span>, <span class="math inline">\(G(A)\subset A\)</span> 일 때 정리가 성립하면 <span class="math inline">\(H\circ G:A \to \mathbb{R}^n\)</span> 에 대해서도 성립한다.</p>
+<p>(Case-3 증명)</p>
 <p><span class="math display">\[
 \begin{aligned}
 \int_{H\circ G (A)} f &amp;= \int_{G(A)} (f\circ H) | \det (H')| \\[0.3em]
@@ -1007,17 +1023,33 @@ U(f,\,P) \ge \int_{G^{-1}(V)} (f\circ G) | \det (G')|.
 &amp;= \int_A (f \circ H \circ G) | \det ((H \circ G)')|.
 \end{aligned}
 \]</span></p>
-<p><u><i>주장-4</i></u> : <span class="math inline">\(G: A\to \mathbb{R}^n\)</span> 이 선형사상이면 정리가 성립한다.</p>
-<p>(주장-4 증명) <a href="3_4_integration.html#exr-CM_spivak_3_35" class="quarto-xref">연습문제&nbsp;<span>15.36</span></a> 에 의해</p>
+<p><u><i>Case-4 </i></u> : <span class="math inline">\(G: A\to \mathbb{R}^n\)</span> 이 선형사상이면 정리가 성립한다.</p>
+<p>(Case-4 증명) <a href="3_4_integration.html#exr-CM_spivak_3_35" class="quarto-xref">연습문제&nbsp;<span>15.36</span></a> 에 의해</p>
 <p><span class="math display">\[
 \int_{G(U)} 1 = \text{vol}(G(U)) = \int_U |\det (G')|
 \]</span></p>
 <p>이다.</p>
+<p><br></p>
+<p><span class="math inline">\(\boldsymbol{a}\in A\)</span> 에 대해 선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 을 <span class="math inline">\(L=G'(\boldsymbol{a})\)</span> 이라고 하면 <span class="math inline">\((L \circ G)'(\boldsymbol{a}) = I_n\)</span> 이다. <i>Case-</i><span class="math inline">\(4\)</span> 에 따라 <span class="math inline">\(L\)</span> 에 대해 이 정리가 성립하며, <i>Case-</i><span class="math inline">\(3\)</span> 에 따라 <span class="math inline">\(L^{-1}\circ G\)</span> 에 대해 이 정리가 성립하면 <span class="math inline">\(G = L^\circ (L^{-1}\circ G)\)</span> 에 대해서도 이 정리가 성립한다. 즉 <span class="math inline">\(G'(\boldsymbol{a})=I_n\)</span> 인 경우에 성립함을 보이면 모든 경우에 성립함을 보이게 된다.</p>
+<p>이제 차원 <span class="math inline">\(n\)</span> 에 대한 induction 으로 증명하자. <span class="math inline">\(n=1\)</span> 일 때는 <a href="#sec-CM_change_of_variables_for_1d" class="quarto-xref"><span>절 16.1</span></a> 에서 보였다. 이제 <span class="math inline">\(n-1\)</span> 차원에서 정리가 성립함을 가정한다. 각각의 <span class="math inline">\(\boldsymbol{a} \in A\)</span> 에 대해 이 정리가 성립하는 <span class="math inline">\(\boldsymbol{a}\in U\subset A\)</span> 를 찾는다면 <i>Case-</i><span class="math inline">\(1\)</span> 에 따라 위의정리가 성립한다는 것을 보인다. 또한 바로 앞에서 보았듯이 <span class="math inline">\(G'(\boldsymbol{a})=I_n\)</span> 인 경우만 생각하면 된다.</p>
+<p><span class="math inline">\(G(\boldsymbol{x}) = (g_1(\boldsymbol{x}),\ldots,\,g_n(\boldsymbol{x}))\)</span> 에 대해 <span class="math inline">\(H(\boldsymbol{x}) = (g_1(\boldsymbol{x}),\ldots,\,g_{n-1}(\boldsymbol{x}),\, x_n)\)</span> 이라고 하면 <span class="math inline">\(H'(\boldsymbol{a})=I_n\)</span> 이며, 따라서 <span class="math inline">\(H\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하는 어떤 열린 집합 <span class="math inline">\(U'\subset A\)</span> 에서의 미분동형사상이다. 이제 <span class="math inline">\(K:H(U') \to \mathbb{R}^n\)</span> 을 아래와 같이 정의하자.</p>
+<p><span class="math display">\[
+K(\boldsymbol{x}) = (x_1,\ldots,\,x_{n-1},\, g_n(H^{-1}(\boldsymbol{x})))
+\]</span></p>
+<p>그렇다면</p>
+<p><span class="math display">\[
+(K \circ H) (\boldsymbol{x}) = (g_1(\boldsymbol{x}),\ldots,\,g_{n-1}(\boldsymbol{x}),\, g_n ((H^{-1}\circ H)(\boldsymbol{x}))) = G(\boldsymbol{x})
+\]</span></p>
+<p>이므로 <span class="math inline">\(G=K\circ H\)</span> 이다.</p>
+<p>이제 <span class="math inline">\(K\)</span> 함수에 대해 알아보자.</p>
+<p><span class="math display">\[
+\left(g_n \circ H^{-1}\right)'(H(\boldsymbol{a})) = g_n'(\boldsymbol{a})  \cdot \left(H'(\boldsymbol{a})\right)^{-1} = g_n'(\boldsymbol{a})
+\]</span></p>
+<p>이며 <span class="math inline">\(G'(\boldsymbol{a})=1\)</span> 이므로 <span class="math inline">\(D_n (g_n\circ H^{-1}) (H(\boldsymbol{a}))= D_n g_n(\boldsymbol{a}) = 1\)</span> 이다. 즉 <span class="math inline">\(K'(\boldsymbol{a})= I_n\)</span> 이다. 이로부터 <span class="math inline">\(H(\boldsymbol{a})\)</span> 를 포함하는 열린 <span class="math inline">\(V\subset H(U')\)</span> 이 존재하여 <span class="math inline">\(K\)</span> 는 <span class="math inline">\(V\)</span> 위에서의 미분동형사상이다. 이제 <span class="math inline">\(U=K^{-1}(V)\)</span> 라고 하자. <span class="math inline">\(H:U \to \mathbb{R}^n\)</span>, <span class="math inline">\(K:V\to \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(G=K\circ H\)</span> 이며 <span class="math inline">\(H(U)\subset V\)</span> 이다. <i>Case-</i><span class="math inline">\(3\)</span> 에서 보았듯이 <span class="math inline">\(K,\,H\)</span> 각각에 대해 정리가 성립하면 <span class="math inline">\(G\)</span> 에 대해서도 성립함을 알 수 있다.</p>
 </div>
 <p><br></p>
 <section id="연습문제-2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
-<br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_41" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 16.9 (Spivak 3.41)</strong></span> <span class="math inline">\(F:\{r:r&gt;0\} \times (0,\, 2\pi) \to \mathbb{R}\)</span> 을 <span class="math inline">\(F(r,\,\theta) := (r \cos \theta,\, r \sin \theta)\)</span> 로 정의한다.</p>
@@ -1026,6 +1058,9 @@ U(f,\,P) \ge \int_{G^{-1}(V)} (f\circ G) | \det (G')|.
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-MunkresAnalysis" class="csl-entry" role="listitem">
+Munkres, J. R. 2019. <em>Analysis on Manifolds</em>. CRC Press. <a href="https://books.google.co.kr/books?id=rSTcqZMZ8UIC">https://books.google.co.kr/books?id=rSTcqZMZ8UIC</a>.
+</div>
 <div id="ref-Spivak1965" class="csl-entry" role="listitem">
 Spivak, M. 1965. <em>Calculus on Manifolds: A Modern Approach to Classical Theorems of Advanced Calculus</em>. Avalon Publishing.
 </div>

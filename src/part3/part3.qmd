@@ -14,7 +14,7 @@ crossref:
 ### 참고 도서
 
 - @Spivak1965 : Calculus on Manifolds
-- @Munkres1991analysis : Analysis on Manifolds
+- @MunkresAnalysis : Analysis on Manifolds
 - @Rudin1976 : Principles of Mathematical Analysis
 - @DoCarmo1998differential : Differential Forms and Applications
   
