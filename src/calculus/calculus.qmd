@@ -1,0 +1,28 @@
+---
+title: "미적분학"
+number-sections: true
+number-depth : 2
+crossref:
+  chapters: true
+
+---
+
+
+
+## 참고자료
+
+### 참고 도서
+
+- @SNUCalculus2013 : 미적분학
+- @Spivak1965 : Calculus on Manifolds
+- @MunkresAnalysis : Analysis on Manifolds
+- @Rudin1976 : Principles of Mathematical Analysis
+- @DoCarmo1998differential : Differential Forms and Applications
+  
+</br>
+
+### 기타
+
+- [All axolotls enjoy mathematics. But this one also loves physics](http://www.petraaxolotl.com/mathematics/calculus-on-manifolds/) : Spivak errata and solution
+- [MA-570 Summer 1999](https://www.ms.uky.edu/~ken/ma570/) Lecture course. Solution to Spivak's *Calculus on Manifolds* are presented.
+- [Spivak - Calculus on Manifolds, Comments and Errata @ www.jirka.org](https://www.jirka.org/spivak-errata.html) : Spivak errata

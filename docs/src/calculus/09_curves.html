@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; 곡선 – Mathematical Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/calculus/10_multivariable_functions.html" rel="next">
+<link href="../../src/calculus/08_3dspace.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/09_curves.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">곡선</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Mathematical Analysis</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Julia-KAERI/MathematicalAnalysis" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/calculus/calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">미적분학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/01_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/02_power_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">멱급수와 수렴반경</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/03_tayler_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">테일러 전개</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/04_coordinate_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">좌표공간과 좌표계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/05_vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">벡터</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/06_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행렬과 선형사상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/07_square_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">정사각 행렬과 행렬식</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/08_3dspace.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3차원 공간과 벡터의 외적</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/09_curves.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">곡선</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/10_multivariable_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">다변수함수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/11_higher_order_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">최대최소값 문제와 고계미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/12_multivariable_vector_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 벡터함수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/13_vector_field.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">벡터장과 선적분</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">해석학의 기반</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">집합</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_2_functions_and_relations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">함수와 관계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_3_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_4_cartesian_products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">유한집합</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">일변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_1_basic_topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">기본적인 위상수학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_2_sequences_and_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_3_continuity_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">함수의 연속성</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_4_differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_5_riemann_stieltjes_integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_6_sequences_and_series_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">함수열</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">다변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_2_differentiation_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_5_change_of_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">미분동형사상과 변수 변경</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_6_differential_forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">미분 형식</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_7_stokes_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">스토크스 정리</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#연습문제-제-9-장-1-절" id="toc-연습문제-제-9-장-1-절" class="nav-link active" data-scroll-target="#연습문제-제-9-장-1-절"><span class="header-section-number">9.1</span> 연습문제 : 제 9 장 1 절</a></li>
+  <li><a href="#제-2-절" id="toc-제-2-절" class="nav-link" data-scroll-target="#제-2-절"><span class="header-section-number">9.2</span> 제 2 절</a></li>
+  <li><a href="#연습문제-제-9-장-2-절" id="toc-연습문제-제-9-장-2-절" class="nav-link" data-scroll-target="#연습문제-제-9-장-2-절"><span class="header-section-number">9.3</span> 연습문제 : 제 9 장 2 절</a></li>
+  <li><a href="#연습문제-제-9-장-3절" id="toc-연습문제-제-9-장-3절" class="nav-link" data-scroll-target="#연습문제-제-9-장-3절"><span class="header-section-number">9.4</span> 연습문제 : 제 9 장 3절</a></li>
+  <li><a href="#연습문제-제-9-장-4-절" id="toc-연습문제-제-9-장-4-절" class="nav-link" data-scroll-target="#연습문제-제-9-장-4-절"><span class="header-section-number">9.5</span> 연습문제 : 제 9 장 4 절</a></li>
+  <li><a href="#연습문제-제-9-장-5-절" id="toc-연습문제-제-9-장-5-절" class="nav-link" data-scroll-target="#연습문제-제-9-장-5-절"><span class="header-section-number">9.6</span> 연습문제 : 제 9 장 5 절</a></li>
+  <li><a href="#연습문제-제-9-장-6-절" id="toc-연습문제-제-9-장-6-절" class="nav-link" data-scroll-target="#연습문제-제-9-장-6-절"><span class="header-section-number">9.7</span> 연습문제 : 제 9 장 6 절</a></li>
+  <li><a href="#연습문제-제-9-장-7-절" id="toc-연습문제-제-9-장-7-절" class="nav-link" data-scroll-target="#연습문제-제-9-장-7-절"><span class="header-section-number">9.8</span> 연습문제 : 제 9 장 7 절</a>
+  <ul class="collapse">
+  <li><a href="#재매개화에-의해-선적분값은-변하지-않는다" id="toc-재매개화에-의해-선적분값은-변하지-않는다" class="nav-link" data-scroll-target="#재매개화에-의해-선적분값은-변하지-않는다"><span class="header-section-number">9.8.1</span> 재매개화에 의해 선적분값은 변하지 않는다</a></li>
+  </ul></li>
+  <li><a href="#연습문제-제-9-장-8-절" id="toc-연습문제-제-9-장-8-절" class="nav-link" data-scroll-target="#연습문제-제-9-장-8-절"><span class="header-section-number">9.9</span> 연습문제 : 제 9 장 8 절</a></li>
+  <li><a href="#제-9-장-탐구문제" id="toc-제-9-장-탐구문제" class="nav-link" data-scroll-target="#제-9-장-탐구문제"><span class="header-section-number">9.10</span> 제 9 장 탐구문제</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/09_curves.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">곡선</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">곡선</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
+<section id="연습문제-제-9-장-1-절" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="연습문제-제-9-장-1-절"><span class="header-section-number">9.1</span> 연습문제 : 제 9 장 1 절</h2>
+<p><strong>1.</strong> 곡선 <span class="math inline">\((2t^2,\, 1-t,\,3+t^2)\)</span> 과 평면 <span class="math inline">\(3x-14y+z=10\)</span> 의 교점을 구하라.</p>
+<hr>
+<p><span class="math display">\[
+3(2t^2)-14(1-t)+3+t^2=10 \implies 7t^2+14t-21=0 \implies t^2+2t-3=0 \implies t=1,\, -3
+\]</span></p>
+<p>이므로, <span class="math inline">\((2,\, 0,\, 4),\, (18, 4, 12)\)</span> 이다.</p>
+<p><br></p>
+<p><strong>2.</strong> 생략.</p>
+<p><br></p>
+<p><strong>3.</strong> 다음 두 곡선</p>
+<p><span class="math display">\[
+(e^t,\, e^{2t},\, 1-e^{-t}),\qquad (1-t,\, \cos t,\, \sin t)
+\]</span></p>
+<p>는 점 <span class="math inline">\((1,\,1,\,0)\)</span> 에서 만남을 보이고, 그 점에서의 교각을 구하라.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{f}(t)=(e^t,\, e^{2t},\, 1-e^{-t})\)</span>, <span class="math inline">\(\boldsymbol{g}(t) = (1-t,\, \cos t,\, \sin t)\)</span> 라 하자. <span class="math inline">\(\boldsymbol{f}(0)=(1,\, 1,\, 0),\, \boldsymbol{g}(0)=(1,\, 1,\, 0)\)</span> 이므로 만난다. <span class="math inline">\(t=0\)</span> 일 때의 점선의 방향벡터는,</p>
+<p><span class="math display">\[
+\boldsymbol{f}'(0)=(1,\, 2,\, 1),\qquad \boldsymbol{g}'(0)=(-1,\, 0,\, 1)
+\]</span></p>
+<p>이므로 두 점선의 교각 <span class="math inline">\(\theta\)</span> 는,<br>
+</p>
+<p><span class="math display">\[
+\cos \theta = \dfrac{\boldsymbol{f}'(0)\cdot \boldsymbol{g}'(0)}{|\boldsymbol{f}'(0)||\boldsymbol{g}'(0)|}=0\implies \theta = \dfrac{\pi}{2}
+\]</span></p>
+<p><br></p>
+<p><strong>4.</strong> 원점을 지나지 않는 미분가능한 곡선 <span class="math inline">\(X(t)\in \mathbb{R}^3\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+\dfrac{d}{dt}|X(t)|=\dfrac{X(t) \cdot X'(t)}{|X(t)|}
+\]</span></p>
+<p>임을 보이라. 이로부터 <span class="math inline">\(t=t_0\)</span> 일 때 <span class="math inline">\(|X(t)|\)</span> 의 값이 최소가 되면 원점과 <span class="math inline">\(X(t_0)\)</span> 를 이은 직선이 곡선 <span class="math inline">\(X(t)\)</span> 와 수직으로 만남을 설명하라.</p>
+<hr>
+<p><span class="math inline">\(X(t)=(x(t),\, y(t),\, z(t))\)</span> 라 하면,</p>
+<p><span class="math display">\[
+\dfrac{d}{dt}|X(t)|=\dfrac{d}{dt}\sqrt{x(t)^2+y^2(t)+z^2(t)}=\dfrac{x(t)x'(t)+y(t)y'(t)+z(t)z'(t)}{\sqrt{x^2(t)+y^2(t)+z^2(t)}} = \dfrac{X(t)\cdot X'(t)}{|X(t)|}
+\]</span></p>
+<p>이다.</p>
+<p><span class="math inline">\(t=t_0\)</span> 일 때 <span class="math inline">\(|X(t)|\)</span> 의 값이 최소가 되면 <span class="math inline">\(\dfrac{d}{dt}|X(t)|=0\)</span> at <span class="math inline">\(t=t_0\)</span> 이며 <span class="math inline">\(|X(t)|\ne 0\)</span> for all <span class="math inline">\(t\in \mathbb{R}\)</span> 이므로 <span class="math inline">\(X(t_0)\cdot X'(t_0)=0\)</span> 이어야 한다.</p>
+<p><br></p>
+<p><strong>5.</strong> 극좌표계에서 <span class="math inline">\(r=r(\theta)\)</span> 로 주어진 평면곡선은 직교좌표계로는</p>
+<p><span class="math display">\[
+X(\theta)=(x(\theta),\,y(\theta))=r(\theta)(\cos \theta,\,\sin \theta)
+\]</span></p>
+<p>로 표현된다. 이때</p>
+<p><span class="math display">\[
+X'(\theta)=r'(\theta)(\cos \theta,\, \sin \theta)+r(\theta)(-\sin\theta,\, \cos\theta),\quad |X'|=\sqrt{{r'}^2-r^2}
+\]</span></p>
+<p>임을 보이라. 이로부터 원점과 점 <span class="math inline">\(X(\theta_0)\)</span> 를 잇는 직선이 점 <span class="math inline">\(X(\theta_0)\)</span> 에서의 곡선 <span class="math inline">\(X(\theta)\)</span> 의 접선과 이루는 사잇각의 코사인값이</p>
+<p><span class="math display">\[
+\dfrac{r'(\theta_0)}{\sqrt{{r'}(\theta_0)^2+r(\theta_0)^2}}
+\]</span></p>
+<p>임을 보이라.</p>
+<p>또 극좌표계에서 <span class="math inline">\(r=e^\theta\)</span> 로 주어진 <strong>로그와선(logarithmic spiral)</strong> 은 원점과 곡선의 한 점을 잇는 직선을 그 점에서 <span class="math inline">\(45^\circ\)</span> 회전시키면, 곡선의 접선이 됨을 보이라.</p>
+<hr>
+<p><span class="math inline">\(X'(\theta)\)</span> 를 계산하면,</p>
+<p><span class="math display">\[
+X'(\theta)=\left(\dfrac{dx(\theta)}{d\theta},\, \dfrac{dy(\theta)}{d\theta}\right)=(r'(\theta)\cos \theta -r(\theta)\sin \theta ,\, r'(\theta) \sin \theta+r(\theta)\cos \theta)=r'(\theta)(\cos \theta,\,\sin\theta)+r(\theta)(-\sin \theta,\,\cos \theta)
+\]</span></p>
+<p>이며,</p>
+<p><span class="math display">\[
+|X'(\theta)|=\sqrt{(r'(\theta)\cos\theta-r(\theta)\sin \theta)^2+(r'(\theta)\sin \theta+r(\theta)\cos\theta)^2}=\sqrt{{r'(\theta)}^2+{r(\theta)}^2}
+\]</span></p>
+<p>이다. 원점과 점 <span class="math inline">\(X(\theta_0)\)</span> 를 잇는 직선이 점 <span class="math inline">\(X(\theta_0)\)</span> 에서의 곡선 <span class="math inline">\(X(\theta)\)</span> 의 접선과 이루는 사잇각을 <span class="math inline">\(\phi\)</span> 라 하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\cos \phi &amp;= \dfrac{X(\theta_0)\cdot X'(\theta_0)}{|X(\theta_0)||X'(\theta_0)|}\\
+&amp;=\dfrac{r(\theta_0) \cos \theta_0 (r'(\theta_0)\cos \theta_0 -r(\theta _0)\sin \theta_0)+r(\theta_0)\sin \theta_0 (r'(\theta_0)\sin \theta_0 +r(\theta_0)\cos \theta_0)}{r(\theta_0)\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}\\
+&amp;= \dfrac{r'(\theta_0)\cos^2\theta_0-r(\theta_0)\cos \theta_0 \sin \theta_0 +r'(\theta_0)\sin ^2\theta_0 +r(\theta_0)\cos \theta_0 \sin \theta_0}{\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}\\
+&amp;=\dfrac{r'(\theta_0)}{\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+<p><span class="math inline">\(r=e^\theta\)</span> 일 경우 <span class="math inline">\(\cos \phi = \dfrac{1}{\sqrt{2}}\)</span> 이므로 그 사잇각이 <span class="math inline">\(\dfrac{\pi}{4}=45^{\circ}\)</span> 이므로, 원점과 곡선의 한 점을 잇는 직선을 그 점에서 <span class="math inline">\(45^\circ\)</span> 회전시키면, 곡선의 접선이 된다.</p>
+<p><br></p>
+<p><strong>6.</strong> 탁자 위에서 원판이 일정한 각속도 <span class="math inline">\(3 \operatorname{rad/sec}\)</span> 로 돌고 있다. (이때 회전의 중심이 원판의 중심이다.) 원판의 중심에서 파리 한마리가 원판의 둘레의 한 점을 향하여 (원판에 대하여) <span class="math inline">\(2 \operatorname{cm/sec}\)</span> 로 움직인다고 하자. 원점에서 출발 후 <span class="math inline">\(4\)</span> 초가 되었을 때 탁자에 대한 파리의 속력을 구하라.</p>
+<hr>
+<p>원판의 중심을 원점으로 잡고 <span class="math inline">\(t=0\)</span> 에서 파리가 <span class="math inline">\(+x\)</span> 방향으로 움직이기 시작했다고 하자. 회전이 반시계방향이라고 하고, 파리의 위치를 <span class="math inline">\(X(t)=(x(t),\,y(t))\)</span> 라 하면,</p>
+<p><span class="math display">\[
+X(t)= (2t) (\cos 3t, \, \sin 3t)=(2t\cos 3t,\, 2t\sin 3t)
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+X'(t) = (2\cos 3t-6t\sin 3t,\, 2\sin 3t+6t\cos 3t)
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(X'(4)=(2\cos 12-24 \sin 12 ,\, 2 \sin 12 + 24 \cos 12)\)</span> 이므로,</p>
+<p><span class="math display">\[
+|X'(t)|=\sqrt{4+576}=2\sqrt{145} \text{ cm/sec}
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>7.</strong> 평면 위에서 점 <span class="math inline">\(P\)</span> 의 운동이 <span class="math inline">\((\cos 2t,\, \sin 2t)\)</span> 로 주어지고, 또 점 <span class="math inline">\(Q\)</span> 의 운동이 <span class="math inline">\(2(\cos t,\,\sin t)\)</span> 로 주어졌다고 하자. 점 <span class="math inline">\(P\)</span> 에서 점 <span class="math inline">\(Q\)</span> 를 바라보았을 때 <span class="math inline">\(Q\)</span> 의 운동을 <span class="math inline">\(X(t)\)</span> 로 둘 때, 이를 구하고 도시하라.</p>
+<hr>
+<p><span class="math display">\[
+X(t)=P(t)-Q(t)=(\cos 2t-2\cos t,\, \sin 2t-2\sin t)
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/problem_9_1_8.jpg" class="img-fluid figure-img"></p>
+<figcaption>problem_9_1_8</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p><strong>8.</strong> (<strong>Bézier 의 이차곡선</strong>) 공간 상의 주어진 서로 다른 세 점 <span class="math inline">\(P_0,\,P_\ast,\, P_1\)</span> 에 대하여 곡선</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(t) &amp; :=(1-t){\big (}(1-t)P_0 + tP_\ast {\big )}+t{\big (} (1-t)P_{\ast}+tP_1 {\big )} \\
+&amp;= (1-t)^2 P_0 + 2t(1-t)P_\ast + t^2P_1 &amp; \qquad (0\le t \le 1)
+\end{aligned}
+\]</span></p>
+<p>은 점 <span class="math inline">\(P_0,\,P_1\)</span> 을 지나고, 점 <span class="math inline">\(P_0\)</span> 에서의 접선과 점 <span class="math inline">\(P_1\)</span> 에서의 접선이 점 <span class="math inline">\(P_\ast\)</span> 에서 만남을 보이라. 또 이 곡선은 <span class="math inline">\(P_{\ast}\)</span> 와 <span class="math inline">\(\dfrac{1}{2}(P_0+P_1)\)</span> 의 평균점을 지남을 보이라.</p>
+<hr>
+<p><span class="math inline">\(P(0)=P_0,\, P(1)=P_1\)</span> 이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+P'(t)=-2(1-t)P_0 + 2(1-t)P_{\ast}-2tP_{\ast}+2tP_1=-2(1-t)P_0 +(2-4t)P_{\ast}+2tP_1
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(P'(0)=-2P_0+2P_{\ast},\, P'(1)=2P_1-2P_{\ast}\)</span> 이다.</p>
+<p><span class="math inline">\(P_1\)</span> 에서의 접선을 <span class="math inline">\(l_1(t)\)</span>, <span class="math inline">\(P_2\)</span> 에서의 접선을 <span class="math inline">\(l_2(s)\)</span> 라 하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+l_1(t)&amp;=(-2P_0+2P_\ast)t+P_0 \\
+l_2(s) &amp;= (2P_1-2P_\ast)s+P_1
+\end{aligned}
+\]</span></p>
+<p>이며 <span class="math inline">\(l_1(1/2)=l_2(-1/2)=P_{\ast}\)</span> 이다. 즉 두 접선은 <span class="math inline">\(P_{\ast}\)</span> 를 지난다. 또한,</p>
+<p><span class="math display">\[
+P \left(\dfrac{1}{2}\right)= \dfrac{1}{4}P_0 + \dfrac{1}{2} P_{\ast}+ \dfrac{1}{4}P_1 = \dfrac{1}{2} \left(P_{\ast} + \dfrac{P_0+P_1}{2}\right)
+\]</span></p>
+<p>이므로, 이 곡선은 <span class="math inline">\(P_{\ast}\)</span> 와 <span class="math inline">\(\dfrac{1}{2}(P_0+P_1)\)</span> 의 평균점을 지난다.</p>
+<p><br></p>
+<p><strong>9.</strong> 함수</p>
+<p><span class="math display">\[
+f(t) = \left\{\begin{array}{ll} te^{1/t^2} \qquad &amp;(t\ne 0)\\ 0 &amp; (t=0) \end{array} \right.
+\]</span></p>
+<p>에 대하여 곡선</p>
+<p><span class="math display">\[
+X(t)={\big (}f(t),\, |f(t)| {\big )}
+\]</span></p>
+<p>의 상을 그리라. 또 이 곡선은 무한급함수임을 보이라. 이 곡선은 정규곡선인가?</p>
+<hr>
+<p>곡선의 상, 무한급함수임은 쉽게 보일 수 있다. <span class="math inline">\(X'(t)=0\)</span> 이므로 정규곡선이 아니다.</p>
+<p><br></p>
+<p><strong>10.</strong> (<strong>세잎 매듭</strong>) 좌표공간에서 <span class="math inline">\(yz\)</span> 평면의 원</p>
+<p><span class="math display">\[
+(y-R)^2+z^2=r^2
+\]</span></p>
+<p>을 <span class="math inline">\(z\)</span> 축 주위로 회전시켜 엳은 <strong>원환면</strong>(torus) 은 방정식</p>
+<p><span class="math display">\[
+\left(\sqrt{x^2+y^2} -R  \right)^2+z^2=r^2
+\]</span></p>
+<p>로 주어진다 (이 때 <span class="math inline">\(0&lt;r&lt;R\)</span> 을 가정한다). 이제 구간 <span class="math inline">\(0\le \theta ,\, \varphi \le 2 \pi\)</span> 에서</p>
+<p><span class="math display">\[
+S(\theta,\,\varphi):=R(\cos \theta,\, \sin \theta,\, 0) + r \cos \varphi (\cos \theta,\, \sin \theta,\, 0)+r \sin \varphi (0,\,0,\,1)
+\]</span></p>
+<p>은 “원환면의 매개화” 임을 설명하라.</p>
+<p>또</p>
+<p><span class="math display">\[
+\theta = 2t,\qquad \varphi = 3t
+\]</span></p>
+<p>로 주어지는 곡선</p>
+<p><span class="math display">\[
+X(t) :=S(2t,\,3t)
+\]</span></p>
+<p>는 주기가 <span class="math inline">\(2\pi\)</span> 임을 보이라. 이 곡선을 <strong>세잎매듭</strong>(trefoil knot) 이라고 부른다.</p>
+<hr>
+<p>원환면을 이루는 점의 집합을 <span class="math inline">\(V\)</span> 라 하자.</p>
+<p><span class="math display">\[
+S(\theta,\, \varphi) = (R\cos \theta + r\cos \varphi \cos \theta,\, R \sin \theta+ r \cos \varphi \sin \theta,\, r \sin \varphi)
+\]</span></p>
+<p>이다. <span class="math inline">\(S(\theta,\, \varphi) = (x(\theta,\, \varphi),\, y(\theta,\, \varphi),\, z(\theta,\, \varphi))\)</span> 이며</p>
+<p><span class="math display">\[
+\sqrt{x(\theta,\,\varphi)^2+y(\theta,\,\varphi)^2}-R^2+z(\theta,\, \varphi)^2= R^2-z^2+z^2+r^2=r^2
+\]</span></p>
+<p>이므로 따라서 <span class="math inline">\(S(\theta,\,\varphi)\)</span> 는 <span class="math inline">\(V\)</span> 의 부분집합이다. 이제 <span class="math inline">\((x,\,y,\,z)\)</span> 가 원환면상의 한 점이라 하자. <span class="math inline">\(r&lt;R\)</span> 이므로 원점은 원환면상에 포함되지 않는다.</p>
+<p><span class="math inline">\(0\le \theta,\,\varphi \le 2\pi\)</span> 에 대해 <span class="math inline">\(\varphi = \arctan \left(\dfrac{z}{\sqrt{x^2+y^2-R^2}}\right)\)</span>, <span class="math inline">\(\theta = \arctan \left(\dfrac{y}{x}\right)\)</span> 라 정의하면, 임의의 원환면상의 한 점은 <span class="math inline">\(S(\theta,\,\varphi)\)</span> 상의 한 점이다. 따라서 <span class="math inline">\(V=S(\theta ,\,\varphi)\)</span> 이므로 원환면의 재매개화이다.</p>
+<p><span class="math display">\[
+X(t)=(R \cos 2t + r \cos 3t \cos 2t,\, R \sin 2t+r \cos 3t \sin 2t,\, r \sin 3t)
+\]</span></p>
+<p>이다. <span class="math inline">\(z(t)\)</span> 의 주기가 <span class="math inline">\(\dfrac{2\pi}{3}\)</span> 이므로 <span class="math inline">\(X(t)\)</span> 의 주기는 <span class="math inline">\(\dfrac{2\pi}{3}\)</span> 의 배수이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+X(0) &amp;=(R+r,\, 0,\, 0)\\
+X\left(\dfrac{2\pi}{3}\right)&amp;=
+\left( -\dfrac{R}{2}-\dfrac{r}{2},\, -\dfrac{\sqrt{3}}{2}R-\dfrac{\sqrt{3}}{2}r,\,0  \right)\\
+X\left(\dfrac{4\pi}{3}\right) &amp;=\left( -\dfrac{R}{2}-\dfrac{r}{2},\, \dfrac{\sqrt{3}}{2}R+\dfrac{\sqrt{3}}{2}r,\,0  \right)\\
+X(2\pi) &amp;=(R+r,\, 0,\, 0)=X(0)
+\end{aligned}
+\]</span></p>
+<p>이며, <span class="math display">\[
+X(t+2\pi)=X(t)
+\]</span></p>
+<p>임은 쉽게 보일 수 있다. 따라서 이 곡선의 주기는 <span class="math inline">\(2\pi\)</span> 이다.</p>
+<p><br></p>
+</section>
+<section id="제-2-절" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="제-2-절"><span class="header-section-number">9.2</span> 제 2 절</h2>
+<p><strong>2.0.1 기본연습문제.</strong></p>
+<p><span class="math inline">\(1.\)</span> 곡선의 가속도벡터가 속도벡터에 항상 수직이면, 속력이 일정한 곡선임을 보이라. 역으로 속력 <span class="math inline">\(|X'(t)|\)</span> 가 일정한 곡선에서는 가속도 벡터 <span class="math inline">\(X''(t)\)</span> 가 속도벡터에 수직임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+X'(t) \cdot X''(t)=0 \iff \dfrac{d}{dt}(X'(t) \cdot X'(t))=0 \iff \dfrac{d}{dt}|X'(t)|^2=0 \iff |X'(t)|=\text{const.}
+\]</span></p>
+<p><br></p>
+<p><span class="math inline">\(2.\)</span> 원 위를 움직이는 점의 가속도 벡터가 항상 원의 중심을 향하면, 이 운동은 등각속도 운동임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+X''(t) \times X(t)=0 \implies \dfrac{d}{dt}\left(X'(t) \times X(t)\right)=0 \implies X'(t) \times X(t)=\text{const}
+\]</span></p>
+<p><br></p>
+</section>
+<section id="연습문제-제-9-장-2-절" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="연습문제-제-9-장-2-절"><span class="header-section-number">9.3</span> 연습문제 : 제 9 장 2 절</h2>
+<p><strong>1.</strong> 생략</p>
+<p><br></p>
+<p><strong>2.</strong> 정규곡선 <span class="math inline">\(X(t)\)</span> 에서 속력 <span class="math inline">\(v(t)\)</span> 와 가속력 <span class="math inline">\(a(t)\)</span> 를 각각</p>
+<p><span class="math display">\[
+v(t) = |X'(t)|,\qquad a(t)=|X''(t)|
+\]</span></p>
+<p>로 두자. 이때</p>
+<p><span class="math display">\[
+a(t)= \pm v'(t),\qquad \forall t
+\]</span></p>
+<p>일 필요충분조건은 <span class="math inline">\(X(t)\)</span> 가 직선운동을 하는 것임을 보이라. (교재에는 <span class="math inline">\(a(t)=v'(t)\)</span> 라과 나왔지만 <span class="math inline">\(\pm\)</span> 이 붙는게 맞다.)</p>
+<hr>
+<ol type="1">
+<li><span class="math inline">\(X(t)\)</span> 가 직선운동을 한다는 것은 어떤 상수 벡터 <span class="math inline">\(U\)</span> 와 스칼라 함수 <span class="math inline">\(f(t)\)</span> 에 대하여 <span class="math inline">\(X(t)-X(0)=Uf(t)\)</span> 란 의미이다. 따라서,</li>
+</ol>
+<p><span class="math display">\[
+X'(t)=Uf'(t),\qquad X''(t)=Uf''(t)
+\]</span></p>
+<p>이다. <span class="math inline">\(X(t)\)</span> 가 정규곡선이므로 <span class="math inline">\(X'(t)\ne 0\)</span> 이며, 따라서 <span class="math inline">\(f'(t)&gt;0 \;\forall t\)</span> 이거나 <span class="math inline">\(f'(t)&lt;0\;\forall t\)</span> 이다. <span class="math inline">\(f'(t)&gt;0\)</span></p>
+<p><span class="math display">\[
+v'(t)= |U||f''(t)|,\qquad a(t)=|U||f''(t)|
+\]</span></p>
+<p>이고 <span class="math inline">\(f'(t)&lt;0\)</span> 이면,</p>
+<p><span class="math display">\[
+v'(t)=|U||-f''(t)|=|U||f''(t)|,\qquad a(t)=|U||f''(t)|
+\]</span></p>
+<p>이므로 <span class="math inline">\(v'(t)=\pm a(t)\)</span> 이다.</p>
+<p><br></p>
+<ol start="2" type="1">
+<li><span class="math inline">\(a(t)= \pm v'(t)\)</span> 임을 가정하자. <span class="math inline">\(v(t)^2 = X'(t) \cdot X'(t)\)</span> 이므로,</li>
+</ol>
+<p><span class="math display">\[
+\dfrac{d}{dt}\left(v(t)^2\right)=2v(t)v'(t) = 2X''(t)\cdot X'(t) \implies v'(t)=\dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
+\]</span></p>
+<p>이다. <span class="math inline">\(v'(t) = \pm a(t)= \pm |X''(t)|\)</span> 이므로 <span class="math inline">\(X'(t) \cdot X''(t) = \pm|X'(t)||X''(t)|\)</span> 이다. 즉 <span class="math inline">\(X'(t)\)</span> 와 <span class="math inline">\(X''(t)\)</span> 는 평행하거나 <span class="math inline">\(X'(t)=0\)</span> or <span class="math inline">\(X''(t)=0\)</span> 임을 의미한다. <span class="math inline">\(X''(t)=0\)</span> 이면 <span class="math inline">\(X'(t)=V\)</span> 인 상수벡터이므로 <span class="math inline">\(X(t)=Vt+X_0\)</span> 이므로 직선이다. <span class="math inline">\(X'(t)=0\)</span> 는 <span class="math inline">\(X(t)\)</span> 가 정규곡선이라는 조건을 위배하므로 생각하지 않는다.</p>
+<p>이제 <span class="math inline">\(X'(t)\)</span> 와 <span class="math inline">\(X''(t)\)</span> 가 평행함을 가정하자. <span class="math inline">\(X(t)\)</span> 는 정규곡선이므로 <span class="math inline">\(X'(t)\ne 0\)</span> for all <span class="math inline">\(t\in \mathbb{R}\)</span> 이다. 그렇다면 <span class="math inline">\(X'(t)=g(t)X''(t)\)</span> 를 만족하는 스칼라 함수 <span class="math inline">\(g(t)\)</span> 가 존재한다. <span class="math inline">\(\displaystyle X(t)=\sum_{i=1}^n x_i(t) \boldsymbol{e}_i\)</span> 라 하면 <span class="math inline">\(x_i'(t)=g(t) x_i ''(t)\)</span> 이다. 정규곡선이므로 <span class="math inline">\(g(t)\ne 0\)</span> 이다.</p>
+<p>임의의 <span class="math inline">\(i\in \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\(\dfrac{1}{g(t)}= \dfrac{x_i''(t)}{x_i'(t)}\)</span> 이므로,</p>
+<p><span class="math display">\[
+\int_{t_0}^t \dfrac{1}{g(t')}\, dt' = \int_{t_0}^t \dfrac{x_i''(t')}{x_i'(t')}dt'=\ln |x_i'(t)|-\ln |x_i'(t_0)|
+\]</span></p>
+<p>이다. 어떤 <span class="math inline">\(i,\,t_0\)</span> 에 대해 <span class="math inline">\(x'_i (t_0)=0\)</span> 이라 하자. <span class="math inline">\(g(t)\ne 0\)</span> 이므로 <span class="math inline">\(x''_i(t_0)=0\)</span> 이다. <span class="math inline">\(x'_i(t)\ne 0\)</span> 이라 하면</p>
+<p><span class="math display">\[
+\lim_{s \to t_0} \int_s^t \dfrac{1}{g(t')}dt' = \lim_{s\to t_0} {\big(} \ln |x_i'(t)|-\ln |x_{i}'(s)| {\big)}
+\]</span></p>
+<p>이므로 <span class="math inline">\(x_i'(t)\)</span> 가 발산하지 않기 위해서는 <span class="math inline">\(x_i'(t)=0\)</span> 이어야 한다. 즉 어떤 <span class="math inline">\(t_0\)</span> 에서 <span class="math inline">\(x'_i(t_0)=0\)</span> 이면 <span class="math inline">\(x_i'(t)=0\)</span> for all <span class="math inline">\(t\in \mathbb{R}\)</span> 이며, 따라서 <span class="math inline">\(x''_i(t)=0\)</span> for all <span class="math inline">\(t\in \mathbb{R}\)</span> 이다. 이제 우리는 nonzero <span class="math inline">\(x_i(t)\)</span> 에 대해서만 살펴보면 된다. <span class="math inline">\(t_0=0\)</span> 으로 놓아도 상관 없다.</p>
+<p><span class="math display">\[
+G(t)=\int_0^t \dfrac{1}{g(t')} dt'
+\]</span></p>
+<p>이라 하자. 그렇다면 <span class="math inline">\(x'_i (t)=x_i'(0) \exp (G(t))\)</span> 이므로 <span class="math inline">\(X'(t)=X'(0) \exp G(t)\)</span> 이다. 또한,</p>
+<p><span class="math display">\[
+X(t)= X'(0)\int_0^t \exp (G(t'))dt' +X(0)
+\]</span></p>
+<p>이므로 <span class="math inline">\(X(t)\)</span> 는 직선운동을 한다.</p>
+<p><br></p>
+<p><strong>3.</strong> <span class="math inline">\(X(t)=r(t) (\cos \theta(t),\, \sin \theta(t))\)</span> 일 때,</p>
+<p><span class="math display">\[
+\begin{aligned}
+X' &amp;= r' (\cos \theta,\, \sin \theta)+r\theta' (-\sin \theta,\, \cos \theta)\\
+X'' &amp;= (r''-r\theta'^2)(\cos \theta,\, \sin \theta)+ \dfrac{1}{r} (r^2\theta')' (-\sin \theta,\,\cos \theta)
+\end{aligned}
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X' &amp;=\left( \dfrac{d}{dt}(r\cos \theta),\, \dfrac{d}{dt}(r \sin \theta)\right) \\
+&amp;=(r' \cos \theta -r\theta'\sin \theta ,\, r' \sin \theta+r\theta'\cos \theta)=r'(\cos \theta ,\, \sin \theta) + r\theta'(-\sin \theta,\, \cos\theta)\\
+X'' &amp;=r''(\cos \theta,\, \sin \theta)+ r'\theta'(-\sin\theta,\, \cos \theta) \\
+&amp; \qquad +(r'\theta'+r\theta'')(-\sin \theta,\, \cos\theta)+ r\theta' \theta'(-\cos\theta,\, -\sin \theta) \\
+&amp;=(r''-r\theta'^2)(\cos \theta,\, \sin \theta) + (2r'\theta'+r\theta'')(-\sin \theta,\, \cos \theta)\\
+&amp;=(r''-r\theta'^2)(\cos \theta,\, \sin\theta)+ \dfrac{1}{r}(r^2\theta')' (-\sin \theta,\,\cos \theta)
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>4.</strong> 삼차원 좌표공간 속의 곡선 <span class="math inline">\(X(t)\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+f(t):=X(t)\cdot X'(t) \times X''(t)
+\]</span></p>
+<p>이면</p>
+<p><span class="math display">\[
+f'(t)=X(t)\cdot X'(t)\times X'''(t)
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+f'(t) &amp;= \underbrace{X'(t) \cdot X'(t)\times X''(t)}_0 + \underbrace{X(t) \cdot X''(t)\times X''(t)}_0 + X(t) \cdot X'(t) \times X'''(t) \\
+&amp;= X(t) \cdot X'(t) \times X'''(t)
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>5.</strong> 곡선 <span class="math inline">\(X(t)=(\sin t,\, \cos t,\, t)\)</span> 의 <span class="math inline">\(t=\dfrac{\pi}{2}\)</span> 인 점에서 접촉평면의 식을 구하라.</p>
+<hr>
+<p><span class="math inline">\(X(\pi/2)=(1,\, 0,\, \pi/2),\, X'(\pi/2)=(0,\, -1,\,1),\, X''(\pi/2)=(-1,\,0,\,0)\)</span> 이므로,</p>
+<p><span class="math display">\[
+0=\det \begin{pmatrix}  x-1 &amp; y &amp; z-\dfrac{\pi}{2} \\ 0 &amp; -1 &amp; 1 \\ -1 &amp; 0 &amp; 0\end{pmatrix}= -y-\left( z-\dfrac{\pi}{2}\right)
+\]</span></p>
+<p>인 <span class="math inline">\(y+z-\dfrac{\pi}{2}=0\)</span> 이 구하는 평면의 방정식이다.</p>
+<p><br></p>
+</section>
+<section id="연습문제-제-9-장-3절" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="연습문제-제-9-장-3절"><span class="header-section-number">9.4</span> 연습문제 : 제 9 장 3절</h2>
+<p><strong>1.</strong> 다음 곡선을 재매개화 하라</p>
+<ol type="1">
+<li><p><span class="math inline">\(4x^2+9y^2=1\)</span> : <span class="math inline">\(X(t)=\left(\dfrac{\cos \theta}{2},\, \dfrac{\sin \theta}{3} \right)\)</span></p></li>
+<li><p><span class="math inline">\(4x^2-9y^2=1\)</span> : <span class="math inline">\(X(t) = \left(\dfrac{\cosh t}{2},\, \dfrac{\sinh t}{3} \right)\)</span></p></li>
+<li><p><span class="math inline">\(y^2=x^3-x^2 \; (x&gt;0)\)</span> : <span class="math inline">\(X(t)=(t^2+1,\, t^3+t) \quad t\in \mathbb{R}\)</span></p></li>
+<li><p><span class="math inline">\(y^2=x^3-x\quad (x&gt;0)\)</span> : <span class="math inline">\(X(t) = (t^2,\, \pm t \sqrt{t^4-1})\)</span></p></li>
+</ol>
+<p><br></p>
+<p><strong>2.</strong> 좌표평면에서 식</p>
+<p><span class="math display">\[
+y^2=x^3+ax+b
+\]</span></p>
+<p>의 꼴로 주어진 곡선을 타원곡선이라고 부른다. 여기에서 <span class="math inline">\(a=0,\,b=0\)</span> 일 때, 이 곡선을 매개화하라.</p>
+<hr>
+<p><span class="math display">\[
+(t^2,\, t^3),\qquad t\in \mathbb{R}
+\]</span></p>
+<p><br></p>
+<p><strong>3.</strong> (<strong>피타고라스의 짝</strong> 과 원의 매개화) 자연수 <span class="math inline">\(p,\,q,\,r\)</span> 이</p>
+<p><span class="math display">\[
+p^2+q^2=r^2
+\]</span></p>
+<p>이면 집합 <span class="math inline">\(\{p,\,q,\,r\}\)</span> 을 피타고라스의 짝 이라고 부른다, 이 때, <span class="math inline">\(p,\,q,\,r\)</span> 이 서로소이면, 이 짝을 <em>서로소인 짝</em> 이라고 부른다. 피타고라스의 짝은 서로소인 것이 흥미있다. 서로소가 아닌짝은 서로소인 짝으로 부터 얻어진다.</p>
+<ol type="1">
+<li>임의의 자연수 <span class="math inline">\(k\)</span> 에 대하여</li>
+</ol>
+<p><span class="math display">\[
+\{4k,\, 4k^2-1,\, 4k^2+1\}
+\]</span></p>
+<p>은 서로소인 피타고라스의 짝임을 보이라.</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(3\)</span> 이상의 홀수 <span class="math inline">\(k\)</span> 에 대하여</li>
+</ol>
+<p><span class="math display">\[
+\left\{k,\, \dfrac{k^2-1}{2},\, \dfrac{k^2+1}{2} \right\}
+\]</span></p>
+<p>는 서로소인 피타고라스 짝임을 보이라.</p>
+<ol start="3" type="1">
+<li>피타고라스짝을 구하는 것은 단위원</li>
+</ol>
+<p><span class="math display">\[
+x^2+y^2=1
+\]</span></p>
+<p>상의 유리점을 구하는 문제와 같음을 설명하라. 또 기울기가 <span class="math inline">\(t\in \mathbb{R}\)</span> 이고, 점 <span class="math inline">\((-1,\,0)\)</span> 을 지나는 직선</p>
+<p><span class="math display">\[
+y=t(x+1)
+\]</span></p>
+<p>이 단위원과 만나는 점은</p>
+<p><span class="math display">\[
+P(t):= \left(\dfrac{1-t^2}{1+t^2},\, \dfrac{2t}{1+t^2}\right)
+\]</span></p>
+<p>임을 보이고, <span class="math inline">\(P(t)\)</span> 가 유리점일 필요충분조건은 <span class="math inline">\(t\)</span> 가 유리수인 것임을 밝히라. 이로부터 모든 서로소인 피타고라스의 짝은 홀짝이 다른 자연수 <span class="math inline">\(m&gt;n\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\{m^2-n^2,\, 2mn,\, m^2+n^2\}
+\]</span></p>
+<p>로 주어짐을 보이라.</p>
+<hr>
+<ol type="1">
+<li>우선</li>
+</ol>
+<p><span class="math display">\[
+(4k)^2+(4k^2-1)^2=16k^4+8k^2+1=(4k^2+1)^2
+\]</span></p>
+<p>이므로 <span class="math inline">\(\{4k,\, 4k^2-1,\, 4k^2+1\}\)</span> 은 피타고라스의 짝이다. 우리는 두 자연수 <span class="math inline">\(a&gt;b\)</span> 에 대하여 <span class="math inline">\(a-b\)</span> 는 <span class="math inline">\(\gcd (a,\,b)\)</span> 의 배수임을 알고 있다. <span class="math inline">\((4k^2+1)-(4k^2-1)=2\)</span> 이며 <span class="math inline">\(\gcd (4k^2+1,\,2)=1\)</span> 이므로 <span class="math inline">\(4k^2-1\)</span> 과 <span class="math inline">\(4k^2+1\)</span> 은 서로소이다. 따라서 <span class="math inline">\(\{4k,\, 4k^2-1,\, 4k^2+1\}\)</span> 은 서로소인 피타고라스의 짝이다.</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(k\)</span> 가 <span class="math inline">\(3\)</span> 이상의 홀수이므로 <span class="math inline">\(n\ge 1\)</span> 에 대하여 <span class="math inline">\(k=2n+1\)</span> 로 쓸 수 있다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\dfrac{k^2-1}{2}&amp;=\dfrac{4n^2+4n}{2}=2n(n+1)\\
+\dfrac{k^2+1}{2}&amp;=\dfrac{4n^2+4n+2}{2}=2n^2+2n+1
+\end{aligned}
+\]</span></p>
+<p>이며,</p>
+<p><span class="math display">\[
+k^2+\left(\dfrac{k^2-1}{2}\right)^2=k^2+\dfrac{k^4-2k^2+1}{4}=\left(\dfrac{k^2+1}{2}\right)^2
+\]</span></p>
+<p>이므로 <span class="math inline">\(\left\{k,\, \dfrac{k^2-1}{2},\, \dfrac{k^2+1}{2} \right\}\)</span> 은 피타고라스의 짝이다. 또한 $ -=1$ 이므로 이 세 수는 서로소인 피타고라스의 짝이다.</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(V\)</span> 를 단위원 상의 유리점의 집합이라 하고 <span class="math inline">\(U\)</span> 를 피타고라스의 짝의 집합이라 하자. <span class="math inline">\(\phi: U \to V\)</span> 를 <span class="math inline">\(\phi (a,\,b,\,c)=\left(\dfrac{a}{c},\,\dfrac{b}{c}\right)\)</span> 라 하면 <span class="math inline">\(\phi\)</span> 는 잘 정의된 함수이다. <span class="math inline">\(\left(\dfrac{p}{r},\, \dfrac{q}{s}\right)\in V\)</span> 이면</li>
+</ol>
+<p><span class="math display">\[
+\dfrac{p^2}{r^2}+\dfrac{q^2}{s^2}=1 \implies (ps)^2+(qr)^2=(rs)^2
+\]</span></p>
+<p>이므로 피타고라스의 짝이 하나 만들어진다. 즉 <span class="math inline">\(\phi\)</span> 는 전사이다.</p>
+<p><span class="math inline">\(\left(\dfrac{a}{c},\,\dfrac{b}{c}\right),\,\left(\dfrac{a'}{c'},\,\dfrac{b'}{c'}\right) \in V\)</span> 이고, <span class="math inline">\(\left(\dfrac{a}{c},\,\dfrac{b}{c}\right)=\left(\dfrac{a'} {c'},\,\dfrac{b'}{c'}\right)\)</span> 이면 <span class="math inline">\(a=ta',\,b=tb',\, c=tc',\, d=td'\)</span> for some <span class="math inline">\(t\in \mathbb{Q}\)</span> 이다. 즉 <span class="math inline">\(\left(\dfrac{a}{c},\,\dfrac{b}{c}\right)\)</span> 로부터 서로소인 피타고라스의 짝과 이와 관계되는 서로소가 아닌 피타고라스의 짝이 만들어진다.</p>
+<p>기울기가 <span class="math inline">\(t\)</span> 인 <span class="math inline">\(y=t(x+1)\)</span> 이 단위원과 다시 만나는 점은</p>
+<p><span class="math display">\[
+1=x^2+y^2=x^2+t^2(x+1)^2\implies {\big(}(t^2+1)x-(1-t^2){\big )}(x+1)=0
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+P(t):=\left(\dfrac{1-t^2}{1+t^2},\, \dfrac{2t}{1+t^2}\right)
+\]</span></p>
+<p>이다. <span class="math inline">\(t\)</span> 가 유리수이면 <span class="math inline">\(P(t)\)</span> 는 유리점이다. <span class="math inline">\(t\)</span> 가 무리수라 가정하자. <span class="math inline">\((1-t^2)/(1+t^2)=p/q\)</span> 인 유리수라면, <span class="math inline">\(t^2=(q-p)(q+p)\)</span> 인 유리수 이어야 한다. 그런데데 <span class="math inline">\(t\)</span> 가 무리수이고 <span class="math inline">\(t^2\)</span> 가 유리수이면 <span class="math inline">\(2t/(1+t^2)\)</span> 는 무리수이므로 <span class="math inline">\(t\)</span> 는 유리수이어야 한다. 즉 <span class="math inline">\(t\)</span> 가 유리수인것은 <span class="math inline">\(P(t)\)</span> 가 유리점인 것의 필요충분조건이다.</p>
+<p><span class="math inline">\(t\in \mathbb{Q}\)</span> 일 때 <span class="math inline">\(P(t)\)</span> 의 집합을 <span class="math inline">\(P\)</span> 라 하자. <span class="math inline">\((-1,\,0)\)</span> 을 지나는 기울기 <span class="math inline">\(t\)</span> 인 직선과 단위원의 교점이 <span class="math inline">\(P(t)\)</span> 의 모임이며 <span class="math inline">\(P(t)\)</span> 가 유리점 <span class="math inline">\(\iff\)</span> <span class="math inline">\(t\)</span> 가 유리수 임을 보였으므로 <span class="math inline">\(P(t\in \mathbb{Q})\)</span> 의 집합은 모든 단위원상의 유리점의 집합이다. <span class="math inline">\(t=\dfrac{n}{m}\)</span> 이며 <span class="math inline">\(\gcd (m,\,n)=1\)</span> 이라 하자. 둘 다 짝수이면 <span class="math inline">\(\gcd (m,\,n)=1\)</span> 이라는 조건에 위배되며 둘 다 짝수이면 <span class="math inline">\(P(t)\)</span> 상의 두 점이 짝수/짝수 가 되므로 기약분수가 되지 않는다. 일단 <span class="math inline">\(m,\,n\)</span> 중 하나는 홀수 하나는 짝수라 하자.</p>
+<p><span class="math inline">\(m&gt;n\)</span> 일 경우 피타고라스의 짝 <span class="math inline">\(\{m^2-n^2,\, 2mn,\, m^2+n^2\}\)</span> 이며 <span class="math inline">\(m&lt;n\)</span> 인 경우 <span class="math inline">\(\{n^2-m^2,\, 2mn,\, m^2+n^2\}\)</span> 를 얻는다. <span class="math inline">\(m&gt;n\)</span> 이라 놓고, <span class="math inline">\(t&gt;1\)</span> 이면 <span class="math inline">\(t=m/n\)</span>, <span class="math inline">\(t&lt;1\)</span> 이면 <span class="math inline">\(t=n/m\)</span> 이라 하면 <span class="math inline">\(\{m^2-n^2,\, 2mn,\, m^2+n^2\}\)</span> 의 피타고라스 짝을 얻는다. 이것이 서로소임을 보자.</p>
+<p>이 세 수의 최대공약수를 <span class="math inline">\(p\)</span> 라 하자. 우선 <span class="math inline">\(m^2-n^2\)</span> 와 <span class="math inline">\(m^2+n^2\)</span> 는 홀수이고 <span class="math inline">\(2mn\)</span> 은 짝수이다. 따라서 <span class="math inline">\(p\)</span> 는 홀수이다. <span class="math inline">\((m^2+n^2)-(m^2-n^2)=2n^2\)</span> 이므로 <span class="math inline">\(p\)</span> 는 (짝수가 아니므로) <span class="math inline">\(n^2\)</span> 의 약수이다. <span class="math inline">\((m^2+n^2)+(m^2-n^2)=2m^2\)</span> 이므로 <span class="math inline">\(p\)</span> 는 <span class="math inline">\(m^2\)</span> 의 약수이다.</p>
+<p>따라서 <span class="math inline">\(p\)</span> 는 <span class="math inline">\(n^2,\,m^2,\,mn\)</span> 의 공약수이다. 어떤 <span class="math inline">\(1\)</span> 이 아닌 <span class="math inline">\(m\)</span> 의 약수 <span class="math inline">\(r\)</span> 에 대해 <span class="math inline">\(r \mid p\)</span> 라 하면, <span class="math inline">\(p\mid n^2\)</span> 이므로 <span class="math inline">\(r\mid n^2\)</span> 이고 <span class="math inline">\(r\mid n\)</span> 이므로 <span class="math inline">\(m,\,n\)</span> 이 서로소임에 모순이다. 따라서 <span class="math inline">\(\gcd (p,\,m)=1\)</span>, 같은 방법으로 <span class="math inline">\(\gcd (p,\,n)=1\)</span> 이다. 그런데 <span class="math inline">\(p\mid mn\)</span> 이므로 <span class="math inline">\(p=1\)</span> 이다. 즉 <span class="math inline">\(\{m^2-n^2,\, 2mn,\, m^2+n^2\}\)</span> 는 서로소이다.</p>
+<p><br></p>
+<p><strong>4.</strong> 곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^n\)</span> 의 에너지는</p>
+<p><span class="math display">\[
+E(X):=\dfrac{1}{2}\int_a^b |X'(t)|^2\,dt
+\]</span></p>
+<p>로 정의한다. 다음 곡선의 에너지를 구하라.</p>
+<p><span class="math display">\[
+X(t):=(t,\,t^2)\qquad (0 \le t \le 1)
+\]</span></p>
+<hr>
+<p><span class="math display">\[
+E(X)=\dfrac{1}{2}\int_0^1 (1+4t^2)\,dt=\dfrac{1}{2}\left[t+\dfrac{4}{3}t^3\right]_0^1=\dfrac{7}{6}
+\]</span></p>
+<p><br></p>
+<p><strong>5.</strong> 곡선의 에너지는 매개화를 달리하였을 때 변화하는지를 살펴보라.</p>
+<hr>
+<p>문제 4 에서 <span class="math inline">\(t=2s\)</span> 로 재매개화 하면, <span class="math inline">\(\tilde X(s):=(2s,\, 4s^2),\quad (0\le s \le 1/2)\)</span> 이다.</p>
+<p><span class="math display">\[
+E(\tilde{X})=\dfrac{1}{2} \int_0^{1/2} (4+16s^2) \, ds =\dfrac{1}{2} \left( 4s+\dfrac{16}{3} s^3 \right)^{1/2}_0 = \dfrac{4}{3}
+\]</span></p>
+<p>이므로 4 의 결과와 다르다.</p>
+<p><br></p>
+<p><strong>6.</strong> 삼차원 공간 속의 곡선 <span class="math inline">\(X(t)\)</span> 에 대하여 <span class="math inline">\(t=t_0\)</span> 에서</p>
+<p><span class="math display">\[
+X' \times X'' \cdot X''' &gt;0
+\]</span></p>
+<p>이면, 곡선 <span class="math inline">\(X\)</span> 는 <span class="math inline">\(t=t_0\)</span> 에서 양으로 (혹은 오른쪽으로) 휘었다고 하고</p>
+<p><span class="math display">\[
+X'\times X'' \cdot X''' &lt;0
+\]</span></p>
+<p>이면 음으로 (또는 왼쪽으로) 휘었다고 한다. 이러한 개념은 곡선의 매개화와 무관함을 보이라. 또 행렬식 값이 양인 정사각행렬 <span class="math inline">\(M\)</span> 과 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여 곡선</p>
+<p><span class="math display">\[
+Y(t)=M(X(t))+\boldsymbol{v}
+\]</span></p>
+<p>가 오른쪽으로 휘어 있을 필요충분조건은 <span class="math inline">\(X\)</span> 가 오른쪽으로 휘어 있는 것임을 보이라.</p>
+<hr>
+<ol type="1">
+<li><span class="math inline">\(X(t)\)</span> 가 <span class="math inline">\(t=g(s)\)</span> 로 재매개화되어어 <span class="math inline">\(Y(s)\)</span> 가 되었다고 하자. 이 때 <span class="math inline">\(g(s)\)</span> 는 일급가역함수이다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+Y' \times Y'' \cdot Y''' &amp;= {\big [} ( g'(s) X'(g(s))) {\big]} \times {\big[}  g''(s)  X'(g(s))  + (g'(s))^{2} X''(g(s)) {\big]} \\
+&amp;\quad \cdot {\big[}g'''(s)X'(g(s))+g''(s)g'(s)X''(g(s))+2g''(s)g'(s)X''(g(s))] +(g'(s))^3X'''(s){\big ]} \\
+&amp;=(g'(s))^3 {\big (}X'(g(s))\times X''(g(s)) {\big )} \\
+&amp;\qquad \cdot {\big[}g'''(s)X'(g(s))+g''(s)g'(s)X''(g(s))+2g''(s)g'(s)X''(g(s))] +(g'(s))^3X'''(s){\big ]} \\
+&amp;=(g'(s))^6 X'(g(s))\times X''(g(s))\cdot X'''(g(s)\\
+&amp;=(g'(s))^6 {\big (} X' \times X'' \cdot X'''{\big)}
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(g(s)\)</span> 는 일급가역함수이므로 모든 <span class="math inline">\(s\)</span> 에서 <span class="math inline">\(0\)</span> 이 아니며 <span class="math inline">\((g'(s))^6&gt;0\)</span> 이다. 따라서 양/음으로 휘는것은 재매개화에 의해 변하지 않는다.</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(Y^{(k)}(t)=MX^{(k)}(t)\)</span> for <span class="math inline">\(k=1,\,2,\,3\)</span> 이다. <span class="math inline">\(Y'\times Y'' \cdot Y''' =  (MX' \times MX''\cdot MX''')\)</span> 이다. 따라서,</li>
+</ol>
+<p><span class="math display">\[
+\det (Y',\, Y'' ,\, Y''')= \det(M)\det(X',\, X'' \cdot X''')
+\]</span></p>
+<p>이며 <span class="math inline">\(\det(M) &gt;0\)</span> 이므로, <span class="math inline">\(Y\)</span> 가 오른쪽으로 휘어 있을 필요충분조건은 <span class="math inline">\(X\)</span> 가 오른쪽으로 휜 것이다.</p>
+<p><br></p>
+<p><strong>7.</strong> 양수 <span class="math inline">\(a,\,b\)</span> 에 대하여 나선</p>
+<p><span class="math display">\[
+R(t):=(a\cos t,\, a \sin t,\, bt)
+\]</span></p>
+<p>는 오른쪽으로 휘어 있지만 나선</p>
+<p><span class="math display">\[
+L(t):=(a\cos t,\, -a \sin t,\ bt)
+\]</span></p>
+<p>는 왼쪽으로 휘어 있음을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+R'\times R'' \cdot R''' &amp;= \begin{pmatrix} -a \sin t&amp; a \cos t &amp; b \\ -a \cos t &amp; -a \sin t &amp; 0 \\ a \sin t &amp; -a \cos t &amp; 0\end{pmatrix}=a^2b\cos ^2 t+a^2b \sin^2 t=a^2b&gt; 0\\
+L'\times L'' \cdot L''' &amp;= \begin{pmatrix} -a \sin t&amp; -a \cos t &amp; b \\ -a \cos t &amp; a \sin t &amp; 0 \\ a \sin t &amp; a \cos t &amp; 0\end{pmatrix} =-a^2b \cos t -a^2b \sin ^2t = -a^2b &lt; 0
+\end{aligned}
+\]</span></p>
+</section>
+<section id="연습문제-제-9-장-4-절" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="연습문제-제-9-장-4-절"><span class="header-section-number">9.5</span> 연습문제 : 제 9 장 4 절</h2>
+<p><strong>1.</strong> 양수 <span class="math inline">\(a\)</span> 에 대하여, 곡선</p>
+<p><span class="math display">\[
+X(t)=(t \cos t,\, t\sin t,\, t) \qquad 0\le t\le \sqrt{2}\sinh a
+\]</span> 의 길이를 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+l &amp;= \int_0^{\sqrt2 \sinh a} \sqrt{(\cos t - t\sin t)^2+(\sin t+t\cos t)^2 +1}\, dt \\
+&amp;=\int_0^{\sqrt{2}\sinh a} \sqrt{t^2+2} \, dt
+\end{aligned}
+\]</span></p>
+<p>여기서 <span class="math inline">\(t=\sqrt{2}\sinh s\)</span> 로 치환하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+l &amp;= \int_0^a 2\cosh^2s\, ds = \dfrac{1}{2}\int_0^a (e^{2s}+2+e^{-2s})ds\\
+&amp;=\dfrac{1}{2}\left[\dfrac{1}{2}e^{2s}+2s-\dfrac{1}{2}e^{-2s}\right]_0^a\\
+&amp;=a+\dfrac{1}{2}\sinh 2a
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>2.</strong> 좌표평면에서 식 <span class="math inline">\(\sqrt{x}+\sqrt{y}=1\)</span> 로 주어진 곡선의 길이를 구하라.</p>
+<hr>
+<p><span class="math inline">\(0\le x,\, y \le 1\)</span> 임을 안다. <span class="math inline">\(X(t)=(t^2,\, (1-t)^2)\)</span> 로 재매개화 하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+l &amp;= \int_0^1 \sqrt{4t^2+4(1-t)^2}\,dt=\int_0^1 \sqrt{8t^2-8t+4}\,dt \\
+&amp; = \int_0^1 \sqrt{8\left( t-\dfrac{1}{2}\right)^2+2} \, dt \\
+&amp;=\sqrt{2}\int_0^1 \sqrt{4\left(t-\dfrac{1}{2}\right)^2+1}
+\end{aligned}
+\]</span></p>
+<p>이다. <span class="math inline">\(2(t-1/2)=\sinh s\)</span> 로 치환하자. <span class="math inline">\(a=\sinh^{-1}(-1),\, b=\sinh^{-1}(1)\)</span> 라 하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+l &amp;= \dfrac{\sqrt{2}}{4}\int_a^b \sqrt{\sinh ^2+1} \cosh s\, ds=\dfrac{\sqrt{2}}{4}\int_a^b \cosh^2 s \, ds \\
+&amp;= \dfrac{\sqrt{2}}{16} {\big [}\sinh  2s+2s {\big ]}_{a}^b \\
+&amp;=\dfrac{\sqrt{2}}{16} (\sinh (2b)-\sinh(2a)+2(b-a))
+\end{aligned}
+\]</span></p>
+<p>이다. 임의의 <span class="math inline">\(x\in \mathbb{R}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sinh (2x) &amp;= \dfrac{e^{2x}-e^{-2x}}{2}=2\dfrac{e^x-e^{-x}}{2}\dfrac{e^{x}+e^{-x}}{2} \\
+&amp; = 2\sinh x\cosh x \\
+&amp;= 2\sinh x \sqrt{\sinh x^2+1}
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\sinh (2b)=2 \cdot 1 \cdot \sqrt{2}=2\sqrt{2},\qquad \sinh 2a = -2\sqrt{2}
+\]</span></p>
+<p>이며, <span class="math inline">\(a=\sinh^{-1}(-1),\, b=\sinh^{-1}(1)\)</span> , 로 부터 <span class="math inline">\(a=\ln(\sqrt{2}-1),\, b=\ln(\sqrt{2}+1)\)</span> 를 얻는다. 따라서,</p>
+<p><span class="math display">\[
+l=\dfrac{\sqrt{2}}{16}(4\sqrt{2}+4\ln(\sqrt{2}+1))=\dfrac{1}{2}+\dfrac{\sqrt{2}}{4}\ln (\sqrt{2}+1)
+\]</span> 이다.</p>
+<p><br></p>
+<p><strong>3.</strong> (<strong>아스트로이드</strong>) 곡선</p>
+<p><span class="math display">\[
+(x^2)^{1/3}+(y^2)^{1/3}=1
+\]</span></p>
+<p>의 길이를 구하라.</p>
+<hr>
+<p><span class="math inline">\(-1 \le x,\,y \le 1\)</span> 이며 대칭을 고려하면 <span class="math inline">\(0\le x,\, y \le 1\)</span> 에서의 곡선을 구한 후 <span class="math inline">\(4\)</span> 배 해주면 된다. <span class="math inline">\(x=\sin ^{3}\theta,\, y = \cos^{3}\theta\)</span> 로 매개화하면, <span class="math inline">\(0\le \theta \le \pi/2\)</span> 구간에서 생각해 주면 되므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+l &amp;= 4\int_0^{\pi/2} \sqrt{9 \cos^2 \theta \sin ^4 \theta + 9 \sin ^2 \theta \cos ^4 \theta}\, d\theta \\
+&amp;=4\int_0^{\pi/2} 3 \sin \theta \cos \theta\,d\theta = 6\int_0^{\pi/2} \sin 2\theta \, d\theta=6
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>4.</strong> 종이가 감긴 직원기둥을 평면으로 절단한 뒤에 종이를 펴면, 잘린 종이의 부분은 사인곡선(sinusoid) 인가? 이 때 자르는 평면이 원기둥의 회전축과 수직이 아니라고 가정한다.</p>
+<hr>
+<p>절단한 평면이 원점을 지나는 평면이라 해도 문제없다. 이 평면의 방향단위벡터를 <span class="math inline">\(\boldsymbol{n}=(n_1,\,n_2,\,n_3)\)</span> 라 하면 평면의 방정식은,</p>
+<p><span class="math display">\[
+\boldsymbol{n}\cdot X=(n_1,\,n_2,\,n_3)\cdot (x,\,y,\,z)=0
+\]</span></p>
+<p>이다. 직원기둥을 원통좌표계로 표시하면</p>
+<p><span class="math display">\[
+(x,\,y,\,z)=(a \cos \phi,\, a \sin \phi,\, z)\qquad a&gt;0,
+\]</span></p>
+<p>이다. 문제의 성격상 <span class="math inline">\(n_3\ne 0\)</span> 이어야 한다. 이제 직원기둥과 평면의 교점은 <span class="math inline">\((n_1,\,n_2,\,n_3)\cdot (x,\,y,\,z)=0\)</span> 이어야 하므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; an_1\cos \phi + an_2\sin \phi+n_3z=0 \\
+\implies &amp;z=a \left( \dfrac{n_1}{n_3}\cos \phi+\dfrac{n_2}{n_3} \sin \phi \right)=b\sin(\phi+\phi_0) \qquad\text{where }\phi_0=\arctan\left(\dfrac{n_1}{n_2}\right),\, b=a\sqrt{\dfrac{n_1^2+n_2^2}{n_3^2}}
+\end{aligned}
+\]</span></p>
+<p>이므로 사인곡선이다.</p>
+<p><br></p>
+<p><strong>5.</strong> (<strong>토리첼리</strong> 의 정리). 로그 와선 <span class="math inline">\(r=e^{\theta}\)</span> 의 한 점 <span class="math inline">\(T=(e^{2n\pi},\,0)\)</span> 에서 그은 접선이 <span class="math inline">\(y\)</span> 축과 만나는 점을 <span class="math inline">\(S\)</span> 라고 하자. 이 때, 로그와선의 구간 <span class="math inline">\(-\infty  &lt; \theta \le 2n\pi\)</span> 사이의 길이는 점 <span class="math inline">\(T\)</span> 와 <span class="math inline">\(S\)</span> 의 길이와 같음을 보이라. (특히 로그와선을 따라 원점에 접근하면, 그 움직인 거리는 유한함을 알 수 있다.)</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X(\theta)&amp;=(e^\theta \cos \theta,\, e^\theta\sin \theta) \\
+X'(\theta)&amp;=(e^\theta \cos \theta -e^\theta \sin \theta,\, e^\theta \sin \theta+ e^\theta\cos \theta)
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(X(T)=(e^{2n\pi},\,0),\, X'(T)=(e^{2n\pi},\, e^{2n\pi})\)</span> 이므로 접선의 방정식은</p>
+<p><span class="math display">\[
+y=x-e^{2n\pi}
+\]</span></p>
+<p>이며 <span class="math inline">\(S=(0,\, -e^{2n\pi})\)</span> 이고 <span class="math inline">\(|\overline{TS}|=\sqrt{2}e^{2n\pi}\)</span> 이다. 이제 로그와선의 구간 <span class="math inline">\(-\infty &lt; \theta \le 2n\pi\)</span> 사이의 길이 <span class="math inline">\(l\)</span> 은</p>
+<p><span class="math display">\[
+\begin{aligned}
+l&amp;=\int_{-\infty}^{2n\pi} \sqrt{(e^\theta \cos \theta -e^\theta \sin \theta)^2+(e^\theta \sin \theta+ e^\theta\cos \theta)^2} d\theta\\
+&amp;=\sqrt{2}\int_{-\infty}^{2n\pi} e^\theta\, d\theta \\
+&amp;= \sqrt{2}e^{2n\pi}=\left|\overline{TS}\right|
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>6.</strong>(<strong>호이겐스의 시계</strong>) 왼쪽 벽과 오른쪽 벽이 사이클로이드로 되어 있는 시계에 추가 달려 있을 때 추가 움직이는 궤적도 역시 사이클로이드임을 보이라.</p>
+<hr>
+<p>추의 고정점을 원점으로 잡았을 때 사이클로이드 벽면의 방정식은 <span class="math inline">\((t-\sin t,\, -1+\cos t)\)</span> 이다. 추의 길이를 <span class="math inline">\(l\)</span> 이라 하자.</p>
+<p>추를 매단 줄은 <span class="math inline">\([0,\,t]\)</span> 구간은 사이클로이드 면을 따라, 그 이후는 남은 줄의 길이만큼은 <span class="math inline">\(t\)</span> 에서의 접선의 방정식을 따라 간다. <span class="math inline">\(t\)</span> 까지의 길이 <span class="math inline">\(l_1(t)\)</span> 는</p>
+<p><span class="math display">\[
+l_1(t) = \int_0^t 2 \sin \left(\dfrac{t'}{2}\right)\, dt'=\left[-4\cos \dfrac{t'}{2}\right]_0^t = 4-4 \cos \left(\dfrac{t}{2}\right)
+\]</span></p>
+<p>이다. <span class="math inline">\(t\)</span> 에서의 접선의 방향벡터는 <span class="math inline">\((1-\cos t,\, -\sin t)\)</span> 이므로, 추의 좌표를 <span class="math inline">\(X(t)=(x(t),\, y(t))\)</span> 라 하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+x(t) &amp;= t-\sin t+(l-l_1(t)) \dfrac{1-\cos t}{2\sin \dfrac{t}{2}} \\
+&amp;=t-\sin t +\sin \dfrac{t}{2} (l-4+4 \cos \dfrac{t}{2}) \\
+&amp;= (l-4) \sin \dfrac{t}{2} + t+\sin t\\
+y(t) &amp;=-1+\cos t + (l-l_1(t))\dfrac{-\sin t}{2 \sin \dfrac{t}{2}} \\
+&amp;=-1+\cos t -\cos \dfrac{t}{2} (l-4+4\cos \dfrac{t}{2}) \\
+&amp;= -(l-4)\cos \dfrac{t}{2}-3-\cos t
+\end{aligned}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/90498B1F-6C5E-402E-BE0B-CAA8FC94E137.jpeg" class="img-fluid figure-img"></p>
+<figcaption>90498B1F-6C5E-402E-BE0B-CAA8FC94E137</figcaption>
+</figure>
+</div>
+<p>이게 사이클로이드인가?? 아래는 위 그림을 그린 python conde 이다. (Jupyter notebook 에서 실행 할 수 있다. )</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cycloid(ti, tf, Nt):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    t<span class="op">=</span>np.linspace(ti, tf, Nt)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>t<span class="op">-</span>np.sin(t)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="dv">1</span><span class="op">-</span>np.cos(t)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(x, y)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>xx, yy <span class="op">=</span> cycloid(<span class="op">-</span>np.pi, np.pi, <span class="dv">100</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.plot(xx, <span class="op">-</span>yy, <span class="st">"k-"</span>, lw<span class="op">=</span><span class="dv">4</span>, label<span class="op">=</span><span class="st">"Cycloid"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>fmts<span class="op">=</span>(<span class="st">"b-"</span>, <span class="st">"r-"</span>, <span class="st">"g-"</span>, <span class="st">"m-"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ind, ll <span class="kw">in</span> <span class="bu">enumerate</span>((<span class="fl">2.0</span>, <span class="fl">2.5</span>, <span class="fl">3.0</span>, <span class="fl">3.5</span>)):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(ind)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    tm <span class="op">=</span> <span class="fl">2.0</span><span class="op">*</span>np.arccos(<span class="fl">1.</span><span class="op">-</span>ll<span class="op">/</span><span class="fl">4.</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    t<span class="op">=</span>np.linspace(<span class="op">-</span>tm, tm, <span class="dv">100</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> (ll<span class="op">-</span><span class="dv">4</span>)<span class="op">*</span>np.sin(t<span class="op">/</span><span class="fl">2.</span>) <span class="op">+</span> t<span class="op">+</span>np.sin(t) , <span class="op">-</span>(ll<span class="op">-</span><span class="dv">4</span>)<span class="op">*</span>np.cos(t<span class="op">/</span><span class="fl">2.</span>)<span class="op">-</span><span class="dv">3</span><span class="op">-</span>np.cos(t)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, y, fmts[ind], marker<span class="op">=</span><span class="va">None</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">"l="</span><span class="op">+</span><span class="bu">str</span>(ll))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<p><strong>7.</strong> 극좌표계로 주어진 다음 곡선의 개형을 그리고, 그 곡선의 길이를 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+L(r=3\theta^2,\, 1 \le \theta \le 2) &amp;=\int_1^2 \sqrt{9\theta^4 + 36\theta^2}\, d\theta =3\int_1^2 \theta\sqrt{\theta^2+4}\, d\theta \\
+&amp;= {\big [} (\theta^2+4)^{3/2}{\big ]}_1^2=16\sqrt{2}-5\sqrt{5} \\
+L(r=e^{-4\theta},\, 1\le \theta \le 2) &amp;=\int_1^2
+\sqrt{e^{-8\theta}+ 16e^{-8\theta}}\, d\theta = \dfrac{\sqrt{17}}{4} \left(e^{-4}-e^{-8}\right) \\
+L(r=2\theta,\, 1 \le \theta \le \sqrt{3})  &amp;= \int_1^{\sqrt{3}} \sqrt{4\theta^2+4}\, d\theta = 2\int_1^{\sqrt{3}}\sqrt{\theta^2+1}\, d\theta =2\int_{\sinh^{-1}(1)}^{\sinh^{-1}(\sqrt{3})} \cosh^2 t\, dt\\&amp;= 2\left[\dfrac{1}{4}\sinh (2t)+\dfrac{1}{2}t\right] _{\sinh^{-1}(1)}^{\sinh^{-1}(\sqrt{3})} \\
+&amp;= 2 \left[\sqrt{3}+\dfrac{1}{2}\ln(2+\sqrt{3})-\dfrac{\sqrt{2}}{2}-\dfrac{1}{2}\ln(1+\sqrt{2})\right] \\
+&amp;= 2\sqrt{3}-\sqrt{2}+ \ln (2\sqrt{2}+\sqrt{6}-\sqrt{3}-2) \\
+L\left(r=\sin^2 \dfrac{\theta}{2},\, 0 \le \theta \le \pi \right) &amp;= \int_0^{\pi} \sqrt{\sin^4 \dfrac{\theta}{2} +  \sin^{2} \dfrac{\theta}{2} \cos^2\dfrac{\theta}{2}} \,d\theta \\
+&amp;=  \int_0^\pi \sin \dfrac{\theta}{2} \, d\theta = 2\\
+L\left( r=\dfrac{\sqrt{3}}{2}+\cos \dfrac{\theta}{2} \right) &amp;= \int_0^{4\pi} \sqrt{\dfrac{3}{4}+\sqrt{3}\cos \dfrac{\theta}{2}+\cos^2 \dfrac{\theta}{2}+ \dfrac{1}{4}\sin^2 \dfrac{\theta}{2}}\, d\theta \\
+&amp;=\int_0^{4\pi}\left( 1+\dfrac{\sqrt{3}}{2}\cos \dfrac{\theta}{2}\right)\, d\theta\\
+&amp;=\left[\theta +\sqrt{3} \sin \dfrac{\theta}{2}\right]_0^{4\pi}=4\pi
+\end{aligned}
+\]</span></p>
+<p>마지막 <span class="math inline">\(r=\dfrac{\sqrt{3}}{2}+\cos \dfrac{\theta}{2}\)</span> 는 주기가 <span class="math inline">\(4\pi\)</span> 인 함수이므로 <span class="math inline">\(0 \le \theta\le 4\pi\)</span> 에서 적분하였다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/calculus_ex_9.4.7.jpg" class="img-fluid figure-img"></p>
+<figcaption>img</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p><strong>8.</strong> 타원 <span class="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</span> 의 길이는</p>
+<p><span class="math display">\[
+\int_0^{2\pi} \sqrt{a^2\sin^2 t + b^2 \cos^2 t}\, dt
+\]</span></p>
+<p>로 표현됨을 보이라. 또 사인함수</p>
+<p><span class="math display">\[
+y=c \sin x,\qquad (0 \le x \le 2\pi)
+\]</span></p>
+<p>의 그래프의 길이는</p>
+<p><span class="math display">\[
+\int_0^{2\pi} \sqrt{1+c^2\cos^2x}\, dx
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>타원의 매개화 <span class="math inline">\(X(t)= (a \sin t,\, b\cos t)\)</span> 를 생각하면 자명하다. 또한 사인함수도 <span class="math inline">\(X(t)=(x,\, c\sin x)\)</span> 를 생각하면 자명하다.</p>
+<p><br></p>
+<p><strong>9.</strong> 곡선</p>
+<p><span class="math display">\[
+y\equiv \ln x \qquad (a\le x \le b)
+\]</span> 의 길이를 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+\int_a^b \sqrt{1+\dfrac{1}{x^2}}\,dx &amp;= \int_a^b \dfrac{\sqrt{1+x^2}}{x}dx=\int_{\sqrt{a^2+1}}^{\sqrt{b^2+1}}\dfrac{u^2}{u^2-1}\, du \\
+&amp;=\int_{\sqrt{a^1+1}}^{\sqrt{b^2+1}}\left(1+\dfrac{1}{2(u-1)}+\dfrac{1}{2(u+1)}\right)\, du \\
+&amp;=\left[u+\dfrac{1}{2}\ln \left(\dfrac{u-1}{u+1}\right)\right]_{\sqrt{a^2+1}}^{\sqrt{b^2+1}}\\
+&amp;=\sqrt{b^2+1}-\sqrt{a^2+1} +\ln \left(\dfrac{(\sqrt{b^2+1}-1)(\sqrt{a^2-1}+1)}{(\sqrt{b^2+1}+1)(\sqrt{a^2-1}-1)} \right)
+\end{aligned}
+\]</span></p>
+<p><br></p>
+</section>
+<section id="연습문제-제-9-장-5-절" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="연습문제-제-9-장-5-절"><span class="header-section-number">9.6</span> 연습문제 : 제 9 장 5 절</h2>
+<p><strong>1.</strong> 극좌표계에서 다음 식으로 주어진 영역의 넓이를 구하라</p>
+<ol type="1">
+<li><span class="math inline">\(1\le r \le 2 \cos \theta \qquad \qquad \qquad\)</span> (2) <span class="math inline">\(2 \le r \le 1+2\cos \theta\)</span></li>
+</ol>
+<hr>
+<ol type="1">
+<li><span class="math inline">\(\cos\theta \ge \dfrac{1}{2}\)</span> 이어야 하므로, <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}\)</span>, <span class="math inline">\(\dfrac{5\pi}{3} \le \theta \le 2\pi\)</span> 이어야 한다.</li>
+</ol>
+<p><span class="math display">\[
+\text{Area}=\int_0^{\pi/3} 2 \cos^2 \theta d\theta+\int_{5\pi/3}^{2\pi} 2 \cos^2 \theta d\theta-\dfrac{2\pi}{3}= 2\times\left[\dfrac{1}{2} \sin 2\theta + \theta\right]_0^{\pi/3} -\dfrac{2\pi}{3}=\dfrac{\sqrt{3}}{2}
+\]</span></p>
+<ol start="2" type="1">
+<li>역시 <span class="math inline">\(\cos\theta \ge \dfrac{1}{2}\)</span> 이어야 하므로, <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}\)</span>, <span class="math inline">\(\dfrac{5\pi}{3} \le \theta \le 2\pi\)</span> 이어야 한다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Area} &amp;= \int_0^{\pi/3} \dfrac{1}{2} (1+2\cos\theta)^2 \, d\theta +\int_{5\pi/3}^{2\pi} \dfrac{1}{2} (1+2\cos\theta)^2 \, d\theta  - \dfrac{8\pi}{3} \\
+&amp;= \int_0^{\pi/3} \left(2\cos 2\theta + 4 \cos \theta+3\right)d\theta -\dfrac{8\pi}{3}\\
+&amp;= \left[\sin 2\theta +4 \sin \theta + 3\theta\right] {\big |}_{0}^{\pi/3} -\dfrac{8\pi}{3}=\dfrac{\sqrt{3}}{2}+ 2\sqrt{3} + \pi - \dfrac{8\pi}{3}\\
+&amp;=\dfrac{5\sqrt{3}}{2}-\dfrac{5\pi}{3}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>2.</strong> 극좌표계에서 식 <span class="math inline">\(r=1-\cos \theta\)</span> 로 주어진 곡선의개형을 그리고, 이 곡선으로 둘러싸인 부분의 면적을 구하라.</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ex_9_5_2.jpg" class="img-fluid figure-img"></p>
+<figcaption>ex_9_5_2</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Area} &amp;= \int_0^{2\pi} \dfrac{1}{2}(1-\cos \theta)^2 d\theta = \dfrac{1}{2}\int_0^{2\pi} (1-2\cos \theta + \cos^2\theta)\, d\theta \\
+&amp;= \dfrac{1}{2}\int_0^{2\pi} \left(\dfrac{3}{2}-2\cos\theta + \dfrac{\cos 2\theta}{2}\right)d\theta \\
+&amp;=\dfrac{1}{2} \left[\dfrac{3\theta}{2} -2 \sin \theta + \dfrac{\sin 2\theta}{4}\right]_0^{\pi} =\dfrac{3\pi}{4}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>3.</strong> 다음 곡선의 개형을 그리고, 그 곡선으로 둘러쌓인 부분의 넓이를구하라.</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ex_9_5_3.jpg" class="img-fluid figure-img"></p>
+<figcaption>ex_9_5_3</figcaption>
+</figure>
+</div>
+<p>넓이를 구하는건.. 별로 안어려워서 패스..</p>
+<p><br></p>
+<p><strong>4.</strong> 극좌표계를 이용하여 다음 식으로 주어진 곡선의 개형을 그리고, 이 곡선으로 둘러싸인 부분의 넓이를 구하라.</p>
+<ol type="1">
+<li><span class="math inline">\(y^2(1+x^2)= x^2(3-x^2) \qquad \qquad \qquad\)</span> (2) <span class="math inline">\(x^2+y^2=6\sqrt{x^2-y^2}\)</span></li>
+</ol>
+<hr>
+<ol type="1">
+<li><span class="math display">\[
+\begin{aligned}
+&amp;r^2\sin^2 \theta (1+r^2 \cos^2 \theta)=r^2 \cos^2\theta (3-r^2\cos^2 \theta)\\
+\implies &amp; \sin^2 \theta +r^2 \cos^2 \theta \sin^2 \theta = 3\cos^2 \theta-r^2\cos^4 \theta  \\
+\implies &amp; r^2 \cos^2\theta  = 3 \cos^2 \theta - \sin^2 \theta \\
+\implies &amp; r^2 = 3-\tan^2 \theta
+\end{aligned}
+\]</span></li>
+</ol>
+<p>따라서 <span class="math inline">\(\tan^2\theta\le3\)</span> 인 $0 , ,, &lt;2 $ 에서 유효하다.</p>
+<ol start="2" type="1">
+<li><span class="math display">\[
+r^2 =6r\sqrt{\cos^2\theta - \sin^2\theta} \implies r=6\sqrt{\cos 2\theta}
+\]</span> 이므로 <span class="math inline">\(\cos 2\theta \ge 0\)</span> 인 <span class="math inline">\(0 \le \theta  \le \dfrac{\pi}{4},\, \dfrac{3\pi}{4}\le \theta \le \dfrac{5 \pi}{4}, \dfrac{7\pi}{4} \le \theta &lt;2\pi\)</span> 에서 유효하다. 이제 두 그래프의 개형을 보자.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ex_9_5_4.jpg" class="img-fluid figure-img"></p>
+<figcaption>ex_9_5_4</figcaption>
+</figure>
+</div>
+<p>대칭을 고려하면, <span class="math display">\[
+\begin{aligned}
+\text{Area}(1)&amp;=4\int_0^{\pi/3} \dfrac{1}{2}(3-\tan^2\theta)d\theta =2 \int_0^{\pi/3} (2-\sec^2\theta)d\theta = 2{\big[}2\theta-\tan \theta{\big ]}_{0}^{\pi/3}\\
+&amp;=2\left( \dfrac{2\pi}{3}-\sqrt{3}\right) \\
+\text{Area}(2) &amp;= 4 \int_0^{\pi/4} \dfrac{1}{2} \cdot 36 \cos 2\theta =36{\big[} \sin 2\theta {\big ]}_0^{\pi/4}=36
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>5.</strong> 곡선 <span class="math inline">\(r^2=2\cos 2\theta\)</span> 의 한쪽 날개의 넓이가 <span class="math inline">\(1\)</span> 임을 보여라.</p>
+<hr>
+<p><span class="math display">\[
+\text{Area}=2\int_0^{\pi/4} \cos 2\theta ={\big[} \sin 2\theta {\big]}_0^{\pi/4}=1
+\]</span></p>
+<p><br></p>
+<p><strong>6.</strong> 극좌표료 주어진 곡선 <span class="math inline">\(r=\sin n\theta\)</span> 의 한 잎의 넓이를 구하라. (단 <span class="math inline">\(n\)</span> 은 자연수이다.)</p>
+<hr>
+<p><span class="math display">\[
+\text{Area}=\int_{0}^{\pi/n}\dfrac{1}{2} \sin^2 n\theta \, d\theta =\dfrac{1}{2n}\int_0^{\pi} \sin^2 \phi \, d\phi= \dfrac{\pi}{4n}
+\]</span></p>
+<p><br></p>
+<p><strong>7.</strong> 아르키메데스의 와선 <span class="math inline">\(r=\theta,\, 0 \le \theta \le \theta_0\)</span> 와 반직선 <span class="math inline">\(\theta = \theta_0\)</span> 로 둘러 싸인 아르키메데스 영역의 넓이는 원점을 꼭지각으로 하고 아르키메데스 영역을 포함하는 가장 작은 부채꼴 넓이의 <span class="math inline">\(1/3\)</span> 임을 보이라. (단 <span class="math inline">\(0 &lt;\theta_0 &lt; 2\pi\)</span> 이다.)</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ex_9_5_7.jpg" class="img-fluid figure-img"></p>
+<figcaption>ex_9_5_7</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\text{Area}=\dfrac{1}{2}\int_0^{\theta_0}\theta^2 \, d\theta =\dfrac{1}{6}\theta_0^3 = \dfrac{1}{3} \left(\pi \theta_0^2 \times \dfrac{\theta_0}{2\pi}\right)
+\]</span></p>
+<p><br></p>
+</section>
+<section id="연습문제-제-9-장-6-절" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="연습문제-제-9-장-6-절"><span class="header-section-number">9.7</span> 연습문제 : 제 9 장 6 절</h2>
+<p><strong>1.</strong> 사이클로이드 <span class="math display">\[
+X(t)=(t-\sin t,\, 1-\cos t) \qquad (0\le t \le 2\pi)
+\]</span> 를 호의 길이로 매개화하라.</p>
+<hr>
+<p><span class="math display">\[
+s(t)=\int_0^t |X'(t')|\, dt'=\int_0^t \sqrt{(1-\cos^2 t')+\sin^2 t'}\, dt'=\int_0^t 2\left|\sin \frac{t'}{2}\right|\, dt' = 4-4\cos \frac{t}{2}
+\]</span></p>
+<p>이므로 <span class="math inline">\(t=2 \cos^{-1}\left(\dfrac{4-s}{4}\right)\)</span> 이다. <span class="math inline">\(\alpha = \cos^{-1}\left(\dfrac{4-s}{4}\right)\)</span> 라 하면, <span class="math inline">\(\cos \alpha = \dfrac{4-s}{4}\)</span>, <span class="math inline">\(\sin \alpha = \dfrac{\sqrt{8s-s^2}}{4}\)</span> 이며,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sin t &amp;= \sin 2 \alpha =2 \cos \alpha  \sin \alpha = \dfrac{(4-s)\sqrt{8s-s^2}}{8}\\
+\cos t &amp;= \cos 2\alpha = 2\cos ^2 \alpha -1 = \dfrac{8-8s+s^2}{8}
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\tilde{X}(s) = \left(2 \cos^{-1}\left(\dfrac{4-s}{4}\right) - \dfrac{(4-s)\sqrt{8s-s^2}}{8},\,  \dfrac{8s-s^2}{8}\right)
+\]</span></p>
+<p><br></p>
+<p><strong>2.</strong> 곡선</p>
+<p><span class="math display">\[
+X(t)=e^t(\cos t,\, \sin t) \qquad (0 \le t \le 2\pi)
+\]</span></p>
+<p>에 대하여 다음에 닿바라.</p>
+<ol type="1">
+<li><p>곡선(의 상) 을 도시하고, 그 길이를 구하라</p></li>
+<li><p>점 <span class="math inline">\(X(0)\)</span> 에서부터 잰 호의 길이를 매개변수로 하여 표현하라.</p></li>
+</ol>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ex_9_6_3.jpg" class="img-fluid figure-img"></p>
+<figcaption>ex_9_6_3</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><span class="math inline">\(X'(t) = (e^t \cos t - e^t \sin t,\, e^t \cos t + e^t \sin t)\)</span></li>
+</ol>
+<p><span class="math display">\[
+s(t)=\int_0^t \sqrt{2}e^{t'}\, dt'=\sqrt{2}(e^t-1)
+\]</span></p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p><span class="math display">\[
+t=\ln \left(\dfrac{s}{\sqrt{2}}+1\right)
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+\tilde{X}(s) = \left(\dfrac{s}{\sqrt{2}}+1 \right)\left(\cos \ln \left(\dfrac{s}{\sqrt{2}}+1\right),\, \sin \ln \left(\dfrac{s}{\sqrt{2}}+1\right)\right)
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>3.</strong> 만약 호의 길이로 매개화된 곡선 <span class="math inline">\(X(t)\)</span> 를 <span class="math inline">\(t=f(s)\)</span> 로 재매개화하였더니 여전히 재매개화된 곡선 <span class="math inline">\(X\circ f\)</span> 도 호의 길이로 매개화되었다고 하자. 이때 어떤 상수 <span class="math inline">\(c\)</span> 에 대하여</p>
+<p><span class="math display">\[
+f(s)=s+c,\qquad \text{or} \qquad f(s)=-s+c
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math inline">\(X(t)\)</span> 가 호의 길이로 매개화되었으므로 <span class="math inline">\(|X'(t)|=1\)</span> 이다. <span class="math inline">\(X\circ f\)</span> 도 호의 길이로 매개화되었으므로 <span class="math inline">\(\left| \dfrac{d X(f(s))}{ds}\right|=1\)</span> 이다. 그런데,</p>
+<p><span class="math display">\[
+\dfrac{d}{ds}X(f(s))=\dfrac{d X}{dt}(f(s)) \cdot\dfrac{d f(s)}{ds} \implies 1=\left|f'(s)\right|
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(f'(s)=\pm 1\)</span> 이다.</p>
+<p><br></p>
+<p><strong>4.</strong> 곡선의 미분가능 정도는 자연스러운 매개변수, 즉 호의 길이로 매개화하였을 때의 미분가능 정도로 이야기 할 수 있다. 태극의 그림처럼 두개의 반원이 만나서 이루는 곡선은 일급곡선이기는 하지만, 이급곡선은 아님을 보이라.</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/ex_9_6_4.png" class="img-fluid figure-img"></p>
+<figcaption>ex_9_6_4</figcaption>
+</figure>
+</div>
+<p>위와 같은 곡선을 생각하자. 좌측의 빨간 반원과 오른쪽의 파란 반원의 그래프는</p>
+<p><span class="math display">\[
+X(\theta) = \left\{ \begin{array}{ll} (a \cos \theta + a,\, a \sin \theta) \qquad &amp;0 \le \theta &lt; \pi \\ (-a \cos \theta -a,\, a \sin \theta) &amp; \pi \le \theta &lt; 2\pi \end{array}\\ \right.
+\]</span></p>
+<p>이며 <span class="math inline">\(\theta=\pi\)</span> 에서 원점을 지난다. 그렇다면,</p>
+<p><span class="math display">\[
+X'(\theta) = \left\{ \begin{array}{ll} (-a \sin \theta ,\, a \cos \theta) \qquad &amp;0 \le \theta &lt; \pi \\ (a \sin \theta ,\, a \cos \theta) &amp; \pi \le \theta &lt; 2\pi \end{array}\\ \right.
+\]</span></p>
+<p>이며 <span class="math inline">\(X'(\theta=\pi^+)=(0,\, -a),\, X'(\theta=\pi^{-})=(0,\, -a)\)</span> 이므로 일급곡선이다.</p>
+<p><span class="math display">\[
+X''(\theta) = \left\{ \begin{array}{ll} (-a \cos \theta,\, -a \sin \theta) \qquad &amp;0 \le \theta &lt; \pi \\ (a \cos \theta ,\, -a \sin \theta) &amp; \pi \le \theta &lt; 2\pi \end{array}\\ \right.
+\]</span></p>
+<p>로 <span class="math inline">\(X''(\theta=\pi^+)=(a,\, 0),\, X''(\theta=\pi^-)=(a,\, 0)\)</span> 으로 <span class="math inline">\(X''(\theta)\)</span> 는 연속이 아니다. 따라서 <span class="math inline">\(X(\theta)\)</span> 는 일급이지만 이급곡선은 아니다.</p>
+<p><br></p>
+</section>
+<section id="연습문제-제-9-장-7-절" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="연습문제-제-9-장-7-절"><span class="header-section-number">9.8</span> 연습문제 : 제 9 장 7 절</h2>
+<section id="재매개화에-의해-선적분값은-변하지-않는다" class="level3" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="재매개화에-의해-선적분값은-변하지-않는다"><span class="header-section-number">9.8.1</span> 재매개화에 의해 선적분값은 변하지 않는다</h3>
+<p>함수 <span class="math inline">\(f(x_1,\ldots,\,x_n)\)</span> 에 대하여, 곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}\)</span> 을 따르는 적분값은 <span class="math inline">\(X\)</span> 를 재매개화하여도 변하지 않는다.</p>
+<hr>
+<p><em>(proof)</em> 함수 <span class="math inline">\(g:[\alpha,\,\beta] \to [a,\,b]\)</span> 가 곡선 <span class="math inline">\(X\)</span> 의 동향 재매개화 <span class="math inline">\(\tilde{X}(u):=X(g(u))\)</span> 를 준다고 하자. 그렇다면,</p>
+<p><span class="math display">\[
+\int_{\tilde X} f\,ds =\int_\alpha^\beta f(\tilde{X}(u)) |\tilde{X}'(u)| du = \int_{\alpha}^\beta f(X(g(u))) |X'(g(u))|g'(u) \, du=\int_{a}^b f(X(t))|X'(t)| dt =\int_X f\, ds
+\]</span></p>
+<p><br></p>
+<p><strong>1.</strong> 주어진 구간에 대하여 다음 곡선의 중심을 구하라.</p>
+<ol type="1">
+<li><p><span class="math inline">\((\cos 2t,\, \sin 2t,\, 3t)\quad (\pi \le t \le 3\pi)\)</span></p></li>
+<li><p><span class="math inline">\((t-\sin t,\, 1-\cos t) \quad (0 \le t \le 2\pi)\)</span></p></li>
+</ol>
+<hr>
+<ol type="1">
+<li>곡선의 길이 <span class="math inline">\(l\)</span> 은</li>
+</ol>
+<p><span class="math display">\[
+l=\int_\pi^{3\pi} \sqrt{13}\, dt = 2\pi\sqrt{13}
+\]</span></p>
+<p>이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{x}_1 &amp;= \dfrac{1}{l}\int_\pi^{3\pi} (\cos 2t) \sqrt{4+9}\, dt = 0\\\
+\overline{x}_2 &amp;= \dfrac{1}{l}\int_{\pi}^{3\pi} (\sin 2t) \sqrt{13}\, dt = 0\\
+\overline{x}_3 &amp;=\dfrac{1}{l} \int_{\pi}^{3\pi} 3t\sqrt{13} \, dt = \dfrac{12\sqrt{13}\pi^2}{2\pi \sqrt{3}}=6\pi
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\((0,\,0,\, 6\pi)\)</span> 가 중심이다.</p>
+<ol start="2" type="1">
+<li>곡선의 길이 <span class="math inline">\(l\)</span> 은</li>
+</ol>
+<p><span class="math display">\[
+l=\int_0^{2\pi} \sqrt{(1-\cos t)^2 + \sin^2 t}=\int_0^{2\pi} 2\left|\sin \dfrac{t}{2}\right|\, dt= 8
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{x}_1 &amp;=\dfrac{1}{l} \int_0^{2\pi} (t-\sin t) 2\sin\dfrac{t}{2}\, dt= \dfrac{1}{4}\int_0^{2\pi} \left[t \sin \dfrac{t}{2}-2 \sin^2 \dfrac{t}{2}\cos \dfrac{t}{2}\right] \, dt= \int_0^{\pi} (\theta \sin \theta - \sin^2 \theta \cos \theta) d\theta  = \pi \\
+\overline{x}_2 &amp;=\dfrac{1}{l} \int_0^{2\pi} (1-\cos t)2\sin \dfrac{t}{2}\, dt =\dfrac{1}{2}\int_0^{2\pi} \sin^3 \dfrac{t}{2}\, dt= \int_0^\pi \sin^3 \theta\, d\theta = \int_0^{\pi} (1-\cos^2\theta)\sin \theta \, d\theta =\dfrac{4}{3}
+\end{aligned}
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\((\pi,\, 4/3)\)</span> 이 중심이다.</p>
+<p><br></p>
+<p><strong>2.</strong> 곡선</p>
+<p><span class="math display">\[
+x^{2/3}+y^{2/3}=1,\qquad x\ge 0,\, y \ge 0
+\]</span></p>
+<p>의 중심을 구하라.</p>
+<hr>
+<p><span class="math inline">\(X(t)=(\cos^3 t,\, \sin^3 t)\)</span>, <span class="math inline">\(0 \le t \le \pi/2\)</span> 로 매개화 할 수 있다. 이제 곡선의 길이 <span class="math inline">\(l\)</span> 은,</p>
+<p><span class="math display">\[
+l=\int_0^{\pi/2} \sqrt{9 \sin^2 t \cos^4 t + 9 \cos ^2 t \sin ^4 t}\, dt = \int_0^{\pi/2} 3 \sin t \cos t\, dt = \dfrac{3}{2} \int_0^{\pi/2} \sin 2t \, dt = \dfrac{3}{2}
+\]</span></p>
+<p>이다. 따라서,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{x}_1 &amp;=\dfrac{1}{l}\int_0^{\pi/2} \cos^3 t (3 \sin t \cos t)\, dt =\dfrac{3}{l}\int_0^{\pi/2} \sin t \cos^4 t\, dt = \dfrac{2}{5} \\
+\overline{x}_2 &amp;= \dfrac{1}{l}\int_0^{\pi/2} \sin^3 t(3\sin t \cos t)\, dt = \dfrac{3}{l}\int_0^{\pi/2}
+\cos t\sin^4 t \, dt = \dfrac{2}{5}
+\end{aligned}
+\]</span></p>
+<p>따라서 중심은 <span class="math inline">\(\left(\dfrac{2}{5},\, \dfrac{2}{5}\right)\)</span> 이다.</p>
+<p><br></p>
+<p><strong>3.</strong> 평면곡선 <span class="math inline">\(X \subset \mathbb{R}^2\)</span> 의 중심을 <span class="math inline">\(\bar{X}\)</span> 라 할 때 임의의 직선 <span class="math inline">\(l \subset \mathbb{R}^2\)</span> 에 대하여 <span class="math inline">\(l\)</span> 과 <span class="math inline">\(X\)</span> 사이의 평균거리는 <span class="math inline">\(l\)</span> 과 <span class="math inline">\(\bar{X}\)</span> 사이의 거리와 같음을 보이라. 또 공간 곡선 <span class="math inline">\(Y \subset \mathbb{R}^3\)</span> 의 중심을 <span class="math inline">\(\bar{Y}\)</span> 라 할 때 임의의 평면 <span class="math inline">\(p \subset \mathbb{R}^3\)</span> 에 대하여 <span class="math inline">\(p\)</span> 와 <span class="math inline">\(Y\)</span> 사이의 평균거리는 <span class="math inline">\(p\)</span> 와 <span class="math inline">\(\bar{Y}\)</span> 사이의 거리와 같음을 보이라. (이 문제에서 <em>거리</em> 는 부호를 가진 것으로 생각한다. 즉, 직선 <span class="math inline">\(l\)</span> 에 의해여 평면이 둘로 나뉘어지는데, 어느 한쪽이 양의 거리이면, 다른 쪽은 음의 거리를 가지는 것으로 생각한다.)</p>
+<hr>
+<p>호의 길이로 매개화된 곡선에 대해서 생각한다.</p>
+<p>직선이 <span class="math inline">\(P\)</span> 를 지나며, 단위벡터 <span class="math inline">\(\boldsymbol{n}\)</span> 에 수직이라 하자. 그렇다면 평면곡선상의 <span class="math inline">\(X(t)\)</span> 와 직선상의 (부호를 가진) 거리는 <span class="math inline">\((X(t)-P)\cdot \boldsymbol{n}\)</span> 이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{d} &amp;=\dfrac{1}{l}\int_a^b (X(t)-P)\cdot \boldsymbol{n} X'(t)\, dt=\dfrac{1}{l} \int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}+(\bar{X}-P)\cdot \boldsymbol{n}{\big]} X'(t)\, dt \\
+&amp;=\dfrac{1}{l}\int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}{\big]} X'(t)\, dt  + \dfrac{1}{l}\int_a^b {\big [}(\bar{X}-P)\cdot \boldsymbol{n}{\big]} X'(t)\, dt
+\end{aligned}
+\]</span></p>
+<p>여기서, 첫번째 term 은</p>
+<p><span class="math display">\[
+\int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}{\big]} X'(t)\, dt =\boldsymbol{n} \cdot  \left(\int_a^b X(t)X'(t)\, dt -\overline{X}\int_a^b X'(t)\, dt \right) = \boldsymbol{n} \cdot \left(\bar{X}-\bar{X}\right)=0
+\]</span></p>
+<p>이다. 두번째 term 에서 <span class="math inline">\((\bar X-P)\cdot \boldsymbol{n}\)</span> 은 상수이며, 일르 고려하면,</p>
+<p><span class="math display">\[
+d=(\bar{X}-P)\cdot \mathbb{n}
+\]</span></p>
+<p>이다.</p>
+<p>평면에 대해서도 똑같이 생각 할 수 있다.</p>
+<p><br></p>
+<p><strong>4.</strong> 나선 <span class="math inline">\(X(t)=(\cos t,\, \sin t,\, t)\)</span> 에서 밀도함수가 <span class="math inline">\(f(t)=t^2\)</span> 일 때, 구간 <span class="math inline">\(-\pi\le t \le \pi\)</span> 에서 나선의 질량이 <span class="math inline">\(m=2\sqrt{2}\pi^3/3\)</span> 임을 보이고, 질량중심이</p>
+<p><span class="math display">\[
+\bar{x}=-\dfrac{6}{\pi^2},\quad\bar{y}=0,\quad \bar{z}=0
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+m &amp;=\int_{-\pi}^{\pi} f(t) |X'(t)|\, dt = \int_{-\pi}^{\pi}t^2 \sqrt{2}\,  dt= \dfrac{2\sqrt{2}\pi^3}{3} \\
+\bar{x} &amp;= \dfrac{1}{m}\int_{-\pi}^{\pi}  f(t)x(t)\, dt = \dfrac{1}{m}\int_{-\pi}^{\pi} \sqrt{2}t^2\cos t \, dt = -\dfrac{\sqrt{2}}{m} 4\pi = -\dfrac{6}{\pi^2} \\
+\bar{y} &amp;=\dfrac{1}{m}\int_{-\pi}^{\pi} f(t) y(t)\,dt = \dfrac{1}{m} \int_{-\pi}^{\pi} \sqrt 2t^2 \sin t\, dt = 0\\
+\bar{z} &amp;=\dfrac{1}{m}\int_{-\pi}^{\pi} f(t) z(t) \, dt = \dfrac{1}{m}\int_{-\pi^\pi} \sqrt{2}t^3\, dt = 0
+\end{aligned}
+\]</span></p>
+<p>나머지 문제는 귀찮아서..</p>
+</section>
+</section>
+<section id="연습문제-제-9-장-8-절" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="연습문제-제-9-장-8-절"><span class="header-section-number">9.9</span> 연습문제 : 제 9 장 8 절</h2>
+<p><strong>1.</strong> 정규곡선 <span class="math inline">\(X(t)\in \mathbb{R}^3\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\dfrac{d}{dt} |X'(t)| = \dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
+\]</span></p>
+<p>를 유도하고, 이로부터</p>
+<p><span class="math display">\[
+\kappa:= \dfrac{\sqrt{|X'|^2|X''|^2-(X'\cdot X'')^2}}{|X'|^3} = \dfrac{|X' \times X''|}{|X'|^3}
+\]</span></p>
+<p>을 유도하라. 이때 벡터 <span class="math inline">\(X'\)</span> 과 <span class="math inline">\(X''\)</span> 이 이루는 각의 크기를 <span class="math inline">\(\alpha\)</span> 라고 두면</p>
+<p><span class="math display">\[
+\kappa = \dfrac{|X''||\sin \alpha|}{|X'|^2}
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\dfrac{d}{dt}|X'(t)|=\dfrac{d}{dt} \sqrt{\sum_{i=1}^3 (x_i' (t))^2}=\dfrac{\sum_{i=1}^3 x'_i (t) x''_i(t)}{\sqrt{\sum_{i=1}^3(x_i'(t))^2}}=\dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
+\]</span></p>
+<p>이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(\dfrac{X'}{|X'|}\right)' &amp;=\dfrac{X''|X'|-X'|X'|'}{|X'|^2} =\dfrac{X''|X'|^2-X'(X' \cdot X'')}{|X'|^3} = \dfrac{X' \times (X'' \times X')}{|X'|^3} \\
+\kappa &amp;=\dfrac{1}{|X'|}\left|\left(\dfrac{X'}{|X'|}\right)'\right|= \dfrac{1}{|X'|}\dfrac{|X'\times (X'' \times X')|}{|X'|^3}=\dfrac{|X'\times X''|}{|X'|^3}
+\end{aligned}
+\]</span></p>
+<p>여기서 우리는 <span class="math inline">\(\boldsymbol{a} \times (\boldsymbol{b} \times \boldsymbol{c})=\boldsymbol{b}(\boldsymbol{a}\cdot \boldsymbol{c})+\boldsymbol{c}(\boldsymbol{a}\cdot \boldsymbol{b})\)</span> 와 <span class="math inline">\(|\boldsymbol{a} \times (\boldsymbol{b}\times \boldsymbol{a})|=|\boldsymbol{a}||\boldsymbol{a}\times \boldsymbol{b}|\)</span> 임을 이용하였다.</p>
+<p><span class="math inline">\(X'\)</span> 과 <span class="math inline">\(X''\)</span> 이 이루는 각의 크기를 <span class="math inline">\(\alpha\)</span> 라고 두면</p>
+<p><span class="math display">\[
+\kappa = \dfrac{|X''||\sin \alpha|}{|X'|^2}
+\]</span></p>
+<p>임은 쉽다.</p>
+<p><br></p>
+<p><strong>2.</strong> 평면곡선 <span class="math inline">\(X(t) = (x(t),\, y(t))\)</span> 의 곡률은</p>
+<p><span class="math display">\[
+\kappa (t) = \dfrac{|x'(t)y''(t)-x''(t)y'(t)|}{((x'(t))^2+(y'(t))^2)^{3/2}}
+\]</span></p>
+<p>임을 보이라. 또 평면곡선 <span class="math inline">\(y=f(x)\)</span> 의 곡률은</p>
+<p><span class="math display">\[
+\kappa (x) = \dfrac{|y''|}{(1+y'^2)^{3/2}}
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>문제 1로부터,</p>
+<p><span class="math display">\[
+\kappa = \dfrac{\sqrt{|X'|^2|X''|^2-(X'\cdot X'')^2}}{|X'|^3}=\dfrac{\sqrt{(x'^2+y'^2)(x''^2+y''^2)-(x'x''-y'y'')^2}}{(x'^2+y'^2)^{3/2}} = \dfrac{|x'y''-x''y'|}{(x'^2+y'^2)^{3/2}}
+\]</span></p>
+<p>이며 <span class="math inline">\(x(t)=t\)</span> 로 놓으면,</p>
+<p><span class="math display">\[
+\kappa =\dfrac{|y''|}{(1+y'^2)^{3/2}}
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>3.</strong> 타원 <span class="math inline">\(X(t)=(a\cos t,\, b \sin t)\)</span> 의 각 점에서의 곡률을 구하라. (<span class="math inline">\(a,\,b&gt;0\)</span> 이다.)</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X'(t) &amp;=(-a \sin t,\, b \cos t)\\
+X''(t) &amp;=(-a \cos t,\, -b \sin t)\\
+\kappa &amp;=\dfrac{|ab\sin^2 t+ab\cos^2 t|}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}=\dfrac{ab}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>4.</strong> 좌표평면에서 포물선 <span class="math inline">\(y=x^2\)</span> 의 각 점에서의 곡률을 구하라.</p>
+<hr>
+<p>문제 2. 로 부터,</p>
+<p><span class="math display">\[
+\kappa = \dfrac{|y''|}{(1+y'^2)^{3/2}}=\dfrac{2}{(1+4x^2)^{3/2}}
+\]</span></p>
+<p><br></p>
+<p><strong>5.</strong> 좌표평면에서 포물선 <span class="math inline">\(y=ax^2\)</span> 상의 세 점 <span class="math inline">\((-t,\,at^2),\, (0,\,0),\, (t,\,at^2)\)</span> 을 지나는 원의 반지름의 길이를 <span class="math inline">\(r(t)\)</span> 라 두었을 때, <span class="math inline">\(\displaystyle \lim_{t \to 0} r(t)\)</span> 의 값을 구하라.</p>
+<hr>
+<p>대칭에 의해 원의 중심은 <span class="math inline">\(y\)</span> 축상에 있으니 이를 <span class="math inline">\((0,\,y)\)</span> 라 하면, <span class="math inline">\(y&gt;0\)</span> 이어야 하며, <span class="math inline">\(r(t)=y\)</span> 이고,</p>
+<p><span class="math display">\[
+y^2=t^2+(y-at^2)^2 \implies y=\dfrac{1+a^2t^2}{2a}
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(\displaystyle \lim_{t\to 0} r(t)=\dfrac{1}{2a}\)</span> 이다.</p>
+<p><br></p>
+<p><strong>6.</strong> 좌표공간에서 곡선 <span class="math inline">\(X(t)\)</span> 의 곡률이 <span class="math inline">\(\kappa (t)\)</span> 일 때, 곡선 <span class="math inline">\(Y(t):=c X(t)\)</span> 의 곡률은 <span class="math inline">\(\kappa(t)/c\)</span> 임을 보이라. (단 <span class="math inline">\(c&gt;0\)</span>.)</p>
+<hr>
+<p><span class="math inline">\(Y=cX\)</span> 이므로 <span class="math inline">\(Y'=cX',\, Y'' = cX''\)</span> 이다. 따라서,</p>
+<p><span class="math display">\[
+\kappa_Y (t) = \dfrac{1}{|Y'|}\left|\left(\dfrac{Y'}{|Y'|}\right)'\right|=\dfrac{1}{c} \kappa (t)
+\]</span></p>
+<p><br></p>
+<p><strong>7.</strong> 곡선 <span class="math inline">\(X(t)=(t,\, t^2,\,t^3)\)</span> 에서 <span class="math inline">\(t=1,\, t=-1\)</span> 일 때의 곡률을 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X'(t)&amp;=(1,\,2t,\,3t^2)\\
+X''(t)&amp;=(0,\,2,\,6t)\\
+\kappa(t) &amp;= \dfrac{|X'\times X''| }{|X'|^3}=\dfrac{2\sqrt{9t^2+9t+1}}{(9t^4+4t^2+1)^{3/2}}\\
+\kappa(1) &amp;=\dfrac{2\sqrt{19}}{14\sqrt{14}}\\
+\kappa(-1)&amp;=\dfrac{2}{14\sqrt{14}}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>8.</strong> 곡선 <span class="math inline">\(X(t)=(t,\, \ln t)\)</span> 에서 곡률반경이 최소인 점을 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+\kappa(t) &amp;= \dfrac{1/t^2}{(1+1/t^2)^{3/2}}=\dfrac{t}{(t^2+1)^{3/2}}\\
+\kappa'(t) &amp;=\dfrac{1-2t^2}{(1+t^2)^{5/2}}  \implies \left(\kappa'(t)=0 \iff t^2=\dfrac{1}{2}\right)\\
+\lim_{t \to 0} \kappa (t) &amp;= +\infty \\
+\kappa(t=1/\sqrt{2})&amp;= \dfrac{2\sqrt{3}}{9} \\
+X\left( \dfrac{1}{\sqrt{2}}\right) &amp; =\left( \dfrac{1}{\sqrt{2}},\, -\dfrac{1}{2} \ln 2 \right)
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>9.</strong> 사이클로이드</p>
+<p><span class="math display">\[
+x(t)=t-\sin t,\quad y(t)=1-\cos t = 2\sin^2 \dfrac{t}{2} \quad (0\le t \le 2\pi)
+\]</span></p>
+<p>의 곡률은</p>
+<p><span class="math display">\[
+\kappa (t) = \dfrac{1}{4\sin \dfrac{t}{2}} =\dfrac{\sqrt{2}}{4\sqrt{y}}
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math inline">\(\sin \dfrac{t}{2}\ge 0\)</span> for <span class="math inline">\(0 \le t \le 2\pi\)</span> 이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+X(t) &amp;= (t-\sin t,\, 1-\cos t)\\
+X'(t) &amp;= (1-\cos t,\, \sin t)\\
+X''(t) &amp;= (\sin t,\, \cos t)\\
+\kappa(t) &amp;= \dfrac{|X' \times X''|}{|X'|^3}=\dfrac{2\sin^2 \dfrac{t}{2}}{8 \sin^3 \dfrac{t}{2}}=\dfrac{1}{4 \sin \dfrac{t}{2}}=\dfrac{\sqrt{2}}{4 \sqrt{y}}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>10.</strong> 곡선</p>
+<p><span class="math display">\[
+X(t)=\left(\int_0^t \cos \dfrac{\pi u^2}{2}\, du ,\, \int_0^t \sin \dfrac{\pi u^2}{2} \, du\right)
+\]</span></p>
+<p>의 곡률을 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X'(t) &amp;= \left(\cos \dfrac{\pi t^2}{2} ,\sin \dfrac{\pi t^2}{2} \right) \\
+X''(t) &amp;= \left( -\pi t \sin \dfrac{\pi t^2}{2},\,  \pi t \cos \dfrac{\pi t^2}{2} \right)\\
+|X'(t)|^2&amp;= 1 \\
+\kappa(t) &amp;= \pi t
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>11.</strong> 곡선 <span class="math inline">\(X(t)\)</span> 의 곡률 <span class="math inline">\(\kappa (t)\)</span> 의 적분 <span class="math inline">\(\displaystyle \int_X \kappa \,ds\)</span> 를 <span class="math inline">\(X\)</span> 의 전곡률(total curvature) 라고 한다. 타원 <span class="math inline">\(x^2+4y^2=1\)</span> 의 전곡률은 얼마인가.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X(t) &amp;=\left( \cos t,\, \dfrac{1}{2} \sin t \right) \\
+X'(t)&amp;= \left(-\sin t,\, \dfrac{1}{2} \cos t \right) \\
+X''(t) &amp;= \left(-\cos t,\, -\dfrac{1}{2} \sin t\right) \\
+\kappa (t) &amp;= \dfrac{\dfrac{1}{2}\sin^2 t + \dfrac{1}{2}\cos^2 t}{(\sin^2 t+\cos^2t/4 )^{3/2}} = \dfrac{1/2}{(\sin^2 t + \cos^2 t/4)^{3/2}}\\
+\int_X \kappa \, ds &amp;=\int_0^{2\pi} \kappa(t) |X'(t)| dt = \int_0^{2\pi} \dfrac{2}{4\sin^2 t+ \cos ^2 t}\, dt
+\end{aligned}
+\]</span></p>
+<p>이 때, <span class="math display">\[
+\begin{aligned}
+\int_\pi^{2\pi} \dfrac{2}{4\sin^2 t +\cos ^2 t}\, dt&amp; \overset{s=2\pi-t}{=} \int_0^{\pi} \dfrac{2}{4 \sin^2 s + \cos^2 s}\, ds\\
+\int_{\pi/2}^{\pi} \dfrac{2}{4\sin^2 t +\cos ^2 t}\, dt&amp; \overset{s=\pi-t}{=}\int_0^{\pi/2} \dfrac{2}{4 \sin^2 s + \cos^2 s}\, ds
+\end{aligned}
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_X \kappa \, ds &amp;= 4 \int_0^{\pi/2} \dfrac{2}{4 \sin^2 t+  \cos^2 t}\, dt = \int_0^{\pi/2} \dfrac{8}{4 \tan^2 t+1} \dfrac{1}{\cos^2t}\, dt  \\
+&amp;\overset{s=\tan t}{=} \int_0^\infty \dfrac{8}{4s^2+1}ds  \overset{s=(\tan \theta)/2}{=} \int_0^{\pi/2} 4 \, d\theta = 2\pi
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>12.</strong> 좌표평면상의 정규곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^2\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+\dfrac{X'(t)}{|X'(t)|} = (\cos \theta(t),\, \sin \theta(t)) \qquad (a \le t \le b)
+\]</span></p>
+<p>로 두면 <span class="math inline">\(X\)</span> 의 전곡률은</p>
+<p><span class="math display">\[
+\int_X \kappa \, ds = \int_a^b |\theta'(t)|\, dt
+\]</span></p>
+<p>임을 보이라. 특히 <span class="math inline">\(\theta(t)\)</span> 가 증가함수이면</p>
+<p><span class="math display">\[
+\int_X \kappa \, ds.= \theta(b)-\theta(a)
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\int_X \kappa \, ds = \int_a^b \dfrac{1}{|X'|}\left|\left(\dfrac{X'}{|X'|}\right)'\right|\, |X'|\, dt = \int_a^b \left|\left(\dfrac{X'}{|X'|}\right)'\right| \, dt = \int_a^b|\theta'(t)(-\sin \theta(t),\, \cos \theta(t))|\, dt=\int_a^b |\theta'(t)|\, dt
+\]</span></p>
+<p><span class="math inline">\(\theta(t)\)</span> 가 증가함수이면 <span class="math inline">\(\theta'(t)&gt;0\)</span> 이다. 따라서,</p>
+<p><span class="math display">\[
+\int_X \kappa \, ds = \int_a^b \theta'(t)\, dt = \theta(b)-\theta(a)
+\]</span></p>
+<p><br></p>
+<p><strong>13.</strong> 차를 몰고 반지름의 길이가 100 미터인 원호 모양의 도로 위를 일정한 속력 <span class="math inline">\(v\)</span> 로 움직일 때 편안함을 느낀다고 하자. 반지름의 길이가 10 미터인 원호 모양의 도로 위를 움직일 때의 속력이 얼마이면 같은 정도의 편안함을 느끼는가?</p>
+<hr>
+<p>반지름의 길이가 <span class="math inline">\(R\)</span> 미터인 원호를 일정한 속력 <span class="math inline">\(v\)</span> 로 움직일 때의 경로 <span class="math inline">\(X(t)\)</span> 는</p>
+<p><span class="math display">\[
+\begin{aligned}
+X(t) &amp;= R (\cos \dfrac{vt}{R},\, \sin \dfrac{vt}{R})\\
+X'(t) &amp;= v(-\sin \dfrac{vt}{R},\, \cos \dfrac{vt}{R})\\
+|X'(t)|&amp;=v\\
+X''(t) &amp;= -\dfrac{v^2}{R}(\cos \dfrac{vt}{R},\, \sin \dfrac{vt}{R})
+\end{aligned}
+\]</span></p>
+<p>이며 가속력의 크기는 <span class="math inline">\(\dfrac{v^2}{R}\)</span> 이다. 같은 정도의 편안함을 느끼려면 가속력이 같아야 하므로, 반지름이 <span class="math inline">\(1/10\)</span> 이 되면 속력은 <span class="math inline">\(1/\sqrt{10}\)</span> 이 되어야 한다.</p>
+<p><br></p>
+<p><strong>14.</strong> 호의 길이로 매개화된 곡선 <span class="math inline">\(X(s)\)</span> 의 곡률이 <span class="math inline">\(\kappa (s)\)</span> 로 주어졌을 때 <span class="math inline">\(\kappa'(s)=0\)</span> 이 되는 점을 <strong>꼭지점</strong> 이라고 부른다. 타원</p>
+<p><span class="math display">\[
+\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1
+\]</span></p>
+<p>의 꼭지점을 구하라.</p>
+<hr>
+<ol type="1">
+<li>일단 처음 생각대로 해보면….</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+X(t) &amp;= (a \cos t,\, b \sin t)\\
+X'(t) &amp;= (-a \sin t,\, b \cos t ) \\
+|X'(t) |&amp;=\sqrt{a^2 \sin^2 t+ b^2 \cos^2 t}\\
+X''(t) &amp;=(-a \cos t,\, - b \sin t)
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(|X'(t)|&gt;0\;\forall t\in \mathbb{R}\)</span> 이다. 호의 길이로 매개화하면,</p>
+<p><span class="math display">\[
+s(t)=\int_0^t |X'(t')|\,dt'=\int_0^t\sqrt{a^2 \sin^2 t'+ b^2 \cos^2 t'}\, dt'
+\]</span></p>
+<p>인데..<strong>이거 적분으로 어쩌구 하려면 잘 안된다</strong>. 이렇게 하지 말고,</p>
+<ol start="2" type="1">
+<li>정규곡선 <span class="math inline">\(X(t)\)</span> 를 호의 길이로 매개화한 곡선을 <span class="math inline">\(Y(s)\)</span> 라 하자. 즉 <span class="math inline">\(s=s(t)=\displaystyle \int_0^t |X'(t')|\, dt'\)</span> 이며 <span class="math inline">\(t=g(s)\)</span> 라 할 때 <span class="math inline">\(Y(s)=X(g(s))\)</span> 이다.</li>
+</ol>
+<p>이제 <span class="math inline">\(Y\)</span> 의 꼭지점은 <span class="math inline">\(Y\)</span> 의 곡률 <span class="math inline">\(\kappa_Y(s)\)</span> 에 대해</p>
+<p><span class="math display">\[
+\dfrac{d}{ds}\kappa_Y (s)=\dfrac{d}{ds}|Y''(s)|
+\]</span></p>
+<p>이 되는 점 이며, <span class="math inline">\(X(t)\)</span> 의 곡률을 <span class="math inline">\(\kappa_X(t)\)</span> 라 할 때,</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y(s) &amp;=X(g(s)) \\
+Y'(s) &amp;= \dfrac{dg}{ds} \cdot \dfrac{d X}{dt}(g(s))\\
+Y''(s) &amp;= \dfrac{d^2 g}{ds^2}\cdot \dfrac{dX}{dt}(g(s)) + \left(\dfrac{dg}{ds}\right)^2 \cdot \dfrac{d^2X}{dt^2}(g(s))
+\end{aligned}
+\]</span></p>
+<p>이 때 문제 1 로 부터, <span class="math inline">\(|Y'|=1\)</span> 을 이용하면,</p>
+<p><span class="math display">\[
+\kappa_Y(s)=\dfrac{|Y' \times Y''|}{|Y'|^3}=\left|\left(\dfrac{dg}{ds}\right)^3\right| \left|X'(g(s))\times X''(g(s))\right|
+\]</span></p>
+<p>우리는 <span class="math inline">\(t=g(s)\)</span> 이며 <span class="math inline">\(g^{-1}(t) = s =\int_0^t |X'(t')|\, dt\)</span> 임을 알고 있다. 역함수의 미분으로 부터 <span class="math inline">\(\dfrac{dg}{ds}=\dfrac{1}{X'}(g(s))\)</span> 임을 알고 있다. 따라서,</p>
+<p><span class="math display">\[
+\kappa_Y (s) = \dfrac{|X'(g(s))\times X''(g(s))|}{|X'(g(s))|^3}=\kappa_X (g(s))
+\]</span></p>
+<p>이다. 따라서,</p>
+<p><span class="math display">\[
+\dfrac{d}{ds}\kappa_Y(s)=0 \implies \dfrac{dg(s)}{ds}=0 \text{ or } \dfrac{d\kappa_X}{dt}(t)=0
+\]</span></p>
+<p>이다. 그런데 <span class="math inline">\(g'(x)&gt;0\)</span> 이므로 <span class="math inline">\(\kappa_X'(t)=0\)</span> 뿐이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\kappa_X (t)&amp;= \dfrac{|X'\times X''|}{|X'|^3} = \dfrac{|ab|}{(a^2 \sin^2 t + b^2 \cos^2 t)^{3/2}}\\
+\kappa_X'(t) &amp;= \dfrac{-3|ab|\sin t \cos t (a^2-b^2)}{(a^2 \sin^2 t + b^2 \cos^2 t)^{5/2}}
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(\kappa'_X(t)=0\)</span> 이면 <span class="math inline">\(t=0,\, \pi/2,\, \pi/\, \pi/3\)</span> 이다. 즉 <span class="math inline">\((\pm a,\,0)\)</span> 과 <span class="math inline">\((0,\, \pm b)\)</span> 가 꼭지점이다.</p>
+<p><br></p>
+<p><strong>15.</strong> 곡선</p>
+<p><span class="math display">\[
+X(t) = \left(\cos t,\, \sin^2 t,\, \dfrac{1}{2} \sin 2t\right)
+\]</span></p>
+<p>에서 <span class="math inline">\(t=\pi\)</span> 일 때의 곡률과 접촉평면의 식을 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X'(t) &amp;= \left(-\sin t,\, \sin 2t,\, \cos 2t\right)\\
+X''(t) &amp;= \left(- \cos t,\, 2 \cos 2t,\, -2 \sin 2t\right)\\
+|X'(t) | &amp;=\sqrt{1+\sin^2 t}\\
+\kappa(t) &amp;=\dfrac{\sqrt{4 + \cos^2 t+ 4 \sin^2 t -8 \sin t \cos t \sin 2t \cos 2t}}{(1+\sin^2t)^{3/2}} \\
+X(\pi) &amp;= (-1,\, 0,\, 0)\\
+X'(\pi)&amp;=(0,\, 0,\, 1)\\
+X''(\pi)&amp;=(1,\, 2,\, 0) \\
+\kappa (\pi) &amp;=\sqrt{5}
+\end{aligned}
+\]</span></p>
+<p>접촉평면의 식은</p>
+<p><span class="math display">\[
+0 = \det \begin{pmatrix}  x+1 &amp; y &amp; z \\ 0 &amp; 0 &amp; 1 \\ 1 &amp; 2 &amp; 0\end{pmatrix} =-2(x+1)+y \implies 2x-y+2=0
+\]</span> 이다.</p>
+<p><br></p>
+<p><strong>16.</strong> 삼차원 공간에서 곡률이 항등적으로 <span class="math inline">\(0\)</span> 인 정규곡선은 직선운동을 하는 곡선임을 보이라.</p>
+<hr>
+<p>문제 1로부터, 곡률이 항등적으로 <span class="math inline">\(0\)</span> 이면</p>
+<p><span class="math display">\[
+0=\kappa = \dfrac{|X'\times X''|}{|X'|^3} \implies X'\times X''=0
+\]</span></p>
+<p>이다. <span class="math inline">\(X'(t)\ne 0\)</span> 이므로 <span class="math inline">\(X''(t) = f(t)X'(t)\)</span> 이며 연습문제 9.2.2 로부터 <span class="math inline">\(X(t)\)</span> 는 직선운동임을 안다.</p>
+<p><br></p>
+<p><strong>17.</strong> 곡선 <span class="math inline">\(X(t)=e^t(\cos t,\, \sin t)\)</span> 의 곡률함수를 구하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X'(t) &amp;= e^t(\cos t- \sin t,\, \sin t + \cos t)\\
+X''(t) &amp;=e^t(-2\sin t,\, 2 \cos t) \\
+\kappa(t) &amp;= \dfrac{2e^{2t}}{|2e^{2t}|^{3/2}}=\dfrac{1}{\sqrt{2}e^t}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>18.</strong> 로그와선 <span class="math inline">\(r=r_0 e^{k\theta}\)</span> 의 각 점에서의 곡률은</p>
+<p><span class="math display">\[
+\kappa = \dfrac{1}{r} \dfrac{1}{\sqrt{1+k^2}}
+\]</span></p>
+<p>임을 보이라. 이로부터 로그와선의 곡률은 원점에서의 거리에 반비례함을 설명하라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+X(\theta) &amp;= r_0 e^{k\theta}(\cos \theta,\,\sin \theta)\\
+X'(\theta) &amp;=r_0 e^{k\theta}(k\cos \theta-\sin \theta,\, k\sin \theta + \cos \theta)
+\\
+X''(\theta) &amp;= r_0 e^{k \theta}((k^2-1) \cos \theta - 2k \sin \theta ,\,(k^2 -1)\sin \theta + 2k\cos \theta ) \\
+|X'(\theta)| &amp;=r_0 e^{k\theta}\sqrt{k^2+1}\\
+|X' \times X''| &amp;= r_0^2 e^{2k\theta} (k^2+1)\\
+\kappa(\theta) &amp;= \dfrac{|X'\times X''|}{|X'|^{3}}= \dfrac{r_0^2e^{2k\theta}(k^2+1)}{r_0^3 e^{3k\theta} (k^2+1)^{3/2} }=\dfrac{1}{r_0e^{k\theta}}\dfrac{1}{\sqrt{k^2+1}}\\
+&amp;=\dfrac{1}{r} \dfrac{1}{\sqrt{k^2+1}}
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(k\)</span> 는 상수이므로 <span class="math inline">\(k(\theta) \propto \dfrac{1}{r}\)</span> .</p>
+<p><br></p>
+</section>
+<section id="제-9-장-탐구문제" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="제-9-장-탐구문제"><span class="header-section-number">9.10</span> 제 9 장 탐구문제</h2>
+<p><strong>1.</strong> 한 변의 길이가 <span class="math inline">\(1\)</span> m 인 정사각형 모양 탁지의 각 귀퉁이에 개미가 한마리씩 있다. 이들 개미가 각자 자기 왼쪽에 있는 개미를 향하여 동시에 같은 속력으로 움직이면 그 자취는 로그와선이 된다. 이 때 개미들이 만날 때가지 움직인 거리를 구하라.</p>
+<hr>
+<p><span class="math inline">\(A,\,B,\,C,\,D\)</span> 에서 출발한 개미의 자취를 <span class="math inline">\(A(t),\, B(t),\, C(t),\, D(t)\)</span> 라 하자. <span class="math inline">\(A\)</span> 는 <span class="math inline">\(B\)</span> 를 따라, <span class="math inline">\(B\)</span> 는 <span class="math inline">\(C\)</span> 를 따라, <span class="math inline">\(C\)</span> 는 <span class="math inline">\(D\)</span> 를 따라, <span class="math inline">\(D\)</span> 는 <span class="math inline">\(A\)</span> 를 따라 움직인다고 하자. 그렇다면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+A'(t) &amp;= v\dfrac{B(t)-A(t)}{|B(t)-A(t)|}\\
+B'(t) &amp;= v\dfrac{C(t)-B(t)}{|C(t)-B(t)|}\\
+C'(t) &amp;= v \dfrac{D(t)-C(t)}{|D(t)-C(t)|}\\
+D'(t) &amp;=  v\dfrac{A(t)-D(t)}{|A(t)-D(t)|}\\
+A(0) &amp;= \left( -\dfrac{1}{2},\, \dfrac{1}{2}\right)\\
+B(0) &amp;=  \left( \dfrac{1}{2},\, \dfrac{1}{2}\right)\\
+C(0) &amp;=  \left( \dfrac{1}{2},\, -\dfrac{1}{2}\right)\\
+D(0) &amp;=  \left( -\dfrac{1}{2},\, -\dfrac{1}{2}\right)
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(A(t)=(x(t),\, y(t))\)</span> 라 하자. <span class="math inline">\(A,\,B,\,C,\,D\)</span> 의 대칭성으로부터, <span class="math inline">\(B(t)\)</span> 는 <span class="math inline">\(A\)</span> 를 시계방향으로 <span class="math inline">\(\pi/2\)</span> 만큼 <span class="math inline">\(C(t)\)</span> 는 <span class="math inline">\(\pi\)</span> 만큼, <span class="math inline">\(D(t)\)</span> 는 <span class="math inline">\(3\pi/2\)</span> 만큼 회전한 것임을 알 수 있다. 따라서,</p>
+<p><span class="math display">\[
+\begin{aligned}
+A(t) &amp;= (x(t),\, y(t)), \\
+B(t) &amp;= (y(t),\, -x(t)), \\
+C(t) &amp;= (-x(t),\, -y(t)),\\
+D(t) &amp;= (-y(t),\, x(t)),
+\end{aligned}
+\]</span></p>
+<p>이며 <span class="math inline">\(x(0)=-1/2,\, y(0)=1/2\)</span> 임을 안다. 그렇다면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+x'(t)=v\dfrac{y-x}{\sqrt{(y-x)^2+(x+y)^2}}=v\dfrac{y-x}{\sqrt{2}r},\qquad y'(t) =-v\dfrac{x+y}{\sqrt{2}r}
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+<p><span class="math display">\[
+v^2=\left(\dfrac{dx}{dt}\right)^2+\left(\dfrac{dy}{dt}\right)^2 = \left(\dfrac{dr}{dt}\right)^2+ r^2 \left(\dfrac{d\theta}{dt}\right)^2 = \dot{r}^2+r^2\dot{\theta}^2
+\]</span></p>
+<p>이다. (물리학에서 많이 쓰는 시간에 대한 미분을 문자 위의 도트로 쓰는 표현을 사용하였다.) 이 곡선이 로그와선을 이루므로</p>
+<p><span class="math display">\[
+r(t) = r_0 e^{k\theta(t)}
+\]</span></p>
+<p>로 놓을 수 있는데, 우선 <span class="math inline">\(\theta (0)=\dfrac{3\pi}{4}\)</span> 이며 <span class="math inline">\(r(0)=\dfrac{1}{\sqrt{2}}\)</span> 이다. 또한 <span class="math inline">\(\dfrac{d\theta}{dt}&lt;0\)</span> 이며 <span class="math inline">\(\dfrac{dr}{dt}&lt;0\)</span> 이므로 <span class="math inline">\(k&gt;0\)</span> 이다.</p>
+<p><span class="math display">\[
+\dot{r}=r_0 (k\dot{\theta})e^{k\theta(t)}=k\dot{\theta}r
+\]</span></p>
+<ul>
+<li>속력이 일정한가?</li>
+</ul>
+<p>– to be done–</p>
+<p><br></p>
+<p><strong>2.</strong> 평면에서 곡선 <span class="math inline">\(X(t)\)</span> 와 한 점 <span class="math inline">\(P\)</span> 가 주어졌다고 하자. 만약 <span class="math inline">\(Q:=X(0)\)</span> 가 곡선 <span class="math inline">\(X(t)\)</span> 의 점 중에서 <span class="math inline">\(P\)</span> 에 가장 가까운 거리에 있으면 벡터 <span class="math inline">\(\overrightarrow{PQ}\)</span> 와 <span class="math inline">\(X'(0)\)</span> 은 서로 수직임을 보이라. 또 두 평면곡선 <span class="math inline">\(x^2y+y^3=8\)</span> 과 <span class="math inline">\(x^2+y^2=1\)</span> 사이의 최단거리를 구하라.</p>
+<hr>
+<p><span class="math inline">\(t\in \mathbb{R}\)</span> 이라고 가정한다. 원점에서의 거리의 제곱 함수를 <span class="math inline">\(L(t)\)</span> 라 하면,</p>
+<p><span class="math display">\[
+L(t)=|X(t)-P|^2
+\]</span></p>
+<p>이다 원점에서 가장 가까운 거리가 <span class="math inline">\(t=0\)</span> 일 때 이면 ,</p>
+<p><span class="math display">\[
+L'(0)=X'(0)\cdot (X(0)-P)=0 \implies X'(0)\cdot (Q-P)=0
+\]</span></p>
+<p>이므로 <span class="math inline">\(X'(0)\)</span> 과 <span class="math inline">\(\overrightarrow{PQ}\)</span> 는 수직이다.</p>
+<p>두 평면곡선 <span class="math inline">\(x^2y+y^3=8\)</span> 과 <span class="math inline">\(x^2+y^2=1\)</span> 사이의 최단거리를 구하자. 만약 두 곡선이 교점이 없으면 원점에서의 최단거리에서 <span class="math inline">\(1\)</span> 을 빼주면 된다. 두 점의 교점이 존재한다면 <span class="math inline">\(x=\cos \theta,\, y = \sin \theta\)</span> 로 놓았을 때 두 식을 만족하는 <span class="math inline">\(\theta\)</span> 가 존재해야 한다. 그러나,</p>
+<p><span class="math display">\[
+8=x^2y+y^3=\cos^2 \theta \sin \theta + \sin ^3 \theta =  \sin \theta\le 1
+\]</span></p>
+<p>이므로 모순. 따라서 교점이 존재하지 않는다. <span class="math inline">\(x^2y+y^3=8\)</span> 을 정리하면,</p>
+<p><span class="math display">\[
+x^2= \dfrac{8-y^3}{y}
+\]</span></p>
+<p>이며 <span class="math inline">\((8-y^3)/y=x^2\ge 0\)</span> 이어야 하므로, $ 0&lt;y$ 에서만 존재한다. 이 곡선은</p>
+<p><span class="math display">\[
+X(t) = \left(\sqrt{\dfrac{8-t^3}{t}},\, t\right)\qquad 0&lt;t\le 2
+\]</span></p>
+<p>로 매개화 할 수 있으며, 원점에서의 거리는, <span class="math inline">\(8/t\)</span> 이므로 최단거리는 <span class="math inline">\(4\)</span> 이다. 따라서 <span class="math inline">\(x^2+y^2=1\)</span> 와의 최단거리는 <span class="math inline">\(3\)</span> 이다.</p>
+<p><strong>3.</strong> 극좌표계로,</p>
+<p><span class="math display">\[
+r=\dfrac{k\epsilon}{1+\epsilon \cos \theta}
+\]</span></p>
+<p>로 주어진 곡선은</p>
+<ol type="i">
+<li><p><span class="math inline">\(0&lt;\epsilon &lt; 1\)</span> 이면 타원</p></li>
+<li><p><span class="math inline">\(\epsilon =1\)</span> 이면 포물선</p></li>
+<li><p><span class="math inline">\(\epsilon&gt;1\)</span> 이면 쌍곡선을 나타냄을 보이라.</p></li>
+</ol>
+<hr>
+<p><span class="math display">\[
+\sqrt{x^2+y^2}=\dfrac{k\epsilon}{1+\epsilon \dfrac{x}{\sqrt{x^2+y^2}}} \implies (1-\epsilon)x^2-2\epsilon kx + y^2 = \epsilon k^2
+\]</span></p>
+<p>이다.</p>
+<p>이므로 <span class="math inline">\(0 &lt;\epsilon &lt;1\)</span> 이면 타원, <span class="math inline">\(\epsilon = 1\)</span> 이면 포물선, <span class="math inline">\(\epsilon&gt;1\)</span> 이면 쌍곡선이다.</p>
+<p><br></p>
+<p><strong>4.</strong> 일급 곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^n\)</span> 의 에너지를</p>
+<p><span class="math display">\[
+E(X):=\int_a^b |X'(t)|^2\, dt
+\]</span></p>
+<p>로 정의한다.</p>
+<p>이 때,</p>
+<p><span class="math display">\[
+\dfrac{(\text{length}(X))^2}{b-a} \le E(X)
+\]</span></p>
+<p>를 보이라.</p>
+<p>이제 공간에 주어진 두 점 <span class="math inline">\(P,\,Q\)</span> 를 잇는 모든 일급곡선중에서 에너지가 최소인 곡선은 등속운동을 하는 직선임을 보이라.</p>
+<hr>
+<p>임의의 실수함수 <span class="math inline">\(f,\, g\)</span> 에 대해</p>
+<p><span class="math display">\[
+\left(\int f(t)g(t)\, dt\right)^2 \le \int f(t)^2\, dt \int g(t)^2\, dt
+\]</span></p>
+<p>임을 보이자.</p>
+<p><span class="math display">\[
+0 \le \int (f(t)-\lambda g(t))^2 \, dt  = \int f(t)^2\, dt -2 \lambda \int f(t) g(t)\, dt + \lambda^2 \int g(t)^2\, dt
+\]</span></p>
+<p>는 <span class="math inline">\(\lambda\)</span> 와 무관하게 항상 성립해야 한다. 따라서, (2차함수의 판별식을 이용하면) 위의 식이 성립하며 등호는 <span class="math inline">\(f(t)\)</span> 가 <span class="math inline">\(g(t)\)</span> 의 상수배일 때 성립한다.</p>
+<p>이제 <span class="math inline">\(f(t)=1,\, g(t) = |X'(t)|\)</span> 를 대입하고 <span class="math inline">\((a,\,b)\)</span> 구간에서 적분하면,</p>
+<p><span class="math display">\[
+(b-a)\int|X'(t)|^2\, dt \le \left(\int|X'(t)|\, dt\right)^2 = \text{length(X)}^2
+\]</span></p>
+<p>이므로, 주어진 식을 보였다. 등호는 <span class="math inline">\(|X'(t)|=v=\text{const}\)</span> 일 때 이므로 등속운동을 할 때 성립하며, 두 점을 잇는 가장 짧은 곡선은 직선이다.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "복사완료!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "복사완료!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/calculus/08_3dspace.html" class="pagination-link" aria-label="3차원 공간과 벡터의 외적">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3차원 공간과 벡터의 외적</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/calculus/10_multivariable_functions.html" class="pagination-link" aria-label="다변수함수">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">다변수함수</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

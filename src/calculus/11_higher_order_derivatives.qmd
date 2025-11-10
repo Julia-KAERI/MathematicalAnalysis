@@ -1,0 +1,2449 @@
+---
+title: "최대최소값 문제와 고계미분"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+## 연습문제 : 제 11 장 1 절
+
+**1.** $x>0$ 일 때 다음 미분을 구하라.
+
+$$
+\dfrac{d}{dx} \int_{x^2}^{x^3} \dfrac{1}{y} e^{xy^2} \, dy
+$$
+
+::: {.solution}
+
+$$
+F(x,\, t) = \int_{a}^t \dfrac{1}{s}e^{xs^2}\, ds
+$$
+
+라 하면
+
+$$
+\int_{x^2}^{x^3}\dfrac{1}{y} e^{xy^2}\, dy = F(x,\, x^3)-F(x,\,x^2)
+$$
+
+이며,
+
+$$
+\begin{aligned}
+\dfrac{d}{dx} \int_{x^2}^{x^3} \dfrac{1}{y} e^{xy^2} \, dy  &= D_1F(x,\, x^3)+3x^2D_2F(x,\,x^3)-D_1F(x,\,x^2)-2xD_2F(x,\,x^2)\\
+&=\int_{a}^{x^3} se^{xs^2}ds+3x^2 \dfrac{1}{x^3}e^{x^7}-\int_a^{x^2} se^{xs^2}\, ds-2x \dfrac{1}{x^2}e^{x^5} \\
+&=\left[\dfrac{1}{2x}e^{xs^2}\right]_{x^2}^{x^3}+\dfrac{3}{x}e^{x^7}-\dfrac{2}{x}e^{x^5} \\
+&=\dfrac{1}{2x}e^{x^7}-\dfrac{1}{2x}e^{x^5} + \dfrac{3}{x}e^{x^7}-\dfrac{2}{x}e^{x^5}\\
+&=\dfrac{7}{2x}e^{x^7}-\dfrac{5}{2x}e^{x^5}
+\end{aligned}
+$$
+
+이다.
+
+:::
+
+
+</br>
+
+**2.** 일급함수 $a(x),\, b(x),\, g(x,\,y)$ 에 대하여
+
+$$
+\dfrac{d}{dx} \int_{a(x)}^{b(x)} g(x,\,y)\, dy = g(x,\,b(x))b'(x)-g(x,\,a(x))a'(x)+\int_{a(x)}^{b(x)}D_1g(x,\,y)\, dy
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+앞의 1과 같은 방법으로,
+
+$$
+F(x,\,t):=\int_c^t g(x,\,y)\, dy
+$$
+
+라 하면,
+
+$$
+\begin{aligned}
+\int_{a(x)}^{b(x)}g(x,\,y)\, dy &= F(x,\,b(x))-F(x,\, a(x)) \\
+D_1F(x,\,t)&=\int_c^t \frac{\partial g}{\partial x}(x,\,y)\, dy = \int_c^t D_1 g(x,\,y)\,dy \\
+D_2F(x,\,y)&= g(x,\,y)
+\end{aligned}
+$$
+
+이므로,
+
+$$
+\begin{aligned}
+\dfrac{d}{dx} \int_{a(x)}^{b(x)}g(x,\,y)dy &= \dfrac{d}{dx} \left[F(x,\,b(x))-F(x,\,a(x)\right] \\
+&= D_1F(x,\,b(x)) +D_2F(x,\, b(x))b'(x)-D_1F(x,\,a(x))-D_2F(x,\,a(x))a'(x) \\
+&=g(x,\,b(x))b'(x)-g(x,\,a(x))a;(x)+\int_{a(x)}^{b(x)} D_1 g(x,\,y)\, dy
+\end{aligned}
+$$
+
+이다.
+
+:::
+
+</br>
+
+**3.** $k<1$ 일 때 함수
+
+$$
+f(k):=\int_0^{\pi/2} \dfrac{dx}{\sqrt{1-k\cos^2x}}
+$$
+
+는 $k$ 에 대한 증가함수 임을 보이라. 또 $k=0$ 일 때의 순간변화율은 얼마인가?
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\dfrac{df(k)}{dk} &=\int_0^{\pi/2}\dfrac{\partial}{\partial k}\left( \dfrac{1}{\sqrt{1-k\cos^2 x}}\, \right)dx  = \int_0^{\pi/2} \dfrac{\cos^2 x}{2(1-k\cos^2x)^{3/2}}\, dx
+\end{aligned}
+$$
+
+이며 $1-k\cos^2 x>0$ , $\cos^2 x>0$ 이므로 $f'(k)>0$  이다. 따라서 $f(k)$ 는  $k$ 에 대한 증가함수이다.
+
+$k=0$ 일 때의 순간변화율은
+
+$$
+\dfrac{df}{dk}(0)= \int_0^{\pi/2}\dfrac{1}{2}\cos^2x\, dx= \dfrac{\pi}{8}
+$$
+:::
+
+</br>
+
+**4.** 좌표평면에서 호의 길이로 매개화된 이급 곡선
+
+$$
+C(s),\qquad s_0\le s \le s_1
+$$
+
+에 대하여 단위 접벡터를
+
+$$
+\mathbf{t}(s) : =C'(s)
+$$
+
+로 두면 이 곡선의 각 점에서 곡률은
+
+$$
+\kappa (x) := |\mathbf{t}'(s)|
+$$
+
+로 주어진다. 이때 곡선  $C(s)$ 를 단위법벡터
+
+$$
+\mathbf{n}(s) := -\dfrac{\mathbf{t}'(s)}{\kappa(s)}
+$$
+
+방향으로 $u$ 만큼 이동한 곡선의 식은
+
+$$
+C_u(s):=C(s)+u\mathbf{n}(s),\qquad s_0\le s\le s_1
+$$
+
+이다. 곡선 $ C_u$ 의 길이를
+
+$$
+L(u):=\int_{s_0}^{s_1}\left|C'_u(s)\right|\, ds
+$$
+
+라 하자.
+
+(1) $\mathbf{n}'(s)=\kappa (s) \mathbf{t}(s)$ 임을 보이라.
+
+(2) $|u|\ll 1$ 이면 $L(u)$ 의 순간변화율은 처음 주어진 곡선의 전곡률 임을, 즉
+
+$$
+L'(u)=\int_{s_0}^{s_1}\kappa (s)\, ds
+$$
+
+를 보이라.
+
+(3)  만약 처음에 주어진 곡선 $C$ 가 타원이면  $L'(0)$ 의 값은 얼마인가?
+
+::: {.solution}
+
+(1)  $|\mathbf{t}(s)|=1,\,|\mathbf{n}(s) |=1$​ 이다. 이로부터,
+
+$$
+\begin{aligned}
+\dfrac{d}{ds}\left|\mathbf{t}(s)\right|^2 &=0 \implies \mathbf{t}(s) \cdot \mathbf{t}'(s)=0 \\
+\dfrac{d}{ds}\left|\mathbf{n}(s)\right|^2 &=0 \implies \mathbf{n}(s) \cdot \mathbf{n}'(s)=0
+\end{aligned}
+$$
+
+좌표평면이므로 2차원이고, $\mathbf{n}(s) \propto \mathbf{t}'(s)$ 이므로, $\mathbf{n}'(s) \propto \mathbf{t}(s)$ 이다. 따라서 어떤 스칼라 함수 $ f(s)$ 에 대해
+
+$$
+\mathbf{n}'(s) =f(s)\mathbf{t}(s) \tag{1}
+$$
+
+이다. 또한, $\mathbf{n}(s) \cdot \mathbf{t}(s)=0$ 이므로,
+
+$$
+\begin{aligned}
+\mathbf{n}'(s)\cdot \mathbf{t}(s) &=\left(\mathbf{n}(s) \cdot \mathbf{t}(s)\right)'-\mathbf{n}(s)\cdot \mathbf{t'(s)} =0-(-\kappa(s))=\kappa(s)
+\end{aligned}
+$$
+
+이며, (1) 로 부터,
+
+$$
+\mathbf{n'}(s)\cdot \mathbf{t}(s) = f(s) |\mathbf{t}(s)|^2=f(s)
+$$
+
+이므로 $f(s)=\kappa (s)$ 이다. 즉,
+
+$$
+\mathbf{n}'(s) = \kappa (s) \mathbf{t}(s)
+$$
+
+이다.
+
+(2)
+$$
+|C'_u(s)| = |C'(s)+u\mathbf{n'(s)}|=|\mathbf{t}(s)+u\kappa(s)\mathbf{t}(s)|=|\mathbf{t}(s)|\cdot |1+u\kappa(s)|=|1+u\kappa(s)|
+$$
+
+이다 .$|u|\ll 1$​ 이면  $1+u\kappa(s)>0$​ 이므로,
+
+$$
+\begin{aligned}
+L(u) &= \int_{s_0}^{s_1} (1+u\kappa(s))ds\\
+L'(u) &=\int_{s_0}^{s_1} \dfrac{\partial }{\partial u}(1+u\kappa(s))ds =\int_{s_0}^{s_1} \kappa(s)\, ds
+\end{aligned}
+$$
+
+이다.
+
+(3) 타원 $X(t) = (a \cos t,\, b \sin t)$ where $0 \le t \le 2\pi$ 라 하자. 호의 길이 $s$ 로 매개화 하면,
+
+$$
+s(t) = \int_0^t |X' (t') |\, dt' = \sqrt{a^2 \sin ^2 t' + b^2 \cos ^2 t'}\, dt'
+$$
+
+이며 문제, 9.8.3 에서 보았듯이,
+
+$$
+\kappa (t) =\dfrac{|ab\sin^2 t+ab\cos^2 t|}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}=\dfrac{ab}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}
+$$
+
+이다.
+
+$$
+\begin{aligned}
+L'(0) & = \int_{s_0}^{s_1} \kappa(s)\, ds \\
+&=\int_0^{2\pi} \kappa (t) |s'(t)|\,  dt \\
+&= \int_0^{2\pi} \dfrac{ab}{a^2\sin^2 t + b^2 \cos^2 t} \, dt \\
+&= \int_0^{2\pi} \dfrac{ab}{a^2 \tan^2 t + b^2} d(\tan t) &;\dfrac{dt}{\cos^2 t} = d(\tan t)\\
+&= 4\int_0^\infty \dfrac{ab}{a^2v^2+b^2}\, dv =2\pi
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+## 연습문제 : 제 11 장 2 절
+
+### 편미분의 교환법칙
+
+$n$-공간의 열린 집합 $A$ 에서 정의된 이급함수 $f$ 는 $P\in A$ 에 대하여 다음을 만족한다.
+
+$$
+D_i D_j f(P)=D_j D_i f(P) \qquad (1\le i,\,j \le n)
+$$
+
+
+::: {.proof}
+
+이변수 함수 $f(x,\,y)$ 에 대해서만 보이면 된다. 우선 $A$ 에 포함되는 충분히 작은 직사각형 $[a,\,b]\times [c,\,d]$ 에 대하여
+
+$$
+\begin{aligned}
+\int_c^y D_1 D_2 f(x,\,t)\, dt &=\dfrac{\partial }{\partial x} \int_{c}^y D_2 f(x,\,t)\, dt \\
+&= \dfrac{\partial }{\partial x}\left(f(x,\,y)-f(x,\,c)\right)\\
+&= D_1f(x,\,y)-D_1 f(x,\,c)
+\end{aligned}
+$$
+
+이다. 이제 좌변을 $y$ 에 대해 미분 가능하며, 따라서 오른쪽도 $y$ 에 대해 미분가능하다. 따라서,
+
+$$
+D_1 D_2 f(x,\,y) = D_2D_1 f(x,\,y)
+$$
+
+이다. $\square$
+
+:::
+
+</br>
+
+**1.** 다음 함수에서 $D_1D_2 f= D_2 D_1 f$ 가 성립하는가를 조사하라.
+
+::: {.solution}
+
+(1) $2x^2y^3 -x^3y^5$
+
+$$
+\begin{aligned}
+D_1 D_2 f(x,\,y) &= D_1(6x^2y^2-5x^3y^4)=12xy^2-15x^2y^4 \\
+D_2 D_1 f(x,\,y) &= D_2 (4xy^3-3x^2y^5) = 12xy^2-15x^2y^5
+\end{aligned}
+$$
+
+따라서 $D_1D_2f=D_2D_1f$ 가 성립한다.
+
+(2) $\cos^7 x - \sin ^2 y$
+
+$$
+\begin{aligned}
+D_1D_2f(x,\,y) &= D_1(-2\cos y \sin y )=0 \\
+D_2D_1 f(x,\,y) &=D_2 (-7 \sin x \cos^6 x)=0
+\end{aligned}
+$$
+
+따라서 $D_1D_2f=D_2D_1f$ 가 성립한다.
+
+(3) $\arctan(x y)$
+
+$$
+\begin{aligned}
+D_1D_2 f(x,\,y) &= D_1 \dfrac{x}{1+x^2y^2} = \dfrac{1+x^2y^2-x(2xy^2)}{(1+x^2y^2)^2} = \dfrac{1-x^2y^2}{(1+x^2y^2)^2} \\
+D_2D_1 f(x,\,y) &=D_2 \dfrac{y}{1+x^2y^2}=\dfrac{1-x^2y^2}{(1+x^2y^2)^2}
+\end{aligned}
+$$
+
+따라서 $D_1D_2f=D_2D_1f$ 가 성립한다.
+
+(4) $\ln \dfrac{x-1}{y+1}$
+
+$$
+\begin{aligned}
+D_1D_2f(x,\,y) = D_2D_1f(x,\,y)=0
+\end{aligned}
+$$
+
+:::
+</br>
+
+
+**2.** 함수 $f(x,\,y)=xy^2+ye^{-x}\sin (x-y)$ 의 모든 이계편도함수를 구하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+D_1 f(x,\,y) &=y^2-ye^{-x}\sin (x-y)+ye^{-x}\cos (x-y) \\
+D_2 f(x,\,y) &=2xy+e^{-x}\sin (x-y)-ye^{-x}\cos(x-y) \\
+{D_1}^2 f(x,\,y) &=ye^{-x}\sin (x-y) -ye^{-x} \cos (x-y)-ye^{-x}\cos (x-y) +ye^{-x} \sin (x-y) \\
+&=2ye^{-x} (\sin (x-y) -\cos(x-y)) \\
+D_2D_1 f(x,\,y) &= 2y-e^{-x}\sin (x-y) +ye^{-x}\cos (x-y) +e^{-x}\cos (x-y)+ye^{-x} \sin (x-y) \\
+&= 2y+(y-1)e^{-x}\sin (x-y) + (y+1)e^{-x} \cos (x-y) \\
+D_1D_2 f(x,\,y) &= 2y-e^{-x}\sin (x-y)+e^{-x}\cos (x-y)+ye^{-x}\cos (x-y)+ye^{-x} \sin (x-y) \\
+&=2y+(y-1)e^{-x}\sin (x-y) + (y+1)e^{-x} \cos (x-y) \\
+{D_2}^2 f(x,\,y) &=2x -e^{-x} \cos (x-y) -e^{-x}\cos (x-y) -ye^{-x} \sin (x-y) \\
+&=2x-2e^{-x} \cos (x-y) -ye^{-x}\sin (x-y)
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**3.** $z=\sin (x+ct)+\cos (2x+2ct)$ 일때
+$$
+\dfrac{\partial^2z}{\partial t^2}=c^2 \dfrac{\partial^2z}{\partial x^2}
+$$
+임을 보이라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\dfrac{\partial z}{\partial t} &= c\cos (x+ct)-2c\sin (2x+2ct) \\
+\dfrac{\partial z}{\partial x} &= \cos (x+ct)-2 \sin (2x+2ct) \\
+\dfrac{\partial^2 z}{\partial t^2} &= -c^2\sin (x+ct) - 4c^2 \cos (2x+2ct) \\
+\dfrac{\partial^2 z}{\partial x^2} &= -\sin (x+ct)-4 \cos (2x+2ct)
+\end{aligned}
+$$
+이므로 주어진 식이 성립한다.
+
+:::
+
+</br>
+
+
+**4.** 이급함수 $f(x,\,y)$ 는 정의역의 각 점에서 임의의 벡터 $\mathbf{v}$ 에 대하여 $\mathbf{v}$ 방향 이계미분계수와 $(-\mathbf{v})$ 방향 이계미분계수가 같은가?
+
+::: {.solution}
+
+Let $\mathbf{v}=(a,\,b)$ Then,
+
+$$
+{D_{(a,\,b)}}^2f(x,\,y)=a^2{D_1}^2f(x,\,y)+2abD_2D_2f(x,\,y)+b^2{D_2}^2f(x,\,y) ={D_{(-a,\,-b)}}^2f(x,\,y)
+$$
+
+:::
+
+</br>
+
+
+**5.** 원점 근방에서 정의된 삼급함수 $f(x,\,y)$ 가 원점에서 $\mathbf{v}$-방향 이계미분계수가 $1$ 이라고 하자. 이 때 $2\mathbf{v}$-방향 이계미분계수는 얼마인가? 또 $f(x,\,y)$ 가 원점에서 $\mathbf{v}$-방향 삼계미분계수가 $1$ 이면 $2\mathbf{v}$-방향 삼계미분계수는 얼마인가?
+
+::: {.solution}
+
+$$
+\begin{aligned}
+D_{2\mathbf{v}} f &= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
+{D_{2\mathbf{v}}}^2 & f= 2\mathbf{v} \cdot \nabla (2\mathbf{v} \cdot \nabla f) =4{D_{\mathbf{v}}}^2f \\
+{D_{2\mathbf{v}}}^3 &f = 8 {D_{\mathbf{v}}}^3f
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**6.** 곡선 $(x_1(t),\ldots,\, x_n(t))$ 와 함수 $f(x_1,\ldots,\,x_n)$ 에 대하여,
+
+$$
+\dfrac{d^2}{dt^2} f(x_1,\ldots,\,x_n) = \sum_{i,\,j=1}^n \dfrac{\partial^2 f}{\partial x_i \partial x_j} \dfrac{dx_i}{dt} \dfrac{dx_j}{dt}+ \sum_{k=1}^n \dfrac{\partial f}{\partial x_k} \dfrac{d ^2 x_k}{dt^2}
+$$
+임을 보이라.
+
+::: {.solution}
+$$
+\begin{aligned}
+\dfrac{d}{dt} f(x_1,\ldots,\,x_n) &= \sum_{i=1}^n  \dfrac{\partial f}{\partial x_i}\dfrac{dx_i}{dt} \\
+\dfrac{d^2}{dt^2} f(x_1,\ldots,\,x_n) &= \sum_{i=1}^n\dfrac{d}{dt}\left(\dfrac{\partial f}{\partial x_j}\right) \cdot \dfrac{d x_i}{dt} + \sum_{k=1}^n \dfrac{\partial f}{\partial x_k} \cdot \dfrac{d}{dt}  \left(\dfrac{dx_i}{dt}\right) \\
+&= \sum_{i,\,j=1}^n   \dfrac{\partial^2 f}{\partial x_i \partial x_j} \dfrac{dx_i}{dt}\dfrac{dx_j}{dt} + \sum_{k=1}^n \dfrac{\partial f}{\partial x_k} \dfrac{d^2x_k}{dt^2}
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+
+**7.** $n$-공간에서 미분작용소
+
+$$
+\nabla^2 := {D_1}^2 + \cdots + {D_n}^2
+$$
+
+를 라플라스 작용소라고 부른다. 좌표평면에서 극좌표계로 라플라스 작용소를 표현하면,
+
+$$
+\partial_x^2 +\partial_y^2 = {\partial_r}^2 + \dfrac{1}{r}{\partial_r} + \dfrac{1}{r^2}{\partial_{\theta}}^2
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+$$
+(x,\,y) = (r \cos \theta,\, r \sin \theta),\qquad r=\sqrt{x^2+y^2},\qquad \theta = \arctan(y/x)\\
+$$
+
+이므로,
+
+$$
+\begin{aligned}
+\partial_x &= \dfrac{\partial r}{\partial x}\partial r + \dfrac{\partial \theta}{\partial x} \partial_{\theta}=\cos \theta \partial_r -\dfrac{\sin \theta}{r} \partial_{\theta} \\
+\partial_y &= \dfrac{\partial r}{\partial y}\partial_r + \dfrac{\partial \theta}{\partial y}\partial_{\theta} = \sin \theta \partial_r + \dfrac{\cos\theta}{r} \partial_{\theta}\\
+{\partial_x}^2 &= \left(\cos \theta \partial_r -\dfrac{\sin \theta}{r} \partial_{\theta}\right)\left(\cos \theta \partial_r -\dfrac{\sin \theta}{r} \partial_{\theta} \right)  \\
+&= \cos^2 \theta {\partial_r}^2+\dfrac{\sin \theta \cos \theta}{r^2} \partial_{\theta}+ \dfrac{\sin^2 \theta }{r} \partial_r + \dfrac{\sin \theta \cos \theta}{r^2}\partial_{\theta}+\dfrac{\sin^2 \theta}{r^2} {\partial_{\theta}}^2\\
+{\partial_y}^2 &= \left(\sin \theta \partial_r + \dfrac{\cos\theta}{r} \partial_{\theta}\right) \left(\sin \theta \partial_r + \dfrac{\cos\theta}{r} \partial_{\theta}\right) \\
+&=\sin^2 \theta {\partial_r}^2 -\dfrac{\sin \theta \cos \theta}{r^2}\partial_{\theta}+\dfrac{\cos^2 \theta}{r}\partial_r -\dfrac{\sin \theta \cos \theta}{r^2} \partial_{\theta}+ \dfrac{\cos^2\theta}{r^2}  {\partial_\theta}^2 \\
+{\partial_x}^2+{\partial_y}^2 &= (\cos^2 \theta +\sin^2 \theta) {\partial_r}^2+ \dfrac{\cos^2\theta +\sin^2\theta}{r}\partial_r + \dfrac{\sin^2\theta+\cos^2\theta}{r^2}{\partial_{\theta}}^2 \\
+&= {\partial_r}^2 + \dfrac{1}{r}\partial_r + \dfrac{1}{r^2} {\partial_{\theta}}^2
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**8.** 라플라스 방정식 $\nabla^2 f$ 를 만족시키는 함수를 **조화함수**라고 한다. 다음 함수들이 조화함수임을 보이라.
+
+::: {.soluition}
+
+(1) $f(x,\,y) = \ln (x^2+y^2)$
+
+$$
+\nabla^2 \ln (r^2) = 2 \nabla^2 \ln r = 2\left( {\partial_r}^2+\dfrac{1}{r}\partial_r\right)\ln r = 2\left(\dfrac{1}{r^2}-\dfrac{1}{r^2}\right)=0
+$$
+
+(2) $f(x,\,y)=e^x \sin y$
+
+$$
+\begin{aligned}
+\partial_x f &= e^x \sin y \\
+\partial_y f &= e^x \cos y \\
+{\partial_x}^2 f &= e^x \sin y \\
+{\partial_y}^2 f &= -e^x \sin y
+\end{aligned}
+$$
+
+(3) $f(x,\,y,\,z) = x^2+y^2-2z^2$
+$$
+\begin{aligned}
+{\partial_x}^2 f&=2\\
+{\partial_y}^2 f &=2 \\
+{\partial_z}^2 f &= -4
+\end{aligned}
+$$
+
+(4) $f(x,\,y,\,z)=1/\sqrt{x^2+y^2+z^2}$
+$$
+\begin{aligned}
+\partial_x f &= \dfrac{-x}{(x^2+y^2+z^2)^{3/2}} \\
+{\partial_x}^2f & = \dfrac{-1}{(x^2+y^2+z^2)^{3/2}}+\dfrac{3x^2}{(x^2+y^2+z^2)^{5/2}} = \dfrac{-2x^2+y^2+z^2}{(x^2+y^2+z^2)^{5/2}}\\
+{\partial_y}^2f & =  \dfrac{x^2-2y^2+z^2}{(x^2+y^2+z^2)^{5/2}}\\
+{\partial_z}^2f & =  \dfrac{x^2+y^2-2z^2}{(x^2+y^2+z^2)^{5/2}}\\
+\end{aligned}
+$$
+
+:::
+
+
+</br>
+
+**9.** $ \left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2$ 과 $\left(\dfrac{\partial}{\partial x}\right)^2 + 2x \dfrac{\partial^2}{\partial x \partial y}+   x^2\left(\dfrac{\partial}{\partial y}\right)^2$ 는 같지 않음을 보이라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2 &=\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right) \\
+&= \left(\dfrac{\partial}{\partial x}\right)^2+ \dfrac{\partial }{\partial y}+x\dfrac{\partial^2}{\partial x \partial y}+ x \dfrac{\partial^2 }{\partial y \partial x} + x^2 \left(\dfrac{\partial}{\partial y}\right)^2
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+
+**10.** 함수 $f(x,\,y) = \ln (1+xy)$ 에서 ${D_{\mathbf{v}}}^2 f,\, {D_{\mathbf{v}}}^3f $ 를 구하라. 그리고 점 $(1,\,1)$ 에서 $\mathbf{v}=(1,\,2)$ 방향으로 볼록인지 또는 오목인지 조사하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+D_1 f &= \dfrac{y}{1+xy}\\
+D_2 f &= \dfrac{x}{1+xy}\\
+{D_1}^2 f &= -\dfrac{y^2}{(1+xy)^2} \\
+{D_2}^2 f&= -\dfrac{x^2}{(1+xy)^2} \\
+D_1D_2 f &= \dfrac{1+xy-xy}{(1+xy)^2}=\dfrac{1}{(1+xy)^2}=D_2D_1 f \\
+{D_1}^3f &= \dfrac{2y^3}{(1+xy)^3} \\
+{D_2}^3 f &=\dfrac{2x^3}{(1+xy)^3} \\
+{D_1}^2D_2f &= -\dfrac{2y}{(1+xy)^3} = D_1D_2D_1 f = {D_2}{D_1}^2 f\\
+{D_1}{D_2}^2 f &=  -\dfrac{2x}{(1+xy)^3} = {D_2}^2D_1 f = D_2D_1D_2f
+\end{aligned}
+$$
+
+이다. $\mathbf{v}=(a,\,b)$ 라 하면,
+
+$$
+{D_{(a,\,b)}}^2 f=a^2{D_1}^2 f + 2abD_1D_2 f + b^2D_2f=-\dfrac{1}{4}<0
+$$
+
+이므로 $(1,\,1)$ 에서 $\mathbf{v}=(1,\,2)$ 방향으로 오목이다. 그리고 ${D_{(a,\,b)}}^3 f$ 는,
+
+$$
+\begin{aligned}
+D_{(a,\,b)}^3 f &= a^3 {D_1}^3f + 3a^2b {D_1}^2D_2 f+ 3ab D_1 {D_2}^2 f+b^3{D_2}^3 \\
+&= \dfrac{2a^3y^3}{(1+xy)^3} -\dfrac{6a^2by}{(1+xy)^3}-\dfrac{6ab^2x}{(1+xy)^3}+\dfrac{2b^3x^3}{(1+xy)^3}
+\end{aligned}
+$$
+
+이다.
+
+:::
+
+</br>
+
+**11.**  좌표평면에서 정의된 연속함수
+
+$$
+f(x,\,y) = \left\{\begin{array}{ll} \dfrac{xy(x^2-y^2)}{x^2+y^2} ,\qquad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )=(0,\,0)  \end{array} \right.
+$$
+
+를 생각하자. 이때 임의의 벡터 $\mathbf{v}$ 에 대하여 $D_{\mathbf{v}} f(0,\,0)=0$ 임을 보이라. 또 원점에서 $\dfrac{\partial^2 f}{\partial x \partial y}$ 와 $\dfrac{\partial^2 f}{\partial y \partial x}$ 가 존재하지만,
+
+$$
+\dfrac{\partial^2 f}{\partial x \partial y} (0,\,0) \ne \dfrac{\partial^2 f}{\partial y \partial x} (0,\,0)
+$$
+
+임을 보이라. 이때 왜 오일러의 편미분 교환법칙 (2.0.2) 가 성립하지 않는 지를 설명하라.
+
+::: {.solution}
+
+$\mathbf{v}=(a,\,b)$ 라 하면,
+
+$$
+\begin{aligned}
+D_{(a,\,b)} f(0,\,0) = \lim_{t\to 0}\dfrac{f(at,\,bt)-f(0,\,0)}{t} = \lim_{t \to 0} \dfrac{ab(a^2-b^2)t^4}{(a^2+b^2)t^3}= \lim_{t \to 0} \dfrac{ab(a^2-b^2)}{a^2+b^2}t = 0
+\end{aligned}
+$$
+
+이므로 임의의 벡터 $\mathbf{v}$ 에 대하여 $D_{\mathbf{v}}f(0,\,0)=0$ 이다. 우선
+
+$$
+\begin{aligned}
+D_1 f(x,\,y) &= \dfrac{(3x^2y-y^3)(x^2+y^2)-2x^2y(x^2-y^2)}{(x^2+y^2)^2}  = \dfrac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\\
+D_2f(x,\,y) &=  \dfrac{(x^3-3xy^2)(x^2+y^2)-2xy^2(x^2-y^2)}{(x^2+y^2)^2} = \dfrac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2} \\
+\end{aligned}
+$$
+
+임을 안다.
+
+$$
+\dfrac{\partial^2f}{\partial x \partial y}(0,\,0) = \lim_{t \to 0} \dfrac{D_2f(t, 0) - D_2f(0,\,0)}{t}  \\
+\dfrac{\partial^2f}{\partial y \partial x}(0,\,0) = \lim_{s \to 0} \dfrac{D_1f(0,  s) - D_1f(0,\,0)}{s}
+$$
+이며,
+
+$x^2+y^2=R^2$ 일 때, $|x|\le R,\, |y|<R,\, |xy|\le R^2/2$ 이므로,
+
+$$
+\left|D_2f(x,\,y)\right| \le \dfrac{|x|}{R^4}{\big(}|x^4|+ 4|x^2y^2|+|y^4|  {\big)} \le 3R
+$$
+
+이므로
+
+$$
+\lim_{(x,\,y) \to (0,\,0)} D_2(x,\,y)=0
+$$
+
+이며, 자연스럽게 $D_2f(0,\,0)$ 을 $0$ 으로 정의한다. 같은 방법으로
+
+$$
+\lim_{(x,\,y) \to (0,\,0)} D_1(x,\,y)=0
+$$
+
+임을 알 수 있다. 또한 $D_2 f(t,\,0)=t$ 이며, $D_1 f(0,\,s)= -s$ 이다. 따라서,
+
+$$
+\dfrac{\partial^2 f}{\partial x \partial y}(0,\,0)=1,\qquad \dfrac{\partial^2 f}{\partial y\partial x}(0,\,0)=-1
+$$
+
+이다.
+
+오일러의 편미분 교환법칙이 성립하지 않는것은 아마 이급함수가 아니기 때문일 것이다. $f$ 가 일급함수임을 보였으므로 이제 $D_2D_1 f$ 가 연속이 되지 않음을 보자.
+
+$$
+\begin{aligned}
+D_2D_1 f (x,\,y) &= \dfrac{(x^4+12x^2y^2-5y^4)(x^2+y^2)^2 - 4y(x^2+y^2)(x^4y+4x^2y^3-y^5)}{(x^2+y^2)^4} \\
+&=\dfrac{1}{(x^2+y^2)^3} \left[ x^6+x^4y^2+12x^4y^2+12x^2y^4-5x^2y^4-5y^6 \right. \\
+&\qquad - 4x^4y^2-16x^2y^4+4y^6\left.\right] \\
+&= \dfrac{(x^6+9x^4y^2 -9x^2y^4-y^6)}{(x^2+y^2)^3}
+\end{aligned}
+$$
+
+이며
+
+$$
+\begin{aligned}
+\lim_{t \to 0}D_2D_1 f(t,\,0) &= 1\\
+\lim_{s \to 0}D_2 D_1 f(0,\,s) &= -1
+\end{aligned}
+$$
+
+이므로 $D_2D_1 f$ 는 연속이 아니다. 따라서 $f$ 는 이급함수가 아니다.
+
+:::
+
+</br>
+
+**12.** $n$-공간의 한 열린집합 $U$ 에서 정의된 무한급함수 전체의 집합을 $C^\infty(U)$ 라고 두자. 그러면 임의의 두 벡터 $\mathbf{v},\,\mathbf{w}$ 에 대하여 방향미분작용소
+$$
+D_{\mathbf{v}},\, D_{\mathbf{w}}: C^{\infty} (U)\to C^{\infty}(U)
+$$
+들은 서로 교환가능함, 즉
+$$
+D_{\mathbf{v}}\circ D_{\mathbf{w}}=D_{\mathbf{w}}\circ D_{\mathbf{v}}
+$$
+임을 보이라.
+
+::: {.solution}
+
+$\mathbf{v}=(v_1,\ldots,\,v_n),\, \mathbf{w}=(w_1,\ldots,\,w_n)$ 이라 하자.
+
+$$
+\begin{aligned}
+(D_{\mathbf{v}}\circ D_{\mathbf{w})}f &= D_{\mathbf{v}} \left(\sum_{i=1}^n w_i \partial_i f \right) \\
+&= \sum_{j=1}^n v_j \partial_j \left(\sum_{i=1}^n w_i \partial_i f\right) \\
+&= \sum_{i,\,j=1}^n w_i v_j\partial_j \partial_i f \\
+&= \sum_{i,\,j=1}^n w_i v_j \partial_i \partial_j f\\
+&= \sum_{i=1}^n w_i \partial_i \left(\sum_{j=1}^n v_j \partial_j f\right) \\
+&= (D_{\mathbf{w}}\circ D_{\mathbf{v}})f
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**13.** 함수 $f(x_1,\ldots,\, x_n)$ 이 $k$ 급 함수이면, 임의의 벡터 $\mathbf{v} = \sum_{i=1}^n v_i \mathbf{e}_i$ 에 대하여
+
+$$
+{D_{\mathbf{v}}}^k f = \sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k}D_{i_1}\cdots D_{i_k}f
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+Induction 을 통해 증명하자. $k=1$ 일 때는 자명하다. 이제 $k$ 에 대해 위 식이 성립함을 가정하자. $k+1$ 에 대해
+
+$$
+\begin{aligned}
+{D_{\mathbf{v}}}^{k+1} f &= D_{\mathbf{v}}\left(D_{\mathbf{v}}^k\right)f\\
+&= D_{\mathbf{v}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right) \\
+&= \sum_{i_{k+1}=1}^n v_{i_{k+1}} D_{i_{k+1}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right)\\
+&= \sum_{i_1,\ldots,\,i_{k+1}=1}^n \left( v_{i_1}\cdots v_{i_{k+1}} D_{i_1}\cdots D_{i_{k+1}} f\right)
+\end{aligned}
+$$
+
+이므로 성립한다.
+
+:::
+
+</br>
+
+## 정리 3.0.3  다변수 함수의 테일러 전개
+
+$n$-공간의 열린 집합 $U$ 에서 정의된 $k$-번 미분가능한 함수 $f$ 가 주어졌다고 하자. 이 때 $U$ 의 한 점 $P$ 와 벡터 $\mathbf{v}$ 에 대하여 선분 $[P,\, P+\mathbf{v}] : = \{P+t\mathbf{v}: 0\le t \le 1\}$ 이 $U$에 포함된다고 하자. 그러면
+$$
+f(P+\mathbf{v})=f(P)+D_{\mathbf{v}}f(P)+ \dfrac{1}{2!}{D_{\mathbf{v}}}^2 f{P}+ \cdots \dfrac{1}{(k-1)!}{D_{\mathbf{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\mathbf{v}}}^k f(P+t^\ast \mathbf{v})
+$$
+를 만족시키는 $t^\ast$ 가 $0$ 과 $1$ 사이에 존재한다.
+
+
+::: {.proof}
+
+함수 $g(t):=f(P+t\mathbf{v})$ 에 대하여
+
+$$
+g^{(i)}(t) = {D_{\mathbf{v}}}^i f(P+t\mathbf{v})
+$$
+
+임을 귀납법으로 보이자. $i=0$ 일 때는 자명하며, $i$ 에서 성립한다고 가정하면,
+
+$$
+g^{(i+1)}(t) = \dfrac{d}{dt} g^{(i)}(t) = \dfrac{d}{dt} \left( {D_{\mathbf{v}}}^i f(P+t\mathbf{v}) \right) = {D_{\mathbf{v}}}^{i+1}(P+t\mathbf{v})
+$$
+
+이다. 이제, $g(t)$ 의 일변수 테일러전개를 이용하고자 한다,
+
+$$
+g(t) = g(0)+g'(0)t+\cdots + \dfrac{g^{(k-1)}(0) }{(k-1)!}t^{k-1}+ \dfrac{g^{(k)}(t^{\ast})}{k!} t^k
+$$
+
+를 만족시키는 $t^\ast \in (0,\,t)$ 의 존재를 안다. 여기서 $t=1$ 로 두면 증명 끝. $\square$
+
+:::
+
+
+</br>
+
+### 정리 3.2.2 테일러 전개의 유일성
+
+$n$ 공간의 한 점 $P$ 근방에서 정의된 $k$ 번 미분가능한 함수 $f$ 와 $g$ 에 대하여, $\mathbf{x}$ 에 대한 함수 $f(P+\mathbf{x})$ 와 $g(P+\mathbf{x})$ 의 차가 $o(|\mathbf{x}|^k)$ 이면
+$$
+T_k f(P,\,\mathbf{x})=T_k g(P,\,\mathbf{x})
+$$
+이다.
+
+::: {.proof}
+
+
+$$
+f(P+\mathbf{x})=T_k f(P,\,\mathbf{x})+o\left( |\mathbf{x}|^k
+\right),\qquad g(P+\mathbf{x})=T_k g(P,\,\mathbf{x})+o\left( |\mathbf{x}|^k \right)
+$$
+
+에서 두 식의 차는,
+
+$$
+f(P+\mathbf{x})-g(P+\mathbf{x})=T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})+o \left(|\mathbf{x}|^k\right)=o(|\mathbf{x}|^k)
+$$
+
+이므로,
+
+$$
+T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
+$$
+
+이다. 위 식의 좌변은 차수가 $k$ 이하인 다항함수 이며 우변은 $k$ 차보다 큰 다항식이므로 항등식에 의해 $0$ 이다.
+$\square$
+
+:::
+
+</br>
+
+## 연습문제 : 제 11 장 3 절
+
+**1.** 원점에서 다음 함수의 2차 근사 다항식을 구하라.
+
+::: {.solution}
+
+문제에 주어진 함수를 $f(x,\,y)$ 라 하자.
+(1) $\sin (xy)$
+
+$$
+\begin{aligned}
+\partial_x \sin (xy) &= y\cos (xy) \\
+\partial_y \cos (xy) &= x \cos (xy) \\
+(\partial_x)^2 \sin (xy) &= -y^2 \sin (xy) \\
+\partial_x \partial_y \sin (xy)  &= \cos (xy) -xy \sin (xy) \\
+(\partial_y)^2 \sin (xy) &= -x^2 \sin (xy) \\
+\sin (xy) & \approx xy
+\end{aligned}
+$$
+
+(2) $\sin x \cos y$
+$$
+\begin{aligned}
+\partial_x \sin x \cos y &= \cos x \cos y\\
+\partial_y \sin x \cos y &= - \sin x \sin y\\
+{\partial_x}^2 \sin x \cos y &= - \sin x \cos y\\
+\partial_x \partial_y \sin x \cos y &= - \cos x \sin y \\
+{\partial_y}^2 \sin x \cos y &= - \sin x \cos y \\
+\sin x \cos y &\approx  x
+\end{aligned}
+$$
+
+(3) $\sin (x^2+y^2)$
+$$
+\begin{aligned}
+\partial_x f &= 2x\cos (x^2+y^2)\\
+\partial_y f &= 2y \cos (x^2+y^2)\\
+{\partial_x}^2 f &= 2\cos (x^2+y^2)-4x^2 \sin (x^2+y^2) \\
+{\partial_x}{\partial_y} f &= -2xy \sin (x^2+y^2) \\
+{\partial_y}^2 f &= 2 \cos (x^2+y^2)-4y^2 \sin (x^2+y^2) \\
+\sin (x^2+y^2) &\approx x^2+y^2
+\end{aligned}
+$$
+
+(4) $ \sin (e^y+x^2-2)$
+$$
+\begin{aligned}
+\partial_x f &= 2x \cos (e^y+x^2-2)\\
+\partial_y f &= e^y\cos (e^y+x^2-2)\\
+{\partial_x}^2 f &= 2\cos (e^y+x^2-2)-4x^2 \sin (e^y+x^2-2) \\
+{\partial_x}{\partial_y} f &= -2xe^y \sin(e^y+x^2-2) \\
+{\partial_y}^2 f &= e^y\cos (e^y+x^2-2)-e^{2y} \sin (e^y+x^2-2) \\
+\sin (e^y+x^2-2) &\approx -\sin (1) + (\cos 1) y + \cos (1)x^2+\dfrac{1}{2}\cos (1) y^2
+\end{aligned}
+$$
+
+(5) $\ln (1+xy)$
+$$
+\begin{aligned}
+\partial_x f &= \dfrac{y}{1+xy} \\
+\partial_y f &= \dfrac{x}{1+xy} \\
+{\partial_x}^2 f &= -\dfrac{y^2}{(1+xy)^2} \\
+\partial_x \partial_y f &= \dfrac{1}{1+xy}-\dfrac{xy}{(1+xy)^2} \\
+{\partial_y}^2 f &= -\dfrac{x^2}{(1+xy)^2} \\
+f(x,\,y) &\approx xy
+\end{aligned}
+$$
+
+(6) $x+xy+2y^2+x^2$
+$$
+\begin{aligned}
+\partial_x f &= 1+y+2x \\
+\partial_y f &= x+4y \\
+{\partial_x}^2 f &= 2\\
+\partial_x \partial_y f &= 1\\
+{\partial_y}^2 f &= 4 \\
+x+xy+2y^2+x^2 &\approx x+x^2+xy+2y^2
+\end{aligned}
+$$
+
+(7) $e^{x+y}$
+$$
+\begin{aligned}
+\partial_x f &= e^{x+y} \\
+\partial_y f &= e^{x+y} \\
+{\partial_x}^2 f&= \partial_y \partial_x f={\partial_y}^2 f =e^{x+y} \\
+e^{x+y} &\approx 1+ x+y + \dfrac{x^2}{2}+xy+\dfrac{y^2}{2}
+\end{aligned}
+$$
+
+(8) $e^x-e^y$
+$$
+\begin{aligned}
+\partial_x f &= e^x = {\partial_x}^2 f\\
+\partial_y f &= -e^y = {\partial_y}^2 f\\
+\partial_x \partial_y f &= 0\\
+e^x-e^y &\approx x-y+\dfrac{1}{2}x^2-\dfrac{1}{2}y^2
+\end{aligned}
+$$
+
+(9) $ \dfrac{1}{1-x^2-y^2}$
+$\dfrac{1}{1-x}=1+x+x^2+\cdots$ 이므로,
+$$
+\dfrac{1}{1-x^2-y^2}\approx 1+x^2+y^2
+$$
+이다.
+
+(10) $e^x \tan y$
+$$
+\begin{aligned}
+e^x \tan y &= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y+o\left(|y|^3\right)\right) \approx y+xy
+\end{aligned}
+$$
+
+(11) $(1+x)^y$
+
+$$
+\begin{aligned}
+\partial_x f &= y(1+x)^{y-1}\\
+\partial_y f &=  (1+x)^y\ln (1+x) \\
+{\partial_x}^2 f &= y(y-1)(1+x)^{y-2}  \\
+{\partial_y}\partial_x f &= (1+x)^{y-1} +(1+x)^{y-1}\ln (1+x)\\
+{\partial_y}^2 f  &= {\big(} \ln (1+x) {\big)}^2 \ln (1+x)^y \\
+(1+x)^y &\approx 1+xy
+\end{aligned}
+$$
+
+(12) $\sin e^{xy}$
+$$
+\begin{aligned}
+\partial_x f &= ye^{xy} \cos e^{xy} \\
+\partial_y f &= xe^{xy} \cos e^{xy} \\
+{\partial_x}^2 f &= y^2e^{xy\cos e^{xy}}-y^2e^{2xy}\sin e^{xy} \\
+{\partial_x }{\partial_y} f &= e^{xy}\cos e^{xy} +xye^{xy}-xye^{2xy} \sin e^{xy} \\
+{\partial_y}^2 f &= x^2e^{xy}\cos e^{xy}-x^2e^{2xy} \sin e^{xy} \\
+\sin e^{xy} &\approx \sin 1 + (\cos 1 ) xy
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**2.** 원점에서 함수 $f(x,\,y)=\cos x \sin y$ 의 3차 근사 다항식을 구하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\cos x \sin y &= \left(1-\dfrac{x^2}{2} + o\left(|x|^4 \right) \right) \left(y-\dfrac{y^3}{6} + o\left(|x|^5\right)\right) \\
+&\approx y-\dfrac{x^2y}{2} -\dfrac{y^3}{6}
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**3.** 다음을 보이라.
+
+$$
+\ln (1+x+2y) = x+2y-\dfrac{1}{2}\left(x^2+4xy+4y^2\right) +o (x^2+y^2)
+$$
+
+::: {.solution}
+
+Let $f(x,\,y)=\ln (1+x+2y)$. 그렇다면,  
+
+$$
+\begin{aligned}
+\partial_x f &= \dfrac{1}{1+x+2y} \\
+\partial_y f &= \dfrac{2}{1+x+2y} \\
+{\partial_x}^2 f &= -\dfrac{1}{(1+x+2y)^2}  \\
+\partial_y \partial_x f &= - \dfrac{2}{(1+x+2y)^2} \\
+{\partial_y}^2 f &= -\dfrac{4}{(1+x+2y)^2}
+\end{aligned}
+$$
+
+이므로,
+
+$$
+\ln(1+x+2y) = x+2y -\dfrac{1}{2} (x^2+4xy+4y^2)+o\left(|x^2+y^2|\right)
+$$
+
+:::
+
+</br>
+
+**4.**  점 $(x,\,y)$ 가 원점에 가까이 갈 때, $\sin (xy)/x$ 의 극한값은 존재하는가? 존재하면 그 값을 구하라. (분모가 영이 아닌 영역에서만 조사한다.) 또 다음 함수들에 대하여는 어떠한가?
+
+::: {.solution}
+
+$|\sin xy|<|xy|$ 이므로 $\left| \dfrac{\sin xy}{x}\right| < |y|$ 이다. 따라서 원점으로의 극한은 $0$ 이다.
+
+(1) $\dfrac{e^{xy}-1}{x}$
+
+$$
+e^{xy}=1+xy+\dfrac{(xy)^2}{2}+\cdots + \dfrac{(xy)^k}{k!}+\cdots
+$$
+
+이므로,
+
+$$
+\dfrac{e^{xy}-1}{x} = y+\dfrac{xy^2}{2} + \cdots + \dfrac{x^{k-1}y^k}{k!}+\cdots
+$$
+
+이다. 따라서 원점으로의 극한은 $0$ 이다.
+
+(2) $\dfrac{\ln (1+x^2+y^2)}{x^2+y^2}$​
+
+$x^2+y^2=R^2$ 라 하면,
+
+$$
+\ln (1+R^2) = R^2 - \dfrac{1}{2}R^4 + \cdots + (-1)^{k+1}\dfrac{R^{2k}}{k}+\cdots
+$$
+
+이다. 따라서,
+
+$$
+\dfrac{\ln (1+R^2)}{R^2} = 1-\dfrac{1}{2}R^2 + \cdots + (-1)^{k+1}\dfrac{R^{2k-2}}{k}+\cdots
+$$
+
+이므로 원점으로의 극한 ($R\to 0$ 극한)에서 극한값은 $1$ 이다.
+
+(3) $\dfrac{\cos xy -1}{x}$
+
+$$
+\cos xy = 1-\dfrac{x^2y^2}+ o(|(xy)^2|)
+$$
+
+이므로 원점 으로의 극한은 $0$ 이다.
+
+(4) $\dfrac{\sin xy - xy}{xy}$
+
+$$
+\sin xy - xy = \dfrac{(xy)^3}{6} + o(|x^3y^3|)
+$$
+
+이므로 원점 으로의 극한은 $0$ 이다.
+
+:::
+
+</br>
+
+**5.** 함수 $x^3-2xy^4+(x-1)^2y^10$ 의 테일러급수에서 제 7차항은 무엇인가?
+
+::: {.solution}
+
+테일러급수의 유일성에 의헤 다항식은 테일러 급수와 같다. 따라서 7차항은 $0$ 이다.
+
+:::
+
+</br>
+
+**6.** 함수 $f(x,\,y,\,z)$ 가 $x,\,y,\,z$ 의 다항식이면, $f$ 는 자기 자신의 테일러 급수와 같음을 보이라.
+
+::: {.solution}
+
+$x_0,\,y_0,\,z_0$ 에서의 테일러 전개를 생각하자. 다항식 $f$ 를
+
+$$
+f=\sum_{i,\,j,\,k} a_{i,\,j,\,k}(x-x_0)^i (y-y_0)^j (z-z_0)^k
+$$
+
+로 표현 할 수 있으며,
+
+$$
+a_{i,\,j,\,k} = \dfrac{1}{i!j!k!} {D_1}^i{D_2}^j{D_3}^k f (x_0,\,y_0\,z_0)
+$$
+
+이다.
+
+:::
+
+</br>
+
+**7.** 함수 $x^2y+xy^2+1$ 을 $(x-1)$ 과 $(y-1)$ 의 멱급수로 표현하라.
+
+::: {.solution}
+
+$f(x,\,y)=x^2y+xy^2+1$ 이라 놓고 6. 의 결과를 이용한다.
+
+$$
+\begin{aligned}
+D_1 f &= 2xy+y^2 \\
+D_2 f &= x^2+2xy \\
+{D_1}^2 f &= 2y \\
+{D_2D_1}f &= 2x+2y\\
+{D_2}^2 f &= 2x \\
+{D_1}^2 D_2 f = 2 \\
+{D_1} {D_2}^2 f = 2
+\end{aligned}
+$$
+
+이며 나머지 테일러 계수는 $0$ 이므로,
+
+$$
+\begin{aligned}
+x^2+xy^2+1 =& 3+3(x-1)+3(y-1) +(x-1)^2 + 4(x-1)(y-1) + (y-1)^2 \\
+&+ 2(x-1)^2 (y-1)+2(x-1)(y-1)^2
+\end{aligned}
+$$
+
+이다.
+
+:::
+
+</br>
+
+**8.** 이급함수 $f(x,\,y)$ 가 임의의 $(x,\,y)$ 와 실수 $t$ 에 대하여
+
+$$
+f(tx,\,ty) = t^2 f(x,\,y)
+$$
+
+이면
+
+$$
+f(x,\,y) = \dfrac{1}{2} (xD_1 + yD_2)^2 f(0,\,0)
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+$\mathbf{v}=(x,\,y)$ 로 놓고, 도움정리 2.1.1 을 사용하면
+
+$$
+\left.\dfrac{d^2}{dt^2}\right|_{t=0}f(t\mathbf{v}) = {D_{\mathbf{v}}}^2 f(0,\,0) \implies 2f(x,\,y)= (xD_1 +yD_2)^2f(0,\,0)
+$$
+
+이다.
+
+:::
+
+</br>
+
+**9.** 기준점에서의 값을 $1$ 로 두었을 때 다음의 일차 근사값을 구하고, 또 오차를 생각하라.
+
+::: {.solution}
+
+(1) $(1.02)^{1.01}$
+
+Let $f(x,\,y)=(1+x)^{1+y}$. Then,
+
+$$
+\begin{aligned}
+D_1 f &= (1+y)(1+x)^y \\
+D_2 f &= \ln (1+x) (1+x)^{1+y}\\
+\end{aligned}
+$$
+
+이므로, $D_1f(0,\,0)=1,\, $D_2 f(0,\,0)=0$ 이다. 따라서,
+
+$$
+(1+x)^{1+y} \approx 1+x
+$$
+
+이므로,
+
+$$
+(1.02)^{1.01} = f(0.02,\, 0.01)\approx 1.02
+$$
+
+이다.
+
+$$
+\begin{aligned}
+{D_1}^2 f &= (1+y)y(1+x)^{1-y} \\
+{D_2}D_1f &= D_1D_2 f=(1+x)^y + \ln (1+x) (1+y)(1+x)^y\\
+{D_2}^2 f &= {\big(} \ln (1+x){\big )}^2 (1+x)^{1+y}
+\end{aligned}
+$$
+
+이므로, $P=(0,\,0),\, \mathbf{v}=(0,02,\, 0.01)$​​ 에 대해
+
+$$
+M_2 =\left\{\left|D_iD_j f(P+t\mathbf{v})\right|: 1\le i,\,j \le 2,\, 0 \le t \le 1\right\}
+$$
+
+를 구하자. $(1+0.02)^{0.01}<1.0002$​​ 이며 $0<\ln (1+0.02)<1$​​, $(1+0.01)(1+0.02)^{0.01} <(1+0.02)^{1.01}<1.0002$ 이므로 대략 $M_2 < 2$ 라고 볼 수 있다. 정확히는 $M_2<1.03$ 이다. 따라서,
+
+$$
+|R_1f(P,\,\mathbf{v})\le \dfrac{M_2}{2}|\mathbf{v}|^2 <0.00026
+$$
+
+이다.
+
+(2) $(0.99)^{0.99}$
+
+귀찮으니...
+
+:::
+
+</br>
+
+**10.** 함수 $f$ 와 $g$ 가 무한급함수이면 정의역의 점 $P$ 와 벡터 $\mathbf{v}$ 및 자연수 $k$ 에 대하여
+
+$$
+T_k (fg)(P,\,\mathbf{v})=T_k f(P,\,\mathbf{v}) \cdot T_k g(P,\,\mathbf{v}) \qquad \operatorname{mod} \quad o\left(|\mathbf{v}|^k \right)
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+{D_{\mathbf{v}}}^n(fg) = \sum_{k=0}^n \dfrac{n!}{k! (n-k)!} {D_{\mathbf{v}}}^k f (P,\,\mathbf{v})\,{D_\mathbf{v}}^{n-k} g(P,\,\mathbf{v})
+\end{aligned}
+$$
+
+임을 이용한다.
+
+우선 $T_k (fg)(P,\,\mathbf{v})$ 를 전개하면,
+
+$$
+\begin{aligned}
+T_k (fg)(P,\,\mathbf{v}) &= \sum_{n=0}^k \dfrac{{D_{\mathbf{v}}}^n (fg)(P)}{n!}  \\
+&= \sum_{n=0}^k \dfrac{1}{n!} \sum_{m=0}^n \dfrac{n!}{m!(n-m)!}{D_{\mathbf{v}}}^m f(P) \cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
+&=\sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P) \cdot {D_{\mathbf{v}}}^{n-m} g(P)
+\end{aligned}
+$$
+
+이다. 이제 $T_k f(P,\,\mathbf{v}) \cdot T_k g(P,\,\mathbf{v})$  를 전개하면,
+
+$$
+\begin{aligned}
+T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) &= \left(\sum_{p=0}^k \dfrac{{D_{\mathbf{v}}}^p f(P)}{p!}\right) \left(\sum_{q=0}^k \dfrac{{D_{\mathbf{v}}}^q g(P)}{q!}\right)  \\
+&= \sum_{p=0}^k \sum_{q=0}^k \dfrac{1}{p!q!} {D_{\mathbf{v}}}^p f(P)\cdot {D_{\mathbf{v}}}^q g(P) \\
+&= \sum_{n=0}^{2k} \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
+&= \sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
+&\quad + \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
+&= T_{k}(fg)(P,\,\mathbf{v})+  \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P)
+\end{aligned}
+$$
+
+$C^\infty$ 급 함수 $f,\,g$ 에 대해 ${D_{\mathbf{v}}}^m f(P) = O(|\mathbf{v}|^m)$, ${D_{\mathbf{v}}}^{n-m} g(P) = O(|\mathbf{v}|^{n-m})$ 이므로,
+
+$$
+T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) -T_{k}(fg)(P,\,\mathbf{v}) = o(|\mathbf{v}|^n)
+$$
+
+이다.
+:::
+
+</br>
+
+## 연습문제 : 제 11 장 4 절
+
+**1.** 다음 함수의 임계점을 구하라.
+
+::: {.solution}
+
+(1) $x^2+4xy-y^2-ax-by$
+
+$$
+\begin{aligned}
+&\nabla f(x,\,y)=(2x+4y-a,\, 4x-2y-b)=(0,\,0) \\
+\implies& x=\dfrac{a+2b}{10},\, y=\dfrac{2a-b}{10}
+\end{aligned}
+$$
+
+(2) $x-y\sin x$
+
+$$
+\begin{aligned}
+&\nabla f(x,\,y)=(1-y\cos x,\, -\sin x)=(0,\,0) \\
+\implies & x=n\pi,\, y=(-1)^n \qquad\text{where }n\in \mathbb{Z}
+\end{aligned}
+$$
+
+(3) $x^2y^2$
+$$
+\begin{aligned}
+& \nabla f(x,\,y)=(2xy^2,\, 2x^2y)=(0,\,0) \\
+\implies & (0,\, \mathbb{R}) \;\text{or}\; (\mathbb{R},\,0)
+\end{aligned}
+$$
+
+(4) $x^4+y^2$
+$$
+\begin{aligned}
+& \nabla f(x,\,y)=(4x^3,\, 2y)=(0,\,0)\\
+\implies& (0,\,0)
+\end{aligned}
+$$
+
+(5) $e^{x^2+y^2+z^2}$
+$$
+\begin{aligned}
+& \nabla f(x,\,y,\,z) = (2x,\, 2y,\, 2z)e^{x^2+y^2+z^2}=0 \\
+\implies &(0,\,0,\,0)
+\end{aligned}
+$$
+
+(6) $e^{-xy/(x^2+y^2+1)}$​
+$$
+\begin{aligned}
+& \nabla f(x,\,y)= \left( \dfrac{x^2y-y^3-y}{(x^2+y^2+1)^2},\, \dfrac{xy^2-x^3-x}{(x^2+y^2+1)^2},\right)e^{xy/(x^2+y^2+1)} \\
+\implies & (0,\,0)
+\end{aligned}
+$$
+:::
+
+</br>
+
+**2.** (**최소자승법**) 좌표평면의 점 $(x_1,\,y_1),\ldots,\, (x_n,\,y_n)$ 에 대하여
+
+$$
+\sum_{i=1}^n \left( y_i -ax_i-b\right)^2
+$$
+
+을 최소로 하는 직선 $y=ax+b$ 를 구하라. (단 $x_1,\ldots,\,x_n$ 이 모두 같은 경우가 아니라고 가정한다.)
+
+::: {.solution}
+
+$$
+\begin{aligned}
+f(a,\,b) &=\sum_{i=1}^n (y_i-ax_i-b)^2  \\
+&=\left(\sum_{i=1}^n {x_i}^2\right) a^2+2\left(\sum_{i=1}^n x_i\right)ab+nb^2-2\left(\sum_{i=1}^n x_i y_i\right) a- 2\left(\sum_{i=1}^n y_i\right)b+\sum_{i=1}^n {y_i}^2\\
+\end{aligned}
+$$
+
+라 하면,
+
+$$
+\begin{aligned}
+\nabla f(a,\,b) &= 2\left[\left( \sum_{i=1}^n {x_i}^2  \right)a + \left(\sum_{i=1}^n x_i\right)b -\left(\sum_{i=1}^n x_i y_i\right),\, \left(\sum_{i=1}^n x_i \right)a+nb+\left(\sum_{i=1}^n y_i \right)\right] \\
+&= (0,\,0)
+\end{aligned}
+$$
+이므로,
+$$
+a=\dfrac{\left(\sum x_i \right)(\sum y_i)-n\sum x_iy_i}{(\sum x_i)^2-n\sum {x_i}^2},\, b= \dfrac{(\sum x_i y_i)(\sum x_i)-(\sum y_i)(\sum {x_i}^2)}{(\sum x_i)^2-n \sum {x_i}^2}
+$$
+일 때 $f(a,\,b)$ 는 최소값을 가진다.
+
+:::
+
+</br>
+
+**3.** 함수 $f(x,\,y)=3x^4-4x^2y+y^2=(3x^2-y)(x^2-y)$ 에 대하여,
+
+::: {.solution}
+
+(1) 원점이 $f$ 의 임계점임을 보이라.
+
+$$
+\nabla f(x,\,y)= (12x^3-8xy,\, -4x^2+2y)
+$$
+
+이므로 $\nabla f(0,\,0)=(0,\,0)$
+
+(2) 임의의 단위벡터 $\mathbf{v}=(h,\,k)$ 에 대하여, 함수 $g(t):=f(t\mathbf{v})=f(th,\,tk)$ 는 $t=0$ 에서 극소임을 보이라.
+
+$$
+\begin{aligned}
+g(t) = 3h^4t^4-4h^2kt^3+k^2t^2 \implies &g'(t)=12h^4t^3-12h^2kt^2+2k^2t \\
+& g''(t) = 36h^4t^2-24h^2kt+2k^2
+\end{aligned}
+$$
+
+이다. $k\ne 0$ 이면  $g''(0)=2k^2>0$ 이므로 $g(0)$ 은 극소점이며, $k=0$ 이면 $g(t)=3h^4t^4$ 이므로 역시 $t=0$ 이 극소점이다.
+
+(3) 그럼에도 불구하고 원점은 $f$ 의 극소점이 아님을 보이라.
+
+$f(t,\,2t^2)=(3t^2-2t^2)(t^2-2t^2)=-t^4$ 이므로 $t=0$ 은 $f(t,\,2t^2)$ 의 극대점이다. 따라서 $f(t)$ 의 극소점이 될 수 없다.
+
+(4) $곡선 $f(x,\,y)=0$ 을 도시하라.
+
+$y=3x^2$ or $y=x^2$ 이다.
+
+(5) $f(x,\,y)>0,\, f(x,\,y)<0$ 인 영역을 각각 그리라.
+
+![ex_11_4_3](figures/ex_11_4_3.png)
+
+(6) (2) 와 (3) 이 서로 모순되지 않는 이유를 설명하라.
+
+$- \to 0 \to -$​, $+ \to 0 \to +$​ 를 생각해보라.
+
+:::
+
+</br>
+
+**4.** (**Steiner** 문제) 평면의  $\triangle ABC$ 에서 꼭지각의 크기가 모두 $120^\circ$ 미만이라고 하자. 이때 함수
+
+$$
+f(x):=|X-A|+|X-B|+|X-C| \qquad (X\in \mathbb{R}^3-\{A,\,B,\,C\})
+$$
+
+의 임계점을 $P$​ 라고 두면, 선분 $AP,\,BP,\,CP$​ 는 서로 $120^\circ$​ 를 이룸을 보이라.
+
+::: {.soluton}
+
+
+$$
+\nabla f(X) = \dfrac{X-A}{|X-A|}+\dfrac{X-B}{|X-B|}+\dfrac{X-C}{|X-C|}
+$$
+
+이므로,
+
+$$
+\dfrac{P-A}{|P-A|}+\dfrac{P-B}{|P-B|}+\dfrac{P-C}{|P-C|}=0
+$$
+
+이다.
+
+<**풀이** 1.>
+
+$$
+\begin{aligned}
+\cos (\angle APB) &= \dfrac{(P-A)\cdot (P-B)}{|P-A| \, |P-B|}\\
+&= - \left(\dfrac{|P-A|}{|P-B|}(P-B)+ \dfrac{|P-A|}{|P-C|}(P-C)\right) \cdot \dfrac{(P-B)}{|P-A||P-B|} \\
+&= -1-\dfrac{(P-C)\cdot (P-B)}{|P-C|\, |{P-B|}}=-1-\cos (\angle BPC) & (1)\\
+&= -1+ \left(\dfrac{|P-B|}{|P-A|}(P-A)+\dfrac{|P-B|}{|P-C|}(P-C)\right)\cdot \dfrac{ (P-C)}{|P-B||P-C|} \\
+&= \dfrac{(P-B)\cdot (P-C)}{|P-B|\,|P{-C|}}=\cos (\angle APC) &(2)\\
+&= -\left(\dfrac{|P-C|}{|P-A|}(P-A) - \dfrac{|P-C|}{|P-B|}(P-B)\right) \cdot \dfrac{(P-B)}{|P-B||P-C|} \\
+&= -1+\cos (\angle APB) &(3)
+\end{aligned}
+$$
+
+(1), (3) 으로부터  $\cos (\angle APB)=-\dfrac{1}{2}$, (2) 로부터 $\cos (\angle APC)=-\dfrac{1}{2}$, (1) 로부터 $\cos (\angle BPC) = -\dfrac{1}{2}$ 이므로 선분 $AP,\,BP,\,CP$ 는 서로 $120^\circ = \dfrac{2\pi}{3}$ 를 이룬다.
+
+</br>
+
+<**풀이 2**>
+
+$$
+\dfrac{P-A}{|P-A|}+\dfrac{P-B}{|P-B|}+\dfrac{P-C}{|P-C|}=0
+$$
+
+일 때
+
+$$
+\dfrac{P-A}{|P-A|}=\mathbf{e}_A,\quad \dfrac{P-B}{|P-B|}=\mathbf{e}_B,\quad \dfrac{P-C}{|P-C|}=\mathbf{e}_C
+$$
+
+라 하면  $|\mathbf{e}_A|=|\mathbf{e}_B|=|\mathbf{e}_C|=1$ 이며 $\mathbf{e}_A+\mathbf{e}_B +\mathbf{e}_C=0$  이다.
+
+$$
+(\mathbf{e}_A+\mathbf{e}_B+\mathbf{e}_C)\cdot \mathbf{e}_A = 0 = 1+\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_A \cdot \mathbf{e}_C
+$$
+
+이며 같은 방법으로 다음을 구할 수 있다.
+
+$$
+\begin{aligned}
+\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_A \cdot \mathbf{e}_C &= -1\\
+\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_B \cdot \mathbf{e}_C &= -1\\
+\mathbf{e}_A \cdot \mathbf{e}_C + \mathbf{e}_B \cdot \mathbf{e}_C &= -1\\
+\end{aligned}
+$$
+
+으며 이로부터  $\mathbf{e}_A\cdot \mathbf{e}_B=\mathbf{e}_A\cdot \mathbf{e}_C=\mathbf{e}_B\cdot \mathbf{e}_C=-\frac{1}{2}$ 이다. 따라서, $AP,\,BP,\,CP$ 는 서로 $120^\circ = \dfrac{2\pi}{3}$ 를 이룬다.
+
+:::
+
+</br>
+
+**5.** 생략.
+
+</br>
+
+## 연습문제 : 제 11 장 5 절
+
+**1.** 함수
+
+$$
+f(x,\,y) = x^4 + 2x^2y +3xy^2 + 6xy +3x
+$$
+
+의 최대값과 최소값이 존재하면 그것을 구하라.
+
+::: {.solution}
+
+일단 $y=0$ 일 때 $f(x,\,0)=x^4+3x$ 이므로 최대값은 존재하지 않는다.
+
+또한 $x=-1$ 일 때 $f(-1,\,y)=-3y^2-4y-2$ 이므로 최소값은 존재하지 않는다.
+
+:::
+
+</br>
+
+**2.** 함수 $f(x,\,y)=(x^2+y^2)\cos (x+2y)$ 는 원점이 극소점임을 보이라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\nabla f(x,\,y)&= (2x \cos (x+2y)-(x^2+y^2)\sin (x+2y),\, 2y \cos(x+2y)-2(x^2+y^2)\sin (x+2y)) \\
+{\partial_x}^2 f(x,\,y)&=2\cos (x+2y)-2x\sin (x+2y)-2x \sin (x+2y)-(x^2+y^2)\cos (x+2y) \\
+&=(2-x^2-y^2)\cos (x+2y)-4x \sin (x+2y) \\
+{\partial_x}{\partial_y}f(x,\,y) &=-4x\sin (x+2y)-2y \sin (x+2y)-2(x^2+y^2)\cos (x+2y) \\
+{\partial_y}^2 f(x,\,y)&= 2 \cos (x+2y)-4y \sin (x+2y)-4y \sin (x+2y)-4(x^2+y^2)\cos (x+2y) \\
+&= 2(1-2x^2-2y^2)\cos (x+2y)-8y \sin (x+2y) \\
+\nabla f(0,\,0) &= (0,\,0)\\
+{\partial_x}^2f(0,\,0)&= 2\\
+{\partial_x}{\partial_y}f(0,\,0)&= 0 \\
+{\partial_y}^2 f(0,\,0)&=2
+\end{aligned}
+$$
+
+이므로 헤세 판정법에 의해 원점은 $f(x,\,y)$ 의 극소점이다.
+
+:::
+
+</br>
+
+**3.** 생략.
+
+</br>
+
+**4.** 다음 함수에서 원점이 안장점 임을 보여라.
+
+::: {.solution}
+
+(1) **원숭이 안장점** $f(x,\,y)=x^3-3xy^2$
+
+$$
+\begin{aligned}
+\nabla f(x,\,y)&= (3x^2-3y^2,\, -6xy)\\
+\nabla f(0,\,0) &= (0,\,0) \\
+\end{aligned}
+$$
+
+으로 원점은 임계점이다. 헤세 행렬이 영행렬이므로 헤세 행렬로 판정 할 수 엇다.  $f(x,\,1) =x^3-3x$ 는 $x=0$ 근처에서 $+ \to -$ 가 되므로 극점이 아니다. 따라서 원점은 안장점이다.
+
+(2) **개 안장점** $f(x,\,y)=x^3y-xy^3$
+
+$$
+\begin{aligned}
+\nabla f(x,\,y)=(3x^2y-y^3,\, x^3-3xy^2)
+\end{aligned}
+$$
+
+이므로 $\nabla f(0,\,0)=(0,\,0)$ 이며 따라서 임계점이다. 헤세 행렬이 영행렬이므로 헤세 행렬로 판정 할 수 없다. 마찬가지로 $f(x,\,1)=x^3-x=x(x-1)(x+1)$ 이며 $y=1$​ 을 따라 갔을 때 원점은 극값이 아니므로 원점은 안장점이다.
+
+:::
+
+</br>
+
+**5.** 이차형식 $q(x,\,y)=ax^2+2bxy+cy^2$​ 의 등위선이 원점을 지나지 않을 때 이 등위선은
+(1) $ac-b^2>0$​ 이면, 타원
+(2) $ac-b^2<0$​ 이면, 쌍곡선
+(3) $ac-b^2=0$​ 이면, 직선
+임을 보여라.
+
+::: {.solution}
+
+회전변환을 통해 $xy$ term 을 제거해보자. $x  = \cos \theta x' + \sin \theta y',\, y = -\sin \theta x' + \cos \theta y'$ 라 하고 $x'y'$ 의 계수가 $0$ 이 되도록 하면,
+
+$$
+\begin{aligned}
+0 &= 2a \cos \theta \sin \theta  + 2b(\cos^2 \theta - \sin^2 \theta ) - 2c \cos \theta \sin \theta \\
+&= (a-c) \sin 2\theta  + 2b \cos 2\theta 
+\end{aligned}
+$$
+
+즉 $\theta = -\dfrac{1}{2} \tan^{-1}\left(\dfrac{2b}{a-c}\right)$ 만큼 회전이동하면 $x'y'$ 항이 없어진다.
+
+$$
+q(x',\,y') = (a\cos^2\theta -2b \cos \theta \sin \theta+c\sin^2 \theta) x'^2 + (a\sin^2\theta +2b \cos \theta \sin \theta+c\cos^2 \theta) y'^2
+$$
+
+이 된다. $f(x,\,y) = ax^2+by^2$ 꼴의 함수의 등위면은, 두 계수의 곱이 양수이면 등위면은 타원이며, 음수이면 쌍곡선임을 안다. 따라서
+
+$$
+\begin{aligned}
+[\text{prod. of coeffs}] = &(a\cos^2\theta -2b \cos \theta \sin \theta+c\sin^2 \theta)  (a\sin^2\theta +2b \cos \theta \sin \theta+c\cos^2 \theta)  \\
+=&a^2 \cos^2\theta \sin^2 \theta + 2ab(\cos^3 \theta \sin\theta - \cos \theta\sin^3 \theta) + ac(\cos^4 \theta + \sin^4 \theta) \\
+&\qquad - 4b^2 \cos^2 \theta \sin^2 \theta + 2bc(\cos \theta \sin^3 \theta - \cos^3 \theta \sin \theta) + c^2 \cos^2\theta \sin^2 \theta \\
+=&(a^2+c^2 - 4b^2) \cos^2\theta \sin^2 \theta   + 2ab\cos \theta \sin\theta(\cos^2 \theta - \sin^2 \theta) \\
+&\qquad - 2bc\cos \theta \sin \theta (\cos^2 \theta - \sin^2\theta) + ac[(\cos^2 \theta + \sin^2 \theta)^2 - 2\cos^2 \theta \sin^2 \theta] \\
+=& \dfrac{1}{4}(a^2+c^2-4b^2) \sin^2 2\theta + (ab-bc)\cos 2\theta \sin 2\theta + ac\left(1-\dfrac{1}{2}\sin^2 2\theta\right) \\
+=& \dfrac{1}{4} \left[(a-c)^2-4b^2\right] \sin^2 2\theta -b(c-a) \cos 2\theta \sin 2\theta  + ac
+\end{aligned}
+$$
+
+여기서 $\tan 2\theta = \dfrac{2b}{c-a}$ 이므로, $\cos 2\theta = \dfrac{c-a}{(c-a)^2+4b^2},\, \sin 2\theta = \dfrac{2b}{(c-a)^2+4b^2}$ 로 놓을 수 있다. 그렇다면 위 식은
+
+$$
+[\text{prod. of coeffs}] = -b^2+ac
+$$
+
+가 된다. 즉 $-b^2 +ac>0$ 이면 타원, $b^2+ac<0$ 이면 쌍곡선이다. $b^2=ac$ 이면 원래의 식이
+
+$$
+q(x,\,y) = ax^2+2ac+cy^2 = (ax+cy)^2
+$$
+
+이므로 등위면이 직선이 뒴을 알 수 있다.
+
+:::
+
+</br>
+
+**6.** $n$ 공간의 점 $P$ 근방에서 정의된 이급함수 $f$ 와 벡터 $\mathbf{v}=v_1\mathbf{e}_1 + \cdots + v_n \mathbf{e}_n$ 에 대하여
+
+$$
+{D_{\mathbf{v}}}^2 f(P) = \sum_{i,\,j=1}^n v_i v_j D_i D_j f(P) = \mathbf{v} \cdot (f''(P)\mathbf{v})
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+\mathbf{v} \cdot (f''(P)\mathbf{v}) &= \sum_{i=1}^n v_i (f''(P)\mathbf{v})_i = \sum_{i=1}^n v_i \left(\sum_{j=1}^n f''(P)_{ij}v_j\right) \\
+&= \sum_{i,\,j=1}^n v_i v_j \left(f''(P)\right)_{ij}=\sum_{i,\,j=1}^n v_iv_j D_iD_j f(P)
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**7.** 이급함수 $f(x,\,y)$ 의 극대점에서는
+
+$$
+\dfrac{\partial^2 f}{\partial x^2}+ \dfrac{\partial^2 f}{\partial y^2} \le 0
+$$
+
+이고, 극소점에서는
+
+$$
+\dfrac{\partial^2 f}{\partial x^2}+ \dfrac{\partial^2 f}{\partial y^2} \ge 0
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+$(a,\,b)$ 가 $f(x,\,y)$ 의 극대점이라 하자. $g (t)=f(a+t,\,b)$ 라 하면 $0$ 이 $g$ 의 극대점이므로 $g'(0) = \dfrac{\partial f}{\partial x}(a,\,b)=0$ , $g''(0) = \dfrac{\partial^2 f}{\partial x^2}(a,\,b) \le 0$ 이다. $h(s) = f(a,\,b+s)$ 라 하면 같은 이유로 $h''(0) = \dfrac{\partial^2 f}{\partial y^2}(a,\,b)\le 0$ 임을 안다. 따라서
+
+$$
+\dfrac{\partial^2 f}{\partial x^2}(a,\,b)+ \dfrac{\partial^2 f}{\partial y^2}(a,\,b)\le 0
+$$
+
+이다. 극소점에 대해서는 이계미분의 부호가 바뀌므로 쉽게 보일 수 있다.
+
+::: 
+
+</br>
+
+## 라그랑즈 승수법
+
+### 정리 6.0.1 (라그랑즈 승수법)
+
+$n$ 공간의 열린 집합 $U$ 에서 정의된 일급함수 $f,\,g$ 에 대하여 함수 $f$ 를 초곡면
+
+$$
+S:=\{X\in U: g(X)=c\}
+$$
+
+에 재한하였을 때, 점 $P\in S$ 가 극점이라고 하자. 그러면 $\nabla f(P)$ 와 $\nabla g(P)$ 는 일차종속이다. 즉
+
+$$
+\lambda_1 \nabla f(P)+\lambda_2 \nabla g(P)=\mathbf{0}
+$$
+
+이고 동시에 영이 아닌 실수 $\lambda_1,\,\lambda_2$ 가 존재한다. 특히, $\nabla g(P)\ne \mathbf{0}$ 이면, 식
+
+$$
+\nabla f(P)=\lambda \nabla g(P)
+$$
+
+를 만족시키는 실수 $\lambda$ 가 존재한다.
+
+::: {.proof}
+
+(1) $\nabla g(P)=\mathbf{0}$  이면 $\nabla f(P)$ 와 $\nabla g(P)$ 는 일차종속이므로 $\nabla g(P)\ne \mathbf{0}$ 일 때만 생각한다.
+
+(2) $P\in S$ 에서 $\nabla f(P)$ 는 초곡면 $S$ 에 대해 수직임을 보이자. 점 $P$ 를 통과하는 $S$ 에서의 임의의 곡선 $X(t)$ 는 $X(0)=P$ 가 되도록 표현 할 수 있다. 이제 $X'(0)$ 는 $P$ 에서의 $S$ 의 접평면에 포함되는 벡터이다.
+
+(3) 문제의 가정에 의해 $f$ 가 $P$ 에서 극값을 가진다. $h(t) := f(X(t))$ 라 하면, $h'(0)=0$ 이므로,
+
+$$
+h'(0)=X'(0)\cdot \nabla f(X(0)) = 0
+$$
+
+이다. 따라서 $\nabla f(P)$ 는 $X'(0)$ 에 수직이며, 따라서 $P$ 에서 $S$ 에 수직이다.
+
+(4) 또한 $\nabla g(P)$ 도 등위면에 수직이므로 $\nabla f(P)$ 와 $\nabla g(P)$ 는 평행하다. 따라서 원하는 결론을 얻는다. $\square$
+
+:::
+
+</br>
+
+### 라그랑주 승수법의 응용 : 산술평균과 기하평균
+
+$$
+g(x_1,\ldots,\,g_n):=x_1+\cdots +x_n=1 ,\qquad x_1\ge 0,\ldots,\, x_n\ge 0
+$$
+
+을 만족시키는 점 $(x_1,\ldots,\,x_n)$ 으로 이루어진 영역에서 함수
+
+$$
+f(x_1,\ldots,\,x_n)=x_1\cdots x_n
+$$
+
+의 최대값을 구해보자.
+
+::: {.solution}
+
+우선 $0\le x_1,\ldots,\,x_n \le 1$ 임을 안다. 이 영역을 $K$ 라 하자. 주어진 영역은 유계인 닫힌집합이고 $f$ 는 연속함수이므로 $f$ 는 최대값을 가진다.  $P=(p_1,\ldots,\,p_n)\in K$ 에서 극값을 갖는다고 하자. 라그랑즈 승수법에 의해
+
+$$
+\begin{aligned}
+\nabla f(P)&=(p_2\cdots p_n,\, p_1p_3 \cdots p_n,\cdots,\, p_1\cdots p_{n-1})\\
+\nabla g(P) &= (1,\ldots,\, 1)
+\end{aligned}
+$$
+
+로부터 $\nabla f(P)=\lambda\nabla g(P)$ 이므로, $p_1=\cdots =p_n=\frac{1}{n}$ 을 얻는다.  $Q_i $ 를 $x_i=1$, $x_1=\cdots =x _{i-1}=x_{i+1}=\cdots =x_n=0$ 인 point 라 했을 때 $f(Q_i)=0$ 이며 $f(P)>1$ 이므로 $f$ 는 $P$ 에서 최대값을 가지며 이 때의 최대값은 $\dfrac{1}{n^n}$ 이다.
+
+이 식으로부터 모두 $0$ 이 아닌 임의의 양의 실수 $a_1,\ldots,\, a_n$ 에 대해 $S=\displaystyle\sum_{i=1}^n a_n$ 이라 하면 $0\le \dfrac{a_i}{S} \le 1$ 이므로,
+
+$$
+\dfrac{a_1}{S}  \cdots  \dfrac{a_n}{S} = \dfrac{a_1\cdots a_n }{S^n}\le \left(\dfrac{1}{n^n}\right) \implies a_1 \cdots a_n \le \left(\dfrac{S}{n}\right)^n  \implies (a_1\cdots a_n)^{1/n} \le \dfrac{a_1+\cdots +a_n}{n}
+$$
+
+을 얻으며 등호는 $a_1=\cdots =a_n$ 일 때만 성립한다.
+
+:::
+
+</br>
+
+### 라그랑즈 승수법의 응용 : 산술평균과 이차평균
+
+$$
+g(x_1,\ldots,\,x_n):={x_1}^2+ \cdots + {x_n}^2 = 1,\qquad x_1\ge 0,\ldots,\,x_n \ge 0
+$$
+
+일 때
+
+$$
+f(x_1,\ldots,\,x_n)=x_1+\cdots +x_n
+$$
+
+의 최대값을 구해보자.
+
+::: {.solution}
+
+역시 $0\le x_1 ,\ldots,\,x_n \le 1$ 이므로 유계인 닫힌 집합에서 정의되었으므로 연속함수 $f$ 는 최대값과 최소값을 가진다.
+
+$$
+\begin{aligned}
+\nabla f(x_1,\ldots,\,x_n) &= (1,\ldots,\,1) \\
+\nabla g(x_1,\ldots,\, x_n) &= 2(x_1,\ldots,\,x_n)
+\end{aligned}
+$$
+
+이므로 극값은 $x_1=\cdots =x_n= \dfrac{1}{\sqrt{n}}$ 뿐이며, 이 점을 $P$ 라 하면 $f(P)=\sqrt{n}$ 이다. $Q_i = \mathbf{e}_i$ 라 정의하면, $f(Q_i)=1 \le f(P)$ 이므로 $f(P)$ 는 $P$ 의 최대값이다.
+
+이제 임의의 $a_1,\ldots,\,a_n$ where $a_i \ge 0$ 에 대하여
+
+$$
+S:=({a_1}^2+\cdots +{a_n}^2)^{1/2}
+$$
+
+라 하면, $\left(\dfrac{a_1}{S}\right)^2 + \cdots +\left(\dfrac{a_n}{S}\right)^2 = 1$ 이며 $0 \le \dfrac{a_i}{S}\le 1$ 이므로,
+
+$$
+\dfrac{a_1}{S}+\cdots + \dfrac{a_n}{S}\le \sqrt{n}
+$$
+
+을 얻는다. 따라서, 절대부등식
+
+$$
+\dfrac{a_1+\cdots +a_n}{n} \le \left(\dfrac{{a_1}^2+\cdots + {a_n}^2}{n}\right)^{1/2}
+$$
+
+가 성립한다. 이 때 등호는 $a_1=\cdots =a_n$ 일 때 뿐이다.
+
+:::
+
+
+</br>
+
+## 연습문제 : 제 11 장 6 절
+
+</br>
+
+**1.** 원판 $x^2+y^2\le 1$ 에서 정의된 함수 $f(x,\,y)=x^2+y^2-x-y+1$ 의 최대값과 최소값을 구하라.
+
+::: {.solution}
+
+$$
+f(x,\,y)=\left(x-\dfrac{1}{2}\right)^2+\left( y-\dfrac{1}{2} \right)^2+\dfrac{1}{2} \ge \dfrac{1}{2}
+$$
+
+이므로 최소값은 $1/2$ 이다. 이제 경계 $g(x,\,y) =x^2+y^2=1$ 에서의 극값을 구해보자.
+
+$$
+\begin{aligned}
+\nabla f(x,\,y) &=  (2x-1,\, 2y-1)\\
+\nabla g(x,\,y) &= (2x,\, 2y)
+\end{aligned}
+$$
+
+이므로 라그랑즈 승수법을 사용하면 $x=y= \pm 1/\sqrt{2}$ 에 존재한다. 극값이 $2+\sqrt{2},\, 2-\sqrt{2}\approx 0.59$ 이므로 최대값은 $2+\sqrt{2}$ 최소값은 $1/2$ 이다.
+
+:::
+
+</br>
+
+**2.** 반지름의 길이가 1 인 구면에 내접하는 원기둥 중에서 표면적을 최대로 하는 것의 표면적을 구하라. 원기둥은 바닥과 뚜껑이 없는 것으로 한다.
+
+::: {.solution}
+
+원기둥의 반경을 $r$, 높이를 $2h$ 라 하면 $r^2+h^2=1$ 이어야 하며 표면적은 $2\pi r (2h)=4\pi r h$ 이다. 또한 $0 \le r,\, h \le 1$ 을 만족해야 한다. $f(r,\,h)=4\pi rh$, $g(r,\,h)=r^2+h^2=1$ 에 대해 라그랑즈 승수법을 적용하면,
+
+$$
+\begin{aligned}
+\nabla f (r,\,h)&= 4\pi (h,\, r)\\
+\nabla g(r,\, h)&= (2r,\, 2h)
+\end{aligned}
+$$
+
+이므로 $r=h=\frac{1}{\sqrt 2}$ 를 얻는다. 이 때 표면적 $f$ 의 극값은 $2\pi$ 이며 $(r,\,h)=(0,\,1)$ 이나 $(r,\,h)=(1,\,0)$ 에서 표면적이 $0$ 이므로 표면적의 최대값이 $2\pi$ 이다.
+
+:::
+
+</br>
+
+**3.** 생략
+
+</br>
+
+**4.** (**케플러의 문제**) 대각선의 길이가 일정한 직원기둥중에서 부피가 최대인것을 구하라. 또 주어진 공(sphere) 속에 들어있는 직육면체 중에서 그 부피가 최대인 것을 구하라.
+
+::: {.solution}
+
+(1) 반지름 $r$, 높이 $h$ 인 직원기둥의 부피는 $V(r,\,h)=\pi r^2 h$  이며 대각선의 길이를 일정하게 놓으므로 대각선의 길이의 제곱함수  $g(r,\,h)= 4r^2+h^2=c$ 를 생각하자.
+
+$$
+\begin{aligned}
+\nabla V(r,\,h) &= \pi (2rh,\, r^2)\\
+\nabla g(r,\,h) &= (8r,\, 2h)
+\end{aligned}
+$$
+
+이 때의 극값은 $h=2r$ 일 때 이며 이 때의 부피는 $2\pi r^3$ 이다. 이 값이 최대값인 것은 $h$ 가 대각선의 길이와 같을 때 $r=0$ 이며 부피가 $0$ 이 되는 것으로 부터 알 수 있다.
+
+(2) 반지름 $R$ 인 공의 직육면체의 각 변의 길이를 $2a,\,2b,\,2c$ 라 하면 직육면체의 부피 $V(a,\,b,\,c)=8abc$ 이며 공에 내접하므로 $g(a,\,b,\,c)=a^2+b^2+c^2=R^2$ 의 제한조건을 갖는다.
+
+$$
+\begin{aligned}
+\nabla V(a,\,b,\,c)&=(8bc,\, 8ac,\, 8ab)\\
+\nabla g(a,\,b,\,c) &= (2a,\,2b,\,2c)
+\end{aligned}
+$$
+
+이므로 $a=b=c=\dfrac{R}{\sqrt{3}}$ 에서 극값을 가진다. 이 때의 부피는 $\dfrac{8\sqrt{3}}{9}R^3$  이다. 이 값이 최대값인 것은 $a=R,\,b=c=0$ 일 때의 부피가 $0$ 인 것을 생각하면 된다.
+
+:::
+
+</br>
+
+**5.** CBS 부등식을 라그랑즈 승수법을 이용하여 증명하라.
+
+::: {.solution}
+
+$n$ 벡터 $\mathbf{a}=(a_1,\cdots,\,a_n),\,\mathbf{b}=(b_1,\cdots\, b_n)$ 에 대해 $|\mathbf{a}\cdot \mathbf{b}|\le |\mathbf{a}||\mathbf{b}|$  를 보이자. 둘 중 하나가 영벡터이면 자명하므로, 둘 다 영벡터가 아님을 가정하자.  $\mathbf{x}=(x_1,\ldots,\,x_n) = \dfrac{\mathbf{a}}{|\mathbf{a}|},\, \mathbf{y}=(y_1,\ldots,\,y_n)=\dfrac{\mathbf{b}}{|\mathbf{b}|}$ 라 하면 $|\mathbf{x}|^2=|\mathbf{y}|^2=1$ 이다. 이제,
+
+$$
+\begin{aligned}
+f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &= \mathbf{x} \cdot \mathbf{y} = x_1y_1 + \cdots +x_ny_n\\
+g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &=|\mathbf{x}||\mathbf{y}| =1
+\end{aligned}
+$$
+
+로 놓고 $f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n)$ 의 극값을 구해보자. 우리는 $-1\le x_i,\,y_i \le 1$ 임을 안다.  라그랑즈 승수법으로부터,
+
+$$
+\begin{aligned}
+\nabla f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &= (y_1,\ldots,\,y_n,\,x_1,\ldots,\,x_n) \\
+\nabla g(x_1,\ldots,\,x_n,\,y_n,\ldots,\,y_n) &= \left( \dfrac{|\mathbf{y}|}{|\mathbf{x}|}x_1,\ldots,\,\dfrac{|\mathbf{y}|}{|\mathbf{x}|} x_n,\, \dfrac{|\mathbf{x}|}{|\mathbf{y}|} y_1,\ldots,\,\dfrac{|\mathbf{x}|}{|\mathbf{y}|}y_n  \right) \\
+&=(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n)
+\end{aligned}
+$$
+
+을 이용하면 $y_i = \lambda x_i ,\, x_j = \lambda y_j$ for $1\le i,\, j \le n$  임을 안다. $\lambda = \pm 1$ 이며 따라서 극값은 $\mathbf{x}=\pm \mathbf{y}$  에서 발생한다. 또한 $\mathbf{x}=\mathbf{y}$ 이면 $f=1$, $\mathbf{x}=-\mathbf{y}$ 이면 $f=-1$ 이다. 유계인 닫힌 영역에서의 연속함수이므로 최대값과 최소값이 존재하며, $\mathbf{x}=\mathbf{e}_1,\,\mathbf{y}=\mathbf{e}_2$  에 대해 $f=0$  이므로 $f$ 의 최대값은 $1$, 최소값은 $-1$ 이며 $|\mathbf{x}\cdot \mathbf{y}|\le 1$ 이므로
+
+$$
+|\mathbf{a}\cdot \mathbf{b}|\le |\mathbf{a}| |\mathbf{b}|
+$$
+를 얻는다.
+
+:::
+
+</br>
+
+**6.** $0<p<q$ 이고 $a_1\ge 0,\ldots,\, a_n \ge 0$ 이면, 부등식
+
+$$
+\begin{align}
+\left( {a_1}^q + \cdots + {a_n}^q\right)^{1/q} &\le \left({a_1}^p+ \cdots + {a_n}^p\right)^{1/p} \tag{1}\\
+\left( \dfrac{ {a_1}^p + \cdots + {a_n}^p}{n}\right)^{1/p} &\le \left( \dfrac{ {a_1}^q + \cdots + {a_n}^q}{n}\right)^{1/q} \tag{2}
+\end{align}
+$$
+
+이 성립함을 보이라.
+
+::: {.solution}
+
+$n=1$ 일 때는 자명하므로 $n\ge 2$ 일 경우만 생각한다.
+
+(1) $x_i \ge 0, \;\forall i=1,\ldots,\,n$ 에 대해 $g(X) = x_1^p + \cdots + x_n^p = 1$ 일 때 $f(X) = x_1^q + \cdots + x_n^q$ 의 최대값을 구해보자. $q>p>0$ 이므로 $0 \le x_i \le 1,\;\forall i=1,\ldots,n$ 이어야 한다. 두개 이상의 $x_i\ne 0$ 이라면 $1$ 보다 작으므로 이 $(x_i)^p<(x_i)^q$ 이다. 즉 $f(X)<1$ 이다. 하나의 $x_i$ 만 $0$ 이 아니라면 그 $x_i = 1$ 이므로 $f(X)$ 의 최대값은 $1$ 이다. 즉 $g(X)=1$ 일 때 $f(X)\le 1$ 이다.
+
+$A = (a_1,\ldots,\,a_n)$ 에 대해 $x_i = \dfrac{a_i}{(\sum_j (a_j)^p)^{1/p}}$ 라 하면 $x_1^p + \cdots + x_n^p = 1$ 이므로
+
+$$
+\begin{aligned}
+&x_1^q + \cdots x_n^q = \dfrac{a_1^q + \cdots +a_n^q}{\left((\sum_j (a_j)^p)^{1/p}\right)^q} \le 1 \\
+\implies &a_1^q + \cdots +a_n^q \le \left((a_1^p + \cdots + a_n^p)^{1/p}\right)^q \\
+\implies & (a_1^q + \cdots + a_n^q)^{1/q} \le (a_1^p + \cdots + a_n^p)^{1/p}
+\end{aligned}
+$$
+
+(2) $g(a_1,\ldots,\,a_n)={a_1}^p+\cdots + {a_n}^p=c^p$ 라 하고 이를 만족하는 영역에서 $f(a_1,\ldots,\,a_n)={a_1}^q+\cdots +{a_n}^q$ 의 극값을 구한다.
+
+$$
+\begin{aligned}
+\nabla f(a_1,\ldots,\,a_n) &= q \left( a_1^{q-1},\ldots,\,a_n^{q-1} \right) \\
+\nabla g(a_1,\ldots,\,a_n) &=p\left( a_1^{p-1},\ldots,\, a_n^{p-1} \right)
+\end{aligned}
+$$
+
+이며 $\nabla f = \lambda \nabla g$ 이므로 극값은, $a_1=\cdots =a_n =\left( \dfrac{\lambda p}{q} \right)^{1/(q-p)}$ 에 존재한다. 이 때
+
+$$
+c^p = a_1^p + \cdots + a_n^p = n \left(\dfrac{\lambda p}{q}\right)^{p/(q-p)} \implies a_1=\cdots =a_n = \dfrac{c}{n^{1/p}}
+$$
+
+이며 이 때의  벡터를 $\mathbf{a}$ 라 할 때 $f(\mathbf{a})$ 값은
+
+$$
+f(\mathbf{a})=f\left(\dfrac{c}{n^{1/p}},\ldots,\, \dfrac{c}{n^{1/p}} \right)= n \dfrac{c^q}{n^{q/p}}=c^qn^{1-q/p}
+$$
+
+경계값을 보자. $n$ 개의 성분 중 $k$ 개의 성분이 $c/(k^p)$ 이고 나머지는 $0$ 이라면 이때의 벡터를 $\mathbf{d}_k$ 라 하면  $g(\mathbf{d}_k)=c^p$ , $f(\mathbf{d}_k)=c^q k^{1-q/p}$ 이다. 이 때 $k\le n$ 이므로
+
+$$
+\dfrac{f(\mathbf{a})}{f(\mathbf{d}_k)}=\dfrac{c^q n^{1-q/p}}{c^qk^{1-q/p}} < 1
+$$
+
+이다. 따라서 $f(\mathbf{a})$ 는 $f$ 의 최소값이며,
+
+$$
+\begin{aligned}
+&{a_1}^q+\cdots + {a_n}^q \ge n c^q n^{-q/p}  \\
+\implies & \left(\dfrac{{a_1}^q+\cdots +{a_n}^q}{n}\right) \ge\left( \dfrac{\left({a_1}^p+\cdots {a_n}^p\right)^{1/p}}{n^{1/p}}\right)^q \\
+\implies & \left(\dfrac{{a_1}^q+\cdots +{a_n}^q}{n}\right)^{1/q} \ge \left(\dfrac{{a_1}^p+\cdots +{a_n}^p}{n}\right)^{1/p}
+\end{aligned}
+$$
+
+이다.
+
+::: 
+
+</br>
+
+**7.** 포물면 $z=x^2+y^2$ 과 점 $(1,\,1,\,0)$ 사이의 최단거리를 구하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+d(x,\,y,\,z) &=(x-1)^2+(y-1)^2+z^2 \\
+g(x,\,y,\,z) &=x^2+y^2-z=0\\
+\nabla d(x,\,y,\,z) &=2(x-1,\, y-1,\,z)\\
+\nabla g(x,\,y,\,z) &= (2x,\, 2y,\, -1)
+\end{aligned}
+$$
+
+$\nabla d = \lambda \nabla g$ 일 때 $x-1=\lambda x,\, y-1=\lambda y,\, z=-\lambda$ 이면 $\lambda = -1, (x,\,y,\,z )=(1/2,\, 1/2,\,1/2)$ 인 경우 극값을 가진다. 이 때의 거리는 $\sqrt{3}/2$ 이며 이 값이 최소값이다.
+
+:::
+
+</br>
+
+**8.** 곡면 $z=xy$ 의 점 중에서 점 $(0,\,0,\,5)$ 에 가장 가까운 점을 모두 구하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+d(x,\,y,\,z) &=x^2+y^2+(z-5)^2\\
+g(x,\,y,\,z) &= xy-z = 0\\
+\nabla d(x,\,y,\,z) &= (2x,\, 2y,\, 2z-10)\\
+\nabla g(x,\,y,\,z) &= (y,\, x,\, -1)
+\end{aligned}
+$$
+
+$\nabla d = \lambda \nabla g$ 이면 $x=\dfrac{\lambda}{2}y,\, y=\dfrac{\lambda}{2} x,\, z=-\dfrac{\lambda}{2} +5$ 이며 이를 만족시키는 $(x,\,y,\,z)=(0,\,0,\,0),\, (2,\,2,\,4)$ 이므로 최단거리는 $3$ 이다.
+
+:::
+
+</br>
+
+**9.** 점 $(1,\,2,\,0)$ 에서 원뿔 $z^2=x^2+y^2$ 까지의 거리를 구하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+d(x,\,y,\,z) &= (x-1)^2+(y-2)^2+z^2\\
+g(x,\,y,\,z) &=x^2+y^2-z^2=0\\
+\nabla d(x,\,y,\,z) &= (2x-2,\, 2y-4,\, 2z) \\
+\nabla g(x,\,y,\,z) &= (2x,\,2y,\,-2z)
+\end{aligned}
+$$
+
+$\nabla d=\lambda \nabla g$ 이면 $x-1=\lambda x,\, y-2=\lambda y,\, z=-\lambda z$ 이므로, $z =0$ 일 때 $(0,\,0,\, 0)$, $\lambda  =-1$ 일 때 $(1/2,\, 1,\, \pm \sqrt{5}/2)$ 이며 거리는 각각 $\sqrt{5},\, \dfrac{\sqrt{10}}{2}$ 이므로 최단거리는  $\dfrac{\sqrt{10}}{2}$ 이다.
+
+... 아 지겨우니 생략...
+
+:::
+
+</br>
+
+**14.** $n$ 차 대칭행렬 $Q=(q_{ij})$ 와 $X=\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}$ 에 대하여, 이차형식은
+$$
+q(X)= X \cdot QX = \sum_{i,\,j=1}^n q_{ij}x_i x_j = \sum_{i=1}^n q_{ii}x_i^2 + 2\sum_{i<j} q_{ij}x_i x_j
+$$
+
+로 주어진다. 이때 $q$ 의 기울기 벡터는 $\nabla q(X)=2QX$ 임을 보이라. 또 $q$ 를 단위 구면 $S: x_1^2+\cdots + x_n^2=1$ 에서 제한하였을 때, 최대점에서는 $QX=\lambda X$ 를 만족시키는 실수 $\lambda$ 가 존재함을 보이라.
+
+::: {.solution}
+
+$$
+\partial_i q(X) = 2q_{ii}x_i + 2\sum_{j \ne i} q_{ij}x_j=2\sum_{j=1}^n q_{ij}x_j = 2(QX)_{i}
+$$
+
+이므로 $\nabla q(X)=2QX$ 이다. $g(X)=|X|^2-1=0$ 일 때,
+
+$$
+\begin{aligned}
+\nabla q(X) &= 2QX \\
+\nabla g(X) &= 2(x_1,\ldots,\,x_n) =2X
+\end{aligned}
+$$
+
+이므로 $QX=\lambda X$ 인 극점 $X$ 가 존재하므로 최대점에서는  $QX=\lambda X$ 를 만족시키는 실수 $\lambda$ 가 존재한다.
+
+:::
+
+</br>
+
+**15.** 영 이상의 실수 $x,\,y,\,z$ 가  $x+y+z=1$ 을 만족 시킬 때 $xy+yz+zx-2xyz$ 의 최대값과 최소값을 구하라.
+
+::: {.solution}
+
+$$
+\begin{aligned}
+f(x,\,y,\,z)  &= xy+yz+zx-2xyz\\
+g(x,\,y,\, z) &= x+y+z-1 \\
+\nabla f(x,\,y,\,z )&= (y+z-2yz,\, x+z-2xz,\, x+y-2xy) \\
+\nabla g(x,\,y,\,z) &= (1,\,1,\,1)
+\end{aligned}
+$$
+
+이므로 $(x-y)(1-2z)=(y-z)(1-2x)=(z-x)(1-2y)=0$ 에서 극값이 존재한다.
+
+1\) $x=y=z=\dfrac{1}{3}$ 이면  $f\left(\dfrac{1}{3},\, \dfrac{1}{3},\, \dfrac{1}{3}\right)= \dfrac{7}{27}$
+
+2\) $x=y=\dfrac{1}{2},\, z=0$, 혹은 $x=0,\, y=z=\dfrac{1}{2}$, 또는 $y=0,\, x=z=\dfrac{1}{2}$ 인 경우, $f(x,\,y,\,z)=\dfrac{1}{4}$
+
+3\) 경계값에서, $x=1,\,y=z=0$ 혹은 $y=1,\, x=z=1$ 혹은 $z=1,\, x=y=0$ 인 경우 $f(x,\,y,\,z)=0$
+
+따라서 최대값은 $7/27$, 최소값은 $0$ 이다.
+
+:::
+
+</br>
+
+**16.** 조건
+
+$$
+g(x,\,y,\,z) :=x+y-2 \ge 0,\qquad h(x,\,y,\,z):= z^2-1\ge 0
+$$
+
+아래에서 함수
+
+$$
+f(x,\,y,\,z) = x^4+2y^2+4z^4-2z^2
+$$
+
+의 최소값을 구하여라.
+
+::: {.solution}
+
+$f_1 (x,\,y,\,z)=x^4+2y^2,\, f_2=4z^4-2z^2$ 이라 하면 $f=f_1+f_2$ 이며 $g$ 와 $f_1$ 은 $x,\,y$ 의 함수 $h$ 와 $f_2$ 는 $z$ 의 함수이므로 $f_1,\,f_2$ 각각의 최소값을 구하면 그 합이 $f$ 의 최소값이다.
+
+$$
+\begin{aligned}
+\nabla f_1&= (4x^3,\, 4y)\\
+\nabla g &= (1,\,1) \\
+f_2' &= 16z^3-4z\\
+h' &= 2z
+\end{aligned}
+$$
+
+$\nabla f_1 = \lambda g$ 라 하면, $x^3=y$ 일 때 극값을 가진다. $x+y-2 = x^3+x-2\ge 0 \implies x\ge 1$ 이며 $f_1(x,\,x^3)=x^4+2x^6$ 이므로 $f_1$ 의 극값은 $3$ 보다 크다. 경계값인 $x+y=2$ 일 때
+
+$$
+f_1(x,\, 2-x)= x^4+2(2-x)^2=x^4+2x^2-8x+8
+$$
+
+이며 극값은 $x=1$  일 때 $3$ 이며 최소값이다. 따라서 $f_1$ 의 최소값은 $3$ 이다.
+
+$f_2 (z) = 4z^4-2z^2=4\left( z^2- \dfrac{1}{4}\right)^2-\dfrac{1}{4}$ 이며 $z^2\ge 1$ 일 때의 최소값은 $z^2=1$ 일 때이므로 최소값은 $2$ 이다. 따라서 $f$ 의 최소값은 $5$ 이다.
+
+:::
+
+</br>
+
+**17.** 좌표평면의 원점에서의 곡선 $x^6+y^6=1$ 의 한 점에 이르는 거리의 최대값과 최소값을 구하라.
+
+:::{.solution}
+
+$d(x,\,y)=x^2+y^2$ , $g(x,\,y)=x^6+y^6-1=0$ 이라 하면,
+
+$$
+\begin{aligned}
+\nabla d &= (2x,\, 2y)\\
+\nabla g &= (6x^5,\, 6y^5)
+\end{aligned}
+$$
+
+이므로  $\nabla d = \lambda \nabla g$ 로 부터 $x(3\lambda x^3-1)=0,\, y(3\lambda y^3-1)=0$ 를 얻는다. 우선 $x=0,\, y=1$  혹은 $x=1,\, y=0$ 일 때   거리는 $1$ 다. $x=y= \dfrac{1}{3\lambda}$ 로 놓으면,  $x=y=\dfrac{1}{\sqrt[6]{2}}$ 일 때 거리는 $2^{1/3}>1$  이므로 최소값은 $1$ 최대값은 $2^{1/3}$ 이다.
+
+:::
+
+</br>
+
+## 제 11장 탐구문제
+
+**1.** $n$-공간에서 주어진 벡터 $\mathbf{v}$ 와 무한급 미분가능함수 $f,\,g$ 에 대하여,
+
+$$
+{D_{\mathbf{v}}}^k (fg)=\sum_{a+b=k} \begin{pmatrix} k \\ a\end{pmatrix} \left({D_{\mathbf{v}}}^a f \right) \left({D_{\mathbf{v}}}^b g \right)\, \qquad k=0,\,1,\,2,\ldots
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+수학적 귀납법을 통해 보인다. $k=0,\,1$ 일 때는 자명하다. $k$ 일 때 성립함을 가정하면, (아래에서는 $\mathbf{v}$ 를 $v$ 로 쓰겠다. )
+
+$$
+\begin{aligned}
+{D_v}^{k+1} (fg) &= D_v \left( {D_{v}}^{k} (fg) \right )\\
+&= \sum_{a=0}^k \dfrac{k!}{a!(k-a)!} \left[\left({D_v}^{a+1} f \right) \left({D_v}^{k-a} g\right)  + \left({D_v}^{a} f \right) \left({D_v}^{k-a+1} g\right)  \right] \\
+&= \sum_{a=0}^k \dfrac{k!}{(a+1)!(k-a)!}(a+1) \left({D_v}^{a+1} f \right) \left({D_v}^{k-a} g\right)  \\
+&\qquad + \sum_{a=0}^k \dfrac{k!}{a!(k-a+1)!}(k-a+1)\left({D_v}^{a} f \right) \left({D_v}^{k-a+1} g\right)   \\
+&= \sum_{a'=1}^{k+1}  \dfrac{k!a'}{a'!(k-a'+1)! } \left({D_{v}}^{a'} f \right) \left({D_v}^{k-a+1} g\right)  + \sum_{a=0}^{k} \dfrac{k!(k-a+1)}{a! (k-a+1)!} \left({D_v}^{a} f \right) \left({D_v}^{k-a+1} g\right)   \\
+&= \sum_{a=0}^{k+1} \dfrac{(k+1)!}{a!(k-a+1)!}  \left({D_{v}}^{a} f \right) \left({D_v}^{k-a+1} g\right)  \\
+&= \sum_{a+b=k+1} \begin{pmatrix}k+1 \\ a\end{pmatrix} \left({D_{v}}^{a} f \right) \left({D_v}^{b} g\right)
+\end{aligned}
+$$
+
+:::
+
+</br>
+
+**2.** (**라플라스 작용소**) 구면좌표계에서
+
+$$
+\nabla^2 f = \dfrac{1}{\rho^2}  \dfrac{\partial}{\partial \rho} \left(\rho^2 \dfrac{\partial f}{\partial \rho}\right) + \dfrac{1}{\rho^2 \sin \varphi} \dfrac{\partial }{\partial \varphi} \left(\sin \varphi \dfrac{\partial f}{\partial \varphi}\right) + \dfrac{1}{\rho^2 \sin^2 \varphi} \dfrac{\partial^2 f}{\partial\theta^2}
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+탐구문제 10장 10번을 이용한다.
+
+$$
+\begin{aligned}
+\partial_x &= \sin \varphi \cos \theta \,\partial_{\rho} + \dfrac{\cos \varphi \cos \theta }{\rho} \partial_{\varphi} - \dfrac{\sin \theta}{\rho \sin \varphi} \partial_\theta \\
+\partial_y &= \sin \varphi \sin \theta \,\partial_{\rho} + \dfrac{\cos \varphi \sin \theta }{\rho} \partial_{\varphi} + \dfrac{\sin \theta}{\rho \cos \varphi} \partial_\theta \\
+\partial_z &= \cos \varphi \, \partial_{\rho} -\dfrac{\sin \varphi}{\rho} \partial_{\varphi}
+\end{aligned}
+$$
+
+이므로,
+
+$$
+\begin{aligned}
+\partial_x^2 &= \sin \varphi \cos \theta \left( \sin \varphi \cos \theta \, \partial_{\rho}^2  - \dfrac{\cos \varphi \cos \theta}{\rho^2} \partial_{\varphi}  + \dfrac{\cos \varphi \cos \theta}{\rho} \partial_\varphi \partial_{\rho}  + \dfrac{\sin \theta}{\rho^2 \sin \varphi} \partial_\theta - \dfrac{\sin \theta}{\rho \sin \varphi  } \partial_{\rho}\partial_{\theta} \right) \\
+&\quad+ \dfrac{\cos \varphi \cos \theta}{\rho} \left(\cos \varphi \cos \theta \,\partial_{\rho} + \sin \varphi \cos \theta \partial_{\rho}\partial_\varphi  - \dfrac{\sin \varphi \cos \theta}{\rho}\partial_{\varphi} + \dfrac{\cos \varphi \cos \theta}{\rho} \partial_\varphi^2  \right. \\
+&\qquad + \left. \dfrac{\sin \theta \cos \varphi}{\rho \sin^2\varphi} \partial_{\theta} - \dfrac{\sin \theta}{\rho \sin \varphi} \partial_\theta \partial_\varphi \right)
+ \\
+ &\quad - \dfrac{\sin \theta}{\rho \sin \varphi } \left( - \sin \varphi \sin \theta \, \partial_{\rho} + \sin \varphi \cos \theta \partial_{\rho}\partial_{\theta}- \dfrac{\cos \varphi \sin \theta}{\rho}\, \partial_\varphi + \dfrac{\cos \varphi \cos \theta}{\rho} \partial_{\varphi}\partial_{\theta}  \right. \\
+ &\qquad \left. - \dfrac{\cos \theta}{\rho \sin \varphi} \partial_{\theta} - \dfrac{\sin \theta}{\rho \sin \varphi} \partial_{\theta}^2\right) \\
+ &= \sin ^2 \varphi \cos ^2 \theta \partial_{\rho}^2 + \dfrac{\cos \varphi ^2 \cos ^2\theta}{\rho^2} \partial_{\varphi}^2 + \dfrac{\sin^2 \theta}{\rho^2 \sin^2 \varphi} \partial_\theta^2 + \left(\dfrac{\cos^2 \varphi \cos^2 \theta}{\rho}+ \dfrac{\sin^2\theta}{\rho}\right)\partial_{\rho} \\
+ &\quad + \left(-2\dfrac{\cos \varphi \sin \varphi \cos^2 \theta}{\rho^2} + \dfrac{\cos \varphi  \sin ^2 \theta}{\rho^2 \sin \varphi }\right) \partial_{\varphi } \\
+ &\quad + \left( \dfrac{\cos \theta  \sin \theta}{\rho^2} + \dfrac{\cos^2 \varphi \sin \theta\cos \theta}{\rho^2 \sin^2\varphi} + \dfrac{\cos \theta \sin \theta}{\rho^2 \sin^2\varphi}\right) \partial_{\theta} \\
+ &\quad + 2\dfrac{\cos \varphi \sin \varphi \cos^2\theta}{\rho}\partial_{\rho}\partial_{\varphi} - 2 \dfrac{\cos \theta \sin \theta}{\rho} \partial_\rho \partial_\theta -2 \dfrac{\cos \varphi \cos \theta \sin \theta}{\rho^2 \sin \varphi} \partial_\varphi \partial_\theta \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+{\partial_y}^2 &= \sin \varphi \sin \theta \left(\sin \varphi \sin \theta \,\partial_{\rho}^2 - \dfrac{\cos \varphi \cos \theta}{\rho^2} \partial_{\varphi} + \dfrac{\cos \varphi \sin \theta}{\rho} \partial_\rho \partial _\varphi - \dfrac{\cos \theta }{\rho^2 \sin \varphi} \partial_\theta + \dfrac{\cos \theta}{\rho \sin \varphi} \partial_{\rho} \partial_{\theta}\right) \\
+&\quad + \dfrac{\cos \varphi \sin \theta}{\rho} \left( \cos \varphi \sin \theta \, \partial_{\rho}  + \sin \varphi \sin \theta \, \partial_{\rho} \partial_\varphi- \dfrac{\sin \varphi \sin \theta}{\rho} \partial_{\varphi} + \dfrac{\cos \varphi \sin \theta}{\rho} {\partial_{\varphi}}^2 \right.  \\
+&\qquad \left. - \dfrac{\cos \varphi \cos \theta}{\rho \sin^2\varphi }\partial_{\theta} + \dfrac{\cos \theta}{\rho \sin \varphi} \partial_\varphi \partial_\theta\right) \\
+&\quad + \dfrac{\cos \theta}{\rho \sin \varphi} \left( \sin \varphi \cos \theta \,\partial_{\rho} + \sin \varphi \sin \theta \, \partial_\rho \partial_\theta + \dfrac{\cos \varphi \cos \theta}{\rho} \partial_{\varphi} + \dfrac{\cos \theta \sin \theta}{\rho} \partial_{\varphi}\partial_{\theta}  \right. \\
+&\qquad \left. - \dfrac{\sin \theta}{\rho \sin \varphi} \partial_{\theta} + \dfrac{\cos \theta}{\rho \sin \varphi} {\partial_{\theta}}^2 \right) \\
+&= \sin^2\varphi \sin^2 \theta \, {\partial_\rho}^2 + \dfrac{\cos^2\varphi \sin^2 \theta}{\rho}{\partial_{\varphi}}^2 + + \dfrac{\cos^2 \theta}{\rho^2 \sin^2\varphi} {\partial_{\theta}}^2 + \left(\dfrac{\cos^2 \varphi \sin^2\theta }{\rho} + \dfrac{\cos^2\theta}{\rho}\right) \partial_{\rho} \\
+&\quad + \left(-2\dfrac{\sin \varphi \cos \varphi \sin^2 \theta}{\rho^2} + \dfrac{\cos \varphi \cos^2\theta}{\rho^2 \sin \varphi}\right) \partial_{\varphi} \\
+&\quad + \left(-\dfrac{\cos \theta \sin \theta}{\rho^2} - \dfrac{\cos^2\varphi \sin \theta \cos \theta}{\rho^2 \sin^2\varphi} - \dfrac{\cos \theta \sin \theta}{\rho^2 \sin^2\varphi }\right)\partial_{\theta} \\
+&\quad + 2 \dfrac{\cos \varphi \sin \varphi \sin^2 \theta}{\rho} \partial_{\rho}\partial_{\varphi} + 2 \dfrac{\cos \theta \sin \theta}{\rho}\partial_{\rho}\partial_\theta + 2\dfrac{\cos \varphi \cos \theta \sin \theta}{\rho^2 \sin \varphi } \partial_{\varphi}\partial_\theta
+\end{aligned}
+$$
+
+$$
+\begin {aligned}
+{\partial_z}^2 &= \cos \varphi \left(\cos \varphi \, {\partial_\rho}^2 + \dfrac{\sin \varphi}{\rho^2} \partial_{\varphi}-\dfrac{\sin\varphi}{\rho} \partial_\rho \partial_\varphi \right) - \dfrac{\sin \varphi}{\rho}\left(-\sin \varphi \, \partial_\rho + \cos \varphi \, \partial_{\rho}\partial_\varphi -\dfrac{\cos \varphi}{\rho}\partial_{\varphi}-\dfrac{\sin \varphi}{\rho}{\partial_\varphi}^2\right) \\
+&= \cos^2\varphi \, {\partial_{\rho}}^2 +\dfrac{\sin^2\varphi}{\rho^2}{\partial_{\varphi}}^2 + \dfrac{\sin^2\varphi}{\rho}\partial_\rho + 2\dfrac{\cos \varphi \sin \varphi}{\rho^2}\partial_{\varphi } -2\dfrac{\cos \varphi \sin \varphi }{\rho}\partial_\rho \partial_{\varphi }
+\end{aligned}
+$$
+
+이므로,
+
+$$
+\begin{aligned}
+\nabla^2  &= \left(\sin^2\varphi \cos^2 \theta + \sin^2 \varphi \sin ^2\theta +\cos^2\varphi \right){\partial_{\rho}}^2  + \left( \dfrac{\cos^2\varphi \cos^2\theta + \cos^2\varphi \sin^2\theta + \sin^2\varphi}{\rho^2}\right) {\partial_{\varphi}}^2 \\
+&\quad + \left(\dfrac{\sin^2\theta +\cos^2\theta}{\rho^2\sin^2\varphi } \right) {\partial_{\theta}}^2 + \left(\dfrac{\cos^2\varphi \cos^2\theta + \cos^2\varphi \sin^2\theta + \sin^2\varphi+1}{\rho}\right) \partial_\rho \\
+&\quad + \left(-2\dfrac{\cos \varphi \sin \varphi}{\rho^2} + \dfrac{\cos \varphi}{\rho^2 \sin \varphi } + 2\dfrac{\cos \varphi \sin \varphi}{\rho^2} \right)\partial_{\varphi} +  0\cdot \partial_{\theta} + 0 \cdot \partial_\rho \partial_\varphi  + 0 \cdot \partial_\rho \partial_\theta + 0 \cdot \partial_\varphi \partial_\theta\\
+&= {\partial_\rho}^2+ \dfrac{1}{\rho^2}{\partial_\varphi}^2 + \dfrac{1}{\rho^2 \sin^2\varphi }{\partial_\theta}^2 + \dfrac{2}{\rho}\partial_\rho + \dfrac{\cos \varphi}{\rho^2 \sin\varphi}\partial_{\varphi }
+\end{aligned}
+$$
+
+문제에 주어진 식을 전개하면,
+
+$$
+\begin{aligned}
+\nabla^2 &= \dfrac{1}{\rho^2}\partial_\rho\left( \rho^2 \partial_\rho\right) + \dfrac{1}{\rho^2 \sin \varphi } \partial_\varphi \left(\sin \varphi \,  \partial_\varphi \right) + \dfrac{1}{\rho^2 \sin^2 \varphi} {\partial_\theta}^2 \\
+&= {\partial_\rho}^2 + \dfrac{2}{\rho}\partial_\rho +  \dfrac{1}{\rho^2} {\partial_{\varphi}}^2+\dfrac{\cos \varphi }{\rho^2 \sin \varphi }\, \partial_{\varphi } + \dfrac{1}{\rho^2\sin^2\varphi }{\partial_\theta}^2
+\end{aligned}
+$$
+
+로 두 식이 같다.
+
+:::
+
+</br>
+
+**3.** 다음 연립 방정식이 해를 가지는 지 판정하라.
+
+$$
+x^3+2xy-3ye^{\sin x} \cos x = -7,\qquad y^5+x^2-3e^{\sin x}=5
+$$
+
+::: {.solution}
+
+함수를 다음과 같이 놓자.
+
+$$
+\begin{aligned}
+f(x,\,y) &= x^3+2xy-3ye^{\sin x} \cos x +7=0\\
+g(x,\,y) &= y^5+x^2-3e^{\sin x}-5=0 \\
+\nabla f(x,\,y) &= (3x^2+2y-3y \cos^2 x e^{\sin x}+3ye^{\sin x}\sin x,\,  2x-3\cos x e^{\sin x }) \\
+\nabla g(x,\,y) &= (2x-3\cos x e^{\sin x},\, 5y^4)
+\end{aligned}
+$$
+
+우리는 $\partial_y f = \partial_x g$ 임을 안다. 어떤 함수 $h(x,\,y)$ 에 대해 $f=\partial_x h,\, g=\partial_y h$ 로 잡을 수 있을까?
+
+$$
+h(x,\,y)= \dfrac{1}{4}x^4+\dfrac{1}{6}y^6+x^2y-3ye^{\sin x}+7x-5y
+$$
+
+라 하면 $\partial_x h=f,\, \partial_y h=g$ 가 성립하며 $h$ 는 무한급 함수이다. 또한 $1/e \le  e^{\sin x} \le e$ 를 생각하면, $r=\sqrt{x^2+y^2} \to \pm \infty$ 에서 $h\to \infty$ 이므로 $h$ 는 최소값이 존재하며 이 때 $\partial_x h =f = 0,\, \partial_y h = g = 0$ 이므로, 주어진 연립방정식의 해가 존재한다.
+
+:::
+
+</br>
+
+**4.** ($\textbf{H\"older}$ 부등식 ) 양수 $p,\,q$ 가 $\dfrac{1}{p}+\dfrac{1}{q}=1$ 을 만족시킬 때, 벡터
+
+$$
+a=(a_1,\ldots,\,a_n),\quad b=(b_1,\ldots,\,b_n)
+$$
+
+에 대하여 부등식
+
+$$
+|a\cdot b| \le (|a_1|^p + \cdots + |a_n|^p)^{1/p}(|b_1|^q  + \cdots + |b_n|^q)^{1/q}
+$$
+을 증명하라.
+
+::: {.solution}
+
+양수 $p,\,q$ 가 $\dfrac{1}{p}+\dfrac{1}{q}=1$ 을 만족시키므로, $p>1,\, q>1$ 이다. 영벡터에 대해서는 자명하므로 영벡터가 아닌 벡터에 대해서만 생각하자.  $n$-벡터 $x=(x_1,\ldots,\,x_n),\,y=(y_1,\ldots,\,y_n)$ where $x_i\ge 0,\, y_i\ge 0$ 가 다음을 만족한다고 하자.
+
+$$
+x_1^p + \cdots + x_n^p=y_1^q+ \cdots +y_n^q=1
+$$
+
+함수 $f(x,\,y),\, g_1(x,\,y),\, g_2(x,\,y)$ 를 다음과 같이 정의하자.
+
+$$
+\begin{aligned}
+f(x,\,y) &= x\cdot y = \sum_{i=1}^n x_i y_i \\
+g_1(x,\, y)&= x_1^p + \cdots + x_n^p-1 \\
+g_2(x,\,y) &= y_1^q + \cdots + y_n^q-1
+\end{aligned}
+$$
+
+라그랑즈 승수법에 의해 극값에서는 어떤 실수 $\lambda,\, \mu$ 에 대해  $\nabla f = \lambda \nabla g_1,\, \nabla f=\mu \nabla g_2$ 가 성립해야 한다.
+
+$$
+\begin{aligned}
+\nabla f &= (y_1,\ldots,\, y_n,\, x_1,\ldots,\,x_n) \\
+\nabla g_1 &= p(x_1^{p-1},\ldots,\,x_n^{p-1},\,0,\ldots,\, 0) \\
+\nabla g_2 &= q(0,\ldots,\, 0,\, y_1^{q-1},\ldots,\, y_n^{q-1})
+\end{aligned}
+$$
+
+이므로 $x_i=\mu q y_i^{q-1},\, y_i = \lambda p x_i^{p-1}$ 이다. $1/p+1/q=1 \implies pq-p-q=0$ 임을 생각하면,
+
+$$
+\begin{aligned}
+x_i &= \mu q \lambda^{q-1}p^{q-1}x_i^{(p-1)(q-1)}=\mu \lambda^{q-1}qp^{q-1} x_i \\
+y_i &= \lambda p \mu^{p-1}q^{p-1} y_i ^{(p-1)(q-1)} = \lambda \mu ^{p-1}pq^{p-1}y_i
+\end{aligned}
+$$
+
+그렇다면
+
+$$
+\mu \lambda^{q-1} qp^{q-1}=\lambda \mu^{p-1}pq^{p-1}=1 \tag{1}
+$$
+
+이어야 한다. 이때의 극값은
+
+$$
+\begin{aligned}
+f(x,\,y)=\sum_{i=1}^n x_i y_i&=\lambda p \sum_{i=1}^n x_i^p =\lambda p\\
+& =\mu q\sum_{i=1}^n y_i^q = \mu q
+\end{aligned}
+$$
+
+이므로 (1) 로부터 $\lambda p = \mu q=1$ 이므로 $f(x,\,y)=1$ 은 극값이다. $x=\mathbf{e}_1,\, y=\mathbf{e}_2$ 라 하면 $x \cdot y = 0$ 이며 $g_1,\,g_2$ 를 만족하므로  $f(x,\,y)$ 의 최대값은 $1$ 이다. 즉  $f(x,\,y)\le 1$ 이다. 이제 $x_i = \dfrac{|a_i|}{(\sum |a_i|^p)^{1/p}},\, y_i =\dfrac{|b_i|}{\sum (|b_i| ^q)^{1/q}}$ 라 하면
+
+$$
+|a \cdot b| = \left|\sum a_i b_i \right|\le \sum |a_i||b_i| \le \left(|a_1|^p+ \cdots + |a_n|^p\right)^{1/p} \left(|b_1|^q+ \cdots + |b_n|^q\right)^{1/q}
+$$
+
+이다.
+
+:::
+
+</br>
+
+**5.** 함수 $L(x,\,y,\,z)$ 에 대하여 공간 $\mathcal{F}=\{ f\in \mathcal{C}^1[a,\,b] \mid f(a)=y_a,\, f(b)=y_b\}$  에서 정의된 범함수
+
+$$
+\mathcal{L}(f) :=\int_a^b L(u,\,f(u),\, f'(u))\, du
+$$
+
+의 Euler-Lagrange 방정식이
+
+$$
+D_2 L(u,\, f(u),\, f'(u))=\dfrac{d}{du} D_3 L(u,\, f(u),\, f'(u))
+$$
+
+임을 보이라.
+
+::: {.solution}
+
+임의의 일급 함수
+
+$$
+h:[a,\,b] \to \mathbb{R},\qquad h(a)=h(b)=0
+$$
+
+에 대하여
+
+$$
+g(t) := \int_a^b L{\big (}u,\, f(u)+th(u),\, f'(u)+th'(u) {\big )} \, du
+$$
+
+라 하면 $g(t)$ 는 $t=0$ 에서 최소이므로
+
+$$
+0=\left.\dfrac{d}{dt} \right|_{t=0} g(t) = \left.\dfrac{d}{dt}\right|_{t=0} \int_a^b L{\big (}u,\, f(u)+th(u),\, f'(u)+th'(u) {\big )}\, du
+$$
+
+가 된다. 따라서,
+
+$$
+\begin{aligned}
+0 &= \int_a^ b \left.\dfrac{d}{dt}\right|_{t=0} L(u,\, f(u)+th(u),\, f'(u)+th'(u))\, du \\
+&= \int_a^bD_2 L(u,\, f(u),\, f'(u))h(u) \, du + \int_a^b D_3L(u,\, f(u),\, f'(u)
+)h' (u)\, du \\
+&=\int_a^bD_2 L(u,\, f(u),\, f'(u))h(u) \, du + {\big [ }  D_3L(u,\, f(u),\, f'(u))h(u) {\big ]}_a^b  \\
+&\qquad -\int_a^b \left(\dfrac{d}{du} D_3 L(u,\, f(u),\, f'(u))\right) h(u)\, du \\
+&= \int_a^b \left(D_2 L(u,\, f(u),\, f'(u)) - \dfrac{d}{du}D_3L(u,\, f(u),\, f'(u)\right)h(u)\, du
+\end{aligned}
+$$
+
+이다. 임의의 $h(u)$ 에 대해 성립해야 하므로 Euler-Lagrange equation 은
+
+$$
+D_2 L(u,\, f(u),\, f'(u)) - \dfrac{d}{du}D_3L(u,\, f(u),\, f'(u)=0
+$$
+이다.
+
+:::
+
+</br>
+
+**6.** 최단강하선 문제에서 $f$ 가 직선이거나 원호이면 걸리는 시간은 얼마인가.
+
+::: {.solution}
+
+$(0,\,0) \to (a,\, b)$ where $a>0,\, b<0$ 까지의 경로가 $y=f(x)$ 를 따를 때 걸리는 시간 $T$ 는
+
+$$
+T=\int_0^a \dfrac{\sqrt{1+f'(x)^2}}{\sqrt{2gf(x)}}\, dx
+$$
+
+이다. $f$ 가 직선이면 $y=f(x)= \dfrac{b}{a}x$ 를 따르므로
+
+$$
+T_{line}= \int_0^a \dfrac{\sqrt{1+b^2/a^2}}{\sqrt{2gbx/a}}\, dx = \dfrac{\sqrt{a^2+b^2}}{\sqrt{2gab}}2\sqrt{a}=\dfrac{\sqrt{2}\sqrt{a^2+b^2}}{\sqrt{gb}}
+$$
+
+$f$ 가 원호이면, 원의 방정식 $(x-c)^2+(y-d)^2=c^2+d^2$ 에 대해 $a^2-2ca+b^2-2db=0$ 을 만족한다.  여기서 원호가 하나로 결정되지 않음에 유의하자.
+
+$$
+\begin{aligned}
+y&=d+\sqrt{(c^2+d^2)-(x-c)^2} \\
+y'&= -\dfrac{(x-c)}{\sqrt{c^2+d^2-(x-c)^2}}
+\end{aligned}
+$$
+
+이므로
+
+$$
+\begin{aligned}
+T_{circ} &= \int_0^a \dfrac{\sqrt{1+ \dfrac{(x-c)^2}{c^2+d^2-(x-c)^2}}}{\sqrt{2g (d+ \sqrt{c^2+d^2-(x-c)^2})}}dx  \qquad R=\sqrt{c^2+d^2},\quad (x-c)=R\sin \theta\\
+&= \dfrac{1}{\sqrt{2g}}\int_{\sin^{-1}(-c/R)}^{\sin^{-1}(a-c)/R}\dfrac{R}{\sqrt{d+R \cos \theta}}\, d\theta
+\end{aligned}
+$$
+
+더 계산할 수 있나... 
+
+:::
+

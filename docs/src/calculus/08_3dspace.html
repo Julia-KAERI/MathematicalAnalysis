@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; 3차원 공간과 벡터의 외적 – Mathematical Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../src/calculus/09_curves.html" rel="next">
+<link href="../../src/calculus/07_square_matrix.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/08_3dspace.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3차원 공간과 벡터의 외적</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Mathematical Analysis</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Julia-KAERI/MathematicalAnalysis" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/calculus/calculus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">미적분학</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/01_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/02_power_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">멱급수와 수렴반경</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/03_tayler_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">테일러 전개</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/04_coordinate_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">좌표공간과 좌표계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/05_vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">벡터</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/06_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행렬과 선형사상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/07_square_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">정사각 행렬과 행렬식</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/08_3dspace.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3차원 공간과 벡터의 외적</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/09_curves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">곡선</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/10_multivariable_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">다변수함수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/11_higher_order_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">최대최소값 문제와 고계미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/12_multivariable_vector_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">다변수 벡터함수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/calculus/13_vector_field.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">벡터장과 선적분</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part1/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">해석학의 기반</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_1_basic_of_naive_set_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">집합</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_2_functions_and_relations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">함수와 관계</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_3_numbers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_4_cartesian_products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">데카르트 곱</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part1/1_5_finite_sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">유한집합</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part2/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">일변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_1_basic_topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">기본적인 위상수학</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_2_sequences_and_series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">수열과 급수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_3_continuity_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">함수의 연속성</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_4_differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_5_riemann_stieltjes_integral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">리만-스틸체스 적분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part2/2_6_sequences_and_series_of_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">함수열</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">다변수 함수의 해석학</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_1_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_2_differentiation_of_manifolds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_3_inverse_function_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_4_integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_5_change_of_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">미분동형사상과 변수 변경</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_6_differential_forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">미분 형식</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/part3/3_7_stokes_theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">스토크스 정리</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#연습문제-제-8-장-1-절" id="toc-연습문제-제-8-장-1-절" class="nav-link active" data-scroll-target="#연습문제-제-8-장-1-절"><span class="header-section-number">8.1</span> 연습문제 : 제 8 장 1 절</a></li>
+  <li><a href="#연습문제-제-8-장-2-절" id="toc-연습문제-제-8-장-2-절" class="nav-link" data-scroll-target="#연습문제-제-8-장-2-절"><span class="header-section-number">8.2</span> 연습문제 : 제 8 장 2 절</a></li>
+  <li><a href="#연습문제-제-8장-3절" id="toc-연습문제-제-8장-3절" class="nav-link" data-scroll-target="#연습문제-제-8장-3절"><span class="header-section-number">8.3</span> 연습문제 : 제 8장 3절</a></li>
+  <li><a href="#탐구문제" id="toc-탐구문제" class="nav-link" data-scroll-target="#탐구문제"><span class="header-section-number">8.4</span> 탐구문제</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/calculus/calculus.html">미적분학</a></li><li class="breadcrumb-item"><a href="../../src/calculus/08_3dspace.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3차원 공간과 벡터의 외적</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3차원 공간과 벡터의 외적</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p>% %</p>
+%
+<p><span class="math display">\[
+\DeclarePairedDelimiters{\set}{\{}{\}}
+\DeclareMathOperator*{\argmax}{argmax}
+\]</span></p>
+</div>
+<p><em>이 장에서의 공간은 <span class="math inline">\(\mathbb{R}^3\)</span> 를 의미한다</em></p>
+<section id="연습문제-제-8-장-1-절" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="연습문제-제-8-장-1-절"><span class="header-section-number">8.1</span> 연습문제 : 제 8 장 1 절</h2>
+<p><strong>1.</strong> ~ <strong>7.</strong> 까지는 단순계산이므로 생략</p>
+<p><br></p>
+<p><strong>8.</strong> 삼차원 공간의 두 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차독립일 필요충분조건은 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b} \ne \boldsymbol{0}\)</span> 임을 보이라.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차종속일 필요충분조건이 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}=0\)</span> 임을 보이는것과 동치이다. 우선 <span class="math inline">\(\boldsymbol{a}\)</span> 혹은 <span class="math inline">\(\boldsymbol{b}\)</span> 가 일차종속임을 가정하자. 둘 중 하나가 <span class="math inline">\(\boldsymbol{0}\)</span> 이면 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 이다. 이제 둘 다 <span class="math inline">\(\boldsymbol{0}\)</span> 이 아닌 벡터에 대해 생각하자. <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차종속이면 어떤 scalar <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}=c\boldsymbol{b}\)</span> 이며, 따라서 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 이다.</p>
+<p>이제 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 임을 가정하자. 둘 중 하나가 <span class="math inline">\(\boldsymbol{0}\)</span> 이면 일차종속이므로 둘 다 <span class="math inline">\(\boldsymbol{0}\)</span> 이 아닌 상태만 생각하면 된다. <span class="math inline">\(|\boldsymbol{a}\times \boldsymbol{b}|=|\boldsymbol{a}||\boldsymbol{b}||\sin \theta|\)</span> 이므로 <span class="math inline">\(\theta = 0\)</span> 이다. 두 벡터가 평행하므로 일차종속이다.</p>
+<p><br></p>
+<p><strong>9.</strong> 삼차원 공간의 임의의 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c},\,\boldsymbol{d}\)</span> 에 대하여 다음 식이 성립함음 보이라.</p>
+<hr>
+<p>Levi-Civita 개념을 사용한다. google 검색..</p>
+<p><span class="math display">\[
+\begin{aligned}
+(a)\qquad \qquad &amp;(\boldsymbol{a}\times (\boldsymbol{b}\times \boldsymbol{c}))_i =\epsilon_{ijk}a_j(\epsilon_{klm}b_lc_m)=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})a_jb_lc_m = a_jb_ic_j-a_jb_jc_i=(\boldsymbol{a}\cdot \boldsymbol{c})b_i-(\boldsymbol{a}\cdot \boldsymbol{b})c_i\\
+\implies &amp;\boldsymbol{a} \times(\boldsymbol{b}\times \boldsymbol{c})=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{c}\\
+(b) \qquad \qquad &amp; ((\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{c})_i = \epsilon_{ijk}\epsilon_{jlm} a_lb_m c_k = (\delta_{kl}\delta_{im}-\delta_{km}\delta_{il})a_lb_mc_k = a_kb_ic_k-a_ib_kc_k = (\boldsymbol{a}\cdot \boldsymbol{c})b_i - (\boldsymbol{b}\cdot \boldsymbol{c})a_i \\
+\implies &amp; (\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{c}=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{b}\cdot \boldsymbol{c})\boldsymbol{a}\\
+(c)\qquad \qquad &amp; (\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{c \times \boldsymbol{d}}) = \epsilon_{ijk} a_jb_k  \epsilon_{ilm}c_ld_m = (\delta_{jl}\delta_{km}-\delta_{jm}\delta_{kl})a_jb_k c_ld_m = a_jb_k c_j d_k-a_jb_kc_kd_j \\
+&amp;=(\boldsymbol{a}\cdot \boldsymbol{c})(\boldsymbol{b}\cdot \boldsymbol{d})-(\boldsymbol{a}\cdot \boldsymbol{d})(\boldsymbol{b}\cdot \boldsymbol{c})\\
+(d) \qquad \qquad &amp; \boldsymbol{a}\times(\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b})=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{c}+(\boldsymbol{b}\cdot \boldsymbol{a})\boldsymbol{c}-(\boldsymbol{b}\cdot \boldsymbol{c})\boldsymbol{a} + (\boldsymbol{c}\cdot \boldsymbol{b})\boldsymbol{a}-(\boldsymbol{c}\cdot \boldsymbol{a})\boldsymbol{b}=0
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>10.</strong> 삼차원공간에서 양으로 향한 정규직교기저 <span class="math inline">\(\boldsymbol{v}_1,\,\boldsymbol{v}_2,\,\boldsymbol{v}_3\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+\boldsymbol{a}=\sum_{i=1}^3 a_i\boldsymbol{v}_i,\qquad \boldsymbol{b}=\sum_{j=1}^n b_j \boldsymbol{v}_j
+\]</span></p>
+<p>일 때,</p>
+<p><span class="math display">\[
+\boldsymbol{a}\times \boldsymbol{b} =\sum_{i,j,k=1}^3 \epsilon_{ijk} a_ib_j \boldsymbol{v}_k
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\boldsymbol{a}\times \boldsymbol{b}=\sum_{i}\sum_j a_ib_j (\boldsymbol{v}_i \times \boldsymbol{v}_j)=\sum_{i,j,k}a_ib_j\epsilon_{ijk} \boldsymbol{v}_k
+\]</span></p>
+<p><br></p>
+<p><strong>11.</strong> 공간속의 한 사면체 <span class="math inline">\(ABCD\)</span> 의 의 면 <span class="math inline">\(BCD\)</span> 에 대하여, 크기가 이 면의 넓이와 같고, 이 면에 수직이고, 방향은 사면체의 밖을 향하는 벡터 <span class="math inline">\(\boldsymbol{v}_A\)</span> 를 생각하자. 마찬가지로 각 면 <span class="math inline">\(CDA,\,DAB,\,ABC\)</span> 에 대하여 벡터 <span class="math inline">\(\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 가 정의도었을 때,</p>
+<p><span class="math display">\[
+\boldsymbol{v}_A+\boldsymbol{v}_B+\boldsymbol{v}_C+\boldsymbol{v}_D=0
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>사면체에서 <span class="math inline">\(ABC\)</span> 가 시계방향인지 반시계 방향인지, <span class="math inline">\(\overrightarrow{AD}\cdot (\overrightarrow{BA}\times \overrightarrow{CA})\)</span> 가 양수인지 음수인지 에 대해 각각의 <span class="math inline">\(\boldsymbol{v}_{X}\;(X=A,\,B,\,C,\,D)\)</span> 벡터를 표현하는 식이 달라진다.</p>
+<p>사면체의 꼭지점의 좌표가 주어지고 <span class="math inline">\(\boldsymbol{v}_A,\,\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 를 계산했다고 하자. 우리는 그 꼭지점의 이름을 어떤 순서와 방향으로 붙이건 간에 <span class="math inline">\(\boldsymbol{v}_A,\,\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 로 계산된 양이 각 면에 나타날 것이므로, 그 합은 꼭지점을 이름붙이는 순서와 상관 없음을 알 수 있다. 즉 편의대로 붙이면 된다.</p>
+<p><span class="math inline">\(A,\,B,\,C\)</span> 가 반시계 방향이고, <span class="math inline">\(\overrightarrow{AD}\cdot(\overrightarrow{BA}\times \overrightarrow{CA})&gt;0\)</span> 이라고 하자. 그렇다면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{v}_A&amp;=\dfrac{1}{2} (\overrightarrow{DB}\times \overrightarrow {DC})\\
+\boldsymbol{v}_B&amp;=\dfrac{1}{2} (\overrightarrow{AD}\times \overrightarrow{AC})\\
+\boldsymbol{v}_C&amp;=\dfrac{1}{2} (\overrightarrow{BD}\times \overrightarrow{BA})\\
+\boldsymbol{v}_D &amp;=\dfrac{1}{2} (\overrightarrow{CB}\times \overrightarrow{CA})
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+2(\boldsymbol{v}_A+\boldsymbol{v}_B+\boldsymbol{v}_C+\boldsymbol{v}_D) &amp;= (\boldsymbol{b}-\boldsymbol{d})\times (\boldsymbol{c}-\boldsymbol{d})+(\boldsymbol{d}-\boldsymbol{a})\times (\boldsymbol{c}-\boldsymbol{a})+(\boldsymbol{d}-\boldsymbol{b})
+\times (\boldsymbol{a}-\boldsymbol{b})+(\boldsymbol{b}-\boldsymbol{c})\times (\boldsymbol{a}-\boldsymbol{c})\\
+&amp;=\boldsymbol{b}\times \boldsymbol{c}-\boldsymbol{b}\times \boldsymbol{d}+\boldsymbol{c}\times \boldsymbol{d}-\boldsymbol{c} \times \boldsymbol{d} +\boldsymbol{a}\times \boldsymbol{d}-\boldsymbol{a}\times \boldsymbol{c} -\boldsymbol{a}\times \boldsymbol{d}+\boldsymbol{b}\times \boldsymbol{d}+\boldsymbol{a}\times \boldsymbol{b} -\boldsymbol{a}\times \boldsymbol{b}-\boldsymbol{b}\times \boldsymbol{c}+\boldsymbol{a}\times \boldsymbol{c}\\
+&amp;=0
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>12.</strong> 일차독립인 벡터 <span class="math inline">\(\boldsymbol{v}_1,\,\boldsymbol{v}_2\)</span> 에 대하여 공간속의 두 직선</p>
+<p><span class="math display">\[
+A_i + t\boldsymbol{v}_i \qquad i=1,\,2
+\]</span></p>
+<p>사이의 최단거리는</p>
+<p><span class="math display">\[
+\left| (A_1-A_2) \cdot \dfrac{\boldsymbol{v}_1\times \boldsymbol{v}_2}{|\boldsymbol{v}_1 \times \boldsymbol{v}_2|} \right|
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>직선 밖의 점 에서 직선까지의 최단거리는 그 점으로부터 직선까지 거린 수선에 의해 정해진다. 두 직선 사이 <span class="math inline">\(l_1,\,l_2\)</span> 의 최단거리를 생각하자. <span class="math inline">\(l_1\)</span> 의 임의의 점 <span class="math inline">\(P_1\)</span> 에서 <span class="math inline">\(l_2\)</span> 까치의 최단거리는 <span class="math inline">\(P_1\)</span> 에서 <span class="math inline">\(l_2\)</span> 에 내린 수선에 의해 정해지며 그 역도 마찬가지이다. 따라서 그 수선의 방향벡터는 <span class="math inline">\(l_1,\,l_2\)</span> 두 직선 각각에 수직이므로 <span class="math inline">\(l_1, l_2\)</span> 의 방향벡터에 수직이다. 문제에서 주어진 두 직선에서 최단거리를 포함하는 직선의 방향벡터는 단위벡터로 표현할 때</p>
+<p><span class="math display">\[
+\dfrac{\boldsymbol{v}_1\times \boldsymbol{v}_2}{|\boldsymbol{v}_1 \times \boldsymbol{v}_2|}
+\]</span></p>
+<p>이다. 직선상의 임의의 두 점은 <span class="math inline">\(A_i+t_i \boldsymbol{v}_i\;(i=1,\,2)\)</span> 이므로 한 직선의 임의의 한 점과 다른 직선의 임의의 한 점의 벡터는</p>
+<p><span class="math display">\[
+A_2+t_2\boldsymbol{v}_1-A_1 -t_1\boldsymbol{v}_1
+\]</span></p>
+<p>으로 표현 할 수 있다. 그런데 이 벡터의 앞서 말한 수선방향으로의 정사영의 크기는</p>
+<p><span class="math display">\[
+\left|(A_2-A_1)\cdot \dfrac{\boldsymbol{v}_1\times \boldsymbol{v}_2}{|\boldsymbol{v}_1\times \boldsymbol{v}_2|}\right|
+\]</span></p>
+<p>로 어떤 두 점에 대해서도 동일하다. 따라서 이 값이 두 직선 사이의 거리이다.</p>
+<p><br></p>
+<p><strong>13.</strong> (<strong>정사영</strong>) 공간 속의 두 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 이루는 평행사변형을 한 평면에 정사영한 것의 넓이는 <span class="math inline">\(\cos \theta\)</span> 배임을 보이라. 여기서 <span class="math inline">\(\theta\)</span> 는 평행사변형과 주어진 평면이 이루는 각의 크기이다.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 에 의해 정의되는 평면의 방향벡터는 (이 평면에 수직인) <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}\)</span> 이다. 주어진 평면의 방향벡터의 단위벡터를 <span class="math inline">\(\boldsymbol{n}\)</span> 이라 하자. <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{n}\)</span> 은 <span class="math inline">\(\boldsymbol{n}\)</span> 에 수직이며 그 크기가 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면에 대한 정사영의 크기와 같고 그 방향은 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면으로의 정사영에 대하여 <span class="math inline">\(\pi/2\)</span> 만큼 회전한 벡터이다. 그 회전방향은 <span class="math inline">\(\boldsymbol{n}\)</span> 과 <span class="math inline">\(\boldsymbol{a}\)</span> 의 방향에 따라 시계방향 혹은 반시계방향일 수 있다. <span class="math inline">\(\boldsymbol{b}\times \boldsymbol{n}\)</span> 도 마찬가지.</p>
+<p><span class="math inline">\(\boldsymbol{a}\cdot \boldsymbol{n}&gt;0\)</span> 일 때 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면에 대한 정사영에 대해 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{n}\)</span> 의 회전방향을 <span class="math inline">\(+\)</span> 로 잡자. <span class="math inline">\(\boldsymbol{b}\cdot \boldsymbol{n}\)</span> 이 양수이든 음수이든 평행사변형의 면적은 변화가 없다. 즉 정사영의 평행사변의 면적 <span class="math inline">\(S\)</span> 는</p>
+<p><span class="math display">\[
+S=|(\boldsymbol{a}\times\boldsymbol{n}) \times (\boldsymbol{b} \times \boldsymbol{n})|=|((\boldsymbol{a} \times \boldsymbol{n})\cdot \boldsymbol{n})\boldsymbol{b} -((\boldsymbol{a\times \boldsymbol{b}}) \cdot \boldsymbol{n})\boldsymbol{n}| = |(\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{n}|=|\boldsymbol{a}\times \boldsymbol{b}|\cos \theta
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>14.</strong> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a}\ne \boldsymbol{0}\)</span> 에 대한 벡터 <span class="math inline">\(\boldsymbol{b}\)</span> 의 정사영을 <span class="math inline">\(p_{\boldsymbol{a}}(\boldsymbol{b})\)</span> 라 하자. 이 때,</p>
+<p><span class="math display">\[
+\boldsymbol{b}-p_{\boldsymbol{a}}(\boldsymbol{b})=\dfrac{(\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{a}}{\boldsymbol{a}\cdot \boldsymbol{a}}
+\]</span></p>
+<p>임을 보여라.</p>
+<hr>
+<p>정리 3.1.1 로부터 <span class="math inline">\(p_{\boldsymbol{a}}(\boldsymbol{b})= \dfrac{\boldsymbol{a}\cdot \boldsymbol{b}}{\boldsymbol{a}\cdot \boldsymbol{a}}\boldsymbol{a}\)</span> 임을 안다. 여기서,</p>
+<p><span class="math display">\[
+(\boldsymbol{a}\times\boldsymbol{b})\times \boldsymbol{a}= (\boldsymbol{a}\cdot \boldsymbol{a})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{a}
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+p_{\boldsymbol{a}}(\boldsymbol{b})=\dfrac{(\boldsymbol{a}\cdot \boldsymbol{a})\boldsymbol{b}-(\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{a}}{\boldsymbol{a} \cdot \boldsymbol{a}}=\boldsymbol{b}-\dfrac{(\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{a}}{\boldsymbol{a} \cdot \boldsymbol{a}}
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>15.</strong> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\, \boldsymbol{c}\)</span> 가 일차독립이면, 임의의 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+\boldsymbol{v} = \dfrac{\det (\boldsymbol{v},\,\boldsymbol{b},\,\boldsymbol{c})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{a} + \dfrac{\det (\boldsymbol{a},\,\boldsymbol{v},\,\boldsymbol{c})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{b} +\dfrac{\det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{c}
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}\)</span> 가 일차독립이므로, <span class="math inline">\(\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})=(\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{c} \ne 0\)</span> 이며, <span class="math inline">\(\boldsymbol{v}=a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}\)</span> 일 때 scalar <span class="math inline">\(a,\,b,\,c\)</span> 가 유일하게 결정된다. <span class="math display">\[
+\begin{aligned}
+\det (\boldsymbol{v},\,\boldsymbol{b},\,\boldsymbol{c})\boldsymbol{a} + \det (\boldsymbol{a},\,\boldsymbol{v},\,\boldsymbol{c})\boldsymbol{b} &amp;+ \det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})\boldsymbol{c} \\
+&amp;= ((\boldsymbol{v}\times \boldsymbol{b})\cdot \boldsymbol{c})\boldsymbol{a}+((\boldsymbol{a} \times \boldsymbol{v})\cdot\boldsymbol{c}) \boldsymbol{b} + ((\boldsymbol{a} \times \boldsymbol{b})\cdot \boldsymbol{v})\boldsymbol{c} \\
+\end{aligned}
+\]</span></p>
+<p>인데,</p>
+<p><span class="math display">\[
+\begin{aligned}
+((\boldsymbol{v}\times \boldsymbol{b})\cdot \boldsymbol{c}) &amp;= (a\boldsymbol{a}\times \boldsymbol{b}+c\boldsymbol{c}\times \boldsymbol{b})\cdot \boldsymbol{c}=a\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})\\
+((\boldsymbol{a}\times \boldsymbol{v})\cdot \boldsymbol{c}) &amp;= (b \boldsymbol{a} \times \boldsymbol{b}+c \boldsymbol{a} \times \boldsymbol{c})\cdot \boldsymbol{c}=b \det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}) \\
+((\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{v})&amp;=(\boldsymbol{a}\times \boldsymbol{b})\cdot(a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c})=c\det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\dfrac{\det (\boldsymbol{v},\,\boldsymbol{b},\,\boldsymbol{c})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{a} +
+\dfrac{\det (\boldsymbol{a},\,\boldsymbol{v},\,\boldsymbol{c})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{b}
++\dfrac{\det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{c} = a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}=\boldsymbol{v}
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>16.</strong> 좌표공간속의 정사면체 <span class="math inline">\(OABC\)</span> 에 내접하는 구의 중심을 <span class="math inline">\(P\)</span> 라고 두자. 이때 <span class="math inline">\(\overrightarrow{OP}\)</span> 를 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 의 일차결합으로 표현하라.</p>
+<hr>
+<p>일단 <span class="math inline">\(OABC\)</span> 가 정사면체가 되려면 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 이 일차독립이어야 한다. 따라서 <span class="math inline">\(\overrightarrow{OP}\)</span> 는 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 의 일차결합으로 표현된다. 편의를 위해 <span class="math inline">\(\overrightarrow{OA}=\boldsymbol{a},\,\overrightarrow{OB}=\boldsymbol{b},\,\overrightarrow{OC}=\boldsymbol{c},\,\overrightarrow{OP}=\boldsymbol{p}\)</span> 라 하자. 이제 <span class="math inline">\(\boldsymbol{p}=a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}\)</span> 이다.</p>
+<p><br></p>
+<p><strong>17.</strong> 공간에서 <span class="math inline">\(\triangle ABC\)</span> 와 원점 <span class="math inline">\(O\)</span> 에 대하여 <span class="math inline">\(\boldsymbol{a}=\overrightarrow{OA},\,\boldsymbol{b}=\overrightarrow{OB},\, \boldsymbol{c}=\overrightarrow{OC}\)</span> 로 두면 <span class="math inline">\((\boldsymbol{a}\times \boldsymbol{b})+(\boldsymbol{b} \times \boldsymbol{c})+(\boldsymbol{c}\times \boldsymbol{a})\)</span> 는 <span class="math inline">\(\triangle ABC\)</span> 에 수직임을 보이라.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{p}=(\boldsymbol{a}\times \boldsymbol{b})+(\boldsymbol{b} \times \boldsymbol{c})+(\boldsymbol{c}\times \boldsymbol{a})\)</span> 라 두면 <span class="math inline">\(\boldsymbol{p}\cdot (\boldsymbol{b}-\boldsymbol{a})=0\)</span> 이고 <span class="math inline">\(\boldsymbol{p}\cdot (\boldsymbol{c}-\boldsymbol{a})=0\)</span> 임을 보이면 된다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{p}\cdot (\boldsymbol{b}-\boldsymbol{a}) &amp;= (\boldsymbol{c}\times \boldsymbol{a})\cdot \boldsymbol{b}-(\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{a}=0 \\
+\boldsymbol{p}\cdot (\boldsymbol{c}-\boldsymbol{a}) &amp;=(\boldsymbol{a} \times \boldsymbol{b} )\cdot \boldsymbol{c} -(\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{a} =0
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>18.</strong> 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}\in \mathbb{R}^3\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+(\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{b}\times \boldsymbol{c}) \times (\boldsymbol{c}\times \boldsymbol{a})=(\boldsymbol{a}\cdot \boldsymbol{b} \times \boldsymbol{c})^2
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+(\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{b}\times \boldsymbol{c}) \times (\boldsymbol{c}\times \boldsymbol{a}) &amp;=(\boldsymbol{a}\times \boldsymbol{b})\cdot \left[((\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{a})\boldsymbol{c} - ((\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{c})\boldsymbol{a}\right] \\
+&amp;= ((\boldsymbol{b}\times \boldsymbol{c} )\cdot \boldsymbol{a})((\boldsymbol{a} \times \boldsymbol{b})\cdot \boldsymbol{c}) \\
+&amp;=(\boldsymbol{a} \cdot \boldsymbol{b} \times \boldsymbol{c})^2
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>19</strong> 평행사변형을 <span class="math inline">\(xy\)</span>-평면, <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면으로 정사영한것의 넓이가 각각 <span class="math inline">\(1,\,1,\,2\)</span> 이면 처음 평행사변형의 넓이는 얼마인가?</p>
+<hr>
+<p>평행사변형의 면적을 <span class="math inline">\(S\)</span> 라 하고 평행사변형을 포함하는 평면의 방향벡터의 단위벡터를 <span class="math inline">\(\boldsymbol{n}\)</span> 이라 하자. 그렇다면</p>
+<p><span class="math display">\[
+S\boldsymbol{n}\cdot (0,\,0,\,1)=1,\qquad S\boldsymbol{n} \cdot (1,\,0,\,0)=1,\qquad S\boldsymbol{n}\cdot (0,\,1,\,0)=2
+\]</span></p>
+<p>이므로 <span class="math inline">\(S=\sqrt{1^2+1^2+2^2}=\sqrt{6}\)</span>.</p>
+<p><br></p>
+<p><strong>20.</strong> <span class="math inline">\(\mathbb{R}^3\)</span> 속의 세 백터 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}\)</span> 가 이루는 <strong>평행육면체</strong> <span class="math display">\[
+\{r\boldsymbol{x}+s\boldsymbol{y}+t\boldsymbol{z} : 0 \le r,\,s,\,t \le 1\}
+\]</span> 의 부피는 <span class="math inline">\(|\det (\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|\)</span> 임을 보이라.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 의 면적은 <span class="math inline">\(|\boldsymbol{x}\times \boldsymbol{y}|\)</span> 이다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 에 의해 정해지는 평면의 방향벡터의 단위벡터는 <span class="math inline">\(\boldsymbol{n}=\dfrac{\boldsymbol{x}\times  \boldsymbol{y}}{|\boldsymbol{x}\times \boldsymbol{y}|}\)</span> 이며 이 평면과 <span class="math inline">\(\boldsymbol{z}\)</span> 사이의 거리는 <span class="math inline">\(\boldsymbol{n}\cdot \boldsymbol{z}\)</span> 로 주어진다. 따라서,</p>
+<p><span class="math display">\[
+V=|\boldsymbol{x} \times \boldsymbol{y}| \, |\boldsymbol{n}\cdot \boldsymbol{z}|=|\boldsymbol{x}\times \boldsymbol{y}| \left| \dfrac{(\boldsymbol{x}\times \boldsymbol{y})\cdot \boldsymbol{z}}{|\boldsymbol{x} \times \boldsymbol{y}|}\right|=|\det (\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|
+\]</span></p>
+<p><br></p>
+<p><strong>21.</strong> 생략</p>
+<p><br></p>
+<p><strong>22.</strong> 3차원 좌표공간 속의 세 벡터 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}\)</span> 가 이루는 평행육면체의 부피를 <span class="math inline">\(\operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})\)</span> 라 고 두었을 때, 3차 정사각행렬 <span class="math inline">\(A\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\operatorname{Vol}(L_A(\boldsymbol{x}),\,L_A(\boldsymbol{y}),\,L_A(\boldsymbol{z}))=|\det A| \operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>앞의 20번 문제에서 부터 <span class="math inline">\(\operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\boldsymbol{z})=|\det(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|\)</span> 임을 보였다. 정리 3.0.6으로부터,</p>
+<p><span class="math display">\[
+\det(A\boldsymbol{x},\,A\boldsymbol{y},\,A\boldsymbol{z}) = (\det A ) (\det (\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}))
+\]</span></p>
+<p>이므로 증명 끝.</p>
+<p><br></p>
+</section>
+<section id="연습문제-제-8-장-2-절" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="연습문제-제-8-장-2-절"><span class="header-section-number">8.2</span> 연습문제 : 제 8 장 2 절</h2>
+<p><strong>1.</strong> 모든 정사각행렬은 대칭행렬과 왜대칭행렬의 합으로 표현됨을 보여라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+(A+A^t)_{ij}-(A+A^t)_{ji}&amp;=A_{ij}+(A^{t})_{ij} -A_{ji}-(A^t)_{ji}=A_{ij}+A_{ji}-A_{ji}-A_{ij}=0\\
+(A-A^t)_{ij}+(A-A^t)_{ji}&amp;=A_{ij}-A_{ji}+A_{ji}-A_{ij}=0
+\end{aligned}
+\]</span></p>
+<p>이므로 <span class="math inline">\(A+A^t\)</span> 는 대칭행렬이고 <span class="math inline">\(A-A^t\)</span> 는 왜대칭행렬이다. <span class="math inline">\(\dfrac{1}{2}(A+A^t)\)</span> 는 대칭행렬이고 <span class="math inline">\(\dfrac{1}{2}(A-A^t)\)</span> 는 왜대칭행렬이며,</p>
+<p><span class="math display">\[
+A=\dfrac{1}{2}(A+A^t)+\dfrac{1}{2}(A-A^t)
+\]</span></p>
+<p>이다.</p>
+<p><br></p>
+<p><strong>2.</strong> 왜대칭행렬의 합은 왜대칭행렬임을 보이라. 또 왜대칭행렬의 상수배도 왜대칭임을 보이라.</p>
+<hr>
+<p>trivial.</p>
+<p><br></p>
+<p><strong>3.</strong> 차수가 같은 두 정사각행렬 <span class="math inline">\(M,\,N\)</span> 에 대하여</p>
+<p><span class="math display">\[
+[M,\,N] := MN - NM
+\]</span></p>
+<p>으로 정의하자. 이 때 삼차원 공간의 임의의 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 에 대하여</p>
+<p><span class="math display">\[
+M_{\boldsymbol{a}\times \boldsymbol{b}}=[M_\boldsymbol{a},\,M_\boldsymbol{b}]
+\]</span></p>
+<p>가 성립함을 보이라. 또</p>
+<p><span class="math display">\[
+[M_1,\,M_2]=M-3,\quad [M_2,\,M_3]=M_1,\quad [M_3,\,M_1]=M_2
+\]</span></p>
+<p>임을 보이라.</p>
+<hr>
+<p>임의의 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^3\)</span> 를 생각하자. 연습문제 8.1.9(d) 의 <span class="math inline">\(\boldsymbol{a}\times(\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b})=0\)</span> 을 이용하면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+(M_{\boldsymbol{a}}M_{\boldsymbol{b}}-M_{\boldsymbol{b}}M_{\boldsymbol{a}})\boldsymbol{x}
+&amp; =\boldsymbol{a} \times (\boldsymbol{b}\times \boldsymbol{x})-\boldsymbol{b}\times (\boldsymbol{a}\times \boldsymbol{x}) \\
+&amp; = \boldsymbol{a}\times (\boldsymbol{b}\times \boldsymbol{x})+\boldsymbol{b}\times (\boldsymbol{x}\times \boldsymbol{a}) \\
+&amp; = (\boldsymbol{a}\times \boldsymbol{b})\times\boldsymbol{x} \\
+&amp; = M_{\boldsymbol{a}\times \boldsymbol{b}}\boldsymbol{x}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>4.</strong> 단위벡터 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^3\)</span> 에 대하여 선형변환</p>
+<p><span class="math display">\[
+\boldsymbol{x}\mapsto \boldsymbol{a} \times \boldsymbol{x} \qquad (\boldsymbol{x}\in \mathbb{R}^3)
+\]</span> 은 <span class="math inline">\(\boldsymbol{a}\)</span> 방향의 벡터는 <span class="math inline">\(0\)</span> 으로 보내고, <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터는 <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 회전시키는 변환임을 설명하라.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{x}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 방향의 벡터와 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터로 분해 할 수 있다. <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 방향 벡터는 <span class="math inline">\((\boldsymbol{x}\cdot \boldsymbol{a})\boldsymbol{a}\)</span> 이므로, <span class="math inline">\(\boldsymbol{x}_{\perp}= \boldsymbol{x}-(\boldsymbol{a}\cdot \boldsymbol{x})\boldsymbol{a}\)</span> 라 하면, <span class="math inline">\(\boldsymbol{x}_{\perp}\)</span> 는 <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터임을 알 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{x}_{\perp} \cdot \boldsymbol{a} &amp;= \boldsymbol{x}\cdot \boldsymbol{a} -(\boldsymbol{a}\cdot \boldsymbol{x})(\boldsymbol{a} \cdot \boldsymbol{a})=0\\
+\boldsymbol{x}_{\perp }\times \boldsymbol{a} &amp;=\boldsymbol{x}\times \boldsymbol{a} -(\boldsymbol{a}\cdot \boldsymbol{x})(\boldsymbol{a}\times \boldsymbol{a})=\boldsymbol{x} \times \boldsymbol{a}
+\end{aligned}
+\]</span></p>
+<p>그런데,</p>
+<p><span class="math display">\[
+(\boldsymbol{a}\times \boldsymbol{x})\cdot \boldsymbol{x}_{\perp} = (\boldsymbol{a}\times \boldsymbol{x}_\perp) \cdot \boldsymbol{x}_{\perp}=0
+\]</span></p>
+<p>이므로 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{x}\)</span> 는 <span class="math inline">\(\boldsymbol{x}_{\perp}\)</span> 수직이며. 또한 당연히 <span class="math inline">\(\boldsymbol{a}\cdot (\boldsymbol{a}\times\boldsymbol{x})=0\)</span> 이므로 <span class="math inline">\(\boldsymbol{a}\)</span> 와도 수직이다.</p>
+<p><span class="math display">\[
+|\boldsymbol{a}\times \boldsymbol{x}|=|\boldsymbol{x}_{\perp}|
+\]</span></p>
+<p>이므로 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{x}\)</span> 는 <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 성분벡터를 <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 회전시키는 변환임을 알 수 있다.</p>
+<p><br></p>
+<p><strong>5.</strong> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}_0\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+\boldsymbol{b}_{n+1}=\boldsymbol{a}\times \boldsymbol{b}_n,\qquad (n=0,\,1,\ldots)
+\]</span></p>
+<p>으로 두자. 이 때 <span class="math inline">\(\boldsymbol{b}_n\)</span> 이 어떻게 변하는 지를 설명하라. 또 <span class="math inline">\(\boldsymbol{a}=(1,\,2,\,2)/3,\, \boldsymbol{b}_0=(0,\,1,\,2)\)</span> 일 때 <span class="math inline">\(\boldsymbol{b}_{2000}\)</span> 을 구하라.</p>
+<hr>
+<p>앞의 4. 의 결과를 알면 쉽다. <span class="math inline">\(|\boldsymbol{a}|=1\)</span> 이므로 <span class="math inline">\(\boldsymbol{b}_1\)</span> 은 <span class="math inline">\(\boldsymbol{b}_0\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 수직인 방향의 성분을 <span class="math inline">\(90^\circ\)</span> 회전시키 것이다. <span class="math inline">\(\boldsymbol{b}_1\)</span> 은 이제 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직이므로 <span class="math inline">\(n\ge 1\)</span> 에 대해 <span class="math inline">\(\boldsymbol{b}_{n+1}\)</span> 은 <span class="math inline">\(\boldsymbol{b}_n\)</span> 을(이제 <span class="math inline">\(\boldsymbol{b}_n\)</span> 은 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직이다) <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 만큼 회전시것이다. <span class="math inline">\(\boldsymbol{b}_0\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 성분을 <span class="math inline">\(\boldsymbol{b}_{\perp}\)</span> 라 하면,</p>
+<p><span class="math display">\[
+\boldsymbol{b}_{\perp}=\boldsymbol{b}_0-(\boldsymbol{a}\cdot \boldsymbol{b_0})\boldsymbol{a}=(-2, -1, 2)/3
+\]</span></p>
+<p>이며, <span class="math inline">\(\boldsymbol{b}_n\)</span> 은 <span class="math inline">\(\boldsymbol{b}_\perp\)</span> 를 <span class="math inline">\(n\)</span> 번 <span class="math inline">\(90^\circ\)</span> 회전시킨 것이므로 <span class="math inline">\(\boldsymbol{b}_{2000}=\boldsymbol{b}_\perp\)</span> 이다.</p>
+<p><br></p>
+<p><strong>6.</strong> 벡터 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^3\)</span> 의 절대값을 <span class="math inline">\(a\)</span> 라 하였을 때</p>
+<p><span class="math display">\[
+M_{\boldsymbol{a}}^3+a^2M_{\boldsymbol{a}}=O
+\]</span></p>
+<p>임을 보이라. 이를 이용하여 <span class="math inline">\(M_{\boldsymbol{a}}^{2002}\)</span> 를 간단히하라.</p>
+<hr>
+<p><span class="math inline">\(M_\boldsymbol{a} \boldsymbol{x} =\boldsymbol{a}\times\boldsymbol{x}\)</span> 이므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{a}\times (\boldsymbol{a} \times (\boldsymbol{a}\times \boldsymbol{x}))+a^2 \boldsymbol{a}\times \boldsymbol{x} &amp;= \boldsymbol{a} \times \big((\boldsymbol{a} \cdot \boldsymbol{x}) \boldsymbol{a}-a^2\boldsymbol{x}\big)+a^2\boldsymbol{a}\times \boldsymbol{x} \\
+&amp; =  -a^2\boldsymbol{a} \times \boldsymbol{x}+a^2\boldsymbol{a}\times\boldsymbol{x}=0
+\end{aligned}
+\]</span></p>
+<p>이다. 따라서 <span class="math inline">\(M_{\boldsymbol{a}}^{3}=-a^2M_{\boldsymbol{a}}\)</span> 이므로 (쓰기 편하게 <span class="math inline">\(M_{\boldsymbol{a}}=M\)</span> 이라 하자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+M^{10}&amp;=(M^3)^3M=-a^6M^2 \\
+M^{100} &amp;= a^{60}M^{20}=a^{72}M^4=-a^{74}M^2 \\
+M^{1000}&amp;= a^{740} M^{20}=a^{752}M^4 = -a^{754}M^2 \\
+M^{2002}&amp;= a^{1508}M^4=-a^{1510}M^2
+\end{aligned}
+\]</span></p>
+<p><br></p>
+</section>
+<section id="연습문제-제-8장-3절" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="연습문제-제-8장-3절"><span class="header-section-number">8.3</span> 연습문제 : 제 8장 3절</h2>
+<p><strong>1.</strong> 일반적으로 삼차원 공간의 점 <span class="math inline">\(P_1,\ldots,\,P_k\)</span> 와 각 점 <span class="math inline">\(P_i\)</span> 에 작용하는 힘 <span class="math inline">\(\boldsymbol{f}_i\)</span> 에 대하여 기준점 <span class="math inline">\(Q\)</span> 에 대한 이들의 회전력을</p>
+<p><span class="math display">\[
+\sum_{i=1}^k \overrightarrow{QP_i} \times \boldsymbol{f}_i
+\]</span></p>
+<p>로 정의한다. 만약</p>
+<p><span class="math display">\[
+\sum_{i=1}^k \boldsymbol{f}_i=0
+\]</span></p>
+<p>이면, 회전력은 기준점 <span class="math inline">\(Q\)</span> 를 달리하더라도 변화가 없음을 보이라.</p>
+<hr>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i=1}^k \overrightarrow{Q'P_i} \times \boldsymbol{f}_i &amp;= \sum_{i=1}^k \left(\overrightarrow{Q'Q}+\overrightarrow{QP_i}\right) \times \boldsymbol{f}_i = \sum_{i=1}^k \overrightarrow{Q'Q}\times \boldsymbol{f}_i +\sum_{i=1}^k \overrightarrow{QP_i}\times \boldsymbol{f}_i  \\
+&amp;= \overrightarrow{Q'Q}\times \left(\sum_{i=1}^k \boldsymbol{f}_i\right)+\sum_{i=1}^k\overrightarrow{QP_i}\times\boldsymbol{f}_i = \sum_{i=1}^k\overrightarrow{QP_i}\times\boldsymbol{f}_i
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<p><strong>2.</strong> 한쪽 긑은 <span class="math inline">\(A=(0,\,0,\,0)\)</span>, 또 다른 한쪽 끝은 <span class="math inline">\(B=(1,\,1,\,1)\)</span> 에 위치한 곧은 막대에 힘 <span class="math inline">\((0,\,1,\,2)\)</span> 가 <span class="math inline">\(A\)</span> 에 작용하고, 또 힘 <span class="math inline">\((1,\,2,\,3)\)</span> 이 <span class="math inline">\(B\)</span> 에 작용한다고 하자. 이 때 막대의 어느붑ㄴ에 얼마만큼의 힘이 작용하면, 막대가 움직이지 않을까?</p>
+<hr>
+<p>막대가 움직이지 않으려면 힘의 총합도 <span class="math inline">\(0\)</span> 이며 회전력의 총합도 <span class="math inline">\(0\)</span> 이어야 한다. 따라서 힘 <span class="math inline">\((-1, -3, -5)\)</span> 가 작용해야 한다. 문제 <span class="math inline">\(1\)</span> 에 의해 회전력의 총합은 기준점의 영향을 받지 않으므로 <span class="math inline">\(A\)</span> 를 기준으로 하기로 하자. 막대이므로 세번째 힘이 작용하는 위치는 <span class="math inline">\((t,\,t,\,t)\)</span> 라 하자. 그렇다면 회전력의 총합이 <span class="math inline">\(0\)</span> 이 되어야 하므로,</p>
+<p><span class="math display">\[
+0=(1,\,1,\,1)\times (0,\,1,\,2)+(t,\,t,\,t)\times (-1,\,-3,\,-5)=(1,\,-2,\,1)+(-2t,\, 4t,\, -2t)
+\]</span></p>
+<p>이며, 따라서 <span class="math inline">\(t=1/2\)</span> 인 (1/2, 1/2, 1/2) 에 작용해야 한다.</p>
+<p><br></p>
+<p><strong>3.</strong> 생략</p>
+<p><br></p>
+</section>
+<section id="탐구문제" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="탐구문제"><span class="header-section-number">8.4</span> 탐구문제</h2>
+<p><strong>1.</strong> <span class="math inline">\(i=1,\,2,\,3\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\exp tM_i = R_i (t) \qquad t\in \mathbb{R}
+\]</span></p>
+<p>임을 보이라. (<span class="math inline">\(R_i\)</span> 는 기본 연습문제 2.0.1 에서 정의하였다.)</p>
+<hr>
+<p>우선 <span class="math inline">\(M_1\)</span> 을 보자.</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_1 &amp;= \left(\begin{array}{rr} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \end{array}\right)\\
+M_1^2 &amp;=\left(\begin{array}{rr} 0 &amp; 0 &amp; 0 \\ 0 &amp;-1 &amp; 0 \\ 0 &amp; 0 &amp; -1\end{array}\right)\\
+M_1^3 &amp;=\left(\begin{array}{rr} 0 &amp;  0 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; -1 &amp; 0\end{array}\right) = -M_1\\
+M_1^4 &amp;=-M_1^2 \\
+M_1^5 &amp;= M_1
+\end{aligned}
+\]</span></p>
+<p>이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\big (}\exp (tM_1){\big)}_{22} &amp;=  \left(\sum_{k=0}^\infty t^k \left( M_1 \right)^k\right)_{22} = \sum_{k=0}^\infty \dfrac{1}{(2k)!} t^{2k}(-1)^{k} =\cos t  \\
+{\big (}\exp (tM_1){\big)}_{23} &amp;= \left(\sum_{k=0}^\infty t^k \left( M_1 \right)^k\right)_{23} = \sum_{k=0}^\infty \dfrac{1}{(2k+1)!}t^{2k+1} (-1)^{k+1} = -\sin t\\
+{\big (}\exp (tM_1){\big)}_{32} &amp;= -{\big (}\exp (tM_1){\big)}_{23} = \sin t \\
+{\big (}\exp (tM_1){\big)}_{33} &amp;= {\big (}\exp (tM_1){\big)}_{22}= \cos t
+\end{aligned}
+\]</span> 이므로 <span class="math inline">\(\exp (tM_1) = R_1 (t)\)</span> 이다.</p>
+<p><span class="math inline">\(M_2,\,M_3\)</span> 에 대해서도 같은 방법으로 보일 수 있다.</p>
+<p><br></p>
+<p><strong>2.</strong> 단위벡터 <span class="math inline">\(\mathbb{a}\in \mathbb{R}^3\)</span> 에 대하여 선형변환</p>
+<p><span class="math display">\[
+\boldsymbol{x} \mapsto \boldsymbol{a}\times\boldsymbol{x} \qquad (\boldsymbol{x}\in \mathbb{R}^3)
+\]</span></p>
+<p>대응되는 행렬 <span class="math inline">\(M_{\boldsymbol{a}}\)</span> 와 실수 <span class="math inline">\(t\)</span> 에 대하여 <span class="math inline">\(\exp tM_{\boldsymbol{a}}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 축을 회전축으로 하고 회전각이 <span class="math inline">\(t^{\text{rad}}\)</span> 인 회전변환에 대응되는 행렬임을 보이라. 또 임의의 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^3\)</span> 에 대하여</p>
+<p><span class="math display">\[
+\left.\dfrac{d}{dt}\right|_{0} \left( \exp tM_{\boldsymbol{a}}\right)\boldsymbol{x}=\boldsymbol{a}\times \boldsymbol{x}
+\]</span></p>
+<p>임을 보여라.</p>
+<hr>
+<p><span class="math inline">\(\boldsymbol{a}=(a_1,\,a_2,\,a_3)\)</span> 라 하면,</p>
+<p><span class="math display">\[
+M_{\boldsymbol{a}}=\begin{pmatrix} 0 &amp; -a_3 &amp; a_2 \\ a_3 &amp; 0 &amp; -a_1 \\ -a_2 &amp; a_1&amp; 0\end{pmatrix} = a_1M_1+a_2M_2+a_3M_3
+\]</span></p>
+<p>이다.</p>
+<p>정사각 행렬 <span class="math inline">\(A,\,B\)</span> 와 실수 <span class="math inline">\(a,\,b\)</span> 에 대하여,</p>
+<p><span class="math display">\[
+\exp (aA+bB)=\sum_{k=0}^\infty \dfrac{1}{k!} (aA+bB)^k= \sum_{k=0}^\infty \dfrac{1}{k!}\sum_{n=0}^k \dfrac{k!}{}
+\]</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "복사완료!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "복사완료!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/julia-kaeri\.github\.io\/MathematicalAnalysis\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../src/calculus/07_square_matrix.html" class="pagination-link" aria-label="정사각 행렬과 행렬식">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">정사각 행렬과 행렬식</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../src/calculus/09_curves.html" class="pagination-link" aria-label="곡선">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">곡선</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
