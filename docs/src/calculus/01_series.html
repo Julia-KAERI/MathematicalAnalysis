@@ -397,7 +397,7 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#수열과-급수" id="toc-수열과-급수" class="nav-link active" data-scroll-target="#수열과-급수"><span class="header-section-number">1.1</span> 1. 수열과 급수</a>
+  <li><a href="#수열과-급수" id="toc-수열과-급수" class="nav-link active" data-scroll-target="#수열과-급수"><span class="header-section-number">1.1</span> 수열과 급수</a>
   <ul class="collapse">
   <li><a href="#자연상수-e" id="toc-자연상수-e" class="nav-link" data-scroll-target="#자연상수-e"><span class="header-section-number">1.1.1</span> 자연상수 <span class="math inline">\(e\)</span></a></li>
   </ul></li>
@@ -445,7 +445,7 @@ window.Quarto = {
 \]</span></p>
 </div>
 <section id="수열과-급수" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="수열과-급수"><span class="header-section-number">1.1</span> 1. 수열과 급수</h2>
+<h2 data-number="1.1" class="anchored" data-anchor-id="수열과-급수"><span class="header-section-number">1.1</span> 수열과 급수</h2>
 <section id="자연상수-e" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="자연상수-e"><span class="header-section-number">1.1.1</span> 자연상수 <span class="math inline">\(e\)</span></h3>
 <p><span class="math display">\[
@@ -934,65 +934,94 @@ q_{n+1}-q= 2+\dfrac{1}{q_n}-2-\dfrac{1}{q}=-\dfrac{q_n-q}{q_nq}
 </section>
 <section id="연습문제-1.7" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="연습문제-1.7"><span class="header-section-number">1.9</span> 연습문제 1.7</h2>
-<p><strong>1.</strong> 다음 급수의 수렴여부를 판정하고, 또 절대수렴하는지를 알아보라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\(\sum (-1)^n \dfrac{\sqrt{n}+1}{n+1}\)</span> : <span class="math inline">\(\displaystyle \lim_{n \to \infty} \dfrac{\sqrt{n}+1}{n+1}=0\)</span> 이므로 수렴한다. 절대수렴은 No</p></li>
-<li><p><span class="math inline">\(\sum \dfrac{\cos n \pi}{n}= \sum (-1)^{n}\dfrac{1}{n}\)</span> : 수렴 Yes, 절대수렴 No.</p></li>
-<li><p><span class="math inline">\(\sum (-1)^{n}ne^{-n}\)</span> : <span class="math inline">\(\displaystyle \lim_{n\to \infty} ne^{-n}=0\)</span> 이므로 수렴 Yes. <span class="math inline">\(\sum ne^n\)</span> 에서 비율판정법을 사용하면, <span class="math inline">\(\displaystyle \lim_{n \to \infty} \dfrac{a_{n+1}}{a_n}=\lim_{n \to\infty}\dfrac{(n+1)}{en}=\dfrac{1}{e}&lt;1\)</span> 이므로 절대수렴.</p></li>
-<li><p><span class="math inline">\(\sum (-1)^n \sin \dfrac{1}{n}\)</span> : <span class="math inline">\(\displaystyle \lim_{n \to \infty}\sin \dfrac{1}{n}=0\)</span> 이므로 수렴. 절대수렴 하지 않는것은 이미 안다.</p></li>
-<li><p><span class="math inline">\(\sum \dfrac{(-1)^{n+1}}{n^{3/2}}\)</span> : 절대수렴하는것을 안다. 따라서 수렴한다.</p></li>
-<li><p><span class="math inline">\(\sum (-1)^n \left(\dfrac{n}{10}\right)^n\)</span> : 수렴 No.&nbsp;절대수렴 No</p></li>
-<li><p><span class="math inline">\(\sum (-1)^n  \dfrac{10^n}{n^{10}}\)</span> : <span class="math display">\[
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_7_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.25</strong></span> 다음 급수의 수렴여부를 판정하고, 또 절대수렴하는지를 알아보라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sum (-1)^n \dfrac{\sqrt{n}+1}{n+1}\)</span> : <span class="math inline">\(\displaystyle \lim_{n \to \infty} \dfrac{\sqrt{n}+1}{n+1}=0\)</span> 이므로 수렴한다. 절대수렴은 No</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sum \dfrac{\cos n \pi}{n}= \sum (-1)^{n}\dfrac{1}{n}\)</span> : 수렴 Yes, 절대수렴 No.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\sum (-1)^{n}ne^{-n}\)</span> : <span class="math inline">\(\displaystyle \lim_{n\to \infty} ne^{-n}=0\)</span> 이므로 수렴 Yes. <span class="math inline">\(\sum ne^n\)</span> 에서 비율판정법을 사용하면, <span class="math inline">\(\displaystyle \lim_{n \to \infty} \dfrac{a_{n+1}}{a_n}=\lim_{n \to\infty}\dfrac{(n+1)}{en}=\dfrac{1}{e}&lt;1\)</span> 이므로 절대수렴.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\sum (-1)^n \sin \dfrac{1}{n}\)</span> : <span class="math inline">\(\displaystyle \lim_{n \to \infty}\sin \dfrac{1}{n}=0\)</span> 이므로 수렴. 절대수렴 하지 않는것은 이미 안다.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(\sum \dfrac{(-1)^{n+1}}{n^{3/2}}\)</span> : 절대수렴하는것을 안다. 따라서 수렴한다.</p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(\sum (-1)^n \left(\dfrac{n}{10}\right)^n\)</span> : 수렴 No.&nbsp;절대수렴 No</p>
+<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(\sum (-1)^n  \dfrac{10^n}{n^{10}}\)</span> : <span class="math display">\[
 \dfrac{a_{n+1}}{a_n}=\dfrac{10^{n+1} (n+1)^{10}}{10^n n^{10}}= 10 \left(1+\dfrac{1}{n}\right)^{10}&gt;10
-\]</span> 발산. 절대수렴 No</p></li>
-<li><p><span class="math inline">\(\sum (-1)^n \dfrac{\ln n}{n}\)</span> : <span class="math inline">\(n\to \infty\)</span> 일 때 <span class="math inline">\(0\)</span> 으로 수렴하는 교대수열이므로 수렴. 절대수렴 No</p></li>
-<li><p><span class="math inline">\(\sum (-1)^n \ln \left(1+\dfrac{1}{n}\right)\)</span> : <span class="math inline">\(n \to \infty\)</span> 에서 <span class="math inline">\(0\)</span> 으로 수렴하는 교대수열의 합이므로 수렴. 절대수렴 하는것은 쉽게 보일 수 있다.</p></li>
-<li><p><span class="math inline">\(\sum_{n\ge 2} \dfrac{(-1)^n}{\ln n}\)</span> : 수렴 Yes, 절대수렴 No</p></li>
-</ol>
-<p><strong>2.</strong> 생략</p>
-<p><strong>3.</strong> 교대급수 <span class="math inline">\(\sum a_n\)</span> 에서 모든 <span class="math inline">\(n\)</span> 에 대하여 <span class="math inline">\(|a_n| \ge |a_{n+1}|\)</span> 이고 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n =0\)</span> 일 때, 급수 <span class="math inline">\(\sum a_n\)</span> 과 <span class="math inline">\(n\)</span> 항까지의 합의 차는 <span class="math inline">\(|a_{n+1}|\)</span> 을 넘지 않음을 보여라.</p>
-<hr>
-<p><span class="math inline">\(s_n = \displaystyle \sum_{k=1}^n a_k,\, s=\lim_{n \to \infty}s_n\)</span> 이라 하자. 즉 <span class="math inline">\(|s-s_n|\le|a_{n+1}|\)</span> 을 보이면 된다.</p>
+\]</span> 발산. 절대수렴 No</p>
+<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(\sum (-1)^n \dfrac{\ln n}{n}\)</span> : <span class="math inline">\(n\to \infty\)</span> 일 때 <span class="math inline">\(0\)</span> 으로 수렴하는 교대수열이므로 수렴. 절대수렴 No</p>
+<p>(<span class="math inline">\(9\)</span>) <span class="math inline">\(\sum (-1)^n \ln \left(1+\dfrac{1}{n}\right)\)</span> : <span class="math inline">\(n \to \infty\)</span> 에서 <span class="math inline">\(0\)</span> 으로 수렴하는 교대수열의 합이므로 수렴. 절대수렴 하는것은 쉽게 보일 수 있다.</p>
+<p>(<span class="math inline">\(10\)</span>) <span class="math inline">\(\sum_{n\ge 2} \dfrac{(-1)^n}{\ln n}\)</span> : 수렴 Yes, 절대수렴 No</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_7_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.26</strong></span> 교대급수 <span class="math inline">\(\sum a_n\)</span> 에서 모든 <span class="math inline">\(n\)</span> 에 대하여 <span class="math inline">\(|a_n| \ge |a_{n+1}|\)</span> 이고 <span class="math inline">\(\displaystyle \lim_{n \to \infty} a_n =0\)</span> 일 때, 급수 <span class="math inline">\(\sum a_n\)</span> 과 <span class="math inline">\(n\)</span> 항까지의 합의 차는 <span class="math inline">\(|a_{n+1}|\)</span> 을 넘지 않음을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(s_n = \displaystyle \sum_{k=1}^n a_k,\, s=\lim_{n \to \infty}s_n\)</span> 이라 하자. 즉 <span class="math inline">\(|s-s_n|\le|a_{n+1}|\)</span> 을 보이면 된다.</p>
 <p>편의를 위해 <span class="math inline">\(a_{2n}&lt;0,\, a_{2n+1}&gt;0,\, b_n=|a_n|\)</span> 이라 하자. 그렇다면 <span class="math inline">\(s-s_{2n}=(b_{2n+1}-b_{2n+2})+(b_{2n+3}-b_{2n+4})+\cdots &gt;0\)</span> 이며 같은 이유로 <span class="math inline">\(s-s_{2n+1}&lt;0\)</span> 임을 알 수 있다. 그렇다면, <span class="math display">\[
 \begin{aligned}
 0&lt;s-s_{2n}&amp;=b_{2n+1}-(b_{2n+2}-b_{2n+3})-(b_{2n+4}+b_{2n+5})+\cdots &lt;b_{2n+1}\\
 0&gt;s-s_{2n+1}&amp;=-b_{2n+2}+(b_{2n+3}-b_{2n+4})+(b_{2n+5}-b_{2n+6})+ \cdots &gt;-b_{2n+2}
 \end{aligned}
 \]</span> 이므로 증명 끝.</p>
-<p><strong>4.</strong> 특이적분 <span class="math inline">\(\displaystyle \int_0^\infty \dfrac{\sin x}{x}\,dx\)</span> 이 수렴함을 보이라.</p>
-<hr>
-<p>Define <span class="math inline">\(a_n = \displaystyle \int_{(n-1)\pi}^{n \pi} \dfrac{\sin x}{x}\,dx\)</span> 라 하면 적분 영역 내에서 함수의 부호는 변하지 않으므로 <span class="math inline">\(a_n\)</span> 이 교대급수임을 알 수 있다. 또한 <span class="math inline">\(\lim_{x\to 0}\dfrac{\sin x}{x}=1\)</span> 이므로 모든 영역에서 적분이 잘 정의된다. <span class="math inline">\(a_n\)</span> 의 적분 영역 내에서 <span class="math inline">\(\dfrac{1}{x} &lt; \dfrac{1}{(n-1)\pi}\)</span> 이며, <span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_7_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.27</strong></span> 특이적분 <span class="math inline">\(\displaystyle \int_0^\infty \dfrac{\sin x}{x}\,dx\)</span> 이 수렴함을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>Define <span class="math inline">\(a_n = \displaystyle \int_{(n-1)\pi}^{n \pi} \dfrac{\sin x}{x}\,dx\)</span> 라 하면 적분 영역 내에서 함수의 부호는 변하지 않으므로 <span class="math inline">\(a_n\)</span> 이 교대급수임을 알 수 있다. 또한 <span class="math inline">\(\lim_{x\to 0}\dfrac{\sin x}{x}=1\)</span> 이므로 모든 영역에서 적분이 잘 정의된다. <span class="math inline">\(a_n\)</span> 의 적분 영역 내에서 <span class="math inline">\(\dfrac{1}{x} &lt; \dfrac{1}{(n-1)\pi}\)</span> 이며, <span class="math display">\[
 |a_n| = \left|\int_{(n-1)\pi}^{n\pi }\dfrac{\sin x}{x}\,dx \right| \le \dfrac{1}{(n-1)\pi} \left|\int_{(n-1)\pi}^{n\pi} \sin x \, dx\right|= \dfrac{2}{\pi(n-1)}
 \]</span> 이므로 <span class="math inline">\(\lim_{n \to \infty}a_n=0\)</span> 이다. 또한 <span class="math inline">\(|a_{n}|\ge |a_{n+1}|\)</span> 임은 잘 알고 있다. 따라서 이 적분은 수렴한다.</p>
+</div>
+<p><br></p>
 </section>
 <section id="연습문제-1.8" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="연습문제-1.8"><span class="header-section-number">1.10</span> 연습문제 1.8</h2>
-<p><strong>1.</strong> 수열 <span class="math inline">\((n^{1/n}: n=3,\,4,\ldots)\)</span> 는 순감소 수열임을 보여라.</p>
-<hr>
-<p><em>a. 미분을 이용한 증명 :</em> <span class="math inline">\(n^{1/n}\)</span> 이 순감소이면 이것에 <span class="math inline">\(\ln n^{1/n}=\dfrac{1}{n}\ln n\)</span> 도 순감소 수열이다. <span class="math inline">\(f(x) = \dfrac{\ln x}{x}\)</span> for <span class="math inline">\(x&gt;3\)</span> 에 대해 미분을 취하면,</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.28</strong></span> 수열 <span class="math inline">\((n^{1/n}: n=3,\,4,\ldots)\)</span> 는 순감소 수열임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><strong>a. 미분을 이용한 증명 :</strong> <span class="math inline">\(n^{1/n}\)</span> 이 순감소이면 이것에 <span class="math inline">\(\ln n^{1/n}=\dfrac{1}{n}\ln n\)</span> 도 순감소 수열이다. <span class="math inline">\(f(x) = \dfrac{\ln x}{x}\)</span> for <span class="math inline">\(x&gt;3\)</span> 에 대해 미분을 취하면,</p>
 <p><span class="math display">\[
 f'(x)=-\dfrac{\ln x}{x^2}+\dfrac{1}{x^2}=-\dfrac{\ln x-1}{x^2}&lt;0
 \]</span></p>
-<p><em>b. 쉬운 증명 :</em>* <span class="math inline">\(n^{1/n}&gt; (n+1)^{1/(n+1)}\)</span> 임을 보이면 된다. 양변의 <span class="math inline">\(n(n+1)\)</span> 승을 취하면 <span class="math inline">\(n^{n+1}&gt;(n+1)^n\)</span> 임을 보이면 된다. 우리는 <span class="math inline">\(\left(1+\dfrac{1}{n}\right)^n&lt;3\)</span> 임을 알고 있다. 즉 <span class="math inline">\((n+1)^n &lt;3 n^n\)</span> 이다. 그런ㄷ <span class="math inline">\(n&gt;3\)</span> 일 경우는</p>
+<p><strong>b. 쉬운 증명 :</strong> <span class="math inline">\(n^{1/n}&gt; (n+1)^{1/(n+1)}\)</span> 임을 보이면 된다. 양변의 <span class="math inline">\(n(n+1)\)</span> 승을 취하면 <span class="math inline">\(n^{n+1}&gt;(n+1)^n\)</span> 임을 보이면 된다. 우리는 <span class="math inline">\(\left(1+\dfrac{1}{n}\right)^n&lt;3\)</span> 임을 알고 있다. 즉 <span class="math inline">\((n+1)^n &lt;3 n^n\)</span> 이다. 그런ㄷ <span class="math inline">\(n&gt;3\)</span> 일 경우는</p>
 <p><span class="math display">\[
 (n+1)^n&lt;3n^n &lt;n \cdot n^{n}=n^{n+1}
 \]</span> 이다.</p>
-<p><strong>2.</strong> 일반항이 다음과 같이 주어진 수열의 유계성과 증가-감소를 판정하라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\(\dfrac{(-1)^n}{n}\)</span> : 유계, 교대수열.</p></li>
-<li><p><span class="math inline">\(\sqrt{n}\)</span> : 유계 아님. 단조증가.</p></li>
-<li><p><span class="math inline">\(\dfrac{n^2}{n+1}\)</span> : 유계 아님. <span class="math inline">\(\dfrac{a_{n+1}}{a_n}=\dfrac{(n+1)^2(n+1)}{n^2(n+2)}=\dfrac{n^3+3n^2+3n+1}{n^3+2n^2}&gt;1\)</span> 이므로 단조증가.</p></li>
-<li><p><span class="math inline">\(\ln \dfrac{2n}{n+1}\)</span> : 위로 유계. <span class="math inline">\(a_n=\dfrac{2n}{n+1}\)</span> 이라 하자. <span class="math inline">\(\dfrac{a_{n+1}}{a_n}=\dfrac{(n+1)(n+1)}{n(n+2)}=\dfrac{n^2+2n+1}{n^2+2n}&gt;1\)</span> 이므로 단조증가.</p></li>
-<li><p><span class="math inline">\(\dfrac{(-2)^n}{n^{10}}\)</span> : 위 아래로 유계, 교대수열.</p></li>
-</ol>
-<p><strong>3.</strong> 임의의 두 양수 <span class="math inline">\(a,\,b\)</span> 에 대하여 수열</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.29</strong></span> 일반항이 다음과 같이 주어진 수열의 유계성과 증가-감소를 판정하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\dfrac{(-1)^n}{n}\)</span> : 유계, 교대수열.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sqrt{n}\)</span> : 유계 아님. 단조증가.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\dfrac{n^2}{n+1}\)</span> : 유계 아님. <span class="math inline">\(\dfrac{a_{n+1}}{a_n}=\dfrac{(n+1)^2(n+1)}{n^2(n+2)}=\dfrac{n^3+3n^2+3n+1}{n^3+2n^2}&gt;1\)</span> 이므로 단조증가.</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\ln \dfrac{2n}{n+1}\)</span> : 위로 유계. <span class="math inline">\(a_n=\dfrac{2n}{n+1}\)</span> 이라 하자. <span class="math inline">\(\dfrac{a_{n+1}}{a_n}=\dfrac{(n+1)(n+1)}{n(n+2)}=\dfrac{n^2+2n+1}{n^2+2n}&gt;1\)</span> 이므로 단조증가.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(\dfrac{(-2)^n}{n^{10}}\)</span> : 위 아래로 유계, 교대수열.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.30</strong></span> 임의의 두 양수 <span class="math inline">\(a,\,b\)</span> 에 대하여 수열</p>
 <p><span class="math display">\[
 (a^n+b^n)^{1/n} \qquad n=1,\,2,\,3,\ldots
 \]</span></p>
 <p>은 유계인 단조수열임을 보이라. 이 수열의 극한값을 구하라.</p>
-<hr>
+</div>
+</div>
+<div class="soltuion">
 <p><span class="math inline">\(a&gt;b\)</span> 라 가정해도 no loss of generality. 그렇다면 <span class="math inline">\((a^n+b^n) I ^{1/n}=a(1+x^n)^{1/n}\)</span> where <span class="math inline">\(x=b/a&lt;1\)</span> 이다. 이제 <span class="math inline">\(0&lt;x&lt;1\)</span> 인 <span class="math inline">\(x\)</span> 에 대해 <span class="math inline">\(x_n=(1+x^n)^{1/n}\)</span> 이 감소수열임을 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1004,12 +1033,16 @@ f'(x)=-\dfrac{\ln x}{x^2}+\dfrac{1}{x^2}=-\dfrac{\ln x-1}{x^2}&lt;0
 \left(\dfrac{x_{n+1}}{x_n}\right)^{n+1}&lt;1 \implies x_{n+1}&lt;x_n
 \]</span></p>
 <p>이므로 주어진 수열은 감소수열이다.</p>
-<p><strong>4.</strong> 다음 집합의 상한과 하한을 구하여라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\(\left\{ \left(1+\dfrac{1}{n}\right)^n : n=1,\,2,\,3,\ldots \right\}\)</span> : 우리는 이 수열이 증가하는 위로 유계인 수열임을 안다. 따라서 하한은 <span class="math inline">\(2\)</span> 이며 상한은 <span class="math inline">\(e\)</span> 이다.</p></li>
-<li><p><span class="math inline">\(\left\{ \left(1+\dfrac{1}{n}\right)^{n+1} : n=1,\,2,\,3,\ldots\right\}\)</span> : 이 수열이 감소수열임을 보이자. <span class="math inline">\(a_n = \left(1+\dfrac{1}{n}\right)^{n+1}\)</span> 이라 할 때,</p></li>
-</ol>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.31</strong></span> 다음 집합의 상한과 하한을 구하여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\left\{ \left(1+\dfrac{1}{n}\right)^n : n=1,\,2,\,3,\ldots \right\}\)</span> : 우리는 이 수열이 증가하는 위로 유계인 수열임을 안다. 따라서 하한은 <span class="math inline">\(2\)</span> 이며 상한은 <span class="math inline">\(e\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\left\{ \left(1+\dfrac{1}{n}\right)^{n+1} : n=1,\,2,\,3,\ldots\right\}\)</span> : 이 수열이 감소수열임을 보이자. <span class="math inline">\(a_n = \left(1+\dfrac{1}{n}\right)^{n+1}\)</span> 이라 할 때,</p>
 <p><span class="math display">\[
 \dfrac{a_{n}}{a_{n+1}}=\dfrac{\left(1+\dfrac{1}{n}\right)^{n+1}}{\left(1+\dfrac{1}{n+1}\right)^{n+2}} = \left(\dfrac{1+\dfrac{1}{n}}{1+\dfrac{1}{(n+1)}}\right)^{n+1} \dfrac{1}{1+\dfrac{1}{n+1}}=\left(1+\dfrac{1}{n^2+2n}\right)^{n+1} \dfrac{1}{1+\dfrac{1}{n+1}}
 \]</span></p>
@@ -1018,16 +1051,22 @@ f'(x)=-\dfrac{\ln x}{x^2}+\dfrac{1}{x^2}=-\dfrac{\ln x-1}{x^2}&lt;0
 \left(1+\dfrac{1}{n^2+2n}\right)^{n+1}\ge 1+ \dfrac{n+1}{n^2+2n}&gt;1+\dfrac{n+1}{n^2+2n+1}=1+\dfrac{1}{n+1}
 \]</span></p>
 <p>이므로 <span class="math inline">\(\dfrac{a_n}{a_{n+1}}&gt;1\)</span> 이다. 븍 <span class="math inline">\(a_n\)</span> 은 감소수열이다. 따라서 이 수열의 상한은 <span class="math inline">\(n=1\)</span> 일 때의 <span class="math inline">\(4\)</span> 이며 이 수열은 <span class="math inline">\(e\)</span> 로 수렴하므로 하한은 <span class="math inline">\(e\)</span> 이다.</p>
-<ol start="3" type="1">
-<li><span class="math inline">\(\left\{\dfrac{1}{n} \sin \dfrac{1}{n} : n=1,\,2,\,3,\ldots\right\}\)</span> : <span class="math inline">\(0&lt;\dfrac{1}{n}&lt;\pi\)</span> for <span class="math inline">\(n\in \mathbb{Z}\)</span> 이므로 이 수열은 양의 수열이다. 또한 <span class="math inline">\(\displaystyle \lim_{n\to \infty } \dfrac{1}{n}\sin \dfrac{1}{n}=0\)</span> 이므로 하한은 <span class="math inline">\(0\)</span> 이다. 또한 이 수열이 감소수열임은 쉽게 보일 수 있다. 따라서 상한은 <span class="math inline">\(\sin 1\)</span> 이다.</li>
-</ol>
-<p><strong>5.</strong> 다음 함수 <span class="math inline">\(f(x)\)</span> 는 유계이지만 그 도함수 <span class="math inline">\(f'(x)\)</span> 는 유계가 아님을 보여라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\(f(x)=x\sin \dfrac{1}{x}\)</span> : <span class="math inline">\(f'(x) = \sin \dfrac{1}{x}-\dfrac{1}{x} \sin \dfrac{1}{x}\)</span> . <span class="math inline">\(-1 \le \sin \dfrac{1}{x}  \le 1\)</span> 이므로 도함수는 유계가 아니다.</p></li>
-<li><p><span class="math inline">\(f(x)= \sin x^2\)</span> : <span class="math inline">\(f'(x) =2x\sin x^2\)</span> 유계가 아님이 자명하다.</p></li>
-</ol>
-<p><strong>6. (오일러 상수)</strong> 임의의 자연수 <span class="math inline">\(n\)</span> 에 대하여</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\left\{\dfrac{1}{n} \sin \dfrac{1}{n} : n=1,\,2,\,3,\ldots\right\}\)</span> : <span class="math inline">\(0&lt;\dfrac{1}{n}&lt;\pi\)</span> for <span class="math inline">\(n\in \mathbb{Z}\)</span> 이므로 이 수열은 양의 수열이다. 또한 <span class="math inline">\(\displaystyle \lim_{n\to \infty } \dfrac{1}{n}\sin \dfrac{1}{n}=0\)</span> 이므로 하한은 <span class="math inline">\(0\)</span> 이다. 또한 이 수열이 감소수열임은 쉽게 보일 수 있다. 따라서 상한은 <span class="math inline">\(\sin 1\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.32</strong></span> 다음 함수 <span class="math inline">\(f(x)\)</span> 는 유계이지만 그 도함수 <span class="math inline">\(f'(x)\)</span> 는 유계가 아님을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f(x)=x\sin \dfrac{1}{x}\)</span> : <span class="math inline">\(f'(x) = \sin \dfrac{1}{x}-\dfrac{1}{x} \sin \dfrac{1}{x}\)</span> . <span class="math inline">\(-1 \le \sin \dfrac{1}{x}  \le 1\)</span> 이므로 도함수는 유계가 아니다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(f(x)= \sin x^2\)</span> : <span class="math inline">\(f'(x) =2x\sin x^2\)</span> 유계가 아님이 자명하다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.33 (오일러 상수)</strong></span> 임의의 자연수 <span class="math inline">\(n\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \dfrac{1}{2}+ \dfrac{1}{3} + \cdots + \dfrac{1}{n} &lt; \ln n &lt; 1+\dfrac{1}{2} + \dfrac{1}{3}+\cdots + \dfrac{1}{n-1}
 \]</span></p>
@@ -1036,11 +1075,11 @@ f'(x)=-\dfrac{\ln x}{x^2}+\dfrac{1}{x^2}=-\dfrac{\ln x-1}{x^2}&lt;0
 \lim_{n \to \infty} \left(\sum_{k=1}^n \dfrac{1}{k}-\ln n\right)
 \]</span></p>
 <p>이 존재함을 보이라.</p>
-<hr>
-<ol type="1">
-<li><p>부등식이 성립함은 <span class="math inline">\(\dfrac{1}{n}\)</span> 에 대한 구분구적법을 생각하면 자명하다.</p></li>
-<li><p><span class="math inline">\(\displaystyle a_n = \sum_{k=1}^n \dfrac{1}{k}-\ln n\)</span> 이라 하자. 이 수열이 유계인 단조감소수열임을 보이고자 한다. <span class="math inline">\(a_{n+1}-a_n&lt;0\)</span> 임을 보이기 위해 <span class="math inline">\((n+1)(a_{n+1}-a_n)\)</span> 을 생각하면,</p></li>
-</ol>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 부등식이 성립함은 <span class="math inline">\(\dfrac{1}{n}\)</span> 에 대한 구분구적법을 생각하면 자명하다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\displaystyle a_n = \sum_{k=1}^n \dfrac{1}{k}-\ln n\)</span> 이라 하자. 이 수열이 유계인 단조감소수열임을 보이고자 한다. <span class="math inline">\(a_{n+1}-a_n&lt;0\)</span> 임을 보이기 위해 <span class="math inline">\((n+1)(a_{n+1}-a_n)\)</span> 을 생각하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 (n+1)(a_{n+1}-a_n)&amp;=(n+1)\left(\sum_{k=1}^{n+1} \dfrac{1}{k}-\ln (n+1) - \sum_{k=1}^n \dfrac{1}{k}+\ln n\right) \\
@@ -1048,15 +1087,16 @@ f'(x)=-\dfrac{\ln x}{x^2}+\dfrac{1}{x^2}=-\dfrac{\ln x-1}{x^2}&lt;0
 \end{aligned}
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(a_n\)</span> 은 단조감소수열이다.</p>
-<ol start="3" type="1">
-<li>아래로부터 우리는 <span class="math inline">\(a_n&gt;0\)</span> 임을 알 수 있다.</li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) 아래로부터 우리는 <span class="math inline">\(a_n&gt;0\)</span> 임을 알 수 있다.</p>
 <p><span class="math display">\[
 \ln n &lt;1+\dfrac{1}{2}+ \cdots + \dfrac{1}{n-1} &lt;\sum_{k=1}^n \dfrac{1}{k}
 \]</span></p>
 <p>따라서 극한값이 존재한다.</p>
-<p><strong>7.</strong> 오일러 상수</p>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.34 (오일러 상수)</strong></span> <span class="math display">\[
 \gamma :=\lim_{n \to \infty} \left(1+\dfrac{1}{2}+\cdots + \dfrac{1}{n}-\ln n\right) \approx 0.5772156649
 \]</span></p>
 <p>를 이용하여,</p>
@@ -1064,26 +1104,42 @@ f'(x)=-\dfrac{\ln x}{x^2}+\dfrac{1}{x^2}=-\dfrac{\ln x-1}{x^2}&lt;0
 \ln 2 = 1-\dfrac{1}{2}+\dfrac{1}{3}-\dfrac{1}{4} + \cdots
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(\displaystyle a_n = \sum_{k=1}^n \dfrac{1}{k}-\ln n\)</span>, <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^n \dfrac{(-1)^{n+1}}{k}\)</span> 라 하자.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\displaystyle a_n = \sum_{k=1}^n \dfrac{1}{k}-\ln n\)</span>, <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^n \dfrac{(-1)^{n+1}}{k}\)</span> 라 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 s_{2n}&amp;= \left( 1+ \dfrac{1}{2}+ \cdots + \dfrac{1}{2n}\right)-2\left(\dfrac{1}{2}+\dfrac{1}{4}+ \dfrac{1}{6} +\cdots + \dfrac{1}{2n}\right)\\
 &amp;= a_{2n}+\ln (2n)-(a_n +\ln n) = a_{2n}-a_n +\ln 2
 \end{aligned}
 \]</span> 이므로 <span class="math inline">\(\displaystyle \lim_{n \to \infty}s_{2n}=\ln 2\)</span>.</p>
-<p><br></p>
-<p><strong>8.</strong> 수열 <span class="math inline">\((a_n)\)</span> 이 수렴하면 수열 <span class="math inline">\((a_{2n})\)</span> 도 수렴함을 설명하라. 또 수열 <span class="math inline">\((a_{3n})\)</span> 도 수렴함을 설명하라.</p>
-<hr>
-<p><span class="math inline">\(\epsilon -\delta\)</span> 를 이용하면 쉽게 설명 할 수 있는데…</p>
-<p><br></p>
-<p><strong>9.</strong> 급수 <span class="math inline">\(\sum \dfrac{1}{(2n-1)(2n)}\)</span> 의 합을 구하라.</p>
-<hr>
-<p>See problem 7.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.35</strong></span> 수열 <span class="math inline">\((a_n)\)</span> 이 수렴하면 수열 <span class="math inline">\((a_{2n})\)</span> 도 수렴함을 설명하라. 또 수열 <span class="math inline">\((a_{3n})\)</span> 도 수렴함을 설명하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\epsilon -\delta\)</span> 를 이용하면 쉽게 설명 할 수 있는데…</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.36</strong></span> 급수 <span class="math inline">\(\sum \dfrac{1}{(2n-1)(2n)}\)</span> 의 합을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>See problem <a href="#exr-CAL_1_8_7" class="quarto-xref">연습문제&nbsp;<span>1.34</span></a></p>
 <p><span class="math display">\[
 \sum_{k=1}^n \dfrac{1}{(2k-1)(2k)}= \sum_{k=1}^n \dfrac{1}{2k-1}-\sum_{k=1}^n \dfrac{1}{2k}= \ln 2.
 \]</span></p>
-<p><strong>10. (특이적분)</strong> 구간 <span class="math inline">\((a,\,b]\)</span> 에서 정의된 연속함수 <span class="math inline">\(f(x)\)</span> 에 대하여</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_8_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.37</strong></span> 구간 <span class="math inline">\((a,\,b]\)</span> 에서 정의된 연속함수 <span class="math inline">\(f(x)\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \int_{a}^b f(x) \,dx:=\lim_{c \searrow a } \int_c^b f(x)\,dx
 \]</span></p>
@@ -1092,38 +1148,46 @@ s_{2n}&amp;= \left( 1+ \dfrac{1}{2}+ \cdots + \dfrac{1}{2n}\right)-2\left(\dfrac
 \int_{0}^1 \dfrac{dx}{x^2+\sqrt{x}}
 \]</span></p>
 <p>가 수렴함을 보여라.</p>
-<hr>
-<p><span class="math inline">\(1/t=x\)</span> 로 치환 하면 알 수 있는데.. 이걸 원하는 건가?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(1/t=x\)</span> 로 치환 하면 알 수 있는데.. 이걸 원하는 건가?</p>
+</div>
 <p><br></p>
 </section>
 <section id="탐구문제" class="level2" data-number="1.11">
 <h2 data-number="1.11" class="anchored" data-anchor-id="탐구문제"><span class="header-section-number">1.11</span> 탐구문제</h2>
-<p><strong>1.</strong> 수열 <span class="math inline">\(\mathbf{a}\)</span> 로 부터 얻은 급수를 <span class="math inline">\(S(\mathbf{a})\)</span> 라고 하면, <span class="math inline">\(S\)</span> 는 수열 전체의 집합에서 정의된 자기사상이 된다. 이 사상이 전단사 사상임을 보이라. 도 두 수열 <span class="math inline">\(\mathbf{a},\, \mathbf{b}\)</span> 의 합을 설명하고</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.38</strong></span> 수열 <span class="math inline">\(\boldsymbol{a}\)</span> 로 부터 얻은 급수를 <span class="math inline">\(S(\boldsymbol{a})\)</span> 라고 하면, <span class="math inline">\(S\)</span> 는 수열 전체의 집합에서 정의된 자기사상이 된다. 이 사상이 전단사 사상임을 보이라. 도 두 수열 <span class="math inline">\(\boldsymbol{a},\, \boldsymbol{b}\)</span> 의 합을 설명하고</p>
 <p><span class="math display">\[
-S(\mathbf{a}+\mathbf{b})=S(\mathbf{a})+S(\mathbf{b})
+S(\boldsymbol{a}+\boldsymbol{b})=S(\boldsymbol{a})+S(\boldsymbol{b})
 \]</span></p>
-<p>임을 보이라. 실수 <span class="math inline">\(t\)</span> 에 대하여 수열 <span class="math inline">\(\mathbf{a}\)</span> 의 실수배 <span class="math inline">\(t\mathbf{a}\)</span> 를 설명하고,</p>
+<p>임을 보이라. 실수 <span class="math inline">\(t\)</span> 에 대하여 수열 <span class="math inline">\(\boldsymbol{a}\)</span> 의 실수배 <span class="math inline">\(t\boldsymbol{a}\)</span> 를 설명하고,</p>
 <p><span class="math display">\[
-S(t\mathbf{a})=tS(\mathbf{a})
+S(t\boldsymbol{a})=tS(\boldsymbol{a})
 \]</span> 임을 보이라.</p>
-<hr>
-<ol type="1">
-<li><span class="math inline">\(A\)</span> 를 수열 전체의 집합이라고 하면 <span class="math inline">\(\mathbf{a}\in A\)</span> 이며 $ S()A$ 임은 자명하다. <span class="math inline">\(\mathbf{a}=(a_n:n=1,\,2,\ldots)\)</span> 이라 하자. 임의의 $ (s_n )A$ 에 대해,</li>
-</ol>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 를 수열 전체의 집합이라고 하면 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 이며 $ S(\bf{a}=(a_n:n=1,,2,)$ 이라 하자. 임의의 <span class="math inline">\((s_n )\in A\)</span> 에 대해,</p>
 <p><span class="math display">\[
 a_1=s_1,\quad a_n = s_{n}-s_{n-1} \text{ for }n&gt;1
 \]</span></p>
 <p>이라 하면 <span class="math inline">\((a_n)\in A\)</span> 이다. 즉 <span class="math inline">\(S: A\to A\)</span> 는 surjection 이다.</p>
-<ol start="2" type="1">
-<li><span class="math inline">\(s_n = t_n\)</span> 이면 <span class="math inline">\(S^{-1}(s_n)= S^{-1}(t_n)\)</span> 이므로 <span class="math inline">\(S\)</span> 는 injection 이다. 따라서 <span class="math inline">\(S\)</span> 는 bijection 이다.</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(s_n = t_n\)</span> 이면 <span class="math inline">\(S^{-1}(s_n)= S^{-1}(t_n)\)</span> 이므로 <span class="math inline">\(S\)</span> 는 injection 이다. 따라서 <span class="math inline">\(S\)</span> 는 bijection 이다.</p>
+</div>
 <p><strong>2.</strong></p>
-<p><strong>3.</strong> 급수</p>
-<p><span class="math display">\[
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S03" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.39</strong></span> 급수 <span class="math display">\[
 1+ \dfrac{1}{3}-\dfrac{1}{2}+ \dfrac{1}{5}+ \dfrac{1}{7}-\dfrac{1}{4} + \cdots + \left(\dfrac{1}{2^n+1}+ \dfrac{1}{2^n+3}+\cdots + \dfrac{1}{2^{n+1}-1} -\dfrac{1}{2^n}\right) + \cdots
 \]</span> 는 발산함을 보여라.</p>
-<hr>
-<p><span class="math inline">\(\displaystyle a_n = \sum_{k=1}^{2^{n-1}} \dfrac{1}{2^n+(2k-1)} -\dfrac{1}{2^n}\)</span> 이라 하면 위 식은 $ a_n$ 이다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\displaystyle a_n = \sum_{k=1}^{2^{n-1}} \dfrac{1}{2^n+(2k-1)} -\dfrac{1}{2^n}\)</span> 이라 하면 위 식은 $ a_n$ 이다.</p>
 <p><span class="math display">\[
 a_n = \sum_{k=1}^{2^{n-1}} \dfrac{1}{2^n+2k-1}-\dfrac{1}{2^n} &gt;\sum_{k=1}^{2^{n-1}} \dfrac{1}{2^{n+1}-1} - \dfrac{1}{2^n} =\dfrac{2^{n-1}}{2^{n+1}-1}-\dfrac{1}{2^n}
 \]</span></p>
@@ -1131,13 +1195,19 @@ a_n = \sum_{k=1}^{2^{n-1}} \dfrac{1}{2^n+2k-1}-\dfrac{1}{2^n} &gt;\sum_{k=1}^{2^
 <p><span class="math display">\[
 \lim_{n \to \infty} a_n \ge \dfrac{1}{4}
 \]</span> 이다. 따라서 주어진 급수는 발산한다.</p>
-<p><strong>4.</strong> 등비급수의 합의 식</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S04" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.40</strong></span> 등비급수의 합의 식</p>
 <p><span class="math display">\[
 1+r+r^2+\cdots = \dfrac{1}{1-r}  \quad(|r|&lt;1)
 \]</span></p>
 <p>은 <span class="math inline">\(r\)</span> 이 복소수 일 때에도 참임을 설명하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 (1-r)(1+r+r^2+\cdots +r^{N-1})=1-r^N\quad \text{for }N\in \mathbb{N}
 \]</span></p>
 <p>은 <span class="math inline">\(r\in\mathbb{C}\)</span> 에서도 성립한다. 따라서,</p>
@@ -1145,26 +1215,32 @@ a_n = \sum_{k=1}^{2^{n-1}} \dfrac{1}{2^n+2k-1}-\dfrac{1}{2^n} &gt;\sum_{k=1}^{2^
 1+r+r^2 + \cdots +r^{N-1}=\dfrac{1-r^N}{1-r}
 \]</span></p>
 <p>이다. <span class="math inline">\(r=x+iy\in \mathbb{C}\)</span> where <span class="math inline">\(x,\, y \in \mathbb{R}\)</span> 이며 <span class="math inline">\(|r|=\sqrt{x^2+y^2}&lt;1\)</span> 이라 하면 <span class="math inline">\(\displaystyle \lim_{N \to \infty} r^N=0\)</span> 이므로 성립한다.</p>
-<p><strong>5.(급수의 재배열)</strong> 전단사함수 <span class="math inline">\(r: \mathbb{N}\to \mathbb{N}\)</span> 에 대하여 급수 <span class="math inline">\(\sum a_n\)</span> 의 재배열은</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S05" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.41 (급수의 재배열)</strong></span> 전단사함수 <span class="math inline">\(r: \mathbb{N}\to \mathbb{N}\)</span> 에 대하여 급수 <span class="math inline">\(\sum a_n\)</span> 의 재배열은</p>
 <p><span class="math display">\[
 r\left(\sum_n a_n\right) :=\sum _n a_{r(n)} =a_{r(1)}+a_{r(2)}+ a_{r(3)}+ \cdots
 \]</span></p>
 <p>로 주어진다. 주어진 급수 <span class="math inline">\(\sum a_n\)</span> 이 절대수렴하면, 이 급수의 재배열도 절대수렴함을 보이라.</p>
-<hr>
-<ol type="1">
-<li><span class="math inline">\(\sum a_n\)</span> 이 절대수렴함을 가정하자. 이제 <span class="math inline">\(\sum a_n= a, \sum |a_n|=b\)</span> 라 하자. 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{N}\)</span> 이 존재하여,</li>
-</ol>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sum a_n\)</span> 이 절대수렴함을 가정하자. 이제 <span class="math inline">\(\sum a_n= a, \sum |a_n|=b\)</span> 라 하자. 임의의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{N}\)</span> 이 존재하여,</p>
 <p><span class="math display">\[
 \left|\sum_{n=1}^{N} |a_n| -b \,\right|&lt;\varepsilon \iff \sum_{n=N+1}^\infty|a_n|&lt;\varepsilon
 \]</span></p>
 <p>임을 안다.</p>
-<ol start="2" type="1">
-<li>재배열된 수열 <span class="math inline">\((a_{r(n)})\)</span> 에서 <span class="math inline">\(r\)</span> 은 전단사 함수이다. 어떤 <span class="math inline">\(M\in \mathbb{N}\)</span> 이 존재하여 <span class="math inline">\(n&gt;M \implies r(n)&gt;N\)</span> 이 성립함을 알 수 있다. 만약 모든 $ n$ 에 대하여 <span class="math inline">\(r(n)\le N\)</span> 이면 전단사 함수임에 위배된다. 또한 <span class="math inline">\(M\ge N\)</span> 임은 자명하다. 즉,</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) 재배열된 수열 <span class="math inline">\((a_{r(n)})\)</span> 에서 <span class="math inline">\(r\)</span> 은 전단사 함수이다. 어떤 <span class="math inline">\(M\in \mathbb{N}\)</span> 이 존재하여 <span class="math inline">\(n&gt;M \implies r(n)&gt;N\)</span> 이 성립함을 알 수 있다. 만약 모든 $ n$ 에 대하여 <span class="math inline">\(r(n)\le N\)</span> 이면 전단사 함수임에 위배된다. 또한 <span class="math inline">\(M\ge N\)</span> 임은 자명하다. 즉,</p>
 <p><span class="math display">\[
 \sum_{n=M+1}^\infty |a_{r(n)}|&lt;\sum_{n=N+1}^\infty |a_n|&lt;\varepsilon \iff 0\le \sum_{n=1}^M |a_{r(n)}|-a&lt;\varepsilon
 \]</span> 이다.</p>
-<p><strong>6.</strong> 자연수 <span class="math inline">\(n\)</span> 에 대하 <span class="math inline">\(n\)</span> 의 분할수(partition number) 란 자연수들을 더하여 <span class="math inline">\(n\)</span> 을 얻는 방법의 가짓수를 뜻한다. 이 분할수를 <span class="math inline">\(p(n)\)</span> 으로 나타내기로 하자. 보기를 들면,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S06" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.42</strong></span> 자연수 <span class="math inline">\(n\)</span> 에 대하 <span class="math inline">\(n\)</span> 의 분할수(partition number) 란 자연수들을 더하여 <span class="math inline">\(n\)</span> 을 얻는 방법의 가짓수를 뜻한다. 이 분할수를 <span class="math inline">\(p(n)\)</span> 으로 나타내기로 하자. 보기를 들면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 2&amp;=1+1\,,\\
@@ -1176,8 +1252,10 @@ r\left(\sum_n a_n\right) :=\sum _n a_{r(n)} =a_{r(1)}+a_{r(2)}+ a_{r(3)}+ \cdots
 <p><span class="math display">\[
 \sum \dfrac{1}{p(n)}
 \]</span> 이 수렴하는지 판정하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 5=4+1=3+2=3+1+1=2+2+1=2+1+1+1=1+1+1+1+1
 \]</span></p>
 <p>이므로 <span class="math inline">\(p(5)=6\)</span>,</p>
@@ -1192,17 +1270,25 @@ r\left(\sum_n a_n\right) :=\sum _n a_{r(n)} =a_{r(1)}+a_{r(2)}+ a_{r(3)}+ \cdots
 \]</span></p>
 <p>이므로 <span class="math inline">\(p(6)=10\)</span> 이다.</p>
 <p>— to be done</p>
-<p><strong>7.</strong> 명제</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S07" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.43</strong></span> 명제</p>
 <blockquote class="blockquote">
 <p>공집합이 아닌 위로 유계인 집합은 상한을 가진다</p>
 </blockquote>
 <p>는 실수의 완비성과 동치임을 보이라.</p>
-<hr>
-<ol type="1">
-<li><p>실수의 완비성을 가정하자. 즉 증가하는 수열의 각 항이 일정한 실수보다 작으면, 그 수열은 수렴한다고 가정한다. <span class="math inline">\((a_n)\)</span> 이 증가하는 수열이며 <span class="math inline">\(a\)</span> 로 수렴한다고 가정하자. <span class="math inline">\((a_n)\)</span> 은 공집합이 아니다. <span class="math inline">\(a_n&lt;a\)</span> for all <span class="math inline">\(n\in \mathbb{N}\)</span> 임을 보이자. 만약 어떤 <span class="math inline">\(N\)</span> 에서 <span class="math inline">\(a_N\ge a\)</span> 이면 <span class="math inline">\(n&gt;N+1 \implies a_n &gt;a\)</span> 이므로 <span class="math inline">\((a_n)\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하지 않는다. 따라서 모든 <span class="math inline">\(a_n&lt;a\)</span> 이다. <span class="math inline">\(b&lt;a\)</span> 에 대해 <span class="math inline">\(b\)</span> 가 <span class="math inline">\((a_n)\)</span> 의 상계이면 모든 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(|a_n -a|&gt; \dfrac{a-b}{2}\)</span> 이므로 <span class="math inline">\((a_n)\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하지 않는다. 따라서 <span class="math inline">\(a\)</span> 는 <span class="math inline">\((a_n)\)</span> 의 상한이다.</p></li>
-<li><p>공집합이 아닌 위로 유계인 집합은 상한을 가짐을 가정한다. <span class="math inline">\((a_n)\)</span> 가 증가하는 수열이며 <span class="math inline">\(b\in \mathbb{R}\)</span> 보다 작다면 <span class="math inline">\((a_n)\)</span> 은 공집합이 아닌 위로 유계인 집합이므로 상한 <span class="math inline">\(a\)</span> 를 갖는다. 이제 이 수열 <span class="math inline">\((a_n)\)</span> 이 <span class="math inline">\(a\)</span> 로 수렴함을 보이자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(a-\varepsilon &lt;a_n &lt;a\)</span> 인 <span class="math inline">\(n\)</span> 이 존재한다. 만약 존재하지 않는다면 <span class="math inline">\(a-\varepsilon\)</span> 이 <span class="math inline">\((a_n)\)</span> 의 상계이므로 <span class="math inline">\(a\)</span> 가 상한이라는 가정에 위배된다. 이 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(k&gt;n\)</span> 이면 <span class="math inline">\(a-\varepsilon&lt;a_n &lt;a_k &lt;a\)</span> 이다. 따라서 <span class="math inline">\((a_n)\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴한다.</p></li>
-</ol>
-<p><strong>8.</strong> 수열</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 실수의 완비성을 가정하자. 즉 증가하는 수열의 각 항이 일정한 실수보다 작으면, 그 수열은 수렴한다고 가정한다. <span class="math inline">\((a_n)\)</span> 이 증가하는 수열이며 <span class="math inline">\(a\)</span> 로 수렴한다고 가정하자. <span class="math inline">\((a_n)\)</span> 은 공집합이 아니다. <span class="math inline">\(a_n&lt;a\)</span> for all <span class="math inline">\(n\in \mathbb{N}\)</span> 임을 보이자. 만약 어떤 <span class="math inline">\(N\)</span> 에서 <span class="math inline">\(a_N\ge a\)</span> 이면 <span class="math inline">\(n&gt;N+1 \implies a_n &gt;a\)</span> 이므로 <span class="math inline">\((a_n)\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하지 않는다. 따라서 모든 <span class="math inline">\(a_n&lt;a\)</span> 이다. <span class="math inline">\(b&lt;a\)</span> 에 대해 <span class="math inline">\(b\)</span> 가 <span class="math inline">\((a_n)\)</span> 의 상계이면 모든 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(|a_n -a|&gt; \dfrac{a-b}{2}\)</span> 이므로 <span class="math inline">\((a_n)\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하지 않는다. 따라서 <span class="math inline">\(a\)</span> 는 <span class="math inline">\((a_n)\)</span> 의 상한이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 공집합이 아닌 위로 유계인 집합은 상한을 가짐을 가정한다. <span class="math inline">\((a_n)\)</span> 가 증가하는 수열이며 <span class="math inline">\(b\in \mathbb{R}\)</span> 보다 작다면 <span class="math inline">\((a_n)\)</span> 은 공집합이 아닌 위로 유계인 집합이므로 상한 <span class="math inline">\(a\)</span> 를 갖는다. 이제 이 수열 <span class="math inline">\((a_n)\)</span> 이 <span class="math inline">\(a\)</span> 로 수렴함을 보이자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(a-\varepsilon &lt;a_n &lt;a\)</span> 인 <span class="math inline">\(n\)</span> 이 존재한다. 만약 존재하지 않는다면 <span class="math inline">\(a-\varepsilon\)</span> 이 <span class="math inline">\((a_n)\)</span> 의 상계이므로 <span class="math inline">\(a\)</span> 가 상한이라는 가정에 위배된다. 이 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(k&gt;n\)</span> 이면 <span class="math inline">\(a-\varepsilon&lt;a_n &lt;a_k &lt;a\)</span> 이다. 따라서 <span class="math inline">\((a_n)\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S08" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.44</strong></span> 수열</p>
 <p><span class="math display">\[
 a_1=1,\quad a_{n+1}=\sqrt{1+a_n}
 \]</span></p>
@@ -1215,13 +1301,16 @@ a_1=1,\quad a_{n+1}=\sqrt{1+a_n}
 \phi = \sqrt{1+\sqrt{1+\sqrt{1+\cdots}}}
 \]</span></p>
 <p>을 설명하라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\(a_n&gt; 1\)</span> 이면 <span class="math inline">\(a_{n+1} &gt;\sqrt{2}\)</span> 이다. <span class="math inline">\(a_1=1\)</span> 이므로 <span class="math inline">\(a_2 &gt;1\)</span> 이고 <span class="math inline">\(a_n&gt;1\)</span> for <span class="math inline">\(n&gt;1\)</span> 이다.</p></li>
-<li><p><span class="math inline">\(x&gt;0\)</span> 에 대해 <span class="math inline">\(\sqrt{1+x}&gt;x\)</span> 를 풀어보면 $ x&lt; =$ 가 나온다. 즉 <span class="math inline">\(a_1=1&lt;\dfrac{1+\sqrt{5}}{2}\)</span> 이므로 <span class="math inline">\(a_2&lt;\phi\)</span> 이며 따라서 <span class="math inline">\(a_3,\, a_4,\ldots &lt;\phi\)</span> 이다. 또한 <span class="math inline">\(a_{n+1}&gt;a_n\)</span> 이므로 단조증가수열이고 유계이므로 수렴한다.</p></li>
-<li><p>나머지는 easy!</p></li>
-</ol>
-<p><strong>9.</strong> 수열</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(a_n&gt; 1\)</span> 이면 <span class="math inline">\(a_{n+1} &gt;\sqrt{2}\)</span> 이다. <span class="math inline">\(a_1=1\)</span> 이므로 <span class="math inline">\(a_2 &gt;1\)</span> 이고 <span class="math inline">\(a_n&gt;1\)</span> for <span class="math inline">\(n&gt;1\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x&gt;0\)</span> 에 대해 <span class="math inline">\(\sqrt{1+x}&gt;x\)</span> 를 풀어보면 $ x&lt; =$ 가 나온다. 즉 <span class="math inline">\(a_1=1&lt;\dfrac{1+\sqrt{5}}{2}\)</span> 이므로 <span class="math inline">\(a_2&lt;\phi\)</span> 이며 따라서 <span class="math inline">\(a_3,\, a_4,\ldots &lt;\phi\)</span> 이다. 또한 <span class="math inline">\(a_{n+1}&gt;a_n\)</span> 이므로 단조증가수열이고 유계이므로 수렴한다.</p>
+<p>(<span class="math inline">\(3\)</span>) 나머지는 easy!</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_1_S09" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 1.45</strong></span> 수열</p>
 <p><span class="math display">\[
 a_1=1,\quad a_{n+1}=1+\dfrac{1}{a_n}
 \]</span></p>
@@ -1230,14 +1319,16 @@ a_1=1,\quad a_{n+1}=1+\dfrac{1}{a_n}
 \phi =1+\dfrac{1}{1+\dfrac{1}{1+\dfrac{1}{1+\cdots}}}
 \]</span></p>
 <p>임을 설명하라.</p>
-<hr>
-<ol type="1">
-<li><p>일단 <span class="math inline">\(a_1&gt;1\)</span> 이므로 <span class="math inline">\(a_{n+1}&gt;1\)</span> 임은 쉽게 알 수 있다.</p></li>
-<li><p><span class="math inline">\(x&lt;1+\dfrac{1}{x}\)</span> 를 만족시키는 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(\dfrac{1-\sqrt{5}}{2}&lt;x&lt;\dfrac{1+\sqrt{5}}{2}\)</span> 이다. 따라서 <span class="math inline">\((a_n)\)</span> 은 단조증가수열이지만 유계이다. 다라서 수렴한다.</p></li>
-<li><p>나머지는 easy!</p></li>
-</ol>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 일단 <span class="math inline">\(a_1&gt;1\)</span> 이므로 <span class="math inline">\(a_{n+1}&gt;1\)</span> 임은 쉽게 알 수 있다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x&lt;1+\dfrac{1}{x}\)</span> 를 만족시키는 <span class="math inline">\(x\)</span> 는 <span class="math inline">\(\dfrac{1-\sqrt{5}}{2}&lt;x&lt;\dfrac{1+\sqrt{5}}{2}\)</span> 이다. 따라서 <span class="math inline">\((a_n)\)</span> 은 단조증가수열이지만 유계이다. 다라서 수렴한다.</p>
+<p>(<span class="math inline">\(3\)</span>) 나머지는 easy!</p>
+</div>
 
 
+</div>
 </section>
 
 </main> <!-- /main -->

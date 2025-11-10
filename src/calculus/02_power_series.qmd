@@ -9,12 +9,21 @@ crossref:
 
 {{< include ../../latexmacros.qmd >}}
 
+</br>
+
 ## 연습문제 2절
 
-**1.** 항등식 $\ln 3 = \displaystyle \sum _{n=0}^\infty \dfrac{1}{(2n+1)4^n}$ 을 보이라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_2_1}  
 
+항등식 $\ln 3 = \displaystyle \sum _{n=0}^\infty \dfrac{1}{(2n+1)4^n}$ 을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 교재로 부터 $\displaystyle \ln 2 = \sum_{n=1}^{\infty} \dfrac{1}{n 2^n},\, \ln \dfrac{3}{2} = \sum_{n=1}^\infty \dfrac{(-1)^{n-1}}{n2^n}$  을 안다. 둘을 더하면 짝수차항이 없어지고 홀수차항만 남아 두배가 되므로 이로부터,
 
 $$
@@ -23,11 +32,19 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**2.** 다음 급수가 수렴함을 보이고, 급수의 합을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_2_2}  
+
+다음 급수가 수렴함을 보이고, 급수의 합을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 아래 문제를 푸는데 이용되는 식. $\dfrac{1}{1-x}$ 의 미분을 이용하여 다음을 얻는다.
 
@@ -36,8 +53,8 @@ $$
 \dfrac{1}{1-x} = \sum_{n=0}^\infty x^n &\implies \dfrac{1}{(1-x)^2} = \sum_{n=1}^\infty nx^{n-1} \\
 &\implies \dfrac{2}{(1-x)^3} =\sum_{n=2}^\infty n(n-1)x^{n-2} \\
 &\implies \dfrac{6}{(1-x)^4} = \sum_{n=3}^{\infty} n(n-1)(n-2) x^{n-3}
-\end{aligned}\tag{2.1}
-$$
+\end{aligned}
+$$ {#eq-CAL_2_2_2_1}
 
 $\dfrac{1}{1-x}$ 의 적분을 이용하여 다음을 얻는다.
 
@@ -45,60 +62,60 @@ $$
 \begin{aligned}
 \dfrac{1}{1-x} =  \sum_{n=0}^\infty x^n &\implies -\ln (1-x)=\sum_{n=0}^\infty\dfrac{x^{n+1}}{n+1} = \sum_{n=1}^\infty \dfrac{x^n}{n} \\
 &\implies x+(1-x)\ln (1-x) = \sum_{n=1}^\infty \dfrac{x^{n+1}}{n(n+1)}
-\end{aligned}\tag{2.2}
-$$
+\end{aligned}
+$${#eq-CAL_2_2_2_2}
 
-(1) $\sum \dfrac{n}{4^n}$
+($1$) $\sum \dfrac{n}{4^n}$
 
-식 (2.1) 의 첫번째 줄을 이용한다.
+식 @eq-CAL_2_2_2_1 의 첫번째 줄을 이용한다.
 
 $$
 \sum_{n=1}^\infty \dfrac{n}{4^n}= \dfrac{1}{4}\left(\sum_{n=1}^\infty \dfrac{n}{4^{n-1}}\right) = \dfrac{1}{4} \dfrac{1}{(1-1/4)^2}= \dfrac{1}{4} \dfrac{16}{9}=\dfrac{4}{9}
 $$
 
-(2) $\sum \dfrac{n(n-1)}{5^n}$
+($2$) $\sum \dfrac{n(n-1)}{5^n}$
 
-식 (2.1) 의 두전째 줄을 이용한다. $x=1/5$ 를 넣으면
+식 @eq-CAL_2_2_2_1 의 두전째 줄을 이용한다. $x=1/5$ 를 넣으면
 
 $$
 \dfrac{10}{4^3}=\dfrac{5}{32}
 $$
 
-(3) $\sum \dfrac{(-1)^{n-1}}{n} \dfrac{1}{3^n}$
+($3$) $\sum \dfrac{(-1)^{n-1}}{n} \dfrac{1}{3^n}$
 
 $|x|<1$ 에 대해 $\ln (1+x)= \displaystyle \sum_{n=1}^\infty \dfrac{(-1)^{n-1}x^n}{n}$ 이므로, $x=\dfrac{1}{3}$ 을 넣으면, $\ln \left(1+ \dfrac{1}{3} \right)=\ln \dfrac{4}{3}$.
 
-(4) $\sum \dfrac{n(n-1)(n-2)}{2^n}$
+($4$) $\sum \dfrac{n(n-1)(n-2)}{2^n}$
 
-식 (2.1) 의 세번째 줄을 이용한다. $x=1/2$ 를 넣으면,
+식 @eq-CAL_2_2_2_1 의 세번째 줄을 이용한다. $x=1/2$ 를 넣으면,
 
 $$
 \dfrac{6}{(1-1/2)^4}=6\times 16=96.
 $$
 
-(5) $\sum \dfrac{n(n-1)(n-2)}{3^n}$
+($5$) $\sum \dfrac{n(n-1)(n-2)}{3^n}$
 
-식 (2.1) 의 세번째 줄을 이용한다. $x=1/3$ 을 넣으면,
+식 @eq-CAL_2_2_2_1 의 세번째 줄을 이용한다. $x=1/3$ 을 넣으면,
 
 $$
 \dfrac{6}{(1-1/3)^4}=\dfrac{6\times 3^4}{2^4}= \dfrac{243}{8}
 $$
 
-(6) $\sum \dfrac{1}{n(n+1)2^n}$
+($6$) $\sum \dfrac{1}{n(n+1)2^n}$
 
-식 (2.2) 의 두번째 줄을 이용한다. $x=1/2$ 를 넣으면,
+식 @eq-CAL_2_2_2_2 의 두번째 줄을 이용한다. $x=1/2$ 를 넣으면,
 
 $$
 \sum_{n=1}^\infty \dfrac{1}{n(n+1)2^n} = 2 \cdot \sum_{n=1}^\infty \dfrac{1}{n(n+1)2^{n+1}} =2 \cdot \left( \dfrac{1}{2} + \dfrac{1}{2} \ln \dfrac{1}{2}\right)=1-\ln 2
 $$
 
-(7)  $\sum \dfrac{n^2}{2^n}$
+($7$)  $\sum \dfrac{n^2}{2^n}$
 
 $\displaystyle \sum_{n=2}^{\infty} \dfrac{n(n-1)}{2^n} = 4,\,\sum_{n=1}^{\infty}\dfrac{n}{2^n}=2$ 이므로 답은 $6$ 이다.
 
-(8) $\sum \dfrac{(-1)^n n^2}{2^n}$
+($8$) $\sum \dfrac{(-1)^n n^2}{2^n}$
 
-from (2.1),
+from @eq-CAL_2_2_2_1,
 
 $$
 \begin{aligned}
@@ -112,16 +129,23 @@ $$
 $$
 \dfrac{1}{4}\times \dfrac{16}{27}+ \dfrac{-1}{2} \times\dfrac{4}{9} = -\dfrac{2}{27}=\sum_{n=0}^\infty \dfrac{(-1)^n n (n-1)}{2^n} + \sum_{n=0}^\infty\dfrac{(-1)^n n}{2^n}=\sum_{n=0}^\infty \dfrac{(-1)^n n^2}{2^n}
 $$
+:::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** 다음 급수가 수렴하는 $x$ 의 범위를 구하라. (이 문제에서도 $n\ge 1$ 이다.)
+::: {#exr-CAL_2_2_3}   
 
----
+다음 급수가 수렴하는 $x$ 의 범위를 구하라. (이 문제에서도 $n\ge 1$ 이다.)
 
-(1) $\displaystyle \sum \dfrac{x^n}{n^n}$ : $\displaystyle \lim_{n \to \infty} \dfrac{n^n}{(n+1)^{n+1}}=\lim_{n \to \infty}\dfrac{1}{n+1}\dfrac{1}{(1+1/n)^n} \le \lim_{n \to \infty} \dfrac{1}{en}=0$ 이므로 $x$ 는 모든 실수 에서 수렴한다.
+:::
 
-(2) $\displaystyle \sum \dfrac{x^n}{\ln (n+2)}$ :  $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+2)}{\ln (n+3)}$ 을 구해보자. 우리는 $\ln$ 이 단조증가함수임을 알고 있다. 따라서 $ \dfrac{\ln (n+2)}{\ln (n+3)}\le 1$ 이다.
+</div>
+
+::: {.solution}
+
+($1$) $\displaystyle \sum \dfrac{x^n}{n^n}$ : $\displaystyle \lim_{n \to \infty} \dfrac{n^n}{(n+1)^{n+1}}=\lim_{n \to \infty}\dfrac{1}{n+1}\dfrac{1}{(1+1/n)^n} \le \lim_{n \to \infty} \dfrac{1}{en}=0$ 이므로 $x$ 는 모든 실수 에서 수렴한다.
+
+($2$) $\displaystyle \sum \dfrac{x^n}{\ln (n+2)}$ :  $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+2)}{\ln (n+3)}$ 을 구해보자. 우리는 $\ln$ 이 단조증가함수임을 알고 있다. 따라서 $ \dfrac{\ln (n+2)}{\ln (n+3)}\le 1$ 이다.
 
 우리는 이미 $(1+1/n)^{n+1}$ 단조감소 수열로 $e$ 로 수렴함을 알고 있다. 따라서,
 
@@ -137,17 +161,17 @@ $$
 
 를 얻는다. 양변에 $n \to \infty$ 극한을 취하면 $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+2)}{\ln (n+3)}=1$ 을 얻는다. 따라서 $|x|<1$ 이면 수렴한다. $x=1$ 일 때는 발산함을 알고 있다. $x=-1$ 일 때는 교대급수정리로부터 수렴함을 알고 있다. 따라서 수렴구간은 $[-1,\,1)$ 이다.
 
-(3)  $\sum \dfrac{nx^n}{6^n}$ : $\displaystyle \lim_{n \to \infty}\dfrac{(n+1)6^n}{n6^{n+1}}=\lim_{n \to \infty} \dfrac{n+1}{6n}=\dfrac{1}{6}$ 이므로 $|x|<6$ 에서는 수렴한다. $x=\pm 6$ 일때는 발한산다.
+($3$)  $\sum \dfrac{nx^n}{6^n}$ : $\displaystyle \lim_{n \to \infty}\dfrac{(n+1)6^n}{n6^{n+1}}=\lim_{n \to \infty} \dfrac{n+1}{6n}=\dfrac{1}{6}$ 이므로 $|x|<6$ 에서는 수렴한다. $x=\pm 6$ 일때는 발한산다.
 
-(4) $\sum \dfrac{n^2x^n}{1+n^2}$ : $\displaystyle \lim_{n \to \infty} \dfrac{(n+1)^2 (1+n^2)}{ n^2 (1+(n+1)^2)}=1$ 이므로 일단 $|x|<1$ 에서는 수렴한다. $x=1$ 에서는 $\sum \dfrac{n^2}{n^2+1}$ 이므로 발산한다. 같은 이유로 $x=-1$ 에서도 발산한다. 따라서 수렴구간은 $(-1,\,1)$ 이다.
+($4$) $\sum \dfrac{n^2x^n}{1+n^2}$ : $\displaystyle \lim_{n \to \infty} \dfrac{(n+1)^2 (1+n^2)}{ n^2 (1+(n+1)^2)}=1$ 이므로 일단 $|x|<1$ 에서는 수렴한다. $x=1$ 에서는 $\sum \dfrac{n^2}{n^2+1}$ 이므로 발산한다. 같은 이유로 $x=-1$ 에서도 발산한다. 따라서 수렴구간은 $(-1,\,1)$ 이다.
 
-(5) $\sum \dfrac{7^nx^n}{n!}$ : $\displaystyle \lim_{n \to \infty} \dfrac{7^{n+1}n!}{7^n (n+1)!}=\lim_{n \to \infty} \dfrac{7}{n+1}=0$  이므로 모든 실수에서 수렴한다.
+($5$) $\sum \dfrac{7^nx^n}{n!}$ : $\displaystyle \lim_{n \to \infty} \dfrac{7^{n+1}n!}{7^n (n+1)!}=\lim_{n \to \infty} \dfrac{7}{n+1}=0$  이므로 모든 실수에서 수렴한다.
 
-(6) $\sum \dfrac{(-1)^n (x-2)^n}{n^n}$ : $\displaystyle \lim_{n \to \infty} \dfrac{n^n}{(n+1)^{n+1}}= \lim \dfrac{1}{n+1} \dfrac{1}{(1+1/n)^n}=0$ 이므로 모든 실수에서 수렴한다.
+($6$) $\sum \dfrac{(-1)^n (x-2)^n}{n^n}$ : $\displaystyle \lim_{n \to \infty} \dfrac{n^n}{(n+1)^{n+1}}= \lim \dfrac{1}{n+1} \dfrac{1}{(1+1/n)^n}=0$ 이므로 모든 실수에서 수렴한다.
 
-(7) $\sum x^n \ln n$  : $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+1)}{\ln n}=1$ 이므로 (see (2)) $|x|<1$ 에서 수렴한다. $x=\pm 1$ 에서 발산함은 쉽게 보일 수 있다.
+($7$) $\sum x^n \ln n$  : $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+1)}{\ln n}=1$ 이므로 (see (2)) $|x|<1$ 에서 수렴한다. $x=\pm 1$ 에서 발산함은 쉽게 보일 수 있다.
 
-(8) $\sum \dfrac{(x-1)^n}{(\ln (n+1))^n}$ : $\displaystyle \lim_{n \to \infty} \dfrac{(\ln (n+1))^{n}}{(\ln (n+2))^{n+1}}$ 을 구한다. 우리는 $\left(1+\dfrac{1}{n+1}\right)^{n+1}<e<\left(1+\dfrac{1}{n+1}\right)^{n+2}$ 이며 앞과 뒤의 수열은 각각 단조증가, 단조감소임을 알고 있다. 이 부등식으로부터 다음을 얻는다.
+($8$) $\sum \dfrac{(x-1)^n}{(\ln (n+1))^n}$ : $\displaystyle \lim_{n \to \infty} \dfrac{(\ln (n+1))^{n}}{(\ln (n+2))^{n+1}}$ 을 구한다. 우리는 $\left(1+\dfrac{1}{n+1}\right)^{n+1}<e<\left(1+\dfrac{1}{n+1}\right)^{n+2}$ 이며 앞과 뒤의 수열은 각각 단조증가, 단조감소임을 알고 있다. 이 부등식으로부터 다음을 얻는다.
 
 $$
 e^{1/(n+2)}<\dfrac{n+2}{n+1}<e^{1/(n+1)} \implies (n+1)e^{1/(n+2)}<n+2 <(n+1)e^{1/(n+1)}
@@ -157,8 +181,9 @@ $$
 
 $$
 \begin{aligned}
-& \dfrac{(\ln (n+1))^n}{(\ln (e^{1/(n+1)} (n+1)))^{n+1}} \le \dfrac{(\ln (n+1))^{n}}{(\ln (n+2))^{n+1}} \le \dfrac{(\ln (n+1))^n}{(\ln (e^{1/(n+2)} (n+1)))^{n+1}} \\
-\implies & \dfrac{1}{\left(\dfrac{1}{n+1} + \ln (n+1)\right)} \dfrac{1}{\left(\dfrac{1}{(n+1)\ln (n+1)}+1\right)^{n}} \le \dfrac{(\ln (n+1))^{n}}{(\ln (n+2))^{n+1}}  \le\dfrac{1}{\left(\dfrac{1}{n+2} + \ln (n+1)\right)} \dfrac{1}{\left(\dfrac{1}{(n+2)\ln (n+1)}+1\right)^{n}}
+& \dfrac{(\ln (n+1))^n}{(\ln (e^{1/(n+1)} (n+1)))^{n+1}} \le \dfrac{(\ln (n+1))^{n}}{(\ln (n+2))^{n+1}} \le \dfrac{(\ln (n+1))^n}{(\ln (e^{1/(n+2)} (n+1)))^{n+1}} \\[0.4em]
+\implies & \dfrac{1}{\left(\dfrac{1}{n+1} + \ln (n+1)\right)} \dfrac{1}{\left(\dfrac{1}{(n+1)\ln (n+1)}+1\right)^{n}} \le \dfrac{(\ln (n+1))^{n}}{(\ln (n+2))^{n+1}}  \\[0.3em]
+&\le\dfrac{1}{\left(\dfrac{1}{n+2} + \ln (n+1)\right)} \dfrac{1}{\left(\dfrac{1}{(n+2)\ln (n+1)}+1\right)^{n}}
 \end{aligned}
 $$
 
@@ -182,29 +207,29 @@ $$
 
 이므로 양변에 $n \to \infty$ 극한을 취하면 $0$ 이된다. 따라서 모든 실수 구간에서 수렴한다.
 
-(9) $\sum \dfrac{n(n+1)(n+2)}{3^n}x^n$ : $\displaystyle \lim_{n \to \infty} \dfrac{(n+1)(n+2)(n+3)3^n}{n(n+1)(n+2)3^{n+1}}= \lim_{n \to \infty} \dfrac{n+3}{3n}=\dfrac{1}{3}$ 이므로 수렴반경은 $3$ 이다. $x=1$ 일때와 $x=-1$ 일 때 발산함은 쉽게 알 수 있다. 따라서 $x$ 의 수렴구간은 $(-3,\,3)$ 이다.
+($9$) $\sum \dfrac{n(n+1)(n+2)}{3^n}x^n$ : $\displaystyle \lim_{n \to \infty} \dfrac{(n+1)(n+2)(n+3)3^n}{n(n+1)(n+2)3^{n+1}}= \lim_{n \to \infty} \dfrac{n+3}{3n}=\dfrac{1}{3}$ 이므로 수렴반경은 $3$ 이다. $x=1$ 일때와 $x=-1$ 일 때 발산함은 쉽게 알 수 있다. 따라서 $x$ 의 수렴구간은 $(-3,\,3)$ 이다.
 
-(10) $\sum \dfrac{x^n}{2^{^n+(-1)^n}}$ : $\displaystyle \lim_{n \to \infty} \dfrac{2^{n+(-1)^{n}}}{2^{n+1+(-1)^{n+1}}} = \lim_{n \to \infty} 2^{-1}=\dfrac{1}{2}$ 이므로 수렴반경은 $2$ 이다. $x=\pm 2$ 일 때는 발산함은 쉽게 알 수 있다.
+($10$) $\sum \dfrac{x^n}{2^{^n+(-1)^n}}$ : $\displaystyle \lim_{n \to \infty} \dfrac{2^{n+(-1)^{n}}}{2^{n+1+(-1)^{n+1}}} = \lim_{n \to \infty} 2^{-1}=\dfrac{1}{2}$ 이므로 수렴반경은 $2$ 이다. $x=\pm 2$ 일 때는 발산함은 쉽게 알 수 있다.
 
-(11) $\sum \dfrac{\sin (n\pi /2)}{2^n}x^n$ : $\displaystyle \sum_{n=1}^\infty \sin \dfrac{n\pi}{2} \left(\dfrac{x}{2}\right)^n=\sum \left(\dfrac{x}{2}\right)^{4n-3} -\left(\dfrac{x}{2}\right)^{4n-1} $
+($11$) $\sum \dfrac{\sin (n\pi /2)}{2^n}x^n$ : $\displaystyle \sum_{n=1}^\infty \sin \dfrac{n\pi}{2} \left(\dfrac{x}{2}\right)^n=\sum \left(\dfrac{x}{2}\right)^{4n-3} -\left(\dfrac{x}{2}\right)^{4n-1} $
 
 교대급수이므로 $|x|<2$ 이면 수렴한다. $x= \pm 2$ 이면 발산함은 자명하다.
 
-(12) $\sum \dfrac{\cos n\pi}{n} x^n = \sum \dfrac{(-1)^{n+1}}{n}x^n$ : 당연히 $x=1$ 에서는 수렴, $x=-1$ 에서는 발산. $|x|<1$ 에서는 수렴. 따라서 수렴구간은 $(-1,\, 1]$
+($12$) $\sum \dfrac{\cos n\pi}{n} x^n = \sum \dfrac{(-1)^{n+1}}{n}x^n$ : 당연히 $x=1$ 에서는 수렴, $x=-1$ 에서는 발산. $|x|<1$ 에서는 수렴. 따라서 수렴구간은 $(-1,\, 1]$
 
-(13) $\sum \left(n \sin \dfrac{1}{n}\right) x^n$ :  우리는 $\displaystyle \lim_{x \to 0} \dfrac{\sin x}{x}=1$ 임을 안다. 따라서, $\displaystyle \lim_{n\to \infty}\dfrac{(n+1)\sin \dfrac{1}{n+1}}{n \sin \dfrac{1}{n}}=1$. 즉 수렴반경은 ${1}$ 이다. $x=\pm 1$ 일 때는 당연이 발산. 따라서 수렴구간은 $(-1,\,1)$.
+($13$) $\sum \left(n \sin \dfrac{1}{n}\right) x^n$ :  우리는 $\displaystyle \lim_{x \to 0} \dfrac{\sin x}{x}=1$ 임을 안다. 따라서, $\displaystyle \lim_{n\to \infty}\dfrac{(n+1)\sin \dfrac{1}{n+1}}{n \sin \dfrac{1}{n}}=1$. 즉 수렴반경은 ${1}$ 이다. $x=\pm 1$ 일 때는 당연이 발산. 따라서 수렴구간은 $(-1,\,1)$.
 
-(14) $\sum \left(n \tan \dfrac{1}{n} \right)x^n$ : $\displaystyle \lim_{x \to 0} \dfrac{\tan x}{x}=1$ 임을 안다. 따라서 13. 과 같은 이유로 수렴반경은 $1$ 이다. $\tan \dfrac{1}{n} > \sin \dfrac{1}{n}$ 이므로 $x=\pm 1$ 에서는 당연히 발산. 따라서 수렴구간은 $(-1,\,1)$.
+($14$) $\sum \left(n \tan \dfrac{1}{n} \right)x^n$ : $\displaystyle \lim_{x \to 0} \dfrac{\tan x}{x}=1$ 임을 안다. 따라서 13. 과 같은 이유로 수렴반경은 $1$ 이다. $\tan \dfrac{1}{n} > \sin \dfrac{1}{n}$ 이므로 $x=\pm 1$ 에서는 당연히 발산. 따라서 수렴구간은 $(-1,\,1)$.
 
-(15) $\sum \left(\sin \dfrac{1}{n} \right) x^n$ :  $\displaystyle \lim_{n \to \infty} \sin \dfrac{1}{n}=0$ 이며, $\displaystyle \lim_{n \to \infty} \dfrac{\sin \dfrac{1}{n+1}}{\sin \dfrac{1}{n}} = \lim_{n\to \infty} \dfrac{(n+1) \sin \dfrac{1}{n+1}}{n \sin \dfrac{1}{n}}\cdot \dfrac{n}{n+1}=1$ 이므로 $|x|<1$ 에서 수렴한다. $x=1$ 일 경우 $\sum \sin \dfrac{1}{n} > \sum \dfrac{2}{\pi n}$ 이므로 발산한다.  $x=-1$ 일 경우 절대값이 감소하며 $0$ 으로 수렴하는 교대수열이므로 수렴한다. 따라서 수렴구간은 $[-1,\, 1)$ 이다.
+($15$) $\sum \left(\sin \dfrac{1}{n} \right) x^n$ :  $\displaystyle \lim_{n \to \infty} \sin \dfrac{1}{n}=0$ 이며, $\displaystyle \lim_{n \to \infty} \dfrac{\sin \dfrac{1}{n+1}}{\sin \dfrac{1}{n}} = \lim_{n\to \infty} \dfrac{(n+1) \sin \dfrac{1}{n+1}}{n \sin \dfrac{1}{n}}\cdot \dfrac{n}{n+1}=1$ 이므로 $|x|<1$ 에서 수렴한다. $x=1$ 일 경우 $\sum \sin \dfrac{1}{n} > \sum \dfrac{2}{\pi n}$ 이므로 발산한다.  $x=-1$ 일 경우 절대값이 감소하며 $0$ 으로 수렴하는 교대수열이므로 수렴한다. 따라서 수렴구간은 $[-1,\, 1)$ 이다.
 
-(16) $\sum \left(\tan \dfrac{1}{n} \right) x^n$ : 15와 같다.
+($16$) $\sum \left(\tan \dfrac{1}{n} \right) x^n$ : 15와 같다.
 
-(17)  $\sum \left( \dfrac{1}{n} \tan \dfrac{1}{n}\right)x^n$ : $\displaystyle \lim_{n \to \infty} \dfrac{1}{n} \tan \dfrac{1}{n}=0$ 이며, $\displaystyle \lim_{n \to \infty} \dfrac{\dfrac{1}{n+1} \tan\dfrac{1}{n+1}}{\dfrac{1}{n}\tan \dfrac{1}{n}}= \lim_{n \to \infty} \dfrac{(n+1)\tan \dfrac{1}{n+1}}{n \tan \dfrac{1}{n}} \cdot \dfrac{n^2}{(n+1)^2}=1$ 이므로 $|x|<1$ 에서 수렴한다. $x=1$ 이면 $\sum \dfrac{1}{n} \tan \dfrac{1}{n}=\sum \dfrac{1}{n^2} \cdot \left(n \tan \dfrac{1}{n}\right)$   이다. 충분히 큰 $n$ 에서 $n \tan \dfrac{1}{n} \approx 1$ 이므로 $n \tan \dfrac{1}{n}<2$ 이다.  따라서 수렴한다.
+($17$)  $\sum \left( \dfrac{1}{n} \tan \dfrac{1}{n}\right)x^n$ : $\displaystyle \lim_{n \to \infty} \dfrac{1}{n} \tan \dfrac{1}{n}=0$ 이며, $\displaystyle \lim_{n \to \infty} \dfrac{\dfrac{1}{n+1} \tan\dfrac{1}{n+1}}{\dfrac{1}{n}\tan \dfrac{1}{n}}= \lim_{n \to \infty} \dfrac{(n+1)\tan \dfrac{1}{n+1}}{n \tan \dfrac{1}{n}} \cdot \dfrac{n^2}{(n+1)^2}=1$ 이므로 $|x|<1$ 에서 수렴한다. $x=1$ 이면 $\sum \dfrac{1}{n} \tan \dfrac{1}{n}=\sum \dfrac{1}{n^2} \cdot \left(n \tan \dfrac{1}{n}\right)$   이다. 충분히 큰 $n$ 에서 $n \tan \dfrac{1}{n} \approx 1$ 이므로 $n \tan \dfrac{1}{n}<2$ 이다.  따라서 수렴한다.
 
 $x=-1$ 에서도 수렴함은 쉽게 알 수 있다. 따라서 수렴구간은 $[-1,\,1]$ 이다.
 
-(18) $\sum \dfrac{x^n}{\ln (n+1)}$ : $\displaystyle \lim_{n \to \infty} \dfrac{1}{\ln (n+1)}=0$ 이며, $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+1)}{\ln n} $ 을 구해야 한다.
+($18$) $\sum \dfrac{x^n}{\ln (n+1)}$ : $\displaystyle \lim_{n \to \infty} \dfrac{1}{\ln (n+1)}=0$ 이며, $\displaystyle \lim_{n \to \infty} \dfrac{\ln (n+1)}{\ln n} $ 을 구해야 한다.
 
 $$
 \dfrac{\ln (n+1)}{\ln n}= \dfrac{\ln n \left(1+\dfrac{1}{n}\right)}{\ln n}= 1+ \dfrac{\ln \left(1+1/n\right)}{\ln n}= 1+ \dfrac{\ln (1+1/n)^n}{n \ln n}
@@ -212,9 +237,15 @@ $$
 
 이므로 양변에 $n \to \infty$ 극한을 취하면 분자의 $\ln$ 의 인수가 $e$ 로 수렴하고, 분모는 $\to \infty$ 이므로 $n \to \infty $ 극한에서 $1$ 이 된다. 따라서 $|x|<1$ 에서 수렴한다. $x=1$ 에서는 발산하고 $x=-1$ 에서는 수렴함은 쉽게 보일 수 있다.
 
-(19) $\sum \dfrac{x^n}{n2^n}$ : $|x|<2$ 에서는 수렴. 나머지는 발산. 따라서 수렴범위는 $(-2,\,2)$ 이다.
+($19$) $\sum \dfrac{x^n}{n2^n}$ : $|x|<2$ 에서는 수렴. 나머지는 발산. 따라서 수렴범위는 $(-2,\,2)$ 이다.
 
-**4.** $|x|<1$ 이면
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_2_4}   
+
+$|x|<1$ 이면
 
 $$
 \ln \dfrac{1+x}{1-x}=2\sum_{n=1}^\infty \dfrac{x^{2n-1}}{2n-1}
@@ -227,7 +258,11 @@ $$
 $$
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 From text p. 63,
 
@@ -246,44 +281,68 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**5.** 갑과 을 두 사람이 '가위-바위-보' 를 하여 진 사람이 이긴 사람에게 100원을 주기로 하였다. 이 놀이를 갑이 이길 때까지 하고 종료한다고 하면, 갑이 얻게 되는 기대값은 얼마인가?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_2_5}  
+
+갑과 을 두 사람이 '가위-바위-보' 를 하여 진 사람이 이긴 사람에게 100원을 주기로 하였다. 이 놀이를 갑이 이길 때까지 하고 종료한다고 하면, 갑이 얻게 되는 기대값은 얼마인가?
+
+::: 
+
+</div>
+
+:::{.solution}
 
 $$
 M=\sum_{n=1}^\infty (100-100(n-1)) \times \left(\dfrac{1}{2}\right)^n= \sum_{n=1}^n (200-100n)\times \left(\dfrac{1}{2} \right)^n = 200-200=0
 $$
 
-</br>
+:::
 
-**6.** 주어진 임의의 자연수 $N$ 에 대하여 다음 멱급수의 수렴반경이 모두 같음을 보이시오.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_2_6} 
+
+주어진 임의의 자연수 $N$ 에 대하여 다음 멱급수의 수렴반경이 모두 같음을 보이시오.
+
 
 $$
 \sum_n a_n x^n \,, \qquad \sum_{n\ge N} a_n x^n \,, \qquad \sum_n a_n x^{n+N}
 $$
 
----
+:::
 
-(1) $|x|=r$ 에서 $\sum a_n x^n$ 이 수렴한다고 가정하자. 그렇다면 $\displaystyle \sum_{n\ge N} a_n x^n = \sum_n a_n x_n-\sum_{n=1}^{N-1} a_n x^n$  이며 $-\sum$ term은 유한한 수이므로 $\sum_{n\ge N}a_n x^n$ 이 수렴한다.
+</div>
 
-(2) $|x|=r$ 에서 $\displaystyle \sum_{n \ge N} a_n x^n$ 이 수렴함을 가정하자. $x^N$ 을 곱해도 수렴하며 $\displaystyle \sum_{n} a_n x^{n+N}=x^N \left(\sum_{n\ge N} x^n\right)- x^N \left(\sum_{n=1}^{N-1} a_n x^n\right)$ 이며 second term은 유한한 term $\sum_n a_n x^{n+N}$ 도 수렴한다.
+::: {.solution}
+($1$) $|x|=r$ 에서 $\sum a_n x^n$ 이 수렴한다고 가정하자. 그렇다면 $\displaystyle \sum_{n\ge N} a_n x^n = \sum_n a_n x_n-\sum_{n=1}^{N-1} a_n x^n$  이며 $-\sum$ term은 유한한 수이므로 $\sum_{n\ge N}a_n x^n$ 이 수렴한다.
 
-(3) $|x|=r$ 에서 $\displaystyle \sum_n a_n x^{n+N}$ 이 수렴함을 가정하자. $r=0$ 일 때는 위 수열 $\displaystyle \sum_n a_n x^n=0$ 이므로 수렴한다. $r\ne 0$ 일 때는 $\displaystyle \sum_n a_n x^n = (x^N)^{-1}\left(\sum_n a_n x^{n+N}\right)$ 이므로 수렴한다.
+($2$) $|x|=r$ 에서 $\displaystyle \sum_{n \ge N} a_n x^n$ 이 수렴함을 가정하자. $x^N$ 을 곱해도 수렴하며 $\displaystyle \sum_{n} a_n x^{n+N}=x^N \left(\sum_{n\ge N} x^n\right)- x^N \left(\sum_{n=1}^{N-1} a_n x^n\right)$ 이며 second term은 유한한 term $\sum_n a_n x^{n+N}$ 도 수렴한다.
 
-(4) 따라서 세 급수의 수렴조건이 동등하므로 수렴반경은 같다.
+($3$) $|x|=r$ 에서 $\displaystyle \sum_n a_n x^{n+N}$ 이 수렴함을 가정하자. $r=0$ 일 때는 위 수열 $\displaystyle \sum_n a_n x^n=0$ 이므로 수렴한다. $r\ne 0$ 일 때는 $\displaystyle \sum_n a_n x^n = (x^N)^{-1}\left(\sum_n a_n x^{n+N}\right)$ 이므로 수렴한다.
 
-</br>
+($4$) 따라서 세 급수의 수렴조건이 동등하므로 수렴반경은 같다.
 
-**7.** 임의의 자연수 $k$ 와 $|x|<1$ 에 대하여
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_2_7}   
+
+임의의 자연수 $k$ 와 $|x|<1$ 에 대하여
 
 $$
 \dfrac{x^k}{(1-x)^{k+1}}=\dfrac{1}{k!}\sum_{n=k}^{\infty} n (n-1)\cdots (n-k+1)x^n
 $$
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\displaystyle \dfrac{1}{1-x}=\sum_{n=0}^\infty x^n$ 을 $k$ 번 미분하면,
 
@@ -293,17 +352,31 @@ $$
 
 이다. 양변을 $k!$ 로 나누고 $x^k$ 를 곱하면 주어진 식을 얻는다.
 
-</br>
+:::
 
-**8.** 멱급수 $\sum a_n x^n$ 의 수렴반경과 멱급수 $\sum a_n x^{2n}$ 의 수렴반경 사이의 관계를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_2_8}   
+
+멱급수 $\sum a_n x^n$ 의 수렴반경과 멱급수 $\sum a_n x^{2n}$ 의 수렴반경 사이의 관계를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\sum a_n x^{2n}=\sum a_n (x^2)^n$ 이다. $|x|=r$ 일 때 $\sum a_n x^n$ 이 수렴한다면 $|x|=\sqrt{r}$ 일 때 $\sum a_n x^{2n}$ 에서 수렴한다. $|x|=s$ 일 때 $\sum a_n x^{2n}$ 에서 수렴한다면, $|x|=s^2$ 일 때 $\sum a_n x^{n}$ 에서 수렴한다.
 
+:::
+
 </br>
 
-**9.** 구간 $|x|<1$ 에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_2_9}   
+
+구간 $|x|<1$ 에서
 
 $$
 \operatorname{li_2}(x) :=\sum_{n=1}^\infty \dfrac{x^n}{n^2}
@@ -316,7 +389,11 @@ $$
 $$
 를 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\displaystyle \ln (1-t)=- \sum_{n=1}^\infty \dfrac{t^n}{n}$ 이므로,
 
@@ -326,6 +403,8 @@ $$
 
 이다.
 
+:::
+
 </br>
 
 **10.**
@@ -334,7 +413,11 @@ trivial
 
 </br>
 
-**11.** 피보나치수열 $(f_n)$ 에 대해 멱급수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_2_11}   
+
+피보나치수열 $(f_n)$ 에 대해 멱급수
 
 $$
 f(x) = \sum f_n x^n
@@ -342,7 +425,11 @@ $$
 
 의 수렴반경을 구하고, 이때 $f(1/2)$ 의 값을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 피보나치수열 $f_n$ 에 대해 $r_n = \dfrac{f_{n}}{f_{n+1}}$ 이 $\dfrac{-1+\sqrt{5}}{2}$ 로 수렴함을 안다. 즉 피보나치수열의 수렴반경은 $\dfrac{-1+\sqrt{5}}{2}$ 이다.
 
@@ -357,9 +444,11 @@ $$
 
 이다. $f(1/2)=1/2+1/2f(1/2)+1/4f(1/2)$ 이므로 $f(1/2)=2$ 이다.
 
-## 3.1
+:::
 
-### 3.1.1. 기본연습문제
+
+## $e$ 는 무리수이다
+
 
 등식
 
@@ -369,11 +458,11 @@ $$
 
 임을 보이고, 이를 이용하여 $e$ 가 무리수임을 증명하라.
 
----
+::: {.proof}
 
-(1) $\displaystyle \exp (x) = \sum_{n=0}^\infty \dfrac{x}{n!}$ 에 $x=-1$ 을 대입하면 위 식을 얻는다.
+($1$) $\displaystyle \exp (x) = \sum_{n=0}^\infty \dfrac{x}{n!}$ 에 $x=-1$ 을 대입하면 위 식을 얻는다.
 
-(2) $1/e$ 가 유리수라고 하면 어떤 자연수 $p$ 를 $1/e$ 에 곱하면 자연수가 된다. 따라서,
+($2$) $1/e$ 가 유리수라고 하면 어떤 자연수 $p$ 를 $1/e$ 에 곱하면 자연수가 된다. 따라서,
 
 $$
 \dfrac{p!}{e} = \dfrac{p!}{2!}-\dfrac{p!}{3!}+ \cdots + (-1)^p \dfrac{p!}{p!}+ \sum_{k=p+1}^\infty (-1)^k \dfrac{p!}{k!}
@@ -400,15 +489,25 @@ $$
 
 이 되므로 모순. 즉 $1/e$ 는 유리수가 아니다.
 
+:::
+
 </br>
 
-### 3.2.1 기본연습문제
+### 기본연습문제
 
-**1.** 다음을 보이라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_2_B1}  
 
-(1) $\displaystyle \lim_{x \to \infty} \dfrac{x^2}{2^x}=0$ : $2^x = e^{x \ln 2}$ 이다. 즉 $2^x=e^{x \ln 2}= 1+ x\ln 2 + \dfrac{(x\ln 2)^2}{2}+ \dfrac{(x\ln 2)^3}{3!}+\cdots $  이므로, 임의의 자연수 $n$ 에 대하여 $2^x > \dfrac{(x\ln 2)^n}{n!}$ 이다. $x>\dfrac{4!}{(\ln 2)^4}$ 이라 하면
+다음을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $\displaystyle \lim_{x \to \infty} \dfrac{x^2}{2^x}=0$ : $2^x = e^{x \ln 2}$ 이다. 즉 $2^x=e^{x \ln 2}= 1+ x\ln 2 + \dfrac{(x\ln 2)^2}{2}+ \dfrac{(x\ln 2)^3}{3!}+\cdots$  이므로, 임의의 자연수 $n$ 에 대하여 $2^x > \dfrac{(x\ln 2)^n}{n!}$ 이다. $x>\dfrac{4!}{(\ln 2)^4}$ 이라 하면
 
 $$
 2^x> \dfrac{x^4 (\ln 2)^4}{4!}=\dfrac{x(\ln 2)^4}{4!}x^3>x^3
@@ -416,11 +515,15 @@ $$
 
 이므로 $\dfrac{x^2}{2^x} < \dfrac{1}{x}$ for sufficiently large $x$. 따라서 극한이 $0$ 이다.
 
-(2) $\displaystyle \lim_{x\to \infty}\dfrac{x^3}{3^x} = 0$ : $0<\dfrac{x^3}{3^x} < \dfrac{x^3}{e^x}$ 이며 $x>5!=120$ 이면 $e^x>x^4$ 이므로 $ \dfrac{x^3}{3^x}< \dfrac{1}{x}$ 이다. 따라서 극한이 $0$ 이다.
+($2$) $\displaystyle \lim_{x\to \infty}\dfrac{x^3}{3^x} = 0$ : $0<\dfrac{x^3}{3^x} < \dfrac{x^3}{e^x}$ 이며 $x>5!=120$ 이면 $e^x>x^4$ 이므로 $ \dfrac{x^3}{3^x}< \dfrac{1}{x}$ 이다. 따라서 극한이 $0$ 이다.
 
-</br>
+:::
 
-**2.** 주어진 자연수 $n$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_2_B2}   
+
+주어진 자연수 $n$ 에 대하여,
 
 $$
 x\gg 1 \implies \ln x < \sqrt[n]{x}
@@ -428,7 +531,11 @@ $$
 
 임을 보여라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $e^x$ 가 단조증가 함수이므로 $\ln x< \sqrt[n]{x} \implies e^{\ln x}< e^{\sqrt[n]{x}}$ 이다. 즉 $x \gg 1 \implies x< e^{\sqrt[n]{x}}$ 임을 보이면 된다.
 
@@ -444,6 +551,9 @@ $$
 
 이다.
 
+:::
+
+
 </br>
 
 **3.** trivial
@@ -456,7 +566,11 @@ $$
 
 ## 연습문제 2장 3절
 
-**1.** 지수함수 $\exp (x)$ 는 어떤 멱급수 함수 $u(x)$ 에 대하여
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_3_1}   
+
+지수함수 $\exp (x)$ 는 어떤 멱급수 함수 $u(x)$ 에 대하여
 
 $$
 \exp (x) = 1+ x + \dfrac{x^2}{2} u(x)
@@ -464,31 +578,45 @@ $$
 
 로 표현됨을 보여라.
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
 \exp (x) = \sum_{k=0}^\infty \dfrac{x^k}{k!}= 1+x+\sum_{k=0}^\infty \dfrac{x^{k+2}}{(k+2)!}=1+x+\dfrac{x^2}{2} \left(\sum_{k=0}^\infty \dfrac{2}{(k+2)!} x^k \right)
 $$
 
-</br>'
+:::
 
-**2.** 다음 극한값을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_3_2}
+
+다음 극한값을 구하라.
 
 $$
 \displaystyle \lim_{x \to 0} \dfrac{e^x-1-x}{x^2}
 $$
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
 \dfrac{e^x-1-x}{x^2}= \sum_{k=0}^\infty \dfrac{x^k}{(k+2)!}
 $$
 
 이므로 극한값은 $1/2$.
 
-</br>
+:::
 
-**3.** 베르누이 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_3_3} 
+
+베르누이 함수
 
 $$
 B(x) = \dfrac{x}{e^x-1}
@@ -502,7 +630,7 @@ $$
 
 로 정의한다.
 
-(1) 우선 $e^x-1 = x+\dfrac{1}{2}x + \dfrac{1}{3!}x^3 + \cdots $ 에서
+($1$) 우선 $e^x-1 = x+\dfrac{1}{2}x + \dfrac{1}{3!}x^3 + \cdots$ 에서
 
 $$
 \begin{aligned}
@@ -514,14 +642,14 @@ $$
 
 임을 보이라.
 
-(2) 함수
+($2$) 함수
 $$
 B(x) - \left(1- \dfrac{1}{2} x \right)
 $$
 
 는 $x$ 대신에 $-x$ 를 넣어도 변하지 않는 **짝함수** 임을 보이고, 이로부터 이 함수의 멱급수 전개는 모두 짝수차항으로만 이루어져 있음을 밝히라.
 
-(3) 베르누이수 $B_1,\,B_2,\,B_3,\ldots$ 는 등식
+($3$) 베르누이수 $B_1,\,B_2,\,B_3,\ldots$ 는 등식
 
 $$
 \dfrac{x}{e^x-1} = 1 - \dfrac{x}{2}- \sum_{n=1}^\infty (-1)^n \dfrac{B_n}{(2n)!} x^{2n}
@@ -535,11 +663,15 @@ $$
 
 임을 보이라.
 
----
+:::
 
-(1) $|y|<1$ 일 때, $\dfrac{1}{1+y}=1-y+y^2-y^3+\cdots +(-1)^n y^n + \cdots $ 이다. 따라서 $\left|\dfrac{1}{2}x+\dfrac{1}{3!}x^2 + \cdots \,\right|<1$ 이면 위의 식이 성립하는데.. $>1$ 일 때는?
+</div>
 
-(2) $f(x) = B(x)-\left(1-\dfrac{1}{2}x\right)$ 하면,
+::: {.solution}
+
+($1$) $|y|<1$ 일 때, $\dfrac{1}{1+y}=1-y+y^2-y^3+\cdots +(-1)^n y^n + \cdots$ 이다. 따라서 $\left|\dfrac{1}{2}x+\dfrac{1}{3!}x^2 + \cdots \,\right|<1$ 이면 위의 식이 성립하는데.. $>1$ 일 때는?
+
+($2$) $f(x) = B(x)-\left(1-\dfrac{1}{2}x\right)$ 하면,
 
 $$
 \begin{aligned}
@@ -554,7 +686,7 @@ $$
 
 $\displaystyle g(x) = \sum_{n=0}^\infty a_n x^n$ 이며 양함수라 하자. $g(x)=g(-x)$ 이므로 $\displaystyle g(x) = \dfrac{g(x)+g(-x)}{2}=\sum_{n=0}^\infty a_{2n}x^{2n}$ 이므로 $g$ 의 멱급수 전개는 짝수차항으로 이루어졌다. (일단 uniqueness of power series 는 가정한다)
 
-(3) $B(x)$ 를 4차항까지 전개하며 홀수차항의 계수가 $0$ 이므로 홀수차항은 생각하지 않는다.
+($3$) $B(x)$ 를 4차항까지 전개하며 홀수차항의 계수가 $0$ 이므로 홀수차항은 생각하지 않는다.
 
 $$
 \begin{aligned}
@@ -570,9 +702,13 @@ $$
 
 이므로 $B_1=\dfrac{1}{6},\, B_2= \dfrac{1}{30}$ 이다.
 
-</br>
+:::
 
-**4. (이항전개)** 주어진 자연수 $r$ 에 대하여 미지수 $x$ 에 대한 다항식 $(1+x)^r$ dmf wjsrogkaus $n$ 차항 $x^n$ 의 계수는
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_3_4} 
+
+주어진 자연수 $r$ 에 대하여 미지수 $x$ 에 대한 다항식 $(1+x)^r$ 을 전개하면 $n$ 차항 $x^n$ 의 계수는
 
 $$
 \begin{pmatrix} r\\n \end{pmatrix} := {}_rC_n = \dfrac{r(r-1)\cdots (r-n+1)}{1\cdot 2 \cdots n} = \dfrac{r!}{n! (r-n)!}
@@ -619,9 +755,13 @@ $$
 \end{aligned}
 $$
 
----
+:::
 
-(1) $r$ 이 정수일 때는 다항식으로 전개되므로 $r$ 이 정수가 아닐 때를 생각한다. 우선 수렴반경을 보이자.
+</div>
+
+::: {.solution}
+
+($1$) $r$ 이 정수일 때는 다항식으로 전개되므로 $r$ 이 정수가 아닐 때를 생각한다. 우선 수렴반경을 보이자.
 
 $$
 \lim_{n\to \infty} \dfrac{a_{n+1}}{a_n}=\lim_{n\to \infty} \dfrac{r(r-1)\cdots (r-n)\times 1\cdot 2 \cdots n}{r(r-1)\cdots (r-n+1) \times 1 \cdot 2 \cdots (n+1) }=\lim_{n \to \infty} \dfrac{(r-n+1)}{(n+1)}=-1
@@ -629,7 +769,7 @@ $$
 
 이다. 따라서 수렴반경은 $1$ 이다.
 
-(2) $(1+x)f'(x) = rf(x)$ 를 보이자.
+($2$) $(1+x)f'(x) = rf(x)$ 를 보이자.
 
 $$
 \begin{aligned}
@@ -643,7 +783,7 @@ $$
 \end{aligned}
 $$
 
-(3)
+($3$)
 
 $$
 \dfrac{d}{dx}\dfrac{f(x)}{(1+x)r}=\dfrac{f'(x)}{(1+x)^r}-\dfrac{rf(x)}{(1+x)^{r+1}}=\dfrac{(1+x)f'(x)-rf(x)}{(1+x)^{r+1}}=0
@@ -651,15 +791,26 @@ $$
 
 이므로 $f(x)= c (1+x)^r$ for $c=\text{const.}$ 이다. $x=0$ 을 넣으면 $c=1$ 임을 알 수 있다. 따라서 $f(x)=(1+x)^r$
 
-(4) $\sqrt{1+x}$ 에는 $r=1/2$, $\sqrt[3]{1+x}$ 눈 $x=1/3$ 을 넣어 계산해보면 된다.
+($4$) $\sqrt{1+x}$ 에는 $r=1/2$, $\sqrt[3]{1+x}$ 눈 $x=1/3$ 을 넣어 계산해보면 된다.
+
+:::
+
 
 </br>
 
 ## 연습문제 2장 4절
 
-**1.** $\cos 0.1$ 의 값을 오차의 범위가 $10^{-3}$ 이하가 되도록 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_4_1} 
+
+$\cos 0.1$ 의 값을 오차의 범위가 $10^{-3}$ 이하가 되도록 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\displaystyle \cos x = \sum_{n=0}^\infty \dfrac{(-1)^n}{(2n)!}x^{2n}$ 이다. 멱급수 전개를 이용하면,
 $$
@@ -667,9 +818,13 @@ $$
 $$
 이며 $n$ 번째 항 $ \dfrac{(-1)^n}{(2n)!}x^{2n}$ 의 절대값이 계속 감소하는 교대수열이므로 $3$ 번째 항 이하가 $10^{-3}$ 보다 커질 수 없다. 따라서 $\cos 0.1 \approx 0.995$ 이다.
 
-</br>
+:::
 
-**2.** 탄젠트 함수 $\tan x$ 의 멱급수 전개는
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_4_2}  
+
+탄젠트 함수 $\tan x$ 의 멱급수 전개는
 
 $$
 \tan x = x +\dfrac{x^3}{3}+ \dfrac{2}{15}x^5 + \cdots
@@ -677,7 +832,11 @@ $$
 
 임을 보이라. (물론 의미있는 구간은 $\left(-\dfrac{\pi}{2},\, \dfrac{\pi}{2}\right)$ 이다. )
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\tan x = \dfrac{\sin x}{\cos x}$ 이므로 $\tan (-x)= -\tan x$ 인 odd function 이다. $\tan x=\sum a_n x^n$ 이라 하자. odd function 이므로,
 
@@ -693,15 +852,23 @@ $$
 \tan x = x + \dfrac{2}{3!}x^3+ \dfrac{16}{5!}x^5 + \cdots = x+\dfrac{1}{3}x^3+ \dfrac{2}{15}x^5+\cdots
 $$
 
-</br>
+:::
 
-**3.** 어떤 멱급수 함수 $u(x),\, v(x)$ 에 대하여 다음이 성립함을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_4_3}  
+
+어떤 멱급수 함수 $u(x),\, v(x)$ 에 대하여 다음이 성립함을 보이라.
 
 $$
 \sin x = x-\dfrac{x^3}{6}u(x),\qquad \cos x =1-\dfrac{x^2}{2}+\dfrac{x^4}{24}v(x);.
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 교재에 주어진 멱급수전개로부터,
 
@@ -714,15 +881,21 @@ $$
 
 를 얻는다.
 
+:::
+
 </br>
 
 **4.** 다음 극한값을 구하라.
 
 skip
 
-</br>
 
-**5.** 피타고라스의 소리에 관한 이론에 의하면, 길이가 $1/2$ 인 현 $S_{1/2}$ 이 내는 소리는 길이가 $1$ 인 현 $S_1$ 이 내는 소리보다 한 옥타브 높은 소리가 난다. $1$ 과 $2$ 의 조화평균인 $\dfrac{1}{\dfrac{1}{2} \left(\dfrac{1}{1}+\dfrac{1}{1/2}\right)}=\dfrac{2}{3}$ 를 길이로 가지는 현 $S_{2/3}$ 은 기본현 $S_1$ 보다 장오도 높은 소리를 낸다. 즉 기본현이 다($C$)음을 내면, 길이가 $2/3$ 인 현은 사($G$) 음을 내고, 길이가 $1/2$ 인 현은 높은 다($c$) 음을 낸다. 이러한 소리들은 모두 사인곡선으로 표현되는데, 현들 $S_1,\, S_{2/3},\, S_{1/2}$ 이 같은 크기로 내는 소리는 다음 곡선에 대응한다.
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_4_5}  
+
+피타고라스의 소리에 관한 이론에 의하면, 길이가 $1/2$ 인 현 $S_{1/2}$ 이 내는 소리는 길이가 $1$ 인 현 $S_1$ 이 내는 소리보다 한 옥타브 높은 소리가 난다. $1$ 과 $2$ 의 조화평균인 $\dfrac{1}{\dfrac{1}{2} \left(\dfrac{1}{1}+\dfrac{1}{1/2}\right)}=\dfrac{2}{3}$ 를 길이로 가지는 현 $S_{2/3}$ 은 기본현 $S_1$ 보다 장오도 높은 소리를 낸다. 즉 기본현이 다($C$)음을 내면, 길이가 $2/3$ 인 현은 사($G$) 음을 내고, 길이가 $1/2$ 인 현은 높은 다($c$) 음을 낸다. 이러한 소리들은 모두 사인곡선으로 표현되는데, 현들 $S_1,\, S_{2/3},\, S_{1/2}$ 이 같은 크기로 내는 소리는 다음 곡선에 대응한다.
 
 $$
 S_1 (x) = \sin x,\qquad S_{2/3}(x) = \sin \dfrac{3}{2}x ,\qquad S_{1/2}(x) = \sin 2x\;.
@@ -736,17 +909,30 @@ $$
 
 의 멱급수 전개를 구하여라.
 
+:::
+
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 \sin x + \sin \dfrac{3}{2} x + \sin 2x = \sum_{n=0}^\infty (-1)^{n}\left(1+ \dfrac{3^{2n}}{2^{2n+1}}+2^{2n+1}\right)\dfrac{x^{2n+1}}{(2n+1)!}
 \end{aligned}
 $$
 
-</br>
+:::
 
-**6.** $\cos 1$ 과 $\sin 1$ 이 모두 무리수임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_4_6}  
+
+$\cos 1$ 과 $\sin 1$ 이 모두 무리수임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\displaystyle \cos 1 = \sum_{n=0}^\infty \dfrac{(-1)^n}{(2n)!}$ 이다. $\cos 1$ 이 유리수라면 곱하여 자연수가되는 어떤 자연수 $p$ 가 존재한다. $N\in \mathbb{N}$ 이 $2N\le p$  이고 $2(N+1)>p$ 를 만족한다고 하자. (이런 $N$ 은 항상 존재한다.) 그렇다면,
 
@@ -754,10 +940,13 @@ $$
 p!\cdot \cos 1 = p! -\dfrac{p!}{2!}+ \dfrac{p!}{4!} + \cdots (-1)^N\dfrac{p!}{(2N)!} + \sum_{n=N+1}^\infty (-1)^n\dfrac{p!}{(2n)!}
 $$
 
-이다 $p! - \cdots+(-1)^N\dfrac{p!}{(2N)!}$ 는 자연수이므로 $\sum$ 으로 묶여 있는 term 도 정수 이어야 한다. $2(N+1)\ge p+1$ 을 이용하면,그런데..
+이다 $p! - \cdots+(-1)^N\dfrac{p!}{(2N)!}$ 는 자연수이므로 $\sum$ 으로 묶여 있는 term 도 정수 이어야 한다. $2(N+1)\ge p+1$ 을 이용하면, 그런데..
 
 $$
-\left|\sum_{n=N+1}^\infty (-1)^n\dfrac{p!}{(2n!)}\right| \le \sum_{n=N+1}^\infty \dfrac{p!}{(2n)!} <\dfrac{1}{p+1} + \dfrac{1}{(p+1)^3}+ \dfrac{1}{(p+1)^5}+\cdots = \dfrac{1/(p+1)}{1-1/(p+1)^2}=\dfrac{p+1}{(p^2+2p)}<\dfrac{1}{p+1}<1
+\begin{aligned}
+\left|\sum_{n=N+1}^\infty (-1)^n\dfrac{p!}{(2n!)}\right| & \le \sum_{n=N+1}^\infty \dfrac{p!}{(2n)!} <\dfrac{1}{p+1} + \dfrac{1}{(p+1)^3}+ \dfrac{1}{(p+1)^5}+\cdots \\[0.3em]
+&= \dfrac{1/(p+1)}{1-1/(p+1)^2}=\dfrac{p+1}{(p^2+2p)}<\dfrac{1}{p+1}<1
+\end{aligned}
 $$
 
 이므로 이를 만족하는 정수는 $0$ 뿐이다. $a_n = \dfrac{p!}{(2n!)}$ 이라 하면 $\sum [\cdots]$ 부분의 합은 ($a_{N+1}>0$ 으로 놓아도 no loss of generality!),
@@ -770,9 +959,13 @@ $$
 
 $\displaystyle \sin 1 = \sum_{n}^\infty \dfrac{(-1)^{n}}{(2n+1)!}$ 도 같은 방법으로 보일 수 있다.
 
-</br>
+:::
 
-**7.** 다음 등식을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_4_7}  
+
+다음 등식을 보이라.
 
 $$
 \begin{aligned}
@@ -783,13 +976,21 @@ $$
 \end{aligned}
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\sin x = -\cos \left(x+\dfrac{\pi}{2}\right)=- \sin (x+\pi)=\cos\left(x+\dfrac{3\pi}{2}\right) = \sin (x+2\pi)$
 
-</br>
+:::
 
-**8.** 두번 미분 가능한 함수 $f:\mathbb{R} \to \mathbb{R}$ 이 미분방정식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_4_8}  
+
+두번 미분 가능한 함수 $f:\mathbb{R} \to \mathbb{R}$ 이 미분방정식
 
 $$
 f''(x)=-f(x),\qquad f(0)=a,\qquad f'(0)=b
@@ -797,7 +998,7 @@ $$
 
 를 만족시킨다고 하자. (여기에서 $a$ 와 $b$ 는 주어진 실수이다.)
 
-(1) $g(x):=(f(x)-a\cos x - b\sin x)^2+ (f'(x)+ a\sin x - b \cos x)^2$ 로 두면
+($1$) $g(x):=(f(x)-a\cos x - b\sin x)^2+ (f'(x)+ a\sin x - b \cos x)^2$ 로 두면
 
 $$
 g'(x)=0,\qquad g(0)=0
@@ -805,17 +1006,21 @@ $$
 
 임을 보이라.
 
-(2) $f(x) = a \cos x + b \sin y$ 임을 보이라.
+($2$) $f(x) = a \cos x + b \sin y$ 임을 보이라.
 
-(3) 다음을 보이라.
+($3$) 다음을 보이라.
 
 $$
 \cos (x+y)= \cos x \cos y - \sin x \sin y,\qquad \sin (x+y)=\sin x \cos y - \cos x \sin y
 $$
 
----
+:::
 
-(1) 우선 $g'(x)=0$ for all $x$ 임을 보이자.
+</div>
+
+::: {.solution}
+
+($1$) 우선 $g'(x)=0$ for all $x$ 임을 보이자.
 
 $$
 \begin{aligned}
@@ -829,9 +1034,9 @@ $$
 g(0)=(a-a)^2+(b-b)^2=0
 $$
 
-(2) $g'(x)=0$ 이므로 $g(x)$ 는 상수함수이며 $g(0)=0$ 이므로 $g(x)=0$ for all $x\in \mathbb{R}$ 이다. 따라서 $f(x)=a\cos x + b \sin y$ 이며 $f'(x)= - a \sin x + b \cos x$ 이어야 한다. $f(x)$ 를 미분하면 정확히 나오므로 $f(x) = a \cos x + b \sin y$ 이다.
+($2$) $g'(x)=0$ 이므로 $g(x)$ 는 상수함수이며 $g(0)=0$ 이므로 $g(x)=0$ for all $x\in \mathbb{R}$ 이다. 따라서 $f(x)=a\cos x + b \sin y$ 이며 $f'(x)= - a \sin x + b \cos x$ 이어야 한다. $f(x)$ 를 미분하면 정확히 나오므로 $f(x) = a \cos x + b \sin y$ 이다.
 
-(3) $h(x) := (f(x) - \cos (x+y))^2 + (f'(x)+\sin (x+y))^2$ 이라 하자.
+($3$) $h(x) := (f(x) - \cos (x+y))^2 + (f'(x)+\sin (x+y))^2$ 이라 하자.
 
 $$
 h'(x) = 2(f'(x)+\sin (x+y))(f(x)-\cos (x+y))+2(f''(x)+\cos (x+y))(f'(x)+ \sin (x+y))=0
@@ -839,13 +1044,28 @@ $$
 
 이며 $h(0)=(\cos y - \cos y)^2 + (-\sin y + \sin y )^2=0$ 이다. 따라서 $h(x) =0$ for all $x\in \mathbb{R}$ 이다.
 
-즉 $f(x) = \cos (x+y)=\cos x \cos y - \sin x  \sin y$, $- f'(x) = \sin (x+y)=\sin x \cos y + \cos x \sin y$ 이다.
+즉 
+
+$$
+\begin{aligned} 
+f(x) &= \cos (x+y)=\cos x \cos y - \sin x  \sin y \\[0.3em]
+- f'(x) &= \sin (x+y)=\sin x \cos y + \cos x \sin y
+\end{aligned}
+$$ 
+이다.
+
+:::
+
 
 </br>
 
 ## 연습문제 2 장 5절
 
-**1.** 쌍곡 삼각함수 $\cosh x$ 와 $\sinh x$ 는 모두 미분방정식
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_5_1}  
+
+쌍곡 삼각함수 $\cosh x$ 와 $\sinh x$ 는 모두 미분방정식
 
 $$
 f''(x)=f(x)
@@ -853,7 +1073,11 @@ $$
 
 를 만족시킴을 보여라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -862,9 +1086,15 @@ $$
 \end{aligned}
 $$
 
+:::
+
 </br>
 
-**2.** 쌍곡 탄젠트 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_5_2} 
+
+쌍곡 탄젠트 함수
 
 $$
 \tanh x := \dfrac{\sinh x}{\cosh x}
@@ -886,44 +1116,61 @@ $$
 
 임을 보이라.
 
----
+:::
 
-(1)
-$$
-\tanh'x = 1-\dfrac{\sinh^2 x}{\cosh^2 x}=\dfrac{1}{\cosh^2 x}
-$$
+</div>
 
-(2) $\displaystyle f(x) = \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} x^n$ 을 이용한다. $f(0)=0,\, f'(0)=1,\, f''(0)=0,\, f^{(3)}(0)=-2,\,f^{(4)}(0)=0,\,f^{(5)}(0)=16$ 이므로,
+::: {.solution}
+
+($1$) $\tanh'x = 1-\dfrac{\sinh^2 x}{\cosh^2 x}=\dfrac{1}{\cosh^2 x}$.
+
+($2$) $\displaystyle f(x) = \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!} x^n$ 을 이용한다. $f(0)=0,\, f'(0)=1,\, f''(0)=0,\, f^{(3)}(0)=-2,\,f^{(4)}(0)=0,\,f^{(5)}(0)=16$ 이므로,
 
 $$
 \tanh x = x - \dfrac{1}{3}x^3 + \dfrac{2}{15}x^5+\cdots
 $$
 
-</br>
+:::
 
-**3.** 다음 등식을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_5_3} 
+
+다음 등식을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
-\sinh x \cosh y + \cosh x \sinh y &=\dfrac{1}{4}\left[(e^x-e^{-x})(e^y+e^{-y})+(e^x+e^{-x})(e^{y}-e^{-y})\right] \\
-&=\dfrac{1}{4} \left(e^{x+y}+e^{x-y}-e^{-x+y}-e^{-x-y}+e^{x+y}-e^{x-y}+e^{-x+y}-e^{-x-y}\right)\\
-&=\dfrac{1}{4}(2e^{x+y}-2e^{-(x+y)})=\sinh(x+y) \;, \\
-\cosh x \cosh y + \sinh x \sinh y &=\dfrac{1}{4} \left[(e^x+e^{-x})(e^{y}+e^{-y}) + (e^x-e^{-x})(e^{y}-e^{-y})\right] \\
-&=\dfrac{1}{4} (e^{x+y} + e^{-x+y}+ e^{x-y}+e^{-x-y} + e^{x+y} -e^{x-y}-e^{-x+y}+e^{-x-y})\\
-&=\dfrac{1}{4}(2e^{x+y}+2e^{-(x+y)})= \cosh (x+y)\,, \\
-\dfrac{\tanh x + \tanh y}{1+\tanh x \tanh y} &= \dfrac{\sinh x \cosh y + \cosh x \sinh y}{ \cosh x \cosh y + \sinh x \sinh y }=\dfrac{\sinh (x+y)}{\cosh (x+h)}=\tanh(x+y)\,,\\
-\cosh ^2 x&=\left(\dfrac{e^x+e^{-x}}{2}\right)^2=\dfrac{1}{4} (e^{2x}+e^{-2x}) +1 = \dfrac{1}{2}\cosh 2x +1\,,\\
+\sinh x \cosh y + \cosh x \sinh y &=\dfrac{1}{4}\left[(e^x-e^{-x})(e^y+e^{-y})+(e^x+e^{-x})(e^{y}-e^{-y})\right] \\[0.3em]
+&=\dfrac{1}{4} \left(e^{x+y}+e^{x-y}-e^{-x+y}-e^{-x-y}+e^{x+y}-e^{x-y}+e^{-x+y}-e^{-x-y}\right)\\[0.3em]
+&=\dfrac{1}{4}(2e^{x+y}-2e^{-(x+y)})=\sinh(x+y) \;, \\[0.5em]
+\cosh x \cosh y + \sinh x \sinh y &=\dfrac{1}{4} \left[(e^x+e^{-x})(e^{y}+e^{-y}) + (e^x-e^{-x})(e^{y}-e^{-y})\right] \\[0.3em]
+&=\dfrac{1}{4} (e^{x+y} + e^{-x+y}+ e^{x-y}+e^{-x-y} + e^{x+y} -e^{x-y}-e^{-x+y}+e^{-x-y})\\[0.3em]
+&=\dfrac{1}{4}(2e^{x+y}+2e^{-(x+y)})= \cosh (x+y)\,, \\[0.5em]
+\dfrac{\tanh x + \tanh y}{1+\tanh x \tanh y} &= \dfrac{\sinh x \cosh y + \cosh x \sinh y}{ \cosh x \cosh y + \sinh x \sinh y }=\dfrac{\sinh (x+y)}{\cosh (x+h)}=\tanh(x+y)\,,\\[0.5em]
+\cosh ^2 x&=\left(\dfrac{e^x+e^{-x}}{2}\right)^2=\dfrac{1}{4} (e^{2x}+e^{-2x}) +1 = \dfrac{1}{2}\cosh 2x +1\,,\\[0.5em]
 \sinh^2 x &=\left(\dfrac{e^{x}-e^{-x}}{2}\right)^2 = \dfrac{1}{4} (e^{2x}+e^{-2x})-1 = \dfrac{1}{2}\cosh 2x -1\;.
 \end{aligned}
 $$
 
-</br>
+:::
 
-**4.** 실수 전체에서 정의된 함수 $f:\mathbb{R}\to \mathbb{R}$ 은 짝함수와 홀함수의 합으로 나타남을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_5_4} 
+
+실수 전체에서 정의된 함수 $f:\mathbb{R}\to \mathbb{R}$ 은 짝함수와 홀함수의 합으로 나타남을 보여라.
+
+::: 
+
+</div>
+
+::: {.solution}
 
 함수 $f:\mathbb{R}\to \mathbb{R}$ 에 대해 $f_e:\mathbb{R}\to \mathbb{R}$ 와 $f_o: \mathbb{R}\to \mathbb{R}$ 를 다음과 같이 정의한다.
 $$
@@ -931,12 +1178,19 @@ f_e (x):=\dfrac{f(x)+f(-x)}{2},\qquad f_o (x):= \dfrac{f(x)-f(-x)}{2}
 $$
 이 때 $f_e(-x)=f_e(x)$, $f_o(-x)=-f_o(x)$ 임을 알 수 있다. 이제 $f(x) = f_e(x)+f_o(x)$ 이다.
 
-</br>
+:::
 
-**5.** 홀함수의 도함수는 짝함수이고, 짝함수의 도함수는 홀함수임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_5_5} 
 
+홀함수의 도함수는 짝함수이고, 짝함수의 도함수는 홀함수임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
 $$
 f_e'(-x)= \lim_{h \to 0} \dfrac{f_e(-x+h)-f_e(-x)}{h} = \lim_{h\to 0} \dfrac{f_e(x-h)-f_e(x)}{h}=-\lim_{h \to 0} \dfrac{f_{e}(x-h)-f_e(x)}{-h}=-f_e'(x)
 $$
@@ -945,18 +1199,22 @@ $$
 f_o'(-x) = \lim_{h \to 0}\dfrac{f_o (-x+h)-f_o(-x)}{h}=  \lim_{h \to 0}\dfrac{f_o(x-h)-f_o(x)}{-h}=f'(x)
 $$
 
-</br>
+:::
 
-**6.** 멱급수 $\mathbf{f}(x) = \sum f_n x^n $ 에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-(i) $\mathbf{f}(x) = \mathbf{f}(-x)$ 이면
+::: {#exr-CAL_2_5_6} 
+
+멱급수 $\mathbf{f}(x) = \sum f_n x^n$ 에서
+
+($i$) $\mathbf{f}(x) = \mathbf{f}(-x)$ 이면
 
 $$
 \forall n,\quad f_{2n+1}=0
 $$
 을 보이라.
 
-(ii) $\mathbf{f}(x) = - \mathbf{f}(-x)$ 이면
+($ii$) $\mathbf{f}(x) = - \mathbf{f}(-x)$ 이면
 
 $$
 \forall n,\quad f_{2n}=0
@@ -964,15 +1222,25 @@ $$
 
 임을 보이라.
 
----
+:::
 
-(i) $\mathbf{f}(x) = \dfrac{\mathbf{f}(x)+\mathbf{f}(-x)}{2} = \dfrac{1}{2}\sum f_n (x^n +(-x)^n)=\sum f_{2n}x^{2n}\,.$
+</div>
 
-(ii) $\mathbf{f}(x) = \dfrac{\mathbf{f}(x)-\mathbf{f}(-x)}{2}= \dfrac{1}{2}\sum f_n (x^n - (-x)^n)= \sum f_{2n+1}x^{2n+1}$
+::: {.solution}
+
+($i$) $\mathbf{f}(x) = \dfrac{\mathbf{f}(x)+\mathbf{f}(-x)}{2} = \dfrac{1}{2}\sum f_n (x^n +(-x)^n)=\sum f_{2n}x^{2n}\,.$
+
+($ii$) $\mathbf{f}(x) = \dfrac{\mathbf{f}(x)-\mathbf{f}(-x)}{2}= \dfrac{1}{2}\sum f_n (x^n - (-x)^n)= \sum f_{2n+1}x^{2n+1}$
+
+:::
 
 </br>
 
-**7.** 다음을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_5_7} 
+
+다음을 보이라.
 
 $$
 \begin{aligned}
@@ -981,7 +1249,11 @@ B(x) &= \dfrac{x}{\tanh x}= 1 + \dfrac{1}{3} x^2 = \dfrac{1}{45}x^4 + \cdots
 \end{aligned}
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\displaystyle f(x) = \sum_{n=0}^\infty \dfrac{f^{(n)}(0)}{n!}x^n$ 을 이용한다. 교재에 나온 대로 분모가 $0$ 일 경우는 $0$ 으로 향하는 극한을 취하여 도함수값으로 사용한다.
 
@@ -989,11 +1261,19 @@ $A(0)=1,\, A'(0)=0,\,A^{(2)}(0)=\dfrac{1}{3},\, A^{(3)}(0)=0,\,A^{(4)}=\dfrac{1}
 
 $B(0)=1,\,B'(0)=0,\, B^{(2)}(0)=\dfrac{2}{3},\, B^{(3)}(0)=0,\, B^{(4)}(0)=-\dfrac{8}{15}$
 
-</br>
+:::
 
-**8.** 좌표평면의 제일사분면에서, 원점과 점 $P=(\cosh t,\, \sinh t)$ 를 잇는 직선의 아래 쪽과 쌍곡선 $x^2-y^2=1$ 의 왼쪽의 공통부분의 넓이는 $t/2$ 임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_5_8} 
+
+좌표평면의 제일사분면에서, 원점과 점 $P=(\cosh t,\, \sinh t)$ 를 잇는 직선의 아래 쪽과 쌍곡선 $x^2-y^2=1$ 의 왼쪽의 공통부분의 넓이는 $t/2$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\cosh^2 t-\sinh^2 t =1$ 을 이용한다.  또한 $2\cosh t \cdot \sinh t= \sinh 2t$ 를 이용한다. $x=\cosh t,\, y=\sinh t$ 에 대해 $y=\sqrt{x^2-1}$ 이므로,
 
@@ -1007,11 +1287,18 @@ $$
 \end{aligned}
 $$
 
+:::
+
+
 </br>
 
 ### 기본연습문제 6.1.5
 
-**2.** 구간 $-1<x<1$ 에서
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_1_B1} 
+
+구간 $-1<x<1$ 에서
 
 $$
 \dfrac{d}{dx} \arcsin x = \dfrac{1}{\sqrt{1-x^2}}
@@ -1019,47 +1306,83 @@ $$
 
 임을 보이라. 또 $y=\arcsin x$ 의 그래프에서 $x=1/3$ 일 때의 접선의 기울기를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $y=\arcsin x$ 라 하면 $0 <y <\pi$ 이다. $x=\sin y$ 이며 $\dfrac{dx}{dy}= \cos y$ 이므로 $\dfrac{dy}{dx}=\dfrac{1}{\cos y}=\dfrac{1}{\sqrt{1-x^2}}$ 이다
+
+:::
+
 
 </br>
 
 ## 연습문제 2장 6절
 
-**1.** $ad-bc\ne 0$ 일 때 함수 $f(x) =\dfrac{ax+b}{cx+d}$ 의 역함수를 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_6_1}
+
+$ad-bc\ne 0$ 일 때 함수 $f(x) =\dfrac{ax+b}{cx+d}$ 의 역함수를 구하라.
+
+::: 
+
+</div>
+
+::: {.solution}
 
 $$
 y=\dfrac{ax+b}{cx+d}\implies (cy-a)x=b-dy \implies f^{-1}(x) =\dfrac{b-dx}{cx-a}
 $$
+:::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** 단사함수와 그 역함수의 그래프는 직선 $y=x$ 에 대칭임을 보여라.
+::: {#exr-CAL_2_6_2} 
 
----
+단사함수와 그 역함수의 그래프는 직선 $y=x$ 에 대칭임을 보여라.
 
-$ (s,\,t)\in \mathbb{R}^2$  일 때 $y=x$ 에 대한 대칭점이 $(t,\,s)$ 임을 보이자. 이 두 점의 중점은 $\left(\dfrac{s+t}{2},\, \dfrac{s+t}{2}\right)$ 이므로 $y=x$ 위에 있다. 또한 점을 잇는 직선의 기울기는 $\dfrac{t-s}{s-t}=-1$ 로 $y=x$ 에 대해 수직이다. 따라서 $(s,\,t)$ 와 $(t,\,x)$ sms $y=x$ 에 서로 대칭이다.
+:::
+
+</div>
+
+::: {.solution}
+
+$(s,\,t)\in \mathbb{R}^2$  일 때 $y=x$ 에 대한 대칭점이 $(t,\,s)$ 임을 보이자. 이 두 점의 중점은 $\left(\dfrac{s+t}{2},\, \dfrac{s+t}{2}\right)$ 이므로 $y=x$ 위에 있다. 또한 점을 잇는 직선의 기울기는 $\dfrac{t-s}{s-t}=-1$ 로 $y=x$ 에 대해 수직이다. 따라서 $(s,\,t)$ 와 $(t,\,x)$ sms $y=x$ 에 서로 대칭이다.
 
 역함수에 성질에 따라 $(x,\,y)\in f \iff (y,\,x)\in f^{-1}$ 이다.  따라서 함수와 그 역함수의 그래프는 $y=x$ 에 대칭이다.
 
-</br>
+:::
 
-**3.** 단사함수 $y=f(x)$ 와 그 역함수의 그래프가 점 $(x_0,\,y_0)$ 에서 만나면
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_3} 
+
+단사함수 $y=f(x)$ 와 그 역함수의 그래프가 점 $(x_0,\,y_0)$ 에서 만나면
 $$
 f(f(x_0))=x_0
 $$
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $y_0=f(x_0)$ 이며 $f^{-1}(x_0)=y_0$ 이다. 따라서 $x_0=f(y_0)$ 이다. 즉 $f(f(x_0))=f(y_0)=x_0$.
 
-</br>
+:::
 
-**4.** $\cos x$ 의 정의역을 구간 $[0,\,\pi]$ 에서 제한하면, $\cos x$ 는 순감소 함수이고, 다라서 역함수를 가진다. 이 역함수를 **역코사인 함수** 라고 부르고 $\arccos$ 또는 $\cos^{-1}$ 로 나타낸다. 이 대 $\arccos$ 의 정의역은 $[-1,\,1]$ 이고, $-1<y<1$ 일 때,
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_4} 
+
+$\cos x$ 의 정의역을 구간 $[0,\,\pi]$ 에서 제한하면, $\cos x$ 는 순감소 함수이고, 다라서 역함수를 가진다. 이 역함수를 **역코사인 함수** 라고 부르고 $\arccos$ 또는 $\cos^{-1}$ 로 나타낸다. 이 대 $\arccos$ 의 정의역은 $[-1,\,1]$ 이고, $-1<y<1$ 일 때,
 
 $$
 \dfrac{d}{dy} (\arccos y) = -\dfrac{1}{\sqrt{1-y^2}}
@@ -1067,15 +1390,23 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 x=\arccos y \implies y=\cos x \implies \dfrac{dy}{dx}=-\sin x \implies \dfrac{dx}{dy}=-\dfrac{1}{\sin x} = -\dfrac{1}{\sqrt{1-y^2}}
 $$
 
-</br>
+:::
 
-**5.** 등식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_5} 
+
+등식
 
 $$
 \arccos y = \dfrac{\pi}{2}-\arcsin y \qquad (-1\le y\le 1)
@@ -1083,13 +1414,21 @@ $$
 
 를 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 Let $\theta = \arccos y$ and $\phi = \arcsin y$. $y=\cos \theta = \sin \phi$ 인데 우리는 $\sin \phi = \cos \left(\dfrac{\pi}{2}-\phi\right)$ 임을 알고 있으며 따라서 $\theta = \dfrac{\pi}{2}-\phi$ 이다.
 
-</br>
+:::
 
-**6.** 두 집합 $A,\,B$ 사이에 정의된 함수 $f:A\to B$ 와 $g:B \to A$ 에 대하여, 이 두 함수가 서로의 역함수일 필요충분조건은
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_6} 
+
+두 집합 $A,\,B$ 사이에 정의된 함수 $f:A\to B$ 와 $g:B \to A$ 에 대하여, 이 두 함수가 서로의 역함수일 필요충분조건은
 
 $$
 g \circ f = \operatorname{id}_A,\,\qquad f \circ g = \operatorname{id}_B
@@ -1097,11 +1436,15 @@ $$
 
 임을 보여라. 여기에서 $\operatorname{id}_A:A \to A$ 와 $\operatorname{id}_B:B \to B$ 는 모두 항등사상을 나타낸다.
 
----
+:::
 
-(1) $f^{-1}=g$ 임을 가정하자. 임의의 $a\in A$ 에 대해 $f(a)=b$ 이면 $g(b)=a$ 이므로 $(g \circ f)(a)=g(b)=a$ 이므로 $g\circ f=\operatorname{id}_A$ 이다. 임의의 $b\in B$ 에 대해 $g(b)=a$ 이면 $g^{-1}(a)=f(a)=b$ 이므로 $(f \circ g)(b) = f(a)=b$ 이다. 즉 $f \circ b=\operatorname{id}_B$ 이다.
+</div>
 
-(2) $g \circ f=\operatorname{id}_A,\, f\circ g= \operatorname{id}_B$ 임을 가정한다. 우선 $f,\,g$ 가 단사임을 보이자. $a_1\in A,\,a_2\in A,\, a_1 \ne a_2$ 에 대해 $f(a_1)=f(a_2) =b$ 라 하자. 그렇다면,
+::: {.solution}
+
+($1$) $f^{-1}=g$ 임을 가정하자. 임의의 $a\in A$ 에 대해 $f(a)=b$ 이면 $g(b)=a$ 이므로 $(g \circ f)(a)=g(b)=a$ 이므로 $g\circ f=\operatorname{id}_A$ 이다. 임의의 $b\in B$ 에 대해 $g(b)=a$ 이면 $g^{-1}(a)=f(a)=b$ 이므로 $(f \circ g)(b) = f(a)=b$ 이다. 즉 $f \circ b=\operatorname{id}_B$ 이다.
+
+($2$$) $g \circ f=\operatorname{id}_A,\, f\circ g= \operatorname{id}_B$ 임을 가정한다. 우선 $f,\,g$ 가 단사임을 보이자. $a_1\in A,\,a_2\in A,\, a_1 \ne a_2$ 에 대해 $f(a_1)=f(a_2) =b$ 라 하자. 그렇다면,
 
 $$
 a_1 = \operatorname{id}_A(a_1 )=(g \circ f)(a_1)=g(b)=(g \circ f)(a_2)=\operatorname{id}_A (a_2)=a_2
@@ -1113,21 +1456,33 @@ $f$ 가 전사임을 보이자. $f$ 가 전사가 아니라면 어떤 $b\in B$ �
 
 $f(a) =b$ 일 때 $g(b) = (g \circ f)(a) = a$ 이다. 또한 $g(d)=c$ 일 때 $(f \circ g)(d)=d=f(c)$ 이다. 즉 $f$ 와 $g$ 는 서로 역함수이다.
 
-</br>
+:::
 
-**7.** 임의의 실수 $x$ 에 대하여 등식 $\tan (\arctan x)=x$ 가 성립함을 보이라. 또 $\arctan (\tan x)$ 가 성립하는 구간을 논하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_6_7} 
 
-$\arctan : \mathbb{R} \to \left(-\dfrac{\pi}{2},\, \dfrac{\pi}{2}\right)$ 는 $\tan$ 함수의 역함수 이므로 $\tan (\arctan x)=x$ 이다. $\arctan (\tan x)$ 가 성립하는 구간은 $\left(-\dfrac{\pi}{2},\, \dfrac{\pi}{2}\right) $ 이다.
+임의의 실수 $x$ 에 대하여 등식 $\tan (\arctan x)=x$ 가 성립함을 보이라. 또 $\arctan (\tan x)$ 가 성립하는 구간을 논하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\arctan : \mathbb{R} \to \left(-\dfrac{\pi}{2},\, \dfrac{\pi}{2}\right)$ 는 $\tan$ 함수의 역함수 이므로 $\tan (\arctan x)=x$ 이다. $\arctan (\tan x)$ 가 성립하는 구간은 $\left(-\dfrac{\pi}{2},\, \dfrac{\pi}{2}\right)$ 이다.
+
+:::
 
 </br>
 
 **8.** trivial
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**9.** 쌍곡 사인함수 $y=\sinh x$ 의 역함수는
+::: {#exr-CAL_2_6_9} 
+
+쌍곡 사인함수 $y=\sinh x$ 의 역함수는
 
 $$
 x=\sinh^{-1}y = \ln (y+\sqrt{y^2+1})
@@ -1140,7 +1495,11 @@ $$
 $$
 임을 보이라.
 
----
+::: 
+
+</div>
+
+::: {.solution}
 
 $y=\sinh x=\dfrac{e^x-e^{-x}}{2}$ 이며 $e^x=t$ 라 하면,
 
@@ -1156,9 +1515,13 @@ $$
 
 이다.
 
-</br>
+:::
 
-**10.** 구간 $x>0$ 에서 쌍곡코사인 함수 $y=\cosh x$ 의 역함수는
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_10} 
+
+구간 $x>0$ 에서 쌍곡코사인 함수 $y=\cosh x$ 의 역함수는
 
 $$
 x=\cosh^{-1}x = \ln (y+\sqrt{y^2-1})
@@ -1171,7 +1534,11 @@ $$
 $$
 임을 보이라.
 
----
+::: 
+
+</div>
+
+::: {.solution}
 
 $y=\cosh x = \dfrac{e^x+e^{-x}}{2}$ 이며 $e^x=t$ 라 하면, 구간 $x>0$ 에서 생각하므로 $t>1$ 이어야 한다.
 
@@ -1187,9 +1554,13 @@ $$
 
 이다.
 
-</br>
+:::
 
-**11.** 다음 등식을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_11} 
+
+다음 등식을 보이라.
 
 $$
 \begin{aligned}
@@ -1198,8 +1569,11 @@ $$
 \end{aligned}
 $$
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 \sinh (\cosh^{-1}x) &= \dfrac{x+\sqrt{x^2-1} - \dfrac{1}{x+\sqrt{x^2-1}}}{2} \\
@@ -1213,21 +1587,30 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**12.** 다음 극한을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_12} 
+
+다음 극한을 구하라.
 
 $$
 \lim_{x \to 0} \dfrac{\sin x - \arctan x}{x^2 \ln (1+x)}
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 분자와 분모를 각각 우리가 아는 멱급수로 전개를 하면,
 
 $$
 \begin{aligned}
-\sin x - \arctan x &= \left(x-\dfrac{1}{3!}x^3 +\dfrac{1}{5!}x^5 +\cdots\right)-\left(x-\dfrac{1}{3}x+\dfrac{1}{5}x^3 + \cdots\right)=\dfrac{1}{6}x^3-\dfrac{23}{120}x^5 + \cdots\\
+\sin x - \arctan x &= \left(x-\dfrac{1}{3!}x^3 +\dfrac{1}{5!}x^5 +\cdots\right)-\left(x-\dfrac{1}{3}x+\dfrac{1}{5}x^3 + \cdots\right)\\
+&=\dfrac{1}{6}x^3-\dfrac{23}{120}x^5 + \cdots\\
 x^2 \ln (1+x) & = x^3- \dfrac{1}{2}x^4 + \dfrac{1}{3}x^5 + \cdots
 \end{aligned}
 $$
@@ -1240,9 +1623,13 @@ $$
 
 이다.
 
-</br>
+:::
 
-**13.** 연속함수 $f$ 가 모든 실수 $x$ 에 대하여
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_13} 
+
+연속함수 $f$ 가 모든 실수 $x$ 에 대하여
 
 $$
 (\exp x -1)f(x) = x
@@ -1250,19 +1637,23 @@ $$
 
 를 만족시킬 때 다음 물음에 답하라.
 
-(1) $f(0)$ 의 값을 구하라.
+&emsp;($1$) $f(0)$ 의 값을 구하라.
 
-(2) 미분계수 $f'(0)$ 의 값을 구하라.
+&emsp;($2$) 미분계수 $f'(0)$ 의 값을 구하라.
 
-(3) $f$ 는 일대일 함수임을 밝히라.
+&emsp;($3$) $f$ 는 일대일 함수임을 밝히라.
 
-(4) 함수 $f$ 의 역함수를 $g$ 라고 할 때, 미분계수 $g'(1)$ 의 값을 구하라.
+&emsp;($4$) 함수 $f$ 의 역함수를 $g$ 라고 할 때, 미분계수 $g'(1)$ 의 값을 구하라.
 
----
+:::
 
-(1) $f$ 가 연속함수 이므로 $\displaystyle f(0)= \lim_{x \to 0}\dfrac{x}{\exp x-1}=1$ 이다.
+</div>
 
-(2)  $\exp x = e^x$ 라 쓴다. $f(x) = \dfrac{x}{e^x-1}$ 이며,
+::: {.solution}
+
+($1$) $f$ 가 연속함수 이므로 $\displaystyle f(0)= \lim_{x \to 0}\dfrac{x}{\exp x-1}=1$ 이다.
+
+($2$)  $\exp x = e^x$ 라 쓴다. $f(x) = \dfrac{x}{e^x-1}$ 이며,
 
 $$
 \begin{aligned}
@@ -1276,7 +1667,7 @@ $$
 f'(0)=\lim_{h \to 0} \dfrac{-h^2 u(h)}{2h(h+\dfrac{h^2}{2} u(h))}=\lim_{h \to 0}\dfrac{-u(h)}{2+hu(h)}=-\dfrac{1}{2}
 $$
 
-(3) $f'(x)$ 를 구하면,
+($3$) $f'(x)$ 를 구하면,
 
 $$
 f'(x) = \dfrac{1}{e^x-1}-\dfrac{xe^x}{(e^x-1)^2}=\dfrac{e^x-1-xe^x}{(e^x-1)^2}
@@ -1284,19 +1675,27 @@ $$
 
 이다. 이 때 분자를 $g(x)$ 라 하면 $g(x)=e^x-1-xe^x$ 이다. $g'(x) = e^x-e^x-xe^x=-xe^x$ 이므로 $x=0$ 일 대 극값을 갖는다. $g(0)= 0$ 이며 $\displaystyle \lim_{x \to -\infty}g(x)=-1,\,\lim_{x \to \infty} g(x)=-\infty$ 이므로 최대값이 $0$ 이고 따라서 $g(x)\le 0$ and $g(x)=0 \iff x=0$ 이다. 따라서 $f'(x)\le 0 \iff x=0$ 이다. 즉 $f(x)$ 는 단조감소함수이며 $x=0$ 일 때에만 극값을 가진다. 따라서 $f$ 는 일대일 함수이다.
 
-(4) $\dfrac{dg}{dy}=\dfrac{1}{df/dx}$ 이며 $g(1)=f^{-1}(1)=0$ 이므로 $g'(1)=-2$ 이다.
+($4$) $\dfrac{dg}{dy}=\dfrac{1}{df/dx}$ 이며 $g(1)=f^{-1}(1)=0$ 이므로 $g'(1)=-2$ 이다.
 
-</br>
+:::
 
-**14.** 함수 $f(x)=3x+\cos x$ 는 모든 실수 $y$ 에 대하여 역함수 $g(y)$ 가 정의됨을 설명하고, 이 대 미분계수 $g'(1)$ 과 $g''(1)$ 을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_6_14} 
 
-(1) $f'(x)= 3-\sin x >0$ 이므로 $f$ 는 단조증가 함수. $\displaystyle \lim_{x \to \infty} f(x)=-\infty,\,\lim_{x \to \infty} f(x)=\infty$ 이므로 $f$ 는 실수 전체에서 정의된 전단사함수이다. 따라서 모든 실수 $y$ 에 대해 역함수 $g(y)$ 가 정의된다.
+함수 $f(x)=3x+\cos x$ 는 모든 실수 $y$ 에 대하여 역함수 $g(y)$ 가 정의됨을 설명하고, 이 대 미분계수 $g'(1)$ 과 $g''(1)$ 을 구하라.
 
-(2) $f'(x)=3-\sin x,\,f(0)=1$  이다. $g'(1)=\dfrac{1}{f'(0)}=\dfrac{1}{3}$ ,
+:::
 
-(3) 합성함수의 미분을 생각하자. $x=g(f(x))$ 이므로 $1=f'(x)g'(f(x))$ 이며,
+</div>
+
+::: {.solution}
+
+($1$) $f'(x)= 3-\sin x >0$ 이므로 $f$ 는 단조증가 함수. $\displaystyle \lim_{x \to \infty} f(x)=-\infty,\,\lim_{x \to \infty} f(x)=\infty$ 이므로 $f$ 는 실수 전체에서 정의된 전단사함수이다. 따라서 모든 실수 $y$ 에 대해 역함수 $g(y)$ 가 정의된다.
+
+($2$) $f'(x)=3-\sin x,\,f(0)=1$  이다. $g'(1)=\dfrac{1}{f'(0)}=\dfrac{1}{3}$ ,
+
+($3$) 합성함수의 미분을 생각하자. $x=g(f(x))$ 이므로 $1=f'(x)g'(f(x))$ 이며,
 
 $$
 0=f''(x)g'(f(x))+(f'(x))^2g''(f(x))
@@ -1308,9 +1707,13 @@ $$
 0=f''(0)g'(f(0))+(f'(0))g''(f(0))=-\dfrac{1}{3}+9 g''(1) \implies g''(1)=\dfrac{1}{27}
 $$
 
-</br>
+:::
 
-**15.** 열린 구간 $I_1$ 과 $I_2$ 사이으 전단사 함수 $f: I_1 \to I_2$ 가 두번 미분 가능하고, 모든 $x\in I_1$ 에 대하여 $f'(x)\ne 0$ 이라고 하자. 이 때 $y=f(x)$ 의 역함수 $x=g(y)$ 도 두번 미분 가능하고
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_15} 
+
+열린 구간 $I_1$ 과 $I_2$ 사이으 전단사 함수 $f: I_1 \to I_2$ 가 두번 미분 가능하고, 모든 $x\in I_1$ 에 대하여 $f'(x)\ne 0$ 이라고 하자. 이 때 $y=f(x)$ 의 역함수 $x=g(y)$ 도 두번 미분 가능하고
 
 $$
 g''(y)=-\dfrac{f''(x)}{(f'(x))^3}
@@ -1324,11 +1727,15 @@ $$
 
 임을 보이라. 일반적으로 $f(x)$ 가 $n$ 번 미분 가능하면 $g(y)$ 도 $n$ 번 미분 가능함을 보이라.
 
----
+:::
 
-(1) 14. 에서 보았듯이 $g''(y)=-\dfrac{f''(x) g'(f(x))}{(f'(x))^2}= \dfrac{f''(x)}{(f'(x))^3}$ because $g'(f(x))=\dfrac{1}{f'(x)}$ .
+</div>
 
-(2) 14. 의 풀이 (3) 의 식을 다시 한번 미분하면,
+::: {.solution}
+
+($1$) @exr-CAL_2_6_14. 에서 보았듯이 $g''(y)=-\dfrac{f''(x) g'(f(x))}{(f'(x))^2}= \dfrac{f''(x)}{(f'(x))^3}$ because $g'(f(x))=\dfrac{1}{f'(x)}$ .
+
+($2$) @exr-CAL_2_6_14 의 풀이 ($3$) 의 식을 다시 한번 미분하면,
 
 $$
 \begin{aligned}
@@ -1345,9 +1752,9 @@ g'''(x)=-\dfrac{1}{(f'(x))^3} \left(\dfrac{f'''(x)}{f'(x)}-\dfrac{3(f''(x))^2}{(
 \end{aligned}
 $$
 
-(3) $f$ 가 $n$ 번 미분 가능하고 $m\le n$ 인 모든 자연수 $m$ 에 대하여 $f^{(m)}(x) \ne 0$ 이라 하자. $f$ 의 역함수 $g$ 를 생각 할 때 $g^{(n)}(y)$ 가 $f,\,f',\cdots,\, f^{(n)}$ 의 합과 곱으로 이루어진 함수를 $(f'(x))^{2n+1}$ 으로 나눈 함수임을 보이자. 즉, $F(f,\,f',\ldots,\,f^{(n)})$ 을 $f,\,f',\ldots,\,f^{(n)}$ 의 임의의 합과 곱으로 이루어진 함수라고 하면 $\dfrac{dF}{dx}$ 는 $f,\,f',\ldots,\,f^{(n+1)}$ 의 합과 곱으로 이루어진 함수이다. 이를 $G(f,\,\ldots,\,f^{(n+1)})$ 이라 하자.
-$$
+($3$) $f$ 가 $n$ 번 미분 가능하고 $m\le n$ 인 모든 자연수 $m$ 에 대하여 $f^{(m)}(x) \ne 0$ 이라 하자. $f$ 의 역함수 $g$ 를 생각 할 때 $g^{(n)}(y)$ 가 $f,\,f',\cdots,\, f^{(n)}$ 의 합과 곱으로 이루어진 함수를 $(f'(x))^{2n+1}$ 으로 나눈 함수임을 보이자. 즉, $F(f,\,f',\ldots,\,f^{(n)})$ 을 $f,\,f',\ldots,\,f^{(n)}$ 의 임의의 합과 곱으로 이루어진 함수라고 하면 $\dfrac{dF}{dx}$ 는 $f,\,f',\ldots,\,f^{(n+1)}$ 의 합과 곱으로 이루어진 함수이다. 이를 $G(f,\,\ldots,\,f^{(n+1)})$ 이라 하자.
 
+$$
 \begin{aligned}
 g^{(n)}(f(x)) &= \dfrac{F(f(x),\,f'(x),\ldots,\,f^{(n)})}{(f'(x))^{2n+1}}\\
 \implies f'(x)g^{(n+1)}(x) &=\dfrac{f'(x)F(f(x),\ldots,\,f^{(n)}) -(2n+1)G(f,\ldots,\,f^{(n+1)})}{(f'(x))^{2n+2}} \\
@@ -1355,11 +1762,19 @@ g^{(n)}(f(x)) &= \dfrac{F(f(x),\,f'(x),\ldots,\,f^{(n)})}{(f'(x))^{2n+1}}\\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**16.** 함수 $f(x)=e^x +\ln x$ 의 역함수를 $g(y)$ 라고 할 때 $y=e$ 에서의 미분계수 $g'(e)$ 를 구하라. 또 이계미분계수 $g''(e)$ 를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_6_16}
+
+함수 $f(x)=e^x +\ln x$ 의 역함수를 $g(y)$ 라고 할 때 $y=e$ 에서의 미분계수 $g'(e)$ 를 구하라. 또 이계미분계수 $g''(e)$ 를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $f'(x) = e^x+\dfrac{1}{x}>0$ 이므로 $f'(x)$ 는 단조증가함수이다. 따라서 역함수가 존재한다. $f(1)=e$ 이므로,
 
@@ -1373,11 +1788,19 @@ $$
 g''(e) = -\dfrac{f''(1)}{(f'(1))^3}=-\dfrac{e-1}{(e+1)^3}
 $$
 
-</br>
+:::
 
-**17.** 최근 10년간의 통계자료를 분석하여 보았더니 어떤 곡물의 연간 생산량 $y$ 와 경작과정에서 사용하는 비료의 양 $x$ 가 다음 관계가 있다는 것을 알았다. : $y=2x^3+3x^2+4x+4$. 이 곡물의 금년 생산량이 $40$ 이라 하자. 내년에 생산량을 $1%$ 증가시키려면 금년보다 비료를 몇 % 정도 더 많이 사용하여야 하는가?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_6_17} 
+
+최근 10년간의 통계자료를 분석하여 보았더니 어떤 곡물의 연간 생산량 $y$ 와 경작과정에서 사용하는 비료의 양 $x$ 가 다음 관계가 있다는 것을 알았다. : $y=2x^3+3x^2+4x+4$. 이 곡물의 금년 생산량이 $40$ 이라 하자. 내년에 생산량을 $1%$ 증가시키려면 금년보다 비료를 몇 % 정도 더 많이 사용하여야 하는가?
+
+:::
+
+</div>
+
+::: {.solution}
 
 $y'=6x^2+6x+4$ 이며 $y'>0$ 임은 쉽게 보일 수 있다. 따라서 $y$ 는 단조증가함수이다. $y=40$ 를 만족하는 $x=2$ 이다.
 
@@ -1389,9 +1812,13 @@ $$
 \% = \dfrac{2.01-2}{2}\times 100 = 0.5 \%
 $$
 
-</br>
+:::
 
-**18.** 구간 $\left[-\dfrac{1}{2},\, \dfrac{1}{2}\right]$ 에서 연속인 함수 $f(x)$ 가 식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_18} 
+
+구간 $\left[-\dfrac{1}{2},\, \dfrac{1}{2}\right]$ 에서 연속인 함수 $f(x)$ 가 식
 
 $$
 \arcsin 2x = xf(x)
@@ -1399,7 +1826,11 @@ $$
 
 를 만족시킬 때 $f(0)$ 를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 양변을 $x$ 에 대해 미분하면,
 
@@ -1409,9 +1840,14 @@ $$
 
 이므로 $2=f(0)$.
 
-</br>
+:::
 
-**19.** 함수 $y=\tanh x$ 의 역함수를 $x=\tanh^{-1}y$ 로 두었을 때,
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_6_19} 
+
+함수 $y=\tanh x$ 의 역함수를 $x=\tanh^{-1}y$ 로 두었을 때,
 
 $$
 \tanh^{-1}y=\dfrac{1}{2}\ln \left(\dfrac{1+y}{1-y}\right) = y+\dfrac{y^3}{3}+\dfrac{y^5}{5} + \cdots \qquad(|y|<1)
@@ -1420,8 +1856,8 @@ $$
 임을 보이라. 이 식에서
 
 $$
-\dfrac{d}{dy}\left(\tanh^{-1} y\right) = \dfrac{1}{1-y^2} \tag{2.4}
-$$
+\dfrac{d}{dy}\left(\tanh^{-1} y\right) = \dfrac{1}{1-y^2} 
+$$ {#eq-exr-CAL_2_6_19}
 
 임을 보이라. 또
 
@@ -1429,46 +1865,51 @@ $$
 \dfrac{d}{dx}\tanh x = 1-\tanh^2 x
 $$
 
-을 이용하여 (2.4) 를 보이라.
+을 이용하여 @eq-exr-CAL_2_6_19 를 보이라.
 
----
+:::
 
-(1) $y=\tanh x = \dfrac{e^x-e^{-x}}{e^x+e^{-x}}$ 이다. $(e^{2x}+1)y=e^{2x}-1$ 이므로 $(y-1)e^{2x}=-(y+1) \implies x= \dfrac{1}{2}\ln \left(\dfrac{1+y}{1-y}\right)$ 이다.
+</div>
 
-연습문제 2.2.4 에서 $\displaystyle \ln \left(\dfrac{1+y}{1-y}\right)= \sum_{n=1}^\infty \dfrac{y^{2n-1}}{2n-1}$ 임을 보았다.
+::: {.solution}
 
-(2)  이로부터,
+($1$) $y=\tanh x = \dfrac{e^x-e^{-x}}{e^x+e^{-x}}$ 이다. $(e^{2x}+1)y=e^{2x}-1$ 이므로 $(y-1)e^{2x}=-(y+1) \implies x= \dfrac{1}{2}\ln \left(\dfrac{1+y}{1-y}\right)$ 이다.
+
+@exr-CAL_2_2_4 에서 $\displaystyle \ln \left(\dfrac{1+y}{1-y}\right)= \sum_{n=1}^\infty \dfrac{y^{2n-1}}{2n-1}$ 임을 보았다.
+
+($2$)  이로부터,
 
 $$
 \dfrac{d}{dy} \left(\tanh^{-1} y\right)= \sum_{n=1}^\infty y^{2n-2}=\dfrac{1}{1-y^2}
 $$
 
-(3)
-$$
-\dfrac{d \tanh^{-1}y}{dy}=\dfrac{1}{\dfrac{d}{dx}\tanh x}=\dfrac{1}{1-\tanh^2x}=\dfrac{1}{1-y^2}
-$$
+($3$) $\dfrac{d \tanh^{-1}y}{dy}=\dfrac{1}{\dfrac{d}{dx}\tanh x}=\dfrac{1}{1-\tanh^2x}=\dfrac{1}{1-y^2}.$
 
-# II. 멱급수와 수렴반경 #3
+:::
+
+</br>
+
 
 ## 멱급수의 기본정리
 
 멱급수 $\displaystyle \sum_{n=0}^\infty a_n x^n$ 의 수렴반경이 $r>0$ 이면
 
-(i) 멱급수 $\displaystyle \sum_{n=1}^\infty na_n x^{n-1}$ 의 수렴반경도 $r$ 이다.
+&emsp;($i$) 멱급수 $\displaystyle \sum_{n=1}^\infty na_n x^{n-1}$ 의 수렴반경도 $r$ 이다.
 
-(ii) 멱급수 $\sum_{n=0}^\infty\dfrac{a_n}{n+1}x^{n+1}$ 의 수렴반경도 $r$ 이다.
+&emsp;($ii$) 멱급수 $\sum_{n=0}^\infty\dfrac{a_n}{n+1}x^{n+1}$ 의 수렴반경도 $r$ 이다.
 
-(iii) 구간 $-r<x<r$ 에서 $\displaystyle f(x):= \sum_{n=0}^\infty a_n x^n$ 으로 두면 함수 $f(x)$ 는 미분가능하며,
+&emsp;($iii$) 구간 $-r<x<r$ 에서 $\displaystyle f(x):= \sum_{n=0}^\infty a_n x^n$ 으로 두면 함수 $f(x)$ 는 미분가능하며,
 
- (a) $\displaystyle f'(x) = \sum_{n=1}^\infty na_n x^{n-1}$   ($-r<x<r$)
+&emsp;&emsp;($a$) $\displaystyle f'(x) = \sum_{n=1}^\infty na_n x^{n-1}$   ($-r<x<r$)
 
-(b) $\displaystyle \int_0^x f(t)\,dt = \sum_{n=0}^\infty \dfrac{a_n}{n+1}x^{n+1}$    ($-r<x<r$)
+&emsp;&emsp;($b$) $\displaystyle \int_0^x f(t)\,dt = \sum_{n=0}^\infty \dfrac{a_n}{n+1}x^{n+1}$    ($-r<x<r$)
 
 이다.
 
----
 
-*(proof)* (i) 우선 $0<t<c<r$ 이 되도록 $t,\,c$ 를 잡자. 우리는 $\displaystyle \lim_{n \to \infty} n^{1/n}= \lim_{n \to \infty} e^{\frac{1}{n}\ln n}=1$ 임을 안다.
+::: {.proof}
+
+($i$) 우선 $0<t<c<r$ 이 되도록 $t,\,c$ 를 잡자. 우리는 $\displaystyle \lim_{n \to \infty} n^{1/n}= \lim_{n \to \infty} e^{\frac{1}{n}\ln n}=1$ 임을 안다.
 
 큰 $n$ 에 대하여 $n^{1/n}t<c$ 이므로,
 
@@ -1480,9 +1921,9 @@ $$
 
 이제 $\displaystyle \sum_{n=0}^\infty na_nx^{n-1}$ 이 절대수렴하면 비교판정법에 의해 $\displaystyle \sum_{n=0}^\infty a_n x^{n-1}$ 이 절대수렴하므로 $\displaystyle \sum_{n=0}^\infty a_n x^n = x\left(\sum_{n=0}^\infty a_n x^{n-1}\right)$ 도 절대수렴한다. 따라서 $\displaystyle \sum_{n=0}^\infty na_n x^{n-1}$ 의 수렴반경은 $r$ 보다 작거나 같다. 두 결과를 합하면 $\displaystyle \sum_{n=0}^\infty a_n x^n$ 과 $\displaystyle \sum_{n=0}^\infty a_n x^{n-1}$ 의 수렴반경은 같다.
 
-(ii) $\sum a_n x^n$ 과 $\sum na_n x^{n-1}$ 이 같은 수렴반경을 가지며 따라서 $\sum (n+1)a_{n+1}x^{n}$ 도 같은 수렴반경을 가진다. $na_n=b_{n-1}$ 이라 놓으면, $\sum \dfrac{b_{n-1}}{n}x^n$ 과 $\sum b_{n-1} x^n$ 은 같은 수렴반경을 가진다. 또한 $\sum \dfrac{b_n}{n+1}x^{n+1}$ 과 $x \left(\sum b_n x^n \right)$ 은 같은 수렴 반경을 가진다.
+($ii$) $\sum a_n x^n$ 과 $\sum na_n x^{n-1}$ 이 같은 수렴반경을 가지며 따라서 $\sum (n+1)a_{n+1}x^{n}$ 도 같은 수렴반경을 가진다. $na_n=b_{n-1}$ 이라 놓으면, $\sum \dfrac{b_{n-1}}{n}x^n$ 과 $\sum b_{n-1} x^n$ 은 같은 수렴반경을 가진다. 또한 $\sum \dfrac{b_n}{n+1}x^{n+1}$ 과 $x \left(\sum b_n x^n \right)$ 은 같은 수렴 반경을 가진다.
 
-(iii-a) $f(x)= \displaystyle \sum_{n=0}^\infty a_n x^n$ 이라 할 때, $x\in (-r,\,r)$ 에서,
+($iii-a$) $f(x)= \displaystyle \sum_{n=0}^\infty a_n x^n$ 이라 할 때, $x\in (-r,\,r)$ 에서,
 $$
 \left(\lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}\right)-\sum_{n =0}^\infty a_n x^{n-1} =0
 $$
@@ -1512,7 +1953,7 @@ $$
 
 이다. 따라서 $\displaystyle \lim_{h\to 0} A(h)=0$ 이다.
 
-(iii-b) 미적분학의 기본정리에 의해,
+($iii-b$) 미적분학의 기본정리에 의해,
 
 $$
 \dfrac{d}{dx} \left(\int_{0}^x \sum_{n=0}^\infty a_n t^n\, dt\right) = \sum_{n=0}^\infty a_n x_n
@@ -1538,11 +1979,18 @@ $$
 
 이다.
 
+:::
+
+
 </br>
 
 ## 제 2장 탐구문제
 
-**1.** 연속함수 $f(x)$ 가 모든 실수 $x$ 에 대하여
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S01} 
+
+연속함수 $f(x)$ 가 모든 실수 $x$ 에 대하여
 
 $$
 x=(1-e^{-x})f(x)
@@ -1556,13 +2004,23 @@ $$
 
 를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x)$ 는 베르누이 함수로 $f(x)=1-\dfrac{1}{2}x + \dfrac{1}{12}x^2 + \cdots$ 이므로 이 극한은 $\dfrac{1}{12}$ 이다.
 
-</br>
+:::
 
-**2.** (**멱급수와 복소수**) 지수함수의 멱급수전개
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S02}
+
+#### 멱급수와 복소수 
+
+지수함수의 멱급수전개
 
 $$
 e^x = \sum \dfrac{x^n}{n!}
@@ -1594,8 +2052,11 @@ $$
 
 이 성립함을 보이라.
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 e^z\cdot e^w &= \left(\sum_{n=0}^\infty \dfrac{z^n}{n!}\right) \left(\sum_{m=0}^\infty \dfrac{w^m}{m!}\right)=\sum_{n=0}^\infty \sum_{m=0}^\infty \dfrac{z^nw^m}{n!m!}\\
@@ -1604,9 +2065,13 @@ e^z\cdot e^w &= \left(\sum_{n=0}^\infty \dfrac{z^n}{n!}\right) \left(\sum_{m=0}^
 \end{aligned}
 $$
 
-</br>
+:::
 
-**3.** 임의의 실수 $\theta$ 에 대하여 등식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S03} 
+
+임의의 실수 $\theta$ 에 대하여 등식
 
 $$
 (\cos \theta + i\sin \theta)^n=\cos n\theta + i \sin n\theta
@@ -1614,7 +2079,11 @@ $$
 
 가 성립함을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 임의의 복소수 $z$ 와 자연수 $n$ 에 대해  $\left(e^{z}\right)^n=e^{nz}$ 임을 보이자. $z=1$ 일 때는 자명하다. $n$ 일 때 성립함을 가정하면,
 
@@ -1628,16 +2097,24 @@ $$
 (\cos \theta +i \sin \theta)^n=(e^{i})^n=e^{in}=\cos n\theta+i\sin n\theta
 $$
 
-</br>
+:::
 
-**4.** 임의의 복소수 $z$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S04} 
+
+임의의 복소수 $z$ 에 대하여,
 
 $$
 \cosh iz=\cos z,\qquad \sinh iz =i\sin z
 $$
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1646,9 +2123,14 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**5.** 등식
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S05} 
+
+등식
 
 $$
 \tanh iz = i \tan z
@@ -1656,7 +2138,11 @@ $$
 
 가 성립하는 복소수 $z$ 를 모두 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1666,9 +2152,14 @@ $$
 
 모든 복소수 $z$ 에 대해 성립한다.
 
-</br>
+:::
 
-**6.** 수렴반경이 $r$ 인 멱급수 $\sum a_n x^n$ 에서, 만약 $x>r$ 이면,
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S06} 
+
+수렴반경이 $r$ 인 멱급수 $\sum a_n x^n$ 에서, 만약 $x>r$ 이면,
 
 $$
 \sup \left\{ |a_1 x|,\,|a_2 x^2|,\, |a_3 x^3|,\ldots\right\}=\infty
@@ -1676,13 +2167,24 @@ $$
 
 를 보이라.
 
----
+:::
 
-멱급수 $\sum a_n x^n$ 의 수렴반경이 $r$ 이면,  $x>r$ 일 때,  $\displaystyle \lim_{n \to \infty} |a_n x^n|=\infty$ 라는 뜻이다. $\displaystyle \lim_{n \to \infty} |a_n x^n| = c < \infty$ 임을 가정하자.  $x>y>r$  인 $y$ 를 선택한다. 그렇다면 $\displaystyle |a_n y^n|= |a_n x^n| \left|\dfrac{x}{y}\right|^n$  인데 충분히 큰 $n$ 에 대해 $|a_n y^n|<(c+1)\left(\dfrac{x}{y}\right)^n $ 이며 $0<x/y<1$ 이므로 $\sum a_n y^n$ 은 절대수렴한다. 따라서 $y>r$ 이라는 가정에 위배된다. 즉 $\lim_{n \to \infty} |a_n x^n|=\infty$ 이므로 증명 끝.  
+</div>
 
-</br>
+::: {.solution}
 
-**7.** (**Hadamard 정리**) 수열 $(a_n)$ 에 대하여,
+멱급수 $\sum a_n x^n$ 의 수렴반경이 $r$ 이면,  $x>r$ 일 때,  $\displaystyle \lim_{n \to \infty} |a_n x^n|=\infty$ 라는 뜻이다. $\displaystyle \lim_{n \to \infty} |a_n x^n| = c < \infty$ 임을 가정하자.  $x>y>r$  인 $y$ 를 선택한다. 그렇다면 $\displaystyle |a_n y^n|= |a_n x^n| \left|\dfrac{x}{y}\right|^n$  인데 충분히 큰 $n$ 에 대해 $|a_n y^n|<(c+1)\left(\dfrac{x}{y}\right)^n$ 이며 $0<x/y<1$ 이므로 $\sum a_n y^n$ 은 절대수렴한다. 따라서 $y>r$ 이라는 가정에 위배된다. 즉 $\lim_{n \to \infty} |a_n x^n|=\infty$ 이므로 증명 끝.  
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S07} 
+
+#### Hadamard 정리 
+
+수열 $(a_n)$ 에 대하여,
 
 $$
 \limsup_{n \to \infty} (a_n):=\lim_{n \to \infty} \sup \{a_n,\,a_{n+1},\,a_{n+2},\ldots\}
@@ -1696,19 +2198,38 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\displaystyle \rho = \left( \limsup_{n \to \infty} |a_n|^{1/n}\right)^{-1}$ 이라 하자. $|x|<\rho$ 이면 $ \displaystyle 1/|x|> \limsup_{n \to \infty} |a_n|^{1/n}$  이므로 $\displaystyle \limsup_{n \to \infty} |a_n x^n|^{1/n}<1$ 이므로 멱근판정법에 의해 멱급수는 수렴한다. $|x|>\rho$ 이면 역시 멱근판정법에 의해 멱급수가 발산한다.  
 
-</br>
+:::
 
-**8.** 다음 미분방정식을 풀어라 (단 $a>0$ 이다.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_S08} 
+ 
+다음 미분방정식을 풀어라 (단 $a>0$ 이다.)
 
-(1) $\dfrac{dy}{dx}=\dfrac{1}{x^2+a^2}=\dfrac{1}{a^2}\dfrac{1}{(x/a)^2+1} \implies \dfrac{dy}{d(x/a)}=\dfrac{1}{a} \dfrac{1}{(x/a)^2+1} \implies y= \dfrac{1}{a} \arctan \dfrac{x}{a} +\text{const.}$
+:::
 
-(2) $\dfrac{dy}{dx}=\dfrac{1}{(x^2+a^2)^2}$
+</div>
+
+::: {.solution}
+
+($1$) 
+
+$$
+\begin{aligned}
+&\dfrac{dy}{dx}=\dfrac{1}{x^2+a^2} =\dfrac{1}{a^2}\dfrac{1}{(x/a)^2+1} \\[0.3em]
+\implies& \dfrac{dy}{d(x/a)}=\dfrac{1}{a} \dfrac{1}{(x/a)^2+1} \implies y= \dfrac{1}{a} \arctan \dfrac{x}{a} +\text{const.}
+\end{aligned}
+$$
+
+($2$) $\dfrac{dy}{dx}=\dfrac{1}{(x^2+a^2)^2}$
 
 $$
 \begin{aligned}
@@ -1718,9 +2239,9 @@ y & =\int_0^x \dfrac{1}{(t^2+a^2)^2}\, dt + C= \dfrac{1}{a^3}\int_0^{\arctan (x/
 \end{aligned}
 $$
 
-(3) $\dfrac{dy}{dx}=\dfrac{1}{\sqrt{x^2-1}}$ : 연습문제 2.6.10 으로 부터, $y=\cosh^{-1} (x)+\text{const}$
+($3$) $\dfrac{dy}{dx}=\dfrac{1}{\sqrt{x^2-1}}$ : 연습문제 2.6.10 으로 부터, $y=\cosh^{-1} (x)+\text{const}$
 
-(4) $\dfrac{dy}{dx}=\dfrac{1}{\sqrt{(x-a)(x-b)}} \quad (a<b)$ :  $(x-a)(x-b)=x^2-(a+b)x+ab=\left(x-\dfrac{a+b}{2}\right)^2 -\left(\dfrac{a-b}{2}\right)^2$ 임을 이용한다. $c=\dfrac{a+b}{2},\, d=\dfrac{a-b}{2}$ 라 하면, $\dfrac{dy}{dx}= \dfrac{1}{\sqrt{(x-c)^2-d^2}}=\dfrac{1}{d}\dfrac{1}{\sqrt{(x-c)^2/d^2-1}}$ 이다. $z=(x-c)/d$ 라 하면,
+($4$) $\dfrac{dy}{dx}=\dfrac{1}{\sqrt{(x-a)(x-b)}} \quad (a<b)$ :  $(x-a)(x-b)=x^2-(a+b)x+ab=\left(x-\dfrac{a+b}{2}\right)^2 -\left(\dfrac{a-b}{2}\right)^2$ 임을 이용한다. $c=\dfrac{a+b}{2},\, d=\dfrac{a-b}{2}$ 라 하면, $\dfrac{dy}{dx}= \dfrac{1}{\sqrt{(x-c)^2-d^2}}=\dfrac{1}{d}\dfrac{1}{\sqrt{(x-c)^2/d^2-1}}$ 이다. $z=(x-c)/d$ 라 하면,
 
 $$
 \dfrac{1}{d}\dfrac{1}{\sqrt{z^2-1}}=\dfrac{dy}{dx}=\dfrac{dy}{dz}\dfrac{dz}{dx}=\dfrac{1}{d} \dfrac{dy}{dz}
@@ -1728,11 +2249,19 @@ $$
 
 이므로 $y=\cosh^{-1}z+\text{const}=\cosh^{-1}\left(\dfrac{x-\dfrac{a+b}{2}}{\dfrac{a-b}{2}}\right) + \text{const}=\cosh^{-1}\left(\dfrac{2x-(a+b)}{(a-b)}\right)+\text{const}.$
 
-</br>
+:::
 
-**9.** $\displaystyle \int_0^1 \dfrac{dx}{(x^2+1)^2}$ 의 값을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_S09} 
+
+$\displaystyle \int_0^1 \dfrac{dx}{(x^2+1)^2}$ 의 값을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1743,11 +2272,19 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**10.** $\displaystyle \int_0^1 \dfrac{2\,dx}{(x+1)(x^2+1)}=\dfrac{1}{2} \ln 2 +\dfrac{\pi}{4}$ 임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_S10}
+
+$\displaystyle \int_0^1 \dfrac{2\,dx}{(x+1)(x^2+1)}=\dfrac{1}{2} \ln 2 +\dfrac{\pi}{4}$ 임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1757,9 +2294,13 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**11.** 이 문제에서는 탄젠트함수의 갑법정리를 이용하여 원주율 $\pi$ 의 근사값을 효과적으로 구하는 법을 살펴보기로 한다. 우선 등식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S11} 
+
+이 문제에서는 탄젠트함수의 갑법정리를 이용하여 원주율 $\pi$ 의 근사값을 효과적으로 구하는 법을 살펴보기로 한다. 우선 등식
 
 $$
 \tan (A+B)=\dfrac{\tan A + \tan B}{1-\tan A \tan B}
@@ -1808,7 +2349,11 @@ $$
 
 를 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1818,17 +2363,25 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**12** 다음 등식을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_2_S12} 
 
-(1) $\arctan 1 + \arctan 2 + \arctan 3 = \pi$
+다음 등식을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $\arctan 1 + \arctan 2 + \arctan 3 = \pi$
 
 from text, $\arctan a+\arctan b = \arctan \left( \dfrac{a+b}{1-ab}\right)$. Let $a=1,\, b=2$. Then, $\arctan 1 + \arctan 2 = \arctan (-3)=\pi - \arctan 3$  because $\pi/2 < 3 <\pi$.   따라서 $\arctan 1 + \arctan 2 +\arctan 3 = \pi$.
 
-(2) (Machin 등식) $\dfrac{\pi}{4} = 4 \arctan \dfrac{1}{5} - \arctan \dfrac{1}{239}$
+($2$) (Machin 등식) $\dfrac{\pi}{4} = 4 \arctan \dfrac{1}{5} - \arctan \dfrac{1}{239}$
 
 $$
 \begin{aligned}
@@ -1839,7 +2392,7 @@ $$
 \end{aligned}
 $$
 
-(3) (**가우스 등식**) : $\dfrac{\pi}{4} = 12 \arctan \dfrac{1}{18} + 8 \arctan\dfrac{1}{57} - 5 \arctan\dfrac{1}{239}$
+($3$) (**가우스 등식**) : $\dfrac{\pi}{4} = 12 \arctan \dfrac{1}{18} + 8 \arctan\dfrac{1}{57} - 5 \arctan\dfrac{1}{239}$
 
 $$
 \begin{aligned}
@@ -1860,7 +2413,7 @@ $$
 \end{aligned}
 $$
 
-(4) (샹크스 등식) : $\dfrac{\pi}{4} = 6 \arctan \dfrac{1}{8} + 2 \arctan \dfrac{1}{57} + \arctan \dfrac{1}{239}$ :
+($4$) (샹크스 등식) : $\dfrac{\pi}{4} = 6 \arctan \dfrac{1}{8} + 2 \arctan \dfrac{1}{57} + \arctan \dfrac{1}{239}$ :
 
 $$
 \begin{aligned}
@@ -1871,9 +2424,12 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**13.** 다음 등식을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_2_S13} 
+ 다음 등식을 보이라.
 
 $$
 \begin{aligned}
@@ -1882,6 +2438,12 @@ $$
 \end{aligned}
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 --to be done--
+
+:::
