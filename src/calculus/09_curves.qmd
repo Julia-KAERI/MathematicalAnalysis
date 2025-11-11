@@ -10,23 +10,38 @@ crossref:
 
 ## 연습문제 : 제 9 장 1 절
 
-**1.** 곡선 $(2t^2,\, 1-t,\,3+t^2)$ 과 평면 $3x-14y+z=10$ 의 교점을 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_1_1}
+
+곡선 $(2t^2,\, 1-t,\,3+t^2)$ 과 평면 $3x-14y+z=10$ 의 교점을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
-3(2t^2)-14(1-t)+3+t^2=10 \implies 7t^2+14t-21=0 \implies t^2+2t-3=0 \implies t=1,\, -3
+\begin{aligned}
+3(2t^2)-14(1-t)+3+t^2 =10 &\implies 7t^2+14t-21=0  \\[0.3em]
+&\implies t^2+2t-3=0 \implies t=1,\, -3
+\end{aligned}
 $$
 
 이므로, $(2,\, 0,\, 4),\, (18, 4, 12)$ 이다.
+
+:::
 
 </br>
 
 **2.** 생략.
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** 다음 두 곡선
+::: {#exr-CAL_9_1_3}
+
+다음 두 곡선
 
 $$
 (e^t,\, e^{2t},\, 1-e^{-t}),\qquad (1-t,\, \cos t,\, \sin t)
@@ -34,9 +49,13 @@ $$
 
 는 점 $(1,\,1,\,0)$ 에서 만남을 보이고, 그 점에서의 교각을 구하라.
 
----
+:::
 
-$\bf{f}(t)=(e^t,\, e^{2t},\, 1-e^{-t})$, $\bf{g}(t) = (1-t,\, \cos t,\, \sin t)$ 라 하자. $\bf{f}(0)=(1,\, 1,\, 0),\, \bf{g}(0)=(1,\, 1,\, 0)$ 이므로 만난다. $t=0$ 일 때의 점선의 방향벡터는,
+</div>
+
+::: {.solution}
+
+$\bf{f}(t)=(e^t,\, e^{2t},\, 1-e^{-t})$, $\bf{g}(t) = (1-t,\, \cos t,\, \sin t)$ 라 하자. $\bf{f}(0)=(1,\, 1,\, 0)=\bf{g}(0)$ 이므로 만난다. $t=0$ 일 때의 점선의 방향벡터는,
 
 $$
 \bf{f}'(0)=(1,\, 2,\, 1),\qquad \bf{g}'(0)=(-1,\, 0,\, 1)
@@ -48,9 +67,13 @@ $$
 \cos \theta = \dfrac{\bf{f}'(0)\cdot \bf{g}'(0)}{|\bf{f}'(0)||\bf{g}'(0)|}=0\implies \theta = \dfrac{\pi}{2}
 $$
 
-</br>
+:::
 
-**4.** 원점을 지나지 않는 미분가능한 곡선 $X(t)\in \mathbb{R}^3$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_1_4}
+
+원점을 지나지 않는 미분가능한 곡선 $X(t)\in \mathbb{R}^3$ 에 대하여,
 
 $$
 \dfrac{d}{dt}|X(t)|=\dfrac{X(t) \cdot X'(t)}{|X(t)|}
@@ -58,21 +81,32 @@ $$
 
 임을 보이라. 이로부터 $t=t_0$ 일 때 $|X(t)|$ 의 값이 최소가 되면 원점과 $X(t_0)$ 를 이은 직선이 곡선 $X(t)$ 와 수직으로 만남을 설명하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $X(t)=(x(t),\, y(t),\, z(t))$ 라 하면,
 
 $$
-\dfrac{d}{dt}|X(t)|=\dfrac{d}{dt}\sqrt{x(t)^2+y^2(t)+z^2(t)}=\dfrac{x(t)x'(t)+y(t)y'(t)+z(t)z'(t)}{\sqrt{x^2(t)+y^2(t)+z^2(t)}} = \dfrac{X(t)\cdot X'(t)}{|X(t)|}
+\begin{aligned}
+\dfrac{d}{dt}|X(t)| &= \dfrac{d}{dt}\sqrt{x(t)^2+y^2(t)+z^2(t)} \\[0.3em]
+&= \dfrac{x(t)x'(t)+y(t)y'(t)+z(t)z'(t)}{\sqrt{x^2(t)+y^2(t)+z^2(t)}} = \dfrac{X(t)\cdot X'(t)}{|X(t)|}
+\end{aligned}
 $$
 
 이다.
 
 $t=t_0$ 일 때 $|X(t)|$ 의 값이 최소가 되면 $\dfrac{d}{dt}|X(t)|=0$ at $t=t_0$ 이며 $|X(t)|\ne 0$ for all $t\in \mathbb{R}$ 이므로 $X(t_0)\cdot X'(t_0)=0$ 이어야 한다.
 
-</br>
+:::
 
-**5.** 극좌표계에서 $r=r(\theta)$ 로 주어진 평면곡선은 직교좌표계로는
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_1_5}
+
+극좌표계에서 $r=r(\theta)$ 로 주어진 평면곡선은 직교좌표계로는
 
 $$
 X(\theta)=(x(\theta),\,y(\theta))=r(\theta)(\cos \theta,\,\sin \theta)
@@ -94,18 +128,29 @@ $$
 
 또 극좌표계에서 $r=e^\theta$ 로 주어진 **로그와선(logarithmic spiral)** 은 원점과 곡선의 한 점을 잇는 직선을 그 점에서 $45^\circ$ 회전시키면, 곡선의 접선이 됨을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $X'(\theta)$ 를 계산하면,
 
 $$
-X'(\theta)=\left(\dfrac{dx(\theta)}{d\theta},\, \dfrac{dy(\theta)}{d\theta}\right)=(r'(\theta)\cos \theta -r(\theta)\sin \theta ,\, r'(\theta) \sin \theta+r(\theta)\cos \theta)=r'(\theta)(\cos \theta,\,\sin\theta)+r(\theta)(-\sin \theta,\,\cos \theta)
+\begin{aligned}
+X'(\theta) &= \left(\dfrac{dx(\theta)}{d\theta},\, \dfrac{dy(\theta)}{d\theta}\right) \\[0.3em]
+&=(r'(\theta)\cos \theta -r(\theta)\sin \theta ,\, r'(\theta) \sin \theta+r(\theta)\cos \theta) \\[0.3em]
+&=r'(\theta)(\cos \theta,\,\sin\theta)+r(\theta)(-\sin \theta,\,\cos \theta)
+\end{aligned}
 $$
 
 이며,
 
 $$
-|X'(\theta)|=\sqrt{(r'(\theta)\cos\theta-r(\theta)\sin \theta)^2+(r'(\theta)\sin \theta+r(\theta)\cos\theta)^2}=\sqrt{{r'(\theta)}^2+{r(\theta)}^2}
+\begin{aligned}
+|X'(\theta)| &= \sqrt{(r'(\theta)\cos\theta-r(\theta)\sin \theta)^2+(r'(\theta)\sin \theta+r(\theta)\cos\theta)^2} \\[0.3em]
+&=\sqrt{{r'(\theta)}^2+{r(\theta)}^2}
+\end{aligned}
 $$
 
 이다. 원점과 점 $X(\theta_0)$ 를 잇는 직선이 점 $X(\theta_0)$ 에서의 곡선 $X(\theta)$ 의 접선과 이루는 사잇각을 $\phi$ 라 하면,
@@ -113,7 +158,8 @@ $$
 $$
 \begin{aligned}
 \cos \phi &= \dfrac{X(\theta_0)\cdot X'(\theta_0)}{|X(\theta_0)||X'(\theta_0)|}\\
-&=\dfrac{r(\theta_0) \cos \theta_0 (r'(\theta_0)\cos \theta_0 -r(\theta _0)\sin \theta_0)+r(\theta_0)\sin \theta_0 (r'(\theta_0)\sin \theta_0 +r(\theta_0)\cos \theta_0)}{r(\theta_0)\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}\\
+&=\dfrac{r(\theta_0) \cos \theta_0 (r'(\theta_0)\cos \theta_0 -r(\theta _0)\sin \theta_0)}{r(\theta_0)\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}} \\[0.3em]
+&\qquad +\dfrac{r(\theta_0)\sin \theta_0 (r'(\theta_0)\sin \theta_0 +r(\theta_0)\cos \theta_0)}{r(\theta_0)\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}\\
 &= \dfrac{r'(\theta_0)\cos^2\theta_0-r(\theta_0)\cos \theta_0 \sin \theta_0 +r'(\theta_0)\sin ^2\theta_0 +r(\theta_0)\cos \theta_0 \sin \theta_0}{\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}\\
 &=\dfrac{r'(\theta_0)}{\sqrt{{r'(\theta_0)}^2+{r(\theta_0)}^2}}
 \end{aligned}
@@ -123,11 +169,19 @@ $$
 
 $r=e^\theta$ 일 경우 $\cos \phi = \dfrac{1}{\sqrt{2}}$ 이므로 그 사잇각이 $\dfrac{\pi}{4}=45^{\circ}$ 이므로, 원점과 곡선의 한 점을 잇는 직선을 그 점에서 $45^\circ$ 회전시키면, 곡선의 접선이 된다.
 
-</br>
+:::
 
-**6.** 탁자 위에서 원판이 일정한 각속도 $3 \operatorname{rad/sec}$ 로 돌고 있다. (이때 회전의 중심이 원판의 중심이다.) 원판의 중심에서 파리 한마리가 원판의 둘레의 한 점을 향하여 (원판에 대하여) $2 \operatorname{cm/sec}$ 로 움직인다고 하자. 원점에서 출발 후 $4$ 초가 되었을 때 탁자에 대한 파리의 속력을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_1_6}
+
+탁자 위에서 원판이 일정한 각속도 $3 \operatorname{rad/sec}$ 로 돌고 있다. (이때 회전의 중심이 원판의 중심이다.) 원판의 중심에서 파리 한마리가 원판의 둘레의 한 점을 향하여 (원판에 대하여) $2 \operatorname{cm/sec}$ 로 움직인다고 하자. 원점에서 출발 후 $4$ 초가 되었을 때 탁자에 대한 파리의 속력을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 원판의 중심을 원점으로 잡고 $t=0$ 에서 파리가 $+x$ 방향으로 움직이기 시작했다고 하자. 회전이 반시계방향이라고 하고, 파리의 위치를 $X(t)=(x(t),\,y(t))$ 라 하면,
 
@@ -149,11 +203,19 @@ $$
 
 이다.
 
-</br>
+:::
 
-**7.** 평면 위에서 점 $P$ 의 운동이 $(\cos 2t,\, \sin 2t)$ 로 주어지고, 또 점 $Q$ 의 운동이 $2(\cos t,\,\sin t)$ 로 주어졌다고 하자. 점 $P$ 에서 점 $Q$ 를 바라보았을 때 $Q$ 의 운동을 $X(t)$ 로 둘 때, 이를 구하고 도시하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_1_7}
+
+평면 위에서 점 $P$ 의 운동이 $(\cos 2t,\, \sin 2t)$ 로 주어지고, 또 점 $Q$ 의 운동이 $2(\cos t,\,\sin t)$ 로 주어졌다고 하자. 점 $P$ 에서 점 $Q$ 를 바라보았을 때 $Q$ 의 운동을 $X(t)$ 로 둘 때, 이를 구하고 도시하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 X(t)=P(t)-Q(t)=(\cos 2t-2\cos t,\, \sin 2t-2\sin t)
@@ -161,9 +223,15 @@ $$
 
 ![problem_9_1_8](figures/problem_9_1_8.jpg)
 
-</br>
+:::
 
-**8.** (**Bézier 의 이차곡선**) 공간 상의 주어진 서로 다른 세 점 $P_0,\,P_\ast,\, P_1$ 에 대하여 곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_1_8}
+ 
+#### Bézier 의 이차곡선 
+
+공간 상의 주어진 서로 다른 세 점 $P_0,\,P_\ast,\, P_1$ 에 대하여 곡선
 
 $$
 \begin{aligned}
@@ -174,7 +242,11 @@ $$
 
 은 점 $P_0,\,P_1$ 을 지나고, 점 $P_0$ 에서의 접선과 점 $P_1$ 에서의 접선이 점 $P_\ast$ 에서 만남을 보이라. 또 이 곡선은 $P_{\ast}$ 와 $\dfrac{1}{2}(P_0+P_1)$ 의 평균점을 지남을 보이라.
 
----
+::: 
+
+</div>
+
+::: {.solution}
 
 $P(0)=P_0,\, P(1)=P_1$ 이다.
 
@@ -203,9 +275,13 @@ $$
 
 이므로, 이 곡선은 $P_{\ast}$ 와 $\dfrac{1}{2}(P_0+P_1)$ 의 평균점을 지난다.
 
-</br>
+:::
 
-**9.** 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_1_9}
+
+함수
 
 $$
 f(t) = \left\{\begin{array}{ll} te^{1/t^2} \qquad &(t\ne 0)\\ 0 & (t=0) \end{array} \right.
@@ -219,13 +295,23 @@ $$
 
 의 상을 그리라.  또 이 곡선은 무한급함수임을 보이라. 이 곡선은 정규곡선인가?
 
----
+::: 
+
+</div>
+
+::: {.solution}
 
 곡선의 상, 무한급함수임은 쉽게 보일 수 있다. $X'(t)=0$ 이므로 정규곡선이 아니다.
 
-</br>
+:::
 
-**10.**  (**세잎 매듭**) 좌표공간에서 $yz$ 평면의 원
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_1_10}
+
+#### 세잎 매듭 
+
+좌표공간에서 $yz$ 평면의 원
 
 $$
 (y-R)^2+z^2=r^2
@@ -259,7 +345,11 @@ $$
 
 는 주기가 $2\pi$ 임을 보이라. 이 곡선을 **세잎매듭**(trefoil knot) 이라고 부른다.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 원환면을 이루는 점의 집합을 $V$ 라 하자.
 
@@ -300,29 +390,52 @@ $$
 
 임은 쉽게 보일 수 있다. 따라서 이 곡선의 주기는 $2\pi$ 이다.
 
+:::
+
 </br>
 
 ## 제 2 절
 
-**2.0.1 기본연습문제.**
+### 2.0.1 기본연습문제.
 
-$1.$ 곡선의 가속도벡터가 속도벡터에 항상 수직이면, 속력이 일정한 곡선임을 보이라. 역으로 속력 $|X'(t)|$ 가 일정한 곡선에서는 가속도 벡터 $X''(t)$ 가 속도벡터에 수직임을 보이라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_2_B01}
 
+곡선의 가속도벡터가 속도벡터에 항상 수직이면, 속력이 일정한 곡선임을 보이라. 역으로 속력 $|X'(t)|$ 가 일정한 곡선에서는 가속도 벡터 $X''(t)$ 가 속도벡터에 수직임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 $$
-X'(t) \cdot X''(t)=0 \iff \dfrac{d}{dt}(X'(t) \cdot X'(t))=0 \iff \dfrac{d}{dt}|X'(t)|^2=0 \iff |X'(t)|=\text{const.}
+\begin{aligned}
+X'(t) \cdot X''(t) = 0 &\iff \dfrac{d}{dt}(X'(t) \cdot X'(t))=0 \\[0.3em]
+&\iff \dfrac{d}{dt}|X'(t)|^2=0 \\[0.3em]
+&\iff |X'(t)|=\text{const.}
+\end{aligned}
 $$
 
-</br>
+:::
 
-$2.$ 원 위를 움직이는 점의 가속도 벡터가 항상 원의 중심을 향하면, 이 운동은 등각속도 운동임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_2_B02}
+
+원 위를 움직이는 점의 가속도 벡터가 항상 원의 중심을 향하면, 이 운동은 등각속도 운동임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 X''(t) \times X(t)=0 \implies \dfrac{d}{dt}\left(X'(t) \times X(t)\right)=0 \implies X'(t) \times X(t)=\text{const}
 $$
+
+:::
 
 </br>
 
@@ -330,9 +443,11 @@ $$
 
 **1.** 생략
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** 정규곡선 $X(t)$ 에서 속력 $v(t)$ 와 가속력 $a(t)$ 를 각각
+::: {#exr-CAL_9_2_1}
+
+정규곡선 $X(t)$ 에서 속력 $v(t)$ 와 가속력 $a(t)$ 를 각각
 
 $$
 v(t) = |X'(t)|,\qquad a(t)=|X''(t)|
@@ -346,9 +461,13 @@ $$
 
 일 필요충분조건은 $X(t)$ 가 직선운동을 하는 것임을 보이라. (교재에는 $a(t)=v'(t)$ 라과 나왔지만 $\pm$ 이 붙는게 맞다.)
 
----
+:::
 
-(1) $X(t)$ 가 직선운동을 한다는 것은 어떤 상수 벡터 $U$ 와 스칼라 함수 $f(t)$ 에 대하여 $X(t)-X(0)=Uf(t)$ 란 의미이다. 따라서,
+</div>
+
+::: {.solution}
+
+$X(t)$ 가 직선운동을 한다는 것은 어떤 상수 벡터 $U$ 와 스칼라 함수 $f(t)$ 에 대하여 $X(t)-X(0)=Uf(t)$ 란 의미이다. 따라서,
 
 $$
 X'(t)=Uf'(t),\qquad X''(t)=Uf''(t)
@@ -368,9 +487,7 @@ $$
 
 이므로 $v'(t)=\pm a(t)$ 이다.
 
-</br>
-
-(2) $a(t)= \pm v'(t)$ 임을 가정하자. $v(t)^2 = X'(t) \cdot X'(t)$ 이므로,
+($2$) $a(t)= \pm v'(t)$ 임을 가정하자. $v(t)^2 = X'(t) \cdot X'(t)$ 이므로,
 
 $$
 \dfrac{d}{dt}\left(v(t)^2\right)=2v(t)v'(t) = 2X''(t)\cdot X'(t) \implies v'(t)=\dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
@@ -406,9 +523,13 @@ $$
 
 이므로 $X(t)$ 는 직선운동을 한다.
 
-</br>
+:::
 
-**3.** $X(t)=r(t) (\cos \theta(t),\, \sin \theta(t))$ 일 때,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_2_3}
+
+$X(t)=r(t) (\cos \theta(t),\, \sin \theta(t))$ 일 때,
 
 $$
 \begin{aligned}
@@ -419,7 +540,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -432,9 +557,13 @@ X'' &=r''(\cos \theta,\, \sin \theta)+ r'\theta'(-\sin\theta,\, \cos \theta) \\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**4.** 삼차원 좌표공간 속의 곡선 $X(t)$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_2_4}
+
+삼차원 좌표공간 속의 곡선 $X(t)$ 에 대하여,
 
 $$
 f(t):=X(t)\cdot X'(t) \times X''(t)
@@ -448,22 +577,34 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
-f'(t) &= \underbrace{X'(t) \cdot X'(t)\times X''(t)}_0 + \underbrace{X(t) \cdot X''(t)\times X''(t)}_0 + X(t) \cdot X'(t) \times X'''(t) \\
+f'(t) &= \underbrace{X'(t) \cdot X'(t)\times X''(t)}_{=0} + \underbrace{X(t) \cdot X''(t)\times X''(t)}_{=0} + X(t) \cdot X'(t) \times X'''(t) \\
 &= X(t) \cdot X'(t) \times X'''(t)
 \end{aligned}
 $$
 
-</br>
+:::
 
-**5.** 곡선 $X(t)=(\sin t,\, \cos t,\, t)$ 의 $t=\dfrac{\pi}{2}$ 인 점에서 접촉평면의 식을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_2_5}
 
-$X(\pi/2)=(1,\, 0,\, \pi/2),\, X'(\pi/2)=(0,\, -1,\,1),\, X''(\pi/2)=(-1,\,0,\,0)$ 이므로,
+곡선 $X(t)=(\sin t,\, \cos t,\, t)$ 의 $t=\dfrac{\pi}{2}$ 인 점에서 접촉평면의 식을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$X(\pi/2)=(1,\, 0,\, \pi/2)$, $X'(\pi/2)=(0,\, -1,\,1)$, $X''(\pi/2)=(-1,\,0,\,0)$ 이므로,
 
 $$
 0=\det \begin{pmatrix}  x-1 & y & z-\dfrac{\pi}{2} \\ 0 & -1 & 1 \\ -1 & 0 & 0\end{pmatrix}= -y-\left( z-\dfrac{\pi}{2}\right)
@@ -471,23 +612,39 @@ $$
 
 인 $y+z-\dfrac{\pi}{2}=0$ 이 구하는 평면의 방정식이다.
 
+:::
+
 </br>
 
 ## 연습문제 : 제 9 장 3절
 
-**1.** 다음 곡선을 재매개화 하라
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-(1) $4x^2+9y^2=1$ : $X(t)=\left(\dfrac{\cos \theta}{2},\, \dfrac{\sin \theta}{3} \right)$
+::: {#exr-CAL_9_3_1}
 
-(2) $4x^2-9y^2=1$ : $X(t) = \left(\dfrac{\cosh t}{2},\, \dfrac{\sinh t}{3} \right)$
+다음 곡선을 재매개화 하라
 
-(3) $y^2=x^3-x^2 \; (x>0)$ : $X(t)=(t^2+1,\, t^3+t) \quad t\in \mathbb{R}$
+:::
 
-(4) $y^2=x^3-x\quad (x>0)$ : $X(t) = (t^2,\, \pm t \sqrt{t^4-1})$
+</div>
 
-</br>
+::: {.solution}
 
-**2.** 좌표평면에서 식
+($1$) $4x^2+9y^2=1$ : $X(t)=\left(\dfrac{\cos \theta}{2},\, \dfrac{\sin \theta}{3} \right)$
+
+($2$) $4x^2-9y^2=1$ : $X(t) = \left(\dfrac{\cosh t}{2},\, \dfrac{\sinh t}{3} \right)$
+
+($3$) $y^2=x^3-x^2 \; (x>0)$ : $X(t)=(t^2+1,\, t^3+t) \quad t\in \mathbb{R}$
+
+($4$) $y^2=x^3-x\quad (x>0)$ : $X(t) = (t^2,\, \pm t \sqrt{t^4-1})$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_3_2} 
+
+좌표평면에서 식
 
 $$
 y^2=x^3+ax+b
@@ -495,15 +652,25 @@ $$
 
 의 꼴로 주어진 곡선을 타원곡선이라고 부른다. 여기에서 $a=0,\,b=0$ 일 때, 이 곡선을 매개화하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 (t^2,\, t^3),\qquad t\in \mathbb{R}
 $$
 
-</br>
+:::
 
-**3.** (**피타고라스의 짝** 과 원의 매개화) 자연수 $p,\,q,\,r$ 이
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_3_3} 
+
+### 피타고라스의 짝과 원의 매개화 
+
+자연수 $p,\,q,\,r$ 이
 
 $$
 p^2+q^2=r^2
@@ -511,7 +678,7 @@ $$
 
 이면 집합 $\{p,\,q,\,r\}$ 을 피타고라스의 짝 이라고 부른다, 이 때, $p,\,q,\,r$ 이 서로소이면, 이 짝을 *서로소인 짝* 이라고 부른다. 피타고라스의 짝은 서로소인 것이 흥미있다. 서로소가 아닌짝은 서로소인 짝으로 부터 얻어진다.
 
-(1) 임의의 자연수 $k$ 에 대하여
+($1$) 임의의 자연수 $k$ 에 대하여
 
 $$
 \{4k,\, 4k^2-1,\, 4k^2+1\}
@@ -519,7 +686,7 @@ $$
 
 은 서로소인 피타고라스의 짝임을 보이라.
 
-(2) $3$ 이상의 홀수 $k$ 에 대하여
+($2$) $3$ 이상의 홀수 $k$ 에 대하여
 
 $$
 \left\{k,\, \dfrac{k^2-1}{2},\, \dfrac{k^2+1}{2} \right\}
@@ -527,7 +694,7 @@ $$
 
 는 서로소인 피타고라스 짝임을 보이라.
 
-(3) 피타고라스짝을 구하는 것은 단위원
+($3$) 피타고라스짝을 구하는 것은 단위원
 
 $$
 x^2+y^2=1
@@ -553,9 +720,13 @@ $$
 
 로 주어짐을 보이라.
 
----
+:::
 
-(1) 우선
+</div>
+
+::: {.solution}
+
+($1$) 우선
 
 $$
 (4k)^2+(4k^2-1)^2=16k^4+8k^2+1=(4k^2+1)^2
@@ -563,7 +734,7 @@ $$
 
 이므로 $\{4k,\, 4k^2-1,\, 4k^2+1\}$ 은 피타고라스의 짝이다. 우리는 두 자연수 $a>b$ 에 대하여 $a-b$ 는 $\gcd (a,\,b)$ 의 배수임을 알고 있다. $(4k^2+1)-(4k^2-1)=2$ 이며 $\gcd (4k^2+1,\,2)=1$ 이므로 $4k^2-1$ 과 $4k^2+1$ 은 서로소이다. 따라서 $\{4k,\, 4k^2-1,\, 4k^2+1\}$ 은 서로소인 피타고라스의 짝이다.
 
-(2) $k$ 가 $3$ 이상의 홀수이므로 $n\ge 1$ 에 대하여 $k=2n+1$ 로 쓸 수 있다.
+($2$) $k$ 가 $3$ 이상의 홀수이므로 $n\ge 1$ 에 대하여 $k=2n+1$ 로 쓸 수 있다.
 
 $$
 \begin{aligned}
@@ -580,7 +751,7 @@ $$
 
 이므로 $\left\{k,\, \dfrac{k^2-1}{2},\, \dfrac{k^2+1}{2} \right\}$ 은 피타고라스의 짝이다. 또한 $ \dfrac{k^2+1}{2}-\dfrac{k^2-1}{2}=1$ 이므로 이 세 수는 서로소인 피타고라스의 짝이다.
 
-(3) $V$ 를 단위원 상의 유리점의 집합이라 하고 $U$ 를 피타고라스의 짝의 집합이라 하자. $\phi: U \to V$ 를 $\phi (a,\,b,\,c)=\left(\dfrac{a}{c},\,\dfrac{b}{c}\right)$ 라 하면 $\phi$ 는 잘 정의된 함수이다. $\left(\dfrac{p}{r},\, \dfrac{q}{s}\right)\in V$ 이면
+($3$) $V$ 를 단위원 상의 유리점의 집합이라 하고 $U$ 를 피타고라스의 짝의 집합이라 하자. $\phi: U \to V$ 를 $\phi (a,\,b,\,c)=\left(\dfrac{a}{c},\,\dfrac{b}{c}\right)$ 라 하면 $\phi$ 는 잘 정의된 함수이다. $\left(\dfrac{p}{r},\, \dfrac{q}{s}\right)\in V$ 이면
 
 $$
 \dfrac{p^2}{r^2}+\dfrac{q^2}{s^2}=1 \implies (ps)^2+(qr)^2=(rs)^2
@@ -612,9 +783,13 @@ $m>n$ 일 경우 피타고라스의 짝 $\{m^2-n^2,\, 2mn,\, m^2+n^2\}$ 이며 $
 
 따라서 $p$ 는 $n^2,\,m^2,\,mn$ 의 공약수이다. 어떤 $1$ 이 아닌 $m$ 의 약수 $r$ 에 대해 $r \mid p$ 라 하면, $p\mid n^2$ 이므로 $r\mid n^2$ 이고 $r\mid n$ 이므로 $m,\,n$ 이 서로소임에 모순이다. 따라서 $\gcd (p,\,m)=1$, 같은 방법으로 $\gcd (p,\,n)=1$ 이다.  그런데 $p\mid mn$ 이므로 $p=1$ 이다. 즉 $\{m^2-n^2,\, 2mn,\, m^2+n^2\}$ 는 서로소이다.
 
-</br>
+:::
 
-**4.** 곡선 $X:[a,\,b]\to \mathbb{R}^n$ 의 에너지는
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_3_4} 
+
+곡선 $X:[a,\,b]\to \mathbb{R}^n$ 의 에너지는
 
 $$
 E(X):=\dfrac{1}{2}\int_a^b |X'(t)|^2\,dt
@@ -626,29 +801,45 @@ $$
 X(t):=(t,\,t^2)\qquad (0 \le t \le 1)
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 E(X)=\dfrac{1}{2}\int_0^1 (1+4t^2)\,dt=\dfrac{1}{2}\left[t+\dfrac{4}{3}t^3\right]_0^1=\dfrac{7}{6}
 $$
 
-</br>
+:::
 
-**5.** 곡선의 에너지는 매개화를 달리하였을 때 변화하는지를 살펴보라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_3_5} 
 
-문제 4 에서 $t=2s$ 로 재매개화 하면, $\tilde X(s):=(2s,\, 4s^2),\quad (0\le s \le 1/2)$ 이다.
+곡선의 에너지는 매개화를 달리하였을 때 변화하는지를 살펴보라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CAL_9_3_4 에서 $t=2s$ 로 재매개화 하면, $\tilde X(s):=(2s,\, 4s^2),\quad (0\le s \le 1/2)$ 이다.
 
 $$
 E(\tilde{X})=\dfrac{1}{2} \int_0^{1/2} (4+16s^2) \, ds =\dfrac{1}{2} \left( 4s+\dfrac{16}{3} s^3 \right)^{1/2}_0 = \dfrac{4}{3}
 $$
 
-이므로 4 의 결과와 다르다.
+이므로 @exr-CAL_9_3_4 의 결과와 다르다.
 
-</br>
+:::
 
-**6.** 삼차원 공간 속의 곡선 $X(t)$ 에 대하여 $t=t_0$ 에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_3_6}  
+
+삼차원 공간 속의 곡선 $X(t)$ 에 대하여 $t=t_0$ 에서
 
 $$
 X' \times X'' \cdot X''' >0
@@ -668,9 +859,13 @@ $$
 
 가 오른쪽으로 휘어 있을 필요충분조건은 $X$ 가 오른쪽으로 휘어 있는 것임을 보이라.
 
----
+:::
 
-(1) $X(t)$ 가 $t=g(s)$ 로 재매개화되어어 $Y(s)$ 가 되었다고 하자. 이 때 $g(s)$ 는 일급가역함수이다.
+</div>
+
+::: {.solution}
+
+($1$) $X(t)$ 가 $t=g(s)$ 로 재매개화되어어 $Y(s)$ 가 되었다고 하자. 이 때 $g(s)$ 는 일급가역함수이다.
 
 $$
 \begin{aligned}
@@ -685,13 +880,16 @@ $$
 
 이다. $g(s)$ 는 일급가역함수이므로 모든 $s$ 에서 $0$ 이 아니며 $(g'(s))^6>0$ 이다. 따라서 양/음으로 휘는것은 재매개화에 의해 변하지 않는다.
 
-(2) $Y^{(k)}(t)=MX^{(k)}(t)$ for $k=1,\,2,\,3$ 이다. $Y'\times Y'' \cdot Y''' =  (MX' \times MX''\cdot MX''')$ 이다. 따라서,
+($2$) $Y^{(k)}(t)=MX^{(k)}(t)$ for $k=1,\,2,\,3$ 이다. $Y'\times Y'' \cdot Y''' =  (MX' \times MX''\cdot MX''')$ 이다. 따라서,
 
 $$
 \det (Y',\, Y'' ,\, Y''')= \det(M)\det(X',\, X'' \cdot X''')
 $$
 
 이며 $\det(M) >0$ 이므로, $Y$ 가 오른쪽으로 휘어 있을 필요충분조건은 $X$ 가 오른쪽으로 휜 것이다.
+
+:::
+
 
 </br>
 
