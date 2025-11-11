@@ -14,39 +14,89 @@ crossref:
 
 **1.** ~ **7.** 까지는 단순계산이므로 생략
 
-</br>
 
-**8.** 삼차원 공간의 두 벡터 $\bf{a},\,\bf{b}$ 가 일차독립일 필요충분조건은 $\bf{a}\times \bf{b} \ne \bf{0}$ 임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_1_8} 
+
+삼차원 공간의 두 벡터 $\bf{a},\,\bf{b}$ 가 일차독립일 필요충분조건은 $\bf{a}\times \bf{b} \ne \bf{0}$ 임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\bf{a},\,\bf{b}$ 가 일차종속일 필요충분조건이 $\bf{a}\times \bf{b}=0$ 임을 보이는것과 동치이다. 우선 $\bf{a}$ 혹은 $\bf{b}$ 가 일차종속임을 가정하자. 둘 중 하나가 $\bf{0}$  이면 $\bf{a} \times \bf{b}=0$ 이다. 이제 둘 다 $\bf{0}$ 이 아닌 벡터에 대해 생각하자. $\bf{a},\,\bf{b}$ 가 일차종속이면 어떤 scalar $c$ 에 대해 $\bf{a}=c\bf{b}$ 이며, 따라서 $\bf{a} \times \bf{b}=0$ 이다.
 
 이제 $\bf{a} \times \bf{b}=0$ 임을 가정하자. 둘 중 하나가 $\bf{0}$ 이면 일차종속이므로 둘 다 $\bf{0}$ 이 아닌 상태만 생각하면 된다. $|\bf{a}\times \bf{b}|=|\bf{a}||\bf{b}||\sin \theta|$ 이므로 $\theta = 0$ 이다. 두 벡터가 평행하므로 일차종속이다.
 
-</br>
+:::
 
-**9.** 삼차원 공간의 임의의 벡터 $\bf{a},\,\bf{b},\,\bf{c},\,\bf{d}$ 에 대하여 다음 식이 성립함음 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_1_9}  
+
+삼차원 공간의 임의의 벡터 $\bf{a},\,\bf{b},\,\bf{c},\,\bf{d}$ 에 대하여 다음 식이 성립함음 보이라.
+
+&emsp;($a$) $\bf{a} \times(\bf{b}\times \bf{c})=(\bf{a}\cdot \bf{c})\bf{b}-(\bf{a}\cdot \bf{b})\bf{c}$,
+
+&emsp;($b$) $(\bf{a}\times \bf{b})\times \bf{c}=(\bf{a}\cdot \bf{c})\bf{b}-(\bf{b}\cdot \bf{c})\bf{a}$,
+
+&emsp;($c$) $(\bf{a}\cdot \bf{c})(\bf{b}\cdot \bf{d})-(\bf{a}\cdot \bf{d})(\bf{b}\cdot \bf{c})$,
+
+&emsp;($d$) $\bf{a}\times(\bf{b}\times \bf{c}) + \bf{b}\times (\bf{c}\times \bf{a}) +\bf{c}\times (\bf{a} \times \bf{b})=\bf{0}$.
+
+::: 
+
+</div>
+
+::: {.solution}
 
 Levi-Civita 개념을 사용한다. google 검색..
 
+($a$) 
+
 $$
 \begin{aligned}
-(a)\qquad \qquad &(\bf{a}\times (\bf{b}\times \bf{c}))_i =\epsilon_{ijk}a_j(\epsilon_{klm}b_lc_m)=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})a_jb_lc_m = a_jb_ic_j-a_jb_jc_i=(\bf{a}\cdot \bf{c})b_i-(\bf{a}\cdot \bf{b})c_i\\
-\implies &\bf{a} \times(\bf{b}\times \bf{c})=(\bf{a}\cdot \bf{c})\bf{b}-(\bf{a}\cdot \bf{b})\bf{c}\\
-(b) \qquad \qquad & ((\bf{a}\times \bf{b})\times \bf{c})_i = \epsilon_{ijk}\epsilon_{jlm} a_lb_m c_k = (\delta_{kl}\delta_{im}-\delta_{km}\delta_{il})a_lb_mc_k = a_kb_ic_k-a_ib_kc_k = (\bf{a}\cdot \bf{c})b_i - (\bf{b}\cdot \bf{c})a_i \\
-\implies & (\bf{a}\times \bf{b})\times \bf{c}=(\bf{a}\cdot \bf{c})\bf{b}-(\bf{b}\cdot \bf{c})\bf{a}\\
-(c)\qquad \qquad & (\bf{a}\times \bf{b})\cdot (\bf{c \times \bf{d}}) = \epsilon_{ijk} a_jb_k  \epsilon_{ilm}c_ld_m = (\delta_{jl}\delta_{km}-\delta_{jm}\delta_{kl})a_jb_k c_ld_m = a_jb_k c_j d_k-a_jb_kc_kd_j \\
-&=(\bf{a}\cdot \bf{c})(\bf{b}\cdot \bf{d})-(\bf{a}\cdot \bf{d})(\bf{b}\cdot \bf{c})\\
-(d) \qquad \qquad & \bf{a}\times(\bf{b}\times \bf{c}) + \bf{b}\times (\bf{c}\times \bf{a}) +\bf{c}\times (\bf{a} \times \bf{b})=(\bf{a}\cdot \bf{c})\bf{b}-(\bf{a}\cdot \bf{b})\bf{c}+(\bf{b}\cdot \bf{a})\bf{c}-(\bf{b}\cdot \bf{c})\bf{a} + (\bf{c}\cdot \bf{b})\bf{a}-(\bf{c}\cdot \bf{a})\bf{b}=0
+(\bf{a}\times (\bf{b}\times \bf{c}))_i &=\epsilon_{ijk}a_j(\epsilon_{klm}b_lc_m)=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})a_jb_lc_m \\[0.3em]
+&= a_jb_ic_j-a_jb_jc_i=(\bf{a}\cdot \bf{c})b_i-(\bf{a}\cdot \bf{b})c_i
 \end{aligned}
 $$
 
-</br>
+($b$)
 
-**10.** 삼차원공간에서 양으로 향한 정규직교기저 $\bf{v}_1,\,\bf{v}_2,\,\bf{v}_3$ 에 대하여,
+$$
+\begin{aligned}
+((\bf{a}\times \bf{b})\times \bf{c})_i &= \epsilon_{ijk}\epsilon_{jlm} a_lb_m c_k = (\delta_{kl}\delta_{im}-\delta_{km}\delta_{il})a_lb_mc_k \\[0.3em]
+&= a_kb_ic_k-a_ib_kc_k = (\bf{a}\cdot \bf{c})b_i - (\bf{b}\cdot \bf{c})a_i
+\end{aligned}
+$$
+
+($c$)
+
+$$
+\begin{aligned}
+(\bf{a}\times \bf{b})\cdot (\bf{c \times \bf{d}}) &= \epsilon_{ijk} a_jb_k  \epsilon_{ilm}c_ld_m = (\delta_{jl}\delta_{km}-\delta_{jm}\delta_{kl})a_jb_k c_ld_m \\[0.3em]
+&= a_jb_k c_j d_k-a_jb_kc_kd_j =(\bf{a}\cdot \bf{c})(\bf{b}\cdot \bf{d})-(\bf{a}\cdot \bf{d})(\bf{b}\cdot \bf{c})
+\end{aligned}
+$$
+
+($d$)
+$$
+\begin{aligned}
+\bf{a}\times & (\bf{b}\times \bf{c}) + \bf{b}\times (\bf{c}\times \bf{a}) +\bf{c}\times (\bf{a} \times \bf{b}) \\[0.3em]
+&=(\bf{a}\cdot \bf{c})\bf{b}-(\bf{a}\cdot \bf{b})\bf{c}+(\bf{b}\cdot \bf{a})\bf{c}-(\bf{b}\cdot \bf{c})\bf{a} + (\bf{c}\cdot \bf{b})\bf{a}-(\bf{c}\cdot \bf{a})\bf{b}=0
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_10}   
+
+삼차원공간에서 양으로 향한 정규직교기저 $\bf{v}_1,\,\bf{v}_2,\,\bf{v}_3$ 에 대하여,
 
 $$
 \bf{a}=\sum_{i=1}^3 a_i\bf{v}_i,\qquad \bf{b}=\sum_{j=1}^n b_j \bf{v}_j
@@ -60,15 +110,23 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \bf{a}\times \bf{b}=\sum_{i}\sum_j a_ib_j (\bf{v}_i \times \bf{v}_j)=\sum_{i,j,k}a_ib_j\epsilon_{ijk} \bf{v}_k
 $$
 
-</br>
+:::
 
-**11.** 공간속의 한 사면체 $ABCD$ 의 의 면 $BCD$ 에 대하여, 크기가 이 면의 넓이와 같고, 이 면에 수직이고, 방향은 사면체의 밖을 향하는 벡터 $\bf{v}_A$ 를 생각하자. 마찬가지로 각 면 $CDA,\,DAB,\,ABC$ 에 대하여 벡터 $\bf{v}_B,\,\bf{v}_C,\,\bf{v}_D$ 가 정의도었을 때,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_11}   
+
+공간속의 한 사면체 $ABCD$ 의 의 면 $BCD$ 에 대하여, 크기가 이 면의 넓이와 같고, 이 면에 수직이고, 방향은 사면체의 밖을 향하는 벡터 $\bf{v}_A$ 를 생각하자. 마찬가지로 각 면 $CDA,\,DAB,\,ABC$ 에 대하여 벡터 $\bf{v}_B,\,\bf{v}_C,\,\bf{v}_D$ 가 정의도었을 때,
 
 $$
 \bf{v}_A+\bf{v}_B+\bf{v}_C+\bf{v}_D=0
@@ -76,7 +134,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 사면체에서 $ABC$ 가 시계방향인지 반시계 방향인지, $\overrightarrow{AD}\cdot (\overrightarrow{BA}\times \overrightarrow{CA})$ 가 양수인지 음수인지 에 대해 각각의 $\bf{v}_{X}\;(X=A,\,B,\,C,\,D)$ 벡터를 표현하는 식이 달라진다.
 
@@ -95,16 +157,22 @@ $$
 
 $$
 \begin{aligned}
-2(\bf{v}_A+\bf{v}_B+\bf{v}_C+\bf{v}_D) &= (\bf{b}-\bf{d})\times (\bf{c}-\bf{d})+(\bf{d}-\bf{a})\times (\bf{c}-\bf{a})+(\bf{d}-\bf{b})
-\times (\bf{a}-\bf{b})+(\bf{b}-\bf{c})\times (\bf{a}-\bf{c})\\
-&=\bf{b}\times \bf{c}-\bf{b}\times \bf{d}+\bf{c}\times \bf{d}-\bf{c} \times \bf{d} +\bf{a}\times \bf{d}-\bf{a}\times \bf{c} -\bf{a}\times \bf{d}+\bf{b}\times \bf{d}+\bf{a}\times \bf{b} -\bf{a}\times \bf{b}-\bf{b}\times \bf{c}+\bf{a}\times \bf{c}\\
+2(\bf{v}_A &+ \bf{v}_B + \bf{v}_C + \bf{v}_D) \\[0.3em]
+&= (\bf{b}-\bf{d})\times (\bf{c}-\bf{d}) + (\bf{d}-\bf{a})\times (\bf{c}-\bf{a}) \\[0.3em]
+&\qquad \qquad + (\bf{d}-\bf{b}) \times (\bf{a}-\bf{b}) + (\bf{b}-\bf{c})\times (\bf{a}-\bf{c})\\
+&=\bf{b}\times \bf{c}-\bf{b}\times \bf{d}+\bf{c}\times \bf{d}-\bf{c} \times \bf{d} +\bf{a}\times \bf{d}-\bf{a}\times \bf{c} \\[0.3em]
+&\qquad \qquad -\bf{a}\times \bf{d}+\bf{b}\times \bf{d}+\bf{a}\times \bf{b} -\bf{a}\times \bf{b}-\bf{b}\times \bf{c}+\bf{a}\times \bf{c}\\
 &=0
 \end{aligned}
 $$
 
-</br>
+:::
 
-**12.** 일차독립인 벡터 $\bf{v}_1,\,\bf{v}_2$ 에 대하여 공간속의 두 직선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_12}   
+
+일차독립인 벡터 $\bf{v}_1,\,\bf{v}_2$ 에 대하여 공간속의 두 직선
 
 $$
 A_i + t\bf{v}_i \qquad i=1,\,2
@@ -118,7 +186,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 직선 밖의 점 에서 직선까지의 최단거리는 그 점으로부터 직선까지 거린 수선에 의해 정해진다. 두 직선 사이 $l_1,\,l_2$ 의 최단거리를 생각하자. $l_1$ 의 임의의 점 $P_1$ 에서 $l_2$ 까치의 최단거리는 $P_1$ 에서 $l_2$ 에 내린 수선에 의해 정해지며 그 역도 마찬가지이다. 따라서 그 수선의 방향벡터는  $l_1,\,l_2$ 두 직선 각각에 수직이므로 $l_1, l_2$ 의 방향벡터에 수직이다. 문제에서 주어진 두 직선에서 최단거리를 포함하는 직선의 방향벡터는 단위벡터로 표현할 때
 
@@ -140,25 +212,44 @@ $$
 
 로 어떤 두 점에 대해서도 동일하다. 따라서 이 값이 두 직선 사이의 거리이다.
 
-</br>
+:::
 
-**13.** (**정사영**) 공간 속의 두 벡터 $\bf{a},\,\bf{b}$ 가 이루는 평행사변형을 한 평면에 정사영한 것의 넓이는 $\cos \theta$ 배임을 보이라. 여기서 $\theta$ 는 평행사변형과 주어진 평면이 이루는 각의 크기이다.
 
----
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_13}   
+
+#### 정사영 
+
+공간 속의 두 벡터 $\bf{a},\,\bf{b}$ 가 이루는 평행사변형을 한 평면에 정사영한 것의 넓이는 $\cos \theta$ 배임을 보이라. 여기서 $\theta$ 는 평행사변형과 주어진 평면이 이루는 각의 크기이다.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\bf{a},\,\bf{b}$ 에 의해 정의되는 평면의 방향벡터는 (이 평면에 수직인) $\bf{a}\times \bf{b}$ 이다.  주어진 평면의 방향벡터의 단위벡터를 $\bf{n}$ 이라 하자. $\bf{a}\times \bf{n}$ 은 $\bf{n}$ 에 수직이며 그 크기가 $\bf{a}$ 의 평면에 대한 정사영의 크기와 같고 그 방향은 $\bf{a}$ 의 평면으로의 정사영에 대하여 $\pi/2$ 만큼 회전한 벡터이다. 그 회전방향은 $\bf{n}$ 과 $\bf{a}$ 의 방향에 따라 시계방향 혹은 반시계방향일 수 있다. $\bf{b}\times \bf{n}$ 도 마찬가지.
 
 $\bf{a}\cdot \bf{n}>0$ 일 때 $\bf{a}$ 의 평면에 대한 정사영에 대해 $\bf{a}\times \bf{n}$ 의 회전방향을 $+$ 로 잡자. $\bf{b}\cdot \bf{n}$ 이 양수이든 음수이든 평행사변형의 면적은 변화가 없다. 즉 정사영의 평행사변의 면적 $S$ 는
 
 $$
-S=|(\bf{a}\times\bf{n}) \times (\bf{b} \times \bf{n})|=|((\bf{a} \times \bf{n})\cdot \bf{n})\bf{b} -((\bf{a\times \bf{b}}) \cdot \bf{n})\bf{n}| = |(\bf{a}\times \bf{b})\cdot \bf{n}|=|\bf{a}\times \bf{b}|\cos \theta
+\begin{aligned}
+S &= |(\bf{a}\times\bf{n}) \times (\bf{b} \times \bf{n})| \\[0.3em]
+&=|((\bf{a} \times \bf{n})\cdot \bf{n})\bf{b} -((\bf{a\times \bf{b}}) \cdot \bf{n})\bf{n}|  \\[0.3em]
+&= |(\bf{a}\times \bf{b})\cdot \bf{n}|=|\bf{a}\times \bf{b}|\cos \theta
+\end{aligned}
 $$
 
 이다.
 
-</br>
+:::
 
-**14.** 공간에서 벡터 $\bf{a}\ne \bf{0}$ 에 대한 벡터 $\bf{b}$ 의 정사영을 $p_{\bf{a}}(\bf{b})$ 라 하자. 이 때,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_14}   
+
+공간에서 벡터 $\bf{a}\ne \bf{0}$ 에 대한 벡터 $\bf{b}$ 의 정사영을 $p_{\bf{a}}(\bf{b})$ 라 하자. 이 때,
 
 $$
 \bf{b}-p_{\bf{a}}(\bf{b})=\dfrac{(\bf{a}\times \bf{b})\times \bf{a}}{\bf{a}\cdot \bf{a}}
@@ -166,7 +257,11 @@ $$
 
 임을 보여라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 정리 3.1.1 로부터 $p_{\bf{a}}(\bf{b})= \dfrac{\bf{a}\cdot \bf{b}}{\bf{a}\cdot \bf{a}}\bf{a}$ 임을 안다. 여기서,
 
@@ -182,9 +277,13 @@ $$
 
 이다.
 
-</br>
+:::
 
-**15.** 공간에서 벡터 $\bf{a},\,\bf{b},\, \bf{c}$ 가 일차독립이면, 임의의 벡터 $\bf{v}$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_15}   
+
+공간에서 벡터 $\bf{a},\,\bf{b},\, \bf{c}$ 가 일차독립이면, 임의의 벡터 $\bf{v}$ 에 대하여,
 
 $$
 \bf{v} = \dfrac{\det (\bf{v},\,\bf{b},\,\bf{c})}{\det(\bf{a},\,\bf{b},\,\bf{c})}\bf{a} + \dfrac{\det (\bf{a},\,\bf{v},\,\bf{c})}{\det(\bf{a},\,\bf{b},\,\bf{c})}\bf{b} +\dfrac{\det (\bf{a},\,\bf{b},\,\bf{v})}{\det(\bf{a},\,\bf{b},\,\bf{c})}\bf{c}
@@ -192,12 +291,16 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 벡터 $\bf{a},\,\bf{b},\,\bf{c}$ 가 일차독립이므로, $\det(\bf{a},\,\bf{b},\,\bf{c})=(\bf{a}\times \bf{b})\cdot \bf{c} \ne 0$ 이며, $\bf{v}=a\bf{a}+b\bf{b}+c\bf{c}$ 일 때 scalar $a,\,b,\,c$ 가 유일하게 결정된다.
 $$
 \begin{aligned}
-\det (\bf{v},\,\bf{b},\,\bf{c})\bf{a} + \det (\bf{a},\,\bf{v},\,\bf{c})\bf{b} &+ \det (\bf{a},\,\bf{b},\,\bf{v})\bf{c} \\
+\det (\bf{v},\,\bf{b},\,\bf{c})\bf{a} &+ \det (\bf{a},\,\bf{v},\,\bf{c})\bf{b} + \det (\bf{a},\,\bf{b},\,\bf{v})\bf{c} \\[0.3em]
 &= ((\bf{v}\times \bf{b})\cdot \bf{c})\bf{a}+((\bf{a} \times \bf{v})\cdot\bf{c}) \bf{b} + ((\bf{a} \times \bf{b})\cdot \bf{v})\bf{c} \\
 \end{aligned}
 $$
@@ -222,19 +325,35 @@ $$
 
 이다.
 
-</br>
+:::
 
-**16.** 좌표공간속의 정사면체 $OABC$ 에 내접하는 구의 중심을 $P$ 라고 두자. 이때 $\overrightarrow{OP}$ 를 $\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}$ 의 일차결합으로 표현하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_1_16}   
+
+좌표공간속의 정사면체 $OABC$ 에 내접하는 구의 중심을 $P$ 라고 두자. 이때 $\overrightarrow{OP}$ 를 $\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}$ 의 일차결합으로 표현하라.
+
+::: 
+
+</div>
+
+::: {.solution}
 
 일단 $OABC$ 가 정사면체가 되려면 $\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}$ 이 일차독립이어야 한다. 따라서 $\overrightarrow{OP}$ 는 $\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}$ 의 일차결합으로 표현된다. 편의를 위해 $\overrightarrow{OA}=\bf{a},\,\overrightarrow{OB}=\bf{b},\,\overrightarrow{OC}=\bf{c},\,\overrightarrow{OP}=\bf{p}$ 라 하자. 이제 $\bf{p}=a\bf{a}+b\bf{b}+c\bf{c}$ 이다.
 
-</br>
+:::
 
-**17.**  공간에서 $\triangle ABC$ 와 원점 $O$ 에 대하여 $\bf{a}=\overrightarrow{OA},\,\bf{b}=\overrightarrow{OB},\, \bf{c}=\overrightarrow{OC}$ 로 두면 $(\bf{a}\times \bf{b})+(\bf{b} \times \bf{c})+(\bf{c}\times \bf{a})$ 는 $\triangle ABC$ 에 수직임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_1_17}    
+
+공간에서 $\triangle ABC$ 와 원점 $O$ 에 대하여 $\bf{a}=\overrightarrow{OA},\,\bf{b}=\overrightarrow{OB},\, \bf{c}=\overrightarrow{OC}$ 로 두면 $(\bf{a}\times \bf{b})+(\bf{b} \times \bf{c})+(\bf{c}\times \bf{a})$ 는 $\triangle ABC$ 에 수직임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\bf{p}=(\bf{a}\times \bf{b})+(\bf{b} \times \bf{c})+(\bf{c}\times \bf{a})$ 라 두면 $\bf{p}\cdot (\bf{b}-\bf{a})=0$ 이고 $\bf{p}\cdot (\bf{c}-\bf{a})=0$ 임을 보이면 된다.
 
@@ -245,9 +364,13 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**18.** 벡터 $\bf{a},\,\bf{b},\,\bf{c}\in \mathbb{R}^3$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_18}   
+
+벡터 $\bf{a},\,\bf{b},\,\bf{c}\in \mathbb{R}^3$ 에 대하여,
 
 $$
 (\bf{a}\times \bf{b})\cdot (\bf{b}\times \bf{c}) \times (\bf{c}\times \bf{a})=(\bf{a}\cdot \bf{b} \times \bf{c})^2
@@ -255,7 +378,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -265,11 +392,19 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**19** 평행사변형을 $xy$-평면, $yz$-평면, $zx$-평면으로 정사영한것의 넓이가 각각 $1,\,1,\,2$ 이면 처음 평행사변형의 넓이는 얼마인가?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_1_19}
+
+평행사변형을 $xy$-평면, $yz$-평면, $zx$-평면으로 정사영한것의 넓이가 각각 $1,\,1,\,2$ 이면 처음 평행사변형의 넓이는 얼마인가?
+
+:::
+
+</div>
+
+::: {.solution}
 
 평행사변형의 면적을 $S$ 라 하고 평행사변형을 포함하는 평면의 방향벡터의 단위벡터를 $\bf{n}$ 이라 하자. 그렇다면
 
@@ -279,15 +414,23 @@ $$
 
 이므로 $S=\sqrt{1^2+1^2+2^2}=\sqrt{6}$.
 
-</br>
+:::
 
-**20.** $\mathbb{R}^3$ 속의 세 백터 $\bf{x},\,\bf{y},\,\bf{z}$ 가 이루는 **평행육면체**
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_1_20}
+
+$\mathbb{R}^3$ 속의 세 백터 $\bf{x},\,\bf{y},\,\bf{z}$ 가 이루는 **평행육면체**
 $$
 \{r\bf{x}+s\bf{y}+t\bf{z} : 0 \le r,\,s,\,t \le 1\}
 $$
 의 부피는 $|\det (\bf{x},\,\bf{y},\,\bf{z})|$ 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\bf{x},\,\bf{y}$ 의 면적은 $|\bf{x}\times \bf{y}|$ 이다. $\bf{x},\,\bf{y}$ 에 의해 정해지는 평면의 방향벡터의 단위벡터는  $\bf{n}=\dfrac{\bf{x}\times  \bf{y}}{|\bf{x}\times \bf{y}|}$ 이며 이 평면과 $\bf{z}$ 사이의 거리는 $\bf{n}\cdot \bf{z}$ 로 주어진다. 따라서,
 
@@ -295,13 +438,17 @@ $$
 V=|\bf{x} \times \bf{y}| \, |\bf{n}\cdot \bf{z}|=|\bf{x}\times \bf{y}| \left| \dfrac{(\bf{x}\times \bf{y})\cdot \bf{z}}{|\bf{x} \times \bf{y}|}\right|=|\det (\bf{x},\,\bf{y},\,\bf{z})|
 $$
 
+:::
+
 </br>
 
 **21.** 생략
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**22.** 3차원 좌표공간 속의 세 벡터 $\bf{x},\,\bf{y},\,\bf{z}$ 가 이루는 평행육면체의 부피를 $\operatorname{Vol}(\bf{x},\,\bf{y},\,\bf{z})$ 라 고 두었을 때, 3차 정사각행렬 $A$ 에 대하여
+::: {#exr-CAL_8_1_22}   
+
+3차원 좌표공간 속의 세 벡터 $\bf{x},\,\bf{y},\,\bf{z}$ 가 이루는 평행육면체의 부피를 $\operatorname{Vol}(\bf{x},\,\bf{y},\,\bf{z})$ 라 고 두었을 때, 3차 정사각행렬 $A$ 에 대하여
 
 $$
 \operatorname{Vol}(L_A(\bf{x}),\,L_A(\bf{y}),\,L_A(\bf{z}))=|\det A| \operatorname{Vol}(\bf{x},\,\bf{y},\,\bf{z})
@@ -309,9 +456,13 @@ $$
 
 임을 보이라.
 
----
+:::
 
-앞의 20번 문제에서 부터 $\operatorname{Vol}(\bf{x},\,\bf{y},\bf{z})=|\det(\bf{x},\,\bf{y},\,\bf{z})|$  임을 보였다. 정리 3.0.6으로부터,
+</div>
+
+::: {.solution}
+
+앞의 @exr-CAL_8_1_20 번 문제에서 부터 $\operatorname{Vol}(\bf{x},\,\bf{y},\bf{z})=|\det(\bf{x},\,\bf{y},\,\bf{z})|$  임을 보였다. 정리 3.0.6으로부터,
 
 $$
 \det(A\bf{x},\,A\bf{y},\,A\bf{z}) = (\det A ) (\det (\bf{x},\,\bf{y},\,\bf{z}))
@@ -319,22 +470,25 @@ $$
 
 이므로 증명 끝.
 
+:::
+
 </br>
 
 ## 연습문제 : 제 8 장 2 절
 
-**1.** 모든 정사각행렬은 대칭행렬과 왜대칭행렬의 합으로 표현됨을 보여라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_2_1}  
 
-$$
-\begin{aligned}
-(A+A^t)_{ij}-(A+A^t)_{ji}&=A_{ij}+(A^{t})_{ij} -A_{ji}-(A^t)_{ji}=A_{ij}+A_{ji}-A_{ji}-A_{ij}=0\\
-(A-A^t)_{ij}+(A-A^t)_{ji}&=A_{ij}-A_{ji}+A_{ji}-A_{ij}=0
-\end{aligned}
-$$
+모든 정사각행렬은 대칭행렬과 왜대칭행렬의 합으로 표현됨을 보여라.
 
-이므로 $A+A^t$ 는 대칭행렬이고 $A-A^t$ 는 왜대칭행렬이다. $\dfrac{1}{2}(A+A^t)$ 는 대칭행렬이고 $\dfrac{1}{2}(A-A^t)$ 는 왜대칭행렬이며,
+:::
+
+</div>
+
+::: {.solution}
+
+$A+A^t$ 는 대칭행렬이고 $A-A^t$ 는 왜대칭행렬임은 쉽게 보일 수 있다. $\dfrac{1}{2}(A+A^t)$ 는 대칭행렬이고 $\dfrac{1}{2}(A-A^t)$ 는 왜대칭행렬이며,
 
 $$
 A=\dfrac{1}{2}(A+A^t)+\dfrac{1}{2}(A-A^t)
@@ -342,17 +496,29 @@ $$
 
 이다.
 
-</br>
+:::
 
-**2.** 왜대칭행렬의 합은 왜대칭행렬임을 보이라. 또 왜대칭행렬의 상수배도 왜대칭임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_2_2}  
+
+왜대칭행렬의 합은 왜대칭행렬임을 보이라. 또 왜대칭행렬의 상수배도 왜대칭임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 trivial.
 
-</br>
+:::
 
-**3.** 차수가 같은 두 정사각행렬 $M,\,N$ 에 대하여
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_2_3}
+
+차수가 같은 두 정사각행렬 $M,\,N$ 에 대하여
 
 $$
 [M,\,N] := MN - NM
@@ -372,9 +538,19 @@ $$
 
 임을 보이라.
 
----
+:::
 
-임의의 $\bf{x}\in \mathbb{R}^3$ 를 생각하자. 연습문제 8.1.9(d) 의 $\bf{a}\times(\bf{b}\times \bf{c}) + \bf{b}\times (\bf{c}\times \bf{a}) +\bf{c}\times (\bf{a} \times \bf{b})=0$ 을 이용하면,
+</div>
+
+::: {.solution}
+
+임의의 $\bf{x}\in \mathbb{R}^3$ 를 생각하자. @exr-CAL_8_1_9 ($d$) 의 
+
+$$
+\bf{a}\times(\bf{b}\times \bf{c}) + \bf{b}\times (\bf{c}\times \bf{a}) +\bf{c}\times (\bf{a} \times \bf{b})=0
+$$ 
+
+을 이용하면,
 
 $$
 \begin{aligned}
@@ -386,16 +562,25 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**4.** 단위벡터 $\bf{a}\in \mathbb{R}^3$ 에 대하여 선형변환
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_2_4}  
+
+단위벡터 $\bf{a}\in \mathbb{R}^3$ 에 대하여 선형변환
 
 $$
 \bf{x}\mapsto \bf{a} \times \bf{x} \qquad (\bf{x}\in \mathbb{R}^3)
 $$
+
 은 $\bf{a}$ 방향의 벡터는 $0$ 으로 보내고, $\bf{a}$ 에 수직인 방향의 벡터는 $\bf{a}$ 를 회전축으로 $90^\circ$ 회전시키는 변환임을 설명하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\bf{x}$ 는 $\bf{a}$ 방향의 벡터와 $\bf{a}$ 에 수직인 방향의 벡터로 분해 할 수 있다. $\bf{x}$ 의 $\bf{a}$ 방향 벡터는 $(\bf{x}\cdot \bf{a})\bf{a}$ 이므로,  $\bf{x}_{\perp}= \bf{x}-(\bf{a}\cdot \bf{x})\bf{a}$  라 하면,  $\bf{x}_{\perp}$ 는 $\bf{x}$ 의 $\bf{a}$ 에 수직인 방향의 벡터임을 알 수 있다.
 
@@ -420,9 +605,13 @@ $$
 
 이므로 $\bf{a}\times \bf{x}$ 는 $\bf{x}$ 의 $\bf{a}$ 에 수직인 성분벡터를 $\bf{a}$ 를 회전축으로 $90^\circ$ 회전시키는 변환임을 알 수 있다.
 
-</br>
+:::
 
-**5.** 공간에서 벡터 $\bf{a},\,\bf{b}_0$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_2_5}
+
+공간에서 벡터 $\bf{a},\,\bf{b}_0$ 에 대하여,
 
 $$
 \bf{b}_{n+1}=\bf{a}\times \bf{b}_n,\qquad (n=0,\,1,\ldots)
@@ -430,9 +619,13 @@ $$
 
 으로 두자. 이 때 $\bf{b}_n$ 이 어떻게 변하는 지를 설명하라. 또 $\bf{a}=(1,\,2,\,2)/3,\, \bf{b}_0=(0,\,1,\,2)$ 일 때 $\bf{b}_{2000}$ 을 구하라.
 
----
+:::
 
-앞의 4. 의 결과를 알면 쉽다.  $|\bf{a}|=1$ 이므로 $\bf{b}_1$ 은 $\bf{b}_0$ 의 $\bf{a}$ 에 대해 수직인 방향의 성분을 $90^\circ$ 회전시키 것이다.  $\bf{b}_1$ 은 이제 $\bf{a}$  에 수직이므로 $n\ge 1$ 에 대해 $\bf{b}_{n+1}$ 은 $\bf{b}_n$ 을(이제 $\bf{b}_n$ 은 $\bf{a}$ 에 수직이다) $\bf{a}$ 를 회전축으로 $90^\circ$ 만큼 회전시것이다.  $\bf{b}_0$ 의 $\bf{a}$ 에 수직인 성분을 $\bf{b}_{\perp}$ 라 하면,
+</div>
+
+::: {.solution}
+
+앞의 @exr-CAL_8_2_4 의 결과를 알면 쉽다. $|\bf{a}|=1$ 이므로 $\bf{b}_1$ 은 $\bf{b}_0$ 의 $\bf{a}$ 에 대해 수직인 방향의 성분을 $90^\circ$ 회전시키 것이다.  $\bf{b}_1$ 은 이제 $\bf{a}$  에 수직이므로 $n\ge 1$ 에 대해 $\bf{b}_{n+1}$ 은 $\bf{b}_n$ 을(이제 $\bf{b}_n$ 은 $\bf{a}$ 에 수직이다) $\bf{a}$ 를 회전축으로 $90^\circ$ 만큼 회전시것이다.  $\bf{b}_0$ 의 $\bf{a}$ 에 수직인 성분을 $\bf{b}_{\perp}$ 라 하면,
 
 $$
 \bf{b}_{\perp}=\bf{b}_0-(\bf{a}\cdot \bf{b_0})\bf{a}=(-2, -1, 2)/3
@@ -440,9 +633,13 @@ $$
 
 이며, $\bf{b}_n$ 은 $\bf{b}_\perp$ 를 $n$ 번 $90^\circ$ 회전시킨 것이므로 $\bf{b}_{2000}=\bf{b}_\perp$ 이다.
 
-</br>
+:::
 
-**6.** 벡터 $\bf{a}\in \mathbb{R}^3$ 의 절대값을 $a$ 라 하였을 때
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_2_6}
+
+벡터 $\bf{a}\in \mathbb{R}^3$ 의 절대값을 $a$ 라 하였을 때
 
 $$
 M_{\bf{a}}^3+a^2M_{\bf{a}}=O
@@ -450,7 +647,11 @@ $$
 
 임을 보이라. 이를 이용하여 $M_{\bf{a}}^{2002}$ 를 간단히하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $M_\bf{a} \bf{x} =\bf{a}\times\bf{x}$ 이므로,
 
@@ -472,11 +673,17 @@ M^{2002}&= a^{1508}M^4=-a^{1510}M^2
 \end{aligned}
 $$
 
+:::
+
 </br>
 
 ## 연습문제 : 제 8장 3절
 
-**1.** 일반적으로 삼차원 공간의 점 $P_1,\ldots,\,P_k$ 와 각 점 $P_i$ 에 작용하는 힘 $\bf{f}_i$ 에 대하여 기준점 $Q$ 에 대한 이들의 회전력을
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_3_1}
+
+일반적으로 삼차원 공간의 점 $P_1,\ldots,\,P_k$ 와 각 점 $P_i$ 에 작용하는 힘 $\bf{f}_i$ 에 대하여 기준점 $Q$ 에 대한 이들의 회전력을
 
 $$
 \sum_{i=1}^k \overrightarrow{QP_i} \times \bf{f}_i
@@ -490,7 +697,11 @@ $$
 
 이면, 회전력은 기준점 $Q$ 를 달리하더라도 변화가 없음을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -499,11 +710,19 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**2.** 한쪽 긑은 $A=(0,\,0,\,0)$, 또 다른 한쪽 끝은 $B=(1,\,1,\,1)$ 에 위치한 곧은 막대에 힘 $(0,\,1,\,2)$ 가 $A$ 에 작용하고, 또 힘 $(1,\,2,\,3)$ 이 $B$ 에 작용한다고 하자. 이 때 막대의 어느붑ㄴ에 얼마만큼의 힘이 작용하면, 막대가 움직이지 않을까?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_8_3_2}
+
+한쪽 긑은 $A=(0,\,0,\,0)$, 또 다른 한쪽 끝은 $B=(1,\,1,\,1)$ 에 위치한 곧은 막대에 힘 $(0,\,1,\,2)$ 가 $A$ 에 작용하고, 또 힘 $(1,\,2,\,3)$ 이 $B$ 에 작용한다고 하자. 이 때 막대의 어느붑ㄴ에 얼마만큼의 힘이 작용하면, 막대가 움직이지 않을까?
+
+:::
+
+</div>
+
+::: {.solution}
 
 막대가 움직이지 않으려면 힘의 총합도 $0$ 이며 회전력의 총합도 $0$ 이어야 한다. 따라서 힘 $(-1, -3, -5)$ 가 작용해야 한다. 문제 $1$ 에 의해 회전력의 총합은 기준점의 영향을 받지 않으므로 $A$ 를 기준으로 하기로 하자. 막대이므로 세번째 힘이 작용하는 위치는 $(t,\,t,\,t)$ 라 하자. 그렇다면 회전력의 총합이 $0$ 이 되어야 하므로,
 
@@ -513,6 +732,8 @@ $$
 
 이며, 따라서 $t=1/2$ 인 (1/2, 1/2, 1/2) 에 작용해야 한다.
 
+:::
+
 </br>
 
 **3.** 생략
@@ -521,7 +742,11 @@ $$
 
 ## 탐구문제
 
-**1.** $i=1,\,2,\,3$ 에 대하여
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_S01}
+
+$i=1,\,2,\,3$ 에 대하여
 
 $$
 \exp tM_i = R_i (t) \qquad t\in \mathbb{R}
@@ -529,7 +754,11 @@ $$
 
 임을 보이라. ($R_i$ 는 기본 연습문제 2.0.1 에서 정의하였다.)
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 우선 $M_1$ 을 보자.
 
@@ -557,9 +786,13 @@ $$
 
 $M_2,\,M_3$ 에 대해서도 같은 방법으로 보일 수 있다.
 
-</br>
+:::
 
-**2.** 단위벡터 $\mathbb{a}\in \mathbb{R}^3$ 에 대하여 선형변환
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_8_S02}
+
+단위벡터 $\mathbb{a}\in \mathbb{R}^3$ 에 대하여 선형변환
 
 $$
 \bf{x} \mapsto \bf{a}\times\bf{x} \qquad (\bf{x}\in \mathbb{R}^3)
@@ -573,7 +806,11 @@ $$
 
 임을 보여라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\bf{a}=(a_1,\,a_2,\,a_3)$ 라 하면,
 
@@ -588,3 +825,6 @@ $$
 $$
 \exp (aA+bB)=\sum_{k=0}^\infty \dfrac{1}{k!} (aA+bB)^k= \sum_{k=0}^\infty \dfrac{1}{k!}\sum_{n=0}^k \dfrac{k!}{}
 $$
+
+:::
+

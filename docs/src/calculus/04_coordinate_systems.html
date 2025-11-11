@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/calculus/03_tayler_series.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +85,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -125,7 +126,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Mathematical Analysis</a> 
         <div class="sidebar-tools-main">
@@ -434,24 +437,39 @@ window.Quarto = {
 \DeclareMathOperator*{\argmax}{argmax}
 \]</span></p>
 </div>
+<p><br></p>
 <section id="연습문제-제-4장-1절" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="연습문제-제-4장-1절"><span class="header-section-number">4.1</span> 연습문제 제 4장 1절</h2>
-<p><strong>1.</strong> 절대값이 <span class="math inline">\(0\)</span> 인 점은 원점 뿐임을 보여라.</p>
-<hr>
-<p><span class="math inline">\(n\)</span>-차원 좌표계 <span class="math inline">\((x_1,\ldots,\,x_n)\)</span> 에서의 절대값은 원점에서의 거리이므로, <span class="math display">\[
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.1</strong></span> 절대값이 <span class="math inline">\(0\)</span> 인 점은 원점 뿐임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(n\)</span>-차원 좌표계 <span class="math inline">\((x_1,\ldots,\,x_n)\)</span> 에서의 절대값은 원점에서의 거리이므로, <span class="math display">\[
 0=\sqrt{\sum_{k=1}^n {x_k}^2} \implies x_1=\cdots =x_n = 0
 \]</span></p>
-<p><br></p>
-<p><strong>2.</strong> 상수 <span class="math inline">\(t\)</span> 와 좌표공간의 점 <span class="math inline">\(A\)</span> 에 대하여 <span class="math inline">\(|tA|=|t||A|\)</span> 임을 보여라.</p>
-<hr>
-<p>Let <span class="math inline">\(A=(a_1,\ldots,\, a_n)\)</span> then,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.2</strong></span> 상수 <span class="math inline">\(t\)</span> 와 좌표공간의 점 <span class="math inline">\(A\)</span> 에 대하여 <span class="math inline">\(|tA|=|t||A|\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>Let <span class="math inline">\(A=(a_1,\ldots,\, a_n)\)</span> then,</p>
 <p><span class="math display">\[
 |tA|=\sqrt{\sum_{k=1}^n (ta_i)^2}=|t|\sqrt{\sum_{k=1}^n (a_i)^2}=|t||A|\;.
 \]</span></p>
-<p><br></p>
-<p><strong>3.</strong> 3차원 좌표공간에서 선분 <span class="math inline">\(S\)</span> 를 <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면, <span class="math inline">\(xy\)</span>-평면에 정사영한 것의 길이가 각각 5, 6, 7 이라면 선분 <span class="math inline">\(S\)</span> 의 길이는 얼마인가?</p>
-<hr>
-<p>선분 <span class="math inline">\(S\)</span> 의 양 끝점을 <span class="math inline">\((x_1,\,y_1,\,z_1),\, (x_2,\,y_2,\,z_2)\)</span> 라 하자. <span class="math inline">\(yz\)</span> 평면에 대한 정사영은 <span class="math inline">\(x_1=x_2=0\)</span> 으로 놓은 것이다. 이것을 다른 두 정사영과 같이 생각하면,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.3</strong></span> 3차원 좌표공간에서 선분 <span class="math inline">\(S\)</span> 를 <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면, <span class="math inline">\(xy\)</span>-평면에 정사영한 것의 길이가 각각 5, 6, 7 이라면 선분 <span class="math inline">\(S\)</span> 의 길이는 얼마인가?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>선분 <span class="math inline">\(S\)</span> 의 양 끝점을 <span class="math inline">\((x_1,\,y_1,\,z_1),\, (x_2,\,y_2,\,z_2)\)</span> 라 하자. <span class="math inline">\(yz\)</span> 평면에 대한 정사영은 <span class="math inline">\(x_1=x_2=0\)</span> 으로 놓은 것이다. 이것을 다른 두 정사영과 같이 생각하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;(y_1-y_2)^2+(z_1-z_2)^2 = 25 \\
@@ -460,8 +478,11 @@ window.Quarto = {
 \implies &amp; \sqrt{(x_1-x_2)^2 +(y_1-y_2)^2+(z_1-z_2)^2}= \sqrt{55}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>4.</strong> 삼차원 좌표공간에서 길이가 <span class="math inline">\(l\)</span> 인 선분을 <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면, <span class="math inline">\(xy\)</span>-평면에 정사영한 것의 길이를 각각 <span class="math inline">\(l_{yz},\, l_{zx},\, l_{xy}\)</span> 라고 두면</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.4</strong></span> 삼차원 좌표공간에서 길이가 <span class="math inline">\(l\)</span> 인 선분을 <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면, <span class="math inline">\(xy\)</span>-평면에 정사영한 것의 길이를 각각 <span class="math inline">\(l_{yz},\, l_{zx},\, l_{xy}\)</span> 라고 두면</p>
 <p><span class="math display">\[
 {l_{yz}}^2+{l_{zx}}^2 + {l_{xy}}^2 = 2l^2
 \]</span></p>
@@ -470,11 +491,11 @@ window.Quarto = {
 \left|{l_{yz}}^2-{l_{zx}}^2\right| \le {l_{xy}}^2 \le {l_{yz}}^2+{l_{zx}}^2
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\({l_{yz}}^2+{l_{zx}}^2 + {l_{xy}}^2 = 2l^2\)</span> 임은 trivial 하다.</p></li>
-<li><p>3번 문제에서와 같이 선분의 양 끝점의 좌표를 <span class="math inline">\((x_1,\,y_1,\,z_1),\, (x_2,\,y_2,\,z_2)\)</span> 라 하면,</p></li>
-</ol>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\({l_{yz}}^2+{l_{zx}}^2 + {l_{xy}}^2 = 2l^2\)</span> 임은 trivial 하다.</p>
+<p>(<span class="math inline">\(2\)</span>) 3번 문제에서와 같이 선분의 양 끝점의 좌표를 <span class="math inline">\((x_1,\,y_1,\,z_1),\, (x_2,\,y_2,\,z_2)\)</span> 라 하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \left| {l_{yz}}^2-{l_{zx}}^2 \right|&amp;=\left|(y_1-y_2)^2-(x_1-x_2)^2\right| \\
@@ -484,59 +505,84 @@ window.Quarto = {
 &amp;={l_{yz}}^2+{l_{zx}}^2\,.
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>7.</strong> 집합 <span class="math inline">\(\{1,\,2,\ldots,\, n\}\)</span> 에서 정의된 함수 전체의 집합은 <span class="math inline">\(\mathbb{R}^n\)</span> 과 일대일 대응이 됨을 보이라.</p>
-<hr>
-<ol type="1">
-<li><span class="math inline">\(A=\{1,\,2,\ldots,\,n\}\)</span> 일 때 <span class="math inline">\(F\)</span> 를 <span class="math inline">\(A\to \mathbb{R}\)</span> 함수의 집합이라 하자. <span class="math inline">\(T: F \to \mathbb{R}^n\)</span> 을 생각한다. <span class="math inline">\(f\in F\)</span> 일 때,</li>
-</ol>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.5</strong></span> 집합 <span class="math inline">\(\{1,\,2,\ldots,\, n\}\)</span> 에서 정의된 함수 전체의 집합은 <span class="math inline">\(\mathbb{R}^n\)</span> 과 일대일 대응이 됨을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(A=\{1,\,2,\ldots,\,n\}\)</span> 일 때 <span class="math inline">\(F\)</span> 를 <span class="math inline">\(A\to \mathbb{R}\)</span> 함수의 집합이라 하자. <span class="math inline">\(T: F \to \mathbb{R}^n\)</span> 을 생각한다. <span class="math inline">\(f\in F\)</span> 일 때,</p>
 <p><span class="math display">\[
 T(f) = (f(1),\,f(2),\ldots,\,f(n))
 \]</span></p>
 <p>으로 정의하면 모든 <span class="math inline">\(f\in F\)</span> 에 대해 <span class="math inline">\(T(f)\in \mathbb{R}^n\)</span> 이며, <span class="math inline">\((f_1,\ldots,\,f_n)\in \mathbb{R}^n\)</span> 일 때 <span class="math inline">\(f(k)=f_k\)</span> 이므로 이 함수 <span class="math inline">\(T\)</span> 는 잘 정의됨을 알 수 있다.</p>
-<ol start="2" type="1">
-<li><p><span class="math inline">\(f,\, g \in F,\, f\ne g\)</span> 이면 어떤 <span class="math inline">\(k\)</span> 에서 <span class="math inline">\(f(k)\ne g(k)\)</span> 이므로 <span class="math inline">\(T(f) \ne T(g)\)</span> 이다. 따라서 <span class="math inline">\(T\)</span> 는 단사이이다.</p></li>
-<li><p>임의의 <span class="math inline">\((a_1,\ldots,\,a_n )\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(g(k)=a_k\)</span> 로 정의하면 <span class="math inline">\(g\in F\)</span> 이다. 따라서 <span class="math inline">\(T\)</span> 는 전사이다.</p></li>
-</ol>
-<p><br></p>
-<p><strong>8.</strong> 차수가 3 이하인 다항식 전체의 집합</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(f,\, g \in F,\, f\ne g\)</span> 이면 어떤 <span class="math inline">\(k\)</span> 에서 <span class="math inline">\(f(k)\ne g(k)\)</span> 이므로 <span class="math inline">\(T(f) \ne T(g)\)</span> 이다. 따라서 <span class="math inline">\(T\)</span> 는 단사이이다.</p>
+<p>(<span class="math inline">\(3\)</span>) 임의의 <span class="math inline">\((a_1,\ldots,\,a_n )\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(g(k)=a_k\)</span> 로 정의하면 <span class="math inline">\(g\in F\)</span> 이다. 따라서 <span class="math inline">\(T\)</span> 는 전사이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.6</strong></span> 차수가 3 이하인 다항식 전체의 집합</p>
 <p><span class="math display">\[
 \{ a_0+a_1x +a_2x^2 +a_3x^3 \mid a_0,\,a_1,\,a_2,\,a_3 \in \mathbb{R}\}
 \]</span></p>
 <p>과 4차원 좌표공간 <span class="math inline">\(\mathbb{R}^4\)</span> 사이의 일대일 대응관계를 서술하라. 이 때 두 다항식의 합은 공간의 점들의 합에 대응되는가?</p>
-<hr>
-<p>차수가 삼차인 다항식 전체의 집합을 <span class="math inline">\(A\)</span> 라 하면 임의의 <span class="math inline">\(f\in A\)</span> 는 상수항과 1차항, 2차항 3차항 네개의 실수의 집합으로 표현 할 수 있다. <span class="math inline">\(f = a_0+a_1x+a_2x^2 +a_3x^3\)</span> 일 때 <span class="math inline">\(T: A \to \mathbb{R}^4\)</span> 를</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>차수가 삼차인 다항식 전체의 집합을 <span class="math inline">\(A\)</span> 라 하면 임의의 <span class="math inline">\(f\in A\)</span> 는 상수항과 1차항, 2차항 3차항 네개의 실수의 집합으로 표현 할 수 있다. <span class="math inline">\(f = a_0+a_1x+a_2x^2 +a_3x^3\)</span> 일 때 <span class="math inline">\(T: A \to \mathbb{R}^4\)</span> 를</p>
 <p><span class="math display">\[
 T(f) = (a_0,\,a_1,\,a_2,\,a_3)
 \]</span></p>
 <p>로 정의하면 <span class="math inline">\(T\)</span> 는 <span class="math inline">\(A \to \mathbb{R}^4\)</span> 함수이다. 이 때 <span class="math inline">\(T\)</span> 가 전단사임은 쉽게 보일 수 있다.</p>
-<p><span class="math inline">\(f(x) =a_0+a_1x+a_2x^2+a_3x^3,\, g(x) = b_0+b_1x+b_2x^2+b_3x^3\)</span> 일 때, <span class="math inline">\(f(x)+g(x) = (a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^2+(a_3+b_3)x^3\)</span> 이므로,</p>
 <p><span class="math display">\[
-T(f+g)=(a_0+b_0,\, a_1+b_1,\, a_2+b_2,\,a_3+b_3)\,,\\
-T(f)+T(g) = (a_0+b_0,\, a_1+b_1,\,a_2+b_2,\, a_3+b_3)\,,
+f(x) =a_0+a_1x+a_2x^2+a_3x^3,\, g(x) = b_0+b_1x+b_2x^2+b_3x^3
+\]</span></p>
+<p>일 때,</p>
+<p><span class="math display">\[
+f(x)+g(x) = (a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^2+(a_3+b_3)x^3
+\]</span></p>
+<p>이므로,</p>
+<p><span class="math display">\[
+\begin{aligned}
+T(f+g) &amp;= (a_0+b_0,\, a_1+b_1,\, a_2+b_2,\,a_3+b_3)\,,\\[0.3em]
+T(f)+T(g) &amp;= (a_0+b_0,\, a_1+b_1,\,a_2+b_2,\, a_3+b_3)
+\end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(T(f+g)=T(f)+T(g)\)</span> 이다.</p>
-<p><br></p>
-<p><strong>11.</strong> <span class="math inline">\(n\)</span>-공간의 점 <span class="math inline">\(A=(a_1,\ldots,\,a_n)\)</span> 에 대하여 <span class="math inline">\(\overline{a}:=\dfrac{1}{n}(a_1+\cdots + a_n)\)</span> 이라 하자. 이 때 점 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\overline{A}=(\overline{a},\ldots,\,\overline{a})\)</span> 사이의 거리는</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_1_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.7</strong></span> <span class="math inline">\(n\)</span>-공간의 점 <span class="math inline">\(A=(a_1,\ldots,\,a_n)\)</span> 에 대하여 <span class="math inline">\(\overline{a}:=\dfrac{1}{n}(a_1+\cdots + a_n)\)</span> 이라 하자. 이 때 점 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(\overline{A}=(\overline{a},\ldots,\,\overline{a})\)</span> 사이의 거리는</p>
 <p><span class="math display">\[
 \sqrt{\sum_{i=1}^n {a_i}^2-n\overline{a}^2}
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 |A-\bar{A}|^2=&amp;\sum_{i=1}^n (a_i-\bar a)^2 = \sum_{i=1}^n {a_i}^2-2\sum_{i=1}^n \bar a a_i + \sum_{i=1}^n \bar a^2 \\
 &amp;= \sum_{i=1}^n {a_i}^2 -2\bar a (n \bar a)+n\bar{a}^2\\
 &amp;= \sum_{i=1}^n {a_i}^2 -n\bar{a}^2
 \end{aligned}
 \]</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-제-4장-2절" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="연습문제-제-4장-2절"><span class="header-section-number">4.2</span> 연습문제 : 제 4장 2절</h2>
-<p><strong>1.</strong> 좌표평면에서 극좌표가 <span class="math inline">\((r_1,\, \theta_1),\, (r_2,\,\theta_2)\)</span> 로 주어진 두 점 사이의 거리를 구하라.</p>
-<hr>
-<p><span class="math display">\[
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_2_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.8</strong></span> 좌표평면에서 극좌표가 <span class="math inline">\((r_1,\, \theta_1),\, (r_2,\,\theta_2)\)</span> 로 주어진 두 점 사이의 거리를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 [\text{distance}]^2 &amp;= (r_1 \cos\theta_1 - r_2 \cos\theta_2)^2 + (r_1 \sin \theta_1-r_2 \sin \theta_2)^2\\
 &amp;={r_1}^2+{r_2}^2 -2r_1r_2 (\cos \theta_1 \cos \theta_2+ \sin \theta_1 \sin \theta_2)\\
@@ -547,23 +593,23 @@ T(f)+T(g) = (a_0+b_0,\, a_1+b_1,\,a_2+b_2,\, a_3+b_3)\,,
 <p><span class="math display">\[
 L=\sqrt{{r_1}^2+{r_2}^2-2r_1r_2 \cos (\theta_1-\theta_2)}
 \]</span></p>
-<p><strong>2.</strong> 극좌표계로 주어진 다음 곡선의 방정식을 직교좌표계의 벙정식으로 바꾸고, 곡선의 개형을 그리라. 단 <span class="math inline">\(a&gt;0\)</span> 이다.</p>
-<hr>
-<ol type="1">
-<li><span class="math inline">\(r=a\sin \theta\)</span></li>
-</ol>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_2_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.9</strong></span> 극좌표계로 주어진 다음 곡선의 방정식을 직교좌표계의 벙정식으로 바꾸고, 곡선의 개형을 그리라. 단 <span class="math inline">\(a&gt;0\)</span> 이다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(r=a\sin \theta\)</span></p>
 <p><span class="math display">\[
 (x,\, y)=(a\sin \theta \cos \theta,\, a \sin^2 \theta)
 \]</span></p>
-<ol start="2" type="1">
-<li><span class="math inline">\(r=\cos \theta\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(r=\cos \theta\)</span></p>
 <p><span class="math display">\[
 (x,\,y)=(\cos^2 \theta,\, \sin\theta \cos \theta)
 \]</span></p>
-<ol start="3" type="1">
-<li><span class="math inline">\(r=\sin 3\left(\theta + \dfrac{\pi}{2}\right)\)</span></li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(r=\sin 3\left(\theta + \dfrac{\pi}{2}\right)\)</span></p>
 <p><span class="math display">\[
 (x,\,y)=\left(\sin 3\left(\theta + \dfrac{\pi}{2}\right) \cos \theta,\, \sin 3\left(\theta + \dfrac{\pi}{2}\right)\sin \theta\right)
 \]</span></p>
@@ -573,14 +619,19 @@ L=\sqrt{{r_1}^2+{r_2}^2-2r_1r_2 \cos (\theta_1-\theta_2)}
 <figcaption>problem_4_2_2</figcaption>
 </figure>
 </div>
-<p><br></p>
-<p><strong>3.</strong> 양수 <span class="math inline">\(a\)</span> 에 대하여 극좌표계에서 식</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_2_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.10</strong></span> 양수 <span class="math inline">\(a\)</span> 에 대하여 극좌표계에서 식</p>
 <p><span class="math display">\[
 r^2 = a^2 \cos 2\theta
 \]</span></p>
 <p>로 표현되는 곡선의 모양이 다음과 같음을 살펴보라.</p>
-<hr>
-<p><span class="math inline">\(r^2\ge 0\)</span> 이므로 <span class="math inline">\(\cos 2\theta \ge 0\)</span> 인 영역에서만 의미있다. 즉 <span class="math inline">\(0\le \theta \le \dfrac{\pi}{4}\)</span>, <span class="math inline">\(\dfrac{3\pi}{4} \le \theta \le \dfrac{5\pi}{4}\)</span>, <span class="math inline">\(\dfrac{7\pi}{4} \le \theta &lt; 2 \pi\)</span> 에서만 고려하면 된다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(r^2\ge 0\)</span> 이므로 <span class="math inline">\(\cos 2\theta \ge 0\)</span> 인 영역에서만 의미있다. 즉 <span class="math inline">\(0\le \theta \le \dfrac{\pi}{4}\)</span>, <span class="math inline">\(\dfrac{3\pi}{4} \le \theta \le \dfrac{5\pi}{4}\)</span>, <span class="math inline">\(\dfrac{7\pi}{4} \le \theta &lt; 2 \pi\)</span> 에서만 고려하면 된다.</p>
 <p><span class="math inline">\(r=|a| \sqrt{\cos 2\theta}\)</span> 이므로,</p>
 <p><span class="math display">\[
 (x,\,y)= |a| \sqrt{\cos 2\theta} (\cos \theta,\, \sin \theta)
@@ -592,29 +643,37 @@ r^2 = a^2 \cos 2\theta
 <figcaption>problem_4_2_3</figcaption>
 </figure>
 </div>
-<p><br></p>
-<p><strong>4.</strong> 극좌표로 다음과 같치 주어진 곡선의 개형을 그려라.</p>
-<ol type="1">
-<li><p><span class="math inline">\(r=|\cos 2\theta|\)</span></p></li>
-<li><p><span class="math inline">\(r=\cos 3\theta\)</span></p></li>
-<li><p><span class="math inline">\(r=|\cos 3\theta|\)</span></p></li>
-<li><p><span class="math inline">\(r=1+2\cos \theta\)</span></p></li>
-<li><p><span class="math inline">\(r=1+\sin \theta\)</span></p></li>
-<li><p><span class="math inline">\(r=1+\frac{1}{2}\sin \theta\)</span></p></li>
-<li><p><span class="math inline">\(r^2 = \sin \theta\)</span></p></li>
-<li><p><span class="math inline">\(r^2=\cos 2\theta\)</span></p></li>
-<li><p><span class="math inline">\(r=\dfrac{2}{2+\sin \theta}\)</span></p></li>
-<li><p>$ r= $</p></li>
-</ol>
-<hr>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_2_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.11</strong></span> 극좌표로 다음과 같치 주어진 곡선의 개형을 그려라.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(r=|\cos 2\theta|\)</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(r=\cos 3\theta\)</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(r=|\cos 3\theta|\)</span></p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(r=1+2\cos \theta\)</span></p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(r=1+\sin \theta\)</span></p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(r=1+\frac{1}{2}\sin \theta\)</span></p>
+<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(r^2 = \sin \theta\)</span></p>
+<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(r^2=\cos 2\theta\)</span></p>
+<p>(<span class="math inline">\(9\)</span>) <span class="math inline">\(r=\dfrac{2}{2+\sin \theta}\)</span></p>
+<p>(<span class="math inline">\(10\)</span>) $ r= $</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/problem_4_2_4.jpg" class="img-fluid figure-img"></p>
 <figcaption>problem_4_2_4</figcaption>
 </figure>
 </div>
-<p><br></p>
-<p><strong>5.</strong> (<strong>Hesse 표준형</strong>) 주어진 실수 <span class="math inline">\(\theta_0\)</span> 와 양수 <span class="math inline">\(r_0\)</span> 에 대하여 극좌표계에서 식</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_2_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.12</strong></span> #### Hesse 표준형</p>
+<p>주어진 실수 <span class="math inline">\(\theta_0\)</span> 와 양수 <span class="math inline">\(r_0\)</span> 에 대하여 극좌표계에서 식</p>
 <p><span class="math display">\[
 r\cos (\theta -\theta_0)=r_0
 \]</span></p>
@@ -623,76 +682,93 @@ r\cos (\theta -\theta_0)=r_0
 x \cos \theta_0 + y \sin \theta_0 = r_0
 \]</span></p>
 <p>로 표현되는 직선은 걑음을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 r_0=x \cos \theta_0 + y\sin \theta_0 = r\cos \theta \cos \theta_0 + r \sin \theta \sin \theta_0 = r \cos(\theta-\theta_0)
 \]</span></p>
-<p><br></p>
-<p><strong>6.</strong> 직교좌표계에서 중심이 <span class="math inline">\(R(\cos \theta_0,\, \sin \theta_0)\)</span> 이고 반지름의 길이가 <span class="math inline">\(r_0\)</span> 인 원의 방정식은 극좌표계로는</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_2_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.13</strong></span> 직교좌표계에서 중심이 <span class="math inline">\(R(\cos \theta_0,\, \sin \theta_0)\)</span> 이고 반지름의 길이가 <span class="math inline">\(r_0\)</span> 인 원의 방정식은 극좌표계로는</p>
 <p><span class="math display">\[
 r^2-2rR \cos (\theta-\theta_0)+R^2-r_0^2=0
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
-(x-R\cos \theta_0)+(y-R\sin \theta_0)^2-{r_0}^2 = 0 &amp;\implies (r\cos \theta-R\cos \theta_0)^2 + (r \sin \theta -R \sin \theta_0)^2-{r_0}^2=0 \\
-&amp;\implies r^2+R^2 -2rR (\cos \theta \cos \theta_0 + \sin \theta \sin \theta_0)-{r_0}^2=0\\
+(x-R\cos \theta_0)+&amp;(y-R\sin \theta_0)^2-{r_0}^2 = 0 \\[0.3em]
+&amp;\implies (r\cos \theta-R\cos \theta_0)^2 + (r \sin \theta -R \sin \theta_0)^2-{r_0}^2=0 \\[0.3em]
+&amp;\implies r^2+R^2 -2rR (\cos \theta \cos \theta_0 + \sin \theta \sin \theta_0)-{r_0}^2=0\\[0.3em]
 &amp;\implies r^2 -2rR \cos (\theta-\theta_0)+R^2-{r_0}^2=0\;.
 \end{aligned}
 \]</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-제-4-장-3-절" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="연습문제-제-4-장-3-절"><span class="header-section-number">4.3</span> 연습문제 제 4 장 3 절</h2>
-<p><strong>1.</strong> 다음 구면좌표계로 표현된 점들을 원기둥좌표계와 구면좌표계로 표시하여라.</p>
-<hr>
-<ol type="1">
-<li><span class="math inline">\((1,\, \sqrt{3},\, 0)\)</span></li>
-</ol>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_3_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.14</strong></span> 다음 구면좌표계로 표현된 점들을 원기둥좌표계와 구면좌표계로 표시하여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\((1,\, \sqrt{3},\, 0)\)</span></p>
 <p>Cylindrical coordinate : <span class="math inline">\(\left(2, \,\dfrac{\pi}{6}, \, 0\right)\)</span></p>
 <p>Spherical coordinate : <span class="math inline">\(\left(2, \, \dfrac{\pi}{6},\, 0\right)\)</span></p>
-<ol start="2" type="1">
-<li><span class="math inline">\((-1,\, -1,\, -1)\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\((-1,\, -1,\, -1)\)</span></p>
 <p>Cylindrical coordinate : <span class="math inline">\(\left(\sqrt{2}, \,\dfrac{5\pi}{4}, \, -1\right)\)</span></p>
 <p>Spherical coordinate : <span class="math inline">\(\left(\sqrt{3}, \,\dfrac{5\pi}{4}, \, \arctan\left(-\dfrac{1}{\sqrt{2}}\right)\right)\)</span></p>
-<p><br></p>
-<p><strong>2.</strong> 다음 직교좌표계로 표현된 식들을 원기둥좌표계와 구면좌표계로 표시하여라.</p>
-<hr>
-<ol type="1">
-<li><span class="math inline">\(x^2+y^2=z^2\)</span></li>
-</ol>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_3_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.15</strong></span> 다음 직교좌표계로 표현된 식들을 원기둥좌표계와 구면좌표계로 표시하여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x^2+y^2=z^2\)</span></p>
 <p>Cylindrical coordinate : <span class="math inline">\(r^2=z^2\)</span></p>
 <p>Spherical coordinate : <span class="math inline">\(\rho^2\sin^2 \theta = \rho^2\cos^2 \theta\)</span></p>
-<ol start="2" type="1">
-<li><span class="math inline">\(1 \le x^2+y^2+z^2 \le 4\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(1 \le x^2+y^2+z^2 \le 4\)</span></p>
 <p>Cylindrical coordinate : $ 1 r<sup>2+z</sup>2 $</p>
 <p>Spherical coordinate : <span class="math inline">\(1 \le \rho^2 \le 4\)</span></p>
-<p><br></p>
-<p><strong>3.</strong> 직교좌표계에서 원뿔 <span class="math inline">\(x^2+y^2 \le z^2\)</span> 와 공 <span class="math inline">\(x^2+y^2+z^2 \le z\)</span> 의 공통부분으로 이루어진 영역을</p>
-<ol type="1">
-<li><p>원기둥좌표계로 나타내어라.</p></li>
-<li><p>구면좌표계로 나타내어라.</p></li>
-</ol>
-<hr>
-<ol type="1">
-<li><p>원기둥좌표계에서, <span class="math inline">\(r^2\le z^2\)</span>, <span class="math inline">\(r^z+z^2\le z\)</span></p></li>
-<li><p>구면좌표계에서, <span class="math inline">\(\rho^2 \sin^2 \theta \le \rho^2 \cos^2 \theta\)</span>, <span class="math inline">\(\rho^2 \le \rho \cos \theta\)</span></p></li>
-</ol>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_3_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.16</strong></span> 직교좌표계에서 원뿔 <span class="math inline">\(x^2+y^2 \le z^2\)</span> 와 공 <span class="math inline">\(x^2+y^2+z^2 \le z\)</span> 의 공통부분으로 이루어진 영역을</p>
+<p>(<span class="math inline">\(1\)</span>) 원기둥좌표계로 나타내어라.</p>
+<p>(<span class="math inline">\(2\)</span>) 구면좌표계로 나타내어라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 원기둥좌표계에서, <span class="math inline">\(r^2\le z^2\)</span>, <span class="math inline">\(r^z+z^2\le z\)</span></p>
+<p>(<span class="math inline">\(2\)</span>) 구면좌표계에서, <span class="math inline">\(\rho^2 \sin^2 \theta \le \rho^2 \cos^2 \theta\)</span>, <span class="math inline">\(\rho^2 \le \rho \cos \theta\)</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="탐구문제" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="탐구문제"><span class="header-section-number">4.4</span> 탐구문제</h2>
-<p><strong>1.</strong> (<strong>순서쌍</strong>) 집합 <span class="math inline">\(U\)</span> 의 원 <span class="math inline">\(x,\,y\)</span> 에 대하여 순서쌍 <span class="math inline">\((x,\,y)\)</span> 는 집합 <span class="math inline">\(\{\{x\},\, \{x,\,y\}\}\)</span> 로 정의한다. 이 때 <span class="math inline">\((x,\,y)=(x',\,y')\)</span> 일 필요충분조건은 <span class="math inline">\(x=x',\, y=y'\)</span> 임을 보이라.</p>
-<hr>
-<ol type="1">
-<li><p><span class="math inline">\(x=x',\,y=y'\)</span> 일 때 <span class="math inline">\(\{\{x\},\, \{x,\,y\}\}=\{\{x'\},\, \{x',\,y'\}\}\)</span> 임은 자명하다.</p></li>
-<li><p>$ {{x},, {x,,y}}={{x’},, {x’,,y’}}$ 이라 하자. <span class="math inline">\(\{x\}=\{x',\, y'\}\)</span> 일 수 없으므로 <span class="math inline">\(\{x\}=\{x'\}\)</span> 이며 따라서 <span class="math inline">\(x=x'\)</span> 이다. <span class="math inline">\(\{x,\,y\}=\{x',\,y'\}\)</span> 이며 <span class="math inline">\(x=x'\)</span> 이므로 <span class="math inline">\(y=y'\)</span> 이어야 한다.</p></li>
-</ol>
-<p><br></p>
-<p><strong>2.</strong> (<strong>나비</strong>) 다음은 극좌표계의 방정식</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.17 (순서쌍)</strong></span> 집합 <span class="math inline">\(U\)</span> 의 원 <span class="math inline">\(x,\,y\)</span> 에 대하여 순서쌍 <span class="math inline">\((x,\,y)\)</span> 는 집합 <span class="math inline">\(\{\{x\},\, \{x,\,y\}\}\)</span> 로 정의한다. 이 때 <span class="math inline">\((x,\,y)=(x',\,y')\)</span> 일 필요충분조건은 <span class="math inline">\(x=x',\, y=y'\)</span> 임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x=x',\,y=y'\)</span> 일 때 <span class="math inline">\(\{\{x\},\, \{x,\,y\}\}=\{\{x'\},\, \{x',\,y'\}\}\)</span> 임은 자명하다.</p>
+<p>(<span class="math inline">\(2\)</span>) $ {{x},, {x,,y}}={{x’},, {x’,,y’}}$ 이라 하자. <span class="math inline">\(\{x\}=\{x',\, y'\}\)</span> 일 수 없으므로 <span class="math inline">\(\{x\}=\{x'\}\)</span> 이며 따라서 <span class="math inline">\(x=x'\)</span> 이다. <span class="math inline">\(\{x,\,y\}=\{x',\,y'\}\)</span> 이며 <span class="math inline">\(x=x'\)</span> 이므로 <span class="math inline">\(y=y'\)</span> 이어야 한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.18 (나비)</strong></span> 다음은 극좌표계의 방정식</p>
 <p><span class="math display">\[
 r=\left(e^{\sin \theta}-2 \cos 4\theta\right) \sin^4(a\theta), \quad a=40
 \]</span></p>
@@ -704,16 +780,21 @@ r=\left(e^{\sin \theta}-2 \cos 4\theta\right) \sin^4(a\theta), \quad a=40
 </figure>
 </div>
 <p>이 때 <span class="math inline">\(a\)</span> 의 값을 다른 것으로 바꾸면 곡선의 모양이 어떻게 바뀌는 지에 대하여 설명하라.</p>
-<hr>
-<p><span class="math inline">\(\sin^4 (a\theta)\)</span> 는 주기가 <span class="math inline">\(2\pi/a\)</span> 이므로 <span class="math inline">\(a\)</span> 가 커질수록 원점에서 뻗어나오는 가지의 갯수가 많아진다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\sin^4 (a\theta)\)</span> 는 주기가 <span class="math inline">\(2\pi/a\)</span> 이므로 <span class="math inline">\(a\)</span> 가 커질수록 원점에서 뻗어나오는 가지의 갯수가 많아진다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/problem_4_x_2.jpg" class="img-fluid figure-img"></p>
 <figcaption>problem_4_x_2</figcaption>
 </figure>
 </div>
-<p><br></p>
-<p><strong>3.</strong> 구간 <span class="math inline">\([0,\,1]\)</span> 에서 연속인 함수 전체의 집합을 <span class="math inline">\(\mathcal{C}^0 [0,\,1]\)</span> 이라고 두자. 이때 두 함수 <span class="math inline">\(f,\,g\in \mathcal{C}^0[0,\,1]\)</span> 에 대하여</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_4_S03" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.19</strong></span> 구간 <span class="math inline">\([0,\,1]\)</span> 에서 연속인 함수 전체의 집합을 <span class="math inline">\(\mathcal{C}^0 [0,\,1]\)</span> 이라고 두자. 이때 두 함수 <span class="math inline">\(f,\,g\in \mathcal{C}^0[0,\,1]\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{dist}_1(f,\,g)&amp;:=\int_0^1 |f(x)-g(x)|\,dx,\,\\
@@ -721,8 +802,10 @@ r=\left(e^{\sin \theta}-2 \cos 4\theta\right) \sin^4(a\theta), \quad a=40
 \end{aligned}
 \]</span></p>
 <p>으로 정의하면 이들은 모두 거리함수임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(1)\)</span> <span class="math inline">\(\displaystyle \operatorname{dist}_1(f,\,g):=\int_0^1 |f(x)-g(x)|\,dx\)</span> 이 거리함수의 4가지 성질을 만족함을 보인다. (1) <span class="math inline">\(d(x,\,y)\le 0\)</span> 과 (2) <span class="math inline">\(d(x,\,y)=0 \iff x=y\)</span> ,(3) <span class="math inline">\(d(x,\,y)=d(y,\,x)\)</span> 를 만족함은 자명하다. <span class="math inline">\(f,\,g,\,h\in \mathcal{C}^0[0,\,1]\)</span> 일 때,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(1)\)</span> <span class="math inline">\(\displaystyle \operatorname{dist}_1(f,\,g):=\int_0^1 |f(x)-g(x)|\,dx\)</span> 이 거리함수의 4가지 성질을 만족함을 보인다. (1) <span class="math inline">\(d(x,\,y)\le 0\)</span> 과 (2) <span class="math inline">\(d(x,\,y)=0 \iff x=y\)</span> ,(3) <span class="math inline">\(d(x,\,y)=d(y,\,x)\)</span> 를 만족함은 자명하다. <span class="math inline">\(f,\,g,\,h\in \mathcal{C}^0[0,\,1]\)</span> 일 때,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \operatorname{dist}_1(f,\,g) + \operatorname{dist}_1(g,\,h) &amp;=\int_0^1 |f(x)-g(x)|\, dx+\int_0^1 |g(x)-h(x)|\, dx\\
@@ -740,18 +823,21 @@ r=\left(e^{\sin \theta}-2 \cos 4\theta\right) \sin^4(a\theta), \quad a=40
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(\|f\|\|g\| \ge \displaystyle \left|\int_0^1f(x)g(x)\,dx \right|\)</span> 을 얻는다. 또한 $|_0^1f(x)g(x),dx | _0^1f(x)g(x),dx $ 이므로,</p>
-<p><span class="math display">\[
-\|f\|\|g\|=\left(\int_0^1 |f(x)|^2\,dx\right)^2  \left(\int_0^1 |g(x)|^2\,dx\right)^2 \ge \int_0^1 f(x)g(x)\, dx \tag{1}
-\]</span></p>
+<p><span id="eq-exr_CAL_4_S03_1"><span class="math display">\[
+\|f\|\|g\|=\left(\int_0^1 |f(x)|^2\,dx\right)^2  \left(\int_0^1 |g(x)|^2\,dx\right)^2 \ge \int_0^1 f(x)g(x)\, dx
+\tag{4.1}\]</span></span></p>
 <p>을 얻었다.</p>
-<p>이제 <span class="math inline">\(\|f\|+\|g\| \ge \|f+g\|\)</span> 가 성립함을 보이자. 식 (1) 을 이용하여</p>
+<p>이제 <span class="math inline">\(\|f\|+\|g\| \ge \|f+g\|\)</span> 가 성립함을 보이자. <a href="#eq-exr_CAL_4_S03_1" class="quarto-xref">식&nbsp;<span>4.1</span></a> 을 이용하여</p>
 <p><span class="math display">\[
-(\|f\|+\|g\|)^2=\|f\|^2+2\|f\|\|g\|+\|g\|^2 \ge \|f\|^2+\|g\|^2 +2\int_0^1 f(x)g(x)\,dx = \int_0^1 (f(x)^2+g(x)^2+2f(x)g(x))dx =\|f+g\|^2
+\begin{aligned}
+(\|f\|+\|g\|)^2 &amp;= \|f\|^2+2\|f\|\|g\|+\|g\|^2 \ge \|f\|^2+\|g\|^2 +2\int_0^1 f(x)g(x)\,dx \\[0.3em]
+&amp;= \int_0^1 (f(x)^2+g(x)^2+2f(x)g(x))dx =\|f+g\|^2
+\end{aligned}
 \]</span></p>
 <p>을 얻었다. 즉,</p>
-<p><span class="math display">\[
-\|f\|+\|g\| \ge \|f+g\| \tag{2}
-\]</span></p>
+<p><span id="eq-exr_CAL_4_S03_2"><span class="math display">\[
+\|f\|+\|g\| \ge \|f+g\|
+\tag{4.2}\]</span></span></p>
 <p>이다. <span class="math inline">\(f\to f-g,\, g \to g-h\)</span> 를 대입하면,</p>
 <p><span class="math display">\[
 \|f-g\|+\|g-h\| \ge \|f-h\|
@@ -761,6 +847,7 @@ r=\left(e^{\sin \theta}-2 \cos 4\theta\right) \sin^4(a\theta), \quad a=40
 \operatorname{dist}_2(f,\,g)+\operatorname{dist}_2(g,\,h)\ge \operatorname{dist}(f,\,h)
 \]</span></p>
 <p>을 얻었다.</p>
+</div>
 
 
 </section>
@@ -817,13 +904,14 @@ r=\left(e^{\sin \theta}-2 \cos 4\theta\right) \sin^4(a\theta), \quad a=40
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

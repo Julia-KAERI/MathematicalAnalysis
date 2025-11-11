@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/calculus/07_square_matrix.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +85,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -125,7 +126,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Mathematical Analysis</a> 
         <div class="sidebar-tools-main">
@@ -438,28 +441,60 @@ window.Quarto = {
 <section id="연습문제-제-8-장-1-절" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="연습문제-제-8-장-1-절"><span class="header-section-number">8.1</span> 연습문제 : 제 8 장 1 절</h2>
 <p><strong>1.</strong> ~ <strong>7.</strong> 까지는 단순계산이므로 생략</p>
-<p><br></p>
-<p><strong>8.</strong> 삼차원 공간의 두 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차독립일 필요충분조건은 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b} \ne \boldsymbol{0}\)</span> 임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차종속일 필요충분조건이 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}=0\)</span> 임을 보이는것과 동치이다. 우선 <span class="math inline">\(\boldsymbol{a}\)</span> 혹은 <span class="math inline">\(\boldsymbol{b}\)</span> 가 일차종속임을 가정하자. 둘 중 하나가 <span class="math inline">\(\boldsymbol{0}\)</span> 이면 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 이다. 이제 둘 다 <span class="math inline">\(\boldsymbol{0}\)</span> 이 아닌 벡터에 대해 생각하자. <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차종속이면 어떤 scalar <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}=c\boldsymbol{b}\)</span> 이며, 따라서 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 이다.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.1</strong></span> 삼차원 공간의 두 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차독립일 필요충분조건은 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b} \ne \boldsymbol{0}\)</span> 임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차종속일 필요충분조건이 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}=0\)</span> 임을 보이는것과 동치이다. 우선 <span class="math inline">\(\boldsymbol{a}\)</span> 혹은 <span class="math inline">\(\boldsymbol{b}\)</span> 가 일차종속임을 가정하자. 둘 중 하나가 <span class="math inline">\(\boldsymbol{0}\)</span> 이면 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 이다. 이제 둘 다 <span class="math inline">\(\boldsymbol{0}\)</span> 이 아닌 벡터에 대해 생각하자. <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 일차종속이면 어떤 scalar <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}=c\boldsymbol{b}\)</span> 이며, 따라서 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 이다.</p>
 <p>이제 <span class="math inline">\(\boldsymbol{a} \times \boldsymbol{b}=0\)</span> 임을 가정하자. 둘 중 하나가 <span class="math inline">\(\boldsymbol{0}\)</span> 이면 일차종속이므로 둘 다 <span class="math inline">\(\boldsymbol{0}\)</span> 이 아닌 상태만 생각하면 된다. <span class="math inline">\(|\boldsymbol{a}\times \boldsymbol{b}|=|\boldsymbol{a}||\boldsymbol{b}||\sin \theta|\)</span> 이므로 <span class="math inline">\(\theta = 0\)</span> 이다. 두 벡터가 평행하므로 일차종속이다.</p>
-<p><br></p>
-<p><strong>9.</strong> 삼차원 공간의 임의의 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c},\,\boldsymbol{d}\)</span> 에 대하여 다음 식이 성립함음 보이라.</p>
-<hr>
-<p>Levi-Civita 개념을 사용한다. google 검색..</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.2</strong></span> 삼차원 공간의 임의의 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c},\,\boldsymbol{d}\)</span> 에 대하여 다음 식이 성립함음 보이라.</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(\boldsymbol{a} \times(\boldsymbol{b}\times \boldsymbol{c})=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{c}\)</span>,</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\((\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{c}=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{b}\cdot \boldsymbol{c})\boldsymbol{a}\)</span>,</p>
+<p> (<span class="math inline">\(c\)</span>) <span class="math inline">\((\boldsymbol{a}\cdot \boldsymbol{c})(\boldsymbol{b}\cdot \boldsymbol{d})-(\boldsymbol{a}\cdot \boldsymbol{d})(\boldsymbol{b}\cdot \boldsymbol{c})\)</span>,</p>
+<p> (<span class="math inline">\(d\)</span>) <span class="math inline">\(\boldsymbol{a}\times(\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b})=\boldsymbol{0}\)</span>.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>Levi-Civita 개념을 사용한다. google 검색..</p>
+<p>(<span class="math inline">\(a\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
-(a)\qquad \qquad &amp;(\boldsymbol{a}\times (\boldsymbol{b}\times \boldsymbol{c}))_i =\epsilon_{ijk}a_j(\epsilon_{klm}b_lc_m)=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})a_jb_lc_m = a_jb_ic_j-a_jb_jc_i=(\boldsymbol{a}\cdot \boldsymbol{c})b_i-(\boldsymbol{a}\cdot \boldsymbol{b})c_i\\
-\implies &amp;\boldsymbol{a} \times(\boldsymbol{b}\times \boldsymbol{c})=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{c}\\
-(b) \qquad \qquad &amp; ((\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{c})_i = \epsilon_{ijk}\epsilon_{jlm} a_lb_m c_k = (\delta_{kl}\delta_{im}-\delta_{km}\delta_{il})a_lb_mc_k = a_kb_ic_k-a_ib_kc_k = (\boldsymbol{a}\cdot \boldsymbol{c})b_i - (\boldsymbol{b}\cdot \boldsymbol{c})a_i \\
-\implies &amp; (\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{c}=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{b}\cdot \boldsymbol{c})\boldsymbol{a}\\
-(c)\qquad \qquad &amp; (\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{c \times \boldsymbol{d}}) = \epsilon_{ijk} a_jb_k  \epsilon_{ilm}c_ld_m = (\delta_{jl}\delta_{km}-\delta_{jm}\delta_{kl})a_jb_k c_ld_m = a_jb_k c_j d_k-a_jb_kc_kd_j \\
-&amp;=(\boldsymbol{a}\cdot \boldsymbol{c})(\boldsymbol{b}\cdot \boldsymbol{d})-(\boldsymbol{a}\cdot \boldsymbol{d})(\boldsymbol{b}\cdot \boldsymbol{c})\\
-(d) \qquad \qquad &amp; \boldsymbol{a}\times(\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b})=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{c}+(\boldsymbol{b}\cdot \boldsymbol{a})\boldsymbol{c}-(\boldsymbol{b}\cdot \boldsymbol{c})\boldsymbol{a} + (\boldsymbol{c}\cdot \boldsymbol{b})\boldsymbol{a}-(\boldsymbol{c}\cdot \boldsymbol{a})\boldsymbol{b}=0
+(\boldsymbol{a}\times (\boldsymbol{b}\times \boldsymbol{c}))_i &amp;=\epsilon_{ijk}a_j(\epsilon_{klm}b_lc_m)=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})a_jb_lc_m \\[0.3em]
+&amp;= a_jb_ic_j-a_jb_jc_i=(\boldsymbol{a}\cdot \boldsymbol{c})b_i-(\boldsymbol{a}\cdot \boldsymbol{b})c_i
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>10.</strong> 삼차원공간에서 양으로 향한 정규직교기저 <span class="math inline">\(\boldsymbol{v}_1,\,\boldsymbol{v}_2,\,\boldsymbol{v}_3\)</span> 에 대하여,</p>
+<p>(<span class="math inline">\(b\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+((\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{c})_i &amp;= \epsilon_{ijk}\epsilon_{jlm} a_lb_m c_k = (\delta_{kl}\delta_{im}-\delta_{km}\delta_{il})a_lb_mc_k \\[0.3em]
+&amp;= a_kb_ic_k-a_ib_kc_k = (\boldsymbol{a}\cdot \boldsymbol{c})b_i - (\boldsymbol{b}\cdot \boldsymbol{c})a_i
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(c\)</span>)</p>
+<p><span class="math display">\[
+\begin{aligned}
+(\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{c \times \boldsymbol{d}}) &amp;= \epsilon_{ijk} a_jb_k  \epsilon_{ilm}c_ld_m = (\delta_{jl}\delta_{km}-\delta_{jm}\delta_{kl})a_jb_k c_ld_m \\[0.3em]
+&amp;= a_jb_k c_j d_k-a_jb_kc_kd_j =(\boldsymbol{a}\cdot \boldsymbol{c})(\boldsymbol{b}\cdot \boldsymbol{d})-(\boldsymbol{a}\cdot \boldsymbol{d})(\boldsymbol{b}\cdot \boldsymbol{c})
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(d\)</span>) <span class="math display">\[
+\begin{aligned}
+\boldsymbol{a}\times &amp; (\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b}) \\[0.3em]
+&amp;=(\boldsymbol{a}\cdot \boldsymbol{c})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{c}+(\boldsymbol{b}\cdot \boldsymbol{a})\boldsymbol{c}-(\boldsymbol{b}\cdot \boldsymbol{c})\boldsymbol{a} + (\boldsymbol{c}\cdot \boldsymbol{b})\boldsymbol{a}-(\boldsymbol{c}\cdot \boldsymbol{a})\boldsymbol{b}=0
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.3</strong></span> 삼차원공간에서 양으로 향한 정규직교기저 <span class="math inline">\(\boldsymbol{v}_1,\,\boldsymbol{v}_2,\,\boldsymbol{v}_3\)</span> 에 대하여,</p>
 <p><span class="math display">\[
 \boldsymbol{a}=\sum_{i=1}^3 a_i\boldsymbol{v}_i,\qquad \boldsymbol{b}=\sum_{j=1}^n b_j \boldsymbol{v}_j
 \]</span></p>
@@ -468,18 +503,25 @@ window.Quarto = {
 \boldsymbol{a}\times \boldsymbol{b} =\sum_{i,j,k=1}^3 \epsilon_{ijk} a_ib_j \boldsymbol{v}_k
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \boldsymbol{a}\times \boldsymbol{b}=\sum_{i}\sum_j a_ib_j (\boldsymbol{v}_i \times \boldsymbol{v}_j)=\sum_{i,j,k}a_ib_j\epsilon_{ijk} \boldsymbol{v}_k
 \]</span></p>
-<p><br></p>
-<p><strong>11.</strong> 공간속의 한 사면체 <span class="math inline">\(ABCD\)</span> 의 의 면 <span class="math inline">\(BCD\)</span> 에 대하여, 크기가 이 면의 넓이와 같고, 이 면에 수직이고, 방향은 사면체의 밖을 향하는 벡터 <span class="math inline">\(\boldsymbol{v}_A\)</span> 를 생각하자. 마찬가지로 각 면 <span class="math inline">\(CDA,\,DAB,\,ABC\)</span> 에 대하여 벡터 <span class="math inline">\(\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 가 정의도었을 때,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.4</strong></span> 공간속의 한 사면체 <span class="math inline">\(ABCD\)</span> 의 의 면 <span class="math inline">\(BCD\)</span> 에 대하여, 크기가 이 면의 넓이와 같고, 이 면에 수직이고, 방향은 사면체의 밖을 향하는 벡터 <span class="math inline">\(\boldsymbol{v}_A\)</span> 를 생각하자. 마찬가지로 각 면 <span class="math inline">\(CDA,\,DAB,\,ABC\)</span> 에 대하여 벡터 <span class="math inline">\(\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 가 정의도었을 때,</p>
 <p><span class="math display">\[
 \boldsymbol{v}_A+\boldsymbol{v}_B+\boldsymbol{v}_C+\boldsymbol{v}_D=0
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>사면체에서 <span class="math inline">\(ABC\)</span> 가 시계방향인지 반시계 방향인지, <span class="math inline">\(\overrightarrow{AD}\cdot (\overrightarrow{BA}\times \overrightarrow{CA})\)</span> 가 양수인지 음수인지 에 대해 각각의 <span class="math inline">\(\boldsymbol{v}_{X}\;(X=A,\,B,\,C,\,D)\)</span> 벡터를 표현하는 식이 달라진다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>사면체에서 <span class="math inline">\(ABC\)</span> 가 시계방향인지 반시계 방향인지, <span class="math inline">\(\overrightarrow{AD}\cdot (\overrightarrow{BA}\times \overrightarrow{CA})\)</span> 가 양수인지 음수인지 에 대해 각각의 <span class="math inline">\(\boldsymbol{v}_{X}\;(X=A,\,B,\,C,\,D)\)</span> 벡터를 표현하는 식이 달라진다.</p>
 <p>사면체의 꼭지점의 좌표가 주어지고 <span class="math inline">\(\boldsymbol{v}_A,\,\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 를 계산했다고 하자. 우리는 그 꼭지점의 이름을 어떤 순서와 방향으로 붙이건 간에 <span class="math inline">\(\boldsymbol{v}_A,\,\boldsymbol{v}_B,\,\boldsymbol{v}_C,\,\boldsymbol{v}_D\)</span> 로 계산된 양이 각 면에 나타날 것이므로, 그 합은 꼭지점을 이름붙이는 순서와 상관 없음을 알 수 있다. 즉 편의대로 붙이면 된다.</p>
 <p><span class="math inline">\(A,\,B,\,C\)</span> 가 반시계 방향이고, <span class="math inline">\(\overrightarrow{AD}\cdot(\overrightarrow{BA}\times \overrightarrow{CA})&gt;0\)</span> 이라고 하자. 그렇다면,</p>
 <p><span class="math display">\[
@@ -492,14 +534,19 @@ window.Quarto = {
 \]</span></p>
 <p><span class="math display">\[
 \begin{aligned}
-2(\boldsymbol{v}_A+\boldsymbol{v}_B+\boldsymbol{v}_C+\boldsymbol{v}_D) &amp;= (\boldsymbol{b}-\boldsymbol{d})\times (\boldsymbol{c}-\boldsymbol{d})+(\boldsymbol{d}-\boldsymbol{a})\times (\boldsymbol{c}-\boldsymbol{a})+(\boldsymbol{d}-\boldsymbol{b})
-\times (\boldsymbol{a}-\boldsymbol{b})+(\boldsymbol{b}-\boldsymbol{c})\times (\boldsymbol{a}-\boldsymbol{c})\\
-&amp;=\boldsymbol{b}\times \boldsymbol{c}-\boldsymbol{b}\times \boldsymbol{d}+\boldsymbol{c}\times \boldsymbol{d}-\boldsymbol{c} \times \boldsymbol{d} +\boldsymbol{a}\times \boldsymbol{d}-\boldsymbol{a}\times \boldsymbol{c} -\boldsymbol{a}\times \boldsymbol{d}+\boldsymbol{b}\times \boldsymbol{d}+\boldsymbol{a}\times \boldsymbol{b} -\boldsymbol{a}\times \boldsymbol{b}-\boldsymbol{b}\times \boldsymbol{c}+\boldsymbol{a}\times \boldsymbol{c}\\
+2(\boldsymbol{v}_A &amp;+ \boldsymbol{v}_B + \boldsymbol{v}_C + \boldsymbol{v}_D) \\[0.3em]
+&amp;= (\boldsymbol{b}-\boldsymbol{d})\times (\boldsymbol{c}-\boldsymbol{d}) + (\boldsymbol{d}-\boldsymbol{a})\times (\boldsymbol{c}-\boldsymbol{a}) \\[0.3em]
+&amp;\qquad \qquad + (\boldsymbol{d}-\boldsymbol{b}) \times (\boldsymbol{a}-\boldsymbol{b}) + (\boldsymbol{b}-\boldsymbol{c})\times (\boldsymbol{a}-\boldsymbol{c})\\
+&amp;=\boldsymbol{b}\times \boldsymbol{c}-\boldsymbol{b}\times \boldsymbol{d}+\boldsymbol{c}\times \boldsymbol{d}-\boldsymbol{c} \times \boldsymbol{d} +\boldsymbol{a}\times \boldsymbol{d}-\boldsymbol{a}\times \boldsymbol{c} \\[0.3em]
+&amp;\qquad \qquad -\boldsymbol{a}\times \boldsymbol{d}+\boldsymbol{b}\times \boldsymbol{d}+\boldsymbol{a}\times \boldsymbol{b} -\boldsymbol{a}\times \boldsymbol{b}-\boldsymbol{b}\times \boldsymbol{c}+\boldsymbol{a}\times \boldsymbol{c}\\
 &amp;=0
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>12.</strong> 일차독립인 벡터 <span class="math inline">\(\boldsymbol{v}_1,\,\boldsymbol{v}_2\)</span> 에 대하여 공간속의 두 직선</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.5</strong></span> 일차독립인 벡터 <span class="math inline">\(\boldsymbol{v}_1,\,\boldsymbol{v}_2\)</span> 에 대하여 공간속의 두 직선</p>
 <p><span class="math display">\[
 A_i + t\boldsymbol{v}_i \qquad i=1,\,2
 \]</span></p>
@@ -508,8 +555,10 @@ A_i + t\boldsymbol{v}_i \qquad i=1,\,2
 \left| (A_1-A_2) \cdot \dfrac{\boldsymbol{v}_1\times \boldsymbol{v}_2}{|\boldsymbol{v}_1 \times \boldsymbol{v}_2|} \right|
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>직선 밖의 점 에서 직선까지의 최단거리는 그 점으로부터 직선까지 거린 수선에 의해 정해진다. 두 직선 사이 <span class="math inline">\(l_1,\,l_2\)</span> 의 최단거리를 생각하자. <span class="math inline">\(l_1\)</span> 의 임의의 점 <span class="math inline">\(P_1\)</span> 에서 <span class="math inline">\(l_2\)</span> 까치의 최단거리는 <span class="math inline">\(P_1\)</span> 에서 <span class="math inline">\(l_2\)</span> 에 내린 수선에 의해 정해지며 그 역도 마찬가지이다. 따라서 그 수선의 방향벡터는 <span class="math inline">\(l_1,\,l_2\)</span> 두 직선 각각에 수직이므로 <span class="math inline">\(l_1, l_2\)</span> 의 방향벡터에 수직이다. 문제에서 주어진 두 직선에서 최단거리를 포함하는 직선의 방향벡터는 단위벡터로 표현할 때</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>직선 밖의 점 에서 직선까지의 최단거리는 그 점으로부터 직선까지 거린 수선에 의해 정해진다. 두 직선 사이 <span class="math inline">\(l_1,\,l_2\)</span> 의 최단거리를 생각하자. <span class="math inline">\(l_1\)</span> 의 임의의 점 <span class="math inline">\(P_1\)</span> 에서 <span class="math inline">\(l_2\)</span> 까치의 최단거리는 <span class="math inline">\(P_1\)</span> 에서 <span class="math inline">\(l_2\)</span> 에 내린 수선에 의해 정해지며 그 역도 마찬가지이다. 따라서 그 수선의 방향벡터는 <span class="math inline">\(l_1,\,l_2\)</span> 두 직선 각각에 수직이므로 <span class="math inline">\(l_1, l_2\)</span> 의 방향벡터에 수직이다. 문제에서 주어진 두 직선에서 최단거리를 포함하는 직선의 방향벡터는 단위벡터로 표현할 때</p>
 <p><span class="math display">\[
 \dfrac{\boldsymbol{v}_1\times \boldsymbol{v}_2}{|\boldsymbol{v}_1 \times \boldsymbol{v}_2|}
 \]</span></p>
@@ -522,23 +571,37 @@ A_2+t_2\boldsymbol{v}_1-A_1 -t_1\boldsymbol{v}_1
 \left|(A_2-A_1)\cdot \dfrac{\boldsymbol{v}_1\times \boldsymbol{v}_2}{|\boldsymbol{v}_1\times \boldsymbol{v}_2|}\right|
 \]</span></p>
 <p>로 어떤 두 점에 대해서도 동일하다. 따라서 이 값이 두 직선 사이의 거리이다.</p>
-<p><br></p>
-<p><strong>13.</strong> (<strong>정사영</strong>) 공간 속의 두 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 이루는 평행사변형을 한 평면에 정사영한 것의 넓이는 <span class="math inline">\(\cos \theta\)</span> 배임을 보이라. 여기서 <span class="math inline">\(\theta\)</span> 는 평행사변형과 주어진 평면이 이루는 각의 크기이다.</p>
-<hr>
-<p><span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 에 의해 정의되는 평면의 방향벡터는 (이 평면에 수직인) <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}\)</span> 이다. 주어진 평면의 방향벡터의 단위벡터를 <span class="math inline">\(\boldsymbol{n}\)</span> 이라 하자. <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{n}\)</span> 은 <span class="math inline">\(\boldsymbol{n}\)</span> 에 수직이며 그 크기가 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면에 대한 정사영의 크기와 같고 그 방향은 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면으로의 정사영에 대하여 <span class="math inline">\(\pi/2\)</span> 만큼 회전한 벡터이다. 그 회전방향은 <span class="math inline">\(\boldsymbol{n}\)</span> 과 <span class="math inline">\(\boldsymbol{a}\)</span> 의 방향에 따라 시계방향 혹은 반시계방향일 수 있다. <span class="math inline">\(\boldsymbol{b}\times \boldsymbol{n}\)</span> 도 마찬가지.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_13" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.6 (정사영)</strong></span> 공간 속의 두 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 가 이루는 평행사변형을 한 평면에 정사영한 것의 넓이는 <span class="math inline">\(\cos \theta\)</span> 배임을 보이라. 여기서 <span class="math inline">\(\theta\)</span> 는 평행사변형과 주어진 평면이 이루는 각의 크기이다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}\)</span> 에 의해 정의되는 평면의 방향벡터는 (이 평면에 수직인) <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}\)</span> 이다. 주어진 평면의 방향벡터의 단위벡터를 <span class="math inline">\(\boldsymbol{n}\)</span> 이라 하자. <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{n}\)</span> 은 <span class="math inline">\(\boldsymbol{n}\)</span> 에 수직이며 그 크기가 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면에 대한 정사영의 크기와 같고 그 방향은 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면으로의 정사영에 대하여 <span class="math inline">\(\pi/2\)</span> 만큼 회전한 벡터이다. 그 회전방향은 <span class="math inline">\(\boldsymbol{n}\)</span> 과 <span class="math inline">\(\boldsymbol{a}\)</span> 의 방향에 따라 시계방향 혹은 반시계방향일 수 있다. <span class="math inline">\(\boldsymbol{b}\times \boldsymbol{n}\)</span> 도 마찬가지.</p>
 <p><span class="math inline">\(\boldsymbol{a}\cdot \boldsymbol{n}&gt;0\)</span> 일 때 <span class="math inline">\(\boldsymbol{a}\)</span> 의 평면에 대한 정사영에 대해 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{n}\)</span> 의 회전방향을 <span class="math inline">\(+\)</span> 로 잡자. <span class="math inline">\(\boldsymbol{b}\cdot \boldsymbol{n}\)</span> 이 양수이든 음수이든 평행사변형의 면적은 변화가 없다. 즉 정사영의 평행사변의 면적 <span class="math inline">\(S\)</span> 는</p>
 <p><span class="math display">\[
-S=|(\boldsymbol{a}\times\boldsymbol{n}) \times (\boldsymbol{b} \times \boldsymbol{n})|=|((\boldsymbol{a} \times \boldsymbol{n})\cdot \boldsymbol{n})\boldsymbol{b} -((\boldsymbol{a\times \boldsymbol{b}}) \cdot \boldsymbol{n})\boldsymbol{n}| = |(\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{n}|=|\boldsymbol{a}\times \boldsymbol{b}|\cos \theta
+\begin{aligned}
+S &amp;= |(\boldsymbol{a}\times\boldsymbol{n}) \times (\boldsymbol{b} \times \boldsymbol{n})| \\[0.3em]
+&amp;=|((\boldsymbol{a} \times \boldsymbol{n})\cdot \boldsymbol{n})\boldsymbol{b} -((\boldsymbol{a\times \boldsymbol{b}}) \cdot \boldsymbol{n})\boldsymbol{n}|  \\[0.3em]
+&amp;= |(\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{n}|=|\boldsymbol{a}\times \boldsymbol{b}|\cos \theta
+\end{aligned}
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>14.</strong> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a}\ne \boldsymbol{0}\)</span> 에 대한 벡터 <span class="math inline">\(\boldsymbol{b}\)</span> 의 정사영을 <span class="math inline">\(p_{\boldsymbol{a}}(\boldsymbol{b})\)</span> 라 하자. 이 때,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_14" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.7</strong></span> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a}\ne \boldsymbol{0}\)</span> 에 대한 벡터 <span class="math inline">\(\boldsymbol{b}\)</span> 의 정사영을 <span class="math inline">\(p_{\boldsymbol{a}}(\boldsymbol{b})\)</span> 라 하자. 이 때,</p>
 <p><span class="math display">\[
 \boldsymbol{b}-p_{\boldsymbol{a}}(\boldsymbol{b})=\dfrac{(\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{a}}{\boldsymbol{a}\cdot \boldsymbol{a}}
 \]</span></p>
 <p>임을 보여라.</p>
-<hr>
-<p>정리 3.1.1 로부터 <span class="math inline">\(p_{\boldsymbol{a}}(\boldsymbol{b})= \dfrac{\boldsymbol{a}\cdot \boldsymbol{b}}{\boldsymbol{a}\cdot \boldsymbol{a}}\boldsymbol{a}\)</span> 임을 안다. 여기서,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>정리 3.1.1 로부터 <span class="math inline">\(p_{\boldsymbol{a}}(\boldsymbol{b})= \dfrac{\boldsymbol{a}\cdot \boldsymbol{b}}{\boldsymbol{a}\cdot \boldsymbol{a}}\boldsymbol{a}\)</span> 임을 안다. 여기서,</p>
 <p><span class="math display">\[
 (\boldsymbol{a}\times\boldsymbol{b})\times \boldsymbol{a}= (\boldsymbol{a}\cdot \boldsymbol{a})\boldsymbol{b}-(\boldsymbol{a}\cdot \boldsymbol{b})\boldsymbol{a}
 \]</span></p>
@@ -547,16 +610,21 @@ S=|(\boldsymbol{a}\times\boldsymbol{n}) \times (\boldsymbol{b} \times \boldsymbo
 p_{\boldsymbol{a}}(\boldsymbol{b})=\dfrac{(\boldsymbol{a}\cdot \boldsymbol{a})\boldsymbol{b}-(\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{a}}{\boldsymbol{a} \cdot \boldsymbol{a}}=\boldsymbol{b}-\dfrac{(\boldsymbol{a}\times \boldsymbol{b})\times \boldsymbol{a}}{\boldsymbol{a} \cdot \boldsymbol{a}}
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>15.</strong> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\, \boldsymbol{c}\)</span> 가 일차독립이면, 임의의 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_15" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.8</strong></span> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\, \boldsymbol{c}\)</span> 가 일차독립이면, 임의의 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여,</p>
 <p><span class="math display">\[
 \boldsymbol{v} = \dfrac{\det (\boldsymbol{v},\,\boldsymbol{b},\,\boldsymbol{c})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{a} + \dfrac{\det (\boldsymbol{a},\,\boldsymbol{v},\,\boldsymbol{c})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{b} +\dfrac{\det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{c}
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}\)</span> 가 일차독립이므로, <span class="math inline">\(\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})=(\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{c} \ne 0\)</span> 이며, <span class="math inline">\(\boldsymbol{v}=a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}\)</span> 일 때 scalar <span class="math inline">\(a,\,b,\,c\)</span> 가 유일하게 결정된다. <span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}\)</span> 가 일차독립이므로, <span class="math inline">\(\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})=(\boldsymbol{a}\times \boldsymbol{b})\cdot \boldsymbol{c} \ne 0\)</span> 이며, <span class="math inline">\(\boldsymbol{v}=a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}\)</span> 일 때 scalar <span class="math inline">\(a,\,b,\,c\)</span> 가 유일하게 결정된다. <span class="math display">\[
 \begin{aligned}
-\det (\boldsymbol{v},\,\boldsymbol{b},\,\boldsymbol{c})\boldsymbol{a} + \det (\boldsymbol{a},\,\boldsymbol{v},\,\boldsymbol{c})\boldsymbol{b} &amp;+ \det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})\boldsymbol{c} \\
+\det (\boldsymbol{v},\,\boldsymbol{b},\,\boldsymbol{c})\boldsymbol{a} &amp;+ \det (\boldsymbol{a},\,\boldsymbol{v},\,\boldsymbol{c})\boldsymbol{b} + \det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})\boldsymbol{c} \\[0.3em]
 &amp;= ((\boldsymbol{v}\times \boldsymbol{b})\cdot \boldsymbol{c})\boldsymbol{a}+((\boldsymbol{a} \times \boldsymbol{v})\cdot\boldsymbol{c}) \boldsymbol{b} + ((\boldsymbol{a} \times \boldsymbol{b})\cdot \boldsymbol{v})\boldsymbol{c} \\
 \end{aligned}
 \]</span></p>
@@ -575,88 +643,125 @@ p_{\boldsymbol{a}}(\boldsymbol{b})=\dfrac{(\boldsymbol{a}\cdot \boldsymbol{a})\b
 +\dfrac{\det (\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{v})}{\det(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c})}\boldsymbol{c} = a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}=\boldsymbol{v}
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>16.</strong> 좌표공간속의 정사면체 <span class="math inline">\(OABC\)</span> 에 내접하는 구의 중심을 <span class="math inline">\(P\)</span> 라고 두자. 이때 <span class="math inline">\(\overrightarrow{OP}\)</span> 를 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 의 일차결합으로 표현하라.</p>
-<hr>
-<p>일단 <span class="math inline">\(OABC\)</span> 가 정사면체가 되려면 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 이 일차독립이어야 한다. 따라서 <span class="math inline">\(\overrightarrow{OP}\)</span> 는 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 의 일차결합으로 표현된다. 편의를 위해 <span class="math inline">\(\overrightarrow{OA}=\boldsymbol{a},\,\overrightarrow{OB}=\boldsymbol{b},\,\overrightarrow{OC}=\boldsymbol{c},\,\overrightarrow{OP}=\boldsymbol{p}\)</span> 라 하자. 이제 <span class="math inline">\(\boldsymbol{p}=a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}\)</span> 이다.</p>
-<p><br></p>
-<p><strong>17.</strong> 공간에서 <span class="math inline">\(\triangle ABC\)</span> 와 원점 <span class="math inline">\(O\)</span> 에 대하여 <span class="math inline">\(\boldsymbol{a}=\overrightarrow{OA},\,\boldsymbol{b}=\overrightarrow{OB},\, \boldsymbol{c}=\overrightarrow{OC}\)</span> 로 두면 <span class="math inline">\((\boldsymbol{a}\times \boldsymbol{b})+(\boldsymbol{b} \times \boldsymbol{c})+(\boldsymbol{c}\times \boldsymbol{a})\)</span> 는 <span class="math inline">\(\triangle ABC\)</span> 에 수직임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(\boldsymbol{p}=(\boldsymbol{a}\times \boldsymbol{b})+(\boldsymbol{b} \times \boldsymbol{c})+(\boldsymbol{c}\times \boldsymbol{a})\)</span> 라 두면 <span class="math inline">\(\boldsymbol{p}\cdot (\boldsymbol{b}-\boldsymbol{a})=0\)</span> 이고 <span class="math inline">\(\boldsymbol{p}\cdot (\boldsymbol{c}-\boldsymbol{a})=0\)</span> 임을 보이면 된다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_16" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.9</strong></span> 좌표공간속의 정사면체 <span class="math inline">\(OABC\)</span> 에 내접하는 구의 중심을 <span class="math inline">\(P\)</span> 라고 두자. 이때 <span class="math inline">\(\overrightarrow{OP}\)</span> 를 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 의 일차결합으로 표현하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>일단 <span class="math inline">\(OABC\)</span> 가 정사면체가 되려면 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 이 일차독립이어야 한다. 따라서 <span class="math inline">\(\overrightarrow{OP}\)</span> 는 <span class="math inline">\(\overrightarrow{OA},\,\overrightarrow{OB},\, \overrightarrow{OC}\)</span> 의 일차결합으로 표현된다. 편의를 위해 <span class="math inline">\(\overrightarrow{OA}=\boldsymbol{a},\,\overrightarrow{OB}=\boldsymbol{b},\,\overrightarrow{OC}=\boldsymbol{c},\,\overrightarrow{OP}=\boldsymbol{p}\)</span> 라 하자. 이제 <span class="math inline">\(\boldsymbol{p}=a\boldsymbol{a}+b\boldsymbol{b}+c\boldsymbol{c}\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.10</strong></span> 공간에서 <span class="math inline">\(\triangle ABC\)</span> 와 원점 <span class="math inline">\(O\)</span> 에 대하여 <span class="math inline">\(\boldsymbol{a}=\overrightarrow{OA},\,\boldsymbol{b}=\overrightarrow{OB},\, \boldsymbol{c}=\overrightarrow{OC}\)</span> 로 두면 <span class="math inline">\((\boldsymbol{a}\times \boldsymbol{b})+(\boldsymbol{b} \times \boldsymbol{c})+(\boldsymbol{c}\times \boldsymbol{a})\)</span> 는 <span class="math inline">\(\triangle ABC\)</span> 에 수직임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{p}=(\boldsymbol{a}\times \boldsymbol{b})+(\boldsymbol{b} \times \boldsymbol{c})+(\boldsymbol{c}\times \boldsymbol{a})\)</span> 라 두면 <span class="math inline">\(\boldsymbol{p}\cdot (\boldsymbol{b}-\boldsymbol{a})=0\)</span> 이고 <span class="math inline">\(\boldsymbol{p}\cdot (\boldsymbol{c}-\boldsymbol{a})=0\)</span> 임을 보이면 된다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \boldsymbol{p}\cdot (\boldsymbol{b}-\boldsymbol{a}) &amp;= (\boldsymbol{c}\times \boldsymbol{a})\cdot \boldsymbol{b}-(\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{a}=0 \\
 \boldsymbol{p}\cdot (\boldsymbol{c}-\boldsymbol{a}) &amp;=(\boldsymbol{a} \times \boldsymbol{b} )\cdot \boldsymbol{c} -(\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{a} =0
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>18.</strong> 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}\in \mathbb{R}^3\)</span> 에 대하여,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_18" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.11</strong></span> 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b},\,\boldsymbol{c}\in \mathbb{R}^3\)</span> 에 대하여,</p>
 <p><span class="math display">\[
 (\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{b}\times \boldsymbol{c}) \times (\boldsymbol{c}\times \boldsymbol{a})=(\boldsymbol{a}\cdot \boldsymbol{b} \times \boldsymbol{c})^2
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 (\boldsymbol{a}\times \boldsymbol{b})\cdot (\boldsymbol{b}\times \boldsymbol{c}) \times (\boldsymbol{c}\times \boldsymbol{a}) &amp;=(\boldsymbol{a}\times \boldsymbol{b})\cdot \left[((\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{a})\boldsymbol{c} - ((\boldsymbol{b}\times \boldsymbol{c})\cdot \boldsymbol{c})\boldsymbol{a}\right] \\
 &amp;= ((\boldsymbol{b}\times \boldsymbol{c} )\cdot \boldsymbol{a})((\boldsymbol{a} \times \boldsymbol{b})\cdot \boldsymbol{c}) \\
 &amp;=(\boldsymbol{a} \cdot \boldsymbol{b} \times \boldsymbol{c})^2
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>19</strong> 평행사변형을 <span class="math inline">\(xy\)</span>-평면, <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면으로 정사영한것의 넓이가 각각 <span class="math inline">\(1,\,1,\,2\)</span> 이면 처음 평행사변형의 넓이는 얼마인가?</p>
-<hr>
-<p>평행사변형의 면적을 <span class="math inline">\(S\)</span> 라 하고 평행사변형을 포함하는 평면의 방향벡터의 단위벡터를 <span class="math inline">\(\boldsymbol{n}\)</span> 이라 하자. 그렇다면</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_19" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.12</strong></span> 평행사변형을 <span class="math inline">\(xy\)</span>-평면, <span class="math inline">\(yz\)</span>-평면, <span class="math inline">\(zx\)</span>-평면으로 정사영한것의 넓이가 각각 <span class="math inline">\(1,\,1,\,2\)</span> 이면 처음 평행사변형의 넓이는 얼마인가?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>평행사변형의 면적을 <span class="math inline">\(S\)</span> 라 하고 평행사변형을 포함하는 평면의 방향벡터의 단위벡터를 <span class="math inline">\(\boldsymbol{n}\)</span> 이라 하자. 그렇다면</p>
 <p><span class="math display">\[
 S\boldsymbol{n}\cdot (0,\,0,\,1)=1,\qquad S\boldsymbol{n} \cdot (1,\,0,\,0)=1,\qquad S\boldsymbol{n}\cdot (0,\,1,\,0)=2
 \]</span></p>
 <p>이므로 <span class="math inline">\(S=\sqrt{1^2+1^2+2^2}=\sqrt{6}\)</span>.</p>
-<p><br></p>
-<p><strong>20.</strong> <span class="math inline">\(\mathbb{R}^3\)</span> 속의 세 백터 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}\)</span> 가 이루는 <strong>평행육면체</strong> <span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_20" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.13</strong></span> <span class="math inline">\(\mathbb{R}^3\)</span> 속의 세 백터 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}\)</span> 가 이루는 <strong>평행육면체</strong> <span class="math display">\[
 \{r\boldsymbol{x}+s\boldsymbol{y}+t\boldsymbol{z} : 0 \le r,\,s,\,t \le 1\}
 \]</span> 의 부피는 <span class="math inline">\(|\det (\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|\)</span> 임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 의 면적은 <span class="math inline">\(|\boldsymbol{x}\times \boldsymbol{y}|\)</span> 이다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 에 의해 정해지는 평면의 방향벡터의 단위벡터는 <span class="math inline">\(\boldsymbol{n}=\dfrac{\boldsymbol{x}\times  \boldsymbol{y}}{|\boldsymbol{x}\times \boldsymbol{y}|}\)</span> 이며 이 평면과 <span class="math inline">\(\boldsymbol{z}\)</span> 사이의 거리는 <span class="math inline">\(\boldsymbol{n}\cdot \boldsymbol{z}\)</span> 로 주어진다. 따라서,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 의 면적은 <span class="math inline">\(|\boldsymbol{x}\times \boldsymbol{y}|\)</span> 이다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 에 의해 정해지는 평면의 방향벡터의 단위벡터는 <span class="math inline">\(\boldsymbol{n}=\dfrac{\boldsymbol{x}\times  \boldsymbol{y}}{|\boldsymbol{x}\times \boldsymbol{y}|}\)</span> 이며 이 평면과 <span class="math inline">\(\boldsymbol{z}\)</span> 사이의 거리는 <span class="math inline">\(\boldsymbol{n}\cdot \boldsymbol{z}\)</span> 로 주어진다. 따라서,</p>
 <p><span class="math display">\[
 V=|\boldsymbol{x} \times \boldsymbol{y}| \, |\boldsymbol{n}\cdot \boldsymbol{z}|=|\boldsymbol{x}\times \boldsymbol{y}| \left| \dfrac{(\boldsymbol{x}\times \boldsymbol{y})\cdot \boldsymbol{z}}{|\boldsymbol{x} \times \boldsymbol{y}|}\right|=|\det (\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|
 \]</span></p>
+</div>
 <p><br></p>
 <p><strong>21.</strong> 생략</p>
-<p><br></p>
-<p><strong>22.</strong> 3차원 좌표공간 속의 세 벡터 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}\)</span> 가 이루는 평행육면체의 부피를 <span class="math inline">\(\operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})\)</span> 라 고 두었을 때, 3차 정사각행렬 <span class="math inline">\(A\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_1_22" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.14</strong></span> 3차원 좌표공간 속의 세 벡터 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}\)</span> 가 이루는 평행육면체의 부피를 <span class="math inline">\(\operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})\)</span> 라 고 두었을 때, 3차 정사각행렬 <span class="math inline">\(A\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \operatorname{Vol}(L_A(\boldsymbol{x}),\,L_A(\boldsymbol{y}),\,L_A(\boldsymbol{z}))=|\det A| \operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>앞의 20번 문제에서 부터 <span class="math inline">\(\operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\boldsymbol{z})=|\det(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|\)</span> 임을 보였다. 정리 3.0.6으로부터,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>앞의 <a href="#exr-CAL_8_1_20" class="quarto-xref">연습문제&nbsp;<span>8.13</span></a> 번 문제에서 부터 <span class="math inline">\(\operatorname{Vol}(\boldsymbol{x},\,\boldsymbol{y},\boldsymbol{z})=|\det(\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z})|\)</span> 임을 보였다. 정리 3.0.6으로부터,</p>
 <p><span class="math display">\[
 \det(A\boldsymbol{x},\,A\boldsymbol{y},\,A\boldsymbol{z}) = (\det A ) (\det (\boldsymbol{x},\,\boldsymbol{y},\,\boldsymbol{z}))
 \]</span></p>
 <p>이므로 증명 끝.</p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-제-8-장-2-절" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="연습문제-제-8-장-2-절"><span class="header-section-number">8.2</span> 연습문제 : 제 8 장 2 절</h2>
-<p><strong>1.</strong> 모든 정사각행렬은 대칭행렬과 왜대칭행렬의 합으로 표현됨을 보여라.</p>
-<hr>
-<p><span class="math display">\[
-\begin{aligned}
-(A+A^t)_{ij}-(A+A^t)_{ji}&amp;=A_{ij}+(A^{t})_{ij} -A_{ji}-(A^t)_{ji}=A_{ij}+A_{ji}-A_{ji}-A_{ij}=0\\
-(A-A^t)_{ij}+(A-A^t)_{ji}&amp;=A_{ij}-A_{ji}+A_{ji}-A_{ij}=0
-\end{aligned}
-\]</span></p>
-<p>이므로 <span class="math inline">\(A+A^t\)</span> 는 대칭행렬이고 <span class="math inline">\(A-A^t\)</span> 는 왜대칭행렬이다. <span class="math inline">\(\dfrac{1}{2}(A+A^t)\)</span> 는 대칭행렬이고 <span class="math inline">\(\dfrac{1}{2}(A-A^t)\)</span> 는 왜대칭행렬이며,</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_2_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.15</strong></span> 모든 정사각행렬은 대칭행렬과 왜대칭행렬의 합으로 표현됨을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A+A^t\)</span> 는 대칭행렬이고 <span class="math inline">\(A-A^t\)</span> 는 왜대칭행렬임은 쉽게 보일 수 있다. <span class="math inline">\(\dfrac{1}{2}(A+A^t)\)</span> 는 대칭행렬이고 <span class="math inline">\(\dfrac{1}{2}(A-A^t)\)</span> 는 왜대칭행렬이며,</p>
 <p><span class="math display">\[
 A=\dfrac{1}{2}(A+A^t)+\dfrac{1}{2}(A-A^t)
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>2.</strong> 왜대칭행렬의 합은 왜대칭행렬임을 보이라. 또 왜대칭행렬의 상수배도 왜대칭임을 보이라.</p>
-<hr>
-<p>trivial.</p>
-<p><br></p>
-<p><strong>3.</strong> 차수가 같은 두 정사각행렬 <span class="math inline">\(M,\,N\)</span> 에 대하여</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_2_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.16</strong></span> 왜대칭행렬의 합은 왜대칭행렬임을 보이라. 또 왜대칭행렬의 상수배도 왜대칭임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>trivial.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_2_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.17</strong></span> 차수가 같은 두 정사각행렬 <span class="math inline">\(M,\,N\)</span> 에 대하여</p>
 <p><span class="math display">\[
 [M,\,N] := MN - NM
 \]</span></p>
@@ -669,8 +774,14 @@ M_{\boldsymbol{a}\times \boldsymbol{b}}=[M_\boldsymbol{a},\,M_\boldsymbol{b}]
 [M_1,\,M_2]=M-3,\quad [M_2,\,M_3]=M_1,\quad [M_3,\,M_1]=M_2
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>임의의 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^3\)</span> 를 생각하자. 연습문제 8.1.9(d) 의 <span class="math inline">\(\boldsymbol{a}\times(\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b})=0\)</span> 을 이용하면,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^3\)</span> 를 생각하자. <a href="#exr-CAL_8_1_9" class="quarto-xref">연습문제&nbsp;<span>8.2</span></a> (<span class="math inline">\(d\)</span>) 의</p>
+<p><span class="math display">\[
+\boldsymbol{a}\times(\boldsymbol{b}\times \boldsymbol{c}) + \boldsymbol{b}\times (\boldsymbol{c}\times \boldsymbol{a}) +\boldsymbol{c}\times (\boldsymbol{a} \times \boldsymbol{b})=0
+\]</span></p>
+<p>을 이용하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 (M_{\boldsymbol{a}}M_{\boldsymbol{b}}-M_{\boldsymbol{b}}M_{\boldsymbol{a}})\boldsymbol{x}
@@ -680,13 +791,19 @@ M_{\boldsymbol{a}\times \boldsymbol{b}}=[M_\boldsymbol{a},\,M_\boldsymbol{b}]
 &amp; = M_{\boldsymbol{a}\times \boldsymbol{b}}\boldsymbol{x}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>4.</strong> 단위벡터 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^3\)</span> 에 대하여 선형변환</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_2_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.18</strong></span> 단위벡터 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^3\)</span> 에 대하여 선형변환</p>
 <p><span class="math display">\[
 \boldsymbol{x}\mapsto \boldsymbol{a} \times \boldsymbol{x} \qquad (\boldsymbol{x}\in \mathbb{R}^3)
-\]</span> 은 <span class="math inline">\(\boldsymbol{a}\)</span> 방향의 벡터는 <span class="math inline">\(0\)</span> 으로 보내고, <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터는 <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 회전시키는 변환임을 설명하라.</p>
-<hr>
-<p><span class="math inline">\(\boldsymbol{x}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 방향의 벡터와 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터로 분해 할 수 있다. <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 방향 벡터는 <span class="math inline">\((\boldsymbol{x}\cdot \boldsymbol{a})\boldsymbol{a}\)</span> 이므로, <span class="math inline">\(\boldsymbol{x}_{\perp}= \boldsymbol{x}-(\boldsymbol{a}\cdot \boldsymbol{x})\boldsymbol{a}\)</span> 라 하면, <span class="math inline">\(\boldsymbol{x}_{\perp}\)</span> 는 <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터임을 알 수 있다.</p>
+\]</span></p>
+<p>은 <span class="math inline">\(\boldsymbol{a}\)</span> 방향의 벡터는 <span class="math inline">\(0\)</span> 으로 보내고, <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터는 <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 회전시키는 변환임을 설명하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x}\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 방향의 벡터와 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터로 분해 할 수 있다. <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 방향 벡터는 <span class="math inline">\((\boldsymbol{x}\cdot \boldsymbol{a})\boldsymbol{a}\)</span> 이므로, <span class="math inline">\(\boldsymbol{x}_{\perp}= \boldsymbol{x}-(\boldsymbol{a}\cdot \boldsymbol{x})\boldsymbol{a}\)</span> 라 하면, <span class="math inline">\(\boldsymbol{x}_{\perp}\)</span> 는 <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 방향의 벡터임을 알 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \boldsymbol{x}_{\perp} \cdot \boldsymbol{a} &amp;= \boldsymbol{x}\cdot \boldsymbol{a} -(\boldsymbol{a}\cdot \boldsymbol{x})(\boldsymbol{a} \cdot \boldsymbol{a})=0\\
@@ -702,26 +819,36 @@ M_{\boldsymbol{a}\times \boldsymbol{b}}=[M_\boldsymbol{a},\,M_\boldsymbol{b}]
 |\boldsymbol{a}\times \boldsymbol{x}|=|\boldsymbol{x}_{\perp}|
 \]</span></p>
 <p>이므로 <span class="math inline">\(\boldsymbol{a}\times \boldsymbol{x}\)</span> 는 <span class="math inline">\(\boldsymbol{x}\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 성분벡터를 <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 회전시키는 변환임을 알 수 있다.</p>
-<p><br></p>
-<p><strong>5.</strong> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}_0\)</span> 에 대하여,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_2_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.19</strong></span> 공간에서 벡터 <span class="math inline">\(\boldsymbol{a},\,\boldsymbol{b}_0\)</span> 에 대하여,</p>
 <p><span class="math display">\[
 \boldsymbol{b}_{n+1}=\boldsymbol{a}\times \boldsymbol{b}_n,\qquad (n=0,\,1,\ldots)
 \]</span></p>
 <p>으로 두자. 이 때 <span class="math inline">\(\boldsymbol{b}_n\)</span> 이 어떻게 변하는 지를 설명하라. 또 <span class="math inline">\(\boldsymbol{a}=(1,\,2,\,2)/3,\, \boldsymbol{b}_0=(0,\,1,\,2)\)</span> 일 때 <span class="math inline">\(\boldsymbol{b}_{2000}\)</span> 을 구하라.</p>
-<hr>
-<p>앞의 4. 의 결과를 알면 쉽다. <span class="math inline">\(|\boldsymbol{a}|=1\)</span> 이므로 <span class="math inline">\(\boldsymbol{b}_1\)</span> 은 <span class="math inline">\(\boldsymbol{b}_0\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 수직인 방향의 성분을 <span class="math inline">\(90^\circ\)</span> 회전시키 것이다. <span class="math inline">\(\boldsymbol{b}_1\)</span> 은 이제 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직이므로 <span class="math inline">\(n\ge 1\)</span> 에 대해 <span class="math inline">\(\boldsymbol{b}_{n+1}\)</span> 은 <span class="math inline">\(\boldsymbol{b}_n\)</span> 을(이제 <span class="math inline">\(\boldsymbol{b}_n\)</span> 은 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직이다) <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 만큼 회전시것이다. <span class="math inline">\(\boldsymbol{b}_0\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 성분을 <span class="math inline">\(\boldsymbol{b}_{\perp}\)</span> 라 하면,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>앞의 <a href="#exr-CAL_8_2_4" class="quarto-xref">연습문제&nbsp;<span>8.18</span></a> 의 결과를 알면 쉽다. <span class="math inline">\(|\boldsymbol{a}|=1\)</span> 이므로 <span class="math inline">\(\boldsymbol{b}_1\)</span> 은 <span class="math inline">\(\boldsymbol{b}_0\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 수직인 방향의 성분을 <span class="math inline">\(90^\circ\)</span> 회전시키 것이다. <span class="math inline">\(\boldsymbol{b}_1\)</span> 은 이제 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직이므로 <span class="math inline">\(n\ge 1\)</span> 에 대해 <span class="math inline">\(\boldsymbol{b}_{n+1}\)</span> 은 <span class="math inline">\(\boldsymbol{b}_n\)</span> 을(이제 <span class="math inline">\(\boldsymbol{b}_n\)</span> 은 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직이다) <span class="math inline">\(\boldsymbol{a}\)</span> 를 회전축으로 <span class="math inline">\(90^\circ\)</span> 만큼 회전시것이다. <span class="math inline">\(\boldsymbol{b}_0\)</span> 의 <span class="math inline">\(\boldsymbol{a}\)</span> 에 수직인 성분을 <span class="math inline">\(\boldsymbol{b}_{\perp}\)</span> 라 하면,</p>
 <p><span class="math display">\[
 \boldsymbol{b}_{\perp}=\boldsymbol{b}_0-(\boldsymbol{a}\cdot \boldsymbol{b_0})\boldsymbol{a}=(-2, -1, 2)/3
 \]</span></p>
 <p>이며, <span class="math inline">\(\boldsymbol{b}_n\)</span> 은 <span class="math inline">\(\boldsymbol{b}_\perp\)</span> 를 <span class="math inline">\(n\)</span> 번 <span class="math inline">\(90^\circ\)</span> 회전시킨 것이므로 <span class="math inline">\(\boldsymbol{b}_{2000}=\boldsymbol{b}_\perp\)</span> 이다.</p>
-<p><br></p>
-<p><strong>6.</strong> 벡터 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^3\)</span> 의 절대값을 <span class="math inline">\(a\)</span> 라 하였을 때</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_2_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.20</strong></span> 벡터 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^3\)</span> 의 절대값을 <span class="math inline">\(a\)</span> 라 하였을 때</p>
 <p><span class="math display">\[
 M_{\boldsymbol{a}}^3+a^2M_{\boldsymbol{a}}=O
 \]</span></p>
 <p>임을 보이라. 이를 이용하여 <span class="math inline">\(M_{\boldsymbol{a}}^{2002}\)</span> 를 간단히하라.</p>
-<hr>
-<p><span class="math inline">\(M_\boldsymbol{a} \boldsymbol{x} =\boldsymbol{a}\times\boldsymbol{x}\)</span> 이므로,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(M_\boldsymbol{a} \boldsymbol{x} =\boldsymbol{a}\times\boldsymbol{x}\)</span> 이므로,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \boldsymbol{a}\times (\boldsymbol{a} \times (\boldsymbol{a}\times \boldsymbol{x}))+a^2 \boldsymbol{a}\times \boldsymbol{x} &amp;= \boldsymbol{a} \times \big((\boldsymbol{a} \cdot \boldsymbol{x}) \boldsymbol{a}-a^2\boldsymbol{x}\big)+a^2\boldsymbol{a}\times \boldsymbol{x} \\
@@ -737,11 +864,14 @@ M^{1000}&amp;= a^{740} M^{20}=a^{752}M^4 = -a^{754}M^2 \\
 M^{2002}&amp;= a^{1508}M^4=-a^{1510}M^2
 \end{aligned}
 \]</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-제-8장-3절" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="연습문제-제-8장-3절"><span class="header-section-number">8.3</span> 연습문제 : 제 8장 3절</h2>
-<p><strong>1.</strong> 일반적으로 삼차원 공간의 점 <span class="math inline">\(P_1,\ldots,\,P_k\)</span> 와 각 점 <span class="math inline">\(P_i\)</span> 에 작용하는 힘 <span class="math inline">\(\boldsymbol{f}_i\)</span> 에 대하여 기준점 <span class="math inline">\(Q\)</span> 에 대한 이들의 회전력을</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_3_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.21</strong></span> 일반적으로 삼차원 공간의 점 <span class="math inline">\(P_1,\ldots,\,P_k\)</span> 와 각 점 <span class="math inline">\(P_i\)</span> 에 작용하는 힘 <span class="math inline">\(\boldsymbol{f}_i\)</span> 에 대하여 기준점 <span class="math inline">\(Q\)</span> 에 대한 이들의 회전력을</p>
 <p><span class="math display">\[
 \sum_{i=1}^k \overrightarrow{QP_i} \times \boldsymbol{f}_i
 \]</span></p>
@@ -750,34 +880,46 @@ M^{2002}&amp;= a^{1508}M^4=-a^{1510}M^2
 \sum_{i=1}^k \boldsymbol{f}_i=0
 \]</span></p>
 <p>이면, 회전력은 기준점 <span class="math inline">\(Q\)</span> 를 달리하더라도 변화가 없음을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 \sum_{i=1}^k \overrightarrow{Q'P_i} \times \boldsymbol{f}_i &amp;= \sum_{i=1}^k \left(\overrightarrow{Q'Q}+\overrightarrow{QP_i}\right) \times \boldsymbol{f}_i = \sum_{i=1}^k \overrightarrow{Q'Q}\times \boldsymbol{f}_i +\sum_{i=1}^k \overrightarrow{QP_i}\times \boldsymbol{f}_i  \\
 &amp;= \overrightarrow{Q'Q}\times \left(\sum_{i=1}^k \boldsymbol{f}_i\right)+\sum_{i=1}^k\overrightarrow{QP_i}\times\boldsymbol{f}_i = \sum_{i=1}^k\overrightarrow{QP_i}\times\boldsymbol{f}_i
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>2.</strong> 한쪽 긑은 <span class="math inline">\(A=(0,\,0,\,0)\)</span>, 또 다른 한쪽 끝은 <span class="math inline">\(B=(1,\,1,\,1)\)</span> 에 위치한 곧은 막대에 힘 <span class="math inline">\((0,\,1,\,2)\)</span> 가 <span class="math inline">\(A\)</span> 에 작용하고, 또 힘 <span class="math inline">\((1,\,2,\,3)\)</span> 이 <span class="math inline">\(B\)</span> 에 작용한다고 하자. 이 때 막대의 어느붑ㄴ에 얼마만큼의 힘이 작용하면, 막대가 움직이지 않을까?</p>
-<hr>
-<p>막대가 움직이지 않으려면 힘의 총합도 <span class="math inline">\(0\)</span> 이며 회전력의 총합도 <span class="math inline">\(0\)</span> 이어야 한다. 따라서 힘 <span class="math inline">\((-1, -3, -5)\)</span> 가 작용해야 한다. 문제 <span class="math inline">\(1\)</span> 에 의해 회전력의 총합은 기준점의 영향을 받지 않으므로 <span class="math inline">\(A\)</span> 를 기준으로 하기로 하자. 막대이므로 세번째 힘이 작용하는 위치는 <span class="math inline">\((t,\,t,\,t)\)</span> 라 하자. 그렇다면 회전력의 총합이 <span class="math inline">\(0\)</span> 이 되어야 하므로,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_3_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.22</strong></span> 한쪽 긑은 <span class="math inline">\(A=(0,\,0,\,0)\)</span>, 또 다른 한쪽 끝은 <span class="math inline">\(B=(1,\,1,\,1)\)</span> 에 위치한 곧은 막대에 힘 <span class="math inline">\((0,\,1,\,2)\)</span> 가 <span class="math inline">\(A\)</span> 에 작용하고, 또 힘 <span class="math inline">\((1,\,2,\,3)\)</span> 이 <span class="math inline">\(B\)</span> 에 작용한다고 하자. 이 때 막대의 어느붑ㄴ에 얼마만큼의 힘이 작용하면, 막대가 움직이지 않을까?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>막대가 움직이지 않으려면 힘의 총합도 <span class="math inline">\(0\)</span> 이며 회전력의 총합도 <span class="math inline">\(0\)</span> 이어야 한다. 따라서 힘 <span class="math inline">\((-1, -3, -5)\)</span> 가 작용해야 한다. 문제 <span class="math inline">\(1\)</span> 에 의해 회전력의 총합은 기준점의 영향을 받지 않으므로 <span class="math inline">\(A\)</span> 를 기준으로 하기로 하자. 막대이므로 세번째 힘이 작용하는 위치는 <span class="math inline">\((t,\,t,\,t)\)</span> 라 하자. 그렇다면 회전력의 총합이 <span class="math inline">\(0\)</span> 이 되어야 하므로,</p>
 <p><span class="math display">\[
 0=(1,\,1,\,1)\times (0,\,1,\,2)+(t,\,t,\,t)\times (-1,\,-3,\,-5)=(1,\,-2,\,1)+(-2t,\, 4t,\, -2t)
 \]</span></p>
 <p>이며, 따라서 <span class="math inline">\(t=1/2\)</span> 인 (1/2, 1/2, 1/2) 에 작용해야 한다.</p>
+</div>
 <p><br></p>
 <p><strong>3.</strong> 생략</p>
 <p><br></p>
 </section>
 <section id="탐구문제" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="탐구문제"><span class="header-section-number">8.4</span> 탐구문제</h2>
-<p><strong>1.</strong> <span class="math inline">\(i=1,\,2,\,3\)</span> 에 대하여</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.23</strong></span> <span class="math inline">\(i=1,\,2,\,3\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \exp tM_i = R_i (t) \qquad t\in \mathbb{R}
 \]</span></p>
 <p>임을 보이라. (<span class="math inline">\(R_i\)</span> 는 기본 연습문제 2.0.1 에서 정의하였다.)</p>
-<hr>
-<p>우선 <span class="math inline">\(M_1\)</span> 을 보자.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>우선 <span class="math inline">\(M_1\)</span> 을 보자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 M_1 &amp;= \left(\begin{array}{rr} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \end{array}\right)\\
@@ -797,8 +939,11 @@ M_1^5 &amp;= M_1
 \end{aligned}
 \]</span> 이므로 <span class="math inline">\(\exp (tM_1) = R_1 (t)\)</span> 이다.</p>
 <p><span class="math inline">\(M_2,\,M_3\)</span> 에 대해서도 같은 방법으로 보일 수 있다.</p>
-<p><br></p>
-<p><strong>2.</strong> 단위벡터 <span class="math inline">\(\mathbb{a}\in \mathbb{R}^3\)</span> 에 대하여 선형변환</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_8_S02" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 8.24</strong></span> 단위벡터 <span class="math inline">\(\mathbb{a}\in \mathbb{R}^3\)</span> 에 대하여 선형변환</p>
 <p><span class="math display">\[
 \boldsymbol{x} \mapsto \boldsymbol{a}\times\boldsymbol{x} \qquad (\boldsymbol{x}\in \mathbb{R}^3)
 \]</span></p>
@@ -807,8 +952,10 @@ M_1^5 &amp;= M_1
 \left.\dfrac{d}{dt}\right|_{0} \left( \exp tM_{\boldsymbol{a}}\right)\boldsymbol{x}=\boldsymbol{a}\times \boldsymbol{x}
 \]</span></p>
 <p>임을 보여라.</p>
-<hr>
-<p><span class="math inline">\(\boldsymbol{a}=(a_1,\,a_2,\,a_3)\)</span> 라 하면,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{a}=(a_1,\,a_2,\,a_3)\)</span> 라 하면,</p>
 <p><span class="math display">\[
 M_{\boldsymbol{a}}=\begin{pmatrix} 0 &amp; -a_3 &amp; a_2 \\ a_3 &amp; 0 &amp; -a_1 \\ -a_2 &amp; a_1&amp; 0\end{pmatrix} = a_1M_1+a_2M_2+a_3M_3
 \]</span></p>
@@ -817,6 +964,7 @@ M_{\boldsymbol{a}}=\begin{pmatrix} 0 &amp; -a_3 &amp; a_2 \\ a_3 &amp; 0 &amp; -
 <p><span class="math display">\[
 \exp (aA+bB)=\sum_{k=0}^\infty \dfrac{1}{k!} (aA+bB)^k= \sum_{k=0}^\infty \dfrac{1}{k!}\sum_{n=0}^k \dfrac{k!}{}
 \]</span></p>
+</div>
 
 
 </section>
@@ -873,13 +1021,14 @@ M_{\boldsymbol{a}}=\begin{pmatrix} 0 &amp; -a_3 &amp; a_2 \\ a_3 &amp; 0 &amp; -
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
