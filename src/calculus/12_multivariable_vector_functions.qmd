@@ -9,9 +9,19 @@ crossref:
 
 ## 연습문제 : 제 12 장 1 절
 
-**1.** 구면좌표 변환의 부피 변화율이 야코비 행렬식과 일치함을 보이라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_12_1_1} 
+
+#### SNU 탐구문제 12.1.1
+
+구면좌표 변환의 부피 변화율이 야코비 행렬식과 일치함을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 정의역의 한 cube
 
@@ -27,11 +37,17 @@ $$
 \begin{aligned}
 \Delta V &\approx \dfrac{1}{3} \left((\rho_0 +\Delta\rho)^3-(\rho_0)^3\right) \sin \varphi \Delta \varphi \Delta \theta \approx \rho^2\sin \varphi \Delta \varphi \Delta \theta = \det \dfrac{\partial(x,\,y,\,z)}{\partial (\rho,\, \varphi,\,\theta)}
 \end{aligned}
-$$ {d}
+$$ 
 
-</br>
+:::
 
-**2.** 사상
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_1_2} 
+
+#### SNU 탐구문제 12.1.2
+
+사상
 $$
 \begin{aligned}
 F(x,\, y)&=(x^2-y^2,\, 2xy) \\
@@ -41,7 +57,11 @@ $$
 
 의 야코비 행렬과 행렬식을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -51,6 +71,8 @@ G'(x,\,y) &= \begin{pmatrix} 3x^2-y^2 & -2xy \\ 2xy & x^2-3y^2 \end{pmatrix} \\
 \det G'(x,\,y) &= 3x^4-10x^2y^2+3y^4+4x^2y^2=3(x^2-y^2)^2
 \end{aligned}
 $$
+
+:::
 
 </br>
 
@@ -132,14 +154,24 @@ $$
 
 ## 연습문제 : 제 12 장 2 절
 
-**1.** 사상
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_1} 
+
+#### SNU 탐구문제 12.2.1
+
+사상
 $$
 (u,\,v):=F(x,\,y)=(x^3-3xy^2,\, 3x^2y-y^3),\qquad (x,\,y)\ne (0,\,0)
 $$
 
 은 국소적으로 가역사상임을 보이라. 이 때 점 $(x,\,y)=(1,\,0)$ 에서 역사상 $G(u,\,v)$ 의 미분을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 F'(x,\,y)= \begin{bmatrix} 3x^2-3y^2 & -6xy \\ 6xy & 3x^2-3y^2\end{bmatrix},\qquad \det F'=9(x^2+y^2)^2
@@ -151,13 +183,23 @@ $$
 F'(1,\,0)=\begin{bmatrix} 3 & 0 \\ 0 & 3\end{bmatrix}\implies G'(1,\,0)=F'^{-1}=\begin{bmatrix} 1/3 & 0 \\ 0 & 1/3\end{bmatrix}
 $$
 
-</br>
+:::
 
-**2.** 다음 함수들이 주어진 점에서 국소적으로 일급가역인가를 조사하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_12_2_2} 
 
-(1) $F(x,\,y)=(x+y,\, y^{1/4}),\qquad (x_0,\,y_0)=(1,\,2)$
+#### SNU 탐구문제 12.2.2 
+
+다음 함수들이 주어진 점에서 국소적으로 일급가역인가를 조사하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $F(x,\,y)=(x+y,\, y^{1/4}),\qquad (x_0,\,y_0)=(1,\,2)$
 
 $$
 F'(x,\,y)= \begin{bmatrix} 1 & 1 \\ 0 & \frac{1}{4} y^{-3/4}\end{bmatrix},\qquad F'(x_0,\,y_0) =\begin{bmatrix} 1 & 1 \\ 0 & \frac{1}{4\cdot 2^{3/4} }\end{bmatrix} \implies \det F''(x_0,\,y_0) \ne 0
@@ -165,7 +207,7 @@ $$
 
 따라서 국소적으로 일급가역이다.
 
-(2) $F(x,\,y )= \dfrac{(x,\,y)}{(x^2+y^2)},\qquad (x_0,\,y_0)\ne (0,\,0)$
+($2$) $F(x,\,y )= \dfrac{(x,\,y)}{(x^2+y^2)},\qquad (x_0,\,y_0)\ne (0,\,0)$
 
 $$
 \begin{aligned}
@@ -176,9 +218,15 @@ $$
 
 이므로 주어진 조건에서 일급가역이다.
 
-</br>
+:::
 
-**3.** $f(x,\,y):=(x-2)^2y-xe^y$ 일 때
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_3} 
+
+#### SNU 탐구문제 12.2.3 
+
+$f(x,\,y):=(x-2)^2y-xe^y$ 일 때
 
 $$
 f(a,\,b)=0,\qquad D_2 f(a,\,b)=0
@@ -186,7 +234,11 @@ $$
 
 인 점 $(a,\,b)$ 를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \nabla f = (2(x-2)y-e^y,\, (x-2)^2-xe^y)
@@ -194,13 +246,23 @@ $$
 
 를 풀면 $a=\dfrac{e+4\pm \sqrt{e^2+8e}}{2},\, b=1$ 이다.
 
-</br>
+:::
 
-**4.** 다음 함수 $f$ 에 대하여 식 $f(x,\,y)=0$ 으로 주어진 등위선은 점 $(x_0,\,y_0)$ 근방에서 함수 $y=g(x)$ 의 그래프로 나타남을 설명하고, 이때 미분계수 $g'(x_0)$ 를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_12_2_4} 
 
-(1) $f(x,\,y)=x^2-xy+y^2-3,\quad (x_0,\,y_0)=(1,\,2)$
+#### SNU 탐구문제 12.2.4 
+
+다음 함수 $f$ 에 대하여 식 $f(x,\,y)=0$ 으로 주어진 등위선은 점 $(x_0,\,y_0)$ 근방에서 함수 $y=g(x)$ 의 그래프로 나타남을 설명하고, 이때 미분계수 $g'(x_0)$ 를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $f(x,\,y)=x^2-xy+y^2-3,\quad (x_0,\,y_0)=(1,\,2)$
 
 $F(x,\,y)=(x,\,f(x,\,y))$ 라 놓을 때,
 
@@ -214,7 +276,7 @@ $$
 g'(1)=-\dfrac{0}{3}=0
 $$
 
-(2) $f(x,\,y)=x \cos (xy),\qquad (x_0,\,y_0)=(1,\,\pi/2)$
+($2$) $f(x,\,y)=x \cos (xy),\qquad (x_0,\,y_0)=(1,\,\pi/2)$
 
 $\partial_y f (x_0,\,y_0)=-1\ne 0$ 이므로 $(x_0,\,y_0)$ 근방에서 $y=g(x)$ 의 그래프로 나타난다.  $\partial_x f(x_0,\,y_0)=-\frac{\pi}{2}$ 이므로,
 
@@ -224,29 +286,46 @@ $$
 
 이다.
 
-(3) $f(x,\,y) = 2e^{x+y}-x+y,\qquad (x_0,\,y_0)=(1,\,-1)$
+($3$) $f(x,\,y) = 2e^{x+y}-x+y,\qquad (x_0,\,y_0)=(1,\,-1)$
 
 $\partial_y f(x_0,\,y_0)= 3\ne 0$, $\partial_x f(x_0,\,y_0)=1$ 이므로 $g(1)= -\frac{1}{3}$ 이다.
 
-(4) $ f(x,\,y)=x+y+x\sin y,\qquad (x_0,\,y_0)=(0,\,0)$
+($4$) $ f(x,\,y)=x+y+x\sin y,\qquad (x_0,\,y_0)=(0,\,0)$
 
 $\partial_y f(0,\,0)= 1 \ne 0,\, \partial_x f(0,\,0)= 1$ 이므로 $g(1)=-1$ 이다.
 
-</br>
+:::
 
-**5.** 다음 함수 $f$ 에 대하여 식 $f(x,\,y,\,z)=0$ 으로 주어진 등위면은 주어진 점 $(x_0,\,y_0,\,z_0)$ 근방에서 함수$z=g(x,\,y)$ 의 그래프로 나타남을 설명하고, 이때 미분계수 $D_1 g(x_0,\,y_0)$ 와 $D_2 g(x_0,\,y_0)$ 를 구하라.
 
----
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-(1) $f(x,\,y,\,z)=x+y+z + \cos xyz,\qquad (x_0,\,y_0,\,z_0)=(0,\,0,\,-1)$
+::: {#exr-CAL_12_2_5} 
+
+#### SNU 탐구문제 12.2.5 
+
+다음 함수 $f$ 에 대하여 식 $f(x,\,y,\,z)=0$ 으로 주어진 등위면은 주어진 점 $(x_0,\,y_0,\,z_0)$ 근방에서 함수$z=g(x,\,y)$ 의 그래프로 나타남을 설명하고, 이때 미분계수 $D_1 g(x_0,\,y_0)$ 와 $D_2 g(x_0,\,y_0)$ 를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $f(x,\,y,\,z)=x+y+z + \cos xyz,\qquad (x_0,\,y_0,\,z_0)=(0,\,0,\,-1)$
 
 $\partial_z f(x_0,\,y_0,\,z_0)= 1 \ne 0$ 이므로 $(x_0,\,y_0,\,z_0)$ 근처에서 $z=g(x,\,y)$ 의 그래프로 나타난다. $\partial_x f(x_0,\,y_0,\,z_0)= 1$, $\partial_y f (x_0,\,y_0,\,z_0)=1$ 이므로 $D_1 g(0,\,0)=-1,\, D_2 g(0,\,0)=-1$ 이다.
 
-(2)-(4) 도 같은 방법으로 풀 수 있다.
+($2$)-($4$) 도 같은 방법으로 풀 수 있다.
 
-</br>
+:::
 
-**6.** 식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_6} 
+
+#### SNU 탐구문제 12.2.6 
+
+식
 
 $$
 xe^y-y+1=0
@@ -254,13 +333,23 @@ $$
 
 으로 주어진 집합은 점 $(e^{-2},\, 2)$ 근방에서 함수의 그래프로 나타나는가?
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y)=xe^y-y+1$ 일 때 $\partial_y f(e^{-2},\, 2)= 0$ 이므로 함수의 그래프로 나타나지 않는다.  거꾸로 $x=h(y)$ 로 나타낼 수 있는지 보기 위해 $\partial_x f(e^{-2},\,2)= e^2\ne 0$ 이므로 $x=h(y)$ 의 그래프로 나타 낼 수 있다.
 
-</br>
+:::
 
-**7.** 좌표평면에서 정의된 함수 $z=f(x,\,y)$ 가 식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_7} 
+
+#### SNU 탐구문제 12.2.7 
+
+좌표평면에서 정의된 함수 $z=f(x,\,y)$ 가 식
 
 $$
 x^3+y^3+z^3+3xyz=6
@@ -268,15 +357,25 @@ $$
 
 을 만족시킨다고 하자. 이 때 점 $(1,\,1)$ 에서 $f$ 의 기울기 벡터 $\nabla f(1,\,1)$ 을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $g(x,\,y,\,z)=x^3+y^3+z^3+3xyz$ 라 하자. $g(1,\,1,\,z)=6$ 을 만족하는 $z$ 는 $z=1$ 뿐임을 쉽게 알 수 있다.
 
 $\partial_z g(1,\,1,\,1)=6\ne 0$ 이다. $g_x (1,\,1,\,1)= g_y (1,\,1,\,1)=1$ 이므로 $\nabla f(1,\,1)=(-1,\,-1)$ 이다.
 
-</br>
+:::
 
-**8.** 방정식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_8} 
+
+#### SNU 탐구문제 12.2.8 
+
+방정식
 
 $$
 x^5+2x^3+x+c=0
@@ -284,15 +383,19 @@ $$
 
 에 대하여 다음에 답하라.
 
-(1) 임의의 실수 $c$ 에 대하여 위 방정식은 오직 하나의 실근을 가짐을 보이라.
+($1$) 임의의 실수 $c$ 에 대하여 위 방정식은 오직 하나의 실근을 가짐을 보이라.
 
-(2) 이 방정식의 근을 $g(c)$ 로 두었을 때 $g'(0), \, g''(0)$ 의 값을 구하라.
+($2$) 이 방정식의 근을 $g(c)$ 로 두었을 때 $g'(0), \, g''(0)$ 의 값을 구하라.
 
----
+:::
 
-(1) $f(x) = x^5+2x^3+x+c=0$ 이라 했을 때 $f'(x)=5x^4+6x^2+1>0$ 이므로 $f$ 는 단조증가 함수이다. $\displaystyle \lim_{x\to -\infty}f(x) = -\infty\, \lim_{x \to \infty} f(x)=\infty$ 이므로 $f(x)=0$ 의 실근은 오직 하나 뿐이다.
+</div>
 
-(2) $h(x,\,y)=x^5+2x^3+x+y$ 라 했을 때 $h(x,\,y)=0$ 을 만족하는 $x,\,y$ 에 대해  $\partial_x h(x,\,y)>0$ 이므로 $x=g(y)$ 인 $g$ 가 존재한다. 이 때 $g(c)$ 는 $h(x,\, c)=0$ 의 근이며 $c=0$ 일 때의 근은 $x=0$ 이다. $g'(0)=-\partial_y h(0,\,0)/\partial_x h(0,\,0)=-1$ 이다.
+::: {.solution}
+
+($1$) $f(x) = x^5+2x^3+x+c=0$ 이라 했을 때 $f'(x)=5x^4+6x^2+1>0$ 이므로 $f$ 는 단조증가 함수이다. $\displaystyle \lim_{x\to -\infty}f(x) = -\infty\, \lim_{x \to \infty} f(x)=\infty$ 이므로 $f(x)=0$ 의 실근은 오직 하나 뿐이다.
+
+($2$) $h(x,\,y)=x^5+2x^3+x+y$ 라 했을 때 $h(x,\,y)=0$ 을 만족하는 $x,\,y$ 에 대해  $\partial_x h(x,\,y)>0$ 이므로 $x=g(y)$ 인 $g$ 가 존재한다. 이 때 $g(c)$ 는 $h(x,\, c)=0$ 의 근이며 $c=0$ 일 때의 근은 $x=0$ 이다. $g'(0)=-\partial_y h(0,\,0)/\partial_x h(0,\,0)=-1$ 이다.
 
 $g'(y) = -\dfrac{1}{5x^4+6x^2+1}$ 이므로,
 
@@ -300,9 +403,15 @@ $$
 g''(y)=\dfrac{20x^3+12x}{(5x^4+6x^2+1)^2}\cdot \dfrac{dg}{dy} \implies g''(0)=0
 $$
 
-</br>
+:::
 
-**9.** 방정식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_9} 
+
+#### SNU 탐구문제 12.2.9 
+
+방정식
 
 $$
 x^3+ax-10=0
@@ -310,7 +419,11 @@ $$
 
 은 $a>0$ 일 때 오직 하나의 실근을 가진다. 이 실근을 $g(a)$ 로 둘 때, $g'(1)$ 과 $g''(1)$ 을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y)=x^3+xy-10$ 이라 하자. $\nabla f (x,\,y)=(3x^2+y,\, x)$ 이며 $y>0$ 일 때 $x=g(y)$ 인 그래프가 존재한다. $y=1$ 일 때 가능한 $f(x,\,1)=0$ 의 해 는 $x=2$ 뿐이다. 음함수의 정리를 이용하면
 
@@ -323,8 +436,15 @@ g''(1) &= -\dfrac{20}{169}
 \end{aligned}
 $$
 
-</br>
-**10.** 다음 주장에서 잘못된 곳을 가려라
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_12_2_10} 
+
+#### SNU 탐구문제 12.2.10 
+
+다음 주장에서 잘못된 곳을 가려라
 
 > $x$ 에 관한 함수 $y$ 가 $y^3=x(x-1)(x-2)$ 로 주어졌을 때, 이 식을 $x$ 에 관해 미분하면,
 > $$
@@ -332,7 +452,11 @@ $$
 > $$
 > 을 얻는다. 이 식의 양변에 $x=0$ 을 대입하면 $0=2$ 를 얻는다.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $y=\left(x(x-1)(x-2)\right)^{1/3}$ 이므로,
 
@@ -342,11 +466,21 @@ $$
 
 이며 $y'(0)$ 은 정의되지 않는다.
 
-</br>
+:::
 
-**11.** $(x,\,y)$ 에 대한 함수 $z$ 가 식 $x^3-2y^2+z^2=0$ 을 만족시킬 때, $\dfrac{\partial z}{\partial x}(1,\,1)$ 과 $\dfrac{\partial z}{\partial y}(1,\,1)$ 을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_12_2_11} 
+
+#### SNU 탐구문제 12.2.11 
+
+$(x,\,y)$ 에 대한 함수 $z$ 가 식 $x^3-2y^2+z^2=0$ 을 만족시킬 때, $\dfrac{\partial z}{\partial x}(1,\,1)$ 과 $\dfrac{\partial z}{\partial y}(1,\,1)$ 을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y,\,z)=x^3-2y^2+z^2$ 이라 할 때 $x=1,\,y=1$ 에 대해 가능한 $f(x,\,y,\,z)=0$ 의 $z$ 값은 $\pm 1$ 이다. 또한 이때 $\partial_z f(1,\,1,\, 1)=2\ne 0,\, \partial_z f(1,\,1,\,-1)=-2\ne 0$ 이 므로 각각의 경우에 대해 $z=g_1(x,\,y),\, g_2(x,\,y)$ 인 그래프가 존재한다.
 
@@ -355,15 +489,25 @@ $$
 $$
 임을 이용한다.
 
-(1) $(1,\,1,\,1)$  근처에서, $\partial_x g_1 (1,\,1)=-\dfrac{\partial_x f(1,\,1,\,1)}{\partial_z f(1,\,1,\,1)}=-\dfrac{3}{2},\, \partial_y g_1 (1,\,1)=-\dfrac{\partial_y f(1,\,1,\,1)}{\partial_z f(1,\,1,\,1)}=2$
+($1$) $(1,\,1,\,1)$  근처에서, $\partial_x g_1 (1,\,1)=-\dfrac{\partial_x f(1,\,1,\,1)}{\partial_z f(1,\,1,\,1)}=-\dfrac{3}{2},\, \partial_y g_1 (1,\,1)=-\dfrac{\partial_y f(1,\,1,\,1)}{\partial_z f(1,\,1,\,1)}=2$
 
-(2) $(1,\,1,\,-1)$ 근처에서 $\partial_x g_2 (1,\,1)=-\dfrac{\partial_x f(1,\,1,\,-1)}{\partial_z f(1,\,1,\,-1)}=-\dfrac{3}{2},\, \partial_y g_2 (1,\,1)=-\dfrac{\partial_y f(1,\,1,\,1)}{\partial_z f(1,\,1,\,1)}=-2$
+($2$) $(1,\,1,\,-1)$ 근처에서 $\partial_x g_2 (1,\,1)=-\dfrac{\partial_x f(1,\,1,\,-1)}{\partial_z f(1,\,1,\,-1)}=-\dfrac{3}{2},\, \partial_y g_2 (1,\,1)=-\dfrac{\partial_y f(1,\,1,\,1)}{\partial_z f(1,\,1,\,1)}=-2$
 
-</br>
+:::
 
-**12.** $y^5+3x^2y^3-7x^6-8=0$ 일 때 $\dfrac{dy}{dx}(0)$ 을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_12_2_12} 
+
+#### SNU 탐구문제 12.2.12 
+
+$y^5+3x^2y^3-7x^6-8=0$ 일 때 $\dfrac{dy}{dx}(0)$ 을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y)=y^5+3x^2y^3-7x^6-8$ 이라 할 때, $x=0,\, y = 2^{3/5}$ 만이 $f(x,\,y)=0$ 을 만족한다.
 
@@ -379,10 +523,22 @@ $$
 
 이다.
 
-</br>
+:::
 
-**13.** 만약 $n$ 차 정사각행렬 $A$ 가 항등행렬 $I$ 에 아주 가까우면, $e^X=A$ 가 되는 정사각행렬 $X$ 가 존재함을 설명하라. 이때 임의의 자연수 $k$ 에 대하여 $Y^k=A$ 가 되는 정사각행렬 $Y$ 가 존재함을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_12_2_13} 
+
+#### SNU 탐구문제 12.2.13 
+
+만약 $n$ 차 정사각행렬 $A$ 가 항등행렬 $I$ 에 아주 가까우면, $e^X=A$ 가 되는 정사각행렬 $X$ 가 존재함을 설명하라. 이때 임의의 자연수 $k$ 에 대하여 $Y^k=A$ 가 되는 정사각행렬 $Y$ 가 존재함을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 (불평) $I$ 에 아주 가깝다는 말이 정확히 무슨뜻이야?
+
+:::
