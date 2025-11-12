@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,15 +69,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../src/calculus/08_3dspace.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +119,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -161,9 +160,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Mathematical Analysis</a> 
         <div class="sidebar-tools-main">
@@ -1059,8 +1056,10 @@ Y' \times Y'' \cdot Y''' &amp;= {\big [} ( g'(s) X'(g(s))) {\big]} \times {\big[
 \]</span></p>
 <p>이며 <span class="math inline">\(\det(M) &gt;0\)</span> 이므로, <span class="math inline">\(Y\)</span> 가 오른쪽으로 휘어 있을 필요충분조건은 <span class="math inline">\(X\)</span> 가 오른쪽으로 휜 것이다.</p>
 </div>
-<p><br></p>
-<p><strong>7.</strong> 양수 <span class="math inline">\(a,\,b\)</span> 에 대하여 나선</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_3_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.22</strong></span> 양수 <span class="math inline">\(a,\,b\)</span> 에 대하여 나선</p>
 <p><span class="math display">\[
 R(t):=(a\cos t,\, a \sin t,\, bt)
 \]</span></p>
@@ -1069,22 +1068,30 @@ R(t):=(a\cos t,\, a \sin t,\, bt)
 L(t):=(a\cos t,\, -a \sin t,\ bt)
 \]</span></p>
 <p>는 왼쪽으로 휘어 있음을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 R'\times R'' \cdot R''' &amp;= \begin{pmatrix} -a \sin t&amp; a \cos t &amp; b \\ -a \cos t &amp; -a \sin t &amp; 0 \\ a \sin t &amp; -a \cos t &amp; 0\end{pmatrix}=a^2b\cos ^2 t+a^2b \sin^2 t=a^2b&gt; 0\\
 L'\times L'' \cdot L''' &amp;= \begin{pmatrix} -a \sin t&amp; -a \cos t &amp; b \\ -a \cos t &amp; a \sin t &amp; 0 \\ a \sin t &amp; a \cos t &amp; 0\end{pmatrix} =-a^2b \cos t -a^2b \sin ^2t = -a^2b &lt; 0
 \end{aligned}
 \]</span></p>
+</div>
+<p><br></p>
 </section>
 <section id="연습문제-제-9-장-4-절" class="level2" data-number="9.5">
 <h2 data-number="9.5" class="anchored" data-anchor-id="연습문제-제-9-장-4-절"><span class="header-section-number">9.5</span> 연습문제 : 제 9 장 4 절</h2>
-<p><strong>1.</strong> 양수 <span class="math inline">\(a\)</span> 에 대하여, 곡선</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.23</strong></span> 양수 <span class="math inline">\(a\)</span> 에 대하여, 곡선</p>
 <p><span class="math display">\[
 X(t)=(t \cos t,\, t\sin t,\, t) \qquad 0\le t\le \sqrt{2}\sinh a
 \]</span> 의 길이를 구하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 l &amp;= \int_0^{\sqrt2 \sinh a} \sqrt{(\cos t - t\sin t)^2+(\sin t+t\cos t)^2 +1}\, dt \\
 &amp;=\int_0^{\sqrt{2}\sinh a} \sqrt{t^2+2} \, dt
@@ -1098,10 +1105,15 @@ l &amp;= \int_0^a 2\cosh^2s\, ds = \dfrac{1}{2}\int_0^a (e^{2s}+2+e^{-2s})ds\\
 &amp;=a+\dfrac{1}{2}\sinh 2a
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>2.</strong> 좌표평면에서 식 <span class="math inline">\(\sqrt{x}+\sqrt{y}=1\)</span> 로 주어진 곡선의 길이를 구하라.</p>
-<hr>
-<p><span class="math inline">\(0\le x,\, y \le 1\)</span> 임을 안다. <span class="math inline">\(X(t)=(t^2,\, (1-t)^2)\)</span> 로 재매개화 하면,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.24</strong></span> 좌표평면에서 식 <span class="math inline">\(\sqrt{x}+\sqrt{y}=1\)</span> 로 주어진 곡선의 길이를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(0\le x,\, y \le 1\)</span> 임을 안다. <span class="math inline">\(X(t)=(t^2,\, (1-t)^2)\)</span> 로 재매개화 하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 l &amp;= \int_0^1 \sqrt{4t^2+4(1-t)^2}\,dt=\int_0^1 \sqrt{8t^2-8t+4}\,dt \\
@@ -1133,24 +1145,34 @@ l &amp;= \dfrac{\sqrt{2}}{4}\int_a^b \sqrt{\sinh ^2+1} \cosh s\, ds=\dfrac{\sqrt
 <p><span class="math display">\[
 l=\dfrac{\sqrt{2}}{16}(4\sqrt{2}+4\ln(\sqrt{2}+1))=\dfrac{1}{2}+\dfrac{\sqrt{2}}{4}\ln (\sqrt{2}+1)
 \]</span> 이다.</p>
-<p><br></p>
-<p><strong>3.</strong> (<strong>아스트로이드</strong>) 곡선</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.25 (아스트로이드)</strong></span> 곡선</p>
 <p><span class="math display">\[
 (x^2)^{1/3}+(y^2)^{1/3}=1
 \]</span></p>
 <p>의 길이를 구하라.</p>
-<hr>
-<p><span class="math inline">\(-1 \le x,\,y \le 1\)</span> 이며 대칭을 고려하면 <span class="math inline">\(0\le x,\, y \le 1\)</span> 에서의 곡선을 구한 후 <span class="math inline">\(4\)</span> 배 해주면 된다. <span class="math inline">\(x=\sin ^{3}\theta,\, y = \cos^{3}\theta\)</span> 로 매개화하면, <span class="math inline">\(0\le \theta \le \pi/2\)</span> 구간에서 생각해 주면 되므로,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(-1 \le x,\,y \le 1\)</span> 이며 대칭을 고려하면 <span class="math inline">\(0\le x,\, y \le 1\)</span> 에서의 곡선을 구한 후 <span class="math inline">\(4\)</span> 배 해주면 된다. <span class="math inline">\(x=\sin ^{3}\theta,\, y = \cos^{3}\theta\)</span> 로 매개화하면, <span class="math inline">\(0\le \theta \le \pi/2\)</span> 구간에서 생각해 주면 되므로,</p>
 <p><span class="math display">\[
 \begin{aligned}
 l &amp;= 4\int_0^{\pi/2} \sqrt{9 \cos^2 \theta \sin ^4 \theta + 9 \sin ^2 \theta \cos ^4 \theta}\, d\theta \\
 &amp;=4\int_0^{\pi/2} 3 \sin \theta \cos \theta\,d\theta = 6\int_0^{\pi/2} \sin 2\theta \, d\theta=6
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>4.</strong> 종이가 감긴 직원기둥을 평면으로 절단한 뒤에 종이를 펴면, 잘린 종이의 부분은 사인곡선(sinusoid) 인가? 이 때 자르는 평면이 원기둥의 회전축과 수직이 아니라고 가정한다.</p>
-<hr>
-<p>절단한 평면이 원점을 지나는 평면이라 해도 문제없다. 이 평면의 방향단위벡터를 <span class="math inline">\(\boldsymbol{n}=(n_1,\,n_2,\,n_3)\)</span> 라 하면 평면의 방정식은,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.26</strong></span> 종이가 감긴 직원기둥을 평면으로 절단한 뒤에 종이를 펴면, 잘린 종이의 부분은 사인곡선(sinusoid) 인가? 이 때 자르는 평면이 원기둥의 회전축과 수직이 아니라고 가정한다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>절단한 평면이 원점을 지나는 평면이라 해도 문제없다. 이 평면의 방향단위벡터를 <span class="math inline">\(\boldsymbol{n}=(n_1,\,n_2,\,n_3)\)</span> 라 하면 평면의 방정식은,</p>
 <p><span class="math display">\[
 \boldsymbol{n}\cdot X=(n_1,\,n_2,\,n_3)\cdot (x,\,y,\,z)=0
 \]</span></p>
@@ -1162,14 +1184,20 @@ l &amp;= 4\int_0^{\pi/2} \sqrt{9 \cos^2 \theta \sin ^4 \theta + 9 \sin ^2 \theta
 <p><span class="math display">\[
 \begin{aligned}
 &amp; an_1\cos \phi + an_2\sin \phi+n_3z=0 \\
-\implies &amp;z=a \left( \dfrac{n_1}{n_3}\cos \phi+\dfrac{n_2}{n_3} \sin \phi \right)=b\sin(\phi+\phi_0) \qquad\text{where }\phi_0=\arctan\left(\dfrac{n_1}{n_2}\right),\, b=a\sqrt{\dfrac{n_1^2+n_2^2}{n_3^2}}
+\implies &amp;z=a \left( \dfrac{n_1}{n_3}\cos \phi+\dfrac{n_2}{n_3} \sin \phi \right)=b\sin(\phi+\phi_0), \\[0.3em]
+&amp;\qquad \qquad \text{where }\phi_0=\arctan\left(\dfrac{n_1}{n_2}\right),\, b=a\sqrt{\dfrac{n_1^2+n_2^2}{n_3^2}}
 \end{aligned}
 \]</span></p>
 <p>이므로 사인곡선이다.</p>
-<p><br></p>
-<p><strong>5.</strong> (<strong>토리첼리</strong> 의 정리). 로그 와선 <span class="math inline">\(r=e^{\theta}\)</span> 의 한 점 <span class="math inline">\(T=(e^{2n\pi},\,0)\)</span> 에서 그은 접선이 <span class="math inline">\(y\)</span> 축과 만나는 점을 <span class="math inline">\(S\)</span> 라고 하자. 이 때, 로그와선의 구간 <span class="math inline">\(-\infty  &lt; \theta \le 2n\pi\)</span> 사이의 길이는 점 <span class="math inline">\(T\)</span> 와 <span class="math inline">\(S\)</span> 의 길이와 같음을 보이라. (특히 로그와선을 따라 원점에 접근하면, 그 움직인 거리는 유한함을 알 수 있다.)</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.27 (토리첼리 의 정리)</strong></span> 로그 와선 <span class="math inline">\(r=e^{\theta}\)</span> 의 한 점 <span class="math inline">\(T=(e^{2n\pi},\,0)\)</span> 에서 그은 접선이 <span class="math inline">\(y\)</span> 축과 만나는 점을 <span class="math inline">\(S\)</span> 라고 하자. 이 때, 로그와선의 구간 <span class="math inline">\(-\infty  &lt; \theta \le 2n\pi\)</span> 사이의 길이는 점 <span class="math inline">\(T\)</span> 와 <span class="math inline">\(S\)</span> 의 길이와 같음을 보이라. (특히 로그와선을 따라 원점에 접근하면, 그 움직인 거리는 유한함을 알 수 있다.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X(\theta)&amp;=(e^\theta \cos \theta,\, e^\theta\sin \theta) \\
 X'(\theta)&amp;=(e^\theta \cos \theta -e^\theta \sin \theta,\, e^\theta \sin \theta+ e^\theta\cos \theta)
@@ -1188,10 +1216,15 @@ l&amp;=\int_{-\infty}^{2n\pi} \sqrt{(e^\theta \cos \theta -e^\theta \sin \theta)
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>6.</strong>(<strong>호이겐스의 시계</strong>) 왼쪽 벽과 오른쪽 벽이 사이클로이드로 되어 있는 시계에 추가 달려 있을 때 추가 움직이는 궤적도 역시 사이클로이드임을 보이라.</p>
-<hr>
-<p>추의 고정점을 원점으로 잡았을 때 사이클로이드 벽면의 방정식은 <span class="math inline">\((t-\sin t,\, -1+\cos t)\)</span> 이다. 추의 길이를 <span class="math inline">\(l\)</span> 이라 하자.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.28 (호이겐스의 시계)</strong></span> 왼쪽 벽과 오른쪽 벽이 사이클로이드로 되어 있는 시계에 추가 달려 있을 때 추가 움직이는 궤적도 역시 사이클로이드임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>추의 고정점을 원점으로 잡았을 때 사이클로이드 벽면의 방정식은 <span class="math inline">\((t-\sin t,\, -1+\cos t)\)</span> 이다. 추의 길이를 <span class="math inline">\(l\)</span> 이라 하자.</p>
 <p>추를 매단 줄은 <span class="math inline">\([0,\,t]\)</span> 구간은 사이클로이드 면을 따라, 그 이후는 남은 줄의 길이만큼은 <span class="math inline">\(t\)</span> 에서의 접선의 방정식을 따라 간다. <span class="math inline">\(t\)</span> 까지의 길이 <span class="math inline">\(l_1(t)\)</span> 는</p>
 <p><span class="math display">\[
 l_1(t) = \int_0^t 2 \sin \left(\dfrac{t'}{2}\right)\, dt'=\left[-4\cos \dfrac{t'}{2}\right]_0^t = 4-4 \cos \left(\dfrac{t}{2}\right)
@@ -1214,7 +1247,7 @@ y(t) &amp;=-1+\cos t + (l-l_1(t))\dfrac{-\sin t}{2 \sin \dfrac{t}{2}} \\
 </figure>
 </div>
 <p>이게 사이클로이드인가?? 아래는 위 그림을 그린 python conde 이다. (Jupyter notebook 에서 실행 할 수 있다. )</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cycloid(ti, tf, Nt):</span>
@@ -1237,11 +1270,16 @@ y(t) &amp;=-1+\cos t + (l-l_1(t))\dfrac{-\sin t}{2 \sin \dfrac{t}{2}} \\
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code></pre></div><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></div>
-<p><br></p>
-<p><strong>7.</strong> 극좌표계로 주어진 다음 곡선의 개형을 그리고, 그 곡선의 길이를 구하라.</p>
-<hr>
-<p><span class="math display">\[
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.29</strong></span> 극좌표계로 주어진 다음 곡선의 개형을 그리고, 그 곡선의 길이를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 L(r=3\theta^2,\, 1 \le \theta \le 2) &amp;=\int_1^2 \sqrt{9\theta^4 + 36\theta^2}\, d\theta =3\int_1^2 \theta\sqrt{\theta^2+4}\, d\theta \\
 &amp;= {\big [} (\theta^2+4)^{3/2}{\big ]}_1^2=16\sqrt{2}-5\sqrt{5} \\
@@ -1264,8 +1302,11 @@ L\left( r=\dfrac{\sqrt{3}}{2}+\cos \dfrac{\theta}{2} \right) &amp;= \int_0^{4\pi
 <figcaption>img</figcaption>
 </figure>
 </div>
-<p><br></p>
-<p><strong>8.</strong> 타원 <span class="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</span> 의 길이는</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.30</strong></span> 타원 <span class="math inline">\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</span> 의 길이는</p>
 <p><span class="math display">\[
 \int_0^{2\pi} \sqrt{a^2\sin^2 t + b^2 \cos^2 t}\, dt
 \]</span></p>
@@ -1278,14 +1319,20 @@ y=c \sin x,\qquad (0 \le x \le 2\pi)
 \int_0^{2\pi} \sqrt{1+c^2\cos^2x}\, dx
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>타원의 매개화 <span class="math inline">\(X(t)= (a \sin t,\, b\cos t)\)</span> 를 생각하면 자명하다. 또한 사인함수도 <span class="math inline">\(X(t)=(x,\, c\sin x)\)</span> 를 생각하면 자명하다.</p>
-<p><br></p>
-<p><strong>9.</strong> 곡선</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>타원의 매개화 <span class="math inline">\(X(t)= (a \sin t,\, b\cos t)\)</span> 를 생각하면 자명하다. 또한 사인함수도 <span class="math inline">\(X(t)=(x,\, c\sin x)\)</span> 를 생각하면 자명하다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_4_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.31</strong></span> 곡선</p>
 <p><span class="math display">\[
-y\equiv \ln x \qquad (a\le x \le b)
+y:=\ln x \qquad (a\le x \le b)
 \]</span> 의 길이를 구하라.</p>
-<hr>
+</div>
+</div>
 <p><span class="math display">\[
 \begin{aligned}
 \int_a^b \sqrt{1+\dfrac{1}{x^2}}\,dx &amp;= \int_a^b \dfrac{\sqrt{1+x^2}}{x}dx=\int_{\sqrt{a^2+1}}^{\sqrt{b^2+1}}\dfrac{u^2}{u^2-1}\, du \\
@@ -1298,20 +1345,21 @@ y\equiv \ln x \qquad (a\le x \le b)
 </section>
 <section id="연습문제-제-9-장-5-절" class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" data-anchor-id="연습문제-제-9-장-5-절"><span class="header-section-number">9.6</span> 연습문제 : 제 9 장 5 절</h2>
-<p><strong>1.</strong> 극좌표계에서 다음 식으로 주어진 영역의 넓이를 구하라</p>
-<ol type="1">
-<li><span class="math inline">\(1\le r \le 2 \cos \theta \qquad \qquad \qquad\)</span> (2) <span class="math inline">\(2 \le r \le 1+2\cos \theta\)</span></li>
-</ol>
-<hr>
-<ol type="1">
-<li><span class="math inline">\(\cos\theta \ge \dfrac{1}{2}\)</span> 이어야 하므로, <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}\)</span>, <span class="math inline">\(\dfrac{5\pi}{3} \le \theta \le 2\pi\)</span> 이어야 한다.</li>
-</ol>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.32</strong></span> 극좌표계에서 다음 식으로 주어진 영역의 넓이를 구하라</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(1\le r \le 2 \cos \theta, \qquad \qquad \qquad\)</span> (<span class="math inline">\(2\)</span>) <span class="math inline">\(2 \le r \le 1+2\cos \theta\)</span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\cos\theta \ge \dfrac{1}{2}\)</span> 이어야 하므로, <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}\)</span>, <span class="math inline">\(\dfrac{5\pi}{3} \le \theta \le 2\pi\)</span> 이어야 한다.</p>
 <p><span class="math display">\[
-\text{Area}=\int_0^{\pi/3} 2 \cos^2 \theta d\theta+\int_{5\pi/3}^{2\pi} 2 \cos^2 \theta d\theta-\dfrac{2\pi}{3}= 2\times\left[\dfrac{1}{2} \sin 2\theta + \theta\right]_0^{\pi/3} -\dfrac{2\pi}{3}=\dfrac{\sqrt{3}}{2}
+\begin{aligned}
+\text{Area} &amp;= \int_0^{\pi/3} 2 \cos^2 \theta d\theta+\int_{5\pi/3}^{2\pi} 2 \cos^2 \theta d\theta-\dfrac{2\pi}{3} \\[0.3em]
+&amp;= 2\times\left[\dfrac{1}{2} \sin 2\theta + \theta\right]_0^{\pi/3} -\dfrac{2\pi}{3}=\dfrac{\sqrt{3}}{2}
+\end{aligned}
 \]</span></p>
-<ol start="2" type="1">
-<li>역시 <span class="math inline">\(\cos\theta \ge \dfrac{1}{2}\)</span> 이어야 하므로, <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}\)</span>, <span class="math inline">\(\dfrac{5\pi}{3} \le \theta \le 2\pi\)</span> 이어야 한다.</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) 역시 <span class="math inline">\(\cos\theta \ge \dfrac{1}{2}\)</span> 이어야 하므로, <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}\)</span>, <span class="math inline">\(\dfrac{5\pi}{3} \le \theta \le 2\pi\)</span> 이어야 한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \text{Area} &amp;= \int_0^{\pi/3} \dfrac{1}{2} (1+2\cos\theta)^2 \, d\theta +\int_{5\pi/3}^{2\pi} \dfrac{1}{2} (1+2\cos\theta)^2 \, d\theta  - \dfrac{8\pi}{3} \\
@@ -1320,9 +1368,15 @@ y\equiv \ln x \qquad (a\le x \le b)
 &amp;=\dfrac{5\sqrt{3}}{2}-\dfrac{5\pi}{3}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>2.</strong> 극좌표계에서 식 <span class="math inline">\(r=1-\cos \theta\)</span> 로 주어진 곡선의개형을 그리고, 이 곡선으로 둘러싸인 부분의 면적을 구하라.</p>
-<hr>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.33</strong></span> 극좌표계에서 식 <span class="math inline">\(r=1-\cos \theta\)</span> 로 주어진 곡선의개형을 그리고, 이 곡선으로 둘러싸인 부분의 면적을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_9_5_2.jpg" class="img-fluid figure-img"></p>
@@ -1336,9 +1390,15 @@ y\equiv \ln x \qquad (a\le x \le b)
 &amp;=\dfrac{1}{2} \left[\dfrac{3\theta}{2} -2 \sin \theta + \dfrac{\sin 2\theta}{4}\right]_0^{\pi} =\dfrac{3\pi}{4}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>3.</strong> 다음 곡선의 개형을 그리고, 그 곡선으로 둘러쌓인 부분의 넓이를구하라.</p>
-<hr>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.34</strong></span> 다음 곡선의 개형을 그리고, 그 곡선으로 둘러쌓인 부분의 넓이를구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_9_5_3.jpg" class="img-fluid figure-img"></p>
@@ -1346,28 +1406,27 @@ y\equiv \ln x \qquad (a\le x \le b)
 </figure>
 </div>
 <p>넓이를 구하는건.. 별로 안어려워서 패스..</p>
-<p><br></p>
-<p><strong>4.</strong> 극좌표계를 이용하여 다음 식으로 주어진 곡선의 개형을 그리고, 이 곡선으로 둘러싸인 부분의 넓이를 구하라.</p>
-<ol type="1">
-<li><span class="math inline">\(y^2(1+x^2)= x^2(3-x^2) \qquad \qquad \qquad\)</span> (2) <span class="math inline">\(x^2+y^2=6\sqrt{x^2-y^2}\)</span></li>
-</ol>
-<hr>
-<ol type="1">
-<li><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.35</strong></span> 극좌표계를 이용하여 다음 식으로 주어진 곡선의 개형을 그리고, 이 곡선으로 둘러싸인 부분의 넓이를 구하라.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(y^2(1+x^2)= x^2(3-x^2), \qquad \qquad \qquad\)</span> (<span class="math inline">\(2\)</span>) <span class="math inline">\(x^2+y^2=6\sqrt{x^2-y^2}\)</span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math display">\[
 \begin{aligned}
 &amp;r^2\sin^2 \theta (1+r^2 \cos^2 \theta)=r^2 \cos^2\theta (3-r^2\cos^2 \theta)\\
 \implies &amp; \sin^2 \theta +r^2 \cos^2 \theta \sin^2 \theta = 3\cos^2 \theta-r^2\cos^4 \theta  \\
 \implies &amp; r^2 \cos^2\theta  = 3 \cos^2 \theta - \sin^2 \theta \\
 \implies &amp; r^2 = 3-\tan^2 \theta
 \end{aligned}
-\]</span></li>
-</ol>
-<p>따라서 <span class="math inline">\(\tan^2\theta\le3\)</span> 인 $0 , ,, &lt;2 $ 에서 유효하다.</p>
-<ol start="2" type="1">
-<li><span class="math display">\[
+\]</span></p>
+<p>따라서 <span class="math inline">\(\tan^2\theta\le3\)</span> 인 <span class="math inline">\(0 \le \theta \le \dfrac{\pi}{3}, \dfrac{2\pi}{3} \le \theta \le \dfrac{4\pi }{3},\, \dfrac{5\pi }{3} \le \theta &lt;2 \pi\)</span> 에서 유효하다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math display">\[
 r^2 =6r\sqrt{\cos^2\theta - \sin^2\theta} \implies r=6\sqrt{\cos 2\theta}
-\]</span> 이므로 <span class="math inline">\(\cos 2\theta \ge 0\)</span> 인 <span class="math inline">\(0 \le \theta  \le \dfrac{\pi}{4},\, \dfrac{3\pi}{4}\le \theta \le \dfrac{5 \pi}{4}, \dfrac{7\pi}{4} \le \theta &lt;2\pi\)</span> 에서 유효하다. 이제 두 그래프의 개형을 보자.</li>
-</ol>
+\]</span> 이므로 <span class="math inline">\(\cos 2\theta \ge 0\)</span> 인 <span class="math inline">\(0 \le \theta  \le \dfrac{\pi}{4},\, \dfrac{3\pi}{4}\le \theta \le \dfrac{5 \pi}{4}, \dfrac{7\pi}{4} \le \theta &lt;2\pi\)</span> 에서 유효하다. 이제 두 그래프의 개형을 보자.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_9_5_4.jpg" class="img-fluid figure-img"></p>
@@ -1381,21 +1440,37 @@ r^2 =6r\sqrt{\cos^2\theta - \sin^2\theta} \implies r=6\sqrt{\cos 2\theta}
 \text{Area}(2) &amp;= 4 \int_0^{\pi/4} \dfrac{1}{2} \cdot 36 \cos 2\theta =36{\big[} \sin 2\theta {\big ]}_0^{\pi/4}=36
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>5.</strong> 곡선 <span class="math inline">\(r^2=2\cos 2\theta\)</span> 의 한쪽 날개의 넓이가 <span class="math inline">\(1\)</span> 임을 보여라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.36</strong></span> 곡선 <span class="math inline">\(r^2=2\cos 2\theta\)</span> 의 한쪽 날개의 넓이가 <span class="math inline">\(1\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \text{Area}=2\int_0^{\pi/4} \cos 2\theta ={\big[} \sin 2\theta {\big]}_0^{\pi/4}=1
 \]</span></p>
-<p><br></p>
-<p><strong>6.</strong> 극좌표료 주어진 곡선 <span class="math inline">\(r=\sin n\theta\)</span> 의 한 잎의 넓이를 구하라. (단 <span class="math inline">\(n\)</span> 은 자연수이다.)</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.37</strong></span> 극좌표료 주어진 곡선 <span class="math inline">\(r=\sin n\theta\)</span> 의 한 잎의 넓이를 구하라. (단 <span class="math inline">\(n\)</span> 은 자연수이다.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \text{Area}=\int_{0}^{\pi/n}\dfrac{1}{2} \sin^2 n\theta \, d\theta =\dfrac{1}{2n}\int_0^{\pi} \sin^2 \phi \, d\phi= \dfrac{\pi}{4n}
 \]</span></p>
-<p><br></p>
-<p><strong>7.</strong> 아르키메데스의 와선 <span class="math inline">\(r=\theta,\, 0 \le \theta \le \theta_0\)</span> 와 반직선 <span class="math inline">\(\theta = \theta_0\)</span> 로 둘러 싸인 아르키메데스 영역의 넓이는 원점을 꼭지각으로 하고 아르키메데스 영역을 포함하는 가장 작은 부채꼴 넓이의 <span class="math inline">\(1/3\)</span> 임을 보이라. (단 <span class="math inline">\(0 &lt;\theta_0 &lt; 2\pi\)</span> 이다.)</p>
-<hr>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_5_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.38</strong></span> 아르키메데스의 와선 <span class="math inline">\(r=\theta,\, 0 \le \theta \le \theta_0\)</span> 와 반직선 <span class="math inline">\(\theta = \theta_0\)</span> 로 둘러 싸인 아르키메데스 영역의 넓이는 원점을 꼭지각으로 하고 아르키메데스 영역을 포함하는 가장 작은 부채꼴 넓이의 <span class="math inline">\(1/3\)</span> 임을 보이라. (단 <span class="math inline">\(0 &lt;\theta_0 &lt; 2\pi\)</span> 이다.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_9_5_7.jpg" class="img-fluid figure-img"></p>
@@ -1405,16 +1480,24 @@ r^2 =6r\sqrt{\cos^2\theta - \sin^2\theta} \implies r=6\sqrt{\cos 2\theta}
 <p><span class="math display">\[
 \text{Area}=\dfrac{1}{2}\int_0^{\theta_0}\theta^2 \, d\theta =\dfrac{1}{6}\theta_0^3 = \dfrac{1}{3} \left(\pi \theta_0^2 \times \dfrac{\theta_0}{2\pi}\right)
 \]</span></p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-제-9-장-6-절" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="연습문제-제-9-장-6-절"><span class="header-section-number">9.7</span> 연습문제 : 제 9 장 6 절</h2>
-<p><strong>1.</strong> 사이클로이드 <span class="math display">\[
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_6_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.39</strong></span> 사이클로이드 <span class="math display">\[
 X(t)=(t-\sin t,\, 1-\cos t) \qquad (0\le t \le 2\pi)
 \]</span> 를 호의 길이로 매개화하라.</p>
-<hr>
-<p><span class="math display">\[
-s(t)=\int_0^t |X'(t')|\, dt'=\int_0^t \sqrt{(1-\cos^2 t')+\sin^2 t'}\, dt'=\int_0^t 2\left|\sin \frac{t'}{2}\right|\, dt' = 4-4\cos \frac{t}{2}
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+s(t) &amp;= \int_0^t |X'(t')|\, dt' = \int_0^t \sqrt{(1-\cos^2 t')+\sin^2 t'}\, dt' \\[0.3em]
+&amp;= \int_0^t 2\left|\sin \frac{t'}{2}\right|\, dt' = 4-4\cos \frac{t}{2}
+\end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(t=2 \cos^{-1}\left(\dfrac{4-s}{4}\right)\)</span> 이다. <span class="math inline">\(\alpha = \cos^{-1}\left(\dfrac{4-s}{4}\right)\)</span> 라 하면, <span class="math inline">\(\cos \alpha = \dfrac{4-s}{4}\)</span>, <span class="math inline">\(\sin \alpha = \dfrac{\sqrt{8s-s^2}}{4}\)</span> 이며,</p>
 <p><span class="math display">\[
@@ -1427,32 +1510,32 @@ s(t)=\int_0^t |X'(t')|\, dt'=\int_0^t \sqrt{(1-\cos^2 t')+\sin^2 t'}\, dt'=\int_
 <p><span class="math display">\[
 \tilde{X}(s) = \left(2 \cos^{-1}\left(\dfrac{4-s}{4}\right) - \dfrac{(4-s)\sqrt{8s-s^2}}{8},\,  \dfrac{8s-s^2}{8}\right)
 \]</span></p>
-<p><br></p>
-<p><strong>2.</strong> 곡선</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_6_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.40</strong></span> 곡선</p>
 <p><span class="math display">\[
 X(t)=e^t(\cos t,\, \sin t) \qquad (0 \le t \le 2\pi)
 \]</span></p>
-<p>에 대하여 다음에 닿바라.</p>
-<ol type="1">
-<li><p>곡선(의 상) 을 도시하고, 그 길이를 구하라</p></li>
-<li><p>점 <span class="math inline">\(X(0)\)</span> 에서부터 잰 호의 길이를 매개변수로 하여 표현하라.</p></li>
-</ol>
-<hr>
+<p>에 대하여 다음에 답하라.</p>
+<p> (<span class="math inline">\(1\)</span>) 곡선(의 상) 을 도시하고, 그 길이를 구하라</p>
+<p> (<span class="math inline">\(2\)</span>) 점 <span class="math inline">\(X(0)\)</span> 에서부터 잰 호의 길이를 매개변수로 하여 표현하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_9_6_3.jpg" class="img-fluid figure-img"></p>
 <figcaption>ex_9_6_3</figcaption>
 </figure>
 </div>
-<ol type="1">
-<li><span class="math inline">\(X'(t) = (e^t \cos t - e^t \sin t,\, e^t \cos t + e^t \sin t)\)</span></li>
-</ol>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(X'(t) = (e^t \cos t - e^t \sin t,\, e^t \cos t + e^t \sin t)\)</span></p>
 <p><span class="math display">\[
 s(t)=\int_0^t \sqrt{2}e^{t'}\, dt'=\sqrt{2}(e^t-1)
 \]</span></p>
-<ol start="2" type="1">
-<li></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>)</p>
 <p><span class="math display">\[
 t=\ln \left(\dfrac{s}{\sqrt{2}}+1\right)
 \]</span></p>
@@ -1461,21 +1544,32 @@ t=\ln \left(\dfrac{s}{\sqrt{2}}+1\right)
 \tilde{X}(s) = \left(\dfrac{s}{\sqrt{2}}+1 \right)\left(\cos \ln \left(\dfrac{s}{\sqrt{2}}+1\right),\, \sin \ln \left(\dfrac{s}{\sqrt{2}}+1\right)\right)
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>3.</strong> 만약 호의 길이로 매개화된 곡선 <span class="math inline">\(X(t)\)</span> 를 <span class="math inline">\(t=f(s)\)</span> 로 재매개화하였더니 여전히 재매개화된 곡선 <span class="math inline">\(X\circ f\)</span> 도 호의 길이로 매개화되었다고 하자. 이때 어떤 상수 <span class="math inline">\(c\)</span> 에 대하여</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_6_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.41</strong></span> 만약 호의 길이로 매개화된 곡선 <span class="math inline">\(X(t)\)</span> 를 <span class="math inline">\(t=f(s)\)</span> 로 재매개화하였더니 여전히 재매개화된 곡선 <span class="math inline">\(X\circ f\)</span> 도 호의 길이로 매개화되었다고 하자. 이때 어떤 상수 <span class="math inline">\(c\)</span> 에 대하여</p>
 <p><span class="math display">\[
 f(s)=s+c,\qquad \text{or} \qquad f(s)=-s+c
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(X(t)\)</span> 가 호의 길이로 매개화되었으므로 <span class="math inline">\(|X'(t)|=1\)</span> 이다. <span class="math inline">\(X\circ f\)</span> 도 호의 길이로 매개화되었으므로 <span class="math inline">\(\left| \dfrac{d X(f(s))}{ds}\right|=1\)</span> 이다. 그런데,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(X(t)\)</span> 가 호의 길이로 매개화되었으므로 <span class="math inline">\(|X'(t)|=1\)</span> 이다. <span class="math inline">\(X\circ f\)</span> 도 호의 길이로 매개화되었으므로 <span class="math inline">\(\left| \dfrac{d X(f(s))}{ds}\right|=1\)</span> 이다. 그런데,</p>
 <p><span class="math display">\[
 \dfrac{d}{ds}X(f(s))=\dfrac{d X}{dt}(f(s)) \cdot\dfrac{d f(s)}{ds} \implies 1=\left|f'(s)\right|
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(f'(s)=\pm 1\)</span> 이다.</p>
-<p><br></p>
-<p><strong>4.</strong> 곡선의 미분가능 정도는 자연스러운 매개변수, 즉 호의 길이로 매개화하였을 때의 미분가능 정도로 이야기 할 수 있다. 태극의 그림처럼 두개의 반원이 만나서 이루는 곡선은 일급곡선이기는 하지만, 이급곡선은 아님을 보이라.</p>
-<hr>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_6_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.42</strong></span> 곡선의 미분가능 정도는 자연스러운 매개변수, 즉 호의 길이로 매개화하였을 때의 미분가능 정도로 이야기 할 수 있다. 태극의 그림처럼 두개의 반원이 만나서 이루는 곡선은 일급곡선이기는 하지만, 이급곡선은 아님을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_9_6_4.png" class="img-fluid figure-img"></p>
@@ -1495,6 +1589,7 @@ X'(\theta) = \left\{ \begin{array}{ll} (-a \sin \theta ,\, a \cos \theta) \qquad
 X''(\theta) = \left\{ \begin{array}{ll} (-a \cos \theta,\, -a \sin \theta) \qquad &amp;0 \le \theta &lt; \pi \\ (a \cos \theta ,\, -a \sin \theta) &amp; \pi \le \theta &lt; 2\pi \end{array}\\ \right.
 \]</span></p>
 <p>로 <span class="math inline">\(X''(\theta=\pi^+)=(a,\, 0),\, X''(\theta=\pi^-)=(a,\, 0)\)</span> 으로 <span class="math inline">\(X''(\theta)\)</span> 는 연속이 아니다. 따라서 <span class="math inline">\(X(\theta)\)</span> 는 일급이지만 이급곡선은 아니다.</p>
+</div>
 <p><br></p>
 </section>
 <section id="연습문제-제-9-장-7-절" class="level2" data-number="9.8">
@@ -1502,21 +1597,25 @@ X''(\theta) = \left\{ \begin{array}{ll} (-a \cos \theta,\, -a \sin \theta) \qqua
 <section id="재매개화에-의해-선적분값은-변하지-않는다" class="level3" data-number="9.8.1">
 <h3 data-number="9.8.1" class="anchored" data-anchor-id="재매개화에-의해-선적분값은-변하지-않는다"><span class="header-section-number">9.8.1</span> 재매개화에 의해 선적분값은 변하지 않는다</h3>
 <p>함수 <span class="math inline">\(f(x_1,\ldots,\,x_n)\)</span> 에 대하여, 곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}\)</span> 을 따르는 적분값은 <span class="math inline">\(X\)</span> 를 재매개화하여도 변하지 않는다.</p>
-<hr>
-<p><em>(proof)</em> 함수 <span class="math inline">\(g:[\alpha,\,\beta] \to [a,\,b]\)</span> 가 곡선 <span class="math inline">\(X\)</span> 의 동향 재매개화 <span class="math inline">\(\tilde{X}(u):=X(g(u))\)</span> 를 준다고 하자. 그렇다면,</p>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>함수 <span class="math inline">\(g:[\alpha,\,\beta] \to [a,\,b]\)</span> 가 곡선 <span class="math inline">\(X\)</span> 의 동향 재매개화 <span class="math inline">\(\tilde{X}(u):=X(g(u))\)</span> 를 준다고 하자. 그렇다면,</p>
 <p><span class="math display">\[
-\int_{\tilde X} f\,ds =\int_\alpha^\beta f(\tilde{X}(u)) |\tilde{X}'(u)| du = \int_{\alpha}^\beta f(X(g(u))) |X'(g(u))|g'(u) \, du=\int_{a}^b f(X(t))|X'(t)| dt =\int_X f\, ds
+\begin{aligned}
+\int_{\tilde X} f\,ds &amp;=\int_\alpha^\beta f(\tilde{X}(u)) |\tilde{X}'(u)| du \int_{\alpha}^\beta f(X(g(u))) |X'(g(u))|g'(u) \, du \\[0.3em]
+&amp;=\int_{a}^b f(X(t))|X'(t)| dt =\int_X f\, ds
+\end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>1.</strong> 주어진 구간에 대하여 다음 곡선의 중심을 구하라.</p>
-<ol type="1">
-<li><p><span class="math inline">\((\cos 2t,\, \sin 2t,\, 3t)\quad (\pi \le t \le 3\pi)\)</span></p></li>
-<li><p><span class="math inline">\((t-\sin t,\, 1-\cos t) \quad (0 \le t \le 2\pi)\)</span></p></li>
-</ol>
-<hr>
-<ol type="1">
-<li>곡선의 길이 <span class="math inline">\(l\)</span> 은</li>
-</ol>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_7_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.43</strong></span> 주어진 구간에 대하여 다음 곡선의 중심을 구하라.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\((\cos 2t,\, \sin 2t,\, 3t)\quad (\pi \le t \le 3\pi)\)</span></p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\((t-\sin t,\, 1-\cos t) \quad (0 \le t \le 2\pi)\)</span></p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 곡선의 길이 <span class="math inline">\(l\)</span> 은</p>
 <p><span class="math display">\[
 l=\int_\pi^{3\pi} \sqrt{13}\, dt = 2\pi\sqrt{13}
 \]</span></p>
@@ -1529,30 +1628,38 @@ l=\int_\pi^{3\pi} \sqrt{13}\, dt = 2\pi\sqrt{13}
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\((0,\,0,\, 6\pi)\)</span> 가 중심이다.</p>
-<ol start="2" type="1">
-<li>곡선의 길이 <span class="math inline">\(l\)</span> 은</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) 곡선의 길이 <span class="math inline">\(l\)</span> 은</p>
 <p><span class="math display">\[
 l=\int_0^{2\pi} \sqrt{(1-\cos t)^2 + \sin^2 t}=\int_0^{2\pi} 2\left|\sin \dfrac{t}{2}\right|\, dt= 8
 \]</span></p>
 <p>이므로,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\overline{x}_1 &amp;=\dfrac{1}{l} \int_0^{2\pi} (t-\sin t) 2\sin\dfrac{t}{2}\, dt= \dfrac{1}{4}\int_0^{2\pi} \left[t \sin \dfrac{t}{2}-2 \sin^2 \dfrac{t}{2}\cos \dfrac{t}{2}\right] \, dt= \int_0^{\pi} (\theta \sin \theta - \sin^2 \theta \cos \theta) d\theta  = \pi \\
-\overline{x}_2 &amp;=\dfrac{1}{l} \int_0^{2\pi} (1-\cos t)2\sin \dfrac{t}{2}\, dt =\dfrac{1}{2}\int_0^{2\pi} \sin^3 \dfrac{t}{2}\, dt= \int_0^\pi \sin^3 \theta\, d\theta = \int_0^{\pi} (1-\cos^2\theta)\sin \theta \, d\theta =\dfrac{4}{3}
+\overline{x}_1 &amp;=\dfrac{1}{l} \int_0^{2\pi} (t-\sin t) 2\sin\dfrac{t}{2}\, dt= \dfrac{1}{4}\int_0^{2\pi} \left[t \sin \dfrac{t}{2}-2 \sin^2 \dfrac{t}{2}\cos \dfrac{t}{2}\right] \, dt \\[0.3em]
+&amp;= \int_0^{\pi} (\theta \sin \theta - \sin^2 \theta \cos \theta) d\theta  = \pi \\
+\overline{x}_2 &amp;=\dfrac{1}{l} \int_0^{2\pi} (1-\cos t)2\sin \dfrac{t}{2}\, dt =\dfrac{1}{2}\int_0^{2\pi} \sin^3 \dfrac{t}{2}\, dt= \int_0^\pi \sin^3 \theta\, d\theta \\[0.3em]
+&amp;= \int_0^{\pi} (1-\cos^2\theta)\sin \theta \, d\theta =\dfrac{4}{3}
 \end{aligned}
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\((\pi,\, 4/3)\)</span> 이 중심이다.</p>
-<p><br></p>
-<p><strong>2.</strong> 곡선</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_7_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.44</strong></span> 곡선</p>
 <p><span class="math display">\[
 x^{2/3}+y^{2/3}=1,\qquad x\ge 0,\, y \ge 0
 \]</span></p>
 <p>의 중심을 구하라.</p>
-<hr>
-<p><span class="math inline">\(X(t)=(\cos^3 t,\, \sin^3 t)\)</span>, <span class="math inline">\(0 \le t \le \pi/2\)</span> 로 매개화 할 수 있다. 이제 곡선의 길이 <span class="math inline">\(l\)</span> 은,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(X(t)=(\cos^3 t,\, \sin^3 t)\)</span>, <span class="math inline">\(0 \le t \le \pi/2\)</span> 로 매개화 할 수 있다. 이제 곡선의 길이 <span class="math inline">\(l\)</span> 은,</p>
 <p><span class="math display">\[
-l=\int_0^{\pi/2} \sqrt{9 \sin^2 t \cos^4 t + 9 \cos ^2 t \sin ^4 t}\, dt = \int_0^{\pi/2} 3 \sin t \cos t\, dt = \dfrac{3}{2} \int_0^{\pi/2} \sin 2t \, dt = \dfrac{3}{2}
+\begin{aligned}
+l&amp;=\int_0^{\pi/2} \sqrt{9 \sin^2 t \cos^4 t + 9 \cos ^2 t \sin ^4 t}\, dt = \int_0^{\pi/2} 3 \sin t \cos t\, dt \\[0.3em]
+&amp;= \dfrac{3}{2} \int_0^{\pi/2} \sin 2t \, dt = \dfrac{3}{2}
+\end{aligned}
 \]</span></p>
 <p>이다. 따라서,</p>
 <p><span class="math display">\[
@@ -1563,20 +1670,29 @@ l=\int_0^{\pi/2} \sqrt{9 \sin^2 t \cos^4 t + 9 \cos ^2 t \sin ^4 t}\, dt = \int_
 \end{aligned}
 \]</span></p>
 <p>따라서 중심은 <span class="math inline">\(\left(\dfrac{2}{5},\, \dfrac{2}{5}\right)\)</span> 이다.</p>
-<p><br></p>
-<p><strong>3.</strong> 평면곡선 <span class="math inline">\(X \subset \mathbb{R}^2\)</span> 의 중심을 <span class="math inline">\(\bar{X}\)</span> 라 할 때 임의의 직선 <span class="math inline">\(l \subset \mathbb{R}^2\)</span> 에 대하여 <span class="math inline">\(l\)</span> 과 <span class="math inline">\(X\)</span> 사이의 평균거리는 <span class="math inline">\(l\)</span> 과 <span class="math inline">\(\bar{X}\)</span> 사이의 거리와 같음을 보이라. 또 공간 곡선 <span class="math inline">\(Y \subset \mathbb{R}^3\)</span> 의 중심을 <span class="math inline">\(\bar{Y}\)</span> 라 할 때 임의의 평면 <span class="math inline">\(p \subset \mathbb{R}^3\)</span> 에 대하여 <span class="math inline">\(p\)</span> 와 <span class="math inline">\(Y\)</span> 사이의 평균거리는 <span class="math inline">\(p\)</span> 와 <span class="math inline">\(\bar{Y}\)</span> 사이의 거리와 같음을 보이라. (이 문제에서 <em>거리</em> 는 부호를 가진 것으로 생각한다. 즉, 직선 <span class="math inline">\(l\)</span> 에 의해여 평면이 둘로 나뉘어지는데, 어느 한쪽이 양의 거리이면, 다른 쪽은 음의 거리를 가지는 것으로 생각한다.)</p>
-<hr>
-<p>호의 길이로 매개화된 곡선에 대해서 생각한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_7_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.45</strong></span> 평면곡선 <span class="math inline">\(X \subset \mathbb{R}^2\)</span> 의 중심을 <span class="math inline">\(\bar{X}\)</span> 라 할 때 임의의 직선 <span class="math inline">\(l \subset \mathbb{R}^2\)</span> 에 대하여 <span class="math inline">\(l\)</span> 과 <span class="math inline">\(X\)</span> 사이의 평균거리는 <span class="math inline">\(l\)</span> 과 <span class="math inline">\(\bar{X}\)</span> 사이의 거리와 같음을 보이라. 또 공간 곡선 <span class="math inline">\(Y \subset \mathbb{R}^3\)</span> 의 중심을 <span class="math inline">\(\bar{Y}\)</span> 라 할 때 임의의 평면 <span class="math inline">\(p \subset \mathbb{R}^3\)</span> 에 대하여 <span class="math inline">\(p\)</span> 와 <span class="math inline">\(Y\)</span> 사이의 평균거리는 <span class="math inline">\(p\)</span> 와 <span class="math inline">\(\bar{Y}\)</span> 사이의 거리와 같음을 보이라. (이 문제에서 <em>거리</em> 는 부호를 가진 것으로 생각한다. 즉, 직선 <span class="math inline">\(l\)</span> 에 의해여 평면이 둘로 나뉘어지는데, 어느 한쪽이 양의 거리이면, 다른 쪽은 음의 거리를 가지는 것으로 생각한다.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>호의 길이로 매개화된 곡선에 대해서 생각한다.</p>
 <p>직선이 <span class="math inline">\(P\)</span> 를 지나며, 단위벡터 <span class="math inline">\(\boldsymbol{n}\)</span> 에 수직이라 하자. 그렇다면 평면곡선상의 <span class="math inline">\(X(t)\)</span> 와 직선상의 (부호를 가진) 거리는 <span class="math inline">\((X(t)-P)\cdot \boldsymbol{n}\)</span> 이다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\bar{d} &amp;=\dfrac{1}{l}\int_a^b (X(t)-P)\cdot \boldsymbol{n} X'(t)\, dt=\dfrac{1}{l} \int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}+(\bar{X}-P)\cdot \boldsymbol{n}{\big]} X'(t)\, dt \\
+\bar{d} &amp;=\dfrac{1}{l}\int_a^b (X(t)-P)\cdot \boldsymbol{n} X'(t)\, dt \\[0.3em]
+&amp;=\dfrac{1}{l} \int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}+(\bar{X}-P)\cdot \boldsymbol{n}{\big]} X'(t)\, dt \\
 &amp;=\dfrac{1}{l}\int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}{\big]} X'(t)\, dt  + \dfrac{1}{l}\int_a^b {\big [}(\bar{X}-P)\cdot \boldsymbol{n}{\big]} X'(t)\, dt
 \end{aligned}
 \]</span></p>
 <p>여기서, 첫번째 term 은</p>
 <p><span class="math display">\[
-\int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}{\big]} X'(t)\, dt =\boldsymbol{n} \cdot  \left(\int_a^b X(t)X'(t)\, dt -\overline{X}\int_a^b X'(t)\, dt \right) = \boldsymbol{n} \cdot \left(\bar{X}-\bar{X}\right)=0
+\begin{aligned}
+\int_a^b {\big [}(X(t)-\bar{X})\cdot \boldsymbol{n}{\big]} X'(t)\, dt &amp;=\boldsymbol{n} \cdot  \left(\int_a^b X(t)X'(t)\, dt -\overline{X}\int_a^b X'(t)\, dt \right) \\[0.3em]
+&amp;= \boldsymbol{n} \cdot \left(\bar{X}-\bar{X}\right)=0
+\end{aligned}
 \]</span></p>
 <p>이다. 두번째 term 에서 <span class="math inline">\((\bar X-P)\cdot \boldsymbol{n}\)</span> 은 상수이며, 일르 고려하면,</p>
 <p><span class="math display">\[
@@ -1584,14 +1700,19 @@ d=(\bar{X}-P)\cdot \mathbb{n}
 \]</span></p>
 <p>이다.</p>
 <p>평면에 대해서도 똑같이 생각 할 수 있다.</p>
-<p><br></p>
-<p><strong>4.</strong> 나선 <span class="math inline">\(X(t)=(\cos t,\, \sin t,\, t)\)</span> 에서 밀도함수가 <span class="math inline">\(f(t)=t^2\)</span> 일 때, 구간 <span class="math inline">\(-\pi\le t \le \pi\)</span> 에서 나선의 질량이 <span class="math inline">\(m=2\sqrt{2}\pi^3/3\)</span> 임을 보이고, 질량중심이</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_7_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.46</strong></span> 나선 <span class="math inline">\(X(t)=(\cos t,\, \sin t,\, t)\)</span> 에서 밀도함수가 <span class="math inline">\(f(t)=t^2\)</span> 일 때, 구간 <span class="math inline">\(-\pi\le t \le \pi\)</span> 에서 나선의 질량이 <span class="math inline">\(m=2\sqrt{2}\pi^3/3\)</span> 임을 보이고, 질량중심이</p>
 <p><span class="math display">\[
 \bar{x}=-\dfrac{6}{\pi^2},\quad\bar{y}=0,\quad \bar{z}=0
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 m &amp;=\int_{-\pi}^{\pi} f(t) |X'(t)|\, dt = \int_{-\pi}^{\pi}t^2 \sqrt{2}\,  dt= \dfrac{2\sqrt{2}\pi^3}{3} \\
 \bar{x} &amp;= \dfrac{1}{m}\int_{-\pi}^{\pi}  f(t)x(t)\, dt = \dfrac{1}{m}\int_{-\pi}^{\pi} \sqrt{2}t^2\cos t \, dt = -\dfrac{\sqrt{2}}{m} 4\pi = -\dfrac{6}{\pi^2} \\
@@ -1600,11 +1721,15 @@ m &amp;=\int_{-\pi}^{\pi} f(t) |X'(t)|\, dt = \int_{-\pi}^{\pi}t^2 \sqrt{2}\,  d
 \end{aligned}
 \]</span></p>
 <p>나머지 문제는 귀찮아서..</p>
+</div>
+<p><br></p>
 </section>
 </section>
 <section id="연습문제-제-9-장-8-절" class="level2" data-number="9.9">
 <h2 data-number="9.9" class="anchored" data-anchor-id="연습문제-제-9-장-8-절"><span class="header-section-number">9.9</span> 연습문제 : 제 9 장 8 절</h2>
-<p><strong>1.</strong> 정규곡선 <span class="math inline">\(X(t)\in \mathbb{R}^3\)</span> 에 대하여</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.47</strong></span> 정규곡선 <span class="math inline">\(X(t)\in \mathbb{R}^3\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \dfrac{d}{dt} |X'(t)| = \dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
 \]</span></p>
@@ -1617,8 +1742,10 @@ m &amp;=\int_{-\pi}^{\pi} f(t) |X'(t)|\, dt = \int_{-\pi}^{\pi}t^2 \sqrt{2}\,  d
 \kappa = \dfrac{|X''||\sin \alpha|}{|X'|^2}
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \dfrac{d}{dt}|X'(t)|=\dfrac{d}{dt} \sqrt{\sum_{i=1}^3 (x_i' (t))^2}=\dfrac{\sum_{i=1}^3 x'_i (t) x''_i(t)}{\sqrt{\sum_{i=1}^3(x_i'(t))^2}}=\dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
 \]</span></p>
 <p>이다.</p>
@@ -1634,8 +1761,11 @@ m &amp;=\int_{-\pi}^{\pi} f(t) |X'(t)|\, dt = \int_{-\pi}^{\pi}t^2 \sqrt{2}\,  d
 \kappa = \dfrac{|X''||\sin \alpha|}{|X'|^2}
 \]</span></p>
 <p>임은 쉽다.</p>
-<p><br></p>
-<p><strong>2.</strong> 평면곡선 <span class="math inline">\(X(t) = (x(t),\, y(t))\)</span> 의 곡률은</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.48</strong></span> 평면곡선 <span class="math inline">\(X(t) = (x(t),\, y(t))\)</span> 의 곡률은</p>
 <p><span class="math display">\[
 \kappa (t) = \dfrac{|x'(t)y''(t)-x''(t)y'(t)|}{((x'(t))^2+(y'(t))^2)^{3/2}}
 \]</span></p>
@@ -1644,52 +1774,82 @@ m &amp;=\int_{-\pi}^{\pi} f(t) |X'(t)|\, dt = \int_{-\pi}^{\pi}t^2 \sqrt{2}\,  d
 \kappa (x) = \dfrac{|y''|}{(1+y'^2)^{3/2}}
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p>문제 1로부터,</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>문제 <a href="#exr-CAL_9_8_1" class="quarto-xref">연습문제&nbsp;<span>9.47</span></a> 로부터,</p>
 <p><span class="math display">\[
-\kappa = \dfrac{\sqrt{|X'|^2|X''|^2-(X'\cdot X'')^2}}{|X'|^3}=\dfrac{\sqrt{(x'^2+y'^2)(x''^2+y''^2)-(x'x''-y'y'')^2}}{(x'^2+y'^2)^{3/2}} = \dfrac{|x'y''-x''y'|}{(x'^2+y'^2)^{3/2}}
+\begin{aligned}
+\kappa &amp;= \dfrac{\sqrt{|X'|^2|X''|^2-(X'\cdot X'')^2}}{|X'|^3} \\[0.3em]
+&amp;=\dfrac{\sqrt{(x'^2+y'^2)(x''^2+y''^2)-(x'x''-y'y'')^2}}{(x'^2+y'^2)^{3/2}} = \dfrac{|x'y''-x''y'|}{(x'^2+y'^2)^{3/2}}
+\end{aligned}
 \]</span></p>
 <p>이며 <span class="math inline">\(x(t)=t\)</span> 로 놓으면,</p>
 <p><span class="math display">\[
 \kappa =\dfrac{|y''|}{(1+y'^2)^{3/2}}
 \]</span></p>
 <p>이다.</p>
-<p><br></p>
-<p><strong>3.</strong> 타원 <span class="math inline">\(X(t)=(a\cos t,\, b \sin t)\)</span> 의 각 점에서의 곡률을 구하라. (<span class="math inline">\(a,\,b&gt;0\)</span> 이다.)</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.49</strong></span> 타원 <span class="math inline">\(X(t)=(a\cos t,\, b \sin t)\)</span> 의 각 점에서의 곡률을 구하라. (<span class="math inline">\(a,\,b&gt;0\)</span> 이다.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X'(t) &amp;=(-a \sin t,\, b \cos t)\\
 X''(t) &amp;=(-a \cos t,\, -b \sin t)\\
 \kappa &amp;=\dfrac{|ab\sin^2 t+ab\cos^2 t|}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}=\dfrac{ab}{(a^2\sin^2t + b^2 \cos ^2 t)^{3/2}}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>4.</strong> 좌표평면에서 포물선 <span class="math inline">\(y=x^2\)</span> 의 각 점에서의 곡률을 구하라.</p>
-<hr>
-<p>문제 2. 로 부터,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.50</strong></span> 좌표평면에서 포물선 <span class="math inline">\(y=x^2\)</span> 의 각 점에서의 곡률을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>문제 <a href="#exr-CAL_9_8_2" class="quarto-xref">연습문제&nbsp;<span>9.48</span></a> 로 부터,</p>
 <p><span class="math display">\[
 \kappa = \dfrac{|y''|}{(1+y'^2)^{3/2}}=\dfrac{2}{(1+4x^2)^{3/2}}
 \]</span></p>
-<p><br></p>
-<p><strong>5.</strong> 좌표평면에서 포물선 <span class="math inline">\(y=ax^2\)</span> 상의 세 점 <span class="math inline">\((-t,\,at^2),\, (0,\,0),\, (t,\,at^2)\)</span> 을 지나는 원의 반지름의 길이를 <span class="math inline">\(r(t)\)</span> 라 두었을 때, <span class="math inline">\(\displaystyle \lim_{t \to 0} r(t)\)</span> 의 값을 구하라.</p>
-<hr>
-<p>대칭에 의해 원의 중심은 <span class="math inline">\(y\)</span> 축상에 있으니 이를 <span class="math inline">\((0,\,y)\)</span> 라 하면, <span class="math inline">\(y&gt;0\)</span> 이어야 하며, <span class="math inline">\(r(t)=y\)</span> 이고,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.51</strong></span> 좌표평면에서 포물선 <span class="math inline">\(y=ax^2\)</span> 상의 세 점 <span class="math inline">\((-t,\,at^2),\, (0,\,0),\, (t,\,at^2)\)</span> 을 지나는 원의 반지름의 길이를 <span class="math inline">\(r(t)\)</span> 라 두었을 때, <span class="math inline">\(\displaystyle \lim_{t \to 0} r(t)\)</span> 의 값을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>대칭에 의해 원의 중심은 <span class="math inline">\(y\)</span> 축상에 있으니 이를 <span class="math inline">\((0,\,y)\)</span> 라 하면, <span class="math inline">\(y&gt;0\)</span> 이어야 하며, <span class="math inline">\(r(t)=y\)</span> 이고,</p>
 <p><span class="math display">\[
 y^2=t^2+(y-at^2)^2 \implies y=\dfrac{1+a^2t^2}{2a}
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(\displaystyle \lim_{t\to 0} r(t)=\dfrac{1}{2a}\)</span> 이다.</p>
-<p><br></p>
-<p><strong>6.</strong> 좌표공간에서 곡선 <span class="math inline">\(X(t)\)</span> 의 곡률이 <span class="math inline">\(\kappa (t)\)</span> 일 때, 곡선 <span class="math inline">\(Y(t):=c X(t)\)</span> 의 곡률은 <span class="math inline">\(\kappa(t)/c\)</span> 임을 보이라. (단 <span class="math inline">\(c&gt;0\)</span>.)</p>
-<hr>
-<p><span class="math inline">\(Y=cX\)</span> 이므로 <span class="math inline">\(Y'=cX',\, Y'' = cX''\)</span> 이다. 따라서,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.52</strong></span> 좌표공간에서 곡선 <span class="math inline">\(X(t)\)</span> 의 곡률이 <span class="math inline">\(\kappa (t)\)</span> 일 때, 곡선 <span class="math inline">\(Y(t):=c X(t)\)</span> 의 곡률은 <span class="math inline">\(\kappa(t)/c\)</span> 임을 보이라. (단 <span class="math inline">\(c&gt;0\)</span>.)</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(Y=cX\)</span> 이므로 <span class="math inline">\(Y'=cX',\, Y'' = cX''\)</span> 이다. 따라서,</p>
 <p><span class="math display">\[
 \kappa_Y (t) = \dfrac{1}{|Y'|}\left|\left(\dfrac{Y'}{|Y'|}\right)'\right|=\dfrac{1}{c} \kappa (t)
 \]</span></p>
-<p><br></p>
-<p><strong>7.</strong> 곡선 <span class="math inline">\(X(t)=(t,\, t^2,\,t^3)\)</span> 에서 <span class="math inline">\(t=1,\, t=-1\)</span> 일 때의 곡률을 구하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.53</strong></span> 곡선 <span class="math inline">\(X(t)=(t,\, t^2,\,t^3)\)</span> 에서 <span class="math inline">\(t=1,\, t=-1\)</span> 일 때의 곡률을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X'(t)&amp;=(1,\,2t,\,3t^2)\\
 X''(t)&amp;=(0,\,2,\,6t)\\
@@ -1698,10 +1858,15 @@ X''(t)&amp;=(0,\,2,\,6t)\\
 \kappa(-1)&amp;=\dfrac{2}{14\sqrt{14}}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>8.</strong> 곡선 <span class="math inline">\(X(t)=(t,\, \ln t)\)</span> 에서 곡률반경이 최소인 점을 구하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.54</strong></span> 곡선 <span class="math inline">\(X(t)=(t,\, \ln t)\)</span> 에서 곡률반경이 최소인 점을 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 \kappa(t) &amp;= \dfrac{1/t^2}{(1+1/t^2)^{3/2}}=\dfrac{t}{(t^2+1)^{3/2}}\\
 \kappa'(t) &amp;=\dfrac{1-2t^2}{(1+t^2)^{5/2}}  \implies \left(\kappa'(t)=0 \iff t^2=\dfrac{1}{2}\right)\\
@@ -1710,8 +1875,11 @@ X''(t)&amp;=(0,\,2,\,6t)\\
 X\left( \dfrac{1}{\sqrt{2}}\right) &amp; =\left( \dfrac{1}{\sqrt{2}},\, -\dfrac{1}{2} \ln 2 \right)
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>9.</strong> 사이클로이드</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.55</strong></span> 사이클로이드</p>
 <p><span class="math display">\[
 x(t)=t-\sin t,\quad y(t)=1-\cos t = 2\sin^2 \dfrac{t}{2} \quad (0\le t \le 2\pi)
 \]</span></p>
@@ -1720,8 +1888,10 @@ x(t)=t-\sin t,\quad y(t)=1-\cos t = 2\sin^2 \dfrac{t}{2} \quad (0\le t \le 2\pi)
 \kappa (t) = \dfrac{1}{4\sin \dfrac{t}{2}} =\dfrac{\sqrt{2}}{4\sqrt{y}}
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math inline">\(\sin \dfrac{t}{2}\ge 0\)</span> for <span class="math inline">\(0 \le t \le 2\pi\)</span> 이다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\sin \dfrac{t}{2}\ge 0\)</span> for <span class="math inline">\(0 \le t \le 2\pi\)</span> 이다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 X(t) &amp;= (t-\sin t,\, 1-\cos t)\\
@@ -1730,14 +1900,19 @@ X''(t) &amp;= (\sin t,\, \cos t)\\
 \kappa(t) &amp;= \dfrac{|X' \times X''|}{|X'|^3}=\dfrac{2\sin^2 \dfrac{t}{2}}{8 \sin^3 \dfrac{t}{2}}=\dfrac{1}{4 \sin \dfrac{t}{2}}=\dfrac{\sqrt{2}}{4 \sqrt{y}}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>10.</strong> 곡선</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.56</strong></span> 곡선</p>
 <p><span class="math display">\[
 X(t)=\left(\int_0^t \cos \dfrac{\pi u^2}{2}\, du ,\, \int_0^t \sin \dfrac{\pi u^2}{2} \, du\right)
 \]</span></p>
 <p>의 곡률을 구하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X'(t) &amp;= \left(\cos \dfrac{\pi t^2}{2} ,\sin \dfrac{\pi t^2}{2} \right) \\
 X''(t) &amp;= \left( -\pi t \sin \dfrac{\pi t^2}{2},\,  \pi t \cos \dfrac{\pi t^2}{2} \right)\\
@@ -1745,10 +1920,15 @@ X''(t) &amp;= \left( -\pi t \sin \dfrac{\pi t^2}{2},\,  \pi t \cos \dfrac{\pi t^
 \kappa(t) &amp;= \pi t
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>11.</strong> 곡선 <span class="math inline">\(X(t)\)</span> 의 곡률 <span class="math inline">\(\kappa (t)\)</span> 의 적분 <span class="math inline">\(\displaystyle \int_X \kappa \,ds\)</span> 를 <span class="math inline">\(X\)</span> 의 전곡률(total curvature) 라고 한다. 타원 <span class="math inline">\(x^2+4y^2=1\)</span> 의 전곡률은 얼마인가.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.57</strong></span> 곡선 <span class="math inline">\(X(t)\)</span> 의 곡률 <span class="math inline">\(\kappa (t)\)</span> 의 적분 <span class="math inline">\(\displaystyle \int_X \kappa \,ds\)</span> 를 <span class="math inline">\(X\)</span> 의 전곡률(total curvature) 라고 한다. 타원 <span class="math inline">\(x^2+4y^2=1\)</span> 의 전곡률은 얼마인가.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X(t) &amp;=\left( \cos t,\, \dfrac{1}{2} \sin t \right) \\
 X'(t)&amp;= \left(-\sin t,\, \dfrac{1}{2} \cos t \right) \\
@@ -1770,8 +1950,11 @@ X''(t) &amp;= \left(-\cos t,\, -\dfrac{1}{2} \sin t\right) \\
 &amp;\overset{s=\tan t}{=} \int_0^\infty \dfrac{8}{4s^2+1}ds  \overset{s=(\tan \theta)/2}{=} \int_0^{\pi/2} 4 \, d\theta = 2\pi
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>12.</strong> 좌표평면상의 정규곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^2\)</span> 에 대하여,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.58</strong></span> 좌표평면상의 정규곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^2\)</span> 에 대하여,</p>
 <p><span class="math display">\[
 \dfrac{X'(t)}{|X'(t)|} = (\cos \theta(t),\, \sin \theta(t)) \qquad (a \le t \le b)
 \]</span></p>
@@ -1784,18 +1967,28 @@ X''(t) &amp;= \left(-\cos t,\, -\dfrac{1}{2} \sin t\right) \\
 \int_X \kappa \, ds.= \theta(b)-\theta(a)
 \]</span></p>
 <p>임을 보이라.</p>
-<hr>
-<p><span class="math display">\[
-\int_X \kappa \, ds = \int_a^b \dfrac{1}{|X'|}\left|\left(\dfrac{X'}{|X'|}\right)'\right|\, |X'|\, dt = \int_a^b \left|\left(\dfrac{X'}{|X'|}\right)'\right| \, dt = \int_a^b|\theta'(t)(-\sin \theta(t),\, \cos \theta(t))|\, dt=\int_a^b |\theta'(t)|\, dt
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+\int_X \kappa \, ds &amp;= \int_a^b \dfrac{1}{|X'|}\left|\left(\dfrac{X'}{|X'|}\right)'\right|\, |X'|\, dt  \int_a^b \left|\left(\dfrac{X'}{|X'|}\right)'\right| \, dt \\[0.3em]
+&amp;= \int_a^b|\theta'(t)(-\sin \theta(t),\, \cos \theta(t))|\, dt=\int_a^b |\theta'(t)|\, dt
+\end{aligned}
 \]</span></p>
 <p><span class="math inline">\(\theta(t)\)</span> 가 증가함수이면 <span class="math inline">\(\theta'(t)&gt;0\)</span> 이다. 따라서,</p>
 <p><span class="math display">\[
 \int_X \kappa \, ds = \int_a^b \theta'(t)\, dt = \theta(b)-\theta(a)
 \]</span></p>
-<p><br></p>
-<p><strong>13.</strong> 차를 몰고 반지름의 길이가 100 미터인 원호 모양의 도로 위를 일정한 속력 <span class="math inline">\(v\)</span> 로 움직일 때 편안함을 느낀다고 하자. 반지름의 길이가 10 미터인 원호 모양의 도로 위를 움직일 때의 속력이 얼마이면 같은 정도의 편안함을 느끼는가?</p>
-<hr>
-<p>반지름의 길이가 <span class="math inline">\(R\)</span> 미터인 원호를 일정한 속력 <span class="math inline">\(v\)</span> 로 움직일 때의 경로 <span class="math inline">\(X(t)\)</span> 는</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_13" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.59</strong></span> 차를 몰고 반지름의 길이가 100 미터인 원호 모양의 도로 위를 일정한 속력 <span class="math inline">\(v\)</span> 로 움직일 때 편안함을 느낀다고 하자. 반지름의 길이가 10 미터인 원호 모양의 도로 위를 움직일 때의 속력이 얼마이면 같은 정도의 편안함을 느끼는가?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>반지름의 길이가 <span class="math inline">\(R\)</span> 미터인 원호를 일정한 속력 <span class="math inline">\(v\)</span> 로 움직일 때의 경로 <span class="math inline">\(X(t)\)</span> 는</p>
 <p><span class="math display">\[
 \begin{aligned}
 X(t) &amp;= R (\cos \dfrac{vt}{R},\, \sin \dfrac{vt}{R})\\
@@ -1805,16 +1998,19 @@ X''(t) &amp;= -\dfrac{v^2}{R}(\cos \dfrac{vt}{R},\, \sin \dfrac{vt}{R})
 \end{aligned}
 \]</span></p>
 <p>이며 가속력의 크기는 <span class="math inline">\(\dfrac{v^2}{R}\)</span> 이다. 같은 정도의 편안함을 느끼려면 가속력이 같아야 하므로, 반지름이 <span class="math inline">\(1/10\)</span> 이 되면 속력은 <span class="math inline">\(1/\sqrt{10}\)</span> 이 되어야 한다.</p>
-<p><br></p>
-<p><strong>14.</strong> 호의 길이로 매개화된 곡선 <span class="math inline">\(X(s)\)</span> 의 곡률이 <span class="math inline">\(\kappa (s)\)</span> 로 주어졌을 때 <span class="math inline">\(\kappa'(s)=0\)</span> 이 되는 점을 <strong>꼭지점</strong> 이라고 부른다. 타원</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_14" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.60</strong></span> 호의 길이로 매개화된 곡선 <span class="math inline">\(X(s)\)</span> 의 곡률이 <span class="math inline">\(\kappa (s)\)</span> 로 주어졌을 때 <span class="math inline">\(\kappa'(s)=0\)</span> 이 되는 점을 <strong>꼭지점</strong> 이라고 부른다. 타원</p>
 <p><span class="math display">\[
 \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1
 \]</span></p>
 <p>의 꼭지점을 구하라.</p>
-<hr>
-<ol type="1">
-<li>일단 처음 생각대로 해보면….</li>
-</ol>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 일단 처음 생각대로 해보면….</p>
 <p><span class="math display">\[
 \begin{aligned}
 X(t) &amp;= (a \cos t,\, b \sin t)\\
@@ -1863,14 +2059,19 @@ Y''(s) &amp;= \dfrac{d^2 g}{ds^2}\cdot \dfrac{dX}{dt}(g(s)) + \left(\dfrac{dg}{d
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(\kappa'_X(t)=0\)</span> 이면 <span class="math inline">\(t=0,\, \pi/2,\, \pi/\, \pi/3\)</span> 이다. 즉 <span class="math inline">\((\pm a,\,0)\)</span> 과 <span class="math inline">\((0,\, \pm b)\)</span> 가 꼭지점이다.</p>
-<p><br></p>
-<p><strong>15.</strong> 곡선</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_15" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.61</strong></span> 곡선</p>
 <p><span class="math display">\[
 X(t) = \left(\cos t,\, \sin^2 t,\, \dfrac{1}{2} \sin 2t\right)
 \]</span></p>
 <p>에서 <span class="math inline">\(t=\pi\)</span> 일 때의 곡률과 접촉평면의 식을 구하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X'(t) &amp;= \left(-\sin t,\, \sin 2t,\, \cos 2t\right)\\
 X''(t) &amp;= \left(- \cos t,\, 2 \cos 2t,\, -2 \sin 2t\right)\\
@@ -1886,32 +2087,47 @@ X''(\pi)&amp;=(1,\, 2,\, 0) \\
 <p><span class="math display">\[
 0 = \det \begin{pmatrix}  x+1 &amp; y &amp; z \\ 0 &amp; 0 &amp; 1 \\ 1 &amp; 2 &amp; 0\end{pmatrix} =-2(x+1)+y \implies 2x-y+2=0
 \]</span> 이다.</p>
-<p><br></p>
-<p><strong>16.</strong> 삼차원 공간에서 곡률이 항등적으로 <span class="math inline">\(0\)</span> 인 정규곡선은 직선운동을 하는 곡선임을 보이라.</p>
-<hr>
-<p>문제 1로부터, 곡률이 항등적으로 <span class="math inline">\(0\)</span> 이면</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_16" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.62</strong></span> 삼차원 공간에서 곡률이 항등적으로 <span class="math inline">\(0\)</span> 인 정규곡선은 직선운동을 하는 곡선임을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>문제 <a href="#exr-CAL_9_8_1" class="quarto-xref">연습문제&nbsp;<span>9.47</span></a> 로부터, 곡률이 항등적으로 <span class="math inline">\(0\)</span> 이면</p>
 <p><span class="math display">\[
 0=\kappa = \dfrac{|X'\times X''|}{|X'|^3} \implies X'\times X''=0
 \]</span></p>
 <p>이다. <span class="math inline">\(X'(t)\ne 0\)</span> 이므로 <span class="math inline">\(X''(t) = f(t)X'(t)\)</span> 이며 연습문제 9.2.2 로부터 <span class="math inline">\(X(t)\)</span> 는 직선운동임을 안다.</p>
-<p><br></p>
-<p><strong>17.</strong> 곡선 <span class="math inline">\(X(t)=e^t(\cos t,\, \sin t)\)</span> 의 곡률함수를 구하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.63</strong></span> 곡선 <span class="math inline">\(X(t)=e^t(\cos t,\, \sin t)\)</span> 의 곡률함수를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X'(t) &amp;= e^t(\cos t- \sin t,\, \sin t + \cos t)\\
 X''(t) &amp;=e^t(-2\sin t,\, 2 \cos t) \\
 \kappa(t) &amp;= \dfrac{2e^{2t}}{|2e^{2t}|^{3/2}}=\dfrac{1}{\sqrt{2}e^t}
 \end{aligned}
 \]</span></p>
-<p><br></p>
-<p><strong>18.</strong> 로그와선 <span class="math inline">\(r=r_0 e^{k\theta}\)</span> 의 각 점에서의 곡률은</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_8_18" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.64</strong></span> 로그와선 <span class="math inline">\(r=r_0 e^{k\theta}\)</span> 의 각 점에서의 곡률은</p>
 <p><span class="math display">\[
 \kappa = \dfrac{1}{r} \dfrac{1}{\sqrt{1+k^2}}
 \]</span></p>
 <p>임을 보이라. 이로부터 로그와선의 곡률은 원점에서의 거리에 반비례함을 설명하라.</p>
-<hr>
-<p><span class="math display">\[
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
 X(\theta) &amp;= r_0 e^{k\theta}(\cos \theta,\,\sin \theta)\\
 X'(\theta) &amp;=r_0 e^{k\theta}(k\cos \theta-\sin \theta,\, k\sin \theta + \cos \theta)
@@ -1924,13 +2140,18 @@ X''(\theta) &amp;= r_0 e^{k \theta}((k^2-1) \cos \theta - 2k \sin \theta ,\,(k^2
 \end{aligned}
 \]</span></p>
 <p><span class="math inline">\(k\)</span> 는 상수이므로 <span class="math inline">\(k(\theta) \propto \dfrac{1}{r}\)</span> .</p>
+</div>
 <p><br></p>
 </section>
 <section id="제-9-장-탐구문제" class="level2" data-number="9.10">
 <h2 data-number="9.10" class="anchored" data-anchor-id="제-9-장-탐구문제"><span class="header-section-number">9.10</span> 제 9 장 탐구문제</h2>
-<p><strong>1.</strong> 한 변의 길이가 <span class="math inline">\(1\)</span> m 인 정사각형 모양 탁지의 각 귀퉁이에 개미가 한마리씩 있다. 이들 개미가 각자 자기 왼쪽에 있는 개미를 향하여 동시에 같은 속력으로 움직이면 그 자취는 로그와선이 된다. 이 때 개미들이 만날 때가지 움직인 거리를 구하라.</p>
-<hr>
-<p><span class="math inline">\(A,\,B,\,C,\,D\)</span> 에서 출발한 개미의 자취를 <span class="math inline">\(A(t),\, B(t),\, C(t),\, D(t)\)</span> 라 하자. <span class="math inline">\(A\)</span> 는 <span class="math inline">\(B\)</span> 를 따라, <span class="math inline">\(B\)</span> 는 <span class="math inline">\(C\)</span> 를 따라, <span class="math inline">\(C\)</span> 는 <span class="math inline">\(D\)</span> 를 따라, <span class="math inline">\(D\)</span> 는 <span class="math inline">\(A\)</span> 를 따라 움직인다고 하자. 그렇다면,</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.65</strong></span> 한 변의 길이가 <span class="math inline">\(1\)</span> m 인 정사각형 모양 탁지의 각 귀퉁이에 개미가 한마리씩 있다. 이들 개미가 각자 자기 왼쪽에 있는 개미를 향하여 동시에 같은 속력으로 움직이면 그 자취는 로그와선이 된다. 이 때 개미들이 만날 때가지 움직인 거리를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(A,\,B,\,C,\,D\)</span> 에서 출발한 개미의 자취를 <span class="math inline">\(A(t),\, B(t),\, C(t),\, D(t)\)</span> 라 하자. <span class="math inline">\(A\)</span> 는 <span class="math inline">\(B\)</span> 를 따라, <span class="math inline">\(B\)</span> 는 <span class="math inline">\(C\)</span> 를 따라, <span class="math inline">\(C\)</span> 는 <span class="math inline">\(D\)</span> 를 따라, <span class="math inline">\(D\)</span> 는 <span class="math inline">\(A\)</span> 를 따라 움직인다고 하자. 그렇다면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 A'(t) &amp;= v\dfrac{B(t)-A(t)}{|B(t)-A(t)|}\\
@@ -1974,10 +2195,15 @@ r(t) = r_0 e^{k\theta(t)}
 <li>속력이 일정한가?</li>
 </ul>
 <p>– to be done–</p>
-<p><br></p>
-<p><strong>2.</strong> 평면에서 곡선 <span class="math inline">\(X(t)\)</span> 와 한 점 <span class="math inline">\(P\)</span> 가 주어졌다고 하자. 만약 <span class="math inline">\(Q:=X(0)\)</span> 가 곡선 <span class="math inline">\(X(t)\)</span> 의 점 중에서 <span class="math inline">\(P\)</span> 에 가장 가까운 거리에 있으면 벡터 <span class="math inline">\(\overrightarrow{PQ}\)</span> 와 <span class="math inline">\(X'(0)\)</span> 은 서로 수직임을 보이라. 또 두 평면곡선 <span class="math inline">\(x^2y+y^3=8\)</span> 과 <span class="math inline">\(x^2+y^2=1\)</span> 사이의 최단거리를 구하라.</p>
-<hr>
-<p><span class="math inline">\(t\in \mathbb{R}\)</span> 이라고 가정한다. 원점에서의 거리의 제곱 함수를 <span class="math inline">\(L(t)\)</span> 라 하면,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_S02" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.66</strong></span> 평면에서 곡선 <span class="math inline">\(X(t)\)</span> 와 한 점 <span class="math inline">\(P\)</span> 가 주어졌다고 하자. 만약 <span class="math inline">\(Q:=X(0)\)</span> 가 곡선 <span class="math inline">\(X(t)\)</span> 의 점 중에서 <span class="math inline">\(P\)</span> 에 가장 가까운 거리에 있으면 벡터 <span class="math inline">\(\overrightarrow{PQ}\)</span> 와 <span class="math inline">\(X'(0)\)</span> 은 서로 수직임을 보이라. 또 두 평면곡선 <span class="math inline">\(x^2y+y^3=8\)</span> 과 <span class="math inline">\(x^2+y^2=1\)</span> 사이의 최단거리를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(t\in \mathbb{R}\)</span> 이라고 가정한다. 원점에서의 거리의 제곱 함수를 <span class="math inline">\(L(t)\)</span> 라 하면,</p>
 <p><span class="math display">\[
 L(t)=|X(t)-P|^2
 \]</span></p>
@@ -1999,24 +2225,31 @@ x^2= \dfrac{8-y^3}{y}
 X(t) = \left(\sqrt{\dfrac{8-t^3}{t}},\, t\right)\qquad 0&lt;t\le 2
 \]</span></p>
 <p>로 매개화 할 수 있으며, 원점에서의 거리는, <span class="math inline">\(8/t\)</span> 이므로 최단거리는 <span class="math inline">\(4\)</span> 이다. 따라서 <span class="math inline">\(x^2+y^2=1\)</span> 와의 최단거리는 <span class="math inline">\(3\)</span> 이다.</p>
-<p><strong>3.</strong> 극좌표계로,</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_S03" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.67</strong></span> 극좌표계로,</p>
 <p><span class="math display">\[
 r=\dfrac{k\epsilon}{1+\epsilon \cos \theta}
 \]</span></p>
 <p>로 주어진 곡선은</p>
-<ol type="i">
-<li><p><span class="math inline">\(0&lt;\epsilon &lt; 1\)</span> 이면 타원</p></li>
-<li><p><span class="math inline">\(\epsilon =1\)</span> 이면 포물선</p></li>
-<li><p><span class="math inline">\(\epsilon&gt;1\)</span> 이면 쌍곡선을 나타냄을 보이라.</p></li>
-</ol>
-<hr>
-<p><span class="math display">\[
+<p> (<span class="math inline">\(i\)</span>) <span class="math inline">\(0&lt;\epsilon &lt; 1\)</span> 이면 타원</p>
+<p> (<span class="math inline">\(ii\)</span>) <span class="math inline">\(\epsilon =1\)</span> 이면 포물선</p>
+<p> (<span class="math inline">\(iii\)</span>) <span class="math inline">\(\epsilon&gt;1\)</span> 이면 쌍곡선을 나타냄을 보이라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \sqrt{x^2+y^2}=\dfrac{k\epsilon}{1+\epsilon \dfrac{x}{\sqrt{x^2+y^2}}} \implies (1-\epsilon)x^2-2\epsilon kx + y^2 = \epsilon k^2
 \]</span></p>
 <p>이다.</p>
 <p>이므로 <span class="math inline">\(0 &lt;\epsilon &lt;1\)</span> 이면 타원, <span class="math inline">\(\epsilon = 1\)</span> 이면 포물선, <span class="math inline">\(\epsilon&gt;1\)</span> 이면 쌍곡선이다.</p>
-<p><br></p>
-<p><strong>4.</strong> 일급 곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^n\)</span> 의 에너지를</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_9_S04" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 9.68</strong></span> 일급 곡선 <span class="math inline">\(X:[a,\,b]\to \mathbb{R}^n\)</span> 의 에너지를</p>
 <p><span class="math display">\[
 E(X):=\int_a^b |X'(t)|^2\, dt
 \]</span></p>
@@ -2027,8 +2260,10 @@ E(X):=\int_a^b |X'(t)|^2\, dt
 \]</span></p>
 <p>를 보이라.</p>
 <p>이제 공간에 주어진 두 점 <span class="math inline">\(P,\,Q\)</span> 를 잇는 모든 일급곡선중에서 에너지가 최소인 곡선은 등속운동을 하는 직선임을 보이라.</p>
-<hr>
-<p>임의의 실수함수 <span class="math inline">\(f,\, g\)</span> 에 대해</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>임의의 실수함수 <span class="math inline">\(f,\, g\)</span> 에 대해</p>
 <p><span class="math display">\[
 \left(\int f(t)g(t)\, dt\right)^2 \le \int f(t)^2\, dt \int g(t)^2\, dt
 \]</span></p>
@@ -2042,6 +2277,7 @@ E(X):=\int_a^b |X'(t)|^2\, dt
 (b-a)\int|X'(t)|^2\, dt \le \left(\int|X'(t)|\, dt\right)^2 = \text{length(X)}^2
 \]</span></p>
 <p>이므로, 주어진 식을 보였다. 등호는 <span class="math inline">\(|X'(t)|=v=\text{const}\)</span> 일 때 이므로 등속운동을 할 때 성립하며, 두 점을 잇는 가장 짧은 곡선은 직선이다.</p>
+</div>
 
 
 </section>
@@ -2098,14 +2334,13 @@ E(X):=\int_a^b |X'(t)|^2\, dt
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

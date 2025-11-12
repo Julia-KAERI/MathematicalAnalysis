@@ -890,10 +890,11 @@ $$
 
 :::
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-</br>
+::: {#exr-CAL_9_3_7} 
 
-**7.** 양수 $a,\,b$ 에 대하여 나선
+양수 $a,\,b$ 에 대하여 나선
 
 $$
 R(t):=(a\cos t,\, a \sin t,\, bt)
@@ -907,7 +908,11 @@ $$
 
 는 왼쪽으로 휘어 있음을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -916,16 +921,29 @@ L'\times L'' \cdot L''' &= \begin{pmatrix} -a \sin t& -a \cos t & b \\ -a \cos t
 \end{aligned}
 $$
 
+:::
+
+</br>
+
+
 ## 연습문제 : 제 9 장 4 절
 
-**1.** 양수 $a$ 에 대하여, 곡선
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_4_1} 
+
+양수 $a$ 에 대하여, 곡선
 
 $$
 X(t)=(t \cos t,\, t\sin t,\, t) \qquad 0\le t\le \sqrt{2}\sinh a
 $$
 의 길이를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -944,11 +962,19 @@ l &= \int_0^a 2\cosh^2s\, ds = \dfrac{1}{2}\int_0^a (e^{2s}+2+e^{-2s})ds\\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**2.** 좌표평면에서 식 $\sqrt{x}+\sqrt{y}=1$ 로 주어진 곡선의 길이를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_4_2}
+
+좌표평면에서 식 $\sqrt{x}+\sqrt{y}=1$ 로 주어진 곡선의 길이를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $0\le x,\, y \le 1$ 임을 안다. $X(t)=(t^2,\, (1-t)^2)$ 로 재매개화 하면,
 
@@ -993,9 +1019,15 @@ l=\dfrac{\sqrt{2}}{16}(4\sqrt{2}+4\ln(\sqrt{2}+1))=\dfrac{1}{2}+\dfrac{\sqrt{2}}
 $$
 이다.
 
-</br>
+:::
 
-**3.** (**아스트로이드**) 곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_4_3} 
+
+#### 아스트로이드 
+
+곡선
 
 $$
 (x^2)^{1/3}+(y^2)^{1/3}=1
@@ -1003,7 +1035,11 @@ $$
 
 의 길이를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $-1 \le x,\,y \le 1$ 이며 대칭을 고려하면 $0\le x,\, y \le 1$ 에서의 곡선을 구한 후 $4$ 배 해주면 된다. $x=\sin ^{3}\theta,\, y = \cos^{3}\theta$ 로 매개화하면, $0\le \theta \le \pi/2$ 구간에서 생각해 주면 되므로,
 
@@ -1014,11 +1050,19 @@ l &= 4\int_0^{\pi/2} \sqrt{9 \cos^2 \theta \sin ^4 \theta + 9 \sin ^2 \theta \co
 \end{aligned}
 $$
 
-</br>
+:::
 
-**4.** 종이가 감긴 직원기둥을 평면으로 절단한 뒤에 종이를 펴면, 잘린 종이의 부분은 사인곡선(sinusoid) 인가? 이 때 자르는 평면이 원기둥의 회전축과 수직이 아니라고 가정한다.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_4_4} 
+
+종이가 감긴 직원기둥을 평면으로 절단한 뒤에 종이를 펴면, 잘린 종이의 부분은 사인곡선(sinusoid) 인가? 이 때 자르는 평면이 원기둥의 회전축과 수직이 아니라고 가정한다.
+
+:::
+
+</div>
+
+::: {.solution}
 
 절단한 평면이 원점을 지나는 평면이라 해도 문제없다. 이 평면의 방향단위벡터를 $\bf{n}=(n_1,\,n_2,\,n_3)$ 라 하면 평면의 방정식은,
 
@@ -1037,18 +1081,28 @@ $$
 $$
 \begin{aligned}
 & an_1\cos \phi + an_2\sin \phi+n_3z=0 \\
-\implies &z=a \left( \dfrac{n_1}{n_3}\cos \phi+\dfrac{n_2}{n_3} \sin \phi \right)=b\sin(\phi+\phi_0) \qquad\text{where }\phi_0=\arctan\left(\dfrac{n_1}{n_2}\right),\, b=a\sqrt{\dfrac{n_1^2+n_2^2}{n_3^2}}
+\implies &z=a \left( \dfrac{n_1}{n_3}\cos \phi+\dfrac{n_2}{n_3} \sin \phi \right)=b\sin(\phi+\phi_0), \\[0.3em]
+&\qquad \qquad \text{where }\phi_0=\arctan\left(\dfrac{n_1}{n_2}\right),\, b=a\sqrt{\dfrac{n_1^2+n_2^2}{n_3^2}}
 \end{aligned}
 $$
 
 이므로 사인곡선이다.
 
-</br>
+:::
 
-**5.** (**토리첼리** 의 정리). 로그 와선 $r=e^{\theta}$ 의 한 점 $T=(e^{2n\pi},\,0)$ 에서 그은 접선이 $y$ 축과 만나는 점을 $S$ 라고 하자. 이 때, 로그와선의 구간 $-\infty  < \theta \le 2n\pi$ 사이의 길이는 점 $T$ 와 $S$ 의 길이와 같음을 보이라. (특히 로그와선을 따라 원점에 접근하면, 그 움직인 거리는 유한함을 알 수 있다.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_4_5} 
 
+#### 토리첼리 의 정리 
+
+로그 와선 $r=e^{\theta}$ 의 한 점 $T=(e^{2n\pi},\,0)$ 에서 그은 접선이 $y$ 축과 만나는 점을 $S$ 라고 하자. 이 때, 로그와선의 구간 $-\infty  < \theta \le 2n\pi$ 사이의 길이는 점 $T$ 와 $S$ 의 길이와 같음을 보이라. (특히 로그와선을 따라 원점에 접근하면, 그 움직인 거리는 유한함을 알 수 있다.)
+
+:::
+
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 X(\theta)&=(e^\theta \cos \theta,\, e^\theta\sin \theta) \\
@@ -1074,11 +1128,21 @@ $$
 
 이다.
 
-</br>
+:::
 
-**6.**(**호이겐스의 시계**) 왼쪽 벽과 오른쪽 벽이 사이클로이드로 되어 있는 시계에 추가 달려 있을 때 추가 움직이는 궤적도 역시 사이클로이드임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_4_6} 
+
+#### 호이겐스의 시계 
+
+왼쪽 벽과 오른쪽 벽이 사이클로이드로 되어 있는 시계에 추가 달려 있을 때 추가 움직이는 궤적도 역시 사이클로이드임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 추의 고정점을 원점으로 잡았을 때 사이클로이드 벽면의 방정식은 $(t-\sin t,\, -1+\cos t)$ 이다. 추의 길이를 $l$ 이라 하자.
 
@@ -1132,11 +1196,19 @@ plt.axis('equal')
 plt.legend()
 ```
 
-</br>
+:::
 
-**7.** 극좌표계로 주어진 다음 곡선의 개형을 그리고, 그 곡선의 길이를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_4_7} 
+
+극좌표계로 주어진 다음 곡선의 개형을 그리고, 그 곡선의 길이를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1159,9 +1231,13 @@ $$
 
 ![img](figures/calculus_ex_9.4.7.jpg)
 
-</br>
+:::
 
-**8.** 타원 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ 의 길이는
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_4_8}
+
+타원 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ 의 길이는
 
 $$
 \int_0^{2\pi} \sqrt{a^2\sin^2 t + b^2 \cos^2 t}\, dt
@@ -1181,20 +1257,30 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 타원의 매개화 $X(t)= (a \sin t,\, b\cos t)$ 를 생각하면 자명하다. 또한 사인함수도 $X(t)=(x,\, c\sin x)$ 를 생각하면 자명하다.
 
-</br>
+:::
 
-**9.** 곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_4_9} 
+
+곡선
 
 $$
-y\equiv \ln x \qquad (a\le x \le b)
+y:=\ln x \qquad (a\le x \le b)
 $$
 의 길이를 구하라.
 
----
+:::
+
+</div>
 
 $$
 \begin{aligned}
@@ -1209,19 +1295,30 @@ $$
 
 ## 연습문제 : 제 9 장 5 절
 
-**1.** 극좌표계에서 다음 식으로 주어진 영역의 넓이를 구하라
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-(1) $1\le r \le 2 \cos \theta \qquad \qquad \qquad$ (2) $2 \le r \le 1+2\cos \theta$
+::: {#exr-CAL_9_5_1}
 
----
+극좌표계에서 다음 식으로 주어진 영역의 넓이를 구하라
 
-(1) $\cos\theta \ge \dfrac{1}{2}$ 이어야 하므로, $0 \le \theta \le \dfrac{\pi}{3}$, $\dfrac{5\pi}{3} \le \theta \le 2\pi$ 이어야 한다.
+&emsp;($1$) $1\le r \le 2 \cos \theta, \qquad \qquad \qquad$ ($2$) $2 \le r \le 1+2\cos \theta$
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $\cos\theta \ge \dfrac{1}{2}$ 이어야 하므로, $0 \le \theta \le \dfrac{\pi}{3}$, $\dfrac{5\pi}{3} \le \theta \le 2\pi$ 이어야 한다.
 
 $$
-\text{Area}=\int_0^{\pi/3} 2 \cos^2 \theta d\theta+\int_{5\pi/3}^{2\pi} 2 \cos^2 \theta d\theta-\dfrac{2\pi}{3}= 2\times\left[\dfrac{1}{2} \sin 2\theta + \theta\right]_0^{\pi/3} -\dfrac{2\pi}{3}=\dfrac{\sqrt{3}}{2}
+\begin{aligned}
+\text{Area} &= \int_0^{\pi/3} 2 \cos^2 \theta d\theta+\int_{5\pi/3}^{2\pi} 2 \cos^2 \theta d\theta-\dfrac{2\pi}{3} \\[0.3em]
+&= 2\times\left[\dfrac{1}{2} \sin 2\theta + \theta\right]_0^{\pi/3} -\dfrac{2\pi}{3}=\dfrac{\sqrt{3}}{2}
+\end{aligned}
 $$
 
-(2) 역시 $\cos\theta \ge \dfrac{1}{2}$ 이어야 하므로, $0 \le \theta \le \dfrac{\pi}{3}$, $\dfrac{5\pi}{3} \le \theta \le 2\pi$ 이어야 한다.
+($2$) 역시 $\cos\theta \ge \dfrac{1}{2}$ 이어야 하므로, $0 \le \theta \le \dfrac{\pi}{3}$, $\dfrac{5\pi}{3} \le \theta \le 2\pi$ 이어야 한다.
 
 $$
 \begin{aligned}
@@ -1232,11 +1329,19 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**2.** 극좌표계에서 식 $r=1-\cos \theta$ 로 주어진 곡선의개형을 그리고, 이 곡선으로 둘러싸인 부분의 면적을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_5_2} 
+
+극좌표계에서 식 $r=1-\cos \theta$ 로 주어진 곡선의개형을 그리고, 이 곡선으로 둘러싸인 부분의 면적을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_9_5_2](figures/ex_9_5_2.jpg)
 
@@ -1248,25 +1353,41 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**3.** 다음 곡선의 개형을 그리고, 그 곡선으로 둘러쌓인 부분의 넓이를구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_5_3}  
+
+다음 곡선의 개형을 그리고, 그 곡선으로 둘러쌓인 부분의 넓이를구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_9_5_3](figures/ex_9_5_3.jpg)
 
 넓이를 구하는건.. 별로 안어려워서 패스..
 
-</br>
+:::
 
-**4.** 극좌표계를 이용하여 다음 식으로 주어진 곡선의 개형을 그리고, 이 곡선으로 둘러싸인 부분의 넓이를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-(1) $y^2(1+x^2)= x^2(3-x^2) \qquad \qquad \qquad$ (2) $x^2+y^2=6\sqrt{x^2-y^2}$
+::: {#exr-CAL_9_5_4}  
 
----
+극좌표계를 이용하여 다음 식으로 주어진 곡선의 개형을 그리고, 이 곡선으로 둘러싸인 부분의 넓이를 구하라.
 
-(1)
+&emsp;($1$) $y^2(1+x^2)= x^2(3-x^2), \qquad \qquad \qquad$ ($2$) $x^2+y^2=6\sqrt{x^2-y^2}$
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$)
 $$
 \begin{aligned}
 &r^2\sin^2 \theta (1+r^2 \cos^2 \theta)=r^2 \cos^2\theta (3-r^2\cos^2 \theta)\\
@@ -1276,9 +1397,9 @@ $$
 \end{aligned}
 $$
 
-따라서 $\tan^2\theta\le3$ 인 $0 \le \theta \le \dfrac{\pi}{3}, \dfrac{2\pi}{3} \le \theta \le \dfrac{4\pi }{3},\, \dfrac{5\pi }{3} \le \theta <2 \pi $ 에서 유효하다.  
+따라서 $\tan^2\theta\le3$ 인 $0 \le \theta \le \dfrac{\pi}{3}, \dfrac{2\pi}{3} \le \theta \le \dfrac{4\pi }{3},\, \dfrac{5\pi }{3} \le \theta <2 \pi$ 에서 유효하다.  
 
-(2)
+($2$)
 $$
 r^2 =6r\sqrt{\cos^2\theta - \sin^2\theta} \implies r=6\sqrt{\cos 2\theta}
 $$
@@ -1295,31 +1416,55 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**5.** 곡선 $r^2=2\cos 2\theta$ 의 한쪽 날개의 넓이가 $1$ 임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_5_5}  
+
+곡선 $r^2=2\cos 2\theta$ 의 한쪽 날개의 넓이가 $1$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \text{Area}=2\int_0^{\pi/4} \cos 2\theta ={\big[} \sin 2\theta {\big]}_0^{\pi/4}=1
 $$
 
-</br>
+:::
 
-**6.** 극좌표료 주어진 곡선 $r=\sin n\theta$ 의 한 잎의 넓이를 구하라. (단 $n$ 은 자연수이다.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_5_6}  
+
+극좌표료 주어진 곡선 $r=\sin n\theta$ 의 한 잎의 넓이를 구하라. (단 $n$ 은 자연수이다.)
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \text{Area}=\int_{0}^{\pi/n}\dfrac{1}{2} \sin^2 n\theta \, d\theta =\dfrac{1}{2n}\int_0^{\pi} \sin^2 \phi \, d\phi= \dfrac{\pi}{4n}
 $$
 
-</br>
+:::
 
-**7.** 아르키메데스의 와선 $r=\theta,\, 0 \le \theta \le \theta_0$ 와 반직선 $\theta = \theta_0$ 로 둘러 싸인 아르키메데스 영역의 넓이는 원점을 꼭지각으로 하고 아르키메데스 영역을 포함하는 가장 작은 부채꼴 넓이의 $1/3$ 임을 보이라. (단 $0 <\theta_0 < 2\pi$ 이다.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_5_7} 
+
+아르키메데스의 와선 $r=\theta,\, 0 \le \theta \le \theta_0$ 와 반직선 $\theta = \theta_0$ 로 둘러 싸인 아르키메데스 영역의 넓이는 원점을 꼭지각으로 하고 아르키메데스 영역을 포함하는 가장 작은 부채꼴 넓이의 $1/3$ 임을 보이라. (단 $0 <\theta_0 < 2\pi$ 이다.)
+
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_9_5_7](figures/ex_9_5_7.jpg)
 
@@ -1327,20 +1472,32 @@ $$
 \text{Area}=\dfrac{1}{2}\int_0^{\theta_0}\theta^2 \, d\theta =\dfrac{1}{6}\theta_0^3 = \dfrac{1}{3} \left(\pi \theta_0^2 \times \dfrac{\theta_0}{2\pi}\right)
 $$
 
+:::
+
 </br>
 
 ## 연습문제 : 제 9 장 6 절
 
-**1.** 사이클로이드
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_6_1}  
+
+사이클로이드
 $$
 X(t)=(t-\sin t,\, 1-\cos t) \qquad (0\le t \le 2\pi)
 $$
 를 호의 길이로 매개화하라.
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
-s(t)=\int_0^t |X'(t')|\, dt'=\int_0^t \sqrt{(1-\cos^2 t')+\sin^2 t'}\, dt'=\int_0^t 2\left|\sin \frac{t'}{2}\right|\, dt' = 4-4\cos \frac{t}{2}
+\begin{aligned}
+s(t) &= \int_0^t |X'(t')|\, dt' = \int_0^t \sqrt{(1-\cos^2 t')+\sin^2 t'}\, dt' \\[0.3em]
+&= \int_0^t 2\left|\sin \frac{t'}{2}\right|\, dt' = 4-4\cos \frac{t}{2}
+\end{aligned}
 $$
 
 이므로 $t=2 \cos^{-1}\left(\dfrac{4-s}{4}\right)$ 이다. $\alpha = \cos^{-1}\left(\dfrac{4-s}{4}\right)$ 라 하면, $\cos \alpha = \dfrac{4-s}{4}$, $\sin \alpha = \dfrac{\sqrt{8s-s^2}}{4}$ 이며,
@@ -1358,31 +1515,39 @@ $$
 \tilde{X}(s) = \left(2 \cos^{-1}\left(\dfrac{4-s}{4}\right) - \dfrac{(4-s)\sqrt{8s-s^2}}{8},\,  \dfrac{8s-s^2}{8}\right)
 $$
 
-</br>
+:::
 
-**2.** 곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_6_2}  
+
+곡선
 
 $$
 X(t)=e^t(\cos t,\, \sin t) \qquad (0 \le t \le 2\pi)
 $$
 
-에 대하여 다음에 닿바라.
+에 대하여 다음에 답하라.
 
-(1) 곡선(의 상) 을 도시하고, 그 길이를 구하라
+&emsp;($1$) 곡선(의 상) 을 도시하고, 그 길이를 구하라
 
-(2) 점 $X(0)$ 에서부터 잰 호의 길이를 매개변수로 하여 표현하라.
+&emsp;($2$) 점 $X(0)$ 에서부터 잰 호의 길이를 매개변수로 하여 표현하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_9_6_3](figures/ex_9_6_3.jpg)
 
-(1) $X'(t) = (e^t \cos t - e^t \sin t,\, e^t \cos t + e^t \sin t)$
+($1$) $X'(t) = (e^t \cos t - e^t \sin t,\, e^t \cos t + e^t \sin t)$
 
 $$
 s(t)=\int_0^t \sqrt{2}e^{t'}\, dt'=\sqrt{2}(e^t-1)
 $$
 
-(2)
+($2$)
 
 $$
 t=\ln \left(\dfrac{s}{\sqrt{2}}+1\right)
@@ -1396,9 +1561,13 @@ $$
 
 이다.
 
-</br>
+:::
 
-**3.** 만약 호의 길이로 매개화된 곡선 $X(t)$ 를 $t=f(s)$ 로 재매개화하였더니 여전히 재매개화된 곡선 $X\circ f$ 도 호의 길이로 매개화되었다고 하자. 이때 어떤 상수 $c$ 에 대하여
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_6_3}  
+
+만약 호의 길이로 매개화된 곡선 $X(t)$ 를 $t=f(s)$ 로 재매개화하였더니 여전히 재매개화된 곡선 $X\circ f$ 도 호의 길이로 매개화되었다고 하자. 이때 어떤 상수 $c$ 에 대하여
 
 $$
 f(s)=s+c,\qquad \text{or} \qquad f(s)=-s+c
@@ -1406,7 +1575,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $X(t)$ 가 호의 길이로 매개화되었으므로 $|X'(t)|=1$ 이다. $X\circ f$ 도 호의 길이로 매개화되었으므로 $\left| \dfrac{d X(f(s))}{ds}\right|=1$ 이다. 그런데,
 
@@ -1416,11 +1589,20 @@ $$
 
 이다. 따라서 $f'(s)=\pm 1$ 이다.
 
-</br>
+:::
 
-**4.** 곡선의 미분가능 정도는 자연스러운 매개변수, 즉 호의 길이로 매개화하였을 때의 미분가능 정도로 이야기 할 수 있다. 태극의 그림처럼 두개의 반원이 만나서 이루는 곡선은 일급곡선이기는 하지만, 이급곡선은 아님을 보이라.
 
----
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_6_4}  
+
+곡선의 미분가능 정도는 자연스러운 매개변수, 즉 호의 길이로 매개화하였을 때의 미분가능 정도로 이야기 할 수 있다. 태극의 그림처럼 두개의 반원이 만나서 이루는 곡선은 일급곡선이기는 하지만, 이급곡선은 아님을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_9_6_4](figures/ex_9_6_4.png)
 
@@ -1444,6 +1626,9 @@ $$
 
 로 $X''(\theta=\pi^+)=(a,\, 0),\, X''(\theta=\pi^-)=(a,\, 0)$ 으로 $X''(\theta)$ 는 연속이 아니다. 따라서 $X(\theta)$ 는 일급이지만 이급곡선은 아니다.
 
+:::
+
+
 </br>
 
 ## 연습문제 : 제 9 장 7 절
@@ -1452,25 +1637,36 @@ $$
 
 함수 $f(x_1,\ldots,\,x_n)$ 에 대하여, 곡선 $X:[a,\,b]\to \mathbb{R}$ 을 따르는 적분값은 $X$ 를 재매개화하여도 변하지 않는다.
 
----
+::: {.proof} 
 
-*(proof)* 함수 $g:[\alpha,\,\beta] \to [a,\,b]$ 가 곡선 $X$ 의 동향 재매개화 $\tilde{X}(u):=X(g(u))$ 를 준다고 하자. 그렇다면,
+함수 $g:[\alpha,\,\beta] \to [a,\,b]$ 가 곡선 $X$ 의 동향 재매개화 $\tilde{X}(u):=X(g(u))$ 를 준다고 하자. 그렇다면,
 
 $$
-\int_{\tilde X} f\,ds =\int_\alpha^\beta f(\tilde{X}(u)) |\tilde{X}'(u)| du = \int_{\alpha}^\beta f(X(g(u))) |X'(g(u))|g'(u) \, du=\int_{a}^b f(X(t))|X'(t)| dt =\int_X f\, ds
+\begin{aligned}
+\int_{\tilde X} f\,ds &=\int_\alpha^\beta f(\tilde{X}(u)) |\tilde{X}'(u)| du \int_{\alpha}^\beta f(X(g(u))) |X'(g(u))|g'(u) \, du \\[0.3em]
+&=\int_{a}^b f(X(t))|X'(t)| dt =\int_X f\, ds
+\end{aligned}
 $$
 
-</br>
+:::
 
-**1.** 주어진 구간에 대하여 다음 곡선의 중심을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-(1) $(\cos 2t,\, \sin 2t,\, 3t)\quad (\pi \le t \le 3\pi)$
+::: {#exr-CAL_9_7_1}
 
-(2) $(t-\sin t,\, 1-\cos t) \quad (0 \le t \le 2\pi)$
+주어진 구간에 대하여 다음 곡선의 중심을 구하라.
 
----
+&emsp;($1$) $(\cos 2t,\, \sin 2t,\, 3t)\quad (\pi \le t \le 3\pi)$
 
-(1) 곡선의 길이 $l$ 은
+&emsp;($2$) $(t-\sin t,\, 1-\cos t) \quad (0 \le t \le 2\pi)$
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) 곡선의 길이 $l$ 은
 
 $$
 l=\int_\pi^{3\pi} \sqrt{13}\, dt = 2\pi\sqrt{13}
@@ -1488,7 +1684,7 @@ $$
 
 이므로 $(0,\,0,\, 6\pi)$ 가 중심이다.
 
-(2) 곡선의 길이 $l$ 은
+($2$) 곡선의 길이 $l$ 은
 
 $$
 l=\int_0^{2\pi} \sqrt{(1-\cos t)^2 + \sin^2 t}=\int_0^{2\pi} 2\left|\sin \dfrac{t}{2}\right|\, dt= 8
@@ -1498,16 +1694,23 @@ $$
 
 $$
 \begin{aligned}
-\overline{x}_1 &=\dfrac{1}{l} \int_0^{2\pi} (t-\sin t) 2\sin\dfrac{t}{2}\, dt= \dfrac{1}{4}\int_0^{2\pi} \left[t \sin \dfrac{t}{2}-2 \sin^2 \dfrac{t}{2}\cos \dfrac{t}{2}\right] \, dt= \int_0^{\pi} (\theta \sin \theta - \sin^2 \theta \cos \theta) d\theta  = \pi \\
-\overline{x}_2 &=\dfrac{1}{l} \int_0^{2\pi} (1-\cos t)2\sin \dfrac{t}{2}\, dt =\dfrac{1}{2}\int_0^{2\pi} \sin^3 \dfrac{t}{2}\, dt= \int_0^\pi \sin^3 \theta\, d\theta = \int_0^{\pi} (1-\cos^2\theta)\sin \theta \, d\theta =\dfrac{4}{3}
+\overline{x}_1 &=\dfrac{1}{l} \int_0^{2\pi} (t-\sin t) 2\sin\dfrac{t}{2}\, dt= \dfrac{1}{4}\int_0^{2\pi} \left[t \sin \dfrac{t}{2}-2 \sin^2 \dfrac{t}{2}\cos \dfrac{t}{2}\right] \, dt \\[0.3em]
+&= \int_0^{\pi} (\theta \sin \theta - \sin^2 \theta \cos \theta) d\theta  = \pi \\
+\overline{x}_2 &=\dfrac{1}{l} \int_0^{2\pi} (1-\cos t)2\sin \dfrac{t}{2}\, dt =\dfrac{1}{2}\int_0^{2\pi} \sin^3 \dfrac{t}{2}\, dt= \int_0^\pi \sin^3 \theta\, d\theta \\[0.3em]
+&= \int_0^{\pi} (1-\cos^2\theta)\sin \theta \, d\theta =\dfrac{4}{3}
 \end{aligned}
 $$
 
 이다. 따라서 $(\pi,\, 4/3)$ 이 중심이다.
 
-</br>
+:::
 
-**2.** 곡선
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_7_2} 
+
+곡선
 
 $$
 x^{2/3}+y^{2/3}=1,\qquad x\ge 0,\, y \ge 0
@@ -1515,12 +1718,19 @@ $$
 
 의 중심을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $X(t)=(\cos^3 t,\, \sin^3 t)$, $0 \le t \le \pi/2$  로 매개화 할 수 있다. 이제 곡선의 길이 $l$ 은,
 
 $$
-l=\int_0^{\pi/2} \sqrt{9 \sin^2 t \cos^4 t + 9 \cos ^2 t \sin ^4 t}\, dt = \int_0^{\pi/2} 3 \sin t \cos t\, dt = \dfrac{3}{2} \int_0^{\pi/2} \sin 2t \, dt = \dfrac{3}{2}
+\begin{aligned}
+l&=\int_0^{\pi/2} \sqrt{9 \sin^2 t \cos^4 t + 9 \cos ^2 t \sin ^4 t}\, dt = \int_0^{\pi/2} 3 \sin t \cos t\, dt \\[0.3em]
+&= \dfrac{3}{2} \int_0^{\pi/2} \sin 2t \, dt = \dfrac{3}{2}
+\end{aligned}
 $$
 
 이다. 따라서,
@@ -1535,11 +1745,19 @@ $$
 
 따라서 중심은 $\left(\dfrac{2}{5},\, \dfrac{2}{5}\right)$ 이다.
 
-</br>
+:::
 
-**3.**  평면곡선 $X \subset \mathbb{R}^2$ 의 중심을 $\bar{X}$ 라 할 때 임의의 직선 $l \subset \mathbb{R}^2$ 에 대하여 $l$ 과 $X$ 사이의 평균거리는 $l$ 과 $\bar{X}$ 사이의 거리와 같음을 보이라. 또 공간 곡선 $Y \subset \mathbb{R}^3$ 의 중심을 $\bar{Y}$ 라 할 때 임의의 평면 $p \subset \mathbb{R}^3$ 에 대하여 $p$ 와 $Y$ 사이의 평균거리는 $p$ 와 $\bar{Y}$ 사이의 거리와 같음을 보이라. (이 문제에서 *거리* 는 부호를 가진 것으로 생각한다. 즉, 직선 $l$ 에 의해여 평면이 둘로 나뉘어지는데, 어느 한쪽이 양의 거리이면, 다른 쪽은 음의 거리를 가지는 것으로 생각한다.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_7_3}  
+
+평면곡선 $X \subset \mathbb{R}^2$ 의 중심을 $\bar{X}$ 라 할 때 임의의 직선 $l \subset \mathbb{R}^2$ 에 대하여 $l$ 과 $X$ 사이의 평균거리는 $l$ 과 $\bar{X}$ 사이의 거리와 같음을 보이라. 또 공간 곡선 $Y \subset \mathbb{R}^3$ 의 중심을 $\bar{Y}$ 라 할 때 임의의 평면 $p \subset \mathbb{R}^3$ 에 대하여 $p$ 와 $Y$ 사이의 평균거리는 $p$ 와 $\bar{Y}$ 사이의 거리와 같음을 보이라. (이 문제에서 *거리* 는 부호를 가진 것으로 생각한다. 즉, 직선 $l$ 에 의해여 평면이 둘로 나뉘어지는데, 어느 한쪽이 양의 거리이면, 다른 쪽은 음의 거리를 가지는 것으로 생각한다.)
+
+:::
+
+</div>
+
+::: {.solution}
 
 호의 길이로 매개화된 곡선에 대해서 생각한다.
 
@@ -1547,7 +1765,8 @@ $$
 
 $$
 \begin{aligned}
-\bar{d} &=\dfrac{1}{l}\int_a^b (X(t)-P)\cdot \bf{n} X'(t)\, dt=\dfrac{1}{l} \int_a^b {\big [}(X(t)-\bar{X})\cdot \bf{n}+(\bar{X}-P)\cdot \bf{n}{\big]} X'(t)\, dt \\
+\bar{d} &=\dfrac{1}{l}\int_a^b (X(t)-P)\cdot \bf{n} X'(t)\, dt \\[0.3em]
+&=\dfrac{1}{l} \int_a^b {\big [}(X(t)-\bar{X})\cdot \bf{n}+(\bar{X}-P)\cdot \bf{n}{\big]} X'(t)\, dt \\
 &=\dfrac{1}{l}\int_a^b {\big [}(X(t)-\bar{X})\cdot \bf{n}{\big]} X'(t)\, dt  + \dfrac{1}{l}\int_a^b {\big [}(\bar{X}-P)\cdot \bf{n}{\big]} X'(t)\, dt
 \end{aligned}
 $$
@@ -1555,7 +1774,10 @@ $$
 여기서, 첫번째 term 은
 
 $$
-\int_a^b {\big [}(X(t)-\bar{X})\cdot \bf{n}{\big]} X'(t)\, dt =\bf{n} \cdot  \left(\int_a^b X(t)X'(t)\, dt -\overline{X}\int_a^b X'(t)\, dt \right) = \bf{n} \cdot \left(\bar{X}-\bar{X}\right)=0
+\begin{aligned}
+\int_a^b {\big [}(X(t)-\bar{X})\cdot \bf{n}{\big]} X'(t)\, dt &=\bf{n} \cdot  \left(\int_a^b X(t)X'(t)\, dt -\overline{X}\int_a^b X'(t)\, dt \right) \\[0.3em]
+&= \bf{n} \cdot \left(\bar{X}-\bar{X}\right)=0
+\end{aligned}
 $$
 
 이다. 두번째 term 에서 $(\bar X-P)\cdot \bf{n}$ 은 상수이며, 일르 고려하면,
@@ -1568,9 +1790,13 @@ $$
 
 평면에 대해서도 똑같이 생각 할 수 있다.
 
-</br>
+:::
 
-**4.** 나선 $X(t)=(\cos t,\, \sin t,\, t)$ 에서 밀도함수가 $f(t)=t^2$ 일 때, 구간 $-\pi\le t \le \pi$ 에서 나선의 질량이 $m=2\sqrt{2}\pi^3/3$ 임을 보이고, 질량중심이
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_7_4} 
+
+나선 $X(t)=(\cos t,\, \sin t,\, t)$ 에서 밀도함수가 $f(t)=t^2$ 일 때, 구간 $-\pi\le t \le \pi$ 에서 나선의 질량이 $m=2\sqrt{2}\pi^3/3$ 임을 보이고, 질량중심이
 
 $$
 \bar{x}=-\dfrac{6}{\pi^2},\quad\bar{y}=0,\quad \bar{z}=0
@@ -1578,7 +1804,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1591,9 +1821,17 @@ $$
 
 나머지 문제는 귀찮아서..
 
+:::
+
+</br>
+
 ## 연습문제 : 제 9 장 8 절
 
-**1.** 정규곡선 $X(t)\in \mathbb{R}^3$ 에 대하여
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_1} 
+
+정규곡선 $X(t)\in \mathbb{R}^3$ 에 대하여
 
 $$
 \dfrac{d}{dt} |X'(t)| = \dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
@@ -1613,7 +1851,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \dfrac{d}{dt}|X'(t)|=\dfrac{d}{dt} \sqrt{\sum_{i=1}^3 (x_i' (t))^2}=\dfrac{\sum_{i=1}^3 x'_i (t) x''_i(t)}{\sqrt{\sum_{i=1}^3(x_i'(t))^2}}=\dfrac{X'(t) \cdot X''(t)}{|X'(t)|}
@@ -1638,9 +1880,13 @@ $$
 
 임은 쉽다.
 
-</br>
+:::
 
-**2.** 평면곡선 $X(t) = (x(t),\, y(t))$ 의 곡률은
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_2} 
+
+평면곡선 $X(t) = (x(t),\, y(t))$ 의 곡률은
 
 $$
 \kappa (t) = \dfrac{|x'(t)y''(t)-x''(t)y'(t)|}{((x'(t))^2+(y'(t))^2)^{3/2}}
@@ -1654,12 +1900,19 @@ $$
 
 임을 보이라.
 
----
+:::
 
-문제 1로부터,
+</div>
+
+::: {.solution}
+
+문제 @exr-CAL_9_8_1 로부터,
 
 $$
-\kappa = \dfrac{\sqrt{|X'|^2|X''|^2-(X'\cdot X'')^2}}{|X'|^3}=\dfrac{\sqrt{(x'^2+y'^2)(x''^2+y''^2)-(x'x''-y'y'')^2}}{(x'^2+y'^2)^{3/2}} = \dfrac{|x'y''-x''y'|}{(x'^2+y'^2)^{3/2}}
+\begin{aligned}
+\kappa &= \dfrac{\sqrt{|X'|^2|X''|^2-(X'\cdot X'')^2}}{|X'|^3} \\[0.3em]
+&=\dfrac{\sqrt{(x'^2+y'^2)(x''^2+y''^2)-(x'x''-y'y'')^2}}{(x'^2+y'^2)^{3/2}} = \dfrac{|x'y''-x''y'|}{(x'^2+y'^2)^{3/2}}
+\end{aligned}
 $$
 
 이며 $x(t)=t$ 로 놓으면,
@@ -1670,12 +1923,19 @@ $$
 
 이다.
 
-</br>
+:::
 
-**3.** 타원 $X(t)=(a\cos t,\, b \sin t)$ 의 각 점에서의 곡률을 구하라. ($a,\,b>0$ 이다.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_3} 
 
+타원 $X(t)=(a\cos t,\, b \sin t)$ 의 각 점에서의 곡률을 구하라. ($a,\,b>0$ 이다.)
+
+:::
+
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 X'(t) &=(-a \sin t,\, b \cos t)\\
@@ -1684,23 +1944,39 @@ X''(t) &=(-a \cos t,\, -b \sin t)\\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**4.** 좌표평면에서 포물선 $y=x^2$ 의 각 점에서의 곡률을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_4}
 
-문제 2. 로 부터,
+좌표평면에서 포물선 $y=x^2$ 의 각 점에서의 곡률을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+문제 @exr-CAL_9_8_2 로 부터,
 
 $$
 \kappa = \dfrac{|y''|}{(1+y'^2)^{3/2}}=\dfrac{2}{(1+4x^2)^{3/2}}
 $$
 
-</br>
+:::
 
-**5.** 좌표평면에서 포물선 $y=ax^2$ 상의 세 점 $(-t,\,at^2),\, (0,\,0),\, (t,\,at^2)$ 을 지나는 원의 반지름의 길이를 $r(t)$ 라 두었을 때, $\displaystyle \lim_{t \to 0} r(t)$ 의 값을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_5} 
+
+좌표평면에서 포물선 $y=ax^2$ 상의 세 점 $(-t,\,at^2),\, (0,\,0),\, (t,\,at^2)$ 을 지나는 원의 반지름의 길이를 $r(t)$ 라 두었을 때, $\displaystyle \lim_{t \to 0} r(t)$ 의 값을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 대칭에 의해 원의 중심은 $y$ 축상에 있으니 이를 $(0,\,y)$ 라 하면,  $y>0$ 이어야 하며, $r(t)=y$ 이고,
 
@@ -1710,11 +1986,19 @@ $$
 
 이다. 따라서 $\displaystyle \lim_{t\to 0} r(t)=\dfrac{1}{2a}$ 이다.
 
-</br>
+:::
 
-**6.** 좌표공간에서 곡선 $X(t)$ 의 곡률이 $\kappa (t)$ 일 때, 곡선 $Y(t):=c X(t)$ 의 곡률은 $\kappa(t)/c$ 임을 보이라. (단 $c>0$.)
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_6}
+
+좌표공간에서 곡선 $X(t)$ 의 곡률이 $\kappa (t)$ 일 때, 곡선 $Y(t):=c X(t)$ 의 곡률은 $\kappa(t)/c$ 임을 보이라. (단 $c>0$.)
+
+:::
+
+</div>
+
+::: {.solution}
 
 $Y=cX$ 이므로 $Y'=cX',\, Y'' = cX''$ 이다. 따라서,
 
@@ -1722,11 +2006,19 @@ $$
 \kappa_Y (t) = \dfrac{1}{|Y'|}\left|\left(\dfrac{Y'}{|Y'|}\right)'\right|=\dfrac{1}{c} \kappa (t)
 $$
 
-</br>
+:::
 
-**7.** 곡선 $X(t)=(t,\, t^2,\,t^3)$ 에서 $t=1,\, t=-1$ 일 때의 곡률을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_7} 
+
+곡선 $X(t)=(t,\, t^2,\,t^3)$ 에서 $t=1,\, t=-1$ 일 때의 곡률을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1738,11 +2030,19 @@ X''(t)&=(0,\,2,\,6t)\\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**8.** 곡선 $X(t)=(t,\, \ln t)$ 에서 곡률반경이 최소인 점을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_8} 
+
+곡선 $X(t)=(t,\, \ln t)$ 에서 곡률반경이 최소인 점을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1754,9 +2054,13 @@ X\left( \dfrac{1}{\sqrt{2}}\right) & =\left( \dfrac{1}{\sqrt{2}},\, -\dfrac{1}{2
 \end{aligned}
 $$
 
-</br>
+:::
 
-**9.**  사이클로이드
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_9}
+
+사이클로이드
 
 $$
 x(t)=t-\sin t,\quad y(t)=1-\cos t = 2\sin^2 \dfrac{t}{2} \quad (0\le t \le 2\pi)
@@ -1770,7 +2074,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\sin \dfrac{t}{2}\ge 0$ for $0 \le t \le 2\pi$ 이다.
 
@@ -1783,9 +2091,13 @@ X''(t) &= (\sin t,\, \cos t)\\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**10.** 곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_10} 
+
+곡선
 
 $$
 X(t)=\left(\int_0^t \cos \dfrac{\pi u^2}{2}\, du ,\, \int_0^t \sin \dfrac{\pi u^2}{2} \, du\right)
@@ -1793,7 +2105,11 @@ $$
 
 의 곡률을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1804,11 +2120,19 @@ X''(t) &= \left( -\pi t \sin \dfrac{\pi t^2}{2},\,  \pi t \cos \dfrac{\pi t^2}{2
 \end{aligned}
 $$
 
-</br>
+:::
 
-**11.** 곡선 $X(t)$ 의 곡률 $\kappa (t)$ 의 적분 $\displaystyle \int_X \kappa \,ds$  를 $X$ 의 전곡률(total curvature) 라고 한다. 타원 $x^2+4y^2=1$ 의 전곡률은 얼마인가.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_11} 
+
+곡선 $X(t)$ 의 곡률 $\kappa (t)$ 의 적분 $\displaystyle \int_X \kappa \,ds$  를 $X$ 의 전곡률(total curvature) 라고 한다. 타원 $x^2+4y^2=1$ 의 전곡률은 얼마인가.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1837,9 +2161,13 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**12.** 좌표평면상의 정규곡선 $X:[a,\,b]\to \mathbb{R}^2$ 에 대하여,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_12} 
+
+좌표평면상의 정규곡선 $X:[a,\,b]\to \mathbb{R}^2$ 에 대하여,
 
 $$
 \dfrac{X'(t)}{|X'(t)|} = (\cos \theta(t),\, \sin \theta(t)) \qquad (a \le t \le b)
@@ -1859,10 +2187,17 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
-\int_X \kappa \, ds = \int_a^b \dfrac{1}{|X'|}\left|\left(\dfrac{X'}{|X'|}\right)'\right|\, |X'|\, dt = \int_a^b \left|\left(\dfrac{X'}{|X'|}\right)'\right| \, dt = \int_a^b|\theta'(t)(-\sin \theta(t),\, \cos \theta(t))|\, dt=\int_a^b |\theta'(t)|\, dt
+\begin{aligned}
+\int_X \kappa \, ds &= \int_a^b \dfrac{1}{|X'|}\left|\left(\dfrac{X'}{|X'|}\right)'\right|\, |X'|\, dt  \int_a^b \left|\left(\dfrac{X'}{|X'|}\right)'\right| \, dt \\[0.3em]
+&= \int_a^b|\theta'(t)(-\sin \theta(t),\, \cos \theta(t))|\, dt=\int_a^b |\theta'(t)|\, dt
+\end{aligned}
 $$
 
 $\theta(t)$ 가 증가함수이면 $\theta'(t)>0$ 이다. 따라서,
@@ -1871,11 +2206,20 @@ $$
 \int_X \kappa \, ds = \int_a^b \theta'(t)\, dt = \theta(b)-\theta(a)
 $$
 
-</br>
+:::
 
-**13.** 차를 몰고 반지름의 길이가 100 미터인 원호 모양의 도로 위를 일정한 속력 $v$ 로 움직일 때 편안함을 느낀다고 하자. 반지름의 길이가 10 미터인 원호 모양의 도로 위를 움직일 때의 속력이 얼마이면 같은 정도의 편안함을 느끼는가?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_13} 
+
+
+차를 몰고 반지름의 길이가 100 미터인 원호 모양의 도로 위를 일정한 속력 $v$ 로 움직일 때 편안함을 느낀다고 하자. 반지름의 길이가 10 미터인 원호 모양의 도로 위를 움직일 때의 속력이 얼마이면 같은 정도의 편안함을 느끼는가?
+
+:::
+
+</div>
+
+::: {.solution}
 
 반지름의 길이가 $R$ 미터인 원호를 일정한 속력 $v$ 로 움직일 때의 경로 $X(t)$ 는
 
@@ -1890,9 +2234,13 @@ $$
 
 이며 가속력의 크기는 $\dfrac{v^2}{R}$ 이다. 같은 정도의 편안함을 느끼려면 가속력이 같아야 하므로, 반지름이 $1/10$ 이 되면 속력은 $1/\sqrt{10}$ 이 되어야 한다.
 
-</br>
+:::
 
-**14.** 호의 길이로 매개화된 곡선 $X(s)$ 의 곡률이 $\kappa (s)$ 로 주어졌을 때 $\kappa'(s)=0$ 이 되는 점을 **꼭지점** 이라고 부른다. 타원
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_14} 
+
+호의 길이로 매개화된 곡선 $X(s)$ 의 곡률이 $\kappa (s)$ 로 주어졌을 때 $\kappa'(s)=0$ 이 되는 점을 **꼭지점** 이라고 부른다. 타원
 
 $$
 \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1
@@ -1900,9 +2248,13 @@ $$
 
 의 꼭지점을 구하라.
 
----
+:::
 
-(1) 일단 처음 생각대로 해보면....
+</div>
+
+::: {.solution}
+
+($1$) 일단 처음 생각대로 해보면....
 
 $$
 \begin{aligned}
@@ -1968,9 +2320,13 @@ $$
 
 이므로 $\kappa'_X(t)=0$ 이면 $t=0,\, \pi/2,\, \pi/\, \pi/3$ 이다. 즉 $(\pm a,\,0)$ 과 $(0,\, \pm b)$ 가 꼭지점이다.
 
-</br>
+:::
 
-**15.** 곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_15} 
+
+곡선
 
 $$
 X(t) = \left(\cos t,\, \sin^2 t,\, \dfrac{1}{2} \sin 2t\right)
@@ -1978,7 +2334,11 @@ $$
 
 에서 $t=\pi$ 일 때의 곡률과 접촉평면의 식을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -2000,13 +2360,21 @@ $$
 $$
 이다.
 
-</br>
+:::
 
-**16.** 삼차원 공간에서 곡률이 항등적으로 $0$ 인 정규곡선은 직선운동을 하는 곡선임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_16} 
 
-문제 1로부터, 곡률이 항등적으로 $0$ 이면
+삼차원 공간에서 곡률이 항등적으로 $0$ 인 정규곡선은 직선운동을 하는 곡선임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+문제 @exr-CAL_9_8_1 로부터, 곡률이 항등적으로 $0$ 이면
 
 $$
 0=\kappa = \dfrac{|X'\times X''|}{|X'|^3} \implies X'\times X''=0
@@ -2014,11 +2382,19 @@ $$
 
 이다. $X'(t)\ne 0$ 이므로 $X''(t) = f(t)X'(t)$ 이며 연습문제 9.2.2 로부터 $X(t)$ 는 직선운동임을 안다.
 
-</br>
+:::
 
-**17.** 곡선 $X(t)=e^t(\cos t,\, \sin t)$ 의 곡률함수를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_8_17} 
+
+곡선 $X(t)=e^t(\cos t,\, \sin t)$ 의 곡률함수를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -2028,9 +2404,13 @@ X''(t) &=e^t(-2\sin t,\, 2 \cos t) \\
 \end{aligned}
 $$
 
-</br>
+:::
 
-**18.** 로그와선 $r=r_0 e^{k\theta}$ 의 각 점에서의 곡률은
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_8_18}
+
+로그와선 $r=r_0 e^{k\theta}$ 의 각 점에서의 곡률은
 
 $$
 \kappa = \dfrac{1}{r} \dfrac{1}{\sqrt{1+k^2}}
@@ -2038,7 +2418,11 @@ $$
 
 임을 보이라. 이로부터 로그와선의 곡률은 원점에서의 거리에 반비례함을 설명하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -2055,13 +2439,23 @@ $$
 
 $k$ 는 상수이므로 $k(\theta) \propto \dfrac{1}{r}$ .
 
+:::
+
 </br>
 
 ## 제 9 장 탐구문제
 
-**1.** 한 변의 길이가 $1$ m 인 정사각형 모양 탁지의 각 귀퉁이에 개미가 한마리씩 있다. 이들 개미가 각자 자기 왼쪽에 있는 개미를 향하여 동시에 같은 속력으로 움직이면 그 자취는 로그와선이 된다. 이 때 개미들이 만날 때가지 움직인 거리를 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_S01}
+
+한 변의 길이가 $1$ m 인 정사각형 모양 탁지의 각 귀퉁이에 개미가 한마리씩 있다. 이들 개미가 각자 자기 왼쪽에 있는 개미를 향하여 동시에 같은 속력으로 움직이면 그 자취는 로그와선이 된다. 이 때 개미들이 만날 때가지 움직인 거리를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $A,\,B,\,C,\,D$ 에서 출발한 개미의 자취를 $A(t),\, B(t),\, C(t),\, D(t)$ 라 하자. $A$ 는 $B$ 를 따라, $B$ 는 $C$ 를 따라, $C$ 는 $D$ 를 따라, $D$ 는 $A$ 를 따라 움직인다고 하자. 그렇다면,
 
@@ -2119,11 +2513,19 @@ $$
 
 -- to be done--
 
-</br>
+:::
 
-**2.** 평면에서 곡선 $X(t)$ 와 한 점 $P$ 가 주어졌다고 하자. 만약 $Q:=X(0)$ 가 곡선 $X(t)$ 의 점 중에서 $P$ 에 가장 가까운 거리에 있으면 벡터 $\overrightarrow{PQ}$ 와 $X'(0)$ 은 서로 수직임을 보이라. 또 두 평면곡선 $x^2y+y^3=8$ 과 $x^2+y^2=1$ 사이의 최단거리를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_9_S02}
+
+평면에서 곡선 $X(t)$ 와 한 점 $P$ 가 주어졌다고 하자. 만약 $Q:=X(0)$ 가 곡선 $X(t)$ 의 점 중에서 $P$ 에 가장 가까운 거리에 있으면 벡터 $\overrightarrow{PQ}$ 와 $X'(0)$ 은 서로 수직임을 보이라. 또 두 평면곡선 $x^2y+y^3=8$ 과 $x^2+y^2=1$ 사이의 최단거리를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $t\in \mathbb{R}$ 이라고 가정한다. 원점에서의 거리의 제곱 함수를 $L(t)$ 라 하면,
 
@@ -2159,7 +2561,14 @@ $$
 
 로 매개화 할 수 있으며, 원점에서의 거리는, $8/t$ 이므로 최단거리는 $4$ 이다. 따라서 $x^2+y^2=1$ 와의 최단거리는 $3$ 이다.
 
-**3.** 극좌표계로,
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_S03}
+
+극좌표계로,
 
 $$
 r=\dfrac{k\epsilon}{1+\epsilon \cos \theta}
@@ -2167,13 +2576,17 @@ $$
 
 로 주어진 곡선은
 
-(i) $0<\epsilon < 1$ 이면 타원
+&emsp;($i$) $0<\epsilon < 1$ 이면 타원
 
-(ii) $\epsilon =1$ 이면 포물선
+&emsp;($ii$) $\epsilon =1$ 이면 포물선
 
-(iii) $\epsilon>1$ 이면 쌍곡선을 나타냄을 보이라.
+&emsp;($iii$) $\epsilon>1$ 이면 쌍곡선을 나타냄을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \sqrt{x^2+y^2}=\dfrac{k\epsilon}{1+\epsilon \dfrac{x}{\sqrt{x^2+y^2}}} \implies (1-\epsilon)x^2-2\epsilon kx + y^2 = \epsilon k^2
@@ -2183,9 +2596,13 @@ $$
 
 이므로 $0 <\epsilon <1$ 이면 타원, $\epsilon = 1$ 이면 포물선, $\epsilon>1$ 이면 쌍곡선이다.
 
-</br>
+:::
 
-**4.** 일급 곡선 $X:[a,\,b]\to \mathbb{R}^n$ 의 에너지를
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_9_S04}
+
+일급 곡선 $X:[a,\,b]\to \mathbb{R}^n$ 의 에너지를
 
 $$
 E(X):=\int_a^b |X'(t)|^2\, dt
@@ -2203,7 +2620,11 @@ $$
 
 이제 공간에 주어진 두 점 $P,\,Q$ 를 잇는 모든 일급곡선중에서 에너지가 최소인 곡선은 등속운동을 하는 직선임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 임의의 실수함수 $f,\, g$ 에 대해
 
@@ -2226,3 +2647,6 @@ $$
 $$
 
 이므로, 주어진 식을 보였다. 등호는 $|X'(t)|=v=\text{const}$ 일 때 이므로 등속운동을 할 때 성립하며, 두 점을 잇는 가장 짧은 곡선은 직선이다.
+
+:::
+

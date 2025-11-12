@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/calculus/10_multivariable_functions.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +84,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -126,9 +125,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Mathematical Analysis</a> 
         <div class="sidebar-tools-main">
@@ -455,10 +452,13 @@ window.Quarto = {
 </div>
 <section id="연습문제-제-11-장-1-절" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="연습문제-제-11-장-1-절"><span class="header-section-number">11.1</span> 연습문제 : 제 11 장 1 절</h2>
-<p><strong>1.</strong> <span class="math inline">\(x&gt;0\)</span> 일 때 다음 미분을 구하라.</p>
-<p><span class="math display">\[
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_1_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.1 (SNU 11.1.1)</strong></span> <span class="math display">\[
 \dfrac{d}{dx} \int_{x^2}^{x^3} \dfrac{1}{y} e^{xy^2} \, dy
 \]</span></p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 F(x,\, t) = \int_{a}^t \dfrac{1}{s}e^{xs^2}\, ds
@@ -479,12 +479,16 @@ F(x,\, t) = \int_{a}^t \dfrac{1}{s}e^{xs^2}\, ds
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> 일급함수 <span class="math inline">\(a(x),\, b(x),\, g(x,\,y)\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_1_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.2 (SNU 11.1.2)</strong></span> 일급함수 <span class="math inline">\(a(x),\, b(x),\, g(x,\,y)\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \dfrac{d}{dx} \int_{a(x)}^{b(x)} g(x,\,y)\, dy = g(x,\,b(x))b'(x)-g(x,\,a(x))a'(x)+\int_{a(x)}^{b(x)}D_1g(x,\,y)\, dy
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>앞의 1과 같은 방법으로,</p>
 <p><span class="math display">\[
@@ -501,19 +505,23 @@ D_2F(x,\,y)&amp;= g(x,\,y)
 <p>이므로,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\dfrac{d}{dx} \int_{a(x)}^{b(x)}g(x,\,y)dy &amp;= \dfrac{d}{dx} \left[F(x,\,b(x))-F(x,\,a(x)\right] \\
-&amp;= D_1F(x,\,b(x)) +D_2F(x,\, b(x))b'(x)-D_1F(x,\,a(x))-D_2F(x,\,a(x))a'(x) \\
-&amp;=g(x,\,b(x))b'(x)-g(x,\,a(x))a;(x)+\int_{a(x)}^{b(x)} D_1 g(x,\,y)\, dy
+\dfrac{d}{dx} &amp;\int_{a(x)}^{b(x)}g(x,\,y)dy = \dfrac{d}{dx} \left[F(x,\,b(x))-F(x,\,a(x)\right] \\
+&amp;= D_1F(x,\,b(x)) +D_2F(x,\, b(x))b'(x) - D_1F(x,\,a(x))-D_2F(x,\,a(x))a'(x) \\
+&amp;=g(x,\,b(x))b'(x)-g(x,\,a(x))a'(x) +\int_{a(x)}^{b(x)} D_1 g(x,\,y)\, dy
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>3.</strong> <span class="math inline">\(k&lt;1\)</span> 일 때 함수</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_1_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.3 (SNU 11.1.3 $)</strong></span> <span class="math inline">\(k&lt;1\)</span> 일 때 함수</p>
 <p><span class="math display">\[
 f(k):=\int_0^{\pi/2} \dfrac{dx}{\sqrt{1-k\cos^2x}}
 \]</span></p>
 <p>는 <span class="math inline">\(k\)</span> 에 대한 증가함수 임을 보이라. 또 <span class="math inline">\(k=0\)</span> 일 때의 순간변화율은 얼마인가?</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -526,78 +534,76 @@ f(k):=\int_0^{\pi/2} \dfrac{dx}{\sqrt{1-k\cos^2x}}
 \dfrac{df}{dk}(0)= \int_0^{\pi/2}\dfrac{1}{2}\cos^2x\, dx= \dfrac{\pi}{8}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>4.</strong> 좌표평면에서 호의 길이로 매개화된 이급 곡선</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_1_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.4 (SNU 11.1.4)</strong></span> 좌표평면에서 호의 길이로 매개화된 이급 곡선</p>
 <p><span class="math display">\[
 C(s),\qquad s_0\le s \le s_1
 \]</span></p>
 <p>에 대하여 단위 접벡터를</p>
 <p><span class="math display">\[
-\mathbf{t}(s) : =C'(s)
+\boldsymbol{t}(s) : =C'(s)
 \]</span></p>
 <p>로 두면 이 곡선의 각 점에서 곡률은</p>
 <p><span class="math display">\[
-\kappa (x) := |\mathbf{t}'(s)|
+\kappa (x) := |\boldsymbol{t}'(s)|
 \]</span></p>
 <p>로 주어진다. 이때 곡선 <span class="math inline">\(C(s)\)</span> 를 단위법벡터</p>
 <p><span class="math display">\[
-\mathbf{n}(s) := -\dfrac{\mathbf{t}'(s)}{\kappa(s)}
+\boldsymbol{n}(s) := -\dfrac{\boldsymbol{t}'(s)}{\kappa(s)}
 \]</span></p>
 <p>방향으로 <span class="math inline">\(u\)</span> 만큼 이동한 곡선의 식은</p>
 <p><span class="math display">\[
-C_u(s):=C(s)+u\mathbf{n}(s),\qquad s_0\le s\le s_1
+C_u(s):=C(s)+u\boldsymbol{n}(s),\qquad s_0\le s\le s_1
 \]</span></p>
 <p>이다. 곡선 $ C_u$ 의 길이를</p>
 <p><span class="math display">\[
 L(u):=\int_{s_0}^{s_1}\left|C'_u(s)\right|\, ds
 \]</span></p>
 <p>라 하자.</p>
-<ol type="1">
-<li><p><span class="math inline">\(\mathbf{n}'(s)=\kappa (s) \mathbf{t}(s)\)</span> 임을 보이라.</p></li>
-<li><p><span class="math inline">\(|u|\ll 1\)</span> 이면 <span class="math inline">\(L(u)\)</span> 의 순간변화율은 처음 주어진 곡선의 전곡률 임을, 즉</p></li>
-</ol>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\boldsymbol{n}'(s)=\kappa (s) \boldsymbol{t}(s)\)</span> 임을 보이라.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(|u|\ll 1\)</span> 이면 <span class="math inline">\(L(u)\)</span> 의 순간변화율은 처음 주어진 곡선의 전곡률 임을, 즉</p>
 <p><span class="math display">\[
 L'(u)=\int_{s_0}^{s_1}\kappa (s)\, ds
 \]</span></p>
 <p>를 보이라.</p>
-<ol start="3" type="1">
-<li>만약 처음에 주어진 곡선 <span class="math inline">\(C\)</span> 가 타원이면 <span class="math inline">\(L'(0)\)</span> 의 값은 얼마인가?</li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) 만약 처음에 주어진 곡선 <span class="math inline">\(C\)</span> 가 타원이면 <span class="math inline">\(L'(0)\)</span> 의 값은 얼마인가?</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li><span class="math inline">\(|\mathbf{t}(s)|=1,\,|\mathbf{n}(s) |=1\)</span>​ 이다. 이로부터,</li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(|\boldsymbol{t}(s)|=1,\,|\boldsymbol{n}(s) |=1\)</span>​ 이다. 이로부터,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\dfrac{d}{ds}\left|\mathbf{t}(s)\right|^2 &amp;=0 \implies \mathbf{t}(s) \cdot \mathbf{t}'(s)=0 \\
-\dfrac{d}{ds}\left|\mathbf{n}(s)\right|^2 &amp;=0 \implies \mathbf{n}(s) \cdot \mathbf{n}'(s)=0
+\dfrac{d}{ds}\left|\boldsymbol{t}(s)\right|^2 &amp;=0 \implies \boldsymbol{t}(s) \cdot \boldsymbol{t}'(s)=0 \\
+\dfrac{d}{ds}\left|\boldsymbol{n}(s)\right|^2 &amp;=0 \implies \boldsymbol{n}(s) \cdot \boldsymbol{n}'(s)=0
 \end{aligned}
 \]</span></p>
-<p>좌표평면이므로 2차원이고, <span class="math inline">\(\mathbf{n}(s) \propto \mathbf{t}'(s)\)</span> 이므로, <span class="math inline">\(\mathbf{n}'(s) \propto \mathbf{t}(s)\)</span> 이다. 따라서 어떤 스칼라 함수 $ f(s)$ 에 대해</p>
+<p>좌표평면이므로 2차원이고, <span class="math inline">\(\boldsymbol{n}(s) \propto \boldsymbol{t}'(s)\)</span> 이므로, <span class="math inline">\(\boldsymbol{n}'(s) \propto \boldsymbol{t}(s)\)</span> 이다. 따라서 어떤 스칼라 함수 <span class="math inline">\(f(s)\)</span> 에 대해</p>
 <p><span class="math display">\[
-\mathbf{n}'(s) =f(s)\mathbf{t}(s) \tag{1}
+\boldsymbol{n}'(s) =f(s)\boldsymbol{t}(s) \tag{1}
 \]</span></p>
-<p>이다. 또한, <span class="math inline">\(\mathbf{n}(s) \cdot \mathbf{t}(s)=0\)</span> 이므로,</p>
+<p>이다. 또한, <span class="math inline">\(\boldsymbol{n}(s) \cdot \boldsymbol{t}(s)=0\)</span> 이므로,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\mathbf{n}'(s)\cdot \mathbf{t}(s) &amp;=\left(\mathbf{n}(s) \cdot \mathbf{t}(s)\right)'-\mathbf{n}(s)\cdot \mathbf{t'(s)} =0-(-\kappa(s))=\kappa(s)
+\boldsymbol{n}'(s)\cdot \boldsymbol{t}(s) &amp;=\left(\boldsymbol{n}(s) \cdot \boldsymbol{t}(s)\right)'-\boldsymbol{n}(s)\cdot \boldsymbol{t'(s)} =0-(-\kappa(s))=\kappa(s)
 \end{aligned}
 \]</span></p>
-<p>이며, (1) 로 부터,</p>
+<p>이며, (<span class="math inline">\(1\)</span>) 로 부터,</p>
 <p><span class="math display">\[
-\mathbf{n'}(s)\cdot \mathbf{t}(s) = f(s) |\mathbf{t}(s)|^2=f(s)
+\boldsymbol{n'}(s)\cdot \boldsymbol{t}(s) = f(s) |\boldsymbol{t}(s)|^2=f(s)
 \]</span></p>
 <p>이므로 <span class="math inline">\(f(s)=\kappa (s)\)</span> 이다. 즉,</p>
 <p><span class="math display">\[
-\mathbf{n}'(s) = \kappa (s) \mathbf{t}(s)
+\boldsymbol{n}'(s) = \kappa (s) \boldsymbol{t}(s)
 \]</span></p>
 <p>이다.</p>
-<ol start="2" type="1">
-<li><span class="math display">\[
-|C'_u(s)| = |C'(s)+u\mathbf{n'(s)}|=|\mathbf{t}(s)+u\kappa(s)\mathbf{t}(s)|=|\mathbf{t}(s)|\cdot |1+u\kappa(s)|=|1+u\kappa(s)|
-\]</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math display">\[
+\begin{aligned}
+|C'_u(s)| &amp;= |C'(s)+u\boldsymbol{n'(s)}|=|\boldsymbol{t}(s)+u\kappa(s)\boldsymbol{t}(s)| \\[0.3em]
+&amp;=|\boldsymbol{t}(s)|\cdot |1+u\kappa(s)|=|1+u\kappa(s)|
+\end{aligned}
+\]</span></p>
 <p>이다 .<span class="math inline">\(|u|\ll 1\)</span>​ 이면 <span class="math inline">\(1+u\kappa(s)&gt;0\)</span>​ 이므로,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -606,9 +612,7 @@ L'(u) &amp;=\int_{s_0}^{s_1} \dfrac{\partial }{\partial u}(1+u\kappa(s))ds =\int
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
-<ol start="3" type="1">
-<li>타원 <span class="math inline">\(X(t) = (a \cos t,\, b \sin t)\)</span> where <span class="math inline">\(0 \le t \le 2\pi\)</span> 라 하자. 호의 길이 <span class="math inline">\(s\)</span> 로 매개화 하면,</li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) 타원 <span class="math inline">\(X(t) = (a \cos t,\, b \sin t)\)</span> where <span class="math inline">\(0 \le t \le 2\pi\)</span> 라 하자. 호의 길이 <span class="math inline">\(s\)</span> 로 매개화 하면,</p>
 <p><span class="math display">\[
 s(t) = \int_0^t |X' (t') |\, dt' = \sqrt{a^2 \sin ^2 t' + b^2 \cos ^2 t'}\, dt'
 \]</span></p>
@@ -652,23 +656,22 @@ D_1 D_2 f(x,\,y) = D_2D_1 f(x,\,y)
 \]</span></p>
 <p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
-<p><strong>1.</strong> 다음 함수에서 <span class="math inline">\(D_1D_2 f= D_2 D_1 f\)</span> 가 성립하는가를 조사하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.5 (SNU 11.2.1)</strong></span> 다음 함수에서 <span class="math inline">\(D_1D_2 f= D_2 D_1 f\)</span> 가 성립하는가를 조사하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li><span class="math inline">\(2x^2y^3 -x^3y^5\)</span></li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(2x^2y^3 -x^3y^5\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
-D_1 D_2 f(x,\,y) &amp;= D_1(6x^2y^2-5x^3y^4)=12xy^2-15x^2y^4 \\
-D_2 D_1 f(x,\,y) &amp;= D_2 (4xy^3-3x^2y^5) = 12xy^2-15x^2y^5
+D_1 D_2 f(x,\,y) &amp;= D_1(6x^2y^2-5x^3y^4)=12xy^2-15x^2y^4, \\
+D_2 D_1 f(x,\,y) &amp;= D_2 (4xy^3-3x^2y^5) = 12xy^2-15x^2y^5.
 \end{aligned}
 \]</span></p>
-<p>따라서 <span class="math inline">\(D_1D_2f=D_2D_1f\)</span> 가 성립한다.</p>
-<ol start="2" type="1">
-<li><span class="math inline">\(\cos^7 x - \sin ^2 y\)</span></li>
-</ol>
+<p>따라서 <span class="math inline">\(D_1 D_2 f = D_2 D_1 f\)</span> 가 성립한다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\cos^7 x - \sin ^2 y\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 D_1D_2f(x,\,y) &amp;= D_1(-2\cos y \sin y )=0 \\
@@ -676,9 +679,7 @@ D_2D_1 f(x,\,y) &amp;=D_2 (-7 \sin x \cos^6 x)=0
 \end{aligned}
 \]</span></p>
 <p>따라서 <span class="math inline">\(D_1D_2f=D_2D_1f\)</span> 가 성립한다.</p>
-<ol start="3" type="1">
-<li><span class="math inline">\(\arctan(x y)\)</span></li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\arctan(x y)\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 D_1D_2 f(x,\,y) &amp;= D_1 \dfrac{x}{1+x^2y^2} = \dfrac{1+x^2y^2-x(2xy^2)}{(1+x^2y^2)^2} = \dfrac{1-x^2y^2}{(1+x^2y^2)^2} \\
@@ -686,17 +687,19 @@ D_2D_1 f(x,\,y) &amp;=D_2 \dfrac{y}{1+x^2y^2}=\dfrac{1-x^2y^2}{(1+x^2y^2)^2}
 \end{aligned}
 \]</span></p>
 <p>따라서 <span class="math inline">\(D_1D_2f=D_2D_1f\)</span> 가 성립한다.</p>
-<ol start="4" type="1">
-<li><span class="math inline">\(\ln \dfrac{x-1}{y+1}\)</span></li>
-</ol>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\ln \dfrac{x-1}{y+1}\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 D_1D_2f(x,\,y) = D_2D_1f(x,\,y)=0
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> 함수 <span class="math inline">\(f(x,\,y)=xy^2+ye^{-x}\sin (x-y)\)</span> 의 모든 이계편도함수를 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.6 (SNU 11.2.2)</strong></span> 함수 <span class="math inline">\(f(x,\,y)=xy^2+ye^{-x}\sin (x-y)\)</span> 의 모든 이계편도함수를 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -713,10 +716,14 @@ D_1D_2 f(x,\,y) &amp;= 2y-e^{-x}\sin (x-y)+e^{-x}\cos (x-y)+ye^{-x}\cos (x-y)+ye
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>3.</strong> <span class="math inline">\(z=\sin (x+ct)+\cos (2x+2ct)\)</span> 일때 <span class="math display">\[
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.7 (SNU 11.2.3)</strong></span> <span class="math inline">\(z=\sin (x+ct)+\cos (2x+2ct)\)</span> 일때 <span class="math display">\[
 \dfrac{\partial^2z}{\partial t^2}=c^2 \dfrac{\partial^2z}{\partial x^2}
 \]</span> 임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -727,30 +734,45 @@ D_1D_2 f(x,\,y) &amp;= 2y-e^{-x}\sin (x-y)+e^{-x}\cos (x-y)+ye^{-x}\cos (x-y)+ye
 \end{aligned}
 \]</span> 이므로 주어진 식이 성립한다.</p>
 </div>
-<p><br></p>
-<p><strong>4.</strong> 이급함수 <span class="math inline">\(f(x,\,y)\)</span> 는 정의역의 각 점에서 임의의 벡터 <span class="math inline">\(\mathbf{v}\)</span> 에 대하여 <span class="math inline">\(\mathbf{v}\)</span> 방향 이계미분계수와 <span class="math inline">\((-\mathbf{v})\)</span> 방향 이계미분계수가 같은가?</p>
-<div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>Let <span class="math inline">\(\mathbf{v}=(a,\,b)\)</span> Then,</p>
-<p><span class="math display">\[
-{D_{(a,\,b)}}^2f(x,\,y)=a^2{D_1}^2f(x,\,y)+2abD_2D_2f(x,\,y)+b^2{D_2}^2f(x,\,y) ={D_{(-a,\,-b)}}^2f(x,\,y)
-\]</span></p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.8 (SNU 11.2.4)</strong></span> 이급함수 <span class="math inline">\(f(x,\,y)\)</span> 는 정의역의 각 점에서 임의의 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여 <span class="math inline">\(\boldsymbol{v}\)</span> 방향 이계미분계수와 <span class="math inline">\((-\boldsymbol{v})\)</span> 방향 이계미분계수가 같은가?</p>
 </div>
-<p><br></p>
-<p><strong>5.</strong> 원점 근방에서 정의된 삼급함수 <span class="math inline">\(f(x,\,y)\)</span> 가 원점에서 <span class="math inline">\(\mathbf{v}\)</span>-방향 이계미분계수가 <span class="math inline">\(1\)</span> 이라고 하자. 이 때 <span class="math inline">\(2\mathbf{v}\)</span>-방향 이계미분계수는 얼마인가? 또 <span class="math inline">\(f(x,\,y)\)</span> 가 원점에서 <span class="math inline">\(\mathbf{v}\)</span>-방향 삼계미분계수가 <span class="math inline">\(1\)</span> 이면 <span class="math inline">\(2\mathbf{v}\)</span>-방향 삼계미분계수는 얼마인가?</p>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span>Let <span class="math inline">\(\boldsymbol{v}=(a,\,b)\)</span> Then,</p>
+<p><span class="math display">\[
 \begin{aligned}
-D_{2\mathbf{v}} f &amp;= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
-{D_{2\mathbf{v}}}^2 &amp; f= 2\mathbf{v} \cdot \nabla (2\mathbf{v} \cdot \nabla f) =4{D_{\mathbf{v}}}^2f \\
-{D_{2\mathbf{v}}}^3 &amp;f = 8 {D_{\mathbf{v}}}^3f
+{D_{(a,\,b)}}^2f(x,\,y) &amp;= a^2{D_1}^2f(x,\,y)+2abD_2D_2f(x,\,y)+b^2{D_2}^2f(x,\,y) \\[0.3em]
+&amp;={D_{(-a,\,-b)}}^2f(x,\,y)
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>6.</strong> 곡선 <span class="math inline">\((x_1(t),\ldots,\, x_n(t))\)</span> 와 함수 <span class="math inline">\(f(x_1,\ldots,\,x_n)\)</span> 에 대하여,</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.9 (SNU 11.2.5)</strong></span> 원점 근방에서 정의된 삼급함수 <span class="math inline">\(f(x,\,y)\)</span> 가 원점에서 <span class="math inline">\(\boldsymbol{v}\)</span>-방향 이계미분계수가 <span class="math inline">\(1\)</span> 이라고 하자. 이 때 <span class="math inline">\(2\boldsymbol{v}\)</span>-방향 이계미분계수는 얼마인가? 또 <span class="math inline">\(f(x,\,y)\)</span> 가 원점에서 <span class="math inline">\(\boldsymbol{v}\)</span>-방향 삼계미분계수가 <span class="math inline">\(1\)</span> 이면 <span class="math inline">\(2\boldsymbol{v}\)</span>-방향 삼계미분계수는 얼마인가?</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
+\begin{aligned}
+D_{2\boldsymbol{v}} f &amp;= 2\boldsymbol{v} \cdot \nabla f=2D_{\boldsymbol{v}}f\\
+{D_{2\boldsymbol{v}}}^2 &amp; f= 2\boldsymbol{v} \cdot \nabla (2\boldsymbol{v} \cdot \nabla f) =4{D_{\boldsymbol{v}}}^2f \\
+{D_{2\boldsymbol{v}}}^3 &amp;f = 8 {D_{\boldsymbol{v}}}^3f
+\end{aligned}
+\]</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.10 (SNU 11.2.6)</strong></span> 곡선 <span class="math inline">\((x_1(t),\ldots,\, x_n(t))\)</span> 와 함수 <span class="math inline">\(f(x_1,\ldots,\,x_n)\)</span> 에 대하여,</p>
 <p><span class="math display">\[
 \dfrac{d^2}{dt^2} f(x_1,\ldots,\,x_n) = \sum_{i,\,j=1}^n \dfrac{\partial^2 f}{\partial x_i \partial x_j} \dfrac{dx_i}{dt} \dfrac{dx_j}{dt}+ \sum_{k=1}^n \dfrac{\partial f}{\partial x_k} \dfrac{d ^2 x_k}{dt^2}
 \]</span> 임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -760,8 +782,10 @@ D_{2\mathbf{v}} f &amp;= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>7.</strong> <span class="math inline">\(n\)</span>-공간에서 미분작용소</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.11 (SNU 11.2.7)</strong></span> <span class="math inline">\(n\)</span>-공간에서 미분작용소</p>
 <p><span class="math display">\[
 \nabla^2 := {D_1}^2 + \cdots + {D_n}^2
 \]</span></p>
@@ -770,6 +794,8 @@ D_{2\mathbf{v}} f &amp;= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
 \partial_x^2 +\partial_y^2 = {\partial_r}^2 + \dfrac{1}{r}{\partial_r} + \dfrac{1}{r^2}{\partial_{\theta}}^2
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 (x,\,y) = (r \cos \theta,\, r \sin \theta),\qquad r=\sqrt{x^2+y^2},\qquad \theta = \arctan(y/x)\\
@@ -788,18 +814,18 @@ D_{2\mathbf{v}} f &amp;= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>8.</strong> 라플라스 방정식 <span class="math inline">\(\nabla^2 f\)</span> 를 만족시키는 함수를 <strong>조화함수</strong>라고 한다. 다음 함수들이 조화함수임을 보이라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.12 (SNU 11.2.8)</strong></span> 라플라스 방정식 <span class="math inline">\(\nabla^2 f\)</span> 를 만족시키는 함수를 <strong>조화함수</strong>라고 한다. 다음 함수들이 조화함수임을 보이라.</p>
+</div>
+</div>
 <div class="soluition">
-<ol type="1">
-<li><span class="math inline">\(f(x,\,y) = \ln (x^2+y^2)\)</span></li>
-</ol>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(f(x,\,y) = \ln (x^2+y^2)\)</span></p>
 <p><span class="math display">\[
 \nabla^2 \ln (r^2) = 2 \nabla^2 \ln r = 2\left( {\partial_r}^2+\dfrac{1}{r}\partial_r\right)\ln r = 2\left(\dfrac{1}{r^2}-\dfrac{1}{r^2}\right)=0
 \]</span></p>
-<ol start="2" type="1">
-<li><span class="math inline">\(f(x,\,y)=e^x \sin y\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(f(x,\,y)=e^x \sin y\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= e^x \sin y \\
@@ -808,26 +834,28 @@ D_{2\mathbf{v}} f &amp;= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
 {\partial_y}^2 f &amp;= -e^x \sin y
 \end{aligned}
 \]</span></p>
-<ol start="3" type="1">
-<li><p><span class="math inline">\(f(x,\,y,\,z) = x^2+y^2-2z^2\)</span> <span class="math display">\[
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(f(x,\,y,\,z) = x^2+y^2-2z^2\)</span> <span class="math display">\[
 \begin{aligned}
 {\partial_x}^2 f&amp;=2\\
 {\partial_y}^2 f &amp;=2 \\
 {\partial_z}^2 f &amp;= -4
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(f(x,\,y,\,z)=1/\sqrt{x^2+y^2+z^2}\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(f(x,\,y,\,z)=1/\sqrt{x^2+y^2+z^2}\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= \dfrac{-x}{(x^2+y^2+z^2)^{3/2}} \\
 {\partial_x}^2f &amp; = \dfrac{-1}{(x^2+y^2+z^2)^{3/2}}+\dfrac{3x^2}{(x^2+y^2+z^2)^{5/2}} = \dfrac{-2x^2+y^2+z^2}{(x^2+y^2+z^2)^{5/2}}\\
 {\partial_y}^2f &amp; =  \dfrac{x^2-2y^2+z^2}{(x^2+y^2+z^2)^{5/2}}\\
 {\partial_z}^2f &amp; =  \dfrac{x^2+y^2-2z^2}{(x^2+y^2+z^2)^{5/2}}\\
 \end{aligned}
-\]</span></p></li>
-</ol>
+\]</span></p>
 </div>
-<p><br></p>
-<p><strong>9.</strong> $ ( + x )^2$ 과 <span class="math inline">\(\left(\dfrac{\partial}{\partial x}\right)^2 + 2x \dfrac{\partial^2}{\partial x \partial y}+   x^2\left(\dfrac{\partial}{\partial y}\right)^2\)</span> 는 같지 않음을 보이라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.13 (SNU 11.2.9)</strong></span> <span class="math inline">\(\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2\)</span> 과 <span class="math inline">\(\left(\dfrac{\partial}{\partial x}\right)^2 + 2x \dfrac{\partial^2}{\partial x \partial y}+   x^2\left(\dfrac{\partial}{\partial y}\right)^2\)</span> 는 같지 않음을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -836,8 +864,12 @@ D_{2\mathbf{v}} f &amp;= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>10.</strong> 함수 <span class="math inline">\(f(x,\,y) = \ln (1+xy)\)</span> 에서 ${D_{}}^2 f,, {D_{}}^3f $ 를 구하라. 그리고 점 <span class="math inline">\((1,\,1)\)</span> 에서 <span class="math inline">\(\mathbf{v}=(1,\,2)\)</span> 방향으로 볼록인지 또는 오목인지 조사하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.14 (SNU 11.2.10)</strong></span> 함수 <span class="math inline">\(f(x,\,y) = \ln (1+xy)\)</span> 에서 <span class="math inline">\({D_{\boldsymbol{v}}}^2 f,\, {D_{\boldsymbol{v}}}^3f\)</span> 를 구하라. 그리고 점 <span class="math inline">\((1,\,1)\)</span> 에서 <span class="math inline">\(\boldsymbol{v}=(1,\,2)\)</span> 방향으로 볼록인지 또는 오목인지 조사하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -852,11 +884,11 @@ D_1D_2 f &amp;= \dfrac{1+xy-xy}{(1+xy)^2}=\dfrac{1}{(1+xy)^2}=D_2D_1 f \\
 {D_1}{D_2}^2 f &amp;=  -\dfrac{2x}{(1+xy)^3} = {D_2}^2D_1 f = D_2D_1D_2f
 \end{aligned}
 \]</span></p>
-<p>이다. <span class="math inline">\(\mathbf{v}=(a,\,b)\)</span> 라 하면,</p>
+<p>이다. <span class="math inline">\(\boldsymbol{v}=(a,\,b)\)</span> 라 하면,</p>
 <p><span class="math display">\[
 {D_{(a,\,b)}}^2 f=a^2{D_1}^2 f + 2abD_1D_2 f + b^2D_2f=-\dfrac{1}{4}&lt;0
 \]</span></p>
-<p>이므로 <span class="math inline">\((1,\,1)\)</span> 에서 <span class="math inline">\(\mathbf{v}=(1,\,2)\)</span> 방향으로 오목이다. 그리고 <span class="math inline">\({D_{(a,\,b)}}^3 f\)</span> 는,</p>
+<p>이므로 <span class="math inline">\((1,\,1)\)</span> 에서 <span class="math inline">\(\boldsymbol{v}=(1,\,2)\)</span> 방향으로 오목이다. 그리고 <span class="math inline">\({D_{(a,\,b)}}^3 f\)</span> 는,</p>
 <p><span class="math display">\[
 \begin{aligned}
 D_{(a,\,b)}^3 f &amp;= a^3 {D_1}^3f + 3a^2b {D_1}^2D_2 f+ 3ab D_1 {D_2}^2 f+b^3{D_2}^3 \\
@@ -865,24 +897,28 @@ D_{(a,\,b)}^3 f &amp;= a^3 {D_1}^3f + 3a^2b {D_1}^2D_2 f+ 3ab D_1 {D_2}^2 f+b^3{
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>11.</strong> 좌표평면에서 정의된 연속함수</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_11" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.15 (SNU 11.2.11)</strong></span> 좌표평면에서 정의된 연속함수</p>
 <p><span class="math display">\[
 f(x,\,y) = \left\{\begin{array}{ll} \dfrac{xy(x^2-y^2)}{x^2+y^2} ,\qquad &amp; (x,\,y) \ne (0,\,0) \\ 0, &amp; (x,\,y )=(0,\,0)  \end{array} \right.
 \]</span></p>
-<p>를 생각하자. 이때 임의의 벡터 <span class="math inline">\(\mathbf{v}\)</span> 에 대하여 <span class="math inline">\(D_{\mathbf{v}} f(0,\,0)=0\)</span> 임을 보이라. 또 원점에서 <span class="math inline">\(\dfrac{\partial^2 f}{\partial x \partial y}\)</span> 와 <span class="math inline">\(\dfrac{\partial^2 f}{\partial y \partial x}\)</span> 가 존재하지만,</p>
+<p>를 생각하자. 이때 임의의 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여 <span class="math inline">\(D_{\boldsymbol{v}} f(0,\,0)=0\)</span> 임을 보이라. 또 원점에서 <span class="math inline">\(\dfrac{\partial^2 f}{\partial x \partial y}\)</span> 와 <span class="math inline">\(\dfrac{\partial^2 f}{\partial y \partial x}\)</span> 가 존재하지만,</p>
 <p><span class="math display">\[
 \dfrac{\partial^2 f}{\partial x \partial y} (0,\,0) \ne \dfrac{\partial^2 f}{\partial y \partial x} (0,\,0)
 \]</span></p>
 <p>임을 보이라. 이때 왜 오일러의 편미분 교환법칙 (2.0.2) 가 성립하지 않는 지를 설명하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\mathbf{v}=(a,\,b)\)</span> 라 하면,</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{v}=(a,\,b)\)</span> 라 하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
 D_{(a,\,b)} f(0,\,0) = \lim_{t\to 0}\dfrac{f(at,\,bt)-f(0,\,0)}{t} = \lim_{t \to 0} \dfrac{ab(a^2-b^2)t^4}{(a^2+b^2)t^3}= \lim_{t \to 0} \dfrac{ab(a^2-b^2)}{a^2+b^2}t = 0
 \end{aligned}
 \]</span></p>
-<p>이므로 임의의 벡터 <span class="math inline">\(\mathbf{v}\)</span> 에 대하여 <span class="math inline">\(D_{\mathbf{v}}f(0,\,0)=0\)</span> 이다. 우선</p>
+<p>이므로 임의의 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여 <span class="math inline">\(D_{\boldsymbol{v}}f(0,\,0)=0\)</span> 이다. 우선</p>
 <p><span class="math display">\[
 \begin{aligned}
 D_1 f(x,\,y) &amp;= \dfrac{(3x^2y-y^3)(x^2+y^2)-2x^2y(x^2-y^2)}{(x^2+y^2)^2}  = \dfrac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\\
@@ -929,37 +965,45 @@ D_2D_1 f (x,\,y) &amp;= \dfrac{(x^4+12x^2y^2-5y^4)(x^2+y^2)^2 - 4y(x^2+y^2)(x^4y
 \]</span></p>
 <p>이므로 <span class="math inline">\(D_2D_1 f\)</span> 는 연속이 아니다. 따라서 <span class="math inline">\(f\)</span> 는 이급함수가 아니다.</p>
 </div>
-<p><br></p>
-<p><strong>12.</strong> <span class="math inline">\(n\)</span>-공간의 한 열린집합 <span class="math inline">\(U\)</span> 에서 정의된 무한급함수 전체의 집합을 <span class="math inline">\(C^\infty(U)\)</span> 라고 두자. 그러면 임의의 두 벡터 <span class="math inline">\(\mathbf{v},\,\mathbf{w}\)</span> 에 대하여 방향미분작용소 <span class="math display">\[
-D_{\mathbf{v}},\, D_{\mathbf{w}}: C^{\infty} (U)\to C^{\infty}(U)
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_12" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.16 (SNU 11.2.12)</strong></span> <span class="math inline">\(n\)</span>-공간의 한 열린집합 <span class="math inline">\(U\)</span> 에서 정의된 무한급함수 전체의 집합을 <span class="math inline">\(C^\infty(U)\)</span> 라고 두자. 그러면 임의의 두 벡터 <span class="math inline">\(\boldsymbol{v},\,\boldsymbol{w}\)</span> 에 대하여 방향미분작용소 <span class="math display">\[
+D_{\boldsymbol{v}},\, D_{\boldsymbol{w}}: C^{\infty} (U)\to C^{\infty}(U)
 \]</span> 들은 서로 교환가능함, 즉 <span class="math display">\[
-D_{\mathbf{v}}\circ D_{\mathbf{w}}=D_{\mathbf{w}}\circ D_{\mathbf{v}}
+D_{\boldsymbol{v}}\circ D_{\boldsymbol{w}}=D_{\boldsymbol{w}}\circ D_{\boldsymbol{v}}
 \]</span> 임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\mathbf{v}=(v_1,\ldots,\,v_n),\, \mathbf{w}=(w_1,\ldots,\,w_n)\)</span> 이라 하자.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{v}=(v_1,\ldots,\,v_n),\, \boldsymbol{w}=(w_1,\ldots,\,w_n)\)</span> 이라 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-(D_{\mathbf{v}}\circ D_{\mathbf{w})}f &amp;= D_{\mathbf{v}} \left(\sum_{i=1}^n w_i \partial_i f \right) \\
+(D_{\boldsymbol{v}}\circ D_{\boldsymbol{w})}f &amp;= D_{\boldsymbol{v}} \left(\sum_{i=1}^n w_i \partial_i f \right) \\
 &amp;= \sum_{j=1}^n v_j \partial_j \left(\sum_{i=1}^n w_i \partial_i f\right) \\
 &amp;= \sum_{i,\,j=1}^n w_i v_j\partial_j \partial_i f \\
 &amp;= \sum_{i,\,j=1}^n w_i v_j \partial_i \partial_j f\\
 &amp;= \sum_{i=1}^n w_i \partial_i \left(\sum_{j=1}^n v_j \partial_j f\right) \\
-&amp;= (D_{\mathbf{w}}\circ D_{\mathbf{v}})f
+&amp;= (D_{\boldsymbol{w}}\circ D_{\boldsymbol{v}})f
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>13.</strong> 함수 <span class="math inline">\(f(x_1,\ldots,\, x_n)\)</span> 이 <span class="math inline">\(k\)</span> 급 함수이면, 임의의 벡터 <span class="math inline">\(\mathbf{v} = \sum_{i=1}^n v_i \mathbf{e}_i\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_2_13" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.17 (SNU 11.2.13)</strong></span> 함수 <span class="math inline">\(f(x_1,\ldots,\, x_n)\)</span> 이 <span class="math inline">\(k\)</span> 급 함수이면, 임의의 벡터 <span class="math inline">\(\boldsymbol{v} = \sum_{i=1}^n v_i \boldsymbol{e}_i\)</span> 에 대하여</p>
 <p><span class="math display">\[
-{D_{\mathbf{v}}}^k f = \sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k}D_{i_1}\cdots D_{i_k}f
+{D_{\boldsymbol{v}}}^k f = \sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k}D_{i_1}\cdots D_{i_k}f
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>Induction 을 통해 증명하자. <span class="math inline">\(k=1\)</span> 일 때는 자명하다. 이제 <span class="math inline">\(k\)</span> 에 대해 위 식이 성립함을 가정하자. <span class="math inline">\(k+1\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
-{D_{\mathbf{v}}}^{k+1} f &amp;= D_{\mathbf{v}}\left(D_{\mathbf{v}}^k\right)f\\
-&amp;= D_{\mathbf{v}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right) \\
+{D_{\boldsymbol{v}}}^{k+1} f &amp;= D_{\boldsymbol{v}}\left(D_{\boldsymbol{v}}^k\right)f\\
+&amp;= D_{\boldsymbol{v}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right) \\
 &amp;= \sum_{i_{k+1}=1}^n v_{i_{k+1}} D_{i_{k+1}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right)\\
 &amp;= \sum_{i_1,\ldots,\,i_{k+1}=1}^n \left( v_{i_1}\cdots v_{i_{k+1}} D_{i_1}\cdots D_{i_{k+1}} f\right)
 \end{aligned}
@@ -971,17 +1015,17 @@ D_{\mathbf{v}}\circ D_{\mathbf{w}}=D_{\mathbf{w}}\circ D_{\mathbf{v}}
 </section>
 <section id="정리-3.0.3-다변수-함수의-테일러-전개" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="정리-3.0.3-다변수-함수의-테일러-전개"><span class="header-section-number">11.3</span> 정리 3.0.3 다변수 함수의 테일러 전개</h2>
-<p><span class="math inline">\(n\)</span>-공간의 열린 집합 <span class="math inline">\(U\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-번 미분가능한 함수 <span class="math inline">\(f\)</span> 가 주어졌다고 하자. 이 때 <span class="math inline">\(U\)</span> 의 한 점 <span class="math inline">\(P\)</span> 와 벡터 <span class="math inline">\(\mathbf{v}\)</span> 에 대하여 선분 <span class="math inline">\([P,\, P+\mathbf{v}] : = \{P+t\mathbf{v}: 0\le t \le 1\}\)</span> 이 <span class="math inline">\(U\)</span>에 포함된다고 하자. 그러면 <span class="math display">\[
-f(P+\mathbf{v})=f(P)+D_{\mathbf{v}}f(P)+ \dfrac{1}{2!}{D_{\mathbf{v}}}^2 f{P}+ \cdots \dfrac{1}{(k-1)!}{D_{\mathbf{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\mathbf{v}}}^k f(P+t^\ast \mathbf{v})
+<p><span class="math inline">\(n\)</span>-공간의 열린 집합 <span class="math inline">\(U\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-번 미분가능한 함수 <span class="math inline">\(f\)</span> 가 주어졌다고 하자. 이 때 <span class="math inline">\(U\)</span> 의 한 점 <span class="math inline">\(P\)</span> 와 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 에 대하여 선분 <span class="math inline">\([P,\, P+\boldsymbol{v}] : = \{P+t\boldsymbol{v}: 0\le t \le 1\}\)</span> 이 <span class="math inline">\(U\)</span>에 포함된다고 하자. 그러면 <span class="math display">\[
+f(P+\boldsymbol{v})=f(P)+D_{\boldsymbol{v}}f(P)+ \dfrac{1}{2!}{D_{\boldsymbol{v}}}^2 f{P}+ \cdots \dfrac{1}{(k-1)!}{D_{\boldsymbol{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\boldsymbol{v}}}^k f(P+t^\ast \boldsymbol{v})
 \]</span> 를 만족시키는 <span class="math inline">\(t^\ast\)</span> 가 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 사이에 존재한다.</p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>함수 <span class="math inline">\(g(t):=f(P+t\mathbf{v})\)</span> 에 대하여</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>함수 <span class="math inline">\(g(t):=f(P+t\boldsymbol{v})\)</span> 에 대하여</p>
 <p><span class="math display">\[
-g^{(i)}(t) = {D_{\mathbf{v}}}^i f(P+t\mathbf{v})
+g^{(i)}(t) = {D_{\boldsymbol{v}}}^i f(P+t\boldsymbol{v})
 \]</span></p>
 <p>임을 귀납법으로 보이자. <span class="math inline">\(i=0\)</span> 일 때는 자명하며, <span class="math inline">\(i\)</span> 에서 성립한다고 가정하면,</p>
 <p><span class="math display">\[
-g^{(i+1)}(t) = \dfrac{d}{dt} g^{(i)}(t) = \dfrac{d}{dt} \left( {D_{\mathbf{v}}}^i f(P+t\mathbf{v}) \right) = {D_{\mathbf{v}}}^{i+1}(P+t\mathbf{v})
+g^{(i+1)}(t) = \dfrac{d}{dt} g^{(i)}(t) = \dfrac{d}{dt} \left( {D_{\boldsymbol{v}}}^i f(P+t\boldsymbol{v}) \right) = {D_{\boldsymbol{v}}}^{i+1}(P+t\boldsymbol{v})
 \]</span></p>
 <p>이다. 이제, <span class="math inline">\(g(t)\)</span> 의 일변수 테일러전개를 이용하고자 한다,</p>
 <p><span class="math display">\[
@@ -992,21 +1036,21 @@ g(t) = g(0)+g'(0)t+\cdots + \dfrac{g^{(k-1)}(0) }{(k-1)!}t^{k-1}+ \dfrac{g^{(k)}
 <p><br></p>
 <section id="정리-3.2.2-테일러-전개의-유일성" class="level3" data-number="11.3.1">
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="정리-3.2.2-테일러-전개의-유일성"><span class="header-section-number">11.3.1</span> 정리 3.2.2 테일러 전개의 유일성</h3>
-<p><span class="math inline">\(n\)</span> 공간의 한 점 <span class="math inline">\(P\)</span> 근방에서 정의된 <span class="math inline">\(k\)</span> 번 미분가능한 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 에 대하여, <span class="math inline">\(\mathbf{x}\)</span> 에 대한 함수 <span class="math inline">\(f(P+\mathbf{x})\)</span> 와 <span class="math inline">\(g(P+\mathbf{x})\)</span> 의 차가 <span class="math inline">\(o(|\mathbf{x}|^k)\)</span> 이면 <span class="math display">\[
-T_k f(P,\,\mathbf{x})=T_k g(P,\,\mathbf{x})
+<p><span class="math inline">\(n\)</span> 공간의 한 점 <span class="math inline">\(P\)</span> 근방에서 정의된 <span class="math inline">\(k\)</span> 번 미분가능한 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 에 대하여, <span class="math inline">\(\boldsymbol{x}\)</span> 에 대한 함수 <span class="math inline">\(f(P+\boldsymbol{x})\)</span> 와 <span class="math inline">\(g(P+\boldsymbol{x})\)</span> 의 차가 <span class="math inline">\(o(|\boldsymbol{x}|^k)\)</span> 이면 <span class="math display">\[
+T_k f(P,\,\boldsymbol{x})=T_k g(P,\,\boldsymbol{x})
 \]</span> 이다.</p>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math display">\[
-f(P+\mathbf{x})=T_k f(P,\,\mathbf{x})+o\left( |\mathbf{x}|^k
-\right),\qquad g(P+\mathbf{x})=T_k g(P,\,\mathbf{x})+o\left( |\mathbf{x}|^k \right)
+f(P+\boldsymbol{x})=T_k f(P,\,\boldsymbol{x})+o\left( |\boldsymbol{x}|^k
+\right),\qquad g(P+\boldsymbol{x})=T_k g(P,\,\boldsymbol{x})+o\left( |\boldsymbol{x}|^k \right)
 \]</span></p>
 <p>에서 두 식의 차는,</p>
 <p><span class="math display">\[
-f(P+\mathbf{x})-g(P+\mathbf{x})=T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})+o \left(|\mathbf{x}|^k\right)=o(|\mathbf{x}|^k)
+f(P+\boldsymbol{x})-g(P+\boldsymbol{x})=T_k f(P,\,\boldsymbol{x})-T_k g(P,\,\boldsymbol{x})+o \left(|\boldsymbol{x}|^k\right)=o(|\boldsymbol{x}|^k)
 \]</span></p>
 <p>이므로,</p>
 <p><span class="math display">\[
-T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
+T_k f(P,\,\boldsymbol{x})-T_k g(P,\,\boldsymbol{x})=o\left( |\boldsymbol{x}|^k\right)
 \]</span></p>
 <p>이다. 위 식의 좌변은 차수가 <span class="math inline">\(k\)</span> 이하인 다항함수 이며 우변은 <span class="math inline">\(k\)</span> 차보다 큰 다항식이므로 항등식에 의해 <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
@@ -1015,9 +1059,14 @@ T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
 </section>
 <section id="연습문제-제-11-장-3-절" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="연습문제-제-11-장-3-절"><span class="header-section-number">11.4</span> 연습문제 : 제 11 장 3 절</h2>
-<p><strong>1.</strong> 원점에서 다음 함수의 2차 근사 다항식을 구하라.</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.18 (SNU 11.3.1)</strong></span> 원점에서 다음 함수의 2차 근사 다항식을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>문제에 주어진 함수를 <span class="math inline">\(f(x,\,y)\)</span> 라 하자. (1) <span class="math inline">\(\sin (xy)\)</span></p>
+<p><span class="proof-title"><em>(해답)</em>. </span>문제에 주어진 함수를 <span class="math inline">\(f(x,\,y)\)</span> 라 하자.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sin (xy)\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \partial_x \sin (xy) &amp;= y\cos (xy) \\
@@ -1028,8 +1077,7 @@ T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
 \sin (xy) &amp; \approx xy
 \end{aligned}
 \]</span></p>
-<ol start="2" type="1">
-<li><p><span class="math inline">\(\sin x \cos y\)</span> <span class="math display">\[
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sin x \cos y\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x \sin x \cos y &amp;= \cos x \cos y\\
 \partial_y \sin x \cos y &amp;= - \sin x \sin y\\
@@ -1038,8 +1086,8 @@ T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
 {\partial_y}^2 \sin x \cos y &amp;= - \sin x \cos y \\
 \sin x \cos y &amp;\approx  x
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(\sin (x^2+y^2)\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\sin (x^2+y^2)\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= 2x\cos (x^2+y^2)\\
 \partial_y f &amp;= 2y \cos (x^2+y^2)\\
@@ -1048,8 +1096,8 @@ T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
 {\partial_y}^2 f &amp;= 2 \cos (x^2+y^2)-4y^2 \sin (x^2+y^2) \\
 \sin (x^2+y^2) &amp;\approx x^2+y^2
 \end{aligned}
-\]</span></p></li>
-<li><p>$ (e<sup>y+x</sup>2-2)$ <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(4\)</span>) $ (e<sup>y+x</sup>2-2)$ <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= 2x \cos (e^y+x^2-2)\\
 \partial_y f &amp;= e^y\cos (e^y+x^2-2)\\
@@ -1058,8 +1106,8 @@ T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
 {\partial_y}^2 f &amp;= e^y\cos (e^y+x^2-2)-e^{2y} \sin (e^y+x^2-2) \\
 \sin (e^y+x^2-2) &amp;\approx -\sin (1) + (\cos 1) y + \cos (1)x^2+\dfrac{1}{2}\cos (1) y^2
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(\ln (1+xy)\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(\ln (1+xy)\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= \dfrac{y}{1+xy} \\
 \partial_y f &amp;= \dfrac{x}{1+xy} \\
@@ -1068,8 +1116,8 @@ T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
 {\partial_y}^2 f &amp;= -\dfrac{x^2}{(1+xy)^2} \\
 f(x,\,y) &amp;\approx xy
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(x+xy+2y^2+x^2\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(x+xy+2y^2+x^2\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= 1+y+2x \\
 \partial_y f &amp;= x+4y \\
@@ -1078,33 +1126,34 @@ f(x,\,y) &amp;\approx xy
 {\partial_y}^2 f &amp;= 4 \\
 x+xy+2y^2+x^2 &amp;\approx x+x^2+xy+2y^2
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(e^{x+y}\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(e^{x+y}\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= e^{x+y} \\
 \partial_y f &amp;= e^{x+y} \\
 {\partial_x}^2 f&amp;= \partial_y \partial_x f={\partial_y}^2 f =e^{x+y} \\
 e^{x+y} &amp;\approx 1+ x+y + \dfrac{x^2}{2}+xy+\dfrac{y^2}{2}
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(e^x-e^y\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(8\)</span>) <span class="math inline">\(e^x-e^y\)</span></p>
+<p><span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= e^x = {\partial_x}^2 f\\
 \partial_y f &amp;= -e^y = {\partial_y}^2 f\\
 \partial_x \partial_y f &amp;= 0\\
 e^x-e^y &amp;\approx x-y+\dfrac{1}{2}x^2-\dfrac{1}{2}y^2
 \end{aligned}
-\]</span></p></li>
-<li><p>$ $ <span class="math inline">\(\dfrac{1}{1-x}=1+x+x^2+\cdots\)</span> 이므로, <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(9\)</span>) <span class="math inline">\(\dfrac{1}{1-x^2-y^2}\)</span></p>
+<p><span class="math inline">\(\dfrac{1}{1-x}=1+x+x^2+\cdots\)</span> 이므로, <span class="math display">\[
 \dfrac{1}{1-x^2-y^2}\approx 1+x^2+y^2
-\]</span> 이다.</p></li>
-<li><p><span class="math inline">\(e^x \tan y\)</span> <span class="math display">\[
+\]</span> 이다.</p>
+<p>(<span class="math inline">\(10\)</span>) <span class="math inline">\(e^x \tan y\)</span> <span class="math display">\[
 \begin{aligned}
 e^x \tan y &amp;= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y+o\left(|y|^3\right)\right) \approx y+xy
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\((1+x)^y\)</span></p></li>
-</ol>
+\]</span></p>
+<p>(<span class="math inline">\(11\)</span>) <span class="math inline">\((1+x)^y\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= y(1+x)^{y-1}\\
@@ -1115,8 +1164,7 @@ e^x \tan y &amp;= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y
 (1+x)^y &amp;\approx 1+xy
 \end{aligned}
 \]</span></p>
-<ol start="12" type="1">
-<li><span class="math inline">\(\sin e^{xy}\)</span> <span class="math display">\[
+<p>(<span class="math inline">\(12\)</span>) <span class="math inline">\(\sin e^{xy}\)</span> <span class="math display">\[
 \begin{aligned}
 \partial_x f &amp;= ye^{xy} \cos e^{xy} \\
 \partial_y f &amp;= xe^{xy} \cos e^{xy} \\
@@ -1125,11 +1173,14 @@ e^x \tan y &amp;= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y
 {\partial_y}^2 f &amp;= x^2e^{xy}\cos e^{xy}-x^2e^{2xy} \sin e^{xy} \\
 \sin e^{xy} &amp;\approx \sin 1 + (\cos 1 ) xy
 \end{aligned}
-\]</span></li>
-</ol>
+\]</span></p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> 원점에서 함수 <span class="math inline">\(f(x,\,y)=\cos x \sin y\)</span> 의 3차 근사 다항식을 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.19 (SNU 11.3.2)</strong></span> 원점에서 함수 <span class="math inline">\(f(x,\,y)=\cos x \sin y\)</span> 의 3차 근사 다항식을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1138,11 +1189,15 @@ e^x \tan y &amp;= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>3.</strong> 다음을 보이라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.20 (SNU 11.3.2)</strong></span> 다음을 보이라.</p>
 <p><span class="math display">\[
 \ln (1+x+2y) = x+2y-\dfrac{1}{2}\left(x^2+4xy+4y^2\right) +o (x^2+y^2)
 \]</span></p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>Let <span class="math inline">\(f(x,\,y)=\ln (1+x+2y)\)</span>. 그렇다면,</p>
 <p><span class="math display">\[
@@ -1159,13 +1214,15 @@ e^x \tan y &amp;= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y
 \ln(1+x+2y) = x+2y -\dfrac{1}{2} (x^2+4xy+4y^2)+o\left(|x^2+y^2|\right)
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>4.</strong> 점 <span class="math inline">\((x,\,y)\)</span> 가 원점에 가까이 갈 때, <span class="math inline">\(\sin (xy)/x\)</span> 의 극한값은 존재하는가? 존재하면 그 값을 구하라. (분모가 영이 아닌 영역에서만 조사한다.) 또 다음 함수들에 대하여는 어떠한가?</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.21 (SNU 11.3.4)</strong></span> 점 <span class="math inline">\((x,\,y)\)</span> 가 원점에 가까이 갈 때, <span class="math inline">\(\sin (xy)/x\)</span> 의 극한값은 존재하는가? 존재하면 그 값을 구하라. (분모가 영이 아닌 영역에서만 조사한다.) 또 다음 함수들에 대하여는 어떠한가?</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(|\sin xy|&lt;|xy|\)</span> 이므로 <span class="math inline">\(\left| \dfrac{\sin xy}{x}\right| &lt; |y|\)</span> 이다. 따라서 원점으로의 극한은 <span class="math inline">\(0\)</span> 이다.</p>
-<ol type="1">
-<li><span class="math inline">\(\dfrac{e^{xy}-1}{x}\)</span></li>
-</ol>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\dfrac{e^{xy}-1}{x}\)</span></p>
 <p><span class="math display">\[
 e^{xy}=1+xy+\dfrac{(xy)^2}{2}+\cdots + \dfrac{(xy)^k}{k!}+\cdots
 \]</span></p>
@@ -1174,9 +1231,7 @@ e^{xy}=1+xy+\dfrac{(xy)^2}{2}+\cdots + \dfrac{(xy)^k}{k!}+\cdots
 \dfrac{e^{xy}-1}{x} = y+\dfrac{xy^2}{2} + \cdots + \dfrac{x^{k-1}y^k}{k!}+\cdots
 \]</span></p>
 <p>이다. 따라서 원점으로의 극한은 <span class="math inline">\(0\)</span> 이다.</p>
-<ol start="2" type="1">
-<li><span class="math inline">\(\dfrac{\ln (1+x^2+y^2)}{x^2+y^2}\)</span>​</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\dfrac{\ln (1+x^2+y^2)}{x^2+y^2}\)</span>​</p>
 <p><span class="math inline">\(x^2+y^2=R^2\)</span> 라 하면,</p>
 <p><span class="math display">\[
 \ln (1+R^2) = R^2 - \dfrac{1}{2}R^4 + \cdots + (-1)^{k+1}\dfrac{R^{2k}}{k}+\cdots
@@ -1186,28 +1241,32 @@ e^{xy}=1+xy+\dfrac{(xy)^2}{2}+\cdots + \dfrac{(xy)^k}{k!}+\cdots
 \dfrac{\ln (1+R^2)}{R^2} = 1-\dfrac{1}{2}R^2 + \cdots + (-1)^{k+1}\dfrac{R^{2k-2}}{k}+\cdots
 \]</span></p>
 <p>이므로 원점으로의 극한 (<span class="math inline">\(R\to 0\)</span> 극한)에서 극한값은 <span class="math inline">\(1\)</span> 이다.</p>
-<ol start="3" type="1">
-<li><span class="math inline">\(\dfrac{\cos xy -1}{x}\)</span></li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\dfrac{\cos xy -1}{x}\)</span></p>
 <p><span class="math display">\[
 \cos xy = 1-\dfrac{x^2y^2}+ o(|(xy)^2|)
 \]</span></p>
 <p>이므로 원점 으로의 극한은 <span class="math inline">\(0\)</span> 이다.</p>
-<ol start="4" type="1">
-<li><span class="math inline">\(\dfrac{\sin xy - xy}{xy}\)</span></li>
-</ol>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\dfrac{\sin xy - xy}{xy}\)</span></p>
 <p><span class="math display">\[
 \sin xy - xy = \dfrac{(xy)^3}{6} + o(|x^3y^3|)
 \]</span></p>
 <p>이므로 원점 으로의 극한은 <span class="math inline">\(0\)</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>5.</strong> 함수 <span class="math inline">\(x^3-2xy^4+(x-1)^2y^10\)</span> 의 테일러급수에서 제 7차항은 무엇인가?</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.22 (SNU 11.3.5)</strong></span> 함수 <span class="math inline">\(x^3-2xy^4+(x-1)^2y^10\)</span> 의 테일러급수에서 제 7차항은 무엇인가?</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>테일러급수의 유일성에 의헤 다항식은 테일러 급수와 같다. 따라서 7차항은 <span class="math inline">\(0\)</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>6.</strong> 함수 <span class="math inline">\(f(x,\,y,\,z)\)</span> 가 <span class="math inline">\(x,\,y,\,z\)</span> 의 다항식이면, <span class="math inline">\(f\)</span> 는 자기 자신의 테일러 급수와 같음을 보이라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.23 (SNU 11.3.6)</strong></span> 함수 <span class="math inline">\(f(x,\,y,\,z)\)</span> 가 <span class="math inline">\(x,\,y,\,z\)</span> 의 다항식이면, <span class="math inline">\(f\)</span> 는 자기 자신의 테일러 급수와 같음을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(x_0,\,y_0,\,z_0\)</span> 에서의 테일러 전개를 생각하자. 다항식 <span class="math inline">\(f\)</span> 를</p>
 <p><span class="math display">\[
@@ -1219,8 +1278,12 @@ a_{i,\,j,\,k} = \dfrac{1}{i!j!k!} {D_1}^i{D_2}^j{D_3}^k f (x_0,\,y_0\,z_0)
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>7.</strong> 함수 <span class="math inline">\(x^2y+xy^2+1\)</span> 을 <span class="math inline">\((x-1)\)</span> 과 <span class="math inline">\((y-1)\)</span> 의 멱급수로 표현하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.24 (SNU 11.3.7)</strong></span> 함수 <span class="math inline">\(x^2y+xy^2+1\)</span> 을 <span class="math inline">\((x-1)\)</span> 과 <span class="math inline">\((y-1)\)</span> 의 멱급수로 표현하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f(x,\,y)=x^2y+xy^2+1\)</span> 이라 놓고 6. 의 결과를 이용한다.</p>
 <p><span class="math display">\[
@@ -1243,8 +1306,10 @@ x^2+xy^2+1 =&amp; 3+3(x-1)+3(y-1) +(x-1)^2 + 4(x-1)(y-1) + (y-1)^2 \\
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>8.</strong> 이급함수 <span class="math inline">\(f(x,\,y)\)</span> 가 임의의 <span class="math inline">\((x,\,y)\)</span> 와 실수 <span class="math inline">\(t\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.25 (SNU 11.3.8)</strong></span> 이급함수 <span class="math inline">\(f(x,\,y)\)</span> 가 임의의 <span class="math inline">\((x,\,y)\)</span> 와 실수 <span class="math inline">\(t\)</span> 에 대하여</p>
 <p><span class="math display">\[
 f(tx,\,ty) = t^2 f(x,\,y)
 \]</span></p>
@@ -1253,20 +1318,23 @@ f(tx,\,ty) = t^2 f(x,\,y)
 f(x,\,y) = \dfrac{1}{2} (xD_1 + yD_2)^2 f(0,\,0)
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\mathbf{v}=(x,\,y)\)</span> 로 놓고, 도움정리 2.1.1 을 사용하면</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{v}=(x,\,y)\)</span> 로 놓고, 도움정리 2.1.1 을 사용하면</p>
 <p><span class="math display">\[
-\left.\dfrac{d^2}{dt^2}\right|_{t=0}f(t\mathbf{v}) = {D_{\mathbf{v}}}^2 f(0,\,0) \implies 2f(x,\,y)= (xD_1 +yD_2)^2f(0,\,0)
+\left.\dfrac{d^2}{dt^2}\right|_{t=0}f(t\boldsymbol{v}) = {D_{\boldsymbol{v}}}^2 f(0,\,0) \implies 2f(x,\,y)= (xD_1 +yD_2)^2f(0,\,0)
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>9.</strong> 기준점에서의 값을 <span class="math inline">\(1\)</span> 로 두었을 때 다음의 일차 근사값을 구하고, 또 오차를 생각하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.26 (SNU 11.3.9)</strong></span> 기준점에서의 값을 <span class="math inline">\(1\)</span> 로 두었을 때 다음의 일차 근사값을 구하고, 또 오차를 생각하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li><span class="math inline">\((1.02)^{1.01}\)</span></li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\((1.02)^{1.01}\)</span></p>
 <p>Let <span class="math inline">\(f(x,\,y)=(1+x)^{1+y}\)</span>. Then,</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1290,55 +1358,57 @@ D_2 f &amp;= \ln (1+x) (1+x)^{1+y}\\
 {D_2}^2 f &amp;= {\big(} \ln (1+x){\big )}^2 (1+x)^{1+y}
 \end{aligned}
 \]</span></p>
-<p>이므로, <span class="math inline">\(P=(0,\,0),\, \mathbf{v}=(0,02,\, 0.01)\)</span>​​ 에 대해</p>
+<p>이므로, <span class="math inline">\(P=(0,\,0),\, \boldsymbol{v}=(0,02,\, 0.01)\)</span>​​ 에 대해</p>
 <p><span class="math display">\[
-M_2 =\left\{\left|D_iD_j f(P+t\mathbf{v})\right|: 1\le i,\,j \le 2,\, 0 \le t \le 1\right\}
+M_2 =\left\{\left|D_iD_j f(P+t\boldsymbol{v})\right|: 1\le i,\,j \le 2,\, 0 \le t \le 1\right\}
 \]</span></p>
 <p>를 구하자. <span class="math inline">\((1+0.02)^{0.01}&lt;1.0002\)</span>​​ 이며 <span class="math inline">\(0&lt;\ln (1+0.02)&lt;1\)</span>​​, <span class="math inline">\((1+0.01)(1+0.02)^{0.01} &lt;(1+0.02)^{1.01}&lt;1.0002\)</span> 이므로 대략 <span class="math inline">\(M_2 &lt; 2\)</span> 라고 볼 수 있다. 정확히는 <span class="math inline">\(M_2&lt;1.03\)</span> 이다. 따라서,</p>
 <p><span class="math display">\[
-|R_1f(P,\,\mathbf{v})\le \dfrac{M_2}{2}|\mathbf{v}|^2 &lt;0.00026
+|R_1f(P,\,\boldsymbol{v})\le \dfrac{M_2}{2}|\boldsymbol{v}|^2 &lt;0.00026
 \]</span></p>
 <p>이다.</p>
-<ol start="2" type="1">
-<li><span class="math inline">\((0.99)^{0.99}\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\((0.99)^{0.99}\)</span></p>
 <p>귀찮으니…</p>
 </div>
-<p><br></p>
-<p><strong>10.</strong> 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 가 무한급함수이면 정의역의 점 <span class="math inline">\(P\)</span> 와 벡터 <span class="math inline">\(\mathbf{v}\)</span> 및 자연수 <span class="math inline">\(k\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_3_10" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.27 (SNU 11.3.10)</strong></span> 함수 <span class="math inline">\(f\)</span> 와 <span class="math inline">\(g\)</span> 가 무한급함수이면 정의역의 점 <span class="math inline">\(P\)</span> 와 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 및 자연수 <span class="math inline">\(k\)</span> 에 대하여</p>
 <p><span class="math display">\[
-T_k (fg)(P,\,\mathbf{v})=T_k f(P,\,\mathbf{v}) \cdot T_k g(P,\,\mathbf{v}) \qquad \operatorname{mod} \quad o\left(|\mathbf{v}|^k \right)
+T_k (fg)(P,\,\boldsymbol{v})=T_k f(P,\,\boldsymbol{v}) \cdot T_k g(P,\,\boldsymbol{v}) \qquad \operatorname{mod} \quad o\left(|\boldsymbol{v}|^k \right)
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
-{D_{\mathbf{v}}}^n(fg) = \sum_{k=0}^n \dfrac{n!}{k! (n-k)!} {D_{\mathbf{v}}}^k f (P,\,\mathbf{v})\,{D_\mathbf{v}}^{n-k} g(P,\,\mathbf{v})
+{D_{\boldsymbol{v}}}^n(fg) = \sum_{k=0}^n \dfrac{n!}{k! (n-k)!} {D_{\boldsymbol{v}}}^k f (P,\,\boldsymbol{v})\,{D_\boldsymbol{v}}^{n-k} g(P,\,\boldsymbol{v})
 \end{aligned}
 \]</span></p>
 <p>임을 이용한다.</p>
-<p>우선 <span class="math inline">\(T_k (fg)(P,\,\mathbf{v})\)</span> 를 전개하면,</p>
+<p>우선 <span class="math inline">\(T_k (fg)(P,\,\boldsymbol{v})\)</span> 를 전개하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
-T_k (fg)(P,\,\mathbf{v}) &amp;= \sum_{n=0}^k \dfrac{{D_{\mathbf{v}}}^n (fg)(P)}{n!}  \\
-&amp;= \sum_{n=0}^k \dfrac{1}{n!} \sum_{m=0}^n \dfrac{n!}{m!(n-m)!}{D_{\mathbf{v}}}^m f(P) \cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&amp;=\sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P) \cdot {D_{\mathbf{v}}}^{n-m} g(P)
+T_k (fg)(P,\,\boldsymbol{v}) &amp;= \sum_{n=0}^k \dfrac{{D_{\boldsymbol{v}}}^n (fg)(P)}{n!}  \\
+&amp;= \sum_{n=0}^k \dfrac{1}{n!} \sum_{m=0}^n \dfrac{n!}{m!(n-m)!}{D_{\boldsymbol{v}}}^m f(P) \cdot {D_{\boldsymbol{v}}}^{n-m} g(P) \\
+&amp;=\sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\boldsymbol{v}}}^m f(P) \cdot {D_{\boldsymbol{v}}}^{n-m} g(P)
 \end{aligned}
 \]</span></p>
-<p>이다. 이제 <span class="math inline">\(T_k f(P,\,\mathbf{v}) \cdot T_k g(P,\,\mathbf{v})\)</span> 를 전개하면,</p>
+<p>이다. 이제 <span class="math inline">\(T_k f(P,\,\boldsymbol{v}) \cdot T_k g(P,\,\boldsymbol{v})\)</span> 를 전개하면,</p>
 <p><span class="math display">\[
 \begin{aligned}
-T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) &amp;= \left(\sum_{p=0}^k \dfrac{{D_{\mathbf{v}}}^p f(P)}{p!}\right) \left(\sum_{q=0}^k \dfrac{{D_{\mathbf{v}}}^q g(P)}{q!}\right)  \\
-&amp;= \sum_{p=0}^k \sum_{q=0}^k \dfrac{1}{p!q!} {D_{\mathbf{v}}}^p f(P)\cdot {D_{\mathbf{v}}}^q g(P) \\
-&amp;= \sum_{n=0}^{2k} \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&amp;= \sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&amp;\quad + \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&amp;= T_{k}(fg)(P,\,\mathbf{v})+  \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P)
+T_k f(P,\,\boldsymbol{v})\cdot T_k g(P,\,\boldsymbol{v}) &amp;= \left(\sum_{p=0}^k \dfrac{{D_{\boldsymbol{v}}}^p f(P)}{p!}\right) \left(\sum_{q=0}^k \dfrac{{D_{\boldsymbol{v}}}^q g(P)}{q!}\right)  \\
+&amp;= \sum_{p=0}^k \sum_{q=0}^k \dfrac{1}{p!q!} {D_{\boldsymbol{v}}}^p f(P)\cdot {D_{\boldsymbol{v}}}^q g(P) \\
+&amp;= \sum_{n=0}^{2k} \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\boldsymbol{v}}}^m f(P)\cdot {D_{\boldsymbol{v}}}^{n-m} g(P) \\
+&amp;= \sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\boldsymbol{v}}}^m f(P)\cdot {D_{\boldsymbol{v}}}^{n-m} g(P) \\
+&amp;\quad + \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\boldsymbol{v}}}^m f(P)\cdot {D_{\boldsymbol{v}}}^{n-m} g(P) \\
+&amp;= T_{k}(fg)(P,\,\boldsymbol{v})+  \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\boldsymbol{v}}}^m f(P)\cdot {D_{\boldsymbol{v}}}^{n-m} g(P)
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(C^\infty\)</span> 급 함수 <span class="math inline">\(f,\,g\)</span> 에 대해 <span class="math inline">\({D_{\mathbf{v}}}^m f(P) = O(|\mathbf{v}|^m)\)</span>, <span class="math inline">\({D_{\mathbf{v}}}^{n-m} g(P) = O(|\mathbf{v}|^{n-m})\)</span> 이므로,</p>
+<p><span class="math inline">\(C^\infty\)</span> 급 함수 <span class="math inline">\(f,\,g\)</span> 에 대해 <span class="math inline">\({D_{\boldsymbol{v}}}^m f(P) = O(|\boldsymbol{v}|^m)\)</span>, <span class="math inline">\({D_{\boldsymbol{v}}}^{n-m} g(P) = O(|\boldsymbol{v}|^{n-m})\)</span> 이므로,</p>
 <p><span class="math display">\[
-T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) -T_{k}(fg)(P,\,\mathbf{v}) = o(|\mathbf{v}|^n)
+T_k f(P,\,\boldsymbol{v})\cdot T_k g(P,\,\boldsymbol{v}) -T_{k}(fg)(P,\,\boldsymbol{v}) = o(|\boldsymbol{v}|^n)
 \]</span></p>
 <p>이다.</p>
 </div>
@@ -1346,60 +1416,61 @@ T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) -T_{k}(fg)(P,\,\mathbf{v}) = o(
 </section>
 <section id="연습문제-제-11-장-4-절" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="연습문제-제-11-장-4-절"><span class="header-section-number">11.5</span> 연습문제 : 제 11 장 4 절</h2>
-<p><strong>1.</strong> 다음 함수의 임계점을 구하라.</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_4_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.28 (SNU 11.4.1)</strong></span> 다음 함수의 임계점을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li><span class="math inline">\(x^2+4xy-y^2-ax-by\)</span></li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x^2+4xy-y^2-ax-by\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\nabla f(x,\,y)=(2x+4y-a,\, 4x-2y-b)=(0,\,0) \\
 \implies&amp; x=\dfrac{a+2b}{10},\, y=\dfrac{2a-b}{10}
 \end{aligned}
 \]</span></p>
-<ol start="2" type="1">
-<li><span class="math inline">\(x-y\sin x\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x-y\sin x\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\nabla f(x,\,y)=(1-y\cos x,\, -\sin x)=(0,\,0) \\
 \implies &amp; x=n\pi,\, y=(-1)^n \qquad\text{where }n\in \mathbb{Z}
 \end{aligned}
 \]</span></p>
-<ol start="3" type="1">
-<li><p><span class="math inline">\(x^2y^2\)</span> <span class="math display">\[
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(x^2y^2\)</span> <span class="math display">\[
 \begin{aligned}
 &amp; \nabla f(x,\,y)=(2xy^2,\, 2x^2y)=(0,\,0) \\
 \implies &amp; (0,\, \mathbb{R}) \;\text{or}\; (\mathbb{R},\,0)
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(x^4+y^2\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(x^4+y^2\)</span> <span class="math display">\[
 \begin{aligned}
 &amp; \nabla f(x,\,y)=(4x^3,\, 2y)=(0,\,0)\\
 \implies&amp; (0,\,0)
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(e^{x^2+y^2+z^2}\)</span> <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(e^{x^2+y^2+z^2}\)</span> <span class="math display">\[
 \begin{aligned}
 &amp; \nabla f(x,\,y,\,z) = (2x,\, 2y,\, 2z)e^{x^2+y^2+z^2}=0 \\
 \implies &amp;(0,\,0,\,0)
 \end{aligned}
-\]</span></p></li>
-<li><p><span class="math inline">\(e^{-xy/(x^2+y^2+1)}\)</span>​ <span class="math display">\[
+\]</span></p>
+<p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(e^{-xy/(x^2+y^2+1)}\)</span>​ <span class="math display">\[
 \begin{aligned}
 &amp; \nabla f(x,\,y)= \left( \dfrac{x^2y-y^3-y}{(x^2+y^2+1)^2},\, \dfrac{xy^2-x^3-x}{(x^2+y^2+1)^2},\right)e^{xy/(x^2+y^2+1)} \\
 \implies &amp; (0,\,0)
 \end{aligned}
-\]</span></p></li>
-</ol>
+\]</span></p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> (<strong>최소자승법</strong>) 좌표평면의 점 <span class="math inline">\((x_1,\,y_1),\ldots,\, (x_n,\,y_n)\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_4_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.29 (SNU 11.4.2 (최소자승법))</strong></span> 좌표평면의 점 <span class="math inline">\((x_1,\,y_1),\ldots,\, (x_n,\,y_n)\)</span> 에 대하여</p>
 <p><span class="math display">\[
 \sum_{i=1}^n \left( y_i -ax_i-b\right)^2
 \]</span></p>
 <p>을 최소로 하는 직선 <span class="math inline">\(y=ax+b\)</span> 를 구하라. (단 <span class="math inline">\(x_1,\ldots,\,x_n\)</span> 이 모두 같은 경우가 아니라고 가정한다.)</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1417,20 +1488,19 @@ f(a,\,b) &amp;=\sum_{i=1}^n (y_i-ax_i-b)^2  \\
 a=\dfrac{\left(\sum x_i \right)(\sum y_i)-n\sum x_iy_i}{(\sum x_i)^2-n\sum {x_i}^2},\, b= \dfrac{(\sum x_i y_i)(\sum x_i)-(\sum y_i)(\sum {x_i}^2)}{(\sum x_i)^2-n \sum {x_i}^2}
 \]</span> 일 때 <span class="math inline">\(f(a,\,b)\)</span> 는 최소값을 가진다.</p>
 </div>
-<p><br></p>
-<p><strong>3.</strong> 함수 <span class="math inline">\(f(x,\,y)=3x^4-4x^2y+y^2=(3x^2-y)(x^2-y)\)</span> 에 대하여,</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_4_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.30 (SNU 11.4.3)</strong></span> 함수 <span class="math inline">\(f(x,\,y)=3x^4-4x^2y+y^2=(3x^2-y)(x^2-y)\)</span> 에 대하여,</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li>원점이 <span class="math inline">\(f\)</span> 의 임계점임을 보이라.</li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 원점이 <span class="math inline">\(f\)</span> 의 임계점임을 보이라.</p>
 <p><span class="math display">\[
 \nabla f(x,\,y)= (12x^3-8xy,\, -4x^2+2y)
 \]</span></p>
 <p>이므로 <span class="math inline">\(\nabla f(0,\,0)=(0,\,0)\)</span></p>
-<ol start="2" type="1">
-<li>임의의 단위벡터 <span class="math inline">\(\mathbf{v}=(h,\,k)\)</span> 에 대하여, 함수 <span class="math inline">\(g(t):=f(t\mathbf{v})=f(th,\,tk)\)</span> 는 <span class="math inline">\(t=0\)</span> 에서 극소임을 보이라.</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) 임의의 단위벡터 <span class="math inline">\(\boldsymbol{v}=(h,\,k)\)</span> 에 대하여, 함수 <span class="math inline">\(g(t):=f(t\boldsymbol{v})=f(th,\,tk)\)</span> 는 <span class="math inline">\(t=0\)</span> 에서 극소임을 보이라.</p>
 <p><span class="math display">\[
 \begin{aligned}
 g(t) = 3h^4t^4-4h^2kt^3+k^2t^2 \implies &amp;g'(t)=12h^4t^3-12h^2kt^2+2k^2t \\
@@ -1438,36 +1508,30 @@ g(t) = 3h^4t^4-4h^2kt^3+k^2t^2 \implies &amp;g'(t)=12h^4t^3-12h^2kt^2+2k^2t \\
 \end{aligned}
 \]</span></p>
 <p>이다. <span class="math inline">\(k\ne 0\)</span> 이면 <span class="math inline">\(g''(0)=2k^2&gt;0\)</span> 이므로 <span class="math inline">\(g(0)\)</span> 은 극소점이며, <span class="math inline">\(k=0\)</span> 이면 <span class="math inline">\(g(t)=3h^4t^4\)</span> 이므로 역시 <span class="math inline">\(t=0\)</span> 이 극소점이다.</p>
-<ol start="3" type="1">
-<li>그럼에도 불구하고 원점은 <span class="math inline">\(f\)</span> 의 극소점이 아님을 보이라.</li>
-</ol>
+<p>(<span class="math inline">\(3\)</span>) 그럼에도 불구하고 원점은 <span class="math inline">\(f\)</span> 의 극소점이 아님을 보이라.</p>
 <p><span class="math inline">\(f(t,\,2t^2)=(3t^2-2t^2)(t^2-2t^2)=-t^4\)</span> 이므로 <span class="math inline">\(t=0\)</span> 은 <span class="math inline">\(f(t,\,2t^2)\)</span> 의 극대점이다. 따라서 <span class="math inline">\(f(t)\)</span> 의 극소점이 될 수 없다.</p>
-<ol start="4" type="1">
-<li>$곡선 <span class="math inline">\(f(x,\,y)=0\)</span> 을 도시하라.</li>
-</ol>
+<p>(<span class="math inline">\(4\)</span>) $곡선 <span class="math inline">\(f(x,\,y)=0\)</span> 을 도시하라.</p>
 <p><span class="math inline">\(y=3x^2\)</span> or <span class="math inline">\(y=x^2\)</span> 이다.</p>
-<ol start="5" type="1">
-<li><span class="math inline">\(f(x,\,y)&gt;0,\, f(x,\,y)&lt;0\)</span> 인 영역을 각각 그리라.</li>
-</ol>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(f(x,\,y)&gt;0,\, f(x,\,y)&lt;0\)</span> 인 영역을 각각 그리라.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/ex_11_4_3.png" class="img-fluid figure-img"></p>
 <figcaption>ex_11_4_3</figcaption>
 </figure>
 </div>
-<ol start="6" type="1">
-<li><ol start="2" type="1">
-<li>와 (3) 이 서로 모순되지 않는 이유를 설명하라.</li>
-</ol></li>
-</ol>
+<p>(<span class="math inline">\(6\)</span>) (<span class="math inline">\(2\)</span>) 와 (<span class="math inline">\(3\)</span>) 이 서로 모순되지 않는 이유를 설명하라.</p>
 <p><span class="math inline">\(- \to 0 \to -\)</span>​, <span class="math inline">\(+ \to 0 \to +\)</span>​ 를 생각해보라.</p>
 </div>
-<p><br></p>
-<p><strong>4.</strong> (<strong>Steiner</strong> 문제) 평면의 <span class="math inline">\(\triangle ABC\)</span> 에서 꼭지각의 크기가 모두 <span class="math inline">\(120^\circ\)</span> 미만이라고 하자. 이때 함수</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_4_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.31 (SNU 11.4.4 (Steiner 문제))</strong></span> 평면의 <span class="math inline">\(\triangle ABC\)</span> 에서 꼭지각의 크기가 모두 <span class="math inline">\(120^\circ\)</span> 미만이라고 하자. 이때 함수</p>
 <p><span class="math display">\[
 f(x):=|X-A|+|X-B|+|X-C| \qquad (X\in \mathbb{R}^3-\{A,\,B,\,C\})
 \]</span></p>
 <p>의 임계점을 <span class="math inline">\(P\)</span>​ 라고 두면, 선분 <span class="math inline">\(AP,\,BP,\,CP\)</span>​ 는 서로 <span class="math inline">\(120^\circ\)</span>​ 를 이룸을 보이라.</p>
+</div>
+</div>
 <div class="soluton">
 <p><span class="math display">\[
 \nabla f(X) = \dfrac{X-A}{|X-A|}+\dfrac{X-B}{|X-B|}+\dfrac{X-C}{|X-C|}
@@ -1477,7 +1541,7 @@ f(x):=|X-A|+|X-B|+|X-C| \qquad (X\in \mathbb{R}^3-\{A,\,B,\,C\})
 \dfrac{P-A}{|P-A|}+\dfrac{P-B}{|P-B|}+\dfrac{P-C}{|P-C|}=0
 \]</span></p>
 <p>이다.</p>
-<p>&lt;<strong>풀이</strong> 1.&gt;</p>
+<p><strong>&lt;풀이 1&gt;</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
 \cos (\angle APB) &amp;= \dfrac{(P-A)\cdot (P-B)}{|P-A| \, |P-B|}\\
@@ -1491,27 +1555,27 @@ f(x):=|X-A|+|X-B|+|X-C| \qquad (X\in \mathbb{R}^3-\{A,\,B,\,C\})
 \]</span></p>
 <p>(1), (3) 으로부터 <span class="math inline">\(\cos (\angle APB)=-\dfrac{1}{2}\)</span>, (2) 로부터 <span class="math inline">\(\cos (\angle APC)=-\dfrac{1}{2}\)</span>, (1) 로부터 <span class="math inline">\(\cos (\angle BPC) = -\dfrac{1}{2}\)</span> 이므로 선분 <span class="math inline">\(AP,\,BP,\,CP\)</span> 는 서로 <span class="math inline">\(120^\circ = \dfrac{2\pi}{3}\)</span> 를 이룬다.</p>
 <p><br></p>
-<p>&lt;<strong>풀이 2</strong>&gt;</p>
+<p><strong>&lt;풀이 2&gt;</strong></p>
 <p><span class="math display">\[
 \dfrac{P-A}{|P-A|}+\dfrac{P-B}{|P-B|}+\dfrac{P-C}{|P-C|}=0
 \]</span></p>
 <p>일 때</p>
 <p><span class="math display">\[
-\dfrac{P-A}{|P-A|}=\mathbf{e}_A,\quad \dfrac{P-B}{|P-B|}=\mathbf{e}_B,\quad \dfrac{P-C}{|P-C|}=\mathbf{e}_C
+\dfrac{P-A}{|P-A|}=\boldsymbol{e}_A,\quad \dfrac{P-B}{|P-B|}=\boldsymbol{e}_B,\quad \dfrac{P-C}{|P-C|}=\boldsymbol{e}_C
 \]</span></p>
-<p>라 하면 <span class="math inline">\(|\mathbf{e}_A|=|\mathbf{e}_B|=|\mathbf{e}_C|=1\)</span> 이며 <span class="math inline">\(\mathbf{e}_A+\mathbf{e}_B +\mathbf{e}_C=0\)</span> 이다.</p>
+<p>라 하면 <span class="math inline">\(|\boldsymbol{e}_A|=|\boldsymbol{e}_B|=|\boldsymbol{e}_C|=1\)</span> 이며 <span class="math inline">\(\boldsymbol{e}_A+\boldsymbol{e}_B +\boldsymbol{e}_C=0\)</span> 이다.</p>
 <p><span class="math display">\[
-(\mathbf{e}_A+\mathbf{e}_B+\mathbf{e}_C)\cdot \mathbf{e}_A = 0 = 1+\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_A \cdot \mathbf{e}_C
+(\boldsymbol{e}_A+\boldsymbol{e}_B+\boldsymbol{e}_C)\cdot \boldsymbol{e}_A = 0 = 1+\boldsymbol{e}_A \cdot \boldsymbol{e}_B + \boldsymbol{e}_A \cdot \boldsymbol{e}_C
 \]</span></p>
 <p>이며 같은 방법으로 다음을 구할 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_A \cdot \mathbf{e}_C &amp;= -1\\
-\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_B \cdot \mathbf{e}_C &amp;= -1\\
-\mathbf{e}_A \cdot \mathbf{e}_C + \mathbf{e}_B \cdot \mathbf{e}_C &amp;= -1\\
+\boldsymbol{e}_A \cdot \boldsymbol{e}_B + \boldsymbol{e}_A \cdot \boldsymbol{e}_C &amp;= -1\\
+\boldsymbol{e}_A \cdot \boldsymbol{e}_B + \boldsymbol{e}_B \cdot \boldsymbol{e}_C &amp;= -1\\
+\boldsymbol{e}_A \cdot \boldsymbol{e}_C + \boldsymbol{e}_B \cdot \boldsymbol{e}_C &amp;= -1\\
 \end{aligned}
 \]</span></p>
-<p>으며 이로부터 <span class="math inline">\(\mathbf{e}_A\cdot \mathbf{e}_B=\mathbf{e}_A\cdot \mathbf{e}_C=\mathbf{e}_B\cdot \mathbf{e}_C=-\frac{1}{2}\)</span> 이다. 따라서, <span class="math inline">\(AP,\,BP,\,CP\)</span> 는 서로 <span class="math inline">\(120^\circ = \dfrac{2\pi}{3}\)</span> 를 이룬다.</p>
+<p>으며 이로부터 <span class="math inline">\(\boldsymbol{e}_A\cdot \boldsymbol{e}_B=\boldsymbol{e}_A\cdot \boldsymbol{e}_C=\boldsymbol{e}_B\cdot \boldsymbol{e}_C=-\frac{1}{2}\)</span> 이다. 따라서, <span class="math inline">\(AP,\,BP,\,CP\)</span> 는 서로 <span class="math inline">\(120^\circ = \dfrac{2\pi}{3}\)</span> 를 이룬다.</p>
 </div>
 <p><br></p>
 <p><strong>5.</strong> 생략.</p>
@@ -1519,17 +1583,25 @@ f(x):=|X-A|+|X-B|+|X-C| \qquad (X\in \mathbb{R}^3-\{A,\,B,\,C\})
 </section>
 <section id="연습문제-제-11-장-5-절" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="연습문제-제-11-장-5-절"><span class="header-section-number">11.6</span> 연습문제 : 제 11 장 5 절</h2>
-<p><strong>1.</strong> 함수</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_5_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.32 (SNU 11.5.1)</strong></span> 함수</p>
 <p><span class="math display">\[
 f(x,\,y) = x^4 + 2x^2y +3xy^2 + 6xy +3x
 \]</span></p>
 <p>의 최대값과 최소값이 존재하면 그것을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>일단 <span class="math inline">\(y=0\)</span> 일 때 <span class="math inline">\(f(x,\,0)=x^4+3x\)</span> 이므로 최대값은 존재하지 않는다.</p>
 <p>또한 <span class="math inline">\(x=-1\)</span> 일 때 <span class="math inline">\(f(-1,\,y)=-3y^2-4y-2\)</span> 이므로 최소값은 존재하지 않는다.</p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> 함수 <span class="math inline">\(f(x,\,y)=(x^2+y^2)\cos (x+2y)\)</span> 는 원점이 극소점임을 보이라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_5_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.33 (SNU 11.5.2)</strong></span> 함수 <span class="math inline">\(f(x,\,y)=(x^2+y^2)\cos (x+2y)\)</span> 는 원점이 극소점임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1549,13 +1621,14 @@ f(x,\,y) = x^4 + 2x^2y +3xy^2 + 6xy +3x
 </div>
 <p><br></p>
 <p><strong>3.</strong> 생략.</p>
-<p><br></p>
-<p><strong>4.</strong> 다음 함수에서 원점이 안장점 임을 보여라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_5_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.34 (SNU 11.5.4)</strong></span> 다음 함수에서 원점이 안장점 임을 보여라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li><strong>원숭이 안장점</strong> <span class="math inline">\(f(x,\,y)=x^3-3xy^2\)</span></li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <strong>원숭이 안장점</strong> <span class="math inline">\(f(x,\,y)=x^3-3xy^2\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \nabla f(x,\,y)&amp;= (3x^2-3y^2,\, -6xy)\\
@@ -1563,9 +1636,7 @@ f(x,\,y) = x^4 + 2x^2y +3xy^2 + 6xy +3x
 \end{aligned}
 \]</span></p>
 <p>으로 원점은 임계점이다. 헤세 행렬이 영행렬이므로 헤세 행렬로 판정 할 수 엇다. <span class="math inline">\(f(x,\,1) =x^3-3x\)</span> 는 <span class="math inline">\(x=0\)</span> 근처에서 <span class="math inline">\(+ \to -\)</span> 가 되므로 극점이 아니다. 따라서 원점은 안장점이다.</p>
-<ol start="2" type="1">
-<li><strong>개 안장점</strong> <span class="math inline">\(f(x,\,y)=x^3y-xy^3\)</span></li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <strong>개 안장점</strong> <span class="math inline">\(f(x,\,y)=x^3y-xy^3\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \nabla f(x,\,y)=(3x^2y-y^3,\, x^3-3xy^2)
@@ -1573,8 +1644,16 @@ f(x,\,y) = x^4 + 2x^2y +3xy^2 + 6xy +3x
 \]</span></p>
 <p>이므로 <span class="math inline">\(\nabla f(0,\,0)=(0,\,0)\)</span> 이며 따라서 임계점이다. 헤세 행렬이 영행렬이므로 헤세 행렬로 판정 할 수 없다. 마찬가지로 <span class="math inline">\(f(x,\,1)=x^3-x=x(x-1)(x+1)\)</span> 이며 <span class="math inline">\(y=1\)</span>​ 을 따라 갔을 때 원점은 극값이 아니므로 원점은 안장점이다.</p>
 </div>
-<p><br></p>
-<p><strong>5.</strong> 이차형식 <span class="math inline">\(q(x,\,y)=ax^2+2bxy+cy^2\)</span>​ 의 등위선이 원점을 지나지 않을 때 이 등위선은 (1) <span class="math inline">\(ac-b^2&gt;0\)</span>​ 이면, 타원 (2) <span class="math inline">\(ac-b^2&lt;0\)</span>​ 이면, 쌍곡선 (3) <span class="math inline">\(ac-b^2=0\)</span>​ 이면, 직선 임을 보여라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_5_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.35 (SNU 11.5.5)</strong></span> 이차형식 <span class="math inline">\(q(x,\,y)=ax^2+2bxy+cy^2\)</span>​ 의 등위선이 원점을 지나지 않을 때 이 등위선은</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(ac-b^2&gt;0\)</span>​ 이면, 타원</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(ac-b^2&lt;0\)</span>​ 이면, 쌍곡선</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(ac-b^2=0\)</span>​ 이면, 직선</p>
+<p>임을 보여라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>회전변환을 통해 <span class="math inline">\(xy\)</span> term 을 제거해보자. <span class="math inline">\(x  = \cos \theta x' + \sin \theta y',\, y = -\sin \theta x' + \cos \theta y'\)</span> 라 하고 <span class="math inline">\(x'y'\)</span> 의 계수가 <span class="math inline">\(0\)</span> 이 되도록 하면,</p>
 <p><span class="math display">\[
@@ -1609,22 +1688,28 @@ q(x,\,y) = ax^2+2ac+cy^2 = (ax+cy)^2
 \]</span></p>
 <p>이므로 등위면이 직선이 뒴을 알 수 있다.</p>
 </div>
-<p><br></p>
-<p><strong>6.</strong> <span class="math inline">\(n\)</span> 공간의 점 <span class="math inline">\(P\)</span> 근방에서 정의된 이급함수 <span class="math inline">\(f\)</span> 와 벡터 <span class="math inline">\(\mathbf{v}=v_1\mathbf{e}_1 + \cdots + v_n \mathbf{e}_n\)</span> 에 대하여</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_5_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.36 (SNU 11.5.6)</strong></span> <span class="math inline">\(n\)</span> 공간의 점 <span class="math inline">\(P\)</span> 근방에서 정의된 이급함수 <span class="math inline">\(f\)</span> 와 벡터 <span class="math inline">\(\boldsymbol{v}=v_1\boldsymbol{e}_1 + \cdots + v_n \boldsymbol{e}_n\)</span> 에 대하여</p>
 <p><span class="math display">\[
-{D_{\mathbf{v}}}^2 f(P) = \sum_{i,\,j=1}^n v_i v_j D_i D_j f(P) = \mathbf{v} \cdot (f''(P)\mathbf{v})
+{D_{\boldsymbol{v}}}^2 f(P) = \sum_{i,\,j=1}^n v_i v_j D_i D_j f(P) = \boldsymbol{v} \cdot (f''(P)\boldsymbol{v})
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
-\mathbf{v} \cdot (f''(P)\mathbf{v}) &amp;= \sum_{i=1}^n v_i (f''(P)\mathbf{v})_i = \sum_{i=1}^n v_i \left(\sum_{j=1}^n f''(P)_{ij}v_j\right) \\
+\boldsymbol{v} \cdot (f''(P)\boldsymbol{v}) &amp;= \sum_{i=1}^n v_i (f''(P)\boldsymbol{v})_i = \sum_{i=1}^n v_i \left(\sum_{j=1}^n f''(P)_{ij}v_j\right) \\
 &amp;= \sum_{i,\,j=1}^n v_i v_j \left(f''(P)\right)_{ij}=\sum_{i,\,j=1}^n v_iv_j D_iD_j f(P)
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>7.</strong> 이급함수 <span class="math inline">\(f(x,\,y)\)</span> 의 극대점에서는</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_5_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.37 (SNU 11.5.7)</strong></span> 이급함수 <span class="math inline">\(f(x,\,y)\)</span> 의 극대점에서는</p>
 <p><span class="math display">\[
 \dfrac{\partial^2 f}{\partial x^2}+ \dfrac{\partial^2 f}{\partial y^2} \le 0
 \]</span></p>
@@ -1633,6 +1718,8 @@ q(x,\,y) = ax^2+2ac+cy^2 = (ax+cy)^2
 \dfrac{\partial^2 f}{\partial x^2}+ \dfrac{\partial^2 f}{\partial y^2} \ge 0
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((a,\,b)\)</span> 가 <span class="math inline">\(f(x,\,y)\)</span> 의 극대점이라 하자. <span class="math inline">\(g (t)=f(a+t,\,b)\)</span> 라 하면 <span class="math inline">\(0\)</span> 이 <span class="math inline">\(g\)</span> 의 극대점이므로 <span class="math inline">\(g'(0) = \dfrac{\partial f}{\partial x}(a,\,b)=0\)</span> , <span class="math inline">\(g''(0) = \dfrac{\partial^2 f}{\partial x^2}(a,\,b) \le 0\)</span> 이다. <span class="math inline">\(h(s) = f(a,\,b+s)\)</span> 라 하면 같은 이유로 <span class="math inline">\(h''(0) = \dfrac{\partial^2 f}{\partial y^2}(a,\,b)\le 0\)</span> 임을 안다. 따라서</p>
 <p><span class="math display">\[
@@ -1652,27 +1739,22 @@ S:=\{X\in U: g(X)=c\}
 \]</span></p>
 <p>에 재한하였을 때, 점 <span class="math inline">\(P\in S\)</span> 가 극점이라고 하자. 그러면 <span class="math inline">\(\nabla f(P)\)</span> 와 <span class="math inline">\(\nabla g(P)\)</span> 는 일차종속이다. 즉</p>
 <p><span class="math display">\[
-\lambda_1 \nabla f(P)+\lambda_2 \nabla g(P)=\mathbf{0}
+\lambda_1 \nabla f(P)+\lambda_2 \nabla g(P)=\boldsymbol{0}
 \]</span></p>
-<p>이고 동시에 영이 아닌 실수 <span class="math inline">\(\lambda_1,\,\lambda_2\)</span> 가 존재한다. 특히, <span class="math inline">\(\nabla g(P)\ne \mathbf{0}\)</span> 이면, 식</p>
+<p>이고 동시에 영이 아닌 실수 <span class="math inline">\(\lambda_1,\,\lambda_2\)</span> 가 존재한다. 특히, <span class="math inline">\(\nabla g(P)\ne \boldsymbol{0}\)</span> 이면, 식</p>
 <p><span class="math display">\[
 \nabla f(P)=\lambda \nabla g(P)
 \]</span></p>
 <p>를 만족시키는 실수 <span class="math inline">\(\lambda\)</span> 가 존재한다.</p>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span></p>
-<ol type="1">
-<li><p><span class="math inline">\(\nabla g(P)=\mathbf{0}\)</span> 이면 <span class="math inline">\(\nabla f(P)\)</span> 와 <span class="math inline">\(\nabla g(P)\)</span> 는 일차종속이므로 <span class="math inline">\(\nabla g(P)\ne \mathbf{0}\)</span> 일 때만 생각한다.</p></li>
-<li><p><span class="math inline">\(P\in S\)</span> 에서 <span class="math inline">\(\nabla f(P)\)</span> 는 초곡면 <span class="math inline">\(S\)</span> 에 대해 수직임을 보이자. 점 <span class="math inline">\(P\)</span> 를 통과하는 <span class="math inline">\(S\)</span> 에서의 임의의 곡선 <span class="math inline">\(X(t)\)</span> 는 <span class="math inline">\(X(0)=P\)</span> 가 되도록 표현 할 수 있다. 이제 <span class="math inline">\(X'(0)\)</span> 는 <span class="math inline">\(P\)</span> 에서의 <span class="math inline">\(S\)</span> 의 접평면에 포함되는 벡터이다.</p></li>
-<li><p>문제의 가정에 의해 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(P\)</span> 에서 극값을 가진다. <span class="math inline">\(h(t) := f(X(t))\)</span> 라 하면, <span class="math inline">\(h'(0)=0\)</span> 이므로,</p></li>
-</ol>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\nabla g(P)=\boldsymbol{0}\)</span> 이면 <span class="math inline">\(\nabla f(P)\)</span> 와 <span class="math inline">\(\nabla g(P)\)</span> 는 일차종속이므로 <span class="math inline">\(\nabla g(P)\ne \boldsymbol{0}\)</span> 일 때만 생각한다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(P\in S\)</span> 에서 <span class="math inline">\(\nabla f(P)\)</span> 는 초곡면 <span class="math inline">\(S\)</span> 에 대해 수직임을 보이자. 점 <span class="math inline">\(P\)</span> 를 통과하는 <span class="math inline">\(S\)</span> 에서의 임의의 곡선 <span class="math inline">\(X(t)\)</span> 는 <span class="math inline">\(X(0)=P\)</span> 가 되도록 표현 할 수 있다. 이제 <span class="math inline">\(X'(0)\)</span> 는 <span class="math inline">\(P\)</span> 에서의 <span class="math inline">\(S\)</span> 의 접평면에 포함되는 벡터이다.</p>
+<p>(<span class="math inline">\(3\)</span>) 문제의 가정에 의해 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(P\)</span> 에서 극값을 가진다. <span class="math inline">\(h(t) := f(X(t))\)</span> 라 하면, <span class="math inline">\(h'(0)=0\)</span> 이므로,</p>
 <p><span class="math display">\[
 h'(0)=X'(0)\cdot \nabla f(X(0)) = 0
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(\nabla f(P)\)</span> 는 <span class="math inline">\(X'(0)\)</span> 에 수직이며, 따라서 <span class="math inline">\(P\)</span> 에서 <span class="math inline">\(S\)</span> 에 수직이다.</p>
-<ol start="4" type="1">
-<li>또한 <span class="math inline">\(\nabla g(P)\)</span> 도 등위면에 수직이므로 <span class="math inline">\(\nabla f(P)\)</span> 와 <span class="math inline">\(\nabla g(P)\)</span> 는 평행하다. 따라서 원하는 결론을 얻는다. <span class="math inline">\(\square\)</span></li>
-</ol>
+<p>(<span class="math inline">\(4\)</span>) 또한 <span class="math inline">\(\nabla g(P)\)</span> 도 등위면에 수직이므로 <span class="math inline">\(\nabla f(P)\)</span> 와 <span class="math inline">\(\nabla g(P)\)</span> 는 평행하다. 따라서 원하는 결론을 얻는다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -1721,7 +1803,7 @@ f(x_1,\ldots,\,x_n)=x_1+\cdots +x_n
 \nabla g(x_1,\ldots,\, x_n) &amp;= 2(x_1,\ldots,\,x_n)
 \end{aligned}
 \]</span></p>
-<p>이므로 극값은 <span class="math inline">\(x_1=\cdots =x_n= \dfrac{1}{\sqrt{n}}\)</span> 뿐이며, 이 점을 <span class="math inline">\(P\)</span> 라 하면 <span class="math inline">\(f(P)=\sqrt{n}\)</span> 이다. <span class="math inline">\(Q_i = \mathbf{e}_i\)</span> 라 정의하면, <span class="math inline">\(f(Q_i)=1 \le f(P)\)</span> 이므로 <span class="math inline">\(f(P)\)</span> 는 <span class="math inline">\(P\)</span> 의 최대값이다.</p>
+<p>이므로 극값은 <span class="math inline">\(x_1=\cdots =x_n= \dfrac{1}{\sqrt{n}}\)</span> 뿐이며, 이 점을 <span class="math inline">\(P\)</span> 라 하면 <span class="math inline">\(f(P)=\sqrt{n}\)</span> 이다. <span class="math inline">\(Q_i = \boldsymbol{e}_i\)</span> 라 정의하면, <span class="math inline">\(f(Q_i)=1 \le f(P)\)</span> 이므로 <span class="math inline">\(f(P)\)</span> 는 <span class="math inline">\(P\)</span> 의 최대값이다.</p>
 <p>이제 임의의 <span class="math inline">\(a_1,\ldots,\,a_n\)</span> where <span class="math inline">\(a_i \ge 0\)</span> 에 대하여</p>
 <p><span class="math display">\[
 S:=({a_1}^2+\cdots +{a_n}^2)^{1/2}
@@ -1741,8 +1823,11 @@ S:=({a_1}^2+\cdots +{a_n}^2)^{1/2}
 </section>
 <section id="연습문제-제-11-장-6-절" class="level2" data-number="11.8">
 <h2 data-number="11.8" class="anchored" data-anchor-id="연습문제-제-11-장-6-절"><span class="header-section-number">11.8</span> 연습문제 : 제 11 장 6 절</h2>
-<p><br></p>
-<p><strong>1.</strong> 원판 <span class="math inline">\(x^2+y^2\le 1\)</span> 에서 정의된 함수 <span class="math inline">\(f(x,\,y)=x^2+y^2-x-y+1\)</span> 의 최대값과 최소값을 구하라.</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.38 (SNU 11.6.1)</strong></span> 원판 <span class="math inline">\(x^2+y^2\le 1\)</span> 에서 정의된 함수 <span class="math inline">\(f(x,\,y)=x^2+y^2-x-y+1\)</span> 의 최대값과 최소값을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 f(x,\,y)=\left(x-\dfrac{1}{2}\right)^2+\left( y-\dfrac{1}{2} \right)^2+\dfrac{1}{2} \ge \dfrac{1}{2}
@@ -1756,8 +1841,12 @@ f(x,\,y)=\left(x-\dfrac{1}{2}\right)^2+\left( y-\dfrac{1}{2} \right)^2+\dfrac{1}
 \]</span></p>
 <p>이므로 라그랑즈 승수법을 사용하면 <span class="math inline">\(x=y= \pm 1/\sqrt{2}\)</span> 에 존재한다. 극값이 <span class="math inline">\(2+\sqrt{2},\, 2-\sqrt{2}\approx 0.59\)</span> 이므로 최대값은 <span class="math inline">\(2+\sqrt{2}\)</span> 최소값은 <span class="math inline">\(1/2\)</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> 반지름의 길이가 1 인 구면에 내접하는 원기둥 중에서 표면적을 최대로 하는 것의 표면적을 구하라. 원기둥은 바닥과 뚜껑이 없는 것으로 한다.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.39 (SNU 11.6.2)</strong></span> 반지름의 길이가 1 인 구면에 내접하는 원기둥 중에서 표면적을 최대로 하는 것의 표면적을 구하라. 원기둥은 바닥과 뚜껑이 없는 것으로 한다.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>원기둥의 반경을 <span class="math inline">\(r\)</span>, 높이를 <span class="math inline">\(2h\)</span> 라 하면 <span class="math inline">\(r^2+h^2=1\)</span> 이어야 하며 표면적은 <span class="math inline">\(2\pi r (2h)=4\pi r h\)</span> 이다. 또한 <span class="math inline">\(0 \le r,\, h \le 1\)</span> 을 만족해야 한다. <span class="math inline">\(f(r,\,h)=4\pi rh\)</span>, <span class="math inline">\(g(r,\,h)=r^2+h^2=1\)</span> 에 대해 라그랑즈 승수법을 적용하면,</p>
 <p><span class="math display">\[
@@ -1771,12 +1860,14 @@ f(x,\,y)=\left(x-\dfrac{1}{2}\right)^2+\left( y-\dfrac{1}{2} \right)^2+\dfrac{1}
 <p><br></p>
 <p><strong>3.</strong> 생략</p>
 <p><br></p>
-<p><strong>4.</strong> (<strong>케플러의 문제</strong>) 대각선의 길이가 일정한 직원기둥중에서 부피가 최대인것을 구하라. 또 주어진 공(sphere) 속에 들어있는 직육면체 중에서 그 부피가 최대인 것을 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.40 (SNU 11.6.4 케플러의 문제)</strong></span> 대각선의 길이가 일정한 직원기둥중에서 부피가 최대인것을 구하라. 또 주어진 공(sphere) 속에 들어있는 직육면체 중에서 그 부피가 최대인 것을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span></p>
-<ol type="1">
-<li>반지름 <span class="math inline">\(r\)</span>, 높이 <span class="math inline">\(h\)</span> 인 직원기둥의 부피는 <span class="math inline">\(V(r,\,h)=\pi r^2 h\)</span> 이며 대각선의 길이를 일정하게 놓으므로 대각선의 길이의 제곱함수 <span class="math inline">\(g(r,\,h)= 4r^2+h^2=c\)</span> 를 생각하자.</li>
-</ol>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) 반지름 <span class="math inline">\(r\)</span>, 높이 <span class="math inline">\(h\)</span> 인 직원기둥의 부피는 <span class="math inline">\(V(r,\,h)=\pi r^2 h\)</span> 이며 대각선의 길이를 일정하게 놓으므로 대각선의 길이의 제곱함수 <span class="math inline">\(g(r,\,h)= 4r^2+h^2=c\)</span> 를 생각하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \nabla V(r,\,h) &amp;= \pi (2rh,\, r^2)\\
@@ -1784,9 +1875,7 @@ f(x,\,y)=\left(x-\dfrac{1}{2}\right)^2+\left( y-\dfrac{1}{2} \right)^2+\dfrac{1}
 \end{aligned}
 \]</span></p>
 <p>이 때의 극값은 <span class="math inline">\(h=2r\)</span> 일 때 이며 이 때의 부피는 <span class="math inline">\(2\pi r^3\)</span> 이다. 이 값이 최대값인 것은 <span class="math inline">\(h\)</span> 가 대각선의 길이와 같을 때 <span class="math inline">\(r=0\)</span> 이며 부피가 <span class="math inline">\(0\)</span> 이 되는 것으로 부터 알 수 있다.</p>
-<ol start="2" type="1">
-<li>반지름 <span class="math inline">\(R\)</span> 인 공의 직육면체의 각 변의 길이를 <span class="math inline">\(2a,\,2b,\,2c\)</span> 라 하면 직육면체의 부피 <span class="math inline">\(V(a,\,b,\,c)=8abc\)</span> 이며 공에 내접하므로 <span class="math inline">\(g(a,\,b,\,c)=a^2+b^2+c^2=R^2\)</span> 의 제한조건을 갖는다.</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) 반지름 <span class="math inline">\(R\)</span> 인 공의 직육면체의 각 변의 길이를 <span class="math inline">\(2a,\,2b,\,2c\)</span> 라 하면 직육면체의 부피 <span class="math inline">\(V(a,\,b,\,c)=8abc\)</span> 이며 공에 내접하므로 <span class="math inline">\(g(a,\,b,\,c)=a^2+b^2+c^2=R^2\)</span> 의 제한조건을 갖는다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \nabla V(a,\,b,\,c)&amp;=(8bc,\, 8ac,\, 8ab)\\
@@ -1795,31 +1884,37 @@ f(x,\,y)=\left(x-\dfrac{1}{2}\right)^2+\left( y-\dfrac{1}{2} \right)^2+\dfrac{1}
 \]</span></p>
 <p>이므로 <span class="math inline">\(a=b=c=\dfrac{R}{\sqrt{3}}\)</span> 에서 극값을 가진다. 이 때의 부피는 <span class="math inline">\(\dfrac{8\sqrt{3}}{9}R^3\)</span> 이다. 이 값이 최대값인 것은 <span class="math inline">\(a=R,\,b=c=0\)</span> 일 때의 부피가 <span class="math inline">\(0\)</span> 인 것을 생각하면 된다.</p>
 </div>
-<p><br></p>
-<p><strong>5.</strong>&nbsp;CBS 부등식을 라그랑즈 승수법을 이용하여 증명하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_5" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.41 (SNU 11.6.5)</strong></span> CBS 부등식을 라그랑즈 승수법을 이용하여 증명하라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(n\)</span> 벡터 <span class="math inline">\(\mathbf{a}=(a_1,\cdots,\,a_n),\,\mathbf{b}=(b_1,\cdots\, b_n)\)</span> 에 대해 <span class="math inline">\(|\mathbf{a}\cdot \mathbf{b}|\le |\mathbf{a}||\mathbf{b}|\)</span> 를 보이자. 둘 중 하나가 영벡터이면 자명하므로, 둘 다 영벡터가 아님을 가정하자. <span class="math inline">\(\mathbf{x}=(x_1,\ldots,\,x_n) = \dfrac{\mathbf{a}}{|\mathbf{a}|},\, \mathbf{y}=(y_1,\ldots,\,y_n)=\dfrac{\mathbf{b}}{|\mathbf{b}|}\)</span> 라 하면 <span class="math inline">\(|\mathbf{x}|^2=|\mathbf{y}|^2=1\)</span> 이다. 이제,</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(n\)</span> 벡터 <span class="math inline">\(\boldsymbol{a}=(a_1,\cdots,\,a_n),\,\boldsymbol{b}=(b_1,\cdots\, b_n)\)</span> 에 대해 <span class="math inline">\(|\boldsymbol{a}\cdot \boldsymbol{b}|\le |\boldsymbol{a}||\boldsymbol{b}|\)</span> 를 보이자. 둘 중 하나가 영벡터이면 자명하므로, 둘 다 영벡터가 아님을 가정하자. <span class="math inline">\(\boldsymbol{x}=(x_1,\ldots,\,x_n) = \dfrac{\boldsymbol{a}}{|\boldsymbol{a}|},\, \boldsymbol{y}=(y_1,\ldots,\,y_n)=\dfrac{\boldsymbol{b}}{|\boldsymbol{b}|}\)</span> 라 하면 <span class="math inline">\(|\boldsymbol{x}|^2=|\boldsymbol{y}|^2=1\)</span> 이다. 이제,</p>
 <p><span class="math display">\[
 \begin{aligned}
-f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;= \mathbf{x} \cdot \mathbf{y} = x_1y_1 + \cdots +x_ny_n\\
-g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;=|\mathbf{x}||\mathbf{y}| =1
+f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;= \boldsymbol{x} \cdot \boldsymbol{y} = x_1y_1 + \cdots +x_ny_n\\
+g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;=|\boldsymbol{x}||\boldsymbol{y}| =1
 \end{aligned}
 \]</span></p>
 <p>로 놓고 <span class="math inline">\(f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n)\)</span> 의 극값을 구해보자. 우리는 <span class="math inline">\(-1\le x_i,\,y_i \le 1\)</span> 임을 안다. 라그랑즈 승수법으로부터,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \nabla f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;= (y_1,\ldots,\,y_n,\,x_1,\ldots,\,x_n) \\
-\nabla g(x_1,\ldots,\,x_n,\,y_n,\ldots,\,y_n) &amp;= \left( \dfrac{|\mathbf{y}|}{|\mathbf{x}|}x_1,\ldots,\,\dfrac{|\mathbf{y}|}{|\mathbf{x}|} x_n,\, \dfrac{|\mathbf{x}|}{|\mathbf{y}|} y_1,\ldots,\,\dfrac{|\mathbf{x}|}{|\mathbf{y}|}y_n  \right) \\
+\nabla g(x_1,\ldots,\,x_n,\,y_n,\ldots,\,y_n) &amp;= \left( \dfrac{|\boldsymbol{y}|}{|\boldsymbol{x}|}x_1,\ldots,\,\dfrac{|\boldsymbol{y}|}{|\boldsymbol{x}|} x_n,\, \dfrac{|\boldsymbol{x}|}{|\boldsymbol{y}|} y_1,\ldots,\,\dfrac{|\boldsymbol{x}|}{|\boldsymbol{y}|}y_n  \right) \\
 &amp;=(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n)
 \end{aligned}
 \]</span></p>
-<p>을 이용하면 <span class="math inline">\(y_i = \lambda x_i ,\, x_j = \lambda y_j\)</span> for <span class="math inline">\(1\le i,\, j \le n\)</span> 임을 안다. <span class="math inline">\(\lambda = \pm 1\)</span> 이며 따라서 극값은 <span class="math inline">\(\mathbf{x}=\pm \mathbf{y}\)</span> 에서 발생한다. 또한 <span class="math inline">\(\mathbf{x}=\mathbf{y}\)</span> 이면 <span class="math inline">\(f=1\)</span>, <span class="math inline">\(\mathbf{x}=-\mathbf{y}\)</span> 이면 <span class="math inline">\(f=-1\)</span> 이다. 유계인 닫힌 영역에서의 연속함수이므로 최대값과 최소값이 존재하며, <span class="math inline">\(\mathbf{x}=\mathbf{e}_1,\,\mathbf{y}=\mathbf{e}_2\)</span> 에 대해 <span class="math inline">\(f=0\)</span> 이므로 <span class="math inline">\(f\)</span> 의 최대값은 <span class="math inline">\(1\)</span>, 최소값은 <span class="math inline">\(-1\)</span> 이며 <span class="math inline">\(|\mathbf{x}\cdot \mathbf{y}|\le 1\)</span> 이므로</p>
+<p>을 이용하면 <span class="math inline">\(y_i = \lambda x_i ,\, x_j = \lambda y_j\)</span> for <span class="math inline">\(1\le i,\, j \le n\)</span> 임을 안다. <span class="math inline">\(\lambda = \pm 1\)</span> 이며 따라서 극값은 <span class="math inline">\(\boldsymbol{x}=\pm \boldsymbol{y}\)</span> 에서 발생한다. 또한 <span class="math inline">\(\boldsymbol{x}=\boldsymbol{y}\)</span> 이면 <span class="math inline">\(f=1\)</span>, <span class="math inline">\(\boldsymbol{x}=-\boldsymbol{y}\)</span> 이면 <span class="math inline">\(f=-1\)</span> 이다. 유계인 닫힌 영역에서의 연속함수이므로 최대값과 최소값이 존재하며, <span class="math inline">\(\boldsymbol{x}=\boldsymbol{e}_1,\,\boldsymbol{y}=\boldsymbol{e}_2\)</span> 에 대해 <span class="math inline">\(f=0\)</span> 이므로 <span class="math inline">\(f\)</span> 의 최대값은 <span class="math inline">\(1\)</span>, 최소값은 <span class="math inline">\(-1\)</span> 이며 <span class="math inline">\(|\boldsymbol{x}\cdot \boldsymbol{y}|\le 1\)</span> 이므로</p>
 <p><span class="math display">\[
-|\mathbf{a}\cdot \mathbf{b}|\le |\mathbf{a}| |\mathbf{b}|
+|\boldsymbol{a}\cdot \boldsymbol{b}|\le |\boldsymbol{a}| |\boldsymbol{b}|
 \]</span> 를 얻는다.</p>
 </div>
-<p><br></p>
-<p><strong>6.</strong> <span class="math inline">\(0&lt;p&lt;q\)</span> 이고 <span class="math inline">\(a_1\ge 0,\ldots,\, a_n \ge 0\)</span> 이면, 부등식</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.42 (SNU 11.6.6)</strong></span> <span class="math inline">\(0&lt;p&lt;q\)</span> 이고 <span class="math inline">\(a_1\ge 0,\ldots,\, a_n \ge 0\)</span> 이면, 부등식</p>
 <p><span class="math display">\[
 \begin{align}
 \left( {a_1}^q + \cdots + {a_n}^q\right)^{1/q} &amp;\le \left({a_1}^p+ \cdots + {a_n}^p\right)^{1/p} \tag{1}\\
@@ -1827,11 +1922,11 @@ g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;=|\mathbf{x}||\mathbf{y}| =1
 \end{align}
 \]</span></p>
 <p>이 성립함을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(n=1\)</span> 일 때는 자명하므로 <span class="math inline">\(n\ge 2\)</span> 일 경우만 생각한다.</p>
-<ol type="1">
-<li><span class="math inline">\(x_i \ge 0, \;\forall i=1,\ldots,\,n\)</span> 에 대해 <span class="math inline">\(g(X) = x_1^p + \cdots + x_n^p = 1\)</span> 일 때 <span class="math inline">\(f(X) = x_1^q + \cdots + x_n^q\)</span> 의 최대값을 구해보자. <span class="math inline">\(q&gt;p&gt;0\)</span> 이므로 <span class="math inline">\(0 \le x_i \le 1,\;\forall i=1,\ldots,n\)</span> 이어야 한다. 두개 이상의 <span class="math inline">\(x_i\ne 0\)</span> 이라면 <span class="math inline">\(1\)</span> 보다 작으므로 이 <span class="math inline">\((x_i)^p&lt;(x_i)^q\)</span> 이다. 즉 <span class="math inline">\(f(X)&lt;1\)</span> 이다. 하나의 <span class="math inline">\(x_i\)</span> 만 <span class="math inline">\(0\)</span> 이 아니라면 그 <span class="math inline">\(x_i = 1\)</span> 이므로 <span class="math inline">\(f(X)\)</span> 의 최대값은 <span class="math inline">\(1\)</span> 이다. 즉 <span class="math inline">\(g(X)=1\)</span> 일 때 <span class="math inline">\(f(X)\le 1\)</span> 이다.</li>
-</ol>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x_i \ge 0, \;\forall i=1,\ldots,\,n\)</span> 에 대해 <span class="math inline">\(g(X) = x_1^p + \cdots + x_n^p = 1\)</span> 일 때 <span class="math inline">\(f(X) = x_1^q + \cdots + x_n^q\)</span> 의 최대값을 구해보자. <span class="math inline">\(q&gt;p&gt;0\)</span> 이므로 <span class="math inline">\(0 \le x_i \le 1,\;\forall i=1,\ldots,n\)</span> 이어야 한다. 두개 이상의 <span class="math inline">\(x_i\ne 0\)</span> 이라면 <span class="math inline">\(1\)</span> 보다 작으므로 이 <span class="math inline">\((x_i)^p&lt;(x_i)^q\)</span> 이다. 즉 <span class="math inline">\(f(X)&lt;1\)</span> 이다. 하나의 <span class="math inline">\(x_i\)</span> 만 <span class="math inline">\(0\)</span> 이 아니라면 그 <span class="math inline">\(x_i = 1\)</span> 이므로 <span class="math inline">\(f(X)\)</span> 의 최대값은 <span class="math inline">\(1\)</span> 이다. 즉 <span class="math inline">\(g(X)=1\)</span> 일 때 <span class="math inline">\(f(X)\le 1\)</span> 이다.</p>
 <p><span class="math inline">\(A = (a_1,\ldots,\,a_n)\)</span> 에 대해 <span class="math inline">\(x_i = \dfrac{a_i}{(\sum_j (a_j)^p)^{1/p}}\)</span> 라 하면 <span class="math inline">\(x_1^p + \cdots + x_n^p = 1\)</span> 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1840,9 +1935,7 @@ g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;=|\mathbf{x}||\mathbf{y}| =1
 \implies &amp; (a_1^q + \cdots + a_n^q)^{1/q} \le (a_1^p + \cdots + a_n^p)^{1/p}
 \end{aligned}
 \]</span></p>
-<ol start="2" type="1">
-<li><span class="math inline">\(g(a_1,\ldots,\,a_n)={a_1}^p+\cdots + {a_n}^p=c^p\)</span> 라 하고 이를 만족하는 영역에서 <span class="math inline">\(f(a_1,\ldots,\,a_n)={a_1}^q+\cdots +{a_n}^q\)</span> 의 극값을 구한다.</li>
-</ol>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(g(a_1,\ldots,\,a_n)={a_1}^p+\cdots + {a_n}^p=c^p\)</span> 라 하고 이를 만족하는 영역에서 <span class="math inline">\(f(a_1,\ldots,\,a_n)={a_1}^q+\cdots +{a_n}^q\)</span> 의 극값을 구한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \nabla f(a_1,\ldots,\,a_n) &amp;= q \left( a_1^{q-1},\ldots,\,a_n^{q-1} \right) \\
@@ -1853,15 +1946,15 @@ g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &amp;=|\mathbf{x}||\mathbf{y}| =1
 <p><span class="math display">\[
 c^p = a_1^p + \cdots + a_n^p = n \left(\dfrac{\lambda p}{q}\right)^{p/(q-p)} \implies a_1=\cdots =a_n = \dfrac{c}{n^{1/p}}
 \]</span></p>
-<p>이며 이 때의 벡터를 <span class="math inline">\(\mathbf{a}\)</span> 라 할 때 <span class="math inline">\(f(\mathbf{a})\)</span> 값은</p>
+<p>이며 이 때의 벡터를 <span class="math inline">\(\boldsymbol{a}\)</span> 라 할 때 <span class="math inline">\(f(\boldsymbol{a})\)</span> 값은</p>
 <p><span class="math display">\[
-f(\mathbf{a})=f\left(\dfrac{c}{n^{1/p}},\ldots,\, \dfrac{c}{n^{1/p}} \right)= n \dfrac{c^q}{n^{q/p}}=c^qn^{1-q/p}
+f(\boldsymbol{a})=f\left(\dfrac{c}{n^{1/p}},\ldots,\, \dfrac{c}{n^{1/p}} \right)= n \dfrac{c^q}{n^{q/p}}=c^qn^{1-q/p}
 \]</span></p>
-<p>경계값을 보자. <span class="math inline">\(n\)</span> 개의 성분 중 <span class="math inline">\(k\)</span> 개의 성분이 <span class="math inline">\(c/(k^p)\)</span> 이고 나머지는 <span class="math inline">\(0\)</span> 이라면 이때의 벡터를 <span class="math inline">\(\mathbf{d}_k\)</span> 라 하면 <span class="math inline">\(g(\mathbf{d}_k)=c^p\)</span> , <span class="math inline">\(f(\mathbf{d}_k)=c^q k^{1-q/p}\)</span> 이다. 이 때 <span class="math inline">\(k\le n\)</span> 이므로</p>
+<p>경계값을 보자. <span class="math inline">\(n\)</span> 개의 성분 중 <span class="math inline">\(k\)</span> 개의 성분이 <span class="math inline">\(c/(k^p)\)</span> 이고 나머지는 <span class="math inline">\(0\)</span> 이라면 이때의 벡터를 <span class="math inline">\(\boldsymbol{d}_k\)</span> 라 하면 <span class="math inline">\(g(\boldsymbol{d}_k)=c^p\)</span> , <span class="math inline">\(f(\boldsymbol{d}_k)=c^q k^{1-q/p}\)</span> 이다. 이 때 <span class="math inline">\(k\le n\)</span> 이므로</p>
 <p><span class="math display">\[
-\dfrac{f(\mathbf{a})}{f(\mathbf{d}_k)}=\dfrac{c^q n^{1-q/p}}{c^qk^{1-q/p}} &lt; 1
+\dfrac{f(\boldsymbol{a})}{f(\boldsymbol{d}_k)}=\dfrac{c^q n^{1-q/p}}{c^qk^{1-q/p}} &lt; 1
 \]</span></p>
-<p>이다. 따라서 <span class="math inline">\(f(\mathbf{a})\)</span> 는 <span class="math inline">\(f\)</span> 의 최소값이며,</p>
+<p>이다. 따라서 <span class="math inline">\(f(\boldsymbol{a})\)</span> 는 <span class="math inline">\(f\)</span> 의 최소값이며,</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;{a_1}^q+\cdots + {a_n}^q \ge n c^q n^{-q/p}  \\
@@ -1871,8 +1964,12 @@ f(\mathbf{a})=f\left(\dfrac{c}{n^{1/p}},\ldots,\, \dfrac{c}{n^{1/p}} \right)= n 
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>7.</strong> 포물면 <span class="math inline">\(z=x^2+y^2\)</span> 과 점 <span class="math inline">\((1,\,1,\,0)\)</span> 사이의 최단거리를 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.43 (SNU 11.6.7)</strong></span> 포물면 <span class="math inline">\(z=x^2+y^2\)</span> 과 점 <span class="math inline">\((1,\,1,\,0)\)</span> 사이의 최단거리를 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1884,8 +1981,12 @@ g(x,\,y,\,z) &amp;=x^2+y^2-z=0\\
 \]</span></p>
 <p><span class="math inline">\(\nabla d = \lambda \nabla g\)</span> 일 때 <span class="math inline">\(x-1=\lambda x,\, y-1=\lambda y,\, z=-\lambda\)</span> 이면 <span class="math inline">\(\lambda = -1, (x,\,y,\,z )=(1/2,\, 1/2,\,1/2)\)</span> 인 경우 극값을 가진다. 이 때의 거리는 <span class="math inline">\(\sqrt{3}/2\)</span> 이며 이 값이 최소값이다.</p>
 </div>
-<p><br></p>
-<p><strong>8.</strong> 곡면 <span class="math inline">\(z=xy\)</span> 의 점 중에서 점 <span class="math inline">\((0,\,0,\,5)\)</span> 에 가장 가까운 점을 모두 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_8" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.44 (SNU 11.6.8)</strong></span> 곡면 <span class="math inline">\(z=xy\)</span> 의 점 중에서 점 <span class="math inline">\((0,\,0,\,5)\)</span> 에 가장 가까운 점을 모두 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1897,8 +1998,12 @@ g(x,\,y,\,z) &amp;= xy-z = 0\\
 \]</span></p>
 <p><span class="math inline">\(\nabla d = \lambda \nabla g\)</span> 이면 <span class="math inline">\(x=\dfrac{\lambda}{2}y,\, y=\dfrac{\lambda}{2} x,\, z=-\dfrac{\lambda}{2} +5\)</span> 이며 이를 만족시키는 <span class="math inline">\((x,\,y,\,z)=(0,\,0,\,0),\, (2,\,2,\,4)\)</span> 이므로 최단거리는 <span class="math inline">\(3\)</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>9.</strong> 점 <span class="math inline">\((1,\,2,\,0)\)</span> 에서 원뿔 <span class="math inline">\(z^2=x^2+y^2\)</span> 까지의 거리를 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_9" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.45 (SNU 11.6.9)</strong></span> 점 <span class="math inline">\((1,\,2,\,0)\)</span> 에서 원뿔 <span class="math inline">\(z^2=x^2+y^2\)</span> 까지의 거리를 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1911,11 +2016,15 @@ g(x,\,y,\,z) &amp;=x^2+y^2-z^2=0\\
 <p><span class="math inline">\(\nabla d=\lambda \nabla g\)</span> 이면 <span class="math inline">\(x-1=\lambda x,\, y-2=\lambda y,\, z=-\lambda z\)</span> 이므로, <span class="math inline">\(z =0\)</span> 일 때 <span class="math inline">\((0,\,0,\, 0)\)</span>, <span class="math inline">\(\lambda  =-1\)</span> 일 때 <span class="math inline">\((1/2,\, 1,\, \pm \sqrt{5}/2)\)</span> 이며 거리는 각각 <span class="math inline">\(\sqrt{5},\, \dfrac{\sqrt{10}}{2}\)</span> 이므로 최단거리는 <span class="math inline">\(\dfrac{\sqrt{10}}{2}\)</span> 이다.</p>
 <p>… 아 지겨우니 생략…</p>
 </div>
-<p><br></p>
-<p><strong>14.</strong> <span class="math inline">\(n\)</span> 차 대칭행렬 <span class="math inline">\(Q=(q_{ij})\)</span> 와 <span class="math inline">\(X=\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}\)</span> 에 대하여, 이차형식은 <span class="math display">\[
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_14" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.46 (SNU 11.6.14)</strong></span> <span class="math inline">\(n\)</span> 차 대칭행렬 <span class="math inline">\(Q=(q_{ij})\)</span> 와 <span class="math inline">\(X=\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}\)</span> 에 대하여, 이차형식은 <span class="math display">\[
 q(X)= X \cdot QX = \sum_{i,\,j=1}^n q_{ij}x_i x_j = \sum_{i=1}^n q_{ii}x_i^2 + 2\sum_{i&lt;j} q_{ij}x_i x_j
 \]</span></p>
 <p>로 주어진다. 이때 <span class="math inline">\(q\)</span> 의 기울기 벡터는 <span class="math inline">\(\nabla q(X)=2QX\)</span> 임을 보이라. 또 <span class="math inline">\(q\)</span> 를 단위 구면 <span class="math inline">\(S: x_1^2+\cdots + x_n^2=1\)</span> 에서 제한하였을 때, 최대점에서는 <span class="math inline">\(QX=\lambda X\)</span> 를 만족시키는 실수 <span class="math inline">\(\lambda\)</span> 가 존재함을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \partial_i q(X) = 2q_{ii}x_i + 2\sum_{j \ne i} q_{ij}x_j=2\sum_{j=1}^n q_{ij}x_j = 2(QX)_{i}
@@ -1929,8 +2038,12 @@ q(X)= X \cdot QX = \sum_{i,\,j=1}^n q_{ij}x_i x_j = \sum_{i=1}^n q_{ii}x_i^2 + 2
 \]</span></p>
 <p>이므로 <span class="math inline">\(QX=\lambda X\)</span> 인 극점 <span class="math inline">\(X\)</span> 가 존재하므로 최대점에서는 <span class="math inline">\(QX=\lambda X\)</span> 를 만족시키는 실수 <span class="math inline">\(\lambda\)</span> 가 존재한다.</p>
 </div>
-<p><br></p>
-<p><strong>15.</strong> 영 이상의 실수 <span class="math inline">\(x,\,y,\,z\)</span> 가 <span class="math inline">\(x+y+z=1\)</span> 을 만족 시킬 때 <span class="math inline">\(xy+yz+zx-2xyz\)</span> 의 최대값과 최소값을 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_15" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.47 (SNU 11.6.15)</strong></span> 영 이상의 실수 <span class="math inline">\(x,\,y,\,z\)</span> 가 <span class="math inline">\(x+y+z=1\)</span> 을 만족 시킬 때 <span class="math inline">\(xy+yz+zx-2xyz\)</span> 의 최대값과 최소값을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math display">\[
 \begin{aligned}
@@ -1941,13 +2054,15 @@ g(x,\,y,\, z) &amp;= x+y+z-1 \\
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\((x-y)(1-2z)=(y-z)(1-2x)=(z-x)(1-2y)=0\)</span> 에서 극값이 존재한다.</p>
-<p>1) <span class="math inline">\(x=y=z=\dfrac{1}{3}\)</span> 이면 <span class="math inline">\(f\left(\dfrac{1}{3},\, \dfrac{1}{3},\, \dfrac{1}{3}\right)= \dfrac{7}{27}\)</span></p>
-<p>2) <span class="math inline">\(x=y=\dfrac{1}{2},\, z=0\)</span>, 혹은 <span class="math inline">\(x=0,\, y=z=\dfrac{1}{2}\)</span>, 또는 <span class="math inline">\(y=0,\, x=z=\dfrac{1}{2}\)</span> 인 경우, <span class="math inline">\(f(x,\,y,\,z)=\dfrac{1}{4}\)</span></p>
-<p>3) 경계값에서, <span class="math inline">\(x=1,\,y=z=0\)</span> 혹은 <span class="math inline">\(y=1,\, x=z=1\)</span> 혹은 <span class="math inline">\(z=1,\, x=y=0\)</span> 인 경우 <span class="math inline">\(f(x,\,y,\,z)=0\)</span></p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(x=y=z=\dfrac{1}{3}\)</span> 이면 <span class="math inline">\(f\left(\dfrac{1}{3},\, \dfrac{1}{3},\, \dfrac{1}{3}\right)= \dfrac{7}{27}\)</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x=y=\dfrac{1}{2},\, z=0\)</span>, 혹은 <span class="math inline">\(x=0,\, y=z=\dfrac{1}{2}\)</span>, 또는 <span class="math inline">\(y=0,\, x=z=\dfrac{1}{2}\)</span> 인 경우, <span class="math inline">\(f(x,\,y,\,z)=\dfrac{1}{4}\)</span></p>
+<p>(<span class="math inline">\(3\)</span>) 경계값에서, <span class="math inline">\(x=1,\,y=z=0\)</span> 혹은 <span class="math inline">\(y=1,\, x=z=1\)</span> 혹은 <span class="math inline">\(z=1,\, x=y=0\)</span> 인 경우 <span class="math inline">\(f(x,\,y,\,z)=0\)</span></p>
 <p>따라서 최대값은 <span class="math inline">\(7/27\)</span>, 최소값은 <span class="math inline">\(0\)</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>16.</strong> 조건</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_16" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.48 (SNU 11.6.16)</strong></span> 조건</p>
 <p><span class="math display">\[
 g(x,\,y,\,z) :=x+y-2 \ge 0,\qquad h(x,\,y,\,z):= z^2-1\ge 0
 \]</span></p>
@@ -1956,6 +2071,8 @@ g(x,\,y,\,z) :=x+y-2 \ge 0,\qquad h(x,\,y,\,z):= z^2-1\ge 0
 f(x,\,y,\,z) = x^4+2y^2+4z^4-2z^2
 \]</span></p>
 <p>의 최소값을 구하여라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(f_1 (x,\,y,\,z)=x^4+2y^2,\, f_2=4z^4-2z^2\)</span> 이라 하면 <span class="math inline">\(f=f_1+f_2\)</span> 이며 <span class="math inline">\(g\)</span> 와 <span class="math inline">\(f_1\)</span> 은 <span class="math inline">\(x,\,y\)</span> 의 함수 <span class="math inline">\(h\)</span> 와 <span class="math inline">\(f_2\)</span> 는 <span class="math inline">\(z\)</span> 의 함수이므로 <span class="math inline">\(f_1,\,f_2\)</span> 각각의 최소값을 구하면 그 합이 <span class="math inline">\(f\)</span> 의 최소값이다.</p>
 <p><span class="math display">\[
@@ -1973,8 +2090,12 @@ f_1(x,\, 2-x)= x^4+2(2-x)^2=x^4+2x^2-8x+8
 <p>이며 극값은 <span class="math inline">\(x=1\)</span> 일 때 <span class="math inline">\(3\)</span> 이며 최소값이다. 따라서 <span class="math inline">\(f_1\)</span> 의 최소값은 <span class="math inline">\(3\)</span> 이다.</p>
 <p><span class="math inline">\(f_2 (z) = 4z^4-2z^2=4\left( z^2- \dfrac{1}{4}\right)^2-\dfrac{1}{4}\)</span> 이며 <span class="math inline">\(z^2\ge 1\)</span> 일 때의 최소값은 <span class="math inline">\(z^2=1\)</span> 일 때이므로 최소값은 <span class="math inline">\(2\)</span> 이다. 따라서 <span class="math inline">\(f\)</span> 의 최소값은 <span class="math inline">\(5\)</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>17.</strong>&nbsp;좌표평면의 원점에서의 곡선 <span class="math inline">\(x^6+y^6=1\)</span> 의 한 점에 이르는 거리의 최대값과 최소값을 구하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_6_17" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.49 (SNU 11.6.17)</strong></span> 좌표평면의 원점에서의 곡선 <span class="math inline">\(x^6+y^6=1\)</span> 의 한 점에 이르는 거리의 최대값과 최소값을 구하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(d(x,\,y)=x^2+y^2\)</span> , <span class="math inline">\(g(x,\,y)=x^6+y^6-1=0\)</span> 이라 하면,</p>
 <p><span class="math display">\[
@@ -1989,13 +2110,17 @@ f_1(x,\, 2-x)= x^4+2(2-x)^2=x^4+2x^2-8x+8
 </section>
 <section id="제-11장-탐구문제" class="level2" data-number="11.9">
 <h2 data-number="11.9" class="anchored" data-anchor-id="제-11장-탐구문제"><span class="header-section-number">11.9</span> 제 11장 탐구문제</h2>
-<p><strong>1.</strong> <span class="math inline">\(n\)</span>-공간에서 주어진 벡터 <span class="math inline">\(\mathbf{v}\)</span> 와 무한급 미분가능함수 <span class="math inline">\(f,\,g\)</span> 에 대하여,</p>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_S01" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.50 (SNU 탐구문제 11.1)</strong></span> <span class="math inline">\(n\)</span>-공간에서 주어진 벡터 <span class="math inline">\(\boldsymbol{v}\)</span> 와 무한급 미분가능함수 <span class="math inline">\(f,\,g\)</span> 에 대하여,</p>
 <p><span class="math display">\[
-{D_{\mathbf{v}}}^k (fg)=\sum_{a+b=k} \begin{pmatrix} k \\ a\end{pmatrix} \left({D_{\mathbf{v}}}^a f \right) \left({D_{\mathbf{v}}}^b g \right)\, \qquad k=0,\,1,\,2,\ldots
+{D_{\boldsymbol{v}}}^k (fg)=\sum_{a+b=k} \begin{pmatrix} k \\ a\end{pmatrix} \left({D_{\boldsymbol{v}}}^a f \right) \left({D_{\boldsymbol{v}}}^b g \right)\, \qquad k=0,\,1,\,2,\ldots
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>수학적 귀납법을 통해 보인다. <span class="math inline">\(k=0,\,1\)</span> 일 때는 자명하다. <span class="math inline">\(k\)</span> 일 때 성립함을 가정하면, (아래에서는 <span class="math inline">\(\mathbf{v}\)</span> 를 <span class="math inline">\(v\)</span> 로 쓰겠다. )</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>수학적 귀납법을 통해 보인다. <span class="math inline">\(k=0,\,1\)</span> 일 때는 자명하다. <span class="math inline">\(k\)</span> 일 때 성립함을 가정하면, (아래에서는 <span class="math inline">\(\boldsymbol{v}\)</span> 를 <span class="math inline">\(v\)</span> 로 쓰겠다. )</p>
 <p><span class="math display">\[
 \begin{aligned}
 {D_v}^{k+1} (fg) &amp;= D_v \left( {D_{v}}^{k} (fg) \right )\\
@@ -2008,14 +2133,18 @@ f_1(x,\, 2-x)= x^4+2(2-x)^2=x^4+2x^2-8x+8
 \end{aligned}
 \]</span></p>
 </div>
-<p><br></p>
-<p><strong>2.</strong> (<strong>라플라스 작용소</strong>) 구면좌표계에서</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_S02" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.51 (SNU 탐구문제 11.2 (라플라스 작용소))</strong></span> 구면좌표계에서</p>
 <p><span class="math display">\[
 \nabla^2 f = \dfrac{1}{\rho^2}  \dfrac{\partial}{\partial \rho} \left(\rho^2 \dfrac{\partial f}{\partial \rho}\right) + \dfrac{1}{\rho^2 \sin \varphi} \dfrac{\partial }{\partial \varphi} \left(\sin \varphi \dfrac{\partial f}{\partial \varphi}\right) + \dfrac{1}{\rho^2 \sin^2 \varphi} \dfrac{\partial^2 f}{\partial\theta^2}
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>탐구문제 10장 10번을 이용한다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="10_multivariable_functions.html#exr-CAL_10_S10" class="quarto-xref">연습문제&nbsp;<span>10.62</span></a> 을 이용한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \partial_x &amp;= \sin \varphi \cos \theta \,\partial_{\rho} + \dfrac{\cos \varphi \cos \theta }{\rho} \partial_{\varphi} - \dfrac{\sin \theta}{\rho \sin \varphi} \partial_\theta \\
@@ -2075,11 +2204,15 @@ f_1(x,\, 2-x)= x^4+2(2-x)^2=x^4+2x^2-8x+8
 \]</span></p>
 <p>로 두 식이 같다.</p>
 </div>
-<p><br></p>
-<p><strong>3.</strong> 다음 연립 방정식이 해를 가지는 지 판정하라.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_S03" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.52 (SNU 탐구문제 11.3)</strong></span> 다음 연립 방정식이 해를 가지는 지 판정하라.</p>
 <p><span class="math display">\[
 x^3+2xy-3ye^{\sin x} \cos x = -7,\qquad y^5+x^2-3e^{\sin x}=5
 \]</span></p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>함수를 다음과 같이 놓자.</p>
 <p><span class="math display">\[
@@ -2096,8 +2229,10 @@ h(x,\,y)= \dfrac{1}{4}x^4+\dfrac{1}{6}y^6+x^2y-3ye^{\sin x}+7x-5y
 \]</span></p>
 <p>라 하면 <span class="math inline">\(\partial_x h=f,\, \partial_y h=g\)</span> 가 성립하며 <span class="math inline">\(h\)</span> 는 무한급 함수이다. 또한 <span class="math inline">\(1/e \le  e^{\sin x} \le e\)</span> 를 생각하면, <span class="math inline">\(r=\sqrt{x^2+y^2} \to \pm \infty\)</span> 에서 <span class="math inline">\(h\to \infty\)</span> 이므로 <span class="math inline">\(h\)</span> 는 최소값이 존재하며 이 때 <span class="math inline">\(\partial_x h =f = 0,\, \partial_y h = g = 0\)</span> 이므로, 주어진 연립방정식의 해가 존재한다.</p>
 </div>
-<p><br></p>
-<p><strong>4.</strong>&nbsp;(<span class="math inline">\(\textbf{H\"older}\)</span> 부등식 ) 양수 <span class="math inline">\(p,\,q\)</span> 가 <span class="math inline">\(\dfrac{1}{p}+\dfrac{1}{q}=1\)</span> 을 만족시킬 때, 벡터</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_S04" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.53 (SNU 탐구문제 11.4 (<span class="math inline">\(\textbf{H\"older}\)</span> 부등식))</strong></span> 양수 <span class="math inline">\(p,\,q\)</span> 가 <span class="math inline">\(\dfrac{1}{p}+\dfrac{1}{q}=1\)</span> 을 만족시킬 때, 벡터</p>
 <p><span class="math display">\[
 a=(a_1,\ldots,\,a_n),\quad b=(b_1,\ldots,\,b_n)
 \]</span></p>
@@ -2105,6 +2240,8 @@ a=(a_1,\ldots,\,a_n),\quad b=(b_1,\ldots,\,b_n)
 <p><span class="math display">\[
 |a\cdot b| \le (|a_1|^p + \cdots + |a_n|^p)^{1/p}(|b_1|^q  + \cdots + |b_n|^q)^{1/q}
 \]</span> 을 증명하라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>양수 <span class="math inline">\(p,\,q\)</span> 가 <span class="math inline">\(\dfrac{1}{p}+\dfrac{1}{q}=1\)</span> 을 만족시키므로, <span class="math inline">\(p&gt;1,\, q&gt;1\)</span> 이다. 영벡터에 대해서는 자명하므로 영벡터가 아닌 벡터에 대해서만 생각하자. <span class="math inline">\(n\)</span>-벡터 <span class="math inline">\(x=(x_1,\ldots,\,x_n),\,y=(y_1,\ldots,\,y_n)\)</span> where <span class="math inline">\(x_i\ge 0,\, y_i\ge 0\)</span> 가 다음을 만족한다고 하자.</p>
 <p><span class="math display">\[
@@ -2144,14 +2281,20 @@ f(x,\,y)=\sum_{i=1}^n x_i y_i&amp;=\lambda p \sum_{i=1}^n x_i^p =\lambda p\\
 &amp; =\mu q\sum_{i=1}^n y_i^q = \mu q
 \end{aligned}
 \]</span></p>
-<p>이므로 (1) 로부터 <span class="math inline">\(\lambda p = \mu q=1\)</span> 이므로 <span class="math inline">\(f(x,\,y)=1\)</span> 은 극값이다. <span class="math inline">\(x=\mathbf{e}_1,\, y=\mathbf{e}_2\)</span> 라 하면 <span class="math inline">\(x \cdot y = 0\)</span> 이며 <span class="math inline">\(g_1,\,g_2\)</span> 를 만족하므로 <span class="math inline">\(f(x,\,y)\)</span> 의 최대값은 <span class="math inline">\(1\)</span> 이다. 즉 <span class="math inline">\(f(x,\,y)\le 1\)</span> 이다. 이제 <span class="math inline">\(x_i = \dfrac{|a_i|}{(\sum |a_i|^p)^{1/p}},\, y_i =\dfrac{|b_i|}{\sum (|b_i| ^q)^{1/q}}\)</span> 라 하면</p>
+<p>이므로 (1) 로부터 <span class="math inline">\(\lambda p = \mu q=1\)</span> 이므로 <span class="math inline">\(f(x,\,y)=1\)</span> 은 극값이다. <span class="math inline">\(x=\boldsymbol{e}_1,\, y=\boldsymbol{e}_2\)</span> 라 하면 <span class="math inline">\(x \cdot y = 0\)</span> 이며 <span class="math inline">\(g_1,\,g_2\)</span> 를 만족하므로 <span class="math inline">\(f(x,\,y)\)</span> 의 최대값은 <span class="math inline">\(1\)</span> 이다. 즉 <span class="math inline">\(f(x,\,y)\le 1\)</span> 이다. 이제 <span class="math inline">\(x_i = \dfrac{|a_i|}{(\sum |a_i|^p)^{1/p}},\, y_i =\dfrac{|b_i|}{\sum (|b_i| ^q)^{1/q}}\)</span> 라 하면</p>
 <p><span class="math display">\[
 |a \cdot b| = \left|\sum a_i b_i \right|\le \sum |a_i||b_i| \le \left(|a_1|^p+ \cdots + |a_n|^p\right)^{1/p} \left(|b_1|^q+ \cdots + |b_n|^q\right)^{1/q}
 \]</span></p>
 <p>이다.</p>
 </div>
-<p><br></p>
-<p><strong>5.</strong> 함수 <span class="math inline">\(L(x,\,y,\,z)\)</span> 에 대하여 공간 <span class="math inline">\(\mathcal{F}=\{ f\in \mathcal{C}^1[a,\,b] \mid f(a)=y_a,\, f(b)=y_b\}\)</span> 에서 정의된 범함수</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_S05" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.54 (SNU 탐구문제 11.5)</strong></span> 함수 <span class="math inline">\(L(x,\,y,\,z)\)</span> 에 대하여 공간</p>
+<p><span class="math display">\[
+\mathcal{F}=\{ f\in \mathcal{C}^1[a,\,b] \mid f(a)=y_a,\, f(b)=y_b\}
+\]</span></p>
+<p>에서 정의된 범함수</p>
 <p><span class="math display">\[
 \mathcal{L}(f) :=\int_a^b L(u,\,f(u),\, f'(u))\, du
 \]</span></p>
@@ -2160,6 +2303,8 @@ f(x,\,y)=\sum_{i=1}^n x_i y_i&amp;=\lambda p \sum_{i=1}^n x_i^p =\lambda p\\
 D_2 L(u,\, f(u),\, f'(u))=\dfrac{d}{du} D_3 L(u,\, f(u),\, f'(u))
 \]</span></p>
 <p>임을 보이라.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span>임의의 일급 함수</p>
 <p><span class="math display">\[
@@ -2189,8 +2334,12 @@ g(t) := \int_a^b L{\big (}u,\, f(u)+th(u),\, f'(u)+th'(u) {\big )} \, du
 D_2 L(u,\, f(u),\, f'(u)) - \dfrac{d}{du}D_3L(u,\, f(u),\, f'(u)=0
 \]</span> 이다.</p>
 </div>
-<p><br></p>
-<p><strong>6.</strong> 최단강하선 문제에서 <span class="math inline">\(f\)</span> 가 직선이거나 원호이면 걸리는 시간은 얼마인가.</p>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CAL_11_S06" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 11.55 (SNU 탐구문제 11.6)</strong></span> 최단강하선 문제에서 <span class="math inline">\(f\)</span> 가 직선이거나 원호이면 걸리는 시간은 얼마인가.</p>
+</div>
+</div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\((0,\,0) \to (a,\, b)\)</span> where <span class="math inline">\(a&gt;0,\, b&lt;0\)</span> 까지의 경로가 <span class="math inline">\(y=f(x)\)</span> 를 따를 때 걸리는 시간 <span class="math inline">\(T\)</span> 는</p>
 <p><span class="math display">\[
@@ -2272,14 +2421,13 @@ T_{circ} &amp;= \int_0^a \dfrac{\sqrt{1+ \dfrac{(x-c)^2}{c^2+d^2-(x-c)^2}}}{\sqr
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

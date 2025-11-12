@@ -10,11 +10,19 @@ crossref:
 
 ## 연습문제 : 제 11 장 1 절
 
-**1.** $x>0$ 일 때 다음 미분을 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_11_1_1}
+
+#### SNU 11.1.1
 
 $$
 \dfrac{d}{dx} \int_{x^2}^{x^3} \dfrac{1}{y} e^{xy^2} \, dy
 $$
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -44,16 +52,24 @@ $$
 
 :::
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-</br>
+::: {#exr-CAL_11_1_2} 
 
-**2.** 일급함수 $a(x),\, b(x),\, g(x,\,y)$ 에 대하여
+#### SNU 11.1.2 
+
+일급함수 $a(x),\, b(x),\, g(x,\,y)$ 에 대하여
+
 
 $$
 \dfrac{d}{dx} \int_{a(x)}^{b(x)} g(x,\,y)\, dy = g(x,\,b(x))b'(x)-g(x,\,a(x))a'(x)+\int_{a(x)}^{b(x)}D_1g(x,\,y)\, dy
 $$
 
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -77,9 +93,9 @@ $$
 
 $$
 \begin{aligned}
-\dfrac{d}{dx} \int_{a(x)}^{b(x)}g(x,\,y)dy &= \dfrac{d}{dx} \left[F(x,\,b(x))-F(x,\,a(x)\right] \\
-&= D_1F(x,\,b(x)) +D_2F(x,\, b(x))b'(x)-D_1F(x,\,a(x))-D_2F(x,\,a(x))a'(x) \\
-&=g(x,\,b(x))b'(x)-g(x,\,a(x))a;(x)+\int_{a(x)}^{b(x)} D_1 g(x,\,y)\, dy
+\dfrac{d}{dx} &\int_{a(x)}^{b(x)}g(x,\,y)dy = \dfrac{d}{dx} \left[F(x,\,b(x))-F(x,\,a(x)\right] \\
+&= D_1F(x,\,b(x)) +D_2F(x,\, b(x))b'(x) - D_1F(x,\,a(x))-D_2F(x,\,a(x))a'(x) \\
+&=g(x,\,b(x))b'(x)-g(x,\,a(x))a'(x) +\int_{a(x)}^{b(x)} D_1 g(x,\,y)\, dy
 \end{aligned}
 $$
 
@@ -87,15 +103,23 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** $k<1$ 일 때 함수
+::: {#exr-CAL_11_1_3} 
+
+#### SNU 11.1.3 $
+
+$k<1$ 일 때 함수
 
 $$
 f(k):=\int_0^{\pi/2} \dfrac{dx}{\sqrt{1-k\cos^2x}}
 $$
 
 는 $k$ 에 대한 증가함수 임을 보이라. 또 $k=0$ 일 때의 순간변화율은 얼마인가?
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -114,9 +138,13 @@ $$
 $$
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**4.** 좌표평면에서 호의 길이로 매개화된 이급 곡선
+::: {#exr-CAL_11_1_4} 
+
+#### SNU 11.1.4 
+
+좌표평면에서 호의 길이로 매개화된 이급 곡선
 
 $$
 C(s),\qquad s_0\le s \le s_1
@@ -125,25 +153,25 @@ $$
 에 대하여 단위 접벡터를
 
 $$
-\mathbf{t}(s) : =C'(s)
+\bf{t}(s) : =C'(s)
 $$
 
 로 두면 이 곡선의 각 점에서 곡률은
 
 $$
-\kappa (x) := |\mathbf{t}'(s)|
+\kappa (x) := |\bf{t}'(s)|
 $$
 
 로 주어진다. 이때 곡선  $C(s)$ 를 단위법벡터
 
 $$
-\mathbf{n}(s) := -\dfrac{\mathbf{t}'(s)}{\kappa(s)}
+\bf{n}(s) := -\dfrac{\bf{t}'(s)}{\kappa(s)}
 $$
 
 방향으로 $u$ 만큼 이동한 곡선의 식은
 
 $$
-C_u(s):=C(s)+u\mathbf{n}(s),\qquad s_0\le s\le s_1
+C_u(s):=C(s)+u\bf{n}(s),\qquad s_0\le s\le s_1
 $$
 
 이다. 곡선 $ C_u$ 의 길이를
@@ -154,9 +182,9 @@ $$
 
 라 하자.
 
-(1) $\mathbf{n}'(s)=\kappa (s) \mathbf{t}(s)$ 임을 보이라.
+($1$) $\bf{n}'(s)=\kappa (s) \bf{t}(s)$ 임을 보이라.
 
-(2) $|u|\ll 1$ 이면 $L(u)$ 의 순간변화율은 처음 주어진 곡선의 전곡률 임을, 즉
+($2$) $|u|\ll 1$ 이면 $L(u)$ 의 순간변화율은 처음 주어진 곡선의 전곡률 임을, 즉
 
 $$
 L'(u)=\int_{s_0}^{s_1}\kappa (s)\, ds
@@ -164,50 +192,57 @@ $$
 
 를 보이라.
 
-(3)  만약 처음에 주어진 곡선 $C$ 가 타원이면  $L'(0)$ 의 값은 얼마인가?
+($3$)  만약 처음에 주어진 곡선 $C$ 가 타원이면  $L'(0)$ 의 값은 얼마인가?
+
+:::
+
+</div>
 
 ::: {.solution}
 
-(1)  $|\mathbf{t}(s)|=1,\,|\mathbf{n}(s) |=1$​ 이다. 이로부터,
+($1$)  $|\bf{t}(s)|=1,\,|\bf{n}(s) |=1$​ 이다. 이로부터,
 
 $$
 \begin{aligned}
-\dfrac{d}{ds}\left|\mathbf{t}(s)\right|^2 &=0 \implies \mathbf{t}(s) \cdot \mathbf{t}'(s)=0 \\
-\dfrac{d}{ds}\left|\mathbf{n}(s)\right|^2 &=0 \implies \mathbf{n}(s) \cdot \mathbf{n}'(s)=0
+\dfrac{d}{ds}\left|\bf{t}(s)\right|^2 &=0 \implies \bf{t}(s) \cdot \bf{t}'(s)=0 \\
+\dfrac{d}{ds}\left|\bf{n}(s)\right|^2 &=0 \implies \bf{n}(s) \cdot \bf{n}'(s)=0
 \end{aligned}
 $$
 
-좌표평면이므로 2차원이고, $\mathbf{n}(s) \propto \mathbf{t}'(s)$ 이므로, $\mathbf{n}'(s) \propto \mathbf{t}(s)$ 이다. 따라서 어떤 스칼라 함수 $ f(s)$ 에 대해
+좌표평면이므로 2차원이고, $\bf{n}(s) \propto \bf{t}'(s)$ 이므로, $\bf{n}'(s) \propto \bf{t}(s)$ 이다. 따라서 어떤 스칼라 함수 $f(s)$ 에 대해
 
 $$
-\mathbf{n}'(s) =f(s)\mathbf{t}(s) \tag{1}
+\bf{n}'(s) =f(s)\bf{t}(s) \tag{1}
 $$
 
-이다. 또한, $\mathbf{n}(s) \cdot \mathbf{t}(s)=0$ 이므로,
+이다. 또한, $\bf{n}(s) \cdot \bf{t}(s)=0$ 이므로,
 
 $$
 \begin{aligned}
-\mathbf{n}'(s)\cdot \mathbf{t}(s) &=\left(\mathbf{n}(s) \cdot \mathbf{t}(s)\right)'-\mathbf{n}(s)\cdot \mathbf{t'(s)} =0-(-\kappa(s))=\kappa(s)
+\bf{n}'(s)\cdot \bf{t}(s) &=\left(\bf{n}(s) \cdot \bf{t}(s)\right)'-\bf{n}(s)\cdot \bf{t'(s)} =0-(-\kappa(s))=\kappa(s)
 \end{aligned}
 $$
 
-이며, (1) 로 부터,
+이며, ($1$) 로 부터,
 
 $$
-\mathbf{n'}(s)\cdot \mathbf{t}(s) = f(s) |\mathbf{t}(s)|^2=f(s)
+\bf{n'}(s)\cdot \bf{t}(s) = f(s) |\bf{t}(s)|^2=f(s)
 $$
 
 이므로 $f(s)=\kappa (s)$ 이다. 즉,
 
 $$
-\mathbf{n}'(s) = \kappa (s) \mathbf{t}(s)
+\bf{n}'(s) = \kappa (s) \bf{t}(s)
 $$
 
 이다.
 
-(2)
+($2$)
 $$
-|C'_u(s)| = |C'(s)+u\mathbf{n'(s)}|=|\mathbf{t}(s)+u\kappa(s)\mathbf{t}(s)|=|\mathbf{t}(s)|\cdot |1+u\kappa(s)|=|1+u\kappa(s)|
+\begin{aligned}
+|C'_u(s)| &= |C'(s)+u\bf{n'(s)}|=|\bf{t}(s)+u\kappa(s)\bf{t}(s)| \\[0.3em]
+&=|\bf{t}(s)|\cdot |1+u\kappa(s)|=|1+u\kappa(s)|
+\end{aligned}
 $$
 
 이다 .$|u|\ll 1$​ 이면  $1+u\kappa(s)>0$​ 이므로,
@@ -221,7 +256,7 @@ $$
 
 이다.
 
-(3) 타원 $X(t) = (a \cos t,\, b \sin t)$ where $0 \le t \le 2\pi$ 라 하자. 호의 길이 $s$ 로 매개화 하면,
+($3$) 타원 $X(t) = (a \cos t,\, b \sin t)$ where $0 \le t \le 2\pi$ 라 하자. 호의 길이 $s$ 로 매개화 하면,
 
 $$
 s(t) = \int_0^t |X' (t') |\, dt' = \sqrt{a^2 \sin ^2 t' + b^2 \cos ^2 t'}\, dt'
@@ -282,24 +317,32 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**1.** 다음 함수에서 $D_1D_2 f= D_2 D_1 f$ 가 성립하는가를 조사하라.
+::: {#exr-CAL_11_2_1} 
+
+#### SNU 11.2.1 
+
+다음 함수에서 $D_1D_2 f= D_2 D_1 f$ 가 성립하는가를 조사하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
-(1) $2x^2y^3 -x^3y^5$
+($1$) $2x^2y^3 -x^3y^5$
 
 $$
 \begin{aligned}
-D_1 D_2 f(x,\,y) &= D_1(6x^2y^2-5x^3y^4)=12xy^2-15x^2y^4 \\
-D_2 D_1 f(x,\,y) &= D_2 (4xy^3-3x^2y^5) = 12xy^2-15x^2y^5
+D_1 D_2 f(x,\,y) &= D_1(6x^2y^2-5x^3y^4)=12xy^2-15x^2y^4, \\
+D_2 D_1 f(x,\,y) &= D_2 (4xy^3-3x^2y^5) = 12xy^2-15x^2y^5.
 \end{aligned}
 $$
 
-따라서 $D_1D_2f=D_2D_1f$ 가 성립한다.
+따라서 $D_1 D_2 f = D_2 D_1 f$ 가 성립한다.
 
-(2) $\cos^7 x - \sin ^2 y$
+($2$) $\cos^7 x - \sin ^2 y$
 
 $$
 \begin{aligned}
@@ -310,7 +353,7 @@ $$
 
 따라서 $D_1D_2f=D_2D_1f$ 가 성립한다.
 
-(3) $\arctan(x y)$
+($3$) $\arctan(x y)$
 
 $$
 \begin{aligned}
@@ -321,7 +364,7 @@ $$
 
 따라서 $D_1D_2f=D_2D_1f$ 가 성립한다.
 
-(4) $\ln \dfrac{x-1}{y+1}$
+($4$) $\ln \dfrac{x-1}{y+1}$
 
 $$
 \begin{aligned}
@@ -330,10 +373,18 @@ D_1D_2f(x,\,y) = D_2D_1f(x,\,y)=0
 $$
 
 :::
-</br>
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** 함수 $f(x,\,y)=xy^2+ye^{-x}\sin (x-y)$ 의 모든 이계편도함수를 구하라.
+::: {#exr-CAL_11_2_2} 
+
+#### SNU 11.2.2 
+
+함수 $f(x,\,y)=xy^2+ye^{-x}\sin (x-y)$ 의 모든 이계편도함수를 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -354,13 +405,21 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** $z=\sin (x+ct)+\cos (2x+2ct)$ 일때
+::: {#exr-CAL_11_2_3} 
+
+#### SNU 11.2.3 
+
+$z=\sin (x+ct)+\cos (2x+2ct)$ 일때
 $$
 \dfrac{\partial^2z}{\partial t^2}=c^2 \dfrac{\partial^2z}{\partial x^2}
 $$
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -376,46 +435,71 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CAL_11_2_4} 
 
-**4.** 이급함수 $f(x,\,y)$ 는 정의역의 각 점에서 임의의 벡터 $\mathbf{v}$ 에 대하여 $\mathbf{v}$ 방향 이계미분계수와 $(-\mathbf{v})$ 방향 이계미분계수가 같은가?
+#### SNU 11.2.4 
 
-::: {.solution}
-
-Let $\mathbf{v}=(a,\,b)$ Then,
-
-$$
-{D_{(a,\,b)}}^2f(x,\,y)=a^2{D_1}^2f(x,\,y)+2abD_2D_2f(x,\,y)+b^2{D_2}^2f(x,\,y) ={D_{(-a,\,-b)}}^2f(x,\,y)
-$$
+이급함수 $f(x,\,y)$ 는 정의역의 각 점에서 임의의 벡터 $\bf{v}$ 에 대하여 $\bf{v}$ 방향 이계미분계수와 $(-\bf{v})$ 방향 이계미분계수가 같은가?
 
 :::
 
-</br>
-
-
-**5.** 원점 근방에서 정의된 삼급함수 $f(x,\,y)$ 가 원점에서 $\mathbf{v}$-방향 이계미분계수가 $1$ 이라고 하자. 이 때 $2\mathbf{v}$-방향 이계미분계수는 얼마인가? 또 $f(x,\,y)$ 가 원점에서 $\mathbf{v}$-방향 삼계미분계수가 $1$ 이면 $2\mathbf{v}$-방향 삼계미분계수는 얼마인가?
+</div>
 
 ::: {.solution}
 
+Let $\bf{v}=(a,\,b)$ Then,
+
 $$
 \begin{aligned}
-D_{2\mathbf{v}} f &= 2\mathbf{v} \cdot \nabla f=2D_{\mathbf{v}}f\\
-{D_{2\mathbf{v}}}^2 & f= 2\mathbf{v} \cdot \nabla (2\mathbf{v} \cdot \nabla f) =4{D_{\mathbf{v}}}^2f \\
-{D_{2\mathbf{v}}}^3 &f = 8 {D_{\mathbf{v}}}^3f
+{D_{(a,\,b)}}^2f(x,\,y) &= a^2{D_1}^2f(x,\,y)+2abD_2D_2f(x,\,y)+b^2{D_2}^2f(x,\,y) \\[0.3em]
+&={D_{(-a,\,-b)}}^2f(x,\,y)
 \end{aligned}
 $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**6.** 곡선 $(x_1(t),\ldots,\, x_n(t))$ 와 함수 $f(x_1,\ldots,\,x_n)$ 에 대하여,
+::: {#exr-CAL_11_2_5} 
+
+#### SNU 11.2.5 
+
+원점 근방에서 정의된 삼급함수 $f(x,\,y)$ 가 원점에서 $\bf{v}$-방향 이계미분계수가 $1$ 이라고 하자. 이 때 $2\bf{v}$-방향 이계미분계수는 얼마인가? 또 $f(x,\,y)$ 가 원점에서 $\bf{v}$-방향 삼계미분계수가 $1$ 이면 $2\bf{v}$-방향 삼계미분계수는 얼마인가?
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+\begin{aligned}
+D_{2\bf{v}} f &= 2\bf{v} \cdot \nabla f=2D_{\bf{v}}f\\
+{D_{2\bf{v}}}^2 & f= 2\bf{v} \cdot \nabla (2\bf{v} \cdot \nabla f) =4{D_{\bf{v}}}^2f \\
+{D_{2\bf{v}}}^3 &f = 8 {D_{\bf{v}}}^3f
+\end{aligned}
+$$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_11_2_6} 
+
+#### SNU 11.2.6 
+
+곡선 $(x_1(t),\ldots,\, x_n(t))$ 와 함수 $f(x_1,\ldots,\,x_n)$ 에 대하여,
 
 $$
 \dfrac{d^2}{dt^2} f(x_1,\ldots,\,x_n) = \sum_{i,\,j=1}^n \dfrac{\partial^2 f}{\partial x_i \partial x_j} \dfrac{dx_i}{dt} \dfrac{dx_j}{dt}+ \sum_{k=1}^n \dfrac{\partial f}{\partial x_k} \dfrac{d ^2 x_k}{dt^2}
 $$
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 $$
@@ -428,10 +512,13 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CAL_11_2_7} 
 
-**7.** $n$-공간에서 미분작용소
+#### SNU 11.2.7 
+
+$n$-공간에서 미분작용소
 
 $$
 \nabla^2 := {D_1}^2 + \cdots + {D_n}^2
@@ -444,6 +531,10 @@ $$
 $$
 
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -468,19 +559,27 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**8.** 라플라스 방정식 $\nabla^2 f$ 를 만족시키는 함수를 **조화함수**라고 한다. 다음 함수들이 조화함수임을 보이라.
+::: {#exr-CAL_11_2_8} 
+
+#### SNU 11.2.8
+
+라플라스 방정식 $\nabla^2 f$ 를 만족시키는 함수를 **조화함수**라고 한다. 다음 함수들이 조화함수임을 보이라.
+
+:::
+
+</div>
 
 ::: {.soluition}
 
-(1) $f(x,\,y) = \ln (x^2+y^2)$
+($1$) $f(x,\,y) = \ln (x^2+y^2)$
 
 $$
 \nabla^2 \ln (r^2) = 2 \nabla^2 \ln r = 2\left( {\partial_r}^2+\dfrac{1}{r}\partial_r\right)\ln r = 2\left(\dfrac{1}{r^2}-\dfrac{1}{r^2}\right)=0
 $$
 
-(2) $f(x,\,y)=e^x \sin y$
+($2$) $f(x,\,y)=e^x \sin y$
 
 $$
 \begin{aligned}
@@ -491,7 +590,7 @@ $$
 \end{aligned}
 $$
 
-(3) $f(x,\,y,\,z) = x^2+y^2-2z^2$
+($3$) $f(x,\,y,\,z) = x^2+y^2-2z^2$
 $$
 \begin{aligned}
 {\partial_x}^2 f&=2\\
@@ -500,7 +599,7 @@ $$
 \end{aligned}
 $$
 
-(4) $f(x,\,y,\,z)=1/\sqrt{x^2+y^2+z^2}$
+($4$) $f(x,\,y,\,z)=1/\sqrt{x^2+y^2+z^2}$
 $$
 \begin{aligned}
 \partial_x f &= \dfrac{-x}{(x^2+y^2+z^2)^{3/2}} \\
@@ -512,10 +611,17 @@ $$
 
 :::
 
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-</br>
+::: {#exr-CAL_11_2_9} 
 
-**9.** $ \left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2$ 과 $\left(\dfrac{\partial}{\partial x}\right)^2 + 2x \dfrac{\partial^2}{\partial x \partial y}+   x^2\left(\dfrac{\partial}{\partial y}\right)^2$ 는 같지 않음을 보이라.
+#### SNU 11.2.9
+
+$\left(\dfrac{\partial}{\partial x} + x \dfrac{\partial}{\partial y}\right)^2$ 과 $\left(\dfrac{\partial}{\partial x}\right)^2 + 2x \dfrac{\partial^2}{\partial x \partial y}+   x^2\left(\dfrac{\partial}{\partial y}\right)^2$ 는 같지 않음을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -528,10 +634,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CAL_11_2_10} 
 
-**10.** 함수 $f(x,\,y) = \ln (1+xy)$ 에서 ${D_{\mathbf{v}}}^2 f,\, {D_{\mathbf{v}}}^3f $ 를 구하라. 그리고 점 $(1,\,1)$ 에서 $\mathbf{v}=(1,\,2)$ 방향으로 볼록인지 또는 오목인지 조사하라.
+#### SNU 11.2.10
+
+함수 $f(x,\,y) = \ln (1+xy)$ 에서 ${D_{\bf{v}}}^2 f,\, {D_{\bf{v}}}^3f$ 를 구하라. 그리고 점 $(1,\,1)$ 에서 $\bf{v}=(1,\,2)$ 방향으로 볼록인지 또는 오목인지 조사하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -549,13 +662,13 @@ D_1D_2 f &= \dfrac{1+xy-xy}{(1+xy)^2}=\dfrac{1}{(1+xy)^2}=D_2D_1 f \\
 \end{aligned}
 $$
 
-이다. $\mathbf{v}=(a,\,b)$ 라 하면,
+이다. $\bf{v}=(a,\,b)$ 라 하면,
 
 $$
 {D_{(a,\,b)}}^2 f=a^2{D_1}^2 f + 2abD_1D_2 f + b^2D_2f=-\dfrac{1}{4}<0
 $$
 
-이므로 $(1,\,1)$ 에서 $\mathbf{v}=(1,\,2)$ 방향으로 오목이다. 그리고 ${D_{(a,\,b)}}^3 f$ 는,
+이므로 $(1,\,1)$ 에서 $\bf{v}=(1,\,2)$ 방향으로 오목이다. 그리고 ${D_{(a,\,b)}}^3 f$ 는,
 
 $$
 \begin{aligned}
@@ -568,15 +681,19 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**11.**  좌표평면에서 정의된 연속함수
+::: {#exr-CAL_11_2_11} 
+
+#### SNU 11.2.11 
+
+좌표평면에서 정의된 연속함수
 
 $$
 f(x,\,y) = \left\{\begin{array}{ll} \dfrac{xy(x^2-y^2)}{x^2+y^2} ,\qquad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )=(0,\,0)  \end{array} \right.
 $$
 
-를 생각하자. 이때 임의의 벡터 $\mathbf{v}$ 에 대하여 $D_{\mathbf{v}} f(0,\,0)=0$ 임을 보이라. 또 원점에서 $\dfrac{\partial^2 f}{\partial x \partial y}$ 와 $\dfrac{\partial^2 f}{\partial y \partial x}$ 가 존재하지만,
+를 생각하자. 이때 임의의 벡터 $\bf{v}$ 에 대하여 $D_{\bf{v}} f(0,\,0)=0$ 임을 보이라. 또 원점에서 $\dfrac{\partial^2 f}{\partial x \partial y}$ 와 $\dfrac{\partial^2 f}{\partial y \partial x}$ 가 존재하지만,
 
 $$
 \dfrac{\partial^2 f}{\partial x \partial y} (0,\,0) \ne \dfrac{\partial^2 f}{\partial y \partial x} (0,\,0)
@@ -584,9 +701,13 @@ $$
 
 임을 보이라. 이때 왜 오일러의 편미분 교환법칙 (2.0.2) 가 성립하지 않는 지를 설명하라.
 
+:::
+
+</div>
+
 ::: {.solution}
 
-$\mathbf{v}=(a,\,b)$ 라 하면,
+$\bf{v}=(a,\,b)$ 라 하면,
 
 $$
 \begin{aligned}
@@ -594,7 +715,7 @@ D_{(a,\,b)} f(0,\,0) = \lim_{t\to 0}\dfrac{f(at,\,bt)-f(0,\,0)}{t} = \lim_{t \to
 \end{aligned}
 $$
 
-이므로 임의의 벡터 $\mathbf{v}$ 에 대하여 $D_{\mathbf{v}}f(0,\,0)=0$ 이다. 우선
+이므로 임의의 벡터 $\bf{v}$ 에 대하여 $D_{\bf{v}}f(0,\,0)=0$ 이다. 우선
 
 $$
 \begin{aligned}
@@ -661,44 +782,60 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**12.** $n$-공간의 한 열린집합 $U$ 에서 정의된 무한급함수 전체의 집합을 $C^\infty(U)$ 라고 두자. 그러면 임의의 두 벡터 $\mathbf{v},\,\mathbf{w}$ 에 대하여 방향미분작용소
+::: {#exr-CAL_11_2_12} 
+
+#### SNU 11.2.12
+
+$n$-공간의 한 열린집합 $U$ 에서 정의된 무한급함수 전체의 집합을 $C^\infty(U)$ 라고 두자. 그러면 임의의 두 벡터 $\bf{v},\,\bf{w}$ 에 대하여 방향미분작용소
 $$
-D_{\mathbf{v}},\, D_{\mathbf{w}}: C^{\infty} (U)\to C^{\infty}(U)
+D_{\bf{v}},\, D_{\bf{w}}: C^{\infty} (U)\to C^{\infty}(U)
 $$
 들은 서로 교환가능함, 즉
 $$
-D_{\mathbf{v}}\circ D_{\mathbf{w}}=D_{\mathbf{w}}\circ D_{\mathbf{v}}
+D_{\bf{v}}\circ D_{\bf{w}}=D_{\bf{w}}\circ D_{\bf{v}}
 $$
 임을 보이라.
 
+:::
+
+</div>
+
 ::: {.solution}
 
-$\mathbf{v}=(v_1,\ldots,\,v_n),\, \mathbf{w}=(w_1,\ldots,\,w_n)$ 이라 하자.
+$\bf{v}=(v_1,\ldots,\,v_n),\, \bf{w}=(w_1,\ldots,\,w_n)$ 이라 하자.
 
 $$
 \begin{aligned}
-(D_{\mathbf{v}}\circ D_{\mathbf{w})}f &= D_{\mathbf{v}} \left(\sum_{i=1}^n w_i \partial_i f \right) \\
+(D_{\bf{v}}\circ D_{\bf{w})}f &= D_{\bf{v}} \left(\sum_{i=1}^n w_i \partial_i f \right) \\
 &= \sum_{j=1}^n v_j \partial_j \left(\sum_{i=1}^n w_i \partial_i f\right) \\
 &= \sum_{i,\,j=1}^n w_i v_j\partial_j \partial_i f \\
 &= \sum_{i,\,j=1}^n w_i v_j \partial_i \partial_j f\\
 &= \sum_{i=1}^n w_i \partial_i \left(\sum_{j=1}^n v_j \partial_j f\right) \\
-&= (D_{\mathbf{w}}\circ D_{\mathbf{v}})f
+&= (D_{\bf{w}}\circ D_{\bf{v}})f
 \end{aligned}
 $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**13.** 함수 $f(x_1,\ldots,\, x_n)$ 이 $k$ 급 함수이면, 임의의 벡터 $\mathbf{v} = \sum_{i=1}^n v_i \mathbf{e}_i$ 에 대하여
+::: {#exr-CAL_11_2_13} 
+
+#### SNU 11.2.13 
+
+함수 $f(x_1,\ldots,\, x_n)$ 이 $k$ 급 함수이면, 임의의 벡터 $\bf{v} = \sum_{i=1}^n v_i \bf{e}_i$ 에 대하여
 
 $$
-{D_{\mathbf{v}}}^k f = \sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k}D_{i_1}\cdots D_{i_k}f
+{D_{\bf{v}}}^k f = \sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k}D_{i_1}\cdots D_{i_k}f
 $$
 
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -706,8 +843,8 @@ Induction 을 통해 증명하자. $k=1$ 일 때는 자명하다. 이제 $k$ 에
 
 $$
 \begin{aligned}
-{D_{\mathbf{v}}}^{k+1} f &= D_{\mathbf{v}}\left(D_{\mathbf{v}}^k\right)f\\
-&= D_{\mathbf{v}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right) \\
+{D_{\bf{v}}}^{k+1} f &= D_{\bf{v}}\left(D_{\bf{v}}^k\right)f\\
+&= D_{\bf{v}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right) \\
 &= \sum_{i_{k+1}=1}^n v_{i_{k+1}} D_{i_{k+1}}\left(\sum_{i_1,\ldots,\,i_k=1}^n v_{i_1}\cdots v_{i_k} D_{i_1}\cdots D_{i_k} f\right)\\
 &= \sum_{i_1,\ldots,\,i_{k+1}=1}^n \left( v_{i_1}\cdots v_{i_{k+1}} D_{i_1}\cdots D_{i_{k+1}} f\right)
 \end{aligned}
@@ -721,25 +858,25 @@ $$
 
 ## 정리 3.0.3  다변수 함수의 테일러 전개
 
-$n$-공간의 열린 집합 $U$ 에서 정의된 $k$-번 미분가능한 함수 $f$ 가 주어졌다고 하자. 이 때 $U$ 의 한 점 $P$ 와 벡터 $\mathbf{v}$ 에 대하여 선분 $[P,\, P+\mathbf{v}] : = \{P+t\mathbf{v}: 0\le t \le 1\}$ 이 $U$에 포함된다고 하자. 그러면
+$n$-공간의 열린 집합 $U$ 에서 정의된 $k$-번 미분가능한 함수 $f$ 가 주어졌다고 하자. 이 때 $U$ 의 한 점 $P$ 와 벡터 $\bf{v}$ 에 대하여 선분 $[P,\, P+\bf{v}] : = \{P+t\bf{v}: 0\le t \le 1\}$ 이 $U$에 포함된다고 하자. 그러면
 $$
-f(P+\mathbf{v})=f(P)+D_{\mathbf{v}}f(P)+ \dfrac{1}{2!}{D_{\mathbf{v}}}^2 f{P}+ \cdots \dfrac{1}{(k-1)!}{D_{\mathbf{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\mathbf{v}}}^k f(P+t^\ast \mathbf{v})
+f(P+\bf{v})=f(P)+D_{\bf{v}}f(P)+ \dfrac{1}{2!}{D_{\bf{v}}}^2 f{P}+ \cdots \dfrac{1}{(k-1)!}{D_{\bf{v}}}^{k-1}f(P)+ \dfrac{1}{k!} {D_{\bf{v}}}^k f(P+t^\ast \bf{v})
 $$
 를 만족시키는 $t^\ast$ 가 $0$ 과 $1$ 사이에 존재한다.
 
 
 ::: {.proof}
 
-함수 $g(t):=f(P+t\mathbf{v})$ 에 대하여
+함수 $g(t):=f(P+t\bf{v})$ 에 대하여
 
 $$
-g^{(i)}(t) = {D_{\mathbf{v}}}^i f(P+t\mathbf{v})
+g^{(i)}(t) = {D_{\bf{v}}}^i f(P+t\bf{v})
 $$
 
 임을 귀납법으로 보이자. $i=0$ 일 때는 자명하며, $i$ 에서 성립한다고 가정하면,
 
 $$
-g^{(i+1)}(t) = \dfrac{d}{dt} g^{(i)}(t) = \dfrac{d}{dt} \left( {D_{\mathbf{v}}}^i f(P+t\mathbf{v}) \right) = {D_{\mathbf{v}}}^{i+1}(P+t\mathbf{v})
+g^{(i+1)}(t) = \dfrac{d}{dt} g^{(i)}(t) = \dfrac{d}{dt} \left( {D_{\bf{v}}}^i f(P+t\bf{v}) \right) = {D_{\bf{v}}}^{i+1}(P+t\bf{v})
 $$
 
 이다. 이제, $g(t)$ 의 일변수 테일러전개를 이용하고자 한다,
@@ -752,35 +889,33 @@ $$
 
 :::
 
-
 </br>
 
 ### 정리 3.2.2 테일러 전개의 유일성
 
-$n$ 공간의 한 점 $P$ 근방에서 정의된 $k$ 번 미분가능한 함수 $f$ 와 $g$ 에 대하여, $\mathbf{x}$ 에 대한 함수 $f(P+\mathbf{x})$ 와 $g(P+\mathbf{x})$ 의 차가 $o(|\mathbf{x}|^k)$ 이면
+$n$ 공간의 한 점 $P$ 근방에서 정의된 $k$ 번 미분가능한 함수 $f$ 와 $g$ 에 대하여, $\bf{x}$ 에 대한 함수 $f(P+\bf{x})$ 와 $g(P+\bf{x})$ 의 차가 $o(|\bf{x}|^k)$ 이면
 $$
-T_k f(P,\,\mathbf{x})=T_k g(P,\,\mathbf{x})
+T_k f(P,\,\bf{x})=T_k g(P,\,\bf{x})
 $$
 이다.
 
 ::: {.proof}
 
-
 $$
-f(P+\mathbf{x})=T_k f(P,\,\mathbf{x})+o\left( |\mathbf{x}|^k
-\right),\qquad g(P+\mathbf{x})=T_k g(P,\,\mathbf{x})+o\left( |\mathbf{x}|^k \right)
+f(P+\bf{x})=T_k f(P,\,\bf{x})+o\left( |\bf{x}|^k
+\right),\qquad g(P+\bf{x})=T_k g(P,\,\bf{x})+o\left( |\bf{x}|^k \right)
 $$
 
 에서 두 식의 차는,
 
 $$
-f(P+\mathbf{x})-g(P+\mathbf{x})=T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})+o \left(|\mathbf{x}|^k\right)=o(|\mathbf{x}|^k)
+f(P+\bf{x})-g(P+\bf{x})=T_k f(P,\,\bf{x})-T_k g(P,\,\bf{x})+o \left(|\bf{x}|^k\right)=o(|\bf{x}|^k)
 $$
 
 이므로,
 
 $$
-T_k f(P,\,\mathbf{x})-T_k g(P,\,\mathbf{x})=o\left( |\mathbf{x}|^k\right)
+T_k f(P,\,\bf{x})-T_k g(P,\,\bf{x})=o\left( |\bf{x}|^k\right)
 $$
 
 이다. 위 식의 좌변은 차수가 $k$ 이하인 다항함수 이며 우변은 $k$ 차보다 큰 다항식이므로 항등식에 의해 $0$ 이다.
@@ -792,12 +927,23 @@ $\square$
 
 ## 연습문제 : 제 11 장 3 절
 
-**1.** 원점에서 다음 함수의 2차 근사 다항식을 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_11_3_1} 
+
+#### SNU 11.3.1
+
+원점에서 다음 함수의 2차 근사 다항식을 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
 문제에 주어진 함수를 $f(x,\,y)$ 라 하자.
-(1) $\sin (xy)$
+
+($1$) $\sin (xy)$
 
 $$
 \begin{aligned}
@@ -810,7 +956,7 @@ $$
 \end{aligned}
 $$
 
-(2) $\sin x \cos y$
+($2$) $\sin x \cos y$
 $$
 \begin{aligned}
 \partial_x \sin x \cos y &= \cos x \cos y\\
@@ -822,7 +968,7 @@ $$
 \end{aligned}
 $$
 
-(3) $\sin (x^2+y^2)$
+($3$) $\sin (x^2+y^2)$
 $$
 \begin{aligned}
 \partial_x f &= 2x\cos (x^2+y^2)\\
@@ -834,7 +980,7 @@ $$
 \end{aligned}
 $$
 
-(4) $ \sin (e^y+x^2-2)$
+($4$) $ \sin (e^y+x^2-2)$
 $$
 \begin{aligned}
 \partial_x f &= 2x \cos (e^y+x^2-2)\\
@@ -846,7 +992,7 @@ $$
 \end{aligned}
 $$
 
-(5) $\ln (1+xy)$
+($5$) $\ln (1+xy)$
 $$
 \begin{aligned}
 \partial_x f &= \dfrac{y}{1+xy} \\
@@ -858,7 +1004,7 @@ f(x,\,y) &\approx xy
 \end{aligned}
 $$
 
-(6) $x+xy+2y^2+x^2$
+($6$) $x+xy+2y^2+x^2$
 $$
 \begin{aligned}
 \partial_x f &= 1+y+2x \\
@@ -870,7 +1016,7 @@ x+xy+2y^2+x^2 &\approx x+x^2+xy+2y^2
 \end{aligned}
 $$
 
-(7) $e^{x+y}$
+($7$) $e^{x+y}$
 $$
 \begin{aligned}
 \partial_x f &= e^{x+y} \\
@@ -880,7 +1026,8 @@ e^{x+y} &\approx 1+ x+y + \dfrac{x^2}{2}+xy+\dfrac{y^2}{2}
 \end{aligned}
 $$
 
-(8) $e^x-e^y$
+($8$) $e^x-e^y$
+
 $$
 \begin{aligned}
 \partial_x f &= e^x = {\partial_x}^2 f\\
@@ -890,21 +1037,22 @@ e^x-e^y &\approx x-y+\dfrac{1}{2}x^2-\dfrac{1}{2}y^2
 \end{aligned}
 $$
 
-(9) $ \dfrac{1}{1-x^2-y^2}$
+($9$) $\dfrac{1}{1-x^2-y^2}$
+
 $\dfrac{1}{1-x}=1+x+x^2+\cdots$ 이므로,
 $$
 \dfrac{1}{1-x^2-y^2}\approx 1+x^2+y^2
 $$
 이다.
 
-(10) $e^x \tan y$
+($10$) $e^x \tan y$
 $$
 \begin{aligned}
 e^x \tan y &= \left( 1+x+\dfrac{x^2}{2} +o\left( |x|^3 \right)\right)\left(y+o\left(|y|^3\right)\right) \approx y+xy
 \end{aligned}
 $$
 
-(11) $(1+x)^y$
+($11$) $(1+x)^y$
 
 $$
 \begin{aligned}
@@ -917,7 +1065,7 @@ $$
 \end{aligned}
 $$
 
-(12) $\sin e^{xy}$
+($12$) $\sin e^{xy}$
 $$
 \begin{aligned}
 \partial_x f &= ye^{xy} \cos e^{xy} \\
@@ -931,9 +1079,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** 원점에서 함수 $f(x,\,y)=\cos x \sin y$ 의 3차 근사 다항식을 구하라.
+::: {#exr-CAL_11_3_2} 
+
+#### SNU 11.3.2
+
+원점에서 함수 $f(x,\,y)=\cos x \sin y$ 의 3차 근사 다항식을 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -946,13 +1102,21 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** 다음을 보이라.
+::: {#exr-CAL_11_3_2} 
+
+#### SNU 11.3.2 
+
+다음을 보이라.
 
 $$
 \ln (1+x+2y) = x+2y-\dfrac{1}{2}\left(x^2+4xy+4y^2\right) +o (x^2+y^2)
 $$
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -976,15 +1140,23 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**4.**  점 $(x,\,y)$ 가 원점에 가까이 갈 때, $\sin (xy)/x$ 의 극한값은 존재하는가? 존재하면 그 값을 구하라. (분모가 영이 아닌 영역에서만 조사한다.) 또 다음 함수들에 대하여는 어떠한가?
+::: {#exr-CAL_11_3_4} 
+
+#### SNU 11.3.4  
+
+점 $(x,\,y)$ 가 원점에 가까이 갈 때, $\sin (xy)/x$ 의 극한값은 존재하는가? 존재하면 그 값을 구하라. (분모가 영이 아닌 영역에서만 조사한다.) 또 다음 함수들에 대하여는 어떠한가?
+
+:::
+
+</div>
 
 ::: {.solution}
 
 $|\sin xy|<|xy|$ 이므로 $\left| \dfrac{\sin xy}{x}\right| < |y|$ 이다. 따라서 원점으로의 극한은 $0$ 이다.
 
-(1) $\dfrac{e^{xy}-1}{x}$
+($1$) $\dfrac{e^{xy}-1}{x}$
 
 $$
 e^{xy}=1+xy+\dfrac{(xy)^2}{2}+\cdots + \dfrac{(xy)^k}{k!}+\cdots
@@ -998,7 +1170,7 @@ $$
 
 이다. 따라서 원점으로의 극한은 $0$ 이다.
 
-(2) $\dfrac{\ln (1+x^2+y^2)}{x^2+y^2}$​
+($2$) $\dfrac{\ln (1+x^2+y^2)}{x^2+y^2}$​
 
 $x^2+y^2=R^2$ 라 하면,
 
@@ -1014,7 +1186,7 @@ $$
 
 이므로 원점으로의 극한 ($R\to 0$ 극한)에서 극한값은 $1$ 이다.
 
-(3) $\dfrac{\cos xy -1}{x}$
+($3$) $\dfrac{\cos xy -1}{x}$
 
 $$
 \cos xy = 1-\dfrac{x^2y^2}+ o(|(xy)^2|)
@@ -1022,7 +1194,7 @@ $$
 
 이므로 원점 으로의 극한은 $0$ 이다.
 
-(4) $\dfrac{\sin xy - xy}{xy}$
+($4$) $\dfrac{\sin xy - xy}{xy}$
 
 $$
 \sin xy - xy = \dfrac{(xy)^3}{6} + o(|x^3y^3|)
@@ -1032,9 +1204,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**5.** 함수 $x^3-2xy^4+(x-1)^2y^10$ 의 테일러급수에서 제 7차항은 무엇인가?
+::: {#exr-CAL_11_3_5} 
+
+#### SNU 11.3.5 
+
+함수 $x^3-2xy^4+(x-1)^2y^10$ 의 테일러급수에서 제 7차항은 무엇인가?
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1042,9 +1222,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**6.** 함수 $f(x,\,y,\,z)$ 가 $x,\,y,\,z$ 의 다항식이면, $f$ 는 자기 자신의 테일러 급수와 같음을 보이라.
+::: {#exr-CAL_11_3_6} 
+
+#### SNU 11.3.6 
+
+함수 $f(x,\,y,\,z)$ 가 $x,\,y,\,z$ 의 다항식이면, $f$ 는 자기 자신의 테일러 급수와 같음을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1064,9 +1252,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**7.** 함수 $x^2y+xy^2+1$ 을 $(x-1)$ 과 $(y-1)$ 의 멱급수로 표현하라.
+::: {#exr-CAL_11_3_7} 
+
+#### SNU 11.3.7 
+
+함수 $x^2y+xy^2+1$ 을 $(x-1)$ 과 $(y-1)$ 의 멱급수로 표현하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1097,9 +1293,13 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**8.** 이급함수 $f(x,\,y)$ 가 임의의 $(x,\,y)$ 와 실수 $t$ 에 대하여
+::: {#exr-CAL_11_3_8} 
+
+#### SNU 11.3.8
+
+이급함수 $f(x,\,y)$ 가 임의의 $(x,\,y)$ 와 실수 $t$ 에 대하여
 
 $$
 f(tx,\,ty) = t^2 f(x,\,y)
@@ -1113,25 +1313,37 @@ $$
 
 임을 보이라.
 
+:::
+
+</div>
+
 ::: {.solution}
 
-$\mathbf{v}=(x,\,y)$ 로 놓고, 도움정리 2.1.1 을 사용하면
+$\bf{v}=(x,\,y)$ 로 놓고, 도움정리 2.1.1 을 사용하면
 
 $$
-\left.\dfrac{d^2}{dt^2}\right|_{t=0}f(t\mathbf{v}) = {D_{\mathbf{v}}}^2 f(0,\,0) \implies 2f(x,\,y)= (xD_1 +yD_2)^2f(0,\,0)
+\left.\dfrac{d^2}{dt^2}\right|_{t=0}f(t\bf{v}) = {D_{\bf{v}}}^2 f(0,\,0) \implies 2f(x,\,y)= (xD_1 +yD_2)^2f(0,\,0)
 $$
 
 이다.
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**9.** 기준점에서의 값을 $1$ 로 두었을 때 다음의 일차 근사값을 구하고, 또 오차를 생각하라.
+::: {#exr-CAL_11_3_9} 
+
+#### SNU 11.3.9 
+
+기준점에서의 값을 $1$ 로 두었을 때 다음의 일차 근사값을 구하고, 또 오차를 생각하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
-(1) $(1.02)^{1.01}$
+($1$) $(1.02)^{1.01}$
 
 Let $f(x,\,y)=(1+x)^{1+y}$. Then,
 
@@ -1164,73 +1376,81 @@ $$
 \end{aligned}
 $$
 
-이므로, $P=(0,\,0),\, \mathbf{v}=(0,02,\, 0.01)$​​ 에 대해
+이므로, $P=(0,\,0),\, \bf{v}=(0,02,\, 0.01)$​​ 에 대해
 
 $$
-M_2 =\left\{\left|D_iD_j f(P+t\mathbf{v})\right|: 1\le i,\,j \le 2,\, 0 \le t \le 1\right\}
+M_2 =\left\{\left|D_iD_j f(P+t\bf{v})\right|: 1\le i,\,j \le 2,\, 0 \le t \le 1\right\}
 $$
 
 를 구하자. $(1+0.02)^{0.01}<1.0002$​​ 이며 $0<\ln (1+0.02)<1$​​, $(1+0.01)(1+0.02)^{0.01} <(1+0.02)^{1.01}<1.0002$ 이므로 대략 $M_2 < 2$ 라고 볼 수 있다. 정확히는 $M_2<1.03$ 이다. 따라서,
 
 $$
-|R_1f(P,\,\mathbf{v})\le \dfrac{M_2}{2}|\mathbf{v}|^2 <0.00026
+|R_1f(P,\,\bf{v})\le \dfrac{M_2}{2}|\bf{v}|^2 <0.00026
 $$
 
 이다.
 
-(2) $(0.99)^{0.99}$
+($2$) $(0.99)^{0.99}$
 
 귀찮으니...
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**10.** 함수 $f$ 와 $g$ 가 무한급함수이면 정의역의 점 $P$ 와 벡터 $\mathbf{v}$ 및 자연수 $k$ 에 대하여
+::: {#exr-CAL_11_3_10} 
+
+#### SNU 11.3.10 
+
+함수 $f$ 와 $g$ 가 무한급함수이면 정의역의 점 $P$ 와 벡터 $\bf{v}$ 및 자연수 $k$ 에 대하여
 
 $$
-T_k (fg)(P,\,\mathbf{v})=T_k f(P,\,\mathbf{v}) \cdot T_k g(P,\,\mathbf{v}) \qquad \operatorname{mod} \quad o\left(|\mathbf{v}|^k \right)
+T_k (fg)(P,\,\bf{v})=T_k f(P,\,\bf{v}) \cdot T_k g(P,\,\bf{v}) \qquad \operatorname{mod} \quad o\left(|\bf{v}|^k \right)
 $$
 
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
 $$
 \begin{aligned}
-{D_{\mathbf{v}}}^n(fg) = \sum_{k=0}^n \dfrac{n!}{k! (n-k)!} {D_{\mathbf{v}}}^k f (P,\,\mathbf{v})\,{D_\mathbf{v}}^{n-k} g(P,\,\mathbf{v})
+{D_{\bf{v}}}^n(fg) = \sum_{k=0}^n \dfrac{n!}{k! (n-k)!} {D_{\bf{v}}}^k f (P,\,\bf{v})\,{D_\bf{v}}^{n-k} g(P,\,\bf{v})
 \end{aligned}
 $$
 
 임을 이용한다.
 
-우선 $T_k (fg)(P,\,\mathbf{v})$ 를 전개하면,
+우선 $T_k (fg)(P,\,\bf{v})$ 를 전개하면,
 
 $$
 \begin{aligned}
-T_k (fg)(P,\,\mathbf{v}) &= \sum_{n=0}^k \dfrac{{D_{\mathbf{v}}}^n (fg)(P)}{n!}  \\
-&= \sum_{n=0}^k \dfrac{1}{n!} \sum_{m=0}^n \dfrac{n!}{m!(n-m)!}{D_{\mathbf{v}}}^m f(P) \cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&=\sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P) \cdot {D_{\mathbf{v}}}^{n-m} g(P)
+T_k (fg)(P,\,\bf{v}) &= \sum_{n=0}^k \dfrac{{D_{\bf{v}}}^n (fg)(P)}{n!}  \\
+&= \sum_{n=0}^k \dfrac{1}{n!} \sum_{m=0}^n \dfrac{n!}{m!(n-m)!}{D_{\bf{v}}}^m f(P) \cdot {D_{\bf{v}}}^{n-m} g(P) \\
+&=\sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\bf{v}}}^m f(P) \cdot {D_{\bf{v}}}^{n-m} g(P)
 \end{aligned}
 $$
 
-이다. 이제 $T_k f(P,\,\mathbf{v}) \cdot T_k g(P,\,\mathbf{v})$  를 전개하면,
+이다. 이제 $T_k f(P,\,\bf{v}) \cdot T_k g(P,\,\bf{v})$  를 전개하면,
 
 $$
 \begin{aligned}
-T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) &= \left(\sum_{p=0}^k \dfrac{{D_{\mathbf{v}}}^p f(P)}{p!}\right) \left(\sum_{q=0}^k \dfrac{{D_{\mathbf{v}}}^q g(P)}{q!}\right)  \\
-&= \sum_{p=0}^k \sum_{q=0}^k \dfrac{1}{p!q!} {D_{\mathbf{v}}}^p f(P)\cdot {D_{\mathbf{v}}}^q g(P) \\
-&= \sum_{n=0}^{2k} \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&= \sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&\quad + \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P) \\
-&= T_{k}(fg)(P,\,\mathbf{v})+  \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\mathbf{v}}}^m f(P)\cdot {D_{\mathbf{v}}}^{n-m} g(P)
+T_k f(P,\,\bf{v})\cdot T_k g(P,\,\bf{v}) &= \left(\sum_{p=0}^k \dfrac{{D_{\bf{v}}}^p f(P)}{p!}\right) \left(\sum_{q=0}^k \dfrac{{D_{\bf{v}}}^q g(P)}{q!}\right)  \\
+&= \sum_{p=0}^k \sum_{q=0}^k \dfrac{1}{p!q!} {D_{\bf{v}}}^p f(P)\cdot {D_{\bf{v}}}^q g(P) \\
+&= \sum_{n=0}^{2k} \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\bf{v}}}^m f(P)\cdot {D_{\bf{v}}}^{n-m} g(P) \\
+&= \sum_{n=0}^k \sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\bf{v}}}^m f(P)\cdot {D_{\bf{v}}}^{n-m} g(P) \\
+&\quad + \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\bf{v}}}^m f(P)\cdot {D_{\bf{v}}}^{n-m} g(P) \\
+&= T_{k}(fg)(P,\,\bf{v})+  \sum_{n=k+1}^{2k}\sum_{m=0}^n \dfrac{1}{m! (n-m)!} {D_{\bf{v}}}^m f(P)\cdot {D_{\bf{v}}}^{n-m} g(P)
 \end{aligned}
 $$
 
-$C^\infty$ 급 함수 $f,\,g$ 에 대해 ${D_{\mathbf{v}}}^m f(P) = O(|\mathbf{v}|^m)$, ${D_{\mathbf{v}}}^{n-m} g(P) = O(|\mathbf{v}|^{n-m})$ 이므로,
+$C^\infty$ 급 함수 $f,\,g$ 에 대해 ${D_{\bf{v}}}^m f(P) = O(|\bf{v}|^m)$, ${D_{\bf{v}}}^{n-m} g(P) = O(|\bf{v}|^{n-m})$ 이므로,
 
 $$
-T_k f(P,\,\mathbf{v})\cdot T_k g(P,\,\mathbf{v}) -T_{k}(fg)(P,\,\mathbf{v}) = o(|\mathbf{v}|^n)
+T_k f(P,\,\bf{v})\cdot T_k g(P,\,\bf{v}) -T_{k}(fg)(P,\,\bf{v}) = o(|\bf{v}|^n)
 $$
 
 이다.
@@ -1240,11 +1460,21 @@ $$
 
 ## 연습문제 : 제 11 장 4 절
 
-**1.** 다음 함수의 임계점을 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_11_4_1} 
+
+#### SNU 11.4.1 
+
+다음 함수의 임계점을 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
-(1) $x^2+4xy-y^2-ax-by$
+($1$) $x^2+4xy-y^2-ax-by$
 
 $$
 \begin{aligned}
@@ -1253,7 +1483,7 @@ $$
 \end{aligned}
 $$
 
-(2) $x-y\sin x$
+($2$) $x-y\sin x$
 
 $$
 \begin{aligned}
@@ -1262,7 +1492,7 @@ $$
 \end{aligned}
 $$
 
-(3) $x^2y^2$
+($3$) $x^2y^2$
 $$
 \begin{aligned}
 & \nabla f(x,\,y)=(2xy^2,\, 2x^2y)=(0,\,0) \\
@@ -1270,7 +1500,7 @@ $$
 \end{aligned}
 $$
 
-(4) $x^4+y^2$
+($4$) $x^4+y^2$
 $$
 \begin{aligned}
 & \nabla f(x,\,y)=(4x^3,\, 2y)=(0,\,0)\\
@@ -1278,7 +1508,7 @@ $$
 \end{aligned}
 $$
 
-(5) $e^{x^2+y^2+z^2}$
+($5$) $e^{x^2+y^2+z^2}$
 $$
 \begin{aligned}
 & \nabla f(x,\,y,\,z) = (2x,\, 2y,\, 2z)e^{x^2+y^2+z^2}=0 \\
@@ -1286,7 +1516,7 @@ $$
 \end{aligned}
 $$
 
-(6) $e^{-xy/(x^2+y^2+1)}$​
+($6$) $e^{-xy/(x^2+y^2+1)}$​
 $$
 \begin{aligned}
 & \nabla f(x,\,y)= \left( \dfrac{x^2y-y^3-y}{(x^2+y^2+1)^2},\, \dfrac{xy^2-x^3-x}{(x^2+y^2+1)^2},\right)e^{xy/(x^2+y^2+1)} \\
@@ -1295,15 +1525,23 @@ $$
 $$
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** (**최소자승법**) 좌표평면의 점 $(x_1,\,y_1),\ldots,\, (x_n,\,y_n)$ 에 대하여
+::: {#exr-CAL_11_4_2} 
+
+#### SNU 11.4.2 (최소자승법) 
+
+좌표평면의 점 $(x_1,\,y_1),\ldots,\, (x_n,\,y_n)$ 에 대하여
 
 $$
 \sum_{i=1}^n \left( y_i -ax_i-b\right)^2
 $$
 
 을 최소로 하는 직선 $y=ax+b$ 를 구하라. (단 $x_1,\ldots,\,x_n$ 이 모두 같은 경우가 아니라고 가정한다.)
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1330,13 +1568,21 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** 함수 $f(x,\,y)=3x^4-4x^2y+y^2=(3x^2-y)(x^2-y)$ 에 대하여,
+::: {#exr-CAL_11_4_3} 
+
+#### SNU 11.4.3 
+
+함수 $f(x,\,y)=3x^4-4x^2y+y^2=(3x^2-y)(x^2-y)$ 에 대하여,
+
+:::
+
+</div>
 
 ::: {.solution}
 
-(1) 원점이 $f$ 의 임계점임을 보이라.
+($1$) 원점이 $f$ 의 임계점임을 보이라.
 
 $$
 \nabla f(x,\,y)= (12x^3-8xy,\, -4x^2+2y)
@@ -1344,7 +1590,7 @@ $$
 
 이므로 $\nabla f(0,\,0)=(0,\,0)$
 
-(2) 임의의 단위벡터 $\mathbf{v}=(h,\,k)$ 에 대하여, 함수 $g(t):=f(t\mathbf{v})=f(th,\,tk)$ 는 $t=0$ 에서 극소임을 보이라.
+($2$) 임의의 단위벡터 $\bf{v}=(h,\,k)$ 에 대하여, 함수 $g(t):=f(t\bf{v})=f(th,\,tk)$ 는 $t=0$ 에서 극소임을 보이라.
 
 $$
 \begin{aligned}
@@ -1355,33 +1601,41 @@ $$
 
 이다. $k\ne 0$ 이면  $g''(0)=2k^2>0$ 이므로 $g(0)$ 은 극소점이며, $k=0$ 이면 $g(t)=3h^4t^4$ 이므로 역시 $t=0$ 이 극소점이다.
 
-(3) 그럼에도 불구하고 원점은 $f$ 의 극소점이 아님을 보이라.
+($3$) 그럼에도 불구하고 원점은 $f$ 의 극소점이 아님을 보이라.
 
 $f(t,\,2t^2)=(3t^2-2t^2)(t^2-2t^2)=-t^4$ 이므로 $t=0$ 은 $f(t,\,2t^2)$ 의 극대점이다. 따라서 $f(t)$ 의 극소점이 될 수 없다.
 
-(4) $곡선 $f(x,\,y)=0$ 을 도시하라.
+($4$) $곡선 $f(x,\,y)=0$ 을 도시하라.
 
 $y=3x^2$ or $y=x^2$ 이다.
 
-(5) $f(x,\,y)>0,\, f(x,\,y)<0$ 인 영역을 각각 그리라.
+($5$) $f(x,\,y)>0,\, f(x,\,y)<0$ 인 영역을 각각 그리라.
 
 ![ex_11_4_3](figures/ex_11_4_3.png)
 
-(6) (2) 와 (3) 이 서로 모순되지 않는 이유를 설명하라.
+($6$) ($2$) 와 ($3$) 이 서로 모순되지 않는 이유를 설명하라.
 
 $- \to 0 \to -$​, $+ \to 0 \to +$​ 를 생각해보라.
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**4.** (**Steiner** 문제) 평면의  $\triangle ABC$ 에서 꼭지각의 크기가 모두 $120^\circ$ 미만이라고 하자. 이때 함수
+::: {#exr-CAL_11_4_4} 
+
+#### SNU 11.4.4 (Steiner 문제) 
+
+평면의  $\triangle ABC$ 에서 꼭지각의 크기가 모두 $120^\circ$ 미만이라고 하자. 이때 함수
 
 $$
 f(x):=|X-A|+|X-B|+|X-C| \qquad (X\in \mathbb{R}^3-\{A,\,B,\,C\})
 $$
 
 의 임계점을 $P$​ 라고 두면, 선분 $AP,\,BP,\,CP$​ 는 서로 $120^\circ$​ 를 이룸을 보이라.
+
+:::
+
+</div>
 
 ::: {.soluton}
 
@@ -1398,7 +1652,7 @@ $$
 
 이다.
 
-<**풀이** 1.>
+**<풀이 1>** 
 
 $$
 \begin{aligned}
@@ -1416,7 +1670,7 @@ $$
 
 </br>
 
-<**풀이 2**>
+**<풀이 2>**
 
 $$
 \dfrac{P-A}{|P-A|}+\dfrac{P-B}{|P-B|}+\dfrac{P-C}{|P-C|}=0
@@ -1425,26 +1679,26 @@ $$
 일 때
 
 $$
-\dfrac{P-A}{|P-A|}=\mathbf{e}_A,\quad \dfrac{P-B}{|P-B|}=\mathbf{e}_B,\quad \dfrac{P-C}{|P-C|}=\mathbf{e}_C
+\dfrac{P-A}{|P-A|}=\bf{e}_A,\quad \dfrac{P-B}{|P-B|}=\bf{e}_B,\quad \dfrac{P-C}{|P-C|}=\bf{e}_C
 $$
 
-라 하면  $|\mathbf{e}_A|=|\mathbf{e}_B|=|\mathbf{e}_C|=1$ 이며 $\mathbf{e}_A+\mathbf{e}_B +\mathbf{e}_C=0$  이다.
+라 하면  $|\bf{e}_A|=|\bf{e}_B|=|\bf{e}_C|=1$ 이며 $\bf{e}_A+\bf{e}_B +\bf{e}_C=0$  이다.
 
 $$
-(\mathbf{e}_A+\mathbf{e}_B+\mathbf{e}_C)\cdot \mathbf{e}_A = 0 = 1+\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_A \cdot \mathbf{e}_C
+(\bf{e}_A+\bf{e}_B+\bf{e}_C)\cdot \bf{e}_A = 0 = 1+\bf{e}_A \cdot \bf{e}_B + \bf{e}_A \cdot \bf{e}_C
 $$
 
 이며 같은 방법으로 다음을 구할 수 있다.
 
 $$
 \begin{aligned}
-\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_A \cdot \mathbf{e}_C &= -1\\
-\mathbf{e}_A \cdot \mathbf{e}_B + \mathbf{e}_B \cdot \mathbf{e}_C &= -1\\
-\mathbf{e}_A \cdot \mathbf{e}_C + \mathbf{e}_B \cdot \mathbf{e}_C &= -1\\
+\bf{e}_A \cdot \bf{e}_B + \bf{e}_A \cdot \bf{e}_C &= -1\\
+\bf{e}_A \cdot \bf{e}_B + \bf{e}_B \cdot \bf{e}_C &= -1\\
+\bf{e}_A \cdot \bf{e}_C + \bf{e}_B \cdot \bf{e}_C &= -1\\
 \end{aligned}
 $$
 
-으며 이로부터  $\mathbf{e}_A\cdot \mathbf{e}_B=\mathbf{e}_A\cdot \mathbf{e}_C=\mathbf{e}_B\cdot \mathbf{e}_C=-\frac{1}{2}$ 이다. 따라서, $AP,\,BP,\,CP$ 는 서로 $120^\circ = \dfrac{2\pi}{3}$ 를 이룬다.
+으며 이로부터  $\bf{e}_A\cdot \bf{e}_B=\bf{e}_A\cdot \bf{e}_C=\bf{e}_B\cdot \bf{e}_C=-\frac{1}{2}$ 이다. 따라서, $AP,\,BP,\,CP$ 는 서로 $120^\circ = \dfrac{2\pi}{3}$ 를 이룬다.
 
 :::
 
@@ -1456,13 +1710,23 @@ $$
 
 ## 연습문제 : 제 11 장 5 절
 
-**1.** 함수
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_11_5_1} 
+
+#### SNU 11.5.1 
+
+함수
 
 $$
 f(x,\,y) = x^4 + 2x^2y +3xy^2 + 6xy +3x
 $$
 
 의 최대값과 최소값이 존재하면 그것을 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1472,9 +1736,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** 함수 $f(x,\,y)=(x^2+y^2)\cos (x+2y)$ 는 원점이 극소점임을 보이라.
+::: {#exr-CAL_11_5_2} 
+
+#### SNU 11.5.2 
+
+함수 $f(x,\,y)=(x^2+y^2)\cos (x+2y)$ 는 원점이 극소점임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1501,13 +1773,21 @@ $$
 
 **3.** 생략.
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**4.** 다음 함수에서 원점이 안장점 임을 보여라.
+::: {#exr-CAL_11_5_4} 
+
+#### SNU 11.5.4  
+
+다음 함수에서 원점이 안장점 임을 보여라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
-(1) **원숭이 안장점** $f(x,\,y)=x^3-3xy^2$
+($1$) **원숭이 안장점** $f(x,\,y)=x^3-3xy^2$
 
 $$
 \begin{aligned}
@@ -1518,7 +1798,7 @@ $$
 
 으로 원점은 임계점이다. 헤세 행렬이 영행렬이므로 헤세 행렬로 판정 할 수 엇다.  $f(x,\,1) =x^3-3x$ 는 $x=0$ 근처에서 $+ \to -$ 가 되므로 극점이 아니다. 따라서 원점은 안장점이다.
 
-(2) **개 안장점** $f(x,\,y)=x^3y-xy^3$
+($2$) **개 안장점** $f(x,\,y)=x^3y-xy^3$
 
 $$
 \begin{aligned}
@@ -1530,13 +1810,25 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**5.** 이차형식 $q(x,\,y)=ax^2+2bxy+cy^2$​ 의 등위선이 원점을 지나지 않을 때 이 등위선은
-(1) $ac-b^2>0$​ 이면, 타원
-(2) $ac-b^2<0$​ 이면, 쌍곡선
-(3) $ac-b^2=0$​ 이면, 직선
+::: {#exr-CAL_11_5_5} 
+
+#### SNU 11.5.5  
+
+이차형식 $q(x,\,y)=ax^2+2bxy+cy^2$​ 의 등위선이 원점을 지나지 않을 때 이 등위선은
+
+&emsp;($1$) $ac-b^2>0$​ 이면, 타원
+
+&emsp;($2$) $ac-b^2<0$​ 이면, 쌍곡선
+
+&emsp;($3$) $ac-b^2=0$​ 이면, 직선
+
 임을 보여라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1585,30 +1877,42 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**6.** $n$ 공간의 점 $P$ 근방에서 정의된 이급함수 $f$ 와 벡터 $\mathbf{v}=v_1\mathbf{e}_1 + \cdots + v_n \mathbf{e}_n$ 에 대하여
+::: {#exr-CAL_11_5_6} 
+
+#### SNU 11.5.6  
+
+$n$ 공간의 점 $P$ 근방에서 정의된 이급함수 $f$ 와 벡터 $\bf{v}=v_1\bf{e}_1 + \cdots + v_n \bf{e}_n$ 에 대하여
 
 $$
-{D_{\mathbf{v}}}^2 f(P) = \sum_{i,\,j=1}^n v_i v_j D_i D_j f(P) = \mathbf{v} \cdot (f''(P)\mathbf{v})
+{D_{\bf{v}}}^2 f(P) = \sum_{i,\,j=1}^n v_i v_j D_i D_j f(P) = \bf{v} \cdot (f''(P)\bf{v})
 $$
 
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
 $$
 \begin{aligned}
-\mathbf{v} \cdot (f''(P)\mathbf{v}) &= \sum_{i=1}^n v_i (f''(P)\mathbf{v})_i = \sum_{i=1}^n v_i \left(\sum_{j=1}^n f''(P)_{ij}v_j\right) \\
+\bf{v} \cdot (f''(P)\bf{v}) &= \sum_{i=1}^n v_i (f''(P)\bf{v})_i = \sum_{i=1}^n v_i \left(\sum_{j=1}^n f''(P)_{ij}v_j\right) \\
 &= \sum_{i,\,j=1}^n v_i v_j \left(f''(P)\right)_{ij}=\sum_{i,\,j=1}^n v_iv_j D_iD_j f(P)
 \end{aligned}
 $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**7.** 이급함수 $f(x,\,y)$ 의 극대점에서는
+::: {#exr-CAL_11_5_7} 
+
+#### SNU 11.5.7  
+
+이급함수 $f(x,\,y)$ 의 극대점에서는
 
 $$
 \dfrac{\partial^2 f}{\partial x^2}+ \dfrac{\partial^2 f}{\partial y^2} \le 0
@@ -1621,6 +1925,10 @@ $$
 $$
 
 임을 보이라.
+
+::: 
+
+</div>
 
 ::: {.solution}
 
@@ -1649,10 +1957,10 @@ $$
 에 재한하였을 때, 점 $P\in S$ 가 극점이라고 하자. 그러면 $\nabla f(P)$ 와 $\nabla g(P)$ 는 일차종속이다. 즉
 
 $$
-\lambda_1 \nabla f(P)+\lambda_2 \nabla g(P)=\mathbf{0}
+\lambda_1 \nabla f(P)+\lambda_2 \nabla g(P)=\bf{0}
 $$
 
-이고 동시에 영이 아닌 실수 $\lambda_1,\,\lambda_2$ 가 존재한다. 특히, $\nabla g(P)\ne \mathbf{0}$ 이면, 식
+이고 동시에 영이 아닌 실수 $\lambda_1,\,\lambda_2$ 가 존재한다. 특히, $\nabla g(P)\ne \bf{0}$ 이면, 식
 
 $$
 \nabla f(P)=\lambda \nabla g(P)
@@ -1662,11 +1970,11 @@ $$
 
 ::: {.proof}
 
-(1) $\nabla g(P)=\mathbf{0}$  이면 $\nabla f(P)$ 와 $\nabla g(P)$ 는 일차종속이므로 $\nabla g(P)\ne \mathbf{0}$ 일 때만 생각한다.
+($1$) $\nabla g(P)=\bf{0}$  이면 $\nabla f(P)$ 와 $\nabla g(P)$ 는 일차종속이므로 $\nabla g(P)\ne \bf{0}$ 일 때만 생각한다.
 
-(2) $P\in S$ 에서 $\nabla f(P)$ 는 초곡면 $S$ 에 대해 수직임을 보이자. 점 $P$ 를 통과하는 $S$ 에서의 임의의 곡선 $X(t)$ 는 $X(0)=P$ 가 되도록 표현 할 수 있다. 이제 $X'(0)$ 는 $P$ 에서의 $S$ 의 접평면에 포함되는 벡터이다.
+($2$) $P\in S$ 에서 $\nabla f(P)$ 는 초곡면 $S$ 에 대해 수직임을 보이자. 점 $P$ 를 통과하는 $S$ 에서의 임의의 곡선 $X(t)$ 는 $X(0)=P$ 가 되도록 표현 할 수 있다. 이제 $X'(0)$ 는 $P$ 에서의 $S$ 의 접평면에 포함되는 벡터이다.
 
-(3) 문제의 가정에 의해 $f$ 가 $P$ 에서 극값을 가진다. $h(t) := f(X(t))$ 라 하면, $h'(0)=0$ 이므로,
+($3$) 문제의 가정에 의해 $f$ 가 $P$ 에서 극값을 가진다. $h(t) := f(X(t))$ 라 하면, $h'(0)=0$ 이므로,
 
 $$
 h'(0)=X'(0)\cdot \nabla f(X(0)) = 0
@@ -1674,7 +1982,7 @@ $$
 
 이다. 따라서 $\nabla f(P)$ 는 $X'(0)$ 에 수직이며, 따라서 $P$ 에서 $S$ 에 수직이다.
 
-(4) 또한 $\nabla g(P)$ 도 등위면에 수직이므로 $\nabla f(P)$ 와 $\nabla g(P)$ 는 평행하다. 따라서 원하는 결론을 얻는다. $\square$
+($4$) 또한 $\nabla g(P)$ 도 등위면에 수직이므로 $\nabla f(P)$ 와 $\nabla g(P)$ 는 평행하다. 따라서 원하는 결론을 얻는다. $\square$
 
 :::
 
@@ -1744,7 +2052,7 @@ $$
 \end{aligned}
 $$
 
-이므로 극값은 $x_1=\cdots =x_n= \dfrac{1}{\sqrt{n}}$ 뿐이며, 이 점을 $P$ 라 하면 $f(P)=\sqrt{n}$ 이다. $Q_i = \mathbf{e}_i$ 라 정의하면, $f(Q_i)=1 \le f(P)$ 이므로 $f(P)$ 는 $P$ 의 최대값이다.
+이므로 극값은 $x_1=\cdots =x_n= \dfrac{1}{\sqrt{n}}$ 뿐이며, 이 점을 $P$ 라 하면 $f(P)=\sqrt{n}$ 이다. $Q_i = \bf{e}_i$ 라 정의하면, $f(Q_i)=1 \le f(P)$ 이므로 $f(P)$ 는 $P$ 의 최대값이다.
 
 이제 임의의 $a_1,\ldots,\,a_n$ where $a_i \ge 0$ 에 대하여
 
@@ -1768,14 +2076,21 @@ $$
 
 :::
 
-
 </br>
 
 ## 연습문제 : 제 11 장 6 절
 
-</br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**1.** 원판 $x^2+y^2\le 1$ 에서 정의된 함수 $f(x,\,y)=x^2+y^2-x-y+1$ 의 최대값과 최소값을 구하라.
+::: {#exr-CAL_11_6_1} 
+
+#### SNU 11.6.1  
+
+원판 $x^2+y^2\le 1$ 에서 정의된 함수 $f(x,\,y)=x^2+y^2-x-y+1$ 의 최대값과 최소값을 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1796,9 +2111,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** 반지름의 길이가 1 인 구면에 내접하는 원기둥 중에서 표면적을 최대로 하는 것의 표면적을 구하라. 원기둥은 바닥과 뚜껑이 없는 것으로 한다.
+::: {#exr-CAL_11_6_2} 
+
+#### SNU 11.6.2  
+
+반지름의 길이가 1 인 구면에 내접하는 원기둥 중에서 표면적을 최대로 하는 것의 표면적을 구하라. 원기둥은 바닥과 뚜껑이 없는 것으로 한다.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1821,11 +2144,21 @@ $$
 
 </br>
 
-**4.** (**케플러의 문제**) 대각선의 길이가 일정한 직원기둥중에서 부피가 최대인것을 구하라. 또 주어진 공(sphere) 속에 들어있는 직육면체 중에서 그 부피가 최대인 것을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CAL_11_6_4} 
+
+#### SNU 11.6.4 케플러의 문제 
+
+대각선의 길이가 일정한 직원기둥중에서 부피가 최대인것을 구하라. 또 주어진 공(sphere) 속에 들어있는 직육면체 중에서 그 부피가 최대인 것을 구하라.
+
+:::
+
+</div>
+ 
 ::: {.solution}
 
-(1) 반지름 $r$, 높이 $h$ 인 직원기둥의 부피는 $V(r,\,h)=\pi r^2 h$  이며 대각선의 길이를 일정하게 놓으므로 대각선의 길이의 제곱함수  $g(r,\,h)= 4r^2+h^2=c$ 를 생각하자.
+($1$) 반지름 $r$, 높이 $h$ 인 직원기둥의 부피는 $V(r,\,h)=\pi r^2 h$  이며 대각선의 길이를 일정하게 놓으므로 대각선의 길이의 제곱함수  $g(r,\,h)= 4r^2+h^2=c$ 를 생각하자.
 
 $$
 \begin{aligned}
@@ -1836,7 +2169,7 @@ $$
 
 이 때의 극값은 $h=2r$ 일 때 이며 이 때의 부피는 $2\pi r^3$ 이다. 이 값이 최대값인 것은 $h$ 가 대각선의 길이와 같을 때 $r=0$ 이며 부피가 $0$ 이 되는 것으로 부터 알 수 있다.
 
-(2) 반지름 $R$ 인 공의 직육면체의 각 변의 길이를 $2a,\,2b,\,2c$ 라 하면 직육면체의 부피 $V(a,\,b,\,c)=8abc$ 이며 공에 내접하므로 $g(a,\,b,\,c)=a^2+b^2+c^2=R^2$ 의 제한조건을 갖는다.
+($2$) 반지름 $R$ 인 공의 직육면체의 각 변의 길이를 $2a,\,2b,\,2c$ 라 하면 직육면체의 부피 $V(a,\,b,\,c)=8abc$ 이며 공에 내접하므로 $g(a,\,b,\,c)=a^2+b^2+c^2=R^2$ 의 제한조건을 갖는다.
 
 $$
 \begin{aligned}
@@ -1849,18 +2182,25 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**5.** CBS 부등식을 라그랑즈 승수법을 이용하여 증명하라.
+::: {#exr-CAL_11_6_5} 
+
+#### SNU 11.6.5
+
+CBS 부등식을 라그랑즈 승수법을 이용하여 증명하라.
+:::
+
+</div>
 
 ::: {.solution}
 
-$n$ 벡터 $\mathbf{a}=(a_1,\cdots,\,a_n),\,\mathbf{b}=(b_1,\cdots\, b_n)$ 에 대해 $|\mathbf{a}\cdot \mathbf{b}|\le |\mathbf{a}||\mathbf{b}|$  를 보이자. 둘 중 하나가 영벡터이면 자명하므로, 둘 다 영벡터가 아님을 가정하자.  $\mathbf{x}=(x_1,\ldots,\,x_n) = \dfrac{\mathbf{a}}{|\mathbf{a}|},\, \mathbf{y}=(y_1,\ldots,\,y_n)=\dfrac{\mathbf{b}}{|\mathbf{b}|}$ 라 하면 $|\mathbf{x}|^2=|\mathbf{y}|^2=1$ 이다. 이제,
+$n$ 벡터 $\bf{a}=(a_1,\cdots,\,a_n),\,\bf{b}=(b_1,\cdots\, b_n)$ 에 대해 $|\bf{a}\cdot \bf{b}|\le |\bf{a}||\bf{b}|$  를 보이자. 둘 중 하나가 영벡터이면 자명하므로, 둘 다 영벡터가 아님을 가정하자.  $\bf{x}=(x_1,\ldots,\,x_n) = \dfrac{\bf{a}}{|\bf{a}|},\, \bf{y}=(y_1,\ldots,\,y_n)=\dfrac{\bf{b}}{|\bf{b}|}$ 라 하면 $|\bf{x}|^2=|\bf{y}|^2=1$ 이다. 이제,
 
 $$
 \begin{aligned}
-f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &= \mathbf{x} \cdot \mathbf{y} = x_1y_1 + \cdots +x_ny_n\\
-g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &=|\mathbf{x}||\mathbf{y}| =1
+f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &= \bf{x} \cdot \bf{y} = x_1y_1 + \cdots +x_ny_n\\
+g(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &=|\bf{x}||\bf{y}| =1
 \end{aligned}
 $$
 
@@ -1869,23 +2209,27 @@ $$
 $$
 \begin{aligned}
 \nabla f(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n) &= (y_1,\ldots,\,y_n,\,x_1,\ldots,\,x_n) \\
-\nabla g(x_1,\ldots,\,x_n,\,y_n,\ldots,\,y_n) &= \left( \dfrac{|\mathbf{y}|}{|\mathbf{x}|}x_1,\ldots,\,\dfrac{|\mathbf{y}|}{|\mathbf{x}|} x_n,\, \dfrac{|\mathbf{x}|}{|\mathbf{y}|} y_1,\ldots,\,\dfrac{|\mathbf{x}|}{|\mathbf{y}|}y_n  \right) \\
+\nabla g(x_1,\ldots,\,x_n,\,y_n,\ldots,\,y_n) &= \left( \dfrac{|\bf{y}|}{|\bf{x}|}x_1,\ldots,\,\dfrac{|\bf{y}|}{|\bf{x}|} x_n,\, \dfrac{|\bf{x}|}{|\bf{y}|} y_1,\ldots,\,\dfrac{|\bf{x}|}{|\bf{y}|}y_n  \right) \\
 &=(x_1,\ldots,\,x_n,\,y_1,\ldots,\,y_n)
 \end{aligned}
 $$
 
-을 이용하면 $y_i = \lambda x_i ,\, x_j = \lambda y_j$ for $1\le i,\, j \le n$  임을 안다. $\lambda = \pm 1$ 이며 따라서 극값은 $\mathbf{x}=\pm \mathbf{y}$  에서 발생한다. 또한 $\mathbf{x}=\mathbf{y}$ 이면 $f=1$, $\mathbf{x}=-\mathbf{y}$ 이면 $f=-1$ 이다. 유계인 닫힌 영역에서의 연속함수이므로 최대값과 최소값이 존재하며, $\mathbf{x}=\mathbf{e}_1,\,\mathbf{y}=\mathbf{e}_2$  에 대해 $f=0$  이므로 $f$ 의 최대값은 $1$, 최소값은 $-1$ 이며 $|\mathbf{x}\cdot \mathbf{y}|\le 1$ 이므로
+을 이용하면 $y_i = \lambda x_i ,\, x_j = \lambda y_j$ for $1\le i,\, j \le n$  임을 안다. $\lambda = \pm 1$ 이며 따라서 극값은 $\bf{x}=\pm \bf{y}$  에서 발생한다. 또한 $\bf{x}=\bf{y}$ 이면 $f=1$, $\bf{x}=-\bf{y}$ 이면 $f=-1$ 이다. 유계인 닫힌 영역에서의 연속함수이므로 최대값과 최소값이 존재하며, $\bf{x}=\bf{e}_1,\,\bf{y}=\bf{e}_2$  에 대해 $f=0$  이므로 $f$ 의 최대값은 $1$, 최소값은 $-1$ 이며 $|\bf{x}\cdot \bf{y}|\le 1$ 이므로
 
 $$
-|\mathbf{a}\cdot \mathbf{b}|\le |\mathbf{a}| |\mathbf{b}|
+|\bf{a}\cdot \bf{b}|\le |\bf{a}| |\bf{b}|
 $$
 를 얻는다.
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**6.** $0<p<q$ 이고 $a_1\ge 0,\ldots,\, a_n \ge 0$ 이면, 부등식
+::: {#exr-CAL_11_6_6} 
+
+#### SNU 11.6.6  
+
+$0<p<q$ 이고 $a_1\ge 0,\ldots,\, a_n \ge 0$ 이면, 부등식
 
 $$
 \begin{align}
@@ -1896,11 +2240,15 @@ $$
 
 이 성립함을 보이라.
 
+:::
+
+</div>
+
 ::: {.solution}
 
 $n=1$ 일 때는 자명하므로 $n\ge 2$ 일 경우만 생각한다.
 
-(1) $x_i \ge 0, \;\forall i=1,\ldots,\,n$ 에 대해 $g(X) = x_1^p + \cdots + x_n^p = 1$ 일 때 $f(X) = x_1^q + \cdots + x_n^q$ 의 최대값을 구해보자. $q>p>0$ 이므로 $0 \le x_i \le 1,\;\forall i=1,\ldots,n$ 이어야 한다. 두개 이상의 $x_i\ne 0$ 이라면 $1$ 보다 작으므로 이 $(x_i)^p<(x_i)^q$ 이다. 즉 $f(X)<1$ 이다. 하나의 $x_i$ 만 $0$ 이 아니라면 그 $x_i = 1$ 이므로 $f(X)$ 의 최대값은 $1$ 이다. 즉 $g(X)=1$ 일 때 $f(X)\le 1$ 이다.
+($1$) $x_i \ge 0, \;\forall i=1,\ldots,\,n$ 에 대해 $g(X) = x_1^p + \cdots + x_n^p = 1$ 일 때 $f(X) = x_1^q + \cdots + x_n^q$ 의 최대값을 구해보자. $q>p>0$ 이므로 $0 \le x_i \le 1,\;\forall i=1,\ldots,n$ 이어야 한다. 두개 이상의 $x_i\ne 0$ 이라면 $1$ 보다 작으므로 이 $(x_i)^p<(x_i)^q$ 이다. 즉 $f(X)<1$ 이다. 하나의 $x_i$ 만 $0$ 이 아니라면 그 $x_i = 1$ 이므로 $f(X)$ 의 최대값은 $1$ 이다. 즉 $g(X)=1$ 일 때 $f(X)\le 1$ 이다.
 
 $A = (a_1,\ldots,\,a_n)$ 에 대해 $x_i = \dfrac{a_i}{(\sum_j (a_j)^p)^{1/p}}$ 라 하면 $x_1^p + \cdots + x_n^p = 1$ 이므로
 
@@ -1912,7 +2260,7 @@ $$
 \end{aligned}
 $$
 
-(2) $g(a_1,\ldots,\,a_n)={a_1}^p+\cdots + {a_n}^p=c^p$ 라 하고 이를 만족하는 영역에서 $f(a_1,\ldots,\,a_n)={a_1}^q+\cdots +{a_n}^q$ 의 극값을 구한다.
+($2$) $g(a_1,\ldots,\,a_n)={a_1}^p+\cdots + {a_n}^p=c^p$ 라 하고 이를 만족하는 영역에서 $f(a_1,\ldots,\,a_n)={a_1}^q+\cdots +{a_n}^q$ 의 극값을 구한다.
 
 $$
 \begin{aligned}
@@ -1927,19 +2275,19 @@ $$
 c^p = a_1^p + \cdots + a_n^p = n \left(\dfrac{\lambda p}{q}\right)^{p/(q-p)} \implies a_1=\cdots =a_n = \dfrac{c}{n^{1/p}}
 $$
 
-이며 이 때의  벡터를 $\mathbf{a}$ 라 할 때 $f(\mathbf{a})$ 값은
+이며 이 때의  벡터를 $\bf{a}$ 라 할 때 $f(\bf{a})$ 값은
 
 $$
-f(\mathbf{a})=f\left(\dfrac{c}{n^{1/p}},\ldots,\, \dfrac{c}{n^{1/p}} \right)= n \dfrac{c^q}{n^{q/p}}=c^qn^{1-q/p}
+f(\bf{a})=f\left(\dfrac{c}{n^{1/p}},\ldots,\, \dfrac{c}{n^{1/p}} \right)= n \dfrac{c^q}{n^{q/p}}=c^qn^{1-q/p}
 $$
 
-경계값을 보자. $n$ 개의 성분 중 $k$ 개의 성분이 $c/(k^p)$ 이고 나머지는 $0$ 이라면 이때의 벡터를 $\mathbf{d}_k$ 라 하면  $g(\mathbf{d}_k)=c^p$ , $f(\mathbf{d}_k)=c^q k^{1-q/p}$ 이다. 이 때 $k\le n$ 이므로
+경계값을 보자. $n$ 개의 성분 중 $k$ 개의 성분이 $c/(k^p)$ 이고 나머지는 $0$ 이라면 이때의 벡터를 $\bf{d}_k$ 라 하면  $g(\bf{d}_k)=c^p$ , $f(\bf{d}_k)=c^q k^{1-q/p}$ 이다. 이 때 $k\le n$ 이므로
 
 $$
-\dfrac{f(\mathbf{a})}{f(\mathbf{d}_k)}=\dfrac{c^q n^{1-q/p}}{c^qk^{1-q/p}} < 1
+\dfrac{f(\bf{a})}{f(\bf{d}_k)}=\dfrac{c^q n^{1-q/p}}{c^qk^{1-q/p}} < 1
 $$
 
-이다. 따라서 $f(\mathbf{a})$ 는 $f$ 의 최소값이며,
+이다. 따라서 $f(\bf{a})$ 는 $f$ 의 최소값이며,
 
 $$
 \begin{aligned}
@@ -1953,9 +2301,17 @@ $$
 
 ::: 
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**7.** 포물면 $z=x^2+y^2$ 과 점 $(1,\,1,\,0)$ 사이의 최단거리를 구하라.
+::: {#exr-CAL_11_6_7} 
+
+#### SNU 11.6.7  
+
+포물면 $z=x^2+y^2$ 과 점 $(1,\,1,\,0)$ 사이의 최단거리를 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1972,9 +2328,17 @@ $\nabla d = \lambda \nabla g$ 일 때 $x-1=\lambda x,\, y-1=\lambda y,\, z=-\lam
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**8.** 곡면 $z=xy$ 의 점 중에서 점 $(0,\,0,\,5)$ 에 가장 가까운 점을 모두 구하라.
+::: {#exr-CAL_11_6_8} 
+
+#### SNU 11.6.8  
+
+곡면 $z=xy$ 의 점 중에서 점 $(0,\,0,\,5)$ 에 가장 가까운 점을 모두 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -1991,9 +2355,17 @@ $\nabla d = \lambda \nabla g$ 이면 $x=\dfrac{\lambda}{2}y,\, y=\dfrac{\lambda}
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**9.** 점 $(1,\,2,\,0)$ 에서 원뿔 $z^2=x^2+y^2$ 까지의 거리를 구하라.
+::: {#exr-CAL_11_6_9} 
+
+#### SNU 11.6.9  
+
+점 $(1,\,2,\,0)$ 에서 원뿔 $z^2=x^2+y^2$ 까지의 거리를 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2012,14 +2384,22 @@ $\nabla d=\lambda \nabla g$ 이면 $x-1=\lambda x,\, y-2=\lambda y,\, z=-\lambda
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**14.** $n$ 차 대칭행렬 $Q=(q_{ij})$ 와 $X=\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}$ 에 대하여, 이차형식은
+::: {#exr-CAL_11_6_14} 
+
+#### SNU 11.6.14  
+
+$n$ 차 대칭행렬 $Q=(q_{ij})$ 와 $X=\begin{pmatrix} x_1 \\ \vdots \\ x_n\end{pmatrix}$ 에 대하여, 이차형식은
 $$
 q(X)= X \cdot QX = \sum_{i,\,j=1}^n q_{ij}x_i x_j = \sum_{i=1}^n q_{ii}x_i^2 + 2\sum_{i<j} q_{ij}x_i x_j
 $$
 
 로 주어진다. 이때 $q$ 의 기울기 벡터는 $\nabla q(X)=2QX$ 임을 보이라. 또 $q$ 를 단위 구면 $S: x_1^2+\cdots + x_n^2=1$ 에서 제한하였을 때, 최대점에서는 $QX=\lambda X$ 를 만족시키는 실수 $\lambda$ 가 존재함을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2040,9 +2420,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**15.** 영 이상의 실수 $x,\,y,\,z$ 가  $x+y+z=1$ 을 만족 시킬 때 $xy+yz+zx-2xyz$ 의 최대값과 최소값을 구하라.
+::: {#exr-CAL_11_6_15} 
+
+#### SNU 11.6.15  
+
+영 이상의 실수 $x,\,y,\,z$ 가  $x+y+z=1$ 을 만족 시킬 때 $xy+yz+zx-2xyz$ 의 최대값과 최소값을 구하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2057,19 +2445,23 @@ $$
 
 이므로 $(x-y)(1-2z)=(y-z)(1-2x)=(z-x)(1-2y)=0$ 에서 극값이 존재한다.
 
-1\) $x=y=z=\dfrac{1}{3}$ 이면  $f\left(\dfrac{1}{3},\, \dfrac{1}{3},\, \dfrac{1}{3}\right)= \dfrac{7}{27}$
+($1$) $x=y=z=\dfrac{1}{3}$ 이면  $f\left(\dfrac{1}{3},\, \dfrac{1}{3},\, \dfrac{1}{3}\right)= \dfrac{7}{27}$
 
-2\) $x=y=\dfrac{1}{2},\, z=0$, 혹은 $x=0,\, y=z=\dfrac{1}{2}$, 또는 $y=0,\, x=z=\dfrac{1}{2}$ 인 경우, $f(x,\,y,\,z)=\dfrac{1}{4}$
+($2$) $x=y=\dfrac{1}{2},\, z=0$, 혹은 $x=0,\, y=z=\dfrac{1}{2}$, 또는 $y=0,\, x=z=\dfrac{1}{2}$ 인 경우, $f(x,\,y,\,z)=\dfrac{1}{4}$
 
-3\) 경계값에서, $x=1,\,y=z=0$ 혹은 $y=1,\, x=z=1$ 혹은 $z=1,\, x=y=0$ 인 경우 $f(x,\,y,\,z)=0$
+($3$) 경계값에서, $x=1,\,y=z=0$ 혹은 $y=1,\, x=z=1$ 혹은 $z=1,\, x=y=0$ 인 경우 $f(x,\,y,\,z)=0$
 
 따라서 최대값은 $7/27$, 최소값은 $0$ 이다.
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**16.** 조건
+::: {#exr-CAL_11_6_16} 
+
+#### SNU 11.6.16 
+
+조건
 
 $$
 g(x,\,y,\,z) :=x+y-2 \ge 0,\qquad h(x,\,y,\,z):= z^2-1\ge 0
@@ -2082,6 +2474,10 @@ f(x,\,y,\,z) = x^4+2y^2+4z^4-2z^2
 $$
 
 의 최소값을 구하여라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2108,9 +2504,17 @@ $f_2 (z) = 4z^4-2z^2=4\left( z^2- \dfrac{1}{4}\right)^2-\dfrac{1}{4}$ 이며 $z^
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**17.** 좌표평면의 원점에서의 곡선 $x^6+y^6=1$ 의 한 점에 이르는 거리의 최대값과 최소값을 구하라.
+::: {#exr-CAL_11_6_17} 
+
+#### SNU 11.6.17  
+
+좌표평면의 원점에서의 곡선 $x^6+y^6=1$ 의 한 점에 이르는 거리의 최대값과 최소값을 구하라.
+
+:::
+
+</div>
 
 :::{.solution}
 
@@ -2131,17 +2535,27 @@ $$
 
 ## 제 11장 탐구문제
 
-**1.** $n$-공간에서 주어진 벡터 $\mathbf{v}$ 와 무한급 미분가능함수 $f,\,g$ 에 대하여,
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_11_S01} 
+
+#### SNU 탐구문제 11.1
+
+$n$-공간에서 주어진 벡터 $\bf{v}$ 와 무한급 미분가능함수 $f,\,g$ 에 대하여,
 
 $$
-{D_{\mathbf{v}}}^k (fg)=\sum_{a+b=k} \begin{pmatrix} k \\ a\end{pmatrix} \left({D_{\mathbf{v}}}^a f \right) \left({D_{\mathbf{v}}}^b g \right)\, \qquad k=0,\,1,\,2,\ldots
+{D_{\bf{v}}}^k (fg)=\sum_{a+b=k} \begin{pmatrix} k \\ a\end{pmatrix} \left({D_{\bf{v}}}^a f \right) \left({D_{\bf{v}}}^b g \right)\, \qquad k=0,\,1,\,2,\ldots
 $$
 
 임을 보이라.
 
+:::
+
+</div>
+
 ::: {.solution}
 
-수학적 귀납법을 통해 보인다. $k=0,\,1$ 일 때는 자명하다. $k$ 일 때 성립함을 가정하면, (아래에서는 $\mathbf{v}$ 를 $v$ 로 쓰겠다. )
+수학적 귀납법을 통해 보인다. $k=0,\,1$ 일 때는 자명하다. $k$ 일 때 성립함을 가정하면, (아래에서는 $\bf{v}$ 를 $v$ 로 쓰겠다. )
 
 $$
 \begin{aligned}
@@ -2157,9 +2571,13 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**2.** (**라플라스 작용소**) 구면좌표계에서
+::: {#exr-CAL_11_S02} 
+
+#### SNU 탐구문제 11.2 (라플라스 작용소) 
+
+구면좌표계에서
 
 $$
 \nabla^2 f = \dfrac{1}{\rho^2}  \dfrac{\partial}{\partial \rho} \left(\rho^2 \dfrac{\partial f}{\partial \rho}\right) + \dfrac{1}{\rho^2 \sin \varphi} \dfrac{\partial }{\partial \varphi} \left(\sin \varphi \dfrac{\partial f}{\partial \varphi}\right) + \dfrac{1}{\rho^2 \sin^2 \varphi} \dfrac{\partial^2 f}{\partial\theta^2}
@@ -2167,9 +2585,13 @@ $$
 
 임을 보이라.
 
+:::
+
+</div>
+
 ::: {.solution}
 
-탐구문제 10장 10번을 이용한다.
+@exr-CAL_10_S10 을 이용한다.
 
 $$
 \begin{aligned}
@@ -2241,13 +2663,21 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**3.** 다음 연립 방정식이 해를 가지는 지 판정하라.
+::: {#exr-CAL_11_S03} 
+
+#### SNU 탐구문제 11.3
+
+다음 연립 방정식이 해를 가지는 지 판정하라.
 
 $$
 x^3+2xy-3ye^{\sin x} \cos x = -7,\qquad y^5+x^2-3e^{\sin x}=5
 $$
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2272,9 +2702,13 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**4.** ($\textbf{H\"older}$ 부등식 ) 양수 $p,\,q$ 가 $\dfrac{1}{p}+\dfrac{1}{q}=1$ 을 만족시킬 때, 벡터
+::: {#exr-CAL_11_S04} 
+
+#### SNU 탐구문제 11.4 ($\textbf{H\"older}$ 부등식) 
+
+양수 $p,\,q$ 가 $\dfrac{1}{p}+\dfrac{1}{q}=1$ 을 만족시킬 때, 벡터
 
 $$
 a=(a_1,\ldots,\,a_n),\quad b=(b_1,\ldots,\,b_n)
@@ -2286,6 +2720,10 @@ $$
 |a\cdot b| \le (|a_1|^p + \cdots + |a_n|^p)^{1/p}(|b_1|^q  + \cdots + |b_n|^q)^{1/q}
 $$
 을 증명하라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2339,7 +2777,7 @@ f(x,\,y)=\sum_{i=1}^n x_i y_i&=\lambda p \sum_{i=1}^n x_i^p =\lambda p\\
 \end{aligned}
 $$
 
-이므로 (1) 로부터 $\lambda p = \mu q=1$ 이므로 $f(x,\,y)=1$ 은 극값이다. $x=\mathbf{e}_1,\, y=\mathbf{e}_2$ 라 하면 $x \cdot y = 0$ 이며 $g_1,\,g_2$ 를 만족하므로  $f(x,\,y)$ 의 최대값은 $1$ 이다. 즉  $f(x,\,y)\le 1$ 이다. 이제 $x_i = \dfrac{|a_i|}{(\sum |a_i|^p)^{1/p}},\, y_i =\dfrac{|b_i|}{\sum (|b_i| ^q)^{1/q}}$ 라 하면
+이므로 (1) 로부터 $\lambda p = \mu q=1$ 이므로 $f(x,\,y)=1$ 은 극값이다. $x=\bf{e}_1,\, y=\bf{e}_2$ 라 하면 $x \cdot y = 0$ 이며 $g_1,\,g_2$ 를 만족하므로  $f(x,\,y)$ 의 최대값은 $1$ 이다. 즉  $f(x,\,y)\le 1$ 이다. 이제 $x_i = \dfrac{|a_i|}{(\sum |a_i|^p)^{1/p}},\, y_i =\dfrac{|b_i|}{\sum (|b_i| ^q)^{1/q}}$ 라 하면
 
 $$
 |a \cdot b| = \left|\sum a_i b_i \right|\le \sum |a_i||b_i| \le \left(|a_1|^p+ \cdots + |a_n|^p\right)^{1/p} \left(|b_1|^q+ \cdots + |b_n|^q\right)^{1/q}
@@ -2349,9 +2787,19 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**5.** 함수 $L(x,\,y,\,z)$ 에 대하여 공간 $\mathcal{F}=\{ f\in \mathcal{C}^1[a,\,b] \mid f(a)=y_a,\, f(b)=y_b\}$  에서 정의된 범함수
+::: {#exr-CAL_11_S05} 
+
+#### SNU 탐구문제 11.5
+
+함수 $L(x,\,y,\,z)$ 에 대하여 공간 
+
+$$
+\mathcal{F}=\{ f\in \mathcal{C}^1[a,\,b] \mid f(a)=y_a,\, f(b)=y_b\}
+$$  
+
+에서 정의된 범함수
 
 $$
 \mathcal{L}(f) :=\int_a^b L(u,\,f(u),\, f'(u))\, du
@@ -2364,6 +2812,10 @@ D_2 L(u,\, f(u),\, f'(u))=\dfrac{d}{du} D_3 L(u,\, f(u),\, f'(u))
 $$
 
 임을 보이라.
+
+:::
+
+</div>
 
 ::: {.solution}
 
@@ -2407,9 +2859,17 @@ $$
 
 :::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**6.** 최단강하선 문제에서 $f$ 가 직선이거나 원호이면 걸리는 시간은 얼마인가.
+::: {#exr-CAL_11_S06} 
+
+#### SNU 탐구문제 11.6
+
+최단강하선 문제에서 $f$ 가 직선이거나 원호이면 걸리는 시간은 얼마인가.
+
+:::
+
+</div>
 
 ::: {.solution}
 

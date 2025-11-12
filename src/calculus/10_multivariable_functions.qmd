@@ -10,63 +10,109 @@ crossref:
 
 ## 제 10 장 1 절
 
-**2.** 다음 함수의 그래프를 종이와 연필을 이용하여 그리라. 또 컴퓨터 프로그램을 이용하여 그리라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_1_2}
+
+ 다음 함수의 그래프를 종이와 연필을 이용하여 그리라. 또 컴퓨터 프로그램을 이용하여 그리라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_10_1_2](figures/ex_10_1_2.jpg)
 
-</br>
+:::
 
-**3.** 3차원 좌표공간의 $yz$-평면에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_1_3}
+
+3차원 좌표공간의 $yz$-평면에서
 
 $$
 z=f(y),\qquad y\ge 0
 $$
 
-의 그래프를 $z$ 축 둘래로 회전시켜 얻은 곡면의 식은 $z=f\left(\sqrt{x^2+y^2}\right) $ 임을 보이라.
+의 그래프를 $z$ 축 둘래로 회전시켜 얻은 곡면의 식은 $z=f\left(\sqrt{x^2+y^2}\right)$ 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 trivial
 
-</br>
+:::
 
-**4.** 다음 함수의 그래프를 그리라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_1_4}
+
+다음 함수의 그래프를 그리라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 ![ex_10_1_4](figures/ex_10_1_4.jpg)
+
+:::
 
 </br>
 
 ## 제 10 장 2 절
 
-**1.** 다음 극한값이 존재하면 그 값을 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_2_1}
 
-(1) $\displaystyle \lim_{(x,\,y)\to (0,\,0)}\dfrac{1}{1-\ln (x^2+y^2)}$
+#### SNU 10.2.1
+
+다음 극한값이 존재하면 그 값을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $\displaystyle \lim_{(x,\,y)\to (0,\,0)}\dfrac{1}{1-\ln (x^2+y^2)}$
 
 방향성과 관계 없이 $\infty$ 이다.
 
-(2) $\displaystyle \lim_{(x,\,y) \to (0,\,0)} \dfrac{e^{-1/(x^2+y^2)}}{x^2+y^2} = \lim_{r \to 0^+}  \dfrac{e^{-1/r^2}}{r}=\lim_{s\to \infty} se^{-s^2} =0 $  
+($2$) $\displaystyle \lim_{(x,\,y) \to (0,\,0)} \dfrac{e^{-1/(x^2+y^2)}}{x^2+y^2} = \lim_{r \to 0^+}  \dfrac{e^{-1/r^2}}{r}=\lim_{s\to \infty} se^{-s^2} =0$  
 
-</br>
+:::
 
-**2.** 다음 함수의 연속성을 조사하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_2_2}
 
-(1) $\displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{xy^2}{x^2+y^4}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.$
+#### SNU 10.2.2
+
+다음 함수의 연속성을 조사하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $\displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{xy^2}{x^2+y^4}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.$
 
 $(x,\, y)=(t^2, t)$ 방향으로는 $\displaystyle \lim_{t \to 0} f(t^2,\,t) = \lim_{t \to 0} \dfrac{t^4}{2t^4}=\dfrac{1}{2}$ 이므로 연속이 아니다.
 
-(2)  $\displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{x^2-y^3}{x^2+y^2}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.$
+($2$)  $\displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{x^2-y^3}{x^2+y^2}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.$
 
 $(x,\,y)= (t,\, 0)$ 방향으로는 $\displaystyle \lim_{t \to 0} f(t,\,0)= 1$ 이므로 불연속
 
-(3) $\displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{x^2y-xy^2}{x^2+y^2}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.$
+($3$) $\displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{x^2y-xy^2}{x^2+y^2}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.$
 
 $|x^2+y^2|=R>0$ 에 대해, $|xy|\le (x^2+y^2)/2\le R/2$ 이므로
 
@@ -76,9 +122,15 @@ $$
 
 이다. 어떤 뱡항으로든 $\displaystyle \lim_{(x,\,y)\to (0,\,0)} f(x,\,y) =0$ 이다.
 
-</br>
+:::
 
-**3.** 좌표평면에서 정의된 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_2_3}
+
+#### SNU 10.2.3
+
+좌표평면에서 정의된 함수
 
 $$
 \displaystyle f(x,\,y)= \left\{\begin{array}{ll} \dfrac{x^2y}{x^4+y^2}, \quad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y )= (0,\, 0) \end{array}\right.
@@ -86,7 +138,11 @@ $$
 
 는 평면 속의 원점을 지나는 임의의 직선에 제한하면 연속함수가 되지만, 원점을 지나는 포물선 $y=x^2$ 에 제한하면 연속함수가 아님을 보여라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -95,9 +151,15 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**4.** 원점을 제외한 좌표평면에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_2_4}
+
+#### SNU 10.2.4
+
+원점을 제외한 좌표평면에서
 
 $$
 f(x,\,y) := \dfrac{ax+by}{\sqrt{x^2+y^2}}
@@ -105,104 +167,151 @@ $$
 
 로 정의된 함수에 대하여 원점에서의 함수값을 잘 정하면 $f(x,\,y)$ 가 원점에서 연속함수가 되는 실수 $a,\,b$ 의 값을 모두 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 우선 $(x,\, y)=(t,\, 0)$ 에서 $t\to 0^+$ 극한은 $a$ 이며 $t\to 0^{-}$ 극한은 $-a$ 이다.  $(x,\, y)=(0,\,t)$ 에서 $t\to 0^{+}$ 극한은 $b$ 이며 $t\to 0^{-}$ 극한은 $-b$ 이다.  $a=b$ 이어야 한다. 또한 $(x,\,y)=(t,\,t)$ 에서 $t \to 0$ 극한은 $\dfrac{a+b}{\sqrt{2}}$ 이므로 $a=b=0$ 이어야 한다. 그렇다면 함수는 $0$ 함수 이므로 연속이다.
 
-</br>
+:::
 
-**5.** 좌표공간의 부분집합이 유계라는 것은 무슨 뜻인가.
 
----
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_2_5}
+
+### SNU 10.2.5
+
+좌표공간의 부분집합이 유계라는 것은 무슨 뜻인가.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $\exists R\in \mathbb{R}$ s.t. $\max\{|x|: x\in U\}<R$.
 
-</br>
+:::
 
-**6.** 좌표공간의 부분집합에서 정의된 연속함수가 최대값을 가지지 않는 경우는 어떠한 경우인가?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_2_6}
 
-1. 함수가 유계가 아닌 경우 $f:\mathbb{R}\to \mathbb{R}$ defined by $f(x)=x^2$
-2. 함수가 닫힌 집합이 아닌 집합에 대해 정의된 경우. $f:(0,\,1)\to \mathbb{R}$ defined by $f(x)=x$.
+#### 10.2.6
+좌표공간의 부분집합에서 정의된 연속함수가 최대값을 가지지 않는 경우는 어떠한 경우인가?
 
+:::
+
+</div>
+
+::: {.solution}
+
+&emsp;$1$. 함수가 유계가 아닌 경우 $f:\mathbb{R}\to \mathbb{R}$ defined by $f(x)=x^2$
+
+&emsp;$2$. 함수가 닫힌 집합이 아닌 집합에 대해 정의된 경우. $f:(0,\,1)\to \mathbb{R}$ defined by $f(x)=x$.
+
+:::
 </br>
 
 ## 제 10 장 3 절
 
 - $\operatorname{grad} f$ 를 $\nabla f$ 로 쓰기로 한다.  
 
-**1.** $f(x,\,y,\,z)=x^2y^3+z$ 에 대하여 $\nabla f(1,\,2,\,3)$ 을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_3_1}
 
-$$
-\nabla f (x,\,y,\, z)=(2xy^3,\ 3x^2y^2,\, 1) \implies \nabla f(1,\,2,\,3)=(16,\, 12,\, 1)
-$$
+#### SNU 10.3.1
+ $f(x,\,y,\,z)=x^2y^3+z$ 에 대하여 $\nabla f(1,\,2,\,3)$ 을 구하라.
 
-</br>
+:::
 
-**2.** 다음 함수의 $\mathbf{v}$ 방향 미분계수를 구하라.
+</div>
 
----
+::: {.solution}
 
-(1) $f(x,\, y)=x^2+y^3,\quad P=(-1,\,3),\quad \mathbf{v}=(1,\,2)$
+$\nabla f (x,\,y,\, z)=(2xy^3,\ 3x^2y^2,\, 1) \implies \nabla f(1,\,2,\,3)=(16,\, 12,\, 1)$
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_3_2}
+
+다음 함수의 $\bf{v}$ 방향 미분계수를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $f(x,\, y)=x^2+y^3,\quad P=(-1,\,3),\quad \bf{v}=(1,\,2)$
 
 $$
 \begin{aligned}
 \nabla f(-1,\,3) &= (-2,\, 27)\\
-\nabla f(-1,\,3)\cdot \mathbf{v} &=-2+54=52
+\nabla f(-1,\,3)\cdot \bf{v} &=-2+54=52
 \end{aligned}
 $$
 
-(2) $f(x,\,y)=2x^2+xy-y^2,\quad P=(3,\,-2),\quad \mathbf{v}=(1,\,-1)$
+($2$) $f(x,\,y)=2x^2+xy-y^2,\quad P=(3,\,-2),\quad \bf{v}=(1,\,-1)$
 
 $$
 \begin{aligned}
 \nabla f(x,\,y)&=(4x+y,\, x-2y) \\
 \nabla f(3,\,-2) &=(10, 7)\\
-\nabla f(3,\, -2) \cdot \mathbf{v} &=3
+\nabla f(3,\, -2) \cdot \bf{v} &=3
 \end{aligned}
 $$
 
-(3) $f(x,\,y)= e^x \ln y,\quad P=(0,\,e),\quad \mathbf{v}=(2,\,1)$
+($3$) $f(x,\,y)= e^x \ln y,\quad P=(0,\,e),\quad \bf{v}=(2,\,1)$
 
 $$
 \begin{aligned}
 \nabla f(x,\,y) &= \left( e^x \ln y,\, \dfrac{e^x}{y}\right)\\
 \nabla f(0,\,e) &= (1,\, 1/e) \\
-\nabla f(0,\,e) \cdot \mathbf{v} &= 2+ \dfrac{1}{e}
+\nabla f(0,\,e) \cdot \bf{v} &= 2+ \dfrac{1}{e}
 \end{aligned}
 $$
 
-(4) $f(x,\,y)= e^x \sin y,\quad P=(0,\,\pi/4),\quad \mathbf{v}=(2,\,1)$
+($4$) $f(x,\,y)= e^x \sin y,\quad P=(0,\,\pi/4),\quad \bf{v}=(2,\,1)$
 
 $$
 \begin{aligned}
 \nabla f(x,\,y)&= (e^x \sin y,\, e^x \cos y)\\
 \nabla f(0,\,\pi/4)& = (1/\sqrt{2},\, 1/\sqrt{2})\\
-\nabla f(0,\, \pi/4)\cdot \mathbf{v} &=3/\sqrt{2}
+\nabla f(0,\, \pi/4)\cdot \bf{v} &=3/\sqrt{2}
 \end{aligned}
 $$
 
-(5) $f(x,\,y)=\ln \sqrt{x^2+y^2},\quad P=(1,\,1),\quad \mathbf{v}=(2,\,1)$
+($5$) $f(x,\,y)=\ln \sqrt{x^2+y^2},\quad P=(1,\,1),\quad \bf{v}=(2,\,1)$
 
 $$
 \begin{aligned}
 \nabla f(x,\,y) &=\left(\dfrac{x}{x^2+y^2},\, \dfrac{y}{x^2+y^2}\right)\\
 \nabla f(1,\,1) &=\left(\dfrac{1}{2},\, \dfrac{1}{2}\right) \\
-\nabla f(1,\, 1)\cdot \mathbf{v} &=\dfrac{3}{2}
+\nabla f(1,\, 1)\cdot \bf{v} &=\dfrac{3}{2}
 \end{aligned}
 $$
 
-</br>
+:::
 
-**3.** $n$ 공간의 열린 집합 $U$ 에서 정의된 편미분가능한 함수 $f,\,g$ 에 대하여
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_3_3}
+
+#### SNU 10.3.3
+
+$n$ 공간의 열린 집합 $U$ 에서 정의된 편미분가능한 함수 $f,\,g$ 에 대하여
 
 $$
 \begin{aligned}
-\nabla (f+g)&=\nabla f + \nabla g\\
-\nabla (cf)&=c \nabla f ,\quad c\in \mathbb{R}\\
+\nabla (f+g)&=\nabla f + \nabla g\\[0.3em]
+\nabla (cf)&=c \nabla f ,\quad c\in \mathbb{R}\\[0.3em]
 \nabla (fg) &=f\nabla g+g \nabla f
 \end{aligned}
 $$
@@ -215,13 +324,18 @@ $$
 
 임을 보이라.
 
----
+:::
 
+</div>
+
+::: {.solution}
+
+$\forall i=1,\,2,\ldots,\,n$ 에 대해 
 $$
 \begin{aligned}
-D_i (f+g)(P) &= D_if(P)+D_i g(P) \quad\forall i=1,\,2,\ldots,\,n  &\implies& \nabla (f+g)=\nabla f +\nabla (g)\\
-D_i (cf)(P) &=cD_i (P) \quad\forall i=1,\,2,\ldots,\,n  &\implies& \nabla (cf)=c\nabla f \\
-D_i (fg)(P) &= (fD_i g)(P) + (gD_i f)(P) \quad \forall i=1,\ldots,\,n &\implies& \nabla (fg) = f\nabla g + g\nabla f
+D_i (f+g)(P) &= D_if(P)+D_i g(P)  &\implies& \nabla (f+g)=\nabla f +\nabla (g)\\[0.3em]
+D_i (cf)(P) &=cD_i (P) &\implies& \nabla (cf)=c\nabla f \\[0.3em]
+D_i (fg)(P) &= (fD_i g)(P) + (gD_i f)(P) &\implies& \nabla (fg) = f\nabla g + g\nabla f
 \end{aligned}
 $$
 
@@ -239,9 +353,15 @@ $$
 
 이다.
 
-</br>
+:::
 
-**4.** $n$-공간에서 항등사상 $X= (x_1,\ldots,\,x_n):\mathbb{R}^n \to \mathbb{R}^n$ 과
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_3_4}
+
+#### SNU 10.3.4 
+
+$n$-공간에서 항등사상 $X= (x_1,\ldots,\,x_n):\mathbb{R}^n \to \mathbb{R}^n$ 과
 
 $$
 |X|=\sqrt{x_1^2+\cdots + x_n^2}
@@ -261,17 +381,29 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
-D_i |X-P|=\dfrac{\partial }{\partial x_k}\sqrt{(x_1-p_1)^2+\cdots +(x_n-p_n)^2}=\dfrac{(x_k-p_k)}{|X|} \implies \nabla|X-P|=\dfrac{X-P}{|X-P|}
+\begin{aligned}
+D_i |X-P| &= \dfrac{\partial }{\partial x_k}\sqrt{(x_1-p_1)^2+\cdots +(x_n-p_n)^2} =\dfrac{(x_k-p_k)}{|X|}
+\end{aligned}
 $$
 
-이다.
+이므로 $\nabla|X-P|=\dfrac{X-P}{|X-P|}$ 이다.
 
-</br>
+:::
 
-**5.** $n$-공간에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_3_5}
+
+#### SNU 10.3.5  
+
+$n$-공간에서
 
 $$
 \nabla \dfrac{1}{|X|}=-\dfrac{X}{|X|^3}
@@ -285,39 +417,59 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 D_k \dfrac{1}{\left( x_1^2+\cdots+x_n^2 \right)^{k/2}}=\dfrac{-kx_k}{\left( x_1^2+\cdots+x_n^2 \right)^{(k+2)/2}} \implies \nabla\dfrac{1}{|X|^k}= -\dfrac{kX}{|X|^{k+2}}
 $$
 
-</br>
+:::
 
-**6.** $n$-공간에서 $r=|X|$ 라 할 때 점 $X$ 에서 다음 함수들의 기울기 벡터를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_3_6}
 
-(1) $f(X)=\ln r$
+#### SNU 10.3.6  
+
+$n$-공간에서 $r=|X|$ 라 할 때 점 $X$ 에서 다음 함수들의 기울기 벡터를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $f(X)=\ln r$
 
 $$
 D_k f(X)= D_k \ln (x_1^2+\cdots +x_n^2)^{1/2}=\dfrac{x_k}{\left(x_1^2+\cdots + x_n^2 \right)} \implies \nabla \ln r = \dfrac{X}{|X|^2}
 $$
 
-(2) $f(X)=e^{-r^2}$
+($2$) $f(X)=e^{-r^2}$
 
 $$
 D_k e^{-r^2} =D_k e^{-(x_1^2+\cdots+x_n^2)}=-2x_k e^{-r^2}\implies \nabla e^{-r^2}=-2X e^{-r^2}
 $$
 
-(3) $f(X)=re^{-r}$
+($3$) $f(X)=re^{-r}$
 
 $$
 D_k re^{-r}= \dfrac{X}{|X|}e^{-r}-Xe^{-r}\implies \nabla re^{-r}=X\left(\dfrac{1}{r}-1\right)e^{-r}
 $$
 
-</br>
+:::
 
-**7.** 함수 $f(x,\,y)=xy^2$ 에서
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_3_7}
+
+#### SNU 10.3.7  
+
+함수 $f(x,\,y)=xy^2$ 에서
 
 $$
 \dfrac{\partial f}{\partial x}(1,\,1)=D_1 f(1,\,1)=1
@@ -331,13 +483,23 @@ $$
 
 임을 설명하라. 또 $f=g$ 임을 살펴보라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f$ 와 $g$ 는 $x,\,y$ 를 서로 exchange 한 함수이므로 $\dfrac{\partial f}{\partial x}(1,\,1)=\dfrac{\partial g}{\partial y}(1,\,1)=2$ 이다. $g(x,\,y)=xy^2=f(x,\,y)$ 이다.
 
-</br>
+:::
 
-**8.** 좌표평면의 극좌표계 $(r,\,\theta)$ 에서 $r=\sqrt{x^2+y^2}$ 이므로,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_3_8}
+
+#### SNU 10.3.8  
+
+좌표평면의 극좌표계 $(r,\,\theta)$ 에서 $r=\sqrt{x^2+y^2}$ 이므로,
 
 $$
 \dfrac{\partial r}{\partial x}= \dfrac{x}{r}=\cos \theta
@@ -357,7 +519,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -366,6 +532,9 @@ $$
 \dfrac{\partial r}{\partial x}\cdot \dfrac{\partial x}{\partial r} &= \cos^2 \theta \ne 1
 \end{aligned}
 $$
+:::
+
+</br>
 
 ## 연습문제 제 10 장 4 절
 
@@ -373,58 +542,62 @@ $$
 
 $n$-공간의 열린 집합 $U$ 에서 정의된 함수 $f:U \to \mathbb{R}$ 가 점 $P\in U$ 에서 미분가능하면
 
-(1) $f$ 는 점 $P$ 에서 연속이다.
+&emsp;($1$) $f$ 는 점 $P$ 에서 연속이다.
 
-(2) $f$ 는 점 $P$ 에서 모든 방향의 방향미분계수를 가지고
+&emsp;($2$) $f$ 는 점 $P$ 에서 모든 방향의 방향미분계수를 가지며 그 값은 다음과 같다.
 
 $$
-D_\mathbf{v} f(P)=\nabla f(P)\cdot \mathbf{v} \qquad (\mathbf{v}\in \mathbb{R}^n)
+D_\bf{v} f(P)=\nabla f(P)\cdot \bf{v} \qquad (\bf{v}\in \mathbb{R}^n)
 $$
 ​
-이다.
+&emsp;($3$) 식 (10.4)를 만족시키는 벡터 $\bf{a}$ 는 $\nabla f(P)$ 이다.
 
-(3) 식 (10.4)를 만족시키는 벡터 $\mathbf{a}$ 는 $\nabla f(P)$ 이다.
+::: {.proof}
 
----
-
-*(proof)* (1) 식 (10.5) $f(P+\mathbf{v})-f(P)=\mathbf{a}\cdot \mathbf{v}+o(\mathbf{v})$ 이므로,
+($1$) 식 (10.5) $f(P+\bf{v})-f(P)=\bf{a}\cdot \bf{v}+o(\bf{v})$ 이므로,
 
 $$
-\lim_{\mathbf{v}\to \mathbf{0}} f(P +\mathbf{v})-f(P)=\lim_{\mathbf{v}\to \mathbf{0}} \mathbf{a}\cdot \mathbf{v} + o(\mathbf{v}) = 0
+\lim_{\bf{v}\to \bf{0}} f(P +\bf{v})-f(P)=\lim_{\bf{v}\to \bf{0}} \bf{a}\cdot \bf{v} + o(\bf{v}) = 0
 $$
 
 이다. 따라서 $f$ 는 $P$ 에서 연속이다.
 
-(2)
+($2$)
 
 $$
-D_{\mathbf{v}} f(P)=\lim_{t\to 0} \dfrac{f(P+t\mathbf{v})-f(P) }{t}=\lim_{t\to 0} \dfrac{t\mathbf{a}\cdot \mathbf{v} }{t}=\mathbf{a}\cdot \mathbf{v}
+D_{\bf{v}} f(P)=\lim_{t\to 0} \dfrac{f(P+t\bf{v})-f(P) }{t}=\lim_{t\to 0} \dfrac{t\bf{a}\cdot \bf{v} }{t}=\bf{a}\cdot \bf{v}
 $$
 
-이므로 모든 방향의 방향미분이 존재한다. $\mathbf{a}=(a_1,\ldots,\,a_n)$ 이라 하면,
+이므로 모든 방향의 방향미분이 존재한다. $\bf{a}=(a_1,\ldots,\,a_n)$ 이라 하면,
 
 $$
-D_k f(P)=\mathbf{a}\cdot \mathbf{e}_k=a_k
+D_k f(P)=\bf{a}\cdot \bf{e}_k=a_k
 $$
 
 이므로,
 
 $$
-\nabla f(P)=\mathbf{a}
+\nabla f(P)=\bf{a}
 $$
 
 이며, 따라서,
 
 $$
-D_\mathbf{v}f(P)=\nabla f(P)\cdot \mathbf{v}
+D_\bf{v}f(P)=\nabla f(P)\cdot \bf{v}
 $$
 이다.
 
-(3) (2)에서 보였다. $\square$
+($3$) ($2$)에서 보였다. $\square$
 
-</br>
+:::
 
-**1.** 좌표평면에서 온도분포함수가 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_4_1}
+
+#### SNU 10.4.1  
+
+좌표평면에서 온도분포함수가 함수
 
 $$
 f(x,\,y)=x^2y+xy^2 \quad({}^\circ \text{C})
@@ -432,12 +605,15 @@ $$
 
 으로 주어졌을 때, 점 $(2,\,3)$ 에 위치한 길동이는
 
-(1) 어느 방향으로 움직여야 빨리 시원해질까? 이때의 온도 순간변화율은 얼마인가?
+&emsp;($1$) 어느 방향으로 움직여야 빨리 시원해질까? 이때의 온도 순간변화율은 얼마인가?
 
-(2) 가장 빨리 뜨거워지는 방향은 어느방향인가? 또 이 방향의 온도순간변화율은 얼마인가?
+&emsp;($2$) 가장 빨리 뜨거워지는 방향은 어느방향인가? 또 이 방향의 온도순간변화율은 얼마인가?
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 \nabla f(x,\,y) &= (2xy+y^2,\, x^2+2xy)\\
@@ -447,11 +623,21 @@ $$
 
 이다. 가장 빨리 시원해지는 방향의 방향벡터는 $-\dfrac{(21,\, 16)}{\sqrt{21^2+16^2}}$ 이며 이때의 온도의 순간변화율은 $\nabla f(2,\,3)$ 과의 내적이므로 $-\sqrt{21^2+16^2}\approx -26.40$ 이며 가장 빨리 뜨거워지는 방향의 방향벡터는 $\dfrac{(21,\, 16)}{\sqrt{21^2+16^2}}$ 이며 온도의 순간변화율은 $\approx 26.40$ 이다.
 
-</br>
+:::
 
-**2.** 좌표평면에서 정의된 미분가능함수 $f(x,\,y)$ 가 원점에서, $(1,\,2)$-방향 미분계수가 $1$ 이고 $(2,\,3)$ 방향 미분계수가 $2$ 라고 하자. 원점에서의 이 함수의 $(3,\,5)$ 방향 미분계수는 얼마인가? 또 기울기 벡터 $\nabla f(O)$ 를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_4_2}
+
+#### SNU 10.4.2 
+
+좌표평면에서 정의된 미분가능함수 $f(x,\,y)$ 가 원점에서, $(1,\,2)$-방향 미분계수가 $1$ 이고 $(2,\,3)$ 방향 미분계수가 $2$ 라고 하자. 원점에서의 이 함수의 $(3,\,5)$ 방향 미분계수는 얼마인가? 또 기울기 벡터 $\nabla f(O)$ 를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -463,9 +649,15 @@ $$
 
 이다. $\nabla f(O)=(a,\,b)$ 라 하면 $a+2b=1,\, 2a+3b=2$ 이므로 $a=1,\,b=0$ 이다. 즉 $\nabla f(O)=(1,\,0)$ 이다.
 
-</br>
+:::
 
-**3.** 동차 다항함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_4_4}
+
+#### SNU 10.4.3 
+
+동차 다항함수
 
 $$
 a_0 x^n + a_1 x^{n-1}y + \cdots + a_{n-1}xy^{n-1}+a_n y^n
@@ -473,12 +665,16 @@ $$
 
 는 일급함수인가? 또 이것은 미분가능함수인가? 모든 다항함수는 일급함수인가? 두 다항식의 몫으로 주어지는 유리함수는 (정의역에서) 일급함수인가?
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 위의 동차 다항함수를 $f(x,\,y)$ 라 하면,
 
 $$
-\nabla f(x,\,y)=(a_0 nx^{n-1}+a_1(n-1)x^{n-2}y + \cdots + a_{n-1}y^{n-1},\, a_1x^{n-1}+2a_2x^{n-2}y+\cdots + a_{n-1}(n-1)xy^{n-2}+ a_n n y^{n-1})
+\nabla f(x,\,y) = \begin{bmatrix} a_0 nx^{n-1}+a_1(n-1)x^{n-2}y + \cdots + a_{n-1}y^{n-1} \\ a_1x^{n-1}+2a_2x^{n-2}y+\cdots + a_{n-1}(n-1)xy^{n-2}+ a_n n y^{n-1} \end{bmatrix}
 $$
 
 이며 각각의 components 도 동차 다항함수이므로 연속이다. 따라서 동차 다항함수는 일급함수이다.
@@ -488,14 +684,20 @@ $$
 임의의 다항식 $p(x,\,y),\, q(x,\,y)$ 의 몫 $\dfrac{p(x,\, y)}{q(x,\, y)}$ 을 $q(x,\, y)\ne 0$ 인 정의역에서 생각하자.
 
 $$
-\nabla\left(\dfrac{p(x,\,y)}{q(x,\,y)}\right)=\left( \dfrac{q(x,\, y)D_1 p(x,\,y)-p(x,\, y)D_1q(x,\,y)}{q(x,\,y)^2}, \dfrac{q(x,\, y)D_2 p(x,\,y)-p(x,\, y)D_2q(x,\,y)}{q(x,\,y)^2}  \right)
+\nabla\left(\dfrac{p(x,\,y)}{q(x,\,y)}\right)= \begin{bmatrix} \dfrac{q(x,\, y)D_1 p(x,\,y)-p(x,\, y)D_1q(x,\,y)}{q(x,\,y)^2} \\ \dfrac{q(x,\, y)D_2 p(x,\,y)-p(x,\, y)D_2q(x,\,y)}{q(x,\,y)^2} \end{bmatrix}
 $$
 
 이므로 $q(x,\,y)\ne 0$ 인 영역에서 각 편미분이 연속이다. 따라서 일급함수이다.
 
-</br>
+:::
 
-**4.** 직사각형 $(a,\,b)\times (c,\,d)\subset \mathbb{R}^2$ 에서 정의된 미분가능함수 $f(x,\,y),\, g(x,\,y)$ 가 항등적으로
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_4_4}
+
+#### SNU 10.4.4 
+
+직사각형 $(a,\,b)\times (c,\,d)\subset \mathbb{R}^2$ 에서 정의된 미분가능함수 $f(x,\,y),\, g(x,\,y)$ 가 항등적으로
 
 $$
 \dfrac{\partial f}{\partial x}= \dfrac{\partial g}{\partial x}
@@ -509,7 +711,11 @@ $$
 
 를 만족시키는 미분가능함수 $h:(c,\,d)\to \mathbb{R}$ 이 존재함을 설명하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $k : (a,\,b)\times (c,\,d)\to \mathbb{R}^2$ 를 $k(x,\,y)=f(x,\,y)-g(x,\,y)$ 로 정의하면,
 
@@ -525,25 +731,43 @@ $$
 
 를 만족하는 $x_0\in (x_1,\,x_2)$ 가 존재함을 의미한다. 그런데 어떤 $x_0\in (a,\,b)$ , $y\in (c\,d)$ 에 대해서도 $\dfrac{\partial k}{\partial x}=0$ 이므로 $k(x_2,\, y)-k(x_1,\,y)=0$ 이다. 따라서 아무 $x_0\in (a,\,b)$ 에 대해서도 $k(x,\,y)=k(x_0,\,y)$ 이다. 이제 $h(y)=k(x_0,\,y)$ 라 놓을 수 있다.
 
-</br>
+:::
 
-**5.** 좌표평면의 원점 근방에서 정의된 함수 $f(x,\,y)$ 에 대하여 $D_1 f(O)=1,\, D_2 f(O)=-2$ 라 하자. 이 대 함수값의 변화가 거의 없는 방향은 어느 방향인가?
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_4_5}
 
-$\mathbf{v}=(v_1,\,v_2)$ 라 하면,
+#### SNU 10.4.5 
+
+좌표평면의 원점 근방에서 정의된 함수 $f(x,\,y)$ 에 대하여 $D_1 f(O)=1,\, D_2 f(O)=-2$ 라 하자. 이 대 함수값의 변화가 거의 없는 방향은 어느 방향인가?
+
+:::
+
+</div>
+
+::: {.solution}
+
+$\bf{v}=(v_1,\,v_2)$ 라 하면,
 
 $$
-D_{\mathbf{v}}f(O) = (1,\,-2)\cdot (v_1,\,v_2)=v_1-2v_2
+D_{\bf{v}}f(O) = (1,\,-2)\cdot (v_1,\,v_2)=v_1-2v_2
 $$
 
-이며 $\mathbf{v}=(2,\,1)$ 혹은 $\mathbf{v}=(-2,\,-1)$ 일 때 $D_\mathbf{v} f(O)=0$ 이다. 따라서 $\pm(2,\,1)$ 방향이 함수값의 변화가 거의 없는 방향이다.
+이며 $\bf{v}=(2,\,1)$ 혹은 $\bf{v}=(-2,\,-1)$ 일 때 $D_\bf{v} f(O)=0$ 이다. 따라서 $\pm(2,\,1)$ 방향이 함수값의 변화가 거의 없는 방향이다.
+
+:::
 
 </br>
 
 ## 연습문제 제 10 장 5 절
 
-**1.** 좌표평면의 표준직교좌표계 $(x,\,y)$ 와 극좌표계 $(r,\,\theta)$ 에 대하여
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_1}
+
+#### SNU 10.5.1 
+
+좌표평면의 표준직교좌표계 $(x,\,y)$ 와 극좌표계 $(r,\,\theta)$ 에 대하여
 
 $$
 \begin{aligned}
@@ -560,7 +784,11 @@ $$
 
 을 유도하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $r=\sqrt{x^2+y^2},\, \theta = \arctan\left(\dfrac{y}{x}\right)$ 로부터,
 
@@ -591,9 +819,15 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**2.** (**오일러 공식**) 주어진 자연수 $k$ 에 대하여 함수 $f(x_1,\ldots,\,x_n)$ 이
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_2}
+
+#### SNU 10.5.2 (오일러 공식) 
+
+주어진 자연수 $k$ 에 대하여 함수 $f(x_1,\ldots,\,x_n)$ 이
 
 $$
 f(tx_1,\ldots,\,tx_n)=t^k f(x_1,\ldots,\,x_n) ,\qquad \forall t,\, x_i \in \mathbb{R}
@@ -607,47 +841,69 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
-f(t\mathbf{x})=t^k f(\mathbf{x})
+f(t\bf{x})=t^k f(\bf{x})
 $$
 
 이므로,
 
 $$
-\dfrac{d}{dt}f(t\mathbf{x})=\mathbf{x} \cdot (\nabla f)(t\mathbf{x})\implies kt^{k-1}f(\mathbf{x})=\sum_{i=1}^n x_i D_i f(t\mathbf{x}) = \mathbf{x} \cdot (\nabla f)(t\mathbf{x})
+\dfrac{d}{dt}f(t\bf{x})=\bf{x} \cdot (\nabla f)(t\bf{x})\implies kt^{k-1}f(\bf{x})=\sum_{i=1}^n x_i D_i f(t\bf{x}) = \bf{x} \cdot (\nabla f)(t\bf{x})
 $$
 
 이다. $t=1$ 을 대입하면 주어진 식을 얻는다.
 
-</br>
+:::
 
-**3.** 미분가능함수 $f(\mathbf{x})$ 가 임의의 실수 $t$ 와 임의의 $\mathbf{x}\in\mathbb{R}^n$ 에 대하여 $f(t\mathbf{x})=tf(\mathbf{x})$  이면
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-$$
-f(\mathbf{x})=\mathbf{a}\cdot \mathbf{x}
-$$
+::: {#exr-CAL_10_5_3}
 
-를 만족시키는 벡터 $\mathbf{a}$ 가 존재함을 보이라.
+#### SNU 10.5.3 
 
----
-
-문제 2로부터, $k=1$ 을 대입하면,
+미분가능함수 $f(\bf{x})$ 가 임의의 실수 $t$ 와 임의의 $\bf{x}\in\mathbb{R}^n$ 에 대하여 $f(t\bf{x})=tf(\bf{x})$  이면
 
 $$
-f(\mathbf{x}) = \mathbf{x} \cdot \nabla f(t\mathbf{x})
+f(\bf{x})=\bf{a}\cdot \bf{x}
 $$
 
-를 얻는다. $t=0$ 을 대입하고 $\nabla{f}(O)=\mathbf{a}$ 라 놓으면
+를 만족시키는 벡터 $\bf{a}$ 가 존재함을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@exr-CAL_10_5_2 로부터, $k=1$ 을 대입하면,
 
 $$
-f(\mathbf{x})=\mathbf{a} \cdot \mathbf{x}
+f(\bf{x}) = \bf{x} \cdot \nabla f(t\bf{x})
+$$
+
+를 얻는다. $t=0$ 을 대입하고 $\nabla{f}(O)=\bf{a}$ 라 놓으면
+
+$$
+f(\bf{x})=\bf{a} \cdot \bf{x}
 $$
 
 이다.
 
-**4.** 미분가능함수 $f$ 에 대하여 $z=f\left(\dfrac{x-y}{y}\right)$ 로 둘 때,
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_4}
+
+#### SNU 10.5.4
+
+미분가능함수 $f$ 에 대하여 $z=f\left(\dfrac{x-y}{y}\right)$ 로 둘 때,
 
 $$
 x\dfrac{\partial z}{\partial x}+ y \dfrac{\partial z}{\partial y}=0
@@ -655,15 +911,25 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 x\dfrac{\partial z}{\partial x}+y\dfrac{\partial z}{\partial y}= \dfrac{x}{y} f'\left(\dfrac{x-y}{y}\right)+ y \left(-\dfrac{x}{y^2}\right)f'\left(\dfrac{x-y}{y}\right)=0
 $$
 
-</br>
+:::
 
-**5.** 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_5}
+
+#### SNU 10.5.5 
+
+함수
 
 $$
 f(x,\,y):=\int_{xy}^{x^2+y^2} e^{-(t-1)^2}\, dt
@@ -671,7 +937,11 @@ $$
 
 의 편미분계수 $\dfrac{\partial f}{\partial x}(1,\,0)$ 과 $\dfrac{\partial f}{\partial y}(0,\,1)$ 을 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 F(s):=\int_{0}^{s} e^{-(t-1)^2}\, dt
@@ -693,9 +963,15 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**6.** 연속함수 $g(t)$ 와 일급함수 $a(x,\,y),\, b(x,\,y)$ 에 대하여, 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_6}
+
+#### SNU 10.5.6
+
+연속함수 $g(t)$ 와 일급함수 $a(x,\,y),\, b(x,\,y)$ 에 대하여, 함수
 
 $$
 f(x,\,y)=\int_{a(x,\,y)}^{b(x,\,y)} g(t)\, dt
@@ -703,7 +979,11 @@ $$
 
 의 편도함수 $D_1 f(x,\,y),\, D_2 f(x,\,y)$ 를 구하라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $g(t)$ 가 연속함수이므로
 $$
@@ -727,9 +1007,15 @@ $$
 
 이다.
 
-</br>
+:::
 
-**7.** 변수 $x$ 에 대한 함수 $y$ 가 방정식
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_7}
+
+#### SNU 10.5.7
+
+변수 $x$ 에 대한 함수 $y$ 가 방정식
 
 $$
 f(x,\,y)=0
@@ -743,7 +1029,11 @@ $$
 
 임을 보이라. (이 문제에서 함수 $y$ 와 $f$ 가 모두 미분가능하다고 가정한다.)
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $X(x)=(x,\, y(x))$, $f(X(x))=0$ 이므로,
 
@@ -751,13 +1041,23 @@ $$
 0=\dfrac{d}{dx} f(X(x))=\nabla f(X(x))\cdot \left( 1,\, \dfrac{dy}{dx}\right)=D_1 f(x,\,y)+ D_2 f(x,\,y)\dfrac{dy}{dx}
 $$
 
-</br>
+:::
 
-**8.** $x^2+y^2=1$ 이고 $y \ne 0$ 일 때, $\dfrac{dy}{dx}=-\dfrac{x}{y}$ 임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_5_8}
 
-$f(x,\,y)=1-x^2-y^2$ 으로 놓고 7 번의 결과를 이용하면,
+#### SNU 10.5.8
+
+$x^2+y^2=1$ 이고 $y \ne 0$ 일 때, $\dfrac{dy}{dx}=-\dfrac{x}{y}$ 임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$f(x,\,y)=1-x^2-y^2$ 으로 놓고 @exr-CAL_10_5_7 번의 결과를 이용하면,
 
 $$
 -x -y \dfrac{dy}{dx}=0 \implies \dfrac{dy}{dx}=-\dfrac{x}{y}
@@ -765,13 +1065,23 @@ $$
 
 이다.
 
-</br>
+:::
 
-**9.** $x^3+x^2y+xy^2+y^3=1$ 일 때 $\dfrac{dy}{dx}(1)$ 을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_5_9}
 
-$f(x,\, y ) = x^3+x^2y+xy^2+y^3-1$ 일 때 $f(x,\,y)=0$ 을 만족한다. $x=1$ 이면 $y^3+y^2+y=0$ 이므로 $y=0$ 이다. 역시 문제 7의 결과를 이용하면,
+#### SNU 10.5.9
+
+$x^3+x^2y+xy^2+y^3=1$ 일 때 $\dfrac{dy}{dx}(1)$ 을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$f(x,\, y ) = x^3+x^2y+xy^2+y^3-1$ 일 때 $f(x,\,y) = 0$ 을 만족한다. $x=1$ 이면 $y^3+y^2+y=0$ 이므로 $y=0$ 이다. 역시 문제 @exr-CAL_10_5_7 의 결과를 이용하면,
 
 $$
 (3x^3+2xy+y^2)+(x^2+2xy+3y^2)\dfrac{dy}{dx}=0 \implies \dfrac{dy}{dx}(1)=-\dfrac{3}{1}=-3
@@ -779,9 +1089,15 @@ $$
 
 이다.
 
-</br>
+:::
 
-**10.** 독도 근방의 바다에서 (경도, 위도)- 좌표를 $(x,\,y)$ 라 하자. 어느날 이 근방의 해수 온도가 $f(x,\,y)\, ({}^\circ \text{C})$ 라고 하자. 이때 바다 지점 $(x_0,\, y_0)$ 에서 동쪽으로 움직일 경우 순간 온도 변화율이 $+1\, (^\circ \text{C/rad})$ 이고, 북쪽으로 움직일 경우 순간 온두 변화율이 $-1\, (^\circ \text{C/rad})$ 라고 하자. 만약 독도 근방을
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_10}
+
+#### SNU 10.5.10 
+
+독도 근방의 바다에서 (경도, 위도)- 좌표를 $(x,\,y)$ 라 하자. 어느날 이 근방의 해수 온도가 $f(x,\,y)\, ({}^\circ \text{C})$ 라고 하자. 이때 바다 지점 $(x_0,\, y_0)$ 에서 동쪽으로 움직일 경우 순간 온도 변화율이 $+1\, (^\circ \text{C/rad})$ 이고, 북쪽으로 움직일 경우 순간 온두 변화율이 $-1\, (^\circ \text{C/rad})$ 라고 하자. 만약 독도 근방을
 
 $$
 x(t)=x_0 +2(t-t_0),\qquad y(t)=y_0 +3\sin (t-t_0)
@@ -789,7 +1105,11 @@ $$
 
 과 같이 배회하는 선박이 지점 $(x_0,\,y_0)$ 를 지날 때 순간 온도 변화율은 얼마인가?
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\dfrac{df}{dx}(x_0,\,y_0)=+1$, $\dfrac{df}{dy}(x_0,\, y_0)=-1$ 이며 $X(t)=(x(t),\, y(t))$ 라 할 때,
 
@@ -797,22 +1117,34 @@ $$
 f'(X(t))=\nabla f(X(t_0))\cdot X'(t_0)=(1,\,-1)\cdot(2,\, 3)=-1
 $$
 
-</br>
+:::
 
-**11.** 다음 함수에서 $x,\,y$ 에 대한 편도함수를 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_5_11}
 
-(1) $f(u,\,v)=(u-v)e^u,\qquad u=xy,\qquad v=x^2-y^2$
+#### SNU 10.5.11 
+
+다음 함수에서 $x,\,y$ 에 대한 편도함수를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $f(u,\,v)=(u-v)e^u,\qquad u=xy,\qquad v=x^2-y^2$
 
 $$
 \begin{aligned}
-\dfrac{\partial f}{\partial x} &= \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial x}+ \dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial x}=(u-v+1)e^u y-e^u (2x)=(xy^2-x^2y+y^3+y-2x)e^{xy}\\
-\dfrac{\partial f}{\partial y} &=\dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial y}+ \dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial y} =(u-v+1)e^ux+e^u (2y)=(x^2y-x^3+xy^2+x+2y)e^{xy}
+\dfrac{\partial f}{\partial x} &= \dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial x}+ \dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial x} \\[0.3em]
+&=(u-v+1)e^u y-e^u (2x)=(xy^2-x^2y+y^3+y-2x)e^{xy}\\
+\dfrac{\partial f}{\partial y} &=\dfrac{\partial f}{\partial u}\dfrac{\partial u}{\partial y}+ \dfrac{\partial f}{\partial v}\dfrac{\partial v}{\partial y} \\[0.3em]
+&=(u-v+1)e^ux+e^u (2y)=(x^2y-x^3+xy^2+x+2y)e^{xy}
 \end{aligned}
 $$
 
-(2) $f(u,\,v) = u \ln v + v \ln u,\qquad u=\dfrac{y}{2}+\dfrac{2}{y},\qquad v=xe^y$
+($2$) $f(u,\,v) = u \ln v + v \ln u,\qquad u=\dfrac{y}{2}+\dfrac{2}{y},\qquad v=xe^y$
 
 $$
 \begin{aligned}
@@ -821,13 +1153,23 @@ $$
 \end{aligned}
 $$
 
-(3), (4) 번은 풀귀 귀찮아서..
+($3$), ($4$) 번은 풀귀 귀찮아서..
 
-</br>
+:::
 
-**12.** $w=f(x-y,\, y-x)$ 일 때, $\dfrac{dw}{dx}+\dfrac{dw}{dy}=0$ 임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_5_12}
+
+#### SNU 10.5.12 
+
+$w=f(x-y,\, y-x)$ 일 때, $\dfrac{dw}{dx}+\dfrac{dw}{dy}=0$ 임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $u=x-y,\, v=y-x,\, w=f(u,\,v)$ 라 하면,
 
@@ -840,11 +1182,21 @@ $$
 
 이므로 $\dfrac{dw}{dx}+\dfrac{dw}{dy}=0$ 이다.
 
-</br>
+:::
 
-**13.** $w=x^3 f\left(\dfrac{y}{x},\, \dfrac{z}{x}\right)$ 일 때, $x\dfrac{\partial w}{\partial x}+ y \dfrac{\partial w}{\partial y}+z\dfrac{\partial w}{\partial z}=3w$ 임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_5_13}
+
+#### SNU 10.5.13 
+
+$w=x^3 f\left(\dfrac{y}{x},\, \dfrac{z}{x}\right)$ 일 때, $x\dfrac{\partial w}{\partial x}+ y \dfrac{\partial w}{\partial y}+z\dfrac{\partial w}{\partial z}=3w$ 임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -858,16 +1210,25 @@ $$
 \end{aligned}
 $$
 
-</br>
+:::
 
-**14.** $g(x,\,y)=f(x+y,\, x-y)$ 이고 $x+y=u,\, x-y=v$ 라 하자. 이때 다음이 성립함을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_14}
+
+#### SNU 10.5.14 
+
+$g(x,\,y)=f(x+y,\, x-y)$ 이고 $x+y=u,\, x-y=v$ 라 하자. 이때 다음이 성립함을 보이라.
 
 $$
 \dfrac{\partial g}{\partial x}\cdot \dfrac{\partial g}{\partial y}=\left(\dfrac{\partial f}{\partial u}\right)^2 - \left(\dfrac{\partial f}{\partial v}\right)^2
 $$
 
----
+:::
 
+</div>
+
+::: {.solution}
 $$
 \begin{aligned}
 \dfrac{\partial g}{\partial x}&=\dfrac{\partial f}{\partial u}\cdot 1+ \dfrac{\partial f}{\partial v}\cdot 1 \\
@@ -877,9 +1238,15 @@ $$
 
 이므로, 성립한다.
 
-</br>
+:::
 
-**15.** 상수 $\theta$ 에 대하여 $x=u\cos \theta -v \sin \theta,\, y=u \sin \theta+v \cos \theta$ 라 하자. $f(x,\,y)=g(u,\,v)$ 일 때,
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_15}
+
+#### SNU 10.5.15 
+
+상수 $\theta$ 에 대하여 $x=u\cos \theta -v \sin \theta,\, y=u \sin \theta+v \cos \theta$ 라 하자. $f(x,\,y)=g(u,\,v)$ 일 때,
 
 $$
 \left(\dfrac{\partial g}{\partial u}\right)^2 + \left(\dfrac{\partial g}{\partial v}\right)^2 = \left(\dfrac{\partial f}{\partial x}\right)^2 +\left(\dfrac{\partial f}{\partial y}\right)^2
@@ -887,7 +1254,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -898,9 +1269,15 @@ $$
 
 이므로 주어진 식이 성립한다.
 
-</br>
+:::
 
-**16.** 미분가능한 일변수 함수 $g(r)$ 의 도함수가 영이 되지 않는다고 하자. 이때 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_16}
+
+#### SNU 10.5.16 
+
+미분가능한 일변수 함수 $g(r)$ 의 도함수가 영이 되지 않는다고 하자. 이때 함수
 
 $$
 f(X):=g(|X|) \qquad (X\in \mathbb{R}^3-O)
@@ -908,15 +1285,25 @@ $$
 
 의 기울기 벡터 $\nabla f(X)$ 는 $X$ 와 나란함을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \nabla f(X)=g'(|X|) (\nabla |X|) = \dfrac{g'(|X|)}{|X|}X
 $$
 
-</br>
+:::
 
-**17.** 미분가능한 함수 $f(X)$ 의 기울기 벡터가 $X$ 와 나란하면
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_5_17}
+
+#### SNU 10.5.17
+
+미분가능한 함수 $f(X)$ 의 기울기 벡터가 $X$ 와 나란하면
 
 $$
 \nabla f(X)=g(X)X
@@ -924,7 +1311,11 @@ $$
 
 인 함수 $g(X)$ 가 존재한다. 이 때 $f(X)$ 는 원점을 중심으로 하는 임의의 구면에서 상수임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 반지름 $R$ 인 구면상의 임의의 일급 곡선 $X(t)$ 를 생각하자. $|X(t)|^2=R^2$ 이므로,
 
@@ -946,11 +1337,19 @@ $$
 
 이므로 $h(t)=\text{const.}$ 이다.
 
+:::
+
 </br>
 
 ## 연습문제 제 10 장 6 절
 
-**1.** 타원
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_6_1}
+
+#### SNU 10.6.1 
+
+타원
 
 $$
 \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1
@@ -964,7 +1363,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y)=\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-1$ 에서 $\nabla f(x_0,\,y_0)=\left(\dfrac{2x_0}{a^2}, \dfrac{2y_0}{b^2}\right)$ 이므로,
 
@@ -972,9 +1375,15 @@ $$
 \nabla f(x_0,\, y_0) \cdot (x-x_0,\, y-y_0) = 0 \implies \dfrac{x_0x}{a^2}+\dfrac{y_0y}{b^2}=1
 $$
 
-</br>
+:::
 
-**2.** 쌍곡선
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_6_2}
+
+#### SNU 10.6.2  
+
+쌍곡선
 
 $$
 \dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1
@@ -988,7 +1397,11 @@ $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y)=\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}-1$ 에서 $\nabla f(x_0,\,y_0)=\left(\dfrac{2x_0}{a^2}, -\dfrac{2y_0}{b^2}\right)$ 이므로
 
@@ -996,13 +1409,23 @@ $$
 \nabla f (x_0,\, y_0)\cdot (x-x_0,\, y-y_0) = 0 \implies \dfrac{x_0x}{a^2}-\dfrac{y_0y}{b^2}=1
 $$
 
-</br>
+:::
 
-**3.** 다음 식으로 주어진 곡면의 점 $P$ 에서 접평면의 방정식을 구하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_6_3}
 
-(1) $8x^2+y^2+8z^2=16,\qquad P=(1,\,2,\,1/\sqrt{2})$
+#### SNU 10.6.3  
+
+다음 식으로 주어진 곡면의 점 $P$ 에서 접평면의 방정식을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $8x^2+y^2+8z^2=16,\qquad P=(1,\,2,\,1/\sqrt{2})$
 
 $f(x,\,y,\,z)=8x^2+y^2+8z^2$ 이라 하면,
 
@@ -1016,7 +1439,7 @@ $$
 16(x-1)+4(y-2)+8\sqrt{2} \left( z-\dfrac{1}{\sqrt{2}} \right)=16x+4y +8\sqrt{2} z-32=0
 $$
 
-(2) $x^2+y^2-z^2=4,\qquad P=(2,\,1,\,1)$
+($2$) $x^2+y^2-z^2=4,\qquad P=(2,\,1,\,1)$
 
 $f(x,\,y,\,z)=x^2+y^2-z^2$ 이라 하면,
 
@@ -1030,12 +1453,12 @@ $$
 4(x-2)+2(y-1)-2(z-1)=4x+2y-2z-8=0
 $$
 
-(3) $ x^2+\dfrac{1}{4}y^2 - \frac{1}{9}z^2=1,\qquad P=(1,\,2,\,3)$
+($3$) $x^2+\dfrac{1}{4}y^2 - \frac{1}{9}z^2=1,\qquad P=(1,\,2,\,3)$
 
 $f(x,\, y,\,z)= x^2+\frac{1}{4}y^2 - \frac{1}{9}z^2$ 라 하면,
 
 $$
-\nabla f(P)=\left( 2x,\, \dfrac{y}{2},\,-\dfrac{2z}{9} \right)(1,\,2,\,3)=(2, 1, -\dfrac{2}{3})
+\nabla f(P)= \begin{bmatrix} 2x \\ \dfrac{y}{2} \\ -\dfrac{2z}{9} \end{bmatrix}_{(1,\,2,\,3)}= \begin{bmatrix} 2 \\ 1 \\ -\dfrac{2}{3}\end{bmatrix}
 $$
 
 이므로 접평면의 방정식은
@@ -1044,12 +1467,14 @@ $$
 2(x-1)+(y-2)-\dfrac{2}{3}(z-3)=2x+y-\dfrac{2}{3}z-2=0
 $$
 
-(4) $\sin xy + \sin yz + \sin zx = 1,\qquad P=(1,\, \pi/2,\,0)$
+($4$) $\sin xy + \sin yz + \sin zx = 1,\qquad P=(1,\, \pi/2,\,0)$
 
-$f(x,\,y,\,z)=\sin xy + \sin yz + \sin zx $ 라 하면,
+$f(x,\,y,\,z)=\sin xy + \sin yz + \sin zx$ 라 하면,
 
 $$
-\nabla f(P)=(y\cos xy + z \cos zx,\, x \cos xy+ z \cos yz,\, y \cos yz+x \cos zx )(1,\, \pi/2 ,\, 0)=(0, 0, \pi/2+1)
+\begin{aligned}
+\nabla f(P) &=\begin{bmatrix} y\cos xy + z \cos zx \\ x \cos xy+ z \cos yz \\ y \cos yz+x \cos zx\end{bmatrix}_{(1,\, \pi/2 ,\, 0)} = \begin{bmatrix}0 \\ 0 \\ \pi/2+1\end{bmatrix}
+\end{aligned}
 $$
 
 이므로 접평면의 방정식은
@@ -1060,9 +1485,7 @@ $$
 
 이다.
 
-</br>
-
-(5) $z-e^x \sin y=0,\qquad P=(\ln 3,\, 3\pi/2,\, -3)$
+($5$) $z-e^x \sin y=0,\qquad P=(\ln 3,\, 3\pi/2,\, -3)$
 
 $f(x,\,y,\,z)=z-e^x\sin y$ 라 하면,
 
@@ -1078,7 +1501,7 @@ $$
 
 이다.
 
-(6) $2y-z^3-3xz=0,\qquad P=(1,\,7,\,2)$
+($6$) $2y-z^3-3xz=0,\qquad P=(1,\,7,\,2)$
 
 $f(x,\,y,\,z)=2y-z^3-3xz$ 라 하면,
 
@@ -1094,7 +1517,7 @@ $$
 
 이다.
 
-(7) $x^3-2y^2+z^2=0,\qquad P=(1,\,1,\,1)$
+($7$) $x^3-2y^2+z^2=0,\qquad P=(1,\,1,\,1)$
 
 $f(x,\,y,\,z)=x^3-2y^2+z^2$ 으로 잡으면,
 
@@ -1110,9 +1533,15 @@ $$
 
 이다.
 
-</br>
+:::
 
-**4.** 쌍곡면
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_6_4}
+
+#### SNU 10.6.4 
+
+쌍곡면
 
 $$
 \dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1
@@ -1126,7 +1555,11 @@ $$
 
 의 접평면의 방정식은 어떻게 주어지는가?
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $f(x,\,y,\,z)=\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}$ 라 하면,
 
@@ -1154,29 +1587,52 @@ $$
 
 이다.
 
-**7.1.2** 기본연습문제
+:::
 
-1. $n$ -공간의 열린집합 $U$ 에서 정의된 함수 $f$ 가 일차독립인 벡터 $\mathbf{v_1},\dots,\,\mathbf{v}_n$ 에 대하여 방향도함수
+
+### 기본연습문제
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_6_1_B01}
+
+#### SNU 기본연습문제 10.6.1.1
+
+$n$ -공간의 열린집합 $U$ 에서 정의된 함수 $f$ 가 일차독립인 벡터 $\bf{v_1},\dots,\,\bf{v}_n$ 에 대하여 방향도함수
 
 $$
-D_{\mathbf{v}_1}f,\ldots,\, D_{\mathbf{v}_n}f : U \to \mathbb{R}
+D_{\bf{v}_1}f,\ldots,\, D_{\bf{v}_n}f : U \to \mathbb{R}
 $$
 가 모두 연속함수이면, $f$ 는 일급함수임을 보이라.
 
----
+:::
 
-주어진 $\{\mathbf{v}_1,\ldots, \mathbf{v}_n\}$  가 일차독립이므로 $n$ 공간의 기저이다. 따라서, 모든 표준단위벡터 $\{\mathbf{e}_i\}$ 를 $\{\mathbf{v}_j\}$ 의 선형결합으로, 즉 $\displaystyle \mathbf{e}_i=\sum_{j=1}^n a_{ji}\mathbf{v}_j$ 와 같이 쓸 수 있다. 그렇다면,
+</div>
+
+::: {.solution}
+
+주어진 $\{\bf{v}_1,\ldots, \bf{v}_n\}$  가 일차독립이므로 $n$ 공간의 기저이다. 따라서, 모든 표준단위벡터 $\{\bf{e}_i\}$ 를 $\{\bf{v}_j\}$ 의 선형결합으로, 즉 $\displaystyle \bf{e}_i=\sum_{j=1}^n a_{ji}\bf{v}_j$ 와 같이 쓸 수 있다. 그렇다면,
 
 $$
-D_i f=D_{\mathbf{e}_i}f= \sum_{j=1}^n a_{ji}D_{\mathbf{v}_j}f
+D_i f=D_{\bf{e}_i}f= \sum_{j=1}^n a_{ji}D_{\bf{v}_j}f
 $$
 이므로 $D_if$ 는 연속함수이다. 따라서 $f$ 는 일급함수이다.
 
-</br>
+:::
 
-**2.** 연결된 곡면 $S\subset \mathbb{R}^3$ 의 각 점에서 일급함수 $f(x,\,y,\,z)$ 의 기울기 벡터가 $S$ 의 접평면에 수직이라고 하자. 이 때 $f$ 는 $S$ 에서 상수함수임을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_6_1_B02}
+
+#### SNU 기본연습문제 10.6.1.2
+
+연결된 곡면 $S\subset \mathbb{R}^3$ 의 각 점에서 일급함수 $f(x,\,y,\,z)$ 의 기울기 벡터가 $S$ 의 접평면에 수직이라고 하자. 이 때 $f$ 는 $S$ 에서 상수함수임을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $S$ 상의 임의의 곡선 $X(t)=(x(t),\,y(t),\,z(t))$ 을 생각하자. 임의의 $t\in \mathbb{R}$ 에서 $f$ 의 기울기 벡터 $\nabla f$ 가 $S$ 의 접평면에 수직이면 $X'(t) = (x'(t),\, y'(t),\,z'(t))$ 에 대해 수직이므로,
 
@@ -1198,13 +1654,15 @@ $$
 
 이다. $S$ 상의 임의의 곡선에 대해 성립하므로 $S$ 전체에 대해 성립한다. 따라서 $f(X)=\text{const.}$ for all $X\in S$ 이다.
 
+:::
+
 </br>
 
 ## 정리 7.2.12
 
 $n$-공간에서 정의된 연속함수 $f:\mathbb{R}^n \to \mathbb{R}$ 의 등위면은 모두 닫힌 집합이다.
 
----
+::: {.proof}
 
 $f$ 의 등위면 $S_c$ 를 다음과 같이 정의할 수 있다.
 
@@ -1220,17 +1678,29 @@ $$
 f(P)=\lim_{i \to \infty}f(X_i)=c
 $$
 
-이며, 따라서 $P\in S_c$ 이다. 즉 $S_c$ 는 닫힌 집합이다.
+이며, 따라서 $P\in S_c$ 이다. 즉 $S_c$ 는 닫힌 집합이다. $\square$
+
+:::
 
 </br>
 
 ## 연습문제 제 10 장 7 절
 
-**1.** 실수체 $\mathbb{R}$ 에서 유리수체 $\mathbb{Q}$ 의 내부, 외부 및 경계를 구하라.
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_7_1}
 
-(1) 아르키메데스의 원리, 즉 임의의 두 양의 실수 $0<a<b$ 에 대해 $an>b$ 를 만족하는 자연수 $n$ 이 존재한다는 것을 우리는 앞서 배웠다. 이를 이용하여 임의의 두 실수 $a<b$ 에 대해 $a<p<b$ 를 만족하는 유리수 $p$ 가 존재함을 보이자. (Rudin PMA, theorm 1.20 참고)
+#### SNU 10.7.1
+
+실수체 $\mathbb{R}$ 에서 유리수체 $\mathbb{Q}$ 의 내부, 외부 및 경계를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) 아르키메데스의 원리, 즉 임의의 두 양의 실수 $0<a<b$ 에 대해 $an>b$ 를 만족하는 자연수 $n$ 이 존재한다는 것을 우리는 앞서 배웠다. 이를 이용하여 임의의 두 실수 $a<b$ 에 대해 $a<p<b$ 를 만족하는 유리수 $p$ 가 존재함을 보이자. (Rudin PMA, theorm 1.20 참고)
 
 $b-a>0$ 이므로 $n(b-a)>1$ 을 만족하는 자연수 $n$ 이 존재한다. 또한 $m_1>na,\, m_2>-na$ 를 만족하는 양의 정수 $m_1,\,m_2$ 가 존재한다. 따라서,
 
@@ -1258,7 +1728,7 @@ $$
 
 이므로 $p=\dfrac{m}{n}$ 이다.
 
-(2) 이제 임의의 두 실수 $a,\,b$ 사이에 무리수가 존재함은 쉽게 보일 수 있다. $a<b$ 일 때 $a<p<b$ 를 만족하는 유리수 $p$ 가 존재하므로 $p<q<b$ 를 만족하는 유리수 $q$ 가 존재한다.
+($2$) 이제 임의의 두 실수 $a,\,b$ 사이에 무리수가 존재함은 쉽게 보일 수 있다. $a<b$ 일 때 $a<p<b$ 를 만족하는 유리수 $p$ 가 존재하므로 $p<q<b$ 를 만족하는 유리수 $q$ 가 존재한다.
 
 $$
 p < \frac{p+q}{\sqrt{2}}<q
@@ -1266,15 +1736,21 @@ $$
 
 이며 $\frac{p+q}{\sqrt{2}}$ 는 무리수이므로 두 실수 사이에 무리수가 항상 존재한다.
 
-(3) 임의의 유리수 $q$ 에 대해 열린 집합 $(q-\epsilon,\, q+\epsilon)$ 내에는 항상 무리수가 존재하므로 $\mathbb{Q}$ 의 내부는 공집합이다.
+($3$) 임의의 유리수 $q$ 에 대해 열린 집합 $(q-\epsilon,\, q+\epsilon)$ 내에는 항상 무리수가 존재하므로 $\mathbb{Q}$ 의 내부는 공집합이다.
 
-(4) 역시 임의의 무리수 $q$ 에 대해 열린집합 ($q-\epsilon,\,p+\epsilon)$ 내에는 항상 유리수가 존재하므로 $\mathbb{Q}$ 의 외부도 공집합이다.
+($4$) 역시 임의의 무리수 $q$ 에 대해 열린집합 ($q-\epsilon,\,p+\epsilon)$ 내에는 항상 유리수가 존재하므로 $\mathbb{Q}$ 의 외부도 공집합이다.
 
-(5) 따라서 $\mathbb{Q}$ 의 경계는 $\mathbb{R}$ 이다.
+($5$) 따라서 $\mathbb{Q}$ 의 경계는 $\mathbb{R}$ 이다.
 
-</br>
+:::
 
-**2.** $n$-공간에서 점 $P$ 가 집합 $A$ 의 경계점이면
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_7_2}
+
+#### SNU 10.7.2
+
+$n$-공간에서 점 $P$ 가 집합 $A$ 의 경계점이면
 
 $$
 \lim_{i \to \infty} X_i = P
@@ -1282,43 +1758,87 @@ $$
 
 인 수열 $(X_i \in A : i=1,\,2,\,3)$ 이 존재함을 보이시오.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $P$ 가 $A$ 의 경계점이면 $P$ 주위의 임의의 공이 점 $A$ 의 원소를 포함한다. 따라서 $B\left( P,\, \frac{1}{i}\right)$ 에 포함되는 $A$ 의 원소를 하나 선택하여 $X_i$ 라 하면, $X_i \in A \cap B(P,\, \frac{1}{i})$ 이며 $\displaystyle \lim_{i \to \infty}X_i = P$ 이다.
 
-</br>
+:::
 
-**3.** $n$ 공간의 부분집합 $A$ 가 열린 집합일 필요충분조건은 그 여집합 $A^C=\mathbb{R}^n-A$ 가 닫힌 집합인 것임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_7_3}
 
-(1) $A$ 가 열린 집합이라고 하자. $a$ 가 $A$ 와 $A^C$ 의 경계점이라 하자. $a\in A$ 이면 $A$ 는 열린집합이므로 $a$ 를 중심으로 한 어떤 공이 존재하여 $A$ 에 포함된다. 따라서 $a$ 는 경계점이 아닌데 이는 $a$ 가 경계점이라는 것에 모순이다. 즉 모든 경계점이 $A^C$ 에 포함되므로 $A^C$ 는 닫힌 집합이다.
+#### SNU 10.7.3
 
-(2) $A^C$ 가 닫힌 집합이라고 하자. $a\in A$ 이면 $a$ 는 경계점이 아니므로 $a$ 를 포함하는 어떤 공은 $A$ 의 부분집합이다. 따라서 $A$ 는 열린집합이다.
+$n$ 공간의 부분집합 $A$ 가 열린 집합일 필요충분조건은 그 여집합 $A^C=\mathbb{R}^n-A$ 가 닫힌 집합인 것임을 보여라.
 
-</br>
+:::
 
-**4.** $n$ 공간의 부분집합 $A$ 가 닫힌 집합일 필요충분조건은 $A$ 에 속하지 않은 모든 점이 $A$ 의 외점인 것을 보이라.
+</div>
 
----
+::: {.solution}
+
+우선 $A$ 가 열린 집합이라고 하자. $a$ 가 $A$ 와 $A^C$ 의 경계점이라 하자. $a\in A$ 이면 $A$ 는 열린집합이므로 $a$ 를 중심으로 한 어떤 공이 존재하여 $A$ 에 포함된다. 따라서 $a$ 는 경계점이 아닌데 이는 $a$ 가 경계점이라는 것에 모순이다. 즉 모든 경계점이 $A^C$ 에 포함되므로 $A^C$ 는 닫힌 집합이다.
+
+이제 $A^C$ 가 닫힌 집합이라고 하자. $a\in A$ 이면 $a$ 는 경계점이 아니므로 $a$ 를 포함하는 어떤 공은 $A$ 의 부분집합이다. 따라서 $A$ 는 열린집합이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_7_4}
+
+#### SNU 10.7.4
+
+$n$ 공간의 부분집합 $A$ 가 닫힌 집합일 필요충분조건은 $A$ 에 속하지 않은 모든 점이 $A$ 의 외점인 것을 보이라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $A$ 가 닫힌집합 $\iff$ $A^C$ 는 열린집합 $\iff$ $A^C$ 의 모든 점은 $A^C$ 의 내점 $\iff$ $A^C$ 의 모든 점은 $A$ 의 외점.
 
-</br>
+:::
 
-**5.** 두 열린 집합의 합집합과 교집합은 모두 열린집합임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_7_5}
+
+#### SNU 10.7.5
+
+ 두 열린 집합의 합집합과 교집합은 모두 열린집합임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $A,\,B$ 가 열린집합이고 $x\in A\cup B$ 이면 $x\in A$ 이거나 $x\in B$ 이다. $x\in A$ 이면 $A$ 에 포함되는 $x$ 를 중심으로 하는 어떤 열린 공이 $A$ 에 포함되므로 당연히 이 공은 $A \cup B$ 에 포함된다. $x\in B$ 이면 $B$ 에 포함되는 $x$ 를 중심으로 하는 어떤 열린 공이 $B$ 에 포함되므로 당연이 히 공은 $A \cup B$ 에 포함된다. 따라서 $A \cup B$ 는 열린집합이다.
 
 $x\in A \cap B$ 라 하자. $x\in A$ 이므로 $x$ 를 중심으로 하는 어떤 열린 공이 $A$ 에 포함된다. 이 때의 반경을 $r_1$ 이라 하자. $x\in B$ 이므로 $x$ 를 중심으로 하는 어떤 열린 공이 $B$ 에 포함된다. 이때의 반경을 $r_2$ 라 하자. 그렇다면 $x$ 를 중심으로 $r=\min (r_1,\,r_2)$ 를 반경으로 하는 열린 공은 $A \cap B$ 에 포함된다. 따라서 $A \cap B$ 도 열린 집합이다.
 
-</br>
+:::
 
-**6.**  두 닫힌 집합의 합집합과 교집합은 모두 열린집합임을 보여라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_7_6}
+
+#### SNU 10.7.6
+
+두 닫힌 집합의 합집합과 교집합은 모두 닫힌집합임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
 
 $A,\,B$ 가 닫힌집합이면 $A^C,\, B^C$ 는 열린집합이다.
 
@@ -1327,15 +1847,24 @@ A\cap B = (A^C \cup B^C)^C \\
 A \cup B = (A^C \cap B^C)^C
 $$
 
-이며 5 에서 보았듯이 $A^C \cup B^C$ 와 $A^C \cap B^C$ 가 열린집합이므로 $A\cup B,\, A\cap B$ 는 모두 닫힌집합이다.
+이며 @exr-CAL_10_7_5 에서 보았듯이 $A^C \cup B^C$ 와 $A^C \cap B^C$ 가 열린집합이므로 $A\cup B,\, A\cap B$ 는 모두 닫힌집합이다.
+:::
 
-</br>
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
-**7.** 좌표평면에서 다음 집합의 지름을 구하라.
+::: {#exr-CAL_10_7_7}
 
----
+#### SNU 10.7.7
 
-(1)  $\left\{(x,\,y) :  |x|^{1/3}+|y|^{1/3}=1\right\}$
+좌표평면에서 다음 집합의 지름을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$)  $\left\{(x,\,y) :  |x|^{1/3}+|y|^{1/3}=1\right\}$
 
 우리는 $(x,\,y)=(1,\,0),\, (x,\,y)=(-1,\,0)$ 에서 원점으로부터의 거리가 $1$ 임을 알고 있다.
 
@@ -1345,7 +1874,7 @@ $$
 
 이므로 $x^2+y^2\le 1$ 이다. 따라서 각 점의 원점으로 부터의 거리는 1보다 작거나 같으며, $1$ 인 두 점이 원점대칭이므로 지름은 $2$ 이다.
 
-(2)  $\left\{(x,\,y) :  |x|^{1/3}+|y|^{1/3}\le1\right\}$
+($2$)  $\left\{(x,\,y) :  |x|^{1/3}+|y|^{1/3}\le1\right\}$
 
 역시
 
@@ -1355,13 +1884,23 @@ $$
 
 이므로 $x^2+y^2\le 1$ 이다. 따라서 (1) 과 같이 지름은 $2$ 이다.
 
+:::
+
 </br>
 
 **8.** 은 생략
 
+</br>
+
 ## 제 10 장 탐구문제
 
-**1.** 좌표평면에서 정의된 함수
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S01}
+
+#### SNU 탐구문제 10.1
+
+좌표평면에서 정의된 함수
 
 $$
 h(x,\,y)=\left\{\begin{array}{ll} \dfrac{xy}{x^2+y^2}, \quad & (x,\, y)\ne (0,\,0)\\ 0 , & (x,\,y)=(0,\,0)  \end{array} \right.
@@ -1369,7 +1908,11 @@ $$
 
 은 연속함수가 아님을 보이라. 또 $h(x,\,y)$ 는 모든 점에서 편도함수 $D_1 h(x,\,y),\, D_2 h(x,\,y)$ 가 존재함을 보이라. 함수 $h$ 는 미분가능한 함수인가?
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $(x,\, y)=(t,\,t)$ 에 대해 $\displaystyle \lim_{t\to 0} h(x,\,y)=\lim_{t \to 0} \dfrac{t^2}{2t^2}=\dfrac{1}{2}$ 이며, $(x,\, y)=(t,\,t^2)$ 에 대해 $\displaystyle \lim_{t \to 0}\dfrac{t^3}{t^2+t^4}=0$ 이다. 따라서 $h(x,\,y)$ 는 연속이 아니다.
 
@@ -1386,9 +1929,15 @@ $$
 
 $D_1 h(x,\,y)$ 의 경우 $(x,\,y)=(t,\,t)$ 로 놓으면 $t\to 0 \implies h(x,\,y)\to 0$ 이지만  $(x,\,y)=(t,\,t^2)$ 로 놓으면  $t\to 0$ 에서  $h(x,\,y)\to -1$ 이므로 불연속이다.
 
-</br>
+:::
 
-**2.** 좌표평면에서 정의된 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S02}
+
+#### SNU 탐구문제 10.2 
+
+좌표평면에서 정의된 함수
 
 $$
 f(x,\,y)=\left\{\begin{array}{ll} \dfrac{y^3}{x^2+y^2} , \qquad & (x,\,y) \ne (0,\,0) \\ 0, &(x,\,y)=(0,\,0)\end{array} \right.
@@ -1396,7 +1945,11 @@ $$
 
 은 연속함수인가? 또 이 함수는 원점에서 모든 방향미분계수를 가지는가? 또 $f$ 는 미분가능한 함수인가?
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $\epsilon>0$ 에 대해 $x^2+y^2=\epsilon^2$ 이라 하면 $|y|\le \epsilon$ 이므로 $\left|\dfrac{y^3}{x^2+y^2}\right|\le\epsilon$ 이다. 따라서 $\epsilon\to 0$ 이면 $f(x,\,y)\to 0$ 이므로 연속함수이다.
 
@@ -1409,9 +1962,15 @@ $$
 
 이다. $D_1f$ 를 $(x,\,y)= (t,\,t)$ 에 따라 $t\to 0$ 극한을 취하면 $-\frac{1}{2}$ 이다. 그러나 $(x,\, y)=(0,\,t)$ 를 따라 극한을 취하면  $0$ 이므로  $D_1f$ 는 $(0,\,0)$  에서 연속이 아니다. 따라서 $f$ 원점에서 방향미분계수를 갖지 않는다. 따라서 $f$ 는 미분가능하지 않다.
 
-</br>
+:::
 
-**3.** 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S03}
+
+#### SNU 탐구문제 10.3 
+
+함수
 
 $$
 f(x) =\left\{\begin{array}{ll} \dfrac{xy}{x^2-y},\qquad &x^2\ne y \\ 0 , & x^2=y  \end{array} \right.
@@ -1419,7 +1978,11 @@ $$
 
 은 원점에서 연속은 아니지만 모든 방향 미분계수가 존재함을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $(x,\,y)=(t,\,t^2-t^3)$ 경로에서  $t\to 0$ 극한을 취하면
 
@@ -1436,7 +1999,7 @@ D_2 f(x,\,y) &= \dfrac{x(x^2-y)+xy}{(x^2-y)^2} = \dfrac{x^3}{(x^2-y)^2}
 \end{aligned}
 $$
 
-이다. $(0,\,0)$ 에서의 $\mathbf{e}_1$ 방향 미분 계수는
+이다. $(0,\,0)$ 에서의 $\bf{e}_1$ 방향 미분 계수는
 
 $$
 \lim_{t\to 0} \dfrac{f(tx,0)-f(0,\,0)}{t}=0
@@ -1450,9 +2013,15 @@ $$
 
 이므로 원점에서의 방향미분계수는 $0$ 이다.
 
-</br>
+:::
 
-**4.** 함수
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S04}
+
+#### SNU 탐구문제 10.4 
+
+함수
 
 $$
 f(x,\,y) = \left\{\begin{array}{ll} \dfrac{x^2y\sqrt{x^2+y^2}}{x^4+y^2}, \qquad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y) = (0,\,0) \end{array} \right.
@@ -1460,7 +2029,11 @@ $$
 
 는 원점에서 연속이고 모든 방향미분계수가 $0$ 이지만, 미분가능함수가 아님을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 산술평균, 기하평균으로부터,
 
@@ -1507,13 +2080,23 @@ $$
 
 이므로 방향도함수  $D_1 f$ 는 원점에서 연속이 아니다. 따라서 미분가능함수가 아니다.
 
-</br>
+:::
 
-**5.** 다음 함수의 미분가능성을 조사하라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
----
+::: {#exr-CAL_10_S05}
 
-(1) $ f (x,\, y) = \left\{ \begin{array}{ll} \dfrac{x^3+y^3}{x^2+y^2} \qquad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y ) = (0,\,0) \end{array} \right.$
+#### SNU 탐구문제 10.5 
+
+다음 함수의 미분가능성을 조사하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $f (x,\, y) = \left\{ \begin{array}{ll} \dfrac{x^3+y^3}{x^2+y^2} \qquad & (x,\,y) \ne (0,\,0) \\ 0, & (x,\,y ) = (0,\,0) \end{array} \right.$
 
 $$
 \begin{aligned}
@@ -1523,9 +2106,8 @@ $$
 
 $(x(t),\, y(t)) = (t,\,t)$ 에서 $\lim_{t \to 0}$ 을 구하면 $\dfrac{1}{2}$ 이다. $(x(t),\, y(t)) = (0,\,t)$ 에서 $\lim_{t \to 0}$ 을 구하면 $0$ 이다. 따라서 $f$ 는 미분가능하지 않다.
 
-</br>
 
-(2) $f(x,\,y,\,z) = \left\{ \begin{array}{ll}  \dfrac{x^3+y^3+z^3}{x^2+y^2+z^2}\, \qquad & (x,\,y,\,z) \ne  (0,\,0,\,0 ) \\ 0  & (x,\,y,\,z) = (0,\,0,\,0)\end{array}\right.$
+($2$) $f(x,\,y,\,z) = \left\{ \begin{array}{ll}  \dfrac{x^3+y^3+z^3}{x^2+y^2+z^2}\, \qquad & (x,\,y,\,z) \ne  (0,\,0,\,0 ) \\ 0  & (x,\,y,\,z) = (0,\,0,\,0)\end{array}\right.$
 
 $$
 \begin{aligned}
@@ -1536,61 +2118,77 @@ $$
 
 $(x(t),\, y(t),\, z(t)) = (t,\,t,\,t)$ 에 대해 $\lim_{t \to 0} f(x(t),\, y(t),\, z(t)) = \dfrac{1}{3}$ 이지만, $(x(t),\, y(t),\, z(t)) = (0,\,t,\,t)$ 에 대해 $\lim_{t \to 0} f(x(t),\, y(t),\, z(t)) = 0$ 이므로 미분가능하지 않다.
  
-</br>
+:::
 
-**6.** $n$-공간의 정규직교기저  $\mathbf{v}_1,\ldots,\,\mathbf{v}_n$ 과 미분가능 함수 $f(x_1,\ldots,\,x_n)$ 에 대하여
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S06}
+
+#### SNU 탐구문제 10.6 
+
+$n$-공간의 정규직교기저  $\bf{v}_1,\ldots,\,\bf{v}_n$ 과 미분가능 함수 $f(x_1,\ldots,\,x_n)$ 에 대하여
 
 $$
-\nabla f(P)=\sum_{i=1} D_{\mathbf{v}_i}f(P)\mathbf{v}_i
+\nabla f(P)=\sum_{i=1} D_{\bf{v}_i}f(P)\bf{v}_i
 $$
 
 임을 보이라.
 
----
+:::
 
-$n$-공간에서의 임의의 벡터 $\mathbf{u},\,\mathbf{v}$와 실수 $c$ 에 대해 미분가능함 함수 f의 $\mathbf{u}+c\mathbf{v}$ 방향의 도함수는
+</div>
 
-$$
-D_{\mathbf{u}+c\mathbf{v}}f(P) =  \mathbf{a}\cdot (\mathbf{u}+c\mathbf{v})=\mathbf{a}\cdot \mathbf{u}+c\mathbf{a}\cdot\mathbf{v} = D_{\mathbf{u}}f(P)+cD_\mathbf{v} f(P)
-$$
+::: {.solution}
 
-이다. 여기서 $\mathbf{a} = \nabla f(P)$ 이다.
-
-$n$-공간에서의 임의의 정규직교기저 $\mathbf{v}_1,\ldots,\mathbf{v}_n$ 이 주어졌을 때 선형변환을 통해 이를 표준정규직교기저 $\mathbf{e}_1,\ldots,\,\mathbf{e}_n$ 으로 바꾸는 선형변환이 존재하며,
+$n$-공간에서의 임의의 벡터 $\bf{u},\,\bf{v}$와 실수 $c$ 에 대해 미분가능함 함수 f의 $\bf{u}+c\bf{v}$ 방향의 도함수는
 
 $$
-\mathbf{e}_j = \sum_{i=1}^n a_{ij}\mathbf{v}_i
+D_{\bf{u}+c\bf{v}}f(P) =  \bf{a}\cdot (\bf{u}+c\bf{v})=\bf{a}\cdot \bf{u}+c\bf{a}\cdot\bf{v} = D_{\bf{u}}f(P)+cD_\bf{v} f(P)
+$$
+
+이다. 여기서 $\bf{a} = \nabla f(P)$ 이다.
+
+$n$-공간에서의 임의의 정규직교기저 $\bf{v}_1,\ldots,\bf{v}_n$ 이 주어졌을 때 선형변환을 통해 이를 표준정규직교기저 $\bf{e}_1,\ldots,\,\bf{e}_n$ 으로 바꾸는 선형변환이 존재하며,
+
+$$
+\bf{e}_j = \sum_{i=1}^n a_{ij}\bf{v}_i
 $$
 
 로 쓸 수 있다. 이 때
 
 $$
-\mathbf{e}_j \cdot \mathbf{v}_k = \sum_{i=1}^n a_{ij}\mathbf{v}_i \cdot \mathbf{v}_k =a_{kj}
+\bf{e}_j \cdot \bf{v}_k = \sum_{i=1}^n a_{ij}\bf{v}_i \cdot \bf{v}_k =a_{kj}
 $$
 
 이다. 이로부터
 
 $$
-\delta_{ik}=\mathbf{e}_i \cdot \mathbf{e}_k= \sum_{j, l}a_{ji}\mathbf{v}_j \cdot a_{lk}\mathbf{v}_l = \sum_{jl}a_{ji}a_{lk}\delta_{jl}=\sum_{j}a_{ji}a_{jk}
+\delta_{ik}=\bf{e}_i \cdot \bf{e}_k= \sum_{j, l}a_{ji}\bf{v}_j \cdot a_{lk}\bf{v}_l = \sum_{jl}a_{ji}a_{lk}\delta_{jl}=\sum_{j}a_{ji}a_{jk}
 $$
 
 임을 안다. 이제,
 
 $$
 \begin{aligned}
-\nabla f(P) &= \sum_{j=1}^n D_j f(P)\mathbf{e}_j \\
-&= \sum_{j=1}^n\sum_{i=1}^nD_{a_{ij}\mathbf{v}_i} f(P) \sum_{k=1}^n a_{kj}\mathbf{v}_k\\
-&=\sum_{i=1} \sum_{j=1}\sum_{k=1} D_{\mathbf{v}_i} a_{ij}a_{kj}\mathbf{v}_k\\
-&=\sum_{i=1}\sum_{k=1}D_{\mathbf{v}_i}f(P)\mathbf{v}_k \delta_{ik}\\
-&=\sum_{i=1}D_{\mathbf{v}_i}f(P)\mathbf{v}_i
+\nabla f(P) &= \sum_{j=1}^n D_j f(P)\bf{e}_j \\
+&= \sum_{j=1}^n\sum_{i=1}^nD_{a_{ij}\bf{v}_i} f(P) \sum_{k=1}^n a_{kj}\bf{v}_k\\
+&=\sum_{i=1} \sum_{j=1}\sum_{k=1} D_{\bf{v}_i} a_{ij}a_{kj}\bf{v}_k\\
+&=\sum_{i=1}\sum_{k=1}D_{\bf{v}_i}f(P)\bf{v}_k \delta_{ik}\\
+&=\sum_{i=1}D_{\bf{v}_i}f(P)\bf{v}_i
 \end{aligned}
 $$
 
 이다.
 
-</br>
+:::
 
-**7.** 원기둥좌표계
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S07}
+
+#### SNU 탐구문제 10.7 
+
+원기둥좌표계
 
 $$
 (x,\,y,\,z)=G(r,\,\theta,\,z)=(r\cos \theta,\, r \sin \theta ,\, z)
@@ -1599,18 +2197,22 @@ $$
 에서
 
 $$
-\mathbf{e}_r = {\dfrac{\partial G}{\partial r}}\left/{\left|\dfrac{\partial G}{\partial r}\right|}\right., \qquad \mathbf{e}_\theta = {\dfrac{\partial G}{\partial \theta}}\left/{\left|\dfrac{\partial G}{\partial \theta}\right|}\right.,\qquad \mathbf{e}_z = {\dfrac{\partial G}{\partial z}}\left/{\left|\dfrac{\partial G}{\partial z}\right|}\right.
+\bf{e}_r = {\dfrac{\partial G}{\partial r}}\left/{\left|\dfrac{\partial G}{\partial r}\right|}\right., \qquad \bf{e}_\theta = {\dfrac{\partial G}{\partial \theta}}\left/{\left|\dfrac{\partial G}{\partial \theta}\right|}\right.,\qquad \bf{e}_z = {\dfrac{\partial G}{\partial z}}\left/{\left|\dfrac{\partial G}{\partial z}\right|}\right.
 $$
 
 라고 두자. 이때 임의의 일급함수 $f(x,\,y,\,z)$ 에 대하여
 
 $$
-\nabla f = \dfrac{\partial f}{\partial r}\mathbf{e}_r + \dfrac{1}{r} \dfrac{\partial f}{\partial \theta} e_{\theta}+\dfrac{\partial f}{\partial z}\mathbf{e}_z
+\nabla f = \dfrac{\partial f}{\partial r}\bf{e}_r + \dfrac{1}{r} \dfrac{\partial f}{\partial \theta} e_{\theta}+\dfrac{\partial f}{\partial z}\bf{e}_z
 $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1627,9 +2229,9 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{e}_r &= \left(\dfrac{x}{r},\, \dfrac{y}{r},\, 0\right) =(\cos \theta,\, \sin\theta,\,0)\\
-\mathbf{e}_\theta &= \left(\dfrac{-y}{r},\, \dfrac{x}{r},\, 0\right)=(-\sin \theta,\,\cos \theta,\,0)\\
-\mathbf{e}_z &= (0,\,0,\,1)
+\bf{e}_r &= \left(\dfrac{x}{r},\, \dfrac{y}{r},\, 0\right) =(\cos \theta,\, \sin\theta,\,0)\\
+\bf{e}_\theta &= \left(\dfrac{-y}{r},\, \dfrac{x}{r},\, 0\right)=(-\sin \theta,\,\cos \theta,\,0)\\
+\bf{e}_z &= (0,\,0,\,1)
 \end{aligned}
 $$
 
@@ -1647,13 +2249,19 @@ $$
 $$
 \begin{aligned}
 \nabla f&= (\cos \theta, \sin \theta, 0)\dfrac{\partial f}{\partial r} + \dfrac{1}{r}(-\sin \theta,\, \cos \theta, 0) \dfrac{\partial f}{\partial \theta}+ (0,\,0,\,1)\dfrac{\partial f}{\partial z} \\
-&= \dfrac{\partial f}{\partial r} \mathbf{e}_r + \dfrac{1}{r} \dfrac{\partial f}{\partial \theta}\mathbf{e}_{\theta} + \dfrac{\partial f}{\partial z}\mathbf{e}_z
+&= \dfrac{\partial f}{\partial r} \bf{e}_r + \dfrac{1}{r} \dfrac{\partial f}{\partial \theta}\bf{e}_{\theta} + \dfrac{\partial f}{\partial z}\bf{e}_z
 \end{aligned}
 $$
 
-</br>
+:::
 
-**8.** 구면좌표꼐
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S08}
+
+#### SNU 탐구문제 10.8 
+
+구면좌표꼐
 $$
 (x,\,y,\,z)=G(\rho,\,\varphi,\, \theta)=(\rho \sin \varphi \cos \theta,\, \rho \sin \varphi \sin \theta,\, \rho \cos \varphi)
 $$
@@ -1661,18 +2269,22 @@ $$
 에서
 
 $$
-\mathbf{e}_{\rho} = {\dfrac{\partial G}{\partial \rho}}\left/{\left|\dfrac{\partial G}{\partial \rho}\right|}\right., \qquad \mathbf{e}_\varphi = {\dfrac{\partial G}{\partial \varphi}}\left/{\left|\dfrac{\partial G}{\partial \varphi}\right|}\right.,\qquad \mathbf{e}_{\theta} = {\dfrac{\partial G}{\partial \theta}}\left/{\left|\dfrac{\partial G}{\partial \theta}\right|}\right.
+\bf{e}_{\rho} = {\dfrac{\partial G}{\partial \rho}}\left/{\left|\dfrac{\partial G}{\partial \rho}\right|}\right., \qquad \bf{e}_\varphi = {\dfrac{\partial G}{\partial \varphi}}\left/{\left|\dfrac{\partial G}{\partial \varphi}\right|}\right.,\qquad \bf{e}_{\theta} = {\dfrac{\partial G}{\partial \theta}}\left/{\left|\dfrac{\partial G}{\partial \theta}\right|}\right.
 $$
 
 라고 두자. 이때 임의의 일급함수 $f(x,\,y\,z)$ 에 대하여
 
 $$
-\nabla f = \dfrac{\partial f}{\partial \rho}\mathbf{e}_{\rho} + \dfrac{1}{\rho}\dfrac{\partial f}{\partial \varphi} \mathbf{e}_{\varphi} + \dfrac{1}{\rho \sin\varphi}\dfrac{\partial f}{\partial \theta} \mathbf{e}_\theta
+\nabla f = \dfrac{\partial f}{\partial \rho}\bf{e}_{\rho} + \dfrac{1}{\rho}\dfrac{\partial f}{\partial \varphi} \bf{e}_{\varphi} + \dfrac{1}{\rho \sin\varphi}\dfrac{\partial f}{\partial \theta} \bf{e}_\theta
 $$
 
 임을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1689,9 +2301,9 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{e}_{\rho} &= (\sin \varphi \cos \theta,\, \sin \varphi \sin \theta,\, \cos \varphi) \\
-\mathbf{e}_{\varphi}  &= (\cos \varphi \cos \theta,\, \cos \varphi \sin \theta,\, - \sin \varphi) \\
-\mathbf{e}_{\theta} &= ( -\sin \theta,\, \cos \theta,\, 0)
+\bf{e}_{\rho} &= (\sin \varphi \cos \theta,\, \sin \varphi \sin \theta,\, \cos \varphi) \\
+\bf{e}_{\varphi}  &= (\cos \varphi \cos \theta,\, \cos \varphi \sin \theta,\, - \sin \varphi) \\
+\bf{e}_{\theta} &= ( -\sin \theta,\, \cos \theta,\, 0)
 \end{aligned}
 $$
 
@@ -1699,9 +2311,12 @@ $$
 
 $$
 \begin{aligned}
-\dfrac{\partial f}{\partial x} &= \dfrac{\partial \rho}{\partial x}\dfrac{\partial f}{\partial \rho}+ \dfrac{\partial \varphi}{\partial x}\dfrac{\partial f}{\partial \varphi}+ \dfrac{\partial \theta}{\partial x}\dfrac{\partial f}{\partial \theta} = \sin \varphi \cos \theta  \dfrac{\partial f}{\partial \rho} + \dfrac{\cos \varphi \cos \theta}{\rho} \dfrac{\partial f}{\partial \varphi}-\dfrac{\sin \theta}{\rho\sin \varphi}\dfrac{\partial f}{\partial \theta} \\
-\dfrac{\partial f}{\partial y} &= \dfrac{\partial \rho}{\partial y}\dfrac{\partial f}{\partial \rho}+ \dfrac{\partial \varphi}{\partial y}\dfrac{\partial f}{\partial \varphi}+ \dfrac{\partial \theta}{\partial y}\dfrac{\partial f}{\partial \theta} = \sin \varphi \sin \theta \dfrac{\partial f}{\partial \rho}  + \dfrac{\cos \varphi\sin \theta }{\rho} \dfrac{\partial f}{\partial \varphi} + \dfrac{\cos \theta}{\rho \sin \varphi} \dfrac{\partial f}{\partial \theta} \\
-\dfrac{\partial f}{\partial z} &= \dfrac{\partial \rho}{\partial z}\dfrac{\partial f}{\partial \rho}+ \dfrac{\partial \varphi}{\partial z}\dfrac{\partial f}{\partial \varphi}+ \dfrac{\partial \theta}{\partial z}\dfrac{\partial f}{\partial \theta} = \cos \varphi \dfrac{\partial f}{\partial \rho} -\dfrac{\sin \phi}{\rho} \dfrac{\partial f}{\partial \varphi}
+\dfrac{\partial f}{\partial x} &= \dfrac{\partial \rho}{\partial x}\dfrac{\partial f}{\partial \rho}+ \dfrac{\partial \varphi}{\partial x}\dfrac{\partial f}{\partial \varphi} + \dfrac{\partial \theta}{\partial x}\dfrac{\partial f}{\partial \theta} \\[0.3em]
+&= \sin \varphi \cos \theta  \dfrac{\partial f}{\partial \rho} + \dfrac{\cos \varphi \cos \theta}{\rho} \dfrac{\partial f}{\partial \varphi}-\dfrac{\sin \theta}{\rho\sin \varphi}\dfrac{\partial f}{\partial \theta} \\
+\dfrac{\partial f}{\partial y} &= \dfrac{\partial \rho}{\partial y}\dfrac{\partial f}{\partial \rho}+ \dfrac{\partial \varphi}{\partial y}\dfrac{\partial f}{\partial \varphi}+ \dfrac{\partial \theta}{\partial y}\dfrac{\partial f}{\partial \theta} \\[0.3em]
+&= \sin \varphi \sin \theta \dfrac{\partial f}{\partial \rho}  + \dfrac{\cos \varphi\sin \theta }{\rho} \dfrac{\partial f}{\partial \varphi} + \dfrac{\cos \theta}{\rho \sin \varphi} \dfrac{\partial f}{\partial \theta} \\
+\dfrac{\partial f}{\partial z} &= \dfrac{\partial \rho}{\partial z}\dfrac{\partial f}{\partial \rho}+ \dfrac{\partial \varphi}{\partial z}\dfrac{\partial f}{\partial \varphi}+ \dfrac{\partial \theta}{\partial z}\dfrac{\partial f}{\partial \theta} \\[0.3em]
+&= \cos \varphi \dfrac{\partial f}{\partial \rho} -\dfrac{\sin \phi}{\rho} \dfrac{\partial f}{\partial \varphi}
 \end{aligned}
 $$
 
@@ -1709,15 +2324,21 @@ $$
 
 $$
 \begin{aligned}
-\nabla f &= (\sin \varphi \cos \theta,\, \sin \varphi \sin \theta,\, \cos \varphi) \dfrac{\partial f}{\partial \rho} + \dfrac{1}{\rho}( \cos \varphi \cos \theta,\, \cos \varphi \sin \theta,\, -\sin \varphi) \dfrac{\partial f}{\partial \varphi} \\
-&\qquad + \dfrac{1}{\rho\sin \varphi}(-\sin \theta,\, \cos \theta,\, 0)\dfrac{\partial f}{\partial \theta} \\
-&= \dfrac{\partial f}{\partial \rho}\mathbf{e}_{\rho}+\dfrac{1}{\rho}\dfrac{\partial f}{\partial \varphi}\mathbf{e}_{\varphi} + \dfrac{1}{\rho \sin \varphi} \dfrac{\partial f}{\partial \theta }\mathbf{e}_{\theta}
+\nabla f &= (\sin \varphi \cos \theta,\, \sin \varphi \sin \theta,\, \cos \varphi) \dfrac{\partial f}{\partial \rho} \\[0.3em]
+&\quad + \dfrac{1}{\rho}( \cos \varphi \cos \theta,\, \cos \varphi \sin \theta,\, -\sin \varphi) \dfrac{\partial f}{\partial \varphi} + \dfrac{1}{\rho\sin \varphi}(-\sin \theta,\, \cos \theta,\, 0)\dfrac{\partial f}{\partial \theta} \\
+&= \dfrac{\partial f}{\partial \rho}\bf{e}_{\rho}+\dfrac{1}{\rho}\dfrac{\partial f}{\partial \varphi}\bf{e}_{\varphi} + \dfrac{1}{\rho \sin \varphi} \dfrac{\partial f}{\partial \theta }\bf{e}_{\theta}
 \end{aligned}
 $$
 
-</br>
+:::
 
-**9.** 좌표공간의 한 닫힌 집합 $A$ 에서 정의된 연속함수 $f:A \to \mathbb{R}$ 가
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S09}
+
+#### SNU 탐구문제 10.9 
+
+좌표공간의 한 닫힌 집합 $A$ 에서 정의된 연속함수 $f:A \to \mathbb{R}$ 가
 
 $$
 \lim_{P \to \infty} f(P)=\infty
@@ -1725,7 +2346,11 @@ $$
 
 을 만족시키면, $f$ 는 최소값을 가짐을 보이라.
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 많이 쓰이는 정의이지만, $f(A)$ 를 다음과 같이 정의하자.
 
@@ -1761,9 +2386,15 @@ $$
 
 이므로 $f(A)$ 의 하한이 $m$ 이라는 것에 위배된다. 따라서 $f(A)$ 는 최소값을 가진다.
 
-</br>
+:::
 
-**10.** 좌표공간의 표준 좌표계 $(x,\,y,\,z)$ 에서 얻은 벡터장 $(\partial_x,\,\partial_y,\,\partial_z)$ 와 구면좌표계 $(\rho,\,\varphi,\,\theta)$ 에서 얻은 벡터장 $(\partial_{\rho},\,\partial_{\varphi},\,\partial_{\theta})$​ 에 대하여 다음을 보이라.
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CAL_10_S10}
+
+#### SNU 탐구문제 10.10 
+
+좌표공간의 표준 좌표계 $(x,\,y,\,z)$ 에서 얻은 벡터장 $(\partial_x,\,\partial_y,\,\partial_z)$ 와 구면좌표계 $(\rho,\,\varphi,\,\theta)$ 에서 얻은 벡터장 $(\partial_{\rho},\,\partial_{\varphi},\,\partial_{\theta})$​ 에 대하여 다음을 보이라.
 
 $$
 \begin{aligned}
@@ -1773,7 +2404,11 @@ $$
 \end{aligned}
 $$
 
----
+:::
+
+</div>
+
+::: {.solution}
 
 $$
 \begin{aligned}
@@ -1806,3 +2441,5 @@ $$
 &= \cos \varphi \partial_{\rho} - \dfrac{\sin \varphi}{\rho} \partial_{\varphi}
 \end{aligned}
 $$
+
+:::
