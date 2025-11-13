@@ -567,7 +567,7 @@ $$
 
 ::: {.proof}
 
-$f(P+\bf{v})-f(P)=\bf{a}\cdot \bf{v}+o(\bf{v})$ 이므로,
+($1$) 식 (10.5) $f(P+\bf{v})-f(P)=\bf{a}\cdot \bf{v}+o(\bf{v})$ 이므로,
 
 $$
 \lim_{\bf{v}\to \bf{0}} f(P +\bf{v})-f(P)=\lim_{\bf{v}\to \bf{0}} \bf{a}\cdot \bf{v} + o(\bf{v}) = 0
