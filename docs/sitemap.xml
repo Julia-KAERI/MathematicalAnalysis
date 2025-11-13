@@ -2,150 +2,150 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/index.html</loc>
-    <lastmod>2024-10-02T08:09:50.496Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.711Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/calculus.html</loc>
-    <lastmod>2025-11-10T05:52:30.691Z</lastmod>
+    <lastmod>2025-11-13T07:57:37.010Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/01_series.html</loc>
-    <lastmod>2025-11-10T10:22:24.014Z</lastmod>
+    <lastmod>2025-11-11T00:35:48.497Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/02_power_series.html</loc>
-    <lastmod>2025-11-10T10:47:53.776Z</lastmod>
+    <lastmod>2025-11-11T00:35:48.497Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/03_tayler_series.html</loc>
-    <lastmod>2025-11-11T23:11:28.288Z</lastmod>
+    <lastmod>2025-11-11T02:41:23.054Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/04_coordinate_systems.html</loc>
-    <lastmod>2025-11-11T23:11:28.289Z</lastmod>
+    <lastmod>2025-11-11T02:58:51.446Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/05_vectors.html</loc>
-    <lastmod>2025-11-11T23:11:28.290Z</lastmod>
+    <lastmod>2025-11-11T07:27:42.163Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/06_matrix.html</loc>
-    <lastmod>2025-11-11T23:11:28.291Z</lastmod>
+    <lastmod>2025-11-11T10:08:37.525Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/07_square_matrix.html</loc>
-    <lastmod>2025-11-11T23:11:28.293Z</lastmod>
+    <lastmod>2025-11-11T13:03:57.485Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/08_3dspace.html</loc>
-    <lastmod>2025-11-11T23:11:28.294Z</lastmod>
+    <lastmod>2025-11-11T13:40:31.269Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/09_curves.html</loc>
-    <lastmod>2025-11-12T01:47:53.453Z</lastmod>
+    <lastmod>2025-11-13T07:28:12.336Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/10_multivariable_functions.html</loc>
-    <lastmod>2025-11-12T05:45:49.587Z</lastmod>
+    <lastmod>2025-11-13T07:28:12.337Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/11_higher_order_derivatives.html</loc>
-    <lastmod>2025-11-12T08:12:25.708Z</lastmod>
+    <lastmod>2025-11-13T07:28:12.337Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/12_multivariable_vector_functions.html</loc>
-    <lastmod>2025-11-12T08:36:15.534Z</lastmod>
+    <lastmod>2025-11-13T07:28:12.337Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/calculus/13_vector_field.html</loc>
-    <lastmod>2025-11-12T08:52:04.375Z</lastmod>
+    <lastmod>2025-11-13T07:56:29.958Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/part1.html</loc>
-    <lastmod>2024-10-02T05:17:36.208Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.712Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_1_basic_of_naive_set_theory.html</loc>
-    <lastmod>2025-06-25T23:08:41.411Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.711Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_2_functions_and_relations.html</loc>
-    <lastmod>2025-06-25T23:08:41.412Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.711Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_3_numbers.html</loc>
-    <lastmod>2025-06-25T23:08:41.413Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.711Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_4_cartesian_products.html</loc>
-    <lastmod>2025-06-25T23:08:41.414Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.711Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_5_finite_sets.html</loc>
-    <lastmod>2025-06-25T23:08:41.415Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.712Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/part2.html</loc>
-    <lastmod>2024-10-02T05:17:36.210Z</lastmod>
+    <lastmod>2025-07-04T08:14:31.713Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html</loc>
-    <lastmod>2025-06-30T03:54:58.256Z</lastmod>
+    <lastmod>2025-07-18T11:00:30.441Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_2_sequences_and_series.html</loc>
-    <lastmod>2025-07-14T08:25:34.164Z</lastmod>
+    <lastmod>2025-07-13T02:32:51.133Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html</loc>
-    <lastmod>2025-08-14T05:27:46.066Z</lastmod>
+    <lastmod>2025-08-03T02:51:53.509Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html</loc>
-    <lastmod>2025-07-06T23:26:52.073Z</lastmod>
+    <lastmod>2025-07-04T10:01:51.097Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html</loc>
-    <lastmod>2025-07-14T08:25:34.164Z</lastmod>
+    <lastmod>2025-07-12T09:36:28.470Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_6_sequences_and_series_of_functions.html</loc>
-    <lastmod>2025-07-14T08:25:34.165Z</lastmod>
+    <lastmod>2025-07-13T06:33:49.750Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/part3.html</loc>
-    <lastmod>2025-09-22T01:16:20.357Z</lastmod>
+    <lastmod>2025-09-20T03:21:10.442Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_1_functions_on_Euclidean_space.html</loc>
-    <lastmod>2025-08-14T05:27:46.067Z</lastmod>
+    <lastmod>2025-08-09T02:08:34.004Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_2_differentiation_of_manifolds.html</loc>
-    <lastmod>2025-09-18T02:08:31.781Z</lastmod>
+    <lastmod>2025-09-18T04:03:02.387Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_3_inverse_function_theorem.html</loc>
-    <lastmod>2025-08-20T08:29:58.254Z</lastmod>
+    <lastmod>2025-08-20T12:59:01.986Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_4_integration.html</loc>
-    <lastmod>2025-09-22T01:16:20.355Z</lastmod>
+    <lastmod>2025-09-19T00:47:58.609Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_5_change_of_variables.html</loc>
-    <lastmod>2025-11-09T23:50:55.379Z</lastmod>
+    <lastmod>2025-09-27T01:42:29.855Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_6_differential_forms.html</loc>
-    <lastmod>2025-09-14T23:09:57.563Z</lastmod>
+    <lastmod>2025-09-14T12:54:12.838Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_7_stokes_theorem.html</loc>
-    <lastmod>2025-09-22T01:16:20.357Z</lastmod>
+    <lastmod>2025-09-18T04:21:45.107Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/references.html</loc>
-    <lastmod>2025-09-22T01:16:20.353Z</lastmod>
+    <lastmod>2025-09-20T03:21:55.265Z</lastmod>
   </url>
 </urlset>

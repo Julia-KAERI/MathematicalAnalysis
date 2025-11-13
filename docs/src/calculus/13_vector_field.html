@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/calculus/12_multivariable_vector_functions.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6fd8179fe9b4b136702f518973a6eab2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +85,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -125,7 +126,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Mathematical Analysis</a> 
         <div class="sidebar-tools-main">
@@ -399,6 +402,7 @@ window.Quarto = {
   <ul>
   <li><a href="#장-1절-연습문제" id="toc-장-1절-연습문제" class="nav-link active" data-scroll-target="#장-1절-연습문제"><span class="header-section-number">13.1</span> 13장 1절 연습문제</a></li>
   <li><a href="#장-2절-연습문제" id="toc-장-2절-연습문제" class="nav-link" data-scroll-target="#장-2절-연습문제"><span class="header-section-number">13.2</span> 13 장 2절 연습문제</a></li>
+  <li><a href="#장-3절-연습문제" id="toc-장-3절-연습문제" class="nav-link" data-scroll-target="#장-3절-연습문제"><span class="header-section-number">13.3</span> 13장 3절 연습문제</a></li>
   </ul>
 </nav>
     </div>
@@ -549,6 +553,7 @@ Y''(s) &amp; = X''(c-s)
 \int_X \boldsymbol{F} \cdot d\boldsymbol{s} = \int_0^{2\pi} (\sin t,\, \cos t)\cdot (- \sin t,\, - \cos t)\, dt = -2\pi
 \]</span></p>
 <p>(<span class="math inline">\(3\)</span>) 생략</p>
+</div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_13_2_2" class="theorem exercise">
@@ -633,6 +638,7 @@ X(t) = |X(t)| (\cos \theta(t),\, \sin \theta (t)), \qquad t_0 \le t \le t_1
 <p>(<span class="math inline">\(3\)</span>) 텍스트에 나와 있음.</p>
 </div>
 <p><strong>4.</strong> 생략</p>
+</section>
 <section id="장-3절-연습문제" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="장-3절-연습문제"><span class="header-section-number">13.3</span> 13장 3절 연습문제</h2>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -779,13 +785,10 @@ X(t) := (\cos t,\, \sin t),\qquad 0 \le t \le \pi
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CAL_13_3_8" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 13.16 (SNU 13.3.8)</strong></span> (<span class="math inline">\(1\)</span>) 정리 (3.6.3) 에서 <span class="math inline">\(U\)</span> 가 두개의 열린 볼록집합의 합집합이면, 여전히 옳은 명제임을 보이라.</p>
-<hr>
+</div>
+</div>
 
 
-</div>
-</div>
-</section>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -840,13 +843,14 @@ X(t) := (\cos t,\, \sin t),\qquad 0 \le t \le \pi
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
