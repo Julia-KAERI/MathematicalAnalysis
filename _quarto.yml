@@ -20,21 +20,21 @@ book:
   
   chapters:
     - index.qmd
-    - part : src/calculus/calculus.qmd
-      chapters: 
-        - src/calculus/01_series.qmd
-        - src/calculus/02_power_series.qmd
-        - src/calculus/03_tayler_series.qmd
-        - src/calculus/04_coordinate_systems.qmd
-        - src/calculus/05_vectors.qmd
-        - src/calculus/06_matrix.qmd
-        - src/calculus/07_square_matrix.qmd
-        - src/calculus/08_3dspace.qmd
-        - src/calculus/09_curves.qmd
-        - src/calculus/10_multivariable_functions.qmd
-        - src/calculus/11_higher_order_derivatives.qmd
-        - src/calculus/12_multivariable_vector_functions.qmd
-        - src/calculus/13_vector_field.qmd
+    # - part : src/calculus/calculus.qmd
+    #   chapters: 
+    #     - src/calculus/01_series.qmd
+    #     - src/calculus/02_power_series.qmd
+    #     - src/calculus/03_tayler_series.qmd
+    #     - src/calculus/04_coordinate_systems.qmd
+    #     - src/calculus/05_vectors.qmd
+    #     - src/calculus/06_matrix.qmd
+    #     - src/calculus/07_square_matrix.qmd
+    #     - src/calculus/08_3dspace.qmd
+    #     - src/calculus/09_curves.qmd
+    #     - src/calculus/10_multivariable_functions.qmd
+    #     - src/calculus/11_higher_order_derivatives.qmd
+    #     - src/calculus/12_multivariable_vector_functions.qmd
+    #     - src/calculus/13_vector_field.qmd
     - part : src/part1/part1.qmd
       chapters :
         - src/part1/1_1_basic_of_naive_set_theory.qmd
