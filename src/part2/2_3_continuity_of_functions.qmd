@@ -895,7 +895,7 @@ $f$ 가 $x$ 에서 1종 불연속인 경우는 $f(x^+)\ne f(x^-)$ 이거나 $f(x
 
 </br>
 
-### 단조함수 {#sec-MA_monitonic_functions}
+### 단조함수 {#sec-MA_monotonic_functions}
 
 ::: {.callout-note appearance="simple" icon="false"}
 
@@ -975,7 +975,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-MA_monitonic_and_countable_number_of_discontinuity}
+::: {#cor-MA_monotonic_and_countable_number_of_discontinuity}
 
 단조함수의 불연속은 항상 1종 불연속이다.
 
@@ -986,7 +986,7 @@ $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-MA_monitonic_and_countable_number_of_discontinuity}
+::: {#prp-MA_monotonic_and_countable_number_of_discontinuity}
 
 $f:(a,\,b)\to \mathbb{R}$ 이 단조함수이면 $f$ 가 불연속인 $(a,\,b)$ 구간의 점은 countable 이다.
 
