@@ -298,14 +298,18 @@ window.Quarto = {
 <h2 data-number="4.1" class="anchored" data-anchor-id="집합족"><span class="header-section-number">4.1</span> 집합족</h2>
 <section id="sec-FA_collection" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-FA_collection"><span class="header-section-number">4.1.1</span> 집합족</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>집합족과 인덱스</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_collection_and_indexing" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 4.1 (집합족과 인덱스)</strong></span> 공집합이 아닌 집합족 <span class="math inline">\(\mathcal{A}\)</span> 를 생각하자. 어떤 집합 <span class="math inline">\(J\)</span> 에 대해 함수 <span class="math inline">\(f:J \to \mathcal{A}\)</span> 가 전사함수 일 때 <span class="math inline">\(f\)</span> 를 인덱스 함수라하고 <span class="math inline">\(J\)</span> 를 인덱스 집합이라고 한다. 주어진 <span class="math inline">\(\alpha\in J\)</span> 에 대해 <span class="math inline">\(f(\alpha)\)</span> 를 <span class="math inline">\(A_{\alpha}\)</span> 라고 쓴다. 앞으로 집합족을 표기할 때는 인덱스 집합 <span class="math inline">\(J\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 4.1</strong></span> 공집합이 아닌 집합족 <span class="math inline">\(\mathcal{A}\)</span> 를 생각하자. 어떤 집합 <span class="math inline">\(J\)</span> 에 대해 함수 <span class="math inline">\(f:J \to \mathcal{A}\)</span> 가 전사함수 일 때 <span class="math inline">\(f\)</span> 를 인덱스 함수라하고 <span class="math inline">\(J\)</span> 를 인덱스 집합이라고 한다. 주어진 <span class="math inline">\(\alpha\in J\)</span> 에 대해 <span class="math inline">\(f(\alpha)\)</span> 를 <span class="math inline">\(A_{\alpha}\)</span> 라고 쓴다. 앞으로 집합족을 표기할 때는 인덱스 집합 <span class="math inline">\(J\)</span> 에 대해</p>
 <p><span class="math display">\[
 \{A_\alpha\}_{\alpha\in J}
 \]</span></p>
@@ -313,18 +317,19 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
 <p>인덱스 함수가 단사일 필요가 없으므로 <span class="math inline">\(A_\alpha,\, A_\beta\in \mathcal{A}\)</span> 에 대해 <span class="math inline">\(\alpha \ne \beta\)</span> 더라도 <span class="math inline">\(A_\alpha = A_\beta\)</span> 일 수 있다.</p>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>집합족에 대한 합집합과 교집합</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_union_and_intersection_for_collection" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 4.2 (집합족에 대한 합집합과 교집합)</strong></span> 집합족 <span class="math inline">\(\mathcal{A}=\{A_\alpha\}_{\alpha\in J}\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 4.2</strong></span> 집합족 <span class="math inline">\(\mathcal{A}=\{A_\alpha\}_{\alpha\in J}\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
 \bigcup_{\alpha\in J} A_\alpha &amp;= \{x \mid \exists \beta\in J,\, x\in A_\beta\}, \\
@@ -335,16 +340,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong><span class="math inline">\(\boldsymbol{n}\)</span>-tuple</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_union_and_intersection_for_collection" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 4.3 (<span class="math inline">\(\boldsymbol{n}\)</span>-tuple)</strong></span> <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 라 하자. 주어진 집합 <span class="math inline">\(X\)</span> 에 대해 함수</p>
+<p><span class="theorem-title"><strong>정의 4.3</strong></span> <span class="math inline">\(n\in \mathbb{Z}_+\)</span> 라 하자. 주어진 집합 <span class="math inline">\(X\)</span> 에 대해 함수</p>
 <p><span class="math display">\[
 \boldsymbol{x} : \{1,\ldots,n\} \to X
 \]</span></p>
@@ -356,20 +363,22 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>데카르트 곱</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_union_and_intersection_for_collection" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 4.4 (데카르트 곱 (Cartesian Product))</strong></span> 집합족 <span class="math inline">\(\{A_1,\ldots,A_m\}\)</span> 과 인덱스 집합 <span class="math inline">\(J_m=\{1,\ldots,\,m\}\)</span> 에 대해 <span class="math inline">\(X=A_1 \cup \cdots \cup A_m\)</span> 이라 하자. <span class="math inline">\(\boldsymbol{x}:J_m \to X\)</span> 이 <span class="math inline">\(\forall i\in J_m,\, x_i \in A_i\)</span> 인 집합을 <strong>데카르트 곱</strong> 이라 하며 다음과 같이 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 4.4</strong></span> 집합족 <span class="math inline">\(\{A_1,\ldots,A_m\}\)</span> 과 인덱스 집합 <span class="math inline">\(J_m=\{1,\ldots,\,m\}\)</span> 에 대해 <span class="math inline">\(X=A_1 \cup \cdots \cup A_m\)</span> 이라 하자. <span class="math inline">\(\boldsymbol{x}:J_m \to X\)</span> 이 <span class="math inline">\(\forall i\in J_m,\, x_i \in A_i\)</span> 인 집합을 <strong>데카르트 곱(Cartesian Product)</strong> 이라 하며 다음과 같이 표기한다.</p>
 <p><span class="math display">\[
 \prod_{i=1}^m A_i \qquad \text{or} \qquad A_1 \times \cdots \times A_m .
 \]</span></p>
-</div>
 </div>
 </div>
 </div>
@@ -380,14 +389,18 @@ window.Quarto = {
 </div>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong><span class="math inline">\(\boldsymbol{\omega}\)</span>-tuple 과 수열</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_omega_tuple_and_sequence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 4.5 (<span class="math inline">\(\boldsymbol{\omega}\)</span>-tuple 과 수열)</strong></span> 집합 <span class="math inline">\(X\)</span> 에 대해 <span class="math inline">\(\mathbb{Z}_+\)</span> 를 정의역으로, <span class="math inline">\(X\)</span> 를 공역으로 정의된 함수 <span class="math inline">\(\boldsymbol{x}:\mathbb{Z}_+ \to X\)</span> 를 <span class="math inline">\(\boldsymbol{\omega}\)</span><strong>-tuple</strong> 혹은 <span class="math inline">\(X\)</span> 에서의 <strong>수열(sequence)</strong> 이라고 하며 <span class="math inline">\(\boldsymbol{x}(i)\)</span> 를 <span class="math inline">\(x_i\)</span> 라고 쓴다. <span class="math inline">\(\omega\)</span>-tuple 을 <span class="math inline">\(\langle x_i \rangle\)</span> 이라고 흔히 쓴다. <span class="math inline">\(n\)</span>-tuple 과 유사하게</p>
+<p><span class="theorem-title"><strong>정의 4.5</strong></span> 집합 <span class="math inline">\(X\)</span> 에 대해 <span class="math inline">\(\mathbb{Z}_+\)</span> 를 정의역으로, <span class="math inline">\(X\)</span> 를 공역으로 정의된 함수 <span class="math inline">\(\boldsymbol{x}:\mathbb{Z}_+ \to X\)</span> 를 <span class="math inline">\(\boldsymbol{\omega}\)</span><strong>-tuple</strong> 혹은 <span class="math inline">\(X\)</span> 에서의 <strong>수열(sequence)</strong> 이라고 하며 <span class="math inline">\(\boldsymbol{x}(i)\)</span> 를 <span class="math inline">\(x_i\)</span> 라고 쓴다. <span class="math inline">\(\omega\)</span>-tuple 을 <span class="math inline">\(\langle x_i \rangle\)</span> 이라고 흔히 쓴다. <span class="math inline">\(n\)</span>-tuple 과 유사하게</p>
 <p><span class="math display">\[
 (x_1,\,x_2,\ldots)
 \]</span></p>
@@ -396,7 +409,6 @@ window.Quarto = {
 \prod_{i\in \mathbb{Z}_+} A_i \qquad \text{or}\qquad A_1 \times A_2 \times \cdots
 \]</span></p>
 <p>와 같이 쓴다.</p>
-</div>
 </div>
 </div>
 </div>

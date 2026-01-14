@@ -10,24 +10,23 @@ crossref:
 
 ## 실수 ($\mathbb{R}$) {#sec-FA_real_number}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **이항 연산**
 
 ::: {#def-FA_binary_operation}
-
-#### 이항 연산
 
 집합 $A$ 에 대해 $f:A\times A \to A$ 를 $A$ 에 대한 **이항연산(binary operation)** 이라 한다.
 
 ::: 
 :::
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **체**
 
 ::: {#def-FA_field}
 
-#### 체(Field)
 
 덧셈과 곱셈 이항연산이 정의된 집합 $\mathbb{F}$ 가 다음을 만족 할 때 $\mathbb{F}$ 를 **체(Field)** 라고 한다.
 
@@ -64,11 +63,11 @@ crossref:
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **음수, 양수, 순서체**
 
 ::: {#def-FA_ordered_field}
-
-#### 음수와 양수, 순서체(Ordered field)
 
 체 $\mathbb{F}$ 가 전순서 집합일 때 $x<0$ 이면 $x$ 를 음수라 한다. $0<y$ 이면 $y$ 를 양수라 한다. $x<y$ 일 때 $y>x$ 라 쓸 수 있다.
 
@@ -79,17 +78,15 @@ crossref:
 
 13. $x>y,\, z>0 \implies xz > yz$.
 
-
 :::
 :::
 
-</br>
 
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **Linear continuum**
+
 ::: {#def-FA_linear_continuum}
-
-#### Linear continuum
 
 아래의 성질을 가지는 집합을 **linear continuum** 이라 한다.
 
@@ -99,11 +96,11 @@ crossref:
 :::
 :::
 
+</br>
 
+::: {.callout-important icon="false"}
 
-::: {.callout-important appearance="simple" icon="false"}
-
-<b>실수의 집합 $\mathbb{R}$ 의 존재 가정</b>
+#### 실수의 집합 $\mathbb{R}$ 의 존재 가정
 
 Linear continuum 이며 순서체인 실수의 집합 $\mathbb{R}$ 이 존재한다.
 
@@ -131,12 +128,13 @@ $x+x<x+y<y+y$ 이며 $1/2>0$ 이므로 $x<\dfrac{x+y}{2} <y$ 이다. $\square$
 
 ## 정수 ($\mathbb{Z}$) 와 유리수 ($\mathbb{Q}$) {#sec-FA_integer_and_rational_number}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **양의 정수**
+
 ::: {#def-FA_positive_integer}
 
-#### 양의 정수
-
-$A\subset \mathbb{R}$ 이 다음 성질을 가지면 **귀납적(inductive)** 하다고 한다. [수학에서의 귀납적(inductive)이라는 말은 논리학에서의 귀납법과는 무관하다.]{.aside}
+$A\subset \mathbb{R}$ 이 다음 성질을 가지면 **귀납적(be inductive)** 이라고 한다. 
 
 &emsp; ($1$) $1\in A$, 
 
@@ -177,10 +175,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-FA_integer}
+::: {.callout-note icon="false"}
 
-#### 정수
+#### **정수**
+
+::: {#def-FA_integer}
 
 정수 $\mathbb{Z}$ 는 다음과 같이 정의된다.
 
@@ -190,28 +189,28 @@ $$
 :::
 :::
 
-</br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유리수와 무리수**
+
 ::: {#def-FA_rational_irrational}
 
-#### 유리수(rational number) 와 무리수(irrational number)
-
-아래와 같이 정의된 $\mathbb{Q}$ 의 원소를 **유리수** 라 한다. 어떤 실수가 유리수가 아니면 **무리수** 라 한다.
+아래와 같이 정의된 $\mathbb{Q}$ 의 원소를 **유리수 (rational number)** 라 한다. 어떤 실수가 유리수가 아니면 **무리수 (irrational number)** 라 한다.
 $$
 \mathbb{Q} = \left\{\dfrac{p}{q} : p\in \mathbb{Z},\, q\in \mathbb{Z}\backslash\{0\}\right\}.
 $$
 
-
 :::
 :::
 
-</br>
 
-::: {.callout-note appearance="simple" icon="false"}
+
+::: {.callout-note icon="false"}
+
+#### **Section**
+
 ::: {#def-FA_section}
-
-#### Section
 
 양의 정수 $n$ 에 대해 $1$ 보다 크거나 같고 $n$ 보다 작은 양의 정수의 집합을 **section** 이라 하며 $S_n$ 으로 쓴다. 
 

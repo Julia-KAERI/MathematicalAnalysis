@@ -12,11 +12,11 @@ crossref:
 
 ### 집합족 {#sec-FA_collection}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **집합족과 인덱스**
 
 ::: {#def-FA_collection_and_indexing}
-
-#### 집합족과 인덱스
 
 공집합이 아닌 집합족 $\mathcal{A}$ 를 생각하자. 어떤 집합 $J$ 에 대해 함수 $f:J \to \mathcal{A}$ 가 전사함수 일 때 $f$ 를 인덱스 함수라하고 $J$ 를 인덱스 집합이라고 한다. 주어진 $\alpha\in J$ 에 대해 $f(\alpha)$ 를 $A_{\alpha}$ 라고 쓴다. 앞으로 집합족을 표기할 때는 인덱스 집합 $J$ 에 대해
 
@@ -26,20 +26,15 @@ $$
 
 와 같이 표기하도록 한다. 간략하게 쓸 때는 $\{A_\alpha\}$ 와 같이 쓰기로 한다.
 :::
-
 :::
-
-</br>
 
 인덱스 함수가 단사일 필요가 없으므로 $A_\alpha,\, A_\beta\in \mathcal{A}$ 에 대해 $\alpha \ne \beta$ 더라도 $A_\alpha = A_\beta$ 일 수 있다. 
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **집합족에 대한 합집합과 교집합**
 
 ::: {#def-FA_union_and_intersection_for_collection}
-
-#### 집합족에 대한 합집합과 교집합
 
 집합족 $\mathcal{A}=\{A_\alpha\}_{\alpha\in J}$ 에 대해
 
@@ -56,21 +51,19 @@ $$
 :::
 
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **$\bf{n}$-tuple**
 
 ::: {#def-FA_union_and_intersection_for_collection}
-
-#### $\boldsymbol{n}$-tuple
 
 $n\in \mathbb{Z}_+$ 라 하자. 주어진 집합 $X$ 에 대해 함수 
 
 $$
-\boldsymbol{x} : \{1,\ldots,n\} \to X
+\bf{x} : \{1,\ldots,n\} \to X
 $$
 
-를 $X$ 의 원소에 대한 **$\boldsymbol{n}$-tuple** 이라 한다. $n$-tuple $\boldsymbol{x}$ 에 대해 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓰며 $\boldsymbol{x}$ 의 $i$ 번째 좌표라고 한다. $n$-tuple 자체를
+를 $X$ 의 원소에 대한 **$\bf{n}$-tuple** 이라 한다. $n$-tuple $\bf{x}$ 에 대해 $\bf{x}(i)$ 를 $x_i$ 라고 쓰며 $\bf{x}$ 의 $i$ 번째 좌표라고 한다. $n$-tuple 자체를
 
 $$
 (x_1,\ldots,x_n)
@@ -83,13 +76,14 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **데카르트 곱**
 
 ::: {#def-FA_union_and_intersection_for_collection}
 
-#### 데카르트 곱 (Cartesian Product)
 
-집합족 $\{A_1,\ldots,A_m\}$ 과 인덱스 집합 $J_m=\{1,\ldots,\,m\}$ 에 대해 $X=A_1 \cup \cdots \cup A_m$ 이라 하자. $\boldsymbol{x}:J_m \to X$ 이 $\forall i\in J_m,\, x_i \in A_i$ 인 집합을 **데카르트 곱** 이라 하며 다음과 같이 표기한다.
+집합족 $\{A_1,\ldots,A_m\}$ 과 인덱스 집합 $J_m=\{1,\ldots,\,m\}$ 에 대해 $X=A_1 \cup \cdots \cup A_m$ 이라 하자. $\bf{x}:J_m \to X$ 이 $\forall i\in J_m,\, x_i \in A_i$ 인 집합을 **데카르트 곱(Cartesian Product)** 이라 하며 다음과 같이 표기한다.
 
 $$
 \prod_{i=1}^m A_i \qquad \text{or} \qquad A_1 \times \cdots \times A_m .
@@ -109,12 +103,13 @@ $$
 
 </div></br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **$\bf{\omega}$-tuple 과 수열**
+
 ::: {#def-FA_omega_tuple_and_sequence}
 
-#### $\boldsymbol{\omega}$-tuple 과 수열
-
-집합 $X$ 에 대해 $\mathbb{Z}_+$ 를 정의역으로, $X$ 를 공역으로 정의된 함수 $\boldsymbol{x}:\mathbb{Z}_+ \to X$ 를 $\boldsymbol{\omega}$**-tuple** 혹은 $X$ 에서의 **수열(sequence)** 이라고 하며 $\boldsymbol{x}(i)$ 를 $x_i$ 라고 쓴다. $\omega$-tuple 을 $\langle x_i \rangle$ 이라고 흔히 쓴다. $n$-tuple 과 유사하게
+집합 $X$ 에 대해 $\mathbb{Z}_+$ 를 정의역으로, $X$ 를 공역으로 정의된 함수 $\bf{x}:\mathbb{Z}_+ \to X$ 를 $\bf{\omega}$**-tuple** 혹은 $X$ 에서의 **수열(sequence)** 이라고 하며 $\bf{x}(i)$ 를 $x_i$ 라고 쓴다. $\omega$-tuple 을 $\langle x_i \rangle$ 이라고 흔히 쓴다. $n$-tuple 과 유사하게
 
 $$
 (x_1,\,x_2,\ldots)
@@ -228,10 +223,10 @@ $$
 
 ($4$) $x\in X^n,\, y \in X^\omega$ 에 대해 $k(x, y) = \left\{\begin{array}{ll} x_i, \quad&\text{if }i\le n \\ y_{i-n}, &\text{if } i > n  \end{array} \right.$ 은 전단사 함수이다. 
 
-($5$) $\boldsymbol{a}_j\in A^\omega$ $(j=1,\,2,\ldots, n)$ 에 대해 $a_{ij} = (\boldsymbol{a}_j)_i$ $(i=1,\,2,\ldots)$ 라 하자. $k\in \mathbb{Z}_+$ 에 대해 $p,\, q$ 는 각각 $k$ 를 $n$ 으로 나누었을 때의 몫과 나머지라 하자.
+($5$) $\bf{a}_j\in A^\omega$ $(j=1,\,2,\ldots, n)$ 에 대해 $a_{ij} = (\bf{a}_j)_i$ $(i=1,\,2,\ldots)$ 라 하자. $k\in \mathbb{Z}_+$ 에 대해 $p,\, q$ 는 각각 $k$ 를 $n$ 으로 나누었을 때의 몫과 나머지라 하자.
 
 $$
-m((\boldsymbol{a}_1,\ldots,\, \boldsymbol{a}_n))_k = (\boldsymbol{a}_{q+1})_{p+1} 
+m((\bf{a}_1,\ldots,\, \bf{a}_n))_k = (\bf{a}_{q+1})_{p+1} 
 $$
 
 는 단사함수이다. 
@@ -248,13 +243,13 @@ $$
 
 아래의 $\mathbb{R}^\omega$ 의 부분집합중에 $\mathbb{R}$ 의 부분집합들의 데카르트 곱으로 표현 될 수 있는것은?
 
-&emsp;($a$) $\{\boldsymbol{x} \mid x_i \in \mathbb{Z}\}$. 
+&emsp;($a$) $\{\bf{x} \mid x_i \in \mathbb{Z}\}$. 
 
-&emsp;($b$) $\{\boldsymbol{x} \mid \forall i,\, x_i \ge i\}$.
+&emsp;($b$) $\{\bf{x} \mid \forall i,\, x_i \ge i\}$.
 
-&emsp;($c$) $\{\boldsymbol{x} \mid \forall i\ge 100,\, x_i \in \mathbb{Z} \}$.
+&emsp;($c$) $\{\bf{x} \mid \forall i\ge 100,\, x_i \in \mathbb{Z} \}$.
 
-&emsp;($d$) $\{\boldsymbol{x} \mid x_2= x_3 \}$.
+&emsp;($d$) $\{\bf{x} \mid x_2= x_3 \}$.
 
 :::
 </div>

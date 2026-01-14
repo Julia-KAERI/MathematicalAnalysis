@@ -12,11 +12,11 @@ crossref:
 
 임의의 양의 정수 $n$ 에 대해 $J_n = \{k\in \mathbb{Z}_+: k=1,\ldots, n\}$ 이라 하자. 또한 두 집합 $A,\,B$ 사이에 1-1 대응관계(전단사 관계)가 존재할 때 $A \sim B$ 라 하자.
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유한집합, 가산집합, 가산무한집합, 불가산집합**
 
 ::: {#def-MA_countable}
-
-#### 유한집합, 가산집합, 가산무한집합, 불가산집합
 
 집합 $A$ 를 다음과 같이 부를 수 있다.
 
@@ -33,13 +33,12 @@ crossref:
 ::: 
 :::
 
-</br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **수열**
 
 ::: {#def-MA_sequence}
-
-#### 수열
 
 $\mathbb{Z}_+$ 가 정의역으로 정의된 함수를 **수열(sequence)** 라고 하며 $a$ 가 수열일 때 $a(n)$ 을 $a_n$ 이라고 표기한다. 수열 전체는 $\langle a_n\rangle$ 이라 표기한다.
 
@@ -53,7 +52,7 @@ $\mathbb{Z}_+$ 가 정의역으로 정의된 함수를 **수열(sequence)** 라�
 
 ::: {#prp-MA_countable_subset}
 
-$A \sim \mathbb{N}$ 의 무한 부분집합 $B$ 는 $B \sim \mathbb{N}$ 이다.
+$A \sim \mathbb{Z}_+$ 의 무한 부분집합 $B$ 는 $B \sim \mathbb{Z}_+$ 이다.
 
 :::
 </div>
@@ -172,11 +171,11 @@ $A$ 를 $0$ 과 $1$ 로만 이루어진 수열의 집합이라고 하고 $E$ 는
 
 ### 거리공간 {#sec-MA_metric_space}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **거리와 거리공간**
 
 ::: {#def-MA_metric_space}
-
-#### 거리와 거리 공간
 
 집합 $X$ 에 아래와 같은 성질을 갖는 이항함수 $d_X:X\times X \mapsto \mathbb{R}$ 이 정의될 때 이 함수를 **거리 함수(metric)** 라고 하고 $X$ 를 **거리공간(metric space)** 라고 한다. 
 
@@ -194,13 +193,11 @@ $d_X (x,\,y)$ 를 $\|x-y\|_X$ 라고 쓸 수 있다. 혹은 거리공간을 굳�
 :::
 
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **1차원 구간**
 
 ::: {#def-MA_interval}
-
-#### 1차원 구간
 
 구간 $(a,\,b),\, (a,\,b],\, [a,\,b),\, [a,\,b]$ 는 다음과 같이 정의된다.
 
@@ -220,11 +217,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유클리드 공간**
 
 ::: {#def-MA_Euclidean_space}
-
-#### 유클리드 공간
 
 양의 정수 $n$ 에 대해 유클리드 내적이 정의된 벡터공간 $\mathbb{R}^n$ 를 $n$ 차원 **유클리드 공간(Euclidean space)** 이라고 한다. $\bf{x} \in \mathbb{R}^n$ 는 $\bf{x}=(x_1,\ldots,\,x_n)$ 로 표현 할 수 있으며 $x_j$ 를 $\bf{x}$ 의 $j$ 번째 **좌표(coordinate)** 라고 한다. $\bf{x},\, \bf{y}\in \mathbb{R}^n$ 에 대한 유클리드 내적은 $\bf{x\cdot y}$ 로 쓰며
 
@@ -282,11 +279,11 @@ $$
 ### 열린집합과 닫힌집합 {#sec-MA_open_set_and_closed_set}
 
 
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-MA_n_cell}
+::: {.callout-note icon="false"}
 
 #### $n$-cell
+
+::: {#def-MA_n_cell}
 
 $\mathbb{R}^n$ 에서
 
@@ -299,14 +296,12 @@ $$
 ::: 
 :::
 
-</br>
 
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **열린 근방과 닫힌근방**
 
 ::: {#def-MA_neighborhood}
-
-#### 열린 근방과 닫힌근방
 
 $\varepsilon>0$ 에 대해 거리공간 $X$ 에서 정의된 다음과 같은 $X$ 의 부분집합을 정의하자.
 $$
@@ -321,19 +316,17 @@ $N_X(p,\,\varepsilon)$ 을 $p$ 를 중심으로 반지름 $\varepsilon$ 인 $X$ 
 ::: 
 :::
 
-</br>
-
 
 거리공간 $X$ 에 대해 다룬다는 것이 명확할때는 생략하여 $N(p,\,\varepsilon)$ 과 같이 쓰기도 한다. $Y\subset X$ 일 경우 $X$ 에서의 근방과 $Y$ 에서의 근방이 다를 수 있으므로 이런 경우에는 명확하게 어느 거리공간에서의 근방인지를 명시해야 한다. 
 
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **볼록 집합**
 
 ::: {#def-MA_convex}
-
-#### 볼록 집합
 
 $E\subset \mathbb{R}^k$ 가 모든 $x,\,y\in E,\, t\in (0,\,1)$ 에 대해
 
@@ -394,11 +387,11 @@ $$
 
 ### 거리공간에서의 위상 {#sec-MA_topology_in_metric_space}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **위상학적 용어들**
 
 ::: {#def-MA_topologycal_terms}
-
-#### 위상학적 용어들
 
 거리공간 $X$ 와 $E\subset X$, $p,\,q \in X$ 에 대해 다음과 같이 용어를 정의한다.
 
@@ -406,7 +399,7 @@ $$
 
 2. $p$ 의 모든 근방이 $p$ 를 제외한 $E$ 의 원소를 포함하면 $p$ 를 $E$ 의 **극한점(limit point)** 이라고 한다. $p$ 가 $E$ 에 포함되는지 여부는 상관 없다. $p$ 가 $E$ 의 극한점이 아니라면 $p$ 를 $E$ 의 **고립점(isolated point)** 이라고 한다.
 
-3. 모든 $E$ 의 극한점의 집합을 $E'$ 라고 쓴다. $E' \subset E$ 일 때 $E$ 가 **닫혀있다(closed)** 라고 하며 닫혀있는 집합을 **닫힌 집합(closed set)** 이라고 한다. $\overline{E}=E \cup E'$ 으로 정의하며 $E$ 의 **폐포(closure)** 라고 한다.
+3. 모든 $E$ 의 극한점의 집합을 $E'$ 라고 표기한다. $E' \subset E$ 일 때 $E$ 가 **닫혀있다(closed)** 라고 하며 닫혀있는 집합을 **닫힌 집합(closed set)** 이라고 한다. $\overline{E}=E \cup E'$ 으로 정의하며 $E$ 의 **폐포(closure)** 라고 한다.
 
 4. $p$ 의 어떤 근방이 $E$ 에 포함되면 $p$ 를 $E$ 의 **내점(inner point)**이라고 한다. $E$ 의 내점들의 집합을 $\text{int} (E)$ 라고 쓴다. 
 
@@ -490,14 +483,15 @@ $E=N(p, \varepsilon)$ 이라 하자. $q\in E$ 이면 $d(p,\,q)<\varepsilon$ 이�
 
 $E$ 가 열린집합임을 가정하자. $p\in (X\backslash E)'$ 일 때 $p$ 의 모든 근방은 $X\backslash E$ 의 $p$ 가 아닌 점을 포함하므로 $p\not \in E$, 즉 $p\in X\backslash E$ 이다. 따라서 $(X\backslash E)'\subset X\backslash E$ 이다. 즉 $X\backslash E$ 는 닫힌 집합이다. 
 
-$X\backslash E$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in X\backslash E$ 이며 $X\backslash E$ 는 닫힌집합이므로 $x$ 는 $X\backslash E$ 의 극한점이 아니다. 따라서 어떤 $x$ 의 근방은 $X\backslash E$ 와 의 교집합이 없으므로 $E$ 에 포함된다. 따라서 $E$ 는 열린집합이다. $\square$
+$X\backslash E$ 가 닫힌 집합임을 가정하자. $q\in E$ 이면 $X\backslash E$ 는 닫힌집합이므로 $q$ 는 $X\backslash E$ 의 극한점이 아니다. 따라서 어떤 $q$ 의 근방은 $X\backslash E$ 와 교집합이 없으므로 $E$ 에 포함된다. 따라서 $E$ 는 열린집합이다. $\square$
 
 :::
 
-이로부터 아래 따름정리는 자명하다.
+이로부터 아래 명제는 자명하다.
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-MA_closed_set_is_complement_of_open_set}
+::: {#prp-MA_closed_set_is_complement_of_open_set}
 거리공간 $X$ 의 부분집합 $E$ 에 대해 다음은 동치이다. 
 
 &emsp;($1$) $E$ 는 닫힌 집합이다.
@@ -531,7 +525,7 @@ $X\backslash E$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 ::: {.proof}
 ($1$) 공집합과 $X$ 가 열린집합이라는 것은 자명하다.
 
-($2$) ($1$)  @prp-MA_open_set_is_complement_of_closed_set 와 @cor-MA_closed_set_is_complement_of_open_set 에 의해 공집합과 $X$ 는 닫힌집합이다. 
+($2$) ($1$)  @prp-MA_open_set_is_complement_of_closed_set 와 @prp-MA_closed_set_is_complement_of_open_set 에 의해 공집합과 $X$ 는 닫힌집합이다. 
 
 ($3$) $\{G_{\alpha}\}$ 를 열린 집합의 집합족이라고 하고 $G=\bigcup_{\alpha}G_{\alpha}$ 라고 하자. $x\in G\implies \exists G_\alpha,\, x\in G_\alpha$ 이며 어떤 $N(x,\, \varepsilon)$ 에 대해 $N(x,\, \varepsilon) \subset G_\alpha \subset G$ 이므로 $G$ 는 열린 집합이다.
 
@@ -580,11 +574,11 @@ $X\backslash E$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **집합 안에서의 열림과 닫힘**
 
 ::: {#def-MA_open_relative}
-
-#### 집합 안에서의 열림과 닫힘
 
 거리공간 $X$ 에 대해 $E\subset Y \subset X$ 라고 하자. $Y$ 역시 거리가 정의된 거리공간이며 집합 $E$ 가 $X$ 에 대해서 뿐만 아니라 $Y$ 에 대해 열려있는지 닫혔는지를 말할 수 있다. 각각의 $p\in E$ 에 대해 $N_Y(p,\, \varepsilon)\subset E$ 인 $\varepsilon>0$ 이 존재하면 $E$ 는 $Y$ 안에서 열려있다 라고 한다.
 ::: 
@@ -605,7 +599,7 @@ $X\backslash E$ 가 닫힌 집합임을 가정하자. $x\in E$ 이면 $x\not\in 
 
 ::: {.proof}
 
-($1 \implies 2$) $p\in E$ 에 대해 $N_Y(p,\,\varepsilon_p)\subset Y$ 인 $\varepsilon_p>0$ 이 존재한다. $G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)$ 라고 하면 $G$ 는 열린 집합이며 $E\subset Y \cap G$ 이다. 또한 각각의 $p\in E$ 에 대해 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이므로 $Y \cap G \subset E$ 이다. 즉 $Y = Y \cap G$ 이다.
+($1 \implies 2$) $p\in E$ 에 대해 $N_Y(p,\,\varepsilon_p)\subset E$ 인 $\varepsilon_p>0$ 이 존재한다. $G=\bigcup_{p\in E} N_X(p,\,\varepsilon_p)$ 라고 하면 $G$ 는 열린 집합이며 $E\subset Y \cap G$ 이다. 또한 각각의 $p\in E$ 에 대해 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이므로 $Y \cap G \subset E$ 이다. 즉 $Y = Y \cap G$ 이다.
 
 ($2 \implies 1$) $G$ 가 열린집합이고 $E \subset G$ 이므로 각각의 $p\in E$ 에 대해 $N_X(p,\, \varepsilon_p) \subset G$ 인 $\varepsilon_p >0$ 이 존재하며 $N_X(p,\,\varepsilon_p) \cap Y \subset E$ 이다. 이 때 $N_X(p,\, \varepsilon_p) \cap Y = N_Y (p,\,\varepsilon_p)$ 이므로 정의에 의해 $E$ 는 $Y$ 안에서 열려 있다. $\square$
 :::
@@ -654,11 +648,11 @@ $A$ 가 유계이므로 상한과 하한이 존재한다. $M =\max (A)$ 라고 �
 
 ### 옹골 집합의 정의 {#sec-MA_compact_set}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **열린 덮게**
 
 ::: {#def-MA_open_cover}
-
-#### 열린 덮게
 
 거리공간 $X$ 에서의 열린 집합으로 이루어진 집합족 $\{G_\alpha\}$ 가 $X$ 의 어떤 부분집합 $E$ 에 대해 
 
@@ -673,19 +667,18 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **옹골집합**
 
 ::: {#def-MA_compact_set}
 
-#### 옹골 집합
-
-거리공간 $X$ 의 부분집합 $E$ 에 대한 어떤 열린 덮개 $\{G_\alpha\}$ 에 대해서도 유한개의 $\{G_{\alpha}\}$ 의 원소만으로 $E$ 의 열린 덮개가 된다면 $E$ 를 **옹골 집합(compact set)** 이라고 한다.
-
+거리공간 $X$ 의 부분집합 $E$ 에 대한 어떤 열린 덮개 $\{G_\alpha\}$ 에 대해서도 유한개의 $\{G_{\alpha}\}$ 의 원소만으로 $E$ 의 열린 덮개가 된다면 $E$ 를 **옹골집합(compact set)** 이라고 한다.
 
 ::: 
 :::
 
-즉 어떤 무한한 열린 덮게 $\{G_\alpha\}$ 를 잡더라도 유한개의 $G_\alpha$ 의 합집합으로 $E$ 를 포함 할 수 있다면 $E$ 는 옹골 집합이다.
+즉 어떤 무한한 열린 덮게 $\{G_\alpha\}$ 를 잡더라도 유한개의 $G_\alpha$ 의 합집합으로 $E$ 를 포함 할 수 있다면 $E$ 는 옹골집합이다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -722,7 +715,7 @@ $$
 ::: {.proof}
 거리공간 $X$ 에서 $K\subset X$ 가 옹골집합이라고 하자. 고정된 $p \in  X\backslash K$ 와 각각의 $q\in K$ 에 대해 반지름 $r$ 이 $\frac{1}{2}d(p,\,q)$ 보다 작은 $p$ 의 근방 $V_q$ 와 $q$ 의 근방 $W_q$ 를 잡을 수 있다. 집합족 $\{W_q\}$ 는 $K$ 에 대한 열린 덮개이므로 유한개의 근방들을 모아 $K$ 를 덮을 수 있다. 이 유한개의 근방을 각각 $W_{q_1},\ldots,\,W_{q_n}$ 이라고 하고 이 $q_1,\,\ldots,\,q_n$ 의 근방을 정할때의 $p$ 의 근방을 각각 $V_{q_1},\ldots,\,V_{q_n}$ 이라고 하자.
 
-$W=W_{q_1} \cup \cdots \cup W_{q_n}$ 라 하고 $V=V_{q_1}\cap \cdots \cap V_{q_n}$ 라 하자. $V$ 는 $p$ 의 근방이며 $W \cap V = \varnothing$ 이다. 따라서 $V\subset X\backslash K$ 이므로 $K^c$ 는 열린집합이다. 즉 $K$ 는 닫힌 집합이다. $\square$ 
+$W=W_{q_1} \cup \cdots \cup W_{q_n}$ 라 하고 $V=V_{q_1}\cap \cdots \cap V_{q_n}$ 라 하자. $V$ 는 $p$ 의 근방이며 $W \cap V = \varnothing$ 이다. 따라서 $V\subset X\backslash K$ 이므로 $X\backslash K$ 는 열린집합이다. 즉 $K$ 는 닫힌 집합이다. $\square$ 
 
 :::
 
@@ -802,9 +795,14 @@ $I_n = [a_n,\,b_n],\, (a_n<b_n)$ 이라 하자. $a_n$ 은 위로 유계 이므�
 
 :::
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#cor-MA_intersection_of-k-cells}
+</br>
+
+
+아래 명제는 위의 명제로부터 자명하다.
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-MA_intersection_of-k-cells}
 
 $\{I_k\}$ 이 $\mathbb{R}^n$ 에서의 $n$-cell 의 수열이며 $I_k \subset I_{k+1}$ 이라면 $\bigcap_{i=1}^\infty I_k \ne \varnothing$ 이다.
 
@@ -842,7 +840,7 @@ $$
 
 &emsp;($3$) $x_k,\,y_k\in I_k$ 일 때 $d(x_k,\,y_k)< 2^{-k} \delta$ 이다.
 
-@cor-MA_intersection_of-k-cells 에 의해 $I_k \ne \varnothing$ 이다. 모든 $I_k$ 에 포함된 $x$ 가 존재하며 따라서 $x$ 를 포함하는 $G_\alpha$ 가 존재한다. $G_\alpha$ 는 열린 집합이므로 $N(x,\, \varepsilon)\subset G_\alpha$ 인 $\varepsilon>0$ 이 존재한다. 그런데 충분히 큰 $k$ 에 대해 $I_k \subset G_\alpha$ 이므로 $I_k$ 은 단 하나의 덮개로 덮을 수 있다. 이는 ($2$) 에 위배된다. 따라서 모든 $n$-cell 은 옹골집합이다. $\square$
+@prp-MA_intersection_of-k-cells 에 의해 $I_k \ne \varnothing$ 이다. 모든 $I_k$ 에 포함된 $x$ 가 존재하며 따라서 $x$ 를 포함하는 $G_\alpha$ 가 존재한다. $G_\alpha$ 는 열린 집합이므로 $N(x,\, \varepsilon)\subset G_\alpha$ 인 $\varepsilon>0$ 이 존재한다. 그런데 충분히 큰 $k$ 에 대해 $I_k \subset G_\alpha$ 이므로 $I_k$ 은 단 하나의 덮개로 덮을 수 있다. 이는 ($2$) 에 위배된다. 따라서 모든 $n$-cell 은 옹골집합이다. $\square$
 
 :::
 
@@ -991,7 +989,7 @@ $E_k$ 를 이루는 한 닫힌 구간의 길이를 $l_k$ 라고 하면 $E_{k+1}$
 
 ### 연결집합 {#sec-MA_connected_set}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_connected_set}
 
@@ -1161,9 +1159,9 @@ $B:=\{x\in X : \forall \varepsilon>0\; N(x,\, \varepsilon) \cap A \ne \varnothin
 
 ::: {.callout-note appearance="minimal"}
 
-::: {#def-MA_boundary}
+#### **경계점**
 
-#### 경계점 
+::: {#def-MA_boundary}
 
 $A\subset \mathbb{R}^n,\, x\in \mathbb{R}^n$ 일 때 임의의 $\varepsilon>0$ 에 대해 
 

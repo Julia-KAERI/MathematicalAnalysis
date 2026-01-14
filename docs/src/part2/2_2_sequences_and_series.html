@@ -282,7 +282,10 @@ window.Quarto = {
   <li><a href="#단조-수열과-부분-수열" id="toc-단조-수열과-부분-수열" class="nav-link" data-scroll-target="#단조-수열과-부분-수열"><span class="header-section-number">7.1.2</span> 단조 수열과 부분 수열</a></li>
   <li><a href="#sec-MA_e" id="toc-sec-MA_e" class="nav-link" data-scroll-target="#sec-MA_e"><span class="header-section-number">7.1.3</span> <span class="math inline">\(e\)</span></a></li>
   </ul></li>
-  <li><a href="#코시-수열" id="toc-코시-수열" class="nav-link" data-scroll-target="#코시-수열"><span class="header-section-number">7.2</span> 코시 수열</a></li>
+  <li><a href="#코시-수열" id="toc-코시-수열" class="nav-link" data-scroll-target="#코시-수열"><span class="header-section-number">7.2</span> 코시 수열</a>
+  <ul class="collapse">
+  <li><a href="#sec-MA_cauchy_sequence" id="toc-sec-MA_cauchy_sequence" class="nav-link" data-scroll-target="#sec-MA_cauchy_sequence"><span class="header-section-number">7.2.1</span> 코시 수열</a></li>
+  </ul></li>
   <li><a href="#sec-MA_upper_limit_and_lower_limit" id="toc-sec-MA_upper_limit_and_lower_limit" class="nav-link" data-scroll-target="#sec-MA_upper_limit_and_lower_limit"><span class="header-section-number">7.3</span> 상극한과 하극한</a></li>
   <li><a href="#sec-MA_examples_of_sequences" id="toc-sec-MA_examples_of_sequences" class="nav-link" data-scroll-target="#sec-MA_examples_of_sequences"><span class="header-section-number">7.4</span> 중요한 수열들</a></li>
   <li><a href="#sec-MA_convergence_of_series" id="toc-sec-MA_convergence_of_series" class="nav-link" data-scroll-target="#sec-MA_convergence_of_series"><span class="header-section-number">7.5</span> 급수의 수렴과 발산</a>
@@ -334,14 +337,18 @@ window.Quarto = {
 <section id="sec-MA_convergence_of_sequence" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="sec-MA_convergence_of_sequence"><span class="header-section-number">7.1.1</span> 수열의 수렴</h3>
 <p>수열은 <a href="2_1_basic_topology.html#def-MA_sequence" class="quarto-xref">정의&nbsp;<span>6.2</span></a> 에서 정의하였다. 수열 가운데 <span class="math inline">\(\mathbb{R}\)</span> 에서 정의된 수열으르 <strong>실수열 (real sequence)</strong>, <span class="math inline">\(\mathbb{C}\)</span> 에서 정의된 수열을 <strong>복소 수열 (complex sequence)</strong> 라고 한다. 급수(series) 는 다음과 같이 정의된다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>부분합, 급수, 무한급수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_series" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.1 (부분합, 급수, 무한급수)</strong></span> 수열 <span class="math inline">\(\langle a_k\rangle\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 7.1</strong></span> 수열 <span class="math inline">\(\langle a_k\rangle\)</span> 에 대해</p>
 <p><span class="math display">\[
 s_n = \sum_{k=1}^n a_k
 \]</span></p>
@@ -349,22 +356,22 @@ s_n = \sum_{k=1}^n a_k
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>수열의 수렴과 발산</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_convergence_of_series" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.2 (수열의 수렴과 발산)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_k \rangle\)</span> 과 어떤 <span class="math inline">\(a\in X\)</span> 를 생각하자.</p>
+<p><span class="theorem-title"><strong>정의 7.2</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_k \rangle\)</span> 과 어떤 <span class="math inline">\(a\in X\)</span> 를 생각하자.</p>
 <p><span class="math display">\[
 \forall \varepsilon&gt;0,\, \exists N\in \mathbb{Z}_+, \text{ s.t. } k \ge N \implies d(a_k,\, a)&lt;\varepsilon
 \]</span></p>
 <p>일 때 수열 <span class="math inline">\(\langle a_k \rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴한다고 하며 <span class="math inline">\(\displaystyle \lim_{k \to \infty} a_k = a\)</span> 혹은 <span class="math inline">\(\langle a_k\rangle \to a\)</span> 라고 쓴다. <span class="math inline">\(\langle a_k \rangle\)</span> 이 수렴하지 않으면 발산한다고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -464,15 +471,18 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 </section>
 <section id="단조-수열과-부분-수열" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="단조-수열과-부분-수열"><span class="header-section-number">7.1.2</span> 단조 수열과 부분 수열</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_monotonic_sequence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.3 (단조 수열)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a_k \le a_{k+1}\)</span> 일 때 <strong>단조 증가 수열</strong> 이라고 하고 <span class="math inline">\(a_{k} \ge a_{k+1}\)</span> 일 때 <strong>단조 감수 수열</strong> 이라고 한다. 단조 증가 수열과 단조 감소 수열을 <strong>단조 수열</strong> 이라고 한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>단조 수열</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_monotonic_sequence" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 7.3</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(a_k \le a_{k+1}\)</span> 일 때 <strong>단조 증가 수열</strong> 이라고 하고 <span class="math inline">\(a_{k} \ge a_{k+1}\)</span> 일 때 <strong>단조 감수 수열</strong> 이라고 한다. 단조 증가 수열과 단조 감소 수열을 <strong>단조 수열</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -486,15 +496,18 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\langle a_n\rangle\)</span> 이 단조 감소 수열이며 유계라고 하자. <span class="math inline">\(a_1\)</span> 은 이 수열의 상한이며 <span class="math inline">\(a\)</span> 를 이 수열의 하한이라고 하자. 즉 <span class="math inline">\(a_n \ge a\)</span> 이다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(a+ \varepsilon &lt; a_k \le a\)</span> 인 <span class="math inline">\(a_k\)</span> 가 존재한다. 그렇지 않으면 수열의 하한은 <span class="math inline">\(a+\varepsilon\)</span> 보다 크거나 같아야 한다. <span class="math inline">\(a_n\)</span> 이 단조감소 수열이므로 <span class="math inline">\(n\ge k\)</span> 에 대해 <span class="math inline">\(a+\varepsilon &lt; a_n \le a\)</span> 이다. 즉 <span class="math inline">\(\langle a_n \rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴한다. 단조 증가 수열에 대해서도 같은 방법으로 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_subsequence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.4 (부분수열)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 과 <span class="math inline">\(1 \le n_1 &lt; n_2 &lt; \cdots\)</span> 를 만족하는 자연수에서 정의된 수열 <span class="math inline">\(\langle n_k \rangle\)</span> 을 생각하자. 이 때 <span class="math inline">\(\langle a_{n_k} \rangle\)</span> 을 수열로 생각 할 수 있으며 이를 <span class="math inline">\(\langle a_{n}\rangle\)</span> 의 부분수열이라고 한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>부분수열</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_subsequence" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 7.4</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 과 <span class="math inline">\(1 \le n_1 &lt; n_2 &lt; \cdots\)</span> 를 만족하는 자연수에서 정의된 수열 <span class="math inline">\(\langle n_k \rangle\)</span> 을 생각하자. 이 때 <span class="math inline">\(\langle a_{n_k} \rangle\)</span> 을 수열로 생각 할 수 있으며 이를 <span class="math inline">\(\langle a_{n}\rangle\)</span> 의 부분수열이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -506,7 +519,7 @@ k \ge M \implies a_k &lt; \dfrac{1}{2}a &lt; 0
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\langle a_n \rangle \subset K\)</span> 라고 하자. <span class="math inline">\(\langle a_n \rangle\)</span> 이 유한집합이면 최소한 하나의 <span class="math inline">\(a\in \langle a_n \rangle\)</span> 에 대해 <span class="math inline">\(\{k: a_k = a\}\)</span> 가 무한집합이므로 이 인덱스의 집합으로 부분수열을 만들면 <span class="math inline">\(a\)</span> 로 수렴하는 부분수열이다.</p>
-<p>이제 <span class="math inline">\(\langle a_n \rangle\)</span> 이 무한집합일 경우에 대해 생각하기로 하자. <a href="2_1_basic_topology.html#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.16</span></a> 의해 <span class="math inline">\(\langle a_n \rangle\)</span> 은 극한점을 가지며, 따라서 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(N(a,\, 1/k)\cap \langle a_n \rangle\)</span> 은 무한개의 원소를 갖는다. <span class="math inline">\(p_1=1\)</span> 로 하고 <span class="math inline">\(N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)\)</span> 가운데 <span class="math inline">\(a_m\)</span> 을 골라 <span class="math inline">\(p_{k+1}= m\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\langle a_{p_k}\rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하는 부분수열이다. <span class="math inline">\(\square\)</span></p>
+<p>이제 <span class="math inline">\(\langle a_n \rangle\)</span> 이 무한집합일 경우에 대해 생각하기로 하자. <a href="2_1_basic_topology.html#prp-MA_infinite_subset_in_compact_set_has_limit_point_in_compact_set" class="quarto-xref">명제&nbsp;<span>6.17</span></a> 의해 <span class="math inline">\(\langle a_n \rangle\)</span> 은 극한점을 가지며, 따라서 <span class="math inline">\(k\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(N(a,\, 1/k)\cap \langle a_n \rangle\)</span> 은 무한개의 원소를 갖는다. <span class="math inline">\(p_1=1\)</span> 로 하고 <span class="math inline">\(N(a,\, 1/k) \cap \left(\langle a_n \rangle \backslash \{a_1,\ldots,\, a_{p_k}\} \right)\)</span> 가운데 <span class="math inline">\(a_m\)</span> 을 골라 <span class="math inline">\(p_{k+1}= m\)</span> 이라고 하자. 그렇다면 <span class="math inline">\(\langle a_{p_k}\rangle\)</span> 은 <span class="math inline">\(a\)</span> 로 수렴하는 부분수열이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -607,14 +620,20 @@ e-s_q &amp;= \dfrac{1}{(q+1)!}+ \dfrac{1}{(q+2)!} + \cdots \\
 </section>
 <section id="코시-수열" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="코시-수열"><span class="header-section-number">7.2</span> 코시 수열</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<section id="sec-MA_cauchy_sequence" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="sec-MA_cauchy_sequence"><span class="header-section-number">7.2.1</span> 코시 수열</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>코시 수열</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_series" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.5 (코시 수열)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정의 7.5</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(N\in \mathbb{Z}_+\)</span> 이 존재하여</p>
 <p><span class="math display">\[
 m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 \]</span></p>
@@ -622,21 +641,23 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
 <p>코시 수열 뿐만 아니라 앞으로의 진행에 필요한 집합의 지름이라는 개념과 지름에 관련된 명제를 증명하고 넘어가기로 하자.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>집합의 지름</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_diameter" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.6 (집합의 지름)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 의 공집합이 아닌 부분집합 <span class="math inline">\(E\)</span> 에 대해 아래와 같이 정의된 <span class="math inline">\(\text{diam}(E)\)</span> 를 <span class="math inline">\(E\)</span> 의 <strong>지름 (diameter)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.6</strong></span> 거리공간 <span class="math inline">\(X\)</span> 의 공집합이 아닌 부분집합 <span class="math inline">\(E\)</span> 에 대해 아래와 같이 정의된 <span class="math inline">\(\text{diam}(E)\)</span> 를 <span class="math inline">\(E\)</span> 의 <strong>지름 (diameter)</strong> 라고 한다.</p>
 <p><span id="eq-MA_definition_of_diameter"><span class="math display">\[
 \text{diam}(E):= \sup \{\|x-y\|_X: x,\,y \in E\}.
 \tag{7.1}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -649,7 +670,7 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(E \subset \overline{E}\)</span> 이므로 <span class="math inline">\(\text{diam}(E) \le \text{diam}(\overline{E})\)</span> 이다. <span class="math inline">\(p,\,q \in \overline{E}\)</span> 라고 하자. <span class="math inline">\(\overline{E}\)</span> 의 정의에 의해 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\|p-p'\|&lt;\varepsilon,\, \|q-q'\|&lt;\varepsilon\)</span> 을 만족하는 <span class="math inline">\(p'\,q'\in E\)</span> 가 존재한다. 삼각부등식으로부터</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(E \subset \overline{E}\)</span> 이므로 <span class="math inline">\(\text{diam}(E) \le \text{diam}(\overline{E})\)</span> 이다. <span class="math inline">\(p,\,q \in \overline{E}\)</span> 라고 하자. <span class="math inline">\(\overline{E}\)</span> 의 정의에 의해 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\|p-p'\|&lt;\varepsilon,\, \|q-q'\|&lt;\varepsilon\)</span> 을 만족하는 <span class="math inline">\(p',\,q'\in E\)</span> 가 존재한다. 삼각부등식으로부터</p>
 <p><span class="math display">\[
 \|p-q\| \le \|p - p'\| + \| q-q'\| + \|p'-q'\| \le 2\varepsilon + \|p'-q'\|
 \]</span></p>
@@ -658,7 +679,7 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 \text{diam}(E) \le \text{diam}(\overline{E}) \le 2\varepsilon + \text{diam}(E)
 \]</span></p>
 <p>이므로 <span class="math inline">\(\text{diam}(\overline{E}) = \text{diam}(E)\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(K = \bigcap K_n\)</span> 이라고 하자. <a href="2_1_basic_topology.html#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 <span class="math inline">\(K \ne \varnothing\)</span> 이다. <span class="math inline">\(K\)</span> 가 두개 이상의 원소로 이루어졌다면 <span class="math inline">\(\text{diam}(K) &gt;0\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \text{diam}(K_n) &gt;0\)</span> 이므로 가정에 위배된다. 따라서 <span class="math inline">\(K\)</span> 는 오직 하나의 원소로만 이루어진다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(K = \bigcap K_n\)</span> 이라고 하자. <a href="2_1_basic_topology.html#prp-MA_finite_intesection_of_compact_sets" class="quarto-xref">명제&nbsp;<span>6.16</span></a> 에 의해 <span class="math inline">\(K \ne \varnothing\)</span> 이다. <span class="math inline">\(K\)</span> 가 두개 이상의 원소로 이루어졌다면 <span class="math inline">\(\text{diam}(K) &gt;0\)</span> 이며, 따라서 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \text{diam}(K_n) &gt;0\)</span> 이므로 가정에 위배된다. 따라서 <span class="math inline">\(K\)</span> 는 오직 하나의 원소로만 이루어진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <p>수열의 수렴은 그 수열이 수렴하는 값을 알아야 수렴 여부를 알 수 있지만 코시 수열 여부는 수렴하는 값이 없어도 코시 수열인지 여부를 알 수 있다. 수열의 수렴과 코시 수열은 밀접한 관련이 있는데 이제 코시 수열에 대해 알아보기로 하자.</p>
@@ -698,28 +719,36 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 </div>
 <p><br></p>
 <p>앞으로 더 자세하게 다루겠지만 일단 다음을 정의하고 넘어가자.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_complete_metic_space" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.7 (완비 거리 공간)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 모든 코시 수열이 수렴할 때 이 거리공간을 <strong>완비 거리 공간 (complete metric space)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
+</section>
 </section>
 <section id="sec-MA_upper_limit_and_lower_limit" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="sec-MA_upper_limit_and_lower_limit"><span class="header-section-number">7.3</span> 상극한과 하극한</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_diverge_to_infinite" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.8 (무한대로 발산)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 각각의 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_M\in \mathbb{N}\)</span> 이 존재하여</p>
 <p><span class="math display">\[
@@ -733,14 +762,17 @@ n \ge N_m \implies a_n &lt; -M
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_limsup_liminf" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.9 (상극한과 하극한)</strong></span> 위로 유계인 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 상극한 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
@@ -750,7 +782,6 @@ n \ge N_m \implies a_n &lt; -M
 <p><span class="math display">\[
 \liminf_{n \to \infty} b_n  :=\lim_{n \to \infty} \inf \{b_n,\, b_{n+1},\, b_{n+2},\ldots \}
 \]</span></p>
-</div>
 </div>
 </div>
 </div>
@@ -885,15 +916,18 @@ m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 </section>
 <section id="sec-MA_comparision_criteria" class="level3" data-number="7.5.2">
 <h3 data-number="7.5.2" class="anchored" data-anchor-id="sec-MA_comparision_criteria"><span class="header-section-number">7.5.2</span> 비교판정법</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_absolute_convergence" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.10 (절대수렴)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대한 급수 <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^\infty |a_k|\)</span> 가 수렴하면 급수 <span class="math inline">\(\displaystyle \sum_{k=1}^\infty a_k\)</span> 가 <strong>절대수렴 (absolutely convergent)</strong> 한다고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1096,15 +1130,18 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 </section>
 <section id="sec-MA_power_series" class="level3" data-number="7.5.6">
 <h3 data-number="7.5.6" class="anchored" data-anchor-id="sec-MA_power_series"><span class="header-section-number">7.5.6</span> 멱급수</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_power_series" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.11 (멱급수)</strong></span> 수열 <span class="math inline">\(\langle a_n\rangle\)</span> 에 대해 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n z^n\)</span> 꼴로 주어진 급수를 <strong>멱급수(power sereis)</strong> 라고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1125,15 +1162,18 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p>이므로 근 판정법(<a href="#thm-MA_series_root_test" class="quarto-xref">정리&nbsp;<span>7.5</span></a>) 을 사용하면 증명된다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-radius_of_convergence" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.12 (수렴반경)</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해 <a href="#prp-MA_radius_of_convergence" class="quarto-xref">명제&nbsp;<span>7.19</span></a> 에서의 <span class="math inline">\(R\)</span> 을 <strong>수렴 반경(radius of convergence)</strong> 이라고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1205,19 +1245,22 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <p><span class="proof-title"><em>(증명)</em>. </span>수렴하는 수열아 합과 상수곱을 생각하면 쉽다.</p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_cauchy_product" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.13 (코시 곱)</strong></span> 급수 <span class="math inline">\(\sum a_n,\, \sum b_n\)</span> 에 대해</p>
 <p><span class="math display">\[
 c_n = \sum_{k=0}^n a_k b_{n-k}
 \]</span></p>
 <p>로 정의된 급수 <span class="math inline">\(\sum c_n\)</span> 을 두 급수의 <strong>코시 곱(Cauchy product)</strong> 이라고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1259,15 +1302,18 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <p>이므로 <span class="math inline">\(\displaystyle \lim_{n \to \infty} \gamma_n = 0\)</span> 임을 알 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+노트
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_rearangement_of_series" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 7.14 (재배열 급수)</strong></span> 급수 <span class="math inline">\(\sum a_n\)</span> 과 전단사 함수 <span class="math inline">\(\sigma : \mathbb{N} \to \mathbb{N}\)</span> 에 대해 <span class="math inline">\(\sum a_{\sigma (n)}\)</span> 을 <span class="math inline">\(\sum a_n\)</span> 의 <strong>재배열 급수</strong>라고 한다.</p>
-</div>
 </div>
 </div>
 </div>

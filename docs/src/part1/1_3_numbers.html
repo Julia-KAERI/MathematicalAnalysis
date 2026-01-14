@@ -104,7 +104,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../custom.css">
 </head>
 
-<body class="nav-sidebar floating slimcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -263,7 +263,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/part1/part1.html">해석학의 기반</a></li><li class="breadcrumb-item"><a href="../../src/part1/1_3_numbers.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">수</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -294,27 +294,33 @@ window.Quarto = {
 </div>
 <section id="sec-FA_real_number" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-FA_real_number"><span class="header-section-number">3.1</span> 실수 (<span class="math inline">\(\mathbb{R}\)</span>)</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>이항 연산</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_binary_operation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.1 (이항 연산)</strong></span> 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(f:A\times A \to A\)</span> 를 <span class="math inline">\(A\)</span> 에 대한 <strong>이항연산(binary operation)</strong> 이라 한다.</p>
+<p><span class="theorem-title"><strong>정의 3.1</strong></span> 집합 <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(f:A\times A \to A\)</span> 를 <span class="math inline">\(A\)</span> 에 대한 <strong>이항연산(binary operation)</strong> 이라 한다.</p>
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>체</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_field" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.2 (체(Field))</strong></span> 덧셈과 곱셈 이항연산이 정의된 집합 <span class="math inline">\(\mathbb{F}\)</span> 가 다음을 만족 할 때 <span class="math inline">\(\mathbb{F}\)</span> 를 <strong>체(Field)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 3.2</strong></span> 덧셈과 곱셈 이항연산이 정의된 집합 <span class="math inline">\(\mathbb{F}\)</span> 가 다음을 만족 할 때 <span class="math inline">\(\mathbb{F}\)</span> 를 <strong>체(Field)</strong> 라고 한다.</p>
 <p><strong>덧셈에 대한 공리</strong></p>
 <ol type="1">
 <li><p>[덧셈에 대해 닫혀있음] <span class="math inline">\(a,\,b\in \mathbb{F} \implies a+b\in \mathbb{F}\)</span>.</p></li>
@@ -338,16 +344,19 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>음수, 양수, 순서체</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_ordered_field" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.3 (음수와 양수, 순서체(Ordered field))</strong></span> 체 <span class="math inline">\(\mathbb{F}\)</span> 가 전순서 집합일 때 <span class="math inline">\(x&lt;0\)</span> 이면 <span class="math inline">\(x\)</span> 를 음수라 한다. <span class="math inline">\(0&lt;y\)</span> 이면 <span class="math inline">\(y\)</span> 를 양수라 한다. <span class="math inline">\(x&lt;y\)</span> 일 때 <span class="math inline">\(y&gt;x\)</span> 라 쓸 수 있다.</p>
+<p><span class="theorem-title"><strong>정의 3.3</strong></span> 체 <span class="math inline">\(\mathbb{F}\)</span> 가 전순서 집합일 때 <span class="math inline">\(x&lt;0\)</span> 이면 <span class="math inline">\(x\)</span> 를 음수라 한다. <span class="math inline">\(0&lt;y\)</span> 이면 <span class="math inline">\(y\)</span> 를 양수라 한다. <span class="math inline">\(x&lt;y\)</span> 일 때 <span class="math inline">\(y&gt;x\)</span> 라 쓸 수 있다.</p>
 <p>체 <span class="math inline">\(\mathbb{F}\)</span> 가 전순서 집합이며 다음 성질을 만족하면 <span class="math inline">\(\mathbb{F}\)</span> 를 <strong>순서체 (ordered field)</strong> 라 한다.</p>
 <ol start="12" type="1">
 <li><p><span class="math inline">\(x &lt; y\implies x+z &lt; y+z\)</span>,</p></li>
@@ -356,16 +365,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>Linear continuum</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_linear_continuum" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.4 (Linear continuum)</strong></span> 아래의 성질을 가지는 집합을 <strong>linear continuum</strong> 이라 한다.</p>
+<p><span class="theorem-title"><strong>정의 3.4</strong></span> 아래의 성질을 가지는 집합을 <strong>linear continuum</strong> 이라 한다.</p>
 <ol start="14" type="1">
 <li>관계 <span class="math inline">\(&lt;\)</span> 는 최소 상계 성질을 가진다.</li>
 <li><span class="math inline">\(x&lt;y\)</span> 일 때 <span class="math inline">\(x&lt;z&lt;y\)</span> 인 <span class="math inline">\(z\)</span> 가 집합 내에 존재한다.</li>
@@ -373,16 +384,18 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
+<p><br></p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><b>실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 의 존재 가정</b></p>
-<p>Linear continuum 이며 순서체인 실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 이 존재한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">중요</span>실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 의 존재 가정
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Linear continuum 이며 순서체인 실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 이 존재한다.</p>
 </div>
 </div>
 <br>
@@ -397,16 +410,20 @@ window.Quarto = {
 <p>실수의 집합 <span class="math inline">\(\mathbb{R}\)</span> 은 선형 연속체이다.</p>
 <p><br></p>
 </section>
-<section id="sec-FA_integer_and_rational_number" class="level2 page-columns page-full" data-number="3.2">
+<section id="sec-FA_integer_and_rational_number" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-FA_integer_and_rational_number"><span class="header-section-number">3.2</span> 정수 (<span class="math inline">\(\mathbb{Z}\)</span>) 와 유리수 (<span class="math inline">\(\mathbb{Q}\)</span>)</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>양의 정수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_positive_integer" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.5 (양의 정수)</strong></span> <span class="math inline">\(A\subset \mathbb{R}\)</span> 이 다음 성질을 가지면 <strong>귀납적(inductive)</strong> 하다고 한다. </p>
+<p><span class="theorem-title"><strong>정의 3.5</strong></span> <span class="math inline">\(A\subset \mathbb{R}\)</span> 이 다음 성질을 가지면 <strong>귀납적(be inductive)</strong> 이라고 한다.</p>
 <p>  (<span class="math inline">\(1\)</span>) <span class="math inline">\(1\in A\)</span>,</p>
 <p>  (<span class="math inline">\(2\)</span>) <span class="math inline">\(n\in A \implies n+1 \in A\)</span>.</p>
 <p><span class="math inline">\(\mathcal{A}\)</span> 를 inductive 한 집합의 집합족이라 할 때, 다음과 같이 정의된 <span class="math inline">\(\mathbb{Z}_+\)</span> 를 양의 정수라 한다.</p>
@@ -416,8 +433,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
-<div class="no-row-height column-margin column-container"><span class="margin-aside callout-margin-content callout-margin-content-simple">수학에서의 귀납적(inductive)이라는 말은 논리학에서의 귀납법과는 무관하다.</span></div><p><br></p>
+<p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-FA_positive_integers_are_inductive" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 3.2</strong></span> 다음이 성립한다.</p>
@@ -430,49 +446,56 @@ window.Quarto = {
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(A\subset \mathbb{Z}_+\)</span> 가 귀납적이라면 <span class="math inline">\(Z_+ \subset A\)</span> 이어야 하므로 <span class="math inline">\(Z_+ = A\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>정수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_integer" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.6 (정수)</strong></span> 정수 <span class="math inline">\(\mathbb{Z}\)</span> 는 다음과 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 3.6</strong></span> 정수 <span class="math inline">\(\mathbb{Z}\)</span> 는 다음과 같이 정의된다.</p>
 <p><span class="math display">\[
 \mathbb{Z}= \mathbb{Z}_+ \cup \{0\} \cup \{-z: z\in \mathbb{Z}_+\}.
 \]</span></p>
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>유리수와 무리수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_rational_irrational" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.7 (유리수(rational number) 와 무리수(irrational number))</strong></span> 아래와 같이 정의된 <span class="math inline">\(\mathbb{Q}\)</span> 의 원소를 <strong>유리수</strong> 라 한다. 어떤 실수가 유리수가 아니면 <strong>무리수</strong> 라 한다. <span class="math display">\[
+<p><span class="theorem-title"><strong>정의 3.7</strong></span> 아래와 같이 정의된 <span class="math inline">\(\mathbb{Q}\)</span> 의 원소를 <strong>유리수 (rational number)</strong> 라 한다. 어떤 실수가 유리수가 아니면 <strong>무리수 (irrational number)</strong> 라 한다. <span class="math display">\[
 \mathbb{Q} = \left\{\dfrac{p}{q} : p\in \mathbb{Z},\, q\in \mathbb{Z}\backslash\{0\}\right\}.
 \]</span></p>
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>Section</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-FA_section" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.8 (Section)</strong></span> 양의 정수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(1\)</span> 보다 크거나 같고 <span class="math inline">\(n\)</span> 보다 작은 양의 정수의 집합을 <strong>section</strong> 이라 하며 <span class="math inline">\(S_n\)</span> 으로 쓴다.</p>
+<p><span class="theorem-title"><strong>정의 3.8</strong></span> 양의 정수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(1\)</span> 보다 크거나 같고 <span class="math inline">\(n\)</span> 보다 작은 양의 정수의 집합을 <strong>section</strong> 이라 하며 <span class="math inline">\(S_n\)</span> 으로 쓴다.</p>
 <p><span class="math display">\[
 S_n = \{m\in \mathbb{Z}_+ : 1\le m &lt; n\}
 \]</span></p>
-</div>
 </div>
 </div>
 </div>

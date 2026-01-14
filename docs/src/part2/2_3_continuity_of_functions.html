@@ -582,7 +582,7 @@ f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K)\)</span> 는 옹골집합이며, <a href="2_1_basic_topology.html#cor-MA_minimum_and_maximum_of_compact_sebset_in_R" class="quarto-xref">따름정리&nbsp;<span>6.7</span></a> 에 따라 최소값과 최대값을 가진다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K)\)</span> 는 옹골집합이며, <a href="2_1_basic_topology.html#cor-MA_minimum_and_maximum_of_compact_sebset_in_R" class="quarto-xref">따름정리&nbsp;<span>6.6</span></a> 에 따라 최소값과 최대값을 가진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -598,7 +598,7 @@ f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(f\)</span> 를 <span class="math inline">\(K\)</span> 위에서만 생각하자. 즉 <span class="math inline">\(f:K \to Y\)</span> 만 생각해도 된다. <a href="#thm-MA_continuity_and_inverse_of_map" class="quarto-xref">정리&nbsp;<span>8.1</span></a> 에 의해 열린집합 <span class="math inline">\(U\subset K\)</span> 에 대해 <span class="math inline">\(f(U)\)</span> 가 열린집합임을 보이면 된다.</p>
-<p>우선 <span class="math inline">\(K\backslash U\)</span> 가 닫힌집합이므로 <a href="2_1_basic_topology.html#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.14</span></a> 에 의해 옹골집합이다. 그리고 <a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K\backslash U)\)</span> 는 옹골집합이다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(K\)</span> 위에서 전단사이므로 <span class="math inline">\(f(K\backslash U) = f(K)\backslash f(U)\)</span> 이다. 따라서 <span class="math inline">\(f(K)\backslash f(U)\)</span> 가 옹골집합이므로 <span class="math inline">\(f(U) = g^{-1}(U)\)</span> 는 열린집합이다. 따라서 <span class="math inline">\(g^{-1}\)</span> 도 연속함수이다. <span class="math inline">\(\square\)</span></p>
+<p>우선 <span class="math inline">\(K\backslash U\)</span> 가 닫힌집합이므로 <a href="2_1_basic_topology.html#prp-MA_closed_subset_of_compact_set_is_compact" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 에 의해 옹골집합이다. 그리고 <a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K\backslash U)\)</span> 는 옹골집합이다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(K\)</span> 위에서 전단사이므로 <span class="math inline">\(f(K\backslash U) = f(K)\backslash f(U)\)</span> 이다. 따라서 <span class="math inline">\(f(K)\backslash f(U)\)</span> 가 옹골집합이므로 <span class="math inline">\(f(U) = g^{-1}(U)\)</span> 는 열린집합이다. 따라서 <span class="math inline">\(g^{-1}\)</span> 도 연속함수이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -940,13 +940,13 @@ f(y^-) &amp;= \sup_{a&lt;t&lt;y} f(t) = \sup_{x&lt;t&lt;y} f(t)
 <p>이로부터 다음을 자연스럽게 알 수 있다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="cor-MA_monitonic_and_countable_number_of_discontinuity" class="theorem corollary">
+<div id="cor-MA_monotonic_and_countable_number_of_discontinuity" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 8.5</strong></span> 단조함수의 불연속은 항상 1종 불연속이다.</p>
 </div>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-MA_monitonic_and_countable_number_of_discontinuity" class="theorem proposition">
+<div id="prp-MA_monotonic_and_countable_number_of_discontinuity" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 8.12</strong></span> <span class="math inline">\(f:(a,\,b)\to \mathbb{R}\)</span> 이 단조함수이면 <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\((a,\,b)\)</span> 구간의 점은 countable 이다.</p>
 </div>
 </div>

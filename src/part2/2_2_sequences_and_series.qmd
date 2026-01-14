@@ -14,11 +14,11 @@ crossref:
 
 수열은 @def-MA_sequence 에서 정의하였다. 수열 가운데 $\R$ 에서 정의된 수열으르 **실수열 (real sequence)**, $\C$ 에서 정의된 수열을 **복소 수열 (complex sequence)** 라고 한다. 급수(series) 는 다음과 같이 정의된다.
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **부분합, 급수, 무한급수**
 
 ::: {#def-MA_series}
-
-#### 부분합, 급수, 무한급수
 
 수열 $\langle a_k\rangle$ 에 대해 
 
@@ -31,17 +31,12 @@ $$
 ::: 
 :::
 
-</br>
 
+::: {.callout-note icon="false"}
 
-
-</br>
-
-::: {.callout-note appearance="simple" icon="false"}
+#### **수열의 수렴과 발산**
 
 ::: {#def-MA_convergence_of_series}
-
-#### 수열의 수렴과 발산
 
 거리공간 $X$ 에서 정의된 수열 $\langle a_k \rangle$ 과 어떤 $a\in X$ 를 생각하자. 
 
@@ -225,11 +220,11 @@ $$
 
 ### 단조 수열과 부분 수열
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **단조 수열**
 
 ::: {#def-MA_monotonic_sequence}
-
-#### 단조 수열
 
 실수열 $\langle a_n \rangle$ 이 $k\in \mathbb{Z}_+$ 에 대해 $a_k \le a_{k+1}$ 일 때 **단조 증가 수열** 이라고 하고 $a_{k} \ge a_{k+1}$ 일 때 **단조 감수 수열** 이라고 한다. 단조 증가 수열과 단조 감소 수열을 **단조 수열** 이라고 한다.
 
@@ -254,11 +249,13 @@ $\langle a_n\rangle$ 이 단조 감소 수열이며 유계라고 하자. $a_1$ �
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **부분수열**
 
 ::: {#def-MA_subsequence}
 
-#### 부분수열
+
 
 수열 $\langle a_n \rangle$ 과 $1 \le n_1 < n_2 < \cdots$ 를 만족하는 자연수에서 정의된 수열 $\langle n_k \rangle$ 을 생각하자. 이 때 $\langle a_{n_k} \rangle$ 을 수열로 생각 할 수 있으며 이를 $\langle a_{n}\rangle$ 의 부분수열이라고 한다.
 
@@ -436,11 +433,15 @@ $$
 
 ## 코시 수열
 
-::: {.callout-note appearance="simple" icon="false"}
+### 코시 수열 {#sec-MA_cauchy_sequence}
+
+::: {.callout-note icon="false"}
+
+#### **코시 수열**
 
 ::: {#def-MA_series}
 
-#### 코시 수열
+
 
 거리공간 $X$ 에서 정의된 수열 $\langle a_n \rangle$ 이 임의의 $\varepsilon>0$ 에 대해 어떤 $N\in \mathbb{Z}_+$ 이 존재하여 
 
@@ -457,11 +458,11 @@ $$
 
 코시 수열 뿐만 아니라 앞으로의 진행에 필요한 집합의 지름이라는 개념과 지름에 관련된 명제를 증명하고 넘어가기로 하자.
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **집합의 지름**
 
 ::: {#def-MA_diameter}
-
-#### 집합의 지름
 
 거리공간 $X$ 의 공집합이 아닌 부분집합 $E$ 에 대해 아래와 같이 정의된 $\text{diam}(E)$ 를 $E$ 의 **지름 (diameter)** 라고 한다.
 
@@ -491,7 +492,7 @@ $$ {#eq-MA_definition_of_diameter}
 
 ::: {.proof}
 
-($1$) $E \subset \overline{E}$ 이므로 $\text{diam}(E) \le \text{diam}(\overline{E})$ 이다. $p,\,q \in \overline{E}$ 라고 하자. $\overline{E}$ 의 정의에 의해 임의의 $\varepsilon>0$ 에 대해 $\|p-p'\|<\varepsilon,\, \|q-q'\|<\varepsilon$ 을 만족하는 $p'\,q'\in E$ 가 존재한다. 삼각부등식으로부터 
+($1$) $E \subset \overline{E}$ 이므로 $\text{diam}(E) \le \text{diam}(\overline{E})$ 이다. $p,\,q \in \overline{E}$ 라고 하자. $\overline{E}$ 의 정의에 의해 임의의 $\varepsilon>0$ 에 대해 $\|p-p'\|<\varepsilon,\, \|q-q'\|<\varepsilon$ 을 만족하는 $p',\,q'\in E$ 가 존재한다. 삼각부등식으로부터 
 
 $$
 \|p-q\| \le \|p - p'\| + \| q-q'\| + \|p'-q'\| \le 2\varepsilon + \|p'-q'\|
@@ -585,7 +586,7 @@ $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 앞으로 더 자세하게 다루겠지만 일단 다음을 정의하고 넘어가자.
 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_complete_metic_space}
 
@@ -601,7 +602,7 @@ $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 
 ## 상극한과 하극한 {#sec-MA_upper_limit_and_lower_limit}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_diverge_to_infinite}
 
@@ -626,7 +627,7 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_limsup_liminf}
 
@@ -869,7 +870,7 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ### 비교판정법 {#sec-MA_comparision_criteria}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_absolute_convergence}
 
@@ -1201,7 +1202,7 @@ $a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴�
 
 ### 멱급수 {#sec-MA_power_series}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 ::: {#def-MA_power_series}
 
 #### 멱급수
@@ -1237,7 +1238,7 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-radius_of_convergence}
 
@@ -1355,7 +1356,7 @@ $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_cauchy_product}
 
@@ -1432,7 +1433,7 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 ::: {#def-MA_rearangement_of_series}
 

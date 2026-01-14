@@ -10,11 +10,11 @@ crossref:
 
 ## 유한집합의 정의
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유한집합**
 
 ::: {#def-FA_finte_set}
-
-#### 유한 집합
 
 집합 $A$ 가 공집합이거나 $A$ 에서 section(@def-FA_section) 로 가는 전단사 함수가 존재할 때 이 $A$ 를 **유한집합**이라 한다. $A$ 가 공집합일 경우 **cardinality 0** 라 하며, $\{1,\ldots,\,n\}$ 과 전단사 관계가 존재할경우 **cardinality n** 이라 한다. 
 
