@@ -12,11 +12,11 @@ crossref:
 
 ### 함수의 극한과 연속 {#sec-MA_limit_and_continuity_of_functions}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **함수의 극한과 연속**
 
 ::: {#def-MA_limits_and_continuity_of_functions}
-
-#### 함수의 극한과 연속
 
 거리공간 $X,\,Y$ 와 함수 $f:E \subset X \to Y$ 를 생각한다. $x_0\in E$ 가 $E$ 에서의 극한점이며 $y_0\in Y$ 라고 하자. 각각의 $\varepsilon > 0$ 에 대해 
 
@@ -117,7 +117,9 @@ $x\in \mathbb{R}\backslash \mathbb{Q}$ 일 때 $x$ 로 수렴하는 유리수열
 
 :::
 </div>
+
 ::: {.proof}
+
 @prp-MA_limit_and_convergent_series 에 의해 $\langle x_n \rangle \to x_0$ 인 수열 $x_n$ 을 생각하자. @prp-MA_properties_of_convergence_3 를 이용하여 증명 할 수 있다. $\square$
 :::
 
@@ -164,11 +166,11 @@ $$
 
 함수의 상과 역상의 정의, 그리고 이에 대한 명제들은 진행을 위해 필요하다.
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **함수의 상과 역상**
 
 ::: {#def-MA_inverse_image_of_function}
-
-#### 함수의 상과 역상
 
 함수 $f:X \to Y$ 을 생각하자. $E \subset X$ 에 대해 $\{f(x): x\in E\}$ 를 $f$ 에 대한 $E$ 의 **상(image)** 라고 하고 $f(E)$ 라고 표기한다. 또한 $V\subset Y$ 에 대해 $\{x\in X : f(x) \in V\}$ 를 $f$ 에 대한 $V$ 의 **역상 (inverse image)** 이라 하고 $f^{-1}(V)$ 라고 표기한다.
 
@@ -376,11 +378,11 @@ $$
 
 ### 최대-최소 정리 {#sec-MA_extreme_value_theorem}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유계함수**
 
 ::: {#def-MA_bounded_function}
-
-#### 유계함수
 
 거리공간 $X,\,Y$ 에서 정의된 함수 $f:X\to Y$ 를 생각하자. $\{\|f(x)\|_Y: x\in X\}$ 가 유계일 때 $f$ 를 유계함수 라고 한다.
 
@@ -479,17 +481,15 @@ $$
 
 :::
 
-</div>
-
-</br>
+</div></br>
 
 ### 고른 연속 함수 {#sec-MA_uniform_continuity}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **고른 연속함수**
 
 ::: {#def-MA_uniformly_continuous}
-
-#### 고른 연속 함수
 
 거리공간 $X,\, Y$ 에서 정의된 함수 $f:X \to Y$ 가 각각의 $\varepsilon>0$ 에 대해 $\delta>0$ 이 존재하여
 
@@ -506,7 +506,7 @@ $$
 
 다음은 정의에 의해 자명하기 때문에 증명은 생략한다.
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_uniform_continuity}
 
@@ -706,7 +706,6 @@ $$
 
 ### 사잇값 정리 {#sec-MA_intermediate_value_theorem}
 
-
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_continuity_and_connectivity}
@@ -852,11 +851,11 @@ $g(x)=f(x)-x$ 라고 하자. $g(a)=f(a)-a \ge 0$ 이며 $g(b) =f(b)-b\le 0$ 이�
 
 ### 좌극한과 우극한 {#sec-left_limit_and_right_limit}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **좌극한과 우극한**
 
 ::: {#def-MA_left_limit_and_right_limit}
-
-#### 좌극한과 우극한
 
 $f:X\subset \mathbb{R} \to \mathbb{R}$ 을 생각하자. 임의의 $\varepsilon>0$ 에 대해 어떤 $\delta>0$ 이 존재하여 
 
@@ -875,20 +874,16 @@ $$
 ::: 
 :::
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **1종 불연속과 2종 불연속**
 
 ::: {#def-MA_1st_2nd_kind_discontinuity}
-
-#### 1종 불연속과 2종 불연속
 
 $(a,\,b)$ 구간에서 정의된 실함수 $f$ 가 $x$ 에서 불연속이지만 $x$ 에서의 좌극한과 우극한이 존재한다면 $f$ 는 $x$ 에서 **1종 불연속 (first kind discontinuity)**, 혹은 **단순 불연속 (simple discontinuity)** 라고 한다. $f$ 가 $x$ 에서 불연속이지만 1급 불연속이 아닐 때 **2종 불연속 (second kind discontinuity)** 라고 한다.
 
 ::: 
 :::
-
-</br>
 
 $f$ 가 $x$ 에서 1종 불연속인 경우는 $f(x^+)\ne f(x^-)$ 이거나 $f(x^+)=f(x^-)\ne f(x)$ 의 두가지이다.  
 
@@ -897,11 +892,11 @@ $f$ 가 $x$ 에서 1종 불연속인 경우는 $f(x^+)\ne f(x^-)$ 이거나 $f(x
 
 ### 단조함수 {#sec-MA_monotonic_functions}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **단조증가/단조감소**
 
 ::: {#def-MA_monotonic_function}
-
-#### 단조증가/단조감소
 
 $f:(a,\,b)\to \mathbb{R}$ 함수 일 때 $a<x<y<b$ 에 대해 $f(x)\le f(y)$ 이면 $f$ 가 구간 $(a,\,b)$ 에서 **단조증가** 한다고 하며 $f(x) \ge f(y)$ 이면 $f$ 가 구간 $(a,\,b)$ 에서 **단조감소**한다고 한다. $f$ 가 $(a,\,b)$ 에서 단조증가 하거나 단조감소 하면 $f$ 를 $(a,\,b)$ 에서의 **단조함수** 라고 한다. 
 

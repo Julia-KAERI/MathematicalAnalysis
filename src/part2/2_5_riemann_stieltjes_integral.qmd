@@ -14,11 +14,11 @@ crossref:
 
 ### 리만 적분 {#sec-MA_riemann_integral}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **분할과 노름**
 
 ::: {#def-MA_partition}
-
-#### 분할과 노름
 
 닫힌 구간 $[a,\,b]$ 에서 어떤 유한개의 점 $x_0,\ldots,\,x_n$ 이
 
@@ -35,15 +35,13 @@ $$ {#eq-MA_definition_of_the_norm_of_partition}
 ::: 
 :::
 
-</br>
+::: {.callout-caution icon="false"}
 
-::: {.callout-caution}
+#### 분할에서의 관례
 
 앞으로 $P = (x_0,\ldots,\,x_n)$ 이 구간 $[a,\,b]$ 의 분할이라고 하면 명시적으로 언급하지 않더라도 $a=x_0 < x_1 <\cdots < x_n=b$ 임을 가정한다.
 
 :::
-
-</br>
 
 닫힌 구간에서 임의의 노름을 가진 구간을 항상 잡을 수 있다는 것은 자명하다.
 
@@ -55,16 +53,13 @@ $$ {#eq-MA_definition_of_the_norm_of_partition}
 
 :::
 
-</div>
+</div></br>
 
+::: {.callout-note icon="false"}
 
-</br>
-
-::: {.callout-note appearance="simple" icon="false"}
+#### **리만 상합, 리만 하합**
 
 ::: {#def-MA_upper_lower_riemann_sum}
-
-#### 리만 상합, 리만 하합
 
 $f:[a,\,b]\to \R,\, P = (x_0,\ldots,\,x_n ) \in \mathcal{P}[a,\,b]$ 에 대해
 
@@ -137,11 +132,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **리만 적분**
 
 ::: {#def-MA_riemann_integral}
-
-#### 리만 적분
 
 @def-MA_upper_lower_riemann_sum 에 대해
 
@@ -162,8 +157,6 @@ $$
 
 ::: 
 :::
-
-</br>
 
 $f$ 가 유계이므로 $M=\sup f([a,\,b])$ 와 $m=\inf f([a,\,b])$ 가 존재한다. @thm-MA_properties_of_rieman_sum_1 에 따라 임의의 $P\in \mathcal{P}[a,\,b]$ 에 대해
 
@@ -228,11 +221,11 @@ $$
 </br>
 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유계변동함수**
 
 ::: {#def-MA_bounded_variation_function}
-
-#### 유계변동함수
 
 함수 $f:[a,\,b] \to \R$ 과 $P = (x_0,\ldots,\,x_n)\in \mathcal{P}[a,\,b]$ 에 대해 $f$ 의 변동(variation) $V_a^b(f,\,P)$ 를 다음과 같이 정의한다.
 
@@ -426,11 +419,11 @@ $$
 
 유계변동함수를 벡터함수로 확장하면 곡선의 길이가 된다. 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **곡선의 길이**
 
 ::: {#def-MA_length_of_curve}
-
-#### 곡선의 길이
 
 곡선 $\bf{\alpha} : [a,\,b] \to \R^n$ 과 분할 $P=(x_0,\ldots,\,x_n) \in \mathcal{P}[a,\,b]$ 에 대해
 
@@ -488,18 +481,17 @@ $$
 
 벡터함수에 대해 자명하지마나 여기서는 일단 곡선에 대해 도함수를 정의하기로 하자.
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **곡선의 미분**
 
 ::: {#def-MA_derivative_of_curve}
-
-#### 곡선의 미분
 
 곡선 $\bf{\alpha}:[a,\,b] \to \R^m$ 의 각 성분함수 $\alpha_k$ 가 모두 $C^1$-함수이면 이 $\bf{\alpha}$ 를 $C^1$-곡선 이라고 부르고 이 경우 $\bf{\alpha}' = (\alpha_1',\ldots,\, \alpha_m')$ 으로 정의한다.
 
 :::
 :::
 
-</br>
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-MA_distance_relation}
@@ -598,17 +590,15 @@ $$
 
 :::
 
-
 </br>
 
 ### 스틸체스 적분 {#sec-MA_stieltjes_integral}
 
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **스틸체스 적분**
 
 ::: {#def-MA_stieltjes_integral}
-
-#### 스틸체스 적분
 
 $\alpha :[a,\,b]\to \R$ 이 단조증가함수일 때 $P\in \mathcal{P}[a,\,b]$ 에 대해 
 
@@ -1246,18 +1236,17 @@ $\square$
 
 </br>
 
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **단위 계단 함수**
 
 ::: {#def-MA_unit_step_function}
-
-#### 단위 계단 함수
 
 **단위 계단 함수(unit step function)** $\theta(x):\R \to \{0,\,1\}$ 은 다음과 같이 정의된다.
 
 $$
 \theta (x) = \left\{\begin{array}{ll} 0, \qquad & x\le 0, \\ 1,&x>0.\end{array}\right. 
-$$
+$$ {#eq-MA_definition_of_unit_step_function}
 
 ::: 
 :::
@@ -1671,8 +1660,9 @@ $$
 
 ### 벡터값 함수의 적분 {#sec-integration_of_vector_valued_functions}
 
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **벡터값 함수의 적분**
 
 ::: {#def-MA_integration_of_vector_valued_function}
 

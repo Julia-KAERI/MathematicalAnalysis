@@ -588,9 +588,9 @@ $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 
 ::: {.callout-note icon="false"}
 
-::: {#def-MA_complete_metic_space}
+#### **완비 거리 공간**
 
-#### 완비 거리 공간
+::: {#def-MA_complete_metic_space}
 
 거리공간 $X$ 에서 정의된 모든 코시 수열이 수렴할 때 이 거리공간을 **완비 거리 공간 (complete metric space)** 라고 한다.
 
@@ -604,9 +604,9 @@ $\mathbb{R}^n$ 위에서의 코시수열은 수렴한다.
 
 ::: {.callout-note icon="false"}
 
-::: {#def-MA_diverge_to_infinite}
+#### **무한대로 발산**
 
-#### 무한대로 발산
+::: {#def-MA_diverge_to_infinite}
 
 실수열 $\langle a_n \rangle$ 이 각각의 양수 $M$ 에 대해 어떤 $N_M\in \mathbb{N}$ 이 존재하여 
 
@@ -629,9 +629,9 @@ $$
 
 ::: {.callout-note icon="false"}
 
-::: {#def-MA_limsup_liminf}
+#### **상극한과 하극한**
 
-#### 상극한과 하극한
+::: {#def-MA_limsup_liminf}
 
 위로 유계인 실수열 $\langle a_n \rangle$ 의 상극한 $\displaystyle \limsup_{n \to \infty} a_n$ 를 다음과 같이 정의한다.
 
@@ -668,7 +668,7 @@ $$
 
 우선 $\displaystyle a=\limsup_{n \to \infty} a_n$ 일 때 두 명제를 만족한다는 것을 보이자. $x_n = \sup \{a_n,\, a_{n+1},\ldots\}$ 라고 하자. $\langle x_n\rangle$ 은 단조 감소 수열 이다. $\displaystyle \limsup_{n \to \infty} a_n = \lim_{n \to \infty} x_n = a$ 이므로 $n\ge N \implies |x_n - a|<\varepsilon$ 인 $N \in \mathbb{Z}_+$ 이 존재한다.  $\langle x_n \rangle$ 이 단조감소수열이므로 $n \ge N \implies x_n < a+\varepsilon$ 이다. (($1$) 증명 끝) 
 
-만약 유한개의 $n$ 에 대해서만 $a-\varepsilon < a_n$ 라면 어떤 $K\in \mathbb{Z}_+$ 에 대해 $n \ge K \implies a_n < a-\varepsilon$ 이므로 $n \ge K \implies x_n \le a-\varepsilon$ 이 성립한다. 이렇게 되면 $\displaystyle \limsup_{n \to \infty}a_n \le a-\varepsilon$ 이 되어 모순이다. (($2$) 증명 끝)
+만약 유한개의 $n$ 에 대해서만 $a-\varepsilon < a_n$ 라면 어떤 $K\in \mathbb{Z}_+$ 에 대해 $n \ge K \implies a_n \le a-\varepsilon$ 이므로 $n \ge K \implies x_n \le a-\varepsilon$ 이 성립한다. 이렇게 되면 $\displaystyle \limsup_{n \to \infty}a_n \le a-\varepsilon$ 이 되어 모순이다. (($2$) 증명 끝)
 
 이제 수열 $\langle a_n \rangle$ 이 두 조건을 만족하면 $\displaystyle \limsup_{n \to \infty} a_n = a$ 임을 보이자. 임의의 $\varepsilon>0$ 에 대해 ($1$) 로 부터 $\displaystyle \limsup_{n \to \infty} a_n \le a+\varepsilon$ 임을 알 수 있다. 또한 ($2$) 로 부터 $\displaystyle a-\varepsilon \le \limsup_{n \to \infty}a_n$ 임을 알 수 있다. 따라서 $\displaystyle \limsup_{n \to \infty}a_n = a$ 이다. $\square$
 
@@ -678,7 +678,7 @@ $$
 
 같은 방법으로 다음을 보일 수 있다.
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-MA_properties_of_liminf}
 
@@ -696,7 +696,7 @@ $$
 
 수열의 극한과 상극한, 하극한은 아래의 관계가 성립한다.
 
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-MA_limsup_liminf_limit}
 
@@ -799,12 +799,9 @@ $$
 $$
 이다. $a-k<0$ 이므로 $\displaystyle \lim_{n \to \infty} \dfrac{n^a}{(1+p)^n} = 0$ 이다. $\square$
 
-
 :::
 
-
 </div></br>
-
 
 ## 급수의 수렴과 발산 {#sec-MA_convergence_of_series}
 
@@ -872,9 +869,9 @@ $\sum a_n$ 이 수렴하면 $\displaystyle \lim_{n \to \infty} a_n = 0$ 이다.
 
 ::: {.callout-note icon="false"}
 
-::: {#def-MA_absolute_convergence}
+#### **절대수렴**
 
-#### 절대수렴 
+::: {#def-MA_absolute_convergence}
 
 수열 $\langle a_n \rangle$ 에 대한 급수 $\displaystyle s_n = \sum_{k=1}^\infty |a_k|$ 가 수렴하면 급수 $\displaystyle \sum_{k=1}^\infty a_k$ 가 **절대수렴 (absolutely convergent)** 한다고 한다.
 
@@ -1009,7 +1006,7 @@ $$
 
 이므로 @prp-MA_convergence_of_1_over_n_p 에 의해 $p>1$ 일 때 수렴하고 $0<p\le 1$ 일 때 발산한다.
 
-$p\le 0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $\square$
+$p <0$ 인 경우는 $(\log k)^p <1$ 이므로 발산한다. $p=0$ 인 경우는 발산함을 알고 있다.$\square$
 
 :::
 
@@ -1203,9 +1200,10 @@ $a>1$ 이면 $1/(1+a^k)< 1/a^k$ 이고 $\sum 1/a^k$ 가 수렴하므로 수렴�
 ### 멱급수 {#sec-MA_power_series}
 
 ::: {.callout-note icon="false"}
-::: {#def-MA_power_series}
 
-#### 멱급수
+#### **멱급수**
+
+::: {#def-MA_power_series}
 
 수열 $\langle a_n\rangle$ 에 대해 $\displaystyle \sum_{n=0}^\infty a_n z^n$ 꼴로 주어진 급수를 **멱급수(power sereis)** 라고 한다.
 
@@ -1240,9 +1238,9 @@ $$
 
 ::: {.callout-note icon="false"}
 
-::: {#def-radius_of_convergence}
+#### **수렴반경**
 
-#### 수렴반경
+::: {#def-radius_of_convergence}
 
 멱급수 $\sum a_n z^n$ 에 대해 @prp-MA_radius_of_convergence 에서의 $R$ 을 **수렴 반경(radius of convergence)** 이라고 한다.
 
@@ -1275,7 +1273,6 @@ $$
 </div></br>
 
 ## 부분합과 재배열 급수
-
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -1358,9 +1355,11 @@ $\sum a_n = A$, $\sum b_n = B$ 일 때 $\sum (a_n + b_n) = A + B$ 이다. 또한
 
 ::: {.callout-note icon="false"}
 
+#### **코시 곱**
+
 ::: {#def-MA_cauchy_product}
 
-#### 코시 곱
+
 
 급수 $\sum a_n,\, \sum b_n$ 에 대해 
 
@@ -1435,9 +1434,9 @@ $$
 
 ::: {.callout-note icon="false"}
 
-::: {#def-MA_rearangement_of_series}
+#### **재배열 급수**
 
-#### 재배열 급수
+::: {#def-MA_rearangement_of_series}
 
 급수 $\sum a_n$ 과 전단사 함수 $\sigma : \mathbb{N} \to \mathbb{N}$ 에 대해 $\sum a_{\sigma (n)}$ 을 $\sum a_n$ 의 **재배열 급수**라고 한다.
 

@@ -725,12 +725,12 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>완비 거리 공간</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_complete_metic_space" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.7 (완비 거리 공간)</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 모든 코시 수열이 수렴할 때 이 거리공간을 <strong>완비 거리 공간 (complete metric space)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.7</strong></span> 거리공간 <span class="math inline">\(X\)</span> 에서 정의된 모든 코시 수열이 수렴할 때 이 거리공간을 <strong>완비 거리 공간 (complete metric space)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>
@@ -745,12 +745,12 @@ m,\, n \ge N \implies \|a_m - a_n\|_X &lt; \varepsilon
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>무한대로 발산</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_diverge_to_infinite" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.8 (무한대로 발산)</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 각각의 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_M\in \mathbb{N}\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정의 7.8</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 각각의 양수 <span class="math inline">\(M\)</span> 에 대해 어떤 <span class="math inline">\(N_M\in \mathbb{N}\)</span> 이 존재하여</p>
 <p><span class="math display">\[
 n \ge N_M \implies a_n &gt; M
 \]</span></p>
@@ -769,12 +769,12 @@ n \ge N_m \implies a_n &lt; -M
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>상극한과 하극한</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_limsup_liminf" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.9 (상극한과 하극한)</strong></span> 위로 유계인 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 상극한 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 7.9</strong></span> 위로 유계인 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 의 상극한 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
 \limsup_{n \to \infty} a_n := \lim_{n \to \infty} \sup \{a_n,\, a_{n+1},\,a_{n+2},\ldots\}
 \]</span></p>
@@ -796,12 +796,11 @@ n \ge N_m \implies a_n &lt; -M
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(\displaystyle a=\limsup_{n \to \infty} a_n\)</span> 일 때 두 명제를 만족한다는 것을 보이자. <span class="math inline">\(x_n = \sup \{a_n,\, a_{n+1},\ldots\}\)</span> 라고 하자. <span class="math inline">\(\langle x_n\rangle\)</span> 은 단조 감소 수열 이다. <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n = \lim_{n \to \infty} x_n = a\)</span> 이므로 <span class="math inline">\(n\ge N \implies |x_n - a|&lt;\varepsilon\)</span> 인 <span class="math inline">\(N \in \mathbb{Z}_+\)</span> 이 존재한다. <span class="math inline">\(\langle x_n \rangle\)</span> 이 단조감소수열이므로 <span class="math inline">\(n \ge N \implies x_n &lt; a+\varepsilon\)</span> 이다. ((<span class="math inline">\(1\)</span>) 증명 끝)</p>
-<p>만약 유한개의 <span class="math inline">\(n\)</span> 에 대해서만 <span class="math inline">\(a-\varepsilon &lt; a_n\)</span> 라면 어떤 <span class="math inline">\(K\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(n \ge K \implies a_n &lt; a-\varepsilon\)</span> 이므로 <span class="math inline">\(n \ge K \implies x_n \le a-\varepsilon\)</span> 이 성립한다. 이렇게 되면 <span class="math inline">\(\displaystyle \limsup_{n \to \infty}a_n \le a-\varepsilon\)</span> 이 되어 모순이다. ((<span class="math inline">\(2\)</span>) 증명 끝)</p>
+<p>만약 유한개의 <span class="math inline">\(n\)</span> 에 대해서만 <span class="math inline">\(a-\varepsilon &lt; a_n\)</span> 라면 어떤 <span class="math inline">\(K\in \mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(n \ge K \implies a_n \le a-\varepsilon\)</span> 이므로 <span class="math inline">\(n \ge K \implies x_n \le a-\varepsilon\)</span> 이 성립한다. 이렇게 되면 <span class="math inline">\(\displaystyle \limsup_{n \to \infty}a_n \le a-\varepsilon\)</span> 이 되어 모순이다. ((<span class="math inline">\(2\)</span>) 증명 끝)</p>
 <p>이제 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 이 두 조건을 만족하면 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n = a\)</span> 임을 보이자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 (<span class="math inline">\(1\)</span>) 로 부터 <span class="math inline">\(\displaystyle \limsup_{n \to \infty} a_n \le a+\varepsilon\)</span> 임을 알 수 있다. 또한 (<span class="math inline">\(2\)</span>) 로 부터 <span class="math inline">\(\displaystyle a-\varepsilon \le \limsup_{n \to \infty}a_n\)</span> 임을 알 수 있다. 따라서 <span class="math inline">\(\displaystyle \limsup_{n \to \infty}a_n = a\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <p>같은 방법으로 다음을 보일 수 있다.</p>
-<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_properties_of_liminf" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 7.12</strong></span> 유계인 실수열 <span class="math inline">\(\langle b_n \rangle\)</span> 의 하극한이 <span class="math inline">\(b\)</span> 일 때 다음이 성립한다.</p>
@@ -812,7 +811,6 @@ n \ge N_m \implies a_n &lt; -M
 </div>
 <p><br></p>
 <p>수열의 극한과 상극한, 하극한은 아래의 관계가 성립한다.</p>
-<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_limsup_liminf_limit" class="theorem">
 <p><span class="theorem-title"><strong>정리 7.2</strong></span> 실수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대해 다음은 동치이다.</p>
@@ -922,12 +920,12 @@ m\ge n  \ge N \implies \left| \sum_{k=n}^m a_k\right| \le \varepsilon
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>절대수렴</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_absolute_convergence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.10 (절대수렴)</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대한 급수 <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^\infty |a_k|\)</span> 가 수렴하면 급수 <span class="math inline">\(\displaystyle \sum_{k=1}^\infty a_k\)</span> 가 <strong>절대수렴 (absolutely convergent)</strong> 한다고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.10</strong></span> 수열 <span class="math inline">\(\langle a_n \rangle\)</span> 에 대한 급수 <span class="math inline">\(\displaystyle s_n = \sum_{k=1}^\infty |a_k|\)</span> 가 수렴하면 급수 <span class="math inline">\(\displaystyle \sum_{k=1}^\infty a_k\)</span> 가 <strong>절대수렴 (absolutely convergent)</strong> 한다고 한다.</p>
 </div>
 </div>
 </div>
@@ -1012,7 +1010,7 @@ s_n &amp;= a_1 + \cdots + a_n \\
 \sum_{k=1}^\infty 2^k \cdot \dfrac{1}{2^k (\log (2^k))^p} = \sum_{k=1}^\infty \dfrac{1}{(k \log 2)^p} = \dfrac{1}{(\log 2)^p} \sum_{k=1}^\infty \dfrac{1}{k^p}
 \]</span></p>
 <p>이므로 <a href="#prp-MA_convergence_of_1_over_n_p" class="quarto-xref">명제&nbsp;<span>7.17</span></a> 에 의해 <span class="math inline">\(p&gt;1\)</span> 일 때 수렴하고 <span class="math inline">\(0&lt;p\le 1\)</span> 일 때 발산한다.</p>
-<p><span class="math inline">\(p\le 0\)</span> 인 경우는 <span class="math inline">\((\log k)^p &lt;1\)</span> 이므로 발산한다. <span class="math inline">\(\square\)</span></p>
+<p><span class="math inline">\(p &lt;0\)</span> 인 경우는 <span class="math inline">\((\log k)^p &lt;1\)</span> 이므로 발산한다. <span class="math inline">\(p=0\)</span> 인 경우는 발산함을 알고 있다.<span class="math inline">\(\square\)</span></p>
 </div>
 </div>
 <p><br></p>
@@ -1136,12 +1134,12 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>멱급수</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_power_series" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.11 (멱급수)</strong></span> 수열 <span class="math inline">\(\langle a_n\rangle\)</span> 에 대해 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n z^n\)</span> 꼴로 주어진 급수를 <strong>멱급수(power sereis)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.11</strong></span> 수열 <span class="math inline">\(\langle a_n\rangle\)</span> 에 대해 <span class="math inline">\(\displaystyle \sum_{n=0}^\infty a_n z^n\)</span> 꼴로 주어진 급수를 <strong>멱급수(power sereis)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>
@@ -1168,12 +1166,12 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>수렴반경</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-radius_of_convergence" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.12 (수렴반경)</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해 <a href="#prp-MA_radius_of_convergence" class="quarto-xref">명제&nbsp;<span>7.19</span></a> 에서의 <span class="math inline">\(R\)</span> 을 <strong>수렴 반경(radius of convergence)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.12</strong></span> 멱급수 <span class="math inline">\(\sum a_n z^n\)</span> 에 대해 <a href="#prp-MA_radius_of_convergence" class="quarto-xref">명제&nbsp;<span>7.19</span></a> 에서의 <span class="math inline">\(R\)</span> 을 <strong>수렴 반경(radius of convergence)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -1251,12 +1249,12 @@ k \ge N \implies {a_k}^{1/k} \ge  \left(\dfrac{a_N}{(\alpha - \varepsilon)^{N}}\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>코시 곱</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_cauchy_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.13 (코시 곱)</strong></span> 급수 <span class="math inline">\(\sum a_n,\, \sum b_n\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 7.13</strong></span> 급수 <span class="math inline">\(\sum a_n,\, \sum b_n\)</span> 에 대해</p>
 <p><span class="math display">\[
 c_n = \sum_{k=0}^n a_k b_{n-k}
 \]</span></p>
@@ -1308,12 +1306,12 @@ C_n &amp;= a_0 b_0 + (a_0b_1 + a_1b_0) + \cdots + (a_0b_n + a_1b_{n-1} + \cdots 
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-노트
+<span class="screen-reader-only">노트</span><strong>재배열 급수</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-MA_rearangement_of_series" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 7.14 (재배열 급수)</strong></span> 급수 <span class="math inline">\(\sum a_n\)</span> 과 전단사 함수 <span class="math inline">\(\sigma : \mathbb{N} \to \mathbb{N}\)</span> 에 대해 <span class="math inline">\(\sum a_{\sigma (n)}\)</span> 을 <span class="math inline">\(\sum a_n\)</span> 의 <strong>재배열 급수</strong>라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 7.14</strong></span> 급수 <span class="math inline">\(\sum a_n\)</span> 과 전단사 함수 <span class="math inline">\(\sigma : \mathbb{N} \to \mathbb{N}\)</span> 에 대해 <span class="math inline">\(\sum a_{\sigma (n)}\)</span> 을 <span class="math inline">\(\sum a_n\)</span> 의 <strong>재배열 급수</strong>라고 한다.</p>
 </div>
 </div>
 </div>

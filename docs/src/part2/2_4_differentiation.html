@@ -328,19 +328,22 @@ window.Quarto = {
 <h2 data-number="9.1" class="anchored" data-anchor-id="실함수의-미분"><span class="header-section-number">9.1</span> 실함수의 미분</h2>
 <section id="sec-MA_differentiability" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="sec-MA_differentiability"><span class="header-section-number">9.1.1</span> 미분가능성과 도함수</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>미분가능과 도함수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_differentiable" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 9.1 (미분가능과 도함수)</strong></span> <span class="math inline">\(f:(a,\,b) \subset \mathbb{R}\to \mathbb{R}\)</span> 과 <span class="math inline">\(x\in (a,\,b)\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 9.1</strong></span> <span class="math inline">\(f:(a,\,b) \subset \mathbb{R}\to \mathbb{R}\)</span> 과 <span class="math inline">\(x\in (a,\,b)\)</span> 에 대해</p>
 <p><span id="eq-MA_differentiability"><span class="math display">\[
 \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h}
 \tag{9.1}\]</span></span></p>
 <p>가 존재할 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 <strong>미분 가능하다(be differentiable)</strong> 고 하며 <a href="#eq-MA_differentiability" class="quarto-xref">식&nbsp;<span>9.1</span></a> 의 극한값을 <span class="math inline">\(f'(x)\)</span> 라고 표기한다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((a,\,b)\)</span> 의 모든 값에서 미분가능할 할 때 <span class="math inline">\(f'\)</span> 값을 <span class="math inline">\((a,\,b)\)</span> 에서 정의된 함수로 생각 할 수 있으며 <span class="math inline">\(f'(x)\)</span> 를 <span class="math inline">\(f(x)\)</span> 의 <strong>도함수 (derivative)</strong> 라고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -356,7 +359,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>PMA(<span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span>) 의 경우는 <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 미분가능하다, 혹은 <span class="math inline">\(f\)</span> 가 <span class="math inline">\([a,\,b]\)</span> 구간에서 미분가능하다는 표현을 사용한다. 그러나 실제로 미분값은 열린 구간에 대해 정의되므로 이 표현은 다소 어색한 표현이다. PMA 의 경우 좌극한, 우극한 처럼 좌미분 우미분을 이용하여 <span class="math inline">\([a,\,b]\)</span> 구간에서의 미분가능성을 정의한다.</p>
-<p>미분이 열린 구간에서 정의가 되므로 임의의 열린 구간이란 표현이 많이 등장하게 된다. 이제 <span class="math inline">\(I\)</span> 를 어떤 열린 구간으로 표기하도록 한다. 즉 <span class="math inline">\(f:I \to \mathbb{R}\)</span> 은 어떤 열린 구간 <span class="math inline">\(I\)</span> 에서 정의된 실함수 <span class="math inline">\(f\)</span> 라는 의미이다.</p>
+<p>미분이 열린 구간에서 정의가 되므로 임의의 열린 구간이란 표현이 많이 등장하게 된다. <u>이제 <span class="math inline">\(I\)</span> 를 어떤 열린 구간으로 표기하도록 한다.</u> 즉 <span class="math inline">\(f:I \to \mathbb{R}\)</span> 은 어떤 열린 구간 <span class="math inline">\(I\subset \mathbb{R}\)</span> 에서 정의된 실함수 <span class="math inline">\(f\)</span> 라는 의미이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -500,31 +503,35 @@ f'(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ 2x \sin \dfrac{1}{x}- \cos \df
 </div>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>도함수의 차수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_differentiable" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 9.2 (도함수의 차수)</strong></span> 함수 <span class="math inline">\(f:I \to \mathbb{R}\)</span> 의 도함수 <span class="math inline">\(f'(x)\)</span> 를 생각 할 수 있다. <span class="math inline">\(f'(x)\)</span> 가 <span class="math inline">\(I\)</span> 에서 미분가능하면 <span class="math inline">\(f'(x)\)</span> 의 도함수를 <span class="math inline">\(f''(x)\)</span> 혹은 <span class="math inline">\(f^{(2)}(x)\)</span> 라고 쓰고 이차 도함수라고 한다. 이것을 계속하면 <span class="math inline">\(n\)</span> 차 도함수 <span class="math inline">\(f^{(n)}(x)\)</span> 를 생각 할 수 있다.</p>
+<p><span class="theorem-title"><strong>정의 9.2</strong></span> 함수 <span class="math inline">\(f:I \to \mathbb{R}\)</span> 의 도함수 <span class="math inline">\(f'(x)\)</span> 를 생각 할 수 있다. <span class="math inline">\(f'(x)\)</span> 가 <span class="math inline">\(I\)</span> 에서 미분가능하면 <span class="math inline">\(f'(x)\)</span> 의 도함수를 <span class="math inline">\(f''(x)\)</span> 혹은 <span class="math inline">\(f^{(2)}(x)\)</span> 라고 쓰고 이차 도함수라고 한다. 이것을 계속하면 <span class="math inline">\(n\)</span> 차 도함수 <span class="math inline">\(f^{(n)}(x)\)</span> 를 생각 할 수 있다.</p>
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
 <p><a href="#exm-MA_case_of_derivative_without_continuity_1" class="quarto-xref">예제&nbsp;<span>9.2</span></a> 과 <a href="#exm-MA_case_of_derivative_without_continuity_2" class="quarto-xref">예제&nbsp;<span>9.3</span></a> 에서 보았듯이 <span class="math inline">\(n\)</span>-차 도함수가 연속일 수도 있고 아닐 수도 있다. <span class="math inline">\(n\)</span> 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.</p>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_class_of_derivatives" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 9.3 (도함수의 계층)</strong></span> <span class="math inline">\(f:I \to \mathbb{R}\)</span> 이 <span class="math inline">\(n\)</span> 번 미분가능하며 <span class="math inline">\(n\)</span> 번째 도함수가 연속일 때 이 함수를 <span class="math inline">\(C^k\)</span>-함수 혹은 <span class="math inline">\(C^k\)</span> 급 함수라고 한다. 연속인 함수는 <span class="math inline">\(C^0\)</span>-함수이며 도함수가 연속이면 <span class="math inline">\(C^1\)</span>-함수 라고 한다. 다항함수나 지수함수와 같이 무한번 미분 가능하며 연속인 함수는 <span class="math inline">\(C^\infty\)</span> 라고 표기한다.</p>
-<p>미분과 연속인 구간을 같이 표기하여 <span class="math inline">\(C^{k}_{[a,\,b]}\)</span> 와 같이 쓸 수 있다. 즉 <span class="math inline">\(C^{0}_{(0,\,1)}\)</span> 은 <span class="math inline">\((0,\,1)\)</span> 에서 연속인 함수를 의미한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>도함수의 계층</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_class_of_derivatives" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 9.3</strong></span> <span class="math inline">\(f:I \to \mathbb{R}\)</span> 이 <span class="math inline">\(n\)</span> 번 미분가능하며 <span class="math inline">\(n\)</span> 번째 도함수가 연속일 때 이 함수를 <span class="math inline">\(C^k\)</span>-함수 혹은 <span class="math inline">\(C^k\)</span> 급 함수라고 한다. 연속인 함수는 <span class="math inline">\(C^0\)</span>-함수이며 도함수가 연속이면 <span class="math inline">\(C^1\)</span>-함수 라고 한다. 다항함수나 지수함수와 같이 무한번 미분 가능하며 연속인 함수는 <span class="math inline">\(C^\infty\)</span> 라고 표기한다.</p>
+<p>미분과 연속인 구간을 같이 표기하여 <span class="math inline">\(C^{k}_{[a,\,b]}\)</span> 와 같이 쓸 수 있다. 즉 <span class="math inline">\(C^{0}_{(0,\,1)}\)</span> 은 <span class="math inline">\((0,\,1)\)</span> 에서 연속인 함수를 의미한다.</p>
 </div>
 </div>
 </div>
@@ -535,15 +542,18 @@ f'(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ 2x \sin \dfrac{1}{x}- \cos \df
 <h2 data-number="9.2" class="anchored" data-anchor-id="평균값-정리와-로피탈-정리"><span class="header-section-number">9.2</span> 평균값 정리와 로피탈 정리</h2>
 <section id="sec-MA_mean_value_theorem" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="sec-MA_mean_value_theorem"><span class="header-section-number">9.2.1</span> 평균값 정리</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_extreme_value" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 9.4 (극대값과 극소값)</strong></span> 거리공간에서 <span class="math inline">\(X\)</span> 에서 정의된 실함수 <span class="math inline">\(f:X\to\mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(x\in X\)</span> 일 때 어떤 <span class="math inline">\(x\)</span> 의 근방 <span class="math inline">\(N=N(x,\,\delta)\)</span> 에서 <span class="math inline">\(p\in N \implies f(p) \le f(x)\)</span> 일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 <strong>극대값(local maximum)</strong> 을 갖는다고 한다. 반대로 <span class="math inline">\(p\in N \implies f(p) \ge f(x)\)</span> 일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 <strong>극소값(local minimum)</strong> 을 갖는다고 한다. 극대값과 극소값을 <strong>극값 (local extrema)</strong> 라고 한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>극대값과 극소값</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_extreme_value" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 9.4</strong></span> 거리공간에서 <span class="math inline">\(X\)</span> 에서 정의된 실함수 <span class="math inline">\(f:X\to\mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(x\in X\)</span> 일 때 어떤 <span class="math inline">\(x\)</span> 의 근방 <span class="math inline">\(N=N(x,\,\delta)\)</span> 에서 <span class="math inline">\(p\in N \implies f(p) \le f(x)\)</span> 일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 <strong>극대값(local maximum)</strong> 을 갖는다고 한다. 반대로 <span class="math inline">\(p\in N \implies f(p) \ge f(x)\)</span> 일 때 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 <strong>극소값(local minimum)</strong> 을 갖는다고 한다. 극대값과 극소값을 <strong>극값 (local extrema)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>

@@ -314,14 +314,18 @@ window.Quarto = {
 <h2 data-number="8.1" class="anchored" data-anchor-id="함수의-극한과-연속"><span class="header-section-number">8.1</span> 함수의 극한과 연속</h2>
 <section id="sec-MA_limit_and_continuity_of_functions" class="level3" data-number="8.1.1">
 <h3 data-number="8.1.1" class="anchored" data-anchor-id="sec-MA_limit_and_continuity_of_functions"><span class="header-section-number">8.1.1</span> 함수의 극한과 연속</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>함수의 극한과 연속</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_limits_and_continuity_of_functions" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.1 (함수의 극한과 연속)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 와 함수 <span class="math inline">\(f:E \subset X \to Y\)</span> 를 생각한다. <span class="math inline">\(x_0\in E\)</span> 가 <span class="math inline">\(E\)</span> 에서의 극한점이며 <span class="math inline">\(y_0\in Y\)</span> 라고 하자. 각각의 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 8.1</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 와 함수 <span class="math inline">\(f:E \subset X \to Y\)</span> 를 생각한다. <span class="math inline">\(x_0\in E\)</span> 가 <span class="math inline">\(E\)</span> 에서의 극한점이며 <span class="math inline">\(y_0\in Y\)</span> 라고 하자. 각각의 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해</p>
 <p><span id="eq-MA_definition_of_limit"><span class="math display">\[
 0&lt;\|x-x_0\|_X &lt; \delta \implies \|f(x)- y_0\|_Y&lt; \varepsilon
 \tag{8.1}\]</span></span></p>
@@ -330,7 +334,6 @@ window.Quarto = {
 \lim_{x \to x_0} f(x) = y_0
 \]</span></p>
 <p>라고 쓴다. 또한 <span class="math inline">\(\displaystyle \lim_{x \to x_0} f(x) = f(x_0)\)</span> 일 때 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x_0\)</span> 에서 <strong>연속</strong> 이라고 한다. 함수 <span class="math inline">\(f\)</span> 가 정의역 <span class="math inline">\(E\)</span> 전체에서 연속일 때 <span class="math inline">\(f\)</span> 를 <strong>연속 함수</strong> 라고 한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -409,15 +412,18 @@ n \ge N \implies 0&lt;\|x_n - x_0 \|&lt; \delta
 <section id="sec-MA_continuity_and_inverse_image" class="level3" data-number="8.1.2">
 <h3 data-number="8.1.2" class="anchored" data-anchor-id="sec-MA_continuity_and_inverse_image"><span class="header-section-number">8.1.2</span> 함수의 연속과 역사상</h3>
 <p>함수의 상과 역상의 정의, 그리고 이에 대한 명제들은 진행을 위해 필요하다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_inverse_image_of_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.2 (함수의 상과 역상)</strong></span> 함수 <span class="math inline">\(f:X \to Y\)</span> 을 생각하자. <span class="math inline">\(E \subset X\)</span> 에 대해 <span class="math inline">\(\{f(x): x\in E\}\)</span> 를 <span class="math inline">\(f\)</span> 에 대한 <span class="math inline">\(E\)</span> 의 <strong>상(image)</strong> 라고 하고 <span class="math inline">\(f(E)\)</span> 라고 표기한다. 또한 <span class="math inline">\(V\subset Y\)</span> 에 대해 <span class="math inline">\(\{x\in X : f(x) \in V\}\)</span> 를 <span class="math inline">\(f\)</span> 에 대한 <span class="math inline">\(V\)</span> 의 <strong>역상 (inverse image)</strong> 이라 하고 <span class="math inline">\(f^{-1}(V)\)</span> 라고 표기한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>함수의 상과 역상</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_inverse_image_of_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 8.2</strong></span> 함수 <span class="math inline">\(f:X \to Y\)</span> 을 생각하자. <span class="math inline">\(E \subset X\)</span> 에 대해 <span class="math inline">\(\{f(x): x\in E\}\)</span> 를 <span class="math inline">\(f\)</span> 에 대한 <span class="math inline">\(E\)</span> 의 <strong>상(image)</strong> 라고 하고 <span class="math inline">\(f(E)\)</span> 라고 표기한다. 또한 <span class="math inline">\(V\subset Y\)</span> 에 대해 <span class="math inline">\(\{x\in X : f(x) \in V\}\)</span> 를 <span class="math inline">\(f\)</span> 에 대한 <span class="math inline">\(V\)</span> 의 <strong>역상 (inverse image)</strong> 이라 하고 <span class="math inline">\(f^{-1}(V)\)</span> 라고 표기한다.</p>
 </div>
 </div>
 </div>
@@ -543,15 +549,18 @@ N_X (x_0,\, \delta) \subset f^{-1}(f(N_X (x_0,\delta))) \subset f^{-1}(N_Y(f(x_0
 <h2 data-number="8.2" class="anchored" data-anchor-id="연속함수와-옹골집합"><span class="header-section-number">8.2</span> 연속함수와 옹골집합</h2>
 <section id="sec-MA_extreme_value_theorem" class="level3" data-number="8.2.1">
 <h3 data-number="8.2.1" class="anchored" data-anchor-id="sec-MA_extreme_value_theorem"><span class="header-section-number">8.2.1</span> 최대-최소 정리</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_bounded_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.3 (유계함수)</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X\to Y\)</span> 를 생각하자. <span class="math inline">\(\{\|f(x)\|_Y: x\in X\}\)</span> 가 유계일 때 <span class="math inline">\(f\)</span> 를 유계함수 라고 한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>유계함수</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_bounded_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 8.3</strong></span> 거리공간 <span class="math inline">\(X,\,Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X\to Y\)</span> 를 생각하자. <span class="math inline">\(\{\|f(x)\|_Y: x\in X\}\)</span> 가 유계일 때 <span class="math inline">\(f\)</span> 를 유계함수 라고 한다.</p>
 </div>
 </div>
 </div>
@@ -582,7 +591,7 @@ f(K) \subset \bigcup_{i=1}^n f(f^{-1}(V_i)) \subset  \bigcup_{i=1}^n V_i
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K)\)</span> 는 옹골집합이며, <a href="2_1_basic_topology.html#cor-MA_minimum_and_maximum_of_compact_sebset_in_R" class="quarto-xref">따름정리&nbsp;<span>6.6</span></a> 에 따라 최소값과 최대값을 가진다. <span class="math inline">\(\square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-MA_continuity_and_compactness" class="quarto-xref">정리&nbsp;<span>8.4</span></a> 에 의해 <span class="math inline">\(f(K)\)</span> 는 옹골집합이며, <a href="2_1_basic_topology.html#cor-MA_minimum_and_maximum_of_compact_sebset_in_R" class="quarto-xref">따름정리&nbsp;<span>6.5</span></a> 에 따라 최소값과 최대값을 가진다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -625,14 +634,18 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0,\\x-1,\qquad &amp; 1&lt;x\le 2\end{
 </section>
 <section id="sec-MA_uniform_continuity" class="level3" data-number="8.2.2">
 <h3 data-number="8.2.2" class="anchored" data-anchor-id="sec-MA_uniform_continuity"><span class="header-section-number">8.2.2</span> 고른 연속 함수</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>고른 연속함수</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_uniformly_continuous" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.4 (고른 연속 함수)</strong></span> 거리공간 <span class="math inline">\(X,\, Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X \to Y\)</span> 가 각각의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정의 8.4</strong></span> 거리공간 <span class="math inline">\(X,\, Y\)</span> 에서 정의된 함수 <span class="math inline">\(f:X \to Y\)</span> 가 각각의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하여</p>
 <p><span class="math display">\[
 \|p,\,q\|_X &lt;\delta  \implies \|f(p)-f(q)\|_Y&lt;\varepsilon
 \]</span></p>
@@ -640,10 +653,8 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0,\\x-1,\qquad &amp; 1&lt;x\le 2\end{
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
 <p>다음은 정의에 의해 자명하기 때문에 증명은 생략한다.</p>
-<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-MA_uniform_continuity" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 8.8</strong></span> <span class="math inline">\(E\subset X\)</span> 에서 고른 연속인 함수 <span class="math inline">\(f:X \to Y\)</span> 는 <span class="math inline">\(E\)</span> 전체에서 연속이다.</p>
@@ -845,14 +856,18 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ \sin \dfrac{1}{x}, \qquad &amp;
 <h2 data-number="8.4" class="anchored" data-anchor-id="단조-함수"><span class="header-section-number">8.4</span> 단조 함수</h2>
 <section id="sec-left_limit_and_right_limit" class="level3" data-number="8.4.1">
 <h3 data-number="8.4.1" class="anchored" data-anchor-id="sec-left_limit_and_right_limit"><span class="header-section-number">8.4.1</span> 좌극한과 우극한</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>좌극한과 우극한</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_left_limit_and_right_limit" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.5 (좌극한과 우극한)</strong></span> <span class="math inline">\(f:X\subset \mathbb{R} \to \mathbb{R}\)</span> 을 생각하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하여</p>
+<p><span class="theorem-title"><strong>정의 8.5</strong></span> <span class="math inline">\(f:X\subset \mathbb{R} \to \mathbb{R}\)</span> 을 생각하자. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 어떤 <span class="math inline">\(\delta&gt;0\)</span> 이 존재하여</p>
 <p><span class="math display">\[
 (x, x+\delta)\subset X,\, 0&lt;t-x&lt;\delta \implies |f(t)-r|&lt; \varepsilon
 \]</span></p>
@@ -864,36 +879,39 @@ f(x) = \left\{\begin{array}{ll} 0, &amp; x=0, \\ \sin \dfrac{1}{x}, \qquad &amp;
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>1종 불연속과 2종 불연속</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-MA_1st_2nd_kind_discontinuity" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.6 (1종 불연속과 2종 불연속)</strong></span> <span class="math inline">\((a,\,b)\)</span> 구간에서 정의된 실함수 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 불연속이지만 <span class="math inline">\(x\)</span> 에서의 좌극한과 우극한이 존재한다면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x\)</span> 에서 <strong>1종 불연속 (first kind discontinuity)</strong>, 혹은 <strong>단순 불연속 (simple discontinuity)</strong> 라고 한다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 불연속이지만 1급 불연속이 아닐 때 <strong>2종 불연속 (second kind discontinuity)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 8.6</strong></span> <span class="math inline">\((a,\,b)\)</span> 구간에서 정의된 실함수 <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 불연속이지만 <span class="math inline">\(x\)</span> 에서의 좌극한과 우극한이 존재한다면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(x\)</span> 에서 <strong>1종 불연속 (first kind discontinuity)</strong>, 혹은 <strong>단순 불연속 (simple discontinuity)</strong> 라고 한다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 불연속이지만 1급 불연속이 아닐 때 <strong>2종 불연속 (second kind discontinuity)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
 <p><span class="math inline">\(f\)</span> 가 <span class="math inline">\(x\)</span> 에서 1종 불연속인 경우는 <span class="math inline">\(f(x^+)\ne f(x^-)\)</span> 이거나 <span class="math inline">\(f(x^+)=f(x^-)\ne f(x)\)</span> 의 두가지이다.</p>
 <p><br></p>
 </section>
 <section id="sec-MA_monotonic_functions" class="level3" data-number="8.4.2">
 <h3 data-number="8.4.2" class="anchored" data-anchor-id="sec-MA_monotonic_functions"><span class="header-section-number">8.4.2</span> 단조함수</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-MA_monotonic_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 8.7 (단조증가/단조감소)</strong></span> <span class="math inline">\(f:(a,\,b)\to \mathbb{R}\)</span> 함수 일 때 <span class="math inline">\(a&lt;x&lt;y&lt;b\)</span> 에 대해 <span class="math inline">\(f(x)\le f(y)\)</span> 이면 <span class="math inline">\(f\)</span> 가 구간 <span class="math inline">\((a,\,b)\)</span> 에서 <strong>단조증가</strong> 한다고 하며 <span class="math inline">\(f(x) \ge f(y)\)</span> 이면 <span class="math inline">\(f\)</span> 가 구간 <span class="math inline">\((a,\,b)\)</span> 에서 <strong>단조감소</strong>한다고 한다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((a,\,b)\)</span> 에서 단조증가 하거나 단조감소 하면 <span class="math inline">\(f\)</span> 를 <span class="math inline">\((a,\,b)\)</span> 에서의 <strong>단조함수</strong> 라고 한다.</p>
-<p>단조증가 하는 함수를 증가 함수 라고 하며 <span class="math inline">\(x&lt;y \implies f(x)&lt;f(y)\)</span> 이면 <strong>순증가 함수(strictily incrreasing function)</strong> 이라고 한다. 단조감소 하는 함수를 감소함수 라고 하며 <span class="math inline">\(x&lt;y \implies f(x)&gt;f(y)\)</span> 이면 <strong>순감소 함수(strictly deceasing function)</strong> 이라고 한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>단조증가/단조감소</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-MA_monotonic_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 8.7</strong></span> <span class="math inline">\(f:(a,\,b)\to \mathbb{R}\)</span> 함수 일 때 <span class="math inline">\(a&lt;x&lt;y&lt;b\)</span> 에 대해 <span class="math inline">\(f(x)\le f(y)\)</span> 이면 <span class="math inline">\(f\)</span> 가 구간 <span class="math inline">\((a,\,b)\)</span> 에서 <strong>단조증가</strong> 한다고 하며 <span class="math inline">\(f(x) \ge f(y)\)</span> 이면 <span class="math inline">\(f\)</span> 가 구간 <span class="math inline">\((a,\,b)\)</span> 에서 <strong>단조감소</strong>한다고 한다. <span class="math inline">\(f\)</span> 가 <span class="math inline">\((a,\,b)\)</span> 에서 단조증가 하거나 단조감소 하면 <span class="math inline">\(f\)</span> 를 <span class="math inline">\((a,\,b)\)</span> 에서의 <strong>단조함수</strong> 라고 한다.</p>
+<p>단조증가 하는 함수를 증가 함수 라고 하며 <span class="math inline">\(x&lt;y \implies f(x)&lt;f(y)\)</span> 이면 <strong>순증가 함수(strictily incrreasing function)</strong> 이라고 한다. 단조감소 하는 함수를 감소함수 라고 하며 <span class="math inline">\(x&lt;y \implies f(x)&gt;f(y)\)</span> 이면 <strong>순감소 함수(strictly deceasing function)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>

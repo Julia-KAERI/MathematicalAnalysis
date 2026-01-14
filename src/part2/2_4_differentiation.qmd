@@ -10,14 +10,13 @@ crossref:
 
 ## 실함수의 미분
 
-
 ### 미분가능성과 도함수 {#sec-MA_differentiability}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **미분가능과 도함수**
 
 ::: {#def-MA_differentiable}
-
-#### 미분가능과 도함수
 
 $f:(a,\,b) \subset \R \to \R$ 과 $x\in (a,\,b)$ 에 대해 
 
@@ -38,7 +37,7 @@ $$ {#eq-MA_differentiability}
 
 PMA(@Rudin1976) 의 경우는 $f:[a,\,b]\to \R$ 이 미분가능하다, 혹은 $f$ 가 $[a,\,b]$ 구간에서 미분가능하다는 표현을 사용한다. 그러나 실제로 미분값은 열린 구간에 대해 정의되므로 이 표현은 다소 어색한 표현이다. PMA 의 경우 좌극한, 우극한 처럼 좌미분 우미분을 이용하여 $[a,\,b]$ 구간에서의 미분가능성을 정의한다.
 
-미분이 열린 구간에서 정의가 되므로 임의의 열린 구간이란 표현이 많이 등장하게 된다. 이제 $I$ 를 어떤 열린 구간으로 표기하도록 한다. 즉 $f:I \to \R$ 은 어떤 열린 구간 $I$ 에서 정의된 실함수 $f$ 라는 의미이다.
+미분이 열린 구간에서 정의가 되므로 임의의 열린 구간이란 표현이 많이 등장하게 된다. <u>이제 $I$ 를 어떤 열린 구간으로 표기하도록 한다.</u> 즉 $f:I \to \R$ 은 어떤 열린 구간 $I\subset \R$ 에서 정의된 실함수 $f$ 라는 의미이다.
 
 :::
 
@@ -271,32 +270,26 @@ $$
 
 :::
 
-</div>
+</div></br>
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **도함수의 차수**
 
 ::: {#def-MA_differentiable}
-
-#### 도함수의 차수
 
 함수 $f:I \to \mathbb{R}$ 의 도함수 $f'(x)$ 를 생각 할 수 있다. $f'(x)$ 가 $I$ 에서 미분가능하면 $f'(x)$ 의 도함수를 $f''(x)$ 혹은 $f^{(2)}(x)$ 라고 쓰고 이차 도함수라고 한다. 이것을 계속하면 $n$ 차 도함수 $f^{(n)}(x)$ 를 생각 할 수 있다. 
 
 ::: 
 :::
 
-</br>
-
 @exm-MA_case_of_derivative_without_continuity_1 과 @exm-MA_case_of_derivative_without_continuity_2 에서 보았듯이 $n$-차 도함수가 연속일 수도 있고 아닐 수도 있다. $n$ 차 도함수가 연속인 것은 매우 중요한 성질이므로 여기에 특별한 이름을 붙인다.
 
-</br>
+::: {.callout-note icon="false"}
 
-::: {.callout-note appearance="simple" icon="false"}
+#### **도함수의 계층**
 
 ::: {#def-MA_class_of_derivatives}
-
-#### 도함수의 계층
 
 $f:I \to \mathbb{R}$ 이 $n$ 번 미분가능하며 $n$ 번째 도함수가 연속일 때 이 함수를 $C^k$-함수 혹은 $C^k$ 급 함수라고 한다. 연속인 함수는 $C^0$-함수이며 도함수가 연속이면 $C^1$-함수 라고 한다. 다항함수나 지수함수와 같이 무한번 미분 가능하며 연속인 함수는 $C^\infty$ 라고 표기한다.
 
@@ -311,11 +304,11 @@ $f:I \to \mathbb{R}$ 이 $n$ 번 미분가능하며 $n$ 번째 도함수가 연�
 
 ### 평균값 정리 {#sec-MA_mean_value_theorem}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **극대값과 극소값**
 
 ::: {#def-MA_extreme_value}
-
-#### 극대값과 극소값
 
 거리공간에서 $X$ 에서 정의된 실함수 $f:X\to\R$ 을 생각하자. $x\in X$ 일 때 어떤 $x$ 의 근방 $N=N(x,\,\delta)$ 에서 $p\in N \implies f(p) \le f(x)$ 일 때 $f$ 가 $x$ 에서 **극대값(local maximum)** 을 갖는다고 한다. 반대로 $p\in N \implies f(p) \ge f(x)$ 일 때 $f$ 가 $x$ 에서 **극소값(local minimum)** 을 갖는다고 한다. 극대값과 극소값을 **극값 (local extrema)** 라고 한다.
 ::: 
