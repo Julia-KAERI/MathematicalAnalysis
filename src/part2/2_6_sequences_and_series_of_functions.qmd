@@ -8,7 +8,7 @@ crossref:
 
 {{< include ../../latexmacros.qmd >}}
 
-::: {.callout-note}
+::: {.callout-warning icon="false"}
 
 #### 함수열의 정의역에 대해 
 아무리 찾아봐도 Rudin 에 명시적으로 지정되지 않았지만 함수열에서 다루는 함수의 정의역은 좌표공간, 혹은 유클리드 공간으로 한정되어 있다. 예를 들어 고른수렴에 대한 코시 판별법(@thm-MA_cauchy_criteria_for_uniform_convergence) 의 경우 코시 수열이 수렴하는 것이 필요한데 일반적인 거리공간에서는 코시수열이 수렴하지 않는다. 따라서 특별한 언급이 없다면 함수열의 정의역은 좌표공간의 부분집합이다.
@@ -20,11 +20,11 @@ crossref:
 ## 함수열과 고른 수렴
 ### 함수열 {#sec-MA_sequence_of_functions}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **함수열의 수렴**
 
 ::: {#def-MA_convergence_of_sequences_of_functions}
-
-#### 함수열의 수렴
 
 $f_n:E \to \C,\, n=1,\,2,\ldots$ 로 이루어진 수열 $\langle f_n \rangle$ 을 **함수열 (sequence of functions)** 라고 한다. 각각의 $x\in E$ 에 대해 $\langle f_n(x)\rangle$ 이 수렴할 때 함수 $f:E \to \C$ 를 다음과 같이 정의 할 수 있다.
 
@@ -206,11 +206,11 @@ $$
 
 ### 함수열의 고른 수렴 {#sec-MA_uniform_convergence_of_sequences_of_functions}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **고른 수렴**
 
 ::: {#def-MA_uniform_convergence}
-
-#### 고른 수렴
 
 $E$ 에서 정의된 함수열 $\langle f_n \rangle$ 이 $f$ 로 점별 수렴한다고 하자. 각각의 $\varepsilon > 0$ 에 대해 어떤 양의 정수 $N$ 이 존재하여 각각의 $x\in E$ 에 대해
 
@@ -439,11 +439,13 @@ $x\in K$ 를 선택한다. $\langle g_n \rangle \to 0$ 이므로 $x\notin \bigca
 
 ### 완비 거리 공간 {#sec-MA_complete_metric_space}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **유계 연속 복소함수공간**
 
 ::: {#def-MA_complex_function_space}
 
-#### 유계연속복소함수공간
+
 
 거리공간 $X$ 에서 정의된 연속이며 유계인 복소함수들의 집합을 $\mathscr{C}(X)$ 라고 하자. $\mathscr{C}(X)$ 는 벡터공간을 이루며 아래와 같은 **상한 노름(supremum norm)** 을 정의하면 거리공간이 된다.(@prp-MA_trivials_in_supremum_norm_space)
 
