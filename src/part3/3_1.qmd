@@ -1,0 +1,91 @@
+---
+title: "푸리에 해석학의 기원"
+number-sections: true
+number-depth : 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+</br>
+
+## 현의 진동 {#sec-FoA_1_1_1}
+
+**단순 조화 운동(simple harmonic motion)**은 아래와 같은 운동방정식에 의해 기술되는 운동이다.
+
+$$
+y''(t) + c^2 y(t) = 0. 
+$$ {#eq-FoA_simple_harmonic_motion}
+
+방정식 -@eq-FoA_simple_harmonic_motion 의 일반해는 
+
+$$
+y(t) = a \cos ct + b \sin ct
+$$ {#eq-FoA_general_solution_of_simple_harmonic_motion_0}
+
+이다. @exr-FoA_stein_1_6 에서는 위 식이 @eq-FoA_simple_harmonic_motion 의 유일한 해임을 요역하여 증명하게 된다. 이 방정식의 특수해를 결정하기 위해서는 $a,\,b$ 값을 결정해야 하며 이를 위해 2개의 초기조건이 주어저여 한다. 예를 들어 $f(0)$ 과 $f'(0)$ 이 주어졌다면 이 방정식의 해는
+
+$$
+y (t) = f(0)\cos ct + \dfrac{f'(0)}{c}\sin ct
+$$
+
+로 유일하게 주어진다. 그리고 우리는
+$$
+a \cos ct + b \sin ct = \sqrt{a^2+b^2} \cos (ct - \varphi),\qquad \text{where }\varphi = \arctan(b/a)
+$$
+
+임을 안다. 여기서 $A$ 를 **진폭(amplitude)**, $c$ 를 **고유진동수(natural frequency)**, $\varphi$ 를 **위상(phase)**, $T=2\pi/c$ 를 **주기(period)** 라고 한다.
+
+### 정상파와 진행파 {#sec-FoA_1_1_2}
+
+
+
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#prp-FoA_open_sphere_and_cube}
+
+$\R^n$ 에서 다음이 성립한다.
+
+$$
+N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta) \subset N(\bf{a},\,\sqrt{n}\delta)
+$$
+
+:::
+
+</div>
+
+::: {.proof}
+$N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol{a},\,\delta)$ 의 한 모서리에서 $\boldsymbol{a}$ 까지의 거리는 $\sqrt{n}\delta$ 이므로 $C(\bf{a},\,\delta) \subset N(\bf{a},\,\sqrt{n}\delta)$ 이다. $\square$
+
+:::
+
+</br>
+
+
+## 연습문제 {.unnumbered}
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-FoA_stein_1_6}
+#### Stein 1.6
+
+$f$ 가 $\R$ 에서 두 번 연속미분가능한 함수이며 방정식 $f''(t)+c^2f(t) = 0$ 의 해라 하자.
+
+$$
+f(t) = a \cos ct + b \sin ct
+$$
+
+
+
+를 만족하는 상수 $a$ 와 $b$ 가 존재함을 증명하라. 이는 두 함수 $g(t) = f(t)\cos ct - c^{-1} f'(t) \sin ct$ 와 $h(t) = f(t) \sin ct + f^{-1} f'(t) \cos ct$ 를 미분하여 알 수 있다. 
+
+:::
+
+</div>
+
+::: {.solution}
+
+:::
