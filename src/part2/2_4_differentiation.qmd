@@ -576,7 +576,7 @@ $$ {#eq-MA_tayler_theorem}
 
 :::
 
-</div></br>
+</div>
 
 ::: {.proof}
 

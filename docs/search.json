@@ -442,7 +442,7 @@
     "href": "src/part2/2_4_differentiation.html#테일러-정리",
     "title": "9  미분",
     "section": "9.3 테일러 정리",
-    "text": "9.3 테일러 정리\n\n\n정리 9.7 (테일러 정리) \\(f:[a,\\,b]\\to \\mathbb{R}\\) 이 \\([a,\\,b]\\) 를 포함하는 열린 구간에서 \\(C^{n-1}\\) 급 함수이며 \\((a,\\,b)\\) 구간에서 \\(n\\) 번 미분 가능하다고 하자. \\(x,\\,t\\in (a,\\,b)\\) 에 대해 \\[\nf(x) = \\sum_{k=0}^{n-1}\\dfrac{f^{(k)}(t)}{k!}(x-t)^{k} + \\dfrac{f^{(n)}(c)}{n!}(x-t)^n\n\\tag{9.11}\\]\n을 만족하는 \\(\\xi\\) 가 \\(x,\\,t\\) 사이에 반드시 존재한다.\n\n\n\n\n(증명). \\(n=1\\) 일 경우는 평균값 정리이다.\n\\[\nf(x) = \\sum_{k=0}^{n-1} \\dfrac{f^{(k)}(t)}{k!}(x-t)^k + M(x-t)^n\n\\tag{9.12}\\]\n를 만족하는 \\(M\\) 을 생각하자. \\(y\\in [a,\\,b]\\) 에 대해\n\\[\ng(y) := f(y) - \\sum_{k=0}^{n-1} \\dfrac{f^{(k)}(t)}{k!}(y-t)^k - M(y-t)^n\n\\tag{9.13}\\]\n라고 하면\n\\[\ng^{(n)}(y) = f^{(n)}(y) - n!M\n\\]\n이다. 이제 \\(g^{(n)}(y)=0\\) 인 \\(y\\) 가 반드시 존재한다는 것을 보이면 된다. 식 9.13 를 생각하면\n\\[\ng(t) = g'(t) = \\cdots = g^{(n-1)}(t) = 0\n\\]\n임을 안다. 식 9.12 로부터 \\(g(x) = 0\\) 이므로 \\(g'(x_1) = 0\\) 인 \\(x_1\\) 이 \\(t\\) 와 \\(x\\) 사이에 존재하며 \\(g''(x_2)\\) 인 \\(x_2\\) 가 \\(x_1\\) 과 \\(t\\) 사이에 존재한다. 이것을 계속하면 \\(g^{(n-1)}(x_{n-1}) = 0\\) 인 \\(x_{n-1}\\) 이 \\(t\\) 와 \\(x_{n-2}\\) 사이에 존재하므로 \\(g^{(n)}(x_n)=0\\) 인 \\(x_n\\) 도 \\(t\\) 와 \\(x_{n-1}\\) 사이에 존재한다. \\(g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0\\) 이므로 \\(M=f^{(n)}(x_n)/n!\\) 이다. \\(\\square\\)",
+    "text": "9.3 테일러 정리\n\n\n정리 9.7 (테일러 정리) \\(f:[a,\\,b]\\to \\mathbb{R}\\) 이 \\([a,\\,b]\\) 를 포함하는 열린 구간에서 \\(C^{n-1}\\) 급 함수이며 \\((a,\\,b)\\) 구간에서 \\(n\\) 번 미분 가능하다고 하자. \\(x,\\,t\\in (a,\\,b)\\) 에 대해 \\[\nf(x) = \\sum_{k=0}^{n-1}\\dfrac{f^{(k)}(t)}{k!}(x-t)^{k} + \\dfrac{f^{(n)}(c)}{n!}(x-t)^n\n\\tag{9.11}\\]\n을 만족하는 \\(\\xi\\) 가 \\(x,\\,t\\) 사이에 반드시 존재한다.\n\n\n\n(증명). \\(n=1\\) 일 경우는 평균값 정리이다.\n\\[\nf(x) = \\sum_{k=0}^{n-1} \\dfrac{f^{(k)}(t)}{k!}(x-t)^k + M(x-t)^n\n\\tag{9.12}\\]\n를 만족하는 \\(M\\) 을 생각하자. \\(y\\in [a,\\,b]\\) 에 대해\n\\[\ng(y) := f(y) - \\sum_{k=0}^{n-1} \\dfrac{f^{(k)}(t)}{k!}(y-t)^k - M(y-t)^n\n\\tag{9.13}\\]\n라고 하면\n\\[\ng^{(n)}(y) = f^{(n)}(y) - n!M\n\\]\n이다. 이제 \\(g^{(n)}(y)=0\\) 인 \\(y\\) 가 반드시 존재한다는 것을 보이면 된다. 식 9.13 를 생각하면\n\\[\ng(t) = g'(t) = \\cdots = g^{(n-1)}(t) = 0\n\\]\n임을 안다. 식 9.12 로부터 \\(g(x) = 0\\) 이므로 \\(g'(x_1) = 0\\) 인 \\(x_1\\) 이 \\(t\\) 와 \\(x\\) 사이에 존재하며 \\(g''(x_2)\\) 인 \\(x_2\\) 가 \\(x_1\\) 과 \\(t\\) 사이에 존재한다. 이것을 계속하면 \\(g^{(n-1)}(x_{n-1}) = 0\\) 인 \\(x_{n-1}\\) 이 \\(t\\) 와 \\(x_{n-2}\\) 사이에 존재하므로 \\(g^{(n)}(x_n)=0\\) 인 \\(x_n\\) 도 \\(t\\) 와 \\(x_{n-1}\\) 사이에 존재한다. \\(g^{(n)}(x_n) = f^{(n)}(x_n)-n!M = 0\\) 이므로 \\(M=f^{(n)}(x_n)/n!\\) 이다. \\(\\square\\)",
     "crumbs": [
       "일변수 함수의 해석학",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>미분</span>"
@@ -665,6 +665,26 @@
     "crumbs": [
       "푸리에 해석학",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>푸리에 해석학의 기원</span>"
+    ]
+  },
+  {
+    "objectID": "src/part3/part3.html",
+    "href": "src/part3/part3.html",
+    "title": "푸리에 해석학",
+    "section": "",
+    "text": "참고자료",
+    "crumbs": [
+      "푸리에 해석학"
+    ]
+  },
+  {
+    "objectID": "src/part3/part3.html#참고자료",
+    "href": "src/part3/part3.html#참고자료",
+    "title": "푸리에 해석학",
+    "section": "",
+    "text": "참고 도서\n\nStein and Shakarchi (2003), Stein and Shakarchi (2022)\nRudin (1976) : Principles of Mathematical Analysis\n\n\n\n\n\n\nRudin, W. 1976. Principles of Mathematical Analysis. Third. International Series in Pure and Applied Mathematics. McGraw-Hill.\n\n\nStein, Elias M, and Rami Shakarchi. 2003. Fourier Analysis: An Introduction. Vol. 1. Princeton Lectures in Analysis. Princeton University Press.\n\n\nStein, Elias M, and Rami Shakarchi. 2022. Fourier Analysis: Stein 푸리에 해석학. Translated by 이상혁. Princeton Lectures in Analysis. 한빛 아카데미.",
+    "crumbs": [
+      "푸리에 해석학"
     ]
   }
 ]
