@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>7&nbsp; 수열과 급수 – Mathematical Analysis</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,14 +54,15 @@ div.csl-indent {
 <link href="../../src/part2/2_1_basic_topology.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,7 +92,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -263,8 +262,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">src/part3/part2.qmd</span></a>
+            <a href="../../src/part3/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">푸리에 해석학</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -344,7 +343,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-<p>%</p>
+%
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -841,7 +840,7 @@ n \ge N_m \implies a_n &lt; -M
 <p>(2 <span class="math inline">\(\implies\)</span> 1) <a href="#prp-MA_properties_of_limsup" class="quarto-xref">명제&nbsp;<span>7.11</span></a> 과 <a href="#prp-MA_properties_of_liminf" class="quarto-xref">명제&nbsp;<span>7.12</span></a> 각각의 1번 조건에 의해 <span class="math inline">\(\displaystyle \lim_{n \to \infty}a_n = a\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p><a href="#def-MA_limsup_liminf" class="quarto-xref">정의&nbsp;<span>7.9</span></a> 는 서울대 해석개론(<span class="citation" data-cites="KKK2011">김성기 et al. (<a href="../../references.html#ref-KKK2011" role="doc-biblioref">2011</a>)</span>) 의 정의이다. 루딘의 PMA(<span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span>) 은 동등한 다른 정의를 사용한다.</p>
+<p><a href="#def-MA_limsup_liminf" class="quarto-xref">정의&nbsp;<span>7.9</span></a> 는 서울대 해석개론(<span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<a href="../../references.html#ref-KKK2011" role="doc-biblioref">2011</a>)</span>) 의 정의이다. 루딘의 PMA(<span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span>) 은 동등한 다른 정의를 사용한다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-MA_another_definition_of_limsup_and_liminf" class="theorem">
@@ -1827,7 +1826,7 @@ x= x + \dfrac{\alpha-x^2}{x+ (\alpha+1)/2}
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Rudin1976" class="csl-entry" role="listitem">
 Rudin, W. 1976. <em>Principles of Mathematical Analysis</em>. Third. International Series in Pure and Applied Mathematics. McGraw-Hill.
 </div>
