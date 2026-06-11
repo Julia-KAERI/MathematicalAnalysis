@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/index.html</loc>
-    <lastmod>2025-07-04T08:14:31.711Z</lastmod>
+    <lastmod>2024-10-02T08:09:50.496Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/part1.html</loc>
-    <lastmod>2025-07-04T08:14:31.712Z</lastmod>
+    <lastmod>2024-10-02T05:17:36.208Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_1_basic_of_naive_set_theory.html</loc>
-    <lastmod>2026-05-26T23:57:16.038Z</lastmod>
+    <lastmod>2026-06-11T23:40:49.374Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part1/1_2_functions_and_relations.html</loc>
@@ -30,11 +30,11 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/part2.html</loc>
-    <lastmod>2025-07-04T08:14:31.713Z</lastmod>
+    <lastmod>2024-10-02T05:17:36.210Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html</loc>
-    <lastmod>2026-06-10T14:05:29.676Z</lastmod>
+    <lastmod>2026-06-11T23:41:15.403Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_2_sequences_and_series.html</loc>
@@ -50,11 +50,15 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html</loc>
-    <lastmod>2026-06-10T07:52:34.608Z</lastmod>
+    <lastmod>2026-06-11T07:06:58.534Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_6_sequences_and_series_of_functions.html</loc>
     <lastmod>2026-05-26T23:57:16.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/part3.html</loc>
+    <lastmod>2026-05-26T23:57:16.044Z</lastmod>
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/3_1.html</loc>
@@ -62,10 +66,6 @@
   </url>
   <url>
     <loc>https://julia-kaeri.github.io/MathematicalAnalysis/references.html</loc>
-    <lastmod>2025-09-20T03:21:55.265Z</lastmod>
-  </url>
-  <url>
-    <loc>https://julia-kaeri.github.io/MathematicalAnalysis/src/part3/part3.html</loc>
-    <lastmod>2026-05-26T23:57:16.044Z</lastmod>
+    <lastmod>2025-09-22T01:16:20.353Z</lastmod>
   </url>
 </urlset>
